@@ -1,6 +1,6 @@
-# Investigating the Use of Large Language Models for Acceptance Test Scenario Generation
+# Investigating the Use of a Large Language Model for Acceptance Test Scenario Generation
 
-This repository provides all scripts, configurations, and artifacts required to reproduce the experiments described in the study: *Investigating the Use of Large Language Models for Acceptance Test Scenario Generation*.
+This repository provides all scripts, configurations, and artifacts required to reproduce the experiment described in the study: *Investigating the Use of an LLM for Acceptance Test Scenario Generation*.
 
 ---
 
