@@ -1,0 +1,8 @@
+Scenario 1: Find help with care for elderly
+  Tags: ['@vcr']
+  Given  I visit the organisations index page
+  When  I search for "elderly"
+  Then  the index should contain:
+  And  the index should not contain:
+  And  the search box should contain "elderly"
+

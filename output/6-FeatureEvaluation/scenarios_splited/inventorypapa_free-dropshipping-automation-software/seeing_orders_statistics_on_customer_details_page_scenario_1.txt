@@ -1,0 +1,6 @@
+Scenario: View customer order statistics with multiple orders
+  Given there is a customer with multiple orders placed across different sales channels
+  And the customer has orders with varying fulfillment statuses
+  When the administrator views the customer's details page
+  Then the system displays the total number of orders placed by the customer
+  And the total value of all orders

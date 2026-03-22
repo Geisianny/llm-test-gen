@@ -1,0 +1,5 @@
+Scenario 7: The minion communicates with the Salt master
+  Then  the Salt master can reach "sle_minion"
+  When  I get OS information of "sle_minion" from the Master
+  Then  it should contain the OS of "sle_minion"
+

@@ -1,0 +1,6 @@
+Scenario 2: Add a new zone payment-provider-rule which is inactive
+  Given  adding a payment-provider-rule named "zones"
+  And  the payment-provider-rule is inactive
+  And  the payment-provider-rule has a condition zones with zone "Europe"
+  Then  the payment-provider-rule should be invalid for my cart with payment provider "Bankwire"
+

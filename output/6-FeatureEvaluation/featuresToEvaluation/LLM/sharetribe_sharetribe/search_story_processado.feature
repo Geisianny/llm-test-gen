@@ -1,0 +1,35 @@
+Feature: search_story_processado
+
+Scenario: Search listings by keyword
+    Given there are listings with titles and descriptions
+    When the user types a keyword "electronics" in the search box
+    And hits enter
+    Then the system displays listings containing the keyword "electronics" in their titles or descriptions
+
+Scenario: Search listings with partial keyword matching
+    Given there are listings with titles "Smartphone" and "Electronic Accessories"
+    When the user types a keyword "phone" in the search box
+    And hits enter
+    Then the system displays listings containing "Smartphone" in the results
+
+Scenario: Apply price range filter
+    Given there are listings with prices between $10 and $1000
+    When the user types a keyword "electronics" in the search box
+    And hits enter
+    And sets the price range filter to $50 to $200
+    Then the system displays listings containing "electronics" with prices between $50 and $200
+
+Scenario: Apply custom numeric field filter
+    Given there are listings with a custom numeric field "year"
+    When the user types a keyword "vintage" in the search box
+    And hits enter
+    And sets the custom numeric field "year" filter to 1990 to 2000
+    Then the system displays listings containing "vintage" with "year" between 1990 and 2000
+
+Scenario: Search with multiple filters
+    Given there are listings with titles, descriptions, prices, and custom numeric fields
+    When the user types a keyword "electronics" in the search box
+    And hits enter
+    And sets the price range filter to $100 to $500
+    And sets the custom numeric field "year" filter to 2010 to 2020
+    Then the system displays listings containing "electronics" with prices between $100 and $500 and "year" between 2010 and 2020

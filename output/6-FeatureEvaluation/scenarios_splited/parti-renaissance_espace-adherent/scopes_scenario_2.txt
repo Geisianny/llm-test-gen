@@ -1,0 +1,5 @@
+Scenario: Request scopes without OAuth token
+  Given the user is not authenticated via OAuth
+  When the user requests their assigned scopes via the API
+  Then the system returns an error response
+  And indicates that authentication is required

@@ -1,0 +1,5 @@
+Scenario 10: deny access if user has no right to invite members
+  Given  I am logged in as "josesantos"
+  When  I am on /profile/26-bsslines/invite/friends
+  Then  I should see "Access denied"
+

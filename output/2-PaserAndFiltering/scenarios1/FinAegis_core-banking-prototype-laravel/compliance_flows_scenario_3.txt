@@ -1,0 +1,7 @@
+Scenario 3: Currency Transaction Report (CTR) generation
+  Given  daily transaction aggregation is running
+  When  transactions exceed $10,000 threshold:
+  Then  CTR should be generated with:
+  And  file with FinCEN within 15 days
+  And  maintain filing records for 5 years
+

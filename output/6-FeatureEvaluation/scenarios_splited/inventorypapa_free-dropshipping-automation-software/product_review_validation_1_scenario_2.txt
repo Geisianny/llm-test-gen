@@ -1,0 +1,6 @@
+Scenario: Add product review with missing comment
+  Given the Administrator is managing product reviews
+  And there is a product review with a title but without a comment
+  When the Administrator attempts to add the product review
+  Then the system prevents the addition of the review
+  And displays a message indicating that the comment is required

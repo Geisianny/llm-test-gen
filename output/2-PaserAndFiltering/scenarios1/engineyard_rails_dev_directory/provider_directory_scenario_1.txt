@@ -1,0 +1,13 @@
+Scenario 1: Provider index and requesting an RFP
+  Given  an "active" provider "Trulio"
+  And  "Trulio" has a new endorsement from "George Tenet"
+  And  "Trulio" has a minimum budget of "15000"
+  And  pre checked services "Ruby on Rails"
+  And  primary services "AJAX, Visual design, UI"
+  And  "Trulio" provides "AJAX"
+  And  an "inactive" provider "Boolio"
+  When  I am on the homepage
+  And  I follow "home.full_listing" translation
+  Then  I should see "Trulio"
+  Then  I should see "Trulio"
+

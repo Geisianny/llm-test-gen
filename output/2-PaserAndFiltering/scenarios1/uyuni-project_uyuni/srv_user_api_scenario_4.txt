@@ -1,0 +1,8 @@
+Scenario 4: Role operations
+  When  I call user.add_role() on "testuser" with the role "org_admin"
+  And  I call user.list_roles() on user "testuser"
+  Then  I should get role "org_admin"
+  When  I call user.remove_role() on "testuser" with the role "org_admin"
+  And  I call user.list_roles() on user "testuser"
+  Then  I should not get role "org_admin"
+

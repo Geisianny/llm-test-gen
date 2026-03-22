@@ -1,0 +1,4 @@
+Scenario: No donations to display
+  Given there is a logged-in adherent with no active donations
+  When the adherent views their account profile
+  Then the system displays a message indicating no donations

@@ -1,0 +1,42 @@
+Feature: Super Admin deleting charity
+Description: As a Super Admin
+  So that I can ensure that defunct charities are removed
+  I want to be able to delete charities
+  Tracker Story ID: https://www.pivotaltracker.com/story/show/59553308
+
+Background: organisations have been added to database
+  Given  the following organisations exist:
+  And  the following proposed edits exist:
+  And  the following users are registered:
+  And  cookies are approved
+
+Scenario 1: Super Admin successfully deletes a charity   # scenario 'Super Admin successfully deletes a charity' do
+  Tags: ['@vcr']
+  Given  I am signed in as a superadmin
+  And  I visit the show page for the organisation named "Friendly"
+  And  I click "Delete"
+  Then  the organisation "Friendly" should be deleted
+  And  I should see "Deleted Friendly" in the flash
+  And  I should be on the organisations index page
+  And  the "2" proposed edits for the organisation named "Friendly" should only be soft deleted
+
+Scenario 2: Org superadmin cannot see delete button
+  Given  I am signed in as a non-superadmin
+  And  I visit the show page for the organisation named "Friendly"
+  And  I should not see "Delete"
+
+Scenario 3: Non-superadmin cannot see delete button
+  Given  I am signed in as a non-superadmin
+  And  I visit the show page for the organisation named "Friendly"
+  And  I should not see "Delete"
+
+Scenario 4: Public cannot see delete button
+  Given  I visit the show page for the organisation named "Friendly"
+  And  I should not see "Delete"
+
+Scenario 5: Non-superadmin unsuccessfully attempts to delete a charity directly
+  Given  I am signed in as a non-superadmin
+  And  I delete "Friendly" charity
+  Then  I should be on the show page for the organisation named "Friendly"
+  And  I should see permission denied
+

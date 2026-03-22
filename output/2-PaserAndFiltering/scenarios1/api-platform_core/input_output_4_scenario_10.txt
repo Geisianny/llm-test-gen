@@ -1,0 +1,8 @@
+Scenario 10: Use messenger with an input where the handler gives a synchronous Response result
+  Tags: ['@!mongodb']
+  When  I send a "POST" request to "/messenger_with_responses" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the JSON should be equal to:
+

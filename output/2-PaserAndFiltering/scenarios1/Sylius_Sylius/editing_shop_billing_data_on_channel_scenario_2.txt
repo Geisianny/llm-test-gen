@@ -1,0 +1,8 @@
+Scenario 2: Editing shop billing data with wrong country code
+  Tags: ['@api', '@no-ui']
+  When  I want to modify a channel "Web Store"
+  And  I specify new country code for this channel as "ZZ"
+  And  I save my changes
+  Then  I should be notified that it is not a valid country
+  And  this channel shop billing address should still be "Pacific Coast Hwy", "90806" "Los Angeles" and "United States" country
+

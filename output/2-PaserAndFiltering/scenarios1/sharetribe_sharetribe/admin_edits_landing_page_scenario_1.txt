@@ -1,0 +1,13 @@
+Scenario 1: Admin edits hero section
+  Tags: ['@javascript']
+  Given  skip this scenario
+  When  I go to the landing page admin page
+  Then  I should see "Landing page editor"
+  And  there is a current landing page in community
+  When  I go to the landing page section of "hero" admin page
+  Then  I should see "Set the background image for the Hero section."
+  And  I choose "Transparent"
+  When  I press submit
+  Then  I should see "Landing page editor"
+  Given  external plan service is not used
+

@@ -1,0 +1,7 @@
+Scenario 7: Seeing information about verified email for registered customer
+  Tags: ['@api', '@ui']
+  Given  there is a customer "Legolas Sindar" identified by an email "legolas@woodland.rm" and a password "takingTheHobbitsToIsengard"
+  And  this customer verified their email
+  When  I view details of the customer "legolas@woodland.rm"
+  Then  I should see that this customer has verified the email
+

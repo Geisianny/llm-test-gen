@@ -1,0 +1,5 @@
+Scenario 3: Invoices tab not visible when billling disabled
+  Given  the provider has "finance" denied
+  When  they go to buyer "Bob" overview page
+  Then  they should not see "Invoices"
+

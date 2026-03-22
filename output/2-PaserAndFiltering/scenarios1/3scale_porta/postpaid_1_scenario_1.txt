@@ -1,0 +1,10 @@
+Scenario 1: With free plan, no invoice is created
+  And  a buyer "broke" signed up to application plan "FreeAsInBeer"
+  Given  the time is 15th January 2009
+  When  buyer "broke" makes 5 service transaction with:
+  When  1 month passes
+  Then  the date should be 15th February 2009
+  When  I log in as "broke" on xyz.3scale.localhost
+  And  I navigate to invoices issued for me
+  Then  I should see 0 invoices
+

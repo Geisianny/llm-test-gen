@@ -1,0 +1,12 @@
+Scenario 4: Provider has custom personal details fields
+  Tags: ['@javascript']
+  Given  the provider has the following fields defined for users:
+  When  they go to the personal details page
+  Then  fields are required:
+  And  they should not see the fields:
+  And  fill in "Current Password" with "supersecret"
+  And  they press "Update Personal Details"
+  Then  they should see error in fields:
+  When  the buyer edits their custom personal details
+  Then  they should be able to edit their custom personal details
+

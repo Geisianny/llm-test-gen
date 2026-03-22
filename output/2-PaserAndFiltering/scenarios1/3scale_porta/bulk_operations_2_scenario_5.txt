@@ -1,0 +1,6 @@
+Scenario 5: Send an email without body
+  Given  item "Bob's App" is selected
+  When  they select bulk action "Send email"
+  And  the modal is submitted with:
+  Then  the buyer has received no emails
+

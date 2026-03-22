@@ -1,0 +1,6 @@
+Scenario 3: Reading alerts
+  Given  they go to the alerts page
+  When  they follow "Read" in the 1st row
+  And  follow "Read" in the 3rd row
+  Then  they should see the following table:
+

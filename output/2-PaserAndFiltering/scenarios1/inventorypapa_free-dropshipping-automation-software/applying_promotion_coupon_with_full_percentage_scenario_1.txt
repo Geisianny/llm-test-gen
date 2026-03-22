@@ -1,0 +1,7 @@
+Scenario 1: Receiving full percentage discount for my cart
+  Tags: ['@ui', '@api']
+  When  I add product "PHP T-Shirt" to the cart
+  And  I use coupon with code "SANTA2016"
+  Then  my cart total should be "$0.00"
+  And  my discount should be "-$100.00"
+

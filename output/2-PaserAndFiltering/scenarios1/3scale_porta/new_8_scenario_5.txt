@@ -1,0 +1,9 @@
+Scenario 5: Create account with fields with choices
+  Given  the provider has the following fields defined for accounts:
+  When  they go to the new buyer account page
+  And  there is a select "Country" that includes options:
+  And  there is a select "Fields with choices" that includes options:
+  And  the form is submitted with:
+  Then  the current page is the buyer account page for "Alice's Web Widget"
+  And  the inverted table has the following rows within the account details card:
+

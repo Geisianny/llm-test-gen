@@ -1,0 +1,4 @@
+Scenario 6: Custom operation name without specific route
+  When  I send a "GET" request to "/custom_action_collection_dummies/1"
+  Then  the JSON should be equal to:
+

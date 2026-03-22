@@ -1,0 +1,5 @@
+Scenario 3: Create an activation key for RedHat-like minion
+  Tags: ['@rhlike_minion']
+  When  I create an activation key with id "RH-LIKE-KEY", description "RedHat like Test Key", base channel "fake-base-channel-rh-like", limit of 20 and contact method "default"
+  Then  I should get the new activation key "1-RH-LIKE-KEY"
+

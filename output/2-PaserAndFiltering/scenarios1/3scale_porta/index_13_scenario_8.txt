@@ -1,0 +1,8 @@
+Scenario 8: Filter paid subscriptions
+  Tags: ['@wip']
+  Given  the following service plans:
+  And  the following buyers with service subscriptions signed up to the provider:
+  When  they go to the provider service subscriptions page
+  And  the table is filtered with:
+  Then  the table should contain the following:
+

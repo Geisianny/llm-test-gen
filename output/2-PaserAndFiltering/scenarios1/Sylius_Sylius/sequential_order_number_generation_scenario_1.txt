@@ -1,0 +1,6 @@
+Scenario 1: Verifying that orders has correct numbers
+  Tags: ['@api', '@ui']
+  When  I browse orders
+  Then  I should see an order with "#000000001" number
+  And  I should see an order with "#000000002" number
+

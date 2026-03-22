@@ -1,0 +1,7 @@
+Scenario 7: Get an archive returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-forwarding']
+  Given  new "GetLogsArchive" request
+  And  request contains "archive_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

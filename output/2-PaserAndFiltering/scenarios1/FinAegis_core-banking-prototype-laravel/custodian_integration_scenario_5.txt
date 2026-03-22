@@ -1,0 +1,8 @@
+Scenario 5: Cross-bank balance reconciliation
+  Given  accounts exist across multiple custodians
+  When  daily reconciliation runs
+  Then  balances should be fetched from all banks
+  And  compared with internal records
+  And  any discrepancies should be flagged
+  And  automatic correction should be attempted
+

@@ -1,0 +1,5 @@
+Scenario: Create a new proposal with valid details
+  Given there is a stakeholder with tokens staked
+  When the stakeholder creates a new proposal with a valid title and description
+  Then the system creates the proposal
+  And displays a message confirming successful proposal creation

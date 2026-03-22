@@ -1,0 +1,10 @@
+Scenario 1: a user can join in a community by members block's button
+  Given  the following communities
+  And  the following blocks
+  And  I am logged in as "mariasilva"
+  And  I go to sample-community's homepage
+  When  I follow "Join this community" within ".members-block"
+  And  I go to mariasilva's control panel
+  And  I follow "Groups" within "#section-relationships"
+  Then  I should see "Sample Community"
+

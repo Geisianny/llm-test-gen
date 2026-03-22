@@ -1,0 +1,11 @@
+Scenario 1: Admin views & sorts list of members
+  Then  I should see list of users with the following details:
+  When  I follow "Name"
+  Then  I should see list of users with the following details:
+  When  I follow "Name"
+  Then  I should see list of users with the following details:
+  When  I follow "Email"
+  Then  I should see list of users with the following details:
+  When  I follow "Joined"
+  Then  I should see list of users with the following details:
+

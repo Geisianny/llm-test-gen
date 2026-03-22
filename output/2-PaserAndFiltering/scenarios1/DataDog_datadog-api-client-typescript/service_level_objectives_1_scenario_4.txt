@@ -1,0 +1,8 @@
+Scenario 4: Get SLO report returns "Not Found" response
+  Tags: ['@team:DataDog/slo-app']
+  Given  operation "GetSLOReport" enabled
+  And  new "GetSLOReport" request
+  And  request contains "report_id" parameter with value "2b468c54-f2a7-11ee-b0b4-ffe56bb6ad43"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

@@ -1,0 +1,7 @@
+Scenario 4: Seeing disabled slug field when editing a taxon
+  Tags: ['@ui']
+  Given  the store has taxonomy named "Medieval weapons" in "English (United States)" locale and "Bronie średniowieczne" in "Polish (Poland)" locale
+  When  I want to modify the "Medieval weapons" taxon
+  Then  the slug field should not be editable in "English (United States)"
+  Then  the slug field should also not be editable in "Polish (Poland)"
+

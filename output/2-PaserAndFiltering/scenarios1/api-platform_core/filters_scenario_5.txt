@@ -1,0 +1,8 @@
+Scenario 5: Retrieve a collection filtered using the search filter with an int
+  Tags: ['@createSchema']
+  Given  there are 4 dummy objects having each 3 relatedDummies
+  When  I send the following GraphQL request:
+  Then  the JSON node "data.dummies.totalCount" should be equal to 1
+  And  the JSON node "data.dummies.edges[0].node.relatedDummies.totalCount" should be equal to 1
+  And  the JSON node "data.dummies.edges[0].node.relatedDummies.edges[0].node.age" should be equal to "31"
+

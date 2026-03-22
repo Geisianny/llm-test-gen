@@ -1,0 +1,8 @@
+Scenario 1: Assigning customer's IP address to a newly placed order
+  Tags: ['@ui']
+  Given  I have product "PHP T-Shirt" in the cart
+  And  I specified the billing address as "Ankh Morpork", "Frost Alley", "90210", "United States" for "Jon Snow"
+  And  I proceed with "Free" shipping method and "Offline" payment
+  And  I confirm my order
+  Then  the administrator should know about IP address of this order made by "customer@example.com"
+

@@ -1,0 +1,7 @@
+Scenario: Attempt to add a duplicate custom network
+  Given the user is on the network settings page
+  And there is a custom network "Custom Network" already added
+  When the user chooses to add a custom network
+  And enters the network details: name "Custom Network", RPC URL "https://customnetwork.com", Chain ID "123", and symbol "CN"
+  Then the system denies adding the custom network
+  And displays an error message indicating that the network already exists

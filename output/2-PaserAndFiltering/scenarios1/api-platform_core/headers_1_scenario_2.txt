@@ -1,0 +1,6 @@
+Scenario 2: Declare headers from resource
+  When  I send a "GET" request to "/redirect_to_foobar"
+  Then  the response status code should be 301
+  And  the header "Location" should be equal to "/foobar"
+  And  the header "Hello" should be equal to "World"
+

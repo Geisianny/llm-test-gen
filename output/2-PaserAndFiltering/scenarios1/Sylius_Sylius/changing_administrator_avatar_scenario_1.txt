@@ -1,0 +1,7 @@
+Scenario 1: Changing an avatar of an administrator
+  Tags: ['@api', '@ui']
+  Given  I have the "ford.jpg" image as my avatar
+  And  I am editing my details
+  When  I update the "troll.jpg" image as my avatar
+  Then  I should see the "troll.jpg" image as my avatar
+

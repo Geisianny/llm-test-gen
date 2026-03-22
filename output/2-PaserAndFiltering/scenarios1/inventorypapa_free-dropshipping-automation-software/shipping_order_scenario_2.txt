@@ -1,0 +1,6 @@
+Scenario 2: Unable to finalize shipped order's shipment
+  Tags: ['@ui']
+  Given  this order has already been shipped
+  When  I view the summary of the order "#00000666"
+  Then  I should not be able to ship this order
+

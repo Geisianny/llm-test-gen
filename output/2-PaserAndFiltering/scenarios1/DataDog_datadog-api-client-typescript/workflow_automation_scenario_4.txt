@@ -1,0 +1,7 @@
+Scenario 4: Create a Workflow returns "Bad request" response
+  Tags: ['@team:DataDog/workflow-automation-dev']
+  Given  new "CreateWorkflow" request
+  And  body with value {"data": {"attributes": {"name": "Too many characters in description", "description": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "spec": {}}, "type": "workflows"}}
+  When  the request is sent
+  Then  the response status is 400 Bad request
+

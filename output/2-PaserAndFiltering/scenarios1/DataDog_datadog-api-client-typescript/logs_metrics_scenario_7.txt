@@ -1,0 +1,9 @@
+Scenario 7: Get a log-based metric returns "OK" response
+  Tags: ['@team:DataDog/logs-backend', '@team:DataDog/logs-forwarding']
+  Given  there is a valid "logs_metric" in the system
+  And  new "GetLogsMetric" request
+  And  request contains "metric_id" parameter from "logs_metric.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.attributes.filter.query" has the same value as "logs_metric.data.attributes.filter.query"
+

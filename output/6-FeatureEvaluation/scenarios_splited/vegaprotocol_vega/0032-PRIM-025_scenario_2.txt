@@ -1,0 +1,5 @@
+Scenario: Auction terminates and market returns to continuous trading mode
+  Given the market "BTC/ETH" is in auction mode
+  When the network moves ahead "1" blocks
+  Then the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  And the mark price should be determined by the executed trades

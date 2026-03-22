@@ -1,0 +1,24 @@
+Feature: Verify the contract for a JSON service
+Description: In order to drive a versioned, evolable API for a JSON service
+  As a consuming developer
+  I want to verify that the service meets a contract
+
+Background: 
+  Given  I have a mock HTTP service
+
+Scenario 1: Verify a single contract for a service
+  Given  a contract "simple JSON resource":
+  When  a resource at "/service" is represented with the JSON:
+  And  I run janus with the contract "simple JSON resource"
+  Then  the output from janus should contain:
+  When  a resource at "/service" is represented with the JSON:
+  And  I run janus with the contract "simple JSON resource"
+  Then  the output from janus should contain:
+
+Scenario 2: Verify a POST contract for my correct service
+  Tags: ['@wip']
+  Given  a contract "POST JSON service":
+  When  a resource is created at "/search" in JSON:
+  And  I run janus with the contract "POST JSON service"
+  Then  the output from janus should contain:
+

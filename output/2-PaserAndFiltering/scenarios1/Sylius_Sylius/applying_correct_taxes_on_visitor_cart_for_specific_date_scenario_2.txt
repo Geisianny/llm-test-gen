@@ -1,0 +1,8 @@
+Scenario 2: Applying proper taxes for product
+  Tags: ['@api', '@ui']
+  Given  it is "02-02-2023" now
+  And  I added product "PHP T-Shirt" to the cart
+  When  I check the details of my cart
+  Then  my cart total should be "$115.00"
+  And  my cart taxes should be "$15.00"
+

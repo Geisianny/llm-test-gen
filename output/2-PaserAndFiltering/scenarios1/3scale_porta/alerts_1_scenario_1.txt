@@ -1,0 +1,7 @@
+Scenario 1: Navigation via vertical menu
+  Given  the current page is the provider dashboard
+  When  follow "My Product" within the apis dashboard widget
+  And  press "Analytics" within the main menu
+  And  follow "Alerts" within the main menu
+  Then  the current page is the alerts of "My Product"
+

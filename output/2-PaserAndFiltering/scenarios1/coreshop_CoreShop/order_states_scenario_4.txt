@@ -1,0 +1,8 @@
+Scenario 4: Test order invoice states
+  Then  the order invoice state should be "new"
+  And  I should be able to apply invoice transition "request_invoice" to my order
+  And  I apply order invoice transition "request_invoice" to my order
+  And  I should be able to apply invoice transition "partially_invoice" to my order
+  And  I should be able to apply invoice transition "cancel" to my order
+  And  I should be able to apply invoice transition "invoice" to my order
+

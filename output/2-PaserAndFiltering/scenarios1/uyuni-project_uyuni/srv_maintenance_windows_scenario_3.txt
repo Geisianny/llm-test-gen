@@ -1,0 +1,11 @@
+Scenario 3: Create a multi calendar
+  When  I follow the left menu "Schedule > Maintenance Windows > Calendars"
+  And  I wait for "1" second
+  Then  I should see a "Items 1 - 1 of 1" text
+  When  I click on "Create" in element "maintenance-windows"
+  Then  I should see a "Calendar Name" text
+  When  I enter "multicalendar" as "name"
+  And  I add "maintenance-windows-multi-exchange-1.ics" calendar file as url
+  And  I click on "Create Calendar"
+  Then  I should see a "Calendar successfully created" text
+

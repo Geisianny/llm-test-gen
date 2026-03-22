@@ -1,0 +1,9 @@
+Scenario 1: Seeing correct quantity on payment retry page
+  Tags: ['@no-api', '@ui']
+  Given  I added 2 products "PHP T-Shirt" to the cart
+  When  I complete addressing step with email "john@example.com" and "United States" based billing address
+  And  I have proceeded selecting "Cash on delivery" payment method
+  And  I have confirmed order
+  And  I go to the change payment method page
+  Then  I should see 2 as number of items
+

@@ -1,0 +1,6 @@
+Scenario 3: Deleting zone that is a zone member should not be possible
+  Tags: ['@api', '@ui']
+  When  I try to delete the zone named "Central and Eastern Europe"
+  Then  I should be notified that this zone cannot be deleted
+  And  I should still see the zone named "Central and Eastern Europe" in the list
+

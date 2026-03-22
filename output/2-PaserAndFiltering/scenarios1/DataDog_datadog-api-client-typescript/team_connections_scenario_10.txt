@@ -1,0 +1,9 @@
+Scenario 10: List team connections with filters returns "OK" response
+  Tags: ['@skip', '@team:DataDog/aaa-omg']
+  Given  operation "ListTeamConnections" enabled
+  And  new "ListTeamConnections" request
+  And  request contains "filter[sources]" parameter with value ["github"]
+  And  request contains "page[size]" parameter with value 10
+  When  the request is sent
+  Then  the response status is 200 OK
+

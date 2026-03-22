@@ -1,0 +1,5 @@
+Scenario 3: a user must not see the plugin\'s button in the control panel if the plugin is disabled
+  Given  plugin Foo is disabled on environment
+  And  I go to joaosilva's control panel
+  Then  I should not see "Foo plugin button"
+

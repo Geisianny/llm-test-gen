@@ -1,0 +1,9 @@
+Scenario 7: Variable cost in automated billing is always UTC
+  Given  the provider time zone is "Pacific Time (US & Canada)"
+  And  the buyer is signed up to plan "VariableOnly" on 31st January 2019 22:00 PST
+  And  the buyer makes a service transactions with:
+  And  time flies to 1st February 2019 12:00 PST
+  And  the buyer makes a service transactions with:
+  When  time flies to 3rd March 2019
+  Then  the buyer should have following line items for "February, 2019" invoice:
+

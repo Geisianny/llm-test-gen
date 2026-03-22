@@ -1,0 +1,7 @@
+Scenario 5: 
+  When  I am logged with "gisele-berthoux@caramail.com" via OAuth client "JeMengage Web"
+  When  I send a "GET" request to "/api/v3/profile/me/scope/delegated_d2315289-a3fd-419c-a3dd-3e1ff71b754d"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+

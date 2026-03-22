@@ -1,0 +1,14 @@
+Scenario Outline 4: Delete the spec - Example 1
+  Given  the product has a Swagger 1.2 spec "Echo API"
+  When  they go to the spec's preview page from Product context
+  And  follow "Delete"
+  And  confirm the dialog
+  Then  the current page is the ActiveDocs page
+  And  they should not see "Echo API"
+
+  Examples:
+    | swagger version |
+    | Swagger 1.2 |
+    | Swagger 2 |
+    | OAS 3.0 |
+

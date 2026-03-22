@@ -1,0 +1,9 @@
+Scenario 16: Cleanup: remove the 2nd state channel and the deployed file
+  When  I follow the left menu "Configuration > Channels"
+  And  I follow first "My State Channel"
+  And  I follow "Delete Channel"
+  Then  I should see a "Are you sure you want to delete this config channel?" text
+  When  I click on "Delete Config Channel"
+  Then  I should see a "Channel 'My State Channel' has been deleted." text
+  When  I remove "/root/statechannel2" from "sle_minion"
+

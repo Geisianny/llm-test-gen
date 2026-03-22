@@ -1,0 +1,7 @@
+Scenario: Create a new tax rate with valid information
+  Given there is an administrator logged in
+  And the tax rates catalog is empty
+  When the administrator creates a new tax rate with the code "VAT" and rate "20"
+  And adds a multilingual description for the tax rate "VAT" in English as "Value Added Tax"
+  Then the system saves the new tax rate
+  And displays a confirmation message

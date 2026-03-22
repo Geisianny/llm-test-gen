@@ -1,0 +1,7 @@
+Scenario 4: Superadmin rejects new organisation
+  Tags: ['@vcr']
+  And  I visit the proposed organisation show page for the proposed organisation that was proposed
+  And  I press "Reject"
+  Then  I should be on the proposed organisations index page
+  And  the proposed organisation should have been rejected
+

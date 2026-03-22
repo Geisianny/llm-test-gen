@@ -1,0 +1,6 @@
+Scenario 5: Removing a product of a product association
+  Tags: ['@api', '@no-ui']
+  Given  the product "LG G3" has an association "Accessories" with products "LG headphones" and "LG earphones"
+  When  I remove the product "LG earphones" from this product association
+  Then  this association should only have product "LG headphones"
+

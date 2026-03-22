@@ -1,0 +1,6 @@
+Scenario 3: Submit a Service Check returns "Payload too large" response
+  Tags: ['@generated', '@skip', '@team:DataDog/monitors-evaluation']
+  Given  body with value [{"check": "app.ok", "host_name": "app.host1", "message": "app is running", "status": 0, "tags": ["environment:test"]}]
+  When  the request is sent
+  Then  the response status is 413 Payload too large
+

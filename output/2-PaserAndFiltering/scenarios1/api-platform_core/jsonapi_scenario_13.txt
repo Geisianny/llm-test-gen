@@ -1,0 +1,9 @@
+Scenario 13: Embed a relation in a parent object
+  When  I send a "POST" request to "/relation_embedders" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should be valid according to the JSON API schema
+  And  the JSON node "data.id" should not be an empty string
+  And  the JSON node "data.attributes.krondstadt" should be equal to "Krondstadt"
+  And  the JSON node "data.relationships.related.data.id" should be equal to "/related_dummies/1"
+

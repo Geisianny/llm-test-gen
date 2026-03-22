@@ -1,0 +1,7 @@
+Scenario 4: Pages index is sorted by default
+  Given  I am signed in as a superadmin
+  And  I visit the home page
+  When  I follow "About Us"
+  And  I follow "Pages"
+  Then  I should see "Bob" page before "Wow"
+

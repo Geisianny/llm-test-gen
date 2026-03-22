@@ -1,0 +1,12 @@
+Scenario 1: Mark price update without any intervention, book stuck at old price
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  And  the network moves ahead "2" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+  When  the network moves ahead "100" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  And  the network moves ahead "25" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+  When  the network moves ahead "96" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+

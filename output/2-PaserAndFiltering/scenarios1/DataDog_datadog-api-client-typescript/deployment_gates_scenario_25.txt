@@ -1,0 +1,9 @@
+Scenario 25: Update deployment gate returns "Deployment gate not found." response
+  Tags: ['@generated', '@skip', '@team:DataDog/ci-app-backend']
+  Given  operation "UpdateDeploymentGate" enabled
+  And  new "UpdateDeploymentGate" request
+  And  request contains "id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"dry_run": false}, "id": "12345678-1234-1234-1234-123456789012", "type": "deployment_gate"}}
+  When  the request is sent
+  Then  the response status is 404 Deployment gate not found.
+

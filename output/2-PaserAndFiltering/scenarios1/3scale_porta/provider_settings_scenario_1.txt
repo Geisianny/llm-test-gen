@@ -1,0 +1,8 @@
+Scenario 1: Provider admin can access settings
+  Given  current domain is the admin domain of provider "foo.3scale.localhost"
+  And  I log in as provider "foo.3scale.localhost"
+  When  I go to the provider dashboard
+  Then  there should be a link to "Billing" within the audience dashboard widget
+  And  there should be a link to "0 Accounts" within the audience dashboard widget
+  And  there should be a link to "Developer Portal" within the audience dashboard widget
+

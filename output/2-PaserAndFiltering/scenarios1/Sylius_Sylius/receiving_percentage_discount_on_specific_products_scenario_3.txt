@@ -1,0 +1,9 @@
+Scenario 3: Receiving percentage discount only on specified items
+  Tags: ['@api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  And  I added product "PHP Mug" to the cart
+  When  I check the details of my cart
+  Then  product "PHP T-Shirt" price should be decreased by "$20.00"
+  And  product "PHP Mug" price should not be decreased
+  And  my cart total should be "$100.00"
+

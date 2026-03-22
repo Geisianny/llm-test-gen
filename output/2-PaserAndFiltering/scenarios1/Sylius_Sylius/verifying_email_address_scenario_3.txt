@@ -1,0 +1,7 @@
+Scenario 3: Resending the verification email as a logged in user
+  Tags: ['@api', '@ui', '@email']
+  Given  I am logged in as "valkyrie@cain.com"
+  When  I resend the verification email
+  Then  I should be notified that the verification email has been sent
+  And  it should be sent to "valkyrie@cain.com"
+

@@ -1,0 +1,15 @@
+Scenario 2: Editing a user on a provider
+  Given  a provider "Kooky" belonging to "paul@joy.com"
+  And  a user "Billow" belonging to the "Kooky" provider
+  And  I am on the homepage
+  When  I log in as "paul@joy.com" with password "testtest"
+  And  I follow "navigation.users" translation
+  Then  I should see "billow"
+  And  I follow "billow"
+  And  I follow "user.edit" translation
+  When  I fill in "First name" with "Joe"
+  And  I fill in "Last name" with "Arnold"
+  And  I press "Save"
+  Then  I should see "Joe Arnold"
+  And  I should see "company_profile.users.manage_headline" translation
+

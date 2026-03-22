@@ -1,0 +1,7 @@
+Scenario 2: Create a custom variable returns "OK" response
+  Tags: ['@skip-terraform-config', '@team:Datadog/collaboration-integrations']
+  Given  new "CreateWebhooksIntegrationCustomVariable" request
+  And  body with value {"is_secret": true, "name": "{{ unique_upper_alnum }}", "value": "CUSTOM_VARIABLE_VALUE"}
+  When  the request is sent
+  Then  the response status is 201 OK
+

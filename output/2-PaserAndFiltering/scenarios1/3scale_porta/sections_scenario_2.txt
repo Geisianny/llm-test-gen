@@ -1,0 +1,5 @@
+Scenario 2: Can index own sections
+  Given  I am logged in as provider "withsections.3scale.localhost" on its admin domain
+  When  I go to the CMS Sections page
+  Then  I should see "lolsection"
+

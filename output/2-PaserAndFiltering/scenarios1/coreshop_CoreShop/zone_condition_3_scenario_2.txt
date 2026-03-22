@@ -1,0 +1,7 @@
+Scenario 2: Add a new zone product specific price rule which is invalid
+  Given  the site has a zone "Asia"
+  Given  adding a product specific price rule to product "Shoe" named "zone-discount"
+  And  the specific price rule is active
+  And  the specific price rule has a condition zones with zone "Asia"
+  Then  the specific price rule should be invalid for product "Shoe"
+

@@ -1,0 +1,7 @@
+Scenario 18: Delete Custom Costs File returns "No Content" response
+  Tags: ['@replay-only', '@team:DataDog/cloud-cost-management']
+  Given  new "DeleteCustomCostsFile" request
+  And  request contains "file_id" parameter with value "9d055d22-a838-4e9f-bc34-a4f9ab66280c"
+  When  the request is sent
+  Then  the response status is 204 No Content
+

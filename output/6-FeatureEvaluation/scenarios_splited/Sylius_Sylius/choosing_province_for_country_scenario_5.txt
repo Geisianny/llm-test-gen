@@ -1,0 +1,4 @@
+Scenario: Empty shipping address fields
+  Given the user is on the checkout page
+  When the user submits the shipping address form without filling any details
+  Then the system displays an error message

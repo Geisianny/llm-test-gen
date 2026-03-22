@@ -1,0 +1,52 @@
+Feature: Application details card
+Tags: ['@javascript']
+
+Background: 
+  Given  a provider
+  And  a product "My API"
+  And  the following application plan:
+  And  a buyer "Jane"
+  And  the following application:
+  And  the provider logs in
+
+Scenario 1: Navigation
+  Given  the current page is the provider dashboard
+  When  they select "Audience" from the context selector
+  And  press "Applications" within the main menu
+  And  press "Accounts" within the main menu
+  And  follow "Listing" within the main menu
+  And  follow "My App"
+  Then  the current page is the application's admin page
+
+Scenario 2: Application details
+  Given  they go to the application's admin page
+  Then  they should see "Jane" within the application details
+  And  should see "My API" within the application details
+  And  should see "Live" within the application details
+
+Scenario 3: It shows Application expiration date when application contract is on trial
+  Given  the application has a trial period of 10 days
+  When  they go to the application's admin page
+  Then  they should see "trial expires in 10 days" within the application details
+
+Scenario 4: Suspending the application
+  Given  they go to the application's admin page
+  When  they follow "Suspend" within the application details
+  And  confirm the dialog
+  Then  they should see a toast alert with text "The application has been suspended"
+  And  should see "Suspended" within the application details
+
+Scenario 5: Resuming the application
+  Given  the application is suspended
+  And  they go to the application's admin page
+  When  they follow "Resume" within the application details
+  Then  they should see a toast alert with text "The application is live again!"
+  And  should see "Live" within the application details
+
+Scenario 6: Extra fields are listed alongside the application details
+  Given  the provider has the following fields defined for applications:
+  And  the application has the following extra fields:
+  When  they go to the application's admin page
+  Then  they should see the following details within the application details:
+  But  should not see "User extra read only" within the application details
+

@@ -1,0 +1,10 @@
+Scenario 5: find product by region
+  Given  the following cities
+  And  the following enterprise
+  And  the following product_category
+  And  the following product
+  When  I go to the search products page
+  And  I fill in "search-input" with "Prudente"
+  And  I press "Search"
+  Then  I should see "Arte em Madeira" within "#search-results"
+

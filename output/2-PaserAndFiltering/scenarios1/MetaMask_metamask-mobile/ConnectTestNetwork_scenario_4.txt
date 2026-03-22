@@ -1,0 +1,10 @@
+Scenario 4: Change to the Test Network Toggle to OFF
+  Given  I tap on the "Ethereum Main Network" button
+  And  "Ethereum Main Network" should be displayed in network educational modal
+  And  I should see the added network name "Ethereum Main Network" in the top navigation bar
+  And  I tap on the navbar network title button
+  And  the Network List Modal is Displayed
+  When  I tap the Test Network toggle
+  Then  the Test Network toggle value should be "OFF"
+  And  Ethereum Main Network should be the only Network displayed
+

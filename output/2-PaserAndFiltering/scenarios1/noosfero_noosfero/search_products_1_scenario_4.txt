@@ -1,0 +1,12 @@
+Scenario 4: see region on facets and results
+  Given  the following cities
+  And  the following enterprise
+  And  the following product_category
+  And  the following product
+  When  I go to the search products page
+  And  I fill in "search-input" with "Madeira"
+  And  I press "Search"
+  Then  I should see "Pres. Prudente" within "#facet-menu-f_region"
+  And  I should see ", SP" within "#facet-menu-f_region"
+  And  I should see "Pres. Prudente, SP" within "#search-results"
+

@@ -1,0 +1,4 @@
+Scenario 2: Creating a Shipping Rule with a fixed price plus and additional amount
+  Given  the shipping rule has a action additional-amount of 5 in currency "EUR"
+  Then  shipping for my cart with carrier "Post" should be priced at "2500"
+

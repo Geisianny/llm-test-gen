@@ -1,0 +1,7 @@
+Scenario 22: List all deployments returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "ListFleetDeployments" enabled
+  And  new "ListFleetDeployments" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

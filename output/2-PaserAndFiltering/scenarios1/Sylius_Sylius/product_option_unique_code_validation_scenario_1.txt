@@ -1,0 +1,9 @@
+Scenario 1: Trying to add product option with a taken code
+  Tags: ['@api', '@ui']
+  When  I want to create a new product option
+  And  I name it "T-Shirt color" in "English (United States)"
+  And  I specify its code as "t_shirt_size"
+  And  I try to add it
+  Then  I should be notified that product option with this code already exists
+  And  there should still be only one product option with code "t_shirt_size"
+

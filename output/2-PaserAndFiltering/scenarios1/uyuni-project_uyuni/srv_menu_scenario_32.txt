@@ -1,0 +1,5 @@
+Scenario 32: Sidebar link destination for Systems => Stored Profiles
+  When  I follow the left menu "Systems > Stored Profiles"
+  Then  I should see a "Stored Profiles" text
+  And  I should see a "No stored profiles." text
+

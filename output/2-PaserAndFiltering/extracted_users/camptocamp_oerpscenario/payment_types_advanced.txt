@@ -1,0 +1,26 @@
+Feature: In order to finely configure workflows based on payment type used on Magento, I need to configure them on OpenERP
+Description: and ensure that the steps of the workflow is automatic or not for each action.
+
+Scenario 1: I define a global configuration for all the workflows and some common patterns.  Each one of them is applied to a list of payment codes.  I set a reference on each list of codes in order to be able to modify them later, as instance  to extract one payment code in a different or new pattern.
+
+Scenario 2: Create the accounting journals used to create the payments for orders imported from Magento
+  Tags: ['@payment_types_journal']
+  Given  I need an "account.journal" with reference "paypal_journal"
+  When  I update it with values:
+  Then  I save it
+
+Scenario 3: Configure payment modes
+  Tags: ['@magento_payment_types']
+  Given  I delete the "BaseSalePaymentType" with reference "magentoerpconnect.payment_type1"
+  And  I delete the "BaseSalePaymentType" with reference "magentoerpconnect.payment_type2"
+  Given  I define the global configuration of the payment types with values:
+  When  I define a "AUTOMATIC" payment type pattern with values:
+  When  I define a "AUTOMATIC PAYPAL" payment type pattern with values:
+  And  the other values of "AUTOMATIC PAYPAL" pattern are those of "AUTOMATIC"
+  And  I define a "CHEQUE" payment type pattern with values:
+  And  I define a "FULL MANUAL" payment type pattern with values:
+  Then  I want to use the following payment codes with the "AUTOMATIC" payment type with reference "direct_total":
+  Then  I want to use the following payment codes with the "AUTOMATIC PAYPAL" payment type with reference "direct_paypal":
+  And  I want to use the following payment codes with the "CHEQUE" payment type with reference "cheq_vir":
+  And  I want to use the following payment codes with the "FULL MANUAL" payment type with reference "manual":
+

@@ -1,0 +1,7 @@
+Scenario 32: Get an application key returns "Not Found" response
+  Tags: ['@team:DataDog/credentials-management']
+  Given  new "GetApplicationKey" request
+  And  request contains "app_key_id" parameter with value "invalidId"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

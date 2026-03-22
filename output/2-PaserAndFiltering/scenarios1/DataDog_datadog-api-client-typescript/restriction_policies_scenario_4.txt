@@ -1,0 +1,10 @@
+Scenario 4: Get a restriction policy returns "OK" response
+  Tags: ['@team:DataDog/aaa-granular-access']
+  Given  new "GetRestrictionPolicy" request
+  And  request contains "resource_id" parameter with value "dashboard:test-get"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.type" is equal to "restriction_policy"
+  And  the response "data.id" is equal to "dashboard:test-get"
+  And  the response "data.attributes.bindings" has length 0
+

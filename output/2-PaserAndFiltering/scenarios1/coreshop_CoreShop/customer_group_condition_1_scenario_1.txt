@@ -1,0 +1,6 @@
+Scenario 1: Add a new customer-group payment-provider-rule which is valid
+  Given  adding a payment-provider-rule named "customer-groups"
+  And  the payment-provider-rule is active
+  And  the payment-provider-rule has a condition customer-groups with customer-group "Frequent Buyers"
+  Then  the payment-provider-rule should be valid for my cart with payment provider "Bankwire"
+

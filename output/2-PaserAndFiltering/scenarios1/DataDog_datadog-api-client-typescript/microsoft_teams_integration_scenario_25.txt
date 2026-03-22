@@ -1,0 +1,6 @@
+Scenario 25: Get all Workflows webhook handles returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/chat-integrations']
+  Given  new "ListWorkflowsWebhookHandles" request
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

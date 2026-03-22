@@ -1,0 +1,7 @@
+Scenario 2: Not applying catalog promotion if it is not available in current channel
+  Tags: ['@api', '@ui']
+  When  I change my current channel to "Web-GB"
+  And  I view product "T-Shirt"
+  Then  I should see the product price "$30.00"
+  And  I should see this product has no catalog promotion applied
+

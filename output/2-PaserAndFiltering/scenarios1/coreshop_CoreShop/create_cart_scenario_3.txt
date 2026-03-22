@@ -1,0 +1,6 @@
+Scenario 3: Create a new cart and add a product and calculate subtotals
+  Given  I add the product "T-Shirt" to my cart
+  Then  there should be one product in my cart
+  And  the cart subtotal should be "2400" including tax
+  And  the cart subtotal should be "2000" excluding tax
+

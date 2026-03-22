@@ -1,0 +1,7 @@
+Scenario 1: 
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  When  I fetch the subscription list from the stripe interopt layer
+  Then  I will see a subscription in the stripe interopt list for "Test Plan"
+

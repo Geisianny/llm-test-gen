@@ -1,0 +1,10 @@
+Scenario 4: Being redirected to previous filtered page after cancelling creating a new product
+  Tags: ['@no-api', '@ui', '@mink:chromedriver']
+  When  I browse products
+  And  I choose enabled filter
+  And  I filter
+  And  I go to the 2nd page
+  And  I want to create a new simple product
+  And  I cancel my changes
+  Then  I should be redirected to the 2nd page of only enabled products
+

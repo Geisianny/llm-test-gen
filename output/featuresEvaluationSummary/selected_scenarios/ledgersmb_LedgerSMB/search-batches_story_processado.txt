@@ -1,0 +1,5 @@
+Scenario: Search for voucher batches by description
+  Given there are existing voucher batches with different descriptions
+  When the user searches for voucher batches with description "January Sales"
+  Then the system displays a list of voucher batches with description containing "January Sales"
+  And the list includes batch number, date, description, and values

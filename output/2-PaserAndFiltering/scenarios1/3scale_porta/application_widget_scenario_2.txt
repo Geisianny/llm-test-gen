@@ -1,0 +1,6 @@
+Scenario 2: With 1 application only, the widget is visible
+  Given  the following applications:
+  When  they go to the overview page of account "Bob"
+  Then  they should see the following table within the application widget:
+  And  should not see "Create new key"
+

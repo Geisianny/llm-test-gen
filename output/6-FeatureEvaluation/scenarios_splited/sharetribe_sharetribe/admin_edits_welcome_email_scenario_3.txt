@@ -1,0 +1,7 @@
+Scenario: Send test welcome email
+  Given there is an admin logged into the system
+  And the welcome email content is currently "Current welcome email content"
+  And the admin's email address is "admin@example.com"
+  When the admin sends a test welcome email
+  Then the system sends a test email to "admin@example.com"
+  And the email contains the content "Current welcome email content"

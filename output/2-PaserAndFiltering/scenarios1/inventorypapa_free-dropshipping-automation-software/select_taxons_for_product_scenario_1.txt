@@ -1,0 +1,8 @@
+Scenario 1: Specifying main taxon for configurable product
+  Tags: ['@ui', '@javascript', '@api']
+  When  I want to modify the "T-Shirt Banana" product
+  And  I choose main taxon "T-Shirts"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  main taxon of product "T-Shirt Banana" should be "T-Shirts"
+

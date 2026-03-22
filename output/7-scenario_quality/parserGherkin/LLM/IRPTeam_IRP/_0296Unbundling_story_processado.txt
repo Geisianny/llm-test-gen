@@ -1,0 +1,52 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: _0296Unbundling_story_processado.feature
+Caminho relativo: IRPTeam_IRP\_0296Unbundling_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\IRPTeam_IRP\_0296Unbundling_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: _0296Unbundling_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Create unbundling document for a bundle with multiple components
+   Steps: 5
+   - Given there is a bundle product with multiple component items
+   - And the sales manager has the necessary permissions
+   - When the sales manager creates an unbundling document for the bundle product
+   - Then the system generates the unbundling document with the component items
+   - And the document status is set to "Draft"
+2. Unbundling document creation fails due to missing bundle product
+   Steps: 4
+   - Given there is no bundle product with the specified ID
+   - And the sales manager has the necessary permissions
+   - When the sales manager attempts to create an unbundling document for the non-existent bundle product
+   - Then the system displays an error message indicating that the bundle product does not exist
+3. Successful unbundling document generation with automatic item key creation
+   Steps: 5
+   - Given there is a bundle product with component items that require automatic item key generation
+   - And the sales manager has the necessary permissions
+   - When the sales manager creates an unbundling document for the bundle product
+   - Then the system generates the unbundling document with the component items and automatically creates item keys
+   - And the document status is set to "Draft"
+4. Unbundling document creation with pre-defined specifications
+   Steps: 5
+   - Given there is a bundle product with pre-defined specifications for unbundling
+   - And the sales manager has the necessary permissions
+   - When the sales manager creates an unbundling document for the bundle product using the pre-defined specifications
+   - Then the system generates the unbundling document with the component items and applies the pre-defined specifications
+   - And the document status is set to "Draft"
+5. Unbundling document approval and inventory update
+   Steps: 5
+   - Given there is an unbundling document in "Draft" status
+   - And the sales manager has the necessary permissions
+   - When the sales manager approves the unbundling document
+   - Then the system updates the inventory levels for the component items across different warehouse profiles
+   - And the document status is set to "Approved"

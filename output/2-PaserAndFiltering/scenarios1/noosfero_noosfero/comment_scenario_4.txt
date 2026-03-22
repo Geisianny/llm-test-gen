@@ -1,0 +1,6 @@
+Scenario 4: show error messages when make a blank comment
+  Tags: ['@selenium']
+  Given  I am on /booking/article-to-comment
+  When  I send enter key in "comment-field" field
+  Then  I should see "Body can't be blank"
+

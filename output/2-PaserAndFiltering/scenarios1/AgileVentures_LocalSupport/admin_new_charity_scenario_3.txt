@@ -1,0 +1,9 @@
+Scenario 3: Get validation error creating new charity with invalid url while being signed-in as superadmin
+  Tags: ['@vcr']
+  Given  I am signed in as a superadmin
+  And  I visit the home page
+  And  I follow "New Organisation"
+  And  I fill in the new charity page with an invalid website
+  And  I press "Create Organisation"
+  Then  I should see "Website is not a valid URL"
+

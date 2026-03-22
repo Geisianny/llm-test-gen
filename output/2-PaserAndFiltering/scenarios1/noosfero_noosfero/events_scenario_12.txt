@@ -1,0 +1,7 @@
+Scenario 12: list all events in global agenda
+  Given  the following users
+  And  the following events
+  When  I am on /search/events?year=2009&month=10&day=24
+  Then  I should see "Another Conference"
+  And  I should see "Manuel Birthday"
+

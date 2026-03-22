@@ -1,0 +1,6 @@
+Scenario: Successful account activation
+  Given there is a registered user with an unactivated account
+  And the user has received an activation token via email
+  When the user activates their account using the received token
+  Then the system marks the user's account as activated
+  And the user can log in to their account

@@ -1,0 +1,6 @@
+Scenario 1: Seeing the unpaid order in the list
+  Tags: ['@todo']
+  Given  I am logged in as "john@example.com"
+  When  I view my order history
+  Then  I should see one order with total of $29.99 and pending payment
+

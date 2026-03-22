@@ -1,0 +1,10 @@
+Scenario 11: Update an SLO correction returns "Bad Request" response
+  Tags: ['@skip', '@team:DataDog/slo-app']
+  Given  there is a valid "slo" in the system
+  And  there is a valid "correction" for "slo"
+  And  new "UpdateSLOCorrection" request
+  And  request contains "slo_correction_id" parameter from "correction.data.id"
+  And  body with value {"data": {"attributes": {"category": "Invalid Test"}, "type": "correction"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

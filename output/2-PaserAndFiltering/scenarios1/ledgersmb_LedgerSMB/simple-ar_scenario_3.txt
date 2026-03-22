@@ -1,0 +1,6 @@
+Scenario 3: COGS posting for goods (short inventory)
+  Given  10 units inventory of a part purchased at 10 USD each
+  When  12 units are sold
+  Then  the inventory should be at 0 USD
+  And  COGS should be at 100 USD
+

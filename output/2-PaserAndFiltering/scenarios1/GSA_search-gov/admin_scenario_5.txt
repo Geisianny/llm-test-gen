@@ -1,0 +1,17 @@
+Scenario 5: Editing an affiliate's Display Settings as an admin
+  Tags: ['@javascript']
+  Given  the following Affiliates exist:
+  When  I go to the admin sites page
+  When  I follow "Edit" within the first scaffold row
+  Then  I should see "Settings (Show)"
+  And  I should see "Enable/disable Settings (Show)"
+  And  I should see "Display Settings (Show)"
+  And  I should see "Analytics-Tracking Code (Show)"
+  When  I follow "Show" within the third subsection row
+  And  I check "Use redesigned results page"
+  And  I press "Update"
+  Then  I should see "agency site"
+  When  I follow "Edit" within the first scaffold row
+  When  I follow "Show" within the third subsection row
+  And  the "Use redesigned results page" checkbox should be checked
+

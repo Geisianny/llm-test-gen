@@ -1,0 +1,9 @@
+Scenario 2: Bulk operations card shows when an items are selected
+  When  item "Bob's App" is selected
+  And  item "Jane's Lite App" is selected
+  Then  they should be able to see the bulk operations
+  And  should see "You have selected 2 applications and you can make following operations with them:"
+  But  item "Bob's App" is unselected
+  And  item "Jane's Lite App" is unselected
+  Then  they should not be able to see the bulk operations
+

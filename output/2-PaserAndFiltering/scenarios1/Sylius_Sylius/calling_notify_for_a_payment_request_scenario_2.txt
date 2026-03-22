@@ -1,0 +1,8 @@
+Scenario 2: I want to send HTTP request to the payment method notify and failed
+  Tags: ['@ui']
+  Given  this payment method is not using Payum
+  And  there is a "completed" "notify" payment request for order "#000001" using the "Offline" payment method
+  When  I call the payment request notify page for this payment request
+  Then  a payment request with action "notify" for payment method "Offline" should have state "completed"
+  And  the response status code should be 404
+

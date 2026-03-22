@@ -1,0 +1,7 @@
+Scenario: Mismatched country and province
+  Given the user is on the checkout page
+  And the user has selected a country with provinces "United States"
+  When the user fills the shipping address form with valid details
+  And selects a province "Ontario" that does not belong to the selected country
+  Then the system displays an error message
+  And indicates that the selected province does not match the country

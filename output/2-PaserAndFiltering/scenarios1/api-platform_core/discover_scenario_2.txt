@@ -1,0 +1,4 @@
+Scenario 2: Checks that the Mercure Link is not added on endpoints where updates are not dispatched
+  Given  I send a "GET" request to "/"
+  Then  the header "Link" should not contain '<https://demo.mercure.rocks/hub>; rel="mercure"'
+

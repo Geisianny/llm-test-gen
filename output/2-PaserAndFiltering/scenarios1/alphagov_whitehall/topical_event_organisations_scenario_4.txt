@@ -1,0 +1,6 @@
+Scenario 4: Make supporting organisation
+  When  I visit the topical event organisations index page
+  And  I make "Lead organisation" a supporting organisation
+  Then  I can see a "Lead organisation has been assigned as a supporting organisation." success notice
+  And  I can see the supporting organisation with the name "Lead organisation"
+

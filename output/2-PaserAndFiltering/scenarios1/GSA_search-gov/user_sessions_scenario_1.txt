@@ -1,0 +1,6 @@
+Scenario 1: Already logged-in user visits login page
+  Tags: ['@javascript']
+  Given  I am logged in with email "affiliate_admin@fixtures.org"
+  And  I go to the login page
+  Then  I should be on the admin home page
+

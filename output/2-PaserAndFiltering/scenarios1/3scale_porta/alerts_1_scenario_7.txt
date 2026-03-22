@@ -1,0 +1,6 @@
+Scenario 7: Deleting all alerts
+  Given  they go to the alerts of "My Product"
+  When  they select toolbar action "Delete all"
+  And  confirm the dialog
+  Then  they should see "All clear"
+

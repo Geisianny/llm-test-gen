@@ -1,0 +1,10 @@
+Scenario 1: insufficient balance in the account wrt minimum auction size - nothing gets earmarked and no auction is triggered. (0097-PAPU-024)
+  When  the protocol automated purchase is defined as:
+  And  the network moves ahead "30" blocks
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  And  the parties submit the following one off transfers:
+  Then  the oracles broadcast data with block time signed with "0xCAFECAFE2":
+  And  the network moves ahead "30" blocks
+  Then  the automated purchase program for market "BTC/ETH" should have a snapshot balance of "5100"
+  And  the trading mode should be "TRADING_MODE_PROTOCOL_AUTOMATED_PURCHASE_AUCTION" for the market "BTC/ETH"
+

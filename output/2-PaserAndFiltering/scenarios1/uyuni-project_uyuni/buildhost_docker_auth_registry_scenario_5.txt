@@ -1,0 +1,4 @@
+Scenario 5: Check the list of packages is not empty
+  Tags: ['@skip_if_github_validation']
+  And  the list of packages of image "auth_registry_profile" with version "latest" is not empty
+

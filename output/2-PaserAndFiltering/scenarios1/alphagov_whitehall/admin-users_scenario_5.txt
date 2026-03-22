@@ -1,0 +1,6 @@
+Scenario 5: Logged in users should be able to see other users' contact details
+  Given  I am a writer
+  And  there is a user called "John Smith" with email address "johnsmith@example.com"
+  When  I visit the admin author page for "John Smith"
+  Then  I should see an email address "johnsmith@example.com"
+

@@ -1,0 +1,7 @@
+Scenario 1: Creating a new draft worldwide organisation
+  When  I draft a new worldwide organisation "Test Worldwide Organisation" assigned to world location "United Kingdom"
+  Then  the worldwide organisation "Test Worldwide Organisation" should have been created
+  And  I should see it has been assigned to the "United Kingdom" world location
+  When  I select the "Worldwide organisations" edition filter
+  Then  I should see the worldwide organisation "Test Worldwide Organisation" in the list of draft documents
+

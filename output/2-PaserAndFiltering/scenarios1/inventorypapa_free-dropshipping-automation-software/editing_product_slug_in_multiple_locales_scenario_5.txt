@@ -1,0 +1,12 @@
+Scenario 5: Enabling automatic slugs update on product's names change
+  Tags: ['@ui', '@javascript']
+  Given  the store has a product named "Pug Pugginton Plushie" in "English (United States)" locale and "Pluszak Mops Mopsiński" in "Polish (Poland)" locale
+  When  I want to modify this product
+  And  I enable slug modification in "English (United States)"
+  And  I rename it to "Pug Pugston the Third Plushie" in "English (United States)"
+  And  I enable slug modification in "Polish (Poland)"
+  And  I rename it to "Pluszak Mops Mopsak Trzeci" in "Polish (Poland)"
+  And  I save my changes
+  Then  this product should have slug "pug-pugston-the-third-plushie" in "English (United States)"
+  And  this product should have slug "pluszak-mops-mopsak-trzeci" in "Polish (Poland)"
+

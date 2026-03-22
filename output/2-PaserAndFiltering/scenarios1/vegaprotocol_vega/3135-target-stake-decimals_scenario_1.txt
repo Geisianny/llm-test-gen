@@ -1,0 +1,18 @@
+Scenario 1: Max open interest changes over time
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties place the following orders:
+  Then  the mark price should be "0" for the market "ETH/DEC21"
+  When  the parties place the following orders:
+  Then  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the opening auction period ends for market "ETH/DEC21"
+  Then  the market data for the market "ETH/DEC21" should be:
+  And  the target stake should be "990000" for the market "ETH/DEC21"
+  When  time is updated to "2021-03-08T01:00:00Z"
+  When  the parties place the following orders with ticks:
+  Then  the mark price should be "90" for the market "ETH/DEC21"
+  And  the target stake should be "810000" for the market "ETH/DEC21"
+  When  time is updated to "2021-03-15T02:00:00Z"
+  Then  the mark price should be "90" for the market "ETH/DEC21"
+  And  the target stake should be "540000" for the market "ETH/DEC21"
+

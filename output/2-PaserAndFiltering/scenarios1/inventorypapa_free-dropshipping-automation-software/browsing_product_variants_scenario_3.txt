@@ -1,0 +1,6 @@
+Scenario 3: Being informed about on hand quantity of a product variant
+  Tags: ['@ui']
+  Given  the "Wyborowa Vodka Exquisite" product variant is tracked by the inventory
+  When  I want to view all variants of this product
+  Then  I should see that the "Wyborowa Vodka Exquisite" variant has zero on hand quantity
+

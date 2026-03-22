@@ -1,0 +1,8 @@
+Scenario 1: show empty search results
+  Tags: ['@selenium']
+  Given  the following enterprises
+  And  I go to the search enterprises page
+  And  I fill in "search-input" with "something unrelated"
+  And  I follow "Search" within ".search-form"
+  Then  I should see "None" within ".search-results-type-empty"
+

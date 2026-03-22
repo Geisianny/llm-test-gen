@@ -1,0 +1,6 @@
+Scenario 19: List all AWS integrations returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/aws-integrations']
+  Given  new "ListAWSAccounts" request
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

@@ -1,0 +1,9 @@
+Scenario 5: Successful sign in as a buyer
+  Given  a buyer "alice" signed up to provider "foo.3scale.localhost"
+  When  the current domain is foo.3scale.localhost
+  And  I go to the login page
+  And  I fill in "Username" with "alice"
+  And  I fill in "Password" with "supersecret"
+  And  I press "Sign in"
+  Then  I should be logged in as "alice"
+

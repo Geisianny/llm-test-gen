@@ -1,0 +1,96 @@
+Feature: Org Connections
+Description: Manage connections between organizations. Org connections allow for
+  controlled sharing of data between different Datadog organizations. See
+  the [Cross-Organization Visibiltiy](https://docs.datadoghq.com/account_man
+  agement/org_settings/cross_org_visibility/) page for more information.
+Tags: ['@endpoint(org-connections)', '@endpoint(org-connections-v2)']
+
+Background: 
+  Given  a valid "apiKeyAuth" key in the system
+  And  a valid "appKeyAuth" key in the system
+  And  an instance of "OrgConnections" API
+
+Scenario 1: Create Org Connection returns "Bad Request" response
+  Tags: ['@team:DataDog/aaa-granular-access']
+  Given  new "CreateOrgConnections" request
+  And  body with value {"data": {"type": "org_connection", "relationships": {"sink_org": {"data": {"type": "orgs", "id": "83999dcd-7f97-11f0-8de1-1ecf66f1aa85"}}}, "attributes": {"connection_types": ["logs", "logs"]}}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 2: Create Org Connection returns "Conflict" response
+  Tags: ['@team:DataDog/aaa-granular-access']
+  Given  there is a valid "org_connection" in the system
+  And  new "CreateOrgConnections" request
+  And  body with value {"data": {"type": "org_connection", "relationships": {"sink_org": {"data": {"type": "orgs", "id": "83999dcd-7f97-11f0-8de1-1ecf66f1aa85"}}}, "attributes": {"connection_types": ["logs"]}}}
+  When  the request is sent
+  Then  the response status is 409 Conflict
+
+Scenario 3: Create Org Connection returns "Not Found" response
+  Tags: ['@team:DataDog/aaa-granular-access']
+  Given  new "CreateOrgConnections" request
+  And  body with value {"data": {"type": "org_connection", "relationships": {"sink_org": {"data": {"type": "orgs", "id": "nonexistent-org-id"}}}, "attributes": {"connection_types": ["logs"]}}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+Scenario 4: Create Org Connection returns "OK" response
+  Tags: ['@team:DataDog/aaa-granular-access']
+  Given  new "CreateOrgConnections" request
+  And  body with value {"data": {"type": "org_connection", "relationships": {"sink_org": {"data": {"type": "orgs", "id": "83999dcd-7f97-11f0-8de1-1ecf66f1aa85"}}}, "attributes": {"connection_types": ["logs"]}}}
+  When  the request is sent
+  Then  the response status is 200 Created
+
+Scenario 5: Delete Org Connection returns "Bad Request" response
+  Tags: ['@skip-go', '@skip-java', '@skip-python', '@skip-ruby', '@skip-rust', '@skip-terraform-config', '@skip-typescript', '@skip-validation', '@team:DataDog/aaa-granular-access']
+  Given  new "DeleteOrgConnections" request
+  And  request contains "connection_id" parameter with value "malformed_id"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 6: Delete Org Connection returns "Not Found" response
+  Tags: ['@team:DataDog/aaa-granular-access']
+  Given  new "DeleteOrgConnections" request
+  And  request contains "connection_id" parameter with value "00000000-0000-0000-0000-000000000000"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+Scenario 7: Delete Org Connection returns "OK" response
+  Tags: ['@team:DataDog/aaa-granular-access']
+  Given  there is a valid "org_connection" in the system
+  And  new "DeleteOrgConnections" request
+  And  request contains "connection_id" parameter from "org_connection.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+
+Scenario 8: List Org Connections returns "OK" response
+  Tags: ['@team:DataDog/aaa-granular-access']
+  Given  new "ListOrgConnections" request
+  When  the request is sent
+  Then  the response status is 200 OK
+
+Scenario 9: Update Org Connection returns "Bad Request" response
+  Tags: ['@team:DataDog/aaa-granular-access']
+  Given  there is a valid "org_connection" in the system
+  And  new "UpdateOrgConnections" request
+  And  request contains "connection_id" parameter from "org_connection.data.id"
+  And  body with value {"data": {"type": "org_connection", "id": "{{ org_connection.data.id }}", "attributes": {"connection_types": ["logs", "logs"]}}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 10: Update Org Connection returns "Not Found" response
+  Tags: ['@team:DataDog/aaa-granular-access']
+  Given  there is a valid "org_connection" in the system
+  And  new "UpdateOrgConnections" request
+  And  request contains "connection_id" parameter with value "00000000-0000-0000-0000-000000000000"
+  And  body with value {"data": {"type": "org_connection", "id": "00000000-0000-0000-0000-000000000000", "attributes": {"connection_types": ["logs", "metrics"]}}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+Scenario 11: Update Org Connection returns "OK" response
+  Tags: ['@team:DataDog/aaa-granular-access']
+  Given  there is a valid "org_connection" in the system
+  And  new "UpdateOrgConnections" request
+  And  request contains "connection_id" parameter from "org_connection.data.id"
+  And  body with value {"data": {"type": "org_connection", "id": "{{ org_connection.data.id }}", "attributes": {"connection_types": ["logs", "metrics"]}}}
+  When  the request is sent
+  Then  the response status is 200 OK
+

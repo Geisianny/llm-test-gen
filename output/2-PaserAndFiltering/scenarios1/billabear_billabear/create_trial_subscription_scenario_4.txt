@@ -1,0 +1,8 @@
+Scenario 4: One trial per customer fails
+  Given  I have authenticated to the API
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "3000" in "USD" with:
+  And  the follow customers exist:
+  And  there is a trial started event for "customer.one@example.org" on subscription plan "OnePer"
+  When  I create a trial subscription via the API for "customer.one@example.org" with the follow:
+  Then  there should not be a subscription for the user "customer.one@example.org"
+

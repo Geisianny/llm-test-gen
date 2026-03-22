@@ -1,0 +1,6 @@
+Scenario 6: Delete a resource
+  Tags: ['@!mongodb']
+  When  I send a "DELETE" request to "/custom_writable_identifier_dummies/slug_modified"
+  Then  the response status code should be 204
+  And  the response should be empty
+

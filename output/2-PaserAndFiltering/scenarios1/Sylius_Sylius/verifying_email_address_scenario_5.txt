@@ -1,0 +1,6 @@
+Scenario 5: Being unable to resend verification token when verified
+  Tags: ['@api', '@ui']
+  Given  I am logged in as "valkyrie@cain.com"
+  And  I have already verified my account
+  Then  I should not be able to resend the verification email
+

@@ -1,0 +1,5 @@
+Scenario: Attempt to create a duplicate STS service account
+  Given the Datadog API is available
+  And there is an existing STS service account with the name "duplicate-sts-account"
+  When the user creates a new STS service account with the name "duplicate-sts-account"
+  Then the system denies the creation

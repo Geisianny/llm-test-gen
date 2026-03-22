@@ -1,0 +1,8 @@
+Scenario 8: Trying to remove zone from existing tax rate
+  Tags: ['@ui']
+  Given  the store has "United States Sales Tax" tax rate of 20% for "Sports gear" within the "US" zone
+  And  I want to modify this tax rate
+  When  I remove its zone
+  And  I try to save my changes
+  Then  I should be notified that zone has to be selected
+

@@ -1,0 +1,5 @@
+Scenario 5: Hide the toolbar when providing an expired signature
+  When  they visit the developer portal in CMS mode with an expired signature
+  Then  there should not be a CMS toolbar
+  And  should see "Invalid or expired signature"
+

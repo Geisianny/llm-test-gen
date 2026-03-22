@@ -1,0 +1,6 @@
+Scenario 7: Editing promotion after adding a new channel
+  Tags: ['@api', '@ui']
+  Given  this promotion gives "$10.00" discount to every order
+  When  the store also operates on another channel named "EU-WEB"
+  Then  I should be able to modify a "Christmas sale" promotion
+

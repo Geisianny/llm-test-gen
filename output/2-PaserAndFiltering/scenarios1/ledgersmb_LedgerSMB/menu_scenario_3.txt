@@ -1,0 +1,9 @@
+Scenario Outline 3: Navigate to menu "<path>" and open screen "<screen>" - Example 3
+  When  I navigate the menu and select the item at "Accounts Payable > Search"
+  Then  I should see the AP search screen
+
+  Examples:
+    | path | screen |
+    | Accounts Payable > Search | AP search |
+    | Accounts Payable > Vendor Invoice | AP invoice entry |
+

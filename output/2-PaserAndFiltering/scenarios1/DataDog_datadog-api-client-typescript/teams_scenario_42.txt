@@ -1,0 +1,15 @@
+Scenario 42: Update a team link returns "OK" response
+  Tags: ['@team:DataDog/aaa-omg']
+  Given  new "UpdateTeamLink" request
+  And  there is a valid "dd_team" in the system
+  And  there is a valid "team_link" in the system
+  And  request contains "team_id" parameter from "dd_team.data.id"
+  And  request contains "link_id" parameter from "team_link.data.id"
+  And  body with value {"data": {"attributes": {"label": "New Label", "url": "https://example.com"}, "type": "team_links"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.id" is equal to "{{ team_link.data.id }}"
+  And  the response "data.attributes.team_id" is equal to "{{ dd_team.data.id }}"
+  And  the response "data.attributes.label" is equal to "New Label"
+  And  the response "data.attributes.url" is equal to "https://example.com"
+

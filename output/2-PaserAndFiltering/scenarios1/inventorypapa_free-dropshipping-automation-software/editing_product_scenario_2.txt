@@ -1,0 +1,8 @@
+Scenario 2: Renaming a simple product
+  Tags: ['@ui', '@api']
+  Given  I want to modify the "Dice Brewing" product
+  When  I rename it to "7 Wonders" in "English (United States)"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this product name should be "7 Wonders"
+

@@ -1,0 +1,14 @@
+Scenario Outline 4: Required fields - Example 1
+  Given  the provider has a Swagger 1.2 spec "Echo API"
+  When  they go to the spec's edit page from Audience context
+  Then  there is a required field "Name"
+  And  there is a readonly field "System name"
+  And  there is a required field "API JSON Spec"
+
+  Examples:
+    | swagger version |
+    | Swagger 1.2 |
+    | Swagger 2 |
+    | OAS 3.0 |
+    | OAS 3.1 |
+

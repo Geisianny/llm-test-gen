@@ -1,0 +1,44 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 19/01/2026 23:13:57
+Arquivo analisado: review_reminder_story_processado.feature
+Caminho relativo: alphagov_whitehall\review_reminder_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/Originais\alphagov_whitehall\review_reminder_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: review_reminder_story_processado
+Descrição: Não possui
+Total de cenários: 4
+
+CENÁRIOS IDENTIFICADOS:
+1. Creating a new draft publication with a review date
+   Steps: 3
+   - When I start drafting a new publication "Standard Beard Lengths"
+   - And I add a review date of "2033-1-1" and the email address "test@gmail.com" on the edit page
+   - Then I should see the review date of "1 January 2033" on the edition summary page
+2. Creating a review date for a published publication
+   Steps: 4
+   - Given a published publication "Standard Beard Lengths" with a PDF attachment
+   - When I click the button "Set review date" on the edition summary page for "Standard Beard Lengths"
+   - And I add a review date of "2033-1-1" and the email address "test@gmail.com"
+   - Then I should see the review date of "1 January 2033" on the edition summary page
+3. Editing the review date for a published publication
+   Steps: 5
+   - Given a published publication "Standard Beard Lengths" with a PDF attachment
+   - And a review reminder exists for "Standard Beard Lengths" with the date "2032-1-1"
+   - When I click the button "Edit review date" on the edition summary page for "Standard Beard Lengths"
+   - And I update the review date to "2033-1-1"
+   - Then I should see the review date of "1 January 2033" on the edition summary page
+4. Deleting the review date for a published publication
+   Steps: 6
+   - Given a published publication "Standard Beard Lengths" with a PDF attachment
+   - And a review reminder exists for "Standard Beard Lengths" with the date "2032-1-1"
+   - When I click the link "Delete review date" on the edition summary page for "Standard Beard Lengths"
+   - Then I should see the review date of "1 January 2032" on the deletion confirmation page
+   - When I delete the review date
+   - Then I should not see a review date on the edition summary page

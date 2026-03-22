@@ -1,0 +1,8 @@
+Scenario 21: List Fastly accounts returns "OK" response
+  Tags: ['@team:DataDog/saas-integrations']
+  Given  there is a valid "fastly_account" in the system
+  And  new "ListFastlyAccounts" request
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data[0].type" is equal to "fastly-accounts"
+

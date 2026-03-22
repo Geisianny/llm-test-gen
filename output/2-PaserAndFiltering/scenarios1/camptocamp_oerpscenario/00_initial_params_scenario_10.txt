@@ -1,0 +1,13 @@
+Scenario 10: PAYMENT TERM SETTINGS
+  Tags: ['@set_payment_term']
+  Given  I need a "account.payment.term" with oid: account.account_payment_term
+  And  having:
+  Given  I need a "account.payment.term.line" with oid: account.account_payment_term_line
+  And  having:
+  Given  I need a "account.payment.term" with oid: account.account_payment_term_advance
+  And  having:
+  Given  I need a "account.payment.term.line" with oid: account.account_payment_term_line_advance1
+  And  having:
+  Given  I need a "account.payment.term.line" with oid: account.account_payment_term_line_advance2
+  And  having:
+

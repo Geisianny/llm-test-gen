@@ -1,0 +1,7 @@
+Scenario 2: Checking cart's total after removing one item
+  And  the site has a product "Mug" priced at 9999
+  And  the product is active and published and available for store "Austria"
+  And  I add this product to the cart
+  And  I remove product "TShirt" from the cart
+  Then  my cart's total should be "€99.99"
+

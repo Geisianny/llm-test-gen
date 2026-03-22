@@ -1,0 +1,5 @@
+Scenario: Consult sent messages
+  Given there is a user "asker@example.com" who has sent messages
+  When the user "asker@example.com" consults their sent messages
+  Then the system displays a list of sent messages
+  And the list includes the recipient's information and the message content

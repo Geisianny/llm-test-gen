@@ -1,0 +1,4 @@
+Scenario: Successful cancellation confirmation
+  Given there is a logged-in adherent with an active donation that is being cancelled
+  When the adherent confirms the cancellation
+  Then the system displays a message confirming successful cancellation

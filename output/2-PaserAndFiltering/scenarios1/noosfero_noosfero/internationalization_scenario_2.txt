@@ -1,0 +1,6 @@
+Scenario 2: different default locale configured locally
+  Tags: ['@default_locale_config']
+  Given  Noosfero is configured to use Portuguese as default
+  When  I go to the homepage
+  Then  the site should be in Portuguese
+

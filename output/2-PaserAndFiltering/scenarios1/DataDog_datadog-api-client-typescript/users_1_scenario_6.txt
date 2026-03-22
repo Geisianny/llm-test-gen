@@ -1,0 +1,11 @@
+Scenario 6: Get a user invitation returns "OK" response
+  Tags: ['@team:DataDog/team-aaa-identity']
+  Given  there is a valid "user" in the system
+  And  the "user" has a "user_invitation"
+  And  new "GetInvitation" request
+  And  request contains "user_invitation_uuid" parameter from "user_invitation.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.attributes.invite_type" is equal to "openid_invite"
+  And  the response "data.attributes.uuid" is equal to "{{user_invitation.id}}"
+

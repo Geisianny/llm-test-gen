@@ -1,0 +1,5 @@
+Scenario 27: Cleanup: delete images without key
+  Given  I am authorized as "admin" with password "admin"
+  When  I delete the image "suse_simple" with version "latest" via API calls
+  And  I delete the image "suse_simple" with version "Latest_simple" via API calls
+

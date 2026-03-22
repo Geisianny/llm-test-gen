@@ -1,0 +1,8 @@
+Scenario 5: create an event
+  Given  I follow "New content"
+  When  I follow "Event"
+  And  I fill in "Title" with "My event"
+  And  I press "Save"
+  And  I go to joaosilva's cms
+  Then  I should see "My event"
+

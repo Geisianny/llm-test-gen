@@ -1,0 +1,58 @@
+Scenario 9: Visiting the active scaffold pages
+  When  I go to the admin home page
+  And  I follow "Users"
+  And  I should see the following breadcrumbs: Super Admin > Users
+  When  I go to the admin home page
+  And  I follow "Rss Feed Urls"
+  And  I should see the following breadcrumbs: Super Admin > Rss Feed Urls
+  When  I follow "Show" within the first scaffold row
+  Then  I should see "http://another.agency.gov/feed"
+  When  I go to the admin home page
+  And  I follow "Filters"
+  Then  I should see the following breadcrumbs: Super Admin > Type Ahead Filters
+  When  I go to the admin home page
+  And  I follow "Suggestions"
+  Then  I should see the following breadcrumbs: Super Admin > Type Ahead Suggestions
+  When  I go to the admin home page
+  And  I follow "Misspellings"
+  Then  I should see the following breadcrumbs: Super Admin > Type Ahead Misspellings
+  When  I go to the admin home page
+  And  I follow "Best Bets: Text"
+  Then  I should see the following breadcrumbs: Super Admin > Best Bets: Text
+  When  I go to the admin home page
+  And  I follow "Collections"
+  Then  I should see the following breadcrumbs: Super Admin > Collections
+  When  I go to the admin home page
+  And  I follow "Superfresh Urls"
+  Then  I should see the following breadcrumbs: Super Admin > SuperfreshUrls
+  When  I go to the admin home page
+  And  I follow "Superfresh Bulk Upload"
+  Then  I should see the following breadcrumbs: Super Admin > Superfresh Bulk Upload
+  When  I go to the admin home page
+  And  I follow "Agencies"
+  Then  I should see the following breadcrumbs: Super Admin > Agencies
+  When  I go to the admin home page
+  And  I follow "Federal Register Agencies"
+  Then  I should see the following breadcrumbs: Super Admin > Federal Register Agencies
+  When  I go to the admin home page
+  And  I follow "Federal Register Documents"
+  Then  I should see the following breadcrumbs: Super Admin > Federal Register Documents
+  When  I go to the admin home page
+  And  I follow "Modules"
+  Then  I should see the following breadcrumbs: Super Admin > Modules
+  When  I go to the admin home page
+  And  I follow "Features" in the Super Admin page
+  Then  I should see the following breadcrumbs: Super Admin > Features
+  When  I go to the admin home page
+  And  I follow "Customer Scopes"
+  Then  I should see the following breadcrumbs: Super Admin > Customer Scopes
+  When  I go to the admin home page
+  And  I follow "Customer Catalog Prefix Whitelist"
+  Then  I should see the following breadcrumbs: Super Admin > Customer Catalog Prefix Whitelist
+  When  I go to the admin home page
+  And  I follow "Help Links"
+  Then  I should see the following breadcrumbs: Super Admin > HelpLinks
+  When  I go to the admin home page
+  And  I follow "Hints"
+  Then  I should see the following breadcrumbs: Super Admin > Hints
+

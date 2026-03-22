@@ -1,0 +1,5 @@
+Scenario 1: User in unverified_email state can login
+  Given  user "alice" is email unverified
+  When  I log in as "alice" on foo.3scale.localhost
+  Then  I should be logged in as "alice"
+

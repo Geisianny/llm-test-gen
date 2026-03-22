@@ -1,0 +1,9 @@
+Scenario 4: Downgrade event
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  stripe billing is disabled
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  And  the following payment details:
+  When  I update the subscription "Better Test Plan" for "customer.one@example.org" to plan to be changed instantly:
+  Then  there should be an downgrade event for "customer.one@example.org"
+

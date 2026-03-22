@@ -1,0 +1,7 @@
+Scenario 2: Multi-provider rate comparison
+  Given  multiple exchange rate providers are available:
+  When  I request conversion from USD to EUR
+  Then  I should see all available rates
+  And  the best rate should be highlighted
+  And  total cost including fees should be shown
+

@@ -1,0 +1,10 @@
+Scenario 6: Create deployment rule returns "OK" response
+  Tags: ['@team:DataDog/ci-app-backend']
+  Given  there is a valid "deployment_gate" in the system
+  And  operation "CreateDeploymentRule" enabled
+  And  new "CreateDeploymentRule" request
+  And  request contains "gate_id" parameter from "deployment_gate.data.id"
+  And  body with value {"data": {"attributes": {"dry_run": false, "name": "My deployment rule", "options": {"excluded_resources": []}, "type": "faulty_deployment_detection"}, "type": "deployment_rule"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+

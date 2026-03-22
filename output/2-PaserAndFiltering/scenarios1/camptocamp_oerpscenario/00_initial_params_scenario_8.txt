@@ -1,0 +1,5 @@
+Scenario 8: CURRENCY RATES TYPE NAME CREATION (mainly for module account_multicurrency_revaluation)
+  Tags: ['@base_finance_setup_currency_rates']
+  Given  I need a "res.currency.rate.type" with oid: scen.average_fx_rate_type
+  And  having:
+

@@ -1,0 +1,7 @@
+Scenario 7: Get an existing Action Connection returns "Successfully get Action Connection" response
+  Tags: ['@team:DataDog/workflow-automation-dev']
+  Given  new "GetActionConnection" request
+  And  request contains "connection_id" parameter with value "cb460d51-3c88-4e87-adac-d47131d0423d"
+  When  the request is sent
+  Then  the response status is 200 Successfully get Action Connection
+

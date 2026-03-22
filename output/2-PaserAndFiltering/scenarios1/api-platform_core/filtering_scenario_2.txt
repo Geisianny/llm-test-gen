@@ -1,0 +1,7 @@
+Scenario 2: Apply filters based on the 'filter' query parameter with 'foo' as value
+  When  I send a "GET" request to "/dummies?filter[name]=foo"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be valid according to the JSON API schema
+  And  the JSON node "data" should have 0 elements
+

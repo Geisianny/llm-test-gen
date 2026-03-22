@@ -1,0 +1,4 @@
+Scenario 4: Access profile with invalid id
+  Given  I go to "/en/organizations/profile/invalidid"
+  Then  I should see "Entity with id \"invalidid\" not found"
+

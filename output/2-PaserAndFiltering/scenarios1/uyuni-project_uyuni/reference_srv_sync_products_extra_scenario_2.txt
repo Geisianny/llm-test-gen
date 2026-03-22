@@ -1,0 +1,4 @@
+Scenario 2: Add openSUSE Tumbleweed product, including Uyuni Client Tools
+  Tags: ['@uyuni']
+  When  I use spacewalk-common-channel to add all "tumbleweed" channels with arch "x86_64"
+

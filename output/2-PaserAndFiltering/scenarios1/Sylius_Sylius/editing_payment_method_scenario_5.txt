@@ -1,0 +1,5 @@
+Scenario 5: Being unable to edit gateway factory field of existing payment method
+  Tags: ['@api', '@ui']
+  When  I want to modify the "Offline" payment method
+  Then  the factory name field should be disabled
+

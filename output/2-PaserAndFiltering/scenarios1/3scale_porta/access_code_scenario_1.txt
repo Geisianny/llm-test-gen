@@ -1,0 +1,6 @@
+Scenario 1: No access code
+  Given  the provider has no site access code
+  When  the current domain is foo.3scale.localhost
+  And  they go to the homepage
+  Then  they should not see "Access code"
+

@@ -1,0 +1,5 @@
+Scenario 4: Editing an existing promotional feature item
+  And  the executive office has a promotional feature with an item
+  When  I edit the promotional item, set the summary to "Edited summary"
+  Then  I should see the promotional feature item's summary has been updated to "Edited summary"
+

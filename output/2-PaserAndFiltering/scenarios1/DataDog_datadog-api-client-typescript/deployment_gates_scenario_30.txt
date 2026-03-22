@@ -1,0 +1,12 @@
+Scenario 30: Update deployment rule returns "OK" response
+  Tags: ['@team:DataDog/ci-app-backend']
+  Given  there is a valid "deployment_gate" in the system
+  And  there is a valid "deployment_rule" in the system
+  And  operation "UpdateDeploymentRule" enabled
+  And  new "UpdateDeploymentRule" request
+  And  request contains "gate_id" parameter from "deployment_gate.data.id"
+  And  request contains "id" parameter from "deployment_rule.data.id"
+  And  body with value {"data": {"attributes": {"dry_run": false, "name": "Updated deployment rule", "options": {"excluded_resources": []}}, "type": "deployment_rule"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+

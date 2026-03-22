@@ -1,0 +1,55 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: insert_story_processado.feature
+Caminho relativo: cross-solution_YAWIK\insert_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\cross-solution_YAWIK\insert_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: insert_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Create organization with valid details
+   Steps: 6
+   - Given there is an admin user logged in
+   - And there is no existing organization with the name "New Organization"
+   - When the admin creates a new organization with the name "New Organization"
+   - And provides a valid description "This is a new organization"
+   - Then the system creates the organization successfully
+   - And displays a confirmation message
+2. Create organization with duplicate name
+   Steps: 6
+   - Given there is an admin user logged in
+   - And there is an existing organization with the name "Existing Organization"
+   - When the admin creates a new organization with the name "Existing Organization"
+   - And provides a valid description "This is a duplicate organization"
+   - Then the system denies the creation
+   - And displays an error message indicating the organization name already exists
+3. Create organization with missing name
+   Steps: 5
+   - Given there is an admin user logged in
+   - When the admin creates a new organization without a name
+   - And provides a valid description "This organization is missing a name"
+   - Then the system denies the creation
+   - And displays an error message indicating the name is required
+4. Create organization with missing description
+   Steps: 5
+   - Given there is an admin user logged in
+   - When the admin creates a new organization with the name "Organization Without Description"
+   - And does not provide a description
+   - Then the system creates the organization successfully
+   - And displays a confirmation message
+5. Cancel creating organization
+   Steps: 5
+   - Given there is an admin user logged in
+   - When the admin starts creating a new organization
+   - And cancels the creation process
+   - Then the system does not create the organization
+   - And returns to the previous page or displays a list of existing organizations

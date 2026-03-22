@@ -1,0 +1,7 @@
+Scenario 1: Navigation
+  Given  a red hat single sign-on integration
+  When  they go to the users sso integrations page
+  And  they follow "Red Hat Single Sign-On"
+  Then  the current page is the sso integration page
+  And  should see "Red Hat Single Sign-On"
+

@@ -1,0 +1,7 @@
+Scenario 3: Seeing all variants when none have names in my locale
+  Tags: ['@no-api', '@ui']
+  Given  I change my locale to "Irish (Ireland)"
+  When  I want to view all variants of this product
+  Then  I should see 3 variants in the list
+  And  I should see 3 variants with no name
+

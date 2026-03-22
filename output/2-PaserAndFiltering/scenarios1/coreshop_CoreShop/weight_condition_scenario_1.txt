@@ -1,0 +1,6 @@
+Scenario 1: Add a new weight shipping rule which is valid
+  Given  adding a shipping rule named "weight"
+  And  the shipping rule is active
+  And  the shipping rule has a condition weight from "5" to "15"
+  Then  the shipping rule should be valid for my cart with carrier "Post"
+

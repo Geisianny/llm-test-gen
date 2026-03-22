@@ -1,0 +1,9 @@
+Scenario 4: One search result for State/Province
+  Given  I have a property "State/Province" with value "Surrey" on "sle_minion"
+  When  I follow the left menu "Systems > Advanced Search"
+  And  I enter "Surrey" on the search field
+  And  I select "State/Province" from "Field to Search"
+  And  I check "fineGrained"
+  And  I click on the search button
+  Then  I should land on system's overview page
+

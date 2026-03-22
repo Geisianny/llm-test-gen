@@ -1,0 +1,11 @@
+Scenario 8: Add a package removal to the action chain on SSH minion
+  When  I follow "Software" in the content area
+  And  I follow "List / Remove" in the content area
+  And  I enter "milkyway-dummy" as the filtered package name
+  And  I click on the filter button
+  And  I check row with "milkyway-dummy" and arch of "ssh_minion"
+  And  I click on "Remove Packages"
+  And  I check radio button "schedule-by-action-chain"
+  And  I click on "Confirm"
+  Then  I should see a "Action has been successfully added to the Action Chain" text
+

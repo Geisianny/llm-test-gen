@@ -1,0 +1,7 @@
+Scenario 2: Items per page can be defined
+  Given  I add Authorization header
+  When  I add "Accept" header equal to "application/json"
+  And  I send a "GET" request to "/billable_calls?_itemsPerPage=10"
+  Then  the header "X-Last-Page" should be equal to "/billable_calls?_page=11"
+  And  the header "X-Total-Pages" should be equal to "11"
+

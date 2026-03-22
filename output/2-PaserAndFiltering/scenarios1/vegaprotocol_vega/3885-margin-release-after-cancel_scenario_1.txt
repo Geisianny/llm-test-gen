@@ -1,0 +1,24 @@
+Scenario 1: Margin should be released after the order was canceled
+  Tags: ['@Cancel']
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the parties place the following orders:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the mark price should be "100" for the market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  Then  the mark price should be "100" for the market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following account balances:
+  And  the mark price should be "100" for the market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  When  the parties cancel the following orders:
+  Then  the parties should have the following account balances:
+  And  the mark price should be "100" for the market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+

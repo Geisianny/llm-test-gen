@@ -1,0 +1,7 @@
+Scenario 5: Delete an index returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-core']
+  Given  new "DeleteLogsIndex" request
+  And  request contains "name" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 200 OK
+

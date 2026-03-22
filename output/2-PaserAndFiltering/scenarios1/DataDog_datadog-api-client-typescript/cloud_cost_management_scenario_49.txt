@@ -1,0 +1,7 @@
+Scenario 49: Reorder tag pipeline rulesets returns "Successfully reordered rulesets" response
+  Tags: ['@generated', '@skip', '@team:DataDog/cloud-cost-management']
+  Given  new "ReorderTagPipelinesRulesets" request
+  And  body with value {"data": [{"id": "55ef2385-9ae1-4410-90c4-5ac1b60fec10", "type": "ruleset"}, {"id": "a7b8c9d0-1234-5678-9abc-def012345678", "type": "ruleset"}, {"id": "f1e2d3c4-b5a6-9780-1234-567890abcdef", "type": "ruleset"}]}
+  When  the request is sent
+  Then  the response status is 204 Successfully reordered rulesets
+

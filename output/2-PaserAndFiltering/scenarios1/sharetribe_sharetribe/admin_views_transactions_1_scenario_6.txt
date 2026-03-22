@@ -1,0 +1,4 @@
+Scenario 6: Admin filters transaction by paid status
+  When  I select "Paid (0)" from "status_"
+  Then  I should see 0 transaction with status "Free transaction"
+

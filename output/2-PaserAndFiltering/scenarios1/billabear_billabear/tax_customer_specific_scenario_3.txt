@@ -1,0 +1,6 @@
+Scenario 3: Use standard services rate for digital service product when no rate exists for digital services
+  Given  the following subscriptions exist:
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  And  there the latest invoice for "customer.two@example.org" will have tax rate of 24
+

@@ -1,0 +1,9 @@
+Scenario 8: Not being able to select non-existing shipping method
+  Tags: ['@api', '@no-ui']
+  Given  the store has "Raven Post" shipping method with "$10.00" fee
+  And  I added product "Targaryen T-Shirt" to the cart
+  And  I addressed the cart
+  When  I want to complete the shipping step
+  And  I try to select non-existing shipping method
+  Then  I should be informed that shipping method with code "NON_EXISTING" does not exist
+

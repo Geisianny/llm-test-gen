@@ -1,0 +1,9 @@
+Scenario 3: Being unable to start checkout payment step with an empty cart
+  Tags: ['@api', '@ui', '@javascript']
+  Given  I added product "PHP T-Shirt" to the cart
+  And  I addressed the cart
+  And  I chose "Free" shipping method
+  When  I remove product "PHP T-Shirt" from the cart
+  Then  I should not be able to proceed checkout payment step
+  And  I should be redirected to my cart summary page
+

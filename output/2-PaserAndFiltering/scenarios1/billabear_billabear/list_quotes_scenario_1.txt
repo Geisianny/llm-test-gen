@@ -1,0 +1,8 @@
+Scenario 1: Read Quote
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  a quote for "customer.seven@example.org" exists in "USD":
+  And  a quote for "customer.two@example.org" exists in "USD":
+  And  a quote for "customer.three@example.org" exists in "USD":
+  When  I view the quotes via the APP
+  Then  I will see a 3 quotes
+

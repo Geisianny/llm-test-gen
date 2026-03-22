@@ -1,0 +1,6 @@
+Scenario 1: Clearing cart after logging out
+  Tags: ['@ui']
+  When  I log out
+  And  I see the summary of my cart
+  Then  my cart should be empty
+

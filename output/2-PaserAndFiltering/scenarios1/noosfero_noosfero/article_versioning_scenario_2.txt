@@ -1,0 +1,9 @@
+Scenario 2: list versions of an article
+  Tags: ['@selenium']
+  Given  I am on article "Edited Article"
+  And  I follow "article-options"
+  When  I follow "All versions"
+  Then  I should be on /joaosilva/edited-article/versions
+  And  I should see "Version 1" within "#article-versions"
+  And  I should see "Version 2" within "#article-versions"
+

@@ -1,0 +1,7 @@
+Scenario 8: Delete patch
+  When  I follow the left menu "Patches > Manage Patches"
+  And  I check "Test Advisory" patch
+  And  I click on "Delete Patches"
+  And  I click on "Confirm"
+  Then  I should see a "Successfully deleted 1 patches." text
+

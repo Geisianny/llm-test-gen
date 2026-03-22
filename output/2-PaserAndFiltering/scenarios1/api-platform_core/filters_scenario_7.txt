@@ -1,0 +1,10 @@
+Scenario 7: Retrieve a collection filtered using the search filter and a name converter
+  Tags: ['@createSchema']
+  Given  there are 20 convertedOwner objects with convertedRelated
+  When  I send the following GraphQL request:
+  Then  the JSON node "data.convertedOwners.edges" should have 2 element
+  And  the JSON node "data.convertedOwners.edges[0].node.id" should be equal to "/converted_owners/2"
+  And  the JSON node "data.convertedOwners.edges[0].node.name_converted.name_converted" should be equal to "Converted 2"
+  And  the JSON node "data.convertedOwners.edges[1].node.id" should be equal to "/converted_owners/20"
+  And  the JSON node "data.convertedOwners.edges[1].node.name_converted.name_converted" should be equal to "Converted 20"
+

@@ -1,0 +1,4 @@
+Scenario 2: Create the bootstrap repository for SUSE Minion
+  Tags: ['@sle_minion']
+  When  I create the bootstrap repository for "sle_minion" on the server
+

@@ -1,0 +1,6 @@
+Scenario: Add product review with both title and comment
+  Given the Administrator is managing product reviews
+  And there is a product review with a title and a comment
+  When the Administrator attempts to add the product review
+  Then the system allows the addition of the review
+  And displays a message confirming successful addition

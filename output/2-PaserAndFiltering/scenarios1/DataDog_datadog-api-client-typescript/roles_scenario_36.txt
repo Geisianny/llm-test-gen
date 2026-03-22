@@ -1,0 +1,8 @@
+Scenario 36: Update a role returns "Unprocessable Entity" response
+  Tags: ['@generated', '@skip', '@team:DataDog/aaa-core-access']
+  Given  new "UpdateRole" request
+  And  request contains "role_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {}, "id": "00000000-0000-1111-0000-000000000000", "relationships": {"permissions": {"data": [{"type": "permissions"}]}}, "type": "roles"}}
+  When  the request is sent
+  Then  the response status is 422 Unprocessable Entity
+

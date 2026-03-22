@@ -1,0 +1,17 @@
+Scenario 2: Admin user create new order type Selling
+  When  I go to the order types admin2 page of community "test"
+  Then  I should see "Order types determine how the order process works on your marketplace."
+  When  I follow "+ Add an order type"
+  Then  I select "Selling products" from "template_order_type"
+  Then  I should see "Checkout button label"
+  When  I fill in "Selling something nice" for "name_en"
+  Then  I follow "+ Add a custom pricing unit"
+  When  I fill in "Customize something nice" for "unit_label_en"
+  When  I fill in "Customize something nice" for "unit_label_fi"
+  When  I fill in "Customize it!" for "selector_label_en"
+  When  I fill in "Customize it!" for "selector_label_fi"
+  Then  I press "Add pricing unit"
+  Then  I should see "Per Customize something nice"
+  When  I press "Add the order type"
+  Then  I should see "Selling something nice"
+

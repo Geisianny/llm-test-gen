@@ -1,0 +1,7 @@
+Scenario 2: As a user granted with local scope, I can get a template
+  Given  I am logged with "president-ad@renaissance-dev.fr" via OAuth client "JeMengage Web" with scope "jemengage_admin"
+  When  I send a "GET" request to "/api/v3/email_templates/825c3c30-f4bd-42b5-8adf-29926a02a4af?scope=president_departmental_assembly"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+

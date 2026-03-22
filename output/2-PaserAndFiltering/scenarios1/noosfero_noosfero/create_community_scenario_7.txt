@@ -1,0 +1,17 @@
+Scenario 7: environment admin rejects new community task through tasks
+  Tags: ['@selenium']
+  Given  I am logged in as "joaosilva"
+  And  feature "admin_must_approve_new_communities" is enabled on environment
+  Given  "joaosilva" creates the community "Community for approval"
+  Given  I am logged in as admin
+  And  I go to admin_user's control panel
+  And  I follow "Tasks" within "#section-profile"
+  And  I should see "Joao Silva wants to create community Community for approval"
+  And  I choose "Reject" within "#task-1"
+  And  I fill in "Rejection explanation" with "Short reject explanation" within ".task-reject-explanation"
+  And  I follow "Save tasks"
+  Then  I should not see "Joao Silva wants to create community Community for approval"
+  And  I go to joaosilva's control panel
+  And  I follow "Groups" within "#section-relationships"
+  Then  I should not see "Community for approval"
+

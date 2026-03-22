@@ -1,0 +1,7 @@
+Scenario 2: Viewing the trending URLs page when no data is available
+  Given  I am logged in with email "affiliate_admin@fixtures.org"
+  And  no trending URLs exist
+  When  I am on the admin home page
+  And  I follow "Trending URLs"
+  Then  I should see "No URLs are trending for any affiliate right now"
+

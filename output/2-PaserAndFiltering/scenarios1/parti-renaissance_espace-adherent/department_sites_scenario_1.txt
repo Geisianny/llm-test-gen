@@ -1,0 +1,5 @@
+Scenario 1: As referent I cannot create my department site if no scope
+  Given  I am logged with "referent@en-marche-dev.fr" via OAuth client "JeMengage Web" with scope "jemengage_admin"
+  When  I send a "POST" request to "/api/v3/department_sites"
+  Then  the response status code should be 403
+

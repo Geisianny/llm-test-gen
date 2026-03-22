@@ -1,0 +1,15 @@
+Scenario 10: User creates a new listing with numeric field
+  Tags: ['@javascript', '@sphinx', '@no-transaction']
+  Given  I am logged in
+  And  there is a custom numeric field "Area" in that community in category "Spaces" with min value 100 and with max value 2000
+  When  I follow "new-listing-link"
+  And  I select "Spaces" from listing type menu
+  And  I select "Selling" from listing type menu
+  And  I fill in "listing_title" with "My house"
+  And  I fill in custom numeric field "Area" with "9999"
+  And  I press "Post listing"
+  Then  I should see validation error
+  When  I fill in custom numeric field "Area" with "150"
+  And  I press "Post listing"
+  Then  I should see "Area: 150"
+

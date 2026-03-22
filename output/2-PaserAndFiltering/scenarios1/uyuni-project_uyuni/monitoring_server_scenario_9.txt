@@ -1,0 +1,17 @@
+Scenario 9: Test Grafana formula on monitoring server
+  Given  I am on the Systems overview page of this "monitoring_server"
+  When  I follow "Formulas" in the content area
+  And  I check the "grafana" formula
+  And  I click on "Save"
+  Then  I wait until I see "Formula saved" text
+  When  I follow "Grafana" in the content area
+  And  I click on "Expand All Sections"
+  And  I enter the "monitoring_server" hostname as the Prometheus URL
+  And  I click on "Save Formula"
+  When  I follow "States" in the content area
+  And  I click on "Apply Highstate"
+  Then  I should see a "Applying the highstate has been scheduled." text
+  And  I wait until event "Apply highstate scheduled by admin" is completed
+  When  I wait until "grafana-server" service is active on "monitoring_server"
+  And  I visit "Grafana" endpoint of this "monitoring_server"
+

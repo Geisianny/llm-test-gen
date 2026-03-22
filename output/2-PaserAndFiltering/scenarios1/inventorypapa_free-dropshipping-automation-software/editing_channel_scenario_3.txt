@@ -1,0 +1,8 @@
+Scenario 3: Renaming the channel
+  Tags: ['@ui']
+  Given  I want to modify a channel "Web Channel"
+  When  I rename it to "Website store"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this channel name should be "Website store"
+

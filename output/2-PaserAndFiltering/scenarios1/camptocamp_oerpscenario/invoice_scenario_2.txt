@@ -1,0 +1,14 @@
+Scenario 2: Cancel and reset the invoice to draft and finally confirm it again
+  Tags: ['@workflow', '@rounding']
+  Given  I take the created invoice MySupplierInvoice
+  And  the entries on the invoice related journal can be cancelled
+  When  I press the cancel button
+  Then  I should see the invoice MySupplierInvoice cancel
+  And  no more link on an account move
+  When  I press the set to draft button
+  Then  I should see the invoice MySupplierInvoice draft
+  When  I change the currency to EUR
+  And  I press the validate button
+  Then  I should see the invoice MySupplierInvoice open
+  And  the residual amount = 1000,0
+

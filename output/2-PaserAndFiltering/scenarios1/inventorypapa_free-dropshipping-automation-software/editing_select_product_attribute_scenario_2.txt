@@ -1,0 +1,8 @@
+Scenario 2: Editing a select product attribute value
+  Tags: ['@ui']
+  When  I want to edit this product attribute
+  And  I change its value "Banana skin" to "Orange skin"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this product attribute should have value "Orange skin"
+

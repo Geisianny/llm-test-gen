@@ -1,0 +1,6 @@
+Scenario 1: Viewing a detailed page with default variant's price without discount
+  Tags: ['@ui']
+  When  I view product "Wyborowa Vodka"
+  Then  the product price should be "$40.00"
+  And  I should not see any original price
+

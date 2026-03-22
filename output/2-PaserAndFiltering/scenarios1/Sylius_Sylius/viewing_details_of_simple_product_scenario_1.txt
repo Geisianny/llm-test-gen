@@ -1,0 +1,7 @@
+Scenario 1: Viewing a simple product show page
+  Tags: ['@no-api', '@ui']
+  When  I access the "Iron Shield" product
+  Then  I should see product show page without variants
+  And  I should see product name "Iron Shield"
+  And  I should see product breadcrumb "Iron Shield"
+

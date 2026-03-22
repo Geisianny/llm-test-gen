@@ -1,0 +1,8 @@
+Scenario 5: vAMM can't amended from having a single bound to the other side, when the vAMM holds a long position.
+  Tags: ['@VAMM']
+  Then  the parties place the following orders:
+  And  the AMM pool status should be:
+  When  the network moves ahead "1" blocks
+  Then  the parties amend the following AMM:
+  And  the AMM pool status should be:
+

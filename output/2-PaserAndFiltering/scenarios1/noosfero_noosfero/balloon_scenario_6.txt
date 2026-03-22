@@ -1,0 +1,6 @@
+Scenario 6: I should not see trigger by default on page
+  Tags: ['@selenium']
+  Given  feature "show_balloon_with_profile_links_when_clicked" is enabled on environment
+  When  I go to /search/communities
+  Then  I should not see "Members"
+

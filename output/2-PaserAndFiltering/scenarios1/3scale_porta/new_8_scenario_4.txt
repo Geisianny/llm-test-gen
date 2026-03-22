@@ -1,0 +1,7 @@
+Scenario 4: Fields validation
+  Given  they go to the new buyer account page
+  When  the form is submitted with:
+  Then  field "Username" has inline error "is too short"
+  And  field "Email" has inline error "should look like an email address"
+  But  field "Password" has no inline error
+

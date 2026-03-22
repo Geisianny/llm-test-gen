@@ -1,0 +1,7 @@
+Scenario 4: Inviting an existing user is not allowed
+  Tags: ['@emails']
+  Given  an user "mary" of account "lol cats"
+  And  user "mary" has email "mary@lolcats.com"
+  When  I send "mary@lolcats.com" an invitation to account "lol cats"
+  Then  I should see an error saying an user with that email already exists
+

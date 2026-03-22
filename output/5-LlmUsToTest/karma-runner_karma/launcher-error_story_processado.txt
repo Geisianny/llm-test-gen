@@ -1,0 +1,34 @@
+Scenario: Browser fails to connect during test execution
+  Given a test is running with Karma Test Runner CLI
+  And a browser is configured to run the test
+  When the browser fails to connect to Karma
+  Then the system outputs an error message to stderr
+  And indicates that the browser failed to capture
+
+Scenario: Multiple browsers, one fails to connect
+  Given a test is running with Karma Test Runner CLI
+  And multiple browsers are configured to run the test
+  When one of the browsers fails to connect to Karma
+  Then the system outputs an error message to stderr
+  And indicates which browser failed to capture
+
+Scenario: Browser connection failure with timeout
+  Given a test is running with Karma Test Runner CLI
+  And a browser is configured to run the test with a timeout
+  When the browser fails to connect to Karma within the timeout
+  Then the system outputs an error message to stderr
+  And indicates that the browser timed out
+
+Scenario: Successful browser connection
+  Given a test is running with Karma Test Runner CLI
+  And a browser is configured to run the test
+  When the browser successfully connects to Karma
+  Then the system does not output an error message to stderr
+  And the test execution proceeds
+
+Scenario: No browsers configured
+  Given a test is running with Karma Test Runner CLI
+  And no browsers are configured to run the test
+  When the test is executed
+  Then the system outputs an error message to stderr
+  And indicates that no browsers are configured to capture

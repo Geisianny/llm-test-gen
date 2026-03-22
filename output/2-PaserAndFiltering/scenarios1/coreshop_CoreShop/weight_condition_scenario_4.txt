@@ -1,0 +1,10 @@
+Scenario 4: Add a new weight shipping rule which is valid with floating numbers
+  Given  adding a shipping rule named "amount"
+  And  the shipping rule is active
+  And  the site has a product "Dress" priced at 10000
+  And  the product weighs 4.2kg
+  And  the product has the tax rule group "AT"
+  And  I add the product "Dress" to my cart
+  And  the shipping rule has a condition weight from "14.19" to "30.95"
+  Then  the shipping rule should be valid for my cart with carrier "Post"
+

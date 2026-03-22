@@ -1,0 +1,9 @@
+Scenario 11: Manually changing a root taxon's slug while editing a taxon's name
+  Tags: ['@api', '@ui']
+  Given  the store has "Medieval weapons" taxonomy
+  When  I want to modify the "Medieval weapons" taxon
+  And  I rename it to "Renaissance weapons" in "English (United States)"
+  And  I set its slug to "renaissance" in "English (United States)"
+  And  I save my changes
+  Then  the slug of the "Renaissance weapons" taxon should be "renaissance"
+

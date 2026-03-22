@@ -1,0 +1,9 @@
+Scenario 5: Changing postcode changes the map coordinates
+  Tags: ['@vcr', '@billy']
+  Given  I visit the organisations index page
+  Given  cookies are approved
+  When  I am signed in as a charity worker related to "Wrong Postcode UK"
+  And  I update "Wrong Postcode UK" charity postcode to be "E1 6LT"
+  And  I visit the organisations index page
+  Then  the coordinates for "Wrong Postcode UK" should not be "51.58152579999999, -0.3439557"
+

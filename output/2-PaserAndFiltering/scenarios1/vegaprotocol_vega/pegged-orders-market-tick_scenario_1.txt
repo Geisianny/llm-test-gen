@@ -1,0 +1,14 @@
+Scenario 1: Simply submit pegged orders, cancel all orders on the orderbook, the pegged orders should be pegged to the AMM orders, AMM orders may not stick to market ticks.
+  Tags: ['@VAMM']
+  When  the parties place the following pegged iceberg orders:
+  Then  the order book should have the following volumes for market "ETH/MAR22":
+  When  the network moves ahead "1" blocks
+  Then  the order book should have the following volumes for market "ETH/MAR22":
+  When  the parties cancel the following orders:
+  Then  the order book should have the following volumes for market "ETH/MAR22":
+  When  the network moves ahead "1" blocks
+  Then  the order book should have the following volumes for market "ETH/MAR22":
+  When  the parties place the following orders:
+  And  the network moves ahead "1" blocks
+  Then  the order book should have the following volumes for market "ETH/MAR22":
+

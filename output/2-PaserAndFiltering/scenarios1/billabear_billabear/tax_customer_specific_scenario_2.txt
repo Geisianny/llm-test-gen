@@ -1,0 +1,6 @@
+Scenario 2: Use standard rate
+  Given  the following subscriptions exist:
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  And  there the latest invoice for "customer.one@example.org" will have tax rate of 15
+

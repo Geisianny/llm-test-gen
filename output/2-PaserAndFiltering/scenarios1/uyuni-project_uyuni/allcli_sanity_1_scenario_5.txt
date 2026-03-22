@@ -1,0 +1,7 @@
+Scenario 5: The SSH minion is healthy
+  Tags: ['@ssh_minion']
+  Then  "ssh_minion" should have a FQDN
+  And  reverse resolution should work for "ssh_minion"
+  And  "ssh_minion" should communicate with the server using public interface
+  And  the clock from "ssh_minion" should be exact
+

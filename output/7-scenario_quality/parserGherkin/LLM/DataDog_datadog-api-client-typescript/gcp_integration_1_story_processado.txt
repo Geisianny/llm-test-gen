@@ -1,0 +1,57 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: gcp_integration_1_story_processado.feature
+Caminho relativo: DataDog_datadog-api-client-typescript\gcp_integration_1_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\DataDog_datadog-api-client-typescript\gcp_integration_1_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: gcp_integration_1_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Create a new STS service account
+   Steps: 7
+   - Given the Datadog API is available
+   - And there are no existing STS service accounts with the name "new-sts-account"
+   - When the user creates a new STS service account with the name "new-sts-account"
+   - And configures the filters "filter1, filter2"
+   - And enables CSPM and Security Command Center
+   - Then the system creates the STS service account successfully
+   - And returns the details of the newly created STS service account
+2. List existing STS service accounts
+   Steps: 5
+   - Given the Datadog API is available
+   - And there are existing STS service accounts with names "sts-account-1, sts-account-2"
+   - When the user requests to list all STS service accounts
+   - Then the system returns a list of existing STS service accounts
+   - And includes "sts-account-1" and "sts-account-2" in the list
+3. Update an existing STS service account
+   Steps: 7
+   - Given the Datadog API is available
+   - And there is an existing STS service account with the name "existing-sts-account"
+   - When the user updates the STS service account "existing-sts-account"
+   - And changes the filters to "new-filter1, new-filter2"
+   - And disables CSPM
+   - Then the system updates the STS service account successfully
+   - And returns the updated details of the STS service account
+4. Delete an existing STS service account
+   Steps: 5
+   - Given the Datadog API is available
+   - And there is an existing STS service account with the name "sts-account-to-delete"
+   - When the user deletes the STS service account "sts-account-to-delete"
+   - Then the system deletes the STS service account successfully
+   - And returns a confirmation of the deletion
+5. Attempt to create a duplicate STS service account
+   Steps: 5
+   - Given the Datadog API is available
+   - And there is an existing STS service account with the name "duplicate-sts-account"
+   - When the user creates a new STS service account with the name "duplicate-sts-account"
+   - Then the system denies the creation
+   - And returns an error message indicating that an STS service account with the same name already exists

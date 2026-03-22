@@ -1,0 +1,13 @@
+Scenario 6: Viewing "more details" block
+  Tags: ['@ui']
+  Given  the product "Iron shield" has the slug "iron-shield"
+  And  the description of product "Iron shield" is "Shield created by dwarf"
+  And  the meta keywords of product "Iron shield" is "shield"
+  And  the short description of product "Iron shield" is "good shield"
+  When  I access "Iron Shield" product page
+  Then  I should see product name is "Iron shield"
+  And  I should see product slug is "iron-shield"
+  And  I should see product's description is "Shield created by dwarf"
+  And  I should see product's meta keywords is "shield"
+  And  I should see product's short description is "good shield"
+

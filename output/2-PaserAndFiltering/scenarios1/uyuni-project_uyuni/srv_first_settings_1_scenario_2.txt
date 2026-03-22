@@ -1,0 +1,15 @@
+Scenario 2: Create admin user and first organization
+  Tags: ['@skip_if_containerized_server']
+  Given  I access the host the first time
+  When  I go to the home page
+  And  I enter "SUSE Test" as "orgName"
+  And  I enter "admin" as "login"
+  And  I enter "admin" as "desiredpassword"
+  And  I enter "admin" as "desiredpasswordConfirm"
+  And  I select "Mr." from "prefix"
+  And  I enter "Admin" as "firstNames"
+  And  I enter "Admin" as "lastName"
+  And  I enter "galaxy-noise@localhost" as "email"
+  And  I click on "Create Organization"
+  Then  I am logged in
+

@@ -1,0 +1,7 @@
+Scenario 1: load only top level categories
+  Tags: ['@selenium']
+  Then  I should see "Products"
+  And  I should see "Services"
+  And  I should not see "Beans"
+  And  I should not see "Development"
+

@@ -1,0 +1,10 @@
+Scenario 1: Deleting multiple product association types at once
+  Tags: ['@ui', '@api', '@javascript']
+  When  I browse product association types
+  And  I check the "Cross sell" product association type
+  And  I check also the "Up sell" product association type
+  And  I delete them
+  Then  I should be notified that they have been successfully deleted
+  And  I should see a single product association type in the list
+  And  I should see the product association type "Accessories" in the list
+

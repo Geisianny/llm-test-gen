@@ -1,0 +1,6 @@
+Scenario 1: View product
+  Given  the site has a product "T-Shirt"
+  And  the product is active and published and available for store "Austria"
+  When  I open the product's detail page
+  Then  I should see the product name "T-Shirt"
+

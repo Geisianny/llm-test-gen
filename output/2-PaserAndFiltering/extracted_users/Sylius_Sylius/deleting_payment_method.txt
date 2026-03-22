@@ -1,0 +1,16 @@
+Feature: Deleting payment methods
+Description: In order to remove test, obsolete or incorrect payment methods
+    As an Administrator
+    I want to be able to delete a payment method
+Tags: ['@managing_payment_methods']
+
+Background: 
+  Given  the store has a payment method "Offline" with a code "Offline"
+  And  I am logged in as an administrator
+
+Scenario 1: Deleted payment method should disappear from the registry
+  Tags: ['@api', '@ui']
+  When  I delete the "Offline" payment method
+  Then  I should be notified that it has been successfully deleted
+  And  this payment method should no longer exist in the registry
+

@@ -1,0 +1,6 @@
+Scenario: Associate a system with a state channel
+  Given there is an existing state channel named "Test Channel"
+  And there is a registered system named "Test System"
+  When the user associates the system "Test System" with the state channel "Test Channel"
+  Then the system "Test System" is associated with the state channel "Test Channel"
+  And the state channel "Test Channel" is listed in the system's associated channels

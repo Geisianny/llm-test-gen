@@ -1,0 +1,9 @@
+Scenario 5: Adding a single image to an existing configurable product
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  Given  the store has a "Lamborghini Gallardo Model" configurable product
+  When  I want to modify this product
+  And  I attach the "lamborghini.jpg" image with "banner" type to this product
+  And  I save my changes to the images
+  Then  I should be notified that it has been successfully uploaded
+  And  the product "Lamborghini Gallardo Model" should have an image with "banner" type
+

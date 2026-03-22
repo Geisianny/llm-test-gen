@@ -1,0 +1,12 @@
+Scenario 3: Add a fake child channel into the fake base channel x86_64
+  When  I follow the left menu "Software > Manage > Channels"
+  And  I follow "Create Channel"
+  And  I enter "Fake-Child-Channel-SUSE-like" as "Channel Name"
+  And  I enter "fake-child-channel-suse-like" as "Channel Label"
+  And  I select "Fake-Base-Channel-SUSE-like" from "Parent Channel"
+  And  I select "x86_64" from "Architecture:"
+  And  I enter "Child channel for testing" as "Channel Summary"
+  And  I enter "Description for Fake Child Channel SUSE like." as "Channel Description"
+  And  I click on "Create Channel"
+  Then  I should see a "Channel Fake-Child-Channel-SUSE-like created." text
+

@@ -1,0 +1,9 @@
+Scenario 9: Monthly fee prorated with contract subscribed in the middle of the month
+  Given  all the rolling updates features are off
+  And  the date is 15th January 2009
+  And  the buyer is signed up to service plan "Service Plan"
+  And  the buyer plan "Service Plan" contract is live
+  When  time flies to 3rd March 2009
+  Then  the buyer should have following line items for "January, 2009" invoice:
+  Then  the buyer should have following line items for "February, 2009" invoice:
+

@@ -1,0 +1,5 @@
+Scenario 5: 0
+  When  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  When  I estimate the new revenue for a mass subscription change:
+  Then  I should be told the new revenue generated would be "0" "GBP"
+

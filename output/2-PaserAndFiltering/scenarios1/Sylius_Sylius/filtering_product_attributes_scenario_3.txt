@@ -1,0 +1,7 @@
+Scenario 3: Filtering product attributes by type
+  Tags: ['@api', '@ui']
+  When  I choose "checkbox" in the type filter
+  And  I filter
+  Then  I should see a single product attribute in the list
+  And  I should see the product attribute "T-Shirt with cotton" in the list
+

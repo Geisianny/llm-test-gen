@@ -1,0 +1,7 @@
+Scenario 6: Go to environment homepage after clicking on home button on not found page
+  Given  I am on the homepage
+  When  I go to /something-that-does-not-exist
+  And  I follow "Go to the home page"
+  Then  I should be on the homepage
+  And  the page title should be "Colivre.net"
+

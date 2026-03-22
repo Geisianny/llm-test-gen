@@ -1,0 +1,9 @@
+Scenario 3: Create a new order and add a product and calculate subtotals
+  Given  I add the product "T-Shirt" to my cart
+  And  the cart ships to customer "some-customer@something.com" address with postcode "4600"
+  And  the cart invoices to customer "some-customer@something.com" address with postcode "4600"
+  And  I create an order from my cart
+  Then  the order subtotal should be "2400" including tax
+  And  the order subtotal should be "2000" excluding tax
+  And  the notification rule for "order" should have been fired
+

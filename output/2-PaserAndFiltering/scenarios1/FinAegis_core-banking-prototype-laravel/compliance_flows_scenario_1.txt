@@ -1,0 +1,7 @@
+Scenario 1: Enhanced KYC onboarding flow
+  Given  a new user "john.doe@example.com" registers
+  When  the KYC workflow initiates
+  Then  the verification should include:
+  And  verification results should be:
+  And  user should be notified of verification status
+

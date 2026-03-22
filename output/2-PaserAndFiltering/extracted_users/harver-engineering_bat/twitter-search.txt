@@ -1,0 +1,24 @@
+Feature: Twitter Standard search API
+Description: Returns a collection of relevant Tweets matching a specified query.
+
+Background: Set up common auth
+  Given  I am a "twitter client"
+  And  I am using basic authentication using credentials from: "./examples/auth.json"
+  And  get token from "https://api.twitter.com/oauth2/token" using:
+
+Scenario 1: Search for tweets containing "Trump"
+  Tags: ['@twitter']
+  Given  I set the variable:
+  When  I send a 'GET' request to 'https://api.twitter.com/1.1/search/tweets.json'
+  And  I add the query string parameters:
+  Then  I should receive a response with the status 200
+  Then  the response body json path at "$.search_metadata.query" should equal "Trump"
+
+Scenario 2: Search for Tweets containing "Boris"
+  Tags: ['@twitter']
+  Given  I set the variable:
+  When  I send a 'GET' request to 'https://api.twitter.com/1.1/search/tweets.json'
+  And  I add the query string parameters:
+  Then  I should receive a response with the status 200
+  Then  the response body json path at "$.search_metadata.query" should equal "{query}"
+

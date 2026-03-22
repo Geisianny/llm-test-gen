@@ -1,0 +1,11 @@
+Scenario 2: Pre-requisite: Create custom channel for PTFs
+  When  I follow the left menu "Software > Manage > Channels"
+  And  I follow "Create Channel"
+  And  I enter "Custom Channel for SLES15SP4 PTFs" as "Channel Name"
+  And  I enter "sles15sp4-ptfs" as "Channel Label"
+  And  I select the parent channel for the "sle_minion" from "Parent Channel"
+  And  I enter "Custom channel for PTFs" as "Channel Summary"
+  And  I uncheck "gpg_check"
+  And  I click on "Create Channel"
+  Then  I should see a "Custom Channel for SLES15SP4 PTFs" text
+

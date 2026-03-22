@@ -1,0 +1,64 @@
+Scenario 1: Buyer lands on the homepage when in enterprise mode
+  When  I log in as "bob" on foo.3scale.localhost
+  Then  I should be on the homepage
+
+
+
+Scenario 2: Buyer lands in dashboard when he requests login page
+  Given  the current domain is foo.3scale.localhost
+  And  I log in as "bob" on foo.3scale.localhost
+  And  I go to the login page
+  Then  I should be on the dashboard
+
+
+
+Scenario 3: Provider cannot login in buyer domain
+  Tags: ['@security']
+  Given  the current domain is foo.3scale.localhost
+  When  I try to log in as "foo.3scale.localhost" with password "supersecret"
+  Then  I should not be logged in
+  And  I should see "Incorrect email or password. Please try again"
+
+
+
+Scenario 4: Buyer can log in with csrf protection enabled
+  Tags: ['@security']
+  Given  the current domain is foo.3scale.localhost
+  When  I go to the login page
+  And  I fill in the "bob" login data
+  Then  I should be logged in the Development Portal
+
+
+
+Scenario 5: Captcha is disabled
+  Tags: ['@recaptcha']
+  Given  the provider has bot protection disabled for its buyers
+  When  the buyer wants to log in
+  Then  the captcha is not present
+
+
+
+Scenario 6: Captcha is enabled
+  Tags: ['@recaptcha']
+  Given  the provider has bot protection enabled for its buyers
+  When  the buyer wants to log in
+  Then  the captcha is present
+
+
+
+Scenario 7: Developer can log in with Captcha enabled
+  Tags: ['@recaptcha']
+  Given  the provider has bot protection enabled for its buyers
+  And  the client will not be marked as a bot
+  When  the developer tries to log in
+  Then  the page should contain "Signed in successfully"
+
+
+
+Scenario 8: Captcha rejects a bot attempt also when it sends the correct credentials
+  Tags: ['@recaptcha']
+  Given  the provider has bot protection enabled for its buyers
+  And  the client will be marked as a bot
+  When  the developer tries to log in
+  Then  the developer login attempt fails
+

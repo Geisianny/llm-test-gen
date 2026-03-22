@@ -1,0 +1,5 @@
+Scenario 4: Seeing a product's name while editing a product review
+  Tags: ['@ui', '@no-api']
+  When  I want to modify the "Awesome" product review
+  Then  I should be editing review of product "Lamborghini Gallardo Model"
+

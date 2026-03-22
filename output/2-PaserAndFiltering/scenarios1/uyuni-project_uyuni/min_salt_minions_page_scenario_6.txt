@@ -1,0 +1,11 @@
+Scenario 6: Accepted minion shows up as a registered system
+  When  I start salt-minion on "sle_minion"
+  And  I wait at most 10 seconds until Salt master sees "sle_minion" as "unaccepted"
+  Then  "sle_minion" should not be registered
+  When  I follow the left menu "Salt > Keys"
+  Then  I should see a "pending" text
+  When  I accept "sle_minion" key
+  And  I wait at most 10 seconds until Salt master sees "sle_minion" as "accepted"
+  And  I wait until onboarding is completed for "sle_minion"
+  Then  "sle_minion" should be registered
+

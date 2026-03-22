@@ -1,0 +1,5 @@
+Scenario 2: Create email template failure for no template id
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  When  I create an email template:
+  Then  there will not be an email template for "subscription_created" with locale "en"
+

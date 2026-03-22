@@ -1,0 +1,6 @@
+Scenario 1: Creating a new case study without selecting a 'previously published' option
+  Given  I am a writer in the organisation "Department of Examples"
+  When  I start a new case study
+  And  I click save
+  Then  I do not see a validation error for the 'previously published' option
+

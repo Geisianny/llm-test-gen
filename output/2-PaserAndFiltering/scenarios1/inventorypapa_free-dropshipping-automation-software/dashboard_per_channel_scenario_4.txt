@@ -1,0 +1,7 @@
+Scenario 4: Seeing recent orders in a specific channel
+  Tags: ['@ui']
+  Given  3 customers have placed 4 orders for total of "$8566.00" mostly "Onion" product
+  And  then 2 more customers have placed 2 orders for total of "$459.00" mostly "Banana" product
+  When  I open administration dashboard for "United States" channel
+  Then  I should see 2 new orders in the list
+

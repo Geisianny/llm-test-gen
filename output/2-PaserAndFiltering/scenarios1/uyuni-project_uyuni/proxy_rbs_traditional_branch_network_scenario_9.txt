@@ -1,0 +1,27 @@
+Scenario 9: Parametrize DHCP on the Retail branch server
+  Given  I am on the Systems overview page of this "proxy"
+  When  I follow "Formulas" in the content area
+  And  I follow first "Dhcpd" in the content area
+  And  I click on "Expand All Sections"
+  And  I enter "example.org" in domain name field
+  And  I enter the local IP address of "proxy" in next server field
+  And  I enter "boot/pxelinux.0" in filename field
+  And  I enter the local IP address of "proxy" in domain name server field
+  And  I enter "eth1" in listen interfaces field
+  And  I enter the local IP address of "network" in network IP field
+  And  I enter "255.255.255.0" in network mask field
+  And  I enter the local IP address of "range begin" in dynamic IP range begin field
+  And  I enter the local IP address of "range end" in dynamic IP range end field
+  And  I enter the local IP address of "broadcast" in broadcast address field
+  And  I press "Remove" in the routers section
+  And  I press "Add Item" in host reservations section
+  And  I enter "sle15sp6terminal" in first reserved hostname field
+  And  I enter the local IP address of "sle15sp6_terminal" in first reserved IP field
+  And  I enter the MAC address of "sle15sp6_terminal" in first reserved MAC field
+  And  I press "Add Item" in host reservations section
+  And  I enter "sle15sp7terminal" in second reserved hostname field
+  And  I enter the local IP address of "sle15sp7_terminal" in second reserved IP field
+  And  I enter the MAC address of "sle15sp7_terminal" in second reserved MAC field
+  And  I click on "Save Formula"
+  Then  I should see a "Formula saved" text
+

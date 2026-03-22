@@ -1,0 +1,6 @@
+Scenario 3: USERS SETTINGS
+  Tags: ['@multicompany_base_finance_users']
+  Given  I need a "res.users" with oid: scen.ch_main_user
+  And  having:
+  And  we assign to user the groups bellow:
+

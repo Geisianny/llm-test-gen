@@ -1,0 +1,5 @@
+Scenario 7: Trying to delete shipping method
+  Tags: ['@api']
+  When  I try to delete shipping method "UPS Carrier"
+  Then  I should be notified that my access has been denied
+

@@ -1,0 +1,9 @@
+Scenario 5: Reject and delete the pending key
+  And  I follow the left menu "Salt > Keys"
+  And  I reject "sle_minion" from the Pending section
+  And  I wait at most 10 seconds until Salt master sees "sle_minion" as "rejected"
+  Then  I should see a "rejected" text
+  When  I stop salt-minion on "sle_minion"
+  And  I delete "sle_minion" from the Rejected section
+  And  I refresh page until I do not see "sle_minion" hostname as text
+

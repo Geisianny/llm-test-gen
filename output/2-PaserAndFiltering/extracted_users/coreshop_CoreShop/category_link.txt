@@ -1,0 +1,11 @@
+Feature: In order that a customer can visit the category page
+Description: The website needs to create a URL
+Tags: ['@domain', '@category']
+
+Background: 
+  Given  the site operates on a store in "Austria"
+  And  the site has a category "Shirts"
+
+Scenario 1: Create URL for product
+  Then  the generated url for object should be "/en/shirts"
+

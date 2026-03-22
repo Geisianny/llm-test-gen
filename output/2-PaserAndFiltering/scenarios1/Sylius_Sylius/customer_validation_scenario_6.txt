@@ -1,0 +1,8 @@
+Scenario 6: Trying to create customer with wrong email format in strict mode
+  Tags: ['@api', '@ui']
+  When  I want to create a new customer
+  And  I specify their email as "wrongemail@example..com"
+  And  I try to add them
+  Then  I should be notified that email is not valid
+  And  the customer with email "wrongemail@example..com" should not appear in the store
+

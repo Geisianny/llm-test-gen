@@ -1,0 +1,31 @@
+Scenario 1: Navigation
+  Given  a red hat single sign-on integration
+  When  they go to the users sso integrations page
+  And  they follow "Red Hat Single Sign-On"
+  Then  the current page is the sso integration page
+  And  should see "Red Hat Single Sign-On"
+
+
+
+Scenario 2: Client secret should be *****
+  Given  a red hat single sign-on integration
+  When  they go to the users sso integrations page
+  When  they follow "Red Hat Single Sign-On"
+  Then  they should see the following details:
+
+
+
+Scenario 3: Red Hat Single Sign-On integration details
+  Given  a red hat single sign-on integration
+  When  they go to the users sso integrations page
+  And  they follow "Red Hat Single Sign-On"
+  Then  they should see the following details:
+
+
+
+Scenario 4: Auth0 integration details
+  Given  an auth0 integration
+  When  they go to the users sso integrations page
+  And  they follow "Auth0"
+  Then  they should see the following details:
+

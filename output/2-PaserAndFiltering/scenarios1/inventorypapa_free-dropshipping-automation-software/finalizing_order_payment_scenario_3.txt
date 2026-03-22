@@ -1,0 +1,6 @@
+Scenario 3: Checking the payment state of a completed order
+  Tags: ['@ui']
+  Given  this order is already paid
+  When  I browse orders
+  Then  this order should have order payment state "Paid"
+

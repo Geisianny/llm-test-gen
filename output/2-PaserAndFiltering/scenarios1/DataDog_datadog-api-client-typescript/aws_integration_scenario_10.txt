@@ -1,0 +1,8 @@
+Scenario 10: Delete an AWS integration returns "OK" response
+  Tags: ['@team:DataDog/aws-integrations']
+  Given  there is a valid "aws_account" in the system
+  And  new "DeleteAWSAccount" request
+  And  body with value {"account_id": "{{ timestamp("now") }}00", "role_name": "DatadogAWSIntegrationRole"}
+  When  the request is sent
+  Then  the response status is 200 OK
+

@@ -1,0 +1,25 @@
+Feature: Hacker News
+Description: Demomnstrates using values from a scenario's response in the next scenario's request
+
+Background: 
+  Given  I set the variable:
+  And  I am anonymous
+
+Scenario 1: One
+  Tags: ['@hn']
+  When  GET "{base}/topstories.json"
+  Then  receive status 200
+
+Scenario 2: Two
+  Tags: ['@hn']
+  When  GET "{base}/item/{storyId}.json"
+  And  I set the placeholder 'storyId' using the json path '$.[0]' from the last 'GET' to '{base}/topstories.json'
+  Then  receive status 200
+
+Scenario 3: Three
+  Tags: ['@hn']
+  When  GET "{base}/user/{userId}.json"
+  And  I set the placeholder 'userId' using the json path '$.by' from the last 'GET' to '{base}/item/{storyId}.json'
+  Then  receive status 200
+  And  json path at "$.karma" should match "\d+"
+

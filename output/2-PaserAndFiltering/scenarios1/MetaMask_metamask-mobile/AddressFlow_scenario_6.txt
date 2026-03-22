@@ -1,0 +1,21 @@
+Scenario Outline 6: A user can add a contact on the contacts view and edit the saved contact - Example 1
+  Given  I am on the contacts view
+  And  I tap on the Add contact button on the Contact view
+  And  I input "Birdis" into the contact name field
+  And  I input "mike.eth" in the Address field
+  And  I tap button Add contact which is now enabled
+  Then  the saved contact "Birdis" should appear
+  When  I tap on contact name "Birdis"
+  And  I tap on Edit button to edit Saved contact details
+  Then  I can edit the contact name to "James"
+  When  I tap the Edit Contact button which is enabled to confirm the change
+  Then  the saved contact "James" should appear
+  When  I go back to the main wallet screen
+  And  On the Main Wallet view I tap on the Send Action
+  Then  I should see the edited name "James" contact under Recents on the send screen
+  And  I should not see the edited name "TestAlias" contact under Recents on the send screen
+
+  Examples:
+    | ContactName | AddressName | EditContactName | DeletedContactName |
+    | Birdis | mike.eth | James | TestAlias |
+

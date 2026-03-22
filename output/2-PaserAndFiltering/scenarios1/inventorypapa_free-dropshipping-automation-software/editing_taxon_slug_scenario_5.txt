@@ -1,0 +1,6 @@
+Scenario 5: Seeing disabled slug field when editing a taxon
+  Tags: ['@ui']
+  Given  the store has "Medieval weapons" taxonomy
+  When  I want to modify the "Medieval weapons" taxon
+  Then  the slug field should not be editable
+

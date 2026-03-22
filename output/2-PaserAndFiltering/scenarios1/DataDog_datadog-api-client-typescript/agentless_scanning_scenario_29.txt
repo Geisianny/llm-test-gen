@@ -1,0 +1,7 @@
+Scenario 29: List AWS on demand tasks returns "OK" response
+  Tags: ['@team:DataDog/k9-agentless']
+  Given  new "ListAwsOnDemandTasks" request
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data[0].type" is equal to "aws_resource"
+

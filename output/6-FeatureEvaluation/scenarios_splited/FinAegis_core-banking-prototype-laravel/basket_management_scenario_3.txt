@@ -1,0 +1,6 @@
+Scenario: Decompose an existing basket asset
+  Given there is a bank customer with an existing basket asset
+  And the basket asset has a valid composition
+  When the customer decomposes the basket asset
+  Then the system removes the basket asset
+  And distributes the underlying assets to the customer's account

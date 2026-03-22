@@ -1,0 +1,5 @@
+Scenario 1: Navigation
+  Given  they go to the application's admin page
+  When  they follow "Edit"
+  Then  the current page is the application's admin edit page
+

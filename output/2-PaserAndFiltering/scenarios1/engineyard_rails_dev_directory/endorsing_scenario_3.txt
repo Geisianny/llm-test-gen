@@ -1,0 +1,10 @@
+Scenario 3: Approving a endorsement for display
+  Given  a provider "Hotpocket" belonging to "paul@test.com"
+  And  "Hotpocket" has a rejected endorsement from "Nick Riviera"
+  And  I am on the homepage
+  When  I log in as "paul@test.com" with password "testtest"
+  Then  I should see "Nick Riviera"
+  When  I follow "Nick Riviera"
+  And  I press "endorsement.approve" translation
+  Then  I should see "endorsement.saved_successfully" translation
+

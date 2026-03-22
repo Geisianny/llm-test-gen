@@ -1,0 +1,15 @@
+Scenario 8: Edit the minion Highstate Recurring Action
+  When  I am on the "Recurring Actions" page of this "sle_minion"
+  Then  I should see a "Minion Highstate Recurring Action" text
+  When  I click the "Minion Highstate Recurring Action" item edit button
+  And  I wait until I see "Update Schedule" text
+  And  I enter "schedule_name_minion" as "scheduleName"
+  And  I check radio button "schedule-weekly"
+  And  I select "Wednesday" from "date_weekly"
+  And  I enter "01:35" as "time-weekly_time"
+  And  I click on "Update Schedule"
+  Then  I wait until I see "Schedule successfully updated" text
+  And  I should see a "schedule_name_minion" text
+  And  I should see a "Minion" text
+  And  I should see a "0 35 1 ? * 4" text
+

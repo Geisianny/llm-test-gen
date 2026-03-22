@@ -1,0 +1,15 @@
+Scenario 4: Save power management values for Redfish
+  Given  I am on the Systems overview page of this "sle_minion"
+  When  I follow "Provisioning" in the content area
+  And  I follow "Power Management" in the content area
+  And  I enter the controller hostname as the redfish server address
+  And  I enter "ipmiusr" as "powerUsername"
+  And  I enter "test" as "powerPassword"
+  And  I select "Redfish" from "powerType"
+  And  I click on "Save"
+  Then  I should see a "Power settings saved" text
+  And  the cobbler report should contain ":8443" for "sle_minion"
+  And  the cobbler report should contain "Power Management Username      : ipmiusr" for "sle_minion"
+  And  the cobbler report should contain "Power Management Password      : test" for "sle_minion"
+  And  the cobbler report should contain "Power Management Type          : redfish" for "sle_minion"
+

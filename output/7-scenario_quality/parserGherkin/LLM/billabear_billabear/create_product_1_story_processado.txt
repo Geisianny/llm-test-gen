@@ -1,0 +1,52 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: create_product_1_story_processado.feature
+Caminho relativo: billabear_billabear\create_product_1_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\billabear_billabear\create_product_1_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: create_product_1_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Create product with valid name and rate
+   Steps: 5
+   - Given there is an authenticated APP user
+   - When the user creates a product with the name "Test Product"
+   - And specifies a rate of "9.99"
+   - Then the system creates the product successfully
+   - And displays the product details
+2. Create product with valid name and rate type
+   Steps: 5
+   - Given there is an authenticated APP user
+   - When the user creates a product with the name "Test Product"
+   - And specifies a rate type of "monthly"
+   - Then the system creates the product successfully
+   - And displays the available rate types
+3. Attempt to create product with empty name
+   Steps: 5
+   - Given there is an authenticated APP user
+   - When the user creates a product with an empty name
+   - And specifies a rate of "9.99"
+   - Then the system prevents the creation of the product
+   - And displays an error message indicating that the name is required
+4. Attempt to create product with invalid rate
+   Steps: 5
+   - Given there is an authenticated APP user
+   - When the user creates a product with the name "Test Product"
+   - And specifies an invalid rate of "abc"
+   - Then the system prevents the creation of the product
+   - And displays an error message indicating that the rate is invalid
+5. Create product with valid name and no rate or rate type
+   Steps: 4
+   - Given there is an authenticated APP user
+   - When the user creates a product with the name "Test Product"
+   - Then the system creates the product successfully
+   - And displays the product details with no rate or rate type specified

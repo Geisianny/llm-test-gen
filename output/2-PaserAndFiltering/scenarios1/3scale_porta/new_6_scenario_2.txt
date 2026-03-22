@@ -1,0 +1,7 @@
+Scenario 2: Create an account plan
+  Given  they go to the new account plan admin page
+  When  the form is submitted with:
+  Then  the current page is the account plans admin page
+  And  they should see "Created account plan Premium"
+  And  the table has the following row:
+

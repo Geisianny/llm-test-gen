@@ -1,0 +1,15 @@
+Scenario 2: Prepaid and variable billing
+  Tags: ['@stats']
+  Given  the time is 5th February 2009
+  And  a buyer "zoidberg" signed up to application plan "Variable" on 5th February 2009
+  Given  the time flies to 6th February 2009
+  And  buyer "zoidberg" makes 1 service transactions with:
+  Given  the time flies to 5th March 2009
+  And  I log in as "zoidberg" on foo.3scale.localhost
+  When  I navigate to 1st invoice issued for me in "February, 2009"
+  Then  I should see invoice in state "Pending"
+  And  I should see line items
+  When  I navigate to invoice issued for me in "March, 2009"
+  Then  I should see invoice in state "Pending"
+  And  I should see line items
+

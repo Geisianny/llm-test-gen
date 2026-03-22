@@ -1,0 +1,8 @@
+Scenario 1: Trying to add address with incorrect country to the cart by the visitor
+  Tags: ['@api']
+  Given  the visitor has product "Stark T-Shirt" in the cart
+  When  the visitor specify the email as "jon.snow@example.com"
+  And  the visitor try to specify the incorrect billing address as "Ankh Morpork", "Frost Alley", "90210", "United Russia" for "Jon Snow"
+  And  the visitor complete the addressing step
+  Then  they should be notified that "United Russia" country does not exist
+

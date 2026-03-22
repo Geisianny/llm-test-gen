@@ -1,0 +1,9 @@
+Scenario 5: As a superadmin recovering a deleted user
+  Given  I am signed in as a superadmin
+  And  I delete "pending@myorg.com"
+  Then  the user with email "pending@myorg.com" should be displayed on the all deleted users page
+  And  I restore the user with the email "pending@myorg.com"
+  Then  user "pending@myorg.com" is not deleted
+  And  I should see "You have restored pending@myorg.com"
+  And  the user with email "pending@myorg.com" should not be displayed on the all deleted users page
+

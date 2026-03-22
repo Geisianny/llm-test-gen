@@ -1,0 +1,6 @@
+Scenario: Verify JavaScript version tag is ignored in non-Firefox browsers
+  Given the user is using the Karma Test Runner CLI
+  And the browser is Safari
+  When the user adds a JavaScript version tag
+  Then the system ignores the JavaScript version tag
+  And the test is executed as if the tag was not added

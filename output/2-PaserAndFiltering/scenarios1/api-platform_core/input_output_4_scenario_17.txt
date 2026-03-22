@@ -1,0 +1,8 @@
+Scenario 17: Get a collection with a custom output and without item operations, from a resource with an identifier
+  Tags: ['@v3']
+  When  I send a "GET" request to "/dummy_id_collection_dtos"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+

@@ -1,0 +1,6 @@
+Scenario 8: Cleanup: remove old packages
+  When  I disable repository "test_repo_rpm_pool" on this "sle_minion" without error control
+  And  I refresh the metadata for "sle_minion"
+  And  I remove package "andromeda-dummy" from this "sle_minion" without error control
+  And  I remove package "virgo-dummy" from this "sle_minion" without error control
+

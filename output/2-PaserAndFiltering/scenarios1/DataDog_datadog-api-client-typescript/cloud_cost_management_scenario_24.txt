@@ -1,0 +1,7 @@
+Scenario 24: Delete a budget returns "Bad Request" response
+  Tags: ['@team:DataDog/cloud-cost-management']
+  Given  new "DeleteBudget" request
+  And  request contains "budget_id" parameter with value "1"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

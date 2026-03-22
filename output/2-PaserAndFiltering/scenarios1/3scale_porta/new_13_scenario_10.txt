@@ -1,0 +1,7 @@
+Scenario 10: Create an application with a pending contract
+  Given  the buyer is subscribed to product "My API"
+  But  the subscription is pending
+  When  they go to the admin portal new application page
+  And  the form is submitted with:
+  Then  they should see a toast alert with text "must have an approved subscription to service"
+

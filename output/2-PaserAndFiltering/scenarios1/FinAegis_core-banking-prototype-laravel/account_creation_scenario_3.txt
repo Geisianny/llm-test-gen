@@ -1,0 +1,9 @@
+Scenario 3: Account creation error handling
+  Tags: ['@javascript']
+  Given  I am on "/wallet"
+  When  I click "Create Account"
+  And  I clear "accountName"
+  And  I press "Create Account" in the modal
+  Then  I should see an error message
+  And  I should still see the modal
+

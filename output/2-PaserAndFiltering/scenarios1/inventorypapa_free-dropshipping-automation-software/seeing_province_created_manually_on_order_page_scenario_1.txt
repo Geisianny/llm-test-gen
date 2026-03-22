@@ -1,0 +1,6 @@
+Scenario 1: Seeing manually definied province on order summary page
+  Tags: ['@ui']
+  When  I view the summary of the order "#00000666"
+  Then  I should see "East of England" as province in the shipping address
+  And  I should see "East of England" ad province in the billing address
+

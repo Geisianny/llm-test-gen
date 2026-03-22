@@ -1,0 +1,5 @@
+Scenario 4: Use correct kernel image on the SSH minion
+  Tags: ['@susemanager']
+  When  I remove package "kernel-default-base" from this "ssh_minion"
+  And  I install package "kernel-default" on this "ssh_minion"
+

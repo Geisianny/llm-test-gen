@@ -1,0 +1,12 @@
+Scenario Outline 6: Referral set member participates in multiple markets with different quantum settlement assets (0083-RFPR-049) - Example 1
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  the referral set stats for code "referral-code-1" at epoch "1" should have a running volume of 20000:
+
+  Examples:
+    | party | maker side | taker side |
+    | referrer1 | buy | sell |
+    | referrer1 | sell | buy |
+    | referee1 | buy | sell |
+    | referee1 | sell | buy |
+

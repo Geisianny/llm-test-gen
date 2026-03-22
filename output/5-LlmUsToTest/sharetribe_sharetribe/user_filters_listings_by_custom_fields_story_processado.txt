@@ -1,0 +1,37 @@
+Scenario: Filter listings by a single custom field
+  Given there are listings with custom field "Location" having values "New York" and "Los Angeles"
+  And the user is on the listings page
+  When the user selects "New York" from the "Location" filter
+  Then the system displays listings with "Location" as "New York"
+  And the listings count is updated accordingly
+
+Scenario: Filter listings by multiple custom fields
+  Given there are listings with custom fields "Location" and "Category" having values "New York", "Los Angeles" and "Electronics", "Furniture"
+  And the user is on the listings page
+  When the user selects "New York" from the "Location" filter
+  And selects "Electronics" from the "Category" filter
+  Then the system displays listings with "Location" as "New York" and "Category" as "Electronics"
+  And the listings count is updated accordingly
+
+Scenario: Combine filter with keyword search
+  Given there are listings with title "Apple Watch" and "Samsung TV"
+  And the user is on the listings page
+  When the user selects "Electronics" from the "Category" filter
+  And enters "Apple" in the keyword search field
+  Then the system displays listings with "Category" as "Electronics" and title containing "Apple"
+  And the listings count is updated accordingly
+
+Scenario: Filter listings by category selection
+  Given there are listings under categories "Electronics" and "Furniture"
+  And the user is on the listings page
+  When the user selects the "Electronics" category
+  Then the system displays listings under the "Electronics" category
+  And the listings count is updated accordingly
+
+Scenario: Reset filters
+  Given there are listings with custom fields "Location" and "Category" having values "New York", "Los Angeles" and "Electronics", "Furniture"
+  And the user is on the listings page
+  And has selected "New York" from the "Location" filter and "Electronics" from the "Category" filter
+  When the user resets the filters
+  Then the system displays all listings
+  And the filter selections are cleared

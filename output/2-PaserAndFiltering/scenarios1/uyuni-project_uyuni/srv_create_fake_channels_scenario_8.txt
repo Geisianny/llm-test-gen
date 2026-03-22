@@ -1,0 +1,12 @@
+Scenario 8: Add a child channel into the test base channel x86_64
+  When  I follow the left menu "Software > Manage > Channels"
+  And  I follow "Create Channel"
+  And  I enter "Test-Child-Channel-x86_64" as "Channel Name"
+  And  I enter "test-child-channel-x86_64" as "Channel Label"
+  And  I select "Test-Base-Channel-x86_64" from "Parent Channel"
+  And  I select "x86_64" from "Architecture:"
+  And  I enter "Test-Child-Channel-x86_64 channel for testing" as "Channel Summary"
+  And  I enter "Description for Test-Child-Channel-x86_64 Channel." as "Channel Description"
+  And  I click on "Create Channel"
+  Then  I should see a "Channel Test-Child-Channel-x86_64 created." text
+

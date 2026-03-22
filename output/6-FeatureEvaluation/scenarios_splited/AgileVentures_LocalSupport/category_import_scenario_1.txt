@@ -1,0 +1,6 @@
+Scenario: Import categories from a valid CSV file
+  Given there is a Site Super Admin user logged in
+  And there is a CSV file containing valid categories
+  When the Super Admin imports the CSV file
+  Then the system imports the categories successfully
+  And the categories are added to the system

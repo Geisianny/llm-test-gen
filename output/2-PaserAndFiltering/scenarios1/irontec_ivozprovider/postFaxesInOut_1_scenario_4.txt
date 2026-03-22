@@ -1,0 +1,8 @@
+Scenario 4: Cannot create inbound faxes
+  Tags: ['@createSchema']
+  Given  I add User Authorization header
+  When  I add "Content-Type" header equal to "multipart/form-data; boundary=----IvozProviderFormBoundaryFUBrG71LG0e8DuZ8"
+  And  I add "Accept" header equal to "application/json"
+  And  I send a "POST" multipart request to "/faxes_in_outs" with body:
+  Then  the response status code should be 403
+

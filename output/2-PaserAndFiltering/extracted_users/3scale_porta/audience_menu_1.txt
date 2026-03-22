@@ -1,0 +1,43 @@
+Feature: Audience menu
+Description: In order to manage my audience
+  As a provider
+  I want to see a menu that lets me do that
+Tags: ['@javascript']
+
+Background: 
+  Given  a provider is logged in
+  And  go to the accounts admin page
+
+Scenario 1: Current API title
+  Then  I should see there is no current API
+
+Scenario 2: Audience menu structure
+  Then  I should see menu sections
+
+Scenario 3: Accounts sub menu structure
+  Then  I should see menu items under "Accounts"
+
+Scenario 4: Portal sub menu structure
+  Then  I should see menu items under "Developer Portal"
+
+Scenario 5: Accounts sub menu structure with account plans enabled
+  When  the provider has "account_plans" visible
+  And  I go to the accounts admin page
+  Then  I should see menu items under "Accounts"
+
+Scenario 6: Accounts sub menu structure with account plans disabled
+  When  the provider has "account_plans" denied
+  And  I go to the accounts admin page
+  Then  I should see menu items under "Accounts"
+
+Scenario 7: Accounts sub menu structure with service plans enabled
+  When  the provider has "service_plans" visible
+  And  I go to the accounts admin page
+  Then  I should see menu items under "Accounts"
+
+Scenario 8: Portal sub menu structure with groups enabled
+  When  the provider has "groups" switch allowed
+  And  I go to the provider dashboard
+  And  I follow "0 Accounts"
+  Then  I should see menu items under "Developer Portal"
+

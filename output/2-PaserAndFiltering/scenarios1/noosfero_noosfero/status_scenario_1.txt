@@ -1,0 +1,17 @@
+Scenario 1: dont display to add status if not an organization
+  Tags: ['@selenium']
+  Given  I am logged in as admin
+  Given  I am on the environment control panel
+  Given  I follow "Plugins"
+  Given  I check "Comment Classification"
+  Then  I follow "Save changes"
+  And  I should see "Plugins updated successfully."
+  And  "Maria Silva" is a member of "Sample Community"
+  And  "Joao Silva" is admin of "Sample Community"
+  Then  I am logged in as "joaosilva"
+  Given  the following articles
+  And  the following comments
+  Given  I am on article "Article on a person profile"
+  Then  I should see "great post!" within ".comment-content"
+  And  I should not see "Status" within ".comment-content"
+

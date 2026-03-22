@@ -1,0 +1,7 @@
+Scenario 8: Create datastore returns "OK" response
+  Tags: ['@team:DataDog/app-builder-backend']
+  Given  new "CreateDatastore" request
+  And  body with value {"data": {"attributes": {"name": "datastore-name", "primary_column_name": "primaryKey"}, "type": "datastores"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+

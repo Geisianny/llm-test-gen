@@ -1,0 +1,7 @@
+Scenario 7: find enterprises without exact query
+  Given  the following enterprises
+  When  I go to the search enterprises page
+  And  I fill in "search-input" with "Noosfero Association"
+  And  I press "Search"
+  Then  I should see "Noosfero Developers Association" within "#search-results"
+

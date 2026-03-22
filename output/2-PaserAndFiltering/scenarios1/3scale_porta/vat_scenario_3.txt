@@ -1,0 +1,10 @@
+Scenario 3: Buyer sees the VAT on an invoice when it's 0
+  Tags: ['@commit-transactions']
+  Given  the time is 31st December 2008
+  And  a buyer "tycoon" signed up to application plan "best"
+  And  VAT rate of buyer "tycoon" is 0%
+  And  time flies to 3rd February 2009
+  When  I log in as "tycoon" on foo.3scale.localhost
+  And  I navigate to invoice issued for me in "January, 2009"
+  Then  I should see line items
+

@@ -1,0 +1,12 @@
+Scenario 4: Trying to send a spam link
+  Tags: ['@javascript']
+  Given  I am logged in
+  When  I open the menu
+  And  I follow "Contact us" within the menu
+  And  I fill in "feedback_content" with "[url=testi"
+  And  I press "Send message"
+  Then  I should see "Feedback not saved, due to its formatting. Try again or use the feedback forum." within ".flash-notifications"
+  When  I fill in "feedback_content" with "<a href="
+  And  I press "Send message"
+  Then  I should see "Feedback not saved, due to its formatting. Try again or use the feedback forum."
+

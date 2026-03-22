@@ -1,0 +1,60 @@
+Scenario 4: I can become adherent from EM account
+  Given  the following fixtures are loaded:
+  When  I am on "/adhesion"
+  And  I fill in the following:
+  And  I click the "membership_request_consentDataCollect" element
+  And  I wait 5 seconds
+  And  I press "J'adhère"
+  Then  I wait 5 seconds until I see "Un email de confirmation vient d’être envoyé à votre adresse email. Cliquez sur le lien de validation qu’il contient pour continuer votre adhésion."
+  And  I should have 1 email "AdhesionAlreadySympathizerMessage" for "carl999@example.fr" with payload:
+  When  I click on the email link "magic_link"
+  Then  I should be on "/adhesion" wait otherwise
+  When  I click the ".autocomplete-fields-toggle" selector
+  And  I fill in the following:
+  And  I press "Suivant"
+  And  I wait 1 second
+  When  I click the "membership_request_exclusiveMembership_0" element
+  And  I click the "membership_request_isPhysicalPerson" element
+  And  I click the "membership_request_allowNotifications" element
+  Then  I click the "#step_3 .re-button" selector
+  And  I wait 5 seconds
+  And  User "carl999@example.fr" should have 7 subscription types
+  And  I scroll element "#step_4 #amount_3_label" into view
+  And  I click the "#step_4 #amount_4_label" selector
+  And  I should see "Je confirme être étudiant, une personne bénéficiant des minima sociaux ou sans emploi"
+  And  I click the "#step_4 #amount_5_label" selector
+  And  I should not see "Je confirme être étudiant, une personne bénéficiant des minima sociaux ou sans emploi"
+  And  I press "Je cotise pour 50 €"
+  Then  I should be on "https://preprod-tpeweb.paybox.com/cgi/FramepagepaiementRWD.cgi" wait otherwise
+  And  I wait until I see "50.00 EUR"
+  When  I simulate IPN call with "00000" code for the last donation of "carl999@example.fr"
+  And  I am on payment status page for the last donation of "carl999@example.fr"
+  Then  I should be on "/adhesion/carte-adherent" wait otherwise
+  And  I should see "Votre paiement a bien été validé !"
+  And  User "carl999@example.fr" should have tag "adherent:a_jour_2025:primo"
+  And  I should have 1 email "RenaissanceAdherentAccountConfirmationMessage" for "carl999@example.fr" with payload:
+  And  I should see "Carte d'adhérent"
+  When  I click the ".autocomplete-fields-toggle" selector
+  And  I fill in the following:
+  When  I press "Recevoir ma carte"
+  Then  I should be on "/adhesion/comite-local" wait otherwise
+  And  I should see "Comité local"
+  And  I should see "Comité : Second Comité des 3 communes"
+  And  I should see "Responsable : Adherent 56 Fa56ke"
+  And  I wait 1 second
+  When  I press "Changer de comité"
+  And  I wait 2 second
+  Then  I should see "Choisissez un nouveau comité près de chez vous"
+  And  I should see "Comité : Comité des 3 communes"
+  And  I should see "Responsable : Adherent 55 Fa55ke"
+  When  I press "Rejoindre"
+  Then  I should not see "Choisissez un nouveau comité près de chez vous"
+  And  I should see "Comité : Comité des 3 communes"
+  And  I should see "Responsable : Adherent 55 Fa55ke"
+  When  I press "Continuer"
+  Then  I should be on "/adhesion/felicitations" wait otherwise
+  And  I should see "Vous êtes désormais adhérent, félicitations !"
+  And  User "carl999@example.fr" should have zones "district_92-5, city_92024"
+  When  I click the ".re-button" selector
+  Then  I should be on "/app" wait otherwise
+

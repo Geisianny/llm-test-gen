@@ -1,0 +1,5 @@
+Scenario 1: Accessing to the cart by the visitor
+  Tags: ['@api']
+  When  the visitor adds "Stark T-Shirt" product to the cart
+  Then  the visitor can see "Stark T-Shirt" product in the cart
+

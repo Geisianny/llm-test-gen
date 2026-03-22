@@ -1,0 +1,8 @@
+Scenario 4: Restoring an archival shipping method
+  Tags: ['@ui', '@api']
+  Given  the shipping method "UPS Carrier" is archival
+  And  I am browsing archival shipping methods
+  When  I restore the "UPS Carrier" shipping method
+  Then  I should be viewing non archival shipping methods
+  And  I should see 2 shipping methods on the list
+

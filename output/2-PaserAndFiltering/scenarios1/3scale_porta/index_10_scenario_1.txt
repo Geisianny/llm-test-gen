@@ -1,0 +1,6 @@
+Scenario 1: Empty state
+  Given  the provider has no buyers
+  When  they go to the buyer accounts page
+  Then  they should see an empty state
+  And  should see "Add your first account"
+

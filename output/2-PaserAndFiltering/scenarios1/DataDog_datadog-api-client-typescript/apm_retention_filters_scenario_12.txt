@@ -1,0 +1,7 @@
+Scenario 12: Re-order retention filters returns "OK" response
+  Tags: ['@replay-only', '@team:DataDog/apm-trace-intake']
+  Given  new "ReorderApmRetentionFilters" request
+  And  body with value {"data":[{"id":"jdZrilSJQLqzb6Cu7aub9Q","type":"apm_retention_filter"},{"id":"7RBOb7dLSYWI01yc3pIH8w","type":"apm_retention_filter"}]}
+  When  the request is sent
+  Then  the response status is 200 OK
+

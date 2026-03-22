@@ -1,0 +1,9 @@
+Scenario 3: Trying to add a new text product attribute without code
+  Tags: ['@api', '@ui']
+  When  I want to create a new text product attribute
+  And  I name it "T-Shirt brand" in "English (United States)"
+  But  I do not specify its code
+  And  I try to add it
+  Then  I should be notified that code is required
+  And  the attribute with name "T-Shirt brand" should not appear in the store
+

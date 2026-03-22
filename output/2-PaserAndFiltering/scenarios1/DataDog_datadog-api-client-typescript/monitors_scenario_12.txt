@@ -1,0 +1,7 @@
+Scenario 12: Create a monitor returns "Bad Request" response
+  Tags: ['@team:DataDog/monitor-app']
+  Given  new "CreateMonitor" request
+  And  body with value {"type": "log alert", "query": "query"}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

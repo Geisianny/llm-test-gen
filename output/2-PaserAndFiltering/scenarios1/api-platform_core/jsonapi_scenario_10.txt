@@ -1,0 +1,7 @@
+Scenario 10: Retrieve a collection with relationships
+  When  I send a "GET" request to "/related_dummies"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be valid according to the JSON API schema
+  And  the JSON node "data[0].relationships.thirdLevel.data.id" should be equal to "/third_levels/1"
+

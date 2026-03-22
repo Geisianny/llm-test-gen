@@ -1,0 +1,6 @@
+Scenario 2: Get a list of events returns "OK" response
+  Tags: ['@skip-validation', '@team:DataDog/event-management']
+  Given  new "ListEvents" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

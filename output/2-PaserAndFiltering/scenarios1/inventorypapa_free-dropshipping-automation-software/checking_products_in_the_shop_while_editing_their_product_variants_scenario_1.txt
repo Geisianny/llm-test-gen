@@ -1,0 +1,8 @@
+Scenario 1: Accessing product show page in shop from the product variant edit page where product is available in more than one channel
+  Tags: ['@ui']
+  Given  this product is also available in the "Europe" channel
+  And  this product has "Red" variant priced at "$220000.00" in "Europe" channel
+  And  I want to modify the "Bugatti" product variant
+  And  I choose to show this product in the "Europe" channel
+  Then  I should see this product in the "Europe" channel in the shop
+

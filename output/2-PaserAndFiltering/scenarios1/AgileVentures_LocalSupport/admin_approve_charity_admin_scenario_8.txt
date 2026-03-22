@@ -1,0 +1,6 @@
+Scenario 8: As a non-superadmin trying to access users index
+  Given  I am signed in as a non-superadmin
+  And  I visit the registered users page
+  Then  I should be on the home page
+  And  I should see "You must be signed in as a superadmin to perform this action!"
+

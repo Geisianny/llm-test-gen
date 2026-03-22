@@ -1,0 +1,5 @@
+Scenario 1: Viewing a detailed page with product's price
+  Tags: ['@ui']
+  When  I view product "Wyborowa Vodka"
+  Then  I should see the product price "$20.00"
+

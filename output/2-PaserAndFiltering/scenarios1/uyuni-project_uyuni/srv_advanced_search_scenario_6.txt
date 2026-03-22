@@ -1,0 +1,8 @@
+Scenario 6: One search result for hostname using "Fine grained search results"
+  When  I follow the left menu "Systems > Advanced Search"
+  And  I enter "sle_minion" hostname on the search field
+  And  I select "Hostname" from "Field to Search"
+  And  I check "fineGrained"
+  And  I click on the search button
+  Then  I should land on system's overview page
+

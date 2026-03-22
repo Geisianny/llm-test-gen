@@ -1,0 +1,8 @@
+Scenario 4: User with existing account sees wallet dashboard
+  Given  I have an account named "Existing Account"
+  When  I go to "/wallet"
+  Then  I should not see "Account Setup Required"
+  And  I should see "Existing Account"
+  And  I should see "Total Balance"
+  And  I should see "Quick Actions"
+

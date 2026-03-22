@@ -1,0 +1,7 @@
+Scenario 2: Get a collection of resources by attributes foo, bar, group.baz and group.qux
+  When  I send a "GET" request to "/dummy_properties?properties[]=foo&properties[]=bar&properties[group][]=baz&properties[group][]=qux"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+

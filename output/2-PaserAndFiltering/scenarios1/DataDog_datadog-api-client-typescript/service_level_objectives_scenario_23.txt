@@ -1,0 +1,11 @@
+Scenario 23: Get an SLO's history returns "OK" response
+  Tags: ['@team:DataDog/slo-app']
+  Given  there is a valid "slo" in the system
+  And  new "GetSLOHistory" request
+  And  request contains "slo_id" parameter from "slo.data[0].id"
+  And  request contains "from_ts" parameter with value {{ timestamp("now - 1d") }}
+  And  request contains "to_ts" parameter with value {{ timestamp("now") }}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.series.res_type" is equal to "time_series"
+

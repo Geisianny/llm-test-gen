@@ -1,0 +1,5 @@
+Scenario 2: deleting other profile
+  Given  I am logged in as "mariasilva"
+  And  I go to /myprofile/joaosilva/profile_editor/destroy_profile
+  Then  I should see "Access denied"
+

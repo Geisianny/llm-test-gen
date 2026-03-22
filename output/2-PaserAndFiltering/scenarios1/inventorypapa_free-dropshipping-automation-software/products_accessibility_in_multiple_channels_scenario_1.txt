@@ -1,0 +1,6 @@
+Scenario 1: 
+  Tags: ['@ui']
+  When  I change my current channel to "Poland"
+  Then  I should be able to access product "Onion"
+  But  I should not be able to access product "Banana"
+

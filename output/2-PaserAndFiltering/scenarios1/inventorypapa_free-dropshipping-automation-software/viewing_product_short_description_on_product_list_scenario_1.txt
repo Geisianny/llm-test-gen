@@ -1,0 +1,5 @@
+Scenario 1: Viewing a short description on product list
+  Tags: ['@api']
+  When  I browse products
+  Then  I should see the product "T-shirt watermelon" with short description "Great T-shirt"
+

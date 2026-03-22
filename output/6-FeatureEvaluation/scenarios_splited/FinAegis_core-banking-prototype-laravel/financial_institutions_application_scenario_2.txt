@@ -1,0 +1,6 @@
+Scenario: Partnership application submission with missing details
+  Given there is a financial institution registered with FinAegis
+  When the financial institution submits a partnership application
+  And omits required partnership details
+  Then the system rejects the partnership application
+  And displays an error message indicating the missing details

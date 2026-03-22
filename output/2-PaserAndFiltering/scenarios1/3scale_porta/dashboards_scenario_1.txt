@@ -1,0 +1,7 @@
+Scenario 1: Navigation
+  Given  the current page is the provider dashboard
+  When  they select "Audience" from the context selector
+  And  press "Billing" within the main menu
+  And  follow "Earnings by month" within the main menu
+  Then  they should be on the earnings by month page
+

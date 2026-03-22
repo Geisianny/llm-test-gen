@@ -1,0 +1,14 @@
+Scenario 4: 0090-VAMM-040, 0090-VAMM-041 base only gets update if difference in price is less that minimum price change trigger
+  Tags: ['@VAMM']
+  Then  the parties submit the following AMM:
+  Then  the AMM pool status should be:
+  And  set the following AMM sub account aliases:
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  And  the market data for the market "ETH/MAR22" should be:
+  Then  the network moves ahead "1" blocks
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  And  the market data for the market "ETH/MAR22" should be:
+

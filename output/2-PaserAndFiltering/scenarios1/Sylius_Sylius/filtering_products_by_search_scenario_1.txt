@@ -1,0 +1,7 @@
+Scenario 1: Searching for a product by code
+  Tags: ['@api', '@ui']
+  When  I search for products with "-pr" code
+  Then  I should see 2 products in the list
+  And  I should see a product with name "MacBook Pro"
+  And  I should see a product with name "HP Pro"
+

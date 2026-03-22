@@ -1,0 +1,27 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 19/01/2026 23:13:57
+Arquivo analisado: not_discountable_discount_amount_action_story_processado.feature
+Caminho relativo: coreshop_CoreShop\not_discountable_discount_amount_action_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/Originais\coreshop_CoreShop\not_discountable_discount_amount_action_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: not_discountable_discount_amount_action_story_processado
+Descrição: Não possui
+Total de cenários: 1
+
+CENÁRIOS IDENTIFICADOS:
+1. Add a new discount rule with 20 percent discount for all products
+   Steps: 7
+   - Given adding a cart price rule named "discount"
+   - And the cart rule is active
+   - And the cart rule is a voucher rule with code "asdf"
+   - And the cart rule has a action discount with 20 in currency "EUR" off
+   - And I apply the voucher code "asdf" to my cart
+   - Then the cart discount should be "0" including tax
+   - Then the cart total should be "10000" including tax

@@ -1,0 +1,4 @@
+Scenario 8: Even organisations without categories are returned when All is selected for all dropdowns
+  Given  I press "Submit"
+  Then  I should see "I hate animals"
+

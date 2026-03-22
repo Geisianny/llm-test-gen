@@ -1,0 +1,8 @@
+Scenario 8: Check power management SSM operation
+  And  I follow the left menu "Systems > System Set Manager > Overview"
+  When  I follow "power management operations" in the content area
+  Then  I should see "sle_minion" as link
+  And  I should see a "Power On" button
+  And  I should see a "Power Off" button
+  And  I should see a "Reboot" button
+

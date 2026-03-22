@@ -1,0 +1,6 @@
+Scenario 30: Cleanup: remove configuration channel for Salt minion
+  When  I follow the left menu "Configuration > Channels"
+  And  I follow "Action Chain Channel"
+  And  I follow "Delete Channel"
+  And  I click on "Delete Config Channel"
+

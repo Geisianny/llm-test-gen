@@ -1,0 +1,11 @@
+Scenario 2: Preventing anonymous user from claiming cart of logged in user
+  Tags: ['@no-api', '@ui', '@javascript']
+  Given  I am logged in as "robb@stark.com"
+  And  I have product "PHP T-Shirt" in the cart
+  When  an anonymous user in another browser adds products "PHP T-Shirt" and "Kotlin T-Shirt" to the cart
+  And  they complete addressing step with email "robb@stark.com" and "United States" based billing address
+  And  they add product "Symfony T-Shirt" to the cart
+  And  I view my cart in the previous session
+  Then  there should be one item in my cart
+  And  my cart total should be "$20.00"
+

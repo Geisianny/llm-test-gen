@@ -1,0 +1,36 @@
+Scenario: Create a new topical event
+  Given there is an editor logged in
+  And there are no existing topical events with the title "New Event"
+  When the editor creates a new topical event with the title "New Event"
+  And enters a summary and description for the event
+  Then the system saves the new topical event
+  And displays a confirmation message
+
+Scenario: Publish a created topical event
+  Given there is an editor logged in
+  And there is a created topical event with the title "New Event"
+  When the editor publishes the topical event "New Event"
+  Then the system makes the event visible in the administrative interface
+  And displays a message confirming the event is published
+
+Scenario: Update a published topical event
+  Given there is an editor logged in
+  And there is a published topical event with the title "New Event"
+  When the editor updates the summary of the topical event "New Event"
+  And saves the changes
+  Then the system updates the event details
+  And displays a confirmation message
+
+Scenario: Delete a topical event
+  Given there is an editor logged in
+  And there is a created topical event with the title "New Event"
+  When the editor deletes the topical event "New Event"
+  Then the system removes the event from the administrative interface
+  And displays a confirmation message
+
+Scenario: Attempt to create a topical event with missing information
+  Given there is an editor logged in
+  When the editor creates a new topical event without a title
+  And enters a summary and description for the event
+  Then the system prevents the event from being saved
+  And displays an error message indicating required fields are missing

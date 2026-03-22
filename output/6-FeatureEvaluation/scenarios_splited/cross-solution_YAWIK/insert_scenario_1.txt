@@ -1,0 +1,7 @@
+Scenario: Create organization with valid details
+  Given there is an admin user logged in
+  And there is no existing organization with the name "New Organization"
+  When the admin creates a new organization with the name "New Organization"
+  And provides a valid description "This is a new organization"
+  Then the system creates the organization successfully
+  And displays a confirmation message

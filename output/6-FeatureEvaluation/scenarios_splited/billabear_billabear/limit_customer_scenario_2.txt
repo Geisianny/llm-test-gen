@@ -1,0 +1,5 @@
+Scenario: Retrieve subscription limits for an active customer with a single plan
+  Given there is an authenticated user
+  And there is an active customer with a single subscription to a plan
+  When the user queries the customer's usage limits
+  Then the system returns the limits per resource for the associated plan

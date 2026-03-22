@@ -1,0 +1,7 @@
+Scenario 2: Changing the number of uses sorting order to ascending
+  Tags: ['@api', '@ui']
+  Given  I am browsing coupons of this promotion
+  When  I sort coupons by ascending number of uses
+  Then  I should see 3 coupons on the list
+  And  the first coupon should have code "X"
+

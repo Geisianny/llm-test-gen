@@ -1,0 +1,7 @@
+Scenario 4: Use exists filter with a non empty relation collection
+  When  I send a "GET" request to "/dummies?exists[relatedDummies]=1"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+

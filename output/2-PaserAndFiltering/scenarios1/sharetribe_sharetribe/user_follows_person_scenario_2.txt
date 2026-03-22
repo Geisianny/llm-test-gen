@@ -1,0 +1,10 @@
+Scenario 2: User unfollows another user
+  Tags: ['@javascript']
+  Given  "kassi_testperson1" follows "kassi_testperson2"
+  When  I go to the profile page of "kassi_testperson2"
+  And  I follow "Unfollow"
+  Then  I should see "Follow" within ".profile-action-buttons-desktop"
+  And  I should not see "Following" within ".profile-action-buttons-desktop"
+  When  I go to my profile page
+  Then  I should see "No followed people"
+

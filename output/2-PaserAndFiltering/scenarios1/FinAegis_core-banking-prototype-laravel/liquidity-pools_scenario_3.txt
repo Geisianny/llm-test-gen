@@ -1,0 +1,7 @@
+Scenario 3: Add liquidity maintaining pool ratio
+  Given  a liquidity pool exists for "BTC/EUR" with reserves:
+  And  I am logged in as "bob@example.com"
+  When  I add liquidity to the "BTC/EUR" pool:
+  Then  the pool reserves should be:
+  And  I should have "20%" of the pool shares
+

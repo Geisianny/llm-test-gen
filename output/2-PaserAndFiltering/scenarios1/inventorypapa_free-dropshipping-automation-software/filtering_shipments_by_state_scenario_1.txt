@@ -1,0 +1,9 @@
+Scenario 1: Filtering payments in state "Shipped"
+  Tags: ['@ui', '@api']
+  When  I browse shipments
+  And  I choose "Shipped" as a shipment state
+  And  I filter
+  Then  I should see a single shipment in the list
+  And  I should see a shipment of order "#00000001"
+  But  I should not see a shipment of order "#00000003"
+

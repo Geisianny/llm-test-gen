@@ -1,0 +1,9 @@
+Scenario 6: Country field works correctly
+  Given  provider "foo.3scale.localhost" has the following fields defined for accounts:
+  And  I log in as "bob" on foo.3scale.localhost
+  When  I go to the account edit page
+  And  I select "Spain" from "Country"
+  And  I press "Update"
+  Then  I should see "The account information was updated"
+  And  I should see "Spain" in the "country" field in the list
+

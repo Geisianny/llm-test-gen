@@ -1,0 +1,6 @@
+Scenario 2: Configure journal
+  Given  there is a journal named "Banque CHF" of type "bank"
+  And  the journal default debit account is set to "1020"
+  And  the journal default credit account is set to "1020"
+  Given  all journals allow entry cancellation
+

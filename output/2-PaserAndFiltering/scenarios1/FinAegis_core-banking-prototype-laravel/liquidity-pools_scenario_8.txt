@@ -1,0 +1,5 @@
+Scenario 8: Calculate pool metrics and APY
+  Given  a liquidity pool exists for "BTC/EUR" with reserves:
+  When  I view the pool metrics
+  Then  the metrics should show:
+

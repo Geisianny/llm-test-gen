@@ -1,0 +1,5 @@
+Scenario 7: The Ansible tab appears in the system overview page
+  Given  I am on the Systems overview page of this "ssh_minion"
+  When  I follow "Ansible" in the content area
+  Then  I should see a "Ansible Control Node Configuration" text
+

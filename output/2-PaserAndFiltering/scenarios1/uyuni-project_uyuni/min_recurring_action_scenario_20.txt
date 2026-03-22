@@ -1,0 +1,15 @@
+Scenario 20: Edit the yourorg Recurring Action
+  When  I follow the left menu "Home > My Organization > Recurring Actions"
+  Then  I should see a "schedule_name" text
+  When  I click the "schedule_name" item edit button
+  And  I wait until I see "Update Schedule" text
+  And  I enter "schedule_name_edit" as "scheduleName"
+  And  I check radio button "schedule-monthly"
+  And  I select "7" from "date_monthly"
+  And  I enter "05:17" as "time-monthly_time"
+  And  I click on "Update Schedule"
+  Then  I wait until I see "Schedule successfully updated" text
+  And  I should see a "schedule_name_edit" text
+  And  I should see a "Organization" text
+  And  I should see a "0 17 5 7 * ?" text
+

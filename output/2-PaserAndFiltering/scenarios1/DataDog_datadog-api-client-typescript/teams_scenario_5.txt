@@ -1,0 +1,9 @@
+Scenario 5: Create a team link returns "API error response." response
+  Tags: ['@team:DataDog/aaa-omg']
+  Given  new "CreateTeamLink" request
+  And  there is a valid "dd_team" in the system
+  And  request contains "team_id" parameter from "dd_team.data.id"
+  And  body with value {"data": {"attributes": {"label": "", "url": "https://example.com", "position": 0}, "type": "team_links"}}
+  When  the request is sent
+  Then  the response status is 422 API error response.
+

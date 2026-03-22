@@ -1,0 +1,11 @@
+Scenario 5: Edit a custom support email of a product
+  Given  a product "Bananas"
+  And  product "Bananas" has support email set to "old-help@bananas.org"
+  And  they go to the emails settings page
+  When  they press "Edit support email for Bananas"
+  And  fill in "Bananas" with "new-help@bananas.org"
+  And  press "Save support email for Bananas"
+  And  1 second pass
+  Then  they should see a toast alert with text "Support email updated successfully"
+  And  the product's support email should be "new-help@bananas.org"
+

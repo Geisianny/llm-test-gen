@@ -1,0 +1,12 @@
+Scenario 8: Changing options of configurable product without any variant defined
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  Given  the store has a "Marvel's T-Shirt" configurable product
+  And  the store has a product option "T-Shirt size" with a code "t_shirt_size"
+  And  the store has a product option "T-Shirt color" with a code "t_shirt_color"
+  And  this product has a "T-Shirt size" option
+  When  I want to modify this product
+  And  I add the "T-Shirt color" option to it
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this product should have a "T-Shirt color" option
+

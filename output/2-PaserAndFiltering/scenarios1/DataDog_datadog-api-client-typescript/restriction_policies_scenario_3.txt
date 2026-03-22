@@ -1,0 +1,7 @@
+Scenario 3: Get a restriction policy returns "Bad Request" response
+  Tags: ['@team:DataDog/aaa-granular-access']
+  Given  new "GetRestrictionPolicy" request
+  And  request contains "resource_id" parameter with value "malformed"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

@@ -1,0 +1,6 @@
+Scenario 26: Get all application keys owned by current user returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/credentials-management']
+  Given  new "ListCurrentUserApplicationKeys" request
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

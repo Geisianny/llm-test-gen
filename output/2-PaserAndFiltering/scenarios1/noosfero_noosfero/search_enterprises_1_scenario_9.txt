@@ -1,0 +1,12 @@
+Scenario 9: remember facet filter when searching new query
+  Given  the following category
+  And  the following enterprises
+  When  I go to the search enterprises page
+  And  I fill in "search-input" with "Developers"
+  And  I press "Search"
+  And  I follow "Software Livre" within "#facets-menu"
+  And  I fill in "search-input" with "Rails"
+  And  I press "Search"
+  Then  I should see "Rails Users" within "#search-results"
+  And  I should not see "Rails Developers"
+

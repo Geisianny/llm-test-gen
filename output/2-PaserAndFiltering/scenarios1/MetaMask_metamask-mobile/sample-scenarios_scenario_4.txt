@@ -1,0 +1,14 @@
+Scenario 4: Validate pet name form fields
+  Tags: ['@sample-feature', '@petnames', '@validation']
+  Given  I am on the Sample Feature screen
+  When  I leave the Address field empty
+  And  I enter "Test Name" in the Name field
+  Then  the "Add Pet Name" button should be disabled
+  When  I enter "invalid-address" in the Address field
+  Then  the "Add Pet Name" button should be disabled
+  When  I enter a valid Ethereum address "0x086473d15475Cf20722F5cA7D8d4adfa39Dc6E05"
+  And  I clear the Name field
+  Then  the "Add Pet Name" button should be disabled
+  When  I enter "Valid Name" in the Name field
+  Then  the "Add Pet Name" button should be enabled
+

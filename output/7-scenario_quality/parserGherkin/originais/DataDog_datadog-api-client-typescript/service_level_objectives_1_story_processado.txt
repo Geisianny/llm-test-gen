@@ -1,0 +1,77 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 19/01/2026 23:13:57
+Arquivo analisado: service_level_objectives_1_story_processado.feature
+Caminho relativo: DataDog_datadog-api-client-typescript\service_level_objectives_1_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/Originais\DataDog_datadog-api-client-typescript\service_level_objectives_1_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: service_level_objectives_1_story_processado
+Descrição: Não possui
+Total de cenários: 8
+
+CENÁRIOS IDENTIFICADOS:
+1. Create a new SLO report returns "Bad Request" response
+   Steps: 5
+   - Given operation "CreateSLOReportJob" enabled
+   - And new "CreateSLOReportJob" request
+   - And body with value {"data": {"attributes": {"from_ts": {{ timestamp('now - 40d') }},  "to_ts": {{ timestamp('now') }}, "query": "slo_type:metric \"SLO Reporting Test\"", "interval": "bad-interval"}}}
+   - When the request is sent
+   - Then the response status is 400 Bad Request
+2. Create a new SLO report returns "OK" response
+   Steps: 6
+   - Given operation "CreateSLOReportJob" enabled
+   - And new "CreateSLOReportJob" request
+   - And body with value {"data": {"attributes": {"from_ts": {{ timestamp('now - 40d') }},  "to_ts": {{ timestamp('now') }}, "query": "slo_type:metric \"SLO Reporting Test\"", "interval": "monthly", "timezone": "America/New_York"}}}
+   - When the request is sent
+   - Then the response status is 200 OK
+   - And the response "data.type" is equal to "report_id"
+3. Get SLO report returns "Bad Request" response
+   Steps: 5
+   - Given operation "GetSLOReport" enabled
+   - And new "GetSLOReport" request
+   - And request contains "report_id" parameter with value "invalid-report-id"
+   - When the request is sent
+   - Then the response status is 400 Bad Request
+4. Get SLO report returns "Not Found" response
+   Steps: 5
+   - Given operation "GetSLOReport" enabled
+   - And new "GetSLOReport" request
+   - And request contains "report_id" parameter with value "2b468c54-f2a7-11ee-b0b4-ffe56bb6ad43"
+   - When the request is sent
+   - Then the response status is 404 Not Found
+5. Get SLO report returns "OK" response
+   Steps: 5
+   - Given operation "GetSLOReport" enabled
+   - And new "GetSLOReport" request
+   - And request contains "report_id" parameter with value "9fb2dc2a-ead0-11ee-a174-9fe3a9d7627f"
+   - When the request is sent
+   - Then the response status is 200 OK
+6. Get SLO report status returns "Bad Request" response
+   Steps: 5
+   - Given operation "GetSLOReportJobStatus" enabled
+   - And new "GetSLOReportJobStatus" request
+   - And request contains "report_id" parameter with value "invalid-report-id"
+   - When the request is sent
+   - Then the response status is 400 Bad Request
+7. Get SLO report status returns "Not Found" response
+   Steps: 5
+   - Given operation "GetSLOReportJobStatus" enabled
+   - And new "GetSLOReportJobStatus" request
+   - And request contains "report_id" parameter with value "2b468c54-f2a7-11ee-b0b4-ffe56bb6ad43"
+   - When the request is sent
+   - Then the response status is 404 Not Found
+8. Get SLO report status returns "OK" response
+   Steps: 7
+   - Given operation "GetSLOReportJobStatus" enabled
+   - And new "GetSLOReportJobStatus" request
+   - And there is a valid "report" in the system
+   - And request contains "report_id" parameter from "report.data.id"
+   - When the request is sent
+   - Then the response status is 200 OK
+   - And the response "data.type" is equal to "report_id"

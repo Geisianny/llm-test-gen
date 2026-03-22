@@ -1,0 +1,8 @@
+Scenario 1: Seeing promotion usage increased after order placement
+  Tags: ['@api', '@ui']
+  Given  there is a customer "john.doe@gmail.com" that placed an order "#00000022"
+  And  the customer bought a single "PHP T-Shirt"
+  And  the customer chose "Free" shipping method to "United States" with "Cash on Delivery" payment
+  When  I browse promotions
+  Then  the promotion "Limited promotion" should be used 1 time
+

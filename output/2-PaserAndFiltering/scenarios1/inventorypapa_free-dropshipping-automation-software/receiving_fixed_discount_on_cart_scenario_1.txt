@@ -1,0 +1,8 @@
+Scenario 1: Receiving fixed discount for my cart
+  Tags: ['@ui', '@api']
+  Given  there is a promotion "Holiday promotion"
+  And  it gives "$10.00" discount to every order
+  When  I add product "PHP T-Shirt" to the cart
+  Then  my cart total should be "$90.00"
+  And  my discount should be "-$10.00"
+

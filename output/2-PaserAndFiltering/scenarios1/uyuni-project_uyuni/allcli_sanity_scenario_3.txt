@@ -1,0 +1,7 @@
+Scenario 3: The SLES 12 SP5 minion is healthy
+  Tags: ['@sle12sp5_minion']
+  Then  "sle12sp5_minion" should have a FQDN
+  And  reverse resolution should work for "sle12sp5_minion"
+  And  "sle12sp5_minion" should communicate with the server using public interface
+  And  the clock from "sle12sp5_minion" should be exact
+

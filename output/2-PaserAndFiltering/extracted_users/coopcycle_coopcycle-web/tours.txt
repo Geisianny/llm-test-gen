@@ -1,0 +1,36 @@
+Feature: Tours
+
+Scenario 1: Retrieve task with tour
+  Given  the fixtures files are loaded:
+  And  the user "bob" has role "ROLE_ADMIN"
+  And  the user "bob" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "GET" request to "/api/tasks/1"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 2: Delete a tour unauthorized
+  Given  the fixtures files are loaded:
+  And  the courier "bob" is loaded:
+  And  the user "bob" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "DELETE" request to "/api/tours/1"
+  Then  the response status code should be 403
+
+Scenario 3: Delete a tour
+  Given  the fixtures files are loaded:
+  And  the courier "sarah" is loaded:
+  And  the user "sarah" has role "ROLE_ADMIN"
+  And  the user "sarah" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "sarah" sends a "DELETE" request to "/api/tours/1"
+  Then  the response status code should be 204
+  When  the user "sarah" sends a "GET" request to "/api/tasks/1"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+

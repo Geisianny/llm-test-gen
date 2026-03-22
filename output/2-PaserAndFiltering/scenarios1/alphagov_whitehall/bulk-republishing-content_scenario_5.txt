@@ -1,0 +1,5 @@
+Scenario 5: Republish all documents with publicly-visible editions with HTML attachments
+  Given  Documents with publicly-visible editions with HTML attachments exist
+  When  I request a bulk republishing of all documents with publicly-visible editions with HTML attachments
+  Then  I can see that all documents with publicly-visible editions with HTML attachments have been queued for republishing
+

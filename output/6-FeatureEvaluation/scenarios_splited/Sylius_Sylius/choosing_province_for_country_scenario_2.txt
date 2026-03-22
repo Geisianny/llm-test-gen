@@ -1,0 +1,6 @@
+Scenario: Fill shipping address with country without provinces
+  Given the user is on the checkout page
+  And the user has selected a country without provinces "Singapore"
+  When the user fills the shipping address form with valid details
+  Then the system validates the shipping address
+  And does not prompt for province selection

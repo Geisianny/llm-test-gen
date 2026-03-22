@@ -1,0 +1,9 @@
+Scenario 2: Images can be deleted from the images tab
+  And  a draft document with images exists
+  When  I visit the images tab of the document with images
+  Then  I should see a list with 2 images
+  When  I click to delete an image
+  And  I confirm the deletion
+  Then  I should see a successfully deleted banner
+  And  I should see a list with 1 image
+

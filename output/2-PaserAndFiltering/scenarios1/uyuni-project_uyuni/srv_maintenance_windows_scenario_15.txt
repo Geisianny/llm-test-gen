@@ -1,0 +1,11 @@
+Scenario 15: Delete maintenance calendars
+  When  I follow the left menu "Schedule > Maintenance Windows > Calendars"
+  And  I click the "singlecalendar" item delete button
+  Then  I should see a "Delete maintenance calendar" text
+  When  I click on the red confirmation button
+  And  I wait until I see "Calendar 'singlecalendar' has been deleted." text
+  And  I click the "multicalendar" item delete button
+  Then  I should see a "Delete maintenance calendar" text
+  When  I click on the red confirmation button
+  And  I wait until I see "Calendar 'multicalendar' has been deleted." text
+

@@ -1,0 +1,7 @@
+Scenario 2: Legal Terms settings
+  Given  provider "foo.3scale.localhost" has "multiple_services" switch allowed
+  And  I go to the legal terms settings page
+  And  I fill in the draft with:
+  And  I press "Update"
+  Then  I should see "Legal terms saved"
+

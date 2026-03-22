@@ -1,0 +1,17 @@
+Scenario 1: Case 4: multiple traders have insufficient MTM & multiple traders socialise the losses (insurance pool partially covers the losses) (0002-STTL-009)
+  Given  the initial insurance pool balance is "2900" for all the markets
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the mark price should be "100" for the market "ETH/DEC19"
+  When  the parties place the following orders with ticks:
+  When  the parties place the following orders with ticks:
+  When  the parties place the following orders with ticks:
+  When  the parties place the following orders with ticks:
+  Then  the parties cancel the following orders:
+  When  the parties place the following orders with ticks:
+  Then  the parties cancel the following orders:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following profit and loss:
+  And  the insurance pool balance should be "0" for the market "ETH/DEC19"
+

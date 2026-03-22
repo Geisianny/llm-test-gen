@@ -1,0 +1,6 @@
+Scenario 12: Accessing to increase quantity of an item in the cart by the customer
+  Tags: ['@api']
+  Given  the customer has product "Stark T-Shirt" in the cart
+  When  the customer change product "Stark T-Shirt" quantity to 2 in his cart
+  Then  the customer should see product "Stark T-Shirt" with quantity 2 in his cart
+

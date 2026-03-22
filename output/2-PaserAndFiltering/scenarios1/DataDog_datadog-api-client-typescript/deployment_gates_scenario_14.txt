@@ -1,0 +1,11 @@
+Scenario 14: Delete deployment rule returns "No Content" response
+  Tags: ['@team:DataDog/ci-app-backend']
+  Given  there is a valid "deployment_gate" in the system
+  And  there is a valid "deployment_rule" in the system
+  And  operation "DeleteDeploymentRule" enabled
+  And  new "DeleteDeploymentRule" request
+  And  request contains "gate_id" parameter from "deployment_gate.data.id"
+  And  request contains "id" parameter from "deployment_rule.data.id"
+  When  the request is sent
+  Then  the response status is 204 No Content
+

@@ -1,0 +1,9 @@
+Scenario 1: Aggregate compute events returns "OK" response
+  Tags: ['@team:DataDog/logs-app']
+  Given  a valid "appKeyAuth" key in the system
+  And  new "AggregateLogs" request
+  And  body with value {"compute": [{"aggregation": "count", "interval": "5m", "type": "timeseries"}], "filter": {"from": "now-15m", "indexes": ["main"], "query": "*", "to": "now"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "meta.status" is equal to "done"
+

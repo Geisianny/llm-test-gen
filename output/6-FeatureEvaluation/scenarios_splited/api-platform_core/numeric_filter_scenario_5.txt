@@ -1,0 +1,4 @@
+Scenario: Filter collection with multiple numerical values and property converter
+  Given there is a collection of resources with numerical properties and a property converter
+  When the client requests the collection with multiple filters by numerical values ["10", "20"] using the property converter
+  Then the system returns a JSON-LD response with the filtered collection

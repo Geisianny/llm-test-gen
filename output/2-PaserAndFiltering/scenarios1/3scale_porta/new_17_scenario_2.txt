@@ -1,0 +1,8 @@
+Scenario 2: Creating a webhook
+  Given  they go to the new webhook page
+  And  there shouldn't be a button to "Ping!"
+  When  the form is submitted with:
+  Then  they should see a toast alert with text "Webhooks settings were successfully updated"
+  And  there should be a button to "Ping!"
+  And  the current page is the edit webhooks page
+

@@ -1,0 +1,5 @@
+Scenario: Consult received messages
+  Given there is an offerer "offerer@example.com" with received messages
+  When the offerer "offerer@example.com" consults their messages
+  Then the system displays a list of received messages
+  And the list includes the sender's information and the message content

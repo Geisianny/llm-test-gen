@@ -1,0 +1,51 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: nrhp_story_processado.feature
+Caminho relativo: SFDigitalServices_sf-dahlia-web\nrhp_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\SFDigitalServices_sf-dahlia-web\nrhp_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: nrhp_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Claim NRHP with valid address
+   Steps: 5
+   - Given there is an applicant with a valid address within the NRHP area
+   - When the applicant fills out the short form application
+   - And enters a valid address within the NRHP area
+   - Then the system allows the applicant to claim "Live in the Neighborhood"
+   - And displays a field to upload supporting documents
+2. Claim NRHP with invalid address
+   Steps: 5
+   - Given there is an applicant with an address outside the NRHP area
+   - When the applicant fills out the short form application
+   - And enters an address outside the NRHP area
+   - Then the system does not allow the applicant to claim "Live in the Neighborhood"
+   - And displays a message indicating that the address is not within the NRHP area
+3. Claim NRHP with eligible household members
+   Steps: 5
+   - Given there is an applicant with household members having valid addresses within the NRHP area
+   - When the applicant fills out the short form application
+   - And selects eligible household members residing within the NRHP area
+   - Then the system allows the applicant to claim "Live in the Neighborhood" for the selected household members
+   - And displays a field to upload supporting documents for the selected household members
+4. Upload supporting documents for NRHP claim
+   Steps: 4
+   - Given there is an applicant who has claimed "Live in the Neighborhood" with a valid address
+   - When the applicant uploads supporting documents for the NRHP claim
+   - Then the system accepts the uploaded documents
+   - And displays a confirmation that the NRHP claim has been successfully submitted
+5. Claim NRHP with missing supporting documents
+   Steps: 4
+   - Given there is an applicant who has claimed "Live in the Neighborhood" with a valid address
+   - When the applicant submits the application without uploading supporting documents
+   - Then the system displays a message requesting the upload of supporting documents
+   - And does not finalize the NRHP claim until the documents are uploaded

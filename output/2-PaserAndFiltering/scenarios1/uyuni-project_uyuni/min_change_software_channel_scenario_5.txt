@@ -1,0 +1,6 @@
+Scenario 5: Pre-requisite: check via API that the system is unsubscribed from old channels
+  Tags: ['@uyuni']
+  When  I refresh the metadata for "sle_minion"
+  Then  channel "openSUSE Tumbleweed (x86_64)" should be enabled on "sle_minion"
+  And  channel "Uyuni Client Tools for openSUSE Tumbleweed (x86_64)" should be disabled on "sle_minion"
+

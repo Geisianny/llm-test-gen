@@ -1,0 +1,14 @@
+Scenario 3: 003 Cancel a perps market in opening auction
+  Tags: ['@PerpetualCancel']
+  Given  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/DEC19"
+  Then  the market data for the market "ETH/DEC19" should be:
+  And  the parties should have the following account balances:
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  And  the parties place the following orders with ticks:
+  Then  the market data for the market "ETH/DEC19" should be:
+  When  the market states are updated through governance:
+  Then  the market state should be "STATE_CLOSED" for the market "ETH/DEC19"
+

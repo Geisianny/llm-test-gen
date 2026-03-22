@@ -1,0 +1,163 @@
+Feature: Webhooks Integration
+Description: Configure your Datadog-Webhooks integration directly through the Datadog
+  API. See the [Webhooks integration
+  page](https://docs.datadoghq.com/integrations/webhooks) for more
+  information.
+Tags: ['@endpoint(webhooks-integration)', '@endpoint(webhooks-integration-v1)']
+
+Background: 
+  Given  a valid "apiKeyAuth" key in the system
+  And  a valid "appKeyAuth" key in the system
+  And  an instance of "WebhooksIntegration" API
+
+Scenario 1: Create a custom variable returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:Datadog/collaboration-integrations']
+  Given  new "CreateWebhooksIntegrationCustomVariable" request
+  And  body with value {"is_secret": true, "name": "CUSTOM_VARIABLE_NAME", "value": "CUSTOM_VARIABLE_VALUE"}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 2: Create a custom variable returns "OK" response
+  Tags: ['@skip-terraform-config', '@team:Datadog/collaboration-integrations']
+  Given  new "CreateWebhooksIntegrationCustomVariable" request
+  And  body with value {"is_secret": true, "name": "{{ unique_upper_alnum }}", "value": "CUSTOM_VARIABLE_VALUE"}
+  When  the request is sent
+  Then  the response status is 201 OK
+
+Scenario 3: Create a webhooks integration returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:Datadog/collaboration-integrations']
+  Given  new "CreateWebhooksIntegration" request
+  And  body with value {"custom_headers": null, "encode_as": "json", "name": "WEBHOOK_NAME", "payload": null, "url": "https://example.com/webhook"}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 4: Create a webhooks integration returns "OK" response
+  Tags: ['@skip-terraform-config', '@team:Datadog/collaboration-integrations']
+  Given  new "CreateWebhooksIntegration" request
+  And  body with value {"name": "{{ unique }}", "url": "https://example.com/webhook"}
+  When  the request is sent
+  Then  the response status is 201 OK
+
+Scenario 5: Delete a custom variable returns "Item Not Found" response
+  Tags: ['@generated', '@skip', '@team:Datadog/collaboration-integrations']
+  Given  new "DeleteWebhooksIntegrationCustomVariable" request
+  And  request contains "custom_variable_name" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Item Not Found
+
+Scenario 6: Delete a custom variable returns "OK" response
+  Tags: ['@skip-terraform-config', '@team:Datadog/collaboration-integrations']
+  Given  there is a valid "webhook_custom_variable" in the system
+  And  new "DeleteWebhooksIntegrationCustomVariable" request
+  And  request contains "custom_variable_name" parameter from "webhook_custom_variable.name"
+  When  the request is sent
+  Then  the response status is 200 OK
+
+Scenario 7: Delete a webhook returns "Item Not Found" response
+  Tags: ['@generated', '@skip', '@team:Datadog/collaboration-integrations']
+  Given  new "DeleteWebhooksIntegration" request
+  And  request contains "webhook_name" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Item Not Found
+
+Scenario 8: Delete a webhook returns "OK" response
+  Tags: ['@skip-terraform-config', '@team:Datadog/collaboration-integrations']
+  Given  there is a valid "webhook" in the system
+  And  new "DeleteWebhooksIntegration" request
+  And  request contains "webhook_name" parameter from "webhook.name"
+  When  the request is sent
+  Then  the response status is 200 OK
+
+Scenario 9: Get a custom variable returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:Datadog/collaboration-integrations']
+  Given  new "GetWebhooksIntegrationCustomVariable" request
+  And  request contains "custom_variable_name" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 10: Get a custom variable returns "Item Not Found" response
+  Tags: ['@generated', '@skip', '@team:Datadog/collaboration-integrations']
+  Given  new "GetWebhooksIntegrationCustomVariable" request
+  And  request contains "custom_variable_name" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Item Not Found
+
+Scenario 11: Get a custom variable returns "OK" response
+  Tags: ['@generated', '@skip', '@team:Datadog/collaboration-integrations']
+  Given  new "GetWebhooksIntegrationCustomVariable" request
+  And  request contains "custom_variable_name" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 200 OK
+
+Scenario 12: Get a webhook integration returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:Datadog/collaboration-integrations']
+  Given  new "GetWebhooksIntegration" request
+  And  request contains "webhook_name" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 13: Get a webhook integration returns "Item Not Found" response
+  Tags: ['@generated', '@skip', '@team:Datadog/collaboration-integrations']
+  Given  new "GetWebhooksIntegration" request
+  And  request contains "webhook_name" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Item Not Found
+
+Scenario 14: Get a webhook integration returns "OK" response
+  Tags: ['@skip-terraform-config', '@team:Datadog/collaboration-integrations']
+  Given  there is a valid "webhook" in the system
+  And  new "GetWebhooksIntegration" request
+  And  request contains "webhook_name" parameter from "webhook.name"
+  When  the request is sent
+  Then  the response status is 200 OK
+
+Scenario 15: Update a custom variable returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:Datadog/collaboration-integrations']
+  Given  new "UpdateWebhooksIntegrationCustomVariable" request
+  And  request contains "custom_variable_name" parameter from "REPLACE.ME"
+  And  body with value {"name": "CUSTOM_VARIABLE_NAME", "value": "CUSTOM_VARIABLE_VALUE"}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 16: Update a custom variable returns "Item Not Found" response
+  Tags: ['@generated', '@skip', '@team:Datadog/collaboration-integrations']
+  Given  new "UpdateWebhooksIntegrationCustomVariable" request
+  And  request contains "custom_variable_name" parameter from "REPLACE.ME"
+  And  body with value {"name": "CUSTOM_VARIABLE_NAME", "value": "CUSTOM_VARIABLE_VALUE"}
+  When  the request is sent
+  Then  the response status is 404 Item Not Found
+
+Scenario 17: Update a custom variable returns "OK" response
+  Tags: ['@skip-terraform-config', '@team:Datadog/collaboration-integrations']
+  Given  there is a valid "webhook_custom_variable" in the system
+  And  new "UpdateWebhooksIntegrationCustomVariable" request
+  And  request contains "custom_variable_name" parameter from "webhook_custom_variable.name"
+  And  body with value {"value": "variable-updated"}
+  When  the request is sent
+  Then  the response status is 200 OK
+
+Scenario 18: Update a webhook returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:Datadog/collaboration-integrations']
+  Given  new "UpdateWebhooksIntegration" request
+  And  request contains "webhook_name" parameter from "REPLACE.ME"
+  And  body with value {"encode_as": "json", "name": "WEBHOOK_NAME", "payload": null, "url": "https://example.com/webhook"}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 19: Update a webhook returns "Item Not Found" response
+  Tags: ['@generated', '@skip', '@team:Datadog/collaboration-integrations']
+  Given  new "UpdateWebhooksIntegration" request
+  And  request contains "webhook_name" parameter from "REPLACE.ME"
+  And  body with value {"encode_as": "json", "name": "WEBHOOK_NAME", "payload": null, "url": "https://example.com/webhook"}
+  When  the request is sent
+  Then  the response status is 404 Item Not Found
+
+Scenario 20: Update a webhook returns "OK" response
+  Tags: ['@skip-terraform-config', '@team:Datadog/collaboration-integrations']
+  Given  there is a valid "webhook" in the system
+  And  new "UpdateWebhooksIntegration" request
+  And  request contains "webhook_name" parameter from "webhook.name"
+  And  body with value {"url": "https://example.com/webhook-updated"}
+  When  the request is sent
+  Then  the response status is 200 OK
+

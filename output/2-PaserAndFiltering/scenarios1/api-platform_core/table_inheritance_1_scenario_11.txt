@@ -1,0 +1,10 @@
+Scenario 11: Generate iri from current resource even if parent class is a resource
+  Tags: ['@!mongodb', '@createSchema']
+  Given  there are 3 sites with external owner
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "GET" request to "/sites"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+

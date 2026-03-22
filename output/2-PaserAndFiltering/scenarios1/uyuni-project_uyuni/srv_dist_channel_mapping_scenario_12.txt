@@ -1,0 +1,13 @@
+Scenario 12: Cleanup: delete the map created for x68_64 openSUSE clients
+  Tags: ['@scc_credentials', '@uyuni']
+  When  I follow the left menu "Software > Distribution Channel Mapping"
+  Then  I should see the text "openSUSE Tumbleweed modified" in the Operating System field
+  And  I should see the text "x86_64" in the Architecture field
+  When  I follow "openSUSE Tumbleweed modified"
+  Then  I should see a "Update Distribution Channel Map" text
+  And  I should see a "Delete Distribution Channel" link
+  When  I follow "Delete Distribution Channel Mapping"
+  Then  I should see a "Delete Distribution Channel Map" text
+  When  I click on "Delete Mapping"
+  Then  I should not see a "openSUSE Tumbleweed modified" link
+

@@ -1,0 +1,10 @@
+Scenario 1: Address an order without name, city and street
+  Tags: ['@api', '@ui', '@javascript']
+  Given  I added product "PHP T-Shirt" to the cart
+  And  I am at the checkout addressing step
+  When  I do not specify any shipping address information
+  And  I try to complete the addressing step
+  Then  I should be notified that the "first name" and the "last name" in shipping details are required
+  And  I should also be notified that the "city" and the "street" in shipping details are required
+  And  I should also be notified that the "postcode" in shipping details is required
+

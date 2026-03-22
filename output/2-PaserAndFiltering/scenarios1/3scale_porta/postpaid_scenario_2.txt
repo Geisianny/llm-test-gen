@@ -1,0 +1,10 @@
+Scenario 2: Trial period ends and no change plan POSTPAID
+  Tags: ['@commit-transactions']
+  Given  plan "PaidAsInLunch" has a trial period of 5 days
+  Given  the time is 1st May 2009
+  And  the buyer is signed up to application plan "PaidAsInLunch" on 1st May 2009
+  When  time flies to 1st June 2009
+  When  I log in as "stallman" on foo.3scale.localhost on 15th June 2009
+  And  I navigate to 1st invoice issued for me in "May, 2009"
+  Then  I should see line items
+

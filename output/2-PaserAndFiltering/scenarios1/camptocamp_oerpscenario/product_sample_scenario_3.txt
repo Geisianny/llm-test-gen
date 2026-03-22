@@ -1,0 +1,6 @@
+Scenario 3: create Supplier
+  Given  I need a "res.partner" with name: Pro living and oid: scenario.main_supplier
+  And  having:
+  Given  I need a "res.partner.address" with name: Pro living and oid: scenario.main_supplier_add
+  And  having:
+

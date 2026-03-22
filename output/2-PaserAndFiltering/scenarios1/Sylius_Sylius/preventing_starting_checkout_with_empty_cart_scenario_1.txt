@@ -1,0 +1,5 @@
+Scenario 1: Being unable to start checkout addressing step with an empty cart
+  Tags: ['@no-api', '@ui']
+  When  I try to open checkout addressing page
+  Then  I should be redirected to my cart summary page
+

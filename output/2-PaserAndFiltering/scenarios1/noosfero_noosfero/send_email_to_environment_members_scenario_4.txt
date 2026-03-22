@@ -1,0 +1,8 @@
+Scenario 4: Not send e-mail to members if subject is blank
+  Tags: ['@selenium']
+  Given  I am logged in as admin
+  And  I go to /admin/users/send_mail
+  And  I type "We have some news" in TinyMCE field "mailing_body"
+  When  I follow "Send"
+  Then  I should be on /admin/users/send_mail
+

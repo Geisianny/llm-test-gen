@@ -1,0 +1,9 @@
+Scenario 13: cancel button back to article when edit
+  Tags: ['@selenium']
+  Given  I am on joaosilva's sitemap
+  When  I follow "Save the whales"
+  And  I follow "article-options"
+  And  I follow "Edit"
+  And  I follow "Cancel"
+  Then  I should be on /joaosilva/save-the-whales
+

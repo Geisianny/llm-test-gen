@@ -1,0 +1,6 @@
+Scenario 16: do not show tags in search results
+  When  I go to the search articles page
+  And  I fill in "search-input" with "dolphins"
+  And  I follow "Search" within ".search-form"
+  Then  I should not see "Tags"
+

@@ -1,0 +1,5 @@
+Scenario 6: adding title on browser in a section
+  When  I go to /doc
+  And  I follow "User features"
+  Then  the page title should be "User features - Online Manual - Colivre.net"
+

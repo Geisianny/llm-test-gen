@@ -1,0 +1,10 @@
+Scenario 6: Going back to addressing step with steps panel when order total is zero
+  Tags: ['@ui', '@no-api']
+  Given  I have product "Stark Robe" in the cart
+  And  I have product "Paganini T-shirt" in the cart
+  And  I complete addressing step with email "jon@snow.wall" and "United States" based billing address
+  And  I proceed with "Free" shipping method
+  When  I go to the addressing step
+  Then  I should be redirected to the addressing step
+  And  I should be able to go to the shipping step again
+

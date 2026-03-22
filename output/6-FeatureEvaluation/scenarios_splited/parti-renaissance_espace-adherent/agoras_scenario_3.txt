@@ -1,0 +1,6 @@
+Scenario: User can join an Agora
+  Given there is an authenticated user with OAuth token
+  And there is an Agora with available membership slots
+  When the user requests to join the Agora
+  Then the system adds the user to the Agora's members
+  And displays a confirmation message

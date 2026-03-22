@@ -1,0 +1,7 @@
+Scenario 2: Customize the plan
+  Given  they go to the application's admin page
+  And  they should see "Application Plan: Free"
+  When  they follow "Convert to a Custom Plan"
+  Then  they should see "Custom Application Plan"
+  But  should not see "Application Plan: Free"
+

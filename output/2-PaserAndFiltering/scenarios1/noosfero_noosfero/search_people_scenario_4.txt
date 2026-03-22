@@ -1,0 +1,7 @@
+Scenario 4: find person without exact query
+  Given  the following users
+  When  I go to the search people page
+  And  I fill in "search-input" with "Adalberto de Oliveira"
+  And  I follow "Search" within ".search-form"
+  Then  I should see "Joao Adalberto de Oliveira Silva" within "#search-results"
+

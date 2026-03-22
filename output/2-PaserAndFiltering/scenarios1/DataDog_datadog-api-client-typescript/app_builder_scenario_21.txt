@@ -1,0 +1,8 @@
+Scenario 21: Unpublish App returns "OK" response
+  Tags: ['@skip-typescript', '@team:DataDog/app-builder-backend']
+  Given  new "UnpublishApp" request
+  And  there is a valid "app" in the system
+  And  request contains "app_id" parameter from "app.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+

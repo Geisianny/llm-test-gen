@@ -1,0 +1,10 @@
+Scenario 2: 002, LP is not covered fully as the buy side is too small (total of 20 volume)
+  When  the opening auction period ends for market "ETH/DEC21"
+  And  the auction ends with a traded volume of "10" at a price of "1000"
+  Then  the market data for the market "ETH/DEC21" should be:
+  And  the parties place the following orders:
+  When  the network moves ahead "7" blocks
+  Then  the liquidity provisions should have the following states:
+  And  the parties should have the following account balances:
+  And  the insurance pool balance should be "1900" for the market "ETH/DEC21"
+

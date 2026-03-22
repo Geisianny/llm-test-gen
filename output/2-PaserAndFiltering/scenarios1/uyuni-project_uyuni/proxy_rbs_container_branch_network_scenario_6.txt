@@ -1,0 +1,9 @@
+Scenario 6: Enable Saltboot Group formula for branch terminals group
+  When  I follow the left menu "Systems > System Groups"
+  And  I follow "example" in the content area
+  And  I follow "Formulas" in the content area
+  And  I check the "saltboot-group" formula
+  And  I click on "Save"
+  And  I wait until I see "Formula saved." text
+  Then  the "saltboot-group" formula should be checked
+

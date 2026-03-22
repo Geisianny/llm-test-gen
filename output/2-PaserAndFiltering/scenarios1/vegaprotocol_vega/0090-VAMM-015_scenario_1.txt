@@ -1,0 +1,14 @@
+Scenario 1: 0090-VAMM-015: A vAMM which has been created and is active contributes with it's proposed fee level to the active fee setting mechanism.
+  Tags: ['@VAMM']
+  When  the parties place the following orders:
+  And  the liquidity fee factor should be "0.02" for the market "ETH/MAR22"
+  Then  the market data for the market "ETH/MAR22" should be:
+  When  the network moves ahead "4" blocks
+  And  the liquidity fee factor should be "0.04" for the market "ETH/MAR22"
+  When  the parties submit the following AMM:
+  Then  the AMM pool status should be:
+  And  set the following AMM sub account aliases:
+  And  the following transfers should happen:
+  When  the network moves ahead "4" blocks
+  And  the liquidity fee factor should be "0.03" for the market "ETH/MAR22"
+

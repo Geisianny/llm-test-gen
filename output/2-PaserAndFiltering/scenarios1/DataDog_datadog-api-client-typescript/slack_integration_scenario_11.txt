@@ -1,0 +1,8 @@
+Scenario 11: Remove a Slack integration channel returns "Item Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/chat-integrations']
+  Given  new "RemoveSlackIntegrationChannel" request
+  And  request contains "account_name" parameter from "REPLACE.ME"
+  And  request contains "channel_name" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Item Not Found
+

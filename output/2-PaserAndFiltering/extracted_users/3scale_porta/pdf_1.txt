@@ -1,0 +1,26 @@
+Feature: Audience > Billing > Invoices > Generate PDF
+Description: As a provider or buyer, I want to have the PDF version of the invoices
+Tags: ['@javascript']
+
+Background: 
+  Given  a provider is logged in on 1st January 2011
+  And  the provider is charging its buyers in prepaid mode
+  And  a buyer "Jane"
+
+Scenario 1: Open invoices don't have generated a PDF
+  Given  the following invoices:
+  When  they go to the admin portal invoices page
+  And  there should not be a link to "Download PDF"
+  When  they follow "2011-01-00000001"
+  Then  there should not be a link to "Download PDF"
+  But  there should be a button to "Generate PDF"
+
+Scenario 2: Paid invoices do have generated a PDF
+  Given  the following invoices:
+  When  they go to the admin portal invoices page
+  And  there should be a link to "Download PDF"
+  When  they follow "2011-01-00000001"
+  Then  there should be a link to "Download PDF"
+  And  there should be a button to "Regenerate PDF"
+  But  there should not be a button to "Generate PDF"
+

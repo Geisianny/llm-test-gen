@@ -1,0 +1,8 @@
+Scenario 9: Performance optimization for large batches
+  Given  a batch operation needs to process 10000 records
+  When  the batch is configured for high performance
+  Then  records should be processed in parallel chunks
+  And  database connections should be optimized
+  And  memory usage should remain within limits
+  And  progress should be persisted for resumability
+

@@ -1,0 +1,9 @@
+Scenario 1: Trying to add a new shipping method with special symbols in the code
+  Tags: ['@ui']
+  Given  I want to create a new shipping method
+  When  I name it "FedEx Carrier" in "English (United States)"
+  And  I specify its code as "#π/"
+  And  I try to add it
+  Then  I should be notified that code needs to contain only specific symbols
+  And  shipping method with name "FedEx Carrier" should not be added
+

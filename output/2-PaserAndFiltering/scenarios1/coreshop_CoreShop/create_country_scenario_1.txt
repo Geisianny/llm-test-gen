@@ -1,0 +1,6 @@
+Scenario 1: Create a new country
+  Given  the site has a currency "Euro" with iso "Euro"
+  And  the site has a country "Austria" with currency "EUR"
+  Then  there should be a country "Austria"
+  And  the country "Austria" should use currency "EUR"
+

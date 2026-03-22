@@ -1,0 +1,8 @@
+Scenario 3: Create deployment gate returns "OK" response
+  Tags: ['@team:DataDog/ci-app-backend']
+  Given  operation "CreateDeploymentGate" enabled
+  And  new "CreateDeploymentGate" request
+  And  body with value {"data": {"attributes": {"dry_run": false, "env": "production", "identifier": "my-gate-1", "service": "my-service"}, "type": "deployment_gate"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+

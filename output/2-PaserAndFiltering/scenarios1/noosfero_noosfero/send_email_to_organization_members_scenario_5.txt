@@ -1,0 +1,9 @@
+Scenario 5: Not send e-mail to members if body is blank
+  Given  I am logged in as "joaosilva"
+  And  I go to Sample Community's members management
+  And  I check "checkbox-manoel"
+  And  I press "Send e-mail to members"
+  And  I fill in "Subject" with "Hello, user!"
+  When  I press "Send"
+  Then  I should be on /profile/sample-community/send_mail
+

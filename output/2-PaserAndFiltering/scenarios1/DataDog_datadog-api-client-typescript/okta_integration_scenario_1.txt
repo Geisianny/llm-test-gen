@@ -1,0 +1,7 @@
+Scenario 1: Add Okta account returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "CreateOktaAccount" request
+  And  body with value {"data": {"attributes": {"auth_method": "oauth", "domain": "https://example.okta.com/", "name": "Okta-Prod"}, "id": "f749daaf-682e-4208-a38d-c9b43162c609", "type": "okta-accounts"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

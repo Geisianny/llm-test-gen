@@ -1,0 +1,5 @@
+Scenario: Choose shipping method for items with Over-sized shipping category
+  Given there are items in the cart with shipping category "Over-sized"
+  When the user views available shipping methods
+  Then the system displays shipping methods associated with "Over-sized" category
+  And the user can select one of the displayed shipping methods

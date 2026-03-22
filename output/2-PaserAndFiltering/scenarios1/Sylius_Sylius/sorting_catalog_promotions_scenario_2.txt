@@ -1,0 +1,7 @@
+Scenario 2: Changing the code sorting order to descending
+  Tags: ['@api', '@ui']
+  When  I browse catalog promotions
+  And  I sort catalog promotions by descending code
+  Then  I should see 3 catalog promotions on the list
+  And  the first catalog promotion should have code "not-b"
+

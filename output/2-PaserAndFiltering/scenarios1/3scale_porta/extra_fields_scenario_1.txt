@@ -1,0 +1,9 @@
+Scenario 1: Show extra fields
+  Given  the following application:
+  And  the application has the following extra fields:
+  When  they go to the application's dev portal page
+  Then  they should see "Plate number"
+  And  should see "Engine"
+  And  should see "Wheels"
+  But  should not see "Stealth"
+

@@ -1,0 +1,6 @@
+Scenario 4: Activated user tries to activate again
+  Given  a pending user "alice" of account "foo.3scale.localhost"
+  And  user "alice" activates herself
+  And  user "alice" activates herself
+  Then  I should be on the provider login page
+

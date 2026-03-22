@@ -1,0 +1,9 @@
+Scenario 12: Update a resource via PATCH
+  When  I send a "PATCH" request to "/related_dummies/1" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be valid according to the JSON API schema
+  And  the JSON node "data.id" should not be an empty string
+  And  the JSON node "data.attributes.name" should be equal to "Jane Doe"
+  And  the JSON node "data.attributes.age" should be equal to the number 23
+

@@ -1,0 +1,55 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: Review_story_processado.feature
+Caminho relativo: Cocolabs-SAS_cocorico\Review_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\Cocolabs-SAS_cocorico\Review_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: Review_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. User adds a review for another user
+   Steps: 6
+   - Given there are two registered users "asker1" and "offerer1"
+   - And "asker1" has made a transaction with "offerer1"
+   - When "asker1" adds a review for "offerer1"
+   - And rates "offerer1" with 5 stars
+   - Then the review is visible on "offerer1"'s profile
+   - And "offerer1"'s rating is updated to reflect the new review
+2. User views another user's reviews
+   Steps: 6
+   - Given there are two registered users "asker1" and "offerer1"
+   - And "asker1" has made a transaction with "offerer1"
+   - And "asker1" has added a review for "offerer1" with 5 stars
+   - When "asker1" views "offerer1"'s profile
+   - Then "asker1" sees the review they left for "offerer1"
+   - And "asker1" sees "offerer1"'s overall rating
+3. User tries to add a review for a non-existent user
+   Steps: 5
+   - Given there is a registered user "asker1"
+   - And there is no registered user "nonexist"
+   - When "asker1" tries to add a review for "nonexist"
+   - Then the system displays an error message
+   - And informs "asker1" that the user does not exist
+4. User tries to add a review without a transaction history
+   Steps: 5
+   - Given there are two registered users "asker1" and "offerer1"
+   - And "asker1" has not made a transaction with "offerer1"
+   - When "asker1" tries to add a review for "offerer1"
+   - Then the system displays an error message
+   - And informs "asker1" that they cannot review "offerer1" without a transaction
+5. User adds a review with invalid rating
+   Steps: 5
+   - Given there are two registered users "asker1" and "offerer1"
+   - And "asker1" has made a transaction with "offerer1"
+   - When "asker1" tries to rate "offerer1" with 6 stars
+   - Then the system displays an error message
+   - And informs "asker1" that the rating is invalid

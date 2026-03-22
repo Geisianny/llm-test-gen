@@ -1,0 +1,26 @@
+Scenario 1: Bond slashing on LP (0044-LIME-002, 0035-LIQM-004, 0044-LIME-009 )
+  Tags: ['@Now']
+  Given  the average block duration is "1"
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/MAR22"
+  Then  the auction ends with a traded volume of "10" at a price of "1000"
+  And  the insurance pool balance should be "0" for the market "ETH/MAR22"
+  And  the market data for the market "ETH/MAR22" should be:
+  Then  the order book should have the following volumes for market "ETH/MAR22":
+  And  the parties should have the following account balances:
+  Then  the parties should have the following margin levels:
+  Then  the parties should have the following profit and loss:
+  When  the parties place the following orders:
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/MAR22"
+  When  the parties place the following orders:
+  And  the market data for the market "ETH/MAR22" should be:
+  And  the parties should have the following account balances:
+  And  the insurance pool balance should be "0" for the market "ETH/MAR22"
+  When  the parties place the following orders:
+  And  the market data for the market "ETH/MAR22" should be:
+  And  the insurance pool balance should be "40365" for the market "ETH/MAR22"
+  And  the parties should have the following account balances:
+  Then  the parties should have the following margin levels:
+

@@ -1,0 +1,9 @@
+Scenario 3: Bug, preview link should be updated
+  Tags: ['@allow-rescue']
+  Given  the provider has cms page "/pathbug" with:
+  And  I go to the CMS Page "/pathbug" page
+  And  I fill in "Path" with "/hattori"
+  And  I press "Publish"
+  And  I should see "Template saved and published"
+  Then  preview draft link should link to "/hattori"
+

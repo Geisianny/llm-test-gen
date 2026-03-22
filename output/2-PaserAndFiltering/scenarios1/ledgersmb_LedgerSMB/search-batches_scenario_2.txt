@@ -1,0 +1,10 @@
+Scenario 2: Search for batches, filtering by batch type
+  When  I navigate the menu and select the item at "Transaction Approval > Batches"
+  Then  I should see the Search Batches screen
+  When  I select "payment" from the drop down "Transaction Type"
+  And  I press "Search"
+  Then  I should see the Batch Search Report screen
+  And  I should see these headings:
+  And  I expect the report to contain 1 row
+  And  I expect the 'Description' report column to contain 'Batch-3' for Batch Number 'B-1003'
+

@@ -1,0 +1,4 @@
+Scenario 14: Apply high state on the proxy to populate new server CA
+  Tags: ['@proxy']
+  When  I apply highstate on "proxy"
+

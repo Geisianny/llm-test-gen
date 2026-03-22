@@ -1,0 +1,9 @@
+Scenario 5: Create Value object without required params
+  Tags: ['@createSchema']
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/vo_dummy_cars" with body:
+  Then  the response status code should be 400
+  And  the header "Content-Type" should be equal to "application/problem+json; charset=utf-8"
+  And  the header "Link" should contain '<http://www.w3.org/ns/hydra/error>; rel="http://www.w3.org/ns/json-ld#error"'
+  And  the JSON should be valid according to this schema:
+

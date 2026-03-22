@@ -1,0 +1,7 @@
+Scenario 7: Add a new category payment-provider-rule which includes all subcategory and is valid
+  Given  adding a payment-provider-rule named "category"
+  And  the payment-provider-rule is active
+  And  the payment-provider-rule has a condition categories with category "Shoes" and it is recursive
+  And  I add the product "Sneaker" to my cart
+  Then  the payment-provider-rule should be valid for my cart with payment provider "Bankwire"
+

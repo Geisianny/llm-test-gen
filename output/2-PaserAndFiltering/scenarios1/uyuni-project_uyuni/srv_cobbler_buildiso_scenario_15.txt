@@ -1,0 +1,10 @@
+Scenario 15: Cleanup: delete test profile in the Cobbler buildiso context
+  Given  I am authorized as "testing" with password "testing"
+  And  I remove profile "orchid"
+  And  I remove profile "flame"
+  And  I remove profile "pearl"
+  When  I follow the left menu "Systems > Autoinstallation > Profiles"
+  Then  I should not see a "orchid" text
+  And  I should not see a "flame" text
+  And  I should not see a "flame" text
+

@@ -1,0 +1,7 @@
+Scenario 3: Create Workflows webhook handle returns "Conflict" response
+  Tags: ['@generated', '@skip', '@team:DataDog/chat-integrations']
+  Given  new "CreateWorkflowsWebhookHandle" request
+  And  body with value {"data": {"attributes": {"name": "fake-handle-name", "url": "https://fake.url.com"}, "type": "workflows-webhook-handle"}}
+  When  the request is sent
+  Then  the response status is 409 Conflict
+

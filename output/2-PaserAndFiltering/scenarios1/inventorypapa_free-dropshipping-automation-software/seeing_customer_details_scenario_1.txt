@@ -1,0 +1,8 @@
+Scenario 1: Seeing customer's basic information
+  Tags: ['@ui']
+  When  I view details of the customer "f.baggins@shire.me"
+  Then  his name should be "Frodo Baggins"
+  And  he should be registered since "2011-01-10 21:00"
+  And  his email should be "f.baggins@shire.me"
+  And  his phone number should be "666777888"
+

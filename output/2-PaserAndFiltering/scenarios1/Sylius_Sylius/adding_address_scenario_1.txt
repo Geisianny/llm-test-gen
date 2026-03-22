@@ -1,0 +1,8 @@
+Scenario 1: Adding address to address book
+  Tags: ['@api', '@ui']
+  When  I want to add a new address to my address book
+  And  I specify the address as "Lucifer Morningstar", "Seaside Fwy", "90802", "Los Angeles", "United States", "Arkansas"
+  And  I add it
+  Then  I should be notified that the address has been successfully added
+  And  address "Lucifer Morningstar", "Seaside Fwy", "90802", "Los Angeles", "United States", "Arkansas" should be marked as my default address
+

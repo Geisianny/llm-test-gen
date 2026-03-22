@@ -1,0 +1,10 @@
+Scenario Outline 7: Multiple referees generate volume in multiple markets with different settlement assets (and quantum) (0083-RFPR-033) - Example 1
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  the referral set stats for code "referral-code-1" at epoch "1" should have a running volume of 60000:
+
+  Examples:
+    | maker side | taker side |
+    | buy | sell |
+    | sell | buy |
+

@@ -1,0 +1,9 @@
+Scenario 9: Search by vendor
+  When  I navigate the menu and select the item at "Accounts Payable > Search"
+  Then  I should see the AP search screen
+  When  I enter "Vendor B" into "Vendor"
+  And  I press "Continue"
+  Then  I should see the Search AP Report screen
+  And  I expect the report to contain 1 row
+  And  I expect the 'Date' report column to contain '2025-04-01' for Invoice 'INV103'
+

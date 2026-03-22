@@ -1,0 +1,9 @@
+Scenario 4: Trying to add a new tax category with a too long name
+  Tags: ['@api', '@ui']
+  When  I want to create a new tax category
+  And  I name it "Food and Beverage"
+  And  I specify a too long name
+  And  I specify its code as "food_and_beverage"
+  And  I try to add it
+  Then  I should be notified that name is too long
+

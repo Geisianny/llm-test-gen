@@ -1,0 +1,53 @@
+Scenario 7: _350005 check the selection conditions when adding additional details on item
+  *  Open Additional attribute sets for item
+  Given  I open hyperlink "e1cib/list/Catalog.AddAttributeAndPropertySets"
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  *  Add additional details only for item type Warm Stockings
+  And  in the table "Attributes" I click the button named "AttributesAdd"
+  And  I click choice button of "Attribute" attribute in "Attributes" table
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I click choice button of "UI group" attribute in "Attributes" table
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I finish line editing in "Attributes" table
+  And  in the table "Attributes" I click the button named "AttributesSetCondition"
+  Then  "1C:Enterprise" window is opened
+  And  I click "Yes" button
+  And  in the table "SettingsFilter" I click the button named "SettingsFilterAddFilterItem"
+  And  I click choice button of the attribute named "SettingsFilterLeftValue" in "SettingsFilter" table
+  And  I go to line in "Source" table
+  And  I select current line in "Source" table
+  And  I move to the next attribute
+  And  I click choice button of "Comparison type" attribute in "SettingsFilter" table
+  And  I click choice button of the attribute named "SettingsFilterRightValue" in "SettingsFilter" table
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I finish line editing in "SettingsFilter" table
+  And  I click "Ok" button
+  And  I click "Save and close" button
+  And  Delay 5
+  *  Check the drawing of additional details for the product with the item type of Warm Stockings
+  *  Create Item with item type Warm Stockings
+  Given  I open hyperlink "e1cib/list/Catalog.Items"
+  And  I click the button named "FormCreate"
+  And  I input "Stockings" text in the field named "Description_en"
+  And  I click Select button of "Item type" field
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I click Select button of "Unit" field
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I click "Save and close" button
+  And  Delay 2
+  *  Check display Article Stockings
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  field "Article Stockings" exists
+  And  I close current window
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  field "Article Stockings" does not exist
+  And  I close all client application windows
+

@@ -1,0 +1,8 @@
+Scenario 1: Being able to access my order right after completing checkout
+  Tags: ['@api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  And  I addressed the cart
+  And  I chose "Free" shipping method and "Cash on delivery" payment method
+  When  I confirm my order
+  Then  I should be able to access this order's details
+

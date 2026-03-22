@@ -1,0 +1,7 @@
+Scenario 13: Update indexes order returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-core']
+  Given  new "UpdateLogsIndexOrder" request
+  And  body with value {"index_names": ["main", "payments", "web"]}
+  When  the request is sent
+  Then  the response status is 200 OK
+

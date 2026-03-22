@@ -1,0 +1,13 @@
+Scenario 3: simple search for event
+  Given  the following communities
+  And  the following events
+  When  I search contents for "birthday"
+  Then  I should see "John Doe's birthday" within ".search-event-item"
+  And  I should see "Start date"
+  And  I should see "September 1, 2009"
+  And  I should see "End date"
+  And  I should see "September 2, 2009"
+  And  I should not see "Group meeting"
+  When  I follow "John Doe's birthday"
+  Then  I should be on article "John Doe's birthday"
+

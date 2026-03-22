@@ -1,0 +1,18 @@
+Scenario Outline 14: Navigate to menu "<path>" and open screen "<screen>" - Example 14
+  Tags: ['@wip']
+  When  I navigate the menu and select the item at "Cash & Banking > Transfer"
+  Then  I should see the  screen
+
+  Examples:
+    | path | screen |
+    | Cash & Banking > Transfer |  |
+    | Cash & Banking > Use AR Overpayment |  |
+    | Cash & Banking > Use Overpayment |  |
+    | Cash & Banking > Vouchers |  |
+    | Cash & Banking > Vouchers > Payments |  |
+    | Cash & Banking > Vouchers > Receipts |  |
+    | Cash & Banking > Vouchers > Reverse AR Overpay |  |
+    | Cash & Banking > Vouchers > Reverse Overpay |  |
+    | Cash & Banking > Vouchers > Reverse Payment |  |
+    | Cash & Banking > Vouchers > Reverse Receipts |  |
+

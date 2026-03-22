@@ -1,0 +1,9 @@
+Scenario 7: Onboarding wizard after registration
+  Given  I have just registered as "john@example.com"
+  When  I am redirected to the dashboard
+  Then  I should see the welcome modal
+  And  the modal should show "Welcome to FinAegis!"
+  And  I should see the following onboarding steps:
+  And  I should see "Skip for Now" button
+  And  I should see "Start Setup" button
+

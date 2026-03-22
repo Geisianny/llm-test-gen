@@ -1,0 +1,9 @@
+Scenario 3: Create a resource that contains a stdClass object.
+  Tags: ['@!mongodb', '@createSchema']
+  When  I send a "POST" request to "/plain_object_dummies" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/vnd.api+json; charset=utf-8"
+  And  the JSON should be valid according to the JSON API schema
+  And  the JSON should be a superset of:
+

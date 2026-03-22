@@ -1,0 +1,5 @@
+Scenario 3: Webhooks switch is denied
+  Given  the provider has "web_hooks" switch denied
+  When  they go to the new webhook page
+  Then  they should see "Access denied"
+

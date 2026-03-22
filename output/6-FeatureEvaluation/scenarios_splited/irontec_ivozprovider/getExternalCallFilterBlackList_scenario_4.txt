@@ -1,0 +1,6 @@
+Scenario: Retrieve a non-existent external call filter blacklist by ID
+  Given there is a client admin with a valid authentication token
+  And there is no existing external call filter blacklist with ID "456"
+  When the client admin sends a GET request to retrieve the blacklist with ID "456"
+  Then the system returns an error response
+  And the response status code is 404

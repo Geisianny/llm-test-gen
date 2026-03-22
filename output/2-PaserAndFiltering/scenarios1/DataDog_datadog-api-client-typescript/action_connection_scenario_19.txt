@@ -1,0 +1,8 @@
+Scenario 19: Update an existing Action Connection returns "Not Found" response
+  Tags: ['@team:DataDog/workflow-automation-dev']
+  Given  new "UpdateActionConnection" request
+  And  request contains "connection_id" parameter with value "aaa11111-aa11-aa11-aaaa-aaaaaa111111"
+  And  body with value {"data":{"type":"action_connection","attributes":{"name":"Cassette Connection","integration":{"type":"AWS","credentials":{"type":"AWSAssumeRole","role":"MyRoleUpdated","account_id":"123456789123"}}}}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

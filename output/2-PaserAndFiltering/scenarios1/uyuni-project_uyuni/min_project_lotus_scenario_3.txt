@@ -1,0 +1,9 @@
+Scenario 3: Pre-requisite: Create custom repository for PTFs
+  When  I follow the left menu "Software > Manage > Repositories"
+  And  I follow "Create Repository"
+  And  I enter "sles15sp4_ptf_repo" as "label"
+  And  I enter "http://updates.suse.de/download/PTF/Release/A127499/SLES/15.4/x86_64/ptf/" as "url"
+  And  I uncheck "metadataSigned"
+  And  I click on "Create Repository"
+  Then  I should see a "Repository created successfully" text
+

@@ -1,0 +1,5 @@
+Scenario 3: It shows Application expiration date when application contract is on trial
+  Given  the application has a trial period of 10 days
+  When  they go to the application's admin page
+  Then  they should see "trial expires in 10 days" within the application details
+

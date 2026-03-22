@@ -1,0 +1,8 @@
+Scenario Outline 7: Navigate to menu "<path>" and open screen "<screen>" - Example 7
+  When  I navigate the menu and select the item at "Accounts Receivable > Reports > Customer History"
+  Then  I should see the Purchase History Search screen
+
+  Examples:
+    | path | screen |
+    | Accounts Receivable > Reports > Customer History | Purchase History Search |
+

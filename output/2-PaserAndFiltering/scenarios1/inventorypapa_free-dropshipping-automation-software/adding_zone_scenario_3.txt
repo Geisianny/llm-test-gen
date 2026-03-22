@@ -1,0 +1,10 @@
+Scenario 3: Adding a zone with zone type member
+  Tags: ['@ui', '@javascript', '@api']
+  When  I want to create a new zone consisting of zone
+  And  I name it "America"
+  And  I specify its code as "AM"
+  And  I add a zone "North America"
+  And  I add it
+  Then  I should be notified that it has been successfully created
+  And  the zone named "America" with the "North America" zone member should appear in the registry
+

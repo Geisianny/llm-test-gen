@@ -1,0 +1,8 @@
+Scenario 3: Receiving a discount from a promotion that has already started
+  Tags: ['@api', '@ui']
+  Given  this promotion started yesterday
+  And  I added product "PHP T-Shirt" to the cart
+  When  I check the details of my cart
+  Then  my cart total should be "$90.00"
+  And  my discount should be "-$10.00"
+

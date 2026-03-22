@@ -1,0 +1,7 @@
+Scenario 7: CREATION OF FISCAL YEAR 2013
+  Tags: ['@base_finance_setup_create_fy']
+  Given  I need a "account.fiscalyear" with oid: scenario.fy2013
+  And  having:
+  And  I create monthly periods on the fiscal year with reference "scenario.fy2013"
+  Then  I find a "account.fiscalyear" with oid: scenario.fy2013
+

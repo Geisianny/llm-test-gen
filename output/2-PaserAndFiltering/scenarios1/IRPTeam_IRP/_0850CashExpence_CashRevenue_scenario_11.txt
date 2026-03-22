@@ -1,0 +1,12 @@
+Scenario 11: _085009 copy Cash expense and change date
+  *  Select Cash expense
+  Given  I open hyperlink "e1cib/list/Document.CashExpense"
+  And  I go to line in "List" table
+  *  Copy Cash expense
+  And  in the table "List" I click the button named "ListContextMenuCopy"
+  And  I move to "Other" tab
+  And  I move to "More" tab
+  And  I input "14.03.2022 00:00:00" text in the field named "Date"
+  And  I click "Post" button
+  Then  user message window does not contain messages
+

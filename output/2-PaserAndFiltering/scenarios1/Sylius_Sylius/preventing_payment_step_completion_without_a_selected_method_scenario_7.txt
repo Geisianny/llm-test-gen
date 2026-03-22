@@ -1,0 +1,13 @@
+Scenario 7: Preventing payment step completion if a payment method is disabled or not assigned to a channel
+  Tags: ['@api', '@no-ui']
+  Given  the store has a payment method "Offline" with a code "Offline"
+  And  this payment method is disabled
+  And  the store has "Cash on Delivery" payment method not assigned to any channel
+  And  I have product "PHP T-Shirt" in the cart
+  When  I specify the billing address as "Ankh Morpork", "Frost Alley", "90210", "United States" for "Jon Snow"
+  And  I complete the addressing step
+  And  I proceed with selecting "Free" shipping method
+  When  I check the details of my cart
+  Then  I should see that no payment method is assigned
+  And  there should not be any payment methods available for selection
+

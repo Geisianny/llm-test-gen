@@ -1,0 +1,8 @@
+Scenario 5: Not receiving discount when cart does not meet the required quantity after removing an item
+  Tags: ['@ui']
+  Given  the promotion gives "$10.00" discount to every order with quantity at least 3
+  And  I have 3 products "PHP T-Shirt" in the cart
+  When  I change "PHP T-Shirt" quantity to 1
+  Then  my cart total should be "$100.00"
+  And  there should be no discount
+

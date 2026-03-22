@@ -1,0 +1,10 @@
+Scenario 55: Update workflow webhook handle returns "OK" response
+  Tags: ['@team:DataDog/chat-integrations']
+  Given  there is a valid "workflows_webhook_handle" in the system
+  And  new "UpdateWorkflowsWebhookHandle" request
+  And  request contains "handle_id" parameter from "workflows_webhook_handle.data.id"
+  And  body with value {"data": {"attributes": {"name": "{{workflows_webhook_handle.data.attributes.name}}--updated"}, "type": "workflows-webhook-handle"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.attributes.name" is equal to "{{workflows_webhook_handle.data.attributes.name}}--updated"
+

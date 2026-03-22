@@ -1,0 +1,10 @@
+Scenario 1: Default account activation email
+  Given  the current domain is foo.3scale.localhost
+  When  someone signs up with the email "user@3scale.localhost"
+  And  they should see "We have sent you an email to confirm your email address."
+  Then  "user@3scale.localhost" should receive the default account activation email with viral footer applied
+  Given  provider "foo.3scale.localhost" has "skip_email_engagement_footer" switch visible
+  When  someone signs up with the email "anotheruser@3scale.localhost"
+  And  they should see "We have sent you an email to confirm your email address."
+  Then  "anotheruser@3scale.localhost" should receive the default account activation email
+

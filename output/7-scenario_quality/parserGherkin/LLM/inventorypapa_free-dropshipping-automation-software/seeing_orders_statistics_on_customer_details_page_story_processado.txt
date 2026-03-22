@@ -1,0 +1,49 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: seeing_orders_statistics_on_customer_details_page_story_processado.feature
+Caminho relativo: inventorypapa_free-dropshipping-automation-software\seeing_orders_statistics_on_customer_details_page_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\inventorypapa_free-dropshipping-automation-software\seeing_orders_statistics_on_customer_details_page_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: seeing_orders_statistics_on_customer_details_page_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. View customer order statistics with multiple orders
+   Steps: 5
+   - Given there is a customer with multiple orders placed across different sales channels
+   - And the customer has orders with varying fulfillment statuses
+   - When the administrator views the customer's details page
+   - Then the system displays the total number of orders placed by the customer
+   - And the total value of all orders
+2. View customer order statistics with no orders
+   Steps: 4
+   - Given there is a customer with no orders placed
+   - When the administrator views the customer's details page
+   - Then the system displays zero as the total number of orders
+   - And zero as the total value of all orders
+3. View customer order statistics with orders across different sales channels
+   Steps: 4
+   - Given there is a customer with orders placed across multiple sales channels
+   - When the administrator views the customer's details page
+   - Then the system displays order statistics segmented by sales channel
+   - And the total value of orders for each sales channel
+4. View customer order statistics with different fulfillment statuses
+   Steps: 4
+   - Given there is a customer with orders having different fulfillment statuses
+   - When the administrator views the customer's details page
+   - Then the system displays order statistics segmented by fulfillment status
+   - And the total value of orders for each fulfillment status
+5. View customer order statistics with average order value
+   Steps: 4
+   - Given there is a customer with multiple orders placed
+   - When the administrator views the customer's details page
+   - Then the system displays the average value of the customer's orders
+   - And the total number of orders and total value are also displayed

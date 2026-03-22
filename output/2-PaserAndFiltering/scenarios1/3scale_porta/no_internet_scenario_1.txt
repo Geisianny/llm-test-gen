@@ -1,0 +1,5 @@
+Scenario 1: Browser has no Internet access
+  Tags: ['@javascript']
+  Given  URL is inaccessible in browser: "https://status.redhat.com:443"
+  And  URL is inaccessible in browser: "https://www.google.com:443"
+

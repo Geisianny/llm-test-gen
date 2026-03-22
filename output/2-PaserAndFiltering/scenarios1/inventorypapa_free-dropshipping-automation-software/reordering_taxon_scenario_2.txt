@@ -1,0 +1,8 @@
+Scenario 2: Moving down the taxon on list
+  Tags: ['@ui', '@javascript']
+  When  I want to see all taxons in store
+  And  I move down "T-Shirts" taxon
+  Then  I should see 4 taxons on the list
+  And  I should see the taxon named "Watches" in the list
+  But  the first taxon on the list should be "Watches"
+

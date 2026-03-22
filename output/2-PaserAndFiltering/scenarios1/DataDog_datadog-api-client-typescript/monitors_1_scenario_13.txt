@@ -1,0 +1,8 @@
+Scenario 13: Delete a monitor notification rule returns "OK" response
+  Tags: ['@team:DataDog/monitor-app']
+  Given  there is a valid "monitor_notification_rule" in the system
+  And  new "DeleteMonitorNotificationRule" request
+  And  request contains "rule_id" parameter from "monitor_notification_rule.data.id"
+  When  the request is sent
+  Then  the response status is 204 OK
+

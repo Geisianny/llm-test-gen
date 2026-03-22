@@ -1,0 +1,7 @@
+Scenario 10: Delete a monitor configuration policy returns "Not Found" response
+  Tags: ['@team:DataDog/monitor-app']
+  Given  new "DeleteMonitorConfigPolicy" request
+  And  request contains "policy_id" parameter with value "00000000-0000-1234-0000-000000000000"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

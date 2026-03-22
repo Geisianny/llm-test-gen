@@ -1,0 +1,10 @@
+Scenario 3: Successfully edit customer note
+  Given  I go to edit job draft with title "Test Job Draft"
+  And  I scroll "#job_incomplete" into view
+  And  I click edit on "customer note" form
+  And  I wait for the ajax response
+  And  I fill in "customerNote-note" with "Edited Some Note"
+  And  I save "customer note" form
+  And  I wait for the ajax response
+  Then  I should see "Edited Some Note"
+

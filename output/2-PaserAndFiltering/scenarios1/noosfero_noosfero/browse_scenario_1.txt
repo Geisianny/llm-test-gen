@@ -1,0 +1,10 @@
+Scenario 1: Show people browse menu
+  Tags: ['@selenium']
+  Given  I should not see "More recent"
+  And  I should not see "More active"
+  And  I should not see "More popular"
+  And  I go to /search/people
+  Then  I should see "More recent"
+  And  I should see "More active"
+  And  I should see "More popular"
+

@@ -1,0 +1,7 @@
+Scenario 1: Passing Options to run on the Command Line
+  Given  a configuration with:
+  When  I start a server in background
+  And  I wait until server output contains:
+  And  I run Karma with additional arguments: "-- arg1 arg2"
+  Then  it passes with:
+

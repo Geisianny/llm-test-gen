@@ -1,0 +1,12 @@
+Scenario 6: Add a fake child channel into the fake base channel i586
+  When  I follow the left menu "Software > Manage > Channels"
+  And  I follow "Create Channel"
+  And  I enter "Fake-Child-Channel-i586" as "Channel Name"
+  And  I enter "fake-child-channel-i586" as "Channel Label"
+  And  I select "Fake-Base-Channel-i586" from "Parent Channel"
+  And  I select "IA-32" from "Architecture:"
+  And  I enter "Fake Child Channel i586 for testing" as "Channel Summary"
+  And  I enter "Description for Fake Child Channel i586." as "Channel Description"
+  And  I click on "Create Channel"
+  Then  I should see a "Channel Fake-Child-Channel-i586 created." text
+

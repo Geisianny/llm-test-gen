@@ -1,0 +1,6 @@
+Scenario 4: Get Tags returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/core-index']
+  Given  new "ListHostTags" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

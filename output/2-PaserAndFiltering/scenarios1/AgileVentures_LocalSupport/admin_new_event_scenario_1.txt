@@ -1,0 +1,4 @@
+Scenario 1: Unsuccessfully attempt to create event without being signed-in
+  When  I visit the new event page
+  Then  I should be on the sign in page
+

@@ -1,0 +1,6 @@
+Scenario: Update document source with invalid new source
+  Given there is an affiliate with the identifier "valid_affiliate"
+  And the affiliate has indexed documents with source "rss"
+  When the admin requests to update the document source to "invalid_source" for the affiliate "valid_affiliate"
+  And confirms the update operation
+  Then the system displays an error message indicating the new source is invalid

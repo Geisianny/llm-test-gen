@@ -1,0 +1,9 @@
+Scenario 1: Reversing a simple deposit transaction
+  Given  user "customer@example.com" has a deposit of 100.00 USD
+  And  the transaction ID is "txn_12345"
+  When  I initiate a reversal for transaction "txn_12345"
+  Then  the reversal workflow should be created
+  And  the original deposit should be voided
+  And  100.00 USD should be debited from the account
+  And  a reversal audit entry should be created
+

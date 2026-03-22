@@ -1,0 +1,12 @@
+Scenario 4: disable notifications
+  Given  the following notifications
+  And  I go to /admin/plugin/push_notification
+  Then  the "settings_add_friend" checkbox should be checked
+  Then  the "settings_add_member" checkbox should be checked
+  And  I uncheck "settings_add_friend"
+  And  I uncheck "settings_add_member"
+  When  I follow "Save"
+  Then  I should be on /admin/plugin/push_notification
+  Then  the "settings_add_friend" checkbox should not be checked
+  Then  the "settings_add_member" checkbox should not be checked
+

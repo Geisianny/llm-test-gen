@@ -1,0 +1,7 @@
+Scenario 15: Get a pipeline returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/event-platform-experience']
+  Given  new "GetLogsPipeline" request
+  And  request contains "pipeline_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

@@ -1,0 +1,10 @@
+Scenario 4: Admin removes a subcategory with listings
+  Tags: ['@javascript']
+  Given  I am on the categories admin page
+  When  I remove category "Books" which needs confirmation
+  Then  I should be able to select new category for listing "Sound of Music"
+  When  I select "Services" as a new category
+  And  I confirm category removal
+  Then  the category "Books" should be removed
+  And  the listing "Sound of Music" should belong to category "Items"
+

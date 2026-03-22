@@ -1,0 +1,6 @@
+Scenario 25: List all AWS integrations returns "AWS Accounts List object" response
+  Tags: ['@team:DataDog/aws-integrations']
+  Given  new "ListAWSAccounts" request
+  When  the request is sent
+  Then  the response status is 200 AWS Accounts List object
+

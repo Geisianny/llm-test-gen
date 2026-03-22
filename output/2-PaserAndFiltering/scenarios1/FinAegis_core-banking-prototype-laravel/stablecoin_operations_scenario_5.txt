@@ -1,0 +1,9 @@
+Scenario 5: Liquidation when collateral ratio falls
+  Given  I have 200.00 FGUSDC stablecoins
+  And  300.00 USD locked as collateral
+  And  the USD price drops affecting my collateral ratio to 140%
+  When  the system checks for liquidation opportunities
+  Then  my position should be flagged for liquidation
+  And  liquidators should be able to liquidate my position
+  And  I should receive the liquidation penalty
+

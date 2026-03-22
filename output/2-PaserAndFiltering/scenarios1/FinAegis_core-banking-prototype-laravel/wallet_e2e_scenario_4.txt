@@ -1,0 +1,8 @@
+Scenario 4: Multi-signature wallet security
+  Given  I have enabled multi-signature for large transactions
+  And  my security rules are:
+  When  I attempt various transactions:
+  Then  security protocols should be enforced
+  And  I should be able to manage pending approvals
+  And  completed transactions should show approval history
+

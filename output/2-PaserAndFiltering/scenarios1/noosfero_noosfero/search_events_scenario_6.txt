@@ -1,0 +1,4 @@
+Scenario 6: highlight the selected day when page is openened directly
+  Given  I am on /search/events?year=2018&month=10&day=8
+  Then  "8" should be visible within ".calendar-day.selected"
+

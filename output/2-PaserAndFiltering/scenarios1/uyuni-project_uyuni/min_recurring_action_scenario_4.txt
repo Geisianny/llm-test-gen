@@ -1,0 +1,21 @@
+Scenario 4: Edit the IP forwarding custom state recurring action
+  When  I am on the "Recurring Actions" page of this "sle_minion"
+  Then  I should see a "IP forwarding custom state recurring action" text
+  When  I click the "IP forwarding custom state recurring action" item edit button
+  And  I wait until I see "Update Schedule" text
+  And  I enter "custom_state_schedule_name_changed" as "scheduleName"
+  And  I enter 1 minutes from now as "time-daily_time"
+  And  I uncheck "statechannel-recurring-cbox"
+  And  I check "Sync States-cbox"
+  And  I click on "Save Changes"
+  And  I wait until I see "Edit State Ranks" text
+  And  I click on "Confirm"
+  And  I click on "Update Schedule"
+  Then  I wait until I see "Schedule successfully updated" text
+  And  I should see a "custom_state_schedule_name_changed" text
+  And  I should see a "Minion" text
+  When  I follow "Events"
+  And  I follow "History"
+  Then  I wait at most 420 seconds until event "Apply recurring states [util.syncstates] scheduled" is completed
+  And  I wait until I see "SLS: util.syncstates" text
+

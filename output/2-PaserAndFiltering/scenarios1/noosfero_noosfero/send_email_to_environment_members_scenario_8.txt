@@ -1,0 +1,7 @@
+Scenario 8: All users should be marked as default recipients
+  Tags: ['@selenium']
+  Given  I am logged in as admin
+  And  I go to /admin/users/send_mail
+  Then  the "send_to_all" radio button should be checked
+  Then  the "send_to_admins" radio button should not be checked
+

@@ -1,0 +1,6 @@
+Scenario 1: Being unable to delete a purchased product variant
+  Tags: ['@domain']
+  When  I try to delete the "Medium PHP Mug" variant of product "PHP Mug"
+  Then  I should be notified that this variant is in use and cannot be deleted
+  And  this variant should still exist in the product catalog
+

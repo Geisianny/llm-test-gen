@@ -1,0 +1,34 @@
+Scenario: Unauthenticated user cannot access Agoras API
+  Given there is an unauthenticated user
+  When the user attempts to access the Agoras API
+  Then the system denies access
+  And displays an error message indicating authentication is required
+
+Scenario: Authenticated user can retrieve list of Agoras
+  Given there is an authenticated user with OAuth token
+  And there are existing Agoras in the system
+  When the user queries the Agoras API
+  Then the system returns a list of Agoras
+  And the list includes the Agoras' details
+
+Scenario: User can join an Agora
+  Given there is an authenticated user with OAuth token
+  And there is an Agora with available membership slots
+  When the user requests to join the Agora
+  Then the system adds the user to the Agora's members
+  And displays a confirmation message
+
+Scenario: User cannot join an Agora beyond its member limit
+  Given there is an authenticated user with OAuth token
+  And there is an Agora with a maximum membership limit reached
+  When the user requests to join the Agora
+  Then the system denies the request
+  And displays an error message indicating the Agora is full
+
+Scenario: Manager can remove a user from an Agora
+  Given there is an authenticated user with OAuth token and manager role
+  And there is an Agora with existing members
+  And there is a user who is a member of the Agora
+  When the manager requests to remove the user from the Agora
+  Then the system removes the user from the Agora's members
+  And displays a confirmation message

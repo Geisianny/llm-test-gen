@@ -1,0 +1,5 @@
+Scenario 2: Navigation from account overview
+  Given  they go to buyer "Bob" overview page
+  When  follow "2 Applications" within the secondary nav
+  Then  the current page is buyer "Bob" applications page
+

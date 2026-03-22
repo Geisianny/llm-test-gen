@@ -1,0 +1,19 @@
+Feature: Adding a new non-translatable product attribute
+Description: In order to add non translatable attribute
+    As an Administrator
+    I want to be able to toggle translatable checkbox
+Tags: ['@managing_product_attributes']
+
+Background: 
+  Given  the store is available in "English (United States)"
+  And  I am logged in as an administrator
+
+Scenario 1: Adding a new non-translatable product attribute
+  Tags: ['@ui']
+  When  I want to create a new integer product attribute
+  And  I specify its code as "damage"
+  And  I name it "Sword" in "English (United States)"
+  And  I disable its translatability
+  And  I add it
+  Then  I should be notified that it has been successfully created
+

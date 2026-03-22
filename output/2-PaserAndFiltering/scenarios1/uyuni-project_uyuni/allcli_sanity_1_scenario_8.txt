@@ -1,0 +1,6 @@
+Scenario 8: The external resources can be reached
+  Tags: ['@skip_if_cloud']
+  Then  it should be possible to reach the test packages
+  And  it should be possible to reach the build sources
+  And  it should be possible to reach the Docker profiles
+

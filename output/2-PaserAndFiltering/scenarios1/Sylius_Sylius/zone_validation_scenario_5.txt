@@ -1,0 +1,7 @@
+Scenario 5: Being unable to edit code of an existing zone
+  Tags: ['@api', '@ui']
+  Given  the store has a zone "European Union" with code "EU"
+  And  it has the "France" country member
+  When  I want to modify the zone named "European Union"
+  Then  I should not be able to edit its code
+

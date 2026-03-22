@@ -1,0 +1,7 @@
+Scenario 2: Seeing customer's default address
+  Tags: ['@api', '@ui']
+  Given  the store operates in "New Zealand"
+  And  their default address is "Hobbiton", "Bag End", "1", "New Zealand" for "Frodo Baggins"
+  When  I view details of the customer "f.baggins@shire.me"
+  Then  their default address should be "Frodo" "Baggins", "Bag End", "1" "Hobbiton", "New Zealand"
+

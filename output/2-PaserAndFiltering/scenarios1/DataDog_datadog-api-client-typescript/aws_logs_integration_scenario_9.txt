@@ -1,0 +1,7 @@
+Scenario 9: Enable an AWS Logs integration returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/aws-integrations']
+  Given  new "EnableAWSLogServices" request
+  And  body with value {"account_id": "1234567", "services": ["s3", "elb", "elbv2", "cloudfront", "redshift", "lambda"]}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

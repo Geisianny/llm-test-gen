@@ -1,0 +1,9 @@
+Scenario 3: post comment in a picture
+  Tags: ['@selenium-fixme']
+  Given  the following files
+  And  I am on /booking/rails.png?view=true
+  And  I fill in "comment-field" with "Hey ho, let's go!"
+  And  I click "#submit_form_button"
+  And  I wait 1 seconds
+  Then  I should see "Hey ho, let"
+

@@ -1,0 +1,7 @@
+Scenario 1: Create a rum-based metric returns "Bad Request" response
+  Tags: ['@team:DataDog/rum-backend']
+  Given  new "CreateRumMetric" request
+  And  body with value {"data": {"id": "rum.actions.invalid", "type": "rum_metrics", "attributes": {"event_type": "action", "compute": {"aggregation_type": "count"}, "uniqueness":{"when": "match"}}}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

@@ -1,0 +1,8 @@
+Scenario 12: Submit deflate distribution points returns "Payload accepted" response
+  Tags: ['@integration-only', '@skip-terraform-config', '@skip-validation', '@team:DataDog/metrics-aggregation']
+  Given  new "SubmitDistributionPoints" request
+  And  body with value {"series": [{"metric": "system.load.1.dist", "points": [[{{ timestamp("now") }}, [1.0, 2.0]]]}]}
+  And  request contains "Content-Encoding" parameter with value "deflate"
+  When  the request is sent
+  Then  the response status is 202 Payload accepted
+

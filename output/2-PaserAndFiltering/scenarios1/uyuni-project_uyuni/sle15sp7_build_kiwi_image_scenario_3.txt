@@ -1,0 +1,11 @@
+Scenario 3: Create an OS image profile for SLES 15 SP7 with activation key
+  Tags: ['@sle15sp7_buildhost']
+  When  I follow the left menu "Images > Profiles"
+  And  I follow "Create"
+  And  I enter "suse_os_image_15_sp7" as "label"
+  And  I select "Kiwi" from "imageType"
+  And  I select "1-sle15sp7_terminal_key" from "activationKey"
+  And  I enter the image filename for "sle15sp7_terminal" relative to profiles as "path"
+  And  I click on "create-btn"
+  And  I wait until no Salt job is running on "sle15sp7_buildhost"
+

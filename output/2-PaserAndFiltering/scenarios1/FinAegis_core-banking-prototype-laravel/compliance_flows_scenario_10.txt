@@ -1,0 +1,6 @@
+Scenario 10: Sanctions screening workflow
+  Given  real-time sanctions screening is enabled
+  When  screening various entities:
+  Then  the screening should:
+  And  maintain screening records for 5 years
+

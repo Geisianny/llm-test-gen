@@ -1,0 +1,3 @@
+Scenario 2: Count Taskomatic SCC accesses in rhn_taskomatic_daemon.log
+  Then  the word "scc.suse.com" does not occur more than 50 times in "/var/log/rhn/rhn_taskomatic_daemon.log" on "server"
+

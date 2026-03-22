@@ -1,0 +1,5 @@
+Scenario 6: Check the new bootstrapped SLES 15 SP7 build host in System Overview page
+  When  I follow the left menu "Salt > Keys"
+  Then  I should see a "accepted" text
+  And  the Salt master can reach "sle15sp7_buildhost"
+

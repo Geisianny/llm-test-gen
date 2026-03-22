@@ -1,0 +1,12 @@
+Scenario 1: Navigation
+  Given  they go to the overview page of product "Pepe API"
+  When  they press "Analytics" within the main menu
+  And  follow "Integration Errors" within the main menu
+  Then  the current page is the integration errors page of product "Pepe API"
+
+
+
+Scenario 2: No errors
+  Given  they go to the integration errors page of product "Pepe API"
+  Then  they should see "No integration errors reported for this service"
+

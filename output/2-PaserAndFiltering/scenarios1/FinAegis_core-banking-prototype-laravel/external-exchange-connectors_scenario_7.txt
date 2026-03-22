@@ -1,0 +1,9 @@
+Scenario 7: Provide external liquidity to internal order book
+  Tags: ['@mock']
+  Given  I am the system account
+  And  the internal order book for "BTC/EUR" has:
+  And  the external exchange "binance" returns ticker for "BTC/EUR":
+  When  the liquidity service provides liquidity for "BTC/EUR"
+  Then  the internal order book should have:
+  And  liquidity orders should be placed with:
+

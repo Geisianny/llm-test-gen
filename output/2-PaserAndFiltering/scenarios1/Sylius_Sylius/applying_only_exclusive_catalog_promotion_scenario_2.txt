@@ -1,0 +1,7 @@
+Scenario 2: Applying always single exclusive catalog promotion with highest priority
+  Tags: ['@api', '@ui']
+  Given  there is another exclusive catalog promotion "Really exclusive PHP stuff promotion" with priority 1000 that reduces price by "70%" and applies on "PHP T-Shirt" variant
+  When  I view product "T-Shirt"
+  Then  I should see the product price "$30.00"
+  And  I should see the product original price "$100.00"
+

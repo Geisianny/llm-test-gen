@@ -1,0 +1,5 @@
+Scenario 6: Access profile when there are no active jobs
+  Given  organization "Profile Active Job" have no job
+  And  I go to profile page for organization "Profile Active Jobs"
+  Then  I should see "This profile is disabled."
+

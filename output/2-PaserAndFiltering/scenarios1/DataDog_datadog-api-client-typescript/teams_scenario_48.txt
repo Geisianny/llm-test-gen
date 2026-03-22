@@ -1,0 +1,10 @@
+Scenario 48: Update permission setting for team returns "API error response." response
+  Tags: ['@team:DataDog/aaa-omg']
+  Given  new "UpdateTeamPermissionSetting" request
+  And  there is a valid "dd_team" in the system
+  And  request contains "team_id" parameter from "dd_team.data.id"
+  And  request contains "action" parameter with value "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"value": "admins"}, "type": "team_permission_settings"}}
+  When  the request is sent
+  Then  the response status is 404 API error response.
+

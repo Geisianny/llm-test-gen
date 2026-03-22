@@ -1,0 +1,9 @@
+Scenario 2: a user should be redirected to the post page when the link is clicked
+  When  I follow "Edit" within ".block.recent-content-block"
+  And  I select "JSilva blog" from "Choose which blog should be displayed"
+  And  I select "Title only" from "Choose how the content should be displayed"
+  And  I fill in "Choose how many items will be displayed" with "3"
+  And  I press "Save"
+  And  I follow "post #4" within ".block.recent-content-block"
+  Then  I should be on /joaosilva/jsilva-blog/post-4
+

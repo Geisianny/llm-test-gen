@@ -1,0 +1,4 @@
+Scenario: Custom headers are not applied to unspecified files
+  Given there is a test configuration with files "test1.js" and "test2.js"
+  When the user sets a custom header "Content-Type" with value "application/javascript" for "test1.js"
+  Then the system serves "test2.js" without the header "Content-Type"

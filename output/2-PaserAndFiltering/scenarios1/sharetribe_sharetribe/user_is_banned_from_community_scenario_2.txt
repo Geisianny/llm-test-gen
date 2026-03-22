@@ -1,0 +1,5 @@
+Scenario 2: Banned user can't create listings
+  Tags: ['@javascript']
+  When  I go to the new listing page
+  Then  I should see a message that I have been banned
+

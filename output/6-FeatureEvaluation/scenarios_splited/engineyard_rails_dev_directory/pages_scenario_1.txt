@@ -1,0 +1,6 @@
+Scenario: Add a new page with valid information
+  Given there is an Engine Yard administrator logged in
+  When the administrator adds a new page with title "About Us" and URL "/about-us"
+  And enters the content "This is the about us page"
+  Then the system creates the new page
+  And displays a confirmation message

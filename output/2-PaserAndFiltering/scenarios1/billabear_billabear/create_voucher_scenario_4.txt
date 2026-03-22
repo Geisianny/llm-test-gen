@@ -1,0 +1,6 @@
+Scenario 4: Create Voucher - fixed amount no amounts
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  When  I create a voucher:
+  Then  there should not be a voucher called "Expired Card Bonus"
+  And  there will be a validation error for the amounts
+

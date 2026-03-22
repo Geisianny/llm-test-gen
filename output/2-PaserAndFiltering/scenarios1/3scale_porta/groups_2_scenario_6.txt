@@ -1,0 +1,8 @@
+Scenario 6: Finance permission for providers shows if finance switch is enabled
+  Tags: ['@wip']
+  Given  the default set of permissions is created
+  Given  the provider has "groups" switch allowed
+  And  the provider has "finance" switch allowed
+  When  I go to the new CMS groups page
+  Then  finance should show in the permissions list
+

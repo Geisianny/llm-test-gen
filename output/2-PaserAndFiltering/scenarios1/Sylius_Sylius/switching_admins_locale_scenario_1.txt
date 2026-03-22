@@ -1,0 +1,6 @@
+Scenario 1: Changing my preferred locale
+  Tags: ['@no-api', '@ui']
+  Given  I am editing my details
+  When  I set my locale to "Spanish (Mexico)"
+  Then  I should be viewing the administration panel in "Spanish (Mexico)" locale
+

@@ -1,0 +1,6 @@
+Scenario 1: Viewing a configurable product show page
+  Tags: ['@ui']
+  When  I access "Iron Shield" product page
+  Then  I should see product show page with variants
+  And  I should see product name "Iron shield"
+

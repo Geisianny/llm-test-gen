@@ -1,0 +1,7 @@
+Scenario 33: Get a budget returns "Not Found" response
+  Tags: ['@team:DataDog/cloud-cost-management']
+  Given  new "GetBudget" request
+  And  request contains "budget_id" parameter with value "9d055d22-0a0a-0a0a-aaa0-00000000000a"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

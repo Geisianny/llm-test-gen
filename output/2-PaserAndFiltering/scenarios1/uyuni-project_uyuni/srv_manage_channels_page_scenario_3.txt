@@ -1,0 +1,9 @@
+Scenario 3: Fail when trying to use invalid characters in the channel label
+  When  I follow the left menu "Software > Manage > Channels"
+  And  I follow "Create Channel"
+  And  I enter "test123" as "Channel Name"
+  And  I enter "tesT123" as "Channel Label"
+  And  I enter "test123" as "Channel Summary"
+  And  I click on "Create Channel"
+  Then  I should see a "Invalid channel label, please see the format described below" text
+

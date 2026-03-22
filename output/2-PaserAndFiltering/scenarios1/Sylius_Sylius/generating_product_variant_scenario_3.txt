@@ -1,0 +1,9 @@
+Scenario 3: Generating the rest of product variants for product with at least one
+  Tags: ['@no-api', '@ui']
+  Given  this product is available in "Orange" taste priced at "$90.00"
+  When  I want to generate new variants for this product
+  And  I specify that the 2nd variant is identified by "WYBOROWA_MELON" code and costs "$95.00" in "United States" channel
+  And  I generate it
+  Then  I should be notified that it has been successfully generated
+  And  I should see 2 variants in the list
+

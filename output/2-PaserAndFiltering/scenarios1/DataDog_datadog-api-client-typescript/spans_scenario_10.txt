@@ -1,0 +1,7 @@
+Scenario 10: Search spans returns "Unprocessable Entity." response
+  Tags: ['@team:DataDog/apm']
+  Given  new "ListSpans" request
+  And  body with value {"data": {"attributes": {"filter": {"from": "now", "query": "service:web* AND @http.status_code:[200 TO 299]", "to": "now-15m"}, "options": {"timezone": "GMT"}, "page": {"limit": 10}, "sort": "timestamp"}, "type": "search_request"}}
+  When  the request is sent
+  Then  the response status is 422 Unprocessable Entity.
+

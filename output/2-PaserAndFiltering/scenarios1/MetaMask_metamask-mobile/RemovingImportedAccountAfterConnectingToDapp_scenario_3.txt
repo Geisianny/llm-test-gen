@@ -1,0 +1,6 @@
+Scenario 3: A user opens another dapp in a new browser tab
+  When  I tap on browser control menu icon on the bottom right of the browser view
+  And  I tap the "New Tab" option on the Option Menu
+  Then  new browser tab is added
+  And  I navigate to "https://metamask.github.io/test-dapp/"
+

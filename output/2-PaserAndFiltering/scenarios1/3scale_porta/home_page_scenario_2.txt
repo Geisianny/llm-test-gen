@@ -1,0 +1,7 @@
+Scenario 2: Invalid domain
+  Tags: ['@allow-rescue']
+  Given  there is no provider with domain "bar.3scale.localhost"
+  When  the current domain is "bar.3scale.localhost"
+  And  I go to the homepage
+  Then  I should see "Not found"
+

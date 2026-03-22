@@ -1,0 +1,5 @@
+Scenario: Retrieve a simple entity with a collection attribute
+  Given there is an entity with a collection attribute
+  When the client requests the entity data via the JSON API
+  Then the system returns a valid JSON API response
+  And the response contains the entity's collection attribute

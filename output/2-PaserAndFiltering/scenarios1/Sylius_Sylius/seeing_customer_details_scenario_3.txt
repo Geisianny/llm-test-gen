@@ -1,0 +1,5 @@
+Scenario 3: Seeing information about no existing account for a given customer
+  Tags: ['@api', '@ui']
+  When  I view details of the customer "f.baggins@shire.me"
+  Then  I should see information about no existing account for this customer
+

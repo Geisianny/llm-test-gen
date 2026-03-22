@@ -1,0 +1,5 @@
+Scenario: Request invalid token
+  Given the user has a configured network
+  When the user requests an invalid token "InvalidToken"
+  Then the system displays a message indicating that the token is invalid
+  And does not generate a payment link or QR code

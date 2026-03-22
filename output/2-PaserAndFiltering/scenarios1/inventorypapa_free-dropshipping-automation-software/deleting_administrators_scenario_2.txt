@@ -1,0 +1,7 @@
+Scenario 2: The administrator account of currently logged in user cannot be deleted
+  Tags: ['@ui', '@api']
+  When  I want to browse administrators
+  And  I delete administrator with email "ted@example.com"
+  Then  I should be notified that it cannot be deleted
+  And  there should still be only one administrator with an email "ted@example.com"
+

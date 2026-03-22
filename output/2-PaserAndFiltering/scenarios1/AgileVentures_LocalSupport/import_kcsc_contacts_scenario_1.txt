@@ -1,0 +1,4 @@
+Scenario 1: Check KCSC Self Care Directory
+  Given  I run the import kcsc service
+  Then  there should be 179 organisations stored
+

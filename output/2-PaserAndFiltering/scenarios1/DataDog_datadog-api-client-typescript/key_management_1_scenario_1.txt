@@ -1,0 +1,7 @@
+Scenario 1: Create an API key returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/credentials-management']
+  Given  new "CreateAPIKey" request
+  And  body with value {"data": {"attributes": {"name": "API Key for submitting metrics"}, "type": "api_keys"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

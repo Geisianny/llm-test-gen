@@ -1,0 +1,10 @@
+Scenario 9: Two AMM's incoming order split pro-rata unequally
+  Tags: ['@VAMM']
+  When  the parties submit the following AMM:
+  Then  the AMM pool status should be:
+  And  set the following AMM sub account aliases:
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the parties place the following orders:
+  Then  the following trades should be executed:
+  And  the market data for the market "ETH/MAR22" should be:
+

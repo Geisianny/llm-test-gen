@@ -1,0 +1,4 @@
+Scenario 17: Apply high state on the Red Hat-like Minion to populate new server CA
+  Tags: ['@rhlike_minion']
+  When  I apply highstate on "rhlike_minion"
+

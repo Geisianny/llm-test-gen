@@ -1,0 +1,5 @@
+Scenario 1: User approving the cookies
+  Given  I click "Close"
+  Then  I should not see an approve cookie policy message
+  And  I should be on the password reset page
+

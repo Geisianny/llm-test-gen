@@ -1,0 +1,8 @@
+Scenario 5: search on environment
+  Given  I go to joaosilva's profile
+  And  I fill in "q" with "bees"
+  And  I choose "General"
+  And  I follow "profile-search-button"
+  Then  I should be on the search page
+  And  I should see "bees and butterflies" within "#search-page"
+

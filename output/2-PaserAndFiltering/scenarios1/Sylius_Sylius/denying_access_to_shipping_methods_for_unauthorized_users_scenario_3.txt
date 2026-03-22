@@ -1,0 +1,5 @@
+Scenario 3: Trying to browse shipping methods
+  Tags: ['@api', '@no-ui']
+  When  I try to browse shipping methods
+  Then  I should be notified that my access has been denied
+

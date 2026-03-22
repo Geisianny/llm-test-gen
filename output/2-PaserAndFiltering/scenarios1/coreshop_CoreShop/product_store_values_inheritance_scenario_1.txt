@@ -1,0 +1,10 @@
+Scenario 1: Product should have different price
+  Given  the products price is 200 for store "Germany"
+  And  the variants price is 250 for store "Germany"
+  And  the variants price is 150 for store "Austria"
+  Then  the product should be priced at "100"
+  And  the variant should be priced at "150"
+  Then  I am in store "Germany"
+  And  the product should be priced at "200"
+  And  the variant should be priced at "250"
+

@@ -1,0 +1,6 @@
+Scenario 11: do not display the "clear cover image" when there is no uploaded image
+  Given  the following blogs
+  And  I go to joaosilva's control panel
+  And  I follow "Configure Blog"
+  Then  I should not see "Delete cover image"
+

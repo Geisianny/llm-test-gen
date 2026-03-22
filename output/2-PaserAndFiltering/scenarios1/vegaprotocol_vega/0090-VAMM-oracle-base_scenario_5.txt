@@ -1,0 +1,14 @@
+Scenario 5: 0090-VAMM-042 updated base price is good, but slippage to rebase prevents it
+  Tags: ['@VAMM']
+  Then  the parties submit the following AMM:
+  Then  the AMM pool status should be:
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  Then  the AMM pool status should be:
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/MAR22" should be:
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  Then  the market data for the market "ETH/MAR22" should be:
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  Then  the AMM pool status should be:
+  Then  the market data for the market "ETH/MAR22" should be:
+

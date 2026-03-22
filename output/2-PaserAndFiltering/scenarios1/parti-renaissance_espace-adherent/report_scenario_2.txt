@@ -1,0 +1,7 @@
+Scenario 2: As a logged-in user I can see all report reasons
+  When  I am logged as "jacques.picard@en-marche.fr"
+  And  I send a "GET" request to "/api/report/reasons"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+

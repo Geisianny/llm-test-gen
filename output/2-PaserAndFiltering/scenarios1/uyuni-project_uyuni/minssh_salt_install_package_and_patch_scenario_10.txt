@@ -1,0 +1,6 @@
+Scenario 10: Cleanup: remove virgo-dummy package from SSH minion
+  When  I remove package "virgo-dummy" from this "ssh_minion" without error control
+  And  I refresh the metadata for "ssh_minion"
+  And  I refresh packages list via spacecmd on "ssh_minion"
+  And  I wait until refresh package list on "ssh_minion" is finished
+

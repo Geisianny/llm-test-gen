@@ -1,0 +1,9 @@
+Scenario 5: Proper taxes after changing item quantity
+  Tags: ['@api', '@ui']
+  Given  I added 3 products "PHP T-Shirt" to the cart
+  And  I added 2 products "Symfony Hat" to the cart
+  And  I changed product "PHP T-Shirt" quantity to 1 in my cart
+  When  I check the details of my cart
+  Then  my cart total should be "$196.80"
+  And  my cart taxes should be "$36.80"
+

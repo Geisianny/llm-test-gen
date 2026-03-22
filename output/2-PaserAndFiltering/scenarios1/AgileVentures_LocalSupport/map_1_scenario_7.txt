@@ -1,0 +1,6 @@
+Scenario 7: Do not show meaning of large map icons on volunteer ops page
+  Given  I visit the volunteer opportunities page
+  And  I click "Close"
+  Then  I should not see "Details updated within the last 12 months"
+  Then  I should not see "Details NOT updated within the last 12 months"
+

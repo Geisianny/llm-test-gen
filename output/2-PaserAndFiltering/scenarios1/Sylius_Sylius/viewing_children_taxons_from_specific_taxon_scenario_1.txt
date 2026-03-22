@@ -1,0 +1,7 @@
+Scenario 1: Viewing only enabled taxons in the vertical menu
+  Tags: ['@api', '@ui']
+  Given  the "Coats" taxon is disabled
+  When  I try to browse products from taxon "Clothes"
+  Then  I should not see "Coats" in the vertical menu
+  And  I should see "T-Shirts" and "Trousers" in the vertical menu
+

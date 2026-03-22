@@ -1,0 +1,8 @@
+Scenario 3: Trying to add a product review with too short title
+  Tags: ['@ui', '@api']
+  When  I want to review product "Necronomicon"
+  And  I leave a comment "This book made me sad, but plot was fine.", titled "X" as "bartholomew@heaven.com"
+  And  I rate it with 3 points
+  And  I try to add it
+  Then  I should be notified that title must have at least 2 characters
+

@@ -1,0 +1,8 @@
+Scenario 11: link to parent in uploaded file search results
+  Given  the following folders
+  Given  the following uploaded files
+  When  I search contents for "rails.png"
+  Then  I should see "Folder for Uploaded Files" within ".search-uploaded-file-parent"
+  When  I follow "Folder for Uploaded Files"
+  Then  I should be on article "Folder for Uploaded Files"
+

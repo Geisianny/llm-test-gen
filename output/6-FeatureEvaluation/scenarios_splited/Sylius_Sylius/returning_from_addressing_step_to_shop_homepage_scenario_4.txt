@@ -1,0 +1,6 @@
+Scenario: Return to shop homepage with empty cart
+  Given there is a visitor with an empty cart
+  And the visitor is at the checkout addressing step
+  When the visitor clicks on the link to return to the shop homepage
+  Then the visitor is redirected to the shop homepage
+  And the cart remains empty

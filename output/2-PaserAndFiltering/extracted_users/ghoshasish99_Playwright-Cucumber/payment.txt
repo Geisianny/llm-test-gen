@@ -1,0 +1,15 @@
+Feature: Payment
+
+Scenario Outline 1: Order a product - Example 1
+  Given  User launched eshop login page
+  When  User logged in eshop using the valid emailid "Ashish@shop.com" and the valid password "Ashishpwd$1"
+  And  User searches for the "Apple iPhone 6s Plus"
+  And  User adds "Apple iPhone 6s Plus" product to the cart
+  And  User enters Address details with "Mr","Ashish", "Ghosh", "Amstelveen","Uilenstede","Amsterdam","Amsterdam", "1181"
+  And  User enters Payment details with "1234567890", "Ashish", "2031","11","151"
+  Then  User should get the Confirmation of Order
+
+  Examples:
+    | EmailID | Password | Product | Title | FirstName | LastName | Line1 | Line2 | City | State | Zipcode | CardNumber | CardName | Year | Month | SecurityCode |
+    | Ashish@shop.com | Ashishpwd$1 | Apple iPhone 6s Plus | Mr | Ashish | Ghosh | Amstelveen | Uilenstede | Amsterdam | Amsterdam | 1181 | 1234567890 | Ashish | 2031 | 11 | 151 |
+

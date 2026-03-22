@@ -1,0 +1,6 @@
+Scenario 31: Sidebar link destination for Systems => Activation Keys
+  When  I follow the left menu "Systems > Activation Keys"
+  Then  I should see a "Activation Keys" text
+  And  I should see a "Create Key" link
+  And  I should see a "The following activation keys have been created for use by your organization." text
+

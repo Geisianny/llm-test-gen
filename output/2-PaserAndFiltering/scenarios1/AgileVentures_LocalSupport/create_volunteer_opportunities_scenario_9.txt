@@ -1,0 +1,4 @@
+Scenario 9: Not Signed In Users cannot create volunteer opportunities
+  Given  I visit the show page for the organisation named "Friendly"
+  Then  I should not see a link with text "Create a Volunteer Opportunity"
+

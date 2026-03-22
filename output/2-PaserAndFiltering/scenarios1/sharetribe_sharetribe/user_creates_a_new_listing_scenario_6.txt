@@ -1,0 +1,29 @@
+Scenario 6: Create a new listing successfully after going back and forth in the listing form
+  Tags: ['@javascript']
+  Given  I am logged in
+  And  I am on the home page
+  When  I follow "new-listing-link"
+  And  I select "Items" from listing type menu
+  Then  I should see "Category: Item"
+  And  I select "Tools" from listing type menu
+  Then  I should see "Category: Item"
+  And  I should see "Subcategory: Tools"
+  And  I select "Requesting" from listing type menu
+  Then  I should see "Listing type: Requesting"
+  And  I select "Category: Item" from listing type menu
+  And  I select "Services" from listing type menu
+  Then  I should see "Category: Services"
+  And  I should not see "Category: Item"
+  And  I select "Category: Services" from listing type menu
+  And  I select "Spaces" from listing type menu
+  Then  I should see "Category: Spaces"
+  And  I should not see "Category: Services"
+  And  I select "Selling" from listing type menu
+  Then  I should see "Category: Spaces"
+  And  I should see "Listing type: Selling"
+  When  I fill in "listing_title" with "My offer"
+  And  I fill in "listing_price" with "20"
+  And  I fill in "listing_description" with "My description"
+  And  I press "Post listing"
+  Then  I should see "My offer" within "#listing-title"
+

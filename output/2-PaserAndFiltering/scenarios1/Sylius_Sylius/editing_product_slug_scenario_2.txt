@@ -1,0 +1,9 @@
+Scenario 2: Creating a product with a custom slug
+  Tags: ['@api', '@ui']
+  When  I want to create a new configurable product
+  And  I specify its code as "BOARD_MANSION_OF_MADNESS"
+  And  I name it "Mansion of Madness" in "English (United States)" locale
+  And  I set its slug to "mom-board-game" in "English (United States)" locale
+  And  I add it
+  Then  the slug of the "Mansion of Madness" product should be "mom-board-game"
+

@@ -1,0 +1,11 @@
+Scenario 3: Trying to add new customer without an account without email
+  Tags: ['@ui', '@javascript']
+  Given  I want to create a new customer account
+  When  I do not choose create account option
+  And  I do not specify their email
+  And  I try to add them
+  Then  I should still be on the customer creation page
+  And  I should not be able to specify their password
+  And  I should be able to select create account option
+  And  I should be notified that email is required
+

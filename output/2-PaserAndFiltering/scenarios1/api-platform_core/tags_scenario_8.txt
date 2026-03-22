@@ -1,0 +1,4 @@
+Scenario 8: Embedded collection must be listed in cache tags
+  When  I send a "GET" request to "/relation2s/1"
+  Then  the header "Cache-Tags" should be equal to "/relation2s/1"
+

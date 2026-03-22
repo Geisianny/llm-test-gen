@@ -1,0 +1,24 @@
+Scenario 1: Given a spot market, if an LP increases or decreases their commitment the target stake should be updated correctly. (0041-TSTK-109)(0041-TSTK-110)(0041-TSTK-112)
+  Given  the following network parameters are set:
+  And  the liquidity monitoring parameters:
+  And  the spot markets are updated:
+  Given  the parties submit the following liquidity provision:
+  When  the parties place the following orders:
+  And  the network moves ahead "2" blocks
+  Then  the market data for the market "BTC/USDT" should be:
+  Given  the parties submit the following liquidity provision:
+  When  the network moves ahead "1" blocks
+  Then  the market data for the market "BTC/USDT" should be:
+  Given  the parties submit the following liquidity provision:
+  When  the network moves ahead "1" blocks
+  Then  the market data for the market "BTC/USDT" should be:
+  Given  the network moves ahead "1" epochs
+  Then  the market data for the market "BTC/USDT" should be:
+  Given  the network moves ahead "19" blocks
+  Then  the market data for the market "BTC/USDT" should be:
+  Given  the network moves ahead "1" blocks
+  Then  the market data for the market "BTC/USDT" should be:
+  Given  the liquidity monitoring parameters:
+  When  the spot markets are updated:
+  Then  the market data for the market "BTC/USDT" should be:
+

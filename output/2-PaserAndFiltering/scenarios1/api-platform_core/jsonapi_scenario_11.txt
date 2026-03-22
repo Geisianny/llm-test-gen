@@ -1,0 +1,7 @@
+Scenario 11: Retrieve the related dummy
+  When  I send a "GET" request to "/related_dummies/1"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be valid according to the JSON API schema
+  And  the JSON should be equal to:
+

@@ -1,0 +1,14 @@
+Scenario 1: Seeing statistics for last 12 months and default channel when expectations are not specified
+  Tags: ['@no-api', '@ui']
+  Given  it is "last day of January last year" now
+  And  2 new customers have fulfilled 2 orders placed for total of "$1,000.00"
+  And  it is "first day of January this year" now
+  And  3 new customers have fulfilled 4 orders placed for total of "$2,000.21"
+  And  it is "first day of February this year" now
+  And  2 more new customers have paid 2 orders placed for total of "$5,000.37"
+  When  I view statistics
+  Then  I should see 5 new customers
+  And  I should see 6 paid orders
+  And  there should be total sales of "$7,000.58"
+  And  the average order value should be "$1,166.76"
+

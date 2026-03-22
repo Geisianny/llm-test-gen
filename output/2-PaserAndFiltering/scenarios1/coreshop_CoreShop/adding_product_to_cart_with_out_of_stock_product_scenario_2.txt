@@ -1,0 +1,5 @@
+Scenario 2: Adding product to cart with more than stocked quantity
+  When  I add 3 of this product to the cart
+  Then  I should be on the cart summary page
+  And  I should be notified that TShirt does not have sufficient stock
+

@@ -1,0 +1,10 @@
+Scenario 53: Update case priority returns "OK" response
+  Tags: ['@team:DataDog/case-management']
+  Given  new "UpdatePriority" request
+  And  there is a valid "case" in the system
+  And  request contains "case_id" parameter from "case.id"
+  And  body with value {"data": {"attributes": {"priority": "P3"}, "type": "case"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.attributes.priority" is equal to "P3"
+

@@ -1,0 +1,5 @@
+Scenario 12: Only subscription
+  Given  the following subscriptions exist:
+  When  the background task to reinvoice active subscriptions
+  Then  there will be no error logs for invoice
+

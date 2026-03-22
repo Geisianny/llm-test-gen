@@ -1,0 +1,10 @@
+Scenario 4: Receiving discount when buying different products with the required quantity
+  Tags: ['@api', '@ui']
+  Given  the store has a product "Symfony T-Shirt" priced at "$50.00"
+  And  the promotion gives "$10.00" discount to every order with quantity at least 3
+  And  I added 2 products "PHP T-Shirt" to the cart
+  And  I added 2 products "Symfony T-Shirt" to the cart
+  When  I check the details of my cart
+  Then  my cart total should be "$290.00"
+  And  my discount should be "-$10.00"
+

@@ -1,0 +1,12 @@
+Scenario 1: Export the GraphQL schema in SDL
+  Tags: ['@createSchema']
+  When  I run the command "api:graphql:export"
+  Then  the command output should contain:
+  And  the command output should contain:
+  And  the command output should contain:
+  And  the command output should contain:
+  And  the command output should contain:
+  And  the command output should contain:
+  And  the command output should contain:
+  And  the command output should contain:
+

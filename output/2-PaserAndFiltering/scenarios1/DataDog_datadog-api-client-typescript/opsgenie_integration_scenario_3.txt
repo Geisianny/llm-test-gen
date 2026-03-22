@@ -1,0 +1,7 @@
+Scenario 3: Create a new service object returns "Conflict" response
+  Tags: ['@skip', '@team:Datadog/collaboration-integrations']
+  Given  new "CreateOpsgenieService" request
+  And  body with value {"data": {"attributes": {"name": "fake-opsgenie-service-name", "opsgenie_api_key": "00000000-0000-0000-0000-000000000000", "region": "us"}, "type": "opsgenie-service"}}
+  When  the request is sent
+  Then  the response status is 409 Conflict
+

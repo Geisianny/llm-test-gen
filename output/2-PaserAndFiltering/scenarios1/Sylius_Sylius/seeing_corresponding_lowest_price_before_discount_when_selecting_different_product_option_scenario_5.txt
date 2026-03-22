@@ -1,0 +1,7 @@
+Scenario 5: Not seeing the lowest price when having variant with more than one option value and without discount
+  Tags: ['@no-api', '@ui', '@javascript']
+  When  I view product "Bocian Vodka"
+  And  I select its "Color" as "Blue"
+  And  I select its "Size" as "Medium"
+  Then  I should not see information about its lowest price
+

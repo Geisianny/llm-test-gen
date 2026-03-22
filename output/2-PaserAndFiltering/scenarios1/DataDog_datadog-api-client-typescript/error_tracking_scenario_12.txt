@@ -1,0 +1,9 @@
+Scenario 12: Update the state of an issue returns "Bad Request" response
+  Tags: ['@team:DataDog/error-tracking']
+  Given  new "UpdateIssueState" request
+  And  there is a valid "issue" in the system
+  And  request contains "issue_id" parameter from "issue.id"
+  And  body with value {"data": {"attributes": {"state": "invalid-state"}, "id": "{{ issue.id }}", "type": "error_tracking_issue"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

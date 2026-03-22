@@ -1,0 +1,7 @@
+Scenario 9: display tag list field when creating folder
+  Given  I am on joaosilva's control panel
+  And  I follow "New" within "#section-content"
+  And  I should see "Folder"
+  When  I follow "Folder"
+  Then  I should see "Tag list"
+

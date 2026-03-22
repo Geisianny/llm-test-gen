@@ -1,0 +1,8 @@
+Scenario 4: Delete a RUM retention filter returns "Not Found" response
+  Tags: ['@team:DataDog/rum-backend']
+  Given  new "DeleteRetentionFilter" request
+  And  request contains "app_id" parameter with value "a33671aa-24fd-4dcd-ba4b-5bbdbafe7690"
+  And  request contains "rf_id" parameter with value "{{ unique }}"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

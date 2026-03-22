@@ -1,0 +1,6 @@
+Scenario 1: Browsing promotions
+  Tags: ['@api', '@ui']
+  When  I want to browse promotions
+  Then  I should see a single promotion in the list
+  And  the "Basic promotion" promotion should exist in the registry
+

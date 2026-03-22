@@ -1,0 +1,7 @@
+Scenario 1: Search for organisations in the "Animal Welfare" category
+  Tags: ['@vcr']
+  Given  I select the "Animal Welfare" category from What They Do
+  And  I press "Submit"
+  Then  I should see "I love dogs"
+  And  I should not see "I hate animals"
+

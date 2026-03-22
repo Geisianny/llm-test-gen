@@ -1,0 +1,31 @@
+Feature: seeing_shipping_method_when_all_units_match_to_shipping_category_story_processado
+
+Scenario: Choose shipping method for items with single shipping category
+    Given there are items in the cart with shipping category "Standard"
+    When the user views available shipping methods
+    Then the system displays shipping methods associated with "Standard" category
+    And the user can select one of the displayed shipping methods
+
+Scenario: No shipping methods available for mixed shipping categories
+    Given there are items in the cart with shipping categories "Standard" and "Over-sized"
+    When the user views available shipping methods
+    Then the system displays a message indicating no shipping methods are available
+    And the user cannot select any shipping method
+
+Scenario: Choose shipping method for items with Over-sized shipping category
+    Given there are items in the cart with shipping category "Over-sized"
+    When the user views available shipping methods
+    Then the system displays shipping methods associated with "Over-sized" category
+    And the user can select one of the displayed shipping methods
+
+Scenario: Shipping methods update when cart contents change
+    Given there are items in the cart with shipping category "Standard"
+    And the system displays shipping methods associated with "Standard" category
+    When the user adds an item with shipping category "Over-sized" to the cart
+    Then the system displays a message indicating no shipping methods are available
+
+Scenario: Valid shipping methods for single item in cart
+    Given there is one item in the cart with shipping category "Standard"
+    When the user views available shipping methods
+    Then the system displays shipping methods associated with "Standard" category
+    And the user can proceed to checkout with the selected shipping method

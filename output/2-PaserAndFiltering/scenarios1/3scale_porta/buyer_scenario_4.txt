@@ -1,0 +1,12 @@
+Scenario 4: Me and my provider should be alarmed about failed payments
+  Tags: ['@commit-transactions']
+  Given  the time is 27th May 2009
+  And  a buyer "broke" signed up to application plan "PaidAsInLunch"
+  And  buyer "broke" has a valid credit card with no money
+  And  I act as "broke"
+  When  the time flies to 3rd June 2009
+  Then  I should receive an email with subject "Monthly statement"
+  Then  on 5th June 2009, me and "admin@foo.3scale.localhost" should get email about payment problem
+  And  on 8th June 2009, me and "admin@foo.3scale.localhost" should get email about payment problem
+  And  on 11th June 2009, me and "admin@foo.3scale.localhost" should get email about payment problem
+

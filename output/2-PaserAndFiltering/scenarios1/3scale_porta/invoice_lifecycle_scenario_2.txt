@@ -1,0 +1,10 @@
+Scenario 2: All charging fails
+  Tags: ['@commit-transactions']
+  Given  buyer "alice" has a valid credit card with no money
+  When  the time flies to 5th June 2009
+  Then  I see my invoice from "May, 2009" is "Unpaid"
+  When  the time flies to 8th June 2009
+  Then  I see my invoice from "May, 2009" is "Unpaid"
+  When  the time flies to 11th June 2009
+  Then  I see my invoice from "May, 2009" is "Failed"
+

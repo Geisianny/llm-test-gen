@@ -1,0 +1,8 @@
+Scenario 3: Create branch terminals group
+  When  I follow the left menu "Systems > System Groups"
+  And  I follow "Create Group"
+  And  I enter "example" as "name"
+  And  I enter "Terminal branch: example.org" as "description"
+  And  I click on "Create Group"
+  Then  I should see a "System group example created." text
+

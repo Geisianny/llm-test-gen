@@ -1,0 +1,10 @@
+Scenario 9: Fail to deactivate organization administrator
+  When  I follow the left menu "Users > User List > Active"
+  And  I follow "user1"
+  When  I follow "Deactivate User"
+  Then  I should see a "This action will deactivate this user. This user will no longer be able to log in or perform actions unless it is reactivated." text
+  When  I click on "Deactivate User"
+  Then  I should see a "You cannot deactivate another organization administrator. Please remove the 'Organization Administrator' role from this user before attempting to deactivate their account." text
+  When  I follow "Deactivated"
+  Then  I should see a "No deactivated users." text
+

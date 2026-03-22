@@ -1,0 +1,3679 @@
+{
+  "repository_name": "vega",
+  "repository_owner": "vegaprotocol",
+  "repository_url": "https://github.com/vegaprotocol/vega",
+  "visibility": "public",
+  "is_private": false,
+  "total_feature_files": 611,
+  "downloaded_files": 611,
+  "download_date": "2025-11-26 09:09:33",
+  "feature_files": [
+    {
+      "name": "0084-VDPR-012.feature",
+      "original_path": "core/integration/features/0084-VDPR-012.feature",
+      "size": 15062,
+      "sha": "1eb0fcd6583b281593ce8f6cc0e0cd9914a78d03"
+    },
+    {
+      "name": "0084-VDPR-013.feature",
+      "original_path": "core/integration/features/0084-VDPR-013.feature",
+      "size": 9545,
+      "sha": "bd908aaf63594bc79acd31e54187bfc4fb94c621"
+    },
+    {
+      "name": "0084-VDPR-014.feature",
+      "original_path": "core/integration/features/0084-VDPR-014.feature",
+      "size": 6509,
+      "sha": "087f642da452a8e8c2dc5074b2f60e85f68dc7cf"
+    },
+    {
+      "name": "0084-VDPR-018.feature",
+      "original_path": "core/integration/features/0084-VDPR-018.feature",
+      "size": 13433,
+      "sha": "2db72af1df50763c167e44033c4bc97faad291ba"
+    },
+    {
+      "name": "2943-distressed-trader-has-general-balance.feature",
+      "original_path": "core/integration/features/accounts/2943-distressed-trader-has-general-balance.feature",
+      "size": 9091,
+      "sha": "0e4e7634d4b3ecead424d433b0ba864967142e83"
+    },
+    {
+      "name": "building_trader_accounts.feature",
+      "original_path": "core/integration/features/accounts/building_trader_accounts.feature",
+      "size": 2283,
+      "sha": "b5b5a06850abac8b16ea78b3ff2d72df07b3b9c6"
+    },
+    {
+      "name": "0086-ASPR-evaluating_activity.feature",
+      "original_path": "core/integration/features/activity-streak/0086-ASPR-evaluating_activity.feature",
+      "size": 16843,
+      "sha": "be64990cb524543e0776ae91a539b58a9ee8b979"
+    },
+    {
+      "name": "0086-ASPR-streak_benefits.feature",
+      "original_path": "core/integration/features/activity-streak/0086-ASPR-streak_benefits.feature",
+      "size": 8889,
+      "sha": "3bf84461c93ea2b83d1e3759631de4dea87c419f"
+    },
+    {
+      "name": "0012-POSR-032.feature",
+      "original_path": "core/integration/features/amm/0012-POSR-032.feature",
+      "size": 8519,
+      "sha": "5c640559d6e15707f9f884e43440511036a80cda"
+    },
+    {
+      "name": "0042-LIQF-107.feature",
+      "original_path": "core/integration/features/amm/0042-LIQF-107.feature",
+      "size": 7112,
+      "sha": "71f19599dcdcf258f69ffafaf1da630b1444a225"
+    },
+    {
+      "name": "0042-LIQF-108.feature",
+      "original_path": "core/integration/features/amm/0042-LIQF-108.feature",
+      "size": 17367,
+      "sha": "85eef8b73841d2b21758c6e78f3a64d2ee8272a2"
+    },
+    {
+      "name": "0042-LIQF-108_before_openingAuction.feature",
+      "original_path": "core/integration/features/amm/0042-LIQF-108_before_openingAuction.feature",
+      "size": 6885,
+      "sha": "6748d3a4289e65e60a2559350410f46c5574446f"
+    },
+    {
+      "name": "0042-LIQF-109.feature",
+      "original_path": "core/integration/features/amm/0042-LIQF-109.feature",
+      "size": 13199,
+      "sha": "d47125fe0a2953453194d1e6860908d3c94ad8aa"
+    },
+    {
+      "name": "0090-VAMM-001.feature",
+      "original_path": "core/integration/features/amm/0090-VAMM-001.feature",
+      "size": 6898,
+      "sha": "64db19a180d66bebf78fc26e2cc9b2730ee207c5"
+    },
+    {
+      "name": "0090-VAMM-002.feature",
+      "original_path": "core/integration/features/amm/0090-VAMM-002.feature",
+      "size": 6774,
+      "sha": "54de4fdd289ad8e60dcb5b76ad86df10ed46edaa"
+    },
+    {
+      "name": "0090-VAMM-003.feature",
+      "original_path": "core/integration/features/amm/0090-VAMM-003.feature",
+      "size": 6775,
+      "sha": "4ff70df24fa0fad52da196611adb2855b772550a"
+    },
+    {
+      "name": "0090-VAMM-004.feature",
+      "original_path": "core/integration/features/amm/0090-VAMM-004.feature",
+      "size": 8069,
+      "sha": "8895708a274638145394cc8349ca748c4dbce0de"
+    },
+    {
+      "name": "0090-VAMM-005.feature",
+      "original_path": "core/integration/features/amm/0090-VAMM-005.feature",
+      "size": 11269,
+      "sha": "04c04c96490ef8c72861935a36fae7c8e517aa2c"
+    },
+    {
+      "name": "0090-VAMM-006-014.feature",
+      "original_path": "core/integration/features/amm/0090-VAMM-006-014.feature",
+      "size": 34405,
+      "sha": "e5167359cb3c40b75be4f4cc1f80391d1374c11f"
+    },
+    {
+      "name": "0090-VAMM-015.feature",
+      "original_path": "core/integration/features/amm/0090-VAMM-015.feature",
+      "size": 7471,
+      "sha": "a7a6c194846881f69034241d76cb4086425667c2"
+    },
+    {
+      "name": "0090-VAMM-016.feature",
+      "original_path": "core/integration/features/amm/0090-VAMM-016.feature",
+      "size": 11216,
+      "sha": "c0263bb6e6c30a07f5764a3f672c224d362a5711"
+    },
+    {
+      "name": "0090-VAMM-019.feature",
+      "original_path": "core/integration/features/amm/0090-VAMM-019.feature",
+      "size": 10826,
+      "sha": "c23d843046968100793632b33f7da7d23bf3ed89"
+    },
+    {
+      "name": "0090-VAMM-020.feature",
+      "original_path": "core/integration/features/amm/0090-VAMM-020.feature",
+      "size": 22258,
+      "sha": "36d113ff8f37b41fb331d72f994ea2ba47132ff2"
+    },
+    {
+      "name": "0090-VAMM-021.feature",
+      "original_path": "core/integration/features/amm/0090-VAMM-021.feature",
+      "size": 26036,
+      "sha": "8ace2b57cb8e818026e75af917a003482e927d16"
+    },
+    {
+      "name": "0090-VAMM-022.feature",
+      "original_path": "core/integration/features/amm/0090-VAMM-022.feature",
+      "size": 9390,
+      "sha": "8dc8c17395ceedad537f47a71cc3f58ed4e77f2d"
+    },
+    {
+      "name": "0090-VAMM-023.feature",
+      "original_path": "core/integration/features/amm/0090-VAMM-023.feature",
+      "size": 10106,
+      "sha": "67d73df4f7f2591a503c96f5a56ab25b99b640fe"
+    },
+    {
+      "name": "0090-VAMM-024-026.feature",
+      "original_path": "core/integration/features/amm/0090-VAMM-024-026.feature",
+      "size": 12821,
+      "sha": "ad3ffc72d73654d4bb784bc2810c15d4a0c2eafc"
+    },
+    {
+      "name": "0090-VAMM-028.feature",
+      "original_path": "core/integration/features/amm/0090-VAMM-028.feature",
+      "size": 31559,
+      "sha": "fea53b5e550b4fadf6308e10ce81dc5caadcc266"
+    },
+    {
+      "name": "0090-VAMM-031.feature",
+      "original_path": "core/integration/features/amm/0090-VAMM-031.feature",
+      "size": 11239,
+      "sha": "bd34142230b3c4b332d2e099338d5642ec50a0f0"
+    },
+    {
+      "name": "0090-VAMM-032.feature",
+      "original_path": "core/integration/features/amm/0090-VAMM-032.feature",
+      "size": 11090,
+      "sha": "7cd648ba971d9d5a62dc0365393312cdd1a34e40"
+    },
+    {
+      "name": "0090-VAMM-035.feature",
+      "original_path": "core/integration/features/amm/0090-VAMM-035.feature",
+      "size": 15935,
+      "sha": "8846bb481d3cbab2dbc706ae0f39aaa352577ce4"
+    },
+    {
+      "name": "0090-VAMM-037.feature",
+      "original_path": "core/integration/features/amm/0090-VAMM-037.feature",
+      "size": 11636,
+      "sha": "f1ac9270622184733f7db1d86ad06c9071fe8551"
+    },
+    {
+      "name": "0090-VAMM-092.feature",
+      "original_path": "core/integration/features/amm/0090-VAMM-092.feature",
+      "size": 9996,
+      "sha": "959f28e9620d84a36a83bba77ad0518874264af6"
+    },
+    {
+      "name": "0090-VAMM-auction-refine.feature",
+      "original_path": "core/integration/features/amm/0090-VAMM-auction-refine.feature",
+      "size": 11436,
+      "sha": "b393304fe900a0aa619412cdd49c3d955f30ba2f"
+    },
+    {
+      "name": "0090-VAMM-auction.feature",
+      "original_path": "core/integration/features/amm/0090-VAMM-auction.feature",
+      "size": 31150,
+      "sha": "f022cf3ee1827e5271312a45e4e184b46e1f2408"
+    },
+    {
+      "name": "0090-VAMM-basic.feature",
+      "original_path": "core/integration/features/amm/0090-VAMM-basic.feature",
+      "size": 21806,
+      "sha": "d85f97282874a29c9f697667f98f0f6d2b735a45"
+    },
+    {
+      "name": "0090-VAMM-market-dp.feature",
+      "original_path": "core/integration/features/amm/0090-VAMM-market-dp.feature",
+      "size": 10177,
+      "sha": "a9c0c1bf8a73fecc2713025992b240a40921de2f"
+    },
+    {
+      "name": "0090-VAMM-market-ticks.feature",
+      "original_path": "core/integration/features/amm/0090-VAMM-market-ticks.feature",
+      "size": 9155,
+      "sha": "f615f5e819b3db8185c8fe4e9338ee373a642749"
+    },
+    {
+      "name": "0090-VAMM-oracle-base-composite.feature",
+      "original_path": "core/integration/features/amm/0090-VAMM-oracle-base-composite.feature",
+      "size": 6797,
+      "sha": "33224546cdb90e35298e97389734cbcdd14b0497"
+    },
+    {
+      "name": "0090-VAMM-oracle-base.feature",
+      "original_path": "core/integration/features/amm/0090-VAMM-oracle-base.feature",
+      "size": 24073,
+      "sha": "e718f510d4207f68e7b75613963d0a22b78f96b1"
+    },
+    {
+      "name": "0090-VAMM-rebase.feature",
+      "original_path": "core/integration/features/amm/0090-VAMM-rebase.feature",
+      "size": 14624,
+      "sha": "5121cf5ad2a8fd253df746e844ddda9a4bbc76d9"
+    },
+    {
+      "name": "0090-VAMM-sparse-auction.feature",
+      "original_path": "core/integration/features/amm/0090-VAMM-sparse-auction.feature",
+      "size": 11498,
+      "sha": "8d539ea97224ac3f6c5857451cdcfb1a4e14cf82"
+    },
+    {
+      "name": "0090-VAMM-sparse.feature",
+      "original_path": "core/integration/features/amm/0090-VAMM-sparse.feature",
+      "size": 12562,
+      "sha": "5f53c054bdc826ec79fc3a856715d0b71986c462"
+    },
+    {
+      "name": "0090-VAMM-spread.feature",
+      "original_path": "core/integration/features/amm/0090-VAMM-spread.feature",
+      "size": 13923,
+      "sha": "aa90c7ea6d2867c598bd4e69c3f636110b7de030"
+    },
+    {
+      "name": "11504-panic-empty-curve.feature",
+      "original_path": "core/integration/features/amm/11504-panic-empty-curve.feature",
+      "size": 14303,
+      "sha": "49bb44daaa2e165d3205eb1715afe015bef1f852"
+    },
+    {
+      "name": "11504-rounding.feature",
+      "original_path": "core/integration/features/amm/11504-rounding.feature",
+      "size": 9538,
+      "sha": "58ad649f95f221de3b053c87e2b9ff39700b0250"
+    },
+    {
+      "name": "amend-amm-single-side.feature",
+      "original_path": "core/integration/features/amm/amend-amm-single-side.feature",
+      "size": 16899,
+      "sha": "b92e72ab519f8c47a96fe4266a824afccdd29a69"
+    },
+    {
+      "name": "pegged-orders-market-tick.feature",
+      "original_path": "core/integration/features/amm/pegged-orders-market-tick.feature",
+      "size": 9262,
+      "sha": "74226e7a0f4772a05ada8a51d3539c940d5bc2ed"
+    },
+    {
+      "name": "pegged-orders.feature",
+      "original_path": "core/integration/features/amm/pegged-orders.feature",
+      "size": 9759,
+      "sha": "465a0f4f5c694ce293aafb9b3321fa29781ade7e"
+    },
+    {
+      "name": "reduce-only-single-sided.feature",
+      "original_path": "core/integration/features/amm/reduce-only-single-sided.feature",
+      "size": 18858,
+      "sha": "6fdd830e74a2e54505ab4794448fbe50be638fd1"
+    },
+    {
+      "name": "vamm-wash-trade.feature",
+      "original_path": "core/integration/features/amm/vamm-wash-trade.feature",
+      "size": 13206,
+      "sha": "61c896d209f8b7ed9cac9f2d049a0714ef9f9ab8"
+    },
+    {
+      "name": "0026-AUCT-039.feature",
+      "original_path": "core/integration/features/auctions/0026-AUCT-039.feature",
+      "size": 5117,
+      "sha": "62526a785e6401ec9eec64ef69dc669567847c9a"
+    },
+    {
+      "name": "0043-MKTL-010.feature",
+      "original_path": "core/integration/features/auctions/0043-MKTL-010.feature",
+      "size": 5172,
+      "sha": "74a50181615ea179a612491f5c1b22ea91d332fd"
+    },
+    {
+      "name": "0094-PRAC-003.feature",
+      "original_path": "core/integration/features/auctions/0094-PRAC-003.feature",
+      "size": 7502,
+      "sha": "24ebaed4ebc6b9b694cef49fb5c385ef67a5f219"
+    },
+    {
+      "name": "0094-PRAC-007.feature",
+      "original_path": "core/integration/features/auctions/0094-PRAC-007.feature",
+      "size": 8095,
+      "sha": "3b1257bee34167668b282c377bb48f129d55f299"
+    },
+    {
+      "name": "0094-PRAC-008.feature",
+      "original_path": "core/integration/features/auctions/0094-PRAC-008.feature",
+      "size": 18461,
+      "sha": "c0fdbfad474e591f618f996977f398741a5b570d"
+    },
+    {
+      "name": "2952-opening-auction-uncrossing-decimals.feature",
+      "original_path": "core/integration/features/auctions/2952-opening-auction-uncrossing-decimals.feature",
+      "size": 3545,
+      "sha": "f4f7381660fa78ef2f301bc1ab1f043c7421f195"
+    },
+    {
+      "name": "2952-opening-auction-uncrossing.feature",
+      "original_path": "core/integration/features/auctions/2952-opening-auction-uncrossing.feature",
+      "size": 3306,
+      "sha": "39141f7df4fc54f97c20153a98b5605a947f76c2"
+    },
+    {
+      "name": "3528-indefinite-auction-extension.feature",
+      "original_path": "core/integration/features/auctions/3528-indefinite-auction-extension.feature",
+      "size": 11443,
+      "sha": "4c16193bc454cfce5570daaa173d7393934a46e1"
+    },
+    {
+      "name": "5460-market-order-cannot-trade-due-to-auction.feature",
+      "original_path": "core/integration/features/auctions/5460-market-order-cannot-trade-due-to-auction.feature",
+      "size": 8294,
+      "sha": "f0da44a8858c89d1cd8ccf2f540781b286232c63"
+    },
+    {
+      "name": "5468-opening-auction-uncross-with-wash-trades.feature",
+      "original_path": "core/integration/features/auctions/5468-opening-auction-uncross-with-wash-trades.feature",
+      "size": 3996,
+      "sha": "5fa16582cb367433c8e4134eada433f53bd34a22"
+    },
+    {
+      "name": "cancel-gfn-auction.feature",
+      "original_path": "core/integration/features/auctions/cancel-gfn-auction.feature",
+      "size": 6749,
+      "sha": "7cc06658738f0ea2bb86113459e0d0e55a0996d6"
+    },
+    {
+      "name": "enter-leave-liquidity-auction.feature",
+      "original_path": "core/integration/features/auctions/enter-leave-liquidity-auction.feature",
+      "size": 12894,
+      "sha": "c8342ee2e85e54bbf6c187a123bd55fad0e16269"
+    },
+    {
+      "name": "leave-price-enter-liquidity-auction.feature",
+      "original_path": "core/integration/features/auctions/leave-price-enter-liquidity-auction.feature",
+      "size": 5868,
+      "sha": "4328f3ee42252b1857fad903ac30f4c3fba8ce1c"
+    },
+    {
+      "name": "liquidity-uncross.feature",
+      "original_path": "core/integration/features/auctions/liquidity-uncross.feature",
+      "size": 4054,
+      "sha": "3592f64dcfb3b194e41e25969f063da93e564775"
+    },
+    {
+      "name": "opening-auction-expiry.feature",
+      "original_path": "core/integration/features/auctions/opening-auction-expiry.feature",
+      "size": 4824,
+      "sha": "a1e194952cf517f40eb5d4abdd46a636de8857a9"
+    },
+    {
+      "name": "opening-auction-indicative-price.feature",
+      "original_path": "core/integration/features/auctions/opening-auction-indicative-price.feature",
+      "size": 5681,
+      "sha": "685a814c8da0459a7341ffd5c81dd1de54bc08d4"
+    },
+    {
+      "name": "opening-auction-price-manipulation.feature",
+      "original_path": "core/integration/features/auctions/opening-auction-price-manipulation.feature",
+      "size": 5148,
+      "sha": "cece77e1bb99a6251c2f896c4b7be7e954cbaad1"
+    },
+    {
+      "name": "opening-auction-price.feature",
+      "original_path": "core/integration/features/auctions/opening-auction-price.feature",
+      "size": 23111,
+      "sha": "26ec3107406bf98ac9271029037811170e80670c"
+    },
+    {
+      "name": "opening-auction-uncross.feature",
+      "original_path": "core/integration/features/auctions/opening-auction-uncross.feature",
+      "size": 13258,
+      "sha": "f61ef0229f4bafb6d5ce733303eacb475e3e7f98"
+    },
+    {
+      "name": "0016-PFUT-015.feature",
+      "original_path": "core/integration/features/capped-futures/0016-PFUT-015.feature",
+      "size": 5230,
+      "sha": "07090bd400e61810ffe58b6b159d65ac1a733a3a"
+    },
+    {
+      "name": "0016-PFUT-016.feature",
+      "original_path": "core/integration/features/capped-futures/0016-PFUT-016.feature",
+      "size": 6756,
+      "sha": "9b9c29a09830264731fa0abf6b8a936eac8245ee"
+    },
+    {
+      "name": "0016-PFUT-018.feature",
+      "original_path": "core/integration/features/capped-futures/0016-PFUT-018.feature",
+      "size": 5487,
+      "sha": "13c6a2d78738c8af18e1d41519134e33d1094e6d"
+    },
+    {
+      "name": "0016-PFUT-019.feature",
+      "original_path": "core/integration/features/capped-futures/0016-PFUT-019.feature",
+      "size": 6247,
+      "sha": "84ac6a6537ad98248ef91dc54fbd66d7e57b1ea1"
+    },
+    {
+      "name": "0016-PFUT-020-ignore.feature",
+      "original_path": "core/integration/features/capped-futures/0016-PFUT-020-ignore.feature",
+      "size": 15290,
+      "sha": "6f7ecbddf4364f4b881fa5c1d588dd0d620d1202"
+    },
+    {
+      "name": "0016-PFUT-020.feature",
+      "original_path": "core/integration/features/capped-futures/0016-PFUT-020.feature",
+      "size": 9560,
+      "sha": "aeba7e1463b89600794427b91086c9d0f30d8e0f"
+    },
+    {
+      "name": "0016-PFUT-021.feature",
+      "original_path": "core/integration/features/capped-futures/0016-PFUT-021.feature",
+      "size": 10834,
+      "sha": "14bb1fdb6aaa7305b787ff4c774a0f0e85d3ad01"
+    },
+    {
+      "name": "0016-PFUT-022-max.feature",
+      "original_path": "core/integration/features/capped-futures/0016-PFUT-022-max.feature",
+      "size": 13885,
+      "sha": "d79d0ca3bcc96e57c32585af8e85edf119297671"
+    },
+    {
+      "name": "0016-PFUT-022.feature",
+      "original_path": "core/integration/features/capped-futures/0016-PFUT-022.feature",
+      "size": 13875,
+      "sha": "2a2ba9649703f1f0f77cd42edf728687b3af1ba4"
+    },
+    {
+      "name": "0016-PFUT-023.feature",
+      "original_path": "core/integration/features/capped-futures/0016-PFUT-023.feature",
+      "size": 8803,
+      "sha": "58477b43afe829965ea0dcd1e7d65fa9843c1b5b"
+    },
+    {
+      "name": "0016-PFUT-026.feature",
+      "original_path": "core/integration/features/capped-futures/0016-PFUT-026.feature",
+      "size": 10199,
+      "sha": "4c64effe72b80a71efac348f6810cc30b5c435fe"
+    },
+    {
+      "name": "0019-MCAL-154.feature",
+      "original_path": "core/integration/features/capped-futures/0019-MCAL-154.feature",
+      "size": 10036,
+      "sha": "26dcb24f184c7c738aee6b9834f688f42a3accea"
+    },
+    {
+      "name": "11453-closeout.feature",
+      "original_path": "core/integration/features/capped-futures/11453-closeout.feature",
+      "size": 6345,
+      "sha": "6e54038f3bdb584f86e9b6b738602b069aba4bd7"
+    },
+    {
+      "name": "0012-POSR-009.feature",
+      "original_path": "core/integration/features/closeouts/0012-POSR-009.feature",
+      "size": 4216,
+      "sha": "f6c6026bb95ac589650f451e00083922cc045f4c"
+    },
+    {
+      "name": "0012-POSR-010.feature",
+      "original_path": "core/integration/features/closeouts/0012-POSR-010.feature",
+      "size": 7582,
+      "sha": "0ba0bd12f66c34f55bb094664f0d79eebc0b71ba"
+    },
+    {
+      "name": "0012-POSR-031.feature",
+      "original_path": "core/integration/features/closeouts/0012-POSR-031.feature",
+      "size": 7576,
+      "sha": "09a392729e6666a5145cf1e5bf190a3aa2a43c11"
+    },
+    {
+      "name": "0012-POSR-033.feature",
+      "original_path": "core/integration/features/closeouts/0012-POSR-033.feature",
+      "size": 8650,
+      "sha": "156165350a79885d7946db88a9d7a29bf69c40d9"
+    },
+    {
+      "name": "1847-closeout-long-with-fees.feature",
+      "original_path": "core/integration/features/closeouts/1847-closeout-long-with-fees.feature",
+      "size": 6052,
+      "sha": "0ba84604818396b60ac24e300e1ad824bdcc6b71"
+    },
+    {
+      "name": "1847-closeout-long.feature",
+      "original_path": "core/integration/features/closeouts/1847-closeout-long.feature",
+      "size": 5251,
+      "sha": "4c8e71b82cdcef12b5dcf90cd6a7909b88ce5a53"
+    },
+    {
+      "name": "1847-closeout-short-with-fees.feature",
+      "original_path": "core/integration/features/closeouts/1847-closeout-short-with-fees.feature",
+      "size": 5203,
+      "sha": "140e4700a652ec70173dafcaf53dd93330826a53"
+    },
+    {
+      "name": "1847-closeout-short.feature",
+      "original_path": "core/integration/features/closeouts/1847-closeout-short.feature",
+      "size": 5190,
+      "sha": "98c6744c705075e5edded246e48aa72461a797cf"
+    },
+    {
+      "name": "1919-close-out-occurs-above-maintenance.feature",
+      "original_path": "core/integration/features/closeouts/1919-close-out-occurs-above-maintenance.feature",
+      "size": 7040,
+      "sha": "5053132561bac8f21156f063d926e7eeb3ac033b"
+    },
+    {
+      "name": "2878-close-out-orders-allowed-when-under-initial.feature",
+      "original_path": "core/integration/features/closeouts/2878-close-out-orders-allowed-when-under-initial.feature",
+      "size": 6161,
+      "sha": "f9980e33f9a648d86e738d820b63d5c8cf8ab797"
+    },
+    {
+      "name": "630-position-resolution-negative-insurance-pool.feature",
+      "original_path": "core/integration/features/closeouts/630-position-resolution-negative-insurance-pool.feature",
+      "size": 5040,
+      "sha": "94d4d604ea008fc503dd2211f056d6b45bb3a060"
+    },
+    {
+      "name": "closeout-long-with-custom-strategy.feature",
+      "original_path": "core/integration/features/closeouts/closeout-long-with-custom-strategy.feature",
+      "size": 7040,
+      "sha": "76dc1cafcdbce5601165086dc629f75a31604858"
+    },
+    {
+      "name": "distressed-safe-event.feature",
+      "original_path": "core/integration/features/closeouts/distressed-safe-event.feature",
+      "size": 4413,
+      "sha": "4c747eebd4309b7c70debf4c3610108162fb3a67"
+    },
+    {
+      "name": "network-order-and-trades-sub.feature",
+      "original_path": "core/integration/features/closeouts/network-order-and-trades-sub.feature",
+      "size": 4161,
+      "sha": "40356b3ddc815bdabd46878c511eb1b7aa9a6dda"
+    },
+    {
+      "name": "position-resolution-after-auction.feature",
+      "original_path": "core/integration/features/closeouts/position-resolution-after-auction.feature",
+      "size": 5114,
+      "sha": "1b5cba0f51cff5f7a874486ddd560685b3812403"
+    },
+    {
+      "name": "debug.feature",
+      "original_path": "core/integration/features/debug.feature",
+      "size": 6322,
+      "sha": "026899f6592ad303c5cfbf31820e73ab8a9c766a"
+    },
+    {
+      "name": "reconciliation.feature",
+      "original_path": "core/integration/features/delegation/reconciliation.feature",
+      "size": 14032,
+      "sha": "a9f212955cb68fa27f5836f75092f251c8f1f8bd"
+    },
+    {
+      "name": "0029-FEES-high_volume_maker.feature",
+      "original_path": "core/integration/features/fees/0029-FEES-high_volume_maker.feature",
+      "size": 10640,
+      "sha": "21956a6cbcded8f177e2ce71531a48d7709a68c9"
+    },
+    {
+      "name": "0042-LIQF-fees_settings.feature",
+      "original_path": "core/integration/features/fees/0042-LIQF-fees_settings.feature",
+      "size": 7040,
+      "sha": "1e466695d711d7dc30b763768ce3ff3d92f99746"
+    },
+    {
+      "name": "amend-fees.feature",
+      "original_path": "core/integration/features/fees/amend-fees.feature",
+      "size": 14983,
+      "sha": "46cdfa1c31e7e843031107048a7e5abf0fb04889"
+    },
+    {
+      "name": "setting-fee-and-rewarding-lps.feature",
+      "original_path": "core/integration/features/fees/setting-fee-and-rewarding-lps.feature",
+      "size": 91312,
+      "sha": "e7a4ef577403571bc5fc57ef191a0c41299d4a60"
+    },
+    {
+      "name": "trading-fees-pdp.feature",
+      "original_path": "core/integration/features/fees/trading-fees-pdp.feature",
+      "size": 95137,
+      "sha": "c314735b8aea96fc6b3fb823ef85c4204776d772"
+    },
+    {
+      "name": "global.feature",
+      "original_path": "core/integration/features/global.feature",
+      "size": 648,
+      "sha": "185f1214e17e104a88455551ffd6e3051f66242f"
+    },
+    {
+      "name": "0012-POSR-012.feature",
+      "original_path": "core/integration/features/liquidation/0012-POSR-012.feature",
+      "size": 7697,
+      "sha": "244363aa2de43c7cb7e60db050fb925bf20610eb"
+    },
+    {
+      "name": "0012-POSR-013.feature",
+      "original_path": "core/integration/features/liquidation/0012-POSR-013.feature",
+      "size": 11801,
+      "sha": "874ea6bad92599994ac0ee92522cccde946263e7"
+    },
+    {
+      "name": "0042-LIQF-043.feature",
+      "original_path": "core/integration/features/liquidity-provision/0042-LIQF-043.feature",
+      "size": 12993,
+      "sha": "0ce583c104a8be01dcb8d0692c476097d2ff6de9"
+    },
+    {
+      "name": "0042-LIQF-100.feature",
+      "original_path": "core/integration/features/liquidity-provision/0042-LIQF-100.feature",
+      "size": 11384,
+      "sha": "e63f19d6999b56d13c7dfe0714c60b27ac9420a8"
+    },
+    {
+      "name": "0044-LIME-013.feature",
+      "original_path": "core/integration/features/liquidity-provision/0044-LIME-013.feature",
+      "size": 7028,
+      "sha": "d1ae24b6d09478b7e5735d15120035b85c112a5b"
+    },
+    {
+      "name": "0044-LIME-014.feature",
+      "original_path": "core/integration/features/liquidity-provision/0044-LIME-014.feature",
+      "size": 8655,
+      "sha": "12b356a82828b6e6779bb976b49f7dfef97805b2"
+    },
+    {
+      "name": "0044-LIME-016.feature",
+      "original_path": "core/integration/features/liquidity-provision/0044-LIME-016.feature",
+      "size": 6696,
+      "sha": "55412325437b32c4d43b6d7b355809f1dbfe7e58"
+    },
+    {
+      "name": "0044-LIME-020.feature",
+      "original_path": "core/integration/features/liquidity-provision/0044-LIME-020.feature",
+      "size": 17426,
+      "sha": "9483dd45d44021d048a9220c207617ad056ecafb"
+    },
+    {
+      "name": "0044-LIME-023.feature",
+      "original_path": "core/integration/features/liquidity-provision/0044-LIME-023.feature",
+      "size": 7421,
+      "sha": "cb72dd40590e1514154a46d5eb8b762bdf493574"
+    },
+    {
+      "name": "0044-LIME-024.feature",
+      "original_path": "core/integration/features/liquidity-provision/0044-LIME-024.feature",
+      "size": 6134,
+      "sha": "ac4352e8f73c1c1622d4177997b92aa0afb03290"
+    },
+    {
+      "name": "0044-LIME-025.feature",
+      "original_path": "core/integration/features/liquidity-provision/0044-LIME-025.feature",
+      "size": 6455,
+      "sha": "2bac40cadaa28441508b5b4e7965b71a73f91cd5"
+    },
+    {
+      "name": "0044-LIME-026.feature",
+      "original_path": "core/integration/features/liquidity-provision/0044-LIME-026.feature",
+      "size": 7366,
+      "sha": "71fe142097de43c3e0dfd5c370b7c27666d36ce6"
+    },
+    {
+      "name": "0044-LIME-027.feature",
+      "original_path": "core/integration/features/liquidity-provision/0044-LIME-027.feature",
+      "size": 8605,
+      "sha": "352b9f66ce30e6df5d9ddfb05096323996784110"
+    },
+    {
+      "name": "0044-LIME-028.feature",
+      "original_path": "core/integration/features/liquidity-provision/0044-LIME-028.feature",
+      "size": 10598,
+      "sha": "f77e05fefac34aaa8644482849d1d290344e8902"
+    },
+    {
+      "name": "0044-LIME-029.feature",
+      "original_path": "core/integration/features/liquidity-provision/0044-LIME-029.feature",
+      "size": 9780,
+      "sha": "575c294fbba45710f7c61199f731a0879fe7f400"
+    },
+    {
+      "name": "0044-LIME-050.feature",
+      "original_path": "core/integration/features/liquidity-provision/0044-LIME-050.feature",
+      "size": 7307,
+      "sha": "1ca80bb4252806cb9ffc5fa2aa16af6d7c24d657"
+    },
+    {
+      "name": "0044-LIME-060.feature",
+      "original_path": "core/integration/features/liquidity-provision/0044-LIME-060.feature",
+      "size": 6459,
+      "sha": "f09e0abbb9ba35da198e1bafa563627763e2093c"
+    },
+    {
+      "name": "0044-LIME-062.feature",
+      "original_path": "core/integration/features/liquidity-provision/0044-LIME-062.feature",
+      "size": 16953,
+      "sha": "096474b4f8752b68266720a5ad8560dda651035c"
+    },
+    {
+      "name": "0044-LIME-063.feature",
+      "original_path": "core/integration/features/liquidity-provision/0044-LIME-063.feature",
+      "size": 13941,
+      "sha": "fe0de5bca404bce8c06417395e8323510817d0fc"
+    },
+    {
+      "name": "0044-LIME-065.feature",
+      "original_path": "core/integration/features/liquidity-provision/0044-LIME-065.feature",
+      "size": 10960,
+      "sha": "3f3673f24df8896216a460e15db193089f535183"
+    },
+    {
+      "name": "0044-LIME-077.feature",
+      "original_path": "core/integration/features/liquidity-provision/0044-LIME-077.feature",
+      "size": 11941,
+      "sha": "cbe487485d28c48248b71b8b9f9389bfdc91d4d3"
+    },
+    {
+      "name": "0044-LIME-088.feature",
+      "original_path": "core/integration/features/liquidity-provision/0044-LIME-088.feature",
+      "size": 7693,
+      "sha": "8dc46e1759d3f338c88fd5c058d1a6bf4e077a2d"
+    },
+    {
+      "name": "0044-LIME-091.feature",
+      "original_path": "core/integration/features/liquidity-provision/0044-LIME-091.feature",
+      "size": 11283,
+      "sha": "5ba6bafd930495f886f34fac4ad8515bf88cdf27"
+    },
+    {
+      "name": "0044-LIME-092.feature",
+      "original_path": "core/integration/features/liquidity-provision/0044-LIME-092.feature",
+      "size": 13434,
+      "sha": "f4c680ef10cf8e6db95502a10cdb8fed351ff808"
+    },
+    {
+      "name": "0044-LIME-113.feature",
+      "original_path": "core/integration/features/liquidity-provision/0044-LIME-113.feature",
+      "size": 10567,
+      "sha": "9e3c9fd43f72079df817c7eac6ec5aeca380d5c1"
+    },
+    {
+      "name": "0044-LIME-115.feature",
+      "original_path": "core/integration/features/liquidity-provision/0044-LIME-115.feature",
+      "size": 9942,
+      "sha": "1dfec606970dfa884c7fadf44e96b655946abd8a"
+    },
+    {
+      "name": "0044-LIME-119.feature",
+      "original_path": "core/integration/features/liquidity-provision/0044-LIME-119.feature",
+      "size": 11899,
+      "sha": "971fa572abd7eab3cba6895cde35d1b67cb23eb9"
+    },
+    {
+      "name": "0044-LIME-LP_amendment.feature",
+      "original_path": "core/integration/features/liquidity-provision/0044-LIME-LP_amendment.feature",
+      "size": 12530,
+      "sha": "f1de25b75cc50fdb93897729309c390664052172"
+    },
+    {
+      "name": "bug-5110.feature",
+      "original_path": "core/integration/features/liquidity-provision/bug-5110.feature",
+      "size": 4558,
+      "sha": "1545f1c844cf4a06a0b02602bc3b780c349bd506"
+    },
+    {
+      "name": "bug-5147.feature",
+      "original_path": "core/integration/features/liquidity-provision/bug-5147.feature",
+      "size": 5004,
+      "sha": "a6674be5de8e7ced0736951cfbe3654031b87da2"
+    },
+    {
+      "name": "liquidity_provision_simple_pdp.feature",
+      "original_path": "core/integration/features/liquidity-provision/liquidity_provision_simple_pdp.feature",
+      "size": 4106,
+      "sha": "030cd0c108ea0bb68441ea74fd1edf6894c8e7c5"
+    },
+    {
+      "name": "lp-distressed-closeout-pdp.feature",
+      "original_path": "core/integration/features/liquidity-provision/lp-distressed-closeout-pdp.feature",
+      "size": 16429,
+      "sha": "c6376707ac1e65c3c12d0b194fc77df743119787"
+    },
+    {
+      "name": "lp-distressed-closeout.feature",
+      "original_path": "core/integration/features/liquidity-provision/lp-distressed-closeout.feature",
+      "size": 16680,
+      "sha": "b4b52b460501bb56f4308529b2bf77b0d0966813"
+    },
+    {
+      "name": "lp-margin-post-auction.feature",
+      "original_path": "core/integration/features/liquidity-provision/lp-margin-post-auction.feature",
+      "size": 6065,
+      "sha": "b7dbafa5b8273370b33fa2b282f3c2c2e1281cbf"
+    },
+    {
+      "name": "margin-release-cancel.feature",
+      "original_path": "core/integration/features/liquidity-provision/margin-release-cancel.feature",
+      "size": 12444,
+      "sha": "b2896c866de70a1e88d5f7d056cf5bf03efc614a"
+    },
+    {
+      "name": "mid-price-issue-amend.feature",
+      "original_path": "core/integration/features/liquidity-provision/mid-price-issue-amend.feature",
+      "size": 13346,
+      "sha": "75b0552e3491fa4ef460acae46956f960a29a5f8"
+    },
+    {
+      "name": "mid-price-issue.feature",
+      "original_path": "core/integration/features/liquidity-provision/mid-price-issue.feature",
+      "size": 3767,
+      "sha": "a507406489b3b7560c6ae0e8139f162aabc4f281"
+    },
+    {
+      "name": "verify-CcySiska.feature",
+      "original_path": "core/integration/features/liquidity-provision/verify-CcySiska.feature",
+      "size": 16370,
+      "sha": "cd0f3ad695f06d2083fb701764077ebee4e46035"
+    },
+    {
+      "name": "0016-PFUT-026_1.feature",
+      "original_path": "core/integration/features/margin/0016-PFUT-026.feature",
+      "size": 6418,
+      "sha": "008e6d668ef37bbda4374b1e40f8ca1f9c51171b"
+    },
+    {
+      "name": "0019-MCAL-032.feature",
+      "original_path": "core/integration/features/margin/0019-MCAL-032.feature",
+      "size": 15662,
+      "sha": "0a8d90ef622db904c3336fda91859702f5f1d4fa"
+    },
+    {
+      "name": "0019-MCAL-037.feature",
+      "original_path": "core/integration/features/margin/0019-MCAL-037.feature",
+      "size": 19904,
+      "sha": "795f92dfe097977c311ac29b91afd46e9abe6681"
+    },
+    {
+      "name": "0019-MCAL-041.feature",
+      "original_path": "core/integration/features/margin/0019-MCAL-041.feature",
+      "size": 10385,
+      "sha": "d3cf15c60613496cb6b836b54328d460ce486f94"
+    },
+    {
+      "name": "0019-MCAL-042.feature",
+      "original_path": "core/integration/features/margin/0019-MCAL-042.feature",
+      "size": 11192,
+      "sha": "fbf9428d3e842baafb4ab5c2f108b0756da28c90"
+    },
+    {
+      "name": "0019-MCAL-043.feature",
+      "original_path": "core/integration/features/margin/0019-MCAL-043.feature",
+      "size": 77015,
+      "sha": "b1c20b804b549e365e10a705ca193fc0255a6ae3"
+    },
+    {
+      "name": "0019-MCAL-068.feature",
+      "original_path": "core/integration/features/margin/0019-MCAL-068.feature",
+      "size": 10257,
+      "sha": "c449be527b513c80e43d35ecc56a5766e715e97d"
+    },
+    {
+      "name": "0019-MCAL-070.feature",
+      "original_path": "core/integration/features/margin/0019-MCAL-070.feature",
+      "size": 35126,
+      "sha": "aa38661396816820d57e19b4626eef0eaa9bbd3e"
+    },
+    {
+      "name": "0019-MCAL-072.feature",
+      "original_path": "core/integration/features/margin/0019-MCAL-072.feature",
+      "size": 14487,
+      "sha": "48fd19035e6b45e7869aba1d79e45240967f6d67"
+    },
+    {
+      "name": "0019-MCAL-100.feature",
+      "original_path": "core/integration/features/margin/0019-MCAL-100.feature",
+      "size": 11469,
+      "sha": "7fd93376682c71d9fbd07994dfd21b79514f4d5b"
+    },
+    {
+      "name": "0019-MCAL-102.feature",
+      "original_path": "core/integration/features/margin/0019-MCAL-102.feature",
+      "size": 7153,
+      "sha": "d65b6ae7ed675d7a4ca029792e103aa6754bacb1"
+    },
+    {
+      "name": "0019-MCAL-105.feature",
+      "original_path": "core/integration/features/margin/0019-MCAL-105.feature",
+      "size": 11533,
+      "sha": "a284cc11bca389de0fac36fbc0368c84ddba41c8"
+    },
+    {
+      "name": "0019-MCAL-107.feature",
+      "original_path": "core/integration/features/margin/0019-MCAL-107.feature",
+      "size": 7854,
+      "sha": "0fc325ee7cce357a1fea07c6646d49808b4db704"
+    },
+    {
+      "name": "0019-MCAL-109.feature",
+      "original_path": "core/integration/features/margin/0019-MCAL-109.feature",
+      "size": 19207,
+      "sha": "205c784b1bf303be22a46dfd1f512c85e66e3538"
+    },
+    {
+      "name": "0019-MCAL-128.feature",
+      "original_path": "core/integration/features/margin/0019-MCAL-128.feature",
+      "size": 9275,
+      "sha": "cc32a91a26feea46732a250965c9b9f72c002eb7"
+    },
+    {
+      "name": "0019-MCAL-145.feature",
+      "original_path": "core/integration/features/margin/0019-MCAL-145.feature",
+      "size": 9804,
+      "sha": "c21d2cf4ffbb79504568ff9de713cce5693707db"
+    },
+    {
+      "name": "0019-MCAL-150.feature",
+      "original_path": "core/integration/features/margin/0019-MCAL-150.feature",
+      "size": 9908,
+      "sha": "334cf720da0f163dc1108f4a2e8196a453692d6a"
+    },
+    {
+      "name": "0019-MCAL-160.feature",
+      "original_path": "core/integration/features/margin/0019-MCAL-160.feature",
+      "size": 6031,
+      "sha": "823415049f62086189abd11b2fa7cbc10465705b"
+    },
+    {
+      "name": "0019-MCAL-164.feature",
+      "original_path": "core/integration/features/margin/0019-MCAL-164.feature",
+      "size": 6417,
+      "sha": "6bbf371e698f6db2ecbfdd9bd3a80e6a734941fa"
+    },
+    {
+      "name": "0019-MCAL-168.feature",
+      "original_path": "core/integration/features/margin/0019-MCAL-168.feature",
+      "size": 7522,
+      "sha": "bd734808695f9203672743a5a2f48e5f6335f1b8"
+    },
+    {
+      "name": "0019-MCAL-172.feature",
+      "original_path": "core/integration/features/margin/0019-MCAL-172.feature",
+      "size": 8138,
+      "sha": "848530c89c89d0f097b9fd8bc7a23161a54e7689"
+    },
+    {
+      "name": "0019-MCAL-176.feature",
+      "original_path": "core/integration/features/margin/0019-MCAL-176.feature",
+      "size": 5252,
+      "sha": "161132dd8c7987800a9a3be2b849641a91b2cb04"
+    },
+    {
+      "name": "0019-MCAL-200.feature",
+      "original_path": "core/integration/features/margin/0019-MCAL-200.feature",
+      "size": 13304,
+      "sha": "07b05986dc71d6afc22ec6ae8d182c4f0050bf53"
+    },
+    {
+      "name": "0019-MCAL-201.feature",
+      "original_path": "core/integration/features/margin/0019-MCAL-201.feature",
+      "size": 6331,
+      "sha": "c0c3326d658718eeff33e16e01373c15e3d28be4"
+    },
+    {
+      "name": "0019-MCAL-202.feature",
+      "original_path": "core/integration/features/margin/0019-MCAL-202.feature",
+      "size": 6551,
+      "sha": "1b454328890431ddfc0fa80b34653e1af6c93340"
+    },
+    {
+      "name": "0019-MCAL-203.feature",
+      "original_path": "core/integration/features/margin/0019-MCAL-203.feature",
+      "size": 6576,
+      "sha": "14a5f61d46080102e6019abad6e3effd4abebef6"
+    },
+    {
+      "name": "0019-MCAL-204.feature",
+      "original_path": "core/integration/features/margin/0019-MCAL-204.feature",
+      "size": 5979,
+      "sha": "35e7c757f4075a437a5227842a68f8a239f5b710"
+    },
+    {
+      "name": "0019-MCAL-205.feature",
+      "original_path": "core/integration/features/margin/0019-MCAL-205.feature",
+      "size": 22937,
+      "sha": "f212f4e9592c22b2852dbe52c6ad88fa13ca9954"
+    },
+    {
+      "name": "0019-MCAL-206.feature",
+      "original_path": "core/integration/features/margin/0019-MCAL-206.feature",
+      "size": 6446,
+      "sha": "767f368d1509d5e0ddd408928f6e77ca7503a6ee"
+    },
+    {
+      "name": "0019-MCAL-208.feature",
+      "original_path": "core/integration/features/margin/0019-MCAL-208.feature",
+      "size": 7769,
+      "sha": "32f622acb5668d63165381a237b59c9446f1d62f"
+    },
+    {
+      "name": "1920-trader-with-no-pos-and-stopped-fok-should-have-0-margin.feature",
+      "original_path": "core/integration/features/margin/1920-trader-with-no-pos-and-stopped-fok-should-have-0-margin.feature",
+      "size": 3455,
+      "sha": "88d9f105154f9dd9fc3175681bf297bb7e4e580b"
+    },
+    {
+      "name": "3885-margin-release-after-cancel.feature",
+      "original_path": "core/integration/features/margin/3885-margin-release-after-cancel.feature",
+      "size": 5488,
+      "sha": "f4840ae186026e23954a19ad876a18bbe1995ae7"
+    },
+    {
+      "name": "596-Opened-positions-traded-out-but-there-is-still-money-sitting-in-a-margin-account.feature",
+      "original_path": "core/integration/features/margin/596-Opened-positions-traded-out-but-there-is-still-money-sitting-in-a-margin-account.feature",
+      "size": 13425,
+      "sha": "a2e74886d9417f0c50376a94660e97572fa78cde"
+    },
+    {
+      "name": "596-margin-account-non-zero-after-trading-out-market-order.feature",
+      "original_path": "core/integration/features/margin/596-margin-account-non-zero-after-trading-out-market-order.feature",
+      "size": 14698,
+      "sha": "8c1bb80ed38287eac88f1c0e5437d8de7c05aa7f"
+    },
+    {
+      "name": "598-open-position-with-zero-margin.feature",
+      "original_path": "core/integration/features/margin/598-open-position-with-zero-margin.feature",
+      "size": 6174,
+      "sha": "855b3e8b087078bf5974b9fe0bd98034318f0779"
+    },
+    {
+      "name": "614-margin-calculations-fixes.feature",
+      "original_path": "core/integration/features/margin/614-margin-calculations-fixes.feature",
+      "size": 4524,
+      "sha": "b66675d72e4a40a9f041ef8a3aa5907930e58c14"
+    },
+    {
+      "name": "6202-release-excess-on-amend.feature",
+      "original_path": "core/integration/features/margin/6202-release-excess-on-amend.feature",
+      "size": 5446,
+      "sha": "078187d764b6278cfcf1e7ab28af5367ef4e1938"
+    },
+    {
+      "name": "635-margin-calculation.feature",
+      "original_path": "core/integration/features/margin/635-margin-calculation.feature",
+      "size": 4660,
+      "sha": "138ed8e173040e629e3c10ddaaf276a2b65d1731"
+    },
+    {
+      "name": "767-margin-level-check.feature",
+      "original_path": "core/integration/features/margin/767-margin-level-check.feature",
+      "size": 5748,
+      "sha": "e49d9cedf0cc9df44ce4519a87a1c43ef7e601bc"
+    },
+    {
+      "name": "margin-for-parked-orders.feature",
+      "original_path": "core/integration/features/margin/margin-for-parked-orders.feature",
+      "size": 21410,
+      "sha": "59c98f1a9fad871618763909a17cae35ff693a18"
+    },
+    {
+      "name": "margin-for-pegged-orders.feature",
+      "original_path": "core/integration/features/margin/margin-for-pegged-orders.feature",
+      "size": 20186,
+      "sha": "d97079bb185cde6a840e218eaef6e83de3cdffff"
+    },
+    {
+      "name": "order-margin-account-balance.feature",
+      "original_path": "core/integration/features/margin/order-margin-account-balance.feature",
+      "size": 5656,
+      "sha": "7053b32d183cd8f38bdbabe62419764ded668c95"
+    },
+    {
+      "name": "testnet_crash.feature",
+      "original_path": "core/integration/features/margin/testnet_crash.feature",
+      "size": 8007,
+      "sha": "4db6aae8c31e2c242401f48d481493c84056d68b"
+    },
+    {
+      "name": "verified_margins_case1-decimal-places.feature",
+      "original_path": "core/integration/features/margin/verified_margins_case1-decimal-places.feature",
+      "size": 9162,
+      "sha": "72a42a1de4fe020514e5857268a5972b2422ec02"
+    },
+    {
+      "name": "0008-TRAD-008.feature",
+      "original_path": "core/integration/features/mark-price/0008-TRAD-008.feature",
+      "size": 4958,
+      "sha": "66ddc41ec9779dbc5d23bf68947d78a2f3885626"
+    },
+    {
+      "name": "0009-MRKP-001.feature",
+      "original_path": "core/integration/features/mark-price/0009-MRKP-001.feature",
+      "size": 4778,
+      "sha": "69ef622a0c1f700f4455e633bce99754bb41850a"
+    },
+    {
+      "name": "0009-MRKP-002.feature",
+      "original_path": "core/integration/features/mark-price/0009-MRKP-002.feature",
+      "size": 4436,
+      "sha": "f30cb5269532fadc1f7407dedf901e56692d2ab1"
+    },
+    {
+      "name": "0009-MRKP-007.feature",
+      "original_path": "core/integration/features/mark-price/0009-MRKP-007.feature",
+      "size": 4463,
+      "sha": "8de858629e66a376579e2d8a23359ea9bc10afe7"
+    },
+    {
+      "name": "0009-MRKP-010.feature",
+      "original_path": "core/integration/features/mark-price/0009-MRKP-010.feature",
+      "size": 5211,
+      "sha": "41c92db754de87fe984a1468f96cec3122730292"
+    },
+    {
+      "name": "0009-MRKP-012.feature",
+      "original_path": "core/integration/features/mark-price/0009-MRKP-012.feature",
+      "size": 10237,
+      "sha": "b2f5d59fbf500567095c435a34b46893b4d31b11"
+    },
+    {
+      "name": "0009-MRKP-016.feature",
+      "original_path": "core/integration/features/mark-price/0009-MRKP-016.feature",
+      "size": 6003,
+      "sha": "fe810a56092fbf414d70e970a8a9a66e7bcafdc3"
+    },
+    {
+      "name": "0009-MRKP-018.feature",
+      "original_path": "core/integration/features/mark-price/0009-MRKP-018.feature",
+      "size": 6420,
+      "sha": "05d5d67a837e43528cc2a0e16a002bbd894e02bd"
+    },
+    {
+      "name": "0009-MRKP-022.feature",
+      "original_path": "core/integration/features/mark-price/0009-MRKP-022.feature",
+      "size": 3634,
+      "sha": "d4158d4b066846f79bb294402a57b30b4fd0696b"
+    },
+    {
+      "name": "0009-MRKP-024.feature",
+      "original_path": "core/integration/features/mark-price/0009-MRKP-024.feature",
+      "size": 8327,
+      "sha": "4f9dce0890c79354ffefa9168e929cd7c7ddc4bb"
+    },
+    {
+      "name": "0009-MRKP-026.feature",
+      "original_path": "core/integration/features/mark-price/0009-MRKP-026.feature",
+      "size": 4593,
+      "sha": "25023b35a8add6d9d39cedd27a05e67aca78c4f1"
+    },
+    {
+      "name": "0009-MRKP-028.feature",
+      "original_path": "core/integration/features/mark-price/0009-MRKP-028.feature",
+      "size": 8252,
+      "sha": "3d5105d39389e4e644a8ec045db14580be6e4283"
+    },
+    {
+      "name": "0009-MRKP-030.feature",
+      "original_path": "core/integration/features/mark-price/0009-MRKP-030.feature",
+      "size": 6589,
+      "sha": "d45e5a6548ffa0b066a6eafa636d63f73d1620d8"
+    },
+    {
+      "name": "0009-MRKP-032.feature",
+      "original_path": "core/integration/features/mark-price/0009-MRKP-032.feature",
+      "size": 6555,
+      "sha": "22deab5b1edbc2749caa875decf8858a48feb743"
+    },
+    {
+      "name": "0009-MRKP-034.feature",
+      "original_path": "core/integration/features/mark-price/0009-MRKP-034.feature",
+      "size": 4076,
+      "sha": "6c2ec527a2c4e9bdac7d07bdcfd90738fcd66b2e"
+    },
+    {
+      "name": "0009-MRKP-036.feature",
+      "original_path": "core/integration/features/mark-price/0009-MRKP-036.feature",
+      "size": 9993,
+      "sha": "eec194f1e8a92e15279c0f7b856ba204431d0cb3"
+    },
+    {
+      "name": "0009-MRKP-110.feature",
+      "original_path": "core/integration/features/mark-price/0009-MRKP-110.feature",
+      "size": 7907,
+      "sha": "9d644f4d14b560caa8bfcc48fcd8a8c56eeb7b33"
+    },
+    {
+      "name": "0009-MRKP-112.feature",
+      "original_path": "core/integration/features/mark-price/0009-MRKP-112.feature",
+      "size": 7259,
+      "sha": "a569366cc6ea7d53bd365c60e603547dc9d19512"
+    },
+    {
+      "name": "0009-MRKP-114.feature",
+      "original_path": "core/integration/features/mark-price/0009-MRKP-114.feature",
+      "size": 7920,
+      "sha": "5da4c76966cdf0324486db0afb49ed9c08165163"
+    },
+    {
+      "name": "0009-MRKP-116.feature",
+      "original_path": "core/integration/features/mark-price/0009-MRKP-116.feature",
+      "size": 5514,
+      "sha": "cba7344dd3238c93a1d809c4526dc146384c9873"
+    },
+    {
+      "name": "0009-MRKP-118.feature",
+      "original_path": "core/integration/features/mark-price/0009-MRKP-118.feature",
+      "size": 7952,
+      "sha": "8978bfebe8e24f223538f2cd57628454c8dd4be9"
+    },
+    {
+      "name": "0009-MRKP-120.feature",
+      "original_path": "core/integration/features/mark-price/0009-MRKP-120.feature",
+      "size": 6423,
+      "sha": "f49c44dc3e5ceecae376b34c5b1b63e6f1942d62"
+    },
+    {
+      "name": "0009-MRKP-122.feature",
+      "original_path": "core/integration/features/mark-price/0009-MRKP-122.feature",
+      "size": 5811,
+      "sha": "1cc1118c1ff45f17dc9b38fb63f6e2ca18b3c9b9"
+    },
+    {
+      "name": "0009-MRKP-124.feature",
+      "original_path": "core/integration/features/mark-price/0009-MRKP-124.feature",
+      "size": 6393,
+      "sha": "d41c37b5abe29b5053d8806612e1ab3646417e19"
+    },
+    {
+      "name": "0009-MRKP-130.feature",
+      "original_path": "core/integration/features/mark-price/0009-MRKP-130.feature",
+      "size": 5977,
+      "sha": "d0006ff60b649d8e611a2acf79603f63690ff7b9"
+    },
+    {
+      "name": "0009-MRKP-131.feature",
+      "original_path": "core/integration/features/mark-price/0009-MRKP-131.feature",
+      "size": 6275,
+      "sha": "ea0a5e16095aea080599823f025358a4b69532f1"
+    },
+    {
+      "name": "0009-MRKP-132.feature",
+      "original_path": "core/integration/features/mark-price/0009-MRKP-132.feature",
+      "size": 5828,
+      "sha": "c6dfc9f36adcb25688dbd1f0ba2da2b890f07b29"
+    },
+    {
+      "name": "0032-PRIM-040.feature",
+      "original_path": "core/integration/features/mark-price/0032-PRIM-040.feature",
+      "size": 5055,
+      "sha": "6d826d727b25e013291960f018220d4a9f32c3a8"
+    },
+    {
+      "name": "panic-upon-leaving-opening-auction.feature",
+      "original_path": "core/integration/features/mark-price/panic-upon-leaving-opening-auction.feature",
+      "size": 5245,
+      "sha": "103f42f5503b78b167aa57bb26099f84ca95613e"
+    },
+    {
+      "name": "0037-OPEG-020.feature",
+      "original_path": "core/integration/features/orders/0037-OPEG-020.feature",
+      "size": 4810,
+      "sha": "be8ec530ef1d7776795f7eed402f8c144ea0d78e"
+    },
+    {
+      "name": "0037-OPEG-022.feature",
+      "original_path": "core/integration/features/orders/0037-OPEG-022.feature",
+      "size": 9409,
+      "sha": "8d575324b2e157b6846085184e27e7b2bc889c3f"
+    },
+    {
+      "name": "1779-cannot-place-network-order.feature",
+      "original_path": "core/integration/features/orders/1779-cannot-place-network-order.feature",
+      "size": 1092,
+      "sha": "13fef529dfeb790772e763c38015061a59d8f52b"
+    },
+    {
+      "name": "760_cancel_filled_order.feature",
+      "original_path": "core/integration/features/orders/760_cancel_filled_order.feature",
+      "size": 16402,
+      "sha": "50a0557d47a71da25a61698cee1734393d9098c9"
+    },
+    {
+      "name": "762_missing_party_and_order.feature",
+      "original_path": "core/integration/features/orders/762_missing_party_and_order.feature",
+      "size": 1804,
+      "sha": "ebadc8de1d5dd27f611a0dfea3007f987b343373"
+    },
+    {
+      "name": "FOK_order_stopped.feature",
+      "original_path": "core/integration/features/orders/FOK_order_stopped.feature",
+      "size": 10378,
+      "sha": "c4277fa8b6a75e9494e6cbc56229cfe10ab89d74"
+    },
+    {
+      "name": "amend-order-decimal-places.feature",
+      "original_path": "core/integration/features/orders/amend-order-decimal-places.feature",
+      "size": 14222,
+      "sha": "07071e2b3b246b9c82ee16dac020fccbd46aa4ae"
+    },
+    {
+      "name": "amend-order-opening-auction.feature",
+      "original_path": "core/integration/features/orders/amend-order-opening-auction.feature",
+      "size": 2634,
+      "sha": "e28dea885e015cb731913af815345ef449c7990c"
+    },
+    {
+      "name": "amend-order.feature",
+      "original_path": "core/integration/features/orders/amend-order.feature",
+      "size": 17403,
+      "sha": "fcf501fc334c37c53832b7039e02c32b9fc09873"
+    },
+    {
+      "name": "amend-trade-panic.feature",
+      "original_path": "core/integration/features/orders/amend-trade-panic.feature",
+      "size": 7890,
+      "sha": "d1efa8286e47aa860126ff87c9a402ab861bc4c3"
+    },
+    {
+      "name": "batch-orders.feature",
+      "original_path": "core/integration/features/orders/batch-orders.feature",
+      "size": 9380,
+      "sha": "e5e3afc83870cf0def2da4974a445ce8e0b0414d"
+    },
+    {
+      "name": "cancel_all_orders.feature",
+      "original_path": "core/integration/features/orders/cancel_all_orders.feature",
+      "size": 5313,
+      "sha": "18a56fa518cb0978d9a5595f9364c7fbe8ecb674"
+    },
+    {
+      "name": "iceberg-orders-all-market-types.feature",
+      "original_path": "core/integration/features/orders/iceberg-orders-all-market-types.feature",
+      "size": 14165,
+      "sha": "42698588fe60bf6e8750bbfb268377943ab9d673"
+    },
+    {
+      "name": "iceberg-orders.feature",
+      "original_path": "core/integration/features/orders/iceberg-orders.feature",
+      "size": 68948,
+      "sha": "c41352498301c8fbf84f92a43a1c9548871fa18c"
+    },
+    {
+      "name": "limit-orders-all-market-types.feature",
+      "original_path": "core/integration/features/orders/limit-orders-all-market-types.feature",
+      "size": 23864,
+      "sha": "2b51874ef87582486bc2c6ac8bf0c02a93a062c4"
+    },
+    {
+      "name": "market-depth-1.feature",
+      "original_path": "core/integration/features/orders/market-depth-1.feature",
+      "size": 3982,
+      "sha": "22836757ab186ebccb09e93c4be6c4347fb87945"
+    },
+    {
+      "name": "market-depth-2.feature",
+      "original_path": "core/integration/features/orders/market-depth-2.feature",
+      "size": 3981,
+      "sha": "82442130c3faec1a92e1f9bd33185dff424e068f"
+    },
+    {
+      "name": "market-depth-3.feature",
+      "original_path": "core/integration/features/orders/market-depth-3.feature",
+      "size": 4379,
+      "sha": "3963ebcafca8a052af35836d27231c9c3edf2039"
+    },
+    {
+      "name": "market-depth-4.feature",
+      "original_path": "core/integration/features/orders/market-depth-4.feature",
+      "size": 5347,
+      "sha": "56a98101dbca93262318180e8d1286bfb4a1e0bb"
+    },
+    {
+      "name": "market-orders-all-market-types.feature",
+      "original_path": "core/integration/features/orders/market-orders-all-market-types.feature",
+      "size": 18474,
+      "sha": "0b892b8d1061b06158dbce9c98f24ddc840c4e73"
+    },
+    {
+      "name": "offsets_with_decimals.feature",
+      "original_path": "core/integration/features/orders/offsets_with_decimals.feature",
+      "size": 6264,
+      "sha": "83e375870ef464cb8fb64eadc7e170423698e663"
+    },
+    {
+      "name": "spot-amend-order.feature",
+      "original_path": "core/integration/features/orders/spot-amend-order.feature",
+      "size": 17645,
+      "sha": "1c61cc999adce56e94b4f4eaa6895fe836d1f198"
+    },
+    {
+      "name": "spot_trader_amends_his_orders.feature",
+      "original_path": "core/integration/features/orders/spot_trader_amends_his_orders.feature",
+      "size": 9165,
+      "sha": "f7b02f2ad5b0e591e9faf6c15a4338ddd75caa68"
+    },
+    {
+      "name": "stop-orders-all-market-types.feature",
+      "original_path": "core/integration/features/orders/stop-orders-all-market-types.feature",
+      "size": 64720,
+      "sha": "e59b020dd861f0434f04104289f5e6147e09932c"
+    },
+    {
+      "name": "stop-orders-linked.feature",
+      "original_path": "core/integration/features/orders/stop-orders-linked.feature",
+      "size": 20619,
+      "sha": "0b30e81d27c6cdfd4fc330286a9f659900ddd0b2"
+    },
+    {
+      "name": "stoporders-auctions.feature",
+      "original_path": "core/integration/features/orders/stoporders-auctions.feature",
+      "size": 12184,
+      "sha": "63f405bf84d351f4c2e466a27cd9b7ca88de0e28"
+    },
+    {
+      "name": "stoporders.feature",
+      "original_path": "core/integration/features/orders/stoporders.feature",
+      "size": 133316,
+      "sha": "aa564fd38708e44588488e5715b68690a8b1ebc9"
+    },
+    {
+      "name": "stoporders_spot-auctions.feature",
+      "original_path": "core/integration/features/orders/stoporders_spot-auctions.feature",
+      "size": 33709,
+      "sha": "ee7523a26289a67c7e21d66ba13bcd7c4af5e604"
+    },
+    {
+      "name": "stoporders_spot.feature",
+      "original_path": "core/integration/features/orders/stoporders_spot.feature",
+      "size": 104663,
+      "sha": "2abaa2372f739254da4145b0ce505fd7238c6a33"
+    },
+    {
+      "name": "trader_amends_his_orders.feature",
+      "original_path": "core/integration/features/orders/trader_amends_his_orders.feature",
+      "size": 17895,
+      "sha": "3ca5e3b71879d94b56d5f92bbeecb909cfb33e66"
+    },
+    {
+      "name": "0097-PAPU-021.feature",
+      "original_path": "core/integration/features/pap/0097-PAPU-021.feature",
+      "size": 6735,
+      "sha": "e70815225a0e1e987e6c5f68e53ee9e2a40d1dd5"
+    },
+    {
+      "name": "0097-PAPU-022.feature",
+      "original_path": "core/integration/features/pap/0097-PAPU-022.feature",
+      "size": 7750,
+      "sha": "d556ea761e64b6ffb09da4ab87390f2adfdb0460"
+    },
+    {
+      "name": "0097-PAPU-023.feature",
+      "original_path": "core/integration/features/pap/0097-PAPU-023.feature",
+      "size": 8849,
+      "sha": "705b0d020937ad448748598b33875098dedb2df4"
+    },
+    {
+      "name": "0097-PAPU-024.feature",
+      "original_path": "core/integration/features/pap/0097-PAPU-024.feature",
+      "size": 8430,
+      "sha": "dff2aea6eb541a86f6aa47a308479de8fbfebd5c"
+    },
+    {
+      "name": "0097-PAPU-025.feature",
+      "original_path": "core/integration/features/pap/0097-PAPU-025.feature",
+      "size": 7708,
+      "sha": "c6275dc3c8e5908af14a241fb5548aaa151ae05f"
+    },
+    {
+      "name": "0097-PAPU-026.feature",
+      "original_path": "core/integration/features/pap/0097-PAPU-026.feature",
+      "size": 8480,
+      "sha": "ba1b7b7691c6b82158a41c56d3b8d5a59b13f7b9"
+    },
+    {
+      "name": "0097-PAPU-027.feature",
+      "original_path": "core/integration/features/pap/0097-PAPU-027.feature",
+      "size": 9997,
+      "sha": "c58fc9c9271a8700d6baf78f2067b71763c7eb70"
+    },
+    {
+      "name": "0097-PAPU-028.feature",
+      "original_path": "core/integration/features/pap/0097-PAPU-028.feature",
+      "size": 9636,
+      "sha": "551dc233596f884f9d07ea9794af783576be12e0"
+    },
+    {
+      "name": "0097-PAPU-029.feature",
+      "original_path": "core/integration/features/pap/0097-PAPU-029.feature",
+      "size": 7657,
+      "sha": "f01a8b63d78e81c2d259b8b77d18c203685b7ecd"
+    },
+    {
+      "name": "0097-PAPU-030.feature",
+      "original_path": "core/integration/features/pap/0097-PAPU-030.feature",
+      "size": 8602,
+      "sha": "5509362b9a026f06bd7d73b6b6e5c1e6157c8bdc"
+    },
+    {
+      "name": "0097-PAPU-031.feature",
+      "original_path": "core/integration/features/pap/0097-PAPU-031.feature",
+      "size": 8661,
+      "sha": "b7630f563b7c2acc2cda6ace7d2f253703736d98"
+    },
+    {
+      "name": "0097-PAPU-032.feature",
+      "original_path": "core/integration/features/pap/0097-PAPU-032.feature",
+      "size": 7827,
+      "sha": "a02e4de1fa7207cfa02389b4f39f427fd04b723a"
+    },
+    {
+      "name": "0097-PAPU-033.feature",
+      "original_path": "core/integration/features/pap/0097-PAPU-033.feature",
+      "size": 7407,
+      "sha": "34e0a5f728ae5948febe8e77fccebecefb47c37b"
+    },
+    {
+      "name": "0097-PAPU-034.feature",
+      "original_path": "core/integration/features/pap/0097-PAPU-034.feature",
+      "size": 7825,
+      "sha": "99bb4ce21e8f7dd4fbe253c26dbd2093c5554abe"
+    },
+    {
+      "name": "0097-PAPU-035.feature",
+      "original_path": "core/integration/features/pap/0097-PAPU-035.feature",
+      "size": 8089,
+      "sha": "185848d3c59c0717d12e046879691935fe5d91e1"
+    },
+    {
+      "name": "0097-PAPU-036.feature",
+      "original_path": "core/integration/features/pap/0097-PAPU-036.feature",
+      "size": 8615,
+      "sha": "603fda2d02b50094040ac6b32af8d0efe161e7c9"
+    },
+    {
+      "name": "0097-PAPU-037.feature",
+      "original_path": "core/integration/features/pap/0097-PAPU-037.feature",
+      "size": 8332,
+      "sha": "9a39abc8ec20b1fcdddb508006fd66da19ee9579"
+    },
+    {
+      "name": "0097-PAPU-038.feature",
+      "original_path": "core/integration/features/pap/0097-PAPU-038.feature",
+      "size": 7911,
+      "sha": "cfd72d52052056d9e718c142826dced59373a852"
+    },
+    {
+      "name": "0097-PAPU-039.feature",
+      "original_path": "core/integration/features/pap/0097-PAPU-039.feature",
+      "size": 8118,
+      "sha": "9a5f784bd00af3c55ac50e262224bd7ae696c574"
+    },
+    {
+      "name": "0097-PAPU-044.feature",
+      "original_path": "core/integration/features/pap/0097-PAPU-044.feature",
+      "size": 7981,
+      "sha": "e42b0261736797b33909c892c5dc6dfe0139bf22"
+    },
+    {
+      "name": "0097-PAPU-045.feature",
+      "original_path": "core/integration/features/pap/0097-PAPU-045.feature",
+      "size": 8784,
+      "sha": "ec838d0b7cb3f0208701345d69d2affaa500c18b"
+    },
+    {
+      "name": "0097-PAPU-046.feature",
+      "original_path": "core/integration/features/pap/0097-PAPU-046.feature",
+      "size": 8621,
+      "sha": "5b81ba1ec4a2b48e2f246233f8d57ae631a1162f"
+    },
+    {
+      "name": "parties-margin-with-0-pos-cleared-on-cancel.feature",
+      "original_path": "core/integration/features/parties-margin-with-0-pos-cleared-on-cancel.feature",
+      "size": 8605,
+      "sha": "37147d12c012931a750d76cb9ead286a5a9164be"
+    },
+    {
+      "name": "perpetual-mark-and-index-price.feature",
+      "original_path": "core/integration/features/perpetual-mark-and-index-price.feature",
+      "size": 17267,
+      "sha": "bb071b679d4b12c9d0cd26a19017afed01e63ad7"
+    },
+    {
+      "name": "perpetual.feature",
+      "original_path": "core/integration/features/perpetual.feature",
+      "size": 23059,
+      "sha": "26a52270e3064691b85877186d9ab216b3081d59"
+    },
+    {
+      "name": "verified-positions-resolution-5-lognormal.feature",
+      "original_path": "core/integration/features/position_tracking/verified-positions-resolution-5-lognormal.feature",
+      "size": 8300,
+      "sha": "daf367d81d20bcd463b7ec084a87395a938ad1d2"
+    },
+    {
+      "name": "verified-positions-resolution-5-lognormal_pdp.feature",
+      "original_path": "core/integration/features/position_tracking/verified-positions-resolution-5-lognormal_pdp.feature",
+      "size": 8368,
+      "sha": "e3c7dce9db52fd097dee6a243331f061ab868b13"
+    },
+    {
+      "name": "wrong-position-tracking.feature",
+      "original_path": "core/integration/features/position_tracking/wrong-position-tracking.feature",
+      "size": 5135,
+      "sha": "ca014e88dc204724967c44e93f6238bc7d1d97d6"
+    },
+    {
+      "name": "price-mon-trigger-leaving-auction.feature",
+      "original_path": "core/integration/features/price-mon-trigger-leaving-auction.feature",
+      "size": 6799,
+      "sha": "8357a60bc0c16eaf45d21a62d5b68ca8da90af52"
+    },
+    {
+      "name": "0032-PRIM-014.feature",
+      "original_path": "core/integration/features/price_monitoring/0032-PRIM-014.feature",
+      "size": 8082,
+      "sha": "dd2b3833a0ea2d53319c9af5fc032cd7dad4a3c2"
+    },
+    {
+      "name": "2668-price-monitoring.feature",
+      "original_path": "core/integration/features/price_monitoring/2668-price-monitoring.feature",
+      "size": 15743,
+      "sha": "58b30f0ffad4d046af7a44965303f0a745f0ae49"
+    },
+    {
+      "name": "2681-price-monitoring.feature",
+      "original_path": "core/integration/features/price_monitoring/2681-price-monitoring.feature",
+      "size": 6215,
+      "sha": "83bb055111380abcb68f759f2c31aec10f6b2a91"
+    },
+    {
+      "name": "3291-amend-trigger-price-auction.feature",
+      "original_path": "core/integration/features/price_monitoring/3291-amend-trigger-price-auction.feature",
+      "size": 3887,
+      "sha": "6a3514511b38f2f0df098b404c6a02a57ec268c1"
+    },
+    {
+      "name": "3362-failing-system-tests-trigger-close-out.feature",
+      "original_path": "core/integration/features/price_monitoring/3362-failing-system-tests-trigger-close-out.feature",
+      "size": 7636,
+      "sha": "b5a653496f0107e2be527c4c4dfc32a04e2e77fc"
+    },
+    {
+      "name": "3362-failing-system-tests-trigger-with-amend.feature",
+      "original_path": "core/integration/features/price_monitoring/3362-failing-system-tests-trigger-with-amend.feature",
+      "size": 4971,
+      "sha": "68d29608489fec82e38e0eaa5472881366ca95dd"
+    },
+    {
+      "name": "3362-failing-system-tests-trigger-with-gtt.feature",
+      "original_path": "core/integration/features/price_monitoring/3362-failing-system-tests-trigger-with-gtt.feature",
+      "size": 5839,
+      "sha": "ecbad1753535dea6d1ea16144cbae49e9c0f0b65"
+    },
+    {
+      "name": "3362-failing-system-tests-trigger-with-lower-bounds.feature",
+      "original_path": "core/integration/features/price_monitoring/3362-failing-system-tests-trigger-with-lower-bounds.feature",
+      "size": 5737,
+      "sha": "6fce463292f2ce37add151926fc27f125b99e92d"
+    },
+    {
+      "name": "3362-failing-system-tests.feature",
+      "original_path": "core/integration/features/price_monitoring/3362-failing-system-tests.feature",
+      "size": 6266,
+      "sha": "60a88a57260c57f548b1e4d316a76faba35b0c01"
+    },
+    {
+      "name": "5206-price-bound-rounding.feature",
+      "original_path": "core/integration/features/price_monitoring/5206-price-bound-rounding.feature",
+      "size": 9653,
+      "sha": "605783c5c6dd6758dfd5b742fb4798b6eb517914"
+    },
+    {
+      "name": "BTC_USDT-perp-bounds.feature",
+      "original_path": "core/integration/features/price_monitoring/BTC_USDT-perp-bounds.feature",
+      "size": 4993,
+      "sha": "28e8fee79c1a909853c237e2e84c7ec8f069bad7"
+    },
+    {
+      "name": "ETH_USDT-perp-bounds.feature",
+      "original_path": "core/integration/features/price_monitoring/ETH_USDT-perp-bounds.feature",
+      "size": 4786,
+      "sha": "eb81ca1502ea071f90af4893161d437f0eb1e2d5"
+    },
+    {
+      "name": "INJ_USDT-perp-bounds.feature",
+      "original_path": "core/integration/features/price_monitoring/INJ_USDT-perp-bounds.feature",
+      "size": 4978,
+      "sha": "16baf86a9a9db3fc75eb7ccc3528a52528601353"
+    },
+    {
+      "name": "LDO_USDT-perp-bounds.feature",
+      "original_path": "core/integration/features/price_monitoring/LDO_USDT-perp-bounds.feature",
+      "size": 4973,
+      "sha": "0646db3209b5b74d2197607ea4599fe1b2efe2a5"
+    },
+    {
+      "name": "SNX_USDT-perp-bounds.feature",
+      "original_path": "core/integration/features/price_monitoring/SNX_USDT-perp-bounds.feature",
+      "size": 4974,
+      "sha": "62ec4c22f408e4cf75e38552b48293c66c6179f6"
+    },
+    {
+      "name": "end-long-auction-with-trigger-change.feature",
+      "original_path": "core/integration/features/price_monitoring/end-long-auction-with-trigger-change.feature",
+      "size": 18953,
+      "sha": "a053e359dd886f3d9cf773d7a94dd7949dee47a2"
+    },
+    {
+      "name": "post-auction-reference-price-with-oracle.feature",
+      "original_path": "core/integration/features/price_monitoring/post-auction-reference-price-with-oracle.feature",
+      "size": 10308,
+      "sha": "a83cb2d99e80bd69e7158653ae9d7e0816c7066b"
+    },
+    {
+      "name": "price-monitoring-bounds.feature",
+      "original_path": "core/integration/features/price_monitoring/price-monitoring-bounds.feature",
+      "size": 17255,
+      "sha": "900eef7637720cfdafad9d9e1ad21658d98cb5e0"
+    },
+    {
+      "name": "price-monitoring-for-system-test.feature",
+      "original_path": "core/integration/features/price_monitoring/price-monitoring-for-system-test.feature",
+      "size": 12596,
+      "sha": "aaa9f933d2b17798bda4a8efce2209a2fd52fd88"
+    },
+    {
+      "name": "price-monitoring-lognormal-decimals.feature",
+      "original_path": "core/integration/features/price_monitoring/price-monitoring-lognormal-decimals.feature",
+      "size": 30124,
+      "sha": "b8521df47e1bdad1067ad038ed48c62e53439bad"
+    },
+    {
+      "name": "price-monitoring-lognormal-identical-bounds.feature",
+      "original_path": "core/integration/features/price_monitoring/price-monitoring-lognormal-identical-bounds.feature",
+      "size": 5273,
+      "sha": "e25334d9e3293b9756df17c2bdd52422c4262845"
+    },
+    {
+      "name": "price-monitoring-lognormal.feature",
+      "original_path": "core/integration/features/price_monitoring/price-monitoring-lognormal.feature",
+      "size": 28512,
+      "sha": "765ba170e98670b243145f60db217bc03618a59e"
+    },
+    {
+      "name": "price-monitoring-lognormal2.feature",
+      "original_path": "core/integration/features/price_monitoring/price-monitoring-lognormal2.feature",
+      "size": 45105,
+      "sha": "3bb1029a311a0e7dd8300f157a4278c37e53771e"
+    },
+    {
+      "name": "price-monitoring-simple.feature",
+      "original_path": "core/integration/features/price_monitoring/price-monitoring-simple.feature",
+      "size": 36608,
+      "sha": "3e786c325f2b2b7189d34aae7810fd1ce54f2aa0"
+    },
+    {
+      "name": "volume-near-price-mon-bounds-2.feature",
+      "original_path": "core/integration/features/price_monitoring/volume-near-price-mon-bounds-2.feature",
+      "size": 7337,
+      "sha": "947abf79c8dc5000a082b10392a3556dfc3e0874"
+    },
+    {
+      "name": "volume-near-price-mon-bounds.feature",
+      "original_path": "core/integration/features/price_monitoring/volume-near-price-mon-bounds.feature",
+      "size": 12706,
+      "sha": "99ebaae0285905d0cc6966ba39324f986736afdc"
+    },
+    {
+      "name": "0083-RFPR-benefit_factors.feature",
+      "original_path": "core/integration/features/referrals/0083-RFPR-benefit_factors.feature",
+      "size": 29386,
+      "sha": "1560edfd0462a83cbc123899530636e7ff6701ea"
+    },
+    {
+      "name": "0083-RFPR-running_volume.feature",
+      "original_path": "core/integration/features/referrals/0083-RFPR-running_volume.feature",
+      "size": 27603,
+      "sha": "08b72c93de3e0394e063232c3bba81cad14ac81f"
+    },
+    {
+      "name": "0083-RFPR-staking_multipliers.feature",
+      "original_path": "core/integration/features/referrals/0083-RFPR-staking_multipliers.feature",
+      "size": 9588,
+      "sha": "efd02d1225fad07fc9c731c54c005976ecbd138c"
+    },
+    {
+      "name": "release-margins-issues-decimals.feature",
+      "original_path": "core/integration/features/release-margins-issues-decimals.feature",
+      "size": 16474,
+      "sha": "fce082e15cf3110410a759335731597c9f838981"
+    },
+    {
+      "name": "release-margins-issues.feature",
+      "original_path": "core/integration/features/release-margins-issues.feature",
+      "size": 16406,
+      "sha": "e0dabc0716af8a39d3e74a6a3790d5c92c92ed40"
+    },
+    {
+      "name": "0056-REWA-097.feature",
+      "original_path": "core/integration/features/rewards/0056-REWA-097.feature",
+      "size": 6371,
+      "sha": "70c0ed95c394142f030c6fa943282eb9dbe114de"
+    },
+    {
+      "name": "0056-REWA-099.feature",
+      "original_path": "core/integration/features/rewards/0056-REWA-099.feature",
+      "size": 12373,
+      "sha": "fd5e42c78f76aee610140cefa8f12e13332c9e24"
+    },
+    {
+      "name": "0056-REWA-100.feature",
+      "original_path": "core/integration/features/rewards/0056-REWA-100.feature",
+      "size": 7914,
+      "sha": "b82cf4c087702af7b68722b177d5302c6f25b7b9"
+    },
+    {
+      "name": "0056-REWA-103.feature",
+      "original_path": "core/integration/features/rewards/0056-REWA-103.feature",
+      "size": 5999,
+      "sha": "e5749d5193aa440317aa110878a0a8c81661dedf"
+    },
+    {
+      "name": "0056-REWA-104.feature",
+      "original_path": "core/integration/features/rewards/0056-REWA-104.feature",
+      "size": 10144,
+      "sha": "99225b5b8b45442aa33bea57171d858a58e72ebf"
+    },
+    {
+      "name": "0056-REWA-105.feature",
+      "original_path": "core/integration/features/rewards/0056-REWA-105.feature",
+      "size": 8662,
+      "sha": "027553debdcaa191e568a8b5377a7dc38e519f89"
+    },
+    {
+      "name": "0056-REWA-106.feature",
+      "original_path": "core/integration/features/rewards/0056-REWA-106.feature",
+      "size": 7796,
+      "sha": "14addfe133ac65709d1cf2ecbc3ebb6fb6482e73"
+    },
+    {
+      "name": "0056-REWA-107.feature",
+      "original_path": "core/integration/features/rewards/0056-REWA-107.feature",
+      "size": 6432,
+      "sha": "e02823c6873d5001ce9303574ad46fed4ca56398"
+    },
+    {
+      "name": "0056-REWA-108.feature",
+      "original_path": "core/integration/features/rewards/0056-REWA-108.feature",
+      "size": 6749,
+      "sha": "205477d2fe0d03ed62656ca5067d63728b00c459"
+    },
+    {
+      "name": "0056-REWA-111.feature",
+      "original_path": "core/integration/features/rewards/0056-REWA-111.feature",
+      "size": 10092,
+      "sha": "16e97d90d29937223ce6d328622801c04edc01af"
+    },
+    {
+      "name": "0056-REWA-116.feature",
+      "original_path": "core/integration/features/rewards/0056-REWA-116.feature",
+      "size": 12587,
+      "sha": "4d097451b84c95004833aa8b28d1c4c439efe14a"
+    },
+    {
+      "name": "0056-REWA-117.feature",
+      "original_path": "core/integration/features/rewards/0056-REWA-117.feature",
+      "size": 9121,
+      "sha": "3205a5dec5d41762eae122be8f84798fec19d753"
+    },
+    {
+      "name": "0056-REWA-170.feature",
+      "original_path": "core/integration/features/rewards/0056-REWA-170.feature",
+      "size": 7483,
+      "sha": "cde3b112fc50ba8970bec0de1a67fd8c69c927f7"
+    },
+    {
+      "name": "0056-REWA-206.feature",
+      "original_path": "core/integration/features/rewards/0056-REWA-206.feature",
+      "size": 7024,
+      "sha": "8b7d839a7d172aed48cdc222bf7e78208e8555f9"
+    },
+    {
+      "name": "0056-REWA-207.feature",
+      "original_path": "core/integration/features/rewards/0056-REWA-207.feature",
+      "size": 7011,
+      "sha": "0cf1594e3a4336af1472b8a1fc99cd940132f49c"
+    },
+    {
+      "name": "0056-REWA-208.feature",
+      "original_path": "core/integration/features/rewards/0056-REWA-208.feature",
+      "size": 9184,
+      "sha": "c6a1ebd66aaea24807ba3c2a168db1a2e1a6bb15"
+    },
+    {
+      "name": "0056-REWA-209.feature",
+      "original_path": "core/integration/features/rewards/0056-REWA-209.feature",
+      "size": 9160,
+      "sha": "24b5ed627335dfd45c0cb96356ad672c0669dcee"
+    },
+    {
+      "name": "0056-REWA-210.feature",
+      "original_path": "core/integration/features/rewards/0056-REWA-210.feature",
+      "size": 9507,
+      "sha": "a55d158bcb62abdabae89937071fac26b09c2319"
+    },
+    {
+      "name": "0056-REWA-211.feature",
+      "original_path": "core/integration/features/rewards/0056-REWA-211.feature",
+      "size": 9436,
+      "sha": "cbaa6a71513894b621b62c8824c03f671f571e2a"
+    },
+    {
+      "name": "0056-REWA-212.feature",
+      "original_path": "core/integration/features/rewards/0056-REWA-212.feature",
+      "size": 9849,
+      "sha": "e49872b31d71006b42d09f7e2efc1445691e7819"
+    },
+    {
+      "name": "0056-REWA-213.feature",
+      "original_path": "core/integration/features/rewards/0056-REWA-213.feature",
+      "size": 8399,
+      "sha": "ed7b655b8b2db56c743aa7ff2dee68ee0e2b8f03"
+    },
+    {
+      "name": "0056-REWA-214.feature",
+      "original_path": "core/integration/features/rewards/0056-REWA-214.feature",
+      "size": 8144,
+      "sha": "2d23b7fd13a488f931a18f51e63c7d11b512aa34"
+    },
+    {
+      "name": "0056-REWA-215.feature",
+      "original_path": "core/integration/features/rewards/0056-REWA-215.feature",
+      "size": 8159,
+      "sha": "97f8c186224846084221e2440a727ea1d4d849ce"
+    },
+    {
+      "name": "0056-REWA-216.feature",
+      "original_path": "core/integration/features/rewards/0056-REWA-216.feature",
+      "size": 8196,
+      "sha": "3dff108b95b818288142313eeeccc9a9f0a29d6d"
+    },
+    {
+      "name": "0056-REWA-217.feature",
+      "original_path": "core/integration/features/rewards/0056-REWA-217.feature",
+      "size": 8199,
+      "sha": "05d09442cbbc8ae697b9c025c48fa9d143c90060"
+    },
+    {
+      "name": "0056-REWA-218.feature",
+      "original_path": "core/integration/features/rewards/0056-REWA-218.feature",
+      "size": 7219,
+      "sha": "33d86f29f479cfe6dc4fcdf1fe887bb103e16884"
+    },
+    {
+      "name": "0056-REWA-219.feature",
+      "original_path": "core/integration/features/rewards/0056-REWA-219.feature",
+      "size": 7223,
+      "sha": "390747264386b4e32e84d2f6b5cb315224d2c19d"
+    },
+    {
+      "name": "0083-RFPR-068.feature",
+      "original_path": "core/integration/features/rewards/0083-RFPR-068.feature",
+      "size": 14836,
+      "sha": "beb1085ef6231c61491ace1f4091a89789673858"
+    },
+    {
+      "name": "asset_fees_rewards.feature",
+      "original_path": "core/integration/features/rewards/asset_fees_rewards.feature",
+      "size": 30047,
+      "sha": "26ab15123553a7fb2e3defa2412c9b69ec7ac8c9"
+    },
+    {
+      "name": "average_notional_rewards.feature",
+      "original_path": "core/integration/features/rewards/average_notional_rewards.feature",
+      "size": 50173,
+      "sha": "0ba7707ca0d34f498cc33ba3cbb2e552f7b12ce8"
+    },
+    {
+      "name": "average_notional_with_liquidation_reward.feature",
+      "original_path": "core/integration/features/rewards/average_notional_with_liquidation_reward.feature",
+      "size": 8971,
+      "sha": "9c3792624a77a2c11e2e1d87ad34bb13aa540cb7"
+    },
+    {
+      "name": "eligible_entities_rewards.feature",
+      "original_path": "core/integration/features/rewards/eligible_entities_rewards.feature",
+      "size": 77633,
+      "sha": "447a190ef588931086e060bc5d41afa2f825ca8e"
+    },
+    {
+      "name": "infra_fees.feature",
+      "original_path": "core/integration/features/rewards/infra_fees.feature",
+      "size": 11558,
+      "sha": "3f523304fbff3b4be5b05021d1524e42bf090b90"
+    },
+    {
+      "name": "lp_reward.feature",
+      "original_path": "core/integration/features/rewards/lp_reward.feature",
+      "size": 11648,
+      "sha": "103783839392dd4d121fa53fc83a1cd9378bb9ac"
+    },
+    {
+      "name": "multi_asset_multi_market_fees_rewards.feature",
+      "original_path": "core/integration/features/rewards/multi_asset_multi_market_fees_rewards.feature",
+      "size": 23160,
+      "sha": "63daad7ba540ccde083b06dd48a53d34e4a0fb73"
+    },
+    {
+      "name": "realised_returns.feature",
+      "original_path": "core/integration/features/rewards/realised_returns.feature",
+      "size": 31653,
+      "sha": "feacd08d54c2f0469d478e997a66a93e799a6fe4"
+    },
+    {
+      "name": "relative_return_rewards.feature",
+      "original_path": "core/integration/features/rewards/relative_return_rewards.feature",
+      "size": 30178,
+      "sha": "f82ca01d7c5bad174e07e71980077d78f6beec6c"
+    },
+    {
+      "name": "return_volatility_rewards.feature",
+      "original_path": "core/integration/features/rewards/return_volatility_rewards.feature",
+      "size": 41296,
+      "sha": "1ac185fb66c050d18a8c4a4c175a70bd5483c77f"
+    },
+    {
+      "name": "reward_pk.feature",
+      "original_path": "core/integration/features/rewards/reward_pk.feature",
+      "size": 10647,
+      "sha": "a9a5cd8fd65b2e82b122243ff1effe743da1c2df"
+    },
+    {
+      "name": "rewards-remix.feature",
+      "original_path": "core/integration/features/rewards/rewards-remix.feature",
+      "size": 11687,
+      "sha": "256d3755a4f50c13c4e082eb6923efaaf5ee075c"
+    },
+    {
+      "name": "spot-rewards.feature",
+      "original_path": "core/integration/features/rewards/spot-rewards.feature",
+      "size": 38318,
+      "sha": "9bdb5d03a4a8a298fed12012718adf9f5626c6ba"
+    },
+    {
+      "name": "team-rewards.feature",
+      "original_path": "core/integration/features/rewards/team-rewards.feature",
+      "size": 6480,
+      "sha": "71ed25d1eaff95d13889f5dbb58df7f017c6ce11"
+    },
+    {
+      "name": "0002-STTL-settlement_at_expiry_with_dp.feature",
+      "original_path": "core/integration/features/settlement/0002-STTL-settlement_at_expiry_with_dp.feature",
+      "size": 38747,
+      "sha": "931d987bab199862153756c2bfd25f4d7f3f2b27"
+    },
+    {
+      "name": "0019-MCAL_018.feature",
+      "original_path": "core/integration/features/settlement/0019-MCAL_018.feature",
+      "size": 20317,
+      "sha": "1dcd31ec0fa9125504ff566708c797fabd3671e2"
+    },
+    {
+      "name": "0019-MCAL_fundingMargin2.feature",
+      "original_path": "core/integration/features/settlement/0019-MCAL_fundingMargin2.feature",
+      "size": 6503,
+      "sha": "6150d918de45568f307edfdfa1e362fb86188add"
+    },
+    {
+      "name": "0019-MCAL_fundingMargin3.feature",
+      "original_path": "core/integration/features/settlement/0019-MCAL_fundingMargin3.feature",
+      "size": 6522,
+      "sha": "d0cb12ceac556aab8175fd8373e7c8321f49f418"
+    },
+    {
+      "name": "0019-MCAL_fundingMargin4.feature",
+      "original_path": "core/integration/features/settlement/0019-MCAL_fundingMargin4.feature",
+      "size": 6524,
+      "sha": "693e8be9f77ff4588207e69ce1c2d1ea786b372b"
+    },
+    {
+      "name": "0019-MCAL_fundingMargin5.feature",
+      "original_path": "core/integration/features/settlement/0019-MCAL_fundingMargin5.feature",
+      "size": 10175,
+      "sha": "c4ec346c007225397d2e4d7e2d51c8f498184fd5"
+    },
+    {
+      "name": "0053-PERP-024_LossSocialisation.feature",
+      "original_path": "core/integration/features/settlement/0053-PERP-024_LossSocialisation.feature",
+      "size": 8870,
+      "sha": "57a9eaa273df199da80565d9f9216d9630b84df5"
+    },
+    {
+      "name": "0053-PERP-027_twap_calculation.feature",
+      "original_path": "core/integration/features/settlement/0053-PERP-027_twap_calculation.feature",
+      "size": 8643,
+      "sha": "3c0029165a505a2b8c9bcf76db3f4e0bcf4a374d"
+    },
+    {
+      "name": "0053-PERP-028_twap_calculation_with_auction.feature",
+      "original_path": "core/integration/features/settlement/0053-PERP-028_twap_calculation_with_auction.feature",
+      "size": 12310,
+      "sha": "7c046703b688049a36df063ad18b780bc5d7af79"
+    },
+    {
+      "name": "0053-PERP-039.feature",
+      "original_path": "core/integration/features/settlement/0053-PERP-039.feature",
+      "size": 10728,
+      "sha": "a78028398b1ae11803280a6414912b418a618d10"
+    },
+    {
+      "name": "0053-PERP-040.feature",
+      "original_path": "core/integration/features/settlement/0053-PERP-040.feature",
+      "size": 11791,
+      "sha": "2de8f49b62e580cca46fb60b6c73e876ff4bf036"
+    },
+    {
+      "name": "0053-PERP-funding-rate-modifiers.feature",
+      "original_path": "core/integration/features/settlement/0053-PERP-funding-rate-modifiers.feature",
+      "size": 6453,
+      "sha": "ec6144ff8f41201b1f927d4ce5e77d0de8e1522b"
+    },
+    {
+      "name": "0053-PERP-funding-rate-modifiers2.feature",
+      "original_path": "core/integration/features/settlement/0053-PERP-funding-rate-modifiers2.feature",
+      "size": 5215,
+      "sha": "1b04de51b66548dfe27b9feea65181f69e69227a"
+    },
+    {
+      "name": "10568-pnl-underflow.feature",
+      "original_path": "core/integration/features/settlement/10568-pnl-underflow.feature",
+      "size": 5495,
+      "sha": "20b06eb07d281ff3b34d084679054b5afa3f7f9b"
+    },
+    {
+      "name": "insurance-pools-at-settlement.feature",
+      "original_path": "core/integration/features/settlement/insurance-pools-at-settlement.feature",
+      "size": 21096,
+      "sha": "1e5ae685ec07234b5032a6a73614a3b3d514f3c0"
+    },
+    {
+      "name": "mark_to_market_interval_positions.feature",
+      "original_path": "core/integration/features/settlement/mark_to_market_interval_positions.feature",
+      "size": 29375,
+      "sha": "76a16da1148729362805ee2c15ec335b78794390"
+    },
+    {
+      "name": "mark_to_market_perpetual.feature",
+      "original_path": "core/integration/features/settlement/mark_to_market_perpetual.feature",
+      "size": 35710,
+      "sha": "68ee84fdb7e717d361c6f01a2111f01c9c2b3469"
+    },
+    {
+      "name": "mark_to_market_settlement_neg_pdp.feature",
+      "original_path": "core/integration/features/settlement/mark_to_market_settlement_neg_pdp.feature",
+      "size": 9864,
+      "sha": "ae6ba10e4d9b8383b30ff0d3bf4f6779e6b3f9b0"
+    },
+    {
+      "name": "mark_to_market_settlement_pdp.feature",
+      "original_path": "core/integration/features/settlement/mark_to_market_settlement_pdp.feature",
+      "size": 11177,
+      "sha": "30e98b00b797b0dcde7e76d277af659474a714aa"
+    },
+    {
+      "name": "markt_to_market_interval.feature",
+      "original_path": "core/integration/features/settlement/markt_to_market_interval.feature",
+      "size": 5795,
+      "sha": "f374c85d4a2d5d26d93caedd2b1a85587b6022c3"
+    },
+    {
+      "name": "settlement_at_expiry_by_time_from_internal_oracle.feature",
+      "original_path": "core/integration/features/settlement/settlement_at_expiry_by_time_from_internal_oracle.feature",
+      "size": 39494,
+      "sha": "45bf66117585d1b2d96a2efe77ca228c843d7300"
+    },
+    {
+      "name": "settlement_with_different_order_types.feature",
+      "original_path": "core/integration/features/settlement/settlement_with_different_order_types.feature",
+      "size": 11627,
+      "sha": "ebceaccd65327e746d1e58e56f79d2201ef294db"
+    },
+    {
+      "name": "system-tests.feature",
+      "original_path": "core/integration/features/settlement/system-tests.feature",
+      "size": 7099,
+      "sha": "94e4f8933d5f6d74eccd955791a20e029b965c26"
+    },
+    {
+      "name": "0013-ACCT-024.feature",
+      "original_path": "core/integration/features/spot/accounts_and_fees/0013-ACCT-024.feature",
+      "size": 6383,
+      "sha": "e5d5997fa9e6d608e1774e771780e87e97ee20bd"
+    },
+    {
+      "name": "0013-ACCT-030.feature",
+      "original_path": "core/integration/features/spot/accounts_and_fees/0013-ACCT-030.feature",
+      "size": 2945,
+      "sha": "5813e94b142fe8f2102da50100c5cb82f836220d"
+    },
+    {
+      "name": "0013-ACCT-031.feature",
+      "original_path": "core/integration/features/spot/accounts_and_fees/0013-ACCT-031.feature",
+      "size": 3416,
+      "sha": "fef2fc76ecc369b649d4c776faefc25be8c24987"
+    },
+    {
+      "name": "0029-FEES-015.feature",
+      "original_path": "core/integration/features/spot/accounts_and_fees/0029-FEES-015.feature",
+      "size": 10810,
+      "sha": "49da41a48b35ca563f06bc377bd5980841f93270"
+    },
+    {
+      "name": "0029-FEES-022.feature",
+      "original_path": "core/integration/features/spot/accounts_and_fees/0029-FEES-022.feature",
+      "size": 6481,
+      "sha": "c3fbe12d3990d683e00d08b93a2833aee39bca6c"
+    },
+    {
+      "name": "0070-MKTD-011.feature",
+      "original_path": "core/integration/features/spot/accounts_and_fees/0070-MKTD-011.feature",
+      "size": 12160,
+      "sha": "830be58941a33fbc008430395ebc3bd4fb108fb3"
+    },
+    {
+      "name": "fund-release-bug.feature",
+      "original_path": "core/integration/features/spot/accounts_and_fees/fund-release-bug.feature",
+      "size": 8397,
+      "sha": "85c83ef314f02e7cf30bb85898c9792ff87b49ee"
+    },
+    {
+      "name": "trading_fees_spot.feature",
+      "original_path": "core/integration/features/spot/accounts_and_fees/trading_fees_spot.feature",
+      "size": 10340,
+      "sha": "421af52709b6920da40144ba68cf3c0464b25017"
+    },
+    {
+      "name": "0034-PROB-008.feature",
+      "original_path": "core/integration/features/spot/liquidity_provision/0034-PROB-008.feature",
+      "size": 7252,
+      "sha": "27b6f1c72eb22d764af835e9c4fcbc958ba36129"
+    },
+    {
+      "name": "0041-TSTK.feature",
+      "original_path": "core/integration/features/spot/liquidity_provision/0041-TSTK.feature",
+      "size": 15108,
+      "sha": "4f9e7a22b63609dceae7dc3c8c215b3e2218762a"
+    },
+    {
+      "name": "0042-LIQF-084.feature",
+      "original_path": "core/integration/features/spot/liquidity_provision/0042-LIQF-084.feature",
+      "size": 15968,
+      "sha": "05e2a3ee04e7c1086bfc347ac8904d9ef0bf47fe"
+    },
+    {
+      "name": "0042-LIQF-marginal_cost.feature",
+      "original_path": "core/integration/features/spot/liquidity_provision/0042-LIQF-marginal_cost.feature",
+      "size": 24770,
+      "sha": "e6c39fcac949e72570bf532e0621795e833795df"
+    },
+    {
+      "name": "0042-LIQF-spots.feature",
+      "original_path": "core/integration/features/spot/liquidity_provision/0042-LIQF-spots.feature",
+      "size": 19693,
+      "sha": "c5e805f02da87f6c25afb15833f42082e1fe1982"
+    },
+    {
+      "name": "0044-LIME-043.feature",
+      "original_path": "core/integration/features/spot/liquidity_provision/0044-LIME-043.feature",
+      "size": 6892,
+      "sha": "68d9137f7cbe8f52548d0f112665f092ecf87166"
+    },
+    {
+      "name": "0044-LIME-044.feature",
+      "original_path": "core/integration/features/spot/liquidity_provision/0044-LIME-044.feature",
+      "size": 7583,
+      "sha": "df594b32f4746b0925245fba9cda5299210a1499"
+    },
+    {
+      "name": "0044-LIME-045.feature",
+      "original_path": "core/integration/features/spot/liquidity_provision/0044-LIME-045.feature",
+      "size": 10879,
+      "sha": "eb004028a6473b55583caea38e87b6eb37fd28b3"
+    },
+    {
+      "name": "0044-LIME-046.feature",
+      "original_path": "core/integration/features/spot/liquidity_provision/0044-LIME-046.feature",
+      "size": 5572,
+      "sha": "7462247965ac39b52d96e066575e3da742b20e22"
+    },
+    {
+      "name": "0044-LIME-047.feature",
+      "original_path": "core/integration/features/spot/liquidity_provision/0044-LIME-047.feature",
+      "size": 5571,
+      "sha": "0c25cfd657e1bb2adb069683d5e2f744c3a0f547"
+    },
+    {
+      "name": "0044-LIME-048.feature",
+      "original_path": "core/integration/features/spot/liquidity_provision/0044-LIME-048.feature",
+      "size": 6378,
+      "sha": "056392954e4b5172ec115836e74805cfe4e81f99"
+    },
+    {
+      "name": "0044-LIME-054.feature",
+      "original_path": "core/integration/features/spot/liquidity_provision/0044-LIME-054.feature",
+      "size": 6710,
+      "sha": "3a4adf398c15c4dc64dc3db3c6a1077356455ae6"
+    },
+    {
+      "name": "0044-LIME-056.feature",
+      "original_path": "core/integration/features/spot/liquidity_provision/0044-LIME-056.feature",
+      "size": 6171,
+      "sha": "78fcdea482425ea075b40fe57272fb991f91646d"
+    },
+    {
+      "name": "0044-LIME-064.feature",
+      "original_path": "core/integration/features/spot/liquidity_provision/0044-LIME-064.feature",
+      "size": 6927,
+      "sha": "f7aae11bda58c938fc263f079fc3ca5f67ddcabd"
+    },
+    {
+      "name": "0044-LIME-078.feature",
+      "original_path": "core/integration/features/spot/liquidity_provision/0044-LIME-078.feature",
+      "size": 8290,
+      "sha": "fef36962b8138b84708bedbbd6253710deaf6eb3"
+    },
+    {
+      "name": "0044-LIME-080.feature",
+      "original_path": "core/integration/features/spot/liquidity_provision/0044-LIME-080.feature",
+      "size": 7606,
+      "sha": "6276d680a255a01b5b30d10e6544f6d00020ef84"
+    },
+    {
+      "name": "0044-LIME-102.feature",
+      "original_path": "core/integration/features/spot/liquidity_provision/0044-LIME-102.feature",
+      "size": 6170,
+      "sha": "78355e4c555134a3d723e8e327e4f3d94c00d926"
+    },
+    {
+      "name": "0044-LIME-103.feature",
+      "original_path": "core/integration/features/spot/liquidity_provision/0044-LIME-103.feature",
+      "size": 6744,
+      "sha": "c83667e8391a3367c47a74e27b6e507d6364aa6f"
+    },
+    {
+      "name": "0044-LIME-104.feature",
+      "original_path": "core/integration/features/spot/liquidity_provision/0044-LIME-104.feature",
+      "size": 6719,
+      "sha": "3712254f18132fc0636865de56d879afa28bcf86"
+    },
+    {
+      "name": "0044-LIME-107.feature",
+      "original_path": "core/integration/features/spot/liquidity_provision/0044-LIME-107.feature",
+      "size": 13683,
+      "sha": "7439ce722c317d69418e3080d37b247b6c36daf8"
+    },
+    {
+      "name": "0044-LIME_spot.feature",
+      "original_path": "core/integration/features/spot/liquidity_provision/0044-LIME_spot.feature",
+      "size": 10937,
+      "sha": "71c5fcdfc8fa6f1ae1bd82a1340d2d7829b7b3c6"
+    },
+    {
+      "name": "0044-LIME_spot_LPorders.feature",
+      "original_path": "core/integration/features/spot/liquidity_provision/0044-LIME_spot_LPorders.feature",
+      "size": 5927,
+      "sha": "f69d2493f0ab345dd29bcad07a2b016af2165034"
+    },
+    {
+      "name": "0011-MARA-020.feature",
+      "original_path": "core/integration/features/spot/orders/0011-MARA-020.feature",
+      "size": 3329,
+      "sha": "f802f2b716381d39a652a4412b425d8c76df6c48"
+    },
+    {
+      "name": "0011-MARA-021.feature",
+      "original_path": "core/integration/features/spot/orders/0011-MARA-021.feature",
+      "size": 3306,
+      "sha": "39d55460990d3d9412073819fdd7854c07502161"
+    },
+    {
+      "name": "0011-MARA-auction.feature",
+      "original_path": "core/integration/features/spot/orders/0011-MARA-auction.feature",
+      "size": 6090,
+      "sha": "99494706050af93fd6a5fadf6f6ede2da8fb5351"
+    },
+    {
+      "name": "0011-MARA-continuous.feature",
+      "original_path": "core/integration/features/spot/orders/0011-MARA-continuous.feature",
+      "size": 7437,
+      "sha": "365422233fb121348699c9442ab8b44e6dee7e1a"
+    },
+    {
+      "name": "0014-ORDT-081.feature",
+      "original_path": "core/integration/features/spot/orders/0014-ORDT-081.feature",
+      "size": 7847,
+      "sha": "9152c3734968f553b87210a77b46ad7326dda86e"
+    },
+    {
+      "name": "0014-ORDT-082.feature",
+      "original_path": "core/integration/features/spot/orders/0014-ORDT-082.feature",
+      "size": 5262,
+      "sha": "736f54fcdeee68788fb686ac50dc5a8d1f91ae8a"
+    },
+    {
+      "name": "0014-ORDT-083.feature",
+      "original_path": "core/integration/features/spot/orders/0014-ORDT-083.feature",
+      "size": 6072,
+      "sha": "123f1da06c4cc9357d2bab5f03086b2e42aa6f9d"
+    },
+    {
+      "name": "0014-ORDT-084.feature",
+      "original_path": "core/integration/features/spot/orders/0014-ORDT-084.feature",
+      "size": 4679,
+      "sha": "36ea5baf02cd24addc4a8fb762cd77ab0e703370"
+    },
+    {
+      "name": "0014-ORDT-085.feature",
+      "original_path": "core/integration/features/spot/orders/0014-ORDT-085.feature",
+      "size": 2865,
+      "sha": "b1c2a19b57be2166c7e868237017fc041dee54b7"
+    },
+    {
+      "name": "0014-ORDT-086.feature",
+      "original_path": "core/integration/features/spot/orders/0014-ORDT-086.feature",
+      "size": 2905,
+      "sha": "cbde374a6f985b0e8b24560b90574ff5f15266c3"
+    },
+    {
+      "name": "0014-ORDT-087.feature",
+      "original_path": "core/integration/features/spot/orders/0014-ORDT-087.feature",
+      "size": 8159,
+      "sha": "327676be75bc7bc928d7aa6d4e2a3d75cd5b8bff"
+    },
+    {
+      "name": "0014-ORDT-088.feature",
+      "original_path": "core/integration/features/spot/orders/0014-ORDT-088.feature",
+      "size": 4081,
+      "sha": "60d09dc82ad4f606ba7b5172477e6ab326cddf07"
+    },
+    {
+      "name": "0014-ORDT-089.feature",
+      "original_path": "core/integration/features/spot/orders/0014-ORDT-089.feature",
+      "size": 3435,
+      "sha": "99c7edc3ad8bbd181fd338077f50fab71345decc"
+    },
+    {
+      "name": "0014-ORDT-091.feature",
+      "original_path": "core/integration/features/spot/orders/0014-ORDT-091.feature",
+      "size": 3902,
+      "sha": "136c0449343198a54915ca75949096e0501ea595"
+    },
+    {
+      "name": "0014-ORDT-092.feature",
+      "original_path": "core/integration/features/spot/orders/0014-ORDT-092.feature",
+      "size": 4001,
+      "sha": "4cee22bed2733bcc0984691ae34aaa150a852e18"
+    },
+    {
+      "name": "0014-ORDT-093.feature",
+      "original_path": "core/integration/features/spot/orders/0014-ORDT-093.feature",
+      "size": 4916,
+      "sha": "aded0e9606713e43173ea31bf33e2f27df08cf12"
+    },
+    {
+      "name": "0014-ORDT-094.feature",
+      "original_path": "core/integration/features/spot/orders/0014-ORDT-094.feature",
+      "size": 8000,
+      "sha": "1205acde1510b7885ccb181c5cd49db29f976702"
+    },
+    {
+      "name": "0014-ORDT-095.feature",
+      "original_path": "core/integration/features/spot/orders/0014-ORDT-095.feature",
+      "size": 4735,
+      "sha": "4c429ab80b255e362ff4b48ef4dc804272147cf8"
+    },
+    {
+      "name": "0014-ORDT-101.feature",
+      "original_path": "core/integration/features/spot/orders/0014-ORDT-101.feature",
+      "size": 4600,
+      "sha": "efc5afc1efb2028a143c262bda271cd5c36d2293"
+    },
+    {
+      "name": "0014-ORDT-102.feature",
+      "original_path": "core/integration/features/spot/orders/0014-ORDT-102.feature",
+      "size": 4600,
+      "sha": "24aeff70702e34660e1efc01db19aa06bebeedcf"
+    },
+    {
+      "name": "0014-ORDT-103.feature",
+      "original_path": "core/integration/features/spot/orders/0014-ORDT-103.feature",
+      "size": 5359,
+      "sha": "fd43a253c5f423be66989c86a27b04cc9faf5299"
+    },
+    {
+      "name": "0014-ORDT-104.feature",
+      "original_path": "core/integration/features/spot/orders/0014-ORDT-104.feature",
+      "size": 3758,
+      "sha": "5318d26a85ec087524c2d8d650573d813fe42179"
+    },
+    {
+      "name": "0014-ORDT-105.feature",
+      "original_path": "core/integration/features/spot/orders/0014-ORDT-105.feature",
+      "size": 3949,
+      "sha": "d3cb26acb10200e9c2e6ff42c82ae0e337372dba"
+    },
+    {
+      "name": "0014-ORDT-106.feature",
+      "original_path": "core/integration/features/spot/orders/0014-ORDT-106.feature",
+      "size": 6096,
+      "sha": "178018305e03e8c40bfd7dffc2474e397150e274"
+    },
+    {
+      "name": "0014-ORDT-107.feature",
+      "original_path": "core/integration/features/spot/orders/0014-ORDT-107.feature",
+      "size": 3942,
+      "sha": "9331dac326c9efcd87202ed2799727ebc72dbb24"
+    },
+    {
+      "name": "0014-ORDT-108.feature",
+      "original_path": "core/integration/features/spot/orders/0014-ORDT-108.feature",
+      "size": 5323,
+      "sha": "025c5b868345729e2eff3252b7d265f0b2dbb281"
+    },
+    {
+      "name": "0014-ORDT-109.feature",
+      "original_path": "core/integration/features/spot/orders/0014-ORDT-109.feature",
+      "size": 4307,
+      "sha": "90ebbe8c74a31006ce8e1f64e4564d2502fd53c3"
+    },
+    {
+      "name": "0014-ORDT-110.feature",
+      "original_path": "core/integration/features/spot/orders/0014-ORDT-110.feature",
+      "size": 4419,
+      "sha": "d7b8ade9d570186488c360853646e08aebaac5f4"
+    },
+    {
+      "name": "0014-ORDT-111.feature",
+      "original_path": "core/integration/features/spot/orders/0014-ORDT-111.feature",
+      "size": 4211,
+      "sha": "88d2c354b057e8f8d861c0a0bb783ef21243ac84"
+    },
+    {
+      "name": "0014-ORDT-112.feature",
+      "original_path": "core/integration/features/spot/orders/0014-ORDT-112.feature",
+      "size": 5177,
+      "sha": "a668fa78ae6ddee6260f5e199c5c40e382ddbaaf"
+    },
+    {
+      "name": "0014-ORDT-113.feature",
+      "original_path": "core/integration/features/spot/orders/0014-ORDT-113.feature",
+      "size": 5232,
+      "sha": "e9d0be28d899e7ee586c966e01d12cbbf8dc9314"
+    },
+    {
+      "name": "0014-ORDT-118.feature",
+      "original_path": "core/integration/features/spot/orders/0014-ORDT-118.feature",
+      "size": 4273,
+      "sha": "8c6948b8a0380ef90fc64291ef53f98d52f9ec84"
+    },
+    {
+      "name": "0014-ORDT-163.feature",
+      "original_path": "core/integration/features/spot/orders/0014-ORDT-163.feature",
+      "size": 5744,
+      "sha": "7ec687b10ad99bd4ff1d8d17d4dfaff05e332fa0"
+    },
+    {
+      "name": "0024-OSTA-030.feature",
+      "original_path": "core/integration/features/spot/orders/0024-OSTA-030.feature",
+      "size": 7754,
+      "sha": "ec75db649b0f71d9df1429dbe0762578a3f006b4"
+    },
+    {
+      "name": "0024-OSTA-033.feature",
+      "original_path": "core/integration/features/spot/orders/0024-OSTA-033.feature",
+      "size": 7145,
+      "sha": "11139cd5ec94470c0425904722fd78442f26c1af"
+    },
+    {
+      "name": "0024-OSTA-034.feature",
+      "original_path": "core/integration/features/spot/orders/0024-OSTA-034.feature",
+      "size": 9587,
+      "sha": "0745b0af26df9d1c2505e54e13a709515341099b"
+    },
+    {
+      "name": "0024-OSTA-040.feature",
+      "original_path": "core/integration/features/spot/orders/0024-OSTA-040.feature",
+      "size": 6698,
+      "sha": "0f4ea2b5559d4cd0e2c2077c961aed609622546f"
+    },
+    {
+      "name": "0025-OCRE-006.feature",
+      "original_path": "core/integration/features/spot/orders/0025-OCRE-006.feature",
+      "size": 3323,
+      "sha": "fe7ebe61fed3edd99ea4b42227482220a5e5008c"
+    },
+    {
+      "name": "0026-AUCT-024.feature",
+      "original_path": "core/integration/features/spot/orders/0026-AUCT-024.feature",
+      "size": 6248,
+      "sha": "f28e75b64326fc05bb17b16ad4a31d0bb3208643"
+    },
+    {
+      "name": "0026-AUCT-029.feature",
+      "original_path": "core/integration/features/spot/orders/0026-AUCT-029.feature",
+      "size": 3622,
+      "sha": "70b1a2c8c44f410bf1f7de7de8b29bd99bb4978c"
+    },
+    {
+      "name": "0026-AUCT-031.feature",
+      "original_path": "core/integration/features/spot/orders/0026-AUCT-031.feature",
+      "size": 3977,
+      "sha": "4400244fb6216981660f52d8e64e1c78efb965d9"
+    },
+    {
+      "name": "0026-AUCT-032.feature",
+      "original_path": "core/integration/features/spot/orders/0026-AUCT-032.feature",
+      "size": 4809,
+      "sha": "4fd7023d143b887a3b98ccd2fe9168575be21a53"
+    },
+    {
+      "name": "0032-PRIM-023.feature",
+      "original_path": "core/integration/features/spot/orders/0032-PRIM-023.feature",
+      "size": 4598,
+      "sha": "138951d903cc5e9bac80e25848fd53863811e087"
+    },
+    {
+      "name": "0032-PRIM-024.feature",
+      "original_path": "core/integration/features/spot/orders/0032-PRIM-024.feature",
+      "size": 5555,
+      "sha": "186f6801901a9feb0ee54d473b34250293e91658"
+    },
+    {
+      "name": "0032-PRIM-025.feature",
+      "original_path": "core/integration/features/spot/orders/0032-PRIM-025.feature",
+      "size": 4948,
+      "sha": "f0835b156e9d83394554df4cca83409f96e74f5b"
+    },
+    {
+      "name": "0032-PRIM-027.feature",
+      "original_path": "core/integration/features/spot/orders/0032-PRIM-027.feature",
+      "size": 5183,
+      "sha": "7b2229b5f9a469f171624434faeeab4e9ca1e55d"
+    },
+    {
+      "name": "0032-PRIM-028.feature",
+      "original_path": "core/integration/features/spot/orders/0032-PRIM-028.feature",
+      "size": 4638,
+      "sha": "8c4a977f1c8929948190a7888c25b482a455a77d"
+    },
+    {
+      "name": "0032-PRIM-033.feature",
+      "original_path": "core/integration/features/spot/orders/0032-PRIM-033.feature",
+      "size": 7106,
+      "sha": "d0ade166939c780793e998301ae8bb2595dd9556"
+    },
+    {
+      "name": "0032-PRIM-037.feature",
+      "original_path": "core/integration/features/spot/orders/0032-PRIM-037.feature",
+      "size": 4877,
+      "sha": "9fc49d8a59a6c34e55d5ba682dafe3e56e22e797"
+    },
+    {
+      "name": "0032-PRIM-038.feature",
+      "original_path": "core/integration/features/spot/orders/0032-PRIM-038.feature",
+      "size": 5813,
+      "sha": "f6fd87987bd945cef5841abcbfc5b0d5f81c2fe0"
+    },
+    {
+      "name": "0034-PROB-010.feature",
+      "original_path": "core/integration/features/spot/orders/0034-PROB-010.feature",
+      "size": 6077,
+      "sha": "b2a2577340a7dba99a5ca6b150b8efe451a124ec"
+    },
+    {
+      "name": "0037-OPEG-023.feature",
+      "original_path": "core/integration/features/spot/orders/0037-OPEG-023.feature",
+      "size": 9087,
+      "sha": "71f64c9ce4c81e3ba94d46c5df744dfae4bb733d"
+    },
+    {
+      "name": "0068-MATC-060.feature",
+      "original_path": "core/integration/features/spot/orders/0068-MATC-060.feature",
+      "size": 8735,
+      "sha": "48fd45a15a8cacd8de092a9f86d8c414e60ca044"
+    },
+    {
+      "name": "0068-MATC-061.feature",
+      "original_path": "core/integration/features/spot/orders/0068-MATC-061.feature",
+      "size": 9250,
+      "sha": "e067dcabaf3fa04646e698bbc5e6b81e71a20fa0"
+    },
+    {
+      "name": "0068-MATC-068.feature",
+      "original_path": "core/integration/features/spot/orders/0068-MATC-068.feature",
+      "size": 4188,
+      "sha": "ae40af20fd87872c0223a63f3bcbe938ca094093"
+    },
+    {
+      "name": "0068-MATC-073.feature",
+      "original_path": "core/integration/features/spot/orders/0068-MATC-073.feature",
+      "size": 4185,
+      "sha": "6b9a534819c36ff1fabea5961523792c5c5d520e"
+    },
+    {
+      "name": "0068-MATC-074.feature",
+      "original_path": "core/integration/features/spot/orders/0068-MATC-074.feature",
+      "size": 4539,
+      "sha": "04c533746ff05fa17b00dd00697d9bb7f4ebf522"
+    },
+    {
+      "name": "0068-MATC-075.feature",
+      "original_path": "core/integration/features/spot/orders/0068-MATC-075.feature",
+      "size": 5222,
+      "sha": "62b6150de0172a30beb2061bbb89395b087b41a8"
+    },
+    {
+      "name": "0068-MATC-076.feature",
+      "original_path": "core/integration/features/spot/orders/0068-MATC-076.feature",
+      "size": 5956,
+      "sha": "0d859b7e947e196ff117fbc968666cdf69f04c68"
+    },
+    {
+      "name": "0068-MATC-077.feature",
+      "original_path": "core/integration/features/spot/orders/0068-MATC-077.feature",
+      "size": 6414,
+      "sha": "127d641d2a3cf515e9fc962711857fdf8137e6e2"
+    },
+    {
+      "name": "0068-MATC-078.feature",
+      "original_path": "core/integration/features/spot/orders/0068-MATC-078.feature",
+      "size": 7143,
+      "sha": "55485ed1d9a90887e86c858a49df698742584d63"
+    },
+    {
+      "name": "0068-MATC-079.feature",
+      "original_path": "core/integration/features/spot/orders/0068-MATC-079.feature",
+      "size": 5677,
+      "sha": "fc5f196cb6ddd7130b043795b254d48223f2269f"
+    },
+    {
+      "name": "0068-MATC-080.feature",
+      "original_path": "core/integration/features/spot/orders/0068-MATC-080.feature",
+      "size": 13538,
+      "sha": "465dd154749bf848de9315f741b4f0fb04bdb068"
+    },
+    {
+      "name": "0074-BTCH-012.feature",
+      "original_path": "core/integration/features/spot/orders/0074-BTCH-012.feature",
+      "size": 4232,
+      "sha": "8b0cb6aac73f7cecdb1950d3bbf260098e99ff15"
+    },
+    {
+      "name": "0074-BTCH-015.feature",
+      "original_path": "core/integration/features/spot/orders/0074-BTCH-015.feature",
+      "size": 4160,
+      "sha": "022704419950a1a129785670be92ad462c3023f0"
+    },
+    {
+      "name": "0074-BTCH-016.feature",
+      "original_path": "core/integration/features/spot/orders/0074-BTCH-016.feature",
+      "size": 5130,
+      "sha": "b21feffbf0d88ec33957fdb77ccadf51c4c8ee0c"
+    },
+    {
+      "name": "0074-BTCH-019.feature",
+      "original_path": "core/integration/features/spot/orders/0074-BTCH-019.feature",
+      "size": 6316,
+      "sha": "7f6004280d1e6d3e391b5fdd62dd99a6421f4cd3"
+    },
+    {
+      "name": "0080-SPOT-024.feature",
+      "original_path": "core/integration/features/spot/orders/0080-SPOT-024.feature",
+      "size": 8337,
+      "sha": "787c4137f1880acbfacc0d4ce6cefd4023b64e60"
+    },
+    {
+      "name": "0080-SPOT-010.feature",
+      "original_path": "core/integration/features/spots/0080-SPOT-010.feature",
+      "size": 3529,
+      "sha": "88cb8a3fc733fde1253c3ad76122983587585d88"
+    },
+    {
+      "name": "0080-SPOT-016.feature",
+      "original_path": "core/integration/features/spots/SpotFunctionalTests/0080-SPOT-016.feature",
+      "size": 3955,
+      "sha": "90649cb91f51708ceaa73cefe14d96f451f5d0be"
+    },
+    {
+      "name": "0080-SPOT-017.feature",
+      "original_path": "core/integration/features/spots/SpotFunctionalTests/0080-SPOT-017.feature",
+      "size": 4298,
+      "sha": "fd7f385fe4879ae1f74f8e29b0ec61bcfe5687e9"
+    },
+    {
+      "name": "0080-SPOT-018.feature",
+      "original_path": "core/integration/features/spots/SpotFunctionalTests/0080-SPOT-018.feature",
+      "size": 4377,
+      "sha": "463f84023992cf597c39650766fa29552569700f"
+    },
+    {
+      "name": "0080-SPOT-020.feature",
+      "original_path": "core/integration/features/spots/SpotFunctionalTests/0080-SPOT-020.feature",
+      "size": 4451,
+      "sha": "f01955e42efc70c503e25ae3bccd45727fff040f"
+    },
+    {
+      "name": "0080-SPOT-021.feature",
+      "original_path": "core/integration/features/spots/SpotFunctionalTests/0080-SPOT-021.feature",
+      "size": 9249,
+      "sha": "0d56ab03120890cca962951f8a13fca85d474470"
+    },
+    {
+      "name": "TC-0001-SimpleSpot.feature",
+      "original_path": "core/integration/features/spots/SpotFunctionalTests/TC-0001-SimpleSpot.feature",
+      "size": 2660,
+      "sha": "7d6580ad953d238126f86c89cd7165a2f3efc9c4"
+    },
+    {
+      "name": "TC-0001-Spot-sim-repro.feature",
+      "original_path": "core/integration/features/spots/SpotFunctionalTests/TC-0001-Spot-sim-repro.feature",
+      "size": 60361,
+      "sha": "54bcf787320df8dd81ebe7b8e2985be4c8106586"
+    },
+    {
+      "name": "TC-0002-SimpleSpot-No-Fill.feature",
+      "original_path": "core/integration/features/spots/SpotFunctionalTests/TC-0002-SimpleSpot-No-Fill.feature",
+      "size": 2381,
+      "sha": "f4ad9ba314aa97753944318be942cef2b3400d11"
+    },
+    {
+      "name": "TC-0003-Spot-OrderAmend-Price-Down.feature",
+      "original_path": "core/integration/features/spots/SpotFunctionalTests/TC-0003-Spot-OrderAmend-Price-Down.feature",
+      "size": 2897,
+      "sha": "afa94bb4a6c4cb788df44a5d084d7fcecec14030"
+    },
+    {
+      "name": "TC-0004-Spot-OrderAmend-QuantityDown.feature",
+      "original_path": "core/integration/features/spots/SpotFunctionalTests/TC-0004-Spot-OrderAmend-QuantityDown.feature",
+      "size": 3761,
+      "sha": "21e34f170b6a166c6125a16190b45b4c38a3e87f"
+    },
+    {
+      "name": "TC-0005-Spot-OrderAmend-Price-And-Quantity.feature",
+      "original_path": "core/integration/features/spots/SpotFunctionalTests/TC-0005-Spot-OrderAmend-Price-And-Quantity.feature",
+      "size": 3221,
+      "sha": "9e70ae7df039ff5b76ad15d973063128cb57c4c9"
+    },
+    {
+      "name": "TC-0006-Spot-OrderAmend-Price-Up.feature",
+      "original_path": "core/integration/features/spots/SpotFunctionalTests/TC-0006-Spot-OrderAmend-Price-Up.feature",
+      "size": 2895,
+      "sha": "0fb85d54ddd590d0092946171b37ad9127c7effd"
+    },
+    {
+      "name": "TC-0007-Spot-OrderAmend-QuantityUp.feature",
+      "original_path": "core/integration/features/spots/SpotFunctionalTests/TC-0007-Spot-OrderAmend-QuantityUp.feature",
+      "size": 3176,
+      "sha": "abae368993584196c297d680e1dbb31f47932617"
+    },
+    {
+      "name": "TC-0008-Spot-PartialFill.feature",
+      "original_path": "core/integration/features/spots/SpotFunctionalTests/TC-0008-Spot-PartialFill.feature",
+      "size": 4841,
+      "sha": "40b302554caf612cfd27d0d08138ae8900e7ca97"
+    },
+    {
+      "name": "TC-0009-Spot-SamePartyTradesDontMatch.feature",
+      "original_path": "core/integration/features/spots/SpotFunctionalTests/TC-0009-Spot-SamePartyTradesDontMatch.feature",
+      "size": 3914,
+      "sha": "3007a099eee5a3ec7afb9384c7e1b3a613d4465e"
+    },
+    {
+      "name": "TC-0010-Spot-Bid-Decimals.feature",
+      "original_path": "core/integration/features/spots/SpotFunctionalTests/TC-0010-Spot-Bid-Decimals.feature",
+      "size": 2849,
+      "sha": "d39a760631a03e89e76704045bd2033743f09df4"
+    },
+    {
+      "name": "TC-0011-Spot-Ask-Decimals.feature",
+      "original_path": "core/integration/features/spots/SpotFunctionalTests/TC-0011-Spot-Ask-Decimals.feature",
+      "size": 2629,
+      "sha": "c8fd13c1e686c326ed47a5884f8996d3982c3708"
+    },
+    {
+      "name": "TC-0012-Spot-Infra-FeeCalculation.feature",
+      "original_path": "core/integration/features/spots/SpotFunctionalTests/TC-0012-Spot-Infra-FeeCalculation.feature",
+      "size": 4038,
+      "sha": "220e1a5ea32295e51936aeb42652e28a3f1a9281"
+    },
+    {
+      "name": "TC-0012-Spot-Maker-FeeCalculation.feature",
+      "original_path": "core/integration/features/spots/SpotFunctionalTests/TC-0012-Spot-Maker-FeeCalculation.feature",
+      "size": 4486,
+      "sha": "a68cae47fc03cb77dbfc2d731b3a7f19a450b33c"
+    },
+    {
+      "name": "TC-0013-Spot-OrderAmend-account-balance.feature",
+      "original_path": "core/integration/features/spots/SpotFunctionalTests/TC-0013-Spot-OrderAmend-account-balance.feature",
+      "size": 3317,
+      "sha": "5daba135abb827352ffa18c6fb9578e934c9f033"
+    },
+    {
+      "name": "TC-0014-Spot-MultipleParties.feature",
+      "original_path": "core/integration/features/spots/SpotFunctionalTests/TC-0014-Spot-MultipleParties.feature",
+      "size": 8520,
+      "sha": "e03e278a68bc1fa8bf4707d05173a421380d2e8b"
+    },
+    {
+      "name": "spot-decimal-positions-2.feature",
+      "original_path": "core/integration/features/spots/SpotFunctionalTests/spot-decimal-positions-2.feature",
+      "size": 8068,
+      "sha": "dd76b46f6ee97f05f79174bd94c1fb0864150f9e"
+    },
+    {
+      "name": "spot-decimal-positions.feature",
+      "original_path": "core/integration/features/spots/SpotFunctionalTests/spot-decimal-positions.feature",
+      "size": 6165,
+      "sha": "9930076f605c39b6c2186a420587989fbf82a07a"
+    },
+    {
+      "name": "opening-auction-expires.feature",
+      "original_path": "core/integration/features/spots/opening-auction-expires.feature",
+      "size": 4162,
+      "sha": "968063d3f349168743392be201e7fa6d16ae5919"
+    },
+    {
+      "name": "opening-auction-uncrossing.feature",
+      "original_path": "core/integration/features/spots/opening-auction-uncrossing.feature",
+      "size": 5286,
+      "sha": "2102b25c60a7f1f70748fb7ae4e23bc38b619e56"
+    },
+    {
+      "name": "pegged-orders_1.feature",
+      "original_path": "core/integration/features/spots/pegged-orders.feature",
+      "size": 5904,
+      "sha": "9bb041683ca70b4c6734e590574587722bd709b4"
+    },
+    {
+      "name": "successor-markets-ELS.feature",
+      "original_path": "core/integration/features/successor-markets-ELS.feature",
+      "size": 42590,
+      "sha": "afacf33cf39d1beaef669c19166e1a5c739ce176"
+    },
+    {
+      "name": "successor-markets-SLA.feature",
+      "original_path": "core/integration/features/successor-markets-SLA.feature",
+      "size": 13434,
+      "sha": "f09751144503562489898218f4e2fa35a1714616"
+    },
+    {
+      "name": "successor-markets-expiration.feature",
+      "original_path": "core/integration/features/successor-markets-expiration.feature",
+      "size": 10540,
+      "sha": "9b5b0712e66aff4299ef5c2a75fff53453bf5922"
+    },
+    {
+      "name": "successor-markets-insurance.feature",
+      "original_path": "core/integration/features/successor-markets-insurance.feature",
+      "size": 82871,
+      "sha": "4b7a335bd1bb8aba323bbac5ddf4a61d7870a938"
+    },
+    {
+      "name": "successor-markets-simple.feature",
+      "original_path": "core/integration/features/successor-markets-simple.feature",
+      "size": 34107,
+      "sha": "235079ce10ca2aa34029011b6928539887339907"
+    },
+    {
+      "name": "system-test-default.feature",
+      "original_path": "core/integration/features/system-test-default.feature",
+      "size": 17069,
+      "sha": "02c63ccd421aeee3374e9c9c37befa869f21e23f"
+    },
+    {
+      "name": "3135-target-stake-decimals.feature",
+      "original_path": "core/integration/features/target_stake/3135-target-stake-decimals.feature",
+      "size": 6363,
+      "sha": "44135ddbe059e62e2fa467a0924e9793b70772d9"
+    },
+    {
+      "name": "3135-target-stake-pdp.feature",
+      "original_path": "core/integration/features/target_stake/3135-target-stake-pdp.feature",
+      "size": 6261,
+      "sha": "19b1b51dc777b817f37fa19016777c79d27705fe"
+    },
+    {
+      "name": "0083-RFPR-061.feature",
+      "original_path": "core/integration/features/teams/0083-RFPR-061.feature",
+      "size": 7534,
+      "sha": "1c57fc65c434e76b9904c5726e7928c23fc46c5a"
+    },
+    {
+      "name": "0083-RFPR-062.feature",
+      "original_path": "core/integration/features/teams/0083-RFPR-062.feature",
+      "size": 7738,
+      "sha": "f956d6174fa0993a116000fbd4cc90ef6e96ae69"
+    },
+    {
+      "name": "0083-RFPR-063-bulk.feature",
+      "original_path": "core/integration/features/teams/0083-RFPR-063-bulk.feature",
+      "size": 8519,
+      "sha": "ccf5a93e31c77df2555a69e6117999feea27e081"
+    },
+    {
+      "name": "0083-RFPR-063.feature",
+      "original_path": "core/integration/features/teams/0083-RFPR-063.feature",
+      "size": 10390,
+      "sha": "549d8c44e89163a3c57aefbc15dbf10f7b69063f"
+    },
+    {
+      "name": "0004-AMND-060.feature",
+      "original_path": "core/integration/features/tick_size/0004-AMND-060.feature",
+      "size": 5987,
+      "sha": "4341e86093572aae7c816c8dd1317422b6217d39"
+    },
+    {
+      "name": "0057-TRAN-023.feature",
+      "original_path": "core/integration/features/transfers/0057-TRAN-023.feature",
+      "size": 9350,
+      "sha": "cbea93efb18827d63a3d22501a0cffb735d01f5d"
+    },
+    {
+      "name": "fee_discounts.feature",
+      "original_path": "core/integration/features/transfers/fee_discounts.feature",
+      "size": 8128,
+      "sha": "842f58322351b8a822024b0b89483d6ab9fd5363"
+    },
+    {
+      "name": "one_off_transfers.feature",
+      "original_path": "core/integration/features/transfers/one_off_transfers.feature",
+      "size": 28365,
+      "sha": "0885b8c60f63eaa9eb9b00521c796b65b19eb89c"
+    },
+    {
+      "name": "one_off_transfers_fee_discount.feature",
+      "original_path": "core/integration/features/transfers/one_off_transfers_fee_discount.feature",
+      "size": 31736,
+      "sha": "5192700826188dd8443f41864fb66f59bb582e87"
+    },
+    {
+      "name": "recurring_transfers.feature",
+      "original_path": "core/integration/features/transfers/recurring_transfers.feature",
+      "size": 37218,
+      "sha": "86507d031022d02e93891c753a2eb5cacec0ec33"
+    },
+    {
+      "name": "0002-STTL-settlement-verified-loss-socialization-case1.feature",
+      "original_path": "core/integration/features/verified/0002-STTL-settlement-verified-loss-socialization-case1.feature",
+      "size": 5382,
+      "sha": "f6db048567d7f47ee9efddfd0a6a3837aaa50adb"
+    },
+    {
+      "name": "0002-STTL-settlement-verified-loss-socialization-case2.feature",
+      "original_path": "core/integration/features/verified/0002-STTL-settlement-verified-loss-socialization-case2.feature",
+      "size": 5229,
+      "sha": "486738960647d5c70b903b10a90e79c9efcbd12c"
+    },
+    {
+      "name": "0002-STTL-settlement-verified-loss-socialization-case3.feature",
+      "original_path": "core/integration/features/verified/0002-STTL-settlement-verified-loss-socialization-case3.feature",
+      "size": 5763,
+      "sha": "9cbb2051a7b7e8fb9d6b5684fc7892354b45fe91"
+    },
+    {
+      "name": "0002-STTL-settlement-verified-loss-socialization-case4.feature",
+      "original_path": "core/integration/features/verified/0002-STTL-settlement-verified-loss-socialization-case4.feature",
+      "size": 5827,
+      "sha": "c328931c0f16d1c13bebdf6ec0121877701a681c"
+    },
+    {
+      "name": "0002-STTL-settlement-verified-loss-socialization-case5.feature",
+      "original_path": "core/integration/features/verified/0002-STTL-settlement-verified-loss-socialization-case5.feature",
+      "size": 6188,
+      "sha": "001676f89691ff1d2d8c5a46a56037385f6012d7"
+    },
+    {
+      "name": "0002-STTL-settlement_at_expiry.feature",
+      "original_path": "core/integration/features/verified/0002-STTL-settlement_at_expiry.feature",
+      "size": 35166,
+      "sha": "5a26120e91a32eaa9a6a15a1554ac72be525fe5f"
+    },
+    {
+      "name": "0002-STTL-settlement_future_example_paths.feature",
+      "original_path": "core/integration/features/verified/0002-STTL-settlement_future_example_paths.feature",
+      "size": 17705,
+      "sha": "c760e5fe5273c4c66537defc76f8238ae74f6acd"
+    },
+    {
+      "name": "0003-MTMK-mark_to_market_settlement.feature",
+      "original_path": "core/integration/features/verified/0003-MTMK-mark_to_market_settlement.feature",
+      "size": 19503,
+      "sha": "702e60db57a946f2357416e759d04ad5610330c2"
+    },
+    {
+      "name": "0003-MTMK-mark_to_market_settlement_using_insurance_pool.feature",
+      "original_path": "core/integration/features/verified/0003-MTMK-mark_to_market_settlement_using_insurance_pool.feature",
+      "size": 6495,
+      "sha": "7627f8630128eca61fa13bebd8561bea174ee1a4"
+    },
+    {
+      "name": "0003-MTMK-verified-mark-to-market-settlement.feature",
+      "original_path": "core/integration/features/verified/0003-MTMK-verified-mark-to-market-settlement.feature",
+      "size": 35605,
+      "sha": "26ee888df83ac1808fe68c7557ef75da5db2d44d"
+    },
+    {
+      "name": "0006-POSI-AC-008.feature",
+      "original_path": "core/integration/features/verified/0006-POSI-AC-008.feature",
+      "size": 7908,
+      "sha": "37757c8c3376d81a2e88e5cd507b4dbed075540f"
+    },
+    {
+      "name": "0006-POSI-AC009.feature",
+      "original_path": "core/integration/features/verified/0006-POSI-AC009.feature",
+      "size": 7398,
+      "sha": "0e199a8ee14988a5c9cf237f354b03516f1b616f"
+    },
+    {
+      "name": "0011-MARA-006.feature",
+      "original_path": "core/integration/features/verified/0011-MARA-006.feature",
+      "size": 20425,
+      "sha": "64d5087e88f9311ca3abdcc9067304e1d914d17a"
+    },
+    {
+      "name": "0011-MARA-016017.feature",
+      "original_path": "core/integration/features/verified/0011-MARA-016017.feature",
+      "size": 9000,
+      "sha": "7150b328d2bd92cd673d360338fd123282069dc0"
+    },
+    {
+      "name": "0011-MARA-change_in_margin_figures.feature",
+      "original_path": "core/integration/features/verified/0011-MARA-change_in_margin_figures.feature",
+      "size": 7535,
+      "sha": "34d6089f7cc49c48f62cb15191750eea56b2aaba"
+    },
+    {
+      "name": "0011-MARA-ensure_margin_funds_are_released.feature",
+      "original_path": "core/integration/features/verified/0011-MARA-ensure_margin_funds_are_released.feature",
+      "size": 14215,
+      "sha": "5528a8a3d0dd2b05cfdd941683a68d3531ee4a06"
+    },
+    {
+      "name": "0015-INSR-insurance_pool_balance_test.feature",
+      "original_path": "core/integration/features/verified/0015-INSR-insurance_pool_balance_test.feature",
+      "size": 23725,
+      "sha": "ce94fece626daaa62afc3f32d6e5a543e81930f6"
+    },
+    {
+      "name": "0019-MCAL-margin_calculator-risk_parameters.feature",
+      "original_path": "core/integration/features/verified/0019-MCAL-margin_calculator-risk_parameters.feature",
+      "size": 14114,
+      "sha": "91d06bd25f89e3bfeba8a2aaa0080b29ab061996"
+    },
+    {
+      "name": "0019-MCAL-margin_calculator-verified_margins_case1.feature",
+      "original_path": "core/integration/features/verified/0019-MCAL-margin_calculator-verified_margins_case1.feature",
+      "size": 11671,
+      "sha": "98c77c37bc45c8cfb7e05f83a29944fe5297c23a"
+    },
+    {
+      "name": "0019-MCAL-margin_calculator-verified_margins_case2.feature",
+      "original_path": "core/integration/features/verified/0019-MCAL-margin_calculator-verified_margins_case2.feature",
+      "size": 9256,
+      "sha": "a2e3bba560cfc18bde35efe6d2ba437ff04a2458"
+    },
+    {
+      "name": "0019-MCAL-margin_calculator-verified_margins_case3.feature",
+      "original_path": "core/integration/features/verified/0019-MCAL-margin_calculator-verified_margins_case3.feature",
+      "size": 7796,
+      "sha": "9aa46ee4adbbdb2458b6c8fe2b08a4209995c9a2"
+    },
+    {
+      "name": "0019-MCAL-margin_calculator-verified_margins_case5.feature",
+      "original_path": "core/integration/features/verified/0019-MCAL-margin_calculator-verified_margins_case5.feature",
+      "size": 8919,
+      "sha": "a67898ab73d94ee177dcfac5a2291bf1cffe9ee4"
+    },
+    {
+      "name": "0019-MCAL-margin_with_pdp.feature",
+      "original_path": "core/integration/features/verified/0019-MCAL-margin_with_pdp.feature",
+      "size": 6763,
+      "sha": "5cd0b8ae9ad8cd645e27a4dfc60b76173ac39e2c"
+    },
+    {
+      "name": "0026-AUCT-auction_interaction.feature",
+      "original_path": "core/integration/features/verified/0026-AUCT-auction_interaction.feature",
+      "size": 8882,
+      "sha": "34366224a3911e57eba67504c434b5024f1a01b2"
+    },
+    {
+      "name": "0029-FEES-040.feature",
+      "original_path": "core/integration/features/verified/0029-FEES-040.feature",
+      "size": 7597,
+      "sha": "f22f2e786dde35e60dea9e8da238c7a4625735d1"
+    },
+    {
+      "name": "0029-FEES-fees.feature",
+      "original_path": "core/integration/features/verified/0029-FEES-fees.feature",
+      "size": 12999,
+      "sha": "326313f49078c9bf40628d0effb40f8d745d9eb6"
+    },
+    {
+      "name": "0029-FEES-multiple_discounts.feature",
+      "original_path": "core/integration/features/verified/0029-FEES-multiple_discounts.feature",
+      "size": 15979,
+      "sha": "e6890f31284aa39ac5523b8a51c01870ab9a98fa"
+    },
+    {
+      "name": "0029-FEES-trading_fees.feature",
+      "original_path": "core/integration/features/verified/0029-FEES-trading_fees.feature",
+      "size": 98646,
+      "sha": "ae1af4122b9f37a13c80020dbedff9c7918675dd"
+    },
+    {
+      "name": "0032-PRIM-price_monitoring_horizon.feature",
+      "original_path": "core/integration/features/verified/0032-PRIM-price_monitoring_horizon.feature",
+      "size": 15129,
+      "sha": "57f60499813003ce25375a664d04f9534212664c"
+    },
+    {
+      "name": "0032-PRIM-price_monitoring_lognormal.feature",
+      "original_path": "core/integration/features/verified/0032-PRIM-price_monitoring_lognormal.feature",
+      "size": 29566,
+      "sha": "aba4a5adf612ed64b49168191b38da6346dbfc4a"
+    },
+    {
+      "name": "0034-PROB-liquidity_TauScaling.feature",
+      "original_path": "core/integration/features/verified/0034-PROB-liquidity_TauScaling.feature",
+      "size": 47636,
+      "sha": "e2b4bba48a09dec5d1ef998358800db09955000d"
+    },
+    {
+      "name": "0035-LIQM-liquidity_monitoring.feature",
+      "original_path": "core/integration/features/verified/0035-LIQM-liquidity_monitoring.feature",
+      "size": 17039,
+      "sha": "7fceb9cc5723db7fa182fc22eef44ef97adbe704"
+    },
+    {
+      "name": "0038-OLIQ-liquidity_provision_creation.feature",
+      "original_path": "core/integration/features/verified/0038-OLIQ-liquidity_provision_creation.feature",
+      "size": 10455,
+      "sha": "83ff6fb9112e5b745f344091d757fe32939d22d1"
+    },
+    {
+      "name": "0041-TSK-target_stake.feature",
+      "original_path": "core/integration/features/verified/0041-TSK-target_stake.feature",
+      "size": 27662,
+      "sha": "5c3120f6e4e2384d2cbf44b37966304c99e6f5d0"
+    },
+    {
+      "name": "0042-LIQF-SLA.feature",
+      "original_path": "core/integration/features/verified/0042-LIQF-SLA.feature",
+      "size": 64826,
+      "sha": "721b030db4d1cf80e58521f8220f7f8b276efab8"
+    },
+    {
+      "name": "0042-LIQF-SLA_spot.feature",
+      "original_path": "core/integration/features/verified/0042-LIQF-SLA_spot.feature",
+      "size": 51707,
+      "sha": "9adb42a487c4eb9aa5af71a78a4422756c8efb75"
+    },
+    {
+      "name": "0042-LIQF-fees_rewards.feature",
+      "original_path": "core/integration/features/verified/0042-LIQF-fees_rewards.feature",
+      "size": 41046,
+      "sha": "2104b1ebbcea48b9770839efefd5c4cb6a3f15d9"
+    },
+    {
+      "name": "0042-LIQF-fees_rewards_VirtualStake.feature",
+      "original_path": "core/integration/features/verified/0042-LIQF-fees_rewards_VirtualStake.feature",
+      "size": 31802,
+      "sha": "9e9c28ee8e6532b9b7421c3e66de57be1676d60a"
+    },
+    {
+      "name": "0042-LIQF-fees_rewards_growing_market.feature",
+      "original_path": "core/integration/features/verified/0042-LIQF-fees_rewards_growing_market.feature",
+      "size": 35633,
+      "sha": "50559608ae2d7429f0052a26f4e5f6db62e4943f"
+    },
+    {
+      "name": "0042-LIQF-fees_rewards_large_distribution_time.feature",
+      "original_path": "core/integration/features/verified/0042-LIQF-fees_rewards_large_distribution_time.feature",
+      "size": 10118,
+      "sha": "4a9c64285bc2c9ba8d3da37be0d07add43f47007"
+    },
+    {
+      "name": "0042-LIQF-fees_rewards_multi_lps.feature",
+      "original_path": "core/integration/features/verified/0042-LIQF-fees_rewards_multi_lps.feature",
+      "size": 9204,
+      "sha": "827561589af29d2d6cd9cedeccb6751ef554adc4"
+    },
+    {
+      "name": "0042-LIQF-fees_rewards_rounding.feature",
+      "original_path": "core/integration/features/verified/0042-LIQF-fees_rewards_rounding.feature",
+      "size": 14796,
+      "sha": "e5e7f98ad359b4ae908500cec1b32009ecdd0a63"
+    },
+    {
+      "name": "0042-LIQF-fees_rewards_with_decimal.feature",
+      "original_path": "core/integration/features/verified/0042-LIQF-fees_rewards_with_decimal.feature",
+      "size": 37769,
+      "sha": "a71ff2f2376d1963cc2b75adb8c101258b533b02"
+    },
+    {
+      "name": "0044-LIME-SLA.feature",
+      "original_path": "core/integration/features/verified/0044-LIME-SLA.feature",
+      "size": 31100,
+      "sha": "da060396cf2c44b8fceb6fe004083750d1b59e95"
+    },
+    {
+      "name": "0044-LIME-SLA_spot.feature",
+      "original_path": "core/integration/features/verified/0044-LIME-SLA_spot.feature",
+      "size": 14231,
+      "sha": "652ae5cd58dcebfffed41e19d862574ee11ceb66"
+    },
+    {
+      "name": "0044-LIME_lp_at_termination.feature",
+      "original_path": "core/integration/features/verified/0044-LIME_lp_at_termination.feature",
+      "size": 9857,
+      "sha": "ac618453b477f4d2cda8446e006e17e6cb913929"
+    },
+    {
+      "name": "0059-STKG-auto_delegation.feature",
+      "original_path": "core/integration/features/verified/0059-STKG-auto_delegation.feature",
+      "size": 12031,
+      "sha": "0627cc161868e4dffdffe15a1ee591826c04336d"
+    },
+    {
+      "name": "0059-STKG-delegation.feature",
+      "original_path": "core/integration/features/verified/0059-STKG-delegation.feature",
+      "size": 40361,
+      "sha": "821e602886faddfb6cf2d9d2d1f5b8ec4994b259"
+    },
+    {
+      "name": "0061-REWP-delegation_rewards.feature",
+      "original_path": "core/integration/features/verified/0061-REWP-delegation_rewards.feature",
+      "size": 46825,
+      "sha": "4b07c815e6620112038fad04a0206409a7f0bba7"
+    },
+    {
+      "name": "0061-REWP-delegation_rewards_genesis.feature",
+      "original_path": "core/integration/features/verified/0061-REWP-delegation_rewards_genesis.feature",
+      "size": 35773,
+      "sha": "e6c40d23ffb0865bd445f5c43bf2b8c8d57805b6"
+    },
+    {
+      "name": "0070-MKTD-market-decimal-places.feature",
+      "original_path": "core/integration/features/verified/0070-MKTD-market-decimal-places.feature",
+      "size": 30200,
+      "sha": "aee6e397d35e1b9099d65fabe1d966ae54c6f9e6"
+    },
+    {
+      "name": "0080-Spot.feature",
+      "original_path": "core/integration/features/verified/0080-Spot.feature",
+      "size": 5697,
+      "sha": "18ac7726fff44df436d3f4d3b5172c894d57fc57"
+    },
+    {
+      "name": "0081-SUCM-multiple_successor_markets.feature",
+      "original_path": "core/integration/features/verified/0081-SUCM-multiple_successor_markets.feature",
+      "size": 8379,
+      "sha": "4fa1dfd300fc414262b95dd26a2a54e8e53a22c7"
+    },
+    {
+      "name": "Funding-insurance_pool.feature",
+      "original_path": "core/integration/features/verified/Funding-insurance_pool.feature",
+      "size": 18892,
+      "sha": "c123b019825e13791f34f148ef7c93114c60c1ec"
+    },
+    {
+      "name": "Funding-treasury.feature",
+      "original_path": "core/integration/features/verified/Funding-treasury.feature",
+      "size": 16666,
+      "sha": "351829bde37072164d76139f1135a8bddb342893"
+    },
+    {
+      "name": "Margin-Levels.feature",
+      "original_path": "core/integration/features/verified/Margin-Levels.feature",
+      "size": 22725,
+      "sha": "fb120f433132495a352c2d47543e5a04115e7bb5"
+    },
+    {
+      "name": "Negative-Position-Decimal-Places.feature",
+      "original_path": "core/integration/features/verified/Negative-Position-Decimal-Places.feature",
+      "size": 19479,
+      "sha": "202a09a2d9c864ff7bf30f483940c8ce648eb316"
+    },
+    {
+      "name": "Test-PnL.feature",
+      "original_path": "core/integration/features/verified/Test-PnL.feature",
+      "size": 16722,
+      "sha": "2dd4d818966d78b1e249df44155fe57387f33938"
+    },
+    {
+      "name": "auction_bug.feature",
+      "original_path": "core/integration/features/verified/auction_bug.feature",
+      "size": 5399,
+      "sha": "7318d1c7365c9ec2bf424af86a94bd85b98148af"
+    },
+    {
+      "name": "closeout-LP_New_Exit_Price.feature",
+      "original_path": "core/integration/features/verified/closeout-LP_New_Exit_Price.feature",
+      "size": 26972,
+      "sha": "8a32c1a62d494ba4f8ac230df5a122b84c1861cc"
+    },
+    {
+      "name": "closeout-cascade.feature",
+      "original_path": "core/integration/features/verified/closeout-cascade.feature",
+      "size": 9008,
+      "sha": "cdf35f0882f2047f379bbed161f4d716eef79772"
+    },
+    {
+      "name": "closeout-lognormal.feature",
+      "original_path": "core/integration/features/verified/closeout-lognormal.feature",
+      "size": 10520,
+      "sha": "7380ff30cefc27dd7d85bdfd4b1a28951b63e339"
+    },
+    {
+      "name": "enactment_HVMR.feature",
+      "original_path": "core/integration/features/verified/enactment_HVMR.feature",
+      "size": 12783,
+      "sha": "3622f3ce7bc2f2924f81081b687f5dee88daa346"
+    },
+    {
+      "name": "enactment_RFPR.feature",
+      "original_path": "core/integration/features/verified/enactment_RFPR.feature",
+      "size": 14511,
+      "sha": "59b4e2165fc2975daf4877a3267e5155c77ae1e7"
+    },
+    {
+      "name": "enactment_VDPR.feature",
+      "original_path": "core/integration/features/verified/enactment_VDPR.feature",
+      "size": 12182,
+      "sha": "42c473d171e19433f6379a28be13b9a490dd4398"
+    },
+    {
+      "name": "fcap_liquidations.feature",
+      "original_path": "core/integration/features/verified/fcap_liquidations.feature",
+      "size": 7079,
+      "sha": "5401ad4f95c106b03cccdd5cc625bb09dd1c4a07"
+    },
+    {
+      "name": "fcap_liquidations_and_fees.feature",
+      "original_path": "core/integration/features/verified/fcap_liquidations_and_fees.feature",
+      "size": 5769,
+      "sha": "d649971889c48504b11f5d1500d63275ddbd602a"
+    },
+    {
+      "name": "fees_from_margin.feature",
+      "original_path": "core/integration/features/verified/fees_from_margin.feature",
+      "size": 10657,
+      "sha": "72ea8058568ec6c81f73ae65cda01e3f833d9bf7"
+    },
+    {
+      "name": "finite-rewards.feature",
+      "original_path": "core/integration/features/verified/finite-rewards.feature",
+      "size": 7518,
+      "sha": "7205098e82dfdc437d0097f5b72882495143b65d"
+    },
+    {
+      "name": "liquidity-provision-bond-account-dp.feature",
+      "original_path": "core/integration/features/verified/liquidity-provision-bond-account-dp.feature",
+      "size": 8855,
+      "sha": "3626e82905ebbae54e138d900e318756c5f63ed2"
+    },
+    {
+      "name": "liquidity-provision-bond-account.feature",
+      "original_path": "core/integration/features/verified/liquidity-provision-bond-account.feature",
+      "size": 9012,
+      "sha": "6f9aedea395c4966b2aefc1cf2fc8e2f195a62c4"
+    },
+    {
+      "name": "negative_price_factor.feature",
+      "original_path": "core/integration/features/verified/negative_price_factor.feature",
+      "size": 5707,
+      "sha": "35a607e866060a703c0b0cab6b9de23059f80947"
+    },
+    {
+      "name": "negative_price_factor_spot.feature",
+      "original_path": "core/integration/features/verified/negative_price_factor_spot.feature",
+      "size": 5628,
+      "sha": "40f82f6d4b1a28a2f598ee8f276ae135c852a941"
+    },
+    {
+      "name": "network_disposing_position_outside_bounds.feature",
+      "original_path": "core/integration/features/verified/network_disposing_position_outside_bounds.feature",
+      "size": 23430,
+      "sha": "5a30951f1ac63643d4703b9eb847f190d4e0ec2f"
+    },
+    {
+      "name": "network_pnl.feature",
+      "original_path": "core/integration/features/verified/network_pnl.feature",
+      "size": 21155,
+      "sha": "8e74f30cb3ec254c478fa8efb861f38965f56907"
+    },
+    {
+      "name": "network_pnl_funding.feature",
+      "original_path": "core/integration/features/verified/network_pnl_funding.feature",
+      "size": 17674,
+      "sha": "f7df129a0b0a93c114a36589df7dcde577490ea5"
+    },
+    {
+      "name": "network_position_disposal.feature",
+      "original_path": "core/integration/features/verified/network_position_disposal.feature",
+      "size": 20170,
+      "sha": "8fdb500de8b278f0ce04db4225a00ff51d44861c"
+    },
+    {
+      "name": "overflow.feature",
+      "original_path": "core/integration/features/verified/overflow.feature",
+      "size": 5430,
+      "sha": "7eaedfa023ad636e7c6a09a4ffd9c223ea5745c2"
+    },
+    {
+      "name": "pegged_orders.feature",
+      "original_path": "core/integration/features/verified/pegged_orders.feature",
+      "size": 11369,
+      "sha": "a99abf2d61171d0fe4c5490ff49b5535727631f4"
+    },
+    {
+      "name": "quick-test.feature",
+      "original_path": "core/integration/features/verified/quick-test.feature",
+      "size": 5513,
+      "sha": "3864697c339a58222a2cad21a1ebfc67bc50e800"
+    },
+    {
+      "name": "reward_cap.feature",
+      "original_path": "core/integration/features/verified/reward_cap.feature",
+      "size": 10243,
+      "sha": "cec6c19cd7f15c7d1e4b72070342752d880c78f2"
+    },
+    {
+      "name": "rewards-over-window.feature",
+      "original_path": "core/integration/features/verified/rewards-over-window.feature",
+      "size": 12012,
+      "sha": "b8dd1dded2bd8ce187d3f7eb2741016b7683a06e"
+    },
+    {
+      "name": "rewards.feature",
+      "original_path": "core/integration/features/verified/rewards.feature",
+      "size": 6074,
+      "sha": "1cfb5a032dfd0b2ea7c4cc588f4978459f4e647a"
+    },
+    {
+      "name": "rewards_lp_fees.feature",
+      "original_path": "core/integration/features/verified/rewards_lp_fees.feature",
+      "size": 8955,
+      "sha": "8f9e149f62a794b687279a23bd061f31700f25b3"
+    },
+    {
+      "name": "risk-parameters-ranges-test.feature",
+      "original_path": "core/integration/features/verified/risk-parameters-ranges-test.feature",
+      "size": 40441,
+      "sha": "1f504d3d58a06f77ba20c029a165e309d57c0856"
+    },
+    {
+      "name": "risk-parameters-sigma-test.feature",
+      "original_path": "core/integration/features/verified/risk-parameters-sigma-test.feature",
+      "size": 9817,
+      "sha": "6be89b99dde0df60850cb8d65d89a7a91ff0d364"
+    },
+    {
+      "name": "special_orders_crossed.feature",
+      "original_path": "core/integration/features/verified/special_orders_crossed.feature",
+      "size": 2459,
+      "sha": "1d0cced078c5daec717a0ee948feb7509bc3fa57"
+    },
+    {
+      "name": "verified-positions-resolution-1.feature",
+      "original_path": "core/integration/features/verified/verified-positions-resolution-1.feature",
+      "size": 8120,
+      "sha": "26e6eac22bb475f5e98afd757b979991a73c7df3"
+    },
+    {
+      "name": "verified-positions-resolution-2.feature",
+      "original_path": "core/integration/features/verified/verified-positions-resolution-2.feature",
+      "size": 5756,
+      "sha": "4940f3d96d52d760abccf7ae0d8e2480fc040c8a"
+    },
+    {
+      "name": "verified-positions-resolution-3.feature",
+      "original_path": "core/integration/features/verified/verified-positions-resolution-3.feature",
+      "size": 5058,
+      "sha": "da8b9109a18327c60d42b1ef5f17a35414aa49d4"
+    },
+    {
+      "name": "verified-positions-resolution-4.feature",
+      "original_path": "core/integration/features/verified/verified-positions-resolution-4.feature",
+      "size": 6954,
+      "sha": "777069d13e58b1f6e1745df2c6ce3860cd956ed7"
+    },
+    {
+      "name": "0085-VSPR-vesting.feature",
+      "original_path": "core/integration/features/vesting/0085-VSPR-vesting.feature",
+      "size": 20834,
+      "sha": "d00403f2f265fb7e3fb18d93ba1b015de6608251"
+    },
+    {
+      "name": "0095-HVMR-cap.feature",
+      "original_path": "core/integration/features/volume-rebate/0095-HVMR-cap.feature",
+      "size": 23382,
+      "sha": "c8cdf9527d306749682493eccc32bfe17c7ad53f"
+    },
+    {
+      "name": "0095-HVMR-multiple.feature",
+      "original_path": "core/integration/features/volume-rebate/0095-HVMR-multiple.feature",
+      "size": 13168,
+      "sha": "763fa804d5893f6825e0c6697d31cbffce7ea73f"
+    },
+    {
+      "name": "0095-HVMR.feature",
+      "original_path": "core/integration/features/volume-rebate/0095-HVMR.feature",
+      "size": 22833,
+      "sha": "ec8cf474eabec1680c92825ebf3c7596c8ae0a37"
+    },
+    {
+      "name": "zero-position.feature",
+      "original_path": "core/integration/features/zero-position.feature",
+      "size": 15744,
+      "sha": "37b2d31bb46dfb35a47b6680f96981a1d486e2e8"
+    }
+  ],
+  "status": "success"
+}

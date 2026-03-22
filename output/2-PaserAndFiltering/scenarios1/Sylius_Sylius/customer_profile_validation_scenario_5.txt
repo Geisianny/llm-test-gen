@@ -1,0 +1,8 @@
+Scenario 5: Trying to remove my last name
+  Tags: ['@api', '@ui']
+  When  I want to modify my profile
+  And  I remove the last name
+  And  I try to save my changes
+  Then  I should be notified that the last name is required
+  And  my name should still be "Francis Underwood"
+

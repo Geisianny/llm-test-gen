@@ -1,0 +1,475 @@
+INFORMAÇÕES DO REPOSITÓRIO
+==================================================
+
+Nome: datadog-api-client-typescript
+Proprietário: DataDog
+URL: https://github.com/DataDog/datadog-api-client-typescript
+Visibilidade: public
+Privado: Não
+Data: 2025-11-26 03:19:43
+Arquivos .feature encontrados: 115
+Arquivos baixados: 115
+Status: success
+
+ARQUIVOS BAIXADOS
+------------------------------
+• authentication.feature (1347 bytes)
+  Path original: features/v1/authentication.feature
+  SHA: b82a2313218e311e51fcd33ff27dc32cb2529d94
+
+• aws_integration.feature (11622 bytes)
+  Path original: features/v1/aws_integration.feature
+  SHA: 08c57bbc61eb26e6cc575b1f07992ceb881b766f
+
+• aws_logs_integration.feature (4858 bytes)
+  Path original: features/v1/aws_logs_integration.feature
+  SHA: 622d8d7debac27032a2fa2b9fbbfc148e90b8647
+
+• azure_integration.feature (7737 bytes)
+  Path original: features/v1/azure_integration.feature
+  SHA: 8d31237b5b60e0b639551216b44cc531a25c7f04
+
+• dashboard_lists.feature (3908 bytes)
+  Path original: features/v1/dashboard_lists.feature
+  SHA: 2077d4503959c5940c30751d7153e534ac907c57
+
+• dashboards.feature (102555 bytes)
+  Path original: features/v1/dashboards.feature
+  SHA: 0d161522e95430475287b93318fec79e08256d62
+
+• downtimes.feature (10450 bytes)
+  Path original: features/v1/downtimes.feature
+  SHA: fccf3660272987d74149c42fe304590c0a547375
+
+• events.feature (3898 bytes)
+  Path original: features/v1/events.feature
+  SHA: e1b7d8a0fd62fc8bd4de3a8254d1651722a3f71f
+
+• gcp_integration.feature (7975 bytes)
+  Path original: features/v1/gcp_integration.feature
+  SHA: 5e6bccf3a7ce1b779124df98f07f8e81cef94702
+
+• hosts.feature (5591 bytes)
+  Path original: features/v1/hosts.feature
+  SHA: 7ed533f7b20fac4c814da2752cd9d25cfe1141b1
+
+• ip_ranges.feature (449 bytes)
+  Path original: features/v1/ip_ranges.feature
+  SHA: 067c9b6215eb4913223161f30d142f46d064bb0e
+
+• key_management.feature (7421 bytes)
+  Path original: features/v1/key_management.feature
+  SHA: c3f18c2346a10f166a8fd2659fe56eb0b77a9a79
+
+• logs.feature (3446 bytes)
+  Path original: features/v1/logs.feature
+  SHA: 5ae909c3aae6ff86fb4a8dbd9f08a53f7576a4aa
+
+• logs_indexes.feature (5900 bytes)
+  Path original: features/v1/logs_indexes.feature
+  SHA: e94fea2c62f4f3cd546c7fca32c36a36358c1d0c
+
+• logs_pipelines.feature (21138 bytes)
+  Path original: features/v1/logs_pipelines.feature
+  SHA: 5f7dde5db67934eba02f13f45cb40f8a6be5a759
+
+• metrics.feature (9952 bytes)
+  Path original: features/v1/metrics.feature
+  SHA: 12886d4238697950b9dea155cd566bbc78e91a4f
+
+• monitors.feature (20859 bytes)
+  Path original: features/v1/monitors.feature
+  SHA: 64e72f698b4ddebc4489504eb795af8ae9d12a50
+
+• notebooks.feature (9795 bytes)
+  Path original: features/v1/notebooks.feature
+  SHA: 3ff8343c9b19274a69fc0223007b441a3b144d74
+
+• organizations.feature (5366 bytes)
+  Path original: features/v1/organizations.feature
+  SHA: d9d89aa89d9d4e7b9c5e73a1b636b90f7404926e
+
+• pagerduty_integration.feature (3429 bytes)
+  Path original: features/v1/pagerduty_integration.feature
+  SHA: c0adea375a8c3edb6331bd251033e0e0ad358a4b
+
+• security_monitoring.feature (4441 bytes)
+  Path original: features/v1/security_monitoring.feature
+  SHA: 4d4904e937eb755ef5b8cf631fb8199b1fe7d7ce
+
+• service_checks.feature (2606 bytes)
+  Path original: features/v1/service_checks.feature
+  SHA: 5ed435e4cb7dc5ce666bf8760b168965596564da
+
+• service_level_objective_corrections.feature (7298 bytes)
+  Path original: features/v1/service_level_objective_corrections.feature
+  SHA: d301d8e6764f01ee6f67ac26a4d4605804452f50
+
+• service_level_objectives.feature (12815 bytes)
+  Path original: features/v1/service_level_objectives.feature
+  SHA: c5534618a73e14fcb0ced9ecbf7b3d803ceb8011
+
+• slack_integration.feature (6811 bytes)
+  Path original: features/v1/slack_integration.feature
+  SHA: 35686a8b43fc2ae6b1b55bcc2e2359077a9cda2b
+
+• snapshots.feature (1269 bytes)
+  Path original: features/v1/snapshots.feature
+  SHA: 9e86ed6bb075cc9d71400205101277772b15aa67
+
+• synthetics.feature (62189 bytes)
+  Path original: features/v1/synthetics.feature
+  SHA: 4d3e23061ae66b639985bd642004c71915e64cfc
+
+• tags.feature (3708 bytes)
+  Path original: features/v1/tags.feature
+  SHA: 36e1eabfdc2580a548fd6b90b8c9d07e3363987c
+
+• usage_metering.feature (34033 bytes)
+  Path original: features/v1/usage_metering.feature
+  SHA: ea9e1ca4b449a01e4333ceb263d033346c86d0da
+
+• users.feature (4719 bytes)
+  Path original: features/v1/users.feature
+  SHA: 57285544672a782c6b19b00bc695af224749fd97
+
+• webhooks_integration.feature (8079 bytes)
+  Path original: features/v1/webhooks_integration.feature
+  SHA: e58d93b7816968116de817ae822abd20cfb94781
+
+• action_connection.feature (8383 bytes)
+  Path original: features/v2/action_connection.feature
+  SHA: 759615a8fd6341ae19f2aac814d2a2ef570fd9a3
+
+• actions_datastores.feature (12296 bytes)
+  Path original: features/v2/actions_datastores.feature
+  SHA: a8cd02fe05297bce2fe04558286686bbfa70fc7b
+
+• agentless_scanning.feature (14761 bytes)
+  Path original: features/v2/agentless_scanning.feature
+  SHA: 919d43c75b5cd03671a65cdcdc97a8464ca9f309
+
+• api_management.feature (4931 bytes)
+  Path original: features/v2/api_management.feature
+  SHA: 86cb52fe8453b737a23d6d6a1f331f0025706ff9
+
+• apm_retention_filters.feature (7945 bytes)
+  Path original: features/v2/apm_retention_filters.feature
+  SHA: f3334c20e3ed6d58307698ac9b9236fa9023d993
+
+• app_builder.feature (12628 bytes)
+  Path original: features/v2/app_builder.feature
+  SHA: 1ef2502e807c10f998278589b8b15f67b4093dfb
+
+• application_security.feature (16415 bytes)
+  Path original: features/v2/application_security.feature
+  SHA: f10a470ff2e00391116336eb3baf2ab32a4e8650
+
+• audit.feature (2422 bytes)
+  Path original: features/v2/audit.feature
+  SHA: b61cee6106add695bab53981ad605acabaf15b57
+
+• authn_mappings.feature (7682 bytes)
+  Path original: features/v2/authn_mappings.feature
+  SHA: 9e0bb72fec8ae27c1b740ce8523571e21fbbc279
+
+• aws_integration_1.feature (15738 bytes)
+  Path original: features/v2/aws_integration.feature
+  SHA: 30ded64d73f12324816b0cbf8d5090407a015cbc
+
+• aws_logs_integration_1.feature (722 bytes)
+  Path original: features/v2/aws_logs_integration.feature
+  SHA: 0dc915e57948e08abbbeb2ceb5866f4090735e02
+
+• case_management.feature (23674 bytes)
+  Path original: features/v2/case_management.feature
+  SHA: 2f239155671fab8edba52709f57628dcb670e293
+
+• case_management_attribute.feature (3975 bytes)
+  Path original: features/v2/case_management_attribute.feature
+  SHA: 3ac06e724b79e0540e8a02b49f3ff3b17d8862ab
+
+• case_management_type.feature (2007 bytes)
+  Path original: features/v2/case_management_type.feature
+  SHA: 0773d7d241b54551bef5b0abb0e43db3369e0c41
+
+• ci_visibility_pipelines.feature (10905 bytes)
+  Path original: features/v2/ci_visibility_pipelines.feature
+  SHA: 3c52a30f4b700344b07af5d2ed6d1519bc7aed0e
+
+• ci_visibility_tests.feature (4416 bytes)
+  Path original: features/v2/ci_visibility_tests.feature
+  SHA: 612c77805327a3608a489da1f424c93d7a771285
+
+• cloud_cost_management.feature (29120 bytes)
+  Path original: features/v2/cloud_cost_management.feature
+  SHA: d141b80f7ba8e58ae420710689fd059be3b24d68
+
+• cloud_network_monitoring.feature (1860 bytes)
+  Path original: features/v2/cloud_network_monitoring.feature
+  SHA: 12064508f1ee2fd03c0224750999d634d8945604
+
+• cloudflare_integration.feature (8796 bytes)
+  Path original: features/v2/cloudflare_integration.feature
+  SHA: 506d440826d1a278786286806d65ce1b26a9e479
+
+• confluent_cloud.feature (13773 bytes)
+  Path original: features/v2/confluent_cloud.feature
+  SHA: f81e01d0938dcea6fcbbfddf20714074069160b5
+
+• container_images.feature (1631 bytes)
+  Path original: features/v2/container_images.feature
+  SHA: 8e9162526cf2b4a61ec3c05d8b70eb7f4db88b90
+
+• containers.feature (1526 bytes)
+  Path original: features/v2/containers.feature
+  SHA: 1e1e842371a6fd454d5c36b017ccb33cbcd3a1cc
+
+• csm_agents.feature (970 bytes)
+  Path original: features/v2/csm_agents.feature
+  SHA: 49cde30aa904c97266b2815b2058688384b6b8c4
+
+• csm_coverage_analysis.feature (1338 bytes)
+  Path original: features/v2/csm_coverage_analysis.feature
+  SHA: 8c3689dbfa71e766bc0e60f5e462bc88dac15c2d
+
+• csm_threats.feature (21017 bytes)
+  Path original: features/v2/csm_threats.feature
+  SHA: be43d01881d8a3ec518a6c00eecb26a3ba3c10bb
+
+• dashboard_lists_1.feature (8774 bytes)
+  Path original: features/v2/dashboard_lists.feature
+  SHA: 1d36afaadd5fb70e7afb99e7344ebabcd328ae02
+
+• data_deletion.feature (4596 bytes)
+  Path original: features/v2/data_deletion.feature
+  SHA: 6bfc942e2a723052ce8717ba37a23359d5e3da19
+
+• datasets.feature (6259 bytes)
+  Path original: features/v2/datasets.feature
+  SHA: 2e089dd0181844f79b2bf6c4f522a0ac902184d6
+
+• deployment_gates.feature (14619 bytes)
+  Path original: features/v2/deployment_gates.feature
+  SHA: e4023c5650b1b7e5b09f5e3e5339195ac792e978
+
+• domain_allowlist.feature (1609 bytes)
+  Path original: features/v2/domain_allowlist.feature
+  SHA: 8fe10371d5c1069408326d18ef5c547e2f4c7bae
+
+• dora_metrics.feature (9905 bytes)
+  Path original: features/v2/dora_metrics.feature
+  SHA: b11b0fc74df5ed92385fa87fad7bee16a001adb8
+
+• downtimes_1.feature (6874 bytes)
+  Path original: features/v2/downtimes.feature
+  SHA: 5e6dc55f71492acbd26cdc0761175cc676abc5a9
+
+• error_tracking.feature (5879 bytes)
+  Path original: features/v2/error_tracking.feature
+  SHA: 253c3b24b237b112fdc08e0a217e014716578678
+
+• events_1.feature (7073 bytes)
+  Path original: features/v2/events.feature
+  SHA: 61d824ce1084dc1b075949f800df5937a031279c
+
+• fastly_integration.feature (11928 bytes)
+  Path original: features/v2/fastly_integration.feature
+  SHA: 61dd97599e055672a2ad39a9b4bc03232fe4f6e1
+
+• fleet_automation.feature (14464 bytes)
+  Path original: features/v2/fleet_automation.feature
+  SHA: 0024399c7455521919c0d1c471ec0b9b70f64404
+
+• gcp_integration_1.feature (13285 bytes)
+  Path original: features/v2/gcp_integration.feature
+  SHA: 6d47a1508eb661359b92e78679c595e2b135dc27
+
+• incident_services.feature (7048 bytes)
+  Path original: features/v2/incident_services.feature
+  SHA: eb5e5716d424b96da07114572c5ae5093168242d
+
+• incident_teams.feature (6803 bytes)
+  Path original: features/v2/incident_teams.feature
+  SHA: 5bbb4926393c1dfb64162778ffbc1fe151c21571
+
+• incidents.feature (70592 bytes)
+  Path original: features/v2/incidents.feature
+  SHA: 74ae965968fdef6727ed6f9a6c579e539ada9639
+
+• ip_allowlist.feature (3723 bytes)
+  Path original: features/v2/ip_allowlist.feature
+  SHA: dbd899a6851582ded34a626e3ae58a3834551618
+
+• key_management_1.feature (15994 bytes)
+  Path original: features/v2/key_management.feature
+  SHA: 40daf9df54f42b71ee7274b35a8e5c2c956f4b68
+
+• logs_1.feature (10817 bytes)
+  Path original: features/v2/logs.feature
+  SHA: b7accd07dd99411e1b47801b72a1dfab23c46eeb
+
+• logs_archives.feature (11371 bytes)
+  Path original: features/v2/logs_archives.feature
+  SHA: a6de8c72d4bd45f4a68f4d51d78f1406e13c93dc
+
+• logs_custom_destinations.feature (22376 bytes)
+  Path original: features/v2/logs_custom_destinations.feature
+  SHA: 44b85404852f0007ee060c19541413233dbdcd12
+
+• logs_metrics.feature (6672 bytes)
+  Path original: features/v2/logs_metrics.feature
+  SHA: 4342f80a9cfbbe65383f35b4fbb85258c593402b
+
+• metrics_1.feature (24935 bytes)
+  Path original: features/v2/metrics.feature
+  SHA: 41e753dfb3f1199c9c57ee2227e0972043b52c45
+
+• microsoft_teams_integration.feature (22891 bytes)
+  Path original: features/v2/microsoft_teams_integration.feature
+  SHA: d76425d375979e210fa9c842f90331ccf772fda4
+
+• monitors_1.feature (25003 bytes)
+  Path original: features/v2/monitors.feature
+  SHA: e84062637c1a803f1dbc213100109c564118c281
+
+• network_device_monitoring.feature (8416 bytes)
+  Path original: features/v2/network_device_monitoring.feature
+  SHA: f6f7a78f257cf6f9032211dfda0f02f7b0c808a5
+
+• observability_pipelines.feature (11348 bytes)
+  Path original: features/v2/observability_pipelines.feature
+  SHA: c7149b1e4fadd4525762555564a6307a79095f61
+
+• okta_integration.feature (5675 bytes)
+  Path original: features/v2/okta_integration.feature
+  SHA: b61b09bb5f3eaca85f17a3c1d70bef36822b1bef
+
+• on-call.feature (16746 bytes)
+  Path original: features/v2/on-call.feature
+  SHA: 39640938e4a172441787564f7cc7d6e319605085
+
+• on-call_paging.feature (1669 bytes)
+  Path original: features/v2/on-call_paging.feature
+  SHA: dc03eb9174ac4efd73a839a1f4a13f8b557dd718
+
+• opsgenie_integration.feature (7185 bytes)
+  Path original: features/v2/opsgenie_integration.feature
+  SHA: 5df3907ac035e633951ba34e3086c0733f322835
+
+• org_connections.feature (5132 bytes)
+  Path original: features/v2/org_connections.feature
+  SHA: 321e7c77f24c462bf6916295772dccc0f157f69c
+
+• organizations_1.feature (4065 bytes)
+  Path original: features/v2/organizations.feature
+  SHA: ddec7484e764903c63f4c51b398c455c2b3a3813
+
+• powerpack.feature (10345 bytes)
+  Path original: features/v2/powerpack.feature
+  SHA: 31daf5b5f8cb81200d5fb7aaf73eb6ea6843e3d6
+
+• processes.feature (1329 bytes)
+  Path original: features/v2/processes.feature
+  SHA: 7399829f2b46daef934c44c28ef71d9820534043
+
+• reference_tables.feature (8755 bytes)
+  Path original: features/v2/reference_tables.feature
+  SHA: fa3ea42360ab290008b86a5e2016dd1b6a5371ca
+
+• restriction_policies.feature (3518 bytes)
+  Path original: features/v2/restriction_policies.feature
+  SHA: 6f5bb72d84f04b0aea19e23fef6a8d539a4b0b1f
+
+• roles.feature (17046 bytes)
+  Path original: features/v2/roles.feature
+  SHA: 4c62839977e85e05f5ee25ba0e50f35eef57f782
+
+• rum.feature (13196 bytes)
+  Path original: features/v2/rum.feature
+  SHA: e25922fb48cd9f748941fd70cc2ece37a5e91c12
+
+• rum_audience_management.feature (7112 bytes)
+  Path original: features/v2/rum_audience_management.feature
+  SHA: ffc365319327e9688fb0310b73160272f64de2fd
+
+• rum_metrics.feature (8198 bytes)
+  Path original: features/v2/rum_metrics.feature
+  SHA: 59cff8c7c983dd062a394e75f7923148d2bb0e9d
+
+• rum_retention_filters.feature (7868 bytes)
+  Path original: features/v2/rum_retention_filters.feature
+  SHA: 08d0a42a2538e6cc8d00af5627e3b2aa7bcfa948
+
+• security_monitoring_1.feature (107864 bytes)
+  Path original: features/v2/security_monitoring.feature
+  SHA: 531c84c19c112ef80648912b93237b6b95a74da4
+
+• sensitive_data_scanner.feature (13502 bytes)
+  Path original: features/v2/sensitive_data_scanner.feature
+  SHA: 4516e161032d940a383953ffc0016081ef9256e0
+
+• service_accounts.feature (10346 bytes)
+  Path original: features/v2/service_accounts.feature
+  SHA: 6e25db1e8f20da6506f4251ef9633d6b502315e3
+
+• service_definition.feature (11198 bytes)
+  Path original: features/v2/service_definition.feature
+  SHA: 20c9428087402bf65945db77b5dab17bdce4363a
+
+• service_level_objectives_1.feature (3805 bytes)
+  Path original: features/v2/service_level_objectives.feature
+  SHA: a415d16ccec993e528a7c9424740752a66ede227
+
+• service_scorecards.feature (10251 bytes)
+  Path original: features/v2/service_scorecards.feature
+  SHA: 387f04cf7113835dff4b705856e20d94159525db
+
+• software_catalog.feature (9336 bytes)
+  Path original: features/v2/software_catalog.feature
+  SHA: 34e9f95314da2da35175783994c9483a589f28de
+
+• spa.feature (3090 bytes)
+  Path original: features/v2/spa.feature
+  SHA: 327bbf16ac09fb29f8b74ca57d75c36814b03052
+
+• spans.feature (4401 bytes)
+  Path original: features/v2/spans.feature
+  SHA: bd1cfba58a798b79a423bc17415d1596fdc1e874
+
+• spans_metrics.feature (5778 bytes)
+  Path original: features/v2/spans_metrics.feature
+  SHA: 9de01b47e5f6fb34fc886ec4e8d316f5ada17c61
+
+• static_analysis.feature (1376 bytes)
+  Path original: features/v2/static_analysis.feature
+  SHA: 85bf4d83ae13e5fe0753af97350701508a47463a
+
+• synthetics_1.feature (1367 bytes)
+  Path original: features/v2/synthetics.feature
+  SHA: 73efa73ec291a6aa0dcb2c39fd7fdc5bb75701db
+
+• team_connections.feature (4852 bytes)
+  Path original: features/v2/team_connections.feature
+  SHA: 7bbce889e1ec87ede7f7d08090e5f2b2158a5431
+
+• teams.feature (22503 bytes)
+  Path original: features/v2/teams.feature
+  SHA: bf11bd0316d645a857fd0293be33ddb8f694bc43
+
+• test_optimization.feature (2922 bytes)
+  Path original: features/v2/test_optimization.feature
+  SHA: 18af1e9cad902017d7f4d9636d706aaebee51572
+
+• usage_metering_1.feature (10636 bytes)
+  Path original: features/v2/usage_metering.feature
+  SHA: 715f443eee3c377c9ee919727d569c07068eaacc
+
+• users_1.feature (9113 bytes)
+  Path original: features/v2/users.feature
+  SHA: ce27d729985f8da1e28201a9f58e00b3fcbd83ba
+
+• workflow_automation.feature (12132 bytes)
+  Path original: features/v2/workflow_automation.feature
+  SHA: df51d50139004c4ea3bd89f6f5b066a7abe03ff1
+

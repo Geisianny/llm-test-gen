@@ -1,0 +1,9 @@
+Scenario 1: Clearing cart after logging out
+  Tags: ['@no-api', '@ui']
+  Given  I am a logged in customer
+  And  I added product "Stark T-Shirt" to the cart
+  When  I check the details of my cart
+  And  I log out
+  When  I see the summary of my cart
+  Then  my cart should be empty
+

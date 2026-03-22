@@ -1,0 +1,10 @@
+Scenario 2: Adding a zone with province type member
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I want to create a new zone consisting of province
+  And  I name it "United States"
+  And  I specify its code as "USA"
+  And  I add a province "Alabama"
+  And  I add it
+  Then  I should be notified that it has been successfully created
+  And  the zone named "United States" with the "Alabama" province member should appear in the registry
+

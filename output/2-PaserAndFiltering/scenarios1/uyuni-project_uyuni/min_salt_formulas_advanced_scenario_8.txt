@@ -1,0 +1,18 @@
+Scenario 8: Verify that minion form inherits the values from group form
+  Given  I am on the Systems overview page of this "sle_minion"
+  When  I follow "Formulas" in the content area
+  And  I follow first "Testform" in the content area
+  And  I click on "Save Formula"
+  Then  I should see a "Formula saved" text
+  And  the pillar data for "testing:str" should be "text1" on "sle_minion"
+  And  the pillar data for "testing:str_def" should be "defvalue" on "sle_minion"
+  And  the pillar data for "testing:str_or_null" should be "None" on "sle_minion"
+  And  the pillar data for "testing" should not contain "str_opt" on "sle_minion"
+  And  the pillar data for "testing:num" should be "1" on "sle_minion"
+  And  the pillar data for "testing:num_def" should be "2" on "sle_minion"
+  And  the pillar data for "testing:num_or_null" should be "None" on "sle_minion"
+  And  the pillar data for "testing" should not contain "num_opt" on "sle_minion"
+  And  the pillar data for "testing:pw" should be "pw1" on "sle_minion"
+  And  the pillar data for "testing:pw_or_null" should be "None" on "sle_minion"
+  And  the pillar data for "testing" should not contain "pw_opt" on "sle_minion"
+

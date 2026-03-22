@@ -1,0 +1,5 @@
+Scenario 3: Showing available currencies
+  Tags: ['@api', '@ui']
+  When  I browse currencies
+  Then  I should see "USD" and "EUR" in the list
+

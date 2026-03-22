@@ -1,0 +1,26 @@
+Scenario Outline 3: I can remove a custom network that was added via the popular network flow - Example 1
+  Given  I tap on the Settings tab option
+  And  In settings I tap on "Networks"
+  And  the network screen is displayed
+  And  I tap on the Add Network button
+  Then  "POPULAR" tab is displayed on networks screen
+  And  "CUSTOM NETWORKS" tab is displayed on networks screen
+  When  I tap on the "POPULAR" tab
+  And  I tap on network "Optimism" to add it
+  And  I select approve
+  Then  the network approval modal has button "Switch Network" displayed
+  And  the network approval modal has button "Close" displayed
+  When  I tap on Switch network
+  Then  "Optimism" should be displayed in network educational modal
+  Then  I should see the added network name "Optimism" in the top navigation bar
+  When  I tap on the Settings tab option
+  And  In settings I tap on "Networks"
+  And  I tap and hold network "Optimism"
+  And  I click "Delete" on remove network modal
+  Then  "Ethereum Main Network" should be displayed in network educational modal
+  And  "Optimism" should be removed from the list of RPC networks
+
+  Examples:
+    | Network |
+    | Optimism |
+

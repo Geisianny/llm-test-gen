@@ -1,0 +1,8 @@
+Scenario 5: Filtering translatable product attributes
+  Tags: ['@api', '@ui']
+  When  I choose "Yes" in the translatable filter
+  And  I filter
+  Then  I should see 2 product attributes in the list
+  And  I should see the product attribute "T-Shirt brand" in the list
+  And  I should see the product attribute "Book pages" in the list
+

@@ -1,0 +1,11 @@
+Scenario Outline 7: superadmin accepting proposed organisations - Example 1
+  Tags: ['@vcr']
+  Given  I accept a proposed organisation called "Unfriendly" with email "registered_user-1@example.com"
+  Then  "registered_user-1@example.com" is notified as an organisation admin of "Unfriendly"
+  And  I should see "A notification of acceptance was sent to registered_user-1@example.com"
+
+  Examples:
+    | email | action | message |
+    | registered_user-1@example.com | notified | A notification of acceptance was sent to registered_user-1@example.com |
+    | unregistered@friendly.xx | invited | An invitation email was sent to unregistered@friendly.xx |
+

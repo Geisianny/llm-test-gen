@@ -1,0 +1,14 @@
+Scenario 1: User creates account from wallet page
+  Tags: ['@javascript']
+  Given  I am on "/wallet"
+  Then  I should see "Account Setup Required"
+  And  I should see "You need to create an account before you can deposit funds"
+  When  I click "Create Account"
+  Then  I should see "Create Your Account" in the modal
+  And  I should see "This will create a multi-currency account"
+  When  I fill in "accountName" with "My Test Account"
+  And  I press "Create Account" in the modal
+  Then  I should not see "Account Setup Required"
+  And  I should see "My Test Account"
+  And  I should see "Account Balance"
+

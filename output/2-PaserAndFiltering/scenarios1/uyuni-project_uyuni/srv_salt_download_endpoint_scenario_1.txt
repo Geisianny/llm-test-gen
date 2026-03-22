@@ -1,0 +1,4 @@
+Scenario 1: Download package, user without token
+  Given  I try to download "virgo-dummy-2.0-1.1.noarch.rpm" from channel "fake-rpm-suse-channel"
+  Then  the download should get a 403 response
+

@@ -1,0 +1,44 @@
+Feature: JSON-LD using iri_only parameter
+Description: In order to improve Vulcain support
+  As a Vulcain user and as a developer
+  I should be able to only get an IRI list when I ask a resource.
+
+Scenario 1: Retrieve Dummy's resource context with invalid format returns an error
+  When  I send a "GET" request to "/contexts/IriOnlyDummy.json"
+  Then  the response status code should be 404
+
+Scenario 2: Retrieve Dummies with iri_only and jsonld_embed_context
+  Tags: ['@createSchema']
+  Given  there are 3 iriOnlyDummies
+  When  I send a "GET" request to "/iri_only_dummies"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+Scenario 3: Retrieve Resource with uriTemplate collection Property
+  Tags: ['@createSchema']
+  Given  there are propertyCollectionIriOnly with relations
+  When  I send a "GET" request to "/property_collection_iri_onlies"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be a superset of:
+  When  I send a "GET" request to "/property_collection_iri_onlies/1"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be a superset of:
+
+Scenario Outline 4: Retrieve Dummy's resource context with iri_only - Example 1
+  When  I send a "GET" request to "/contexts/IriOnlyDummy"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+  Examples:
+    | uri |
+    | /contexts/IriOnlyDummy |
+    | /contexts/IriOnlyDummy.jsonld |
+

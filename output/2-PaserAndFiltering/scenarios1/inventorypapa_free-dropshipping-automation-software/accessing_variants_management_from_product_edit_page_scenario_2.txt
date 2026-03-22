@@ -1,0 +1,6 @@
+Scenario 2: Being able to access the variant creation page
+  Tags: ['@ui']
+  When  I modify the "Audi" product
+  And  I go to the variant creation page
+  Then  I should be on the variant creation page for this product
+

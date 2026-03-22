@@ -1,0 +1,6 @@
+Scenario: Reconcile an invoice with a bank statement
+  Given there is an open invoice and a corresponding bank statement line
+  When the user reconciles the invoice with the bank statement line
+  Then the system reconciles the invoice successfully
+  And displays the invoice status as "paid"
+  And updates the bank statement balance

@@ -1,0 +1,6 @@
+Scenario 12: List App Key Registrations returns "OK" response
+  Tags: ['@team:DataDog/workflow-automation-dev']
+  Given  new "ListAppKeyRegistrations" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

@@ -1,0 +1,6 @@
+Scenario 6: Meta Title and Description for about us show page
+  Given  I am on the show page with the "aboutus" permalink
+  And  I should have a page with a title tag set to: "About Us | Harrow volunteering"
+  And  I should see "We are a not-for-profit"
+  And  it should have a Meta Description
+

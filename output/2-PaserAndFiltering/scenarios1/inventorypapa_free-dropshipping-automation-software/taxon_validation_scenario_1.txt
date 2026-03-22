@@ -1,0 +1,9 @@
+Scenario 1: Trying to add a taxon without specifying its code
+  Tags: ['@ui']
+  Given  I want to create a new taxon
+  When  I do not specify its code
+  And  I name it "T-Shirts" in "English (United States)"
+  And  I try to add it
+  Then  I should be notified that code is required
+  And  taxon named "T-Shirts" should not be added
+

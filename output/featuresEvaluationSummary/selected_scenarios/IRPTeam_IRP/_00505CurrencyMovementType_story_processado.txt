@@ -1,0 +1,6 @@
+Scenario: Attempt to delete a non-existent currency movement type
+  Given there is an administrator logged into the system
+  And there is no existing currency movement type with the name "Non Existent"
+  When the administrator attempts to delete the currency movement type with the name "Non Existent"
+  Then the system prevents the deletion
+  And displays an error message indicating that the currency movement type does not exist

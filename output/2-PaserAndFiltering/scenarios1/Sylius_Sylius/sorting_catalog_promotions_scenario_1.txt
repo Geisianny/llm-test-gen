@@ -1,0 +1,6 @@
+Scenario 1: Catalog promotions are sorted by ascending code by default
+  Tags: ['@api', '@ui']
+  When  I browse catalog promotions
+  Then  I should see 3 catalog promotions on the list
+  And  the first catalog promotion should have code "a"
+

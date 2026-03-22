@@ -1,0 +1,6 @@
+Scenario 6: Delete base channel and clone
+  When  I delete these channels with spacewalk-remove-channel:
+  And  I list channels with spacewalk-remove-channel
+  Then  I shouldn't get "clone-fake-rpm-suse-channel"
+  And  I shouldn't get "clone-clone-fake-rpm-suse-channel"
+

@@ -1,0 +1,34 @@
+Scenario: View customer details with informational billing model
+  Given there is a customer with payment details
+  And the provider is using the informational billing model
+  When the provider accesses the customer's profile
+  Then the system displays the customer's details
+  And displays the customer's payment details
+
+Scenario: View customer details with pre-paid billing model
+  Given there is a customer with payment details
+  And the provider is using the pre-paid billing model
+  When the provider accesses the customer's profile
+  Then the system displays the customer's details
+  And does not display the customer's payment details
+
+Scenario: View customer details with post-paid billing model
+  Given there is a customer with payment details
+  And the provider is using the post-paid billing model
+  When the provider accesses the customer's profile
+  Then the system displays the customer's details
+  And does not display the customer's payment details
+
+Scenario: Edit customer details
+  Given there is a customer with existing details
+  When the provider edits the customer's details
+  And saves the changes
+  Then the system updates the customer's details
+  And displays a confirmation message
+
+Scenario: Cancel editing customer details
+  Given there is a customer with existing details
+  When the provider edits the customer's details
+  And cancels the changes
+  Then the system does not update the customer's details
+  And displays the customer's original details

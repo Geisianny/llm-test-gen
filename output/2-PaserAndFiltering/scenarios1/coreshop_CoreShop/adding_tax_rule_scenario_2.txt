@@ -1,0 +1,7 @@
+Scenario 2: Tax calculator should return same price when country is not configured
+  Given  the site has a country "Germany" with currency "EUR"
+  And  the country "Germany" is active
+  And  the country "Germany" is valid for store "Austria"
+  And  I am in country "Germany"
+  Then  the tax rule group should add "0" to the price "20"
+

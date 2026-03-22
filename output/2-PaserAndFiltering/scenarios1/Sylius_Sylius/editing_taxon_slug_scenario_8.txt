@@ -1,0 +1,10 @@
+Scenario 8: Not editing the slug while changing the taxon's parent
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  Given  the store has "Medieval weapons" taxonomy
+  And  the store has "Renaissance weapons" taxonomy
+  And  the "Medieval weapons" taxon has child taxon "Pikes"
+  When  I want to modify the "Pikes" taxon
+  And  I change its parent taxon to "Renaissance weapons"
+  And  I save my changes
+  Then  the slug of the "Pikes" taxon should still be "medieval-weapons/pikes"
+

@@ -1,0 +1,5 @@
+Scenario 1: Validate API key returns "Forbidden" response
+  Tags: ['@skip-validation', '@team:DataDog/credentials-management']
+  When  the request is sent
+  Then  the response status is 403 OK
+

@@ -1,0 +1,7 @@
+Scenario 1: On buyer side with advanced CMS enabled
+  Given  there are no pages
+  And  provider "foo.3scale.localhost" has a public page at "/" with content
+  When  the current domain is "foo.3scale.localhost"
+  And  I go to the homepage
+  Then  I should see "This is advanced CMS page"
+

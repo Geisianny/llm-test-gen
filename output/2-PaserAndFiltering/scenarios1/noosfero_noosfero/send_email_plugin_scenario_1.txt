@@ -1,0 +1,6 @@
+Scenario 1: expand macro in article content
+  Given  plugin SendEmail is enabled on environment
+  And  the following articles
+  When  I go to /joaosilva/sample-article
+  Then  I should see "URL path to /profile/joaosilva/plugin/send_email/deliver action"
+

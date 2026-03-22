@@ -1,0 +1,9 @@
+Scenario 1: Get a list of events returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/monitors-evaluation']
+  Given  a valid "appKeyAuth" key in the system
+  And  new "ListEvents" request
+  And  request contains "start" parameter from "REPLACE.ME"
+  And  request contains "end" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

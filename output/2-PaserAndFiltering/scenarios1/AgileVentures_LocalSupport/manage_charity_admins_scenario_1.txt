@@ -1,0 +1,6 @@
+Scenario 1: Existing charity superadmin appears in form when editing charity
+  Tags: ['@vcr']
+  Given  I am signed in as a superadmin
+  And  I visit the edit page for the organisation named "Friendly"
+  Then  I should see "registered-user-1@example.com" in the charity superadmin email
+

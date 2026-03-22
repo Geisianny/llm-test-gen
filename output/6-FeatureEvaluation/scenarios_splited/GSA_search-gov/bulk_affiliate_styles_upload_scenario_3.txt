@@ -1,0 +1,6 @@
+Scenario: Upload an invalid file type
+  Given there is an admin user logged in
+  And a file of type "image/jpeg" containing affiliate site styles
+  When the admin uploads the file
+  Then the system denies the upload
+  And displays an error message indicating that the file type is not supported

@@ -1,0 +1,6 @@
+Scenario 8: Invited user clicking through on email with cookies policy clicked
+  Given  I click on the invitation link in the email to "superadmin@another.org"
+  And  I accepted the cookie policy from the "invitation" page
+  And  I set my password
+  Then  I should be on the show page for the organisation named "Yet Another Org"
+

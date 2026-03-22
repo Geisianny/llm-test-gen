@@ -1,0 +1,6 @@
+Scenario 14: Add apply highstate to action chain on SSH minion
+  Given  I am on the Systems overview page of this "ssh_minion"
+  When  I follow "States" in the content area
+  And  I check radio button "schedule-by-action-chain"
+  And  I click on "Apply Highstate"
+

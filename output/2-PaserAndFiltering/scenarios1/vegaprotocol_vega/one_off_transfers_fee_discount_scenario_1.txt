@@ -1,0 +1,13 @@
+Scenario 1: 0057-TRAN-021 when a party paid taker fee g in previous epoch, and transfer.feeDiscountDecayFraction = 0.9, then in the next epoch when a party (did not generate any fees) makes a transfer and the theoretical fee the party should pay is f, fee-free amount is then c = 0.9 x g. If c > f, then no transfer fee is paid. And a party makes another transfer, and the theoretical fee the party should pay is f, then the party is not getting any fee-free discount
+  Tags: ['@transfer', '@fee-discount']
+  Given  the parties have the following transfer fee discounts:
+  When  the network moves ahead "1" epochs
+  Then  the parties have the following transfer fee discounts:
+  Given  the parties submit the following one off transfers:
+  And  time is updated to "2021-08-26T00:00:10Z"
+  When  the parties have the following transfer fee discounts:
+  Then  the following transfers should happen:
+  Given  the parties submit the following one off transfers:
+  When  the parties have the following transfer fee discounts:
+  Then  the following transfers should happen:
+

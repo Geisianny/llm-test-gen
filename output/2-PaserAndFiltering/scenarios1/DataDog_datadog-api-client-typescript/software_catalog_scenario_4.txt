@@ -1,0 +1,7 @@
+Scenario 4: Create or update kinds returns "ACCEPTED" response
+  Tags: ['@generated', '@skip', '@team:DataDog/service-catalog']
+  Given  new "UpsertCatalogKind" request
+  And  body with value {"kind": "my-job"}
+  When  the request is sent
+  Then  the response status is 202 ACCEPTED
+

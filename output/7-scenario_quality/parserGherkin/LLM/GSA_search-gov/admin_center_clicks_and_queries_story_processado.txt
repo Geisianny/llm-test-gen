@@ -1,0 +1,48 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: admin_center_clicks_and_queries_story_processado.feature
+Caminho relativo: GSA_search-gov\admin_center_clicks_and_queries_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\GSA_search-gov\admin_center_clicks_and_queries_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: admin_center_clicks_and_queries_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. View top clicked URLs
+   Steps: 4
+   - Given there are search queries and corresponding clicked URLs in the system
+   - When the site administrator views the top clicked URLs report
+   - Then the system displays a list of top clicked URLs
+   - And the list includes the number of clicks for each URL
+2. Analyze queries that led to a clicked URL
+   Steps: 4
+   - Given there is a clicked URL with associated search queries in the system
+   - When the site administrator selects a clicked URL to analyze
+   - Then the system displays the search queries that led to the clicked URL
+   - And the list includes the frequency of each query
+3. View clicked URLs from a specific query
+   Steps: 4
+   - Given there is a search query with associated clicked URLs in the system
+   - When the site administrator selects a search query to analyze
+   - Then the system displays the clicked URLs that resulted from the query
+   - And the list includes the number of clicks for each URL
+4. Generate monthly report of query and click correlation
+   Steps: 4
+   - Given there are search queries and corresponding clicked URLs in the system for the current month
+   - When the site administrator requests a monthly report
+   - Then the system generates a report showing the correlation between search queries and clicked URLs
+   - And the report includes the top clicked URLs and their corresponding queries
+5. No data available for query and click correlation
+   Steps: 4
+   - Given there are no search queries or clicked URLs in the system
+   - When the site administrator views the top clicked URLs report
+   - Then the system displays a message indicating that there is no data available
+   - And provides guidance on how to start collecting data

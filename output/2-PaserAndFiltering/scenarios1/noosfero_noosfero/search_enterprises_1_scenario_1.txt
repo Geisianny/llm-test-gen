@@ -1,0 +1,6 @@
+Scenario 1: see default facets when searching
+  When  I go to the search enterprises page
+  And  I fill in "search-input" with "shoes"
+  And  I press "Search"
+  Then  I should see "City" within "#facets-menu"
+

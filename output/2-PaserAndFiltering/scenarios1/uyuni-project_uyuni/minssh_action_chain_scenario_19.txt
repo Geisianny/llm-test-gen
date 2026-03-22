@@ -1,0 +1,8 @@
+Scenario 19: Execute the action chain from the web UI on SSH minion
+  Given  I am authorized for the "Admin" section
+  When  I follow the left menu "Schedule > Action Chains"
+  And  I wait until I see "minssh_action_chain" text
+  And  I follow "minssh_action_chain"
+  Then  I click on "Save and Schedule"
+  And  I should see a "Action Chain minssh_action_chain has been scheduled for execution." text
+

@@ -1,0 +1,4 @@
+Scenario 4: Enable Rocky 8 Uyuni client tools for creating bootstrap repositories
+  Tags: ['@uyuni']
+  When  I use spacewalk-common-channel to add channel "rockylinux8 rockylinux8-appstream rockylinux8-uyuni-client" with arch "x86_64"
+

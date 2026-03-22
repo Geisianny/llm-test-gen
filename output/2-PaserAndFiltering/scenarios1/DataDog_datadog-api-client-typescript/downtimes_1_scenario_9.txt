@@ -1,0 +1,7 @@
+Scenario 9: Get all downtimes for a monitor returns "Monitor Not Found error" response
+  Tags: ['@team:DataDog/monitor-app']
+  Given  new "ListMonitorDowntimes" request
+  And  request contains "monitor_id" parameter with value 0
+  When  the request is sent
+  Then  the response status is 404 Monitor Not Found error
+

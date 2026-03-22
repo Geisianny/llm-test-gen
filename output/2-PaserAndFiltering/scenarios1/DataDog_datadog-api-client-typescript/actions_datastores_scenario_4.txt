@@ -1,0 +1,11 @@
+Scenario 4: Bulk write datastore items returns "Bad Request" response
+  Tags: ['@team:DataDog/app-builder-backend']
+  Given  new "BulkWriteDatastoreItems" request
+  And  there is a valid "datastore" in the system
+  And  request contains "datastore_id" parameter from "datastore.data.id"
+  And  body with value {"data": {"attributes": {"values": [{"id": "cust_3141", "name": "Johnathan"}, {"badPrimaryKey": "key2", "name": "Johnathan"}]}, "type": "items"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+  And  the response "errors" has length 1
+  And  the response "errors[0].title" is equal to "item key missing or invalid"
+

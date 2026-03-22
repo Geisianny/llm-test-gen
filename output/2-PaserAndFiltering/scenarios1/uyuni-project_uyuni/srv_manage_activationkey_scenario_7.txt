@@ -1,0 +1,7 @@
+Scenario 7: Delete the i586 activation key with packages
+  When  I follow the left menu "Systems > Activation Keys"
+  And  I follow "SUSE Test PKG Key i586" in the content area
+  And  I follow "Delete Key"
+  And  I click on "Delete Activation Key"
+  Then  I should see a "Activation key SUSE Test PKG Key i586 has been deleted." text
+

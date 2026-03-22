@@ -1,0 +1,8 @@
+Scenario 3: Error validation responses must always contain security headers
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/dummies" with body:
+  Then  the response status code should be 422
+  And  the header "Content-Type" should be equal to "application/problem+json; charset=utf-8"
+  And  the header "X-Content-Type-Options" should be equal to "nosniff"
+  And  the header "X-Frame-Options" should be equal to "deny"
+

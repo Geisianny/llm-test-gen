@@ -1,0 +1,8 @@
+Scenario 8: List pipelines returns "Bad Request" response
+  Tags: ['@team:DataDog/observability-pipelines']
+  Given  operation "ListPipelines" enabled
+  And  new "ListPipelines" request
+  And  request contains "page[size]" parameter with value 0
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

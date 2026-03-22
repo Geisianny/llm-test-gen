@@ -1,0 +1,5 @@
+Scenario 2: Providers have charging disabled by default
+  Given  the provider has "finance" allowed
+  When  they are reviewing the charging and gateway billing settings
+  Then  payment gateway cannot be set
+

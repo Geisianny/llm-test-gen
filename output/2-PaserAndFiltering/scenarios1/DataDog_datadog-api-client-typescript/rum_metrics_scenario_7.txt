@@ -1,0 +1,18 @@
+Scenario 7: Get a rum-based metric returns "OK" response
+  Tags: ['@team:DataDog/rum-backend']
+  Given  there is a valid "rum_metric" in the system
+  And  new "GetRumMetric" request
+  And  request contains "metric_id" parameter from "rum_metric.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.id" has the same value as "rum_metric.data.id"
+  And  the response "data.type" has the same value as "rum_metric.data.type"
+  And  the response "data.attributes.event_type" has the same value as "rum_metric.data.attributes.event_type"
+  And  the response "data.attributes.compute.aggregation_type" has the same value as "rum_metric.data.attributes.compute.aggregation_type"
+  And  the response "data.attributes.compute.include_percentiles" has the same value as "rum_metric.data.attributes.compute.include_percentiles"
+  And  the response "data.attributes.compute.path" has the same value as "rum_metric.data.attributes.compute.path"
+  And  the response "data.attributes.filter.query" has the same value as "rum_metric.data.attributes.filter.query"
+  And  the response "data.attributes.group_by[0].path" has the same value as "rum_metric.data.attributes.group_by[0].path"
+  And  the response "data.attributes.group_by[0].tag_name" has the same value as "rum_metric.data.attributes.group_by[0].tag_name"
+  And  the response "data.attributes.uniqueness.when" has the same value as "rum_metric.data.attributes.uniqueness.when"
+

@@ -1,0 +1,7 @@
+Scenario 5: 
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  When  I fetch the subscription list from the stripe interopt layer for created at "-3 days"
+  Then  I will see 2 results in the stripe interopt list
+

@@ -1,0 +1,8 @@
+Scenario 2: Receiving no discount on order while buying product from different than promoted taxon
+  Tags: ['@api', '@ui']
+  Given  the promotion gives "$10.00" off if order contains products classified as "T-Shirts" with a minimum value of "$15.00"
+  And  I added product "PHP Mug" to the cart
+  When  I check the details of my cart
+  Then  my cart total should be "$20.00"
+  And  there should be no discount applied
+

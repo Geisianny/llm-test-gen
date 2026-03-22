@@ -1,0 +1,6 @@
+Scenario 3: viewing another tag
+  When  I go to /tag
+  And  I follow "whales"
+  Then  I should see "save the whales"
+  And  I should not see "the Amazon is being destroyed"
+

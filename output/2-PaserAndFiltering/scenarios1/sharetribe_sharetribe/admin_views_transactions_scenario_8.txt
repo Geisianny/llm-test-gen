@@ -1,0 +1,9 @@
+Scenario 8: Admin searches transactions by participant
+  When  I fill in "q" with "richard"
+  And  I click ".search-button"
+  Then  I should see 1 transaction with status "Free transaction"
+  And  I should see "Power drill"
+  When  I fill in "q" with "jane"
+  And  I click ".search-button"
+  Then  I should see 2 transaction with status "Free transaction"
+

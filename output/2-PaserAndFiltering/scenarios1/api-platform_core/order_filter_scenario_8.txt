@@ -1,0 +1,4 @@
+Scenario 8: Get collection ordered by default configured order on a embedded string property and on which order filter has been enabled in whitelist mode with default descending order
+  When  I send a "GET" request to "/embedded_dummies?order[embeddedDummy.dummyName]"
+  Then  the response status code should be 422
+

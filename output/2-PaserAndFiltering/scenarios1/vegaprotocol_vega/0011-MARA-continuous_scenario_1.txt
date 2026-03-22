@@ -1,0 +1,4 @@
+Scenario 1: In Spot market, holding in holding account is correctly calculated for all order types in continuous trading limit GTT. (0011-MARA-022)
+  Given  the parties place the following orders:
+  And  "party5" should have holding account balance of "5" for asset "BTC"
+

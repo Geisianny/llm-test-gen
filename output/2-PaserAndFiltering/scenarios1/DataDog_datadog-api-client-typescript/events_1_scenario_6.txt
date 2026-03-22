@@ -1,0 +1,7 @@
+Scenario 6: Get an event returns "Not Found" response
+  Tags: ['@skip', '@team:DataDog/event-management']
+  Given  new "GetEvent" request
+  And  request contains "event_id" parameter with value "AAAAAAAAAAAAAAAAAAAAAAAA"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

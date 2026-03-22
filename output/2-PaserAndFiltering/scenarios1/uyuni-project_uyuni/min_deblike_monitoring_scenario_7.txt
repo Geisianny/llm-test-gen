@@ -1,0 +1,5 @@
+Scenario 7: Visit monitoring endpoints on the Debian-like minion
+  And  I visit "Prometheus node exporter" endpoint of this "deblike_minion"
+  And  I visit "Prometheus apache exporter" endpoint of this "deblike_minion"
+  And  I visit "Prometheus postgres exporter" endpoint of this "deblike_minion"
+

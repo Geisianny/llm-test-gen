@@ -1,0 +1,14 @@
+Scenario 19: Searching on sites with Boosted Contents
+  Given  the following BingV7 Affiliates exist:
+  And  the following Boosted Content entries exist for the affiliate "agency.gov"
+  And  the following Boosted Content entries exist for the affiliate "es.agency.gov"
+  When  I am on agency.gov's search page
+  And  I fill in "query" with "notes"
+  And  I press "Search" within the search box
+  Then  I should see a link to "Notes for Week Ending May 31, 2013" with url for "http://search.gov/releases/2013-05-31.html" in the boosted contents section
+  And  I should not see a link to "Notes for Week Ending June 21, 2013"
+  When  I am on es.agency.gov's search page
+  And  I fill in "query" with "emergencia"
+  And  I press "Buscar" within the search box
+  Then  I should see a link to "la página de prueba de Emergencia" with url for "http://www.agency.gov/911" in the boosted contents section
+

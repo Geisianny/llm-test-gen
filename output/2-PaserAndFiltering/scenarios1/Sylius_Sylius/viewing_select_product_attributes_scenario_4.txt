@@ -1,0 +1,7 @@
+Scenario 4: Viewing a detailed page with product's select attribute after removing one of the value
+  Tags: ['@api', '@ui', '@no-postgres']
+  Given  this product has select attribute "T-Shirt material" with values "Banana skin" and "Cotton"
+  When  this product attribute's value "Cotton" has been removed
+  And  I check this product's details
+  Then  I should see the product attribute "T-Shirt material" with value "Banana skin"
+

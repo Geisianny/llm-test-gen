@@ -1,0 +1,6 @@
+Scenario 5: Change the public explanation for a withdrawn document
+  Given  a published publication "Shaving kits for all" exists
+  When  I withdraw the publication with the explanation "Policy change"
+  When  I edit the public explanation for withdrawal to "The policy has changed"
+  Then  there should be an unpublishing explanation of "The policy has changed" and a reason of "No longer current government policy/activity"
+

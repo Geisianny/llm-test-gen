@@ -1,0 +1,9 @@
+Scenario 2: Used exchange rate types identified
+  Given  the following exchange rate type:
+  Given  the following exchange rate:
+  When  I navigate the menu and select the item at "System > Currency > Edit rate types"
+  Then  I should see the Edit rate types screen
+  And  I expect the report to contain 2 rows
+  And  I expect the '' report column to contain 'system type' for Description 'Default rate'
+  And  I expect the '' report column to contain 'in use' for Description 'Test'
+

@@ -1,0 +1,6 @@
+Scenario 2: Viewing a cart summary with correct default shipping method based on product shipping category
+  Tags: ['@api', '@ui']
+  Given  I added product "T-Shirt banana" to the cart
+  And  I see the summary of my cart
+  Then  my cart shipping total should be "$0.00"
+

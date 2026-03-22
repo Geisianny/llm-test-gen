@@ -1,0 +1,8 @@
+Scenario 6: Build the suse_key image with and without activation key
+  Tags: ['@scc_credentials']
+  Given  I am on the Systems overview page of this "build_host"
+  When  I schedule the build of image "suse_key" via API calls
+  And  I wait at most 660 seconds until event "Image Build suse_key scheduled" is completed
+  And  I wait at most 900 seconds until image "suse_key" with version "latest" is built successfully via API
+  And  I wait at most 300 seconds until image "suse_key" with version "latest" is inspected successfully via API
+

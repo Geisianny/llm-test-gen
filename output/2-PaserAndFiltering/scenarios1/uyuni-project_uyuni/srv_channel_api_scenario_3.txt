@@ -1,0 +1,5 @@
+Scenario 3: Create a custom software channel as the child of another one
+  When  I create the following channels:
+  Then  "foobar-child" should get listed with a call of listSoftwareChannels
+  And  "foobar" should be the parent channel of "foobar-child"
+

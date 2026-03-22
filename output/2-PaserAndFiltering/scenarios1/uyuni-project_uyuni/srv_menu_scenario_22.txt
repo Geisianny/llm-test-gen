@@ -1,0 +1,15 @@
+Scenario 22: Completeness of the side navigation bar and the content frame
+  When  I am on the Systems page
+  Then  I should see a "Systems" text in the content area
+  And  I should see a "All" link in the left menu
+  And  I should see a "Systems" link in the left menu
+  And  I should see a "System Groups" link in the left menu
+  And  I should see a "System Set Manager" link in the left menu
+  And  I should see a "Advanced Search" link in the left menu
+  And  I should see a "Activation Keys" link in the left menu
+  And  I should see a "Stored Profiles" link in the left menu
+  And  I should see a "Custom System Info" link in the left menu
+  And  I should see a "Autoinstallation" link in the left menu
+  And  I should see a "Download CSV" link
+  And  I should see a Sign Out link
+

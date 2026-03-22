@@ -1,0 +1,11 @@
+Scenario 5: I cannot find listings with price out of searched price range
+  Given  I do a search on the home page
+  Then  I should be on the "listing search result" page
+  And  I should see "1 results"
+  When  I fill date range with the following:
+  And  I drag range slider ".range-box .ui-slider" with min equal to "150" and max equal to "300"
+  And  I select a characteristic "Characteristic_3" with value "Custom value 1"
+  And  I wait 500 ms for Jquery loading
+  Then  I should be on the "listing search result" page
+  And  I should see "0 results"
+

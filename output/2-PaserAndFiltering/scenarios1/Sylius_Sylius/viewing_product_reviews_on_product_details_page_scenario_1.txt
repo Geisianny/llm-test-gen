@@ -1,0 +1,7 @@
+Scenario 1: Viewing last 3 product reviews on product's details page
+  Tags: ['@api', '@ui']
+  When  I check this product's details
+  Then  I should see 3 product reviews
+  And  I should see reviews titled "Classic", "Too gloomy" and "Scary and dark"
+  But  I should not see review titled "Good book"
+

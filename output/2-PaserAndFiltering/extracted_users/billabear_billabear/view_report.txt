@@ -1,0 +1,34 @@
+Feature: View Tax Report
+
+Background: 
+  Given  the following accounts exist:
+  And  there are the following tax types:
+  And  the follow products exist:
+  And  that the following countries exist:
+  And  the following country tax rules exist:
+  And  the follow prices exist:
+  And  the following features exist:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "Price One" with:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "Price One" with:
+  And  the follow customers exist:
+  Given  the following subscriptions exist:
+
+Scenario 1: 
+  Given  the following invoices exist:
+  And  there is a payments for:
+  And  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  I generate a receipt for the payment for "customer.four@example.org" for 3500
+  When  I view the tax report page
+  Then  I will not see a tax item for "customer.two@example.org"
+  But  I will see a tax item for "customer.one@example.org"
+  But  I will see a tax item for "customer.four@example.org"
+
+Scenario 2: 
+  Given  the following invoices exist:
+  And  there is a payments for:
+  And  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  I generate a receipt for the payment for "customer.four@example.org" for 3500
+  When  I view the tax report page
+  Then  I will see that the country "DE" in list of active countries
+  Then  I will see that the country "GB" in list of active countries
+

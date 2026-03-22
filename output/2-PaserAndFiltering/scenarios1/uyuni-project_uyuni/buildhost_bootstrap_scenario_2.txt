@@ -1,0 +1,9 @@
+Scenario 2: Check the new bootstrapped build host in System Overview page
+  When  I follow the left menu "Salt > Keys"
+  And  I accept "build_host" key in the Salt master
+  And  I wait until I do not see "Loading..." text
+  Then  I should see a "accepted" text
+  When  I follow the left menu "Systems > System List > All"
+  And  I wait at most 500 seconds until I see the name of "build_host", refreshing the page
+  Then  the Salt master can reach "build_host"
+

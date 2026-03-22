@@ -1,0 +1,12 @@
+Scenario 7: redirect to right place after reply a picture comment
+  Tags: ['@selenium-fixme']
+  Given  the following files
+  And  the following comment
+  Given  I am logged in as "booking"
+  And  I go to /booking/rails.png?view=true
+  And  I follow "Reply" within ".comments-action-bar"
+  And  I fill in "Title" within "comment-balloon" with "Hey ho, let's go!"
+  And  I fill in "Enter your comment" within "comment-balloon" with "Hey ho, let's go!"
+  When  I press "Post comment" within ".comment-balloon"
+  Then  I should be exactly on /booking/rails.png?view=true
+

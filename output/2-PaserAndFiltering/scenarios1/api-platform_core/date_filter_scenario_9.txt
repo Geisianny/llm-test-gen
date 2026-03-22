@@ -1,0 +1,16 @@
+Scenario 9: Get collection filtered by date that is not a datetime including null before and after
+  Tags: ['@createSchema']
+  Given  there are 3 dummydate objects with nullable dateIncludeNullBeforeAndAfter
+  When  I send a "GET" request to "/dummy_dates?dateIncludeNullBeforeAndAfter[before]=2015-04-01"
+  Then  the response status code should be 200
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON node "hydra:totalItems" should be equal to 2
+  And  the JSON node "hydra:member[0].dateIncludeNullBeforeAndAfter" should be equal to "2015-04-01T00:00:00+00:00"
+  And  the JSON node "hydra:member[1].dateIncludeNullBeforeAndAfter" should be null
+  When  I send a "GET" request to "/dummy_dates?dateIncludeNullBeforeAndAfter[after]=2015-04-02"
+  Then  the response status code should be 200
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON node "hydra:totalItems" should be equal to 2
+  And  the JSON node "hydra:member[0].dateIncludeNullBeforeAndAfter" should be equal to "2015-04-02T00:00:00+00:00"
+  And  the JSON node "hydra:member[1].dateIncludeNullBeforeAndAfter" should be null
+

@@ -1,0 +1,9 @@
+Scenario Outline 8: Navigate to menu "<path>" and open screen "<screen>" - Example 8
+  Tags: ['@wip']
+  When  I navigate the menu and select the item at "Accounts Receivable > Reports > Outstanding"
+  Then  I should see the  screen
+
+  Examples:
+    | path | screen |
+    | Accounts Receivable > Reports > Outstanding |  |
+

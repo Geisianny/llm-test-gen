@@ -1,0 +1,9 @@
+Scenario 15: Add a variable to the uploaded profile
+  When  I follow the left menu "Systems > Autoinstallation > Profiles"
+  And  I follow "fedora_kickstart_profile_upload"
+  And  I follow "Variables"
+  And  I enter "my_var=A_Test_String" as "variables"
+  And  I click on "Update Variables"
+  And  I follow "Autoinstallation File"
+  Then  I should see a "A_Test_String" text
+

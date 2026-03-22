@@ -1,0 +1,12 @@
+Scenario 1: Creating a product with custom slugs
+  Tags: ['@api', '@ui']
+  When  I want to create a new configurable product
+  And  I specify its code as "PUG_PUGGINTON_PLUSHIE"
+  And  I name it "Pug Pugginton Plushie" in "English (United States)" locale
+  And  I set its slug to "sir-pugginton" in "English (United States)" locale
+  And  I name it "Pluszak Mops Mopsiński" in "Polish (Poland)" locale
+  And  I set its slug to "pan-mopsinski" in "Polish (Poland)" locale
+  And  I add it
+  Then  the slug of the "Pug Pugginton Plushie" product should be "sir-pugginton" in the "English (United States)" locale
+  And  the slug of the "Pug Pugginton Plushie" product should be "pan-mopsinski" in the "Polish (Poland)" locale
+

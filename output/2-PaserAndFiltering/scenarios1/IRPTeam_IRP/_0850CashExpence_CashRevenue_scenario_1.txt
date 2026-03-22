@@ -1,0 +1,33 @@
+Scenario 1: _085000 preparation (Cash expence and Cash revenue)
+  When  set True value to the constant
+  When  set True value to the constant Use salary
+  *  Load info
+  When  Create catalog ObjectStatuses objects
+  When  Create catalog Currencies objects
+  When  Create catalog Companies objects (Main company)
+  When  Create catalog Companies objects (own Second company)
+  When  Create catalog Countries objects
+  When  Create catalog Partners objects (Kalipso)
+  When  Create information register PartnerSegments records
+  When  Create catalog PartnerSegments objects
+  When  Create chart of characteristic types CurrencyMovementType objects
+  When  Create catalog TaxRates objects
+  When  Create catalog PlanningPeriods objects
+  When  Create catalog Taxes objects
+  When  Create information register TaxSettings records
+  When  Create catalog IntegrationSettings objects
+  When  Create information register CurrencyRates records
+  When  Create catalog CashAccounts objects
+  When  Create catalog BusinessUnits objects
+  When  Create catalog ExpenseAndRevenueTypes objects
+  When  Create document CashExpense objects
+  When  Create document CashRevenue objects
+  When  Create catalog Partners objects
+  When  Create catalog SalaryCalculationType objects
+  When  Create catalog CashAccounts objects (Second Company)
+  When  Create information register Taxes records (VAT)
+  *  Post
+  And  I execute 1C:Enterprise script at server
+  And  I execute 1C:Enterprise script at server
+  And  I close all client application windows
+

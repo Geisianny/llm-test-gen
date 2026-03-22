@@ -1,0 +1,6 @@
+Scenario: Cart contents remain after returning to shop homepage
+  Given there is a visitor with items in the cart
+  And the visitor is at the checkout addressing step
+  When the visitor clicks on the link to return to the shop homepage
+  Then the cart still contains the items
+  And the visitor can continue shopping

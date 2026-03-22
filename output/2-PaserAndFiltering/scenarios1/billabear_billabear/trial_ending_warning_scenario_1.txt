@@ -1,0 +1,6 @@
+Scenario 1: Send trial ending warning email
+  Given  that trial ending emails are to be sent
+  Given  the following subscriptions exist:
+  When  the trial ending check is ran
+  Then  the trial ending warning email is sent to the customer
+

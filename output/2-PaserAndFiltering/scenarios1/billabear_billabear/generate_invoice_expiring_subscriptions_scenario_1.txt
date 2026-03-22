@@ -1,0 +1,12 @@
+Scenario 1: 
+  Given  the following subscriptions exist:
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  Then  the subscription for "customer.one@example.org" will expire in a week
+  And  the subscription for "customer.two@example.org" will expire in a month
+  And  the subscription for "customer.three@example.org" will expire in a year
+  But  the subscription for "customer.four@example.org" will expire today
+  And  the subscription for "customer.five@example.org" will expire today
+  And  the subscription for "customer.six@example.org" will expire today
+  And  the payment amount stats for the day should be 33000 in the currency "USD"
+

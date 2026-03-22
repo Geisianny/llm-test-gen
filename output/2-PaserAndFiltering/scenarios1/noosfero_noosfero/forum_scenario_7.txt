@@ -1,0 +1,21 @@
+Scenario 7: accept terms in topics page
+  Tags: ['@selenium']
+  Given  the following forums
+  And  the following users
+  And  I go to /joaosilva/forum-one
+  And  I follow "article-options"
+  When  I follow "Configure forum"
+  And  I fill in tinyMCE "article_body" with "My description"
+  And  I check "Has terms of use:"
+  And  I follow "Save"
+  And  I follow "article-options"
+  When  I follow "New discussion topic"
+  And  I should see "Text article"
+  And  I follow "Text article"
+  And  I fill in "Title" with "Topic"
+  And  I follow "Save"
+  And  I am logged in as "mariasilva"
+  And  I go to /joaosilva/forum-one/topic
+  And  I follow "Accept"
+  Then  I should see "Topic"
+

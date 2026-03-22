@@ -1,0 +1,8 @@
+Scenario 8: Comment case returns "Not Found" response
+  Tags: ['@team:DataDog/case-management']
+  Given  new "CommentCase" request
+  And  request contains "case_id" parameter with value "67d80aa3-36ff-44b9-a694-c501a7591737"
+  And  body with value {"data": {"attributes": {"comment": "Hello world !"}, "type": "case"}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

@@ -1,0 +1,9 @@
+Scenario 2: Create a new service object returns "CREATED" response
+  Tags: ['@team:Datadog/collaboration-integrations']
+  Given  new "CreateOpsgenieService" request
+  And  body with value {"data": {"attributes": {"name": "{{unique}}", "opsgenie_api_key": "00000000-0000-0000-0000-000000000000", "region": "us"}, "type": "opsgenie-service" }}
+  When  the request is sent
+  Then  the response status is 201 CREATED
+  And  the response "data.attributes.name" is equal to "{{unique}}"
+  And  the response "data.attributes.region" is equal to "us"
+

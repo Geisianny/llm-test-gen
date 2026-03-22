@@ -1,0 +1,6 @@
+Scenario 24: Get resource collection IAM permissions returns "AWS integration resource collection IAM permissions." response
+  Tags: ['@generated', '@skip', '@team:DataDog/aws-integrations']
+  Given  new "GetAWSIntegrationIAMPermissionsResourceCollection" request
+  When  the request is sent
+  Then  the response status is 200 AWS integration resource collection IAM permissions.
+

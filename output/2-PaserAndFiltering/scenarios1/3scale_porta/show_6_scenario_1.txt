@@ -1,0 +1,6 @@
+Scenario 1: Vertical navigation structure
+  Given  a backend
+  When  an admin is in the backend overview page
+  Then  the name of the backend can be seen on top of the menu
+  And  I should see menu sections
+

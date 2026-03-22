@@ -1,0 +1,8 @@
+Scenario 14: Adding a page to a worldwide organisation
+  Given  an worldwide organisation "Test Worldwide Organisation"
+  When  I visit the pages tab for the worldwide organisation
+  Then  I should see that the list of pages for the worldwide organisation is empty
+  When  I click the link to create a new page
+  And  I correctly fill out the worldwide organisation page fields for a "Personal information charter" with:
+  Then  I should see the "Personal information charter" page on the list of pages with the details:
+

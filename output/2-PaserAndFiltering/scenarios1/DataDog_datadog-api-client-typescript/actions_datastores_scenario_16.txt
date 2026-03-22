@@ -1,0 +1,9 @@
+Scenario 16: Get datastore returns "OK" response
+  Tags: ['@team:DataDog/app-builder-backend']
+  Given  new "GetDatastore" request
+  And  there is a valid "datastore" in the system
+  And  request contains "datastore_id" parameter from "datastore.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.id" is equal to "{{datastore.data.id}}"
+

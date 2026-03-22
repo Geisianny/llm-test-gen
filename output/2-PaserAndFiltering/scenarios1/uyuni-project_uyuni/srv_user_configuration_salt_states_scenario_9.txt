@@ -1,0 +1,11 @@
+Scenario 9: User Roles were assigned
+  Given  I am authorized for the "Admin" section
+  When  I follow the left menu "Users > User List > Active"
+  And  I follow "user2"
+  Then  I should see a "User Details" text
+  And  I should see "role_activation_key_admin" as checked
+  And  I should see "role_image_admin" as unchecked
+  And  I should see "role_config_admin" as checked
+  And  I should see "role_channel_admin" as unchecked
+  And  I should see "role_system_group_admin" as unchecked
+

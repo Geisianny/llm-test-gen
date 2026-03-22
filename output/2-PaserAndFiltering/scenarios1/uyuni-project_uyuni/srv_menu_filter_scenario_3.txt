@@ -1,0 +1,4 @@
+Scenario 3: Search a partial word and expect the right result
+  When  I enter "Formula" as the left menu search field
+  Then  I should see a "Formula Catalog" link in the left menu
+

@@ -1,0 +1,7 @@
+Scenario 1: Adding a product with stated quantity to the cart
+  Tags: ['@api', '@ui']
+  Given  there are 10 units of product "T-Shirt banana" available in the inventory
+  And  I added 5 of them to my cart
+  When  I check the details of my cart
+  And  I should see "T-Shirt banana" with quantity 5 in my cart
+

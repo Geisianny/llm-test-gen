@@ -1,0 +1,11 @@
+Scenario 9: show and link last items on folder search results
+  Given  the following folders
+  And  the following articles
+  When  I search contents for "Music"
+  Then  I should see "Last items" within ".search-folder-items"
+  And  I should see "Blackfield"
+  And  I should see "Porcupine Tree"
+  And  I should see "Steven Wilson"
+  When  I follow "Porcupine Tree"
+  Then  I should be on article "Porcupine Tree"
+

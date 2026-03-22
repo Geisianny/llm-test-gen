@@ -1,0 +1,7 @@
+Scenario 21: Get AWS scan options returns "Not Found" response
+  Tags: ['@team:DataDog/k9-agentless']
+  Given  new "GetAwsScanOptions" request
+  And  request contains "account_id" parameter with value "404404404404"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

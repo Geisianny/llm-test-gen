@@ -1,0 +1,14 @@
+Scenario 2: 002 Funding insurance pool balance by closing a trader out - note this scenario is a template. It does not actually close out the trader, it's just the first steps from the system test. With this scenario, we can check margin requirements before and after MTM settlement
+  Tags: ['@SystemTestBase']
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/DEC20"
+  Then  the market data for the market "ETH/DEC20" should be:
+  When  the parties place the following orders:
+  Then  the parties should have the following account balances:
+  And  the parties should have the following margin levels:
+  When  the network moves ahead "1" blocks
+  Then  the parties should have the following account balances:
+  And  the parties should have the following margin levels:
+

@@ -1,0 +1,8 @@
+Scenario 4: Delete a pipeline returns "Conflict" response
+  Tags: ['@generated', '@skip', '@team:DataDog/observability-pipelines']
+  Given  operation "DeletePipeline" enabled
+  And  new "DeletePipeline" request
+  And  request contains "pipeline_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 409 Conflict
+

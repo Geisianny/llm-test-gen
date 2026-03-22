@@ -1,0 +1,6 @@
+Scenario 2: Receiving fixed discount on a multiple items from specific taxon
+  Tags: ['@ui']
+  When  I add 3 products "PHP T-Shirt" to the cart
+  Then  theirs price should be decreased by "$30.00"
+  And  my cart total should be "$270.00"
+

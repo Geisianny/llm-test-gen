@@ -1,0 +1,10 @@
+Scenario Outline 21: Navigate to menu "<path>" and open screen "<screen>" - Example 21
+  Tags: ['@wip']
+  When  I navigate the menu and select the item at "General Journal > Reports > Income Statement"
+  Then  I should see the  screen
+
+  Examples:
+    | path | screen |
+    | General Journal > Reports > Income Statement |  |
+    | General Journal > Reports > Trial Balance |  |
+

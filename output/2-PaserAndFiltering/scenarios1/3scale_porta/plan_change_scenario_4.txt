@@ -1,0 +1,10 @@
+Scenario 4: With a valid credit card, an application's plan can be changed directly
+  Given  all the rolling updates features are off
+  And  the product allows to change application plan only with credit card
+  And  the buyer has a valid credit card
+  When  they go to the application's dev portal edit page
+  And  follow "Review/Change"
+  And  follow "Enterprise"
+  And  press "Change Plan"
+  Then  they should see "Plan change was successful"
+

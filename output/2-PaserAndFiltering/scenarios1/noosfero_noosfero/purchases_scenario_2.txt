@@ -1,0 +1,8 @@
+Scenario 2: view orders with different status
+  Tags: ['@selenium']
+  Given  the following purchase from "homer" on "moes-tavern" that is "accepted"
+  And  the following purchase from "homer" on "moes-tavern" that is "delivered"
+  When  I follow "Purchases made"
+  Then  I should see "Accepted" within any ".situation"
+  And  I should see "Delivered" within any ".situation"
+

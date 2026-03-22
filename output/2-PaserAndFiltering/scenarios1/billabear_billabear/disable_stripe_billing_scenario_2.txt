@@ -1,0 +1,6 @@
+Scenario 2: Disable stripe billing - not admin
+  Given  stripe billing is enabled
+  Given  I have logged in as "tim.brown@example.org" with the password "AF@k3P@ss"
+  When  I disable stripe billing
+  Then  stripe billing should be enabled
+

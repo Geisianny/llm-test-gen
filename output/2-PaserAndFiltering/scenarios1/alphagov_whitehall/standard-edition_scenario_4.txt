@@ -1,0 +1,8 @@
+Scenario 4: Creating a non-English primary locale configurable document
+  Given  I am a writer
+  And  the configurable document types feature flag is enabled
+  And  the test configurable document type is defined with translations enabled
+  When  I create a new "Test configurable document type" with Welsh as the primary locale titled "Strategaeth Ddigidol Cymru"
+  Then  I am on the summary page of the draft titled "Strategaeth Ddigidol Cymru"
+  And  the language of the document should be Welsh
+

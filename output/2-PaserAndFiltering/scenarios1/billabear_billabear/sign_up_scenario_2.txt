@@ -1,0 +1,8 @@
+Scenario 2: Sign up with a password with code
+  Given  the invite code "invite-code" exists
+  And  I have given the field "email" the value "parthenon.user@example.org"
+  And  I have given the field "password" the value "randomP@ssw0rld!"
+  When  I try to sign up with the code "invite-code"
+  Then  there will be a new user registered
+  And  the invite code "invite-code" will have been used by "parthenon.user@example.org"
+

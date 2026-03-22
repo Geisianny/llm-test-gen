@@ -1,0 +1,10 @@
+Scenario 3: Composing a basket from components
+  Tags: ['@wip']
+  Given  I have a basket "GCU" with the following components:
+  And  I have an account with balance 100.00 USD
+  And  I have an account with balance 100.00 EUR
+  When  I compose 100 units of basket "GCU"
+  Then  my GCU balance should be 100.00
+  And  my USD balance should be 50.00
+  And  my EUR balance should be 50.00
+

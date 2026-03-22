@@ -1,0 +1,4 @@
+Scenario: Retrieve subscription limits without authentication
+  Given there is no authenticated user
+  When the user queries a customer's usage limits
+  Then the system denies access

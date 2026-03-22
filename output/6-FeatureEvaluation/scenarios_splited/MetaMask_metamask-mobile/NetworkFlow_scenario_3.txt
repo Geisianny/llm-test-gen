@@ -1,0 +1,6 @@
+Scenario: Attempt to add a custom network with invalid RPC URL
+  Given the user is on the network settings page
+  When the user chooses to add a custom network
+  And enters the network details: name "Invalid Network", RPC URL "invalidurl", Chain ID "123", and symbol "IN"
+  Then the system denies adding the custom network
+  And displays an error message indicating that the RPC URL is invalid

@@ -1,0 +1,6 @@
+Scenario 6: List all Azure integrations returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/azure-integrations']
+  Given  new "ListAzureIntegration" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

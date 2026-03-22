@@ -1,0 +1,8 @@
+Scenario 7: Delete an existing Workflow returns "Successfully deleted a workflow." response
+  Tags: ['@team:DataDog/workflow-automation-dev']
+  Given  there is a valid "workflow" in the system
+  And  new "DeleteWorkflow" request
+  And  request contains "workflow_id" parameter from "workflow.data.id"
+  When  the request is sent
+  Then  the response status is 204 Successfully deleted a workflow.
+

@@ -1,0 +1,8 @@
+Scenario 1: Multi-bank account creation
+  Given  a new user registers for an account
+  When  the account creation workflow is triggered
+  Then  accounts should be created across all active custodians
+  And  each custodian should return account details
+  And  the accounts should be linked in our system
+  And  balance synchronization should be established
+

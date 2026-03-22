@@ -1,0 +1,9 @@
+Scenario 5: One search result for Country
+  Given  I have a combobox property "Country" with value "Portugal (PT)" on "sle_minion"
+  When  I follow the left menu "Systems > Advanced Search"
+  And  I enter "PT" on the search field
+  And  I select "Country Code" from "Field to Search"
+  And  I check "fineGrained"
+  And  I click on the search button
+  Then  I should land on system's overview page
+

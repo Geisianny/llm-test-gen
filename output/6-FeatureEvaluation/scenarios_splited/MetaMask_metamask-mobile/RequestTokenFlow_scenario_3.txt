@@ -1,0 +1,5 @@
+Scenario: Request token with unconfigured network
+  Given the user does not have a configured network with native token "BNB"
+  When the user requests the native token "BNB"
+  Then the system displays a message indicating that the network is not configured
+  And does not generate a payment link or QR code

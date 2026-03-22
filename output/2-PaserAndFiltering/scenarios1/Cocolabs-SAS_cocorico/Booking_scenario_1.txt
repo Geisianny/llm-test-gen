@@ -1,0 +1,27 @@
+Scenario 1: As asker i can find a listing so that i can make a booking request
+  Given  I am logged in as user "asker@cocorico.rocks" with password "12345678"
+  And  I do a search on the home page
+  And  I find a listing which "listing title" equal to "Listing One"
+  And  I wait 3000 ms
+  When  I fill date range with the following:
+  And  I wait 3000 ms
+  Then  I should see "300" in the ".add-info .price" element
+  When  I follow "Book now"
+  Then  I should be on this new booking page:
+  And  I should see "300" in the "[data-id=booking-amount]" element
+  And  I should see "30" in the "[data-id=booking-fees]" element
+  And  I should see "330" in the "[data-id=booking-total]" element
+  When  I fill in "message" with "Hello, I want to book your listing"
+  And  I fill correctly credit card informations
+  And  I check hidden "I accept the terms of use"
+  And  I press "Validate booking"
+  And  I eventually retry new booking request if first card failed
+  Then  I should be on "https://3ds-acs.test.modirum.com/mdpayacs/pareq"
+  When  I fill in "password" with "secret3"
+  And  I press "Submit"
+  Then  I should be on the page which route name is "dashboard_booking_show_asker"
+  And  I should see "330" in the ".post [data-id=booking-total]" element
+  And  I should receive the "booking_request_asker" mail on "asker@cocorico.rocks"
+  And  He should receive the "booking_request_offerer" mail on "offerer@cocorico.rocks"
+  And  I should see "SUCCESS! You have booked this listing successfully"
+

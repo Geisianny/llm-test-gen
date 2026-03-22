@@ -1,0 +1,11 @@
+Scenario 7: Access code on domain that supports SSL
+  Tags: ['@wip']
+  Given  the provider has site access code "foobar"
+  And  domain "foo.3scale.localhost" supports SSL
+  When  the current domain is foo.3scale.localhost
+  And  I go to the homepage
+  Then  I should feel secure
+  When  I fill in "Access code" with "foobar"
+  And  I press "Enter"
+  Then  I should not see "Access code"
+

@@ -1,0 +1,7 @@
+Scenario: Add a new top city with valid information
+  Given there is an admin logged in
+  And the city "New York" does not exist in the top cities list
+  When the admin adds "New York" as a top city
+  And sets its state to "New York" and country to "USA"
+  Then the system includes "New York" in the top cities list
+  And displays "New York" with its state and country

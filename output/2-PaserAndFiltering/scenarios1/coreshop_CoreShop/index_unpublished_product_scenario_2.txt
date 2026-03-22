@@ -1,0 +1,4 @@
+Scenario 2: The product is enabled and unpublished
+  Given  the product is not published
+  Then  the index should not have indexed the product "Shoe"
+

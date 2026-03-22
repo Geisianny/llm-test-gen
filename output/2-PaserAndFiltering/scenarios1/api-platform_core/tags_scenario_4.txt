@@ -1,0 +1,5 @@
+Scenario 4: Tags must be set for collections
+  When  I send a "GET" request to "/relation_embedders"
+  Then  the response status code should be 200
+  And  the header "Cache-Tags" should be equal to "/third_levels/1,/related_dummies/1,/relation_embedders/1,/third_levels/2,/related_dummies/2,/relation_embedders/2,/relation_embedders"
+

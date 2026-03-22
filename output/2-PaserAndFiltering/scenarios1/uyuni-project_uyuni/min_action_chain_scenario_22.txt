@@ -1,0 +1,8 @@
+Scenario 22: Add a remote command to the action chain on Salt minion
+  Given  I am on the Systems overview page of this "sle_minion"
+  When  I follow "Remote Command"
+  And  I enter as remote command this script in
+  And  I check radio button "schedule-by-action-chain"
+  And  I click on "Schedule"
+  Then  I should see a "Action has been successfully added to the Action Chain" text
+

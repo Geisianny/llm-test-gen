@@ -1,0 +1,11 @@
+Scenario 5: 005: User tops up markets with differing precisions with the same asset + amount, should result in identical margin changes, (0070-MKTD-004)
+  Tags: ['@SLABug']
+  Given  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  Then  the market data for the market "USD/DEC19" should be:
+  When  the network moves ahead "2" blocks
+  Then  the parties should have the following account balances:
+  When  the parties deposit on asset's general account the following amount:
+  Then  the parties should have the following account balances:
+

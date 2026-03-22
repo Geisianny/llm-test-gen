@@ -1,0 +1,7 @@
+Scenario 19: Delete Custom Costs file returns "No Content" response
+  Tags: ['@generated', '@skip', '@team:DataDog/cloud-cost-management']
+  Given  new "DeleteCustomCostsFile" request
+  And  request contains "file_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 204 No Content
+

@@ -1,0 +1,10 @@
+Scenario 17: Send invitation emails returns "OK" response
+  Tags: ['@team:DataDog/team-aaa-identity']
+  Given  there is a valid "user" in the system
+  And  new "SendInvitations" request
+  And  body with value {"data": [{"type": "user_invitations", "relationships": {"user": {"data": {"type": "{{ user.data.type }}", "id": "{{ user.data.id }}"}}}}]}
+  When  the request is sent
+  Then  the response status is 201 OK
+  And  the response "data" has length 1
+  And  the response "data[0].attributes.invite_type" is equal to "openid_invite"
+

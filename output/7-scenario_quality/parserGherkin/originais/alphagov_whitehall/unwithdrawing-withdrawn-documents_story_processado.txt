@@ -1,0 +1,25 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 19/01/2026 23:13:57
+Arquivo analisado: unwithdrawing-withdrawn-documents_story_processado.feature
+Caminho relativo: alphagov_whitehall\unwithdrawing-withdrawn-documents_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/Originais\alphagov_whitehall\unwithdrawing-withdrawn-documents_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: unwithdrawing-withdrawn-documents_story_processado
+Descrição: Não possui
+Total de cenários: 1
+
+CENÁRIOS IDENTIFICADOS:
+1. Unwithdrawing a withdrawn document
+   Steps: 5
+   - Given I am a managing editor
+   - And a published publication "Shaving kits for all" exists
+   - When I withdraw the publication with the explanation "Policy change"
+   - And I unwithdraw the publication
+   - Then I should be redirected to the latest edition of the publication

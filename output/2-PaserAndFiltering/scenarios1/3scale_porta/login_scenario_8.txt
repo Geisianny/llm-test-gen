@@ -1,0 +1,7 @@
+Scenario 8: Captcha rejects a bot attempt also when it sends the correct credentials
+  Tags: ['@recaptcha']
+  Given  the provider has bot protection enabled for its buyers
+  And  the client will be marked as a bot
+  When  the developer tries to log in
+  Then  the developer login attempt fails
+

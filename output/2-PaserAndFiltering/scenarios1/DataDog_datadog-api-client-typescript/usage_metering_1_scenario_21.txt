@@ -1,0 +1,7 @@
+Scenario 21: Get hourly usage for observability pipelines returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/revenue-query']
+  Given  new "GetUsageObservabilityPipelines" request
+  And  request contains "start_hr" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

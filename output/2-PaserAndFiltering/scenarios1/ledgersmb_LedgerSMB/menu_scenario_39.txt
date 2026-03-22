@@ -1,0 +1,8 @@
+Scenario Outline 39: Navigate to menu "<path>" and open screen "<screen>" - Example 39
+  When  I navigate the menu and select the item at "System > Taxes"
+  Then  I should see the system taxes screen
+
+  Examples:
+    | path | screen |
+    | System > Taxes | system taxes |
+

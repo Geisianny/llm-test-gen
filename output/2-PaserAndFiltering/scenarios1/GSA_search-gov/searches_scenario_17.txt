@@ -1,0 +1,13 @@
+Scenario 17: Affiliate search on affiliate with connections
+  Given  the following BingV7 Affiliates exist:
+  And  the following Connections exist for the affiliate "agency.gov":
+  When  I am on agency.gov's search page
+  And  I search for "jobs"
+  Then  I should see at least "10" web search results
+  And  every result URL should match "epa.gov"
+  And  I should see "Other Site"
+  When  I follow "Other Site" in the search navbar
+  Then  I should see the browser page titled "jobs - other site Search Results"
+  And  I should see at least "10" web search results
+  And  every result URL should match "cdc.gov"
+

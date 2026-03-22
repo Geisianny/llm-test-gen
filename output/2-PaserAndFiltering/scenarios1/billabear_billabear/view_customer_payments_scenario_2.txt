@@ -1,0 +1,8 @@
+Scenario 2: List payments when customer has no payments
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  And  there is a payments for:
+  When  I view the customer payments via the API for "customer.two@example.org"
+  Then  I will not see a payment for "customer.one@example.org" for 3500 in the list
+

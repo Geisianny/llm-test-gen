@@ -1,0 +1,7 @@
+Scenario 4: Create a provider account with invalid data
+  Given  they go to the new provider account page
+  When  the form is submitted with:
+  Then  field "Username" has inline error "is too short (minimum is 3 characters)"
+  And  field "Email" has inline error "should look like an email address"
+  And  field "Password confirmation" has inline error "doesn't match Password"
+

@@ -1,0 +1,5 @@
+Scenario 2: Empty view
+  Given  the provider has no service subscriptions
+  When  they go to the buyer's service subscriptions page
+  Then  they should see an empty state
+

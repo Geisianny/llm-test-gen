@@ -1,0 +1,7 @@
+Scenario: Fill shipping address with country having provinces
+  Given the user is on the checkout page
+  And the user has selected a country with provinces "United States"
+  When the user fills the shipping address form with valid details
+  And selects the province "New York"
+  Then the system validates the shipping address
+  And displays the selected country and province correctly

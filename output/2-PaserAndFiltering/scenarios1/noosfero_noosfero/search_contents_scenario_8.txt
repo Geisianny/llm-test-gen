@@ -1,0 +1,7 @@
+Scenario 8: show event search results without end date
+  Given  the following communities
+  And  the following events
+  When  I search contents for "birthday"
+  Then  I should see "John Doe's birthday" within ".search-event-item"
+  And  I should not see "End date"
+

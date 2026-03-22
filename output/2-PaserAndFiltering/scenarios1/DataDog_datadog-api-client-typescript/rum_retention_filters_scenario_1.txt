@@ -1,0 +1,8 @@
+Scenario 1: Create a RUM retention filter returns "Bad Request" response
+  Tags: ['@team:DataDog/rum-backend']
+  Given  new "CreateRetentionFilter" request
+  And  request contains "app_id" parameter with value "a33671aa-24fd-4dcd-ba4b-5bbdbafe7690"
+  And  body with value {"data":{"type":"invalid_type","attributes":{"name":"Test creating retention filter","event_type":"session","query":"","sample_rate":25,"enabled":true}}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

@@ -1,0 +1,7 @@
+Scenario 7: Publishing a submitted speech
+  Tags: ['@not-quite-as-fake-search']
+  Given  I am an editor
+  And  a submitted speech "Stubble to be Outlawed" exists
+  When  I publish the speech "Stubble to be Outlawed"
+  Then  I should see the speech "Stubble to be Outlawed" in the list of published documents
+

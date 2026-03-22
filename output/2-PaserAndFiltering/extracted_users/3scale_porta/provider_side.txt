@@ -1,0 +1,90 @@
+Feature: Provider stats
+Description: In order to know the usage of my service
+  As an admin of provider account
+  I want to see the stats
+Tags: ['@javascript']
+
+Background: 
+  Given  a provider is logged in
+  And  the provider has "multiple_applications" visible
+  And  all the rolling updates features are off
+  And  All Dashboard widgets are loaded
+
+Scenario 1: Stats access
+  And  I follow "API"
+  And  I follow "Analytics"
+  And  I follow "Traffic"
+  Then  I should be on the provider stats usage page
+
+Scenario 2: Usage stats
+  And  I follow "API"
+  And  I follow "Analytics"
+  Then  I should see "Traffic"
+
+Scenario 3: Top applications (multiple applications mode)
+  Given  a buyer "bob" signed up to provider "foo.3scale.localhost"
+  And  I follow "API"
+  And  I follow "Analytics"
+  And  I go to the provider stats apps page
+  Then  I should see "Top Applications" in a header
+  And  I should see a chart called "chart"
+
+Scenario 4: Top users (single application mode)
+  Given  the provider has "multiple_applications" denied
+  And  the following application plan:
+  And  a buyer "bob" signed up to application plan "Default"
+  And  I follow "API"
+  And  I follow "Analytics"
+  And  I follow "Top Applications"
+  Then  I should see "Top Applications" in a header
+
+Scenario 5: Default metric when creating a backend after product
+  Given  a service "My API" of the provider
+  And  a backend
+  And  the backend is used by the product
+  When  I go to the overview page of product "My API"
+  And  I follow "Analytics"
+  And  I follow "Traffic"
+  Then  I should see "Hits (hits)"
+
+Scenario 6: Default metric when creating a backend before product
+  Given  a backend
+  And  a service "My API" of the provider
+  And  the backend is used by the product
+  When  I go to the overview page of product "My API"
+  And  I follow "Analytics"
+  And  I follow "Traffic"
+  Then  I should see "Hits (hits)"
+
+Scenario 7: Signups (single application mode)
+  Tags: ['@wip']
+  Given  provider "foo.3scale.localhost" has "multiple_applications" denied
+  And  an application plan "Basic" of provider "foo.3scale.localhost"
+  Given  these buyers signed up to plan "Basic"
+  When  I log in as provider "foo.3scale.localhost"
+  And  I follow "API"
+  And  I follow "Analytics"
+  And  I follow "Signups"
+  Then  I should see these buyers in the latest signups table:
+  But  I should not see "alice"
+
+Scenario 8: Signups (multiple application mode)
+  Tags: ['@wip']
+  Given  provider "foo.3scale.localhost" has "multiple_applications" visible
+  And  the following application plan:
+  And  a buyer "alice" signed up to provider "foo.3scale.localhost"
+  And  buyer "alice" has the following applications:
+  When  I log in as provider "foo.3scale.localhost"
+  And  I follow "API"
+  And  I follow "Analytics"
+  And  I follow "Signups"
+  Then  I should see these applications in the latest signups table:
+  But  I should not see "AwesomeWidget"
+
+Scenario 9: Days
+  Tags: ['@wip']
+  Given  a buyer "kitty_one" signed up to application plan "Basic"
+  When  I log in as "lol.3scale.localhost"
+  And  I go to the provider days stats page
+  Then  I should see "Stats: Days of week"
+

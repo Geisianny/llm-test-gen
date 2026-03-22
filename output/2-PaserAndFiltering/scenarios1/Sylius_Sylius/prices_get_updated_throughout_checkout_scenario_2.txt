@@ -1,0 +1,8 @@
+Scenario 2: Prices get updated after the addressing step
+  Tags: ['@no-api', '@ui']
+  Given  I am at the checkout addressing step
+  When  the exchange rate of "US Dollar" to "British Pound" is 5.0
+  And  I specify the billing address as "Ankh Morpork", "Frost Alley", "90210", "United States" for "Jon Snow"
+  And  I complete the addressing step
+  Then  the subtotal of "The Pug Mug" item should be "£50.00"
+

@@ -1,0 +1,7 @@
+Scenario 2: Trying to add product translation in unexisting locale
+  Tags: ['@api', '@no-ui']
+  When  I want to modify the "Symfony Mug" product
+  And  I name it "Symfony tasse" in "French (France)" locale
+  And  I try to save my changes
+  Then  I should be notified that the locale is not available
+

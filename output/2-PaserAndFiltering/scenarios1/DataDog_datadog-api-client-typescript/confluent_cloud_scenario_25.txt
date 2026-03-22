@@ -1,0 +1,8 @@
+Scenario 25: Update Confluent account returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "UpdateConfluentAccount" request
+  And  request contains "account_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"api_key": "TESTAPIKEY123", "api_secret": "test-api-secret-123", "tags": ["myTag", "myTag2:myValue"]}, "type": "confluent-cloud-accounts"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

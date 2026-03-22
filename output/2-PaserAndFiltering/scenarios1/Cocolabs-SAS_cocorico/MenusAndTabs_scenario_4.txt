@@ -1,0 +1,11 @@
+Scenario 4: Check tabs as asker
+  Given  I am logged in as user "asker@cocorico.rocks" with password "12345678"
+  When  I click on dashboard menu "Messages" of "asker"
+  Then  I should be on the "dashboard message" page
+  And  I wait 500 ms for Jquery loading
+  And  I should see "Messages" in the "nav.tabset-holder" element
+  And  I should see "Bookings" in the "nav.tabset-holder" element
+  And  I should see "Payments" in the "nav.tabset-holder" element
+  And  I should see "Comments" in the "nav.tabset-holder" element
+  And  I should see "Profile" in the "nav.tabset-holder" element
+

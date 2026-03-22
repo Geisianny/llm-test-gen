@@ -1,0 +1,8 @@
+Scenario 1: Product's average rating is correctly recalculated after review's rate change
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I want to modify the "Awesome" product review
+  And  I choose 5 as its rating
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  average rating of product "Lamborghini Gallardo Model" should be 4
+

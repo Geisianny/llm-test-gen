@@ -1,0 +1,10 @@
+Scenario 9: Should disable checkboxes when recipients is set to All users
+  Tags: ['@selenium']
+  Given  I am logged in as admin
+  And  I go to /admin/users/send_mail
+  Then  the field "#profile_admins" should be disabled
+  Then  the field "#env_admins" should be disabled
+  When  I choose "Only Admins"
+  Then  the field "#profile_admins" should be enabled
+  Then  the field "#env_admins" should be enabled
+

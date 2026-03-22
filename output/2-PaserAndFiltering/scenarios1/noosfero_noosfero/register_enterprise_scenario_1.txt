@@ -1,0 +1,5 @@
+Scenario 1: enterprise registration is disabled by admin
+  Given  feature "enterprise_registration" is disabled on environment
+  When  I follow "Groups" within "#section-relationships"
+  Then  I should not see "Register a new enterprise"
+

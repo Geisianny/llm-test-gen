@@ -1,0 +1,9 @@
+Scenario 29: Cleanup: delete all profiles without key
+  When  I follow the left menu "Images > Profiles"
+  And  I check "suse_simple" in the list
+  And  I check "suse_real_simple" in the list
+  And  I click on "Delete"
+  And  I should see a "Are you sure you want to delete selected profiles?" text
+  And  I click on the red confirmation button
+  And  I wait until I see "Image profiles have been deleted" text
+

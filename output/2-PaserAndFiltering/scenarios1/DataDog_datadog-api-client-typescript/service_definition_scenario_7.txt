@@ -1,0 +1,7 @@
+Scenario 7: Delete a single service definition returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/service-catalog']
+  Given  new "DeleteServiceDefinition" request
+  And  request contains "service_name" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

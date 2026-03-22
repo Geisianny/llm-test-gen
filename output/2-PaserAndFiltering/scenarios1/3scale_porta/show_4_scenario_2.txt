@@ -1,0 +1,6 @@
+Scenario 2: Client secret should be *****
+  Given  a red hat single sign-on integration
+  When  they go to the users sso integrations page
+  When  they follow "Red Hat Single Sign-On"
+  Then  they should see the following details:
+

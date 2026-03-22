@@ -1,0 +1,8 @@
+Scenario 5: Receiving fixed discount only on items from specific taxon
+  Tags: ['@ui', '@api']
+  When  I add product "PHP T-Shirt" to the cart
+  And  I add product "PHP Mug" to the cart
+  Then  product "PHP T-Shirt" price should be decreased by "$10.00"
+  And  product "PHP Mug" price should not be decreased
+  And  my cart total should be "$110.00"
+

@@ -1,0 +1,5 @@
+Scenario 4: Create email template with template id
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  When  I create an email template:
+  Then  there will be an email template for "subscription_created" with locale "en"
+

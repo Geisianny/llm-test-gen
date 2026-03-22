@@ -1,0 +1,6 @@
+Scenario 7: Execute a test excluding an file included with ext. glob patterns
+  Given  a configuration with:
+  When  I start Karma
+  Then  it passes with like:
+  And  it passes with like:
+

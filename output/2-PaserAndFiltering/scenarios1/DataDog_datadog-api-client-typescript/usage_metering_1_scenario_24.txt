@@ -1,0 +1,7 @@
+Scenario 24: Get projected cost across your account returns "OK" response
+  Tags: ['@replay-only', '@team:DataDog/revenue-query']
+  Given  new "GetProjectedCost" request
+  And  request contains "view" parameter with value "sub-org"
+  When  the request is sent
+  Then  the response status is 200 OK
+

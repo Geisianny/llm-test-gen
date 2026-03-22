@@ -1,0 +1,7 @@
+Scenario 3: remove user
+  Tags: ['@selenium']
+  Given  I follow "Remove" within "tr[title='Joao Silva']"
+  And  I confirm the browser dialog
+  And  I go to /admin/users
+  Then  I should not see "Joao Silva"
+

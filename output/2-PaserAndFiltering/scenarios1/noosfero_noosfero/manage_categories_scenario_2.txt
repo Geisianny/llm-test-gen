@@ -1,0 +1,9 @@
+Scenario 2: load subcategories only after following parent
+  Tags: ['@selenium']
+  Then  I should not see "Beans"
+  And  I should not see "Potatoes"
+  When  I click "#show-hide-button1"
+  And  I wait 0.5 seconds for Services show animation to finish
+  Then  I should see "Beans"
+  And  I should see "Potatoes"
+

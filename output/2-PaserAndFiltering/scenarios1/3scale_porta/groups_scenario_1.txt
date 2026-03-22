@@ -1,0 +1,6 @@
+Scenario 1: Navigation
+  When  they select "Audience" from the context selector
+  And  they follow "Bob buyer"
+  And  they follow "0 Group Memberships"
+  Then  the current page is the buyer account "Bob buyer" groups page
+

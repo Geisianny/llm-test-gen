@@ -1,0 +1,9 @@
+Scenario 3: 003: Users engage in an ETH market auction, (0070-MKTD-003, 0070-MKTD-008)
+  Given  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "USD/DEC19"
+  Then  the auction ends with a traded volume of "10" at a price of "1000"
+  And  the parties should have the following account balances:
+  And  the following trades should be executed:
+

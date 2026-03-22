@@ -1,0 +1,90 @@
+Feature: Orphans UI
+Description: As the site owner
+  So that I look up orphan orgs and email prospective users
+  I want a UI that shows me orphan orgs and allows me to generate user accounts for them
+
+Background: 
+  Given  the following organisations exist:
+  And  the following users are registered:
+  And  the invitation instructions mail template exists
+  And  the superadmin invited a user for "Yet Another Org"
+
+Scenario 1: Super Admin can invite users but only for unique emails
+  Tags: ['@javascript', '@vcr', '@billy']
+  Given  cookies are approved
+  Given  I am signed in as a superadmin
+  And  I visit the invite users to become admin of organisations page
+  And  I check the box for "The Organisation"
+  And  I check the box for "The Same Email Org"
+  When  I click id "invite_users"
+  Then  I should see "Invited!" in the response field for "The Organisation"
+  Then  I should see "Error: Email has already been taken" in the response field for "The Same Email Org"
+
+Scenario 2: Already invited organisations don't appear
+  Given  cookies are approved
+  And  I am signed in as a superadmin
+  And  I visit the invite users to become admin of organisations page
+  Then  I should not see "Yet Another Org"
+
+Scenario 3: Super Admin should be notified when email is invalid
+  Tags: ['@javascript']
+  Given  cookies are approved
+  Given  I am signed in as a superadmin
+  And  I visit the invite users to become admin of organisations page
+  And  I check the box for "Crazy Email Org"
+  When  I click id "invite_users"
+  Then  I should see "Error: Email is invalid" in the response field for "Crazy Email Org"
+
+Scenario 4: Super Admin can see the preview email
+  Given  cookies are approved
+  And  I am signed in as a superadmin
+  And  I visit the invite users to become admin of organisations page
+  Then  I should see the preview email
+
+Scenario 5: As a non-superadmin trying to access orphans index
+  Given  cookies are approved
+  Given  I am signed in as a non-superadmin
+  And  I visit the invite users to become admin of organisations page
+  Then  I should be on the home page
+  And  I should see "You must be signed in as a superadmin to perform this action!"
+
+Scenario 6: Table columns should be sortable
+  Tags: ['@javascript', '@billy']
+  Given  cookies are approved
+  Given  I am signed in as a superadmin
+  And  I visit the invite users to become admin of organisations page
+  And  I click tableheader "Name"
+  Then  I should see "Crazy Email Org" before "The Organisation"
+  When  I click tableheader "Name"
+  Then  I should see "The Organisation" before "Crazy Email Org"
+
+Scenario 7: Select All button toggles all checkboxes
+  Tags: ['@javascript', '@billy']
+  Given  cookies are approved
+  Given  I am signed in as a superadmin
+  And  I visit the invite users to become admin of organisations page
+  And  I press "Select All"
+  Then  all the checkboxes should be checked
+  When  I press "Select All"
+  Then  all the checkboxes should be unchecked
+
+Scenario 8: Invited user clicking through on email with cookies policy clicked
+  Given  I click on the invitation link in the email to "superadmin@another.org"
+  And  I accepted the cookie policy from the "invitation" page
+  And  I set my password
+  Then  I should be on the show page for the organisation named "Yet Another Org"
+
+Scenario 9: Invited user clicking through on email ignoring cookies policy
+  Given  I click on the invitation link in the email to "superadmin@another.org"
+  And  I set my password
+  Then  I should be on the show page for the organisation named "Yet Another Org"
+
+Scenario 10: Invited user email is out of date
+  Given  cookies are approved
+  And  I am signed in as a superadmin
+  And  I visit the invite users to become admin of organisations page
+  Then  I should not see "Yet Another Org"
+  When  I edit the charity email of "Yet Another Org" to be "other_email@charity.com"
+  And  I visit the invite users to become admin of organisations page
+  Then  I should see "Yet Another Org"
+

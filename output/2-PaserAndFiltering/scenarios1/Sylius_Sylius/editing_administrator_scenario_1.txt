@@ -1,0 +1,9 @@
+Scenario 1: Changing name and email of an existing administrator
+  Tags: ['@api', '@ui']
+  When  I want to edit this administrator
+  And  I change its name to "Jon Snow"
+  And  I change its email to "jon@example.com"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this administrator with name "Jon Snow" should appear in the store
+

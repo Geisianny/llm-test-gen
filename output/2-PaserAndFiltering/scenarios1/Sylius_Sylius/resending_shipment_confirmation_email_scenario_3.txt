@@ -1,0 +1,9 @@
+Scenario 3: Not being able to resend a confirmation email for a given shipment with wrong state
+  Tags: ['@api', '@ui', '@email']
+  Given  this customer placed another order "#00000023"
+  And  the customer bought a single "Angel T-Shirt"
+  And  the customer "Lucifer Morningstar" addressed it to "Seaside Fwy", "90802" "Los Angeles" in the "United States" with identical billing address
+  And  the customer chose "Free" shipping method with "Cash on Delivery" payment
+  When  I view the summary of the order "#00000023"
+  Then  I should not be able to resend the shipment confirmation email
+

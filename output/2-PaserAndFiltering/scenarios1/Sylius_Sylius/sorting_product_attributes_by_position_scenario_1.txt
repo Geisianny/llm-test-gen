@@ -1,0 +1,7 @@
+Scenario 1: Product attributes are sorted by position in ascending order by default
+  Tags: ['@api', '@ui']
+  When  I want to see all product attributes in store
+  Then  I should see 3 product attributes in the list
+  And  the first product attribute on the list should have name "Book pages"
+  And  the last product attribute on the list should have name "T-Shirt with cotton"
+

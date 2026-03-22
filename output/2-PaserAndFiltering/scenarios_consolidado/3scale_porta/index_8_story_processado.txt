@@ -1,0 +1,5 @@
+Scenario 1: Navigation via context selector
+  When  they select "Audience" from the context selector
+  And  follow "Account Plans" within the main menu
+  Then  the current page is the account plans admin page
+

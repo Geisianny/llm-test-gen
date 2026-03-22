@@ -1,0 +1,7 @@
+Scenario 13: Get a custom destination returns "Not Found" response
+  Tags: ['@team:DataDog/logs-backend', '@team:DataDog/logs-forwarding']
+  Given  new "GetLogsCustomDestination" request
+  And  request contains "custom_destination_id" parameter with value "does-not-exist"
+  When  the request is sent
+  Then  the response status is 404 Not found
+

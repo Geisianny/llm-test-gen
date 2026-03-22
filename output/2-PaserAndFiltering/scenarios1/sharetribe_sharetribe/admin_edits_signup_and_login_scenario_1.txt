@@ -1,0 +1,10 @@
+Scenario 1: Admin user can set join only with an invite from a registered user
+  When  I check "Make marketplace invite-only (new users need an invitation from a registered user to sign up)"
+  And  I uncheck "community_facebook_connect_enabled"
+  And  I uncheck "community_google_connect_enabled"
+  And  I uncheck "community_linkedin_connect_enabled"
+  And  I press submit
+  Then  I log out
+  And  I go to the signup page
+  And  I should see "Invitation code"
+

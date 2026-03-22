@@ -1,0 +1,17 @@
+Scenario 6: Verify patch presence in web UI
+  When  I follow the left menu "Patches > Patch List > All"
+  And  I follow "Bugfix Patches" in the content area
+  And  I enter "Test Patch" as the filtered synopsis
+  And  I click on the filter button
+  And  I follow "Test Advisory"
+  Then  I should see a "Test Patch" text
+  And  I should see a "test@test.org" text
+  And  I should see a "Test Topic" text
+  And  I should see a "Test Description" text
+  And  I should see a "Test Solution" text
+  And  I should see a "Fake-Base-Channel-SUSE-like" link
+  And  I should see a "Test Summary" link
+  And  I should see a "keywords, test" text
+  And  I should see a "Test Reference" text
+  And  I should see a "Test Note" text
+

@@ -1,0 +1,8 @@
+Scenario 2: Seeing the accurate percentage amount after editing the catalog promotion including the value up to two decimal places
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I want to modify a catalog promotion "Christmas sale"
+  And  I edit its action so that it reduces price by "2.56%"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this catalog promotion should have "2.56%" percentage discount
+

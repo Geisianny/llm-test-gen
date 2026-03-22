@@ -1,0 +1,1495 @@
+{
+  "repository_name": "uyuni",
+  "repository_owner": "uyuni-project",
+  "repository_url": "https://github.com/uyuni-project/uyuni",
+  "visibility": "public",
+  "is_private": false,
+  "total_feature_files": 247,
+  "downloaded_files": 247,
+  "download_date": "2025-11-26 01:53:26",
+  "feature_files": [
+    {
+      "name": "monitoring_server_add_maintenance_update_repositories.feature",
+      "original_path": "testsuite/features/build_validation/add_MU_repositories/monitoring_server_add_maintenance_update_repositories.feature",
+      "size": 2450,
+      "sha": "ab7ed25c6c439fd3431afd1871415efe3c74713c"
+    },
+    {
+      "name": "centos7_minion_add_iso.feature",
+      "original_path": "testsuite/features/build_validation/add_non_MU_repositories/centos7_minion_add_iso.feature",
+      "size": 2439,
+      "sha": "8c4fb4a83862d7d27ac82f68288f7b052750397c"
+    },
+    {
+      "name": "rocky8_minion_add_iso.feature",
+      "original_path": "testsuite/features/build_validation/add_non_MU_repositories/rocky8_minion_add_iso.feature",
+      "size": 3586,
+      "sha": "59353f6cd802f4f04cad426eb2479b341694bd68"
+    },
+    {
+      "name": "allcli_sanity.feature",
+      "original_path": "testsuite/features/build_validation/core/allcli_sanity.feature",
+      "size": 20785,
+      "sha": "56f93b13e5aa51089e28c5d442673a90f7f1901d"
+    },
+    {
+      "name": "srv_add_configuration_channel_and_file.feature",
+      "original_path": "testsuite/features/build_validation/core/srv_add_configuration_channel_and_file.feature",
+      "size": 1253,
+      "sha": "b00f87dc4980e3cd7a998b270cfa58e1da7d1c41"
+    },
+    {
+      "name": "srv_first_settings.feature",
+      "original_path": "testsuite/features/build_validation/core/srv_first_settings.feature",
+      "size": 2793,
+      "sha": "dc1bcc1d10aa570002a1dc8dfdd104305d88d253"
+    },
+    {
+      "name": "srv_user_preferences.feature",
+      "original_path": "testsuite/features/build_validation/core/srv_user_preferences.feature",
+      "size": 853,
+      "sha": "96066c894ecd025a4a9c77432a97f30b5d4ab313"
+    },
+    {
+      "name": "allcli_debug.feature",
+      "original_path": "testsuite/features/build_validation/finishing/allcli_debug.feature",
+      "size": 243,
+      "sha": "e83a7fa270160d60b26bd15c57b2fc1db7300e32"
+    },
+    {
+      "name": "srv_debug.feature",
+      "original_path": "testsuite/features/build_validation/finishing/srv_debug.feature",
+      "size": 448,
+      "sha": "96ed06d982e45ec07b77b6146f652cae97d8b3df"
+    },
+    {
+      "name": "alma8_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/alma8_minion.feature",
+      "size": 1710,
+      "sha": "fe18b71b1c922390d8885a332a580e1b143b739a"
+    },
+    {
+      "name": "alma8_ssh_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/alma8_ssh_minion.feature",
+      "size": 1816,
+      "sha": "d0fb00cb60b83bb531b597b312ecbc90e067b528"
+    },
+    {
+      "name": "alma9_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/alma9_minion.feature",
+      "size": 1710,
+      "sha": "daecdfb712df13d3ad887b2fbc24fe564b0eec4f"
+    },
+    {
+      "name": "alma9_ssh_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/alma9_ssh_minion.feature",
+      "size": 1816,
+      "sha": "4b93d33d497b09fad5467395467d881bdebf7a25"
+    },
+    {
+      "name": "amazon2023_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/amazon2023_minion.feature",
+      "size": 1785,
+      "sha": "7b864162964675afef3e60dab07b176487f08d59"
+    },
+    {
+      "name": "amazon2023_ssh_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/amazon2023_ssh_minion.feature",
+      "size": 1939,
+      "sha": "0fd75f132789a1958d7d2db4560d516c9dc8cbca"
+    },
+    {
+      "name": "centos7_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/centos7_minion.feature",
+      "size": 1745,
+      "sha": "5b6781ba37e836f981156ce28f768fca4e42c49e"
+    },
+    {
+      "name": "centos7_ssh_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/centos7_ssh_minion.feature",
+      "size": 1846,
+      "sha": "058de9a8a721ac9531f11a786003aa43cc258f96"
+    },
+    {
+      "name": "debian12_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/debian12_minion.feature",
+      "size": 1804,
+      "sha": "c303cee86b971018b7e036943ed2af764e8201bf"
+    },
+    {
+      "name": "debian12_ssh_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/debian12_ssh_minion.feature",
+      "size": 1354,
+      "sha": "6978db7d28f566b3cc2873f0ac4338d31ad3dcce"
+    },
+    {
+      "name": "liberty9_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/liberty9_minion.feature",
+      "size": 1976,
+      "sha": "823c9ec182f0bbf4bb03553df7c1165db7cc03ff"
+    },
+    {
+      "name": "liberty9_ssh_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/liberty9_ssh_minion.feature",
+      "size": 2090,
+      "sha": "aa7b54beabd23f725f5dc76bc72b081c8b5bcb63"
+    },
+    {
+      "name": "monitoring_server.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/monitoring_server.feature",
+      "size": 4846,
+      "sha": "e12900d241533a8ee71dbba0af0ccf95a627a723"
+    },
+    {
+      "name": "opensuse156arm_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/opensuse156arm_minion.feature",
+      "size": 2038,
+      "sha": "776befa8ac5b80aba68c12a720981df244ff6f90"
+    },
+    {
+      "name": "opensuse156arm_ssh_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/opensuse156arm_ssh_minion.feature",
+      "size": 1851,
+      "sha": "e6b8f8cd0c9e17b93ca3b42d45b4b9021400b80c"
+    },
+    {
+      "name": "oracle9_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/oracle9_minion.feature",
+      "size": 1898,
+      "sha": "82e0b11beda9ebeddcd5bc13cd183e5a45665c76"
+    },
+    {
+      "name": "oracle9_ssh_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/oracle9_ssh_minion.feature",
+      "size": 2012,
+      "sha": "d5b64c8d0d76f0147d1e135d52b5fc1652d6364c"
+    },
+    {
+      "name": "proxy.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/proxy.feature",
+      "size": 3205,
+      "sha": "07165e2a2f3ad5c99904f464aa79716ecc4d7afb"
+    },
+    {
+      "name": "rhel9_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/rhel9_minion.feature",
+      "size": 1710,
+      "sha": "844c9deca34deeb266225acbc43e7e426a9a5b96"
+    },
+    {
+      "name": "rhel9_ssh_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/rhel9_ssh_minion.feature",
+      "size": 1742,
+      "sha": "eb4628d21621001ccb3aa494e050128f405fcbdb"
+    },
+    {
+      "name": "rocky8_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/rocky8_minion.feature",
+      "size": 1730,
+      "sha": "b2c4eb635e6b07a8b4a62b65c0d20c3a5d2725a3"
+    },
+    {
+      "name": "rocky8_ssh_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/rocky8_ssh_minion.feature",
+      "size": 1831,
+      "sha": "6473d41bb9fb4d6bf078c002a422ba2a08a371c7"
+    },
+    {
+      "name": "rocky9_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/rocky9_minion.feature",
+      "size": 1725,
+      "sha": "d7b968bcf8965f43c6098189e7a3305d7815c8a6"
+    },
+    {
+      "name": "rocky9_ssh_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/rocky9_ssh_minion.feature",
+      "size": 1831,
+      "sha": "c31dca01f72ca294f19754d840a01d0e5c316937"
+    },
+    {
+      "name": "salt_migration_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/salt_migration_minion.feature",
+      "size": 728,
+      "sha": "ae2eecb6963adbad171863f861d38554908c5a2b"
+    },
+    {
+      "name": "sle12sp5_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/sle12sp5_minion.feature",
+      "size": 1947,
+      "sha": "7f6d1b2c9af26dc56eebeeaa24087bdd6fca10e8"
+    },
+    {
+      "name": "sle12sp5_ssh_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/sle12sp5_ssh_minion.feature",
+      "size": 1767,
+      "sha": "f6158dcab330cf5052946baf328ec75d1c38eba3"
+    },
+    {
+      "name": "sle15sp3_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/sle15sp3_minion.feature",
+      "size": 1947,
+      "sha": "c89b75c21c73d47be4f878584f44b95bd92234a6"
+    },
+    {
+      "name": "sle15sp3_ssh_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/sle15sp3_ssh_minion.feature",
+      "size": 1767,
+      "sha": "945f27eab598998ecccf69e6570adab672cb8e30"
+    },
+    {
+      "name": "sle15sp4_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/sle15sp4_minion.feature",
+      "size": 2302,
+      "sha": "88c2bddea8168309521b36776c05b632e04481d3"
+    },
+    {
+      "name": "sle15sp4_ssh_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/sle15sp4_ssh_minion.feature",
+      "size": 2147,
+      "sha": "6087fb7c928a9839b3fa940dc5c7c10373320fd8"
+    },
+    {
+      "name": "sle15sp5_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/sle15sp5_minion.feature",
+      "size": 1942,
+      "sha": "a05f67329d9a65f29e8bd1749684380dc1444259"
+    },
+    {
+      "name": "sle15sp5_ssh_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/sle15sp5_ssh_minion.feature",
+      "size": 1767,
+      "sha": "e4871a990f067701a3431d0031ba707e18a2dac4"
+    },
+    {
+      "name": "sle15sp5s390_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/sle15sp5s390_minion.feature",
+      "size": 2025,
+      "sha": "fce15d0934e4d771cb4baf1d4f91af4868d612a2"
+    },
+    {
+      "name": "sle15sp5s390_ssh_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/sle15sp5s390_ssh_minion.feature",
+      "size": 1835,
+      "sha": "d264a00f1913587b2f6c8c5d8d85ccd4ad519e6d"
+    },
+    {
+      "name": "sle15sp6_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/sle15sp6_minion.feature",
+      "size": 1942,
+      "sha": "fb06600f30e081d8fcf15ab1a1e2ad449267112d"
+    },
+    {
+      "name": "sle15sp6_ssh_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/sle15sp6_ssh_minion.feature",
+      "size": 1767,
+      "sha": "a06abeab9a5eef6ceaae2efba5d26bb5748ad7df"
+    },
+    {
+      "name": "sle15sp7_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/sle15sp7_minion.feature",
+      "size": 1942,
+      "sha": "9b178075f7e1aee0d6ac6209ee98cc7cebf108da"
+    },
+    {
+      "name": "sle15sp7_ssh_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/sle15sp7_ssh_minion.feature",
+      "size": 1762,
+      "sha": "c27bff9d79cfbafc3018824c131807e278ed0ecc"
+    },
+    {
+      "name": "slemicro51_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/slemicro51_minion.feature",
+      "size": 3269,
+      "sha": "9ad01f5540d71da99f2127a9eba2f29c2388cb06"
+    },
+    {
+      "name": "slemicro51_ssh_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/slemicro51_ssh_minion.feature",
+      "size": 2019,
+      "sha": "1934ab97876e959ac77ddb52c8d64012b95a3a73"
+    },
+    {
+      "name": "slemicro52_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/slemicro52_minion.feature",
+      "size": 3269,
+      "sha": "cc3aa875c8c70c9d27280f4d0589676ca403dbc3"
+    },
+    {
+      "name": "slemicro52_ssh_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/slemicro52_ssh_minion.feature",
+      "size": 2023,
+      "sha": "11d405ebd68a0df91718423bba3b205e3f5455fc"
+    },
+    {
+      "name": "slemicro53_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/slemicro53_minion.feature",
+      "size": 3269,
+      "sha": "44d988052e463eba37298424da7d1b3d0533a909"
+    },
+    {
+      "name": "slemicro53_ssh_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/slemicro53_ssh_minion.feature",
+      "size": 2023,
+      "sha": "46df98805a5b831cf4823c18d1402615d3241db8"
+    },
+    {
+      "name": "slemicro54_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/slemicro54_minion.feature",
+      "size": 3269,
+      "sha": "aa16c5b401572193cb27a442fbfa64df2d058744"
+    },
+    {
+      "name": "slemicro54_ssh_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/slemicro54_ssh_minion.feature",
+      "size": 2023,
+      "sha": "6b2db8c9fe96b69a5817d6aeff06d58e146f1d4e"
+    },
+    {
+      "name": "slemicro55_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/slemicro55_minion.feature",
+      "size": 3269,
+      "sha": "c5e6c8bc761428a7185a4bf20531f293cf0ac956"
+    },
+    {
+      "name": "slemicro55_ssh_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/slemicro55_ssh_minion.feature",
+      "size": 2023,
+      "sha": "2c7c5574083088c88779698b963111b4d3f3b0d1"
+    },
+    {
+      "name": "slmicro60_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/slmicro60_minion.feature",
+      "size": 3162,
+      "sha": "9fb67e6c7f769efc4b5deaa5b2096ce42ec37b08"
+    },
+    {
+      "name": "slmicro60_ssh_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/slmicro60_ssh_minion.feature",
+      "size": 1912,
+      "sha": "102579ac2f4fc958eb91f0011803d920ecb5ab8f"
+    },
+    {
+      "name": "slmicro61_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/slmicro61_minion.feature",
+      "size": 3162,
+      "sha": "355b663677fd3d085529f892c5104566311b54e6"
+    },
+    {
+      "name": "slmicro61_ssh_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/slmicro61_ssh_minion.feature",
+      "size": 1912,
+      "sha": "655f1728d6628f0c1b47c7a19102555f25fba829"
+    },
+    {
+      "name": "ubuntu2004_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/ubuntu2004_minion.feature",
+      "size": 1868,
+      "sha": "9649abf2f6a7fe791f93d92a1fb216cd23bb7d60"
+    },
+    {
+      "name": "ubuntu2004_ssh_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/ubuntu2004_ssh_minion.feature",
+      "size": 1375,
+      "sha": "500b42324d7b843629d3a5e258206c90aff172b0"
+    },
+    {
+      "name": "ubuntu2204_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/ubuntu2204_minion.feature",
+      "size": 1868,
+      "sha": "7f26c4f69cff36b0b9c9ac058b5feb3205f1c736"
+    },
+    {
+      "name": "ubuntu2204_ssh_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/ubuntu2204_ssh_minion.feature",
+      "size": 1375,
+      "sha": "169d0649019a076f07dc4d1763d197be90ee3bf2"
+    },
+    {
+      "name": "ubuntu2404_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/ubuntu2404_minion.feature",
+      "size": 2056,
+      "sha": "fd9661eaf4485e85f24db92c7394fa86eb92032a"
+    },
+    {
+      "name": "ubuntu2404_ssh_minion.feature",
+      "original_path": "testsuite/features/build_validation/init_clients/ubuntu2404_ssh_minion.feature",
+      "size": 1583,
+      "sha": "fce0d31c12bbd16d5f6d7a7e0de3121b4ce4c858"
+    },
+    {
+      "name": "migration_salt_migration_minion.feature",
+      "original_path": "testsuite/features/build_validation/migration/migration_salt_migration_minion.feature",
+      "size": 5933,
+      "sha": "82e1651e5ef4815afe2b143b73b0ccf459b2e8d1"
+    },
+    {
+      "name": "migration_sle15sp6_minion.feature",
+      "original_path": "testsuite/features/build_validation/migration/migration_sle15sp6_minion.feature",
+      "size": 2956,
+      "sha": "218c27986be27dd0c90e920dfe96943d93cb1e4e"
+    },
+    {
+      "name": "migration_sle15sp6_ssh_minion.feature",
+      "original_path": "testsuite/features/build_validation/migration/migration_sle15sp6_ssh_minion.feature",
+      "size": 2904,
+      "sha": "e62a90d60a349878fd7f106a225912bf98cec526"
+    },
+    {
+      "name": "migration_slemicro54_minion.feature",
+      "original_path": "testsuite/features/build_validation/migration/migration_slemicro54_minion.feature",
+      "size": 2330,
+      "sha": "9ed59ee502d04ba52c90992ecd9b9ac44f1d6dbf"
+    },
+    {
+      "name": "migration_slemicro55_minion.feature",
+      "original_path": "testsuite/features/build_validation/migration/migration_slemicro55_minion.feature",
+      "size": 2421,
+      "sha": "5c5404414d790529cdcfeb0f097ae9e8b519c596"
+    },
+    {
+      "name": "srv_disable_scheduled_reposync.feature",
+      "original_path": "testsuite/features/build_validation/reposync/srv_disable_scheduled_reposync.feature",
+      "size": 722,
+      "sha": "b40772fdd082b08de5ed2ff8f89344debcc4c0bd"
+    },
+    {
+      "name": "srv_sync_all_products.feature",
+      "original_path": "testsuite/features/build_validation/reposync/srv_sync_all_products.feature",
+      "size": 48574,
+      "sha": "c6c8bc5f5c2d2f32d177d6c441176e11d1bcf091"
+    },
+    {
+      "name": "init_sle15sp6_buildhost.feature",
+      "original_path": "testsuite/features/build_validation/retail/init_sle15sp6_buildhost.feature",
+      "size": 2555,
+      "sha": "01a153a578ac464f3fb9f1b3c48199d09c9ac20b"
+    },
+    {
+      "name": "init_sle15sp7_buildhost.feature",
+      "original_path": "testsuite/features/build_validation/retail/init_sle15sp7_buildhost.feature",
+      "size": 2555,
+      "sha": "6cb4a51c8d110cb9c768d1d001cc32af6296c03d"
+    },
+    {
+      "name": "proxy_rbs_container_branch_network.feature",
+      "original_path": "testsuite/features/build_validation/retail/proxy_rbs_container_branch_network.feature",
+      "size": 3694,
+      "sha": "502c696313da569f4318e2219a2a632a33750d36"
+    },
+    {
+      "name": "proxy_rbs_traditional_branch_network.feature",
+      "original_path": "testsuite/features/build_validation/retail/proxy_rbs_traditional_branch_network.feature",
+      "size": 10559,
+      "sha": "6abb503ea65f98b0de8939ea5143803f539f3342"
+    },
+    {
+      "name": "sle15sp6_build_kiwi_image.feature",
+      "original_path": "testsuite/features/build_validation/retail/sle15sp6_build_kiwi_image.feature",
+      "size": 2017,
+      "sha": "b715ced573c4efe6cce35c328f715dccfe7095b3"
+    },
+    {
+      "name": "sle15sp6_terminal_deploy.feature",
+      "original_path": "testsuite/features/build_validation/retail/sle15sp6_terminal_deploy.feature",
+      "size": 2908,
+      "sha": "d47308d8ab8ced5983f2720e2fcdaa5d69a508a2"
+    },
+    {
+      "name": "sle15sp6_terminal_prepare_group_saltboot.feature",
+      "original_path": "testsuite/features/build_validation/retail/sle15sp6_terminal_prepare_group_saltboot.feature",
+      "size": 2507,
+      "sha": "37b014ab0f6d004a395ed40585ba5f5b3156fb9d"
+    },
+    {
+      "name": "sle15sp7_build_kiwi_image.feature",
+      "original_path": "testsuite/features/build_validation/retail/sle15sp7_build_kiwi_image.feature",
+      "size": 2019,
+      "sha": "1df4d7207acb195f35bf248d6326e4da2c56fd36"
+    },
+    {
+      "name": "sle15sp7_terminal_deploy.feature",
+      "original_path": "testsuite/features/build_validation/retail/sle15sp7_terminal_deploy.feature",
+      "size": 2908,
+      "sha": "abdfcae88a7846ab36411e426479132d2ff013fa"
+    },
+    {
+      "name": "sle15sp7_terminal_prepare_group_saltboot.feature",
+      "original_path": "testsuite/features/build_validation/retail/sle15sp7_terminal_prepare_group_saltboot.feature",
+      "size": 2507,
+      "sha": "2966bd2a807bd9d60ca8da96ebc4d9b125cf33f7"
+    },
+    {
+      "name": "allcli_sanity_1.feature",
+      "original_path": "testsuite/features/core/allcli_sanity.feature",
+      "size": 3621,
+      "sha": "425a05d1dff7fa39e2bbc445a5bd2c1931e1db8f"
+    },
+    {
+      "name": "srv_disable_local_repos_off.feature",
+      "original_path": "testsuite/features/core/srv_disable_local_repos_off.feature",
+      "size": 377,
+      "sha": "bf63b0068d78ed32b25362727b67439d26d2962d"
+    },
+    {
+      "name": "srv_docker.feature",
+      "original_path": "testsuite/features/core/srv_docker.feature",
+      "size": 803,
+      "sha": "7809eb08c419bad97a85a699cb5bda365871cdcb"
+    },
+    {
+      "name": "srv_first_settings_1.feature",
+      "original_path": "testsuite/features/core/srv_first_settings.feature",
+      "size": 3383,
+      "sha": "0fce90a1a2b93af7e1e74713b703ba8d5f47a2f9"
+    },
+    {
+      "name": "srv_organization_credentials.feature",
+      "original_path": "testsuite/features/core/srv_organization_credentials.feature",
+      "size": 586,
+      "sha": "0d408d577a459377724666361be7cc8e126c2884"
+    },
+    {
+      "name": "srv_osimage.feature",
+      "original_path": "testsuite/features/core/srv_osimage.feature",
+      "size": 480,
+      "sha": "6d44ba3c2baf41003b3e7249a87260fc37b69ccb"
+    },
+    {
+      "name": "srv_user_preferences_1.feature",
+      "original_path": "testsuite/features/core/srv_user_preferences.feature",
+      "size": 853,
+      "sha": "96066c894ecd025a4a9c77432a97f30b5d4ab313"
+    },
+    {
+      "name": "allcli_debug_1.feature",
+      "original_path": "testsuite/features/finishing/allcli_debug.feature",
+      "size": 243,
+      "sha": "e83a7fa270160d60b26bd15c57b2fc1db7300e32"
+    },
+    {
+      "name": "srv_count_scc_access.feature",
+      "original_path": "testsuite/features/finishing/srv_count_scc_access.feature",
+      "size": 504,
+      "sha": "467cc67e6249bb5e2a967ef3767d41a362e6bc4a"
+    },
+    {
+      "name": "srv_debug_1.feature",
+      "original_path": "testsuite/features/finishing/srv_debug.feature",
+      "size": 662,
+      "sha": "87ea50660bb696c773ba834c1f537960c1b97356"
+    },
+    {
+      "name": "srv_selinux.feature",
+      "original_path": "testsuite/features/finishing/srv_selinux.feature",
+      "size": 389,
+      "sha": "4e87df3c9ef77c3e269ca53ace3d6459e993dd28"
+    },
+    {
+      "name": "first_settings.feature",
+      "original_path": "testsuite/features/github_validation/core/first_settings.feature",
+      "size": 1002,
+      "sha": "2d7ce516ee537e9c84d804adfbc8be320df23801"
+    },
+    {
+      "name": "buildhost_bootstrap.feature",
+      "original_path": "testsuite/features/github_validation/init_clients/buildhost_bootstrap.feature",
+      "size": 1287,
+      "sha": "51cf1edd4bdae5a8c95ae8a93fbcb3d3917109f3"
+    },
+    {
+      "name": "min_deblike_salt.feature",
+      "original_path": "testsuite/features/github_validation/init_clients/min_deblike_salt.feature",
+      "size": 764,
+      "sha": "1cd800bcdbb38c6a3c9ba6d9bd9f85160f6b108a"
+    },
+    {
+      "name": "min_rhlike_salt.feature",
+      "original_path": "testsuite/features/github_validation/init_clients/min_rhlike_salt.feature",
+      "size": 749,
+      "sha": "4deff04c0f8988e15c3aa036ae7b40dff44dc2b4"
+    },
+    {
+      "name": "sle_minion.feature",
+      "original_path": "testsuite/features/github_validation/init_clients/sle_minion.feature",
+      "size": 661,
+      "sha": "73dc08425472256b335dac66e72bc8d0f1984512"
+    },
+    {
+      "name": "sle_ssh_minion.feature",
+      "original_path": "testsuite/features/github_validation/init_clients/sle_ssh_minion.feature",
+      "size": 1601,
+      "sha": "4abf8ebdabc83c71a2f2146247a1f321fbaa6487"
+    },
+    {
+      "name": "buildhost_bootstrap_1.feature",
+      "original_path": "testsuite/features/init_clients/buildhost_bootstrap.feature",
+      "size": 2464,
+      "sha": "e292503e2b75f4f808372410022f30bfa75cd571"
+    },
+    {
+      "name": "min_deblike_salt_1.feature",
+      "original_path": "testsuite/features/init_clients/min_deblike_salt.feature",
+      "size": 2736,
+      "sha": "ccfce6758217b0dd1300282ada392265fdef3ddd"
+    },
+    {
+      "name": "min_rhlike_salt_1.feature",
+      "original_path": "testsuite/features/init_clients/min_rhlike_salt.feature",
+      "size": 2638,
+      "sha": "cc73fb57a80257e82718e809c63cc9da4d5e99b1"
+    },
+    {
+      "name": "sle_minion_1.feature",
+      "original_path": "testsuite/features/init_clients/sle_minion.feature",
+      "size": 2311,
+      "sha": "cd14be69d43ee54f6c56ca99dffe9445f421e747"
+    },
+    {
+      "name": "sle_ssh_minion_1.feature",
+      "original_path": "testsuite/features/init_clients/sle_ssh_minion.feature",
+      "size": 1872,
+      "sha": "12ca68ff7e1060bd0df81cc86d9ec9c0da49f596"
+    },
+    {
+      "name": "proxy_container.feature",
+      "original_path": "testsuite/features/proxy/proxy_container.feature",
+      "size": 3008,
+      "sha": "4ef783ea7d0d7c5bad21ea40380b7663b799bfd8"
+    },
+    {
+      "name": "proxy_rbs_container_branch_network_1.feature",
+      "original_path": "testsuite/features/proxy/proxy_rbs_container_branch_network.feature",
+      "size": 1658,
+      "sha": "2940d32cdd670d3a7069655332f16a79534a47a7"
+    },
+    {
+      "name": "allcli_update_activationkeys.feature",
+      "original_path": "testsuite/features/reposync/allcli_update_activationkeys.feature",
+      "size": 15471,
+      "sha": "7198437232080cccc9638fa3667e273d05e78fa5"
+    },
+    {
+      "name": "reference_srv_check_reposync.feature",
+      "original_path": "testsuite/features/reposync/reference_srv_check_reposync.feature",
+      "size": 3379,
+      "sha": "61984162644082e3fa83a3f45bf1b01e28b20027"
+    },
+    {
+      "name": "reference_srv_sync_products_extra.feature",
+      "original_path": "testsuite/features/reposync/reference_srv_sync_products_extra.feature",
+      "size": 2443,
+      "sha": "ffe3601d9cc931733c65c7d1e089cbc6047b43a0"
+    },
+    {
+      "name": "srv_create_activationkey.feature",
+      "original_path": "testsuite/features/reposync/srv_create_activationkey.feature",
+      "size": 4037,
+      "sha": "0e3dd739b4fb07256150f5e3b063b4fdb2495559"
+    },
+    {
+      "name": "srv_create_bootstrap_repositories.feature",
+      "original_path": "testsuite/features/reposync/srv_create_bootstrap_repositories.feature",
+      "size": 847,
+      "sha": "7bd9083d1c85ee773f992d47a063f7be7e06dafe"
+    },
+    {
+      "name": "srv_create_devel_channels.feature",
+      "original_path": "testsuite/features/reposync/srv_create_devel_channels.feature",
+      "size": 3978,
+      "sha": "e7b9393d472718110e5cae75e6730c868b33ae06"
+    },
+    {
+      "name": "srv_create_fake_channels.feature",
+      "original_path": "testsuite/features/reposync/srv_create_fake_channels.feature",
+      "size": 8867,
+      "sha": "93710d5c76522cbf81088b2f826ec3cc8b82c4f8"
+    },
+    {
+      "name": "srv_create_fake_repositories.feature",
+      "original_path": "testsuite/features/reposync/srv_create_fake_repositories.feature",
+      "size": 7597,
+      "sha": "519c87b15e675ce92a0fce73b34b65cfb8e47d4f"
+    },
+    {
+      "name": "srv_create_repository.feature",
+      "original_path": "testsuite/features/reposync/srv_create_repository.feature",
+      "size": 8207,
+      "sha": "eb1289be209efafa5806a7eaca2a0ea836c09712"
+    },
+    {
+      "name": "srv_disable_scheduled_reposync_1.feature",
+      "original_path": "testsuite/features/reposync/srv_disable_scheduled_reposync.feature",
+      "size": 722,
+      "sha": "2bc0377e35859d508d7bca1861b58eac6edf17c5"
+    },
+    {
+      "name": "srv_strict_mode_repo_sync.feature",
+      "original_path": "testsuite/features/reposync/srv_strict_mode_repo_sync.feature",
+      "size": 2599,
+      "sha": "c663bf72e86da08f289298a543e69944e54ed6fb"
+    },
+    {
+      "name": "srv_sync_channels.feature",
+      "original_path": "testsuite/features/reposync/srv_sync_channels.feature",
+      "size": 2681,
+      "sha": "0e0103802d2fc481b99b393781e136949b61b2e4"
+    },
+    {
+      "name": "srv_sync_devel_channels.feature",
+      "original_path": "testsuite/features/reposync/srv_sync_devel_channels.feature",
+      "size": 2684,
+      "sha": "b55b30ad8c92a8e93f96752ff45ed6c701965e47"
+    },
+    {
+      "name": "srv_sync_fake_channels.feature",
+      "original_path": "testsuite/features/reposync/srv_sync_fake_channels.feature",
+      "size": 7151,
+      "sha": "0ade17e00e3a6550f1c2bf28a98edb127ba0460b"
+    },
+    {
+      "name": "srv_sync_products.feature",
+      "original_path": "testsuite/features/reposync/srv_sync_products.feature",
+      "size": 15050,
+      "sha": "d0b76e5c324ca95f54f73c46fcd9b411217865c8"
+    },
+    {
+      "name": "allcli_action_chain.feature",
+      "original_path": "testsuite/features/secondary/allcli_action_chain.feature",
+      "size": 6081,
+      "sha": "9a1ab5ea22eede278e0dd8e4cf9dea6eeac60952"
+    },
+    {
+      "name": "allcli_config_channel.feature",
+      "original_path": "testsuite/features/secondary/allcli_config_channel.feature",
+      "size": 10758,
+      "sha": "f8b06ef5ddfaee660ae85c60d0631b1f62ea210a"
+    },
+    {
+      "name": "allcli_overview_systems_details.feature",
+      "original_path": "testsuite/features/secondary/allcli_overview_systems_details.feature",
+      "size": 6332,
+      "sha": "90c893dcbf576ab6b1e285908e6dfdd99ff75ea4"
+    },
+    {
+      "name": "allcli_reboot.feature",
+      "original_path": "testsuite/features/secondary/allcli_reboot.feature",
+      "size": 3105,
+      "sha": "fd40371cdec6dae19726d0f3a2ac64fb8667a1b9"
+    },
+    {
+      "name": "allcli_software_channels.feature",
+      "original_path": "testsuite/features/secondary/allcli_software_channels.feature",
+      "size": 12003,
+      "sha": "813778420a1e9d4c32cd95d9f576f3d9ff98bda3"
+    },
+    {
+      "name": "allcli_software_channels_dependencies.feature",
+      "original_path": "testsuite/features/secondary/allcli_software_channels_dependencies.feature",
+      "size": 5127,
+      "sha": "151f585498e74899273116bf637e52d0ed88237c"
+    },
+    {
+      "name": "allcli_system_group.feature",
+      "original_path": "testsuite/features/secondary/allcli_system_group.feature",
+      "size": 9496,
+      "sha": "6afa33d55a89cf280ed67a4e23ddf308fe227976"
+    },
+    {
+      "name": "buildhost_docker_auth_registry.feature",
+      "original_path": "testsuite/features/secondary/buildhost_docker_auth_registry.feature",
+      "size": 3094,
+      "sha": "6161427984894f55848c4737cf9da9156e1afe95"
+    },
+    {
+      "name": "buildhost_docker_build_image.feature",
+      "original_path": "testsuite/features/secondary/buildhost_docker_build_image.feature",
+      "size": 11478,
+      "sha": "d9702b3f472f909be584cd2762874a6c49b1a72c"
+    },
+    {
+      "name": "buildhost_osimage_build_image.feature",
+      "original_path": "testsuite/features/secondary/buildhost_osimage_build_image.feature",
+      "size": 3074,
+      "sha": "887f36af2c6046a74f89a38bb0fff757625a1d08"
+    },
+    {
+      "name": "https_connection.feature",
+      "original_path": "testsuite/features/secondary/https_connection.feature",
+      "size": 987,
+      "sha": "4c232b8cd67877af3512204260af2464b3ca7025"
+    },
+    {
+      "name": "min_action_chain.feature",
+      "original_path": "testsuite/features/secondary/min_action_chain.feature",
+      "size": 14866,
+      "sha": "9e906d7c40abf26693ef0ea711d8e3abdb4069f4"
+    },
+    {
+      "name": "min_ansible_control_node.feature",
+      "original_path": "testsuite/features/secondary/min_ansible_control_node.feature",
+      "size": 5730,
+      "sha": "1bf2a1939f166ddb51393685290b15a55baff928"
+    },
+    {
+      "name": "min_bootstrap_activation_key.feature",
+      "original_path": "testsuite/features/secondary/min_bootstrap_activation_key.feature",
+      "size": 7115,
+      "sha": "c100f37bd589a195f43716a4d05a390ba017e0f9"
+    },
+    {
+      "name": "min_bootstrap_api.feature",
+      "original_path": "testsuite/features/secondary/min_bootstrap_api.feature",
+      "size": 4183,
+      "sha": "680444251906a450ec71052bcc7de34d04d59455"
+    },
+    {
+      "name": "min_bootstrap_negative.feature",
+      "original_path": "testsuite/features/secondary/min_bootstrap_negative.feature",
+      "size": 3394,
+      "sha": "1159fd730a780648f9c3ceec9f6880c6c4b29554"
+    },
+    {
+      "name": "min_bootstrap_reactivation.feature",
+      "original_path": "testsuite/features/secondary/min_bootstrap_reactivation.feature",
+      "size": 4064,
+      "sha": "71ae661e5d52e999729a09e2c9a11f764a056eb1"
+    },
+    {
+      "name": "min_bootstrap_script.feature",
+      "original_path": "testsuite/features/secondary/min_bootstrap_script.feature",
+      "size": 5254,
+      "sha": "15ec3e2f7dc75ea8addc5fc474a89dc9e88ef919"
+    },
+    {
+      "name": "min_bootstrap_ssh_key.feature",
+      "original_path": "testsuite/features/secondary/min_bootstrap_ssh_key.feature",
+      "size": 3426,
+      "sha": "a255a200b63e5ef4112b21c4130ecc44dbafdb78"
+    },
+    {
+      "name": "min_change_software_channel.feature",
+      "original_path": "testsuite/features/secondary/min_change_software_channel.feature",
+      "size": 8994,
+      "sha": "12a65011f212de6cf04b74482b8ab4c034067a8f"
+    },
+    {
+      "name": "min_check_patches_install.feature",
+      "original_path": "testsuite/features/secondary/min_check_patches_install.feature",
+      "size": 3132,
+      "sha": "97dad134f3df5cc65a479fd10a7b2ad0b9f1848b"
+    },
+    {
+      "name": "min_config_state_channel.feature",
+      "original_path": "testsuite/features/secondary/min_config_state_channel.feature",
+      "size": 9406,
+      "sha": "945e4c340d57330fbdf3f7d822c5a058552573da"
+    },
+    {
+      "name": "min_config_state_channel_api.feature",
+      "original_path": "testsuite/features/secondary/min_config_state_channel_api.feature",
+      "size": 993,
+      "sha": "70610cbddd61a40500479ee2622d22f5737b946a"
+    },
+    {
+      "name": "min_custom_pkg_download_endpoint.feature",
+      "original_path": "testsuite/features/secondary/min_custom_pkg_download_endpoint.feature",
+      "size": 6642,
+      "sha": "385c56faaefef4211157c0a14a6bf7053e7cde6b"
+    },
+    {
+      "name": "min_cve_audit.feature",
+      "original_path": "testsuite/features/secondary/min_cve_audit.feature",
+      "size": 5279,
+      "sha": "7dda38b5481a6af981bc4aefd3f7ba41f45f38ad"
+    },
+    {
+      "name": "min_cve_id_new_syntax.feature",
+      "original_path": "testsuite/features/secondary/min_cve_id_new_syntax.feature",
+      "size": 1479,
+      "sha": "7d74f6082332e257b90b79436d9f5feab2ce98e1"
+    },
+    {
+      "name": "min_deblike_monitoring.feature",
+      "original_path": "testsuite/features/secondary/min_deblike_monitoring.feature",
+      "size": 3439,
+      "sha": "bcb493f39c19a30432cedd6b117cf44ad7291151"
+    },
+    {
+      "name": "min_deblike_openscap_audit.feature",
+      "original_path": "testsuite/features/secondary/min_deblike_openscap_audit.feature",
+      "size": 4105,
+      "sha": "16119b09a24bade27928aa802a7af65b66c4a973"
+    },
+    {
+      "name": "min_deblike_remote_command.feature",
+      "original_path": "testsuite/features/secondary/min_deblike_remote_command.feature",
+      "size": 942,
+      "sha": "9231dbf49ff90ba678f876d94554d30b5f4c1776"
+    },
+    {
+      "name": "min_deblike_salt_install_package_and_patch.feature",
+      "original_path": "testsuite/features/secondary/min_deblike_salt_install_package_and_patch.feature",
+      "size": 2785,
+      "sha": "20a46d28cbbf6e9134d9593bdc3f92b277db0ed6"
+    },
+    {
+      "name": "min_deblike_salt_install_with_staging.feature",
+      "original_path": "testsuite/features/secondary/min_deblike_salt_install_with_staging.feature",
+      "size": 3886,
+      "sha": "f56a8e94d97ccec5bc39343f2d13f87cbeb6b952"
+    },
+    {
+      "name": "min_deblike_ssh.feature",
+      "original_path": "testsuite/features/secondary/min_deblike_ssh.feature",
+      "size": 5923,
+      "sha": "d27e5354589e807fcc3b136d05609a4a44233ed4"
+    },
+    {
+      "name": "min_docker_api.feature",
+      "original_path": "testsuite/features/secondary/min_docker_api.feature",
+      "size": 1381,
+      "sha": "081c75476d7d3ee313d580922f08ed0f471f22c7"
+    },
+    {
+      "name": "min_empty_system_profiles.feature",
+      "original_path": "testsuite/features/secondary/min_empty_system_profiles.feature",
+      "size": 2228,
+      "sha": "6018a299f752ec330bb65e5bcc1d38434296631e"
+    },
+    {
+      "name": "min_monitoring.feature",
+      "original_path": "testsuite/features/secondary/min_monitoring.feature",
+      "size": 3229,
+      "sha": "6e30e0689f4955d2f1c25f77d2355e55793c4abf"
+    },
+    {
+      "name": "min_move_from_and_to_proxy.feature",
+      "original_path": "testsuite/features/secondary/min_move_from_and_to_proxy.feature",
+      "size": 4638,
+      "sha": "302bb6ebf6a6e583252fe5e8e8b2ee21d02daf64"
+    },
+    {
+      "name": "min_project_lotus.feature",
+      "original_path": "testsuite/features/secondary/min_project_lotus.feature",
+      "size": 5967,
+      "sha": "4a7a1563060ceda9df3ad12da72e8bcdfb41a379"
+    },
+    {
+      "name": "min_reboot_required_flag.feature",
+      "original_path": "testsuite/features/secondary/min_reboot_required_flag.feature",
+      "size": 2626,
+      "sha": "73769cc59fde4ef93d54e103f955648557294341"
+    },
+    {
+      "name": "min_recurring_action.feature",
+      "original_path": "testsuite/features/secondary/min_recurring_action.feature",
+      "size": 22467,
+      "sha": "15d884852f274ebd83101a94939ad3b6a2c388ed"
+    },
+    {
+      "name": "min_retracted_patches.feature",
+      "original_path": "testsuite/features/secondary/min_retracted_patches.feature",
+      "size": 6370,
+      "sha": "45daa18b346c39b755b01d041fff00245bc2d951"
+    },
+    {
+      "name": "min_rhlike_appstreams.feature",
+      "original_path": "testsuite/features/secondary/min_rhlike_appstreams.feature",
+      "size": 7650,
+      "sha": "9f73fcd48369db9dfdab3370bebae36d7cecfdfc"
+    },
+    {
+      "name": "min_rhlike_monitoring.feature",
+      "original_path": "testsuite/features/secondary/min_rhlike_monitoring.feature",
+      "size": 3433,
+      "sha": "813eefffc9495f99f285a63f18b19cdd020603fa"
+    },
+    {
+      "name": "min_rhlike_openscap_audit.feature",
+      "original_path": "testsuite/features/secondary/min_rhlike_openscap_audit.feature",
+      "size": 4672,
+      "sha": "dcdbcac07f4b53f5a6177c846254ec61cce3557e"
+    },
+    {
+      "name": "min_rhlike_remote_command.feature",
+      "original_path": "testsuite/features/secondary/min_rhlike_remote_command.feature",
+      "size": 986,
+      "sha": "b3c4eb5709e77d781dd6fa3b8a9d2b8475b32f7c"
+    },
+    {
+      "name": "min_rhlike_salt_install_package_and_patch.feature",
+      "original_path": "testsuite/features/secondary/min_rhlike_salt_install_package_and_patch.feature",
+      "size": 4044,
+      "sha": "563853ef702bd1273bb8fa6da56753be66916abb"
+    },
+    {
+      "name": "min_rhlike_ssh.feature",
+      "original_path": "testsuite/features/secondary/min_rhlike_ssh.feature",
+      "size": 5976,
+      "sha": "2e54f944293581d3a342ced6fcf0fabb23f28067"
+    },
+    {
+      "name": "min_salt_formulas.feature",
+      "original_path": "testsuite/features/secondary/min_salt_formulas.feature",
+      "size": 8491,
+      "sha": "8ba519ed90f29de366a3b3a778c7508b93bd92ed"
+    },
+    {
+      "name": "min_salt_formulas_advanced.feature",
+      "original_path": "testsuite/features/secondary/min_salt_formulas_advanced.feature",
+      "size": 15267,
+      "sha": "ec88254bce5a52fe1a1f06f9c8bcda6774e277bc"
+    },
+    {
+      "name": "min_salt_install_package_and_patch.feature",
+      "original_path": "testsuite/features/secondary/min_salt_install_package_and_patch.feature",
+      "size": 4256,
+      "sha": "38bf9b64d739c5488b6cef9eb481e2a24a2cdc4d"
+    },
+    {
+      "name": "min_salt_install_with_staging.feature",
+      "original_path": "testsuite/features/secondary/min_salt_install_with_staging.feature",
+      "size": 3999,
+      "sha": "b884782307a9fd3269a64464f812cd7023cc64a7"
+    },
+    {
+      "name": "min_salt_lock_packages.feature",
+      "original_path": "testsuite/features/secondary/min_salt_lock_packages.feature",
+      "size": 7973,
+      "sha": "43e8a617aaa9a64f883b888c5576ac87f244ff64"
+    },
+    {
+      "name": "min_salt_mgrcompat_state.feature",
+      "original_path": "testsuite/features/secondary/min_salt_mgrcompat_state.feature",
+      "size": 5835,
+      "sha": "c6789a937a98fc3b4f7676571f58d4ee73649a1e"
+    },
+    {
+      "name": "min_salt_minion_details.feature",
+      "original_path": "testsuite/features/secondary/min_salt_minion_details.feature",
+      "size": 1375,
+      "sha": "8e68276082bd1b069ccbfc96fb4a027c17fe78b9"
+    },
+    {
+      "name": "min_salt_minions_page.feature",
+      "original_path": "testsuite/features/secondary/min_salt_minions_page.feature",
+      "size": 4067,
+      "sha": "e2fe1481ff7d160f76e1a39ec042c09d6c60d0b2"
+    },
+    {
+      "name": "min_salt_openscap_audit.feature",
+      "original_path": "testsuite/features/secondary/min_salt_openscap_audit.feature",
+      "size": 6289,
+      "sha": "4ab61469f5f5eda91f50e9cba6a1c6317de54d44"
+    },
+    {
+      "name": "min_salt_pkgset_beacon.feature",
+      "original_path": "testsuite/features/secondary/min_salt_pkgset_beacon.feature",
+      "size": 2939,
+      "sha": "c5eea2d456b60ac2c5ef975fe2a5d8e34705b83f"
+    },
+    {
+      "name": "min_salt_software_states.feature",
+      "original_path": "testsuite/features/secondary/min_salt_software_states.feature",
+      "size": 6943,
+      "sha": "02476d2db5d04b7971594c4aa8e9fedf5adc1cde"
+    },
+    {
+      "name": "min_salt_user_states.feature",
+      "original_path": "testsuite/features/secondary/min_salt_user_states.feature",
+      "size": 1333,
+      "sha": "bfd1cf8d16e173752a13cf0dfcd7d2f207866f51"
+    },
+    {
+      "name": "min_timezone.feature",
+      "original_path": "testsuite/features/secondary/min_timezone.feature",
+      "size": 4184,
+      "sha": "73ccde3df5cbf2ef9eb8629ea020a1956991e489"
+    },
+    {
+      "name": "minssh_action_chain.feature",
+      "original_path": "testsuite/features/secondary/minssh_action_chain.feature",
+      "size": 14411,
+      "sha": "773615d3146da07d4a85070ffc99703f4d890453"
+    },
+    {
+      "name": "minssh_ansible_control_node.feature",
+      "original_path": "testsuite/features/secondary/minssh_ansible_control_node.feature",
+      "size": 5741,
+      "sha": "e2081fb25e3f1f07484d83ec81067cd4b331dd12"
+    },
+    {
+      "name": "minssh_bootstrap_api.feature",
+      "original_path": "testsuite/features/secondary/minssh_bootstrap_api.feature",
+      "size": 4163,
+      "sha": "8467049fc0f8207dfdfe1a19625f1322e402a985"
+    },
+    {
+      "name": "minssh_move_from_and_to_proxy.feature",
+      "original_path": "testsuite/features/secondary/minssh_move_from_and_to_proxy.feature",
+      "size": 4421,
+      "sha": "8a9cac58e02e363c3f13a0820c8658092c19e9d4"
+    },
+    {
+      "name": "minssh_salt_install_package_and_patch.feature",
+      "original_path": "testsuite/features/secondary/minssh_salt_install_package_and_patch.feature",
+      "size": 4260,
+      "sha": "661edd59ff0756136f26d2162b2b280937e78fdc"
+    },
+    {
+      "name": "minssh_tunnel.feature",
+      "original_path": "testsuite/features/secondary/minssh_tunnel.feature",
+      "size": 4374,
+      "sha": "15fa2caa6058b6aa8165ebc716c7aa06dc3e884a"
+    },
+    {
+      "name": "proxy_container_cobbler_pxeboot.feature",
+      "original_path": "testsuite/features/secondary/proxy_container_cobbler_pxeboot.feature",
+      "size": 7636,
+      "sha": "a97d473f16a8dd2e339d25800c016d91487f947a"
+    },
+    {
+      "name": "proxy_container_retail_mass_import.feature",
+      "original_path": "testsuite/features/secondary/proxy_container_retail_mass_import.feature",
+      "size": 4292,
+      "sha": "a67ba4c82d41ac1332b3820f137f9d3785261ce9"
+    },
+    {
+      "name": "proxy_container_retail_pxeboot.feature",
+      "original_path": "testsuite/features/secondary/proxy_container_retail_pxeboot.feature",
+      "size": 9953,
+      "sha": "e45de2db80f73d15bd89a29ffd20cf0074310e18"
+    },
+    {
+      "name": "srv_activationkey_api.feature",
+      "original_path": "testsuite/features/secondary/srv_activationkey_api.feature",
+      "size": 732,
+      "sha": "fd4d48106c0f8cc56af47e1b34ef330bf92ba1e3"
+    },
+    {
+      "name": "srv_advanced_search.feature",
+      "original_path": "testsuite/features/secondary/srv_advanced_search.feature",
+      "size": 2641,
+      "sha": "9f17f74e52c3ea72c1736099da8b97dda9933cfb"
+    },
+    {
+      "name": "srv_change_password.feature",
+      "original_path": "testsuite/features/secondary/srv_change_password.feature",
+      "size": 1896,
+      "sha": "e6a15465bcd09ade53cb87c3a6799aca5b1ec3c4"
+    },
+    {
+      "name": "srv_change_task_schedule.feature",
+      "original_path": "testsuite/features/secondary/srv_change_task_schedule.feature",
+      "size": 1807,
+      "sha": "41c2791c3dcd82aa2fb9b3a4f9c62c78f57ab619"
+    },
+    {
+      "name": "srv_channel_api.feature",
+      "original_path": "testsuite/features/secondary/srv_channel_api.feature",
+      "size": 2423,
+      "sha": "f9bb77d68780f93297e4b99e3d082c0f458cb1a1"
+    },
+    {
+      "name": "srv_check_channels_page.feature",
+      "original_path": "testsuite/features/secondary/srv_check_channels_page.feature",
+      "size": 4068,
+      "sha": "73dc7ffd64d2d931c943b595f643d494caa7cf3c"
+    },
+    {
+      "name": "srv_check_sync_source_packages.feature",
+      "original_path": "testsuite/features/secondary/srv_check_sync_source_packages.feature",
+      "size": 1051,
+      "sha": "35df2f3ffcd19399e329c22da686bd08becfc986"
+    },
+    {
+      "name": "srv_clone_channel_npn.feature",
+      "original_path": "testsuite/features/secondary/srv_clone_channel_npn.feature",
+      "size": 6168,
+      "sha": "7b06255db42247c02ac710a8c87e95fcbdd2af09"
+    },
+    {
+      "name": "srv_cobbler_buildiso.feature",
+      "original_path": "testsuite/features/secondary/srv_cobbler_buildiso.feature",
+      "size": 4572,
+      "sha": "7b041d129769f12eb97ae1d5b16be65b82314803"
+    },
+    {
+      "name": "srv_cobbler_distro.feature",
+      "original_path": "testsuite/features/secondary/srv_cobbler_distro.feature",
+      "size": 10039,
+      "sha": "4be1a7b6532fb68fa40e64020aa82bb2773f35a9"
+    },
+    {
+      "name": "srv_cobbler_profile.feature",
+      "original_path": "testsuite/features/secondary/srv_cobbler_profile.feature",
+      "size": 4730,
+      "sha": "0326f80381543aa89ff7ca53dfa26fec2e2c5510"
+    },
+    {
+      "name": "srv_cobbler_sync.feature",
+      "original_path": "testsuite/features/secondary/srv_cobbler_sync.feature",
+      "size": 2452,
+      "sha": "4d567cf3a1e3abc77c46c4266180a4a5cf200fca"
+    },
+    {
+      "name": "srv_content_lifecycle.feature",
+      "original_path": "testsuite/features/secondary/srv_content_lifecycle.feature",
+      "size": 35020,
+      "sha": "ce974ed6c9b9ceca0d91a9697b1450351e81f00e"
+    },
+    {
+      "name": "srv_custom_system_info.feature",
+      "original_path": "testsuite/features/secondary/srv_custom_system_info.feature",
+      "size": 2272,
+      "sha": "545c4e803f3eb5bb09062156b7da80ae1d599dd8"
+    },
+    {
+      "name": "srv_datepicker.feature",
+      "original_path": "testsuite/features/secondary/srv_datepicker.feature",
+      "size": 961,
+      "sha": "d942acf3436589cde1789be69ad7befede6b6fc5"
+    },
+    {
+      "name": "srv_delete_channel_from_ui.feature",
+      "original_path": "testsuite/features/secondary/srv_delete_channel_from_ui.feature",
+      "size": 4521,
+      "sha": "3d746579c1bc26eb246008f53bb37bf122c0d3ed"
+    },
+    {
+      "name": "srv_delete_channel_with_tool.feature",
+      "original_path": "testsuite/features/secondary/srv_delete_channel_with_tool.feature",
+      "size": 2538,
+      "sha": "59fa283c7c0cf825ae66a11d263263dd497e6775"
+    },
+    {
+      "name": "srv_dist_channel_mapping.feature",
+      "original_path": "testsuite/features/secondary/srv_dist_channel_mapping.feature",
+      "size": 9754,
+      "sha": "e694a2932352ebb1e0f4f047852d8dca240d784c"
+    },
+    {
+      "name": "srv_docker_advanced_content_management.feature",
+      "original_path": "testsuite/features/secondary/srv_docker_advanced_content_management.feature",
+      "size": 2030,
+      "sha": "8f616658925b4c893da80187a8d43818ce500cad"
+    },
+    {
+      "name": "srv_errata_api.feature",
+      "original_path": "testsuite/features/secondary/srv_errata_api.feature",
+      "size": 433,
+      "sha": "18531deaaf2a0a73fe9d93a107f53fd3da7810d1"
+    },
+    {
+      "name": "srv_group_union_intersection.feature",
+      "original_path": "testsuite/features/secondary/srv_group_union_intersection.feature",
+      "size": 4866,
+      "sha": "09b94fb73c9758d30cb8be27030b2c4a5ab8ac66"
+    },
+    {
+      "name": "srv_handle_config_channels_with_ISS_v2.feature",
+      "original_path": "testsuite/features/secondary/srv_handle_config_channels_with_ISS_v2.feature",
+      "size": 3224,
+      "sha": "68396457633a9bafcbb1f1fa3254952485903c4c"
+    },
+    {
+      "name": "srv_handle_software_channels_with_ISS_v2.feature",
+      "original_path": "testsuite/features/secondary/srv_handle_software_channels_with_ISS_v2.feature",
+      "size": 3028,
+      "sha": "2f3197adca1bd769c3326f845b81e5539e27910b"
+    },
+    {
+      "name": "srv_health_check_supportconfig.feature",
+      "original_path": "testsuite/features/secondary/srv_health_check_supportconfig.feature",
+      "size": 1385,
+      "sha": "513c75dff55268b3339ae66467e74c859d6cb5c9"
+    },
+    {
+      "name": "srv_logfile.feature",
+      "original_path": "testsuite/features/secondary/srv_logfile.feature",
+      "size": 934,
+      "sha": "5c199b6d994d64127353fee56d52df2a5e794d28"
+    },
+    {
+      "name": "srv_mainpage.feature",
+      "original_path": "testsuite/features/secondary/srv_mainpage.feature",
+      "size": 3895,
+      "sha": "2184939023f1d70d3ccc997f7443c99dca0a0b95"
+    },
+    {
+      "name": "srv_maintenance_windows.feature",
+      "original_path": "testsuite/features/secondary/srv_maintenance_windows.feature",
+      "size": 7508,
+      "sha": "ea1b032b35d64e176b97bc67bf3c396f3181f344"
+    },
+    {
+      "name": "srv_manage_activationkey.feature",
+      "original_path": "testsuite/features/secondary/srv_manage_activationkey.feature",
+      "size": 4772,
+      "sha": "fd7b298bac988ae417e69a1def411e6428570225"
+    },
+    {
+      "name": "srv_manage_channels_page.feature",
+      "original_path": "testsuite/features/secondary/srv_manage_channels_page.feature",
+      "size": 4148,
+      "sha": "8bd518f53fe9f8b0c3799f01b305a55f3c612fd2"
+    },
+    {
+      "name": "srv_menu.feature",
+      "original_path": "testsuite/features/secondary/srv_menu.feature",
+      "size": 16858,
+      "sha": "61d03473cc25a0fbdf54ebfb86b91ee2957960b2"
+    },
+    {
+      "name": "srv_menu_filter.feature",
+      "original_path": "testsuite/features/secondary/srv_menu_filter.feature",
+      "size": 1531,
+      "sha": "47ec8f02e89b61861787cccebe53863fb3ce5dec"
+    },
+    {
+      "name": "srv_mgr_sync_list_products.feature",
+      "original_path": "testsuite/features/secondary/srv_mgr_sync_list_products.feature",
+      "size": 916,
+      "sha": "c5340664106130fe159bb3a519c4755414b96e62"
+    },
+    {
+      "name": "srv_monitoring.feature",
+      "original_path": "testsuite/features/secondary/srv_monitoring.feature",
+      "size": 5733,
+      "sha": "ad6c114b8a0af2b7edd34643bbb3df47bc17ae6a"
+    },
+    {
+      "name": "srv_notifications.feature",
+      "original_path": "testsuite/features/secondary/srv_notifications.feature",
+      "size": 1243,
+      "sha": "c74fab0e80f604b4acd6466c1f56abc1aedc3dbb"
+    },
+    {
+      "name": "srv_password_restriction.feature",
+      "original_path": "testsuite/features/secondary/srv_password_restriction.feature",
+      "size": 4319,
+      "sha": "7b6af85841bcac64452a370a686445a35e8cada9"
+    },
+    {
+      "name": "srv_patches_page.feature",
+      "original_path": "testsuite/features/secondary/srv_patches_page.feature",
+      "size": 4234,
+      "sha": "43c9b2868a582c23fa6a1151bea66d8d6164f06b"
+    },
+    {
+      "name": "srv_payg_ssh_connection.feature",
+      "original_path": "testsuite/features/secondary/srv_payg_ssh_connection.feature",
+      "size": 6502,
+      "sha": "db1742e285c99f20189f8926e2f271d93fde8276"
+    },
+    {
+      "name": "srv_power_management.feature",
+      "original_path": "testsuite/features/secondary/srv_power_management.feature",
+      "size": 4859,
+      "sha": "156c616eab58ebb9cccf901dd7dd5b47847adcb5"
+    },
+    {
+      "name": "srv_power_management_api.feature",
+      "original_path": "testsuite/features/secondary/srv_power_management_api.feature",
+      "size": 2170,
+      "sha": "42275bab502403514dce3b976a19fb750dc0bf2a"
+    },
+    {
+      "name": "srv_power_management_redfish.feature",
+      "original_path": "testsuite/features/secondary/srv_power_management_redfish.feature",
+      "size": 4815,
+      "sha": "dca79a42d99bc6eb52358ce0ecdffba8d972107a"
+    },
+    {
+      "name": "srv_push_package.feature",
+      "original_path": "testsuite/features/secondary/srv_push_package.feature",
+      "size": 1724,
+      "sha": "15d6a7ee01bd5123269160408cad7cc5ad2e02b9"
+    },
+    {
+      "name": "srv_rename_hostname.feature",
+      "original_path": "testsuite/features/secondary/srv_rename_hostname.feature",
+      "size": 4345,
+      "sha": "d93a44788fe8759053cba1d6ccc0d7f83e3b1b73"
+    },
+    {
+      "name": "srv_reportdb.feature",
+      "original_path": "testsuite/features/secondary/srv_reportdb.feature",
+      "size": 2720,
+      "sha": "94ed3268c6599ce58a499389465f764f04ae6cab"
+    },
+    {
+      "name": "srv_restart.feature",
+      "original_path": "testsuite/features/secondary/srv_restart.feature",
+      "size": 1101,
+      "sha": "1175b4449e25968f26c3f1bbedd1fb7524598072"
+    },
+    {
+      "name": "srv_restart_postgres.feature",
+      "original_path": "testsuite/features/secondary/srv_restart_postgres.feature",
+      "size": 827,
+      "sha": "92f94bf0b3cab3bef04692f473a60ff38a40c474"
+    },
+    {
+      "name": "srv_salt.feature",
+      "original_path": "testsuite/features/secondary/srv_salt.feature",
+      "size": 1410,
+      "sha": "30969028e6cb9685031e979d8aeee1241b659db0"
+    },
+    {
+      "name": "srv_salt_download_endpoint.feature",
+      "original_path": "testsuite/features/secondary/srv_salt_download_endpoint.feature",
+      "size": 2165,
+      "sha": "1683b9fbe69c990a738cc5a692ec037162fe1787"
+    },
+    {
+      "name": "srv_salt_git_pillar.feature",
+      "original_path": "testsuite/features/secondary/srv_salt_git_pillar.feature",
+      "size": 2290,
+      "sha": "aa7e0a2f91af24dcf5a6033bed0f652e80b36d49"
+    },
+    {
+      "name": "srv_scc_user_credentials.feature",
+      "original_path": "testsuite/features/secondary/srv_scc_user_credentials.feature",
+      "size": 3272,
+      "sha": "b585ce91ff78994fce3cf14fac89d6d7321d7893"
+    },
+    {
+      "name": "srv_security.feature",
+      "original_path": "testsuite/features/secondary/srv_security.feature",
+      "size": 1175,
+      "sha": "6e8a2beda19c4151c8f9eb6c77a42fa5a6311794"
+    },
+    {
+      "name": "srv_task_status_engine.feature",
+      "original_path": "testsuite/features/secondary/srv_task_status_engine.feature",
+      "size": 3072,
+      "sha": "a00af31997997dcbaf98a4dbd56ac26412dab5bf"
+    },
+    {
+      "name": "srv_user_api.feature",
+      "original_path": "testsuite/features/secondary/srv_user_api.feature",
+      "size": 1001,
+      "sha": "57fb69a6b4dfc0044bb0868eb8ab2061cea6da8a"
+    },
+    {
+      "name": "srv_user_configuration_salt_states.feature",
+      "original_path": "testsuite/features/secondary/srv_user_configuration_salt_states.feature",
+      "size": 3924,
+      "sha": "6ca730177c66427b2916242da787a04b6ce69b52"
+    },
+    {
+      "name": "srv_users.feature",
+      "original_path": "testsuite/features/secondary/srv_users.feature",
+      "size": 9672,
+      "sha": "a73c725e06a651868eebdb33ecf83c71a80c6dd9"
+    },
+    {
+      "name": "srv_virtual_host_manager.feature",
+      "original_path": "testsuite/features/secondary/srv_virtual_host_manager.feature",
+      "size": 2973,
+      "sha": "6fad2125830e5ea5fd4e4b8772f303ba8de21e73"
+    }
+  ],
+  "status": "success"
+}

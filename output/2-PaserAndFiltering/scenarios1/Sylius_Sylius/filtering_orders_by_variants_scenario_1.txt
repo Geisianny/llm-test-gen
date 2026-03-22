@@ -1,0 +1,8 @@
+Scenario 1: Filtering orders by variant
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I browse orders
+  And  I filter by variant "Sundress"
+  Then  I should see 2 orders in the list
+  And  I should see an order with "#0000002" number
+  And  I should see an order with "#0000003" number
+

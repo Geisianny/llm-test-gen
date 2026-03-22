@@ -1,0 +1,10 @@
+Scenario 6: 
+  Given  that the tax settings for tax customers with tax number is true
+  Given  the following subscriptions exist:
+  And  stripe billing is enabled
+  And  the following credit transactions exist:
+  When  the background task to reinvoice active subscriptions
+  Then  the subscription for "customer.one@example.org" will expire in a week
+  And  the latest invoice for "customer.one@example.org" will have amount due as 1100
+  And  the latest invoice for "customer.one@example.org" will have tax amount due
+

@@ -1,0 +1,6 @@
+Scenario 3: COGS from negative purchase quantities (full return of inventory)
+  Given  10 units inventory of a part purchased at 10 USD each
+  When  -10 units are purchased at 10 USD each
+  Then  COGS should be at 0 USD
+  And  the inventory should be at 0 USD
+

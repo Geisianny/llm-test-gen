@@ -1,0 +1,8 @@
+Scenario 32: Upgrade hosts returns "CREATED" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "CreateFleetDeploymentUpgrade" enabled
+  And  new "CreateFleetDeploymentUpgrade" request
+  And  body with value {"data": {"attributes": {"filter_query": "env:prod AND service:web", "target_packages": [{"name": "datadog-agent", "version": "7.52.0"}]}, "type": "deployment"}}
+  When  the request is sent
+  Then  the response status is 201 CREATED
+

@@ -1,0 +1,3 @@
+Scenario 10: Cleanup: remove ISS v2 export folder
+  When  I ensure folder "/tmp/export_iss_v2" doesn't exist on "server"
+

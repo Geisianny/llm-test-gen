@@ -1,0 +1,5 @@
+Scenario 2: Increasing quantity of an item in cart beyond the threshold
+  Given  I see the summary of my cart
+  When  I change "TShirt" quantity to 20000
+  Then  I should see "TShirt" with quantity 20000 in my cart
+

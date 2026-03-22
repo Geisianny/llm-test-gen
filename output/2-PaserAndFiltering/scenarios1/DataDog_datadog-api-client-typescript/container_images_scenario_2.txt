@@ -1,0 +1,5 @@
+Scenario 2: Get all Container Images returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/container-experiences']
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

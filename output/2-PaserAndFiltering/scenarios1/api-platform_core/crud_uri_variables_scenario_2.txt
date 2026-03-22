@@ -1,0 +1,6 @@
+Scenario 2: Create a second resource Company
+  Tags: ['@php8']
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/companies" with body:
+  Then  the response status code should be 201
+

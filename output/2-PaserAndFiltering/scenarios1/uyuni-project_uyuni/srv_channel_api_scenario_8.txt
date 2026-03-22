@@ -1,0 +1,5 @@
+Scenario 8: Verify if a channel is modular via the API
+  Tags: ['@rhlike_minion']
+  When  I verify channel "fake-base-channel-appstream" is modular via the API
+  And  I verify channel "fake-rpm-suse-channel" is not modular via the API
+

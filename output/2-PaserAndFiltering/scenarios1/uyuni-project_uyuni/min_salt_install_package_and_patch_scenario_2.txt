@@ -1,0 +1,4 @@
+Scenario 2: Pre-requisite: install virgo-dummy-1.0 package on SLE minion
+  When  I refresh the metadata for "sle_minion"
+  And  I install old package "virgo-dummy-1.0" on this "sle_minion" without error control
+

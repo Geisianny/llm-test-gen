@@ -1,0 +1,10 @@
+Scenario 4: Being unable to verify using old verification links
+  Tags: ['@api', '@ui']
+  Given  I am logged in as "valkyrie@cain.com"
+  And  I have already received a verification email
+  But  I have not verified my account yet
+  When  I resend the verification email
+  But  I use the verification link from the first email to verify
+  Then  I should be notified that the verification token is invalid
+  And  my account should not be verified
+

@@ -1,0 +1,8 @@
+Scenario 13: Get a configuration deployment by ID returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "GetFleetDeployment" enabled
+  And  new "GetFleetDeployment" request
+  And  request contains "deployment_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 200 OK
+

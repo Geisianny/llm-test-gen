@@ -1,0 +1,6 @@
+Scenario: Application with negative response to employment question
+  Given there is a web user applying to Custom Educator Listing 2
+  And the user does not have employment with the San Francisco Unified School District
+  When the user submits the application form
+  Then the system allows the user to complete the full application
+  And displays an informational note about the eligibility criteria

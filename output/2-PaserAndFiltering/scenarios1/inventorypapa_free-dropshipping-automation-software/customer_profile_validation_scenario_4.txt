@@ -1,0 +1,8 @@
+Scenario 4: Trying to change my email to an existing value
+  Tags: ['@ui', '@api']
+  When  I want to modify my profile
+  And  I specify the customer email as "claire@underwood.com"
+  And  I try to save my changes
+  Then  I should be notified that the email is already used
+  And  my email should still be "francis@underwood.com"
+

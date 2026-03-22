@@ -1,0 +1,7 @@
+Scenario 3: User tries to view a listing restricted viewable to community members without logging in
+  Given  I am not logged in
+  And  this community is private
+  And  I am on the home page
+  When  I go to the listing page
+  Then  I should see "You must log in to view this content"
+

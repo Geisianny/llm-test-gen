@@ -1,0 +1,4 @@
+Scenario 3: Activation key details
+  When  I set the description of the activation key "1-testkey" to "Key description"
+  Then  I get the description "Key description" for the activation key "1-testkey"
+

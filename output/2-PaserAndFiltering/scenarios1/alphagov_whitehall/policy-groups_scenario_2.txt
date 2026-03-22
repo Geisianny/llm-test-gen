@@ -1,0 +1,6 @@
+Scenario 2: Deleting a policy group
+  Given  I am a GDS editor
+  And  a policy group "Delete me" exists
+  When  I delete the policy group "Delete me"
+  Then  I should not see the policy group "Delete me"
+

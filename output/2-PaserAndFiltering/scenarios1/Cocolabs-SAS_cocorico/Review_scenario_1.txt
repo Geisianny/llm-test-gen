@@ -1,0 +1,14 @@
+Scenario 1: As offerer i can add a rating to an asker
+  Given  I am logged in as user "offerer@cocorico.rocks" with password "12345678"
+  When  I click on dashboard menu "Comments" of "offerer"
+  Then  I should be on the "dashboard reviews received" page
+  And  I wait 500 ms for Jquery loading
+  And  I should see "You must make notation for booking" in the "div.area" element
+  When  I follow "Add your rating"
+  And  I wait 500 ms for Jquery loading
+  And  I click on the element with css selector "#user-rating-make a"
+  And  I fill in the following:
+  And  I press "Publish this comment"
+  And  I wait 1000 ms
+  Then  I should be on the "dashboard reviews added" page
+

@@ -1,0 +1,7 @@
+Scenario 1: Search with no query on an affiliate page
+  Tags: ['@javascript', '@a11y']
+  Given  the following BingV7 Affiliates exist:
+  When  I am on bar.gov's redesigned search page
+  Then  I should see "Please enter a search term in the box above."
+  And  I should not see pagination
+

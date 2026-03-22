@@ -1,0 +1,5 @@
+Scenario: Request ERC-20 token successfully
+  Given the user has a configured network with ERC-20 token "Link"
+  When the user requests the ERC-20 token "Link"
+  Then the system generates a payment link for "Link"
+  And displays a QR code for "Link"

@@ -1,0 +1,5 @@
+Scenario 3: sections are accessible to permitted buyers even when another provider has a restricted section with same path
+  Given  I am logged in as "one_buyer" on two.3scale.localhost
+  When  I request the url "/first"
+  Then  I should see "First of two"
+

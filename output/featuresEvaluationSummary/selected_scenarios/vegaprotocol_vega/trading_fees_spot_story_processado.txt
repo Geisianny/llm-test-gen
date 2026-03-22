@@ -1,0 +1,5 @@
+Scenario: Order placement with sufficient balance
+  Given there is a user with sufficient balance in their general account
+  When the user places an order on a spot market
+  Then the system reserves the required assets in the holding account
+  And the order is accepted

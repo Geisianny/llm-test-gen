@@ -1,0 +1,52 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: input_output_2_story_processado.feature
+Caminho relativo: api-platform_core\input_output_2_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\api-platform_core\input_output_2_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: input_output_2_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Successful password reset using DTO
+   Steps: 5
+   - Given there is a registered user with the email "user@example.com"
+   - When the client sends a password reset request with the email "user@example.com"
+   - And includes a valid JSON payload
+   - Then the system returns a 201 status code
+   - And includes the dispatch timestamp in the response
+2. Password reset with non-existent user
+   Steps: 5
+   - Given there is no registered user with the email "nonexistent@example.com"
+   - When the client sends a password reset request with the email "nonexistent@example.com"
+   - And includes a valid JSON payload
+   - Then the system returns a 404 status code
+   - And includes a problem+json formatted response
+3. Invalid JSON payload for password reset
+   Steps: 5
+   - Given there is a registered user with the email "user@example.com"
+   - When the client sends a password reset request with the email "user@example.com"
+   - And includes an invalid JSON payload
+   - Then the system returns a 400 status code
+   - And includes an error message indicating invalid JSON
+4. Missing content header for DTO
+   Steps: 5
+   - Given there is a registered user with the email "user@example.com"
+   - When the client sends a password reset request with the email "user@example.com"
+   - And omits the content header
+   - Then the system returns a 415 status code
+   - And includes an error message indicating unsupported media type
+5. Successful DTO processing with application/json
+   Steps: 4
+   - Given there is a registered user with the email "user@example.com"
+   - When the client sends a request with a valid DTO in application/json format
+   - Then the system processes the DTO successfully
+   - And returns a response indicating successful processing

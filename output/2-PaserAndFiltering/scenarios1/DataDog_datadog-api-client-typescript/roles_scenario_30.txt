@@ -1,0 +1,9 @@
+Scenario 30: Revoke permission returns "Not found" response
+  Tags: ['@team:DataDog/aaa-core-access']
+  Given  there is a valid "permission" in the system
+  And  new "RemovePermissionFromRole" request
+  And  request contains "role_id" parameter with value "00000000-dead-beef-dead-ffffffffffff"
+  And  body with value {"data": {"id": "{{ permission.id }}", "type": "{{ permission.type }}"}}
+  When  the request is sent
+  Then  the response status is 404 Not found
+

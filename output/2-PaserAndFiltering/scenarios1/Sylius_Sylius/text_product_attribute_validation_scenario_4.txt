@@ -1,0 +1,9 @@
+Scenario 4: Trying to remove name for existing text product attribute
+  Tags: ['@api', '@ui']
+  Given  the store has a text product attribute "T-Shirt cotton brand"
+  When  I want to edit this product attribute
+  And  I remove its name from "English (United States)" translation
+  And  I try to save my changes
+  Then  I should be notified that name is required
+  And  the text attribute "T-Shirt cotton brand" should still be in the store
+

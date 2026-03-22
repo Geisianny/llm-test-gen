@@ -1,0 +1,9 @@
+Scenario 2: Create custom attribute config for a case type returns "CREATED" response
+  Tags: ['@team:DataDog/case-management']
+  Given  new "CreateCustomAttributeConfig" request
+  And  there is a valid "case_type" in the system
+  And  request contains "case_type_id" parameter from "case_type.id"
+  And  body with value {"data": {"attributes": {"display_name": "AWS Region {{uuid}}", "is_multi": true, "key": "region_{{unique_hash}}", "type": "NUMBER"}, "type": "custom_attribute"}}
+  When  the request is sent
+  Then  the response status is 201 CREATED
+

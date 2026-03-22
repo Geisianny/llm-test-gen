@@ -1,0 +1,11 @@
+Scenario 4: Trying to add a comment without logging in
+  Tags: ['@javascript']
+  Given  there are following users:
+  And  there is a listing with title "Massage" from "kassi_testperson1" with category "Services" and with listing shape "Requesting"
+  And  listing comments are in use in community "test"
+  And  I am not logged in
+  And  I am on the home page
+  When  I follow "Massage"
+  Then  I should see "You must log in to send a new comment."
+  And  I should not see "Write a new comment:"
+

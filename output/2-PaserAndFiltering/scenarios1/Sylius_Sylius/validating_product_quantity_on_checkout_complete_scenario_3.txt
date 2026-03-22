@@ -1,0 +1,9 @@
+Scenario 3: Prevent order confirmation if any product is unavailable in the required quantity
+  Tags: ['@api', '@ui']
+  Given  I added 5 products "Iron Maiden T-Shirt" to the cart
+  And  I added 5 products "2Pac T-Shirt" to the cart
+  And  I proceeded through the checkout process
+  And  other customer has bought 7 "2Pac T-Shirt" products by this time
+  When  I confirm my order
+  And  I should be notified that product "2Pac T-Shirt" does not have sufficient stock
+

@@ -1,0 +1,7 @@
+Scenario 9: Create role returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/aaa-core-access']
+  Given  new "CreateRole" request
+  And  body with value {"data": {"attributes": {"name": "developers"}, "relationships": {"permissions": {"data": [{"type": "permissions"}]}}, "type": "roles"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+

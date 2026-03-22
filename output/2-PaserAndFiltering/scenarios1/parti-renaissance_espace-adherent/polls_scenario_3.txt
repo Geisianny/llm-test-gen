@@ -1,0 +1,7 @@
+Scenario 3: As a non logged-in user I can retrieve poll by postal code, when no active nation poll
+  Given  I freeze the clock to "+3 days"
+  And  I am logged with device "dd4SOCS-4UlCtO-gZiQGDA" via OAuth client "JeMengage Mobile" with scope "jemarche_app"
+  When  I send a "GET" request to "/api/v3/polls/92110"
+  Then  the response status code should be 200
+  And  the JSON should be equal to:
+

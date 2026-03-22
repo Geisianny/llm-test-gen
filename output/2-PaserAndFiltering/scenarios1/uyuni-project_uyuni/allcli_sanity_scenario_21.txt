@@ -1,0 +1,7 @@
+Scenario 21: The SLE Micro 5.4 minion is healthy
+  Tags: ['@slemicro54_minion']
+  Then  "slemicro54_minion" should have a FQDN
+  And  reverse resolution should work for "slemicro54_minion"
+  And  "slemicro54_minion" should communicate with the server using public interface
+  And  the clock from "slemicro54_minion" should be exact
+

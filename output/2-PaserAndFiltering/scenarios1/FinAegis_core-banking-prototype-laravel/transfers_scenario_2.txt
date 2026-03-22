@@ -1,0 +1,6 @@
+Scenario 2: Transfer with insufficient funds
+  Given  I have an account with balance 100.00 USD
+  When  I try to transfer 200.00 USD to account "b1234567-1234-1234-1234-123456789012"
+  Then  the transfer should fail with error "Insufficient funds"
+  And  my account balance should be 100.00 USD
+

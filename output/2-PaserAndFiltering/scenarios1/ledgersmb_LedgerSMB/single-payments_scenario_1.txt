@@ -1,0 +1,14 @@
+Scenario 1: Full payment of a single invoice
+  When  I navigate the menu and select the item at "Cash & Banking > Payment"
+  Then  I should see the Single Payment Vendor Selection screen
+  When  I enter "Vendor A" into "Vendor Name"
+  And  I press "Continue"
+  Then  I should see the Single Payment Entry screen
+  And  I expect the open items table to contain 1 row
+  And  I expect the open item for invoice INV100 to show:
+  When  I enter "2017-02-02" into "Date"
+  And  I press "Post"
+  And  I navigate the menu and select the item at "Cash & Banking > Reports > Payments"
+  And  I press "Search"
+  Then  I expect the 'Total Paid' report column to contain '100.00' for Vendor Number 'Vendor A'
+

@@ -1,0 +1,7 @@
+Scenario 13: Changing to yearly charging won't alter previous invoices
+  Given  the provider is charging its buyers
+  And  a buyer has been billed monthly
+  When  they are reviewing the charging and gateway billing settings
+  Then  they can set the billing period to yearly
+  And  only new invoices will change their id
+

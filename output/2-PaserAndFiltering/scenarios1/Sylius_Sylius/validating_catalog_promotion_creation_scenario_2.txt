@@ -1,0 +1,6 @@
+Scenario 2: Trying to create a catalog promotion without specifying its code and name
+  Tags: ['@api', '@ui']
+  When  I create a new catalog promotion without specifying its code and name
+  Then  I should be notified that code and name are required
+  And  there should be an empty list of catalog promotions
+

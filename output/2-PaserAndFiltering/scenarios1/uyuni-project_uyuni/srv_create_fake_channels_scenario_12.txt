@@ -1,0 +1,13 @@
+Scenario 12: Add a fake AppStream base channel
+  Tags: ['@rhlike_minion']
+  When  I follow the left menu "Software > Manage > Channels"
+  And  I follow "Create Channel"
+  And  I enter "Fake-Base-Channel-AppStream" as "Channel Name"
+  And  I enter "fake-base-channel-appstream" as "Channel Label"
+  And  I select "None" from "Parent Channel"
+  And  I select "x86_64" from "Architecture:"
+  And  I enter "Fake-Base-Channel-AppStream for testing" as "Channel Summary"
+  And  I enter "Description for Fake-Base-Channel-AppStream." as "Channel Description"
+  And  I click on "Create Channel"
+  Then  I should see a "Channel Fake-Base-Channel-AppStream created." text
+

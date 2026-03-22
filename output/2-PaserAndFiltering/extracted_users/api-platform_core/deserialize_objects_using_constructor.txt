@@ -1,0 +1,14 @@
+Feature: Resource with constructor deserializable
+Description: In order to build non anemic resource object
+  As a developer
+  I should be able to deserialize data into objects with constructors
+
+Scenario 1: post a resource built with constructor
+  Tags: ['@createSchema']
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/dummy_entity_with_constructors" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be a superset of:
+

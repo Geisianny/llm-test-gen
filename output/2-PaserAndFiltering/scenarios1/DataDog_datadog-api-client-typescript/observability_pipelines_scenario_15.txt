@@ -1,0 +1,9 @@
+Scenario 15: Validate an observability pipeline returns "OK" response
+  Tags: ['@team:DataDog/observability-pipelines']
+  Given  operation "ValidatePipeline" enabled
+  And  new "ValidatePipeline" request
+  And  body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["filter-processor"], "type": "datadog_logs"}], "processors": [{"id": "filter-processor", "include": "service:my-service", "inputs": ["datadog-agent-source"], "type": "filter"}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Main Observability Pipeline"}, "type": "pipelines"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "errors" has length 0
+

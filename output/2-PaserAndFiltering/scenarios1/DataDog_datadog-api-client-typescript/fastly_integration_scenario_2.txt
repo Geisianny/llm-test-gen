@@ -1,0 +1,10 @@
+Scenario 2: Add Fastly account returns "CREATED" response
+  Tags: ['@team:DataDog/saas-integrations']
+  Given  new "CreateFastlyAccount" request
+  And  body with value {"data": {"attributes": {"api_key": "{{ unique_alnum }}", "name": "{{ unique }}", "services": []}, "type": "fastly-accounts"}}
+  When  the request is sent
+  Then  the response status is 201 CREATED
+  And  the response "data.type" is equal to "fastly-accounts"
+  And  the response "data.attributes.name" is equal to "{{ unique }}"
+  And  the response "data.attributes.services" has length 0
+

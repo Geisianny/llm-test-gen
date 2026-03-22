@@ -1,0 +1,5 @@
+Scenario 4: Trying to show shipping method
+  Tags: ['@api']
+  When  I try to show "UPS Carrier" shipping method
+  Then  I should be notified that my access has been denied
+

@@ -1,0 +1,13 @@
+Scenario 2: Disable 'Waiting list confirmation' notification
+  And  provider "foo.3scale.localhost" requires accounts to be approved
+  And  provider "foo.3scale.localhost" has "multiple_applications" visible
+  And  provider "foo.3scale.localhost" has email template "account_confirmed"
+  When  the current domain is foo.3scale.localhost
+  And  I go to the sign up page
+  And  I fill in the signup fields as "Kirill"
+  Then  I should see the registration succeeded
+  When  I follow the activation link in an email sent to "Kirill@3scale.localhost"
+  Then  I should see "once your account is approved"
+  When  I act as "Kirill"
+  Then  I should receive no email with subject "Waiting list confirmation"
+

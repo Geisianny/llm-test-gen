@@ -1,0 +1,6 @@
+Scenario 2: Validate the partner creation
+  Tags: ['@partner']
+  Given  I want to create a partner named automatedtest with default receivable account
+  Then  I get a receivable account
+  And  I should get a partner id
+

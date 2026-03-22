@@ -1,0 +1,5 @@
+Scenario 1: Navigation
+  Given  they go to the users sso integrations page
+  When  they follow "Add a SSO integration"
+  Then  the current page is the new sso integration page
+

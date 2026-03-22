@@ -1,0 +1,6 @@
+Scenario 5: Site Super Admin users can create Volunteer Opportunities
+  Given  I am signed in as a superadmin
+  And  I submit a volunteer op "Hard Work", "For no pay" on the "Friendly" page
+  Then  I should be on the show page for the volunteer_op titled "Hard Work"
+  And  I should see "Hard Work", "For no pay" and "Organisation: Friendly"
+

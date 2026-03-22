@@ -1,0 +1,6 @@
+Scenario 4: Filtering payment requests by state "Completed"
+  Tags: ['@api', '@ui']
+  When  I browse payment requests of an order "#00000001"
+  And  I filter by the "completed" state
+  Then  there should be 0 payment request on the list
+

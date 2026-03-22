@@ -1,0 +1,8 @@
+Scenario 7: Do not send verification email when account verification on the channel is not required
+  Tags: ['@ui', '@email', '@api']
+  Given  "United States" channel has account verification disabled
+  When  I register with email "ghastly@bespoke.com" and password "suitsarelife"
+  Then  I should be notified that new account has been successfully created
+  And  1 emails should be sent to "ghastly@bespoke.com"
+  And  I should be logged in
+

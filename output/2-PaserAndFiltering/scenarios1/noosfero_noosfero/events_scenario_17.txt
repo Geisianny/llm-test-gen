@@ -1,0 +1,6 @@
+Scenario 17: provide button to go back to profile homepage
+  Given  the following articles
+  Given  I am on /profile/josesilva/events
+  When  I follow "Back to josesilva"
+  Then  I should be on josesilva's homepage
+

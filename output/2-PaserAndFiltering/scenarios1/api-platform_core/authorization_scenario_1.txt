@@ -1,0 +1,11 @@
+Scenario 1: An anonymous user tries to retrieve a secured item
+  Tags: ['@createSchema']
+  Given  there are 1 SecuredDummy objects
+  When  I send the following GraphQL request:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the JSON node "errors[0].extensions.status" should be equal to 403
+  And  the JSON node "errors[0].message" should be equal to "Access Denied."
+  And  the JSON node "data.securedDummy" should be null
+

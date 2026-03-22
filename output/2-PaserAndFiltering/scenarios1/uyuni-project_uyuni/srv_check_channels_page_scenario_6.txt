@@ -1,0 +1,11 @@
+Scenario 6: Check package dependencies page
+  When  I follow the left menu "Software > Channel List > All"
+  And  I follow "Show All Child Channels"
+  And  I follow "Fake-RPM-SUSE-Channel"
+  And  I follow "Packages"
+  And  I follow "andromeda-dummy-2.0-1.1.noarch"
+  And  I follow "Dependencies"
+  Then  I should see a "pam" text
+  And  I should see a "rpmlib(PayloadIsXz) <= 5.2-1" text
+  And  I should see a "andromeda-dummy = 2.0-1.1" text
+

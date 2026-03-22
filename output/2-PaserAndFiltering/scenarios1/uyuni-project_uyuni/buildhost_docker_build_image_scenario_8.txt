@@ -1,0 +1,7 @@
+Scenario 8: Build the suse_simple image with and without activation key
+  Given  I am on the Systems overview page of this "build_host"
+  When  I schedule the build of image "suse_simple" via API calls
+  And  I wait at most 660 seconds until event "Image Build suse_simple scheduled" is completed
+  And  I wait at most 900 seconds until image "suse_simple" with version "latest" is built successfully via API
+  And  I wait at most 300 seconds until image "suse_simple" with version "latest" is inspected successfully via API
+

@@ -1,0 +1,8 @@
+Scenario 12: Verify that minion bootstrapped with configuration channel
+  Given  I am on the Systems overview page of this "sle_minion"
+  When  I follow "Configuration" in the content area
+  Then  I should see a "1 configuration channel" text
+  When  I follow "View Files" in the content area
+  Then  I should see a "/etc/euler.conf" text
+  And  I should see a "Key Channel" text
+

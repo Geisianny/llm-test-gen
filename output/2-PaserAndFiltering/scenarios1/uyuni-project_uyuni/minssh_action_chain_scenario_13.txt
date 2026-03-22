@@ -1,0 +1,11 @@
+Scenario 13: Add a configuration file deployment to the action chain on SSH minion
+  When  I follow the left menu "Configuration > Channels"
+  And  I follow "Action Chain Channel"
+  And  I follow "Deploy Files" in the content area
+  And  I click on "Deploy All Files"
+  And  I check the "ssh_minion" client
+  And  I click on "Confirm & Deploy to Selected Systems"
+  And  I check radio button "schedule-by-action-chain"
+  And  I click on "Deploy Files to Selected Systems"
+  Then  I should see a "Action has been successfully added to the Action Chain" text
+

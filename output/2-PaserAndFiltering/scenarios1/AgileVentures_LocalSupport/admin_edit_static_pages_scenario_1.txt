@@ -1,0 +1,8 @@
+Scenario 1: Super Admin can edit
+  Given  I am signed in as a superadmin
+  And  I visit the home page
+  When  I follow "About Us"
+  Then  I should see a link with text "Edit"
+  And  I follow "Edit"
+  Then  I should be on the edit page for "about"
+

@@ -1,0 +1,7 @@
+Scenario 2: 
+  Given  the following invoices with a payment attempt exist:
+  When  I retry failed payments
+  Then  then the invoice for "customer.four@example.org" will not be marked as paid
+  And  the retry count for payment failure process for "customer.four@example.org" will be 2
+  Then  the subscription "Test Plan" for "customer.four@example.org" will not be cancelled
+

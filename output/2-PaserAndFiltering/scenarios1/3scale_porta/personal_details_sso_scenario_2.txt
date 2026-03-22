@@ -1,0 +1,7 @@
+Scenario 2: Buyer can edit their personal details
+  Tags: ['@javascript']
+  Given  they go to the personal details page
+  And  the current page is the personal details page
+  When  they edit their personal details
+  Then  they should be able to edit their personal details
+

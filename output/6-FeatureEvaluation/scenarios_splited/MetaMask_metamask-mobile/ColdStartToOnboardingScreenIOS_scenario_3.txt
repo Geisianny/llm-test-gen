@@ -1,0 +1,5 @@
+Scenario: Wallet setup screen is displayed after cold start
+  Given the app is not installed on the device
+  When the user installs the app for the first time
+  Then the wallet setup screen is displayed
+  And the user can interact with the screen

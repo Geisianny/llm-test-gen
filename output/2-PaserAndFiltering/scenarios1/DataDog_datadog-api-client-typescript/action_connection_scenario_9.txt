@@ -1,0 +1,7 @@
+Scenario 9: Get an existing App Key Registration returns "Not found" response
+  Tags: ['@team:DataDog/workflow-automation-dev']
+  Given  new "GetAppKeyRegistration" request
+  And  request contains "app_key_id" parameter with value "aaa11111-aa11-aa11-aaaa-aaaaaa111111"
+  When  the request is sent
+  Then  the response status is 404 Not found
+

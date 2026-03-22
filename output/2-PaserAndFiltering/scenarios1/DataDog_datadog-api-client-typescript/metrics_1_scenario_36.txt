@@ -1,0 +1,10 @@
+Scenario 36: Related Assets to a Metric returns "Success" response
+  Tags: ['@team:DataDog/metrics-experience']
+  Given  a valid "appKeyAuth" key in the system
+  And  new "ListMetricAssets" request
+  And  request contains "metric_name" parameter with value "system.cpu.user"
+  When  the request is sent
+  Then  the response status is 200 Success
+  And  the response "data.type" is equal to "metrics"
+  And  the response "data.id" is equal to "system.cpu.user"
+

@@ -1,0 +1,9 @@
+Scenario 6: Create a deblike group
+  Tags: ['@deblike_minion']
+  When  I follow the left menu "Systems > System Groups"
+  When  I follow "Create Group"
+  And  I enter "deblike" as "name"
+  And  I enter "Debian-like systems" as "description"
+  And  I click on "Create Group"
+  Then  I should see a "System group deblike created." text
+

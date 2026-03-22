@@ -1,0 +1,27 @@
+Scenario 2: I create the base application to then be able to use for autofill
+  Given  I go to the first page of the "Senior Test Listing" application
+  When  I answer "Yes" to the community screening question
+  And  I hit the Next button "1" time
+  When  I fill out the Name page as "Arnold Autofill"
+  Then  the application page title should be "Welcome back!"
+  When  I sign in as "Arnold Autofill" with my email pre-filled
+  Then  I should be signed in
+  And  I should be on the "Name" page of the application
+  And  I hit the Next button "1" time
+  And  I fill out the Contact page with an address, non-NRHP match, and WorkInSF
+  And  I confirm my address
+  And  I don't indicate an alternate contact
+  And  I indicate I will live alone
+  And  I indicate no ADA priority
+  And  I indicate having vouchers
+  And  I fill out my income as "25000"
+  And  I continue past the Lottery Preferences intro
+  And  I opt out of "Live/Work" preference
+  And  I don't choose COP-DTHP preferences
+  And  I answer "No" to the Veterans preference question
+  And  I continue past the general lottery notice page
+  And  I fill out the optional survey
+  And  I confirm details on the review page
+  And  I agree to the terms and submit
+  Then  I should see my lottery number on the confirmation page
+

@@ -1,0 +1,13 @@
+Scenario 2: CREATION OF PRODUCTS
+  Tags: ['@multicompany_base_finance_product_creation']
+  Given  I need a "product.product" with name: P1 and oid: scenario.p1
+  And  having:
+  Given  I need a "product.product" with name: P2 and oid: scenario.p2
+  And  having:
+  Given  I need a "product.product" with name: P3 and oid: scenario.p3
+  And  having:
+  Given  I need a "product.product" with name: P4 and oid: scenario.p4
+  And  having:
+  Given  I need a "product.product" with name: P5 and oid: scenario.p5
+  And  having:
+

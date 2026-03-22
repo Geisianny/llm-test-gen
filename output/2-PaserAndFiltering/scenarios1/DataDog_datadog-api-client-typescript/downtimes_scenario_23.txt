@@ -1,0 +1,12 @@
+Scenario 23: Update a downtime returns "OK" response
+  Tags: ['@team:DataDog/monitor-app']
+  Given  there is a valid "downtime" in the system
+  And  new "UpdateDowntime" request
+  And  request contains "downtime_id" parameter from "downtime.id"
+  And  body with value {"message": "{{ unique}}-updated", "mute_first_recovery_notification": true, "notify_end_states": ["alert", "no data", "warn"], "notify_end_types": ["canceled", "expired"]}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "message" is equal to "{{ unique }}-updated"
+  And  the response "notify_end_states" array contains value "alert"
+  And  the response "notify_end_types" array contains value "canceled"
+

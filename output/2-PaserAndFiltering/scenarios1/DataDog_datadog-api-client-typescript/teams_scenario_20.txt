@@ -1,0 +1,7 @@
+Scenario 20: Get links for a team returns "API error response." response
+  Tags: ['@team:DataDog/aaa-omg']
+  Given  new "GetTeamLinks" request
+  And  request contains "team_id" parameter with value "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 API error response.
+

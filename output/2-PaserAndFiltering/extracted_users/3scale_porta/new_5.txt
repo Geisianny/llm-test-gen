@@ -1,0 +1,34 @@
+Feature: Product's new service plan page
+Tags: ['@javascript']
+
+Background: 
+  Given  a provider is logged in
+  And  the provider has "service_plans" allowed
+  And  a product "My API"
+  And  they go to the product's new service plan admin page
+
+Scenario 1: Navigation
+  Given  they go to product "My API" service plans admin page
+  When  they select toolbar action "Create service plan"
+  Then  the current page is the product's new service plan admin page
+
+Scenario 2: Create an service plan
+  Given  they go to the product's new service plan admin page
+  When  the form is submitted with:
+  Then  the current page is the product's service plans admin page
+  And  they should see "Created service plan Premium"
+  And  the table has the following row:
+
+Scenario 3: System name is optional
+  Given  they go to the product's new service plan admin page
+  When  the form is submitted with:
+  And  they should see "Created service plan Premium"
+
+Scenario 4: Create a service plan with billing enabled
+  Tags: ['@wip']
+
+Scenario 5: Form validation
+  Given  they go to the product's new service plan admin page
+  When  the form is submitted with:
+  Then  field "Name" has inline error "Can't be blank"
+

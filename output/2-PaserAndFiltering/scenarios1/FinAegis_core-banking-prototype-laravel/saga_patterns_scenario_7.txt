@@ -1,0 +1,6 @@
+Scenario 7: Long-running saga with checkpoint recovery
+  Given  a multi-day batch processing saga is configured
+  When  the saga execution is interrupted at step 500 of 1000
+  Then  on restart the saga should:
+  And  maintain exactly-once processing guarantee
+

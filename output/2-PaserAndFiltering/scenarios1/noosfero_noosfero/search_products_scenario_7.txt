@@ -1,0 +1,8 @@
+Scenario 7: find products without exact query
+  Given  the following product_category
+  And  the following products
+  When  I go to the search products page
+  And  I fill in "search-input" with "Noosfero Social"
+  And  I follow "Search" within ".search-form"
+  Then  I should see "Noosfero Social Network Platform" within "#search-results"
+

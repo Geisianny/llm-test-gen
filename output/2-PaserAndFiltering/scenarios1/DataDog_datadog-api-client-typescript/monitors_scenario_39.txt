@@ -1,0 +1,9 @@
+Scenario 39: Validate an existing monitor returns "OK" response
+  Tags: ['@team:DataDog/monitor-app']
+  Given  there is a valid "monitor" in the system
+  And  new "ValidateExistingMonitor" request
+  And  request contains "monitor_id" parameter from "monitor.id"
+  And  body from file "monitor_payload.json"
+  When  the request is sent
+  Then  the response status is 200 OK
+

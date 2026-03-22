@@ -1,0 +1,12 @@
+Scenario 4: Viewing details block
+  Tags: ['@ui']
+  Given  the store has a tax category "No tax" with a code "nt"
+  And  product's "Iron shield" code is "123456789"
+  And  there are 4 units of product "Iron shield" available in the inventory
+  And  the product "Iron shield" belongs to "No tax" tax category
+  When  I access "Iron Shield" product page
+  Then  I should see product's code is "123456789"
+  And  I should see the product is enabled for channel "United States"
+  And  I should see 4 as a current stock of this product
+  And  I should see product's tax category is "No tax"
+

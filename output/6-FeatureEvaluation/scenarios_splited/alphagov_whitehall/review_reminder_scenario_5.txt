@@ -1,0 +1,5 @@
+Scenario: Set a review date in the past
+  Given there is a document without a review date
+  When the editor sets a review date for the document
+  And the review date is "2022-01-01"
+  Then the system displays a warning message indicating that the review date is in the past

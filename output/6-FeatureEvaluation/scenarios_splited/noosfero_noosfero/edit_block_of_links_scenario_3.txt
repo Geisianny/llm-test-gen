@@ -1,0 +1,6 @@
+Scenario: Edit link block without icon selection
+  Given there is a profile owner with a link block on their site
+  When the profile owner edits the link block with the title "No Icon"
+  And enters the link "https://www.example.com/noicon"
+  Then the system saves the changes
+  And displays the updated link block without an icon

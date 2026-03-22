@@ -1,0 +1,5 @@
+Scenario 3: Required filter should throw an error if not set
+  When  I am on "/filter_validators"
+  Then  the response status code should be 422
+  And  the JSON node "detail" should be equal to 'required: This value should not be blank.\nrequired-allow-empty: This value should not be null.'
+

@@ -1,0 +1,11 @@
+Feature: Customer Read API
+Description: In order to manage a customer
+  As an API user
+  I need to be see what the customer info
+
+Scenario 1: Get customer info
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  When  I view the customer info via the API for "customer.one@example.org"
+  Then  I will see the data "email" with value "customer.one@example.org"
+

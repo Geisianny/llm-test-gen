@@ -1,0 +1,7 @@
+Scenario 10: Test filter bounds: max length
+  When  I am on "/filter_validators?required=foo&required-allow-empty&max-length-3=123"
+  Then  the response status code should be 200
+  When  I am on "/filter_validators?required=foo&required-allow-empty&max-length-3=1234"
+  Then  the response status code should be 422
+  And  the JSON node "detail" should be equal to 'max-length-3: This value is too long. It should have 3 characters or less.'
+

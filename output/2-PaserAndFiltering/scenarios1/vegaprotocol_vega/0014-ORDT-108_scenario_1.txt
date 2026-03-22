@@ -1,0 +1,10 @@
+Scenario 1: A passive iceberg order with a couple of order that sit behind the iceberg order at the same price that crosses with an order where
+            and gets filled only when the other orders in front get fully filled (0014-ORDT-108)
+  When  the parties place the following iceberg orders:
+  And  the parties place the following orders:
+  And  the parties place the following orders:
+  Then  the orders should have the following states:
+  And  the parties place the following orders:
+  Then  the orders should have the following states:
+  Then  the order book should have the following volumes for market "BTC/ETH":
+

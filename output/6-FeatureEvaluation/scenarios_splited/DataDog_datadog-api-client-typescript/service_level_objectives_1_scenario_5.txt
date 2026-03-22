@@ -1,0 +1,5 @@
+Scenario: Attempt to create an SLO report with invalid details
+  Given the user has valid Datadog API credentials
+  And the SLO report details are invalid
+  When the user creates a new SLO report via the API
+  Then the system returns an error response

@@ -1,0 +1,5 @@
+Scenario: Search customer service subscriptions by account
+  Given there are customer service subscriptions for a provider
+  When the provider searches for subscriptions by account name "Example Account"
+  Then the system displays a list of customer service subscriptions for "Example Account"
+  And the list includes the status, plan, billing type, value, and service for each subscription

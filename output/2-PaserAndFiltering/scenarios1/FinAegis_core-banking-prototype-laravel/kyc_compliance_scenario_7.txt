@@ -1,0 +1,7 @@
+Scenario 7: AML transaction reporting
+  Given  large transactions occur above reporting threshold
+  When  daily reconciliation runs
+  Then  CTR (Currency Transaction Report) should be generated
+  And  suspicious patterns should be identified
+  And  regulatory reports should be prepared
+

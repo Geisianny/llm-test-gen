@@ -1,0 +1,8 @@
+Scenario 7: Create an application when product has no application plans
+  Given  a product "No plans API" with no plans
+  And  they go to the admin portal new application page
+  When  select "Jane" from "Account"
+  And  select "No plans API" from "Product"
+  Then  they should see "No application plans exist for the selected product"
+  And  select "Application plan" is disabled
+

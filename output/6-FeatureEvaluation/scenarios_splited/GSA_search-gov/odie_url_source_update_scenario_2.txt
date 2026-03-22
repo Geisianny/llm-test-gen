@@ -1,0 +1,6 @@
+Scenario: Update document source for an invalid affiliate
+  Given there is no affiliate with the identifier "invalid_affiliate"
+  When the admin requests to update the document source to "manual" for the affiliate "invalid_affiliate"
+  And confirms the update operation
+  Then the system displays an error message indicating the affiliate does not exist
+  And does not queue a job to update the document source

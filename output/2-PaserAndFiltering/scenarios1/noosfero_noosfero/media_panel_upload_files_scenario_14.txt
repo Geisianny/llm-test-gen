@@ -1,0 +1,14 @@
+Scenario 14: separate images from non-images
+  Tags: ['@selenium-fixme']
+  When  I follow "Show/Hide"
+  Then  I should not see "Images"
+  And  I should not see "Files"
+  When  I attach the file "public/robots.txt" to "file"
+  And  I attach the file "public/images/rails.png" to "file"
+  Then  I should see "Files"
+  And  I should see "robots" within ".generics"
+  But  I should not see "rails" within ".generics"
+  And  I should see "Images"
+  And  I should see div with title "rails" within ".images"
+  But  I should not see div with title "robots" within ".images"
+

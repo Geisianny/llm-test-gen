@@ -1,0 +1,8 @@
+Scenario 6: Read-only user can't make changes in the ReportDB
+  Then  I should not be able to "insert" data in a ReportDB "table" as a read-only user
+  And  I should not be able to "update" data in a ReportDB "table" as a read-only user
+  And  I should not be able to "delete" data in a ReportDB "table" as a read-only user
+  And  I should not be able to "insert" data in a ReportDB "view" as a read-only user
+  And  I should not be able to "update" data in a ReportDB "view" as a read-only user
+  And  I should not be able to "delete" data in a ReportDB "view" as a read-only user
+

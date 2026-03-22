@@ -1,0 +1,4 @@
+Scenario 1: Provider lands in dashboard when login in master domain
+  When  the provider logs in
+  Then  the current page is the provider dashboard
+

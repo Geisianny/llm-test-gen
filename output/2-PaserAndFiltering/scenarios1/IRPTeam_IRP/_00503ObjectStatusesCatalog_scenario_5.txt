@@ -1,0 +1,32 @@
+Scenario 5: _005043 filling in the status catalog for Sales return order
+  *  Opening a form for creating Objects status historyes
+  Given  I open hyperlink "e1cib/list/Catalog.ObjectStatuses"
+  *  Filling the name for the predefined element  SalesReturnOrder
+  And  I go to line in "List" table
+  And  I expand current line in "List" table
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I click Open button of the field named "Description_en"
+  And  I input "Sales return order" text in the field named "Description_en"
+  And  I input "Sales return order TR" text in the field named "Description_tr"
+  And  I click "Ok" button
+  And  I click "Save and close" button
+  *  Adding status "Wait"
+  And  I go to line in "List" table
+  And  I click the button named "FormCreate"
+  And  I set checkbox "Set by default"
+  And  I click Open button of the field named "Description_en"
+  And  I input "Wait" text in the field named "Description_en"
+  And  I input "Wait TR" text in the field named "Description_tr"
+  And  I click "Ok" button
+  And  I click "Save and close" button
+  *  Adding status "Approved"
+  And  I go to line in "List" table
+  And  I click the button named "FormCreate"
+  And  I set checkbox "Posting"
+  And  I click Open button of the field named "Description_en"
+  And  I input "Approved" text in the field named "Description_en"
+  And  I input "Approved TR" text in the field named "Description_tr"
+  And  I click "Ok" button
+  And  I click "Save and close" button
+

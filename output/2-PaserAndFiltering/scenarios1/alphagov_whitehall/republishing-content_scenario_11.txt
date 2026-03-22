@@ -1,0 +1,5 @@
+Scenario 11: Republish a document
+  Given  a document with slug "an-existing-document" exists
+  When  I request a republish of the "an-existing-document" document's editions
+  Then  I can see the "an-existing-document" document's editions have been republished
+

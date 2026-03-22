@@ -1,0 +1,6 @@
+Scenario 2: viewing the article not in fullscreen by default
+  Tags: ['@selenium']
+  Given  I go to /joaosilva/sample-article
+  And  I follow "article-options"
+  Then  I should see "Full screen"
+

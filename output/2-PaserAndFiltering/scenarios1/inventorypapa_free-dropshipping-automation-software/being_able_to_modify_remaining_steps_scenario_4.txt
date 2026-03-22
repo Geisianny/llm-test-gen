@@ -1,0 +1,10 @@
+Scenario 4: Changing shipping method of my order
+  Tags: ['@ui']
+  Given  I had product "PHP T-Shirt" in the cart
+  And  I specified the billing address as "Ankh Morpork", "Frost Alley", "90210", "United States" for "Jon Snow"
+  And  I have proceeded selecting "Free" shipping method
+  When  I go back to shipping step of the checkout
+  And  I select "Raven Post" shipping method
+  And  I complete the shipping step
+  Then  I should be on the checkout payment step
+

@@ -1,0 +1,7 @@
+Scenario 37: Sidebar link destination for Systems => Autoinstallation => GPG and SSL Keys
+  When  I follow the left menu "Systems > Autoinstallation > GPG and SSL Keys"
+  Then  I should see a "GPG Public Keys and SSL Certificates" text
+  And  I should see a "Create Stored Key/Cert" link
+  And  I should see a "Reference Guide" link
+  And  I should see a "RHN-ORG-TRUSTED-SSL-CERT" link
+

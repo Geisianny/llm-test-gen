@@ -1,0 +1,5 @@
+Scenario: Forum creation with invalid input
+  Given there is a Noosfero user with a personal profile
+  When the user creates a new forum with invalid input
+  Then the system denies the creation of the forum
+  And displays a message indicating the input is invalid

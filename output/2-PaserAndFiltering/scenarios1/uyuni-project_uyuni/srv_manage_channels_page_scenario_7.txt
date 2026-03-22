@@ -1,0 +1,9 @@
+Scenario 7: Create a channel that will be changed
+  When  I follow the left menu "Software > Manage > Channels"
+  And  I follow "Create Channel"
+  And  I enter "aaaSLE-12-Cloud-Compute5-Pool for x86_64" as "Channel Name"
+  And  I enter "sle-we12aaa-pool-x86_64-sap" as "Channel Label"
+  And  I enter "test123" as "Channel Summary"
+  And  I click on "Create Channel"
+  Then  I should see a "Channel aaaSLE-12-Cloud-Compute5-Pool for x86_64 created." text
+

@@ -1,0 +1,8 @@
+Scenario 8: Accessing to add address to the cart by the customer
+  Tags: ['@api', '@ui']
+  Given  the customer logged in
+  And  the customer added product "Stark T-Shirt" to the cart
+  When  the customer specify the billing address
+  And  the visitor completes the addressing step
+  Then  the customer should have checkout address step completed
+

@@ -1,0 +1,5 @@
+Scenario 2: pegged orders pegged to non-tick size AMM's
+  Tags: ['@VAMM']
+  Then  the parties place the following pegged orders:
+  Then  the order book should have the following volumes for market "ETH/MAR22":
+

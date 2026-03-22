@@ -1,0 +1,23 @@
+Feature: CMS Templates versioning
+Description: As a provider
+  I want to see history of my content changes
+Tags: ['@javascript']
+
+Background: 
+  Given  a provider is logged in
+  And  the time flies to 2012-12-24 12:00:00
+  And  I have cms page "/my-page" of provider "foo.3scale.localhost"
+  And  I go to the CMS Page "/my-page" page
+
+Scenario 1: Versioning
+  Tags: ['@wip']
+  When  fill the template draft with "My content"
+  And  save it as version at 13:00:00
+  And  save it as version at 14:00:00
+  And  I press "Publish" at 15:00:00
+  And  I press "Publish" at 16:00:00
+  And  I follow "Versions of this page"
+  Then  I should see following table:
+  When  I follow "Show 2012-12-24 16:00:00 UTC"
+  Then  I should see "Version of Page"
+

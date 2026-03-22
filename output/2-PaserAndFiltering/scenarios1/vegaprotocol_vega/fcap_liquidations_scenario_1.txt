@@ -1,0 +1,7 @@
+Scenario 1: Party opens a short position with a market order and is liquidiated at the next mark to market.
+  Tags: ['@CappedF', '@NoPerp']
+  And  the following network parameters are set:
+  Given  the parties deposit on asset's general account the following amount:
+  Given  the parties place the following orders:
+  And  the parties should have the following account balances:
+

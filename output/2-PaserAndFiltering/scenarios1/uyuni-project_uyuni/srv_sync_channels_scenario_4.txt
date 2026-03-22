@@ -1,0 +1,5 @@
+Scenario 4: List Proxy product
+  Tags: ['@proxy', '@susemanager']
+  When  I execute mgr-sync "list products"
+  Then  I should get "[ ] SUSE Manager Proxy 4.3 x86_64"
+

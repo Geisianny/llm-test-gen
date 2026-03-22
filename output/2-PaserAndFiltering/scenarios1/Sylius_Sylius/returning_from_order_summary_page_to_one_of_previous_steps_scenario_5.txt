@@ -1,0 +1,11 @@
+Scenario 5: Going back to shipping step with steps panel when order total is zero
+  Tags: ['@no-api', '@ui']
+  Given  I am a logged in customer
+  And  I added product "Stark Robe" to the cart
+  And  I added product "Paganini T-Shirt" to the cart
+  And  I addressed the cart
+  When  I proceed with "Free" shipping method
+  And  I go to the shipping step
+  Then  I should be redirected to the shipping step
+  And  I should be able to go to the complete step again
+

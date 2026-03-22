@@ -1,0 +1,13 @@
+Scenario 7: Select a system for the System Set Manager
+  And  I click on the clear SSM button
+  And  I follow the left menu "Audit > CVE Audit"
+  And  I select "1999" from "cveIdentifierYear"
+  And  I enter "9999" as "cveIdentifierId"
+  And  I click on "Audit Servers"
+  Then  I should see a "Affected, at least one patch available in an assigned channel" text
+  When  I check the "sle_minion" client
+  Then  I should see a "system selected" text
+  When  I follow the left menu "Systems > System List > All"
+  Then  I should see "sle_minion" as link
+  And  I click on the clear SSM button
+

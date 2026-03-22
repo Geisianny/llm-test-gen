@@ -1,0 +1,8 @@
+Scenario 6: Visiting the users admin page as an admin
+  When  I go to the admin home page
+  And  I follow "Users" within ".main"
+  Then  I should be on the users admin page
+  And  I should see the following breadcrumbs: Super Admin > Users
+  When  I follow "Edit" within the first scaffold row
+  Then  the "Default affiliate" select field should contain 1 option
+

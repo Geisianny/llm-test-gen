@@ -1,0 +1,7 @@
+Scenario 42: List Custom Costs files returns "Bad Request" response
+  Tags: ['@team:DataDog/cloud-cost-management']
+  Given  new "ListCustomCostsFiles" request
+  And  request contains "filter[status]" parameter with value "invalid_file_status"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

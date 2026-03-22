@@ -1,0 +1,6 @@
+Scenario 2: Seeing shipped order shipping state
+  Tags: ['@api', '@ui']
+  Given  this order has already been shipped
+  When  I browse orders
+  Then  order "#00000666" should have shipment state "shipped"
+

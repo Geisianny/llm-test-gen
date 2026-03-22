@@ -1,0 +1,11 @@
+Scenario 8: Bulk upload best bets texts
+  Given  the following BingV7 Affiliates exist:
+  And  I am logged in with email "john@agency.gov"
+  When  I go to the agency.gov's Manage Content page
+  And  I follow "Best Bets: Text" within the Admin Center content
+  And  I follow "Bulk Upload"
+  And  I attach the file "features/support/boosted_content.csv" to "best_bets_text_data_file"
+  And  I submit the form by pressing "Upload"
+  Then  I should see "You have added 2 Text Best Bets."
+  And  I should see "1 Text Best Bet was not uploaded. Please ensure the URLs are properly formatted, including the http:// or https:// prefix."
+

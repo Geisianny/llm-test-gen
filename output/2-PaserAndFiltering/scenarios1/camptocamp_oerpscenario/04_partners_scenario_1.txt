@@ -1,0 +1,9 @@
+Scenario 1: Partner_1
+  Tags: ['@base_finance_partner']
+  Given  I need a "res.partner" with oid: scen.partner_1
+  And  having:
+  Given  I need a "res.partner" with oid: scen.partner_1_add_del
+  And  having:
+  Given  I need a "res.partner" with oid: scen.partner_1_add_inv
+  And  having:
+

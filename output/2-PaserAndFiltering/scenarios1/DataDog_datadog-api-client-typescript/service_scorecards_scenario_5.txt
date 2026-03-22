@@ -1,0 +1,8 @@
+Scenario 5: Delete a rule returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/service-catalog']
+  Given  operation "DeleteScorecardRule" enabled
+  And  new "DeleteScorecardRule" request
+  And  request contains "rule_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

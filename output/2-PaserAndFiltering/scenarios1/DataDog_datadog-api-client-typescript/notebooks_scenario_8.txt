@@ -1,0 +1,10 @@
+Scenario 8: Get a notebook returns "OK" response
+  Tags: ['@team:DataDog/notebooks']
+  Given  new "GetNotebook" request
+  And  there is a valid "notebook" in the system
+  And  request contains "notebook_id" parameter from "notebook.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.attributes.name" has the same value as "notebook.data.attributes.name"
+  And  the response "data.attributes.cells[0].attributes.definition.type" has the same value as "notebook.data.attributes.cells[0].attributes.definition.type"
+

@@ -1,0 +1,5 @@
+Scenario 6: Sample to use sequel to establish a direct db connection
+  Given  I open a database connection with sequel
+  When  I select all the users
+  Then  I must have selected users
+

@@ -1,0 +1,4 @@
+Scenario 3: User does exist but is not confirmed
+  When  I have logged in as "tim.brown@example.org" with the password "AF@k3P@ss"
+  Then  I will see a login error
+

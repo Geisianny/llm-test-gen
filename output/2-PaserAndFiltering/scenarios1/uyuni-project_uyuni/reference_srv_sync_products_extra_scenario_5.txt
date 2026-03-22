@@ -1,0 +1,13 @@
+Scenario 5: Add Ubuntu 24.04 product with recommended sub-products
+  Tags: ['@scc_credentials', '@susemanager']
+  When  I follow the left menu "Admin > Setup Wizard > Products"
+  And  I wait until I do not see "currently running" text
+  And  I wait until I do not see "Loading" text
+  And  I enter "Ubuntu" as the filtered product description
+  And  I select "amd64-deb" from "product-arch-filter"
+  And  I wait until I see "Ubuntu 24.04" text
+  And  I select "Ubuntu 24.04" as a product
+  Then  I should see the "Ubuntu 24.04" selected
+  When  I click the Add Product button
+  And  I wait until I see "Ubuntu 24.04" product has been added
+

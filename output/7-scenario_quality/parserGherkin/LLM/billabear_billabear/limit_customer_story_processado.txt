@@ -1,0 +1,49 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: limit_customer_story_processado.feature
+Caminho relativo: billabear_billabear\limit_customer_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\billabear_billabear\limit_customer_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: limit_customer_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Retrieve subscription limits for an active customer with multiple plans
+   Steps: 5
+   - Given there is an authenticated user
+   - And there is an active customer with multiple subscriptions to different plans
+   - When the user queries the customer's usage limits
+   - Then the system returns the total limits per resource for all associated plans
+   - And the limits are correctly summed from each plan
+2. Retrieve subscription limits for an active customer with a single plan
+   Steps: 4
+   - Given there is an authenticated user
+   - And there is an active customer with a single subscription to a plan
+   - When the user queries the customer's usage limits
+   - Then the system returns the limits per resource for the associated plan
+3. Retrieve subscription limits for a deactivated customer
+   Steps: 4
+   - Given there is an authenticated user
+   - And there is a deactivated customer with a subscription to a plan
+   - When the user queries the customer's usage limits
+   - Then the system returns an empty list of limits
+4. Retrieve subscription limits for a customer without subscriptions
+   Steps: 4
+   - Given there is an authenticated user
+   - And there is an active customer without any subscriptions
+   - When the user queries the customer's usage limits
+   - Then the system returns an empty list of limits
+5. Retrieve subscription limits without authentication
+   Steps: 4
+   - Given there is no authenticated user
+   - When the user queries a customer's usage limits
+   - Then the system denies access
+   - And displays a message indicating that authentication is required

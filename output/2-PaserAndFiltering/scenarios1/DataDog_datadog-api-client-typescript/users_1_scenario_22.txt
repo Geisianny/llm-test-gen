@@ -1,0 +1,8 @@
+Scenario 22: Update a user returns "Unprocessable Entity" response
+  Tags: ['@generated', '@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "UpdateUser" request
+  And  request contains "user_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {}, "id": "00000000-0000-feed-0000-000000000000", "type": "users"}}
+  When  the request is sent
+  Then  the response status is 422 Unprocessable Entity
+

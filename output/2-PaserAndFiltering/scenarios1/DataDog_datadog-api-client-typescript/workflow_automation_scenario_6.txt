@@ -1,0 +1,7 @@
+Scenario 6: Delete an existing Workflow returns "Not found" response
+  Tags: ['@team:DataDog/workflow-automation-dev']
+  Given  new "DeleteWorkflow" request
+  And  request contains "workflow_id" parameter with value "aaa11111-aa11-aa11-aaaa-aaaaaa111111"
+  When  the request is sent
+  Then  the response status is 404 Not found
+

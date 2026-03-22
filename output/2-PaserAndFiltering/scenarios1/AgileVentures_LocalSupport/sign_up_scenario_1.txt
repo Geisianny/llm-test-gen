@@ -1,0 +1,7 @@
+Scenario 1: Sign up for an existing user
+  Tags: ['@email']
+  Given  I visit the sign up page
+  And  I sign up as "existent-user1@example.com" with password "pppppppp" and password confirmation "pppppppp"
+  Then  I should see "Email has already been taken"
+  And  I should not receive an email
+

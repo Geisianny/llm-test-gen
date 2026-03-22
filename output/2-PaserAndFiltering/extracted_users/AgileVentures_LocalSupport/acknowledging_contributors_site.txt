@@ -1,0 +1,27 @@
+Feature: Acknowledging Contributors
+Description: As a site superadministrator
+  So that I can encourage continued support from vendors and developers
+  I want to see acknowledgement of support on every page
+
+Background: 
+
+Scenario Outline 1: Display acknowledgements - Example 1
+  Given  I visit the home page
+  Then  I should see the "Agile Ventures" image linked to contributors
+
+  Examples:
+    | page |
+    | home |
+    | organisations index |
+    | new organisation |
+
+Scenario Outline 2: Do-it logo is displayed when doit_volunteer_opportunities flag is enabled - Example 1
+  Given  that the doit_volunteer_opportunities flag is enabled
+  Given  I visit the organisations index page
+  Then  I should see the "Do-it" image linked to "https://do-it.org/"
+
+  Examples:
+    | page |
+    | organisations index |
+    | new organisation |
+

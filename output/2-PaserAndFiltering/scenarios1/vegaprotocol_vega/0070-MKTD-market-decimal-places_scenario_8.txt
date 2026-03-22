@@ -1,0 +1,9 @@
+Scenario 8: 008: Price monitoring bounds are calculated at asset precision but displayed rounded, (0070-MKTD-006)
+  Given  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "USD/DEC20"
+  Then  the price monitoring bounds for the market "USD/DEC19" should be:
+  And  the price monitoring bounds for the market "USD/DEC20" should be:
+  And  the price monitoring bounds for the market "USD/DEC21" should be:
+

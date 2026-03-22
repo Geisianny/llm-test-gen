@@ -1,0 +1,10 @@
+Scenario 1: Changing a single image of a simple product
+  Tags: ['@ui', '@javascript']
+  Given  the store has a product "Lamborghini Gallardo Model"
+  And  this product has an image "ford.jpg" with "thumbnail" type
+  When  I want to modify this product
+  And  I change the image with the "thumbnail" type to "lamborghini.jpg"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this product should have an image with "thumbnail" type
+

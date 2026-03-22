@@ -1,0 +1,7 @@
+Scenario 20: Get a list of entity relations returns "OK" response with pagination
+  Tags: ['@replay-only', '@skip-validation', '@team:DataDog/service-catalog', '@with-pagination']
+  Given  new "ListCatalogRelation" request
+  And  request contains "page[limit]" parameter with value 20
+  When  the request with pagination is sent
+  Then  the response status is 200 OK
+

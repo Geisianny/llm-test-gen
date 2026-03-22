@@ -1,0 +1,10 @@
+Scenario 26: View all types of recurring actions in the list of all actions
+  When  I follow the left menu "Schedule > Recurring Actions"
+  Then  I should not see a "Create" text
+  And  I should see a "schedule_name_minion" text
+  And  I should see a "Minion" text
+  And  I should see a "schedule_name_group" text
+  And  I should see a "Group" text
+  And  I should see a "schedule_name_org" text
+  And  I should see a "Organization" text
+

@@ -1,0 +1,6 @@
+Scenario 5: Non-superadmin unsuccessfully attempts to delete a charity directly
+  Given  I am signed in as a non-superadmin
+  And  I delete "Friendly" charity
+  Then  I should be on the show page for the organisation named "Friendly"
+  And  I should see permission denied
+

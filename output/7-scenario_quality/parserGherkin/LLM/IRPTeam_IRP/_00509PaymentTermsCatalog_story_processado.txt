@@ -1,0 +1,55 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: _00509PaymentTermsCatalog_story_processado.feature
+Caminho relativo: IRPTeam_IRP\_00509PaymentTermsCatalog_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\IRPTeam_IRP\_00509PaymentTermsCatalog_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: _00509PaymentTermsCatalog_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Create a new payment term with a custom name
+   Steps: 5
+   - Given there is an administrator logged into the system
+   - And the payment terms catalog is empty
+   - When the administrator creates a new payment term named "Custom Term"
+   - Then the system saves the new payment term
+   - And displays a confirmation message
+2. Create a new payment term with multilingual descriptions
+   Steps: 6
+   - Given there is an administrator logged into the system
+   - And the payment terms catalog is empty
+   - When the administrator creates a new payment term with the description "English Description" in English
+   - And adds a description "French Description" in French
+   - Then the system saves the new payment term with multilingual descriptions
+   - And displays a confirmation message
+3. Edit an existing payment term
+   Steps: 6
+   - Given there is an administrator logged into the system
+   - And there is a payment term named "Existing Term" in the catalog
+   - When the administrator edits the payment term "Existing Term"
+   - And changes its name to "Updated Term"
+   - Then the system updates the payment term
+   - And displays a confirmation message
+4. Attempt to create a duplicate payment term
+   Steps: 5
+   - Given there is an administrator logged into the system
+   - And there is a payment term named "Existing Term" in the catalog
+   - When the administrator creates a new payment term with the name "Existing Term"
+   - Then the system prevents the creation of the duplicate payment term
+   - And displays an error message indicating that the term already exists
+5. Delete a payment term
+   Steps: 5
+   - Given there is an administrator logged into the system
+   - And there is a payment term named "Term to Delete" in the catalog
+   - When the administrator deletes the payment term "Term to Delete"
+   - Then the system removes the payment term from the catalog
+   - And displays a confirmation message

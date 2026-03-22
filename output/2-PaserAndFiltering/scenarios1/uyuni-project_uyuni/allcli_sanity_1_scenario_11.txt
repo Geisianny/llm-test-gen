@@ -1,0 +1,4 @@
+Scenario 11: The registry without authentication is healthy
+  Tags: ['@no_auth_registry']
+  Then  it should be possible to reach the not authenticated registry
+

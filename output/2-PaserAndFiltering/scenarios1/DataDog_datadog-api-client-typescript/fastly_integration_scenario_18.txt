@@ -1,0 +1,8 @@
+Scenario 18: Get Fastly service returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "GetFastlyService" request
+  And  request contains "account_id" parameter from "REPLACE.ME"
+  And  request contains "service_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 200 OK
+

@@ -1,0 +1,8 @@
+Scenario 2: Product inherits the variant price
+  Given  the products price is 200 for store "Germany"
+  And  the product should be priced at "100"
+  And  the variant should be priced at "100"
+  Then  I am in store "Germany"
+  And  the product should be priced at "200"
+  And  the variant should be priced at "200"
+

@@ -1,0 +1,8 @@
+Scenario 3: Displaying correct taxes for multiple products after specifying billing address
+  Tags: ['@api', '@ui']
+  Given  I added 3 products "PHP T-Shirt" to the cart
+  And  I addressed the cart to "Germany"
+  When  I check the details of my cart
+  Then  my cart total should be "$369.00"
+  And  my cart taxes should be "$69.00"
+

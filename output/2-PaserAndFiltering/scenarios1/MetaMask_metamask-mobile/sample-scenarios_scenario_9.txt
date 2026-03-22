@@ -1,0 +1,7 @@
+Scenario 9: Verify UI elements and styling
+  Tags: ['@sample-feature', '@ui-elements']
+  Given  I am on the Sample Feature screen
+  Then  I should see the following UI elements:
+  And  all interactive elements should have proper touch feedback
+  And  the screen should be scrollable
+

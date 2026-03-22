@@ -1,0 +1,7 @@
+Scenario 2: Create an API key returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/credentials-management']
+  Given  new "CreateAPIKey" request
+  And  body with value {"name": "example user"}
+  When  the request is sent
+  Then  the response status is 200 OK
+

@@ -1,0 +1,6 @@
+Scenario 6: Show meaning of large map icons on home page
+  Given  I visit the organisations index page
+  And  I click "Close"
+  Then  I should see "Details updated within the last 12 months"
+  Then  I should see "Details NOT updated within the last 12 months"
+

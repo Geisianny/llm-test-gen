@@ -1,0 +1,7 @@
+Scenario 4: go to catalog when click on products link
+  Tags: ['@selenium-fixme']
+  Given  I am on /search/enterprises
+  When  I follow "Profile links"
+  And  I follow "Products" and wait
+  Then  I should be exactly on /catalog/shop1
+

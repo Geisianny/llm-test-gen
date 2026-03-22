@@ -1,0 +1,8 @@
+Scenario 2: Create partial invoice
+  Given  I add the product "T-Shirt" to my cart
+  And  I create an order from my cart
+  And  I create a invoice for my order
+  And  I apply order invoice transition "request_invoice" to my order
+  And  I apply invoice transition "complete" to latest order invoice
+  Then  the order invoice state should be "partially_invoiced"
+

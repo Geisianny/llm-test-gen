@@ -1,0 +1,5 @@
+Scenario 4: The object instance is disabled and unpublished
+  Given  the product is not active
+  Given  the product is not published
+  Then  the index should not have indexed the product "Shoe"
+

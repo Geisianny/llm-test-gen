@@ -1,0 +1,9 @@
+Scenario 4: Accept a proposed edit
+  Given  I am signed in as a superadmin
+  And  I visit the most recently created proposed edit for "Friendly"
+  When  I press "Accept Edit"
+  Then  I should be on the show page for the organisation named "Unfriendly"
+  And  "Friendly" should be updated as follows:
+  And  the most recently updated proposed edit for "Unfriendly" should be updated as follows:
+  And  I should see "The edit you accepted has been applied and archived"
+

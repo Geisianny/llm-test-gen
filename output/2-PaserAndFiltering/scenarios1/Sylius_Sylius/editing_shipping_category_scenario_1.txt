@@ -1,0 +1,5 @@
+Scenario 1: Seeing disabled code field when editing shipping category
+  Tags: ['@api', '@ui']
+  When  I modify a shipping category "Standard"
+  Then  I should not be able to edit its code
+

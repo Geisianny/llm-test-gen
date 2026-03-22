@@ -1,0 +1,5 @@
+Scenario 1: show recent content on index
+  When  I go to the search articles page
+  Then  I should see "bees and butterflies" within "#search-results"
+  And  I should see "whales and dolphins" within "#search-results"
+

@@ -1,0 +1,6 @@
+Scenario 3: Provider can log in with Captcha enabled
+  Given  the provider has bot protection enabled
+  And  the client will not be marked as a bot
+  When  the provider tries to log in
+  Then  the current page is the provider dashboard
+

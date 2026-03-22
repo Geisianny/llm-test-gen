@@ -1,0 +1,11 @@
+Scenario 10: Filter by "Approved Status" is "Not Approved"
+  When  I navigate the menu and select the item at "Cash & Banking > Reports > Reconciliation"
+  Then  I should see the Search Reconciliation Reports screen
+  When  I select "Not Approved" from the drop down "Approval Status"
+  And  I press "Search"
+  Then  I should see the Reconciliation Search Report screen
+  And  I expect the report to contain 3 rows
+  And  I expect the 'Statement Date' report column to contain '2018-01-01' for Statement Balance '100.00'
+  And  I expect the 'Statement Date' report column to contain '2018-01-01' for Statement Balance '1000.00'
+  And  I expect the 'Statement Date' report column to contain '2018-02-01' for Statement Balance '1000.01'
+

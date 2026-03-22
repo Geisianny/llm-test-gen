@@ -1,0 +1,6 @@
+Scenario 3: changing the date on a statistics announcement
+  Given  I am a GDS editor in the organisation "Department for Beards"
+  And  a statistics announcement called "Monthly Beard Stats" exists
+  When  I change the release date on the announcement
+  Then  the new date is reflected on the announcement
+

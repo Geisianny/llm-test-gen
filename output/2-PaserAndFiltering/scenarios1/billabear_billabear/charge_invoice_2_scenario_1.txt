@@ -1,0 +1,6 @@
+Scenario 1: 
+  Given  the following invoices with a payment attempt exist:
+  And  there is a manage customer session for "customer.two@example.org" that expires in "+5 minutes"
+  When  charge the invoice for "customer.two@example.org" via the portal
+  Then  then the invoice for "customer.two@example.org" will be marked as paid
+

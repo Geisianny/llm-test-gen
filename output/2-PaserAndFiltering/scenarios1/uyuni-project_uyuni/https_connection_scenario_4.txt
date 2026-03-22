@@ -1,0 +1,4 @@
+Scenario 4: Connecting to the server securely while using incorrect CA certificate file
+  When  I connect to the server securely while using incorrect certificate as a CA certificate file
+  Then  the secure connection should fail due to unverified certificate signature
+

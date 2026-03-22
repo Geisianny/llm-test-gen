@@ -1,0 +1,6 @@
+Scenario: Attempt to delete a non-existent special number
+  Given there is a super admin with valid credentials
+  And there is no special number with ID "123"
+  When the super admin sends a DELETE request to the special number API with ID "123"
+  Then the system returns an HTTP 404 status code
+  And displays a message indicating that the special number was not found

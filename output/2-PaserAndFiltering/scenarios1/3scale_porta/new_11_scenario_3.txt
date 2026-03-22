@@ -1,0 +1,6 @@
+Scenario 3: Create a provider account
+  Given  they go to the new provider account page
+  When  the form is submitted with:
+  Then  they should see a toast alert with text "Tenant account was successfully created"
+  And  the current page is the overview page of account "The Provider"
+

@@ -1,0 +1,6 @@
+Scenario 17: Get a list of entity kinds returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/service-catalog']
+  Given  new "ListCatalogKind" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

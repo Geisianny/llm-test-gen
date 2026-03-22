@@ -1,0 +1,8 @@
+Scenario 4: Updating required profile's custom checkbox field shows error message
+  Tags: ['@javascript']
+  And  there is a person custom dropdown field "Balcony type" in community "test" with options:
+  And  there is a required person custom checkbox field "Language" in community "test" with options:
+  And  I am on the profile settings page
+  And  I press "Save information"
+  Then  I should see "This field is required."
+

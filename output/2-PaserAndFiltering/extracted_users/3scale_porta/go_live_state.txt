@@ -1,0 +1,18 @@
+Feature: Dashboards
+Tags: ['@javascript']
+
+Background: 
+  Given  a provider is logged in
+  And  all the rolling updates features are off
+
+Scenario 1: "Steps completed with APIcast"
+  When  I complete the "apicast_gateway_deployed" step
+  And  I go to the dashboard
+  Then  I should be done
+
+Scenario 2: "Last step completed and first step completed last"
+  When  I complete the "apicast_gateway_deployed" step
+  And  I complete the "api_sandbox_traffic" step
+  And  I go to the dashboard
+  Then  I should be done
+

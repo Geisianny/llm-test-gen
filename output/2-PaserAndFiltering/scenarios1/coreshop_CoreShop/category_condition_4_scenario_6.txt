@@ -1,0 +1,7 @@
+Scenario 6: Add a new category shipping rule which includes all subcategory and is invalid
+  Given  adding a shipping rule named "category"
+  And  the shipping rule is active
+  And  the shipping rule has a condition categories with category "Shoes"
+  And  I add the product "Sneaker" to my cart
+  Then  the shipping rule should be invalid for my cart with carrier "Post"
+

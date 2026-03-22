@@ -1,0 +1,9 @@
+Scenario 1: Seeing shipping methods that are available in channel
+  Tags: ['@api', '@ui']
+  Given  I changed my current channel to "United States"
+  And  I added product "T-Shirt" to the cart
+  And  I addressed the cart with email "guest@example.com"
+  When  I want to complete the shipping step
+  Then  I should see "ultra fast" shipping method
+  And  I should not see "uber speedy" shipping method
+

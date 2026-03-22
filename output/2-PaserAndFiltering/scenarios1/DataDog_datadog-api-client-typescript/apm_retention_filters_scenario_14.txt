@@ -1,0 +1,8 @@
+Scenario 14: Update a retention filter returns "Not Found" response
+  Tags: ['@team:DataDog/apm-trace-intake']
+  Given  new "UpdateApmRetentionFilter" request
+  And  request contains "filter_id" parameter with value "not_found"
+  And  body with value {"data": { "attributes": { "name": "test", "rate": 0.90, "filter": {"query": "@_top_level:1 test:service-demo"},"enabled": true,"filter_type": "spans-sampling-processor"}, "id":"not_found", "type": "apm_retention_filter"}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

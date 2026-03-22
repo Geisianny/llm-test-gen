@@ -1,0 +1,8 @@
+Scenario 3: Receiving free shipping after changing the quantity of a product in the cart
+  Tags: ['@ui']
+  Given  the promotion gives free shipping to every order over "$70.00"
+  When  I add product "PHP Mug" to the cart
+  And  I change "PHP Mug" quantity to 4
+  Then  my cart total should be "$80.00"
+  And  my cart shipping total should be "$0.00"
+

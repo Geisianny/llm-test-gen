@@ -1,0 +1,7 @@
+Scenario 9: Create tenant-based handle returns "Conflict" response
+  Tags: ['@generated', '@skip', '@team:DataDog/chat-integrations']
+  Given  new "CreateTenantBasedHandle" request
+  And  body with value {"data": {"attributes": {"channel_id": "fake-channel-id", "name": "fake-handle-name", "team_id": "00000000-0000-0000-0000-000000000000", "tenant_id": "00000000-0000-0000-0000-000000000001"}, "type": "tenant-based-handle"}}
+  When  the request is sent
+  Then  the response status is 409 Conflict
+

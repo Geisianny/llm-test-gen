@@ -1,0 +1,55 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: edit_own_charity_profile_story_processado.feature
+Caminho relativo: AgileVentures_LocalSupport\edit_own_charity_profile_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\AgileVentures_LocalSupport\edit_own_charity_profile_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: edit_own_charity_profile_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Charity worker edits charity description
+   Steps: 5
+   - Given there is a charity with a description "Old description"
+   - And a charity worker is associated with the charity
+   - When the charity worker edits the charity description to "New description"
+   - Then the charity's description is updated to "New description"
+   - And the change is reflected on the charity's public page
+2. Unauthorized user cannot edit charity details
+   Steps: 5
+   - Given there is a charity with a description "Charity description"
+   - And a user is not associated with the charity
+   - When the user attempts to edit the charity's description
+   - Then the system denies access to editing the charity's details
+   - And the charity's public page remains unchanged
+3. Charity worker edits charity contact details
+   Steps: 5
+   - Given there is a charity with contact details "Old phone number"
+   - And a charity worker is associated with the charity
+   - When the charity worker edits the charity contact details to "New phone number"
+   - Then the charity's contact details are updated to "New phone number"
+   - And the change is reflected on the charity's public page
+4. System accepts protocol-less URLs for charity website
+   Steps: 5
+   - Given there is a charity with a website URL "example.com"
+   - And a charity worker is associated with the charity
+   - When the charity worker edits the charity website URL to "newexample.com"
+   - Then the charity's website URL is updated to "newexample.com"
+   - And the change is reflected on the charity's public page
+5. External failure does not prevent charity details update
+   Steps: 7
+   - Given there is a charity with contact details "Old email"
+   - And a charity worker is associated with the charity
+   - And an external service is unavailable
+   - When the charity worker edits the charity contact details to "New email"
+   - Then the charity's contact details are updated to "New email"
+   - And the change is reflected on the charity's public page
+   - And the system does not prevent the update due to the external failure

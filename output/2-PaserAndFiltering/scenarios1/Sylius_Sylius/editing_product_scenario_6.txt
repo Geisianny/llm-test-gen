@@ -1,0 +1,9 @@
+Scenario 6: Renaming a configurable product
+  Tags: ['@api', '@ui']
+  Given  the store has a "Wyborowa Vodka" configurable product
+  When  I want to modify this product
+  And  I rename it to "Sobieski Vodka" in "English (United States)" locale
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this product name should be "Sobieski Vodka" in "English (United States)" locale
+

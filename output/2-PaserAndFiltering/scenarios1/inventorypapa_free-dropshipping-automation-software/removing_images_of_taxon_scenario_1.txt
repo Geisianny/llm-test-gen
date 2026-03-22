@@ -1,0 +1,9 @@
+Scenario 1: Removing a single image of a taxon
+  Tags: ['@ui', '@javascript']
+  Given  the "T-Shirts" taxon has an image "t-shirts.jpg" with "banner" type
+  And  I want to modify the "T-Shirts" taxon
+  When  I remove an image with "banner" type
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this taxon should not have any images
+

@@ -1,0 +1,10 @@
+Scenario 6: Error when Editing Header & Footer
+  Tags: ['@javascript']
+  Given  the following BingV7 Affiliates exist:
+  And  I am logged in with email "john@agency.gov"
+  When  I go to the agency.gov's Header & Footer page
+  And  I fill in the following:
+  And  I submit the form by pressing "Save"
+  Then  I should see "Header link URL can't be blank"
+  Then  I should see "Footer link title can't be blank"
+

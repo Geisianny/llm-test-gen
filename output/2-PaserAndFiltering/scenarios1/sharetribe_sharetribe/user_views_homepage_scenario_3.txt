@@ -1,0 +1,12 @@
+Scenario 3: User browses homepage when there is no content
+  Tags: ['@javascript']
+  Given  there are following users:
+  When  I am on the homepage
+  When  I log in as "kassi_testperson2"
+  When  there is a listing with title "car spare parts" from "kassi_testperson1" with category "Items" and with listing shape "Requesting"
+  And  I am on the homepage
+  When  there is a listing with title "car spare parts" from "kassi_testperson1" with category "Items" and with listing shape "Selling"
+  And  I am on the homepage
+  Then  I should not see "No open item, service or rideshare requests."
+  And  I should not see "No open item, service or rideshare offers."
+

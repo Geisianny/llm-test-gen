@@ -1,0 +1,5 @@
+Scenario 2: Republish all documents with pre-publication editions
+  Given  Documents with pre-publication editions exist
+  When  I request a bulk republishing of all documents with pre-publication editions
+  Then  I can see that all documents with pre-publication editions have been queued for republishing
+

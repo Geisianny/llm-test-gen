@@ -1,0 +1,8 @@
+Scenario 1: Human friendly links from oranisations index page
+  Given  I visit the organisations index page
+  Then  the URL for "The Most Noble Great 1 Charity of London" should refer to "/organisations/most-noble-great"
+  And  the URL for "The Most Noble Great 2 Charity of London" should refer to "/organisations/most-noble-great-charity-london"
+  And  the URL for "The Most Noble Great 3 Charity of London" should refer to "/organisations/most-noble-great-3-charity-london-org"
+  And  the URL for "The Most Noble Great 3 of Charity of London" should refer to "/organisations/the-most-noble-great-3-of-charity-of-london"
+  And  the URL for "The Parochial Church Council Of The Ecclesiastical Parish Of St. Alban, North" should refer to "/organisations/parochial-church-st-alban-north"
+

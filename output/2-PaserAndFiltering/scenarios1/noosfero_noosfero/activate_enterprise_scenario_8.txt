@@ -1,0 +1,19 @@
+Scenario 8: not replace template after enable an enterprise
+  Tags: ['@selenium']
+  Given  enterprise template must not be replaced after enable
+  And  feature "enterprise_activation" is enabled on environment
+  And  the following enterprises
+  And  "Active Template" is the active enterprise template
+  And  "Services Provider 3" doesnt have "Active Template" as template
+  When  I go to joaosilva's control panel
+  And  I fill in "Enterprise activation code" with code of "Services Provider 3"
+  And  I follow "Activate"
+  And  I fill in "What year your enterprise was founded? It must have 4 digits, eg 1990." with "2000"
+  And  I follow "Continue"
+  And  I check "I read the terms of use and accepted them"
+  When  I follow "Continue"
+  Then  I should see "Services Provider 3 was successfully activated. Now you may go to your control panel or to the control panel of your enterprise"
+  And  enterprise "Services Provider 3" should be enabled
+  And  "Joao Silva" is admin of "Services Provider 3"
+  And  "Services Provider 3" doesnt have "Active Template" as template
+

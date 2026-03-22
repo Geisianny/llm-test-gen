@@ -1,0 +1,7 @@
+Scenario 2: Removing cart item when the store has defined default shipping method
+  Tags: ['@ui', '@api']
+  Given  the store has "UPS" shipping method with "$20.00" fee
+  When  I remove product "T-shirt banana" from the cart
+  Then  my cart should be empty
+  And  my cart's total should be "$0.00"
+

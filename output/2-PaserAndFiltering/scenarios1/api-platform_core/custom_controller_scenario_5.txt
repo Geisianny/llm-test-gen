@@ -1,0 +1,5 @@
+Scenario 5: Custom collection name without specific route
+  When  I send a "GET" request to "/custom_action_collection_dummies"
+  Then  the response status code should be 200
+  Then  the JSON node "hydra:member" should have 2 elements
+

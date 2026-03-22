@@ -1,0 +1,7 @@
+Scenario 2: Receiving no discount from a valid but expired promotion
+  Tags: ['@ui', '@api']
+  Given  this promotion has already expired
+  When  I add product "PHP T-Shirt" to the cart
+  And  my cart total should be "$100.00"
+  And  there should be no discount
+

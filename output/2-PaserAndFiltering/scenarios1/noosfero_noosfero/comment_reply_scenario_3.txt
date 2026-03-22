@@ -1,0 +1,8 @@
+Scenario 3: render reply form
+  Tags: ['@selenium']
+  Given  I am on /booking/article-to-comment
+  And  I follow "comment-options"
+  When  I follow "Reply"
+  Then  I should see "Name"
+  Then  I should see "e-mail"
+

@@ -1,0 +1,21 @@
+Scenario 2: Edit profile page
+  When  I go to profile page
+  And  I hover over the element ".sf-container"
+  And  I wait for the ajax response
+  And  I press "Edit"
+  And  I wait for the ajax response
+  Then  I should see "Salutation"
+  When  I fill in the following:
+  And  I select "Mr." from "info-gender"
+  And  I press "Save"
+  And  I wait for the ajax response
+  And  I wait for 3 seconds
+  Then  I should see "Test Profile Edited"
+  And  I should see "Some Street Address"
+  And  I should see "77777"
+  And  I should see "12345"
+  And  I should see "New York"
+  And  I should see "6212345"
+  And  I should see "test-edited@profile.com"
+  And  I should see "Mr."
+

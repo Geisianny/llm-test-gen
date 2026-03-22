@@ -1,0 +1,4 @@
+Scenario 14: Cleanup: user was successfully removed
+  When  I follow the left menu "Users > User List > Active"
+  Then  I should not see a "user2" text
+

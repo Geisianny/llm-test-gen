@@ -1,0 +1,9 @@
+Scenario 16: Update a custom destination returns "Bad Request" response
+  Tags: ['@team:DataDog/logs-backend', '@team:DataDog/logs-forwarding']
+  Given  new "UpdateLogsCustomDestination" request
+  And  there is a valid "custom_destination" in the system
+  And  request contains "custom_destination_id" parameter from "custom_destination.data.id"
+  And  body with value {"data": {"attributes": {"forward_tags_restriction_list_type": "this_list_type_does_not_exist"}, "type": "custom_destination", "id": "{{ custom_destination.data.id }}" }}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

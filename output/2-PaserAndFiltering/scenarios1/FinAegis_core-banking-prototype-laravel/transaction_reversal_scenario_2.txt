@@ -1,0 +1,9 @@
+Scenario 2: Reversing a complex multi-step transfer
+  Given  a transfer of 500.00 EUR from "alice@example.com" to "bob@example.com"
+  And  the transfer has completed successfully
+  When  I reverse the transfer transaction
+  Then  the withdrawal from Alice should be reversed
+  And  the deposit to Bob should be reversed
+  And  both accounts should return to original balances
+  And  compensation events should be recorded
+

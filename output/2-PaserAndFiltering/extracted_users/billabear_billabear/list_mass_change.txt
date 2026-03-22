@@ -1,0 +1,20 @@
+Feature: Create Subscription Mass Change
+
+Background: 
+  Given  the following accounts exist:
+  And  the follow products exist:
+  And  the follow brands exist:
+  And  the follow prices exist:
+  And  the following features exist:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "Price One" with:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "Price One" with:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "Price One" with:
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+
+Scenario 1: Create Mass Change change
+  When  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  there are the following mass subscription changes exists:
+  When  I look at the mass subscription change list
+  Then  I will see there are 6 mass subscriptions changes in the list
+

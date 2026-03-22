@@ -1,0 +1,11 @@
+Scenario 12: Update an API returns "API updated successfully" response
+  Tags: ['@integration-only', '@skip-terraform-config', '@skip-validation', '@team:DataDog/api-management']
+  Given  operation "UpdateOpenAPI" enabled
+  And  there is a valid "managed_api" in the system
+  And  new "UpdateOpenAPI" request
+  And  request contains "id" parameter from "managed_api.data.id"
+  And  request contains "openapi_spec_file" parameter with value "openapi-spec.yaml"
+  When  the request is sent
+  Then  the response status is 200 API updated successfully
+  And  the response "data.attributes.failed_endpoints" has length 0
+

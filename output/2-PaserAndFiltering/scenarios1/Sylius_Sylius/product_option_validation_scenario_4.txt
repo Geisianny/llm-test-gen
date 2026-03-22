@@ -1,0 +1,9 @@
+Scenario 4: Trying to add a new product option without specifying its name
+  Tags: ['@api', '@ui']
+  When  I want to create a new product option
+  And  I specify its code as "t_shirt_size"
+  But  I do not name it
+  And  I try to add it
+  Then  I should be notified that name is required
+  And  the product option with code "t_shirt_size" should not be added
+

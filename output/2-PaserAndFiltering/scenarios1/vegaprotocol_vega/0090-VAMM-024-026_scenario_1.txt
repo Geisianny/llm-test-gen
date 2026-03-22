@@ -1,0 +1,9 @@
+Scenario 1: 0090-VAMM-024: If other traders trade to move the market mid price to 140 the vAMM has a short position.
+  Tags: ['@VAMM']
+  When  the parties place the following orders:
+  Then  the following trades should be executed:
+  When  the network moves ahead "1" blocks
+  Then  the market data for the market "ETH/MAR22" should be:
+  And  the parties should have the following profit and loss:
+  And  the AMM pool status should be:
+

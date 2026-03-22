@@ -1,0 +1,36 @@
+Scenario: User adds a review for another user
+  Given there are two registered users "asker1" and "offerer1"
+  And "asker1" has made a transaction with "offerer1"
+  When "asker1" adds a review for "offerer1"
+  And rates "offerer1" with 5 stars
+  Then the review is visible on "offerer1"'s profile
+  And "offerer1"'s rating is updated to reflect the new review
+
+Scenario: User views another user's reviews
+  Given there are two registered users "asker1" and "offerer1"
+  And "asker1" has made a transaction with "offerer1"
+  And "asker1" has added a review for "offerer1" with 5 stars
+  When "asker1" views "offerer1"'s profile
+  Then "asker1" sees the review they left for "offerer1"
+  And "asker1" sees "offerer1"'s overall rating
+
+Scenario: User tries to add a review for a non-existent user
+  Given there is a registered user "asker1"
+  And there is no registered user "nonexist"
+  When "asker1" tries to add a review for "nonexist"
+  Then the system displays an error message
+  And informs "asker1" that the user does not exist
+
+Scenario: User tries to add a review without a transaction history
+  Given there are two registered users "asker1" and "offerer1"
+  And "asker1" has not made a transaction with "offerer1"
+  When "asker1" tries to add a review for "offerer1"
+  Then the system displays an error message
+  And informs "asker1" that they cannot review "offerer1" without a transaction
+
+Scenario: User adds a review with invalid rating
+  Given there are two registered users "asker1" and "offerer1"
+  And "asker1" has made a transaction with "offerer1"
+  When "asker1" tries to rate "offerer1" with 6 stars
+  Then the system displays an error message
+  And informs "asker1" that the rating is invalid

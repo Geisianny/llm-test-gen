@@ -1,0 +1,6 @@
+Scenario 10: List all users returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "ListUsers" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

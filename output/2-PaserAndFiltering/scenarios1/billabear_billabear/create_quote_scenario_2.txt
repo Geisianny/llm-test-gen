@@ -1,0 +1,8 @@
+Scenario 2: Create subscriptions - per seat
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  I want to invoice the customer "customer.seven@example.org"
+  And  I want to invoice for a subscription to "Per Seat Plan" at 3000 in "USD" per "week" with 30 seats
+  When  I finalise the quote in APP
+  Then  there will be a quote for "customer.seven@example.org"
+  And  the latest quote for "customer.seven@example.org" will have amount due as 90000
+

@@ -1,0 +1,5 @@
+Scenario 15: Sanity check whether the page is in its default state
+  When  I follow the left menu "Software > Distribution Channel Mapping"
+  Then  I should see a "Distribution Channel Mapping" text
+  And  I should see a "No distribution channel mappings currently exist." text in the content area
+

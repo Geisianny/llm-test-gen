@@ -1,0 +1,8 @@
+Scenario 3: Create a new cart, add a product and calculate subtotals
+  Given  I add the product "Shoes" with unit "Pieces" to my cart
+  Given  I add the product "Shoes" with unit "Carton" to my cart
+  Given  I add the product "Shoes" with unit "Palette" to my cart
+  Given  I add the product "Shoes" to my cart
+  Given  I add the product "Shoes" with unit "Pieces" to my cart
+  Then  the cart total tax should be "25833"
+

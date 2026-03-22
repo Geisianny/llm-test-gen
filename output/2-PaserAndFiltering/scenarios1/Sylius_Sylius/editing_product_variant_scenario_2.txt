@@ -1,0 +1,8 @@
+Scenario 2: Changing product variant option values
+  Tags: ['@api', '@ui']
+  When  I want to modify the "Go" product variant
+  And  I change its "Size" option to "L"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  the variant "Go" should have "Size" option as "L"
+

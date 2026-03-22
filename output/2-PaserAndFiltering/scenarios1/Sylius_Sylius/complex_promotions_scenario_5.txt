@@ -1,0 +1,10 @@
+Scenario 5: Receiving a discount on products from multiple taxons based on products from different taxons
+  Tags: ['@api', '@ui']
+  Given  there is a promotion "Formal attire pack"
+  And  it gives "10%" off on every product classified as "Formal attire" or "Dresses" if order contains any product classified as "Trousers" or "Jackets"
+  And  I added products "Rammstein bow tie", "Metallica dress" and "Iron Maiden trousers" to the cart
+  When  I check the details of my cart
+  Then  product "Metallica dress" price should be discounted by "$5.00"
+  And  product "Rammstein bow tie" price should be discounted by "$1.00"
+  And  my cart total should be "$134.00"
+

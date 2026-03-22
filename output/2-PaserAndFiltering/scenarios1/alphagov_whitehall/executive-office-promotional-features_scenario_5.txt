@@ -1,0 +1,5 @@
+Scenario 5: Deleting a promotional feature item
+  And  the executive office has a promotional feature with an item
+  When  I delete the promotional item
+  Then  I should no longer see the promotional item
+

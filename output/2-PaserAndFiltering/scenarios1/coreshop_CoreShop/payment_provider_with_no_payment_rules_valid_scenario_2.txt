@@ -1,0 +1,8 @@
+Scenario 2: Payment Provider with one payment rule should be valid
+  Given  adding a payment-provider-rule named "creditdards"
+  And  the payment-provider-rule "creditdards" is active
+  And  the payment-provider-rule has a condition products with product "Shoe"
+  And  the payment-provider-rule belongs to payment provider "Bankwire"
+  And  I add the product "Shoe" to my cart
+  Then  the payment provider "Bankwire" should be valid for my cart
+

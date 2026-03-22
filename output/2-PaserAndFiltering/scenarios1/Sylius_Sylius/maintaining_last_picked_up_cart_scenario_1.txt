@@ -1,0 +1,7 @@
+Scenario 1: Having access to a last picked up cart
+  Tags: ['@api', '@no-ui']
+  When  I pick up my cart
+  And  I pick up my cart again
+  And  I check the details of my cart
+  Then  I should have empty cart
+

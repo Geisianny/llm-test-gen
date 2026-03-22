@@ -1,0 +1,9 @@
+Scenario 2: Access Lending subproduct page as a visitor
+  When  I visit "/subproducts/lending"
+  Then  the response status code should be 200
+  And  I should see "FinAegis Lending"
+  And  I should see "P2P lending marketplace"
+  And  I should see "Now Live"
+  And  I should not see "Route [lending.index] not defined"
+  And  I should not see "Route [loans.index] not defined"
+

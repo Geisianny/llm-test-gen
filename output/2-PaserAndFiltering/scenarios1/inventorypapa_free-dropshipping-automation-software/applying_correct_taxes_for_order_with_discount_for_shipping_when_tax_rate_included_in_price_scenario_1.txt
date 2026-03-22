@@ -1,0 +1,9 @@
+Scenario 1: Properly rounded up tax
+  Tags: ['@ui']
+  Given  the store has "DHL" shipping method with "$56.95" fee
+  And  shipping method "DHL" belongs to "Shipping" tax category
+  And  I have product "Symfony Mug" in the cart
+  And  I proceed selecting "DHL" shipping method
+  Then  my cart total should be "$61.25"
+  And  my included in price taxes should be "$4.66"
+

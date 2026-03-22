@@ -1,0 +1,26 @@
+Scenario 1: Submitting a basic application, creating an account on the confirmation page
+  Given  I go to the first page of the "Test Listing" application
+  When  I fill out the Name page as "Jane Doe"
+  And  I fill out the Contact page with an address, non-NRHP match, and WorkInSF
+  And  I confirm my address
+  And  I don't indicate an alternate contact
+  And  I indicate I will live alone
+  And  I indicate living in public housing
+  And  I indicate no ADA priority
+  And  I indicate having vouchers
+  And  I fill out my income as "25000"
+  And  I continue past the Lottery Preferences intro
+  And  I opt out of "Assisted Housing" preference
+  And  I opt out of "Live/Work" preference
+  And  I opt out of "Alice Griffith" preference
+  And  I don't choose COP-DTHP preferences
+  And  I answer "No" to the Veterans preference question
+  And  I continue past the general lottery notice page
+  And  I fill out the optional survey
+  And  I confirm details on the review page
+  And  I agree to the terms and submit
+  Then  I should see my lottery number on the confirmation page
+  When  I click the Create Account button
+  And  I create an account for "Jane Doe" with my pre-filled application details
+  Then  I should be on the login page with the email confirmation popup
+

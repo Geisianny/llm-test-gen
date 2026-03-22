@@ -1,0 +1,14 @@
+Scenario 4: Submit application without accepting terms
+  Given  I am on "/financial-institutions/apply"
+  When  I fill in "institution_name" with "Test Bank Ltd"
+  And  I fill in "country" with "Germany"
+  And  I fill in "contact_name" with "John Doe"
+  And  I fill in "contact_email" with "john.doe@testbank.com"
+  And  I fill in "technical_capabilities" with "We have modern REST APIs"
+  And  I fill in "regulatory_compliance" with "Fully licensed"
+  And  I fill in "financial_strength" with "€500M AUM"
+  And  I fill in "insurance_coverage" with "Complete coverage"
+  And  I press "Submit Application"
+  Then  I should see "Please accept the terms"
+  And  I should be on "/financial-institutions/apply"
+

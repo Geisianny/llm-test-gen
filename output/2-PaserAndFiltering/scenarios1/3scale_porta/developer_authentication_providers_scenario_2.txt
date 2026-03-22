@@ -1,0 +1,4 @@
+Scenario 2: With plan by default add auth0
+  When  I visit the "Auth0" authentication provider page
+  Then  I should be on the upgrade notice page for "iam_tools"
+

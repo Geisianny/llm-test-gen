@@ -1,0 +1,10 @@
+Scenario 3: Replying to a message
+  Given  a message sent from provider "foo.3scale.localhost" to buyer "bob" with subject "Wassup?" and body "Everything OK?"
+  When  I go to the dashboard
+  And  I follow "Messages 1"
+  When  I follow "Wassup?"
+  Then  I should see "Wassup?"
+  When  I fill in "message_body" with "Yep, all good."
+  And  I press "Send reply"
+  Then  a message should be sent from buyer "bob" to provider "foo.3scale.localhost" with subject "Re: Wassup?" and body "Yep, all good."
+

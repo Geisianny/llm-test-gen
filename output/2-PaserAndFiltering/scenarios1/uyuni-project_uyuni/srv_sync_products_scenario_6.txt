@@ -1,0 +1,7 @@
+Scenario 6: Partially add openSUSE Tumbleweed product, only including the required packages to generate the bootstrap repository
+  Tags: ['@uyuni']
+  When  I use spacewalk-common-channel to add channel "opensuse_tumbleweed" with arch "x86_64"
+  And  I kill running spacewalk-repo-sync for "opensuse_tumbleweed-x86_64" channel
+  And  I use spacewalk-repo-sync to sync channel "opensuse_tumbleweed-x86_64" including only client tools dependencies
+  And  I use spacewalk-common-channel to add all "tumbleweed-client-tools-x86_64" channels with arch "x86_64"
+

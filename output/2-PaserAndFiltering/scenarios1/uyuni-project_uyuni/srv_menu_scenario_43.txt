@@ -1,0 +1,6 @@
+Scenario 43: "Create kickstart distribution" page Systems => Autoinstallation => Distributions => create new kickstart distribution
+  When  I follow the left menu "Systems > Autoinstallation > Distributions"
+  And  I follow "Create Distribution"
+  Then  I should see a "Create Autoinstallable Distribution" text
+  And  I should see a "Distribution Label" text
+

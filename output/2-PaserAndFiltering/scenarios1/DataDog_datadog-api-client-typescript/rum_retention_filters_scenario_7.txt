@@ -1,0 +1,8 @@
+Scenario 7: Get all RUM retention filters returns "OK" response
+  Tags: ['@replay-only', '@team:DataDog/rum-backend']
+  Given  new "ListRetentionFilters" request
+  And  request contains "app_id" parameter with value "1d4b9c34-7ac4-423a-91cf-9902d926e9b3"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data" has length 3
+

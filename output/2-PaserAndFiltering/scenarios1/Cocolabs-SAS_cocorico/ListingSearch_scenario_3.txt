@@ -1,0 +1,9 @@
+Scenario 3: I can not find listings without searched characteristics
+  Given  I do a search on the home page
+  Then  I should be on the "listing search result" page
+  And  I should see "1 results"
+  When  I select a characteristic "Characteristic_3" with value "Custom value 2"
+  And  I wait 500 ms for Jquery loading
+  Then  I should be on the "listing search result" page
+  And  I should see "0 results"
+

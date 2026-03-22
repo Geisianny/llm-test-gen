@@ -1,0 +1,55 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: topical_events_story_processado.feature
+Caminho relativo: alphagov_whitehall\topical_events_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\alphagov_whitehall\topical_events_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: topical_events_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Create a new topical event
+   Steps: 6
+   - Given there is an editor logged in
+   - And there are no existing topical events with the title "New Event"
+   - When the editor creates a new topical event with the title "New Event"
+   - And enters a summary and description for the event
+   - Then the system saves the new topical event
+   - And displays a confirmation message
+2. Publish a created topical event
+   Steps: 5
+   - Given there is an editor logged in
+   - And there is a created topical event with the title "New Event"
+   - When the editor publishes the topical event "New Event"
+   - Then the system makes the event visible in the administrative interface
+   - And displays a message confirming the event is published
+3. Update a published topical event
+   Steps: 6
+   - Given there is an editor logged in
+   - And there is a published topical event with the title "New Event"
+   - When the editor updates the summary of the topical event "New Event"
+   - And saves the changes
+   - Then the system updates the event details
+   - And displays a confirmation message
+4. Delete a topical event
+   Steps: 5
+   - Given there is an editor logged in
+   - And there is a created topical event with the title "New Event"
+   - When the editor deletes the topical event "New Event"
+   - Then the system removes the event from the administrative interface
+   - And displays a confirmation message
+5. Attempt to create a topical event with missing information
+   Steps: 5
+   - Given there is an editor logged in
+   - When the editor creates a new topical event without a title
+   - And enters a summary and description for the event
+   - Then the system prevents the event from being saved
+   - And displays an error message indicating required fields are missing

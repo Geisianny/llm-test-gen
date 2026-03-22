@@ -1,0 +1,13 @@
+Scenario 28: Update an SLO returns "OK" response
+  Tags: ['@team:DataDog/slo-app']
+  Given  there is a valid "slo" in the system
+  And  new "UpdateSLO" request
+  And  request contains "slo_id" parameter from "slo.data[0].id"
+  And  body with value {"type":"metric","name":"{{ slo.data[0].name }}","thresholds":[{"target":97.0,"timeframe":"7d","warning":98.0}],"timeframe":"7d","target_threshold":97.0,"warning_threshold":98,"query":{"numerator":"sum:httpservice.hits{code:2xx}.as_count()","denominator":"sum:httpservice.hits{!code:3xx}.as_count()"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data[0].thresholds[0].target" is equal to 97.0
+  And  the response "data[0].timeframe" is equal to "7d"
+  And  the response "data[0].target_threshold" is equal to 97.0
+  And  the response "data[0].warning_threshold" is equal to 98.0
+

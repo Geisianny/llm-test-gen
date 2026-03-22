@@ -1,0 +1,5 @@
+Scenario 4: Check the new bootstrapped SLES 15 SP5 minion in System Overview page
+  When  I follow the left menu "Salt > Keys"
+  Then  I should see a "accepted" text
+  And  the Salt master can reach "sle15sp5_minion"
+

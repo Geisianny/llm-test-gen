@@ -1,0 +1,7 @@
+Scenario 10: Get a custom variable returns "Item Not Found" response
+  Tags: ['@generated', '@skip', '@team:Datadog/collaboration-integrations']
+  Given  new "GetWebhooksIntegrationCustomVariable" request
+  And  request contains "custom_variable_name" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Item Not Found
+

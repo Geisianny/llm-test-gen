@@ -1,0 +1,4 @@
+Scenario 1: CREATE DATABASE
+  Tags: ['@customer_db']
+  Given  I create database "openerp_test_customer" with admin password "admin"
+

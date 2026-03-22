@@ -1,0 +1,18 @@
+Scenario Outline 3: Referral set member participates in a trade when exiting an auction (0083-RFPR-032) - Example 1
+  Given  the market data for the market "ETH/USD-1-2" should be:
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/USD-1-2" should be:
+  And  the network moves ahead "1" blocks
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/USD-1-2"
+  When  the parties place the following orders:
+  And  the network moves ahead "1" epochs
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/USD-1-2"
+  And  the referral set stats for code "referral-code-1" at epoch "1" should have a running volume of 0:
+
+  Examples:
+    | party | maker side | taker side |
+    | referrer1 | buy | sell |
+    | referrer1 | sell | buy |
+    | referee1 | buy | sell |
+    | referee1 | sell | buy |
+

@@ -1,0 +1,6 @@
+Scenario 5: Marking all alerts as read
+  Given  they go to the alerts page
+  When  they select toolbar action "Mark all as read"
+  And  confirm the dialog
+  Then  they should see the following table:
+

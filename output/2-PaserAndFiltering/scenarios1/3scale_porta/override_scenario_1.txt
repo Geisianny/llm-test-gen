@@ -1,0 +1,8 @@
+Scenario 1: Signup
+  When  the current domain is "foo.3scale.localhost"
+  And  I go to the signup page
+  Then  I should see "Sign up"
+  When  builtin page "signup/show" of provider "foo.3scale.localhost" has content "EDITED Signup"
+  And  I go to the signup page
+  Then  I should see "EDITED Signup"
+

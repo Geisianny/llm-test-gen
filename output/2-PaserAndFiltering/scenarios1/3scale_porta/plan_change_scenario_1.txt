@@ -1,0 +1,8 @@
+Scenario 1: Change an application's plan requires approval
+  Given  they go to the application's dev portal edit page
+  When  follow "Review/Change"
+  And  follow "Enterprise"
+  And  press "Request Plan Change"
+  Then  should see the flash message "A request to change your application plan has been sent"
+  And  "admin@foo.3scale.localhost" should receive an email with subject "Action required: Jane from Jane requested an app plan change"
+

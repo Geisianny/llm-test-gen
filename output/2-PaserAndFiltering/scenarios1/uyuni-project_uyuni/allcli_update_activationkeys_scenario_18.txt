@@ -1,0 +1,9 @@
+Scenario 18: Update Debian-like key with to include dev child channel
+  Tags: ['@skip_if_github_validation', '@deblike_minion']
+  When  I follow the left menu "Systems > Activation Keys"
+  And  I follow "Debian-like Test Key" in the content area
+  And  I wait for child channels to appear
+  And  I check "Devel-Debian-like-Channel"
+  And  I click on "Update Activation Key"
+  Then  I should see a "Activation key Debian-like Test Key has been modified" text
+

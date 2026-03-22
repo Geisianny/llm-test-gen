@@ -1,0 +1,9 @@
+Scenario 1: Admin user delete order type Selling
+  Given  community "test" has order type "Selling"
+  When  I go to the edit "selling" order type admin page
+  Then  I should see "Edit order type 'Selling'"
+  When  I confirm alert popup
+  Given  I will confirm all following confirmation dialogs in this page if I am running PhantomJS
+  When  I follow "Delete order type"
+  Then  I should see "Successfully deleted order type 'Selling'"
+

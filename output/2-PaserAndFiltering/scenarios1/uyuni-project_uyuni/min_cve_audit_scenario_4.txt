@@ -1,0 +1,5 @@
+Scenario 4: Display CVE audit page
+  When  I follow the left menu "Audit > CVE Audit"
+  Then  I should see a "CVE Audit" link in the left menu
+  And  I should see a "CVE Audit" text
+

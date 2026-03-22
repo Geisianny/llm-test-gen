@@ -1,0 +1,8 @@
+Scenario 3: COGS from negative sales quantities (arrears purchase)
+  Given  a part
+  And  8 units sold
+  When  -2 units are sold
+  And  8 units are purchased at 10 USD each
+  Then  COGS should be at 60 USD
+  And  the inventory should be at 20 USD
+

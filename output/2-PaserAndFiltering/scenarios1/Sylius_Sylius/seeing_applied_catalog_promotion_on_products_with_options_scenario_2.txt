@@ -1,0 +1,6 @@
+Scenario 2: Seeing applied catalog promotion on the product with non default option
+  Tags: ['@no-api', '@ui', '@javascript']
+  When  I view product "T-Shirt"
+  And  I select its "Size" as "L"
+  Then  I should see this product is discounted from "$50.00" to "$37.50" with "Surprise sale" promotion
+

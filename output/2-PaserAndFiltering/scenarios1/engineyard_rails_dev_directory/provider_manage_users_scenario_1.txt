@@ -1,0 +1,13 @@
+Scenario 1: Adding a new user to a provider
+  Given  a provider "Kooky" belonging to "paul@joy.com"
+  And  I am on the homepage
+  When  I log in as "paul@joy.com" with password "testtest"
+  And  I follow "navigation.users" translation
+  And  I follow "company_profile.users.add_new" translation
+  And  I fill in "First name" with "Ciara"
+  And  I fill in "Last name" with "McGuire"
+  And  I fill in "Email" with "ciara@ciarascakes.com"
+  And  I press "Save"
+  Then  I should see "Ciara McGuire"
+  And  "ciara@ciarascakes.com" should have a perishable token
+

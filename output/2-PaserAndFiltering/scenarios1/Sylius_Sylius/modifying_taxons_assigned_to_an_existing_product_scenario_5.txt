@@ -1,0 +1,5 @@
+Scenario 5: Being prevented from assigning an empty product to a taxon
+  Tags: ['@api', '@no-ui']
+  When  I try to assign an empty product to the "Clothes" taxon
+  Then  I should be notified that specifying a product is required
+

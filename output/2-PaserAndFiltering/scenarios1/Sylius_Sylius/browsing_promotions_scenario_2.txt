@@ -1,0 +1,7 @@
+Scenario 2: Browsing manage button for coupon based promotion
+  Tags: ['@api', '@ui']
+  Given  the store has promotion "Christmas sale" with coupon "Santa's gift"
+  When  I want to browse promotions
+  Then  this promotion should be coupon based
+  And  I should be able to manage coupons for this promotion
+

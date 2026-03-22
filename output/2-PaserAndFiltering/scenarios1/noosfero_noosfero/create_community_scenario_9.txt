@@ -1,0 +1,10 @@
+Scenario 9: new community is listed after approval
+  Tags: ['@selenium']
+  Given  I am logged in as admin
+  And  feature "admin_must_approve_new_communities" is enabled on environment
+  Given  "admin_user" creates the community "Community for approval"
+  And  I approve community "Community for approval"
+  And  I go to admin_user's control panel
+  And  I follow "Groups" within "#section-relationships"
+  Then  I should see "Community for approval"
+

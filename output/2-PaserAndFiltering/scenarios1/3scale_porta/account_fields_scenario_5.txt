@@ -1,0 +1,6 @@
+Scenario 5: Extra fields are sorted by position
+  Given  I log in as "bob" on foo.3scale.localhost
+  And  provider "foo.3scale.localhost" has the field "required_field" for "Account" in the position 20
+  When  I go to the account edit page
+  Then  I should see the fields in order:
+

@@ -1,0 +1,5 @@
+Scenario 2: expand media panel
+  Tags: ['@selenium-fixme']
+  When  I follow "Show/Hide"
+  Then  I should see an element ".show-media-panel"
+

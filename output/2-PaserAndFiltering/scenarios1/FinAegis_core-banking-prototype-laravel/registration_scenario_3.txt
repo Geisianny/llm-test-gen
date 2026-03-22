@@ -1,0 +1,13 @@
+Scenario 3: Successful registration as business user
+  Given  I am on the registration page
+  When  I fill in "Name" with "Acme Corporation"
+  And  I fill in "Email" with "admin@acme.com"
+  And  I check "Business Account"
+  And  I fill in "Password" with "Password123!"
+  And  I fill in "Confirm Password" with "Password123!"
+  And  I check "I agree to the Terms of Service"
+  And  I press "Register"
+  Then  I should be redirected to "/dashboard"
+  And  I should see "Welcome to FinAegis!"
+  And  I should see the onboarding wizard
+

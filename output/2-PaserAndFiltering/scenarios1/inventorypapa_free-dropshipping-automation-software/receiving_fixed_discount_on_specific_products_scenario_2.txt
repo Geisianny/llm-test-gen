@@ -1,0 +1,6 @@
+Scenario 2: Not receiving fixed discount on another item
+  Tags: ['@ui', '@api']
+  When  I add product "PHP Mug" to the cart
+  Then  product "PHP Mug" price should not be decreased
+  And  my cart total should be "$20.00"
+

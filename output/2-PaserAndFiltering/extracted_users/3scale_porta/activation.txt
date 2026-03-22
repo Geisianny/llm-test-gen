@@ -1,0 +1,36 @@
+Feature: Activation
+Description: In order to allow only users with valid emails to sign in
+  They have to activate themselves first
+Tags: ['@javascript']
+
+Background: 
+  Given  a provider "foo.3scale.localhost"
+  And  current domain is the admin domain of provider "foo.3scale.localhost"
+
+Scenario 1: Activation with valid activation token
+  Tags: ['@emails']
+  Given  a pending user "alice" of account "foo.3scale.localhost"
+  When  I follow the activation link in an email sent to user "alice"
+  And  I try to log in as provider "alice"
+  Then  they should see "Hello alice"
+  And  the current page is the provider onboarding wizard page
+
+Scenario 2: Not activated user can't log in
+  Given  a pending user "alice" of account "foo.3scale.localhost"
+  When  I try to log in as provider "alice"
+  Then  I should not be logged in
+  And  I should see "Your account isn't active or hasn't been approved yet."
+
+Scenario 3: Activated user logs in
+  Given  a pending user "alice" of account "foo.3scale.localhost"
+  And  user "alice" activates herself
+  When  I try to log in as provider "alice"
+  Then  they should see "Hello alice"
+  And  the current page is the provider onboarding wizard page
+
+Scenario 4: Activated user tries to activate again
+  Given  a pending user "alice" of account "foo.3scale.localhost"
+  And  user "alice" activates herself
+  And  user "alice" activates herself
+  Then  I should be on the provider login page
+

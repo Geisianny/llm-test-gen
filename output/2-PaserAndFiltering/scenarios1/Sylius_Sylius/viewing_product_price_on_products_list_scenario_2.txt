@@ -1,0 +1,9 @@
+Scenario 2: Viewing a product with discount on list
+  Tags: ['@api', '@ui']
+  Given  the store has a product "T-Shirt watermelon" priced at "$19.00"
+  And  the product "T-Shirt watermelon" has original price "$20.00"
+  And  the store classifies its products as "T-Shirts"
+  And  this product belongs to "T-Shirts"
+  When  I browse products from taxon "T-Shirts"
+  Then  I should see "T-Shirt watermelon" product discounted from "$20.00" to "$19.00"
+

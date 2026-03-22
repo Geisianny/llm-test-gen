@@ -1,0 +1,49 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 19/01/2026 23:13:57
+Arquivo analisado: basket_management_story_processado.feature
+Caminho relativo: FinAegis_core-banking-prototype-laravel\basket_management_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/Originais\FinAegis_core-banking-prototype-laravel\basket_management_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: basket_management_story_processado
+Descrição: Não possui
+Total de cenários: 4
+
+CENÁRIOS IDENTIFICADOS:
+1. Creating a fixed basket
+   Steps: 3
+   - When I create a basket "STABLE" with the following components:
+   - Then the basket should be created successfully
+   - And the basket value should be calculated correctly
+2. Decomposing a basket into components
+   Steps: 8
+   - Given I have a basket "GCU" with the following components:
+   - And I have an account with balance 1000.00 GCU
+   - When I decompose 100 of basket "GCU"
+   - Then I should have 35.00 USD in my account
+   - And I should have 30.00 EUR in my account
+   - And I should have 25.00 GBP in my account
+   - And I should have 10.00 CHF in my account
+   - And my GCU balance should be 900.00
+3. Composing a basket from components
+   Steps: 7
+   - Given I have a basket "GCU" with the following components:
+   - And I have an account with balance 100.00 USD
+   - And I have an account with balance 100.00 EUR
+   - When I compose 100 units of basket "GCU"
+   - Then my GCU balance should be 100.00
+   - And my USD balance should be 50.00
+   - And my EUR balance should be 50.00
+4. Dynamic basket rebalancing
+   Steps: 5
+   - Given I have a dynamic basket "DYNAMIC" with the following components:
+   - When the basket needs rebalancing
+   - And I trigger a rebalance
+   - Then the basket should be rebalanced within the weight limits
+   - And a rebalancing event should be recorded

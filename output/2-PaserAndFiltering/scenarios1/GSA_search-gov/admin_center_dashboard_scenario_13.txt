@@ -1,0 +1,29 @@
+Scenario 13: Adding a new site
+  Tags: ['@javascript']
+  Given  I am logged in with email "affiliate_manager@fixtures.org"
+  When  I go to the new site page
+  Then  I should see the browser page titled "New Site Setup"
+  When  I fill in the following:
+  And  I submit the form by pressing "Add"
+  Then  I should see "Site Handle (visible to searchers in the URL) is too short"
+  And  the "Homepage URL" field should contain "http://awesome.gov"
+  When  I fill in the following:
+  And  I select "Arabic" from "Site Language"
+  And  I submit the form by pressing "Add"
+  Then  I should see "You have added 'Agency Gov' as a site."
+  And  I should be on the agencygov's Dashboard page
+  And  "affiliate_manager@fixtures.org" should receive an email
+  When  I follow "Settings"
+  Then  the "Homepage URL" field should contain "https://www.nih.gov/"
+  And  I should see "Arabic"
+  When  I follow "Content"
+  Then  the "Discover and add the RSS feeds and social media accounts listed on the following page:" field should contain "https://www.nih.gov"
+  When  I follow "Display"
+  And  I follow "Visual design (new)"
+  Then  the "Favicon URL" field should contain "http://www.nih.gov/themes/custom/nih2_uswds/assets/img/favicons/custom/favicon-192x192.png"
+  When  I open the email
+  Then  I should see "Your new site: Agency Gov" in the email subject
+  And  I should see "Affiliate Manager" in the email body
+  And  I should see "Name: Agency Gov" in the email body
+  And  I should see "Handle: agencygov" in the email body
+

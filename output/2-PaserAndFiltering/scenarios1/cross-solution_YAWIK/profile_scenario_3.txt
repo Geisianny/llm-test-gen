@@ -1,0 +1,6 @@
+Scenario 3: Update profile photo
+  When  I go to profile page
+  And  I attach the file "img/person.jpg" to "info-image-image"
+  And  I wait for the ajax response
+  Then  I should see an "img.img-polaroid" element
+

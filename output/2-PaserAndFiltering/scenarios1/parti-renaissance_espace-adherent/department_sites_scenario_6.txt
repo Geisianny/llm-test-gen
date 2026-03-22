@@ -1,0 +1,6 @@
+Scenario 6: As referent I cannot create my department site with invalid payload
+  Given  I am logged with "referent-75-77@en-marche-dev.fr" via OAuth client "JeMengage Web" with scope "jemengage_admin"
+  When  I send a "POST" request to "/api/v3/department_sites?scope=president_departmental_assembly" with body:
+  Then  the response status code should be 400
+  And  the JSON should be equal to:
+

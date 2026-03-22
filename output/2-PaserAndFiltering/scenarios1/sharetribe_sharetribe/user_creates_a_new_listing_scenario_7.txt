@@ -1,0 +1,6 @@
+Scenario 7: User creates a new listing with price
+  Tags: ['@javascript']
+  Given  I am logged in
+  When  I create a new listing "Sledgehammer" with price "20.5"
+  Then  I should see "Sledgehammer" within "#listing-title"
+

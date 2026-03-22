@@ -1,0 +1,15 @@
+Scenario 5: the show link is available just for categories with category tree
+  Tags: ['@selenium']
+  Given  the following category
+  And  I follow "menu-dropdown"
+  And  I wait for 1 seconds
+  And  I follow "Administration"
+  And  I follow "Categories"
+  Then  I should see "Food"
+  When  I follow "Show/Hide subcategories"
+  Then  I should see "Vegetarian"
+  And  I should see "Steak"
+  And  I follow "Show/Hide subcategories"
+  And  I should not see "Steak"
+  Then  I should not see "Vegetarian"
+

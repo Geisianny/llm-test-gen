@@ -1,0 +1,30 @@
+Feature: Handle One stop shop
+
+Background: 
+  Given  the following accounts exist:
+  And  the follow brands exist:
+  And  there are the following tax types:
+  And  that the following countries exist:
+  And  the following country tax rules exist:
+  And  the follow products exist:
+  And  the follow prices exist:
+  And  the following features exist:
+  And  the follow products exist:
+  And  the follow prices exist:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "Price One" with:
+  And  the follow customers exist:
+
+Scenario 1: 
+  Given  the EU one stop shop rule is enabled
+  Given  the following subscriptions exist:
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  And  there the latest invoice for "customer.two@example.org" will have tax country of "FR"
+
+Scenario 2: 
+  Given  the EU one stop shop rule is not enabled
+  Given  the following subscriptions exist:
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  And  there the latest invoice for "customer.three@example.org" will have tax country of "DE"
+

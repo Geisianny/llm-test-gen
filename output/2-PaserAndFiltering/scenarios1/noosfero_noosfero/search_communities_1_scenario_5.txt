@@ -1,0 +1,13 @@
+Scenario 5: remember facet filter when searching new query
+  Given  the following categories as facets
+  And  the following category
+  And  the following communities
+  When  I go to the search communities page
+  And  I fill in "search-input" with "Developers"
+  And  I press "Search"
+  And  I follow "Software Livre" within "#facets-menu"
+  And  I fill in "search-input" with "Rails"
+  And  I press "Search"
+  Then  I should see "Rails Users" within "#search-results"
+  And  I should not see "Rails Developers"
+

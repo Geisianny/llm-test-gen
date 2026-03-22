@@ -1,0 +1,9 @@
+Scenario 4: Adding multiple images of the same type to an existing taxon
+  Tags: ['@ui', '@javascript']
+  Given  I want to modify the "T-Shirts" taxon
+  When  I attach the "t-shirts.jpg" image with "banner" type
+  And  I attach the "t-shirts.jpg" image with "banner" type
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this taxon should have 2 images
+

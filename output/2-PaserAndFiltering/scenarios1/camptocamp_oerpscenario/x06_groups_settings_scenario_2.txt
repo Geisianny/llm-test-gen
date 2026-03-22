@@ -1,0 +1,6 @@
+Scenario 2: ACCOUNTING SETTINGS
+  Tags: ['@multicompany_base_finance_accounting_settings']
+  Given  I need a "account.config.settings" with oid: scen.account_settings
+  And  having:
+  Then  execute the setup
+

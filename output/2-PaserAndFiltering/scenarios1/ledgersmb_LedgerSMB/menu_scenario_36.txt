@@ -1,0 +1,11 @@
+Scenario Outline 36: Navigate to menu "<path>" and open screen "<screen>" - Example 36
+  Tags: ['@wip']
+  When  I navigate the menu and select the item at "System > GIFI > Add GIFI"
+  Then  I should see the  screen
+
+  Examples:
+    | path | screen |
+    | System > GIFI > Add GIFI |  |
+    | System > GIFI > Import GIFI |  |
+    | System > GIFI > List GIFI |  |
+

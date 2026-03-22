@@ -1,0 +1,8 @@
+Scenario 6: Mass liquidation simulation
+  Given  multiple users have under-collateralized positions
+  And  the total system collateral ratio is below 120%
+  When  I trigger a mass liquidation simulation
+  Then  the system should identify all at-risk positions
+  And  calculate the total liquidation impact
+  And  provide recovery scenarios
+

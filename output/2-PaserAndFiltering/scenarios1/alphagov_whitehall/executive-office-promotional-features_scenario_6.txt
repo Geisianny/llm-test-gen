@@ -1,0 +1,5 @@
+Scenario 6: Limiting the number of feature items to a maximum of three
+  And  the executive office has a promotional feature with the maximum number of items
+  When  I view the promotional feature
+  Then  I should not be able to add any further feature items
+

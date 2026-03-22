@@ -1,0 +1,7 @@
+Scenario 7: Add a new category shipping rule which includes all subcategory and is valid
+  Given  adding a shipping rule named "category"
+  And  the shipping rule is active
+  And  the shipping rule has a condition categories with category "Shoes" and it is recursive
+  And  I add the product "Sneaker" to my cart
+  Then  the shipping rule should be valid for my cart with carrier "Post"
+

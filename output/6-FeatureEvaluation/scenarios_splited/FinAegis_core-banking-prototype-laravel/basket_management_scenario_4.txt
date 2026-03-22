@@ -1,0 +1,6 @@
+Scenario: Rebalance an existing basket asset
+  Given there is a bank customer with an existing basket asset
+  And the basket asset has a valid composition
+  When the customer requests rebalancing of the basket
+  Then the system rebalances the basket asset according to the defined rules
+  And displays the updated basket composition

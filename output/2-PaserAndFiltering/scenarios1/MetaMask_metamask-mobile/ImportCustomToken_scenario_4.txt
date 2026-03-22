@@ -1,0 +1,13 @@
+Scenario Outline 4: Importing Custom tokens - Example 1
+  When  I tap on the navbar network title button
+  And  I select "AVAX Fuji" network option
+  When  I tap Import Tokens
+  And  I type 0x0b9d5D9136855f6FEc3c0993feE6E9CE8a297846 into token Address field
+  Then  The Token Symbol is displayed
+  When  I tap on the Import button
+  Then  I should see "Imported Token" toast message
+
+  Examples:
+    | NETWORK | TOKENADDRESS |
+    | AVAX Fuji | 0x0b9d5D9136855f6FEc3c0993feE6E9CE8a297846 |
+

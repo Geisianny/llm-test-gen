@@ -1,0 +1,14 @@
+Scenario 4: Search with blended results
+  Tags: ['@javascript', '@a11y']
+  Given  the following BingV7 Affiliates exist:
+  And  the following IndexedDocuments exist:
+  When  I am on bar.gov's redesigned search page
+  And  I search for "article" in the redesigned search page
+  Then  I should see exactly "6" web search results
+  And  I should see "The last hour article"
+  And  I should see "p.whitehouse.gov/hour.html"
+  And  I should see "Within the last hour article on item"
+  And  I should not see pagination
+  And  I should see "6 results"
+  And  I should see Powered by Search.gov
+

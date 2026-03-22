@@ -1,0 +1,5 @@
+Scenario 1: Create/Update a user
+  Tags: ['@tmp']
+  Given  I need a "res.users" with name: Cucumber and login: is rocking
+  And  having:
+

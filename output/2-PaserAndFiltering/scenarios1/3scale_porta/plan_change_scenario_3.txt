@@ -1,0 +1,10 @@
+Scenario 3: Without a credit card, changing an application's plan requires approval
+  Given  all the rolling updates features are off
+  And  the product allows to change application plan only with credit card
+  When  they go to the application's dev portal edit page
+  And  follow "Review/Change"
+  And  follow "Enterprise"
+  And  press "Request Plan Change"
+  Then  they should see "A request to change your application plan has been sent"
+  And  "admin@foo.3scale.localhost" should receive an email with subject "Action required: Jane from Jane requested an app plan change"
+

@@ -1,0 +1,5 @@
+Scenario: Shipping methods update when cart contents change
+  Given there are items in the cart with shipping category "Standard"
+  And the system displays shipping methods associated with "Standard" category
+  When the user adds an item with shipping category "Over-sized" to the cart
+  Then the system displays a message indicating no shipping methods are available

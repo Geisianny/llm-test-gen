@@ -1,0 +1,7 @@
+Scenario 5: Fix kernel parameters
+  When  I follow the left menu "Systems > Autoinstallation > Distributions"
+  And  I follow "SLE-15-SP4-TFTP"
+  And  I enter "useonlinerepo insecure=1 install=http://proxy.example.org/ks/dist/SLE-15-SP4-TFTP self_update=http://proxy.example.org/ks/dist/child/sle15-sp4-installer-updates-x86_64/SLE-15-SP4-TFTP" as "kernelopts"
+  And  I click on "Update Autoinstallable Distribution"
+  Then  I should see a "Autoinstallable Distribution Updated" text
+

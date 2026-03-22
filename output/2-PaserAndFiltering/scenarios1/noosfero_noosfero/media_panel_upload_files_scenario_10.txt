@@ -1,0 +1,19 @@
+Scenario 10: update recent media after file upload
+  Tags: ['@selenium-fixme']
+  Given  the following files
+  When  I go to /myprofile/joaosilva/cms/new?type=TextArticle
+  And  I follow "Show/Hide"
+  And  I select "Recent media" from "parent_id" within "#published-media"
+  Then  I should see div with title "other-pic" within ".items"
+  When  I select "joaosilva" from "parent_id" within "#media-upload-form"
+  And  I attach the file "public/503.jpg" to "file"
+  Then  I should see div with title "503" within ".items"
+  And  I should see div with title "other-pic" within ".items"
+  When  I select "joaosilva/Gallery" from "parent_id" within "#media-upload-form"
+  And  I attach the file "public/images/rails.png" to "file"
+  And  I attach the file "public/robots.txt" to "file"
+  Then  I should see div with title "rails" within ".items"
+  And  I should see div with title "503" within ".items"
+  And  I should see div with title "other-pic" within ".items"
+  And  I should see "robots" link
+

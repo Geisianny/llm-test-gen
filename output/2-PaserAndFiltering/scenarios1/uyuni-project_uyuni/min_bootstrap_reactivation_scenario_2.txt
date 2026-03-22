@@ -1,0 +1,6 @@
+Scenario 2: Generate a re-activation key
+  Given  I am on the Systems overview page of this "sle_minion"
+  When  I follow "Reactivation"
+  And  I click on "Generate New Key"
+  Then  I should see a "Key:" text
+

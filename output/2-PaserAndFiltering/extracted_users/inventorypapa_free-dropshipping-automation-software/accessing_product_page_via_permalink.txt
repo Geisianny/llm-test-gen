@@ -1,0 +1,16 @@
+Feature: Viewing a product details using permalink
+Description: In order to see products detailed page
+    As a visitor
+    I want to be able to have access to product page by permalink
+Tags: ['@viewing_products']
+
+Background: 
+  Given  the store operates on a single channel in "United States"
+
+Scenario 1: Accessing a detailed product page using permalink
+  Tags: ['@ui']
+  Given  the store has a product "T-shirt banana"
+  When  I open page "en_US/products/t-shirt-banana"
+  Then  I should be on "T-shirt banana" product detailed page
+  And  I should see the product name "T-shirt banana"
+

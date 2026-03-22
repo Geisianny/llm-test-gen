@@ -1,0 +1,6 @@
+Scenario: Invalid JSON payload for password reset
+  Given there is a registered user with the email "user@example.com"
+  When the client sends a password reset request with the email "user@example.com"
+  And includes an invalid JSON payload
+  Then the system returns a 400 status code
+  And includes an error message indicating invalid JSON

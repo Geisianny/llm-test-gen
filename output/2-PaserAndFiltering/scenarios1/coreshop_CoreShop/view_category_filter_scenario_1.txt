@@ -1,0 +1,4 @@
+Scenario 1: latest products should still be
+  When  I check latest products
+  Then  I should see 6 products in the list
+

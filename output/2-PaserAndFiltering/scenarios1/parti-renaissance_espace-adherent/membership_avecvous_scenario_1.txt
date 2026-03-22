@@ -1,0 +1,6 @@
+Scenario 1: As a non logged-in user I can create a contact
+  Given  I send a "POST" request to "/api/contacts" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+

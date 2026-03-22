@@ -1,0 +1,9 @@
+Scenario 1: Closed books disallow posting
+  Given  the following GL transaction posted on 2015-11-01:
+  When  I navigate the menu and select the item at "General Journal > Year End"
+  And  I enter "2015-11-15" into "Close As-Of"
+  And  I press "Close Period"
+  And  I enter "2015-11-30" into "Close As-Of"
+  And  I press "Close Period"
+  Then  I can't post a transaction on 2015-11-16
+

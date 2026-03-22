@@ -1,0 +1,5 @@
+Scenario 5: Run Cobbler Sync via button and validate UI output
+  When  I follow the left menu "Admin > Manager Configuration > Cobbler"
+  And  I click on "Update"
+  Then  I should see a "Cobbler Sync action was successfully executed. Look at /var/log/cobbler/*.log for more information" text
+

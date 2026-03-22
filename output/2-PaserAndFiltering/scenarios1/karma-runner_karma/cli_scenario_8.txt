@@ -1,0 +1,4 @@
+Scenario 8: Stop command help
+  When  I execute Karma with arguments: "stop --help"
+  Then  the stdout is exactly:
+

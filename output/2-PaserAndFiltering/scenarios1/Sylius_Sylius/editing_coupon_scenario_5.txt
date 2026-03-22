@@ -1,0 +1,5 @@
+Scenario 5: Being unable to change code of promotion coupon
+  Tags: ['@api', '@ui']
+  When  I want to modify the "SANTA2016" coupon for this promotion
+  Then  I should not be able to edit its code
+

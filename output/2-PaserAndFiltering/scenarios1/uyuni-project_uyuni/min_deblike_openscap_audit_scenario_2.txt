@@ -1,0 +1,4 @@
+Scenario 2: Enable all the necessary repositories for OpenSCAP on Debian-like minion
+  Tags: ['@skip_if_github_validation']
+  When  I enable Debian-like "universe" repository on "deblike_minion"
+

@@ -1,0 +1,7 @@
+Scenario 1: Acknowledge On-Call Page returns "Accepted." response
+  Tags: ['@generated', '@skip', '@team:DataDog/on-call']
+  Given  new "AcknowledgeOnCallPage" request
+  And  request contains "page_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 202 Accepted.
+

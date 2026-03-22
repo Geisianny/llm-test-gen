@@ -1,0 +1,5 @@
+Scenario: Multiple orders are handled correctly during auction and continuous trading
+  Given the parties place multiple orders for the market "BTC/ETH"
+  When the network moves ahead "1" blocks
+  Then the orders should have the following states: executed, partially executed, or cancelled
+  And the mark price should be "1050" for the market "BTC/ETH"

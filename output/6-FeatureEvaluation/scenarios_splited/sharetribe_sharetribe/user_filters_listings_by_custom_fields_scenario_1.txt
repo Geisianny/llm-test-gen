@@ -1,0 +1,6 @@
+Scenario: Filter listings by a single custom field
+  Given there are listings with custom field "Location" having values "New York" and "Los Angeles"
+  And the user is on the listings page
+  When the user selects "New York" from the "Location" filter
+  Then the system displays listings with "Location" as "New York"
+  And the listings count is updated accordingly

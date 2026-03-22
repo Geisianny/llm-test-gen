@@ -1,0 +1,6 @@
+Scenario 1: Navigation
+  Given  they go to the admin portal applications page
+  When  they follow "Create an application"
+  And  they should see "Create application"
+  And  the current page is the admin portal new application page
+

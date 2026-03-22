@@ -1,0 +1,6 @@
+Scenario 10: Upload IdP metadata returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "UploadIdPMetadata" request
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

@@ -1,0 +1,8 @@
+Scenario 4: Create a monitor notification rule returns "OK" response
+  Tags: ['@team:DataDog/monitor-app']
+  Given  new "CreateMonitorNotificationRule" request
+  And  body with value {"data": {"attributes": {"filter": {"tags": ["test:{{ unique_lower }}"]}, "name": "test rule", "recipients": ["slack-test-channel", "jira-test"]}, "type": "monitor-notification-rule"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.attributes.name" is equal to "test rule"
+

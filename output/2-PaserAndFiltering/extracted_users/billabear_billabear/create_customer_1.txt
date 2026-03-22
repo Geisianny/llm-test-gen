@@ -1,0 +1,94 @@
+Feature: Customer Creation
+Description: In order to keep track of customers
+  As an APP user
+  I need to be register a customer
+
+Background: 
+  Given  the following accounts exist:
+
+Scenario 1: Successfully create customer
+  When  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  When  I create a customer via the app with the following info
+  Then  there should be a customer for "customer@example.org"
+
+Scenario 2: No email
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  When  I create a customer via the app with the following info
+  Then  there should be an error for "email"
+  And  there should not be an error for "country"
+
+Scenario 3: Invalid email
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  When  I create a customer via the app with the following info
+  Then  there should be an error for "email"
+  And  there should not be an error for "country"
+
+Scenario 4: Stripe not configured
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  there are no stripe api keys configured
+  When  I create a customer via the app with the following info
+  Then  there should be an error for "stripe"
+
+Scenario 5: Successfully create customer with references
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  When  I create a customer via the app with the following info
+  Then  there should be a customer for "customer@example.org"
+  And  the customer "customer@example.org" should have the external reference "cust_4945959"
+  And  the customer "customer@example.org" should have the reference "Test Customer"
+  And  the customer "customer@example.org" should have the post code "20043"
+
+Scenario 6: Customer already exists
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  the follow customers exist:
+  When  I create a customer via the app with the following info
+  Then  I should be told there is a conflict
+
+Scenario 7: Successfully create customer with references and billing type
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  When  I create a customer via the app with the following info
+  Then  there should be a customer for "customer@example.org"
+  And  the customer "customer@example.org" should have the external reference "cust_4945959"
+  And  the customer "customer@example.org" should have the reference "Test Customer"
+  And  the customer "customer@example.org" should have the billing type "invoice"
+
+Scenario 8: Successfully create customer with Brand
+  Given  the follow brands exist:
+  And  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  When  I create a customer via the app with the following info
+  Then  there should be a customer for "customer@example.org"
+  And  the customer "customer@example.org" should have the brand "example"
+  And  the customer "customer@example.org" should have the locale "en"
+
+Scenario 9: Successfully create customer with Brand and tax number
+  Given  the follow brands exist:
+  And  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  When  I create a customer via the app with the following info
+  Then  there should be a customer for "customer@example.org"
+  And  the customer "customer@example.org" should have the tax number "GB2494944"
+
+Scenario 10: Successfully create customer as business customer
+  Given  the follow brands exist:
+  And  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  When  I create a customer via the app with the following info
+  Then  there should be a customer for "customer@example.org"
+  And  the customer "customer@example.org" should be a business customer
+
+Scenario 11: Successfully create customer as Individual customer
+  Given  the follow brands exist:
+  And  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  When  I create a customer via the app with the following info
+  Then  there should be a customer for "customer@example.org"
+  And  the customer "customer@example.org" should be a individual customer
+
+Scenario 12: Error when country is not enabled
+  When  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  that the following countries exist:
+  When  I create a customer via the app with the following info
+  Then  there should be an error for "address.country"
+
+Scenario 13: Create email pdf invoice delivery
+  Given  the follow brands exist:
+  And  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  When  I create a customer via the app with the following info
+  Then  there should be an invoice delivery for "customer@example.org" for type "Email" and format "pdf"
+

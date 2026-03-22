@@ -1,0 +1,10 @@
+Scenario 47: Update a user's role on a team returns "API error response." response
+  Tags: ['@team:DataDog/aaa-omg']
+  Given  new "UpdateTeamMembership" request
+  And  there is a valid "dd_team" in the system
+  And  request contains "team_id" parameter from "dd_team.data.id"
+  And  request contains "user_id" parameter with value "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"role": "admin"}, "type": "team_memberships"}}
+  When  the request is sent
+  Then  the response status is 404 API error response.
+

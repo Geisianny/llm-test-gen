@@ -1,0 +1,5 @@
+Scenario 1: Show Access Denied page on-premises
+  Tags: ['@onpremises']
+  When  I go to the provider login page
+  Then  I see the support email of the provider
+

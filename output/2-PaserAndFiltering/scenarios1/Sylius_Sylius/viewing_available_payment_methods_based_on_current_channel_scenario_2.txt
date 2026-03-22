@@ -1,0 +1,11 @@
+Scenario 2: Seeing shipping methods that are available in another channel as an logged in customer
+  Tags: ['@api', '@ui']
+  Given  I am a logged in customer
+  And  I am in the "Poland" channel
+  And  I have product "PHP T-Shirt" in the cart
+  When  I complete addressing step with "United States" based billing address
+  And  I complete the shipping step with the first shipping method
+  Then  I should be on the checkout payment step
+  And  I should see "Bank of Poland" and "Offline" payment methods
+  But  I should not see "Bank of Universe" and "Bank of America" payment methods
+

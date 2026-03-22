@@ -1,0 +1,12 @@
+Scenario 15: Cleanup: subscribe system back to default base channel
+  Given  I am on the Systems overview page of this "rhlike_minion"
+  When  I follow "Software" in the content area
+  And  I follow "Software Channels" in the content area
+  And  I wait until I do not see "Loading..." text
+  And  I check default base channel radio button of this "rhlike_minion"
+  And  I click on "Next"
+  Then  I should see a "Confirm Software Channel Change" text
+  When  I click on "Confirm"
+  Then  I should see a "Changing the channels has been scheduled." text
+  And  I wait until event "Subscribe channels scheduled by admin" is completed
+

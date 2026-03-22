@@ -1,0 +1,18 @@
+Scenario 1: Fields are not required/hidden/read_only for providers
+  When  I go to the buyer user edit page for "SpaceWidgets"
+  Then  fields should be required:
+  Then  I should see the fields:
+  When  I press "Update User"
+  Then  I should see "User was successfully updated"
+
+
+
+Scenario 2: Fields edition
+  When  I go to the buyer user edit page for "SpaceWidgets"
+  And  I fill in "First name" with "bob"
+  And  I fill in "User extra read only" with "notEditable"
+  When  I press "Update User"
+  Then  I should see "User was successfully updated"
+  And  I should see "bob" in the "First name" field
+  And  I should see "notEditable" in the "User extra read only" field
+

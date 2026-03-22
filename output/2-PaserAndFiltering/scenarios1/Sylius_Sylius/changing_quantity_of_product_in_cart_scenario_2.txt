@@ -1,0 +1,8 @@
+Scenario 2: Increasing quantity of an item in cart beyond the threshold
+  Tags: ['@api', '@ui', '@javascript']
+  Given  I added product "T-Shirt banana" to the cart
+  When  I see the summary of my cart
+  And  I change product "T-Shirt banana" quantity to 20000 in my cart
+  Then  I should be notified that the quantity of the product "T-Shirt banana" must be between 1 and 9999
+  And  my cart items total should be "$12.54"
+

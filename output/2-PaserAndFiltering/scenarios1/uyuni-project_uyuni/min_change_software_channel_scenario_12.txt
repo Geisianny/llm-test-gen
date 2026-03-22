@@ -1,0 +1,6 @@
+Scenario 12: Check via API the new channels are enabled on the system
+  Tags: ['@uyuni']
+  When  I refresh the metadata for "sle_minion"
+  Then  channel "openSUSE Tumbleweed (x86_64)" should be enabled on "sle_minion"
+  And  channel "Uyuni Client Tools for openSUSE Tumbleweed (x86_64)" should be enabled on "sle_minion"
+

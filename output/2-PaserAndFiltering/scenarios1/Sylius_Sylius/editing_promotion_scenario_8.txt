@@ -1,0 +1,8 @@
+Scenario 8: Removing priority from existing promotion
+  Tags: ['@ui', '@no-api']
+  When  I want to modify a "Christmas sale" promotion
+  And  I remove its priority
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  the "Christmas sale" promotion should have priority 1
+

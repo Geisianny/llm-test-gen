@@ -1,0 +1,9 @@
+Scenario 5: paginate events of the month correctly after selecting a day
+  Tags: ['@selenium']
+  Given  the following events
+  And  I am on /search/events?year=2018&month=10&day=17
+  When  I follow "October 2018"
+  And  follow "Next" within ".xhr-links"
+  Then  I should see "Party On"
+  And  I should see "October 2018" within "#agenda"
+

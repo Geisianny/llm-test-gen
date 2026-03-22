@@ -1,0 +1,8 @@
+Scenario 3: Get account facet info returns "Successful response with facet information" response
+  Tags: ['@generated', '@skip', '@team:DataDog/audience-management-backend']
+  Given  operation "GetAccountFacetInfo" enabled
+  And  new "GetAccountFacetInfo" request
+  And  body with value {"data": {"attributes": {"facet_id": "first_browser_name", "limit": 10, "search": {"query": "user_org_id:5001 AND first_country_code:US"}, "term_search": {"value": "Chrome"}}, "id": "facet_info_request", "type": "users_facet_info_request"}}
+  When  the request is sent
+  Then  the response status is 200 Successful response with facet information
+

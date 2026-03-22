@@ -1,0 +1,5 @@
+Scenario 1: Seeing not found page when the product does not exist in the admin panel
+  Tags: ['@no-api', '@ui']
+  When  I try to reach nonexistent product
+  Then  I should see the not found page with the link to the dashboard
+

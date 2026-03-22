@@ -1,0 +1,14 @@
+Scenario 11: Cleanup: bootstrap a Debian-like minion
+  When  I follow the left menu "Systems > Bootstrapping"
+  Then  I should see a "Bootstrap Minions" text
+  When  I enter the hostname of "deblike_minion" as "hostname"
+  And  I enter "22" as "port"
+  And  I enter "root" as "user"
+  And  I enter "linux" as "password"
+  And  I select the hostname of "proxy" from "proxies" if present
+  And  I click on "Bootstrap"
+  And  I wait at most 480 seconds until I see "Bootstrap process initiated." text
+  And  I follow the left menu "Systems > System List > All"
+  And  I wait until I see the name of "deblike_minion", refreshing the page
+  And  I wait until onboarding is completed for "deblike_minion"
+

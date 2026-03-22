@@ -1,0 +1,7 @@
+Scenario 2: Bulk Delete SLO Timeframes returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/slo-app']
+  Given  new "DeleteSLOTimeframeInBulk" request
+  And  body with value {"id1": ["7d", "30d"], "id2": ["7d", "30d"]}
+  When  the request is sent
+  Then  the response status is 200 OK
+

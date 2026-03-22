@@ -1,0 +1,11 @@
+Scenario 7: Subscribe a SSH minion to the configuration channel
+  Tags: ['@ssh_minion']
+  When  I am on the Systems overview page of this "ssh_minion"
+  And  I follow "Configuration" in the content area
+  And  I follow "Manage Configuration Channels" in the content area
+  And  I follow first "Subscribe to Channels" in the content area
+  And  I check "Mixed Channel" in the list
+  And  I click on "Continue"
+  And  I click on "Update Channel Rankings"
+  Then  I should see a "Channel Subscriptions successfully changed for" text
+

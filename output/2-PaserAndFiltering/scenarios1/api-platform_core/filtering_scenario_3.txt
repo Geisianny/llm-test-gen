@@ -1,0 +1,8 @@
+Scenario 3: Apply filters and pagination at the same time
+  When  I send a "GET" request to "/dummies?filter[name]=foo&page[page]=2"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be valid according to the JSON API schema
+  Then  the JSON node "meta.currentPage" should be a number
+  Then  the JSON node "meta.currentPage" should be equal to "2"
+

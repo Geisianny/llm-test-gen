@@ -1,0 +1,8 @@
+Scenario 39: Update a Workload Protection policy returns "Not Found" response
+  Tags: ['@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  new "UpdateCSMThreatsAgentPolicy" request
+  And  request contains "policy_id" parameter with value "non-existent-policy-id"
+  And  body with value {"data": {"attributes": {"description": "My agent policy", "enabled": true, "hostTags": [], "name": "my_agent_policy"}, "id": "non-existent-policy-id", "type": "policy"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

@@ -1,0 +1,6 @@
+Scenario 2: Cannot cancel an order, which is already cancelled
+  Tags: ['@ui', '@api']
+  Given  the customer cancelled this order
+  When  I view the summary of the order "#00000022"
+  Then  I should not be able to cancel this order
+

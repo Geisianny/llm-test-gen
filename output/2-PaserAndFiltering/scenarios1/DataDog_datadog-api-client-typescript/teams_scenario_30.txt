@@ -1,0 +1,9 @@
+Scenario 30: Get user memberships returns "Represents a user's association to a team" response
+  Tags: ['@team:DataDog/aaa-omg']
+  Given  new "GetUserMemberships" request
+  And  there is a valid "user" in the system
+  And  request contains "user_uuid" parameter from "user.data.id"
+  When  the request is sent
+  Then  the response status is 200 Represents a user's association to a team
+  And  the response "data" has length 0
+

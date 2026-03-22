@@ -1,0 +1,13 @@
+Scenario 7: Install patch in the future and check for staging
+  When  I follow "Software" in the content area
+  And  I follow "Patches" in the content area
+  And  I enter "virgo" as the filtered synopsis
+  And  I click on the filter button
+  And  I check "virgo-dummy-3456" in the list
+  And  I click on "Apply Patches"
+  And  I pick 3 minutes from now as schedule time
+  And  I click on "Confirm"
+  Then  I should see a "1 patch update has been scheduled for" text
+  And  I wait until the package "virgo-dummy-2.0-1.1.noarch" has been cached on this "sle_minion"
+  And  I wait for "virgo-dummy-2.0-1.1" to be installed on "sle_minion"
+

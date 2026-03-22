@@ -1,0 +1,51 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: activation_story_processado.feature
+Caminho relativo: 3scale_porta\activation_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\3scale_porta\activation_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: activation_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Successful account activation
+   Steps: 5
+   - Given there is a registered user with an unactivated account
+   - And the user has received an activation token via email
+   - When the user activates their account using the received token
+   - Then the system marks the user's account as activated
+   - And the user can log in to their account
+2. Login before account activation
+   Steps: 4
+   - Given there is a registered user with an unactivated account
+   - When the user attempts to log in to their account
+   - Then the system denies access
+   - And displays a message indicating that the account is not activated
+3. Account activation with invalid token
+   Steps: 4
+   - Given there is a registered user with an unactivated account
+   - When the user attempts to activate their account using an invalid token
+   - Then the system denies activation
+   - And displays a message indicating that the activation token is invalid
+4. Login after successful account activation
+   Steps: 4
+   - Given there is a registered user with an activated account
+   - When the user logs in to their account with valid credentials
+   - Then the system grants access
+   - And displays a message confirming successful login
+5. Multiple activation attempts with same token
+   Steps: 6
+   - Given there is a registered user with an unactivated account
+   - And the user has received an activation token via email
+   - When the user activates their account using the received token
+   - And attempts to activate their account again using the same token
+   - Then the system denies the second activation attempt
+   - And displays a message indicating that the account is already activated

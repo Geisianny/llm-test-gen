@@ -1,0 +1,4 @@
+Scenario 2: Create a new match condition and render it
+  Given  there is a match condition with field-name "XY" and value "blub"
+  Then  the condition rendered for "mysql" should look like "`XY` = 'blub'"
+

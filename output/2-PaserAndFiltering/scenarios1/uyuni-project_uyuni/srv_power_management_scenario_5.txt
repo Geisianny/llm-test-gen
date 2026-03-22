@@ -1,0 +1,11 @@
+Scenario 5: Save power management values
+  When  I enter "fakeipmi" as "powerAddress"
+  And  I enter "ipmiusr" as "powerUsername"
+  And  I enter "test" as "powerPassword"
+  And  I click on "Save"
+  Then  I should see a "Power settings saved" text
+  And  the cobbler report should contain "Power Management Address       : fakeipmi" for "sle_minion"
+  And  the cobbler report should contain "Power Management Username      : ipmiusr" for "sle_minion"
+  And  the cobbler report should contain "Power Management Password      : test" for "sle_minion"
+  And  the cobbler report should contain "Power Management Type          : ipmilan" for "sle_minion"
+

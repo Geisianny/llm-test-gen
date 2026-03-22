@@ -1,0 +1,8 @@
+Scenario 16: Get a WAF exclusion filter returns "OK" response
+  Tags: ['@team:DataDog/asm-backend']
+  Given  there is a valid "exclusion_filter" in the system
+  And  new "GetApplicationSecurityWafExclusionFilter" request
+  And  request contains "exclusion_filter_id" parameter from "exclusion_filter.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+

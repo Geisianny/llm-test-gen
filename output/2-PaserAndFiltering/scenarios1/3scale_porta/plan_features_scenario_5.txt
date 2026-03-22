@@ -1,0 +1,13 @@
+Scenario Outline 5: Adding a new plan feature - Example 1
+  Given  they go to application plan "Free" admin edit page
+  When  they follow "New feature"
+  And  the modal is submitted with:
+  Then  they should see a toast alert with text "Feature has been created"
+  And  should see the following table within the features:
+
+  Examples:
+    | plan |
+    | application plan "Free" |
+    | service plan "Free" |
+    | account plan "Free" |
+

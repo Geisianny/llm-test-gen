@@ -1,0 +1,6 @@
+Scenario 1: Filtering payment methods by name
+  Tags: ['@api', '@ui']
+  When  I search by "Bank" name
+  Then  I should see a single payment method in the list
+  And  I should see the payment method "Bank transfer"
+

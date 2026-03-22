@@ -1,0 +1,12 @@
+Scenario 7: Admin user create new order type Custom
+  When  I go to the order types admin page of community "test"
+  Then  I should see "Order types determine how the order process works in your site."
+  When  I select "Custom" from "template"
+  Then  I should see "Create order type"
+  When  I fill in "Customize something nice" for "name_en"
+  When  I fill in "Customize something nice" for "name_fi"
+  When  I fill in "Customize it!" for "action_button_label_en"
+  When  I fill in "Customize it!" for "action_button_label_fi"
+  When  I press "Create"
+  Then  I should see "Customize something nice"
+

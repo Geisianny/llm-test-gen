@@ -1,0 +1,7 @@
+Scenario: Multiple partial payments of an invoice
+  Given there is an invoice with a total amount of $100 in USD
+  And the invoice status is "open"
+  When the user makes a payment of $30 in USD
+  And makes another payment of $40 in USD
+  Then the residual amount is $30
+  And the invoice status remains "open"

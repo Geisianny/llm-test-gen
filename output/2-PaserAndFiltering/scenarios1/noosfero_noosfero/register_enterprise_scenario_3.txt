@@ -1,0 +1,9 @@
+Scenario 3: approval method is region
+  Given  organization_approval_method is "region" on environment
+  And  the following enterprise
+  And  the following validation info
+  And  the following states
+  And  I follow "Groups" within "#section-relationships"
+  When  I follow "Register a new enterprise"
+  Then  I should see "Region"
+

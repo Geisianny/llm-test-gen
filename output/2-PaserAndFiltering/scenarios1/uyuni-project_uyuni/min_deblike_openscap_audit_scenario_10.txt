@@ -1,0 +1,4 @@
+Scenario 10: Cleanup: remove all the necessary repositories for OpenSCAP on Debian-like minion
+  Tags: ['@skip_if_github_validation']
+  And  I disable Debian-like "universe" repository on "deblike_minion"
+

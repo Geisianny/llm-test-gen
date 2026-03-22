@@ -1,0 +1,11 @@
+Scenario Outline 9: As Anonymous user I cannot access department sites endpoints - Example 1
+  When  I send a "GET" request to "/api/v3/department_sites"
+  Then  the response status code should be 401
+
+  Examples:
+    | method | url |
+    | GET | /api/v3/department_sites |
+    | POST | /api/v3/department_sites |
+    | GET | /api/v3/department_sites/51e507e5-3d7c-4f08-b05d-b7cb45e960d3 |
+    | PUT | /api/v3/department_sites/51e507e5-3d7c-4f08-b05d-b7cb45e960d3 |
+

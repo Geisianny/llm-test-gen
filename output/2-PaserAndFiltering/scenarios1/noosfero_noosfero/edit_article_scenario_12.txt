@@ -1,0 +1,10 @@
+Scenario 12: edit an article
+  Tags: ['@selenium']
+  Given  I am on joaosilva's sitemap
+  When  I follow "Save the whales"
+  And  I follow "article-options"
+  And  I follow "Edit"
+  And  I fill in "Title" with "My Article edited"
+  And  I follow "Save"
+  Then  I should be on /joaosilva/my-article-edited
+

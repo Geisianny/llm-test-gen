@@ -1,0 +1,7 @@
+Scenario 16: List workflow instances returns "Bad Request" response
+  Tags: ['@replay-only', '@team:DataDog/workflow-automation-dev']
+  Given  new "ListWorkflowInstances" request
+  And  request contains "workflow_id" parameter with value "malformed"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

@@ -1,0 +1,7 @@
+Scenario 13: Send a deployment event returns "Bad Request" response
+  Tags: ['@skip', '@team:DataDog/ci-app-backend']
+  Given  new "CreateDORADeployment" request
+  And  body with value {"data": {"attributes": {}}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

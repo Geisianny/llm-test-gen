@@ -1,0 +1,5 @@
+Scenario 6: Form validation
+  Given  they go to the product's new application plan admin page
+  When  the form is submitted with:
+  Then  field "Name" has inline error "Can't be blank"
+

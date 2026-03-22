@@ -1,0 +1,6 @@
+Scenario 3: Get all aggregated DNS traffic returns "OK" response
+  Tags: ['@team:Datadog/networks']
+  Given  new "GetAggregatedDns" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

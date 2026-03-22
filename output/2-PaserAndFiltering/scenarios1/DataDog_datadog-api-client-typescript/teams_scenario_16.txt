@@ -1,0 +1,8 @@
+Scenario 16: Get all member teams returns "OK" response with pagination
+  Tags: ['@generated', '@skip', '@team:DataDog/aaa-omg', '@with-pagination']
+  Given  operation "ListMemberTeams" enabled
+  And  new "ListMemberTeams" request
+  And  request contains "super_team_id" parameter from "REPLACE.ME"
+  When  the request with pagination is sent
+  Then  the response status is 200 OK
+

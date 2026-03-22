@@ -1,0 +1,24 @@
+Scenario 2: If settlement amount > party’s margin account balance  and <= party's margin account balance + general account balance for the asset, he full balance of the party’s margin account is transferred to the market’s temporary settlement account the remainder, i.e. difference between the amount transferred from the margin account and the settlement amount, is transferred from the party’s general account for the asset to the market’s temporary settlement account (0003-MTMK-002, 0003-MTMK-005; 0003-MTMK-006; 0003-MTMK-008; 0003-MTMK-009)
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the settlement account should have a balance of "0" for the market "ETH/DEC19"
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following account balances:
+  And  the settlement account should have a balance of "0" for the market "ETH/DEC19"
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following account balances:
+  And  the markets are updated:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following account balances:
+  Then  the following transfers should happen:
+  And  the settlement account should have a balance of "0" for the market "ETH/DEC19"
+  And  the settlement account should have a balance of "0" for the market "ETH/DEC19"
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following account balances:
+  Then  the following transfers should happen:
+  And  the cumulated balance for all accounts should be worth "330000"
+

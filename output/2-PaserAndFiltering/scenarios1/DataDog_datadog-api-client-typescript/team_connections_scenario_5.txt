@@ -1,0 +1,8 @@
+Scenario 5: Delete team connections returns "No Content" response
+  Tags: ['@generated', '@skip', '@team:DataDog/aaa-omg']
+  Given  operation "DeleteTeamConnections" enabled
+  And  new "DeleteTeamConnections" request
+  And  body with value {"data": [{"id": "12345678-1234-5678-9abc-123456789012", "type": "team_connection"}]}
+  When  the request is sent
+  Then  the response status is 204 No Content
+

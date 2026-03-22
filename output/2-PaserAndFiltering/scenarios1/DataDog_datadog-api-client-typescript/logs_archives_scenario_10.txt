@@ -1,0 +1,6 @@
+Scenario 10: Get archive order returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-forwarding']
+  Given  new "GetLogsArchiveOrder" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

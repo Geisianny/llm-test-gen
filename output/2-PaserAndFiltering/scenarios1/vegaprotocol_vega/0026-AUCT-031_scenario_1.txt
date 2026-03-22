@@ -1,0 +1,11 @@
+Scenario 1: When entering an auction, all GFN orders will be cancelled. (0026-AUCT-031)
+  And  the parties place the following orders:
+  And  the opening auction period ends for market "BTC/ETH"
+  When  the network moves ahead "1" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  And  the mark price should be "1000" for the market "BTC/ETH"
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "BTC/ETH"
+  And  the orders should have the following states:
+

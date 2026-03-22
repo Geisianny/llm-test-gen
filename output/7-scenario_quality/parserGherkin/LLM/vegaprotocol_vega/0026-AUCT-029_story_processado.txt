@@ -1,0 +1,54 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: 0026-AUCT-029_story_processado.feature
+Caminho relativo: vegaprotocol_vega\0026-AUCT-029_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\vegaprotocol_vega\0026-AUCT-029_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: 0026-AUCT-029_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Market in opening auction with overlapping orders
+   Steps: 6
+   - Given the market "BTC/ETH" is in opening auction
+   - And there are overlapping orders on the book
+   - When the network moves ahead "50" blocks
+   - Then the trading mode should be "TRADING_MODE_OPENING_AUCTION" for the market "BTC/ETH"
+   - When the network moves ahead "2" more blocks
+   - Then the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+2. Market in opening auction without overlapping orders
+   Steps: 6
+   - Given the market "BTC/ETH" is in opening auction
+   - And there are no overlapping orders on the book
+   - When the network moves ahead "50" blocks
+   - Then the trading mode should be "TRADING_MODE_OPENING_AUCTION" for the market "BTC/ETH"
+   - When the network moves ahead "2" more blocks
+   - Then the trading mode should still be "TRADING_MODE_OPENING_AUCTION" for the market "BTC/ETH"
+3. Market transition to continuous trading after minimum blocks
+   Steps: 6
+   - Given the market "BTC/ETH" is in opening auction
+   - And there are overlapping orders on the book
+   - When the network moves ahead "50" blocks
+   - Then the trading mode should be "TRADING_MODE_OPENING_AUCTION" for the market "BTC/ETH"
+   - When the network moves ahead "2" more blocks
+   - Then the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+4. Market remains in opening auction before minimum blocks
+   Steps: 4
+   - Given the market "BTC/ETH" is in opening auction
+   - And there are overlapping orders on the book
+   - When the network moves ahead "49" blocks
+   - Then the trading mode should be "TRADING_MODE_OPENING_AUCTION" for the market "BTC/ETH"
+5. Market remains in opening auction with no overlapping orders
+   Steps: 4
+   - Given the market "BTC/ETH" is in opening auction
+   - And there are no overlapping orders on the book
+   - When the network moves ahead "52" blocks
+   - Then the trading mode should be "TRADING_MODE_OPENING_AUCTION" for the market "BTC/ETH"

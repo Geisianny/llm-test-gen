@@ -1,0 +1,5 @@
+Scenario 1: Adding a product to the cart in the default store
+  Given  I change my current store to "Austria"
+  When  I add product "Mug" to the cart
+  Then  I should see "Mug" with unit price "€100.00" in my cart
+

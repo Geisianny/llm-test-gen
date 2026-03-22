@@ -1,0 +1,8 @@
+Scenario 3: Test property filter on not resource relations
+  When  I send a "GET" request to "/dummy-with-array-of-objects/1?properties[notResourceObject][]=foo&properties[arrayOfNotResourceObjects][]=bar"
+  Then  the JSON node "notResourceObject.foo" should be equal to "foo"
+  And  the JSON node "notResourceObject.bar" should not exist
+  And  the JSON node "arrayOfNotResourceObjects[0].foo" should not exist
+  And  the JSON node "arrayOfNotResourceObjects[0].bar" should be equal to "bar"
+  And  the JSON node "id" should not exist
+

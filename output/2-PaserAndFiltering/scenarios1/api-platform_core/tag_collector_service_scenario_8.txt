@@ -1,0 +1,5 @@
+Scenario 8: TagCollector can read propertyMetadata (tag is overridden with data from extraProperties)
+  When  I send a "GET" request to "/extra_properties_on_properties/1"
+  Then  the response status code should be 200
+  And  the header "Cache-Tags" should be equal to "/extra_properties_on_properties/1#overrideRelationTag,/extra_properties_on_properties/1"
+

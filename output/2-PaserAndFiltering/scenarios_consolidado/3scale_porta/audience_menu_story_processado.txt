@@ -1,0 +1,5 @@
+Scenario 1: Application overview
+  Tags: ['@javascript']
+  When  they go to the application's admin page
+  Then  I should see there is no current API
+

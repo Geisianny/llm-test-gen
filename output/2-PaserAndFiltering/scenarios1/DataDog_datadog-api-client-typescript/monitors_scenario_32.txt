@@ -1,0 +1,7 @@
+Scenario 32: Monitors search returns "Bad Request" response
+  Tags: ['@team:DataDog/monitor-app']
+  Given  new "SearchMonitors" request
+  And  request contains "query" parameter with value "status:notastatus"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

@@ -1,0 +1,21 @@
+Scenario 3: Searching by location
+  Given  an "active" provider "Hyper Tiny"
+  And  an "active" provider "Hashrocket"
+  And  "Hashrocket" is based in "FL, US"
+  And  "Hyper Tiny" is based in "NA, IE"
+  When  I am on the homepage
+  And  I select "All Locations" from "Location"
+  And  I press "provider.directory.find_providers" translation
+  Then  I should see "Hyper Tiny"
+  And  I should see "Hashrocket"
+  When  I am on the homepage
+  And  I select "Ireland" from "Location"
+  And  I press "provider.directory.find_providers" translation
+  Then  I should see "Hyper Tiny"
+  And  I should not see "Hashrocket"
+  When  I am on the homepage
+  And  I select "Florida" from "Location"
+  And  I press "provider.directory.find_providers" translation
+  Then  I should see "Hashrocket"
+  And  I should not see "Hyper Tiny"
+

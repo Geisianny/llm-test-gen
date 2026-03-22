@@ -1,0 +1,6 @@
+Scenario 4: sections are restricted to buyers even when another provider has a public section with same path
+  Tags: ['@allow-rescue']
+  Given  I am logged in as "one_buyer" on one.3scale.localhost
+  When  I request the url "/first"
+  Then  I should see "Not found"
+

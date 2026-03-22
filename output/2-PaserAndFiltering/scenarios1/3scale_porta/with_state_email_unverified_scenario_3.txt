@@ -1,0 +1,11 @@
+Scenario 3: When user edits his email he should verify its email
+  Tags: ['@wip']
+  Given  user "alice" is active
+  When  I log in as "alice" on foo.3scale.localhost
+  And  I navigate to my personal details page
+  When  I fill in my email with "newmail@3scale.localhost"
+  And  I commit the changes to my personal details
+  Then  "newmail@3scale.localhost" should receive an email to verify email address
+  When  I navigate to my personal details page
+  Then  I should see the notice to validate my email
+

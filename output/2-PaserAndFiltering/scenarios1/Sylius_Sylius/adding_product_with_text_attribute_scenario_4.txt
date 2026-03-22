@@ -1,0 +1,11 @@
+Scenario 4: Trying to add an invalid text attribute to product
+  Tags: ['@api', '@no-ui']
+  When  I want to create a new configurable product
+  And  I specify its code as "44_MAGNUM"
+  And  I name it "44 Magnum" in "English (United States)" locale
+  And  I set its slug to "44-magnum"
+  And  I set the invalid integer value of the non-translatable "Author" attribute to 5
+  And  I try to add it
+  Then  I should be notified that the value of the "Author" attribute has invalid type
+  And  product with code "44_MAGNUM" should not be added
+

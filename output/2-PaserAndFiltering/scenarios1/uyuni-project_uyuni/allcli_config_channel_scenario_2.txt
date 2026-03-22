@@ -1,0 +1,9 @@
+Scenario 2: Create a configuration channel for mixed client types
+  When  I follow the left menu "Configuration > Channels"
+  And  I follow "Create Config Channel"
+  And  I enter "Mixed Channel" as "cofName"
+  And  I enter "mixedchannel" as "cofLabel"
+  And  I enter "This is a configuration channel for different system types" as "cofDescription"
+  And  I click on "Create Config Channel"
+  Then  I should see a "Mixed Channel" text
+

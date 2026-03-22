@@ -1,0 +1,19 @@
+Scenario 8: Errors when Editing No Results Page
+  Tags: ['@javascript']
+  Given  the following BingV7 Affiliates exist:
+  And  I am logged in with email "john@agency.gov"
+  When  I go to the agency.gov's No Results Page page
+  When  I fill in the following:
+  And  I submit the form by pressing "Save"
+  Then  I should not see "You have updated your No Results Page."
+  Then  I should see "Additional guidance text is required when links are present."
+  When  I fill in "Additional Guidance Text" with "The GSA apologizes for not having any relevant results."
+  And  I fill in the following:
+  And  I submit the form by pressing "Save"
+  Then  I should not see "You have updated your No Results Page."
+  Then  I should see "Alternative link title can't be blank"
+  When  I fill in the following:
+  And  I submit the form by pressing "Save"
+  Then  I should see "You have updated your No Results Page."
+  And  the "Alternative Link URL 0" field should contain "http://news.agency.gov"
+

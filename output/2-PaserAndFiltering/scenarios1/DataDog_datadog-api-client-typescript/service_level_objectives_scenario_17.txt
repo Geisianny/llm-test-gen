@@ -1,0 +1,10 @@
+Scenario 17: Get all SLOs returns "OK" response
+  Tags: ['@team:DataDog/slo-app']
+  Given  there is a valid "slo" in the system
+  And  new "ListSLOs" request
+  And  request contains "ids" parameter from "slo.data[0].id"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data" has length 1
+  And  the response "data[0].id" has the same value as "slo.data[0].id"
+

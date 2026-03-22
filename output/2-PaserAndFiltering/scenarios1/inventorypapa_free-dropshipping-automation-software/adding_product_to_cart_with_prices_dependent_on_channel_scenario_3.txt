@@ -1,0 +1,6 @@
+Scenario 3: Buying a product with proper price after channel change
+  Tags: ['@ui']
+  Given  I change my current channel to "Web-GB"
+  When  I add product "Leprechaun's Gold" to the cart
+  Then  I should see "Leprechaun's Gold" with unit price "£15.00" in my cart
+

@@ -1,0 +1,10 @@
+Scenario 20: Viewing audit history for the worldwide organisation and associated pages
+  Given  a published worldwide organisation "Test Worldwide Organisation" with a "Personal information charter" page
+  When  I create a new edition of the "Test Worldwide Organisation" worldwide organisation
+  And  I visit the pages tab for the worldwide organisation
+  And  I click the "Edit" link for the "Personal information charter" page
+  And  I correctly fill out the worldwide organisation page fields for a "Personal information charter" with:
+  And  I click the link to create a new page
+  And  I correctly fill out the worldwide organisation page fields for a "Complaints procedure" with:
+  Then  The audit history for the pages should be displayed on the document history page with:
+

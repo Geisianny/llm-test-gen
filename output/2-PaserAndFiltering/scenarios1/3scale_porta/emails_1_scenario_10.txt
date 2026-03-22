@@ -1,0 +1,6 @@
+Scenario 10: Validation error for invalid finance support email format
+  Given  they go to the emails settings page
+  When  the form is submitted with:
+  Then  field "Finance support email" has inline error "should look like an email address"
+  And  the provider's finance support email should still be "finance-support@api.test"
+

@@ -1,0 +1,7 @@
+Scenario 5: Purge item on update
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "PUT" request to "/relation_embedders/1" with body:
+  Then  the response status code should be 200
+  And  the header "Cache-Tags" should not exist
+  And  "/relation_embedders,/relation_embedders/1,/related_dummies/1" IRIs should be purged
+

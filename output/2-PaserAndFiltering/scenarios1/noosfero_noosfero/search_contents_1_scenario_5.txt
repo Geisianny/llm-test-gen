@@ -1,0 +1,12 @@
+Scenario 5: remember facet filter when searching new query
+  Given  the following category
+  And  the following articles
+  When  I go to the search articles page
+  And  I fill in "search-input" with "this is an article"
+  And  I press "Search"
+  And  I follow "Software Livre" within "#facets-menu"
+  And  I fill in "search-input" with "facebook"
+  And  I press "Search"
+  Then  I should see "facebook defense" within "#search-results"
+  And  I should not see "1984"
+

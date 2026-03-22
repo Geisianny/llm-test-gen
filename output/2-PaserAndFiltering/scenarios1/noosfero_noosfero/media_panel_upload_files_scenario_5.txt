@@ -1,0 +1,10 @@
+Scenario 5: show error when upload fails
+  Tags: ['@selenium-fixme']
+  When  I follow "Show/Hide"
+  And  I attach the file "public/images/rails.png" to "file"
+  And  I attach the file "public/images/rails.png" to "file"
+  Then  I should see "rails.png" within "#file-1"
+  And  I should see "100%" within "#file-1"
+  But  I should see "Validation failed: Slug The title (article name) is already being used by another article, please use another title." within "#file-2"
+  And  The page should contain "div.error-message"
+

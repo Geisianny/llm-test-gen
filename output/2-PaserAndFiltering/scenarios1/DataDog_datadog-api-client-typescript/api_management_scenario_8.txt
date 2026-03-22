@@ -1,0 +1,9 @@
+Scenario 8: Get an API returns "OK" response
+  Tags: ['@integration-only', '@skip-terraform-config', '@skip-validation', '@team:DataDog/api-management']
+  Given  operation "GetOpenAPI" enabled
+  And  there is a valid "managed_api" in the system
+  And  new "GetOpenAPI" request
+  And  request contains "id" parameter from "managed_api.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+

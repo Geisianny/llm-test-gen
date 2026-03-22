@@ -1,0 +1,6 @@
+Scenario 2: Already invited organisations don't appear
+  Given  cookies are approved
+  And  I am signed in as a superadmin
+  And  I visit the invite users to become admin of organisations page
+  Then  I should not see "Yet Another Org"
+

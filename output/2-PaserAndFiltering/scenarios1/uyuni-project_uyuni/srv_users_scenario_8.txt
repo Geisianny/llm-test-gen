@@ -1,0 +1,4 @@
+Scenario 8: Verify user list
+  When  I follow the left menu "Users > User List > Active"
+  Then  table row for "user1" should contain "Organization Administrator"
+

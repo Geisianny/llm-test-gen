@@ -1,0 +1,9 @@
+Scenario 1: Removing a single image of a taxon
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  Given  the "T-Shirts" taxon has an image "t-shirts.jpg" with "banner" type
+  When  I want to modify the "T-Shirts" taxon
+  And  I remove an image with "banner" type
+  And  I save my changes to the images
+  Then  I should be notified that the changes have been successfully applied
+  And  this taxon should not have any images
+

@@ -1,0 +1,4 @@
+Scenario: Initial notification preferences display
+  Given the provider user is on the notification preferences page
+  And there are notification types available for selection
+  Then the system displays the current notification preferences

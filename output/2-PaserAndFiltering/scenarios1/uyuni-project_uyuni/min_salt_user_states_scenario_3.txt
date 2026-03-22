@@ -1,0 +1,5 @@
+Scenario 3: Trigger highstate from API
+  When  I schedule a highstate for "sle_minion" via API
+  And  I wait until event "Apply highstate scheduled" is completed
+  Then  file "/tmp/test_user_defined_state" should exist on "sle_minion"
+

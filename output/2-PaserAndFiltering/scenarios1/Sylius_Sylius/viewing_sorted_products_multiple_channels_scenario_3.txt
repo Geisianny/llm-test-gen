@@ -1,0 +1,8 @@
+Scenario 3: Sorting products by their prices with ascending order on channel Germany
+  Tags: ['@api', '@ui']
+  When  I change my current channel to "Germany"
+  And  I browse products from taxon "Sylius merch"
+  And  I sort products by the lowest price first
+  Then  I should see 2 products in the list
+  And  the first product on the list should have name "Sylius Con stickers"
+

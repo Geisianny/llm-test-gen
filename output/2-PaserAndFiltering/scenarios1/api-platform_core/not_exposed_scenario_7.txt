@@ -1,0 +1,10 @@
+Scenario Outline 7: Get a not exposed route returns a 404 with an explanation - Example 1
+  When  I send a "GET" request to "/.well-known/genid/12345"
+  Then  the response status code should be 404
+  And  the response should be in JSON
+  And  the JSON node "detail" should be equal to "This route is not exposed on purpose. It generates an IRI for a collection resource without identifier nor item operation."
+
+  Examples:
+    | uri | description |
+    | /.well-known/genid/12345 | This route is not exposed on purpose. It generates an IRI for a collection resource without identifier nor item operation. |
+

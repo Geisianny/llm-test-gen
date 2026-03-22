@@ -1,0 +1,8 @@
+Scenario 6: Not editing the slug while changing a taxon name
+  Tags: ['@api', '@ui']
+  Given  the store has "Medieval weapons" taxonomy
+  When  I want to modify the "Medieval weapons" taxon
+  And  I rename it to "Renaissance weapons" in "English (United States)"
+  And  I save my changes
+  Then  the slug of the "Renaissance weapons" taxon should still be "medieval-weapons"
+

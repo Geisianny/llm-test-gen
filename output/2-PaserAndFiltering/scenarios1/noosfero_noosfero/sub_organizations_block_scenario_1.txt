@@ -1,0 +1,6 @@
+Scenario 1: display both sub types on block
+  Given  the following blocks
+  When  I follow "Blocks" within "#section-design"
+  Then  I should see "Moe" within ".block.related-organizations-block"
+  And  I should see "Duff" within ".block.related-organizations-block"
+

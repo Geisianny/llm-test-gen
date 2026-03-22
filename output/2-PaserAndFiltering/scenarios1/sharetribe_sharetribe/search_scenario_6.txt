@@ -1,0 +1,10 @@
+Scenario 6: Finding by price
+  Tags: ['@javascript']
+  When  I set price range between "100" and "1000"
+  And  I press "Update view"
+  Then  I should see "old sofa for sale"
+  Then  I should not see "light-weigth plastic outdoor sofa"
+  When  I set price range between "500" and "1000"
+  And  I press "Update view"
+  Then  I should see "Sorry, no listings could be found for your search criteria"
+

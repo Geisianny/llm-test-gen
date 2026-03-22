@@ -1,0 +1,12 @@
+Scenario 18: View the group recurring actions details
+  When  I follow the left menu "Systems > System Groups"
+  And  I follow "Recurring-Action-test-group"
+  And  I follow "Recurring Actions" in the content area
+  Then  I should see a "schedule_name" text
+  When  I click the "schedule_name" item details button
+  Then  I should see a "Every hour at minute 35" text
+  And  I should see a "Recurring-Action-test-group" link
+  And  I should see a "Update System" text
+  When  I click on "Back"
+  Then  I should see a "Schedules" text
+

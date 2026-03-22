@@ -1,0 +1,7 @@
+Scenario 6: Delete an API key returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/credentials-management']
+  Given  new "DeleteAPIKey" request
+  And  request contains "key" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

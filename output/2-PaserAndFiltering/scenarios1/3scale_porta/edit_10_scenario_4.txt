@@ -1,0 +1,7 @@
+Scenario 4: Editting an application with extra fields
+  Given  the provider has the following fields defined for applications:
+  And  they go to the application's admin edit page
+  When  the form is submitted with:
+  Then  they should see a toast alert with text "Application was successfully updated"
+  And  they should see "habba babba" within the application details
+

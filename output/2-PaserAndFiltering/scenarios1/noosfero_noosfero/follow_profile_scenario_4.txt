@@ -1,0 +1,11 @@
+Scenario 4: Common noosfero user cancel the circle creation action
+  Tags: ['@selenium']
+  Given  I am logged in as "johnsnow"
+  When  I go to nightswatch's homepage
+  When  I follow "Follow"
+  When  I follow "New Circle"
+  When  I follow "Cancel"
+  And  I wait for 1 second
+  Then  I should not see "Circle name"
+  And  I should not see "Create"
+

@@ -1,0 +1,7 @@
+Scenario 3: Unregistered user is invited when superadmin accepts proposed organisation
+  Tags: ['@vcr']
+  Given  I accept a proposed organisation called "Unfriendly" with email "unregistered@unfriendly.xx"
+  And  I click on the invitation link in the proposed org accepted email to "unregistered@unfriendly.xx"
+  And  I set my password
+  Then  I should be on the show page for the organisation named "Unfriendly"
+

@@ -1,0 +1,13 @@
+Scenario 1: Adding multiple products to the index and sort them by name ASC
+  And  the site has a product "A Shoe" priced at 100
+  And  the products ean is "123456"
+  And  the products sku is "654321"
+  And  the product is active
+  And  the product is published
+  And  the site has a product "B Shoe" priced at 100
+  And  the products ean is "987654"
+  And  the products sku is "456789"
+  And  the product is active
+  And  the product is published
+  Then  if I query the filter with a simple order for field "name" and direction "ASC" I should get two products "A Shoe" and "B Shoe"
+

@@ -1,0 +1,6 @@
+Scenario 9: Member user without access to finance and provider not charging
+  Given  an active user don't have access to admin section finance
+  And  the provider is billing but not charging
+  When  the user logs in
+  Then  they should not be able to review the charging and gateway billing settings
+

@@ -1,0 +1,5 @@
+Scenario: Order cancellation due to impossible fulfillment
+  Given there is a user with an accepted order on a spot market
+  And the order becomes impossible to fulfill
+  When the system automatically cancels the order
+  Then the system releases the reserved assets

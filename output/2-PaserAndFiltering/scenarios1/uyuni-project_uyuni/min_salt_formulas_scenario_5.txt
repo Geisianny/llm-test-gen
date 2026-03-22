@@ -1,0 +1,11 @@
+Scenario 5: Enable the formula on the minion
+  Given  I am on the Systems overview page of this "sle_minion"
+  When  I follow "Formulas" in the content area
+  Then  I should see a "Choose formulas:" text
+  And  I should see a "General System Configuration" text
+  And  I should see a "Locale" text
+  When  I check the "locale" formula
+  And  I click on "Save"
+  And  I wait until I see "Formula saved." text
+  Then  the "locale" formula should be checked
+

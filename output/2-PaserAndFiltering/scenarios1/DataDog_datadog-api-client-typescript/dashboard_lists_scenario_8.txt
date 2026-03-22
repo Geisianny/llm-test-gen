@@ -1,0 +1,8 @@
+Scenario 8: Update a dashboard list returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/dashboards-backend']
+  Given  new "UpdateDashboardList" request
+  And  request contains "list_id" parameter from "REPLACE.ME"
+  And  body with value {"name": "My Dashboard"}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

@@ -1,0 +1,5 @@
+Scenario 6: categories link to search results of orgs with these categories
+  Given  I click "Health"
+  Then  I should be on the organisations search page
+  And  I should see "Friendly"
+

@@ -1,0 +1,57 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: admin_edits_welcome_email_story_processado.feature
+Caminho relativo: sharetribe_sharetribe\admin_edits_welcome_email_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\sharetribe_sharetribe\admin_edits_welcome_email_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: admin_edits_welcome_email_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Edit welcome email content with valid input
+   Steps: 6
+   - Given there is an admin logged into the system
+   - And the welcome email content is currently "Default welcome email content"
+   - When the admin edits the welcome email content to "New welcome email content"
+   - And saves the changes
+   - Then the system updates the welcome email content to "New welcome email content"
+   - And displays a confirmation message
+2. Preview welcome email content
+   Steps: 5
+   - Given there is an admin logged into the system
+   - And the welcome email content is currently "Current welcome email content"
+   - When the admin previews the welcome email content
+   - Then the system displays the welcome email content as "Current welcome email content"
+   - And the admin can see the preview of the email
+3. Send test welcome email
+   Steps: 6
+   - Given there is an admin logged into the system
+   - And the welcome email content is currently "Current welcome email content"
+   - And the admin's email address is "admin@example.com"
+   - When the admin sends a test welcome email
+   - Then the system sends a test email to "admin@example.com"
+   - And the email contains the content "Current welcome email content"
+4. Edit welcome email sender address with valid input
+   Steps: 6
+   - Given there is an admin logged into the system
+   - And the welcome email sender address is currently "default@example.com"
+   - When the admin edits the welcome email sender address to "new@example.com"
+   - And saves the changes
+   - Then the system updates the welcome email sender address to "new@example.com"
+   - And displays a confirmation message
+5. Attempt to save welcome email content with invalid input
+   Steps: 6
+   - Given there is an admin logged into the system
+   - And the welcome email content is currently "Current welcome email content"
+   - When the admin edits the welcome email content to a value exceeding the maximum allowed characters
+   - And attempts to save the changes
+   - Then the system displays an error message indicating that the input is invalid
+   - And the welcome email content remains "Current welcome email content"

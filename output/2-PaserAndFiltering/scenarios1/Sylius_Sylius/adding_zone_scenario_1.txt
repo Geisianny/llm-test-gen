@@ -1,0 +1,10 @@
+Scenario 1: Adding a zone with a country type member
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I want to create a new zone consisting of country
+  And  I name it "European Union"
+  And  I specify its code as "EU"
+  And  I add a country "France"
+  And  I add it
+  Then  I should be notified that it has been successfully created
+  And  the zone named "European Union" with the "France" country member should appear in the registry
+

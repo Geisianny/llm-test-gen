@@ -1,0 +1,7 @@
+Scenario 7: Realm is required
+  Given  they go to the developer portal new sso integration page for "keycloak"
+  And  there is a required field "Realm"
+  When  the form is submitted with:
+  Then  they should see a toast alert with text "Authentication provider has not been updated"
+  And  field "Realm" has inline error "can't be blank"
+

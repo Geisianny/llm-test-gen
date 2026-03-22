@@ -1,0 +1,7 @@
+Scenario 10: Sorting coupons by expiration date in ascending order
+  Tags: ['@ui', '@no-postgres', '@api']
+  Given  I am browsing coupons of this promotion
+  When  I sort coupons by ascending expiration date
+  Then  I should see 3 coupons on the list
+  And  the first coupon should have code "Y"
+

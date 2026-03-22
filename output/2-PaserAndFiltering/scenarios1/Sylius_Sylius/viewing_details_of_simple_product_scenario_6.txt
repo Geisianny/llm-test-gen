@@ -1,0 +1,12 @@
+Scenario 6: Viewing shipping block
+  Tags: ['@no-api', '@ui']
+  Given  the store has "Over sized" and "Standard" shipping category
+  And  the product "Iron Shield" has height "10.0", width "15.0", depth "20.0", weight "25.0"
+  And  this product belongs to "Over sized" shipping category
+  When  I access the "Iron Shield" product
+  Then  I should see product's shipping category is "Over sized"
+  And  I should see product's height is 10
+  And  I should see product's width is 15
+  And  I should see product's depth is 20
+  And  I should see product's weight is 25
+

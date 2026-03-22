@@ -1,0 +1,6 @@
+Scenario 4: Seeing no applied catalog promotion on the product option without applied catalog promotion
+  Tags: ['@no-api', '@ui', '@javascript']
+  When  I view product "T-Shirt"
+  And  I select its "Size" as "M"
+  Then  I should see this product is not discounted
+

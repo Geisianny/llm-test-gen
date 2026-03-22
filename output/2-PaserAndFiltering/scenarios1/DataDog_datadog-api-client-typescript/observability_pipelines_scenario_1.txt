@@ -1,0 +1,8 @@
+Scenario 1: Create a new pipeline returns "Bad Request" response
+  Tags: ['@team:DataDog/observability-pipelines']
+  Given  operation "CreatePipeline" enabled
+  And  new "CreatePipeline" request
+  And  body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["filter-processor"], "type": "datadog_logs"}], "processors": [{"id": "unknown-processor", "include": "service:my-service", "inputs": ["datadog-agent-source"], "type": "filter"}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Main Observability Pipeline"}, "type": "pipelines"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

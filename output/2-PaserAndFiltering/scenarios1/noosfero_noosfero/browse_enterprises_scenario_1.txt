@@ -1,0 +1,7 @@
+Scenario 1: show all enterprises
+  Given  the following enterprises
+  Given  I am on /search/enterprises
+  Then  I should see "Enterprises"
+  And  I should see "Shoes Shop"
+  And  I should see "Fruits Shop"
+

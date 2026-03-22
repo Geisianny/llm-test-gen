@@ -1,0 +1,14 @@
+Scenario 2: Get IP Allowlist returns "OK" response
+  Tags: ['@team:DataDog/aaa-core-access']
+  Given  the "ip_allowlist_nonempty_disabled" has two entries and is disabled
+  And  new "GetIPAllowlist" request
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.type" is equal to "{{ ip_allowlist_nonempty_disabled.data.type }}"
+  And  the response "data.attributes.enabled" has the same value as "ip_allowlist_nonempty_disabled.data.attributes.enabled"
+  And  the response "data.attributes.entries" has length 2
+  And  the response "data.attributes.entries[0].data.attributes.note" has the same value as "ip_allowlist_nonempty_disabled.data.attributes.entries[0].data.attributes.note"
+  And  the response "data.attributes.entries[0].data.type" is equal to "{{ ip_allowlist_nonempty_disabled.data.attributes.entries[0].data.type }}"
+  And  the response "data.attributes.entries[1].data.attributes.note" has the same value as "ip_allowlist_nonempty_disabled.data.attributes.entries[1].data.attributes.note"
+  And  the response "data.attributes.entries[1].data.type" is equal to "{{ ip_allowlist_nonempty_disabled.data.attributes.entries[1].data.type }}"
+

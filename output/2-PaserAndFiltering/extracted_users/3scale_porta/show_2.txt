@@ -1,0 +1,22 @@
+Feature: Developer portal application overview page
+
+Background: 
+  Given  a provider
+  And  a product "The API"
+  And  the following published application plans:
+  And  a buyer "Jane" signed up to service "The API"
+  And  the following application:
+  And  the buyer logs in
+
+Scenario 1: Navigation
+  Given  they go to the homepage
+  When  they follow "My App"
+  Then  the current page is the application's dev portal page
+
+Scenario 2: Application fields visibility for buyers
+  Given  the provider has the following fields defined for applications:
+  And  the application has the following extra fields:
+  When  they go to the application's dev portal page
+  Then  they should see the following details:
+  But  should not see "Ketchup"
+

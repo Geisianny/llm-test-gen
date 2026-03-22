@@ -1,0 +1,6 @@
+Scenario 3: Not being able to shop using a locale non-existent in the channel
+  Tags: ['@api', '@ui']
+  When  I browse that channel
+  And  I try to check this product's details in the "Irish (Ireland)" locale
+  Then  I should not be able to view this product in the "Irish (Ireland)" locale
+

@@ -1,0 +1,8 @@
+Scenario 21: Update datastore item returns "Bad Request" response
+  Tags: ['@team:DataDog/app-builder-backend']
+  Given  new "UpdateDatastoreItem" request
+  And  request contains "datastore_id" parameter with value "invalid-uuid"
+  And  body with value {"data": {"attributes": {"item_changes": {}, "item_key": ""}, "type": "items"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

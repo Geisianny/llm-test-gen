@@ -1,0 +1,7 @@
+Scenario 17: Reposync handles wrong encoding on DEB attributes
+  Tags: ['@deblike_minion']
+  When  I follow the left menu "Software > Channel List"
+  And  I follow "Fake-Deb-AMD64-Channel"
+  And  I follow "Packages" in the content area
+  And  I wait until I see "blackhole-dummy" text, refreshing the page
+

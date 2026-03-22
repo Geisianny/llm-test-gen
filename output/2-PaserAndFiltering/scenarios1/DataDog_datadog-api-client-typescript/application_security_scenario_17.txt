@@ -1,0 +1,6 @@
+Scenario 17: List all WAF custom rules returns "OK" response
+  Tags: ['@team:DataDog/asm-backend']
+  Given  new "ListApplicationSecurityWAFCustomRules" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

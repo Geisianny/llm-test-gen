@@ -1,0 +1,4 @@
+Scenario: Search for voucher batches with no matching results
+  Given there are existing voucher batches with different transaction types
+  When the user searches for voucher batches with transaction type "Invalid Type"
+  Then the system displays a message indicating no voucher batches were found

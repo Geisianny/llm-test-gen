@@ -1,0 +1,6 @@
+Scenario 1: Being unable to delete a promotion that was applied to an order
+  Tags: ['@api', '@ui']
+  When  I try to delete a "Christmas sale" promotion
+  Then  I should be notified that it is in use and cannot be deleted
+  And  promotion "Christmas sale" should still exist in the registry
+

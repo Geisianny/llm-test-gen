@@ -1,0 +1,6 @@
+Scenario 2: User visits event directly
+  Given  I visit "Open Source Weekend" event
+  Then  I should see "Open Source Weekend"
+  And  I should see "Good for everyone"
+  And  I should see "Sunday, October 20, 2030 at 10:30"
+

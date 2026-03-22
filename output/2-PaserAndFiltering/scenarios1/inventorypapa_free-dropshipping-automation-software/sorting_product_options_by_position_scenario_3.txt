@@ -1,0 +1,6 @@
+Scenario 3: Product option added at position 0 is added as the first one
+  Tags: ['@ui', '@api']
+  Given  the store has a product option "Mug shape" at position 0
+  When  I browse product options
+  Then  the first product option in the list should have name "Mug shape"
+

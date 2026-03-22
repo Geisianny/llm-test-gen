@@ -1,0 +1,7 @@
+Scenario 4: Multi-bank settlement workflow
+  Given  end-of-day settlement is required
+  When  the settlement workflow runs
+  Then  it should orchestrate:
+  And  handle bank-specific settlement windows
+  And  manage cross-timezone coordination
+

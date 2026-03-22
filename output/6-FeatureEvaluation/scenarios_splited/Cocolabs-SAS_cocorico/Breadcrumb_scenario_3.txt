@@ -1,0 +1,3 @@
+Scenario: Verify breadcrumbs for the homepage
+  Given the user is on the homepage
+  Then the breadcrumbs display "Home"

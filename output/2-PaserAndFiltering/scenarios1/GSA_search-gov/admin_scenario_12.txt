@@ -1,0 +1,13 @@
+Scenario 12: Adding a system alert
+  Tags: ['@javascript']
+  When  I go to the admin home page
+  And  I follow "System Alerts"
+  Then  I should see the following breadcrumbs: Super Admin > System Alerts
+  When  I follow "Create New"
+  And  I fill in "Message" with "Achtung!"
+  And  I fill in "Start at" with "Sun, 26 Jul 2021 16:06:00"
+  And  I fill in "End at" with "Mon, 27 Jul 2021 16:06:00"
+  And  I press "Create"
+  Then  I should see "Achtung!"
+  And  I should see "1 Found"
+

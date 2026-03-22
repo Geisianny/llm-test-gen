@@ -1,0 +1,8 @@
+Scenario 18: New formula page is rendered for the system group
+  When  I follow the left menu "Systems > System Groups"
+  And  I follow "new-systems-group"
+  And  I follow "Formulas"
+  Then  I should see a "Choose formulas:" text
+  And  I should see a "General System Configuration" text
+  And  the "locale" formula should be unchecked
+

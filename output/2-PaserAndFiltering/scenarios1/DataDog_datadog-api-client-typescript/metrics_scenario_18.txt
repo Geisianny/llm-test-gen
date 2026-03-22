@@ -1,0 +1,7 @@
+Scenario 18: Submit metrics returns "Bad Request" response
+  Tags: ['@skip', '@team:DataDog/metrics-intake']
+  Given  new "SubmitMetrics" request
+  And  body with value "invalid"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

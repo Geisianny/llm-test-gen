@@ -1,0 +1,7 @@
+Scenario 5: Go to profile homepage after clicking on home button on not found page
+  Tags: ['@fixme']
+  Given  I am on sample-community's homepage
+  When  I go to /something-that-does-not-exist
+  And  I follow "Go to the home page"
+  Then  the page title should be "Sample Community"
+

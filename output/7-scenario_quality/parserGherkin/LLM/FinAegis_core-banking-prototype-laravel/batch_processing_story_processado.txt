@@ -1,0 +1,53 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: batch_processing_story_processado.feature
+Caminho relativo: FinAegis_core-banking-prototype-laravel\batch_processing_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\FinAegis_core-banking-prototype-laravel\batch_processing_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: batch_processing_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Create a new asset basket successfully
+   Steps: 5
+   - Given the system administrator is logged in
+   - And there are existing assets in the system
+   - When the administrator creates a new asset basket with valid assets
+   - Then the system creates the asset basket
+   - And displays a confirmation message
+2. Attempt to create an asset basket with invalid assets
+   Steps: 5
+   - Given the system administrator is logged in
+   - And there are existing assets in the system
+   - When the administrator creates a new asset basket with invalid assets
+   - Then the system denies the creation of the asset basket
+   - And displays an error message indicating the invalid assets
+3. Decompose an existing asset basket
+   Steps: 5
+   - Given the system administrator is logged in
+   - And there is an existing asset basket
+   - When the administrator decomposes the asset basket
+   - Then the system decomposes the asset basket
+   - And displays a confirmation message
+4. Attempt to decompose a non-existent asset basket
+   Steps: 5
+   - Given the system administrator is logged in
+   - And there is no asset basket with the specified ID
+   - When the administrator attempts to decompose the non-existent asset basket
+   - Then the system denies the decomposition
+   - And displays an error message indicating that the asset basket does not exist
+5. Rebalance an existing asset basket
+   Steps: 5
+   - Given the system administrator is logged in
+   - And there is an existing asset basket with assets
+   - When the administrator rebalances the asset basket
+   - Then the system rebalances the asset basket
+   - And displays a confirmation message indicating the new composition

@@ -1,0 +1,9 @@
+Scenario 2: change the api key
+  Given  that "old_key" is the server api key
+  Given  I go to /admin/plugin/push_notification
+  Then  the "Server API key" field should contain "old_key"
+  When  I fill in "Server API key" with "new_key"
+  And  I follow "Save"
+  Then  I should be on /admin/plugin/push_notification
+  Then  the "Server API key" field should contain "new_key"
+

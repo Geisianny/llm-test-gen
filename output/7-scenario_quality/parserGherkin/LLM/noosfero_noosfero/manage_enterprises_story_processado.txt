@@ -1,0 +1,50 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: manage_enterprises_story_processado.feature
+Caminho relativo: noosfero_noosfero\manage_enterprises_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\noosfero_noosfero\manage_enterprises_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: manage_enterprises_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Enterprise owner views enterprise management option
+   Steps: 4
+   - Given there is an enterprise owner with registered enterprises
+   - And the feature flag for enterprise management is enabled
+   - When the user navigates to the main menu
+   - Then the system displays the enterprise management option
+2. Enterprise owner accesses enterprise dashboard
+   Steps: 5
+   - Given there is an enterprise owner with registered enterprises
+   - And the feature flag for enterprise management is enabled
+   - When the user selects the enterprise management option
+   - Then the system displays a list of registered enterprises
+   - And the user can access the dashboard of each enterprise
+3. User without enterprises does not see enterprise management option
+   Steps: 4
+   - Given there is a user without registered enterprises
+   - And the feature flag for enterprise management is enabled
+   - When the user navigates to the main menu
+   - Then the system does not display the enterprise management option
+4. Feature flag disabled hides enterprise management option
+   Steps: 4
+   - Given there is an enterprise owner with registered enterprises
+   - And the feature flag for enterprise management is disabled
+   - When the user navigates to the main menu
+   - Then the system does not display the enterprise management option
+5. Multiple enterprises are listed for enterprise owner
+   Steps: 5
+   - Given there is an enterprise owner with multiple registered enterprises
+   - And the feature flag for enterprise management is enabled
+   - When the user selects the enterprise management option
+   - Then the system displays a list of all registered enterprises
+   - And the list includes all enterprises associated with the owner

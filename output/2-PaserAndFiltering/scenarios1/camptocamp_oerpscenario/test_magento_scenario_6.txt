@@ -1,0 +1,8 @@
+Scenario 6: Configure shops
+  Tags: ['@shops_magento']
+  Given  a shop with name "Main Website Store" exists
+  Then  I set the warehouse of the shop on "stock.warehouse0"
+  And  I set the price list of the shop on reference "product.list0"
+  And  I set the following attributes on the shop:
+  And  I save the shop
+

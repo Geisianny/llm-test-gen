@@ -1,0 +1,8 @@
+Scenario 5: Super Admin successfully changes volunteer opportunity location
+  Tags: ['@vcr']
+  Given  I am signed in as a superadmin
+  When  I visit the show page for the volunteer_op titled "Litter Box Scooper"
+  And  I click "Edit"
+  And  I set new volunteer opportunity location to "Station Rd", "HA8 7BD"
+  Then  I should see "Station Rd, HA8 7BD"
+

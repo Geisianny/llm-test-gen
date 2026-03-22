@@ -1,0 +1,10 @@
+Scenario 2: Giving feedback successfully when logged in
+  Tags: ['@javascript']
+  Given  I am logged in
+  When  I open the menu
+  And  I follow "Contact us" within the menu
+  Then  I should not see "Your email"
+  When  I fill in "feedback_content" with "Feedback"
+  And  I press "Send message"
+  Then  I should see "Thanks a lot for your message!"
+

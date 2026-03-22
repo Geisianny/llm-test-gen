@@ -1,0 +1,7 @@
+Scenario 2: Revoking the access while administrator is logged in
+  Tags: ['@api', '@ui']
+  Given  I am logged in as "admin@example.com" administrator
+  When  this administrator account becomes disabled
+  And  I try to browse administrators
+  Then  I should not be logged in
+

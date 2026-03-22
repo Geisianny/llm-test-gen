@@ -1,0 +1,7 @@
+Scenario 9: Cleanup: apply highstate after test monitoring on the Debian-like minion
+  Tags: ['@skip_if_github_validation']
+  When  I follow "States" in the content area
+  And  I click on "Apply Highstate"
+  Then  I should see a "Applying the highstate has been scheduled." text
+  And  I wait until event "Apply highstate scheduled" is completed
+

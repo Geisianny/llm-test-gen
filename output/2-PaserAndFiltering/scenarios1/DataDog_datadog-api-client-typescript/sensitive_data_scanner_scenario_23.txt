@@ -1,0 +1,11 @@
+Scenario 23: Update Scanning Rule returns "OK" response
+  Tags: ['@team:DataDog/sensitive-data-scanner']
+  Given  a valid "configuration" in the system
+  And  there is a valid "scanning_group" in the system
+  And  the "scanning_group" has a "scanning_rule"
+  And  new "UpdateScanningRule" request
+  And  request contains "rule_id" parameter from "rule.data.id"
+  And  body with value {"meta":{},"data":{"id": "{{ rule.data.id }}", "type":"sensitive_data_scanner_rule","attributes":{"name":"{{ unique }}","pattern":"pattern","text_replacement":{"type":"none"},"tags":["sensitive_data:true"],"is_enabled":true,"priority":5,"included_keyword_configuration": {"keywords": ["credit card", "cc"], "character_count":35}}}}
+  When  the request is sent
+  Then  the response status is 200 OK
+

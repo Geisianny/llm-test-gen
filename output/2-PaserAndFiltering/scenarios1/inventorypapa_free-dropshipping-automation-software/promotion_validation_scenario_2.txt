@@ -1,0 +1,9 @@
+Scenario 2: Trying to add a new promotion without specifying its name
+  Tags: ['@ui']
+  Given  I want to create a new promotion
+  When  I specify its code as "no_vat_promotion"
+  But  I do not name it
+  And  I try to add it
+  Then  I should be notified that name is required
+  And  promotion with code "no_vat_promotion" should not be added
+

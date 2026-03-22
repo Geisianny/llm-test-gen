@@ -1,0 +1,9 @@
+Scenario 4: Adding a single image to an existing configurable product
+  Tags: ['@ui', '@javascript']
+  Given  the store has a "Lamborghini Gallardo Model" configurable product
+  And  I want to modify this product
+  When  I attach the "lamborghini.jpg" image with "banner" type
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  the product "Lamborghini Gallardo Model" should have an image with "banner" type
+

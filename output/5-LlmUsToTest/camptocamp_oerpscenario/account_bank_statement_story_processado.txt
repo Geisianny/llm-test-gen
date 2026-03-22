@@ -1,0 +1,33 @@
+Scenario: Register a new invoice
+  Given there is an existing customer with a valid account
+  When the user creates a new invoice for the customer
+  And enters a valid invoice amount
+  Then the system registers the invoice successfully
+  And displays the invoice status as "open"
+
+Scenario: Create a new bank statement
+  Given the system has no existing bank statements
+  When the user creates a new bank statement
+  And enters a valid statement date and balance
+  Then the system creates the bank statement successfully
+  And displays the statement status as "draft"
+
+Scenario: Import bank statement lines
+  Given there is an existing bank statement in draft status
+  When the user imports bank statement lines from a valid file
+  And the file contains valid transaction data
+  Then the system imports the statement lines successfully
+  And displays the updated statement balance
+
+Scenario: Reconcile an invoice with a bank statement
+  Given there is an open invoice and a corresponding bank statement line
+  When the user reconciles the invoice with the bank statement line
+  Then the system reconciles the invoice successfully
+  And displays the invoice status as "paid"
+  And updates the bank statement balance
+
+Scenario: Attempt to reconcile an already reconciled invoice
+  Given there is an invoice that has already been reconciled
+  When the user attempts to reconcile the invoice again with a bank statement line
+  Then the system prevents the reconciliation
+  And displays an alert indicating that the invoice is already reconciled

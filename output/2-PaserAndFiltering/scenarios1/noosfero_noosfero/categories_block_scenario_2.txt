@@ -1,0 +1,8 @@
+Scenario 2: List just regions
+  Tags: ['@selenium']
+  Given  display ".button-bar"
+  And  I follow "Edit" within ".blocks .categories-block"
+  And  I check "Region"
+  When  I follow "Save"
+  Then  I should see "Bahia"
+

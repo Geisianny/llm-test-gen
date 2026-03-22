@@ -1,0 +1,5 @@
+Scenario 2: The NoOne's gravatar picture must link to Gravatar homepage
+  Tags: ['@selenium']
+  When  I go to article "My Article"
+  Then  I should see "NoOne (unauthenticated user)" linking to "//www.gravatar.com"
+

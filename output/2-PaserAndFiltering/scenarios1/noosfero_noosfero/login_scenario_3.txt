@@ -1,0 +1,9 @@
+Scenario 3: view my control panel
+  Given  feature "allow_change_of_redirection_after_login" is disabled on environment
+  And  I am not logged in
+  And  I go to joaosilva's control panel
+  And  I should be on login page
+  And  I fill in the following:
+  When  I follow "Log in"
+  Then  I should be on joaosilva's control panel
+

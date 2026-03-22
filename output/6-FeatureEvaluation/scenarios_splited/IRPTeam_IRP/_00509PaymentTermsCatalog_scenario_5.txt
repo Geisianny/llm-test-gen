@@ -1,0 +1,5 @@
+Scenario: Delete a payment term
+  Given there is an administrator logged into the system
+  And there is a payment term named "Term to Delete" in the catalog
+  When the administrator deletes the payment term "Term to Delete"
+  Then the system removes the payment term from the catalog

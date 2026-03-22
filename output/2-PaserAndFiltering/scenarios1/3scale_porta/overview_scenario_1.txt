@@ -1,0 +1,5 @@
+Scenario 1: List of backends used is ordered alphabetically
+  Tags: ['@javascript']
+  When  I go to the overview page of product "My Product"
+  Then  I should see the following backends being used:
+

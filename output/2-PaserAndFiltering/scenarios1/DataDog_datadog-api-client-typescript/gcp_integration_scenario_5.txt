@@ -1,0 +1,6 @@
+Scenario 5: List all GCP integrations returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/gcp-integrations']
+  Given  new "ListGCPIntegration" request
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

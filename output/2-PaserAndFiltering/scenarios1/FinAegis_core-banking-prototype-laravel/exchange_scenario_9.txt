@@ -1,0 +1,5 @@
+Scenario 9: Minimum order validation
+  Given  I am logged in as "alice@example.com"
+  When  I try to place a buy order for "0.00001" "BTC" at "50000" "EUR"
+  Then  I should get an error "Minimum order amount is 0.0001 BTC"
+

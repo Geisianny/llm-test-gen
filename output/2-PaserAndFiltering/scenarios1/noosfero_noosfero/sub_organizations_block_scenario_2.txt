@@ -1,0 +1,9 @@
+Scenario 2: display only sub-communities
+  Given  the following blocks
+  When  I follow "Blocks" within "#section-design"
+  And  I follow "Edit" within ".block.related-organizations-block"
+  And  I select "Community" from "block_organization_type"
+  And  I press "Save"
+  Then  I should see "Moe" within ".block.related-organizations-block"
+  And  I should not see "Duff" within ".block.related-organizations-block"
+

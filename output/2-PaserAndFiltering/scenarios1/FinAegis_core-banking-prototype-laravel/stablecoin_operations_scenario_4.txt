@@ -1,0 +1,9 @@
+Scenario 4: Adding collateral to improve ratio
+  Given  I have 200.00 FGUSDC stablecoins
+  And  300.00 USD locked as collateral
+  And  my collateral ratio is 150%
+  When  I add 100.00 USD additional collateral
+  Then  the collateral addition should be successful
+  And  my total collateral should be 400.00 USD
+  And  my collateral ratio should be 200%
+

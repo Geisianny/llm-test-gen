@@ -1,0 +1,6 @@
+Scenario 3: User sees event location
+  Tags: ['@javascript', '@vcr', '@billy']
+  Given  I visit the events page
+  When  I click "Open Source Weekend"
+  Then  I should see the following event markers in the map:
+

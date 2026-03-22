@@ -1,0 +1,14 @@
+Scenario Outline 3: Update a spec - Example 1
+  Given  the provider has a Swagger 1.2 spec "Echo API"
+  And  a product "New service"
+  When  they go to the spec's edit page from Audience context
+  And  the form is submitted with:
+  Then  they should see a toast alert with text "ActiveDocs Spec was successfully updated"
+
+  Examples:
+    | swagger version |
+    | Swagger 1.2 |
+    | Swagger 2 |
+    | OAS 3.0 |
+    | OAS 3.1 |
+

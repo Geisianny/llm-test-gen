@@ -1,0 +1,13 @@
+Scenario 9: Add a fake terminal child channel to the SUSE Product base channel
+  Tags: ['@pxeboot_minion', '@uyuni', '@scc_credentials']
+  When  I follow the left menu "Software > Manage > Channels"
+  And  I follow "Create Channel"
+  And  I enter "Fake-RPM-Terminal-Channel" as "Channel Name"
+  And  I enter "fake-rpm-terminal-channel" as "Channel Label"
+  And  I select the parent channel for the "pxeboot_minion" from "Parent Channel"
+  And  I select "x86_64" from "Architecture:"
+  And  I enter "Fake-RPM-Terminal-Channel for testing" as "Channel Summary"
+  And  I enter "Description for Fake-RPM-Terminal-Channel Child Channel." as "Channel Description"
+  And  I click on "Create Channel"
+  Then  I should see a "Channel Fake-RPM-Terminal-Channel created." text
+

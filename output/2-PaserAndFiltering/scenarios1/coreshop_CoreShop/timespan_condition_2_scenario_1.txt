@@ -1,0 +1,6 @@
+Scenario 1: Add a new timespan product specific price rule which is valid
+  Given  adding a product specific price rule to product "Shoe" named "timespan-discount"
+  And  the specific price rule is active
+  And  the specific price rule has a condition timespan which is valid from "yesterday" to "tomorrow"
+  Then  the specific price rule should be valid for product "Shoe"
+

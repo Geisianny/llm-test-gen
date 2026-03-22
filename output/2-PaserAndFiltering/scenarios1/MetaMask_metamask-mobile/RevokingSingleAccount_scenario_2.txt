@@ -1,0 +1,5 @@
+Scenario 2: User grants permission to a dapp to access one of their accounts
+  When  I navigate to the browser
+  And  I navigate to "https://metamask.github.io/test-dapp/"
+  Then  I connect my active wallet to the test dapp
+

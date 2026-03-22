@@ -1,0 +1,6 @@
+Scenario 4: Create partially paid payment
+  Given  I create a payment for my order with payment provider "Bankwire" and amount 1800
+  And  I apply payment transition "complete" to latest order payment
+  Then  the order payment state should be "partially_paid"
+  And  the order state should be "confirmed"
+

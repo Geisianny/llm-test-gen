@@ -1,0 +1,7 @@
+Scenario 7: Delete a single entity returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/service-catalog']
+  Given  new "DeleteCatalogEntity" request
+  And  request contains "entity_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

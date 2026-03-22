@@ -1,0 +1,4 @@
+Scenario 11: Cleanup: remove package from script-bootstrapped SLES minion
+  When  I remove package "orion-dummy-1.1-1.1" from this "sle_minion"
+  Then  "orion-dummy-1.1-1.1" should not be installed on "sle_minion"
+

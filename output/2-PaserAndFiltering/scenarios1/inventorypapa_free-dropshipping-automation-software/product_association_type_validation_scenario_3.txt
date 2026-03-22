@@ -1,0 +1,8 @@
+Scenario 3: Trying to remove name from an existing product association type
+  Tags: ['@ui', '@api']
+  When  I want to modify the "Cross sell" product association type
+  And  I remove its name from "English (United States)" translation
+  And  I try to save my changes
+  Then  I should be notified that name is required
+  And  this product association type should still be named "Cross sell"
+

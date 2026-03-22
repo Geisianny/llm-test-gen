@@ -1,0 +1,8 @@
+Scenario 5: Update with new GL transaction on an existing line
+  Given  an existing reconciliation report
+  And  a GL transaction with a balance of 100.00 into the reconciliation period
+  When  I open the reconciliation report
+  And  I mark all lines cleared
+  And  I enter a GL transaction with a balance of 50.00 into the reconciliation period
+  Then  I expect the reconciliation report to show one uncleared line
+

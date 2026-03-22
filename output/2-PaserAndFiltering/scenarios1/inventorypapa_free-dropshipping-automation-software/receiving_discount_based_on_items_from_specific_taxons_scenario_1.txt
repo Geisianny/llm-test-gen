@@ -1,0 +1,7 @@
+Scenario 1: Receiving discount on order while buying product from promoted taxon
+  Tags: ['@ui', '@api']
+  Given  the promotion gives "$20.00" off if order contains products classified as "T-Shirts"
+  When  I add product "PHP T-Shirt" to the cart
+  And  my cart total should be "$80.00"
+  And  my discount should be "-$20.00"
+

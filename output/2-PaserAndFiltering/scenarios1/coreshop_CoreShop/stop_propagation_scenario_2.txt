@@ -1,0 +1,6 @@
+Scenario 2: Let only the 10% rule apply
+  Given  the price rule "discount 10" is stop propagation
+  And  the product "Shoe" should have the prices, price: "9000" and retail-price: "10000" and discount: "1000"
+  And  the product "Shoe 2" should have the prices, price: "13500" and retail-price: "15000" and discount: "1500"
+  And  the product "Jacket" should have the prices, price: "36000" and retail-price: "40000" and discount: "4000"
+

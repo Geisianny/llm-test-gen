@@ -1,0 +1,9 @@
+Scenario 1: Preventing customer from completing checkout with no longer available products
+  Tags: ['@api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  When  I have proceeded through checkout process
+  But  the product "PHP T-Shirt" has been disabled
+  When  I try to confirm my order
+  Then  I should be informed that this product has been disabled
+  And  I should not see the thank you page
+

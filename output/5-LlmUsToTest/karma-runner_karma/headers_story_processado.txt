@@ -1,0 +1,28 @@
+Scenario: Set custom headers for a single file
+  Given there is a test configuration with a file "test.js"
+  When the user sets a custom header "Content-Type" with value "application/javascript" for "test.js"
+  Then the system serves "test.js" with the header "Content-Type" and value "application/javascript"
+
+Scenario: Serve multiple files with different custom headers
+  Given there is a test configuration with files "test1.js" and "test2.css"
+  When the user sets a custom header "Cache-Control" with value "no-cache" for "test1.js"
+  And sets a custom header "Content-Type" with value "text/css" for "test2.css"
+  Then the system serves "test1.js" with the header "Cache-Control" and value "no-cache"
+  And serves "test2.css" with the header "Content-Type" and value "text/css"
+
+Scenario: Custom headers are not applied to unspecified files
+  Given there is a test configuration with files "test1.js" and "test2.js"
+  When the user sets a custom header "Content-Type" with value "application/javascript" for "test1.js"
+  Then the system serves "test2.js" without the header "Content-Type"
+
+Scenario: Update custom headers for a file
+  Given there is a test configuration with a file "test.js"
+  And the user has set a custom header "Content-Type" with value "text/plain" for "test.js"
+  When the user updates the custom header "Content-Type" with value "application/javascript" for "test.js"
+  Then the system serves "test.js" with the header "Content-Type" and value "application/javascript"
+
+Scenario: Remove custom headers from a file
+  Given there is a test configuration with a file "test.js"
+  And the user has set a custom header "Content-Type" with value "application/javascript" for "test.js"
+  When the user removes the custom header "Content-Type" for "test.js"
+  Then the system serves "test.js" without the header "Content-Type"

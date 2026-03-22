@@ -1,0 +1,4 @@
+Scenario 2: importing analytic_chart
+  Tags: ['@multicompany_base_finance_csv_analytic_chart_import']
+  Given  "account.analytic.account" is imported from CSV "Plan_analytique.csv" using delimiter ";"
+

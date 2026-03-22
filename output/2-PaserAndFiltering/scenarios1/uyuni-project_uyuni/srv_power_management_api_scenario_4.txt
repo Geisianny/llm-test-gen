@@ -1,0 +1,8 @@
+Scenario 4: Test IPMI functions for API test
+  When  I turn power on
+  Then  the power status is "on"
+  When  I turn power off
+  Then  the power status is "off"
+  When  I do power management reboot
+  Then  the power status is "on"
+

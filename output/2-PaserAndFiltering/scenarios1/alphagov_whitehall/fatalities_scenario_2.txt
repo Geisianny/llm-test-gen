@@ -1,0 +1,5 @@
+Scenario 2: Only editors/writers from organisations which handle fatalities can create fatality notices
+  Given  I am a writer in the organisation "DFT"
+  Then  I cannot edit fields of operation
+  And  I cannot create new fatality notices
+

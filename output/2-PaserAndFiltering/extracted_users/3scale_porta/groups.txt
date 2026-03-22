@@ -1,0 +1,15 @@
+Feature: Buyer account group memberships
+Description: As a provider admin I want to add and remove buyer accounts from CMS groups.
+Tags: ['@javascript']
+
+Background: 
+  Given  a provider is logged in
+  And  the provider has "groups" switch allowed
+  And  a buyer "Bob buyer"
+
+Scenario 1: Navigation
+  When  they select "Audience" from the context selector
+  And  they follow "Bob buyer"
+  And  they follow "0 Group Memberships"
+  Then  the current page is the buyer account "Bob buyer" groups page
+

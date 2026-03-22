@@ -1,0 +1,10 @@
+Scenario Outline 20: Navigate to menu "<path>" and open screen "<screen>" - Example 20
+  When  I navigate the menu and select the item at "General Journal > Journal Entry"
+  Then  I should see the GL entry screen
+
+  Examples:
+    | path | screen |
+    | General Journal > Journal Entry | GL entry |
+    | General Journal > Search | GL search |
+    | General Journal > Reports > Balance Sheet | generate balance sheet |
+

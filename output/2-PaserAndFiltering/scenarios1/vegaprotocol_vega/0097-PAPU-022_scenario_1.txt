@@ -1,0 +1,11 @@
+Scenario 1: pap expires  (0097-PAPU-022)
+  When  the protocol automated purchase is defined as:
+  Then  the oracles broadcast data with block time signed with "0xCAFECAFE2":
+  And  the network moves ahead "16" blocks
+  Then  the automated purchase program for market "BTC/ETH" should have a snapshot balance of "200"
+  And  the network moves ahead "16" blocks
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  And  the buy back fees balance should be "5000" for the asset "BTC"
+  And  the active pap id should be "none" for the market "BTC/ETH"
+  And  the active pap order id should be "none" for the market "BTC/ETH"
+

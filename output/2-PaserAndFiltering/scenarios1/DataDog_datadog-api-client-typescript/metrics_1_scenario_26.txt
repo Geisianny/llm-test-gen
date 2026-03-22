@@ -1,0 +1,8 @@
+Scenario 26: List tag configuration by name returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/metrics-experience']
+  Given  a valid "appKeyAuth" key in the system
+  And  new "ListTagConfigurationByName" request
+  And  request contains "metric_name" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

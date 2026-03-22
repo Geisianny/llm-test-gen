@@ -1,0 +1,6 @@
+Scenario: Add JavaScript version tag in Firefox
+  Given the user is using the Karma Test Runner CLI
+  And the browser is Firefox
+  When the user adds a JavaScript version tag
+  Then the system includes the JavaScript version tag in the test configuration
+  And the test is executed with the JavaScript version tag

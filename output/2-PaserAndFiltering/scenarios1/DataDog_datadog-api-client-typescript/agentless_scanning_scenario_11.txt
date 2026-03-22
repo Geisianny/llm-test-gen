@@ -1,0 +1,7 @@
+Scenario 11: Delete AWS scan options returns "No Content" response
+  Tags: ['@generated', '@skip', '@team:DataDog/k9-agentless']
+  Given  new "DeleteAwsScanOptions" request
+  And  request contains "account_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 204 No Content
+

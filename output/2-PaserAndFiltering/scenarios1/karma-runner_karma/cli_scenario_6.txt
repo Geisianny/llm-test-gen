@@ -1,0 +1,4 @@
+Scenario 6: Start command help
+  When  I execute Karma with arguments: "start --help"
+  Then  the stdout is exactly:
+

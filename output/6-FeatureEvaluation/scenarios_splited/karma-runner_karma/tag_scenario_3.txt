@@ -1,0 +1,7 @@
+Scenario: Manage multiple JavaScript version tags in Firefox
+  Given the user is using the Karma Test Runner CLI
+  And the browser is Firefox
+  And there are existing JavaScript version tags
+  When the user adds a new JavaScript version tag
+  Then the system includes all JavaScript version tags in the test configuration
+  And the test is executed with the JavaScript version tags

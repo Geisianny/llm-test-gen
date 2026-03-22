@@ -1,0 +1,11 @@
+Scenario 2: The default resolved shipping for my cart should be 40
+  Given  the shipping rule has a condition postcode with "4700"
+  And  the site has another carrier "DPD"
+  And  adding a shipping rule named "DPD"
+  And  the shipping rule is active
+  And  the shipping rule has a action price of 40 in currency "EUR"
+  And  the shipping rule belongs to carrier "DPD"
+  And  I add the product "Shoe" to my cart
+  Then  the shipping rule "Post" should be invalid for my cart with carrier "Post"
+  And  the cart shipping should be "4000" excluding tax
+

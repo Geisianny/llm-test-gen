@@ -1,0 +1,6 @@
+Scenario 1: Trying to delete an attribute from the registry when a product uses it
+  Tags: ['@api', '@ui']
+  Given  this product has a text attribute "Gun caliber" with value "11 mm"
+  When  I delete this product attribute
+  Then  I should be notified that it is in use
+

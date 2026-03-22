@@ -1,0 +1,10 @@
+Scenario 19: List datastore items returns "OK" response
+  Tags: ['@skip-typescript', '@team:DataDog/app-builder-backend']
+  Given  new "ListDatastoreItems" request
+  And  there is a valid "datastore" in the system
+  And  there is a valid "datastore_item" in the system
+  And  request contains "datastore_id" parameter from "datastore.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data" has length 1
+

@@ -1,0 +1,9 @@
+Scenario 1: Applying correct taxes for a single item unit with tax rate included in price
+  Tags: ['@api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  When  I check the details of my cart
+  Then  my cart total should be "$19.70"
+  And  my included in price taxes should be "$3.28"
+  And  there should be one item in my cart
+  And  total price of "PHP T-Shirt" item should be "$19.70"
+

@@ -1,0 +1,7 @@
+Scenario 61: The monitoring server is healthy
+  Tags: ['@monitoring_server']
+  Then  "monitoring_server" should have a FQDN
+  And  reverse resolution should work for "monitoring_server"
+  And  "monitoring_server" should communicate with the server using public interface
+  And  the clock from "monitoring_server" should be exact
+

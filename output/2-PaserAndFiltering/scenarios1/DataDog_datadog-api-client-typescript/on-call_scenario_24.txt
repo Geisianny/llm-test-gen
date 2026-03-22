@@ -1,0 +1,12 @@
+Scenario 24: Update On-Call escalation policy returns "OK" response
+  Tags: ['@team:DataDog/on-call']
+  Given  new "UpdateOnCallEscalationPolicy" request
+  And  there is a valid "user" in the system
+  And  there is a valid "dd_team" in the system
+  And  there is a valid "schedule" in the system
+  And  there is a valid "escalation_policy" in the system
+  And  request contains "policy_id" parameter from "escalation_policy.data.id"
+  And  body with value {"data": {"attributes": {"name": "{{ unique }}-updated", "resolve_page_on_policy_end": false, "retries": 0, "steps": [{"assignment": "default", "escalate_after_seconds": 3600, "id": "{{ escalation_policy.data.relationships.steps.data[0].id }}", "targets": [{"id": "{{ user.data.id }}", "type": "users"}]}]}, "id": "{{ escalation_policy.data.id }}", "relationships": {"teams": {"data": [{"id": "{{ dd_team.data.id }}", "type": "teams"}]}}, "type": "policies"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+

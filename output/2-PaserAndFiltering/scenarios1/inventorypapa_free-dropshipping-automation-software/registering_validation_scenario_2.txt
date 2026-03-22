@@ -1,0 +1,11 @@
+Scenario 2: Trying to register a new account without specifying first name
+  Tags: ['@ui', '@api']
+  When  I want to register a new account
+  And  I do not specify the first name
+  And  I specify the last name as "Goodman"
+  And  I specify the email as "goodman@gmail.com"
+  And  I specify the password as "heisenberg"
+  And  I try to register this account
+  Then  I should be notified that the first name is required
+  And  I should not be logged in
+

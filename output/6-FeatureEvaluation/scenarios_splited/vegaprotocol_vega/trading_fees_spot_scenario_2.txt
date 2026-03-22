@@ -1,0 +1,5 @@
+Scenario: Order placement with insufficient balance
+  Given there is a user with insufficient balance in their general account
+  When the user places an order on a spot market
+  Then the system rejects the order
+  And displays a message indicating insufficient balance

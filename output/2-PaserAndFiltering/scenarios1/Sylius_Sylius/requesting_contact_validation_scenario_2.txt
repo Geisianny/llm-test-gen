@@ -1,0 +1,9 @@
+Scenario 2: Trying to request contact without specifying a message
+  Tags: ['@api', '@ui']
+  Given  this channel has contact email set as "contact@goodshop.com"
+  When  I want to request contact
+  And  I specify the email as "lucifer@morningstar.com"
+  And  I do not specify the message
+  And  I try to send it
+  Then  I should be notified that the message is required
+

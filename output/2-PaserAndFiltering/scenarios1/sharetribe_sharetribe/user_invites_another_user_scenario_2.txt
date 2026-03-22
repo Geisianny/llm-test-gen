@@ -1,0 +1,32 @@
+Scenario 2: User invites another user successfully
+  Tags: ['@javascript']
+  When  users can not invite new users to join community "test"
+  And  I am on the homepage
+  And  I should not see "Invite friends"
+  When  I log in as "kassi_testperson2"
+  And  I am on invitations page
+  And  I should see "Post a new listing"
+  Then  I should not see "Invite your friends"
+  When  users can invite new users to join community "test"
+  And  I am on invitations page
+  Then  I should see "Email address(es)"
+  And  I fill in "invitation_email" with "test@example.com"
+  And  I fill in "invitation_message" with "test"
+  And  I press "Send invitation"
+  Then  I should see "Invitation sent successfully"
+  When  the system processes jobs
+  And  "test@example.com" should receive an email
+  When  I fill in "invitation_email" with "test@example.com"
+  And  I press "Send invitation"
+  Then  I should see "Invitation sent successfully"
+  When  the system processes jobs
+  And  "test@example.com" should receive 2 emails
+  When  I fill in "invitation_email" with "test2@example.com, another.test@example.com,third.strange.guy@example.com"
+  And  I fill in "invitation_message" with "test"
+  And  I press "Send invitation"
+  Then  I should see "Invitation sent successfully"
+  When  the system processes jobs
+  And  "test2@example.com" should receive an email
+  And  "another.test@example.com" should receive an email
+  And  "third.strange.guy@example.com" should receive an email
+

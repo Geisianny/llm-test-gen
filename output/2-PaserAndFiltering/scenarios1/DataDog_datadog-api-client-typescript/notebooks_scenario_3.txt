@@ -1,0 +1,7 @@
+Scenario 3: Delete a notebook returns "Bad Request" response
+  Tags: ['@skip', '@team:DataDog/notebooks']
+  Given  new "DeleteNotebook" request
+  And  request contains "notebook_id" parameter with value "ThisIsntANotebookId"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

@@ -1,0 +1,5 @@
+Scenario: Execute an approved proposal
+  Given there is an approved proposal and the voting period has ended
+  When the system executes the approved proposal
+  Then the proposal is implemented
+  And the system displays a message confirming successful execution

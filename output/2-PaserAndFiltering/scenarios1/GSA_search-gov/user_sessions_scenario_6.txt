@@ -1,0 +1,9 @@
+Scenario 6: Already logged-in super admin logs out
+  Tags: ['@javascript']
+  Given  I am logged in with email "affiliate_admin@fixtures.org"
+  When  I go to the admin home page
+  Then  I should not see "Security Notification"
+  When  I follow "Sign Out"
+  And  I go to the admin home page
+  Then  I should see "Security Notification"
+

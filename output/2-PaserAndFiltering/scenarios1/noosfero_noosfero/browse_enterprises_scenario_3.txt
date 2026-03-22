@@ -1,0 +1,8 @@
+Scenario 3: show profile links when clicked
+  Tags: ['@selenium-fixme']
+  Given  I am on /search/enterprises
+  When  I follow "Profile links"
+  Then  I should see "Products" within "ul.menu-submenu-list"
+  And  I should see "Members" within "ul.menu-submenu-list"
+  And  I should see "Agenda" within "ul.menu-submenu-list"
+

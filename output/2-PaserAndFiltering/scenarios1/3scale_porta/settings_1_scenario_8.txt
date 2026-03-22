@@ -1,0 +1,6 @@
+Scenario 8: Member user with access to finance but finance is switched off
+  Given  an active user has access to admin section finance
+  And  the provider has "finance" denied
+  When  the user logs in
+  Then  they should not be able to review the charging and gateway billing settings
+

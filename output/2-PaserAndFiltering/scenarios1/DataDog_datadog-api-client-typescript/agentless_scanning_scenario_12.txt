@@ -1,0 +1,7 @@
+Scenario 12: Delete AWS scan options returns "Not Found" response
+  Tags: ['@team:DataDog/k9-agentless']
+  Given  new "DeleteAwsScanOptions" request
+  And  request contains "account_id" parameter with value "000000000005"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

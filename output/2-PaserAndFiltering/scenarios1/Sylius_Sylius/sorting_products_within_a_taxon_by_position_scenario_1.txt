@@ -1,0 +1,10 @@
+Scenario 1: Setting two products to position -1 on the non-last page
+  Tags: ['@no-api', '@ui', '@mink:chromedriver', '@failing']
+  When  I am browsing the 1st page of products from "Soft Toys" taxon
+  And  I set the position of "Old pug" to "-1"
+  And  I set the position of "Young pug" to "-1"
+  And  I save my new configuration
+  And  I go to the 2nd page of products from "Soft Toys" taxon
+  Then  the one before last product on the list should have name "Old pug" with position 18
+  And  the last product on the list should have name "Young pug" with position 19
+

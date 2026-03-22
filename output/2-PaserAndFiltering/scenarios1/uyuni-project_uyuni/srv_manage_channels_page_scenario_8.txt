@@ -1,0 +1,8 @@
+Scenario 8: Fail when trying to change the channel name to a reserved name
+  Tags: ['@scc_credentials']
+  When  I follow the left menu "Software > Manage > Channels"
+  And  I follow "aaaSLE-12-Cloud-Compute5-Pool for x86_64"
+  And  I enter "openSUSE-Leap-15.6-Pool for x86_64" as "Channel Name"
+  And  I click on "Update Channel"
+  Then  I should see a "The channel name 'openSUSE-Leap-15.6-Pool for x86_64' is reserved, please enter a different name" text
+

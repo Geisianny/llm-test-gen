@@ -1,0 +1,7 @@
+Scenario 3: Create a monitor notification rule returns "Bad Request" response
+  Tags: ['@skip-validation', '@team:DataDog/monitor-app']
+  Given  new "CreateMonitorNotificationRule" request
+  And  body with value {"data": {"attributes": {"filter": {"tags": ["test:{{ unique_lower }}", "host:abc"]}, "name": "test rule", "recipients": ["@slack-test-channel", "@jira-test"]}, "type": "monitor-notification-rule"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

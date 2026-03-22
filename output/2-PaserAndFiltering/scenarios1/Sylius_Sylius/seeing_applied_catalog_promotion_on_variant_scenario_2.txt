@@ -1,0 +1,5 @@
+Scenario 2: Seeing no applied catalog promotion on variant
+  Tags: ['@api', '@ui', '@javascript']
+  When  I view "Sylius T-Shirt" variant of the "T-Shirt" product
+  Then  I should see this variant is not discounted
+

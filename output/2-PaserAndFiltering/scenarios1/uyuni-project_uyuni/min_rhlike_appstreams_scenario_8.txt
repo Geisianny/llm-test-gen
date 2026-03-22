@@ -1,0 +1,14 @@
+Scenario 8: Upgrade to modular package
+  Given  I am on the Systems overview page of this "rhlike_minion"
+  And  I follow "Software" in the content area
+  And  I follow "Packages"
+  And  I follow "Upgrade"
+  Then  I wait until I see "scorpio-dummy-2.0" text, refreshing the page
+  And  I should see a "scorpio:2.0" text
+  And  I check "scorpio-dummy-2.0" in the list
+  And  I click on "Upgrade Packages"
+  And  I click on "Confirm"
+  And  I should see a "1 package upgrade has been scheduled for" text
+  When  I wait until event "Package Install/Upgrade scheduled by admin" is completed
+  Then  "scorpio-dummy-2.0" should be installed on "rhlike_minion"
+

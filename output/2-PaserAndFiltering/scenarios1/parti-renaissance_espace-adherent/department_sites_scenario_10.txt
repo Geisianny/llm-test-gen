@@ -1,0 +1,12 @@
+Scenario Outline 10: as a logged-in user without correct right I cannot access department sites endpoints - Example 1
+  Given  I am logged with "jacques.picard@en-marche.fr" via OAuth client "JeMengage Web" with scope "jemengage_admin"
+  When  I send a "GET" request to "/api/v3/department_sites?scope=president_departmental_assembly"
+  Then  the response status code should be 403
+
+  Examples:
+    | method | url |
+    | GET | /api/v3/department_sites?scope=president_departmental_assembly |
+    | POST | /api/v3/department_sites?scope=president_departmental_assembly |
+    | GET | /api/v3/department_sites/51e507e5-3d7c-4f08-b05d-b7cb45e960d3?scope=president_departmental_assembly |
+    | PUT | /api/v3/department_sites/51e507e5-3d7c-4f08-b05d-b7cb45e960d3?scope=president_departmental_assembly |
+

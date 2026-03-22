@@ -1,0 +1,11 @@
+Scenario 2: Given the following dispatch metrics, if an `eligible keys` list is specified in the recurring transfer, only parties included in the list and meeting other eligibility criteria should receive a score (0056-REWA-220)
+  Given  the current epoch is "0"
+  And  the parties submit the following recurring transfers:
+  And  the network moves ahead "1" epochs
+  Given  the parties place the following orders:
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the parties should have the following profit and loss:
+  Given  the network moves ahead "1" epochs
+  Then  parties should have the following vesting account balances:
+

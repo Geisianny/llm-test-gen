@@ -1,0 +1,7 @@
+Scenario 32: Cleanup: Remove "My State Channel for Recurring Actions" config channel
+  When  I follow the left menu "Configuration > Channels"
+  And  I follow "My State Channel for Recurring Actions"
+  And  I follow "Delete Channel"
+  And  I click on "Delete Config Channel"
+  Then  I should see a "Channel 'My State Channel for Recurring Actions' has been deleted" text
+

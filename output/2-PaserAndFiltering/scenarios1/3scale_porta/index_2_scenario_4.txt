@@ -1,0 +1,7 @@
+Scenario 4: Index does not show the API column
+  Tags: ['@wip']
+  Given  the product has a Swagger 2 spec "Echo API"
+  When  they go to the product's ActiveDocs page
+  Then  there should not be a link to "Create your first spec"
+  Then  the table should not have a column "API"
+

@@ -1,0 +1,65 @@
+Scenario 1: Integration Settings options (Rolling updates Service Mesh OFF)
+  And  I have rolling updates "service_mesh_integration,apicast_oidc" disabled
+  And  I go to the settings page for service "API" of provider "foo.3scale.localhost"
+  Then  they should be able to choose one of the following within deployment options:
+  And  they should be able to choose one of the following within authentication methods:
+
+
+
+Scenario 2: Integration Settings options (Rolling updates ON)
+  And  I go to the settings page for service "API" of provider "foo.3scale.localhost"
+  Then  they should be able to choose one of the following within deployment options:
+  And  they should be able to choose one of the following within authentication methods:
+
+
+
+Scenario 3: Integration Settings and authentication method interaction
+  And  I go to the settings page for service "API" of provider "foo.3scale.localhost"
+  When  I click on the label "APIcast self-managed"
+  And  I click on the label "API Key (user_key)"
+  Then  I should see "API KEY (USER_KEY) BASICS"
+  And  I should see "CREDENTIALS LOCATION"
+  And  I should see "GATEWAY RESPONSE"
+  When  I click on the label "App_ID and App_Key Pair"
+  Then  I should see "APP_ID AND APP_KEY PAIR BASICS"
+  And  I should see "CREDENTIALS LOCATION"
+  And  I should see "GATEWAY RESPONSE"
+  When  I click on the label "OpenID Connect"
+  Then  I should see "OPENID CONNECT (OIDC) BASICS"
+  And  I should see "OIDC AUTHORIZATION FLOW"
+  And  I should see "JSON WEB TOKEN (JWT) CLAIM WITH CLIENTID"
+  And  I should see "GATEWAY RESPONSE"
+  When  I click on the label "Istio"
+  And  I click on the label "API Key (user_key)"
+  Then  I should not see "API KEY (USER_KEY) BASICS"
+  And  I should not see "CREDENTIALS LOCATION"
+  And  I should not see "SECURITY"
+  And  I should not see "GATEWAY RESPONSE"
+  When  I click on the label "App_ID and App_Key Pair"
+  Then  I should not see "APP_ID AND APP_KEY PAIR BASICS"
+  And  I should not see "CREDENTIALS LOCATION"
+  And  I should not see "SECURITY"
+  And  I should not see "GATEWAY RESPONSE"
+  When  I click on the label "OpenID Connect"
+  Then  I should see "OPENID CONNECT (OIDC) BASICS"
+  And  I should see "OIDC AUTHORIZATION FLOW"
+  And  I should not see "CREDENTIALS LOCATION"
+  And  I should not see "SECURITY"
+  And  I should not see "GATEWAY RESPONSE"
+
+
+
+Scenario 4: Production and Staging URL are not grayed out when self-managed APIcast
+  And  I go to the settings page for service "API" of provider "foo.3scale.localhost"
+  When  I click on the label "APIcast self-managed"
+  Then  field "Staging Public Base URL" is not readonly
+  And  field "Production Public Base URL" is not readonly
+
+
+
+Scenario 5: Production and Staging URL are grayed out when 3scale-managed APIcast
+  And  I go to the settings page for service "API" of provider "foo.3scale.localhost"
+  When  I click on the label "APIcast"
+  Then  field "Staging Public Base URL" is readonly
+  And  field "Production Public Base URL" is readonly
+

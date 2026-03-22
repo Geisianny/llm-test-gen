@@ -1,0 +1,7 @@
+Scenario 7: Cannot amend AMM to have only one side if its current position does not support it
+  Tags: ['@VAMM']
+  When  the parties place the following orders:
+  Then  the parties amend the following AMM:
+  When  the parties place the following orders:
+  Then  the parties amend the following AMM:
+

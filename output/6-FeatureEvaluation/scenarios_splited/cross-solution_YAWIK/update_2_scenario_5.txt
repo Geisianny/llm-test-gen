@@ -1,0 +1,5 @@
+Scenario: Attempt to update organization with invalid data
+  Given there is a recruiter logged in
+  And the recruiter has an organization with the name "Valid Name"
+  When the recruiter updates the organization name to an empty string
+  Then the system displays an error message

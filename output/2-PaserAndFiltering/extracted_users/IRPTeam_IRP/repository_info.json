@@ -1,0 +1,2053 @@
+{
+  "repository_name": "IRP",
+  "repository_owner": "IRPTeam",
+  "repository_url": "https://github.com/IRPTeam/IRP",
+  "visibility": "public",
+  "is_private": false,
+  "total_feature_files": 340,
+  "downloaded_files": 340,
+  "download_date": "2025-11-26 18:19:55",
+  "feature_files": [
+    {
+      "name": "AccountingImportData(TestDB).feature",
+      "original_path": "features/External/AccountingImportData(TestDB).feature",
+      "size": 42014,
+      "sha": "8ee321b49f35c319ca957f4d534dd2d36d47f02b"
+    },
+    {
+      "name": "CashBankDocFilters.feature",
+      "original_path": "features/External/CashBankDocFilters.feature",
+      "size": 18949,
+      "sha": "3b0f1d17902270adf6b13e3f872ced55aa46b69e"
+    },
+    {
+      "name": "DashBoardDemo.feature",
+      "original_path": "features/External/DashBoardDemo.feature",
+      "size": 191615,
+      "sha": "22f1274b5419418500cb0149ac4af523a3440eea"
+    },
+    {
+      "name": "ExportVerificationPosting.feature",
+      "original_path": "features/External/ExportVerificationPosting.feature",
+      "size": 6723,
+      "sha": "425544a82ea273d1cc4860f651224d6dc203fdb6"
+    },
+    {
+      "name": "Exportcatalog.feature",
+      "original_path": "features/External/Exportcatalog.feature",
+      "size": 16452,
+      "sha": "d9da9f66679babc2eabe262490e948745508afc5"
+    },
+    {
+      "name": "Exportpricelist.feature",
+      "original_path": "features/External/Exportpricelist.feature",
+      "size": 758,
+      "sha": "af931c98a8a5da5b5b56f0200932afe5684e52a1"
+    },
+    {
+      "name": "ImportData.feature",
+      "original_path": "features/External/ImportData.feature",
+      "size": 1152735,
+      "sha": "93c658031521c0d6219e9f6a2d534b188a78c614"
+    },
+    {
+      "name": "ImportDataAccessRights.feature",
+      "original_path": "features/External/ImportDataAccessRights.feature",
+      "size": 959791,
+      "sha": "fbb796039201c84172b107e94d07437b7e5fd743"
+    },
+    {
+      "name": "ImportDataCurrencyRevaluation.feature",
+      "original_path": "features/External/ImportDataCurrencyRevaluation.feature",
+      "size": 147270,
+      "sha": "757ce82c6f86a0b942b38a21f103e3a975c29f3b"
+    },
+    {
+      "name": "ImportDataDebitCreditNote.feature",
+      "original_path": "features/External/ImportDataDebitCreditNote.feature",
+      "size": 454247,
+      "sha": "b2cbaff45fdda378a0cbcf3254c202a31cf3d6a3"
+    },
+    {
+      "name": "ImportDocumentComissionTradeConsignment.feature",
+      "original_path": "features/External/ImportDocumentComissionTradeConsignment.feature",
+      "size": 523281,
+      "sha": "08c3bcbc45c0ae679ca0e3aad69e8f60d843e5a1"
+    },
+    {
+      "name": "ImportDocuments.feature",
+      "original_path": "features/External/ImportDocuments.feature",
+      "size": 1986749,
+      "sha": "909113525667ad22b2d42a3e2512f77af067934b"
+    },
+    {
+      "name": "ImportDocumentsCreationBaseOn.feature",
+      "original_path": "features/External/ImportDocumentsCreationBaseOn.feature",
+      "size": 1092429,
+      "sha": "1e2242af8f4af1caaae4d2b25073506c2fb2f568"
+    },
+    {
+      "name": "ImportDocumentsSecondPart.feature",
+      "original_path": "features/External/ImportDocumentsSecondPart.feature",
+      "size": 1832825,
+      "sha": "16e638ad8b2408bd7172f37300409925d9d917f5"
+    },
+    {
+      "name": "ImportItem.feature",
+      "original_path": "features/External/ImportItem.feature",
+      "size": 95290,
+      "sha": "2fe02ba95990819f4af8c45f80b93dde3a090232"
+    },
+    {
+      "name": "ImportMock.feature",
+      "original_path": "features/External/ImportMock.feature",
+      "size": 126841,
+      "sha": "04e9a088b39701542c97b411e4c27f2c4e44b925"
+    },
+    {
+      "name": "ImportCatalogs.feature",
+      "original_path": "features/External/Landed cost/ImportCatalogs.feature",
+      "size": 318843,
+      "sha": "5678caa98098aaeb5eb7068c046e4bcf5712b544"
+    },
+    {
+      "name": "ImportDocuments_1.feature",
+      "original_path": "features/External/Landed cost/ImportDocuments.feature",
+      "size": 1210401,
+      "sha": "cb9c3cbc09a0a23951900ba87d8b90f96b124467"
+    },
+    {
+      "name": "Preparation.feature",
+      "original_path": "features/External/Landed cost/Preparation.feature",
+      "size": 3520,
+      "sha": "4ccfb4e45f6438bcd85c232c764f61e87dad85a3"
+    },
+    {
+      "name": "LoadDemoBD.feature",
+      "original_path": "features/External/LoadDemoBD.feature",
+      "size": 1909190,
+      "sha": "7abc04c1689495fdb5c653234e468a9725ffe331"
+    },
+    {
+      "name": "ExportScenarios.feature",
+      "original_path": "features/External/Manufactoring/ExportScenarios.feature",
+      "size": 8186,
+      "sha": "3eca727912e0a5619455e3e9ea08c9c70570b945"
+    },
+    {
+      "name": "ImportData_1.feature",
+      "original_path": "features/External/Manufactoring/ImportData.feature",
+      "size": 315494,
+      "sha": "505eeede770420e9aa6c833d24636da00ef84fd7"
+    },
+    {
+      "name": "Podgotovka.feature",
+      "original_path": "features/External/Podgotovka.feature",
+      "size": 126410,
+      "sha": "4a0e6052c37f2ae82419e7fb3138bb6f9f586cf8"
+    },
+    {
+      "name": "Podgotovka1.feature",
+      "original_path": "features/External/Podgotovka1.feature",
+      "size": 100947,
+      "sha": "9be4c1c90a482b5e402d0c125b10b161e69a7692"
+    },
+    {
+      "name": "ProductSelectionFormPlusFilters.feature",
+      "original_path": "features/External/ProductSelectionFormPlusFilters.feature",
+      "size": 101517,
+      "sha": "ad3e3e522446f11731b779212f56a45e04c55685"
+    },
+    {
+      "name": "PreparationSimpleBatches.feature",
+      "original_path": "features/External/Simple batches/PreparationSimpleBatches.feature",
+      "size": 2510,
+      "sha": "c031c14ebdad741ea568b79fe992334bd360a1eb"
+    },
+    {
+      "name": "StepsForCreateDiscount.feature",
+      "original_path": "features/External/StepsForCreateDiscount.feature",
+      "size": 35129,
+      "sha": "fe5c93a2d163686e07d842af591263d61b6b935d"
+    },
+    {
+      "name": "StressTesting.feature",
+      "original_path": "features/External/StressTesting.feature",
+      "size": 3239916,
+      "sha": "4f5e73dc59ee140bda2e124af6781ccebadce5c2"
+    },
+    {
+      "name": "TestDataBase.feature",
+      "original_path": "features/External/TestDataBase.feature",
+      "size": 2364599,
+      "sha": "650448a2f9943da11f4b0444620d4842b346ed84"
+    },
+    {
+      "name": "ValidateData.feature",
+      "original_path": "features/External/ValidateData.feature",
+      "size": 59563,
+      "sha": "096eebcdcf2bc20f94004dc75f905180bc375795"
+    },
+    {
+      "name": "Variables.feature",
+      "original_path": "features/External/Variables.feature",
+      "size": 870,
+      "sha": "1481af8503bdabdd71abca29b40b613f4ce11c69"
+    },
+    {
+      "name": "_0049DataBaseStatus.feature",
+      "original_path": "features/Internal/_0050 Catalogs/_0049DataBaseStatus.feature",
+      "size": 2597,
+      "sha": "e4ac3d2ce5f6bbef0034927c5351e6e6bd0c06f9"
+    },
+    {
+      "name": "_00501CountriesCatalog.feature",
+      "original_path": "features/Internal/_0050 Catalogs/_00501CountriesCatalog.feature",
+      "size": 2062,
+      "sha": "655d3ac734b01e0bf753b3114f9dd5e63dbfbf8d"
+    },
+    {
+      "name": "_00502CurrenciesCatalog.feature",
+      "original_path": "features/Internal/_0050 Catalogs/_00502CurrenciesCatalog.feature",
+      "size": 1258,
+      "sha": "91a20894dbde1f891f3b450512085f00ec93deab"
+    },
+    {
+      "name": "_00503CashBankAccountsCatalog.feature",
+      "original_path": "features/Internal/_0050 Catalogs/_00503CashBankAccountsCatalog.feature",
+      "size": 10972,
+      "sha": "ba8dd52b7e17eba4035894a28fd1e4a9963e1180"
+    },
+    {
+      "name": "_00503ObjectStatusesCatalog.feature",
+      "original_path": "features/Internal/_0050 Catalogs/_00503ObjectStatusesCatalog.feature",
+      "size": 18828,
+      "sha": "2041a8746ab1de8b375cd5a9371246695aeaaa5c"
+    },
+    {
+      "name": "_00503TaxRatesCatalog.feature",
+      "original_path": "features/Internal/_0050 Catalogs/_00503TaxRatesCatalog.feature",
+      "size": 3167,
+      "sha": "268f09e6db7cb63fbec0388fb6c0c6ea3914838e"
+    },
+    {
+      "name": "_00504CompaniesCatalog.feature",
+      "original_path": "features/Internal/_0050 Catalogs/_00504CompaniesCatalog.feature",
+      "size": 14527,
+      "sha": "7ecc29052b33be6520007f57cb2a0a3a2550b783"
+    },
+    {
+      "name": "_00505CurrencyMovementType.feature",
+      "original_path": "features/Internal/_0050 Catalogs/_00505CurrencyMovementType.feature",
+      "size": 1564,
+      "sha": "e2c254a3396f14b40d75a3cfdb94b5c7c3295e16"
+    },
+    {
+      "name": "_00506UnitsCatalog.feature",
+      "original_path": "features/Internal/_0050 Catalogs/_00506UnitsCatalog.feature",
+      "size": 7498,
+      "sha": "5c6220129901de41c86beed9d3925a280af1a05a"
+    },
+    {
+      "name": "_00507AccessGroupsCatalog.feature",
+      "original_path": "features/Internal/_0050 Catalogs/_00507AccessGroupsCatalog.feature",
+      "size": 1872,
+      "sha": "0b086957c20e01f9d160cc6f1528351dcf118cd6"
+    },
+    {
+      "name": "_00508AccessProfilesCatalog.feature",
+      "original_path": "features/Internal/_0050 Catalogs/_00508AccessProfilesCatalog.feature",
+      "size": 4194,
+      "sha": "ff3b2fc52a66be5146b1340b2bdf4a4996ebb0cd"
+    },
+    {
+      "name": "_00509PaymentTermsCatalog.feature",
+      "original_path": "features/Internal/_0050 Catalogs/_00509PaymentTermsCatalog.feature",
+      "size": 783,
+      "sha": "de4f73435ca25dd49778a81b2083b52240144369"
+    },
+    {
+      "name": "_00510ItemSegmentsContentCatalog.feature",
+      "original_path": "features/Internal/_0050 Catalogs/_00510ItemSegmentsContentCatalog.feature",
+      "size": 1248,
+      "sha": "04007ea2de4d967feb5b22f0f6914d36455f4982"
+    },
+    {
+      "name": "_00511PaymentTypesCatalog.feature",
+      "original_path": "features/Internal/_0050 Catalogs/_00511PaymentTypesCatalog.feature",
+      "size": 3935,
+      "sha": "1dce928f28911b3cb4394592696c63cbd8bceed2"
+    },
+    {
+      "name": "_00512PriceTypesCatalog.feature",
+      "original_path": "features/Internal/_0050 Catalogs/_00512PriceTypesCatalog.feature",
+      "size": 4409,
+      "sha": "83751ba7af025465c8980af3da29a01a071427c9"
+    },
+    {
+      "name": "_00513SpecialOffersCatalog.feature",
+      "original_path": "features/Internal/_0050 Catalogs/_00513SpecialOffersCatalog.feature",
+      "size": 2625,
+      "sha": "73e9ee5b3f416c9f234db2c411fd885799eb17b5"
+    },
+    {
+      "name": "_00514StoresCatalog.feature",
+      "original_path": "features/Internal/_0050 Catalogs/_00514StoresCatalog.feature",
+      "size": 4297,
+      "sha": "9cf2585c67de619f3b23ab0f6fb55c178423f89d"
+    },
+    {
+      "name": "_00515BusinessUnitsCatalog.feature",
+      "original_path": "features/Internal/_0050 Catalogs/_00515BusinessUnitsCatalog.feature",
+      "size": 2063,
+      "sha": "9bb6ceacfd480a96eaee388b17d3b9f9af3bb6de"
+    },
+    {
+      "name": "_00516ExpenseTypeCatalog.feature",
+      "original_path": "features/Internal/_0050 Catalogs/_00516ExpenseTypeCatalog.feature",
+      "size": 1982,
+      "sha": "84b2a124e13b19253b67bdb6b7460f9327243620"
+    },
+    {
+      "name": "_00517TaxAdditionalAnalyticsCatalog.feature",
+      "original_path": "features/Internal/_0050 Catalogs/_00517TaxAdditionalAnalyticsCatalog.feature",
+      "size": 1301,
+      "sha": "8e917e9cbb2dcce991a94dd23e21a570d6907e7a"
+    },
+    {
+      "name": "_00518IntegrationSettingsCatalog.feature",
+      "original_path": "features/Internal/_0050 Catalogs/_00518IntegrationSettingsCatalog.feature",
+      "size": 7533,
+      "sha": "94fae53067ada602bbbfebef370515f402b96a3d"
+    },
+    {
+      "name": "_00519PartnersCatalog.feature",
+      "original_path": "features/Internal/_0050 Catalogs/_00519PartnersCatalog.feature",
+      "size": 10540,
+      "sha": "f4d962964159fdd1b0b010ab51c23725fbde015b"
+    },
+    {
+      "name": "_0051CreateItems.feature",
+      "original_path": "features/Internal/_0050 Catalogs/_0051CreateItems.feature",
+      "size": 100783,
+      "sha": "d1f5c3ea45f1eb08ea8a339992ead39a21809d58"
+    },
+    {
+      "name": "_00520PartnerSegmentsCatalog.feature",
+      "original_path": "features/Internal/_0050 Catalogs/_00520PartnerSegmentsCatalog.feature",
+      "size": 1468,
+      "sha": "34f69c0b201a66a86b14b60bfb46d7f65522d899"
+    },
+    {
+      "name": "_00521RetailCustomersCatalog.feature",
+      "original_path": "features/Internal/_0050 Catalogs/_00521RetailCustomersCatalog.feature",
+      "size": 2335,
+      "sha": "6b54ea2a09ab49d723fb4c689979e6337931e01f"
+    },
+    {
+      "name": "_00522PartnersBankAccounts.feature",
+      "original_path": "features/Internal/_0050 Catalogs/_00522PartnersBankAccounts.feature",
+      "size": 4668,
+      "sha": "9403d8539df91f71f2ff53ebe5cd1df599eeeaba"
+    },
+    {
+      "name": "_00523ChequeBondCatalog.feature",
+      "original_path": "features/Internal/_0050 Catalogs/_00523ChequeBondCatalog.feature",
+      "size": 3413,
+      "sha": "4301274fabc0f8db1bef3220d9a812286ed4ce83"
+    },
+    {
+      "name": "_0052CreatePartnerItems.feature",
+      "original_path": "features/Internal/_0050 Catalogs/_0052CreatePartnerItems.feature",
+      "size": 4757,
+      "sha": "93359d30f2e25a14866d438f459f1b8ca56b2524"
+    },
+    {
+      "name": "_0080EmployeeAndAccessRights.feature",
+      "original_path": "features/Internal/_0050 Catalogs/_0080EmployeeAndAccessRights.feature",
+      "size": 22350,
+      "sha": "85dfa79cf48290398b2695ff59a0aefa6c6b507e"
+    },
+    {
+      "name": "_0100ContactInformation.feature",
+      "original_path": "features/Internal/_0050 Catalogs/_0100ContactInformation.feature",
+      "size": 45805,
+      "sha": "962afc7f2290c76a3eb456ec92108de859fff964"
+    },
+    {
+      "name": "_0101PartnersStructure.feature",
+      "original_path": "features/Internal/_0050 Catalogs/_0101PartnersStructure.feature",
+      "size": 14134,
+      "sha": "1d6b26ec0d1f2dd893f5676a7a1de6f0d30340d5"
+    },
+    {
+      "name": "_0120Agreements.feature",
+      "original_path": "features/Internal/_0050 Catalogs/_0120Agreements.feature",
+      "size": 26490,
+      "sha": "f48de3379878e50b336d6eb51116dfbebb4b5186"
+    },
+    {
+      "name": "_0179TaxSettings.feature",
+      "original_path": "features/Internal/_0050 Catalogs/_0179TaxSettings.feature",
+      "size": 6005,
+      "sha": "a9cd9847189e979c9483555e37bb6ccb251ff97a"
+    },
+    {
+      "name": "_0061InputCurrencyRate.feature",
+      "original_path": "features/Internal/_0061 Input currency rate/_0061InputCurrencyRate.feature",
+      "size": 6346,
+      "sha": "2b444905778522448b3062add3b07595098d71d9"
+    },
+    {
+      "name": "_0160PriceByItemkey.feature",
+      "original_path": "features/Internal/_0160 Price/_0160PriceByItemkey.feature",
+      "size": 54417,
+      "sha": "a3bb2f94a693ec6128a9d7ac6dcfe95077075b95"
+    },
+    {
+      "name": "_1500PriceByItemProperties.feature",
+      "original_path": "features/Internal/_0160 Price/_1500PriceByItemProperties.feature",
+      "size": 58507,
+      "sha": "7163a93081d9025617e37482b5dbf93d631412e2"
+    },
+    {
+      "name": "_0165CreateInternalSupplyRequest.feature",
+      "original_path": "features/Internal/_0170 Purchase/_0165CreateInternalSupplyRequest.feature",
+      "size": 8309,
+      "sha": "fdf8ff64de5cd219f34aa5d68318ca0b507b3286"
+    },
+    {
+      "name": "_0170PCreatePurchaseOrder.feature",
+      "original_path": "features/Internal/_0170 Purchase/_0170PCreatePurchaseOrder.feature",
+      "size": 48867,
+      "sha": "2b93d15d7f68938ce9da5155f1f4495fece04075"
+    },
+    {
+      "name": "_0180CreatePurchaseInvoice.feature",
+      "original_path": "features/Internal/_0170 Purchase/_0180CreatePurchaseInvoice.feature",
+      "size": 80864,
+      "sha": "5136658e631e609ee9e9d15d0c462bdfdaf486c2"
+    },
+    {
+      "name": "_0220PostingPurchaseReturnOrder.feature",
+      "original_path": "features/Internal/_0170 Purchase/_0220PostingPurchaseReturnOrder.feature",
+      "size": 30986,
+      "sha": "fdab2e18fe27c56c1fac44639d43d94d6ca55c4b"
+    },
+    {
+      "name": "_0223PostingPurchaseReturn.feature",
+      "original_path": "features/Internal/_0170 Purchase/_0223PostingPurchaseReturn.feature",
+      "size": 36793,
+      "sha": "8be5c4dc8e0b09560f4ad7e2cb977fd4386b9cc0"
+    },
+    {
+      "name": "_0224PurchaseOrderClosing.feature",
+      "original_path": "features/Internal/_0170 Purchase/_0224PurchaseOrderClosing.feature",
+      "size": 17537,
+      "sha": "83ac744f6980ac9af14ad11f598b36e3dadd33cc"
+    },
+    {
+      "name": "_0225SC_PR.feature",
+      "original_path": "features/Internal/_0170 Purchase/_0225SC_PR.feature",
+      "size": 17759,
+      "sha": "82953429f8daf7a24fedeb6f5528b004ac880f4b"
+    },
+    {
+      "name": "_0226PI_IT.feature",
+      "original_path": "features/Internal/_0170 Purchase/_0226PI_IT.feature",
+      "size": 15113,
+      "sha": "1fb6abe433bb84309e047cf212e839ce8ae8cfe3"
+    },
+    {
+      "name": "_0200PostingInventoryTransferOrder.feature",
+      "original_path": "features/Internal/_0200 Inventory transfer/_0200PostingInventoryTransferOrder.feature",
+      "size": 22989,
+      "sha": "5bdbb453a292a17f7be3b69b1c6eda0580cbc160"
+    },
+    {
+      "name": "_0210PostingInventoryTransfer.feature",
+      "original_path": "features/Internal/_0200 Inventory transfer/_0210PostingInventoryTransfer.feature",
+      "size": 44145,
+      "sha": "f7605c3bdd74fceb051b3f2447ec2465d4d4d568"
+    },
+    {
+      "name": "_0230CreateSalesOrder.feature",
+      "original_path": "features/Internal/_0230 Sales/_0230CreateSalesOrder.feature",
+      "size": 35364,
+      "sha": "918351225bdd00378ef27a11dc69ca25365efa22"
+    },
+    {
+      "name": "_0240CreateSalesInvoice.feature",
+      "original_path": "features/Internal/_0230 Sales/_0240CreateSalesInvoice.feature",
+      "size": 77051,
+      "sha": "03ec4609b7a247ced9a1dfb482acb89d53ba7820"
+    },
+    {
+      "name": "_0280PostingSalesReturnOrder.feature",
+      "original_path": "features/Internal/_0230 Sales/_0280PostingSalesReturnOrder.feature",
+      "size": 35399,
+      "sha": "9ed05773ef669d2779d9593c4129f174cbafdcb2"
+    },
+    {
+      "name": "_0283SalesOrderClosing.feature",
+      "original_path": "features/Internal/_0230 Sales/_0283SalesOrderClosing.feature",
+      "size": 17965,
+      "sha": "5bb4ae7922b0c13c671470d7289d14117013af5f"
+    },
+    {
+      "name": "_0284GR_SR.feature",
+      "original_path": "features/Internal/_0230 Sales/_0284GR_SR.feature",
+      "size": 16717,
+      "sha": "50ef59a725ebbfa0b13d5d9ebf17e3bd3310c7ad"
+    },
+    {
+      "name": "_0285PostingSalesReturn.feature",
+      "original_path": "features/Internal/_0230 Sales/_0285PostingSalesReturn.feature",
+      "size": 61640,
+      "sha": "83a800fb0306fa432d9b2a67f1d6bb58873ceb53"
+    },
+    {
+      "name": "_0286ShipmentPlanningOrder.feature",
+      "original_path": "features/Internal/_0230 Sales/_0286ShipmentPlanningOrder.feature",
+      "size": 9186,
+      "sha": "5c5d44cb1c61f281d885404fee1174b68ad9af06"
+    },
+    {
+      "name": "_0242PlannedReceiptReservation.feature",
+      "original_path": "features/Internal/_0242 PlannedReceiptReservation/_0242PlannedReceiptReservation.feature",
+      "size": 12397,
+      "sha": "b69a2f92533e30cfe7415acfc967216f5cf2ab73"
+    },
+    {
+      "name": "_2024FillingRetailDocuments.feature",
+      "original_path": "features/Internal/_0250 RetailDocuments/_2024FillingRetailDocuments.feature",
+      "size": 278018,
+      "sha": "acc8fb2ba7f98567503dec544394e523240c77be"
+    },
+    {
+      "name": "_2025RetailIMDocuments.feature",
+      "original_path": "features/Internal/_0250 RetailDocuments/_2025RetailIMDocuments.feature",
+      "size": 67590,
+      "sha": "1196d675d0939fdfc69bb5edc02a8dd4ef1fd0b1"
+    },
+    {
+      "name": "_2026RGR_RRR.feature",
+      "original_path": "features/Internal/_0250 RetailDocuments/_2026RGR_RRR.feature",
+      "size": 35745,
+      "sha": "a81f0f8547468fab563bb6f4c6aacb68d412b664"
+    },
+    {
+      "name": "_0260Retail.feature",
+      "original_path": "features/Internal/_0260 Retail/_0260Retail.feature",
+      "size": 103091,
+      "sha": "e95cc8b045844b7b1657ea242a6e969cb4a888d1"
+    },
+    {
+      "name": "_0261ChangeRightsPOS.feature",
+      "original_path": "features/Internal/_0260 Retail/_0261ChangeRightsPOS.feature",
+      "size": 12365,
+      "sha": "8da2acc582d5729f051d640e27257f686853cb26"
+    },
+    {
+      "name": "_0262Certificate.feature",
+      "original_path": "features/Internal/_0260 Retail/_0262Certificate.feature",
+      "size": 22220,
+      "sha": "9f9b040bd3c54233686f3cf2b8456d4a81bd2c3f"
+    },
+    {
+      "name": "_0263PostponedRetailsReceipts.feature",
+      "original_path": "features/Internal/_0260 Retail/_0263PostponedRetailsReceipts.feature",
+      "size": 58762,
+      "sha": "4293fd9fb21b4c191e0362a932f803c53470ec34"
+    },
+    {
+      "name": "_0287Services.feature",
+      "original_path": "features/Internal/_0287 Services/_0287Services.feature",
+      "size": 40304,
+      "sha": "b773872bbe2b844119de3629b1e56d360d69ccb4"
+    },
+    {
+      "name": "_0288WorkOrder.feature",
+      "original_path": "features/Internal/_0287 Services/_0288WorkOrder.feature",
+      "size": 25088,
+      "sha": "ae0b9ff898e78393d5fce0bfc6f2079820dd642c"
+    },
+    {
+      "name": "_0289WorkSheet.feature",
+      "original_path": "features/Internal/_0287 Services/_0289WorkSheet.feature",
+      "size": 29497,
+      "sha": "334f8584a4cdb94b5d1db7cde3f6647c8f8ed2e7"
+    },
+    {
+      "name": "_0288PostingShipmentConfirmation.feature",
+      "original_path": "features/Internal/_0288 Inventory/_0288PostingShipmentConfirmation.feature",
+      "size": 56092,
+      "sha": "9ee005360cf7f72b409a524eb54e4633ed5a1b59"
+    },
+    {
+      "name": "_0289PostingGoodsReciept.feature",
+      "original_path": "features/Internal/_0288 Inventory/_0289PostingGoodsReciept.feature",
+      "size": 41738,
+      "sha": "8e961e0801466dbca412395145b2f237bce9cec2"
+    },
+    {
+      "name": "_0295Bundling.feature",
+      "original_path": "features/Internal/_0288 Inventory/_0295Bundling.feature",
+      "size": 29816,
+      "sha": "58c25effad855962bb61e11e58032134ce908390"
+    },
+    {
+      "name": "_0296Unbundling.feature",
+      "original_path": "features/Internal/_0288 Inventory/_0296Unbundling.feature",
+      "size": 13077,
+      "sha": "b21051f7b4ed495e7dea9c7b948a1b7944ab2a9e"
+    },
+    {
+      "name": "_0297ItemStockAdjustment.feature",
+      "original_path": "features/Internal/_0288 Inventory/_0297ItemStockAdjustment.feature",
+      "size": 5417,
+      "sha": "0e5f1258f3789143c62ac8b46ba5066cd59326bb"
+    },
+    {
+      "name": "_0298PackageList.feature",
+      "original_path": "features/Internal/_0288 Inventory/_0298PackageList.feature",
+      "size": 5248,
+      "sha": "ab4612c54555d5964473852840da557401f16e2c"
+    },
+    {
+      "name": "_0292CreatePurchaseBaseSalesOrder.feature",
+      "original_path": "features/Internal/_0299 SalesProcurementMethods/_0292CreatePurchaseBaseSalesOrder.feature",
+      "size": 336503,
+      "sha": "49def3236c2dacfe49f0d488edfbacb576445b8f"
+    },
+    {
+      "name": "_0299SalesOrderNoReserve.feature",
+      "original_path": "features/Internal/_0299 SalesProcurementMethods/_0299SalesOrderNoReserve.feature",
+      "size": 70519,
+      "sha": "e2e6710bcc9ed774413fac093c856624c2cd4eb5"
+    },
+    {
+      "name": "_0300Discount.feature",
+      "original_path": "features/Internal/_0300 Discount/_0300Discount.feature",
+      "size": 64845,
+      "sha": "d8f5fcc0cd0b71e471e758d32528bbccd6b55ce8"
+    },
+    {
+      "name": "_0320StationaryOrderDiscountMinimum.feature",
+      "original_path": "features/Internal/_0300 Discount/_0320StationaryOrderDiscountMinimum.feature",
+      "size": 57148,
+      "sha": "e1d68783ec9ca5f100d03bd25fec33bc38d3e504"
+    },
+    {
+      "name": "_0334StationaryOrderDiscountRange.feature",
+      "original_path": "features/Internal/_0300 Discount/_0334StationaryOrderDiscountRange.feature",
+      "size": 14174,
+      "sha": "ee037559ff6a087758c2207033dcc00c67b0f424"
+    },
+    {
+      "name": "_0335StationaryOrderDiscountMax.feature",
+      "original_path": "features/Internal/_0300 Discount/_0335StationaryOrderDiscountMax.feature",
+      "size": 69257,
+      "sha": "574eb2038661c70cbee3b735c4acef2bf4f4fc36"
+    },
+    {
+      "name": "_0340PurchaseDiscount.feature",
+      "original_path": "features/Internal/_0300 Discount/_0340PurchaseDiscount.feature",
+      "size": 35254,
+      "sha": "74f8707a1c840855e6777ef2a1f3dca78d5a500b"
+    },
+    {
+      "name": "_0345RetailSalesReturnReceiptDiscount.feature",
+      "original_path": "features/Internal/_0300 Discount/_0345RetailSalesReturnReceiptDiscount.feature",
+      "size": 22181,
+      "sha": "4aecce2c72bf7f37cb9b8a906675f075a9bcf7be"
+    },
+    {
+      "name": "_0348SalesReturnDiscount.feature",
+      "original_path": "features/Internal/_0300 Discount/_0348SalesReturnDiscount.feature",
+      "size": 15866,
+      "sha": "a5a654bb1632b1a389a98150b5a9961c7cc9e8a9"
+    },
+    {
+      "name": "_0349DiscountPOS.feature",
+      "original_path": "features/Internal/_0300 Discount/_0349DiscountPOS.feature",
+      "size": 28662,
+      "sha": "269e1237165ba02911aeb97d9632e5793807dd7d"
+    },
+    {
+      "name": "_0400ItemStockAdjustmentMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_0400ItemStockAdjustmentMovements.feature",
+      "size": 33622,
+      "sha": "7d58be9611914324bd84a1a3487179add8dd2f73"
+    },
+    {
+      "name": "_0402SalesOrderClosingMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_0402SalesOrderClosingMovements.feature",
+      "size": 85950,
+      "sha": "20ee070185d26da326146822a475a5b2f33567b9"
+    },
+    {
+      "name": "_0403SalesOrderMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_0403SalesOrderMovements.feature",
+      "size": 74064,
+      "sha": "b1728de8feddf7b66c0230791fee201524bbf24c"
+    },
+    {
+      "name": "_0404SalesInvoiceMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_0404SalesInvoiceMovements.feature",
+      "size": 189157,
+      "sha": "c69e770359a208b1bbe182c6d1c534d366aa832f"
+    },
+    {
+      "name": "_405ShipmentConfirmationMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_405ShipmentConfirmationMovements.feature",
+      "size": 79332,
+      "sha": "176e3a3ebf32b6a2348e6abce989ad50c9a62d17"
+    },
+    {
+      "name": "_406PurchaseOrderMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_406PurchaseOrderMovements.feature",
+      "size": 62298,
+      "sha": "bda9b4f857983458feb529e9c13c95d6f9f7c85f"
+    },
+    {
+      "name": "_407PurchaseInvoiceMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_407PurchaseInvoiceMovements.feature",
+      "size": 143634,
+      "sha": "e9b86b51289f8655519096f92c41bbd0c4f85029"
+    },
+    {
+      "name": "_408GoodsReceiptMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_408GoodsReceiptMovements.feature",
+      "size": 44051,
+      "sha": "c65a0375650080ca4a6dfcf61f98a54f11a57711"
+    },
+    {
+      "name": "_409InventoryTransferOrderMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_409InventoryTransferOrderMovements.feature",
+      "size": 29507,
+      "sha": "15b9e1484806278341b43e7afba00b6ae8a02749"
+    },
+    {
+      "name": "_410InventoryTransferMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_410InventoryTransferMovements.feature",
+      "size": 65926,
+      "sha": "50ab23acd8ea92b4e34df034be38d00e78608f26"
+    },
+    {
+      "name": "_411PurchaseOrderClosingMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_411PurchaseOrderClosingMovements.feature",
+      "size": 41133,
+      "sha": "1f5f117f50390027e078a81e5905942f3d69a94f"
+    },
+    {
+      "name": "_412SalesReturnOrderMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_412SalesReturnOrderMovements.feature",
+      "size": 21474,
+      "sha": "8c221f4775319f2d7a6c48c0423cabc358f45c8d"
+    },
+    {
+      "name": "_413SalesReturnMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_413SalesReturnMovements.feature",
+      "size": 158379,
+      "sha": "0b2c612e1f057d2f47363cee81e652b35424204d"
+    },
+    {
+      "name": "_415PurchaseReturnOrderMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_415PurchaseReturnOrderMovements.feature",
+      "size": 18369,
+      "sha": "edeae601ffa4f5d9bbdd22ab421defaa14fbbd7f"
+    },
+    {
+      "name": "_416PurchaseReturnMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_416PurchaseReturnMovements.feature",
+      "size": 114053,
+      "sha": "1f6851c6dff44dfd64f5a06c16938d5dbd27fda3"
+    },
+    {
+      "name": "_417PhysicalInventoryMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_417PhysicalInventoryMovements.feature",
+      "size": 16765,
+      "sha": "f234960b661dc3de8d1f5d3e30b2007aa641058a"
+    },
+    {
+      "name": "_418StockAdjustmentAsSurplusMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_418StockAdjustmentAsSurplusMovements.feature",
+      "size": 24403,
+      "sha": "6a006849e14db2d0bee719f02da98ccefec62a88"
+    },
+    {
+      "name": "_419StockAdjustmentAsWriteOffMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_419StockAdjustmentAsWriteOffMovements.feature",
+      "size": 22974,
+      "sha": "c64b303dd9d646cc4c3b94e00aac8ee5e1816bbb"
+    },
+    {
+      "name": "_424RetailSalesReceiptMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_424RetailSalesReceiptMovements.feature",
+      "size": 115800,
+      "sha": "189135c4bfb9739f9da5138f5e91f9f81f358e5b"
+    },
+    {
+      "name": "_425RetailReturnReceiptMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_425RetailReturnReceiptMovements.feature",
+      "size": 133264,
+      "sha": "06808a545871abc7ffa25e49f0ce58fd39149b3f"
+    },
+    {
+      "name": "_426BundlingMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_426BundlingMovements.feature",
+      "size": 10004,
+      "sha": "3d68f039846ef3817569e6bee34e33dbc6b9778f"
+    },
+    {
+      "name": "_427UnbundlingMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_427UnbundlingMovements.feature",
+      "size": 10451,
+      "sha": "0ad5cdb0e0ed45563112869ae404998eba0ba24c"
+    },
+    {
+      "name": "_429OpeningEntryMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_429OpeningEntryMovements.feature",
+      "size": 142529,
+      "sha": "1230ce2d47542557efaa3253e53426bb3611a709"
+    },
+    {
+      "name": "_430DebitNoteMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_430DebitNoteMovements.feature",
+      "size": 57476,
+      "sha": "9735298f2a8ce01cbf4cc54d55aa00c86fe2e397"
+    },
+    {
+      "name": "_431CreditNoteMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_431CreditNoteMovements.feature",
+      "size": 58245,
+      "sha": "ce321d73511cac2dcdf7376383cdc50178ae34b6"
+    },
+    {
+      "name": "_432DebitCreditNoteMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_432DebitCreditNoteMovements.feature",
+      "size": 247523,
+      "sha": "9cfabaf49ebf46179ebf1f97d630daebd909452b"
+    },
+    {
+      "name": "_433BankPaymentMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_433BankPaymentMovements.feature",
+      "size": 179309,
+      "sha": "040015a4e48aa16f577a914134a7b214da8814df"
+    },
+    {
+      "name": "_434BankReceiptMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_434BankReceiptMovements.feature",
+      "size": 250608,
+      "sha": "8c307b9eac5b55225cfd5a9f05f1e244469bd774"
+    },
+    {
+      "name": "_435CashPaymentMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_435CashPaymentMovements.feature",
+      "size": 110232,
+      "sha": "0a1a1aeaf8e4bbb396edf82f90da36c162a02bdd"
+    },
+    {
+      "name": "_436CashReceiptMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_436CashReceiptMovements.feature",
+      "size": 126874,
+      "sha": "8ad65fe461414de706ece51e0c361a1c0e1fc062"
+    },
+    {
+      "name": "_440CashExpenseMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_440CashExpenseMovements.feature",
+      "size": 39671,
+      "sha": "55f63a700b11ddfc9ebd522ea7f96ee3485a0015"
+    },
+    {
+      "name": "_441CashRevenueMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_441CashRevenueMovements.feature",
+      "size": 38533,
+      "sha": "14329e6cca9bb1587afdd91576349d729de20fbc"
+    },
+    {
+      "name": "_450OutgoingPaymentOrderMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_450OutgoingPaymentOrderMovements.feature",
+      "size": 19327,
+      "sha": "22fcb346cb68dd0df69258434e9bee0eed550bae"
+    },
+    {
+      "name": "_451IncomingPaymentOrderMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_451IncomingPaymentOrderMovements.feature",
+      "size": 16225,
+      "sha": "f23ab6f46a94238ff78709bde180859f734a9abe"
+    },
+    {
+      "name": "_452CashTransferOrderMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_452CashTransferOrderMovements.feature",
+      "size": 11073,
+      "sha": "765f960a25e4c130318038dc46bfa5a0c327f63b"
+    },
+    {
+      "name": "_453MoneyTransferMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_453MoneyTransferMovements.feature",
+      "size": 38700,
+      "sha": "adce44c180ba86eac9f35a7a2ed0dfba101b7bd1"
+    },
+    {
+      "name": "_454CashStatementMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_454CashStatementMovements.feature",
+      "size": 26696,
+      "sha": "92fe39a7e3bb844d4e9b01673493ac8f8ca13863"
+    },
+    {
+      "name": "_455WorkSheetMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_455WorkSheetMovements.feature",
+      "size": 35482,
+      "sha": "520ab50c80b5a9a9cc8c4252d10d4f8cdfc7adac"
+    },
+    {
+      "name": "_460SalesReportFromTradeAgentMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_460SalesReportFromTradeAgentMovements.feature",
+      "size": 51897,
+      "sha": "a9fd395cbb61e10175960b7d929e72b8977184ab"
+    },
+    {
+      "name": "_470SalesReportToConsignorsMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_470SalesReportToConsignorsMovements.feature",
+      "size": 16308,
+      "sha": "9f97940221141cf5f19fcc4294569217d3272714"
+    },
+    {
+      "name": "_490PayrollMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_490PayrollMovements.feature",
+      "size": 42232,
+      "sha": "950a71d6d07a490a7804e135608f304d66ec883a"
+    },
+    {
+      "name": "_491EmployeeCashAdvanceMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_491EmployeeCashAdvanceMovements.feature",
+      "size": 36391,
+      "sha": "656b419499dad7c272deadfbdcd1bf7b44f54dfd"
+    },
+    {
+      "name": "_500RetailShipmentConfirmationMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_500RetailShipmentConfirmationMovements.feature",
+      "size": 24565,
+      "sha": "4c11525c1281dd90d4ebdf883bbb57dac3730759"
+    },
+    {
+      "name": "_510RetailGoodsReceiptMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_510RetailGoodsReceiptMovements.feature",
+      "size": 22554,
+      "sha": "37a568f56fcf8709a3e2f7681026ae04156b7bc4"
+    },
+    {
+      "name": "_513ExpenseRevenueAccrualsMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_513ExpenseRevenueAccrualsMovements.feature",
+      "size": 56626,
+      "sha": "65b73ba7a141a5500ad7aef4b313bb46eeb440fa"
+    },
+    {
+      "name": "_515CommissioningOfFixedAssetMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_515CommissioningOfFixedAssetMovements.feature",
+      "size": 26181,
+      "sha": "061cb117298df7f4251c7c1e3d02387f3c32e770"
+    },
+    {
+      "name": "_516DepreciationCalculationMovements.feature",
+      "original_path": "features/Internal/_0400 Movements/_516DepreciationCalculationMovements.feature",
+      "size": 14760,
+      "sha": "9ed5991cbc84300764e549cc7cf7c60c31a9609c"
+    },
+    {
+      "name": "_520MovementsPartnersBalanceRegister.feature",
+      "original_path": "features/Internal/_0400 Movements/_520MovementsPartnersBalanceRegister.feature",
+      "size": 393499,
+      "sha": "4ecf72615c8a2d9d878051db0fceb4086a9b6486"
+    },
+    {
+      "name": "_522MovementsAdditionalCostAndRevenueAllocation.feature",
+      "original_path": "features/Internal/_0400 Movements/_522MovementsAdditionalCostAndRevenueAllocation.feature",
+      "size": 61062,
+      "sha": "b649003434dec86b0806029aa029a4564ecedf78"
+    },
+    {
+      "name": "_523MovementsShipmentPlanningOrder.feature",
+      "original_path": "features/Internal/_0400 Movements/_523MovementsShipmentPlanningOrder.feature",
+      "size": 31971,
+      "sha": "e2cc8fe9f10ea68921e4001082699acd37b1f7e4"
+    },
+    {
+      "name": "_524MovementsWithholdingTaxInvoice.feature",
+      "original_path": "features/Internal/_0400 Movements/_524MovementsWithholdingTaxInvoice.feature",
+      "size": 61963,
+      "sha": "04c4382175a89627322b72f808621057be9ea182"
+    },
+    {
+      "name": "_0500PostingCashReciept.feature",
+      "original_path": "features/Internal/_0500 Cash management/_0500PostingCashReciept.feature",
+      "size": 64958,
+      "sha": "c021d80f5eec24a466e746d8d2fe862fe07809e3"
+    },
+    {
+      "name": "_0510PostingCashPayment.feature",
+      "original_path": "features/Internal/_0500 Cash management/_0510PostingCashPayment.feature",
+      "size": 71272,
+      "sha": "64b7d5ec35fdd4b299de992a992919f24644acfc"
+    },
+    {
+      "name": "_0520PostingBankReciept.feature",
+      "original_path": "features/Internal/_0500 Cash management/_0520PostingBankReciept.feature",
+      "size": 80775,
+      "sha": "3065dff0a36bff1ae50fadca4be123ff64447fc9"
+    },
+    {
+      "name": "_0530PostingBankPayment.feature",
+      "original_path": "features/Internal/_0500 Cash management/_0530PostingBankPayment.feature",
+      "size": 67486,
+      "sha": "6dcd51b672fcc041dbeb4db545e84458d122fa4d"
+    },
+    {
+      "name": "_0540PostingCashTransferOrder.feature",
+      "original_path": "features/Internal/_0500 Cash management/_0540PostingCashTransferOrder.feature",
+      "size": 65186,
+      "sha": "02c0d6b1799618154c0b9bf7ed0d07ff272f2f5e"
+    },
+    {
+      "name": "_0541MoneyTransfer.feature",
+      "original_path": "features/Internal/_0500 Cash management/_0541MoneyTransfer.feature",
+      "size": 20563,
+      "sha": "90551417d5f195da2ae897a138aa2839a04f630d"
+    },
+    {
+      "name": "_0600FormReconcilationStatement.feature",
+      "original_path": "features/Internal/_0500 Cash management/_0600FormReconcilationStatement.feature",
+      "size": 4553,
+      "sha": "77b4d2385b4303a7f81b77b4d6ae7e57cbec1885"
+    },
+    {
+      "name": "_0800CashManagment.feature",
+      "original_path": "features/Internal/_0500 Cash management/_0800CashManagment.feature",
+      "size": 15027,
+      "sha": "4726c5eb58e1d63d8d64f84b535cc9a295d182e0"
+    },
+    {
+      "name": "_0850CashExpence_CashRevenue.feature",
+      "original_path": "features/Internal/_0500 Cash management/_0850CashExpence_CashRevenue.feature",
+      "size": 30602,
+      "sha": "a8213f7c7c8e10ff87a1719c12f427cd484163d7"
+    },
+    {
+      "name": "_0851ExpenseRevenueAccruals.feature",
+      "original_path": "features/Internal/_0500 Cash management/_0851ExpenseRevenueAccruals.feature",
+      "size": 34782,
+      "sha": "1c251a02cd30b2f6b01ad6183d59c16286e800be"
+    },
+    {
+      "name": "_0950Credit_DebitNote.feature",
+      "original_path": "features/Internal/_0500 Cash management/_0950Credit_DebitNote.feature",
+      "size": 49770,
+      "sha": "8aa90e0afe185955552187febe5389a85ac03d36"
+    },
+    {
+      "name": "_0960EmployeeCashAdvance.feature",
+      "original_path": "features/Internal/_0500 Cash management/_0960EmployeeCashAdvance.feature",
+      "size": 33040,
+      "sha": "749cd8c652f36cc0079f8b1d52710f5ca37c1ed7"
+    },
+    {
+      "name": "_0970TransferMoney(withoutCTO).feature",
+      "original_path": "features/Internal/_0500 Cash management/_0970TransferMoney(withoutCTO).feature",
+      "size": 11769,
+      "sha": "44979101a0c9671bc7ea377c6b934a1514623a12"
+    },
+    {
+      "name": "_0980NegativeCashControlInCashAccounts.feature",
+      "original_path": "features/Internal/_0500 Cash management/_0980NegativeCashControlInCashAccounts.feature",
+      "size": 17791,
+      "sha": "f3356d8c86cfd37cd73f46f9e2c1ea06ef512cbd"
+    },
+    {
+      "name": "_0600ApArByStandartAgreement.feature",
+      "original_path": "features/Internal/_0600 Ap-ar posting/_0600ApArByStandartAgreement.feature",
+      "size": 27350,
+      "sha": "92095b7d910cb64d98b19b488067b7247d25229e"
+    },
+    {
+      "name": "_0602ApArByAgreement.feature",
+      "original_path": "features/Internal/_0600 Ap-ar posting/_0602ApArByAgreement.feature",
+      "size": 35110,
+      "sha": "f64dfcac8f56cf2fcec6f7c0003b9f5f506e5f6a"
+    },
+    {
+      "name": "_0700PostingChequeBondTransaction.feature",
+      "original_path": "features/Internal/_0700 ChequeBondTransaction/_0700PostingChequeBondTransaction.feature",
+      "size": 29936,
+      "sha": "23ef22f73e95ed31f7654c5496b7085bf82c22b8"
+    },
+    {
+      "name": "_0902TaxCalculation.feature",
+      "original_path": "features/Internal/_0902 Tax calculation/_0902TaxCalculation.feature",
+      "size": 72868,
+      "sha": "1ab0bf3858cc7bc5f26bb9a9d7d465a5cf9f3273"
+    },
+    {
+      "name": "_0905Barcodes.feature",
+      "original_path": "features/Internal/_0905 Barcodes/_0905Barcodes.feature",
+      "size": 6918,
+      "sha": "ecdaae4ea87db45d06c5bcffe79d57fa06888ac9"
+    },
+    {
+      "name": "_1535AdditionalAttributes.feature",
+      "original_path": "features/Internal/_0910 Forms/_1535AdditionalAttributes.feature",
+      "size": 295502,
+      "sha": "465bb0a29bbdeb6af3414e8abfa0cb8170a34856"
+    },
+    {
+      "name": "_1540Forms.feature",
+      "original_path": "features/Internal/_0910 Forms/_1540Forms.feature",
+      "size": 70631,
+      "sha": "58aeb76d93e3f3c2b41a3870e784b24413bf6c0d"
+    },
+    {
+      "name": "_1541InputBySearchInLine.feature",
+      "original_path": "features/Internal/_0910 Forms/_1541InputBySearchInLine.feature",
+      "size": 120716,
+      "sha": "5d606d45fa73f66338178c958f6d84ec7ab6ddec"
+    },
+    {
+      "name": "_1542DocumentsTitle.feature",
+      "original_path": "features/Internal/_0910 Forms/_1542DocumentsTitle.feature",
+      "size": 35517,
+      "sha": "701dc4da5e82c33f48a50323121d1ea4bba0f232"
+    },
+    {
+      "name": "_1545InfoMessages.feature",
+      "original_path": "features/Internal/_0910 Forms/_1545InfoMessages.feature",
+      "size": 66977,
+      "sha": "f234c30a83c23aa17b8694a4df7b9889ff277eae"
+    },
+    {
+      "name": "_1560MobileForms.feature",
+      "original_path": "features/Internal/_0910 Forms/_1560MobileForms.feature",
+      "size": 29504,
+      "sha": "56019341cb468cfb5b022e3155674ae5f906a2b8"
+    },
+    {
+      "name": "_2000UserSettings.feature",
+      "original_path": "features/Internal/_0910 Forms/_2000UserSettings.feature",
+      "size": 103064,
+      "sha": "c5a9fc7d8183da10f61c2ec85103f5e1fe1745d3"
+    },
+    {
+      "name": "_2022PrintLabel.feature",
+      "original_path": "features/Internal/_0910 Forms/_2022PrintLabel.feature",
+      "size": 19785,
+      "sha": "7b6596a40ae6818ca2f2a7ab522291ac8475fb0a"
+    },
+    {
+      "name": "_2023RequeredObjects.feature",
+      "original_path": "features/Internal/_0910 Forms/_2023RequeredObjects.feature",
+      "size": 4314,
+      "sha": "c97462885f882cb3157ad1bdcedcb67c177992bb"
+    },
+    {
+      "name": "_2050Commands.feature",
+      "original_path": "features/Internal/_0910 Forms/_2050Commands.feature",
+      "size": 257232,
+      "sha": "2aecb41ae9bbb152daab5992f670174f1a7125db"
+    },
+    {
+      "name": "_2060SpecificationForm.feature",
+      "original_path": "features/Internal/_0910 Forms/_2060SpecificationForm.feature",
+      "size": 12920,
+      "sha": "cbd98ce7f4634c581c3aea972434482199972a94"
+    },
+    {
+      "name": "_2061ItemUnitForm.feature",
+      "original_path": "features/Internal/_0910 Forms/_2061ItemUnitForm.feature",
+      "size": 8863,
+      "sha": "d01648e0b45c032097364533a898bae23841aea3"
+    },
+    {
+      "name": "_2062DuplicateСheck.feature",
+      "original_path": "features/Internal/_0910 Forms/_2062DuplicateСheck.feature",
+      "size": 5655,
+      "sha": "d9a4b51889826295a361d87b059d4b2ba221af12"
+    },
+    {
+      "name": "_2063AuditLock.feature",
+      "original_path": "features/Internal/_0910 Forms/_2063AuditLock.feature",
+      "size": 14011,
+      "sha": "0ad65c79ec1f6d59fc13e4520d0bc6477fe26b9a"
+    },
+    {
+      "name": "_2070CopyAdditionalAttributeValue.feature",
+      "original_path": "features/Internal/_0910 Forms/_2070CopyAdditionalAttributeValue.feature",
+      "size": 19538,
+      "sha": "2609b3db26627b26900beec3875338e86da20cb8"
+    },
+    {
+      "name": "_2010FillingStores.feature",
+      "original_path": "features/Internal/_0912 Filling documents/_2010FillingStores.feature",
+      "size": 108640,
+      "sha": "bbf416f9443eb17f2bc678c961c5e9f874e11af1"
+    },
+    {
+      "name": "_2021Fillingdocument.feature",
+      "original_path": "features/Internal/_0912 Filling documents/_2021Fillingdocument.feature",
+      "size": 583446,
+      "sha": "f8bbed40e17e8c7faf81618be5580c53cb5bf793"
+    },
+    {
+      "name": "_2022FillingExpenceRevenueType.feature",
+      "original_path": "features/Internal/_0912 Filling documents/_2022FillingExpenceRevenueType.feature",
+      "size": 11909,
+      "sha": "91bb8b9aef5c821eef3cc62ea0da13d31046c040"
+    },
+    {
+      "name": "_2023Copydocumentslines.feature",
+      "original_path": "features/Internal/_0912 Filling documents/_2023Copydocumentslines.feature",
+      "size": 69149,
+      "sha": "55796a3f617f1a885ae0261fedc9d14bbe0a0905"
+    },
+    {
+      "name": "_2025CurrentPrices.feature",
+      "original_path": "features/Internal/_0912 Filling documents/_2025CurrentPrices.feature",
+      "size": 7757,
+      "sha": "6061d69a978c8f8b0f7c8c38b3f11df654659674"
+    },
+    {
+      "name": "_2050SelectionPositioning.feature",
+      "original_path": "features/Internal/_0912 Filling documents/_2050SelectionPositioning.feature",
+      "size": 10183,
+      "sha": "7a23b8259a8511c7594c63cfe0022df877108909"
+    },
+    {
+      "name": "_2060CheckValidateData.feature",
+      "original_path": "features/Internal/_0912 Filling documents/_2060CheckValidateData.feature",
+      "size": 33031,
+      "sha": "aa01b9a4181dc8b679a42a024f8d89bda640ecd0"
+    },
+    {
+      "name": "_2999Fillingreturns.feature",
+      "original_path": "features/Internal/_0912 Filling documents/_2999Fillingreturns.feature",
+      "size": 26912,
+      "sha": "48818c7ac6fef78e474ebcc75531af4520d84794"
+    },
+    {
+      "name": "_0901DisplayMarkedForDeletionItem.feature",
+      "original_path": "features/Internal/_0915 Filters/_0901DisplayMarkedForDeletionItem.feature",
+      "size": 11200,
+      "sha": "b924322e70167ff336b432558f809ebb368d6817"
+    },
+    {
+      "name": "_1541FiltersCompanyLegalNameDescription.feature",
+      "original_path": "features/Internal/_0915 Filters/_1541FiltersCompanyLegalNameDescription.feature",
+      "size": 33357,
+      "sha": "95713ad95327f4a062a5b390b096d9791b972731"
+    },
+    {
+      "name": "_2030ListForm.feature",
+      "original_path": "features/Internal/_0915 Filters/_2030ListForm.feature",
+      "size": 8009,
+      "sha": "de41b0730f8de08c618876dba3895564456e7707"
+    },
+    {
+      "name": "_2031ExpenceRevenueTypeFilter.feature",
+      "original_path": "features/Internal/_0915 Filters/_2031ExpenceRevenueTypeFilter.feature",
+      "size": 9380,
+      "sha": "f860416f97e747dc908017d0708884b675a13c7a"
+    },
+    {
+      "name": "_0920SerialLotNumber.feature",
+      "original_path": "features/Internal/_0920 SerialLotNumbers/_0920SerialLotNumber.feature",
+      "size": 286684,
+      "sha": "ac132a1e2d2e0cc82c5950f0901d5e161a4d2e93"
+    },
+    {
+      "name": "_2050InvoiceMatchAndFillingReconcilationStatement - Copy.feature",
+      "original_path": "features/Internal/_0950 LinkedTransaction/_2050InvoiceMatchAndFillingReconcilationStatement - Copy.feature",
+      "size": 16204,
+      "sha": "11183ff87c94ed356a87242c91c8030a3996ecef"
+    },
+    {
+      "name": "_2060LinkUnlinkForm.feature",
+      "original_path": "features/Internal/_0950 LinkedTransaction/_2060LinkUnlinkForm.feature",
+      "size": 370415,
+      "sha": "99e55daf746f50353c25f646558055fcb0de4935"
+    },
+    {
+      "name": "_2065LockingLinkedStringsSalesOneSession.feature",
+      "original_path": "features/Internal/_0950 LinkedTransaction/_2065LockingLinkedStringsSalesOneSession.feature",
+      "size": 86688,
+      "sha": "bbe4ecb535d793d33a5d762cd0061911ca6ccbfa"
+    },
+    {
+      "name": "_2066LockingLinkedStringsPurchasesOneSession.feature",
+      "original_path": "features/Internal/_0950 LinkedTransaction/_2066LockingLinkedStringsPurchasesOneSession.feature",
+      "size": 68578,
+      "sha": "72b5adca10af026b976a98c3f4510f746e648995"
+    },
+    {
+      "name": "_2067LockingLinkedStringsInventoryTransfersOneSession.feature",
+      "original_path": "features/Internal/_0950 LinkedTransaction/_2067LockingLinkedStringsInventoryTransfersOneSession.feature",
+      "size": 42297,
+      "sha": "ac7bc4601c1925e6e214f76fac8060cf9558aacc"
+    },
+    {
+      "name": "_2067LockingLinkedStringsPhysicalInventorysOneSession.feature",
+      "original_path": "features/Internal/_0950 LinkedTransaction/_2067LockingLinkedStringsPhysicalInventorysOneSession.feature",
+      "size": 16905,
+      "sha": "6e61b56651d8e60790071d530d8c92d7a0cbb0d7"
+    },
+    {
+      "name": "_2069LockingLinkedStringsRetailSalessOneSession.feature",
+      "original_path": "features/Internal/_0950 LinkedTransaction/_2069LockingLinkedStringsRetailSalessOneSession.feature",
+      "size": 20860,
+      "sha": "caa69f5c1b4bfa042775b3c36656c16ef26e8d95"
+    },
+    {
+      "name": "_2070LockingLinkedStringsSalesSeveralSessions.feature",
+      "original_path": "features/Internal/_0950 LinkedTransaction/_2070LockingLinkedStringsSalesSeveralSessions.feature",
+      "size": 13034,
+      "sha": "e4193e09abf65ba8eca685566c3a0b6ac7ff9216"
+    },
+    {
+      "name": "_0980FixedAssets.feature",
+      "original_path": "features/Internal/_0980 Fixed assets/_0980FixedAssets.feature",
+      "size": 47995,
+      "sha": "c66ea8db838195b590e7ad4f9c420091b5b7c60f"
+    },
+    {
+      "name": "_1000CreditLimit.feature",
+      "original_path": "features/Internal/_1000 Aging and credit limit/_1000CreditLimit.feature",
+      "size": 56612,
+      "sha": "7c1a7326f2bb0a2ecb7d59f50676ac6d9751fc93"
+    },
+    {
+      "name": "_1001CustomersAging.feature",
+      "original_path": "features/Internal/_1000 Aging and credit limit/_1001CustomersAging.feature",
+      "size": 79217,
+      "sha": "38585f17d70b2d570905270a10e12d36c9eff43c"
+    },
+    {
+      "name": "_1002VendorsAging.feature",
+      "original_path": "features/Internal/_1000 Aging and credit limit/_1002VendorsAging.feature",
+      "size": 71538,
+      "sha": "20d76a642046a524bd0c64ce61d70a0584d44228"
+    },
+    {
+      "name": "_1002VendorsAdvance.feature",
+      "original_path": "features/Internal/_1001 Advance/_1002VendorsAdvance.feature",
+      "size": 109652,
+      "sha": "7981fce9e36c3959fa4dbbe0f073f4de93ea440c"
+    },
+    {
+      "name": "_1003CustomersAdvance.feature",
+      "original_path": "features/Internal/_1001 Advance/_1003CustomersAdvance.feature",
+      "size": 78148,
+      "sha": "1757c9dab06b6fade30754621389c0192b3a3f44"
+    },
+    {
+      "name": "_1000Production.feature",
+      "original_path": "features/Internal/_1050 Manufactoring/_1000Production.feature",
+      "size": 300438,
+      "sha": "a68edc15064965e7e150f83be478ff1953310a49"
+    },
+    {
+      "name": "_2000LandedCost.feature",
+      "original_path": "features/Internal/_1050 Manufactoring/_2000LandedCost.feature",
+      "size": 31808,
+      "sha": "62a46a12455e62624b50cbef2e2dd518ee00508d"
+    },
+    {
+      "name": "_3000ProductionPlanningCorrection.feature",
+      "original_path": "features/Internal/_1050 Manufactoring/_3000ProductionPlanningCorrection.feature",
+      "size": 193521,
+      "sha": "0eba2d6902e856862a1bacb362749be808e8cc4d"
+    },
+    {
+      "name": "_4000Reservation.feature",
+      "original_path": "features/Internal/_1050 Manufactoring/_4000Reservation.feature",
+      "size": 19202,
+      "sha": "b4b703134b8ab3289c6d2107d548f8ed2cd87b69"
+    },
+    {
+      "name": "_5001ProductionWorkSpace.feature",
+      "original_path": "features/Internal/_1050 Manufactoring/_5001ProductionWorkSpace.feature",
+      "size": 19256,
+      "sha": "3e09fa2a5d1c1c5edd5db4c5b185005343fccb6e"
+    },
+    {
+      "name": "_7000ProductionPlanningClosing.feature",
+      "original_path": "features/Internal/_1050 Manufactoring/_7000ProductionPlanningClosing.feature",
+      "size": 3555,
+      "sha": "ca107b32ee9f68774edb205b7a1d9a2ad4a4c46c"
+    },
+    {
+      "name": "_8000FillingFromUserSettings.feature",
+      "original_path": "features/Internal/_1050 Manufactoring/_8000FillingFromUserSettings.feature",
+      "size": 2467,
+      "sha": "7a8748f160a26de36275581ea8f809ea84304473"
+    },
+    {
+      "name": "_9005Filters.feature",
+      "original_path": "features/Internal/_1050 Manufactoring/_9005Filters.feature",
+      "size": 21383,
+      "sha": "ccd250182f176b9e25dd484ba2bc9788a6301174"
+    },
+    {
+      "name": "_9050AdditionalСhecks.feature",
+      "original_path": "features/Internal/_1050 Manufactoring/_9050AdditionalСhecks.feature",
+      "size": 35408,
+      "sha": "43a91adce1cacacd774196e356b8b113b8a8808b"
+    },
+    {
+      "name": "AdditionalCostAllocation.feature",
+      "original_path": "features/Internal/_1100 Landed cost/AdditionalCostAllocation.feature",
+      "size": 110909,
+      "sha": "a67921bb513ebf17405c476f22ad31cbeaccdad4"
+    },
+    {
+      "name": "AutoFillingAmountInTheItemStockAdjastmentAsSurplus.feature",
+      "original_path": "features/Internal/_1100 Landed cost/AutoFillingAmountInTheItemStockAdjastmentAsSurplus.feature",
+      "size": 17065,
+      "sha": "7abf99113ff6438f91b7de8f232915eb7f47079d"
+    },
+    {
+      "name": "BatchReallocate.feature",
+      "original_path": "features/Internal/_1100 Landed cost/BatchReallocate.feature",
+      "size": 15215,
+      "sha": "92a13f39cd6cc473fe61da86309d0a597587a15d"
+    },
+    {
+      "name": "LandedCost.feature",
+      "original_path": "features/Internal/_1100 Landed cost/LandedCost.feature",
+      "size": 132213,
+      "sha": "528804aa675ee1a57b401b2bb90a32df9df96a1c"
+    },
+    {
+      "name": "SourceOfOrigin.feature",
+      "original_path": "features/Internal/_1500 Source of origin/SourceOfOrigin.feature",
+      "size": 158218,
+      "sha": "d76322151f9eeb2f15826d1b5ddfb18ec6e4eab5"
+    },
+    {
+      "name": "_1600CreateCashRecieptSimpleForm.feature",
+      "original_path": "features/Internal/_1600 Payment documents simple forms/_1600CreateCashRecieptSimpleForm.feature",
+      "size": 48572,
+      "sha": "c10b9f6e1728dbef2d444fee51a9ceb2b7c13fc9"
+    },
+    {
+      "name": "_1650CreateCashPaymentSimpleForm.feature",
+      "original_path": "features/Internal/_1600 Payment documents simple forms/_1650CreateCashPaymentSimpleForm.feature",
+      "size": 46269,
+      "sha": "382d9915a988ef76535bc1254b7dbfc3bb806155"
+    },
+    {
+      "name": "_1700CreateBankRecieptSimpleForm.feature",
+      "original_path": "features/Internal/_1600 Payment documents simple forms/_1700CreateBankRecieptSimpleForm.feature",
+      "size": 47279,
+      "sha": "9e9bebe1954ae5d462fdce83a77daf2b28a71645"
+    },
+    {
+      "name": "_1750CreateBankPaymentSimpleForm.feature",
+      "original_path": "features/Internal/_1600 Payment documents simple forms/_1750CreateBankPaymentSimpleForm.feature",
+      "size": 46484,
+      "sha": "6fc88c1e8b52ddd8090d23a11533196a5dd92f19"
+    },
+    {
+      "name": "_2000LoadCurrencyRate.feature",
+      "original_path": "features/Internal/_2000 LoadInfo/_2000LoadCurrencyRate.feature",
+      "size": 14829,
+      "sha": "fa51f8f575c79d0aff696bb1029785c08015c6c0"
+    },
+    {
+      "name": "_2010LoadDataForm.feature",
+      "original_path": "features/Internal/_2000 LoadInfo/_2010LoadDataForm.feature",
+      "size": 68358,
+      "sha": "8c644b3bacc84ae8c6cf9aca515815068aa965b0"
+    },
+    {
+      "name": "_2020ImportExportObjectFromDB.feature",
+      "original_path": "features/Internal/_2000 LoadInfo/_2020ImportExportObjectFromDB.feature",
+      "size": 10900,
+      "sha": "fd05a728b8d2554e59a8841bce99fc5bb95053b3"
+    },
+    {
+      "name": "_2500PrintFormSalesOrder.feature",
+      "original_path": "features/Internal/_2500 PrintForm/_2500PrintFormSalesOrder.feature",
+      "size": 16538,
+      "sha": "455d8af04e45f55b7c9ce875241e2c5c46ad3841"
+    },
+    {
+      "name": "_2800PostingOpeningEntries.feature",
+      "original_path": "features/Internal/_2800 Posting opening entries/_2800PostingOpeningEntries.feature",
+      "size": 87039,
+      "sha": "977a81e9f7de93c6f2f5fa9f999cac360101b290"
+    },
+    {
+      "name": "_2810OpeningEntryCommissionTrade.feature",
+      "original_path": "features/Internal/_2800 Posting opening entries/_2810OpeningEntryCommissionTrade.feature",
+      "size": 26931,
+      "sha": "0a64a2b49b06be39b9168b2c31843db94e72603f"
+    },
+    {
+      "name": "_2951PurchaseСreationBasedMulti.feature",
+      "original_path": "features/Internal/_2950 Сreation based multi/_2951PurchaseСreationBasedMulti.feature",
+      "size": 125358,
+      "sha": "b3a1d2d0bf68ae3e6185371c4cb57664933fcf2f"
+    },
+    {
+      "name": "_2952SalesСreationBasedMulti.feature",
+      "original_path": "features/Internal/_2950 Сreation based multi/_2952SalesСreationBasedMulti.feature",
+      "size": 51502,
+      "sha": "9be3ea6a0c0bd53a4ca730a2e023d5f2872b2083"
+    },
+    {
+      "name": "_2953CreateSI_PIBasedSC_GR.feature",
+      "original_path": "features/Internal/_2950 Сreation based multi/_2953CreateSI_PIBasedSC_GR.feature",
+      "size": 46434,
+      "sha": "69ef22dafc6c3a5bf796837deadba4c84b5ac0c2"
+    },
+    {
+      "name": "_2954CreateInventoryTransferOrderInternalSupplyRequest.feature",
+      "original_path": "features/Internal/_2950 Сreation based multi/_2954CreateInventoryTransferOrderInternalSupplyRequest.feature",
+      "size": 13511,
+      "sha": "6f3f8223353cb4d50323bc1013e425a0a4f89a48"
+    },
+    {
+      "name": "_2990PhysicalInventory.feature",
+      "original_path": "features/Internal/_2990 PhysicalInventory/_2990PhysicalInventory.feature",
+      "size": 102332,
+      "sha": "810fb1afacca35d1cb112bfcce7bf9bd2e73f542"
+    },
+    {
+      "name": "_3001PickUpItemsInventory.feature",
+      "original_path": "features/Internal/_3000 Other/_3001PickUpItemsInventory.feature",
+      "size": 16372,
+      "sha": "328aad3f44576ee3a46247230b79a69260bfb3f7"
+    },
+    {
+      "name": "_3002Labeling.feature",
+      "original_path": "features/Internal/_3000 Other/_3002Labeling.feature",
+      "size": 10943,
+      "sha": "82ecfb82c401da072914688288db8b7f19c208fc"
+    },
+    {
+      "name": "_3003AutoCreatingItemKey(Unbundling).feature",
+      "original_path": "features/Internal/_3000 Other/_3003AutoCreatingItemKey(Unbundling).feature",
+      "size": 9780,
+      "sha": "c21de01b8d0a4b69d751dd0e183311b4a6082127"
+    },
+    {
+      "name": "_3004SelectServiceItem.feature",
+      "original_path": "features/Internal/_3000 Other/_3004SelectServiceItem.feature",
+      "size": 10317,
+      "sha": "84175c95dc936d34845fa9f161f5c57f52f060ff"
+    },
+    {
+      "name": "_3005RelatedDocuments.feature",
+      "original_path": "features/Internal/_3000 Other/_3005RelatedDocuments.feature",
+      "size": 10309,
+      "sha": "38ed299c13fa9d9ff007e15b21293c7f95660499"
+    },
+    {
+      "name": "_3006LocalLang.feature",
+      "original_path": "features/Internal/_3000 Other/_3006LocalLang.feature",
+      "size": 11001,
+      "sha": "a339bd39025c7f7057f43d057b9d72aad997ac01"
+    },
+    {
+      "name": "_3007SearchByBarcodes.feature",
+      "original_path": "features/Internal/_3000 Other/_3007SearchByBarcodes.feature",
+      "size": 12115,
+      "sha": "7493a1dc3a1d45009cd5d3e305c5d44535ba0473"
+    },
+    {
+      "name": "_3500ChangeAddAtrItemType.feature",
+      "original_path": "features/Internal/_3000 Other/_3500ChangeAddAtrItemType.feature",
+      "size": 25312,
+      "sha": "2760e5b92be29588cf789b567e564beaa91cc9c2"
+    },
+    {
+      "name": "_3510ClearFieldsWhenTheTumblerIsSwitched.feature",
+      "original_path": "features/Internal/_3000 Other/_3510ClearFieldsWhenTheTumblerIsSwitched.feature",
+      "size": 10992,
+      "sha": "af835fe6a2f020861af2d5924e06c955e3be18ac"
+    },
+    {
+      "name": "_3515ItemTypeGroup.feature",
+      "original_path": "features/Internal/_3000 Other/_3515ItemTypeGroup.feature",
+      "size": 2263,
+      "sha": "657fcda72b6dd4662e6a41a85bff352568cc1ea9"
+    },
+    {
+      "name": "_3520ExportExternalDataProcessor.feature",
+      "original_path": "features/Internal/_3000 Other/_3520ExportExternalDataProcessor.feature",
+      "size": 1143,
+      "sha": "d53f46d7783c02f08f706b3aec7486efd0c72837"
+    },
+    {
+      "name": "_6000UsersPassword.feature",
+      "original_path": "features/Internal/_3000 Other/_6000UsersPassword.feature",
+      "size": 4330,
+      "sha": "bd72bbb89cbf2cdc091c8a80a3e591cbe6c6875f"
+    },
+    {
+      "name": "_6002DataHistory.feature",
+      "original_path": "features/Internal/_3000 Other/_6002DataHistory.feature",
+      "size": 4513,
+      "sha": "6e483987e9ff4ea2966a89181277280211854216"
+    },
+    {
+      "name": "_6003ExternalFunctions.feature",
+      "original_path": "features/Internal/_3000 Other/_6003ExternalFunctions.feature",
+      "size": 8841,
+      "sha": "72194847c37b9cafed1493be9240d6458dab0234"
+    },
+    {
+      "name": "_6004ObjectPropertyEditor.feature",
+      "original_path": "features/Internal/_3000 Other/_6004ObjectPropertyEditor.feature",
+      "size": 48256,
+      "sha": "3d7680bc23538148eac2a8e27019abf2ba887c34"
+    },
+    {
+      "name": "_6005EditDocumentsMovements.feature",
+      "original_path": "features/Internal/_3000 Other/_6005EditDocumentsMovements.feature",
+      "size": 33995,
+      "sha": "71b6b6d795eaf9c7664bd1dcf5a6d95bfd7c7907"
+    },
+    {
+      "name": "_6007NumberingRules.feature",
+      "original_path": "features/Internal/_3000 Other/_6007NumberingRules.feature",
+      "size": 12021,
+      "sha": "c38e1852c063845b2165294669fceb26aa4dd6ca"
+    },
+    {
+      "name": "_3008Pictures.feature",
+      "original_path": "features/Internal/_4000 TestWithExtension/_3008Pictures.feature",
+      "size": 21799,
+      "sha": "ffe33cefba22ddd5fa94f4b00b2b1512f53abd15"
+    },
+    {
+      "name": "_40001ReportForm.feature",
+      "original_path": "features/Internal/_4000 TestWithExtension/_40001ReportForm.feature",
+      "size": 18373,
+      "sha": "4fc623ff6bed52eba7f7e00dc562ab4114a4f2c8"
+    },
+    {
+      "name": "_40002AdditionalFunctionality.feature",
+      "original_path": "features/Internal/_4000 TestWithExtension/_40002AdditionalFunctionality.feature",
+      "size": 4883,
+      "sha": "4dc7409d4024036ce8b32af8fe0dc16cbad5cba8"
+    },
+    {
+      "name": "_40017AttachFilesControl.feature",
+      "original_path": "features/Internal/_4000 TestWithExtension/_40017AttachFilesControl.feature",
+      "size": 22965,
+      "sha": "3ce0def23d4f2480afe7b062a4f3932aad56fcfa"
+    },
+    {
+      "name": "_40018OutgoingMessage.feature",
+      "original_path": "features/Internal/_4000 TestWithExtension/_40018OutgoingMessage.feature",
+      "size": 11103,
+      "sha": "724409bdb99700d1430b7687d8c12ea83009eefc"
+    },
+    {
+      "name": "_5001Сonsignment.feature",
+      "original_path": "features/Internal/_5000 CommissionTrade/_5001Сonsignment.feature",
+      "size": 40805,
+      "sha": "6075d44fa4087a566113e8c07e750b860bbd662c"
+    },
+    {
+      "name": "_5501CommissionProductsSales.feature",
+      "original_path": "features/Internal/_5000 CommissionTrade/_5501CommissionProductsSales.feature",
+      "size": 147596,
+      "sha": "32a99363edb0c85403fd9c749e6daea7b034d449"
+    },
+    {
+      "name": "_5601ConsignmentLandedCostOld.feature",
+      "original_path": "features/Internal/_5000 CommissionTrade/_5601ConsignmentLandedCostOld.feature",
+      "size": 7145,
+      "sha": "e3a37010715b8fba378ab8f1dd36649cc51779de"
+    },
+    {
+      "name": "_5602LandedCostComissionTradeOld.feature",
+      "original_path": "features/Internal/_5000 CommissionTrade/_5602LandedCostComissionTradeOld.feature",
+      "size": 6248,
+      "sha": "87c98022b16ef15d88cffb350a9a674c42e4df32"
+    },
+    {
+      "name": "_5802ComissionTradeOwnCompaniesOld.feature",
+      "original_path": "features/Internal/_5000 CommissionTrade/_5802ComissionTradeOwnCompaniesOld.feature",
+      "size": 83839,
+      "sha": "d654ff5e062374818aca0c1a0d85b780f77af926"
+    },
+    {
+      "name": "_7000ProcurementDataProc.feature",
+      "original_path": "features/Internal/_7000 ProcurementDataProc/_7000ProcurementDataProc.feature",
+      "size": 30583,
+      "sha": "2e360e7270245f03aed7d8927be1fd4263a59624"
+    },
+    {
+      "name": "_8001RemainingStockControl.feature",
+      "original_path": "features/Internal/_8000 Remaining stock control/_8001RemainingStockControl.feature",
+      "size": 163637,
+      "sha": "0d16581a5b66084678c3259c8f6f07934ba06f32"
+    },
+    {
+      "name": "_8002SerialLotNumberStockControl.feature",
+      "original_path": "features/Internal/_8000 Remaining stock control/_8002SerialLotNumberStockControl.feature",
+      "size": 12503,
+      "sha": "48cbc5c0659c85a47e092253ce16026e87a3bf2f"
+    },
+    {
+      "name": "_8003StockInventoryControl.feature",
+      "original_path": "features/Internal/_8000 Remaining stock control/_8003StockInventoryControl.feature",
+      "size": 55532,
+      "sha": "e88c14ba33377bd38db590bb2bef083aa233a30b"
+    },
+    {
+      "name": "_8000SaaS.feature",
+      "original_path": "features/Internal/_8000 SaaS/_8000SaaS.feature",
+      "size": 28276,
+      "sha": "99dc66e8c4dc0dae1331f93180f7897acb6921e2"
+    },
+    {
+      "name": "_8510FiscalPrinter.feature",
+      "original_path": "features/Internal/_8510 FiscalPrinter/_8510FiscalPrinter.feature",
+      "size": 299295,
+      "sha": "b178ec2c5bb2b9c61278d7d3a2549ded54757239"
+    },
+    {
+      "name": "_8800 Actual and free stock control.feature",
+      "original_path": "features/Internal/_8800 Negative balance control by registers/_8800 Actual and free stock control.feature",
+      "size": 163784,
+      "sha": "084123cb058dd74153a0368faec986ee0d437bf9"
+    },
+    {
+      "name": "_8900 Serial lot number stock control.feature",
+      "original_path": "features/Internal/_8800 Negative balance control by registers/_8900 Serial lot number stock control.feature",
+      "size": 12664,
+      "sha": "0a3223e3d7bc41be65f7da7d79d4e796916970c9"
+    },
+    {
+      "name": "_8910 Stock inventory control.feature",
+      "original_path": "features/Internal/_8800 Negative balance control by registers/_8910 Stock inventory control.feature",
+      "size": 55197,
+      "sha": "4e140e231f2c516a8d0879cf0917a663cb2542f7"
+    },
+    {
+      "name": "_8920 Cash on hand and other period expense and revenue control.feature",
+      "original_path": "features/Internal/_8800 Negative balance control by registers/_8920 Cash on hand and other period expense and revenue control.feature",
+      "size": 17307,
+      "sha": "f66e19d331044b56275caa981e6a7094eee8bc5c"
+    },
+    {
+      "name": "_9001UseSimpleMode.feature",
+      "original_path": "features/Internal/_9000 FunctionalOptions/_9001UseSimpleMode.feature",
+      "size": 38927,
+      "sha": "d6e1a080a629e22b06c0060772edba858bba15e5"
+    },
+    {
+      "name": "_9010UseTransactionTypesFO.feature",
+      "original_path": "features/Internal/_9000 FunctionalOptions/_9010UseTransactionTypesFO.feature",
+      "size": 4426,
+      "sha": "9e52e1478e0480e3ed55ad7b30bec559c9f32104"
+    },
+    {
+      "name": "_9011GeneralFO.feature",
+      "original_path": "features/Internal/_9000 FunctionalOptions/_9011GeneralFO.feature",
+      "size": 5453,
+      "sha": "52bdcdb9830d2ced4194e20376a758c177754d2f"
+    },
+    {
+      "name": "AcessRightsSaaS.feature",
+      "original_path": "features/Internal/_9500 AccessRights/AcessRightsSaaS.feature",
+      "size": 2116,
+      "sha": "856eab9a87b64a604e3ec1be54149c8f00036b88"
+    },
+    {
+      "name": "_9500FullAccessOnlyRead.feature",
+      "original_path": "features/Internal/_9500 AccessRights/_9500FullAccessOnlyRead.feature",
+      "size": 46434,
+      "sha": "4ec5ae9e8fb23f8f2bfae546d4369aece39ab8ec"
+    },
+    {
+      "name": "_9501BasicRole.feature",
+      "original_path": "features/Internal/_9500 AccessRights/_9501BasicRole.feature",
+      "size": 6568,
+      "sha": "be579eac8ad2b10306496e7def4ab82d8dd83ecf"
+    },
+    {
+      "name": "_9503Roles.feature",
+      "original_path": "features/Internal/_9500 AccessRights/_9503Roles.feature",
+      "size": 8790,
+      "sha": "271b9fbcec19157f4b036f35ce9cb9a8e81f360b"
+    },
+    {
+      "name": "_9504LockDataModification.feature",
+      "original_path": "features/Internal/_9500 AccessRights/_9504LockDataModification.feature",
+      "size": 141783,
+      "sha": "40f9368457714f8f7adc5b993ce66f063326fe19"
+    },
+    {
+      "name": "_9505LogInSettings.feature",
+      "original_path": "features/Internal/_9500 AccessRights/_9505LogInSettings.feature",
+      "size": 4609,
+      "sha": "524fef01d8b0e47e6ea7bcc2780b0a8e3f5eaf44"
+    },
+    {
+      "name": "_9600AccessRightsSystemDocuments.feature",
+      "original_path": "features/Internal/_9600 AccessRightsSystem/_9600AccessRightsSystemDocuments.feature",
+      "size": 1454878,
+      "sha": "3815d9be0c133e264ad655328f5e7ec413eac286"
+    },
+    {
+      "name": "_9601AccessRightsSystemRegisters.feature",
+      "original_path": "features/Internal/_9600 AccessRightsSystem/_9601AccessRightsSystemRegisters.feature",
+      "size": 81421,
+      "sha": "a3b15bb9f41e43c92373190347761cc54d5d929a"
+    },
+    {
+      "name": "_9602AccessRightsSystemDocumentsPost.feature",
+      "original_path": "features/Internal/_9600 AccessRightsSystem/_9602AccessRightsSystemDocumentsPost.feature",
+      "size": 126342,
+      "sha": "23fa6e6ddbb8082e0835aec578a99f4a0b529040"
+    },
+    {
+      "name": "_9603AccessRightsSystemRolesForDocuments.feature",
+      "original_path": "features/Internal/_9600 AccessRightsSystem/_9603AccessRightsSystemRolesForDocuments.feature",
+      "size": 37843,
+      "sha": "d2365d7dd82f7b56607276d5e305969711e506ec"
+    },
+    {
+      "name": "_9700FillingInTestDataBase.feature",
+      "original_path": "features/Internal/_9700 TestDB/_9700FillingInTestDataBase.feature",
+      "size": 33295,
+      "sha": "56eeec04f150ef2a22f35cba0432c800df2bcece"
+    },
+    {
+      "name": "_9710_InitialDatabaseSettings.feature",
+      "original_path": "features/Internal/_9710_InitialDatabaseSettings/_9710_InitialDatabaseSettings.feature",
+      "size": 42456,
+      "sha": "ff32b1abd2c91b0233baa3cf6cd4f093ddb4bb80"
+    },
+    {
+      "name": "_9720Incidents.feature",
+      "original_path": "features/Internal/_9720 Incidents/_9720Incidents.feature",
+      "size": 25345,
+      "sha": "4e695effc36f9dd2e0eb98dc3f5e3c3d2158f020"
+    },
+    {
+      "name": "_9750UnitTests.feature",
+      "original_path": "features/Internal/_9750 UnitTest/_9750UnitTests.feature",
+      "size": 18652,
+      "sha": "f3f246451ff215cb94a5d507ae24b2c4e207adaa"
+    },
+    {
+      "name": "_09770 Salary.feature",
+      "original_path": "features/Internal/_9770 Salary/_09770 Salary.feature",
+      "size": 94603,
+      "sha": "a04b19d5af80659515684170f96e3368b165fa82"
+    },
+    {
+      "name": "_9780MultiCurrencyRevaluation.feature",
+      "original_path": "features/Internal/_9780 MultiCurrencyRevaluation/_9780MultiCurrencyRevaluation.feature",
+      "size": 131895,
+      "sha": "af7ff3d5e793474379b34c5455678c7baad149fd"
+    },
+    {
+      "name": "_9800ErrorsTest.feature",
+      "original_path": "features/Internal/_9800 ErrorsTest/_9800ErrorsTest.feature",
+      "size": 7692,
+      "sha": "dc4f5ae26a2f87a7d8715c0bfbcd642fdc71eccf"
+    },
+    {
+      "name": "_9850TestObjectsRemovel.feature",
+      "original_path": "features/Internal/_9850 DeleteObjects/_9850TestObjectsRemovel.feature",
+      "size": 38003,
+      "sha": "3246ad15d8bc12bb1940c788bcbb48ccd2889e84"
+    },
+    {
+      "name": "_9900StressTestingInventory.feature",
+      "original_path": "features/Internal/_9900 SrtessTesting/_9900StressTestingInventory.feature",
+      "size": 5174,
+      "sha": "5a591ba534604a4efab50e5cfac8f82c8eea5230"
+    },
+    {
+      "name": "_9900StressTestingPurchaseAndSales.feature",
+      "original_path": "features/Internal/_9900 SrtessTesting/_9900StressTestingPurchaseAndSales.feature",
+      "size": 12077,
+      "sha": "590de1e5ada00b85ba572fea3f59c771ec2ecb4f"
+    },
+    {
+      "name": "_9910AccountingSettings.feature",
+      "original_path": "features/Internal/_9910 Accounting/_9910AccountingSettings.feature",
+      "size": 375993,
+      "sha": "49f488f32465799cd79a08d6fb61547001a7be8b"
+    },
+    {
+      "name": "_9920 TransformationSystem.feature",
+      "original_path": "features/Internal/_9920 TransformationSystem/_9920 TransformationSystem.feature",
+      "size": 26688,
+      "sha": "88423485670c5217b6510613c3dd22080d50b334"
+    },
+    {
+      "name": "_9980 SimpleBatches.feature",
+      "original_path": "features/Internal/_9980 SimpleBatches/_9980 SimpleBatches.feature",
+      "size": 60714,
+      "sha": "9af1758346e9aab775dcfc1ca12d15cdb9b68c83"
+    },
+    {
+      "name": "_9999 DemoDB.feature",
+      "original_path": "features/Internal/_9999 DemoDB/_9999 DemoDB.feature",
+      "size": 21020,
+      "sha": "9655a99a4eededf2128e8a2425b93cc92364252b"
+    },
+    {
+      "name": "001_TestDataBaseSmoke.feature",
+      "original_path": "features/Smoke/001_TestDataBaseSmoke.feature",
+      "size": 2063813,
+      "sha": "e1b0b89ce1ed8dc746b47032aebe38c38d9cf93e"
+    },
+    {
+      "name": "011_Catalogs_ListForm.feature",
+      "original_path": "features/Smoke/011_Catalogs_ListForm.feature",
+      "size": 34243,
+      "sha": "1097c915c36e8ed7adee3bad65fceee20c72dd82"
+    },
+    {
+      "name": "012_Catalogs_ObjectForm.feature",
+      "original_path": "features/Smoke/012_Catalogs_ObjectForm.feature",
+      "size": 36194,
+      "sha": "aaa288301aef047b2191b8d34daf789f46d4258c"
+    },
+    {
+      "name": "013_Catalogs_Save.feature",
+      "original_path": "features/Smoke/013_Catalogs_Save.feature",
+      "size": 382881,
+      "sha": "f36f60e8183729e8ee86057be3d57c18e16a68fe"
+    },
+    {
+      "name": "014_Catalogs_Copying.feature",
+      "original_path": "features/Smoke/014_Catalogs_Copying.feature",
+      "size": 223481,
+      "sha": "29fe4359f733c3960d1a6a8da8dd4ce9872686dc"
+    },
+    {
+      "name": "015_Catalogs_Generate.feature",
+      "original_path": "features/Smoke/015_Catalogs_Generate.feature",
+      "size": 2342,
+      "sha": "dfe444467db873901e0c60bf93e59f6d0918c5e0"
+    },
+    {
+      "name": "016_Catalogs_ChoiseForm.feature",
+      "original_path": "features/Smoke/016_Catalogs_ChoiseForm.feature",
+      "size": 11719,
+      "sha": "a1eb963f8858f4c1b65fdb446a130f256d7c5920"
+    },
+    {
+      "name": "021_Documents_ListForm.feature",
+      "original_path": "features/Smoke/021_Documents_ListForm.feature",
+      "size": 38784,
+      "sha": "ca9e755376e1ddb89d0d803277469328cf764a2b"
+    },
+    {
+      "name": "022_Documents_ObjectForm.feature",
+      "original_path": "features/Smoke/022_Documents_ObjectForm.feature",
+      "size": 37706,
+      "sha": "97d162c88372fb4446cf266d0333f688e365858c"
+    },
+    {
+      "name": "023_Documents_Save.feature",
+      "original_path": "features/Smoke/023_Documents_Save.feature",
+      "size": 422667,
+      "sha": "d4d966bb107ecc106f129679aab9256482223c68"
+    },
+    {
+      "name": "024_Documents_Copying.feature",
+      "original_path": "features/Smoke/024_Documents_Copying.feature",
+      "size": 194709,
+      "sha": "396927753c918c0e5c306a04e215ec59cc284f4d"
+    },
+    {
+      "name": "025_Documents_ChoiseForm.feature",
+      "original_path": "features/Smoke/025_Documents_ChoiseForm.feature",
+      "size": 21477,
+      "sha": "94e0be6fea2dd3f9598a532676cd689adeaa26ef"
+    },
+    {
+      "name": "031_ChartsOfCharacteristicTypes_ListForm.feature",
+      "original_path": "features/Smoke/031_ChartsOfCharacteristicTypes_ListForm.feature",
+      "size": 2932,
+      "sha": "c1dd4aa0e6550f2d332b7dedad9b51494e6cc2ad"
+    },
+    {
+      "name": "032_ChartsOfCharacteristicTypes_ObjectForm.feature",
+      "original_path": "features/Smoke/032_ChartsOfCharacteristicTypes_ObjectForm.feature",
+      "size": 2889,
+      "sha": "25527a825ed3dfaedfa1ce215f5c5953a2469072"
+    },
+    {
+      "name": "033_ChartsOfCharacteristicTypes_Save.feature",
+      "original_path": "features/Smoke/033_ChartsOfCharacteristicTypes_Save.feature",
+      "size": 25726,
+      "sha": "259cdb5c3a2243cc078ffcc27de41fb51c0f7e3b"
+    },
+    {
+      "name": "034_ChartsOfCharacteristicTypes_Copying.feature",
+      "original_path": "features/Smoke/034_ChartsOfCharacteristicTypes_Copying.feature",
+      "size": 14862,
+      "sha": "25fed87893d96d7c0f31377b43442492dfb1a37e"
+    },
+    {
+      "name": "041_ChartsOfAccount_ListForm.feature",
+      "original_path": "features/Smoke/041_ChartsOfAccount_ListForm.feature",
+      "size": 678,
+      "sha": "d550b7b26ccd4a9bff61ae1f085273023ed8b500"
+    },
+    {
+      "name": "042_ChartsOfAccount_ObjectForm.feature",
+      "original_path": "features/Smoke/042_ChartsOfAccount_ObjectForm.feature",
+      "size": 671,
+      "sha": "8f992b9d06eadd522cb50d2a4e7752b6b9d52fb6"
+    },
+    {
+      "name": "072_Reports_ObjectForm.feature",
+      "original_path": "features/Smoke/072_Reports_ObjectForm.feature",
+      "size": 652,
+      "sha": "b6592785f52c71b80739074a14d628034b9bea17"
+    },
+    {
+      "name": "082_DataProcessors_ObjectForm.feature",
+      "original_path": "features/Smoke/082_DataProcessors_ObjectForm.feature",
+      "size": 9572,
+      "sha": "6c20afa9859501c28f7ad2c83c00d530194b5d84"
+    },
+    {
+      "name": "091_InformationRegisters_ListForm.feature",
+      "original_path": "features/Smoke/091_InformationRegisters_ListForm.feature",
+      "size": 3546,
+      "sha": "d600c616313bcc9dbff4665f773b6c27d2db4849"
+    },
+    {
+      "name": "092_InformationRegisters_ObjectForm.feature",
+      "original_path": "features/Smoke/092_InformationRegisters_ObjectForm.feature",
+      "size": 9669,
+      "sha": "be6974dfc2dec77b83e59364f47abfc3d0d64c89"
+    },
+    {
+      "name": "101_AccumulationRegisters_ListForm.feature",
+      "original_path": "features/Smoke/101_AccumulationRegisters_ListForm.feature",
+      "size": 1251,
+      "sha": "356cb011e42c7330c78d0113f1bee26f7d4631de"
+    },
+    {
+      "name": "111_AccountingRegisters_ListForm.feature",
+      "original_path": "features/Smoke/111_AccountingRegisters_ListForm.feature",
+      "size": 696,
+      "sha": "8be17ba4dc42880e319ae95059c458bb27d48720"
+    }
+  ],
+  "status": "success"
+}

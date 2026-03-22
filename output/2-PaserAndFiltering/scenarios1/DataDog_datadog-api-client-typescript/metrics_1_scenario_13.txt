@@ -1,0 +1,8 @@
+Scenario 13: Get a list of metrics returns "Success" response
+  Tags: ['@skip', '@team:DataDog/metrics-experience']
+  Given  a valid "appKeyAuth" key in the system
+  And  there is a valid "metric_tag_configuration" in the system
+  And  new "ListTagConfigurations" request
+  When  the request is sent
+  Then  the response status is 200 Success
+

@@ -1,0 +1,20 @@
+Scenario 2: 002 create a suicidal trade from "designatedLoser" to get closeout immediately after trade
+  Tags: ['@Liquidation']
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  Then  the parties place the following orders:
+  Then  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the mark price should be "150" for the market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  When  the parties place the following orders with ticks:
+  And  the market data for the market "ETH/DEC19" should be:
+  Then  the order book should have the following volumes for market "ETH/DEC19":
+  Then  the parties should have the following profit and loss:
+  When  the parties place the following orders with ticks:
+  And  the network moves ahead "1" blocks
+  Then  the parties should have the following account balances:
+  Then  the parties should have the following margin levels:
+  Then  the parties should have the following profit and loss:
+  And  the insurance pool balance should be "0" for the market "ETH/DEC19"
+

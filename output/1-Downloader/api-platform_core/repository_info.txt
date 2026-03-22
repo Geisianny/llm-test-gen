@@ -1,0 +1,555 @@
+INFORMAÇÕES DO REPOSITÓRIO
+==================================================
+
+Nome: core
+Proprietário: api-platform
+URL: https://github.com/api-platform/core
+Visibilidade: public
+Privado: Não
+Data: 2025-11-26 00:03:43
+Arquivos .feature encontrados: 135
+Arquivos baixados: 135
+Status: success
+
+ARQUIVOS BAIXADOS
+------------------------------
+• deny.feature (14381 bytes)
+  Path original: features/authorization/deny.feature
+  SHA: 8aeac46c7bd44b22484ad220e218ca42106426d5
+
+• legacy_deny.feature (3803 bytes)
+  Path original: features/authorization/legacy_deny.feature
+  SHA: b911022c3bd795c1b1598e4e1fa96974ce03a963
+
+• boolean_filter.feature (18103 bytes)
+  Path original: features/doctrine/boolean_filter.feature
+  SHA: e3332eea7bd094836fbc4901759e2f0a897c1fb8
+
+• date_filter.feature (24318 bytes)
+  Path original: features/doctrine/date_filter.feature
+  SHA: 7d8d1a906f8829571bc74da1b31104c57e9d2a56
+
+• eager_loading.feature (4394 bytes)
+  Path original: features/doctrine/eager_loading.feature
+  SHA: 539330a1c54d5499b07cc2d0bf70a53c93dbdf5d
+
+• exists_filter.feature (8068 bytes)
+  Path original: features/doctrine/exists_filter.feature
+  SHA: e99f2ff445afce40a46a4692b89ee82ad81458ad
+
+• handle_links.feature (637 bytes)
+  Path original: features/doctrine/handle_links.feature
+  SHA: ebfa7b10e4f8a69af31298c705a0999828be8657
+
+• subresource_without_get.feature (348 bytes)
+  Path original: features/doctrine/issue5722/subresource_without_get.feature
+  SHA: ff54949e92615f95536493591427dd4ddc94be88
+
+• standard_put_entity_inheritence.feature (794 bytes)
+  Path original: features/doctrine/issue6175/standard_put_entity_inheritence.feature
+  SHA: 07d0d7e88cb90329df86f00267a9bf57c33d612d
+
+• multiple_filter.feature (1638 bytes)
+  Path original: features/doctrine/multiple_filter.feature
+  SHA: d98e36cf264b79ba9de2c29fcd7f29c8d3e84acc
+
+• numeric_filter.feature (7757 bytes)
+  Path original: features/doctrine/numeric_filter.feature
+  SHA: ec449ae0be77e51d1e18c6d5f1e7897a4c60bd56
+
+• order_filter.feature (26026 bytes)
+  Path original: features/doctrine/order_filter.feature
+  SHA: 4d3d5587b97eedf0274f7fcc3fb7430095f7ed9b
+
+• range_filter.feature (18023 bytes)
+  Path original: features/doctrine/range_filter.feature
+  SHA: 9a9ec12d0742417da7d319b61a8e1fc0e02fc68e
+
+• search_filter.feature (35275 bytes)
+  Path original: features/doctrine/search_filter.feature
+  SHA: 50718f81963f9610fd61db584eb845d3164ae030
+
+• separated_resource.feature (3976 bytes)
+  Path original: features/doctrine/separated_resource.feature
+  SHA: 90ba193fd6896ac8949b00e1a76eabc2c42f9dbd
+
+• match_filter.feature (15298 bytes)
+  Path original: features/elasticsearch/match_filter.feature
+  SHA: cf0b70413a9c264d8f9ebeec2e09dc59144b6ddd
+
+• order_filter_1.feature (23129 bytes)
+  Path original: features/elasticsearch/order_filter.feature
+  SHA: 2fe4ac1e14bbfecb4a15942cc03f6d054559ad4c
+
+• read.feature (28529 bytes)
+  Path original: features/elasticsearch/read.feature
+  SHA: 226acafaf619ac08978948898d99c055356b98b1
+
+• term_filter.feature (17786 bytes)
+  Path original: features/elasticsearch/term_filter.feature
+  SHA: 97f72fabd65d12a49c3337359308bd14aa20c9ef
+
+• filter_validation.feature (5825 bytes)
+  Path original: features/filter/filter_validation.feature
+  SHA: 5119643e5534be426447007cbe9e2e6c2a8d28fe
+
+• property_filter.feature (1611 bytes)
+  Path original: features/filter/property_filter.feature
+  SHA: 3b225793d3f098ff0b813587fb340c1b4469650e
+
+• authorization.feature (20063 bytes)
+  Path original: features/graphql/authorization.feature
+  SHA: f1e918b5242de51ffd1240944f4b3c54c5c98028
+
+• collection.feature (36233 bytes)
+  Path original: features/graphql/collection.feature
+  SHA: afc2dc097ece68af5a4676203136de0c9f5b4008
+
+• docs.feature (416 bytes)
+  Path original: features/graphql/docs.feature
+  SHA: 7c54a7343f0612e8f1dfe72ee9798ac0be5b8d92
+
+• filters.feature (9307 bytes)
+  Path original: features/graphql/filters.feature
+  SHA: b5927c6598de2ff83cba0be88e68e3432daa8193
+
+• input_output.feature (5584 bytes)
+  Path original: features/graphql/input_output.feature
+  SHA: aac22be3f3c59d1e7407df9876c7f35ef1a80baa
+
+• introspection.feature (17263 bytes)
+  Path original: features/graphql/introspection.feature
+  SHA: 356fc67c5773c54d3034599144b378e9dbf92c1a
+
+• mutation.feature (41300 bytes)
+  Path original: features/graphql/mutation.feature
+  SHA: 7df064279c153a6690a054d8a9467e180f2c74bf
+
+• query.feature (23335 bytes)
+  Path original: features/graphql/query.feature
+  SHA: 732540a65cb11335741a0a807295c56f1c9af107
+
+• schema.feature (2819 bytes)
+  Path original: features/graphql/schema.feature
+  SHA: 86a48cebd13ddfc2e9ebb896c21404ade1485daf
+
+• subscription.feature (7353 bytes)
+  Path original: features/graphql/subscription.feature
+  SHA: 75863ec04bf42a72b2cfe6a4adb9a3d5e8ad3ada
+
+• type.feature (2586 bytes)
+  Path original: features/graphql/type.feature
+  SHA: 03a072785d56827e797efffd1806c848c6ace16e
+
+• absolute_url.feature (3382 bytes)
+  Path original: features/hal/absolute_url.feature
+  SHA: 87be61f0670a67de1b7d08c9d5f1a91fb0187ca4
+
+• collection_1.feature (17643 bytes)
+  Path original: features/hal/collection.feature
+  SHA: 8507c886621ead390fb63df8bdd10c260301b53f
+
+• collection_uri_template.feature (2605 bytes)
+  Path original: features/hal/collection_uri_template.feature
+  SHA: a71c2d9329ce346363c2b1b7aed525cfa550562d
+
+• hal.feature (6567 bytes)
+  Path original: features/hal/hal.feature
+  SHA: be469651f581ead16764831b05c9c9fedb136f07
+
+• input_output_1.feature (1434 bytes)
+  Path original: features/hal/input_output.feature
+  SHA: c7acbe989f047434281a99a641b8ee12f5fd9696
+
+• item_uri_template.feature (4147 bytes)
+  Path original: features/hal/item_uri_template.feature
+  SHA: 5c949d071617a3d3cae60d760e84f4944ecba1fb
+
+• max_depth.feature (2561 bytes)
+  Path original: features/hal/max_depth.feature
+  SHA: ef1b9601dd747c42512b19d0f11da7f855cc7e00
+
+• network_path.feature (3193 bytes)
+  Path original: features/hal/network_path.feature
+  SHA: 264d2a49f829b2062c2e2f306bfa65804baf38a7
+
+• non_resource.feature (1169 bytes)
+  Path original: features/hal/non_resource.feature
+  SHA: 320ea122b8318051100cdcb5dfc31e8944c4e07e
+
+• problem.feature (1955 bytes)
+  Path original: features/hal/problem.feature
+  SHA: 692cd0aa1055a2a10a9893808785bb2b8bb245a7
+
+• table_inheritance.feature (3858 bytes)
+  Path original: features/hal/table_inheritance.feature
+  SHA: 55ef27b7cade88d64d055ce08b5c6ea9e68d0894
+
+• headers.feature (573 bytes)
+  Path original: features/http_cache/headers.feature
+  SHA: 7c000f79b056d4f1114627f58acefe36bef980f7
+
+• tag_collector_service.feature (8737 bytes)
+  Path original: features/http_cache/tag_collector_service.feature
+  SHA: ed994aadb7e0ccd4d24440c54b5ef25f588dd0c9
+
+• tags.feature (5173 bytes)
+  Path original: features/http_cache/tags.feature
+  SHA: bcc5ed9370c11b099bb2e82acf9888fed0244677
+
+• absolute.feature (1122 bytes)
+  Path original: features/hydra/absolute.feature
+  SHA: ba26000260ae88fa9512a26dcaceffe9d2212c0e
+
+• collection_2.feature (20759 bytes)
+  Path original: features/hydra/collection.feature
+  SHA: 8e9b0c33aba6620f3de8f20a6c3ba4163f0f6e6f
+
+• docs_1.feature (6874 bytes)
+  Path original: features/hydra/docs.feature
+  SHA: de6da5aae8ddf93bbd77697db5d75767fb358ebf
+
+• entrypoint.feature (1906 bytes)
+  Path original: features/hydra/entrypoint.feature
+  SHA: b2b8f731d27794c3deb5951232f56217859bde05
+
+• error.feature (6265 bytes)
+  Path original: features/hydra/error.feature
+  SHA: 07fe8210f02db1a16fd0c197f80b0c0c2fb72327
+
+• item_uri_template_1.feature (8145 bytes)
+  Path original: features/hydra/item_uri_template.feature
+  SHA: 0c7328323510df32790a28f824aff9fe19e8019d
+
+• 5926.feature (1676 bytes)
+  Path original: features/issues/5926.feature
+  SHA: 640d8a1bc6c10a4b54fd55a02dee483fd66b56e0
+
+• input_output_2.feature (1287 bytes)
+  Path original: features/json/input_output.feature
+  SHA: 2a5a11431628b96e6a4cae183b626379afe4a902
+
+• relation.feature (6501 bytes)
+  Path original: features/json/relation.feature
+  SHA: 3455d9d41230f2fe575c7e9faed1e61a5df78331
+
+• absolute_url_1.feature (3582 bytes)
+  Path original: features/jsonapi/absolute_url.feature
+  SHA: 45b4444e442a83425013956cd3f9e335aeaca294
+
+• collection_attributes.feature (1077 bytes)
+  Path original: features/jsonapi/collection_attributes.feature
+  SHA: 6603d36087d1c2552341885eafa5656f71ab94ee
+
+• collection_uri_template_1.feature (2197 bytes)
+  Path original: features/jsonapi/collection_uri_template.feature
+  SHA: 6fa13c0073209d2821877d467e3983129f5bb16e
+
+• errors.feature (2084 bytes)
+  Path original: features/jsonapi/errors.feature
+  SHA: 24e99594478572c9da110920e7305a9b5ede2bd0
+
+• filtering.feature (2600 bytes)
+  Path original: features/jsonapi/filtering.feature
+  SHA: ce8f209caa50654f0bb21d72a144cfd9a1107ec3
+
+• input_output_3.feature (1750 bytes)
+  Path original: features/jsonapi/input_output.feature
+  SHA: 1fb6771081d1632a149c50a6eacd700ad70a651e
+
+• item_uri_template_2.feature (6525 bytes)
+  Path original: features/jsonapi/item_uri_template.feature
+  SHA: 7dbfb223580c7a433481645a688f692251e0ec2e
+
+• jsonapi.feature (8127 bytes)
+  Path original: features/jsonapi/jsonapi.feature
+  SHA: 39a5d3920ea214dcf809f8b53affbcee2c439876
+
+• network_path_1.feature (3531 bytes)
+  Path original: features/jsonapi/network_path.feature
+  SHA: 810ba0f9612574efeca266a4b49b06747edffef8
+
+• non_resource_1.feature (3778 bytes)
+  Path original: features/jsonapi/non_resource.feature
+  SHA: 493e83efcc0cfbf423a949846aa9acb9629c1dd0
+
+• ordering.feature (3910 bytes)
+  Path original: features/jsonapi/ordering.feature
+  SHA: b3d4f687a3c6b627711ef228b90ef53877b9a901
+
+• pagination.feature (2156 bytes)
+  Path original: features/jsonapi/pagination.feature
+  SHA: d07afd8d89c1e8b284b65687a2bea5220c31fc00
+
+• related-resouces-inclusion.feature (53131 bytes)
+  Path original: features/jsonapi/related-resouces-inclusion.feature
+  SHA: 2a6663d3fd13f3ffec72c6fa8c26ceb486f66db6
+
+• absolute_url_2.feature (2917 bytes)
+  Path original: features/jsonld/absolute_url.feature
+  SHA: 9770e6bbb77dccd5ba01c59796a625b3b25a6738
+
+• context.feature (3547 bytes)
+  Path original: features/jsonld/context.feature
+  SHA: 49d76b7e3b634eb9e11872fe32421fff7a87338d
+
+• disable_id_generation.feature (393 bytes)
+  Path original: features/jsonld/disable_id_generation.feature
+  SHA: 0e396ebe7ad127cb33a414442ed66dd5dd850774
+
+• getter_setter_renaming.feature (853 bytes)
+  Path original: features/jsonld/getter_setter_renaming.feature
+  SHA: d5f876918b888669cbf71ee5728a252e9c0c9929
+
+• inheritance.feature (517 bytes)
+  Path original: features/jsonld/inheritance.feature
+  SHA: 0008392cf54fb3937e0bff00baaee4ecf85dcf9e
+
+• input_output_4.feature (14198 bytes)
+  Path original: features/jsonld/input_output.feature
+  SHA: dbe56ab18782157f9d1fdaa31d824b1125b79f93
+
+• interface_as_resource.feature (1660 bytes)
+  Path original: features/jsonld/interface_as_resource.feature
+  SHA: 7236ace7ae7d3a399b55faf256c95008f1e59aad
+
+• interface_dto_output.feature (569 bytes)
+  Path original: features/jsonld/interface_dto_output.feature
+  SHA: 9c56f8e57bbf95beb5a45ce091e49a4e256ad680
+
+• iri_only.feature (3602 bytes)
+  Path original: features/jsonld/iri_only.feature
+  SHA: 170e7f69f869de48ba5849b357816e8693bd1f6c
+
+• json_serializable.feature (3408 bytes)
+  Path original: features/jsonld/json_serializable.feature
+  SHA: 57cb57de510d0d2586a5f82e082553f25d6364eb
+
+• max_depth_1.feature (1438 bytes)
+  Path original: features/jsonld/max_depth.feature
+  SHA: 58c2e5c1249297ecc846d1eae21ce623d363d62c
+
+• network_path_2.feature (3038 bytes)
+  Path original: features/jsonld/network_path.feature
+  SHA: 6d486390e3fc3ae95d8caf67b2c9b73b0980a992
+
+• no_output.feature (345 bytes)
+  Path original: features/jsonld/no_output.feature
+  SHA: 09b7a41919a91fac041b6e80ea81983ca857a729
+
+• non_resource_2.feature (4917 bytes)
+  Path original: features/jsonld/non_resource.feature
+  SHA: 083770c9a28d1096451ed7d15a4120c1ab204124
+
+• attribute_resource.feature (4215 bytes)
+  Path original: features/main/attribute_resource.feature
+  SHA: da92073e98f0f21d352d90205c78913728dc7106
+
+• circular_reference.feature (2721 bytes)
+  Path original: features/main/circular_reference.feature
+  SHA: f53d44d916455b287b8cd1e9f1f182c6ed8d1dd7
+
+• composite.feature (5285 bytes)
+  Path original: features/main/composite.feature
+  SHA: ab99527bd7f8d9673cfd5865e3bc52f9c157e392
+
+• configurable.feature (1965 bytes)
+  Path original: features/main/configurable.feature
+  SHA: c0e73d1ba2b10f54f177fc87bae061236603b0a8
+
+• content_negotiation.feature (7397 bytes)
+  Path original: features/main/content_negotiation.feature
+  SHA: 7f22db3b396454e2845ae193658a26c417337e5b
+
+• crud.feature (25214 bytes)
+  Path original: features/main/crud.feature
+  SHA: 5933812bcccfabf7ea46aabca3cde181a46256f2
+
+• crud_abstract.feature (5401 bytes)
+  Path original: features/main/crud_abstract.feature
+  SHA: fc8bd66c69a1613fbe6f683a1d4431de3d4a538e
+
+• crud_uri_variables.feature (6625 bytes)
+  Path original: features/main/crud_uri_variables.feature
+  SHA: 37787dc56d21c83e6027232714e59f05ec3b2583
+
+• custom_controller.feature (3655 bytes)
+  Path original: features/main/custom_controller.feature
+  SHA: 16516099e53a08f431b5e0a8173769dc783a477f
+
+• custom_identifier.feature (4043 bytes)
+  Path original: features/main/custom_identifier.feature
+  SHA: 4af017873090e35774fc2d0796373e2999e457be
+
+• custom_identifier_with_subresource.feature (3065 bytes)
+  Path original: features/main/custom_identifier_with_subresource.feature
+  SHA: 74d9c65a4cdff7464f7aac0c354362d24828187e
+
+• custom_normalized.feature (7300 bytes)
+  Path original: features/main/custom_normalized.feature
+  SHA: 7d1a49f3feda188e04aa26d492f03b5326cac6f6
+
+• custom_put.feature (826 bytes)
+  Path original: features/main/custom_put.feature
+  SHA: 9b286b57cb489a8bddbd61ae5c007f65c660f84c
+
+• custom_writable_identifier.feature (4373 bytes)
+  Path original: features/main/custom_writable_identifier.feature
+  SHA: 097d253b9ad2a897234c4eaa4a58083f440c0ebb
+
+• default_order.feature (6932 bytes)
+  Path original: features/main/default_order.feature
+  SHA: ad05e08a835c0708f76556c1923b4c1e6e52b7b1
+
+• exception_to_status.feature (2116 bytes)
+  Path original: features/main/exception_to_status.feature
+  SHA: a182ea848a82d3d01cae085b64552a155bd6e5a7
+
+• exposed_state.feature (1333 bytes)
+  Path original: features/main/exposed_state.feature
+  SHA: 1915732f3802345c5a50ed8a49c709b5aae11fc0
+
+• headers_1.feature (579 bytes)
+  Path original: features/main/headers.feature
+  SHA: d61e67695744006b2ee550e4b539fb48fbc977cb
+
+• input_output_5.feature (570 bytes)
+  Path original: features/main/input_output.feature
+  SHA: 0c6f49926d9eab408eb6a5c241fb8a99d9d7be44
+
+• not_exposed.feature (8041 bytes)
+  Path original: features/main/not_exposed.feature
+  SHA: 809b95dd8e5f5d6c1a8befd6812f2396e5c1372e
+
+• operation.feature (3134 bytes)
+  Path original: features/main/operation.feature
+  SHA: 24a82890cfd0fba68245db42a381674069a17724
+
+• operation_resource.feature (1913 bytes)
+  Path original: features/main/operation_resource.feature
+  SHA: b4bd729fcaf6d158def5f2d6a529afcbe6da42ee
+
+• overridden_operation.feature (5376 bytes)
+  Path original: features/main/overridden_operation.feature
+  SHA: d07181de8bdef94073f22d7cb7116f82d59a6b2b
+
+• patch.feature (3150 bytes)
+  Path original: features/main/patch.feature
+  SHA: d6be7ec54378c85861349727ae2c950a3705aa3c
+
+• put_collection.feature (1201 bytes)
+  Path original: features/main/put_collection.feature
+  SHA: 2423043b8860082c327d71acdca1699764da529c
+
+• relation_1.feature (16881 bytes)
+  Path original: features/main/relation.feature
+  SHA: 5eba540f96e15c5f2273b69fe5ccfab3fdb3fe55
+
+• serializable_item_data_provider.feature (560 bytes)
+  Path original: features/main/serializable_item_data_provider.feature
+  SHA: 11a111cf101575031ab450478e37852b2085f4d5
+
+• standard_put.feature (4060 bytes)
+  Path original: features/main/standard_put.feature
+  SHA: 670ab6d0d0bafd9ea41e8dabdb74e2a7bc1ad686
+
+• sub_resource.feature (20785 bytes)
+  Path original: features/main/sub_resource.feature
+  SHA: 1a8b9e14ad1639687f6ed92898dc34c37ad3a823
+
+• table_inheritance_1.feature (21969 bytes)
+  Path original: features/main/table_inheritance.feature
+  SHA: 1c3617f5f924199b1c2d3b5af5ff99387c25125b
+
+• union_intersect_types.feature (3361 bytes)
+  Path original: features/main/union_intersect_types.feature
+  SHA: 73195804d380fd0d291d24c9b564dd5af5f20d12
+
+• url_encoded_id.feature (993 bytes)
+  Path original: features/main/url_encoded_id.feature
+  SHA: 6e5828bbab32f45967ac73c7a2dac5cc6ea21f12
+
+• uuid.feature (8246 bytes)
+  Path original: features/main/uuid.feature
+  SHA: a7506a15bec5b726239b334eb83f683fe7c69a4b
+
+• validation.feature (3941 bytes)
+  Path original: features/main/validation.feature
+  SHA: 40e22bdfb3ace38c3eecc29f21c2bc1856cf650a
+
+• discover.feature (631 bytes)
+  Path original: features/mercure/discover.feature
+  SHA: fecc057506f48637d5bb4d2c558bbbd217c0170a
+
+• publish.feature (2372 bytes)
+  Path original: features/mercure/publish.feature
+  SHA: ac0c27fa7ed1c20b3d450f6616b4563590bab023
+
+• deserialize_embed_many_without_target_document.feature (1829 bytes)
+  Path original: features/mongodb/deserialize_embed_many_without_target_document.feature
+  SHA: 5a984a96f3f90687f8596b6da075c229f66d5fea
+
+• filters_1.feature (1758 bytes)
+  Path original: features/mongodb/filters.feature
+  SHA: 5bb7c3b07e8435932a45640e27ef5e91f0e15213
+
+• push.feature (962 bytes)
+  Path original: features/push_relations/push.feature
+  SHA: fe4a7d1de75cc072049277148ba521d3c536d143
+
+• send_security_headers.feature (1413 bytes)
+  Path original: features/security/send_security_headers.feature
+  SHA: bca2f6fb9c1831edb12277f376bad65bdfdc5e83
+
+• strong_typing.feature (6048 bytes)
+  Path original: features/security/strong_typing.feature
+  SHA: 27e669816dd5a43e201f2ff3c612c5037d79b282
+
+• unknown_attributes.feature (1170 bytes)
+  Path original: features/security/unknown_attributes.feature
+  SHA: efe7b954c0aeb7cf2c03a159bd21225e066c6f4c
+
+• validate_incoming_content-types.feature (1001 bytes)
+  Path original: features/security/validate_incoming_content-types.feature
+  SHA: 80c6fd3b65ac0b8eb11954a550f42251fdbad227
+
+• validate_response_types.feature (2631 bytes)
+  Path original: features/security/validate_response_types.feature
+  SHA: 2b0884dbb92ae971bfb796ca16484bb4bf29a5b7
+
+• deserialize_objects_using_constructor.feature (1138 bytes)
+  Path original: features/serializer/deserialize_objects_using_constructor.feature
+  SHA: 24e5f20af9640ed98e4e93c29e237adb253e7855
+
+• dynamic_groups.feature (412 bytes)
+  Path original: features/serializer/dynamic_groups.feature
+  SHA: 2454d0c2418d9a3dbf9ad6841ec8ca2a600d65c4
+
+• empty_array_as_object.feature (1023 bytes)
+  Path original: features/serializer/empty_array_as_object.feature
+  SHA: c0cc85481782c99d2cbdc80a7e883e88e09c6b26
+
+• group_filter.feature (31400 bytes)
+  Path original: features/serializer/group_filter.feature
+  SHA: 95de871d40875c63b46fc9b8731d85acb3500971
+
+• groups_related.feature (790 bytes)
+  Path original: features/serializer/groups_related.feature
+  SHA: ad2ca49e3316aaea77bbe93a27bc3aacc9ced1c0
+
+• property_filter_1.feature (14334 bytes)
+  Path original: features/serializer/property_filter.feature
+  SHA: 7da85deb692f316a8870be707225a60007b9c3d9
+
+• vo_relations.feature (6126 bytes)
+  Path original: features/serializer/vo_relations.feature
+  SHA: 08999440a50f5b931fa6be275b69985c3c0b4a2f
+
+• multiple_relation.feature (1895 bytes)
+  Path original: features/sub_resources/multiple_relation.feature
+  SHA: c774257aa3743c5aed351c7121e802ade023755c
+
+• deserialization.feature (2955 bytes)
+  Path original: features/xml/deserialization.feature
+  SHA: ae2d2ef66ab9a6ad1af01801f8e7088a3f08ecb7
+

@@ -1,0 +1,7 @@
+Scenario 3: Escalate On-Call Page returns "Accepted." response
+  Tags: ['@generated', '@skip', '@team:DataDog/on-call']
+  Given  new "EscalateOnCallPage" request
+  And  request contains "page_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 202 Accepted.
+

@@ -1,0 +1,8 @@
+Scenario 11: Adding a new catalog promotion with one scope and one action
+  Tags: ['@ui', '@mink:chromedriver', '@no-api']
+  When  I want to create a new catalog promotion
+  And  I add a new catalog promotion scope
+  And  I add a new catalog promotion action
+  Then  I should see the catalog promotion scope configuration form
+  And  I should see the catalog promotion action configuration form
+

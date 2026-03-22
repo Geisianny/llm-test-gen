@@ -1,0 +1,7 @@
+Scenario: Multiple activation attempts with same token
+  Given there is a registered user with an unactivated account
+  And the user has received an activation token via email
+  When the user activates their account using the received token
+  And attempts to activate their account again using the same token
+  Then the system denies the second activation attempt
+  And displays a message indicating that the account is already activated

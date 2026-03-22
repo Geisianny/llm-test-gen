@@ -1,0 +1,6 @@
+Scenario 1: "Add to cart" button is disabled when requested quantity exceeds stock
+  Tags: ['@no-api', '@ui', '@javascript']
+  When  I view product "Sylius T-Shirt"
+  And  I update the quantity of this product to 3
+  Then  I should not be able to add it
+

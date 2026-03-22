@@ -1,0 +1,5 @@
+Scenario 1: 
+  Given  the following invoices exist:
+  When  the background task to send reminders for unpaid invoices
+  Then  the workflow for the invoice for "customer.two@example.org" will be at "customer_warning_sent"
+

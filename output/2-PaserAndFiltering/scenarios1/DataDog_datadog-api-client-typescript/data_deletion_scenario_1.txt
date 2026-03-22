@@ -1,0 +1,8 @@
+Scenario 1: Cancels a data deletion request returns "Bad Request" response
+  Tags: ['@replay-only', '@team:DataDog/supportability-engineering']
+  Given  operation "CancelDataDeletionRequest" enabled
+  And  new "CancelDataDeletionRequest" request
+  And  request contains "id" parameter with value "id-1"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

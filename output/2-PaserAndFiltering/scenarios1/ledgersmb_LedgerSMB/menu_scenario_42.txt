@@ -1,0 +1,16 @@
+Scenario Outline 42: Navigate to menu "<path>" and open screen "<screen>" - Example 42
+  Tags: ['@wip']
+  When  I navigate the menu and select the item at "Timecards > Import"
+  Then  I should see the  screen
+
+  Examples:
+    | path | screen |
+    | Timecards > Import |  |
+    | Timecards > Search |  |
+    | Timecards > Translations > Description |  |
+    | Transaction Approval > Batches |  |
+    | Transaction Approval > Drafts |  |
+    | Transaction Approval > Inventory | unapproved inventory adjustments search screen |
+    | Transaction Approval > Reconciliation |  |
+    | Transaction Templates |  |
+

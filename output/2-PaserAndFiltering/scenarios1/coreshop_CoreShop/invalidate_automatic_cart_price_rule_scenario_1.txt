@@ -1,0 +1,7 @@
+Scenario 1: Invalidate Price Rule by adding another Product
+  When  I add this product to the cart
+  And  I should see "TShirt" with unit price "€100.00" in my cart
+  And  my cart's total should be "€80.00"
+  Given  I add this product to the cart
+  And  my cart's total should be "€200.00"
+

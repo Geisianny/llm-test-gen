@@ -1,0 +1,8 @@
+Scenario 2: Store Theme
+  Given  the site has a country "Germany" with currency "EUR"
+  And  the country "Germany" is active
+  And  the site has a store "Germany" with country "Germany" and currency "EUR"
+  And  the store "Germany" uses theme "germany"
+  And  I am in store "Germany"
+  Then  the current theme name should be "germany"
+

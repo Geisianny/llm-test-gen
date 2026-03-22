@@ -1,0 +1,14 @@
+Scenario 2: admin configure labels
+  Tags: ['@selenium']
+  Given  I am logged in as admin
+  And  I am on the environment control panel
+  And  I follow "Plugins"
+  And  I follow "Configuration"
+  And  I follow "Manage Labels"
+  And  I should see "no label registered yet" within "#comment-classification-labels"
+  And  I follow "Add a new label"
+  And  I fill in "Name" with "Question"
+  And  I check "Enable this label"
+  When  I follow "Save"
+  Then  I should see "Question" within "#comment-classification-labels"
+

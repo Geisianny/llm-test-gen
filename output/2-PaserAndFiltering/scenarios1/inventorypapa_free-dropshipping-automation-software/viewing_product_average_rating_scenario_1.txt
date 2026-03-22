@@ -1,0 +1,5 @@
+Scenario 1: Viewing product's average rating
+  Tags: ['@ui', '@api']
+  When  I check this product's details
+  Then  I should see "3.4" as its average rating
+

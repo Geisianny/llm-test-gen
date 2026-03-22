@@ -1,0 +1,10 @@
+Scenario 7: Delete a tag configuration returns "No Content" response
+  Tags: ['@replay-only', '@skip-validation', '@team:DataDog/metrics-experience']
+  Given  there is a valid "metric" in the system
+  And  there is a valid "metric_tag_configuration" in the system
+  And  a valid "appKeyAuth" key in the system
+  And  new "DeleteTagConfiguration" request
+  And  request contains "metric_name" parameter with value "{{ unique_alnum }}"
+  When  the request is sent
+  Then  the response status is 204 No Content
+

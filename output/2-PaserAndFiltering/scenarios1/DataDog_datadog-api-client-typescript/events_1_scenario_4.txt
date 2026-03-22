@@ -1,0 +1,11 @@
+Scenario 4: Get a quick list of events returns "OK" response
+  Tags: ['@team:DataDog/event-management']
+  Given  new "ListEvents" request
+  And  request contains "filter[query]" parameter with value "datadog-agent"
+  And  request contains "filter[from]" parameter with value "2020-09-17T11:48:36+01:00"
+  And  request contains "filter[to]" parameter with value "2020-09-17T12:48:36+01:00"
+  And  request contains "page[limit]" parameter with value 5
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data" has length 0
+

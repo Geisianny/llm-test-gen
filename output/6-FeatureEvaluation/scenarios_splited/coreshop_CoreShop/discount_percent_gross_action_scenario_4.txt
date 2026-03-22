@@ -1,0 +1,6 @@
+Scenario: Apply voucher code on an empty cart
+  Given there is an active voucher-type rule with a 10 percent discount
+  And the cart is empty
+  When the user applies the voucher code
+  Then the system displays a message indicating that the cart is empty
+  And the cart total remains 0.00

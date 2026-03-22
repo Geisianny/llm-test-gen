@@ -1,0 +1,4 @@
+Scenario 4: Custom normalization operation with shorthand configuration
+  When  I send a "GET" request to "/short_custom/2/normalization"
+  Then  the JSON should be equal to:
+

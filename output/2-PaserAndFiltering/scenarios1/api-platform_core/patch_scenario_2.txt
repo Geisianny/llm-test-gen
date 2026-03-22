@@ -1,0 +1,5 @@
+Scenario 2: Patch an item
+  When  I add "Content-Type" header equal to "application/merge-patch+json"
+  And  I send a "PATCH" request to "/patch_dummies/1" with body:
+  Then  the JSON node "name" should contain "Patched"
+

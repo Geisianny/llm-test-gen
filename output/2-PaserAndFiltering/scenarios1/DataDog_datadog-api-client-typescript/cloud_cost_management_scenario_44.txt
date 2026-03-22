@@ -1,0 +1,6 @@
+Scenario 44: List Google Cloud Usage Cost configs returns "OK" response
+  Tags: ['@team:DataDog/cloud-cost-management']
+  Given  new "ListCostGCPUsageCostConfigs" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

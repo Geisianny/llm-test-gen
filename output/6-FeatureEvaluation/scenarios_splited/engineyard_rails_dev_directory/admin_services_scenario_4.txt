@@ -1,0 +1,5 @@
+Scenario: Disable a service
+  Given there is a service with the name "Existing Service"
+  And the service is enabled
+  When the administrator disables the service "Existing Service"
+  Then the system lists the service "Existing Service" as disabled

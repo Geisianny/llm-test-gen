@@ -1,0 +1,9 @@
+Scenario 4: simple search for folder
+  Given  the following folders
+  When  I search contents for "Music"
+  Then  I should see "Music Folder"
+  And  I should see "" within ".search-folder-item"
+  And  I should not see "Videos Folder"
+  And  I follow "Music Folder"
+  Then  I should be on article "Music Folder"
+

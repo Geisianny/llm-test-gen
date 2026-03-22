@@ -1,0 +1,9 @@
+Scenario 1: Proper shipping fee, tax and product tax
+  Tags: ['@ui']
+  Given  I have product "PHP T-Shirt" in the cart
+  When  I proceed selecting "DHL" shipping method
+  And  I choose "Offline" payment method
+  Then  my cart total should be "$135.30"
+  And  my cart taxes should be "$25.30"
+  And  my cart shipping total should be "$12.30"
+

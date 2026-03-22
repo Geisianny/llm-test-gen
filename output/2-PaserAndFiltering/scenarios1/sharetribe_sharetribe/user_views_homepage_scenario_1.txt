@@ -1,0 +1,12 @@
+Scenario 1: Latest offers on the homepage
+  Tags: ['@javascript']
+  Given  there are following users:
+  And  there is a listing with title "car spare parts" from "kassi_testperson1" with category "Items" and with listing shape "Selling"
+  And  there is a listing with title "bike" from "kassi_testperson1" with category "Items" and with listing shape "Selling"
+  And  that listing is closed
+  And  there is a listing with title "saw" from "kassi_testperson2" with category "Items" and with listing shape "Requesting"
+  When  I am on the homepage
+  Then  I should see "car spare parts"
+  And  I should not see "bike"
+  And  I should see "saw"
+

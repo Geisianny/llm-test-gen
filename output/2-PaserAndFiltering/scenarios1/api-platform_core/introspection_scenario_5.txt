@@ -1,0 +1,8 @@
+Scenario 5: Introspect deprecated queries
+  When  I send the following GraphQL request:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the GraphQL field "deprecatedResource" is deprecated for the reason "This resource is deprecated"
+  And  the GraphQL field "deprecatedResources" is deprecated for the reason "This resource is deprecated"
+

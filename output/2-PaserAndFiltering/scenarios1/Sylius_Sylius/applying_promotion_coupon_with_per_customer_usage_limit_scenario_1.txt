@@ -1,0 +1,8 @@
+Scenario 1: Receiving discount from valid coupon with a per customer usage limit as a logged in customer
+  Tags: ['@api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  And  I applied the coupon with code "SANTA2016"
+  When  I check the details of my cart
+  Then  my cart total should be "$90.00"
+  And  my discount should be "-$10.00"
+

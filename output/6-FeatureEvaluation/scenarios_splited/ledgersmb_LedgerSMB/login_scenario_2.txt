@@ -1,0 +1,6 @@
+Scenario: User successful login
+  Given there is a user with the username "user1" and password "password123"
+  When the user logs in with the username "user1"
+  And enters the correct password "password123"
+  Then the system grants access to the user dashboard
+  And displays a message confirming successful login

@@ -1,0 +1,16 @@
+Scenario 9: redirect user not logged
+  Tags: ['@selenium']
+  Given  the following forums
+  And  I go to /joaosilva/forum-one
+  And  I follow "article-options"
+  When  I follow "Configure forum"
+  And  I fill in tinyMCE "article_body" with "My description"
+  And  I check "Has terms of use:"
+  And  I follow "Save"
+  And  I follow "menu-dropdown"
+  When  I follow "Logout"
+  And  I wait for 1 seconds
+  And  I go to /joaosilva/forum-one?terms=terms
+  When  I follow "Accept"
+  Then  I should see "Login" within ".login-box"
+

@@ -1,0 +1,5 @@
+Scenario 9: As a logged-in referent I can not get deputy audiences
+  Given  I am logged with "referent@en-marche-dev.fr" via OAuth client "JeMengage Web"
+  When  I send a "GET" request to "/api/v3/audiences?scope=deputy"
+  Then  the response status code should be 403
+

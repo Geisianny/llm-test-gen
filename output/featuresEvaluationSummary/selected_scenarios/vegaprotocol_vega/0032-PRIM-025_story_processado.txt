@@ -1,0 +1,5 @@
+Scenario: Market data is updated after auction termination
+  Given the market "BTC/ETH" is in auction mode
+  When the network moves ahead "1" blocks
+  Then the market data for the market "BTC/ETH" should be updated with the new mark price "1050"
+  And other relevant market data fields are updated accordingly

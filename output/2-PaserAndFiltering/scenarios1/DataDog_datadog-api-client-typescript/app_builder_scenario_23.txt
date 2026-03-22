@@ -1,0 +1,12 @@
+Scenario 23: Update App returns "OK" response
+  Tags: ['@skip-typescript', '@team:DataDog/app-builder-backend']
+  Given  new "UpdateApp" request
+  And  there is a valid "app" in the system
+  And  request contains "app_id" parameter from "app.data.id"
+  And  body with value {"data": {"attributes": {"name": "Updated Name", "rootInstanceName": "grid0"}, "id": "{{ app.data.id }}", "type": "appDefinitions"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.id" has the same value as "app.data.id"
+  And  the response "data.type" is equal to "appDefinitions"
+  And  the response "data.attributes.name" is equal to "Updated Name"
+

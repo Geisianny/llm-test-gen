@@ -1,0 +1,31 @@
+Feature: Publish Job
+Description: In order to get applicants
+    As recruiter
+    I should able to publish my job
+
+Background: 
+  Given  I have a recruiter with the following:
+  And  I have a draft job with the following:
+  And  I am logged in as "test@recruiter.com" identified by "test"
+
+Scenario 1: Successfully publish a job
+  Tags: ['@jobs', '@mail']
+  Given  I go to edit job draft with title "Test Publishing a Job"
+  And  I wait for the ajax response
+  And  I scroll "#yk-footer" into view
+  And  I follow "Create job opening"
+  And  I wait for the ajax response
+  And  I follow "Preview"
+  And  I wait for the ajax response
+  And  I scroll "#job_incomplete" into view
+  And  I check "I have read the terms an conditions and accept it"
+  And  I wait for the ajax response
+  And  I scroll "#job_incomplete" into view
+  And  I follow "Publish job"
+  And  I wait for the ajax response
+  Then  I should see "Publishing successfully finished"
+  And  an email should be sent to "test@recruiter.com"
+  And  an email should be sent from "email@example.com"
+  And  sent email should be contain "Click here to accept or reject the job opening"
+  And  sent email should be contain "We hereby acknowledge receipt of your job announcement"
+

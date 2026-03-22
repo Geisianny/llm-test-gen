@@ -1,0 +1,4 @@
+Scenario 5: Access disabled organization profile
+  Given  I go to profile page for organization "Profile Disabled"
+  Then  I should see "This profile is disabled."
+

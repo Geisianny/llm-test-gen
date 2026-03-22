@@ -1,0 +1,9 @@
+Scenario 4: Trying to add a product review with too long title
+  Tags: ['@api', '@ui', '@javascript']
+  When  I want to review product "Necronomicon"
+  And  I leave a comment "This book made me sad, but plot was fine." as "bartholomew@heaven.com"
+  And  I title it with very long title
+  And  I rate it with 3 points
+  And  I try to add it
+  Then  I should be notified that title must have at most 255 characters
+

@@ -1,0 +1,5 @@
+Scenario 3: Create a new product with a name and a meta title
+  Given  the site has a product "Shoe"
+  And  the products meta title is "Blue Shoe"
+  Then  the product should have meta title "Blue Shoe"
+

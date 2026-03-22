@@ -1,0 +1,4 @@
+Scenario 4: Search a word with a different case and expect the right result
+  When  I enter "saLT" as the left menu search field
+  Then  I should see a "Salt" link in the left menu
+

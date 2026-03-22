@@ -1,0 +1,6 @@
+Scenario: Publish a created topical event
+  Given there is an editor logged in
+  And there is a created topical event with the title "New Event"
+  When the editor publishes the topical event "New Event"
+  Then the system makes the event visible in the administrative interface
+  And displays a message confirming the event is published

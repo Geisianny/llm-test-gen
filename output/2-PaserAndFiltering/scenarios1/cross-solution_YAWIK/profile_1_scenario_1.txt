@@ -1,0 +1,7 @@
+Scenario 1: Browse Organization Profiles
+  Given  I want to see list organization profiles
+  Then  I should see "Organizations Profile"
+  And  the "#cam-organization-list" element should contain "Cross Solution"
+  And  I should not see "Profile Active Job"
+  And  I should not see "Profile Disabled"
+

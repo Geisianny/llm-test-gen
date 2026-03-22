@@ -1,0 +1,8 @@
+Scenario 1: Adding an association to an existing product
+  Tags: ['@no-api', '@ui', '@mink:chromedriver']
+  When  I want to modify the "LG G3" product
+  And  I associate as "Accessories" the "LG headphones" and "LG earphones" products
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this product should have an association "Accessories" with products "LG headphones" and "LG earphones"
+

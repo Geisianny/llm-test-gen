@@ -1,0 +1,7 @@
+Scenario 6: Delete an SLO correction returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/slo-app']
+  Given  new "DeleteSLOCorrection" request
+  And  request contains "slo_correction_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 204 OK
+

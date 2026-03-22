@@ -1,0 +1,7 @@
+Scenario 4: The my orginization menu under the Home menu
+  When  I follow the left menu "Home > My Organization"
+  Then  I should see a "Organization Configuration" text
+  And  I should see a "Configuration" link in the left menu
+  And  I should see a "Organization Trusts" link in the left menu
+  And  I should see a "Configuration Channels" link in the left menu
+

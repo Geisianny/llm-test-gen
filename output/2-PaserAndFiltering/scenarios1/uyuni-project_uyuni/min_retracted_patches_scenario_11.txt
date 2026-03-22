@@ -1,0 +1,9 @@
+Scenario 11: Retracted packages in the channel packages list
+  When  I follow the left menu "Software > Channel List > All"
+  And  I follow "Show All Child Channels"
+  And  I follow "Fake-RPM-SUSE-Channel"
+  And  I follow "Packages" in the content area
+  Then  the table row for "rute-dummy-2.0-1.1.x86_64" should contain "retracted" icon
+  Then  the table row for "rute-dummy-2.0-1.2.x86_64" should not contain "retracted" icon
+  Then  the table row for "rute-dummy-2.1-1.1.x86_64" should contain "retracted" icon
+

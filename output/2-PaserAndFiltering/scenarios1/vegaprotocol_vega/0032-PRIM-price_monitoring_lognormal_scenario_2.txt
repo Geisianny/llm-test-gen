@@ -1,0 +1,24 @@
+Scenario 2: Persistent order results in an auction (both triggers breached), orders placed during auction result in a trade with indicative price within the price monitoring bounds, hence auction concludes. (0032-PRIM-021)
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  And  the mark price should be "100000" for the market "ETH/DEC20"
+  When  time is updated to "2020-10-16T00:10:00Z"
+  Then  the parties place the following orders:
+  And  the mark price should be "100000" for the market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  When  the parties place the following orders:
+  Then  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/DEC20"
+  And  the mark price should be "100000" for the market "ETH/DEC20"
+  When  time is updated to "2020-10-16T00:14:00Z"
+  Then  the market data for the market "ETH/DEC20" should be:
+  And  the mark price should be "100000" for the market "ETH/DEC20"
+  When  time is updated to "2020-10-16T00:14:01Z"
+  Then  the market data for the market "ETH/DEC20" should be:
+  When  the parties place the following orders:
+  And  time is updated to "2020-10-16T00:20:01Z"
+  Then  the market data for the market "ETH/DEC20" should be:
+

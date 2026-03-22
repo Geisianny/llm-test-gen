@@ -1,0 +1,9 @@
+Scenario 1: Signup Licence
+  When  I go to the legal terms settings page
+  And  I fill in the draft with:
+  And  I press "Update"
+  Then  I should see "Legal terms saved"
+  When  the current domain is "foo.3scale.localhost"
+  And  I go to the signup page
+  Then  I should see "Ich war hier, Fantomas"
+

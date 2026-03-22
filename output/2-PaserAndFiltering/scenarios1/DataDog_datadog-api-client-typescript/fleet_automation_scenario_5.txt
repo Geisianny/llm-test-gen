@@ -1,0 +1,8 @@
+Scenario 5: Create a configuration deployment returns "CREATED" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "CreateFleetDeploymentConfigure" enabled
+  And  new "CreateFleetDeploymentConfigure" request
+  And  body with value {"data": {"attributes": {"config_operations": [{"file_op": "merge-patch", "file_path": "/datadog.yaml", "patch": {"apm_config": {"enabled": true}, "log_level": "debug", "logs_enabled": true}}], "filter_query": "env:prod AND service:web"}, "type": "deployment"}}
+  When  the request is sent
+  Then  the response status is 201 CREATED
+

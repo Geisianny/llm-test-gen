@@ -1,0 +1,14 @@
+Scenario 4: Create Scanning Rule returns "OK" response
+  Tags: ['@team:DataDog/sensitive-data-scanner']
+  Given  a valid "configuration" in the system
+  And  there is a valid "scanning_group" in the system
+  And  new "CreateScanningRule" request
+  And  body with value {"meta":{},"data":{"type":"sensitive_data_scanner_rule","attributes":{"name":"{{ unique }}","pattern":"pattern", "namespaces": ["admin"], "excluded_namespaces": ["admin.name"], "text_replacement":{"type":"none"},"tags":["sensitive_data:true"],"is_enabled":true,"priority":1,"included_keyword_configuration":{"keywords":["credit card"],"character_count":35}},"relationships":{"group":{"data":{"type":"{{ group.data.type }}","id":"{{ group.data.id }}"}}}}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.type" is equal to "sensitive_data_scanner_rule"
+  And  the response "data.attributes.name" is equal to "{{ unique }}"
+  And  the response "data.attributes.pattern" is equal to "pattern"
+  And  the response "data.attributes.included_keyword_configuration.character_count" is equal to 35
+  And  the response "data.attributes.included_keyword_configuration.keywords[0]" is equal to "credit card"
+

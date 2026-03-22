@@ -1,0 +1,8 @@
+Scenario 2: 
+  Given  the follow price "Product One" for "USD" monthly price with tiered volume with these tiers:
+  Given  the following subscriptions exist:
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  Then  the subscription for "customer.one@example.org" will expire in a month
+  And  there the latest invoice for "customer.one@example.org" will be for 1000 "USD"
+

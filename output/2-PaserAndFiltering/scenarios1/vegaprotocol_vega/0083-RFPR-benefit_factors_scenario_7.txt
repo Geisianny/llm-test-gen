@@ -1,0 +1,8 @@
+Scenario 7: Referal reward factor set greater than referralProgram.maxReferralRewardProportion (0029-FEES-029, 0029-FEES-031)
+  Given  the parties place the following orders:
+  When  the network moves ahead "3" epochs
+  Then  the referral set stats for code "referral-code-1" at epoch "3" should have a running volume of 3000:
+  Given  the parties place the following orders:
+  When  the following trades should be executed:
+  Then  the following transfers should happen:
+

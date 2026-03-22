@@ -1,0 +1,6 @@
+Scenario 5: Attempting to save attachment after validation failure
+  Given  I am a writer
+  And  a draft publication "Standards on Beard Grooming" exists
+  When  I try and upload an attachment but there are validation errors
+  Then  I should be able to submit the attachment without re-uploading the file
+

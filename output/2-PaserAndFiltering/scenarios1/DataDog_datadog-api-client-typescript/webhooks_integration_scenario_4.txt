@@ -1,0 +1,7 @@
+Scenario 4: Create a webhooks integration returns "OK" response
+  Tags: ['@skip-terraform-config', '@team:Datadog/collaboration-integrations']
+  Given  new "CreateWebhooksIntegration" request
+  And  body with value {"name": "{{ unique }}", "url": "https://example.com/webhook"}
+  When  the request is sent
+  Then  the response status is 201 OK
+

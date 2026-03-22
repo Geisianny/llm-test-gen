@@ -1,0 +1,6 @@
+Scenario 4: Account plan changed event is hidden when on premises
+  Tags: ['@onpremises']
+  Given  master admin is logged in
+  When  they go to the new webhook page
+  Then  there is no field "Account Plan changed"
+

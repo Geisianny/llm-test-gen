@@ -1,0 +1,7 @@
+Scenario 1: Having cart maintained after logging in
+  Given  I add this product to the cart
+  When  I log in as "elon@musk.com" with "cybertruck" password
+  And  I see the summary of my cart
+  Then  there should be one item in my cart
+  And  this item should have name "TShirt"
+

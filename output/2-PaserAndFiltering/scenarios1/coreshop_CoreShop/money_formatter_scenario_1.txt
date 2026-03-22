@@ -1,0 +1,4 @@
+Scenario 1: Format currency in EUR for language de and en
+  Then  the amount "100" of currency "EUR" in language "de" should be formatted "1,00 €"
+  And  the amount "100" of currency "EUR" in language "en" should be formatted "€1.00"
+

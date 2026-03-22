@@ -1,0 +1,5 @@
+Scenario 7: Republish all non-editionable content types
+  Given  Non-editionable content exists
+  When  I request a bulk republishing of all non-editionable content
+  Then  I can see that all non-editionable content has been queued for republishing
+

@@ -1,0 +1,7 @@
+Scenario 2: Products used by backend table
+  Given  a product
+  And  a backend
+  And  the backend is used by the product
+  When  an admin is in the backend overview page
+  Then  there is a list of all products using it
+

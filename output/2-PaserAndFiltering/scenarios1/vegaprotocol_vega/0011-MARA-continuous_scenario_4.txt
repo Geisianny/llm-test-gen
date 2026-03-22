@@ -1,0 +1,12 @@
+Scenario 4: In Spot market, holding in holding account is correctly calculated for all order types in continuous trading pegged GTT. (0011-MARA-025)
+  Given  the following network parameters are set:
+  When  the parties place the following orders:
+  And  the parties place the following pegged orders:
+  Then  "party5" should have holding account balance of "1" for asset "BTC"
+  And  the order book should have the following volumes for market "BTC/ETH":
+  When  the parties place the following orders:
+  Then  the orders should have the following status:
+  And  the order book should have the following volumes for market "BTC/ETH":
+  When  the network moves ahead "2" blocks
+  Then  the orders should have the following status:
+

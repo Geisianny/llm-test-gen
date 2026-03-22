@@ -1,0 +1,7 @@
+Scenario 34: The Amazon 2023 Salt SSH minion is healthy
+  Tags: ['@amazon2023_ssh_minion']
+  Then  "amazon2023_ssh_minion" should have a FQDN
+  And  reverse resolution should work for "amazon2023_ssh_minion"
+  And  "amazon2023_ssh_minion" should communicate with the server using public interface
+  And  the clock from "amazon2023_ssh_minion" should be exact
+

@@ -1,0 +1,5 @@
+Scenario: Create a new state channel
+  Given there are no existing state channels with the name "Test Channel"
+  When the user creates a new state channel named "Test Channel"
+  Then the system creates the state channel "Test Channel"
+  And the state channel "Test Channel" is listed in the available state channels

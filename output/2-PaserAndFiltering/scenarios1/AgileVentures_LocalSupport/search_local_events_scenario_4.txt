@@ -1,0 +1,5 @@
+Scenario 4: Search displays only future events
+  Given  I fill in "Search Text" with "Some past event" within the main body
+  And  I press "Search"
+  Then  I should see "Sorry, it seems we don't have quite what you are looking for."
+

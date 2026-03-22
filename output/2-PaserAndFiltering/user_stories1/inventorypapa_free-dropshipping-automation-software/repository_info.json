@@ -1,0 +1,3871 @@
+{
+  "repository_name": "free-dropshipping-automation-software",
+  "repository_owner": "inventorypapa",
+  "repository_url": "https://github.com/inventorypapa/free-dropshipping-automation-software",
+  "visibility": "public",
+  "is_private": false,
+  "total_feature_files": 643,
+  "downloaded_files": 643,
+  "download_date": "2025-11-26 09:01:53",
+  "feature_files": [
+    {
+      "name": "adding_address.feature",
+      "original_path": "features/account/customer_account/address_book/adding_address.feature",
+      "size": 806,
+      "sha": "95a5c796041827250cbfa83a93e4a5f6af014bb6"
+    },
+    {
+      "name": "adding_address_validation.feature",
+      "original_path": "features/account/customer_account/address_book/adding_address_validation.feature",
+      "size": 1328,
+      "sha": "a56558efffa80063932661f9cb091a43caabfc94"
+    },
+    {
+      "name": "address_province_validation.feature",
+      "original_path": "features/account/customer_account/address_book/address_province_validation.feature",
+      "size": 1578,
+      "sha": "dc175bb6424616aa54514c9d7664150dbf0eef43"
+    },
+    {
+      "name": "deleting_address.feature",
+      "original_path": "features/account/customer_account/address_book/deleting_address.feature",
+      "size": 690,
+      "sha": "c3976fd1e2739452c77b57ca30206e4061e489e9"
+    },
+    {
+      "name": "deleting_address_created_after_checkout.feature",
+      "original_path": "features/account/customer_account/address_book/deleting_address_created_after_checkout.feature",
+      "size": 1382,
+      "sha": "e379d9539bbe23f748d56b87ac21da2f29b9c156"
+    },
+    {
+      "name": "editing_address.feature",
+      "original_path": "features/account/customer_account/address_book/editing_address.feature",
+      "size": 3002,
+      "sha": "60d2d1fca55c75cff193b2624c1d47834b3c1f63"
+    },
+    {
+      "name": "preventing_not_logged_user_from_operations_on_address_book.feature",
+      "original_path": "features/account/customer_account/address_book/preventing_not_logged_user_from_operations_on_address_book.feature",
+      "size": 1228,
+      "sha": "0a9eef8291401c6f2f146d8b1a475e2b75685e55"
+    },
+    {
+      "name": "setting_default_address.feature",
+      "original_path": "features/account/customer_account/address_book/setting_default_address.feature",
+      "size": 1730,
+      "sha": "6665885e3155a3d63e03cc72e92b0ba62c646cda"
+    },
+    {
+      "name": "viewing_addresses.feature",
+      "original_path": "features/account/customer_account/address_book/viewing_addresses.feature",
+      "size": 1175,
+      "sha": "a4171a7fc4dfc822b775f5514a2c9d7ae0531af9"
+    },
+    {
+      "name": "viewing_addresses_created_after_checkout.feature",
+      "original_path": "features/account/customer_account/address_book/viewing_addresses_created_after_checkout.feature",
+      "size": 1237,
+      "sha": "ad6d8d0273eaad363fe1b9d95b86c46a8186366b"
+    },
+    {
+      "name": "viewing_empty_address_book.feature",
+      "original_path": "features/account/customer_account/address_book/viewing_empty_address_book.feature",
+      "size": 454,
+      "sha": "b1582dbc67012cb9f2400b4e95eb4f099e5b8937"
+    },
+    {
+      "name": "changing_password.feature",
+      "original_path": "features/account/customer_account/changing_password.feature",
+      "size": 948,
+      "sha": "29e32887388aca17b22fd8d90e73c56276814314"
+    },
+    {
+      "name": "changing_password_validation.feature",
+      "original_path": "features/account/customer_account/changing_password_validation.feature",
+      "size": 1655,
+      "sha": "ed5cfe765dbce507a50449624e5feb108823b205"
+    },
+    {
+      "name": "customer_profile_validation.feature",
+      "original_path": "features/account/customer_account/customer_profile_validation.feature",
+      "size": 2094,
+      "sha": "3801b57dede5c5f3db721296eea85cb288162634"
+    },
+    {
+      "name": "editing_customer_profile.feature",
+      "original_path": "features/account/customer_account/editing_customer_profile.feature",
+      "size": 2115,
+      "sha": "72d5e98925fca0d018992622eacb25ea47547bf9"
+    },
+    {
+      "name": "redirect_when_already_signed_in.feature",
+      "original_path": "features/account/customer_account/redirect_when_already_signed_in.feature",
+      "size": 635,
+      "sha": "8f8a0ba2147eaec0aab227c2a746f0440a46c80a"
+    },
+    {
+      "name": "subscribing_newsletter.feature",
+      "original_path": "features/account/customer_account/subscribing_newsletter.feature",
+      "size": 715,
+      "sha": "d29ab750256b47073de16676eea6ab16339553d0"
+    },
+    {
+      "name": "being_unable_to_see_non_own_orders_and_associated_resources.feature",
+      "original_path": "features/account/customer_account/viewing_orders_history/being_unable_to_see_non_own_orders_and_associated_resources.feature",
+      "size": 1760,
+      "sha": "fb9be42b2b7784388a8b9c987aaea82d9a79f6fb"
+    },
+    {
+      "name": "changing_payment_method.feature",
+      "original_path": "features/account/customer_account/viewing_orders_history/changing_payment_method.feature",
+      "size": 1061,
+      "sha": "7c49f1ee3a9f9e520be8aaf61d66ac5b832f8110"
+    },
+    {
+      "name": "order_is_always_placed_in_a_base_currency_of_a_channel.feature",
+      "original_path": "features/account/customer_account/viewing_orders_history/order_is_always_placed_in_a_base_currency_of_a_channel.feature",
+      "size": 1471,
+      "sha": "24787409892c90842568de33191cadedc395cea9"
+    },
+    {
+      "name": "seeing_customer_orders_placed_as_guest.feature",
+      "original_path": "features/account/customer_account/viewing_orders_history/seeing_customer_orders_placed_as_guest.feature",
+      "size": 1222,
+      "sha": "22fd51a0715871dcb91b1e29e0fcd65d55b388d8"
+    },
+    {
+      "name": "seeing_province_created_manually_in_order_history.feature",
+      "original_path": "features/account/customer_account/viewing_orders_history/seeing_province_created_manually_in_order_history.feature",
+      "size": 1472,
+      "sha": "bfdbae9af015968eddb31e855c1c1dc6f102dbbc"
+    },
+    {
+      "name": "seeing_right_payment_amount_for_an_order.feature",
+      "original_path": "features/account/customer_account/viewing_orders_history/seeing_right_payment_amount_for_an_order.feature",
+      "size": 1235,
+      "sha": "82691826667f27255b37059e49d2a8c6c47b7644"
+    },
+    {
+      "name": "viewing_only_my_orders.feature",
+      "original_path": "features/account/customer_account/viewing_orders_history/viewing_only_my_orders.feature",
+      "size": 1464,
+      "sha": "1ac7424dd27921c21fb5eefb58137127458dcc20"
+    },
+    {
+      "name": "viewing_order.feature",
+      "original_path": "features/account/customer_account/viewing_orders_history/viewing_order.feature",
+      "size": 1363,
+      "sha": "25cdcd13c2c79b229e81ec0a066d2e73e314bf69"
+    },
+    {
+      "name": "viewing_order_items.feature",
+      "original_path": "features/account/customer_account/viewing_orders_history/viewing_order_items.feature",
+      "size": 1348,
+      "sha": "5992f59948bc112f8255ef59b276b78ba4b2f958"
+    },
+    {
+      "name": "viewing_order_items_with_proper_names.feature",
+      "original_path": "features/account/customer_account/viewing_orders_history/viewing_order_items_with_proper_names.feature",
+      "size": 1357,
+      "sha": "d3b8cf8d8a6dcd6d335166242af2d78d50525f33"
+    },
+    {
+      "name": "viewing_order_only_from_current_channel.feature",
+      "original_path": "features/account/customer_account/viewing_orders_history/viewing_order_only_from_current_channel.feature",
+      "size": 2044,
+      "sha": "ffe5e709d95f59aa6c8849dfad86ee0b54db08f3"
+    },
+    {
+      "name": "viewing_orders.feature",
+      "original_path": "features/account/customer_account/viewing_orders_history/viewing_orders.feature",
+      "size": 895,
+      "sha": "5703481b0c0f454cea7018cac46ae8241ac6a254"
+    },
+    {
+      "name": "viewing_payment_status_for_an_order.feature",
+      "original_path": "features/account/customer_account/viewing_orders_history/viewing_payment_status_for_an_order.feature",
+      "size": 1795,
+      "sha": "cfa6f585a0adaf789ecc880d8dff61adedbd1fec"
+    },
+    {
+      "name": "viewing_shipment_status_on_a_placed_order_show_page.feature",
+      "original_path": "features/account/customer_account/viewing_orders_history/viewing_shipment_status_on_a_placed_order_show_page.feature",
+      "size": 1871,
+      "sha": "2b2640789da00054931ba4b8731e6041ff4e189e"
+    },
+    {
+      "name": "receiving_email_after_registration.feature",
+      "original_path": "features/account/receiving_email_after_registration.feature",
+      "size": 973,
+      "sha": "90254806293e8eb5d309c4da50c9dc434183e3b8"
+    },
+    {
+      "name": "registering.feature",
+      "original_path": "features/account/registering.feature",
+      "size": 2555,
+      "sha": "4f497d69a9925eaeb1942038a0f98bc8a52f4451"
+    },
+    {
+      "name": "registering_validation.feature",
+      "original_path": "features/account/registering_validation.feature",
+      "size": 3633,
+      "sha": "bd82692daf04f9796c09c679baa0125ffdef9e70"
+    },
+    {
+      "name": "renewing_account_after_deletion.feature",
+      "original_path": "features/account/renewing_account_after_deletion.feature",
+      "size": 903,
+      "sha": "f4efa90881a5f65b74c7c597b2db190ae3b6e175"
+    },
+    {
+      "name": "resetting_password.feature",
+      "original_path": "features/account/resetting_password.feature",
+      "size": 1602,
+      "sha": "a5aa77392828f105597eb32efcf9439b56ffd2e4"
+    },
+    {
+      "name": "resetting_password_redirect.feature",
+      "original_path": "features/account/resetting_password_redirect.feature",
+      "size": 511,
+      "sha": "053dcca9000d3e8115a5bcd9e65166e853ab1783"
+    },
+    {
+      "name": "resetting_password_validation.feature",
+      "original_path": "features/account/resetting_password_validation.feature",
+      "size": 1463,
+      "sha": "1eedefa7b389cb88c1f59f1e4458472ce995adeb"
+    },
+    {
+      "name": "signing_in.feature",
+      "original_path": "features/account/signing_in.feature",
+      "size": 545,
+      "sha": "d98e4d332577495ac2c6abcb1719699b44675a27"
+    },
+    {
+      "name": "signing_in_validation.feature",
+      "original_path": "features/account/signing_in_validation.feature",
+      "size": 1472,
+      "sha": "fc302a5cfe487c7874c4dcaa85b1cbb628b49f26"
+    },
+    {
+      "name": "subscribing_newsletter_during_registration.feature",
+      "original_path": "features/account/subscribing_newsletter_during_registration.feature",
+      "size": 974,
+      "sha": "a41222424454d8049ac5de5bb24bcc0d77e21c4a"
+    },
+    {
+      "name": "verifying_email_address.feature",
+      "original_path": "features/account/verification/verifying_email_address.feature",
+      "size": 2954,
+      "sha": "cabed7a609866ea42eaa36c5f954b645fe0167af"
+    },
+    {
+      "name": "adding_country.feature",
+      "original_path": "features/addressing/managing_countries/adding_country.feature",
+      "size": 519,
+      "sha": "37e5b6a1b75d747ae9d9573cb3b9a79396f7092b"
+    },
+    {
+      "name": "adding_country_with_provinces.feature",
+      "original_path": "features/addressing/managing_countries/adding_country_with_provinces.feature",
+      "size": 1370,
+      "sha": "5986d02e2d51b7e00ad78d8273dacfb194c30bda"
+    },
+    {
+      "name": "country_unique_code_validation.feature",
+      "original_path": "features/addressing/managing_countries/country_unique_code_validation.feature",
+      "size": 495,
+      "sha": "974f6165eebfac37edf2adc4153b219275aa7db1"
+    },
+    {
+      "name": "editing_country.feature",
+      "original_path": "features/addressing/managing_countries/editing_country.feature",
+      "size": 1064,
+      "sha": "fe3c162bf3baa8895479dba176220b5cd4841fdc"
+    },
+    {
+      "name": "managing_provinces_of_country.feature",
+      "original_path": "features/addressing/managing_countries/managing_provinces_of_country.feature",
+      "size": 2047,
+      "sha": "1c532d7bf166afb2420afbc07d29b6a89dd23726"
+    },
+    {
+      "name": "province_unique_code_validation.feature",
+      "original_path": "features/addressing/managing_countries/province_unique_code_validation.feature",
+      "size": 765,
+      "sha": "b3f837d10e141b7736ff157871a677c505707626"
+    },
+    {
+      "name": "province_validation.feature",
+      "original_path": "features/addressing/managing_countries/province_validation.feature",
+      "size": 1845,
+      "sha": "dc08795ce9f766346b761e4160d4ba1fc544bea5"
+    },
+    {
+      "name": "adding_zone.feature",
+      "original_path": "features/addressing/managing_zones/adding_zone.feature",
+      "size": 2420,
+      "sha": "f603441a74e3fe9577cdce0257564987b7be5310"
+    },
+    {
+      "name": "browsing_zone.feature",
+      "original_path": "features/addressing/managing_zones/browsing_zone.feature",
+      "size": 545,
+      "sha": "3381c5bdc8f444d0d888f21d5c5913a05d3cd6b9"
+    },
+    {
+      "name": "deleting_multiple_zones.feature",
+      "original_path": "features/addressing/managing_zones/deleting_multiple_zones.feature",
+      "size": 757,
+      "sha": "cf0a855579d96f0c6bdebd0c4982d0411a1dfb4c"
+    },
+    {
+      "name": "deleting_zone.feature",
+      "original_path": "features/addressing/managing_zones/deleting_zone.feature",
+      "size": 1068,
+      "sha": "8e35b7ea255eeef1f5be550fe9dc3523e64b6500"
+    },
+    {
+      "name": "editing_zone.feature",
+      "original_path": "features/addressing/managing_zones/editing_zone.feature",
+      "size": 2551,
+      "sha": "8beef82fb4f4cc38da256bb01c68c491e42ba1f0"
+    },
+    {
+      "name": "zone_unique_code_validation.feature",
+      "original_path": "features/addressing/managing_zones/zone_unique_code_validation.feature",
+      "size": 790,
+      "sha": "a999372625ef84d0062c1334b84bc34952f29f49"
+    },
+    {
+      "name": "zone_validation.feature",
+      "original_path": "features/addressing/managing_zones/zone_validation.feature",
+      "size": 2563,
+      "sha": "dbac8fa8d991d882b34cc43e2f7fc57eadbb1f5d"
+    },
+    {
+      "name": "browsing_administration_panel_in_proper_language.feature",
+      "original_path": "features/admin/browsing_administration_panel_in_proper_language.feature",
+      "size": 968,
+      "sha": "105801348ea6e5b9410855115bfbeeecae4b23f1"
+    },
+    {
+      "name": "dashboard.feature",
+      "original_path": "features/admin/dashboard.feature",
+      "size": 2045,
+      "sha": "f9aa49973c4438a4f981e5aed926be727fff1cfd"
+    },
+    {
+      "name": "dashboard_per_channel.feature",
+      "original_path": "features/admin/dashboard_per_channel.feature",
+      "size": 2590,
+      "sha": "74966f72ac4ad80c87bcb2e07e98aa8d9832aad8"
+    },
+    {
+      "name": "impersonating_customers.feature",
+      "original_path": "features/admin/impersonating_customers.feature",
+      "size": 2296,
+      "sha": "c410f678995bd25be7a524e65abce4d8030b1a0c"
+    },
+    {
+      "name": "placing_order_as_impersonated_customers.feature",
+      "original_path": "features/admin/placing_order_as_impersonated_customers.feature",
+      "size": 1746,
+      "sha": "471049aef9e67e55d10dd0930da97e532bc176f0"
+    },
+    {
+      "name": "redirecting_on_login_after_being_logout.feature",
+      "original_path": "features/admin/redirecting_on_login_after_being_logout.feature",
+      "size": 480,
+      "sha": "17ae72218b45f662165a4bb74593a46e789838eb"
+    },
+    {
+      "name": "sign_in.feature",
+      "original_path": "features/admin/sign_in.feature",
+      "size": 1249,
+      "sha": "61df8a0f195fc2be5003aac0bf17d1d38757ffc4"
+    },
+    {
+      "name": "switching_admins_locale.feature",
+      "original_path": "features/admin/switching_admins_locale.feature",
+      "size": 2079,
+      "sha": "8aae78290d9dc64f148137d58c23cf35e6ced1b4"
+    },
+    {
+      "name": "adding_product_to_cart.feature",
+      "original_path": "features/cart/shopping_cart/adding_product_to_cart.feature",
+      "size": 1482,
+      "sha": "e3d6462742b5d2d0d94254b45a409f6ac0568abd"
+    },
+    {
+      "name": "adding_product_to_cart_with_prices_dependent_on_channel.feature",
+      "original_path": "features/cart/shopping_cart/adding_product_to_cart_with_prices_dependent_on_channel.feature",
+      "size": 1838,
+      "sha": "7a85c46dd1b0ae2bdeb16f17afba6c21b900c8b7"
+    },
+    {
+      "name": "adding_product_with_options_to_cart.feature",
+      "original_path": "features/cart/shopping_cart/adding_product_with_options_to_cart.feature",
+      "size": 900,
+      "sha": "3c95234f9870029fd9a73f284bf9c792ceca63d3"
+    },
+    {
+      "name": "adding_product_with_variants_to_cart.feature",
+      "original_path": "features/cart/shopping_cart/adding_product_with_variants_to_cart.feature",
+      "size": 975,
+      "sha": "460d3d762b59900d17541970b6ce2333759bab2f"
+    },
+    {
+      "name": "adding_products_with_quantity_to_cart.feature",
+      "original_path": "features/cart/shopping_cart/adding_products_with_quantity_to_cart.feature",
+      "size": 1200,
+      "sha": "0ecc280fda87b101bb495c66728cbbc0e0d2bc53"
+    },
+    {
+      "name": "allowing_access_only_for_correctly_logged_in_users.feature",
+      "original_path": "features/cart/shopping_cart/allowing_access_only_for_correctly_logged_in_users.feature",
+      "size": 10008,
+      "sha": "3bc5572ac462a51ccd9b6279bbbc89334530c67e"
+    },
+    {
+      "name": "changing_display_currency_of_cart.feature",
+      "original_path": "features/cart/shopping_cart/changing_display_currency_of_cart.feature",
+      "size": 1112,
+      "sha": "0cd6cadeb766f1f7511eb24f794b3073f4a2fb30"
+    },
+    {
+      "name": "changing_quantity_of_product_in_cart.feature",
+      "original_path": "features/cart/shopping_cart/changing_quantity_of_product_in_cart.feature",
+      "size": 937,
+      "sha": "64f739c748b0984f102eac27a384a9b2d8234fce"
+    },
+    {
+      "name": "clearing_cart.feature",
+      "original_path": "features/cart/shopping_cart/clearing_cart.feature",
+      "size": 496,
+      "sha": "7a6ada536b5270871ce0a1247da2b0e1d08d16d4"
+    },
+    {
+      "name": "clearing_cart_after_logging_out.feature",
+      "original_path": "features/cart/shopping_cart/clearing_cart_after_logging_out.feature",
+      "size": 750,
+      "sha": "bd227d604aeba8554bff63b402fc94213f028fa6"
+    },
+    {
+      "name": "currency_rounding_edge_case.feature",
+      "original_path": "features/cart/shopping_cart/currency_rounding_edge_case.feature",
+      "size": 1127,
+      "sha": "fa7bd351a775bd582d37527a6f217a8c5573c4f2"
+    },
+    {
+      "name": "deleting_expired_carts_automatically.feature",
+      "original_path": "features/cart/shopping_cart/deleting_expired_carts_automatically.feature",
+      "size": 806,
+      "sha": "3e4c453d2cb8c273d8152daa93a808f50bc9d970"
+    },
+    {
+      "name": "having_proper_product_image_displayed_in_cart.feature",
+      "original_path": "features/cart/shopping_cart/having_proper_product_image_displayed_in_cart.feature",
+      "size": 1233,
+      "sha": "8f4a560b67e9dff6170c2c43045234d31601b122"
+    },
+    {
+      "name": "maintaining_cart_after_authorization.feature",
+      "original_path": "features/cart/shopping_cart/maintaining_cart_after_authorization.feature",
+      "size": 2830,
+      "sha": "f1b696ef82a77173df72ea05fd2d9e9a98d8901e"
+    },
+    {
+      "name": "maintaining_last_picked_up_cart.feature",
+      "original_path": "features/cart/shopping_cart/maintaining_last_picked_up_cart.feature",
+      "size": 467,
+      "sha": "c40d6548d8b8d9aa1502e3840db1d9af60b751e0"
+    },
+    {
+      "name": "maintaining_previous_cart_after_authorization.feature",
+      "original_path": "features/cart/shopping_cart/maintaining_previous_cart_after_authorization.feature",
+      "size": 961,
+      "sha": "cccfe6b5872f67b25b4d3b6be5595a25ac5e929e"
+    },
+    {
+      "name": "removing_cart_item.feature",
+      "original_path": "features/cart/shopping_cart/removing_cart_item.feature",
+      "size": 1245,
+      "sha": "26a6af5e326aea3eb014cc222079ccdf81e9bc8c"
+    },
+    {
+      "name": "resolving_default_shipping_method_in_cart_summary_for_simple_products.feature",
+      "original_path": "features/cart/shopping_cart/resolving_default_shipping_method_in_cart_summary_for_simple_products.feature",
+      "size": 1850,
+      "sha": "ee9941da86c40fed43b2c1cc039b321aeba1ddc0"
+    },
+    {
+      "name": "seeing_detailed_information_about_cart.feature",
+      "original_path": "features/cart/shopping_cart/seeing_detailed_information_about_cart.feature",
+      "size": 744,
+      "sha": "d7110d4c50a86ec14aba2c43b987b53f3fbb8c4a"
+    },
+    {
+      "name": "seeing_shipping_costs_only_when_required.feature",
+      "original_path": "features/cart/shopping_cart/seeing_shipping_costs_only_when_required.feature",
+      "size": 1725,
+      "sha": "7c8c4da8f2863e076afca7da3435b41883eba563"
+    },
+    {
+      "name": "viewing_cart_summary.feature",
+      "original_path": "features/cart/shopping_cart/viewing_cart_summary.feature",
+      "size": 385,
+      "sha": "c3520ea8307d36a5be3044d0b4c8670c14aa293f"
+    },
+    {
+      "name": "viewing_cart_summary_in_many_channels.feature",
+      "original_path": "features/cart/shopping_cart/viewing_cart_summary_in_many_channels.feature",
+      "size": 1731,
+      "sha": "ae5d7c085580fa234ac07e2ddb27c53d78a7f652"
+    },
+    {
+      "name": "adding_channel.feature",
+      "original_path": "features/channel/managing_channels/adding_channel.feature",
+      "size": 2031,
+      "sha": "30b6d2ef91439635d23c50b32992a1de5c60ea83"
+    },
+    {
+      "name": "adding_channel_with_shop_billing_data.feature",
+      "original_path": "features/channel/managing_channels/adding_channel_with_shop_billing_data.feature",
+      "size": 1221,
+      "sha": "6c6ea0eee47890d8901942ca5810c0e7281f5ff1"
+    },
+    {
+      "name": "adding_new_channel_with_menu_taxon.feature",
+      "original_path": "features/channel/managing_channels/adding_new_channel_with_menu_taxon.feature",
+      "size": 1210,
+      "sha": "943ae8e4aad669e8cb037bf56086b7565a822184"
+    },
+    {
+      "name": "browsing_channels.feature",
+      "original_path": "features/channel/managing_channels/browsing_channels.feature",
+      "size": 598,
+      "sha": "f95b116ae0a0c3fce9a2c3c9a2752bf18e064539"
+    },
+    {
+      "name": "channel_unique_code_validation.feature",
+      "original_path": "features/channel/managing_channels/channel_unique_code_validation.feature",
+      "size": 686,
+      "sha": "ac4e5e3a8f3f03f8774bcd5a25c9e3882729f91c"
+    },
+    {
+      "name": "channel_validation.feature",
+      "original_path": "features/channel/managing_channels/channel_validation.feature",
+      "size": 2055,
+      "sha": "0971f2159d7f79ca55b30c670cf79050c275af3c"
+    },
+    {
+      "name": "deleting_channel.feature",
+      "original_path": "features/channel/managing_channels/deleting_channel.feature",
+      "size": 635,
+      "sha": "372e70c0eb61d06a8df197c0a00c0e87e1dd5c95"
+    },
+    {
+      "name": "deleting_multiple_channels.feature",
+      "original_path": "features/channel/managing_channels/deleting_multiple_channels.feature",
+      "size": 885,
+      "sha": "422ee1dc97d0e1d4ec5f7fba58ba1172ecb648d8"
+    },
+    {
+      "name": "editing_channel.feature",
+      "original_path": "features/channel/managing_channels/editing_channel.feature",
+      "size": 1252,
+      "sha": "825342a205e36e6ef37ea69ff6b91f2af8c5f09f"
+    },
+    {
+      "name": "editing_menu_taxon_on_channel.feature",
+      "original_path": "features/channel/managing_channels/editing_menu_taxon_on_channel.feature",
+      "size": 834,
+      "sha": "bb32cbf8b52f7197576bd0b41ff93c045e6ae442"
+    },
+    {
+      "name": "editing_shop_billing_data_on_channel.feature",
+      "original_path": "features/channel/managing_channels/editing_shop_billing_data_on_channel.feature",
+      "size": 1153,
+      "sha": "801ae49a6ea01ca40e920eab8ec4168f880d8096"
+    },
+    {
+      "name": "not_being_able_to_add_disabled_channel_when_no_other_exist.feature",
+      "original_path": "features/channel/managing_channels/not_being_able_to_add_disabled_channel_when_no_other_exist.feature",
+      "size": 908,
+      "sha": "15e323cf6858a9a965a5114aa0e73a5684c18747"
+    },
+    {
+      "name": "not_being_able_to_delete_last_available_channel.feature",
+      "original_path": "features/channel/managing_channels/not_being_able_to_delete_last_available_channel.feature",
+      "size": 566,
+      "sha": "e30a65d27c14f62d196108f295a44f65675a31d0"
+    },
+    {
+      "name": "not_being_able_to_disable_last_available_channel.feature",
+      "original_path": "features/channel/managing_channels/not_being_able_to_disable_last_available_channel.feature",
+      "size": 700,
+      "sha": "0d726370ed0c951ba96a3e7a8885659fe97e88dc"
+    },
+    {
+      "name": "selecting_currencies_available_for_channel.feature",
+      "original_path": "features/channel/managing_channels/selecting_currencies_available_for_channel.feature",
+      "size": 1318,
+      "sha": "6a418810ede0439715c24011cde2cce33146253e"
+    },
+    {
+      "name": "selecting_default_tax_zone_for_channel.feature",
+      "original_path": "features/channel/managing_channels/selecting_default_tax_zone_for_channel.feature",
+      "size": 1784,
+      "sha": "15894e703165ad42096b9d89c2da5d992b3ea3dd"
+    },
+    {
+      "name": "selecting_locales_available_for_channel.feature",
+      "original_path": "features/channel/managing_channels/selecting_locales_available_for_channel.feature",
+      "size": 2458,
+      "sha": "fa73bafba8a921570f39ef59bd48094bb91da5eb"
+    },
+    {
+      "name": "selecting_tax_calculation_strategy_for_channel.feature",
+      "original_path": "features/channel/managing_channels/selecting_tax_calculation_strategy_for_channel.feature",
+      "size": 1984,
+      "sha": "0309571c55c89d7305f060e634e969fa5c3c9a4c"
+    },
+    {
+      "name": "toggling_channel.feature",
+      "original_path": "features/channel/managing_channels/toggling_channel.feature",
+      "size": 1034,
+      "sha": "3a7f3972d5f4a66e48b047f289f936e8174bbca6"
+    },
+    {
+      "name": "products_accessibility_in_multiple_channels.feature",
+      "original_path": "features/channel/products_accessibility_in_multiple_channels/products_accessibility_in_multiple_channels.feature",
+      "size": 874,
+      "sha": "038b5d8ead2afcdc39337c3e844a233b4bb5caa5"
+    },
+    {
+      "name": "displaying_themed_channel_website.feature",
+      "original_path": "features/channel/theming/displaying_themed_channel_website.feature",
+      "size": 845,
+      "sha": "2b649cdb24ad44c5c32d6d5c65df819bc90a2731"
+    },
+    {
+      "name": "managing_themes_per_channel.feature",
+      "original_path": "features/channel/theming/managing_themes_per_channel.feature",
+      "size": 892,
+      "sha": "afab79366d036e3412bf59cade60a00c1918e63a"
+    },
+    {
+      "name": "overriding_plugin_template_with_theme.feature",
+      "original_path": "features/channel/theming/overriding_plugin_template_with_theme.feature",
+      "size": 903,
+      "sha": "d38f5ca764f84ad891f84dc69e87f7f3b122651d"
+    },
+    {
+      "name": "ability_to_change_email_during_checkout.feature",
+      "original_path": "features/checkout/ability_to_change_email_during_checkout.feature",
+      "size": 1413,
+      "sha": "fb697e67da17be54d855596a07e1e1e7eca804d5"
+    },
+    {
+      "name": "ability_to_checkout_as_guest_with_a_registered_email.feature",
+      "original_path": "features/checkout/ability_to_checkout_as_guest_with_a_registered_email.feature",
+      "size": 961,
+      "sha": "705fbc8255ab638520a04dc126ce5de554e6fd25"
+    },
+    {
+      "name": "ability_to_confirm_an_order_with_a_promotion_on_shipping.feature",
+      "original_path": "features/checkout/ability_to_confirm_an_order_with_a_promotion_on_shipping.feature",
+      "size": 1079,
+      "sha": "5f1ac351eb80a1b34546ee31cd0cd2a72160e6c4"
+    },
+    {
+      "name": "accessing_order_right_after_completing_checkout.feature",
+      "original_path": "features/checkout/accessing_order_right_after_completing_checkout.feature",
+      "size": 998,
+      "sha": "218f8c8e93bd9f645fcc1011f1dfa1bac3c6fde9"
+    },
+    {
+      "name": "adding_product_with_promotion_that_makes_the_order_free.feature",
+      "original_path": "features/checkout/adding_product_with_promotion_that_makes_the_order_free.feature",
+      "size": 1054,
+      "sha": "8eecfa2a862886c994c1e4ca9006b29b27531aaf"
+    },
+    {
+      "name": "choosing_billing_and_shipping_address_from_address_book.feature",
+      "original_path": "features/checkout/addressing_order/choosing_billing_and_shipping_address_from_address_book.feature",
+      "size": 2530,
+      "sha": "0c0f68481376471ab42de8759d6c559256d51c77"
+    },
+    {
+      "name": "choosing_province_for_country.feature",
+      "original_path": "features/checkout/addressing_order/choosing_province_for_country.feature",
+      "size": 3054,
+      "sha": "58c443036eb2ab85421d53a8b85fda72bdceb9ee"
+    },
+    {
+      "name": "filling_billing_and_shipping_address_details.feature",
+      "original_path": "features/checkout/addressing_order/filling_billing_and_shipping_address_details.feature",
+      "size": 1299,
+      "sha": "8560d6a4e2a9109dcfd41adef480d46d9ef26ed7"
+    },
+    {
+      "name": "filling_shipping_address_details_as_guest_with_existing_account.feature",
+      "original_path": "features/checkout/addressing_order/filling_shipping_address_details_as_guest_with_existing_account.feature",
+      "size": 1020,
+      "sha": "232368ecdc74b1458ae3c11551190234ea0ed553"
+    },
+    {
+      "name": "filling_shipping_and_billing_address_details_as_guest.feature",
+      "original_path": "features/checkout/addressing_order/filling_shipping_and_billing_address_details_as_guest.feature",
+      "size": 1887,
+      "sha": "6e3801a4c7f7144e2d8e8fbfb15a3865ef58f174"
+    },
+    {
+      "name": "having_default_address_preselected.feature",
+      "original_path": "features/checkout/addressing_order/having_default_address_preselected.feature",
+      "size": 1461,
+      "sha": "eeb67037e9c83ae6c8a99a1ad597f292f63cc569"
+    },
+    {
+      "name": "having_only_possible_country_preselected.feature",
+      "original_path": "features/checkout/addressing_order/having_only_possible_country_preselected.feature",
+      "size": 1014,
+      "sha": "1df26cd0ff6e71e05e8f83bc6c06350d806504d7"
+    },
+    {
+      "name": "order_address_validation.feature",
+      "original_path": "features/checkout/addressing_order/order_address_validation.feature",
+      "size": 1891,
+      "sha": "036aa5e0bb33b25bb1b48f84764c21d63c56a5be"
+    },
+    {
+      "name": "restricting_list_of_countries_available_for_addressing.feature",
+      "original_path": "features/checkout/addressing_order/restricting_list_of_countries_available_for_addressing.feature",
+      "size": 1167,
+      "sha": "81bdc59c5826de9457e72d1d5d06443d42f2f0b8"
+    },
+    {
+      "name": "returning_from_addressing_step_to_shop_homepage.feature",
+      "original_path": "features/checkout/addressing_order/returning_from_addressing_step_to_shop_homepage.feature",
+      "size": 739,
+      "sha": "01eff918443b1c1529418af79b76155666e7d729"
+    },
+    {
+      "name": "returning_to_addressing_step_and_changing_address_data.feature",
+      "original_path": "features/checkout/addressing_order/returning_to_addressing_step_and_changing_address_data.feature",
+      "size": 1049,
+      "sha": "b65cb88334dd03ee37309d7b24c830391fa60b7e"
+    },
+    {
+      "name": "returning_to_addressing_step_with_a_different_shipping_address.feature",
+      "original_path": "features/checkout/addressing_order/returning_to_addressing_step_with_a_different_shipping_address.feature",
+      "size": 2836,
+      "sha": "d869a5d016c67e5344804e50ed85d26dd153b986"
+    },
+    {
+      "name": "shipping_and_billing_address_validation.feature",
+      "original_path": "features/checkout/addressing_order/shipping_and_billing_address_validation.feature",
+      "size": 1592,
+      "sha": "883ca623c98cae71bc2b1e8a2323bdc9fe17c717"
+    },
+    {
+      "name": "sign_in_during_addressing_step.feature",
+      "original_path": "features/checkout/addressing_order/sign_in_during_addressing_step.feature",
+      "size": 1444,
+      "sha": "b1d3db13ef4518a1470e192af87efc416f612c8e"
+    },
+    {
+      "name": "specifying_province_manually.feature",
+      "original_path": "features/checkout/addressing_order/specifying_province_manually.feature",
+      "size": 2041,
+      "sha": "33ed51a1962855894e164f832154fdc379243536"
+    },
+    {
+      "name": "assigning_customer_ip_address_to_placed_order.feature",
+      "original_path": "features/checkout/assigning_customer_ip_address_to_placed_order.feature",
+      "size": 1161,
+      "sha": "91353f8d7a8103bc98ef607d4e86d7075c46fcb0"
+    },
+    {
+      "name": "being_able_to_modify_remaining_steps.feature",
+      "original_path": "features/checkout/being_able_to_modify_remaining_steps.feature",
+      "size": 3837,
+      "sha": "0882ca2980d3f4acc8c74661d341b4c84c3828e6"
+    },
+    {
+      "name": "emptying_the_cart_after_checkout.feature",
+      "original_path": "features/checkout/emptying_the_cart_after_checkout.feature",
+      "size": 872,
+      "sha": "ef6e9b11945b5fd731e963663cdb6bc1ed320eb5"
+    },
+    {
+      "name": "having_new_addresses_saved_in_address_book.feature",
+      "original_path": "features/checkout/having_new_addresses_saved_in_address_book.feature",
+      "size": 2466,
+      "sha": "7b28aeb75fb8acb173e36b93bf4eac79277c9d40"
+    },
+    {
+      "name": "having_registration_account_form_prefilled_after_checkout.feature",
+      "original_path": "features/checkout/having_registration_account_form_prefilled_after_checkout.feature",
+      "size": 1481,
+      "sha": "3157252c4ba70265142359d8783575b9966029d5"
+    },
+    {
+      "name": "leaving_notes_on_order_during_checkout.feature",
+      "original_path": "features/checkout/leaving_notes_on_order_during_checkout.feature",
+      "size": 1243,
+      "sha": "e0362c5135777de9e117fc79f9ea1ebf24cea3e5"
+    },
+    {
+      "name": "not_seeing_payment_method_instructions_on_thank_you_page_if_order_total_is_zero.feature",
+      "original_path": "features/checkout/not_seeing_payment_method_instructions_on_thank_you_page_if_order_total_is_zero.feature",
+      "size": 1038,
+      "sha": "9aeda72598b6cd2733a24d89a77f2bc3c645cc44"
+    },
+    {
+      "name": "order_promotion_integrity_validation.feature",
+      "original_path": "features/checkout/order_promotion/order_promotion_integrity_validation.feature",
+      "size": 2821,
+      "sha": "7f2e9d903eeee35bba6ed797a04e7b19183bb0a4"
+    },
+    {
+      "name": "accessing_order_right_after_completing_checkout_1.feature",
+      "original_path": "features/checkout/paying_for_order/accessing_order_right_after_completing_checkout.feature",
+      "size": 1023,
+      "sha": "5a22b090d5923e2a31add0f358760dc9e08d9fed"
+    },
+    {
+      "name": "changing_offline_payment_method_after_order_confirmation.feature",
+      "original_path": "features/checkout/paying_for_order/changing_offline_payment_method_after_order_confirmation.feature",
+      "size": 2320,
+      "sha": "645e5f5e4f4bf2bc8bf59fb32428cd1a72efd2c3"
+    },
+    {
+      "name": "inform_customer_about_order_total_changes.feature",
+      "original_path": "features/checkout/paying_for_order/inform_customer_about_order_total_changes.feature",
+      "size": 2601,
+      "sha": "4f7de5cc865fa08689026e6f67443d798df7fde4"
+    },
+    {
+      "name": "paying_offline_during_checkout.feature",
+      "original_path": "features/checkout/paying_for_order/paying_offline_during_checkout.feature",
+      "size": 723,
+      "sha": "02cf2a516ef58b609d183b4c88a3b47b0f416a63"
+    },
+    {
+      "name": "paying_offline_during_checkout_as_guest.feature",
+      "original_path": "features/checkout/paying_for_order/paying_offline_during_checkout_as_guest.feature",
+      "size": 1283,
+      "sha": "d4b93f8500de4a1f00e4fe77d4c686df7a61c16f"
+    },
+    {
+      "name": "paying_with_paypal_during_checkout.feature",
+      "original_path": "features/checkout/paying_for_order/paying_with_paypal_during_checkout.feature",
+      "size": 2838,
+      "sha": "8af294d53134f61556d1c29e1fabeff74511e60b"
+    },
+    {
+      "name": "payment_method_integrity_validation.feature",
+      "original_path": "features/checkout/paying_for_order/payment_method_integrity_validation.feature",
+      "size": 879,
+      "sha": "4728939d041356249c58dc8dbebe9aa021fb841a"
+    },
+    {
+      "name": "preventing_not_available_payment_method_selection.feature",
+      "original_path": "features/checkout/paying_for_order/preventing_not_available_payment_method_selection.feature",
+      "size": 2414,
+      "sha": "51e6d895f7f4cbc8f5dc49cd381f5aab0469caaa"
+    },
+    {
+      "name": "preventing_payment_step_completion_without_a_selected_method.feature",
+      "original_path": "features/checkout/paying_for_order/preventing_payment_step_completion_without_a_selected_method.feature",
+      "size": 3062,
+      "sha": "dcc7a834fbe77b02aa3114937e0fe93815e62506"
+    },
+    {
+      "name": "preventing_to_pay_for_cancelled_order.feature",
+      "original_path": "features/checkout/paying_for_order/preventing_to_pay_for_cancelled_order.feature",
+      "size": 1067,
+      "sha": "710f4ea66b48865003edc15156932025c17fccd4"
+    },
+    {
+      "name": "retrying_to_pay_the_order_from_my_account_panel.feature",
+      "original_path": "features/checkout/paying_for_order/retrying_to_pay_the_order_from_my_account_panel.feature",
+      "size": 1042,
+      "sha": "3b08e41ce32a03924c58071c119bc4ebdd5d0b33"
+    },
+    {
+      "name": "returning_from_payment_step_to_one_of_previous_steps.feature",
+      "original_path": "features/checkout/paying_for_order/returning_from_payment_step_to_one_of_previous_steps.feature",
+      "size": 1908,
+      "sha": "fbc16443af18dbc51bf2f4161af3a887ebfec6de"
+    },
+    {
+      "name": "seeing_payment_method_instructions_on_thank_you_page.feature",
+      "original_path": "features/checkout/paying_for_order/seeing_payment_method_instructions_on_thank_you_page.feature",
+      "size": 959,
+      "sha": "559391d452ba6eff0c6b3cb3216ab38c785f653d"
+    },
+    {
+      "name": "selecting_order_payment_method.feature",
+      "original_path": "features/checkout/paying_for_order/selecting_order_payment_method.feature",
+      "size": 962,
+      "sha": "ede51d77bcdb4cd0edfa128f46ab09290e27e43e"
+    },
+    {
+      "name": "sorting_payment_method_selection.feature",
+      "original_path": "features/checkout/paying_for_order/sorting_payment_method_selection.feature",
+      "size": 1271,
+      "sha": "bf02cb8226424ae8b60db388a1d693d1fa07c29d"
+    },
+    {
+      "name": "picking_up_the_cart_with_the_locale_other_than_the_default.feature",
+      "original_path": "features/checkout/picking_up_the_cart_with_the_locale_other_than_the_default.feature",
+      "size": 701,
+      "sha": "8df64aa9fa9aa6ed14296393429605e1e96a37b6"
+    },
+    {
+      "name": "placing_an_order_after_moving_back_in_checkout.feature",
+      "original_path": "features/checkout/placing_an_order_after_moving_back_in_checkout.feature",
+      "size": 1828,
+      "sha": "dbd4952043aa965d52439d9854a45bfa808955eb"
+    },
+    {
+      "name": "placing_an_order_with_different_scopes_for_shipping_and_taxes.feature",
+      "original_path": "features/checkout/placing_an_order_with_different_scopes_for_shipping_and_taxes.feature",
+      "size": 3275,
+      "sha": "ea9d4aa00e30bb62985e0de9ecea0086ffc7d637"
+    },
+    {
+      "name": "placing_an_order_on_a_single_channel_store.feature",
+      "original_path": "features/checkout/placing_order_on_multi_channel/placing_an_order_on_a_single_channel_store.feature",
+      "size": 1917,
+      "sha": "dbbb3fbd7ff34b6b9a4c0fc96cad21f9428a6a47"
+    },
+    {
+      "name": "placing_an_order_on_multiple_channels_with_different_currency.feature",
+      "original_path": "features/checkout/placing_order_on_multi_channel/placing_an_order_on_multiple_channels_with_different_currency.feature",
+      "size": 2097,
+      "sha": "e8b58c73858f303783baedd0b0c89261d14da089"
+    },
+    {
+      "name": "placing_an_order_on_multiple_channels_with_same_currency.feature",
+      "original_path": "features/checkout/placing_order_on_multi_channel/placing_an_order_on_multiple_channels_with_same_currency.feature",
+      "size": 2046,
+      "sha": "1fcc3ea648d6d1ada31b268edf63f7875645991a"
+    },
+    {
+      "name": "prevent_skipping_checkout_steps.feature",
+      "original_path": "features/checkout/prevent_skipping_checkout_steps.feature",
+      "size": 3041,
+      "sha": "29b729ddac9631c038b2ad394bc790304ac5a2f9"
+    },
+    {
+      "name": "preventing_adding_to_cart_disabled_products.feature",
+      "original_path": "features/checkout/preventing_adding_to_cart_disabled_products.feature",
+      "size": 1108,
+      "sha": "6d9ec232acc6ce53fba543c60c0970784f435827"
+    },
+    {
+      "name": "preventing_adding_to_cart_inexistent_variant.feature",
+      "original_path": "features/checkout/preventing_adding_to_cart_inexistent_variant.feature",
+      "size": 802,
+      "sha": "4b87382dc34f0d35b499ebb8f8cd324f6f3f410e"
+    },
+    {
+      "name": "preventing_adding_to_cart_product_or_variant_from_another_channel.feature",
+      "original_path": "features/checkout/preventing_adding_to_cart_product_or_variant_from_another_channel.feature",
+      "size": 1205,
+      "sha": "e6d0b18e43a396acdd10a0b515edd3d8cf13e52c"
+    },
+    {
+      "name": "preventing_cart_from_being_modified_after_checkout.feature",
+      "original_path": "features/checkout/preventing_cart_from_being_modified_after_checkout.feature",
+      "size": 3349,
+      "sha": "9e89646af6be16ac369a0cbd381fa67abd3edb81"
+    },
+    {
+      "name": "preventing_starting_checkout_with_empty_cart.feature",
+      "original_path": "features/checkout/preventing_starting_checkout_with_empty_cart.feature",
+      "size": 2239,
+      "sha": "120cf740134dc1d1950c2f92b58bd2e7f8588e95"
+    },
+    {
+      "name": "prices_get_updated_throughout_checkout.feature",
+      "original_path": "features/checkout/prices_get_updated_throughout_checkout.feature",
+      "size": 3784,
+      "sha": "05484a0c2dc4466bdd598b13ee03b79979f8f65d"
+    },
+    {
+      "name": "product_integrity_validation.feature",
+      "original_path": "features/checkout/product_integrity_validation.feature",
+      "size": 1507,
+      "sha": "0fd65f5253dcf5c1e9b5812486e8e3a14360041c"
+    },
+    {
+      "name": "receiving_confirmation_email_after_completing_checkout.feature",
+      "original_path": "features/checkout/receiving_confirmation_email_after_completing_checkout.feature",
+      "size": 1506,
+      "sha": "c8972881550a451a534ec9eb1dae284c81d03574"
+    },
+    {
+      "name": "registering_account_after_checkout.feature",
+      "original_path": "features/checkout/registering_account_after_checkout.feature",
+      "size": 1134,
+      "sha": "af5e84f4160816f8e7697e85171f98c28117e613"
+    },
+    {
+      "name": "returning_from_order_summary_page_to_one_of_previous_steps.feature",
+      "original_path": "features/checkout/returning_from_order_summary_page_to_one_of_previous_steps.feature",
+      "size": 3945,
+      "sha": "90997c3a0a53bd0424c21f83c500ba584c390900"
+    },
+    {
+      "name": "seeing_addresses_on_order_summary_page.feature",
+      "original_path": "features/checkout/seeing_order_summary/seeing_addresses_on_order_summary_page.feature",
+      "size": 1753,
+      "sha": "2b51002b10e52e12873788d427768e2a1d8df683"
+    },
+    {
+      "name": "seeing_discount_on_order_item_on_summary_page.feature",
+      "original_path": "features/checkout/seeing_order_summary/seeing_discount_on_order_item_on_summary_page.feature",
+      "size": 1106,
+      "sha": "3b8e4f920147f04e64fb1385a3bfed427d3f8f37"
+    },
+    {
+      "name": "seeing_items_on_order_summary_page.feature",
+      "original_path": "features/checkout/seeing_order_summary/seeing_items_on_order_summary_page.feature",
+      "size": 1383,
+      "sha": "75147efca03dacad7135a67057c07b3d6c883d77"
+    },
+    {
+      "name": "seeing_order_locale.feature",
+      "original_path": "features/checkout/seeing_order_summary/seeing_order_locale.feature",
+      "size": 1230,
+      "sha": "eef9f3393c06c33a99dd5afe2c2eadbc2d573ee5"
+    },
+    {
+      "name": "seeing_province_created_manually_on_order_summary_page.feature",
+      "original_path": "features/checkout/seeing_order_summary/seeing_province_created_manually_on_order_summary_page.feature",
+      "size": 1498,
+      "sha": "ac6c8e12478ab7d2b7af2363faaf8880986744e7"
+    },
+    {
+      "name": "seeing_shipping_discount_on_order_summary_page.feature",
+      "original_path": "features/checkout/seeing_order_summary/seeing_shipping_discount_on_order_summary_page.feature",
+      "size": 1229,
+      "sha": "cbe024b0fe6dceb58a438e99fc4dcd8636b55f78"
+    },
+    {
+      "name": "seeing_shipping_method_and_payment_method_on_order_summary_page.feature",
+      "original_path": "features/checkout/seeing_order_summary/seeing_shipping_method_and_payment_method_on_order_summary_page.feature",
+      "size": 1086,
+      "sha": "56191bb4f5b87996f226fc911e2daef89665bdf6"
+    },
+    {
+      "name": "seeing_shipping_total_on_order_summary_page.feature",
+      "original_path": "features/checkout/seeing_order_summary/seeing_shipping_total_on_order_summary_page.feature",
+      "size": 2187,
+      "sha": "ee0f8ca1c3b486efcfe449c81758c3492acc20ce"
+    },
+    {
+      "name": "seeing_summary_order_with_free_product.feature",
+      "original_path": "features/checkout/seeing_order_summary/seeing_summary_order_with_free_product.feature",
+      "size": 1912,
+      "sha": "ed1d639b939a13328bd8d93f8f66ebe750ccd69e"
+    },
+    {
+      "name": "seeing_total_discount_on_order_summary_page.feature",
+      "original_path": "features/checkout/seeing_order_summary/seeing_total_discount_on_order_summary_page.feature",
+      "size": 1277,
+      "sha": "cb233f3e2c30699d343c57f231f1cd7f83bb36a6"
+    },
+    {
+      "name": "seeing_total_tax_on_order_summary_page.feature",
+      "original_path": "features/checkout/seeing_order_summary/seeing_total_tax_on_order_summary_page.feature",
+      "size": 1028,
+      "sha": "65ba878571d226465e5ffd761be6db684aea773b"
+    },
+    {
+      "name": "seeing_purchaser_identifier_in_checkout_page.feature",
+      "original_path": "features/checkout/seeing_purchaser_identifier_in_checkout_page.feature",
+      "size": 1615,
+      "sha": "f74e7c0ec8665ca89ff6c04b7a992ba24a4e4878"
+    },
+    {
+      "name": "preventing_not_available_shipping_method_selection.feature",
+      "original_path": "features/checkout/shipping_order/preventing_not_available_shipping_method_selection.feature",
+      "size": 5846,
+      "sha": "39a272723da8aa9011202bbab6fddd6ba5d9e470"
+    },
+    {
+      "name": "preventing_shipping_step_completion_without_a_selected_method.feature",
+      "original_path": "features/checkout/shipping_order/preventing_shipping_step_completion_without_a_selected_method.feature",
+      "size": 2969,
+      "sha": "06e40fe6a87c2896349e2113998d4ddd28fc4308"
+    },
+    {
+      "name": "returning_from_shipping_step_to_addressing_step.feature",
+      "original_path": "features/checkout/shipping_order/returning_from_shipping_step_to_addressing_step.feature",
+      "size": 1277,
+      "sha": "f076c7b55bb52f0633e8b77c915c7e21519344e3"
+    },
+    {
+      "name": "seeing_default_shipping_method_selected_based_on_shipping_address.feature",
+      "original_path": "features/checkout/shipping_order/seeing_default_shipping_method_selected_based_on_shipping_address.feature",
+      "size": 2255,
+      "sha": "3970c9dc66080ba00c2fda80f8b7b3cab4a93f9c"
+    },
+    {
+      "name": "seeing_shipping_fee.feature",
+      "original_path": "features/checkout/shipping_order/seeing_shipping_fee.feature",
+      "size": 1439,
+      "sha": "0f3fb0566013be7b585271ce941476fd349312fe"
+    },
+    {
+      "name": "seeing_shipping_fee_on_multiple_channels.feature",
+      "original_path": "features/checkout/shipping_order/seeing_shipping_fee_on_multiple_channels.feature",
+      "size": 2167,
+      "sha": "cae71a5af6c19e2cf3f84daad89b877f922cbe49"
+    },
+    {
+      "name": "seeing_shipping_method_when_all_units_match_to_shipping_category.feature",
+      "original_path": "features/checkout/shipping_order/seeing_shipping_method_when_all_units_match_to_shipping_category.feature",
+      "size": 4730,
+      "sha": "62721127ec526ccd3e07f5d955eb0c5e2362a599"
+    },
+    {
+      "name": "seeing_shipping_method_when_at_least_one_unit_match_to_shipping_method.feature",
+      "original_path": "features/checkout/shipping_order/seeing_shipping_method_when_at_least_one_unit_match_to_shipping_method.feature",
+      "size": 4472,
+      "sha": "9f36162fcfbb58986757dfbb7b6fab5e756c7fbf"
+    },
+    {
+      "name": "seeing_shipping_method_when_no_units_match_to_shipping_category.feature",
+      "original_path": "features/checkout/shipping_order/seeing_shipping_method_when_no_units_match_to_shipping_category.feature",
+      "size": 3947,
+      "sha": "42077b4e4fdb7fe9e8910866f20bcb7abd136d6d"
+    },
+    {
+      "name": "selecting_order_shipping_method.feature",
+      "original_path": "features/checkout/shipping_order/selecting_order_shipping_method.feature",
+      "size": 903,
+      "sha": "98fd13feccb4fbd59b8eb4c4044548a729242326"
+    },
+    {
+      "name": "shipping_method_integrity_validation.feature",
+      "original_path": "features/checkout/shipping_order/shipping_method_integrity_validation.feature",
+      "size": 2959,
+      "sha": "79e55131f826b861f77f79be7ca40ca06646904d"
+    },
+    {
+      "name": "sorting_shipping_method_selection.feature",
+      "original_path": "features/checkout/shipping_order/sorting_shipping_method_selection.feature",
+      "size": 1123,
+      "sha": "26ba7c92bac7894268c7648ae6d9460310327447"
+    },
+    {
+      "name": "skipping_payment_method_step_when_only_one_payment_method_is_available.feature",
+      "original_path": "features/checkout/skipping_payment_method_step_when_only_one_payment_method_is_available.feature",
+      "size": 2224,
+      "sha": "3cf561d6f058a7350452587e0992d8f06d44cc16"
+    },
+    {
+      "name": "skipping_payment_step_when_order_total_is_zero.feature",
+      "original_path": "features/checkout/skipping_payment_step_when_order_total_is_zero.feature",
+      "size": 1765,
+      "sha": "8a9cdd41271b2f81827ffe1844ad49007d7aa3b6"
+    },
+    {
+      "name": "skipping_payment_step_when_order_total_is_zero_after_applying_coupon.feature",
+      "original_path": "features/checkout/skipping_payment_step_when_order_total_is_zero_after_applying_coupon.feature",
+      "size": 1427,
+      "sha": "ef3104d63044a140d8ed6ac8f583b975d377dabe"
+    },
+    {
+      "name": "skipping_shipping_and_payment_step_when_order_does_not_require_any_shipping_and_its_total_is_zero.feature",
+      "original_path": "features/checkout/skipping_shipping_and_payment_step_when_order_does_not_require_any_shipping_and_its_total_is_zero.feature",
+      "size": 1292,
+      "sha": "d3bf6e4484c0cd5d83d077f41a99ef93cb351968"
+    },
+    {
+      "name": "skipping_shipping_step_when_only_one_shipping_method_is_available.feature",
+      "original_path": "features/checkout/skipping_shipping_step_when_only_one_shipping_method_is_available.feature",
+      "size": 2780,
+      "sha": "a98fde4ca119e0aa4d8a9be5b703cd68427e531b"
+    },
+    {
+      "name": "skipping_shipping_step_when_order_does_not_require_any_shipping.feature",
+      "original_path": "features/checkout/skipping_shipping_step_when_order_does_not_require_any_shipping.feature",
+      "size": 1730,
+      "sha": "86b465799f404e28b2b10105b5b5a14e4b817027"
+    },
+    {
+      "name": "showing_available_plugins.feature",
+      "original_path": "features/cli/showing_available_plugins.feature",
+      "size": 400,
+      "sha": "90c89973636f2214847f937ed45914cb4f401d69"
+    },
+    {
+      "name": "requesting_contact.feature",
+      "original_path": "features/contact/requesting_contact.feature",
+      "size": 1263,
+      "sha": "cb833d347966ca37e77d951accdeba6756b67078"
+    },
+    {
+      "name": "requesting_contact_validation.feature",
+      "original_path": "features/contact/requesting_contact_validation.feature",
+      "size": 1915,
+      "sha": "7e118e2da99353dc07d62c39f71894db1ef5c5dd"
+    },
+    {
+      "name": "handling_different_currencies_on_multiple_channels.feature",
+      "original_path": "features/currency/handling_different_currencies_on_multiple_channels.feature",
+      "size": 1289,
+      "sha": "86e9be24e3efd48a5d38310adce708895eb931c7"
+    },
+    {
+      "name": "adding_currency.feature",
+      "original_path": "features/currency/managing_currencies/adding_currency.feature",
+      "size": 516,
+      "sha": "ecaa4094c6240a84960cca73bee4608b6e2f902b"
+    },
+    {
+      "name": "browsing_currencies.feature",
+      "original_path": "features/currency/managing_currencies/browsing_currencies.feature",
+      "size": 507,
+      "sha": "52c15f613e078eeb6648d243a6e73922868bf450"
+    },
+    {
+      "name": "currency_unique_code_validation.feature",
+      "original_path": "features/currency/managing_currencies/currency_unique_code_validation.feature",
+      "size": 611,
+      "sha": "d775b78d137febe711425ebced2926dd88cafbfb"
+    },
+    {
+      "name": "editing_currency.feature",
+      "original_path": "features/currency/managing_currencies/editing_currency.feature",
+      "size": 432,
+      "sha": "7e8a11bb65e04cf6f97f73c683d7102c8aaebbf3"
+    },
+    {
+      "name": "adding_exchange_rate.feature",
+      "original_path": "features/currency/managing_exchange_rates/adding_exchange_rate.feature",
+      "size": 818,
+      "sha": "db5790e759987fd11268a2cd2eb55f12f67e02cb"
+    },
+    {
+      "name": "browsing_exchange_rates.feature",
+      "original_path": "features/currency/managing_exchange_rates/browsing_exchange_rates.feature",
+      "size": 744,
+      "sha": "9282b222ee287efad96be54e1c502652a6897cf4"
+    },
+    {
+      "name": "deleting_exchange_rate.feature",
+      "original_path": "features/currency/managing_exchange_rates/deleting_exchange_rate.feature",
+      "size": 702,
+      "sha": "4a8651e339f77bcf4d18caf32337feb1dfad81b2"
+    },
+    {
+      "name": "deleting_multiple_exchange_rates.feature",
+      "original_path": "features/currency/managing_exchange_rates/deleting_multiple_exchange_rates.feature",
+      "size": 1091,
+      "sha": "fc05312589a5d22de0115f94a40bf623eda16608"
+    },
+    {
+      "name": "editing_exchange_rate.feature",
+      "original_path": "features/currency/managing_exchange_rates/editing_exchange_rate.feature",
+      "size": 977,
+      "sha": "2de7ea381baedf60602545ebc43ada0838fafb0f"
+    },
+    {
+      "name": "exchange_rate_validation.feature",
+      "original_path": "features/currency/managing_exchange_rates/exchange_rate_validation.feature",
+      "size": 1799,
+      "sha": "395bafa193e124e10f19ae8240dc68124ca8fb7f"
+    },
+    {
+      "name": "filtering_exchange_rates_by_currency.feature",
+      "original_path": "features/currency/managing_exchange_rates/filtering_exchange_rates_by_currency.feature",
+      "size": 1001,
+      "sha": "536703841d0371c1a068005ba357817773c6a5e2"
+    },
+    {
+      "name": "inability_of_adding_exchange_rate_with_same_currency_pair.feature",
+      "original_path": "features/currency/managing_exchange_rates/inability_of_adding_exchange_rate_with_same_currency_pair.feature",
+      "size": 1497,
+      "sha": "dfd5d2c1d71d0a7107b1f4b6e9d3202c860e1d3d"
+    },
+    {
+      "name": "switching_current_currency.feature",
+      "original_path": "features/currency/switching_current_currency.feature",
+      "size": 871,
+      "sha": "8ee971b70a87a59734ad1bdc15fcbc66d7ad223e"
+    },
+    {
+      "name": "seeing_myself_while_login.feature",
+      "original_path": "features/customer/seeing_myself_while_login.feature",
+      "size": 519,
+      "sha": "fe9d404f273d4dc1e217e5f3f41e0332b2e38ced"
+    },
+    {
+      "name": "viewing_latest_products.feature",
+      "original_path": "features/homepage/viewing_latest_products.feature",
+      "size": 1131,
+      "sha": "e53cac47d858892e11fb0284f2a8e2bc3a0aafd4"
+    },
+    {
+      "name": "viewing_only_enabled_taxons_in_taxon_menu.feature",
+      "original_path": "features/homepage/viewing_only_enabled_taxons_in_taxon_menu.feature",
+      "size": 1303,
+      "sha": "dbabf25feeb898b08612e1b722bcd1c7d7139eca"
+    },
+    {
+      "name": "viewing_only_taxons_from_menu_taxon.feature",
+      "original_path": "features/homepage/viewing_only_taxons_from_menu_taxon.feature",
+      "size": 1852,
+      "sha": "6e40d84617961e7a01598793e7add97225738862"
+    },
+    {
+      "name": "install_command.feature",
+      "original_path": "features/installer/install_command.feature",
+      "size": 826,
+      "sha": "0c2f55a6479122848189bac3fa99afbca4de8316"
+    },
+    {
+      "name": "load_sample_data_command.feature",
+      "original_path": "features/installer/load_sample_data_command.feature",
+      "size": 367,
+      "sha": "8c37488846b6be2a99a251df2ba17ef520db806b"
+    },
+    {
+      "name": "inability_of_adding_a_product_with_insufficient_stock.feature",
+      "original_path": "features/inventory/cart_inventory/inability_of_adding_a_product_with_insufficient_stock.feature",
+      "size": 691,
+      "sha": "946967abfb4b10b9e3174502dff62d2537998d33"
+    },
+    {
+      "name": "prevent_buying_more_products_than_available_in_a_stock.feature",
+      "original_path": "features/inventory/cart_inventory/prevent_buying_more_products_than_available_in_a_stock.feature",
+      "size": 1557,
+      "sha": "8a892a75799be9b6f630a313ad0474171c16b386"
+    },
+    {
+      "name": "verify_inventory_quantity_when_updating_cart_summary.feature",
+      "original_path": "features/inventory/cart_inventory/verify_inventory_quantity_when_updating_cart_summary.feature",
+      "size": 1212,
+      "sha": "2803e86760ba0e73f1e38abc0cb6d01a7fc5f744"
+    },
+    {
+      "name": "holding_inventory_units_during_checkout_process.feature",
+      "original_path": "features/inventory/checkout_inventory/holding_inventory_units_during_checkout_process.feature",
+      "size": 1578,
+      "sha": "5f7e677e0c8f47a6e1c506683bf8f68e2d0b7820"
+    },
+    {
+      "name": "validating_product_quantity_on_checkout_complete.feature",
+      "original_path": "features/inventory/checkout_inventory/validating_product_quantity_on_checkout_complete.feature",
+      "size": 2192,
+      "sha": "7cd6389b9de62bf1a027511c58529f1ebb770b95"
+    },
+    {
+      "name": "displaying_inventory_tab_on_simple_product_edit_page.feature",
+      "original_path": "features/inventory/displaying_inventory_tab_on_simple_product_edit_page.feature",
+      "size": 826,
+      "sha": "98565468439aa11027af061250448f2b4c5bbe01"
+    },
+    {
+      "name": "browsing_inventory.feature",
+      "original_path": "features/inventory/managing_inventory/browsing_inventory.feature",
+      "size": 1085,
+      "sha": "6daa68e2e4ef3deb0f92aa9a0c5bea34c1c6fdc8"
+    },
+    {
+      "name": "decreasing_invetory_below_on_hold_validation.feature",
+      "original_path": "features/inventory/managing_inventory/decreasing_invetory_below_on_hold_validation.feature",
+      "size": 2373,
+      "sha": "b52d2d2967fd04a3f4184c3bb6a07429de2271bb"
+    },
+    {
+      "name": "filtering_inventory_by_code.feature",
+      "original_path": "features/inventory/managing_inventory/filtering_inventory_by_code.feature",
+      "size": 1114,
+      "sha": "6952b9b1d56a8614e99a2a5b8e70f613d81f1296"
+    },
+    {
+      "name": "filtering_inventory_by_name.feature",
+      "original_path": "features/inventory/managing_inventory/filtering_inventory_by_name.feature",
+      "size": 1074,
+      "sha": "efa370593bad47c0b8d5d674884605e585588fa3"
+    },
+    {
+      "name": "verify_reserved_inventory_is_back_in_stock_on_order_cancelling.feature",
+      "original_path": "features/inventory/verify_reserved_inventory_is_back_in_stock_on_order_cancelling.feature",
+      "size": 6961,
+      "sha": "d4acba19f62175e462266d3dad2bc8f13d213fe6"
+    },
+    {
+      "name": "viewing_product_variant_with_specify_quantity_of_items_on_hand.feature",
+      "original_path": "features/inventory/viewing_product_variant_with_specify_quantity_of_items_on_hand.feature",
+      "size": 2493,
+      "sha": "7b4fb89fb1cf74b04ebf888509e1c65abecca59a"
+    },
+    {
+      "name": "browsing_shop_in_different_than_default_locale.feature",
+      "original_path": "features/locale/browsing_shop_in_different_than_default_locale.feature",
+      "size": 1374,
+      "sha": "c5266c619b68c0ea889b416793e414ae019d9d88"
+    },
+    {
+      "name": "channel_independent_translatable_entities_locales.feature",
+      "original_path": "features/locale/channel_independent_translatable_entities_locales.feature",
+      "size": 826,
+      "sha": "6d6d22b4b49a86146fe43a101e5c77f51e5cbbef"
+    },
+    {
+      "name": "handling_different_locales_on_multiple_channels.feature",
+      "original_path": "features/locale/handling_different_locales_on_multiple_channels.feature",
+      "size": 1514,
+      "sha": "74d5897d4e5e966fa299dfabf4cb5b75e6b128ab"
+    },
+    {
+      "name": "adding_locale.feature",
+      "original_path": "features/locale/managing_locales/adding_locale.feature",
+      "size": 545,
+      "sha": "bb4e1a24f47db9c310216460eaea5c9c7e182df4"
+    },
+    {
+      "name": "locale_unique_code_validation.feature",
+      "original_path": "features/locale/managing_locales/locale_unique_code_validation.feature",
+      "size": 505,
+      "sha": "9eae46ea43ebcc6f1041da4401baf9c4ff0e17b9"
+    },
+    {
+      "name": "locale_validation.feature",
+      "original_path": "features/locale/managing_locales/locale_validation.feature",
+      "size": 551,
+      "sha": "169ba5be37a1fd1a602d4a0b92a01ea0c97e24d1"
+    },
+    {
+      "name": "redirect_to_default_locale.feature",
+      "original_path": "features/locale/redirect_to_default_locale.feature",
+      "size": 896,
+      "sha": "80065ebc866aed72ba8a50a7dc3222bc2b1d63b1"
+    },
+    {
+      "name": "switching_current_locale.feature",
+      "original_path": "features/locale/switching_current_locale.feature",
+      "size": 1001,
+      "sha": "5a8c23246921755f67037bef188cb1ed0cebd8a7"
+    },
+    {
+      "name": "browsing_orders.feature",
+      "original_path": "features/order/managing_orders/browsing_orders/browsing_orders.feature",
+      "size": 844,
+      "sha": "b010f8bc8ea83c3656f8bad3cb44c913e6493ad7"
+    },
+    {
+      "name": "seeing_orders_currency_on_index.feature",
+      "original_path": "features/order/managing_orders/browsing_orders/seeing_orders_currency_on_index.feature",
+      "size": 1713,
+      "sha": "aaff5f6e58c0df4b34a37afcc1e6754378f46b8e"
+    },
+    {
+      "name": "seeing_orders_payment_amount_including_all_fees.feature",
+      "original_path": "features/order/managing_orders/browsing_orders/seeing_orders_payment_amount_including_all_fees.feature",
+      "size": 1582,
+      "sha": "c9af9f63663c4e8e4a58932c16fb3ce3d0626cb8"
+    },
+    {
+      "name": "seeing_orders_with_different_currency_on_index.feature",
+      "original_path": "features/order/managing_orders/browsing_orders/seeing_orders_with_different_currency_on_index.feature",
+      "size": 2499,
+      "sha": "9063fee40316630f1b895de17293924be2543dda"
+    },
+    {
+      "name": "sequential_order_number_generation.feature",
+      "original_path": "features/order/managing_orders/browsing_orders/sequential_order_number_generation.feature",
+      "size": 1131,
+      "sha": "16cdfd5211a95fa750953d1b684fbe4e75167a46"
+    },
+    {
+      "name": "sorting_orders_by_number.feature",
+      "original_path": "features/order/managing_orders/browsing_orders/sorting_orders_by_number.feature",
+      "size": 1626,
+      "sha": "a53f0c137903892b89b1f953a369c0cd11219b5a"
+    },
+    {
+      "name": "cancelling_order.feature",
+      "original_path": "features/order/managing_orders/cancelling_order.feature",
+      "size": 1554,
+      "sha": "5e6cd035d611ea15bddffcfc2de0be5f3b726700"
+    },
+    {
+      "name": "cancelling_order_with_promotion.feature",
+      "original_path": "features/order/managing_orders/cancelling_order_with_promotion.feature",
+      "size": 1459,
+      "sha": "78c62e77b20df439fa61b4a1a6a5ec761dfb1050"
+    },
+    {
+      "name": "cancelling_unpaid_orders_automatically.feature",
+      "original_path": "features/order/managing_orders/cancelling_unpaid_orders_automatically.feature",
+      "size": 1423,
+      "sha": "6851fce392c6a804722ae5b6c08a381b66d8102c"
+    },
+    {
+      "name": "deleting_order.feature",
+      "original_path": "features/order/managing_orders/deleting_order.feature",
+      "size": 1931,
+      "sha": "229c64cbba7ac3ab548280dcff4e772f30d61bda"
+    },
+    {
+      "name": "fulfilling_order.feature",
+      "original_path": "features/order/managing_orders/fulfilling_order.feature",
+      "size": 1907,
+      "sha": "25db01f0fc8076a10b0a78c8ed4a962d2d9f2fc4"
+    },
+    {
+      "name": "finalizing_order_payment.feature",
+      "original_path": "features/order/managing_orders/handling_order_payment/finalizing_order_payment.feature",
+      "size": 1581,
+      "sha": "34447d517a0b51cad5ed7b76194144d089335ec1"
+    },
+    {
+      "name": "placing_order_with_payment.feature",
+      "original_path": "features/order/managing_orders/handling_order_payment/placing_order_with_payment.feature",
+      "size": 1247,
+      "sha": "d8d9133f2b697fd9dacaa30ee465fef59469a1c4"
+    },
+    {
+      "name": "refunding_order_payment.feature",
+      "original_path": "features/order/managing_orders/handling_order_payment/refunding_order_payment.feature",
+      "size": 1348,
+      "sha": "4e6852f81635233ea8fdb166fa06857b78c8eaed"
+    },
+    {
+      "name": "placing_order_with_shipment.feature",
+      "original_path": "features/order/managing_orders/handling_order_shipment/placing_order_with_shipment.feature",
+      "size": 1074,
+      "sha": "8ffacd37be19677aaf043398ac3b28fbc15a280e"
+    },
+    {
+      "name": "resending_shipment_confirmation_email.feature",
+      "original_path": "features/order/managing_orders/handling_order_shipment/resending_shipment_confirmation_email.feature",
+      "size": 2105,
+      "sha": "87091afaa4a8094fa47261276198f4fe9b1b138d"
+    },
+    {
+      "name": "sending_confirmation_email_after_shipping_order.feature",
+      "original_path": "features/order/managing_orders/handling_order_shipment/sending_confirmation_email_after_shipping_order.feature",
+      "size": 1814,
+      "sha": "055191ecd49fe52f8e51952e230dc5e6fd84572f"
+    },
+    {
+      "name": "shipping_order.feature",
+      "original_path": "features/order/managing_orders/handling_order_shipment/shipping_order.feature",
+      "size": 1602,
+      "sha": "691f3ee3f724a4d4b25acce25efa2a7a6bcd4675"
+    },
+    {
+      "name": "modifying_billing_address.feature",
+      "original_path": "features/order/managing_orders/modifying_billing_address/modifying_billing_address.feature",
+      "size": 4282,
+      "sha": "90c1258655aadc9bbb46b29016c12c31bf7f3841"
+    },
+    {
+      "name": "modifying_billing_address_on_order_with_coupon.feature",
+      "original_path": "features/order/managing_orders/modifying_billing_address/modifying_billing_address_on_order_with_coupon.feature",
+      "size": 2036,
+      "sha": "d38e5d04756427ba420293b403e43e938c3d5a1f"
+    },
+    {
+      "name": "modifying_billing_address_on_order_with_promotion.feature",
+      "original_path": "features/order/managing_orders/modifying_billing_address/modifying_billing_address_on_order_with_promotion.feature",
+      "size": 1972,
+      "sha": "02e86fd48d8b30a8723b3672186e60ae0953d172"
+    },
+    {
+      "name": "modifying_billing_address_on_order_with_taxes.feature",
+      "original_path": "features/order/managing_orders/modifying_billing_address/modifying_billing_address_on_order_with_taxes.feature",
+      "size": 1810,
+      "sha": "06c0c03e44d88c1e5797f26702d5d6eb0c3f2e1c"
+    },
+    {
+      "name": "modifying_billing_address_validation.feature",
+      "original_path": "features/order/managing_orders/modifying_billing_address/modifying_billing_address_validation.feature",
+      "size": 1625,
+      "sha": "071e2005b5d76d5afe06967031b23035cfc5f804"
+    },
+    {
+      "name": "modifying_shipping_address.feature",
+      "original_path": "features/order/managing_orders/modifying_shipping_address/modifying_shipping_address.feature",
+      "size": 4333,
+      "sha": "53482e5f71d1c46083e55b00862a68f64c49a844"
+    },
+    {
+      "name": "modifying_shipping_address_on_order_with_coupon.feature",
+      "original_path": "features/order/managing_orders/modifying_shipping_address/modifying_shipping_address_on_order_with_coupon.feature",
+      "size": 2118,
+      "sha": "a106cf08d92c11627273dc51334f5ea240563a32"
+    },
+    {
+      "name": "modifying_shipping_address_on_order_with_promotion.feature",
+      "original_path": "features/order/managing_orders/modifying_shipping_address/modifying_shipping_address_on_order_with_promotion.feature",
+      "size": 2054,
+      "sha": "b2d4157ed134e5cd6a63cfde2a09dc6d71625542"
+    },
+    {
+      "name": "modifying_shipping_address_on_order_with_taxes.feature",
+      "original_path": "features/order/managing_orders/modifying_shipping_address/modifying_shipping_address_on_order_with_taxes.feature",
+      "size": 1892,
+      "sha": "2fc649c0891028c772d5d0e9136e9f9a67722ba6"
+    },
+    {
+      "name": "modifying_shipping_address_validation.feature",
+      "original_path": "features/order/managing_orders/modifying_shipping_address/modifying_shipping_address_validation.feature",
+      "size": 1626,
+      "sha": "42754995d6b44ad65ed866c7356de64aa51f8530"
+    },
+    {
+      "name": "seeing_order.feature",
+      "original_path": "features/order/managing_orders/order_details/seeing_order.feature",
+      "size": 1519,
+      "sha": "a0dbf2b4b1af0d1a7372a8d3b9651163095f0d9b"
+    },
+    {
+      "name": "seeing_order_aggregated_discounts.feature",
+      "original_path": "features/order/managing_orders/order_details/seeing_order_aggregated_discounts.feature",
+      "size": 2362,
+      "sha": "9d5028dd1a1b051be2688a29b4cea3a0e8e2c2ef"
+    },
+    {
+      "name": "seeing_order_aggregated_taxes.feature",
+      "original_path": "features/order/managing_orders/order_details/seeing_order_aggregated_taxes.feature",
+      "size": 2493,
+      "sha": "29e5a7f3a5bcb9ac73543af36d3600a0ac855b98"
+    },
+    {
+      "name": "seeing_order_currency_on_show.feature",
+      "original_path": "features/order/managing_orders/order_details/seeing_order_currency_on_show.feature",
+      "size": 2619,
+      "sha": "11e109949d38bd60a00f921586bc8d89e5a71257"
+    },
+    {
+      "name": "seeing_order_discounts.feature",
+      "original_path": "features/order/managing_orders/order_details/seeing_order_discounts.feature",
+      "size": 2108,
+      "sha": "eec2ed1da705e0fca39e3773146b3ceeebeeec74"
+    },
+    {
+      "name": "seeing_order_item_detailed_data.feature",
+      "original_path": "features/order/managing_orders/order_details/seeing_order_item_detailed_data.feature",
+      "size": 1951,
+      "sha": "b01fb263d75b7b980c28516954c69c5a0b77a2c4"
+    },
+    {
+      "name": "seeing_order_item_included_taxes.feature",
+      "original_path": "features/order/managing_orders/order_details/seeing_order_item_included_taxes.feature",
+      "size": 1329,
+      "sha": "d2ea477a4aea0a5db64782fa75fa9ac433bcd324"
+    },
+    {
+      "name": "seeing_order_item_taxes.feature",
+      "original_path": "features/order/managing_orders/order_details/seeing_order_item_taxes.feature",
+      "size": 1253,
+      "sha": "18ecefcf7ba72ee6d0670a1ae4811ceb873c52e9"
+    },
+    {
+      "name": "seeing_order_items_with_proper_names.feature",
+      "original_path": "features/order/managing_orders/order_details/seeing_order_items_with_proper_names.feature",
+      "size": 1363,
+      "sha": "87ca755e8fc8a7c57211c0d43f04fbb15ac3a7a4"
+    },
+    {
+      "name": "seeing_order_new_state_after_customers_checkout.feature",
+      "original_path": "features/order/managing_orders/order_details/seeing_order_new_state_after_customers_checkout.feature",
+      "size": 926,
+      "sha": "f7f93e1ac4aec06138982cd1c8d85add5afd8ad8"
+    },
+    {
+      "name": "seeing_order_payment_state_as_completed_if_free_order_coupon_was_applied.feature",
+      "original_path": "features/order/managing_orders/order_details/seeing_order_payment_state_as_completed_if_free_order_coupon_was_applied.feature",
+      "size": 1323,
+      "sha": "220a4deb6ba8f1356ab50ede85432729cd83c3dc"
+    },
+    {
+      "name": "seeing_order_payment_state_as_completed_if_order_total_is_zero.feature",
+      "original_path": "features/order/managing_orders/order_details/seeing_order_payment_state_as_completed_if_order_total_is_zero.feature",
+      "size": 1417,
+      "sha": "598618f89d3d02c5d96d7252c251fe316c131c9c"
+    },
+    {
+      "name": "seeing_order_shipment_state_after_checkout.feature",
+      "original_path": "features/order/managing_orders/order_details/seeing_order_shipment_state_after_checkout.feature",
+      "size": 1442,
+      "sha": "3f657907dc41b1b8436b06b3fff664e87e04954a"
+    },
+    {
+      "name": "seeing_order_shipment_state_as_shipped_if_there_is_not_shipments_to_deliver.feature",
+      "original_path": "features/order/managing_orders/order_details/seeing_order_shipment_state_as_shipped_if_there_is_not_shipments_to_deliver.feature",
+      "size": 1529,
+      "sha": "bb151c91bc8e322fa203b2f27756a49cc3caf4d4"
+    },
+    {
+      "name": "seeing_order_shipping_fees.feature",
+      "original_path": "features/order/managing_orders/order_details/seeing_order_shipping_fees.feature",
+      "size": 1722,
+      "sha": "fe1036807a3debff93335cfe1b9455e392ab9702"
+    },
+    {
+      "name": "seeing_order_shipping_taxes.feature",
+      "original_path": "features/order/managing_orders/order_details/seeing_order_shipping_taxes.feature",
+      "size": 2241,
+      "sha": "5db6de50b76aad29cef6be33c04e164dee1be2e4"
+    },
+    {
+      "name": "seeing_order_shipping_total_with_applied_promotion_and_taxes.feature",
+      "original_path": "features/order/managing_orders/order_details/seeing_order_shipping_total_with_applied_promotion_and_taxes.feature",
+      "size": 2844,
+      "sha": "3faa0f1a7e089c5cf1280cc1e6efb9eeff89713e"
+    },
+    {
+      "name": "seeing_order_with_different_promotions.feature",
+      "original_path": "features/order/managing_orders/order_details/seeing_order_with_different_promotions.feature",
+      "size": 2096,
+      "sha": "a0bd3e8290bf99299b70431b21376272fd24c910"
+    },
+    {
+      "name": "seeing_order_with_items.feature",
+      "original_path": "features/order/managing_orders/order_details/seeing_order_with_items.feature",
+      "size": 1182,
+      "sha": "a2b65dcc6739f7dfec1c3cef1fabc512587d9100"
+    },
+    {
+      "name": "seeing_order_without_shipping_address.feature",
+      "original_path": "features/order/managing_orders/order_details/seeing_order_without_shipping_address.feature",
+      "size": 1305,
+      "sha": "d3beac62d8614f6e26df403638130d47c0fa755c"
+    },
+    {
+      "name": "seeing_province_created_manually_on_order_page.feature",
+      "original_path": "features/order/managing_orders/order_details/seeing_province_created_manually_on_order_page.feature",
+      "size": 1567,
+      "sha": "b035062a5d7476d0a6a6be0bedf824d5fa5a9fe5"
+    },
+    {
+      "name": "seeing_shipment_shipping_date.feature",
+      "original_path": "features/order/managing_orders/order_details/seeing_shipment_shipping_date.feature",
+      "size": 1030,
+      "sha": "9cb708d0d6e8ed5f549444a401d36a9b0001d28b"
+    },
+    {
+      "name": "filtering_orders_by_channel.feature",
+      "original_path": "features/order/managing_orders/order_filtration/filtering_orders_by_channel.feature",
+      "size": 1482,
+      "sha": "97ef558a16e232ecb925e7a3a04bc338bdf31916"
+    },
+    {
+      "name": "filtering_orders_by_date.feature",
+      "original_path": "features/order/managing_orders/order_filtration/filtering_orders_by_date.feature",
+      "size": 3041,
+      "sha": "0d8324b199a6cb074482434ad1a8235a1b667913"
+    },
+    {
+      "name": "filtering_orders_by_shipping_method.feature",
+      "original_path": "features/order/managing_orders/order_filtration/filtering_orders_by_shipping_method.feature",
+      "size": 2119,
+      "sha": "e4953e4b9f080088b7e258227f8516d41471ea46"
+    },
+    {
+      "name": "filtering_orders_by_total_in_different_currencies.feature",
+      "original_path": "features/order/managing_orders/order_filtration/filtering_orders_by_total_in_different_currencies.feature",
+      "size": 3712,
+      "sha": "a9fb895296eab62d0be83edc466b8e9282ab7bd0"
+    },
+    {
+      "name": "limiting_the_number_of_orders.feature",
+      "original_path": "features/order/managing_orders/order_filtration/limiting_the_number_of_orders.feature",
+      "size": 1101,
+      "sha": "73e507ee645d76c3ed50adcb6dad2a90b679388e"
+    },
+    {
+      "name": "tracking_changes_on_order_addresses.feature",
+      "original_path": "features/order/managing_orders/order_history/tracking_changes_on_order_addresses.feature",
+      "size": 1877,
+      "sha": "db036ee22ffd143f3315f29c2812678a1025a736"
+    },
+    {
+      "name": "resending_order_confirmation_email.feature",
+      "original_path": "features/order/managing_orders/resending_order_confirmation_email.feature",
+      "size": 1998,
+      "sha": "1d2f18f30e9368fe12d5ad525b3346d8666f4e85"
+    },
+    {
+      "name": "adding_payment_method.feature",
+      "original_path": "features/payment/managing_payment_methods/adding_payment_method.feature",
+      "size": 3339,
+      "sha": "0c8abc53edeb53eca40f9cf0245e52bfe5cffdf2"
+    },
+    {
+      "name": "browsing_payment_methods.feature",
+      "original_path": "features/payment/managing_payment_methods/browsing_payment_methods.feature",
+      "size": 683,
+      "sha": "0eca4c2b18e51de142f6f622c33a191e0b2e5556"
+    },
+    {
+      "name": "deleting_multiple_payment_methods.feature",
+      "original_path": "features/payment/managing_payment_methods/deleting_multiple_payment_methods.feature",
+      "size": 1072,
+      "sha": "5cd5d6d72f2a434b7f18af8ad75bc868bdc8b651"
+    },
+    {
+      "name": "deleting_payment_method.feature",
+      "original_path": "features/payment/managing_payment_methods/deleting_payment_method.feature",
+      "size": 616,
+      "sha": "0dee21d2c8f2732a3d0b9cc8c22e217e9508eb3f"
+    },
+    {
+      "name": "editing_payment_method.feature",
+      "original_path": "features/payment/managing_payment_methods/editing_payment_method.feature",
+      "size": 1775,
+      "sha": "ca1f94e068b261a882d6ff302e5fb5cc46867179"
+    },
+    {
+      "name": "payment_method_unique_code_validation.feature",
+      "original_path": "features/payment/managing_payment_methods/payment_method_unique_code_validation.feature",
+      "size": 876,
+      "sha": "acb3a9f0f32d82c4aff30eece2419d74f7f61f6a"
+    },
+    {
+      "name": "payment_method_validation.feature",
+      "original_path": "features/payment/managing_payment_methods/payment_method_validation.feature",
+      "size": 2280,
+      "sha": "c365206364b3f99b0daad0892027bc112f7cb742"
+    },
+    {
+      "name": "preventing_deletion_of_used_payment_method.feature",
+      "original_path": "features/payment/managing_payment_methods/preventing_deletion_of_used_payment_method.feature",
+      "size": 1024,
+      "sha": "2c02f62455c54c0e6be1038ec8e4a8ec9565cd5e"
+    },
+    {
+      "name": "sorting_payment_methods.feature",
+      "original_path": "features/payment/managing_payment_methods/sorting_payment_methods.feature",
+      "size": 2786,
+      "sha": "a76b563d3e0bff4c49fb165d58eddfb0f6670511"
+    },
+    {
+      "name": "sorting_payment_methods_by_position.feature",
+      "original_path": "features/payment/managing_payment_methods/sorting_payment_methods_by_position.feature",
+      "size": 1484,
+      "sha": "1c79719210dfe7bb45f216f9920d8f981abc7857"
+    },
+    {
+      "name": "accessing_payments_order_from_payment_index.feature",
+      "original_path": "features/payment/managing_payments/accessing_payments_order_from_payment_index.feature",
+      "size": 823,
+      "sha": "e97042c896f9701d9b9b3fd93c987451454ce194"
+    },
+    {
+      "name": "browsing_payments.feature",
+      "original_path": "features/payment/managing_payments/browsing_payments.feature",
+      "size": 1332,
+      "sha": "e57d924fdbc7634e7a28bf018d1feb2dc718c2de"
+    },
+    {
+      "name": "filtering_payments_by_channel.feature",
+      "original_path": "features/payment/managing_payments/filtering_payments_by_channel.feature",
+      "size": 1252,
+      "sha": "424ea4a8d5c3db1ddecadcb0b780897b3562a4da"
+    },
+    {
+      "name": "filtering_payments_by_state.feature",
+      "original_path": "features/payment/managing_payments/filtering_payments_by_state.feature",
+      "size": 3140,
+      "sha": "f90d3ca3bdebfa7700ee7e3e5882e239bdfaaf36"
+    },
+    {
+      "name": "managing_of_payment_status.feature",
+      "original_path": "features/payment/managing_payments/managing_of_payment_status.feature",
+      "size": 852,
+      "sha": "01dbd9e42f98e04db2ad7fec8451a3428307325a"
+    },
+    {
+      "name": "adding_product_review_as_a_customer.feature",
+      "original_path": "features/product/adding_product_reviews/adding_product_review_as_a_customer.feature",
+      "size": 745,
+      "sha": "35918dc320f2ae54430b76bd56af9695843a2911"
+    },
+    {
+      "name": "adding_product_review_as_a_guest.feature",
+      "original_path": "features/product/adding_product_reviews/adding_product_review_as_a_guest.feature",
+      "size": 710,
+      "sha": "42ce9a430f93a780fcb4119663c56a1bdca37c05"
+    },
+    {
+      "name": "product_review_validation.feature",
+      "original_path": "features/product/adding_product_reviews/product_review_validation.feature",
+      "size": 3521,
+      "sha": "a9da7f172b1c6b454430e4c7b06da6b2e76098da"
+    },
+    {
+      "name": "adding_product_association_type.feature",
+      "original_path": "features/product/managing_product_association_types/adding_product_association_type.feature",
+      "size": 770,
+      "sha": "9bd18dc417c801fc3c33379ab960d7ec6ac47eb5"
+    },
+    {
+      "name": "browsing_product_association_types.feature",
+      "original_path": "features/product/managing_product_association_types/browsing_product_association_types.feature",
+      "size": 691,
+      "sha": "181f1288e53e6282faf76f1b6c219decf66f53ff"
+    },
+    {
+      "name": "deleting_multiple_product_association_types.feature",
+      "original_path": "features/product/managing_product_association_types/deleting_multiple_product_association_types.feature",
+      "size": 1075,
+      "sha": "7c597c336e3984f48129509606bd621b2eb7a4f6"
+    },
+    {
+      "name": "deleting_product_association_type.feature",
+      "original_path": "features/product/managing_product_association_types/deleting_product_association_type.feature",
+      "size": 653,
+      "sha": "7afa3c4b50eb9a0ece3f5cb439bab611cdec310d"
+    },
+    {
+      "name": "editing_product_association_type.feature",
+      "original_path": "features/product/managing_product_association_types/editing_product_association_type.feature",
+      "size": 1038,
+      "sha": "099066b40a53c21e101f364cb46fb083bbd99531"
+    },
+    {
+      "name": "filtering_product_association_types.feature",
+      "original_path": "features/product/managing_product_association_types/filtering_product_association_types.feature",
+      "size": 1175,
+      "sha": "0c4b3a727bba2a866b983632014e13bfbd8af833"
+    },
+    {
+      "name": "product_association_type_unique_code_validation.feature",
+      "original_path": "features/product/managing_product_association_types/product_association_type_unique_code_validation.feature",
+      "size": 964,
+      "sha": "fba4d0245da93da035da740c652913b068643eef"
+    },
+    {
+      "name": "product_association_type_validation.feature",
+      "original_path": "features/product/managing_product_association_types/product_association_type_validation.feature",
+      "size": 1690,
+      "sha": "2506752fb5c5e2f2a97f20fc2230029dd6d188fc"
+    },
+    {
+      "name": "adding_checkbox_product_attribute.feature",
+      "original_path": "features/product/managing_product_attributes/adding_checkbox_product_attribute.feature",
+      "size": 982,
+      "sha": "9330e8d9cf038a484f445c38514c332e526af63e"
+    },
+    {
+      "name": "adding_integer_product_attribute.feature",
+      "original_path": "features/product/managing_product_attributes/adding_integer_product_attribute.feature",
+      "size": 948,
+      "sha": "bec909816843e7a1797180cafdfd7c7ac479611e"
+    },
+    {
+      "name": "adding_non_translatable_attribute.feature",
+      "original_path": "features/product/managing_product_attributes/adding_non_translatable_attribute.feature",
+      "size": 711,
+      "sha": "ae5a4b70877d9ee773cc5fd24ad2489b3b887078"
+    },
+    {
+      "name": "adding_percent_product_attribute.feature",
+      "original_path": "features/product/managing_product_attributes/adding_percent_product_attribute.feature",
+      "size": 984,
+      "sha": "00d32611133cdfc3389855d47b927237803cbad7"
+    },
+    {
+      "name": "adding_select_product_attribute.feature",
+      "original_path": "features/product/managing_product_attributes/adding_select_product_attribute.feature",
+      "size": 1615,
+      "sha": "caecf44763c6ca76f9ce778ea2f85c468483972b"
+    },
+    {
+      "name": "adding_text_product_attribute.feature",
+      "original_path": "features/product/managing_product_attributes/adding_text_product_attribute.feature",
+      "size": 936,
+      "sha": "e542b9fe7d006171c9b9df6672c1e828c5c8cd7f"
+    },
+    {
+      "name": "adding_textarea_product_attribute.feature",
+      "original_path": "features/product/managing_product_attributes/adding_textarea_product_attribute.feature",
+      "size": 970,
+      "sha": "4caaddd51399be85c3793f3d1f531cc4c71f9518"
+    },
+    {
+      "name": "browsing_all_product_attributes.feature",
+      "original_path": "features/product/managing_product_attributes/browsing_all_product_attributes.feature",
+      "size": 811,
+      "sha": "619027624b757cfbcc0cc97a61b2d9480acbaad0"
+    },
+    {
+      "name": "deleting_multiple_product_attributes.feature",
+      "original_path": "features/product/managing_product_attributes/deleting_multiple_product_attributes.feature",
+      "size": 985,
+      "sha": "1544fe8b983ac423411c448a41a64e890bc184a3"
+    },
+    {
+      "name": "deleting_text_product_attribute.feature",
+      "original_path": "features/product/managing_product_attributes/deleting_text_product_attribute.feature",
+      "size": 635,
+      "sha": "9f3a13c89b80b9f3814cee3bcf91222caab35c50"
+    },
+    {
+      "name": "editing_select_product_attribute.feature",
+      "original_path": "features/product/managing_product_attributes/editing_select_product_attribute.feature",
+      "size": 2272,
+      "sha": "4532afc21eae62b17de832568481884acb1841fe"
+    },
+    {
+      "name": "editing_text_product_attribute.feature",
+      "original_path": "features/product/managing_product_attributes/editing_text_product_attribute.feature",
+      "size": 1355,
+      "sha": "54d78240c2295ff73acb3ea24a90b9cde4a5276a"
+    },
+    {
+      "name": "product_attribute_unique_code_validation.feature",
+      "original_path": "features/product/managing_product_attributes/product_attribute_unique_code_validation.feature",
+      "size": 938,
+      "sha": "733bedd79a2b663f4d41483b41b728d3964c89da"
+    },
+    {
+      "name": "select_product_attribute_validation.feature",
+      "original_path": "features/product/managing_product_attributes/select_product_attribute_validation.feature",
+      "size": 2735,
+      "sha": "4e19c8df15b2a60d95df9d2fdabda83f528c88d3"
+    },
+    {
+      "name": "sorting_product_attributes_by_position.feature",
+      "original_path": "features/product/managing_product_attributes/sorting_product_attributes_by_position.feature",
+      "size": 1684,
+      "sha": "b063f0acbbddae559416e8182079cc30cfd3375c"
+    },
+    {
+      "name": "text_product_attribute_validation.feature",
+      "original_path": "features/product/managing_product_attributes/text_product_attribute_validation.feature",
+      "size": 2200,
+      "sha": "8bb18ad6fb0be3d2dd16afc64e6f9d004cc4b1bf"
+    },
+    {
+      "name": "adding_product_option.feature",
+      "original_path": "features/product/managing_product_options/adding_product_option.feature",
+      "size": 2080,
+      "sha": "c637d6189e0bd6fee4761140498c61a1066d7cba"
+    },
+    {
+      "name": "browsing_product_options.feature",
+      "original_path": "features/product/managing_product_options/browsing_product_options.feature",
+      "size": 706,
+      "sha": "b2f3638077b0ab5e39f24677d886ef8cc5ba14a5"
+    },
+    {
+      "name": "deleting_multiple_product_options.feature",
+      "original_path": "features/product/managing_product_options/deleting_multiple_product_options.feature",
+      "size": 960,
+      "sha": "77ac16a12e7a5b66530636666ac039355a09feb2"
+    },
+    {
+      "name": "editing_product_option.feature",
+      "original_path": "features/product/managing_product_options/editing_product_option.feature",
+      "size": 1129,
+      "sha": "b6d2779c005fd727962fa950f26e72e0d7177632"
+    },
+    {
+      "name": "managing_values_of_product_option.feature",
+      "original_path": "features/product/managing_product_options/managing_values_of_product_option.feature",
+      "size": 2004,
+      "sha": "fbd2719a48a2547f03108c98d21d175bcac018d2"
+    },
+    {
+      "name": "product_option_unique_code_validation.feature",
+      "original_path": "features/product/managing_product_options/product_option_unique_code_validation.feature",
+      "size": 879,
+      "sha": "62dc62ec80450d1338dd30dd078da027c6ebbcff"
+    },
+    {
+      "name": "product_option_validation.feature",
+      "original_path": "features/product/managing_product_options/product_option_validation.feature",
+      "size": 1623,
+      "sha": "c9f8966b2614309798093009f5d37924442b2233"
+    },
+    {
+      "name": "sorting_product_options_by_position.feature",
+      "original_path": "features/product/managing_product_options/sorting_product_options_by_position.feature",
+      "size": 1393,
+      "sha": "bb1510261fb9f880c37e253243c15c1ca7823510"
+    },
+    {
+      "name": "accepting_product_review.feature",
+      "original_path": "features/product/managing_product_reviews/accepting_product_review.feature",
+      "size": 817,
+      "sha": "f6a3d9d3e5fa83e8da19c49cc80b3f3cd00ecdd6"
+    },
+    {
+      "name": "browsing_product_reviews.feature",
+      "original_path": "features/product/managing_product_reviews/browsing_product_reviews.feature",
+      "size": 950,
+      "sha": "5d41ea19be91e2862cabfdc621241731dc046112"
+    },
+    {
+      "name": "deleting_multiple_product_reviews.feature",
+      "original_path": "features/product/managing_product_reviews/deleting_multiple_product_reviews.feature",
+      "size": 1198,
+      "sha": "220b9de3f86985ac74dcc0ff8cd81a60eb1ef600"
+    },
+    {
+      "name": "deleting_product_review.feature",
+      "original_path": "features/product/managing_product_reviews/deleting_product_review.feature",
+      "size": 792,
+      "sha": "9b90ea16fde6f8f0f83e8334a9227afb2a40e0d4"
+    },
+    {
+      "name": "editing_product_review.feature",
+      "original_path": "features/product/managing_product_reviews/editing_product_review.feature",
+      "size": 2257,
+      "sha": "f91f5918d49f83e434f973f33052a09d8f5cd483"
+    },
+    {
+      "name": "product_review_validation_1.feature",
+      "original_path": "features/product/managing_product_reviews/product_review_validation.feature",
+      "size": 1255,
+      "sha": "f94cc11dc7b8be312b70fbf8510d50f3b745071e"
+    },
+    {
+      "name": "recalculating_product_average_rating.feature",
+      "original_path": "features/product/managing_product_reviews/recalculating_product_average_rating.feature",
+      "size": 1414,
+      "sha": "0eba93af19d4ed2a7daac88f5094921e1a86c218"
+    },
+    {
+      "name": "rejecting_product_review.feature",
+      "original_path": "features/product/managing_product_reviews/rejecting_product_review.feature",
+      "size": 796,
+      "sha": "94e360df3eb0facd74b9d734adbdfaae4c3a3003"
+    },
+    {
+      "name": "adding_product_variant.feature",
+      "original_path": "features/product/managing_product_variants/adding_product_variant.feature",
+      "size": 5273,
+      "sha": "e35f0d103376f6d68e5e41e4f1144d76a91a1ba5"
+    },
+    {
+      "name": "adding_product_variant_with_only_original_price.feature",
+      "original_path": "features/product/managing_product_variants/adding_product_variant_with_only_original_price.feature",
+      "size": 1097,
+      "sha": "7021a2b985eafab393415aa28cfeb1cef95a130b"
+    },
+    {
+      "name": "autocomplete_product_variant_descriptor.feature",
+      "original_path": "features/product/managing_product_variants/autocomplete_product_variant_descriptor.feature",
+      "size": 1833,
+      "sha": "e0fe7a0188e7a1f30af0552faf584bd7bed7f7ff"
+    },
+    {
+      "name": "browsing_product_variants.feature",
+      "original_path": "features/product/managing_product_variants/browsing_product_variants.feature",
+      "size": 1397,
+      "sha": "77b9be94305768c56152497f7e506d718f8037a1"
+    },
+    {
+      "name": "checking_products_in_the_shop_while_editing_their_product_variants.feature",
+      "original_path": "features/product/managing_product_variants/checking_products_in_the_shop_while_editing_their_product_variants.feature",
+      "size": 1795,
+      "sha": "5dce7f074cf180f13241c8280e514b80b355c1e1"
+    },
+    {
+      "name": "deleting_multiple_product_variants.feature",
+      "original_path": "features/product/managing_product_variants/deleting_multiple_product_variants.feature",
+      "size": 1036,
+      "sha": "dbda51bd6285958d959bb514885202793b68b3c4"
+    },
+    {
+      "name": "deleting_product_variant.feature",
+      "original_path": "features/product/managing_product_variants/deleting_product_variant.feature",
+      "size": 784,
+      "sha": "5f3dfde191e8f1458c6df3e6d96df7d43848c9ef"
+    },
+    {
+      "name": "disable_or_enable_inventory_on_product_variant.feature",
+      "original_path": "features/product/managing_product_variants/disable_or_enable_inventory_on_product_variant.feature",
+      "size": 1272,
+      "sha": "445a7c2480d9f4a7f0130b21d11a9c7af75953ce"
+    },
+    {
+      "name": "disable_or_enable_product_variant.feature",
+      "original_path": "features/product/managing_product_variants/disable_or_enable_product_variant.feature",
+      "size": 1234,
+      "sha": "d9f43b6577025614ec3cb98d93e77d608c98aed1"
+    },
+    {
+      "name": "generating_product_variant.feature",
+      "original_path": "features/product/managing_product_variants/generating_product_variant.feature",
+      "size": 2499,
+      "sha": "06336ad31f7d05015b89bd3dd0239286545e71d1"
+    },
+    {
+      "name": "generating_product_variant_validation.feature",
+      "original_path": "features/product/managing_product_variants/generating_product_variant_validation.feature",
+      "size": 3307,
+      "sha": "68e3e2867b167f855da6ebf13c986dc3517e889f"
+    },
+    {
+      "name": "prevent_deletion_of_purchased_product_variant.feature",
+      "original_path": "features/product/managing_product_variants/prevent_deletion_of_purchased_product_variant.feature",
+      "size": 1174,
+      "sha": "f2ec5b1ed0ea37de6acb756f6b3002b3fe23e6c0"
+    },
+    {
+      "name": "preventing_the_generation_of_products_variants_from_options_without_any_values.feature",
+      "original_path": "features/product/managing_product_variants/preventing_the_generation_of_products_variants_from_options_without_any_values.feature",
+      "size": 875,
+      "sha": "2e7a71af67c870289e07ff217708c2150f5a281f"
+    },
+    {
+      "name": "product_variant_validation.feature",
+      "original_path": "features/product/managing_product_variants/product_variant_validation.feature",
+      "size": 4001,
+      "sha": "4c850d142f7ac7fe5f735fb8b30d1ca1a0d835dd"
+    },
+    {
+      "name": "removing_product_variant_price_from_obsolete_channel.feature",
+      "original_path": "features/product/managing_product_variants/removing_product_variant_price_from_obsolete_channel.feature",
+      "size": 1665,
+      "sha": "71ce655773609f7d02e275ac9a809780d44b773e"
+    },
+    {
+      "name": "seeing_correct_option_values_while_editing_product_variant.feature",
+      "original_path": "features/product/managing_product_variants/seeing_correct_option_values_while_editing_product_variant.feature",
+      "size": 1445,
+      "sha": "993d907c5720d32d623e527865cc44c233a75766"
+    },
+    {
+      "name": "sorting_product_variants_within_product_by_position.feature",
+      "original_path": "features/product/managing_product_variants/sorting_product_variants_within_product_by_position.feature",
+      "size": 2904,
+      "sha": "ec67bac80d500b586ebce5012e5d7425e3fbff34"
+    },
+    {
+      "name": "accessing_variants_management_from_product_edit_page.feature",
+      "original_path": "features/product/managing_products/accessing_variants_management_from_product_edit_page.feature",
+      "size": 1205,
+      "sha": "de3aebb4f38a946fea22cfe70068e5f488d9d616"
+    },
+    {
+      "name": "adding_associations_to_existing_product.feature",
+      "original_path": "features/product/managing_products/adding_associations_to_existing_product.feature",
+      "size": 851,
+      "sha": "0db83e61462398c4cc8bbc55722cd03090a83dad"
+    },
+    {
+      "name": "adding_images_to_existing_product.feature",
+      "original_path": "features/product/managing_products/adding_images_to_existing_product.feature",
+      "size": 3605,
+      "sha": "c826abeb699454cee7707c47994be5a2fda13216"
+    },
+    {
+      "name": "adding_product.feature",
+      "original_path": "features/product/managing_products/adding_product.feature",
+      "size": 4655,
+      "sha": "7b8459931be4ea863c1c38e6aeb13c0c693b9871"
+    },
+    {
+      "name": "adding_product_with_associations.feature",
+      "original_path": "features/product/managing_products/adding_product_with_associations.feature",
+      "size": 2176,
+      "sha": "65e61b7c8a973037f403721b204376e413fc23f1"
+    },
+    {
+      "name": "adding_product_with_images.feature",
+      "original_path": "features/product/managing_products/adding_product_with_images.feature",
+      "size": 2485,
+      "sha": "bfe909f692b0a45b88ab658d7ff76aba23b848bc"
+    },
+    {
+      "name": "adding_product_with_integer_attribute.feature",
+      "original_path": "features/product/managing_products/adding_product_with_integer_attribute.feature",
+      "size": 1779,
+      "sha": "6c5bb81e13cc3610dd6f98ed070d56415d8df01e"
+    },
+    {
+      "name": "adding_product_with_only_original_price.feature",
+      "original_path": "features/product/managing_products/adding_product_with_only_original_price.feature",
+      "size": 926,
+      "sha": "0c6e61dd919c5d318335f4a82ce11cde8f5c378d"
+    },
+    {
+      "name": "adding_product_with_percent_attribute.feature",
+      "original_path": "features/product/managing_products/adding_product_with_percent_attribute.feature",
+      "size": 1787,
+      "sha": "637d2ca16a55620692081da53d7a408f750c9ae5"
+    },
+    {
+      "name": "adding_product_with_prices_for_multiple_channels.feature",
+      "original_path": "features/product/managing_products/adding_product_with_prices_for_multiple_channels.feature",
+      "size": 3170,
+      "sha": "b224dae76f531304b99006d5f46ac36f0d1e7d7c"
+    },
+    {
+      "name": "adding_product_with_text_attribute.feature",
+      "original_path": "features/product/managing_products/adding_product_with_text_attribute.feature",
+      "size": 2677,
+      "sha": "37df48bd7f2c82aa55ea6ea388261f2802dc9a09"
+    },
+    {
+      "name": "adding_text_attribute_in_different_locales.feature",
+      "original_path": "features/product/managing_products/adding_text_attribute_in_different_locales.feature",
+      "size": 2114,
+      "sha": "9dc2b16b3b775129a2e54e094638bc9e2d26eacc"
+    },
+    {
+      "name": "adding_text_attributes_to_existing_product.feature",
+      "original_path": "features/product/managing_products/adding_text_attributes_to_existing_product.feature",
+      "size": 2641,
+      "sha": "a3e8575bf4c226ccc289d842a215efde5edfc32d"
+    },
+    {
+      "name": "browsing_products.feature",
+      "original_path": "features/product/managing_products/browsing_products.feature",
+      "size": 487,
+      "sha": "eb715d8c750f207351d42f7811490354ccf3745b"
+    },
+    {
+      "name": "browsing_products_by_taxon.feature",
+      "original_path": "features/product/managing_products/browsing_products_by_taxon.feature",
+      "size": 1006,
+      "sha": "81c274af8acf4230d93ba17b6f819bb2c43dcc7d"
+    },
+    {
+      "name": "changing_associations_of_product.feature",
+      "original_path": "features/product/managing_products/changing_associations_of_product.feature",
+      "size": 1574,
+      "sha": "7a0b6d609f184e04ef5219b12c84a313d9395822"
+    },
+    {
+      "name": "changing_images_of_product.feature",
+      "original_path": "features/product/managing_products/changing_images_of_product.feature",
+      "size": 2525,
+      "sha": "a947bfefd36825beccbd0ff7661186ad3b8adf84"
+    },
+    {
+      "name": "checking_products_in_the_shop_while_editing_them.feature",
+      "original_path": "features/product/managing_products/checking_products_in_the_shop_while_editing_them.feature",
+      "size": 1594,
+      "sha": "274466777fe37609a4b3488ceee987bd7789cd3e"
+    },
+    {
+      "name": "deleting_multiple_products.feature",
+      "original_path": "features/product/managing_products/deleting_multiple_products.feature",
+      "size": 824,
+      "sha": "628d75453b23cd11b56840d295ab6bf3f8fcff76"
+    },
+    {
+      "name": "deleting_product.feature",
+      "original_path": "features/product/managing_products/deleting_product.feature",
+      "size": 1013,
+      "sha": "32b88294533ceddee7d1209e38c7837d593bd73c"
+    },
+    {
+      "name": "deleting_product_with_reviews.feature",
+      "original_path": "features/product/managing_products/deleting_product_with_reviews.feature",
+      "size": 681,
+      "sha": "74052f066bf8b57fc6ddb5dd77313652428f5d21"
+    },
+    {
+      "name": "disable_or_enable_inventory_on_product.feature",
+      "original_path": "features/product/managing_products/disable_or_enable_inventory_on_product.feature",
+      "size": 1016,
+      "sha": "e1b1a0801d977fdd260a86247a33aa666a90c880"
+    },
+    {
+      "name": "disable_or_enable_product.feature",
+      "original_path": "features/product/managing_products/disable_or_enable_product.feature",
+      "size": 976,
+      "sha": "268760755bf428af0586806d9fa2e6ce131ced8c"
+    },
+    {
+      "name": "editing_product.feature",
+      "original_path": "features/product/managing_products/editing_product.feature",
+      "size": 5018,
+      "sha": "8ca18f0c5a4d0ecf2b7e10ff93b63979132ead06"
+    },
+    {
+      "name": "editing_product_attributes.feature",
+      "original_path": "features/product/managing_products/editing_product_attributes.feature",
+      "size": 1193,
+      "sha": "38a2b598e4288e4fc73b604c24174addbb3959f7"
+    },
+    {
+      "name": "editing_product_slug.feature",
+      "original_path": "features/product/managing_products/editing_product_slug.feature",
+      "size": 2875,
+      "sha": "7bff2a08a67b0dc068154c4e07d278b963f795c3"
+    },
+    {
+      "name": "editing_product_slug_in_multiple_locales.feature",
+      "original_path": "features/product/managing_products/editing_product_slug_in_multiple_locales.feature",
+      "size": 4922,
+      "sha": "051fce8152fdbcbac53b559deac4b9abca5b812a"
+    },
+    {
+      "name": "filtering_products_by_channel.feature",
+      "original_path": "features/product/managing_products/filtering_products_by_channel.feature",
+      "size": 1425,
+      "sha": "52afb64b14dbe5b938170cfd4921abf37ec85b57"
+    },
+    {
+      "name": "prevent_deletion_of_purchased_product.feature",
+      "original_path": "features/product/managing_products/prevent_deletion_of_purchased_product.feature",
+      "size": 1813,
+      "sha": "e15586f14d0dc5f3e504973a46a8449ae67b5ded"
+    },
+    {
+      "name": "product_validation.feature",
+      "original_path": "features/product/managing_products/product_validation.feature",
+      "size": 9587,
+      "sha": "e3b2686fa87c8095502ffb619daa4ffb4ef98d59"
+    },
+    {
+      "name": "removing_images_of_product.feature",
+      "original_path": "features/product/managing_products/removing_images_of_product.feature",
+      "size": 5543,
+      "sha": "5f5985b68c19d5b59b3bad42250b54207975f055"
+    },
+    {
+      "name": "removing_product_price_after_channel_deletion.feature",
+      "original_path": "features/product/managing_products/removing_product_price_after_channel_deletion.feature",
+      "size": 978,
+      "sha": "88fbe4771e41257c5fa93cd48f652be3ec049eff"
+    },
+    {
+      "name": "removing_product_price_from_obsolete_channel.feature",
+      "original_path": "features/product/managing_products/removing_product_price_from_obsolete_channel.feature",
+      "size": 1623,
+      "sha": "34333a83cd6acac0674df8c55bbec690704906a5"
+    },
+    {
+      "name": "select_taxons_for_new_product.feature",
+      "original_path": "features/product/managing_products/select_taxons_for_new_product.feature",
+      "size": 1663,
+      "sha": "a4155ce49868c107a931c13452b18c106ded48a8"
+    },
+    {
+      "name": "select_taxons_for_product.feature",
+      "original_path": "features/product/managing_products/select_taxons_for_product.feature",
+      "size": 1343,
+      "sha": "5a279c183c99cf84a3242eabfc46acc5f8d9fdb1"
+    },
+    {
+      "name": "sorting_products.feature",
+      "original_path": "features/product/managing_products/sorting_products.feature",
+      "size": 2993,
+      "sha": "2970aaa373224281b08e18ffcebc5c3331d2c88a"
+    },
+    {
+      "name": "sorting_products_within_a_taxon_by_position.feature",
+      "original_path": "features/product/managing_products/sorting_products_within_a_taxon_by_position.feature",
+      "size": 2459,
+      "sha": "1547415666941f347ff3a2b36cadfa6877c9ef7c"
+    },
+    {
+      "name": "viewing_non_translatable_attributes.feature",
+      "original_path": "features/product/managing_products/viewing_non_translatable_attributes.feature",
+      "size": 733,
+      "sha": "bb81e56d8327522b38f5c2a73d4a124d58860c6d"
+    },
+    {
+      "name": "accesing_product_edit_page_from_show_page.feature",
+      "original_path": "features/product/viewing_product_in_admin_panel/accesing_product_edit_page_from_show_page.feature",
+      "size": 1160,
+      "sha": "c3bd6175411a373750b07536814a81ae6861ee46"
+    },
+    {
+      "name": "checking_products_in_the_shop_while_viewing_them.feature",
+      "original_path": "features/product/viewing_product_in_admin_panel/checking_products_in_the_shop_while_viewing_them.feature",
+      "size": 1535,
+      "sha": "fefeffa7ee58ccd2079d4a0c0a51c1683d96d3f1"
+    },
+    {
+      "name": "viewing_details_of_product_with_variants.feature",
+      "original_path": "features/product/viewing_product_in_admin_panel/viewing_details_of_product_with_variants.feature",
+      "size": 3538,
+      "sha": "01dfa2df9184749936eb83fa67e043ff5dd12793"
+    },
+    {
+      "name": "viewing_details_of_simple_product.feature",
+      "original_path": "features/product/viewing_product_in_admin_panel/viewing_details_of_simple_product.feature",
+      "size": 4336,
+      "sha": "0432b39ee39d96070e96389dcb09bfcca55a5139"
+    },
+    {
+      "name": "viewing_non_translatable_attributes_admin.feature",
+      "original_path": "features/product/viewing_product_in_admin_panel/viewing_non_translatable_attributes_admin.feature",
+      "size": 1258,
+      "sha": "c9324be56ff9320f4b19853136be97460d604980"
+    },
+    {
+      "name": "viewing_product_attributes_in_different_locales.feature",
+      "original_path": "features/product/viewing_product_in_admin_panel/viewing_product_attributes_in_different_locales.feature",
+      "size": 1451,
+      "sha": "725fd24722d5baa48d1b2578428fc799a1ea9662"
+    },
+    {
+      "name": "viewing_product_reviews_on_product_details_page.feature",
+      "original_path": "features/product/viewing_product_reviews/viewing_product_reviews_on_product_details_page.feature",
+      "size": 1214,
+      "sha": "8e09379a16951aff53fba6c9d51ccf7c726076fc"
+    },
+    {
+      "name": "viewing_product_reviews_on_product_reviews_page.feature",
+      "original_path": "features/product/viewing_product_reviews/viewing_product_reviews_on_product_reviews_page.feature",
+      "size": 1574,
+      "sha": "cad4a3866489caab1c954c8fdb27f519f0b50633"
+    },
+    {
+      "name": "accessing_disabled_taxon.feature",
+      "original_path": "features/product/viewing_products/accessing_disabled_taxon.feature",
+      "size": 522,
+      "sha": "8ada7ac8f51f27ae97b560d03843a2468df8c45b"
+    },
+    {
+      "name": "accessing_product_page_via_permalink.feature",
+      "original_path": "features/product/viewing_products/accessing_product_page_via_permalink.feature",
+      "size": 595,
+      "sha": "eb79f47283d83de9b89a0609190a08a18a5ea924"
+    },
+    {
+      "name": "accessing_product_wich_does_not_exist.feature",
+      "original_path": "features/product/viewing_products/accessing_product_wich_does_not_exist.feature",
+      "size": 457,
+      "sha": "367811011b8d04408bedfa8a86ed93abd9844e3f"
+    },
+    {
+      "name": "searching_products_by_name_within_specific_taxon.feature",
+      "original_path": "features/product/viewing_products/searching_products_by_name_within_specific_taxon.feature",
+      "size": 1646,
+      "sha": "10011b5ff7b39ae6de68d180e6b76650d97b4732"
+    },
+    {
+      "name": "viewing_children_taxons_from_specific_taxon.feature",
+      "original_path": "features/product/viewing_products/viewing_children_taxons_from_specific_taxon.feature",
+      "size": 1085,
+      "sha": "710ea47e3cf5a2f07513602124a2dab05e01bc04"
+    },
+    {
+      "name": "viewing_diagonal_variant_options.feature",
+      "original_path": "features/product/viewing_products/viewing_diagonal_variant_options.feature",
+      "size": 1587,
+      "sha": "34798306b7cf1ab6bed173722810d85556ee0e0a"
+    },
+    {
+      "name": "viewing_different_discounted_price_for_different_product_variants.feature",
+      "original_path": "features/product/viewing_products/viewing_different_discounted_price_for_different_product_variants.feature",
+      "size": 1212,
+      "sha": "a0fe972a1e60570714e500b3e8e1bd8ecccfcc44"
+    },
+    {
+      "name": "viewing_different_price_for_different_product_variants.feature",
+      "original_path": "features/product/viewing_products/viewing_different_price_for_different_product_variants.feature",
+      "size": 1122,
+      "sha": "eedc1ff1cb8ab8030681a7049a142ad31855ca3c"
+    },
+    {
+      "name": "viewing_different_price_for_different_product_variants_selected_with_options.feature",
+      "original_path": "features/product/viewing_products/viewing_different_price_for_different_product_variants_selected_with_options.feature",
+      "size": 1023,
+      "sha": "a5ae2f31fd781f22dde1660849d820a12fa7b60b"
+    },
+    {
+      "name": "viewing_enabled_products_only.feature",
+      "original_path": "features/product/viewing_products/viewing_enabled_products_only.feature",
+      "size": 663,
+      "sha": "9552121b5ddf768710e50576dba6f2279a01caf7"
+    },
+    {
+      "name": "viewing_product.feature",
+      "original_path": "features/product/viewing_products/viewing_product.feature",
+      "size": 671,
+      "sha": "c8ea7c69a550ded6eeb603bb00d8430ea4e7f854"
+    },
+    {
+      "name": "viewing_product_associations.feature",
+      "original_path": "features/product/viewing_products/viewing_product_associations.feature",
+      "size": 1813,
+      "sha": "3013af5a5a2690903d511ce81dd0c9f69ed27163"
+    },
+    {
+      "name": "viewing_product_attributes.feature",
+      "original_path": "features/product/viewing_products/viewing_product_attributes.feature",
+      "size": 5608,
+      "sha": "a9d56402a74db52b0e249e9e5a28db86ff626076"
+    },
+    {
+      "name": "viewing_product_attributes_in_different_locales_1.feature",
+      "original_path": "features/product/viewing_products/viewing_product_attributes_in_different_locales.feature",
+      "size": 1316,
+      "sha": "83280a9306234fbfaaac8ed27dfb9f3767e7af70"
+    },
+    {
+      "name": "viewing_product_attributes_in_different_locales_and_channels.feature",
+      "original_path": "features/product/viewing_products/viewing_product_attributes_in_different_locales_and_channels.feature",
+      "size": 3082,
+      "sha": "ea36fdaf2da58696f6cdf0880645221fcde9b206"
+    },
+    {
+      "name": "viewing_product_average_rating.feature",
+      "original_path": "features/product/viewing_products/viewing_product_average_rating.feature",
+      "size": 1076,
+      "sha": "c9730a3124c6fa500f0676cf0243f93ac03ad666"
+    },
+    {
+      "name": "viewing_product_enabled_variants_only.feature",
+      "original_path": "features/product/viewing_products/viewing_product_enabled_variants_only.feature",
+      "size": 777,
+      "sha": "103977555df0f20db44159ee912994369f0c30de"
+    },
+    {
+      "name": "viewing_product_enabled_variants_options_only.feature",
+      "original_path": "features/product/viewing_products/viewing_product_enabled_variants_options_only.feature",
+      "size": 831,
+      "sha": "d91bfb608ff23c39cd162fda9747d374287f3160"
+    },
+    {
+      "name": "viewing_product_from_specific_taxon_sorted_by_position.feature",
+      "original_path": "features/product/viewing_products/viewing_product_from_specific_taxon_sorted_by_position.feature",
+      "size": 928,
+      "sha": "b771555e81ae7c44771cc44753bdf3fbf77cd2ba"
+    },
+    {
+      "name": "viewing_product_image.feature",
+      "original_path": "features/product/viewing_products/viewing_product_image.feature",
+      "size": 663,
+      "sha": "7ffa7e550f6200bb0f4e4fb10515f18aa1b59232"
+    },
+    {
+      "name": "viewing_product_price_on_products_list.feature",
+      "original_path": "features/product/viewing_products/viewing_product_price_on_products_list.feature",
+      "size": 677,
+      "sha": "573b7ff1f76aa7639bde7124f2d9f3e9254f0bf6"
+    },
+    {
+      "name": "viewing_product_short_description_on_product_list.feature",
+      "original_path": "features/product/viewing_products/viewing_product_short_description_on_product_list.feature",
+      "size": 654,
+      "sha": "fba859a8ac6fcf58aad432b3a99b32579d4221e6"
+    },
+    {
+      "name": "viewing_product_variants_names.feature",
+      "original_path": "features/product/viewing_products/viewing_product_variants_names.feature",
+      "size": 1223,
+      "sha": "4137a1b6690e9b7a32b568802984ef177e5fbf77"
+    },
+    {
+      "name": "viewing_product_with_all_variants_disabled.feature",
+      "original_path": "features/product/viewing_products/viewing_product_with_all_variants_disabled.feature",
+      "size": 941,
+      "sha": "574bc93cb51d3ae4d58ce8515026dd7ef1408363"
+    },
+    {
+      "name": "viewing_products_discounted_price.feature",
+      "original_path": "features/product/viewing_products/viewing_products_discounted_price.feature",
+      "size": 659,
+      "sha": "2fb20a0a3fdc6d075d33b137bddcfde7a37a838b"
+    },
+    {
+      "name": "viewing_products_from_specific_taxon.feature",
+      "original_path": "features/product/viewing_products/viewing_products_from_specific_taxon.feature",
+      "size": 1038,
+      "sha": "b1b31594384d0f92dd992003dd57ee2208035fab"
+    },
+    {
+      "name": "viewing_products_from_specific_taxon_and_channel.feature",
+      "original_path": "features/product/viewing_products/viewing_products_from_specific_taxon_and_channel.feature",
+      "size": 1377,
+      "sha": "9a5f17cfef464a11b34e1c62617d3d7c2f9e8256"
+    },
+    {
+      "name": "viewing_products_from_taxon_and_children.feature",
+      "original_path": "features/product/viewing_products/viewing_products_from_taxon_and_children.feature",
+      "size": 1640,
+      "sha": "a36a228e28f8aefa8f912c011d993906f3eae78f"
+    },
+    {
+      "name": "viewing_products_from_taxon_children.feature",
+      "original_path": "features/product/viewing_products/viewing_products_from_taxon_children.feature",
+      "size": 1163,
+      "sha": "ea191d67fbaaec551e50b1c436cd6bf714936ff1"
+    },
+    {
+      "name": "viewing_products_price.feature",
+      "original_path": "features/product/viewing_products/viewing_products_price.feature",
+      "size": 489,
+      "sha": "888542610591ac974f6ae2caf464ef3a24076226"
+    },
+    {
+      "name": "viewing_products_sorted_by_first_variant_price.feature",
+      "original_path": "features/product/viewing_products/viewing_products_sorted_by_first_variant_price.feature",
+      "size": 1607,
+      "sha": "b54e9a549407908098eb810bb799bd13affd3e68"
+    },
+    {
+      "name": "viewing_products_with_multiple_variants_sorted_by_price.feature",
+      "original_path": "features/product/viewing_products/viewing_products_with_multiple_variants_sorted_by_price.feature",
+      "size": 2307,
+      "sha": "28670895a0cc805167b204f07820461966dd47a5"
+    },
+    {
+      "name": "viewing_select_product_attributes.feature",
+      "original_path": "features/product/viewing_products/viewing_select_product_attributes.feature",
+      "size": 2154,
+      "sha": "65bacd6529761c4042ae85d657ff3339dfbcfac9"
+    },
+    {
+      "name": "viewing_select_product_attributes_in_different_locales.feature",
+      "original_path": "features/product/viewing_products/viewing_select_product_attributes_in_different_locales.feature",
+      "size": 1990,
+      "sha": "9331c5d41e1a28ac28455144c1eceb6439d46b19"
+    },
+    {
+      "name": "viewing_sorted_products.feature",
+      "original_path": "features/product/viewing_products/viewing_sorted_products.feature",
+      "size": 3011,
+      "sha": "494d64578a5152a64c87c485ad8fdf60810150a9"
+    },
+    {
+      "name": "applying_promotion_coupon.feature",
+      "original_path": "features/promotion/applying_promotion_coupon/applying_promotion_coupon.feature",
+      "size": 770,
+      "sha": "5273ef3b2578ed375bb30c7f8293573f6b523211"
+    },
+    {
+      "name": "applying_promotion_coupon_with_expiration_date.feature",
+      "original_path": "features/promotion/applying_promotion_coupon/applying_promotion_coupon_with_expiration_date.feature",
+      "size": 1655,
+      "sha": "c3a587b4b33a8aab0be583b8958ae5223a3e4ca6"
+    },
+    {
+      "name": "applying_promotion_coupon_with_full_percentage.feature",
+      "original_path": "features/promotion/applying_promotion_coupon/applying_promotion_coupon_with_full_percentage.feature",
+      "size": 829,
+      "sha": "ede9de604872c4e274697f17bc0c5bafa120afbf"
+    },
+    {
+      "name": "applying_promotion_coupon_with_per_customer_usage_limit.feature",
+      "original_path": "features/promotion/applying_promotion_coupon/applying_promotion_coupon_with_per_customer_usage_limit.feature",
+      "size": 3619,
+      "sha": "a3df32d0e670ba325dc7b125d419a91594486842"
+    },
+    {
+      "name": "applying_promotion_coupon_with_usage_limit.feature",
+      "original_path": "features/promotion/applying_promotion_coupon/applying_promotion_coupon_with_usage_limit.feature",
+      "size": 2701,
+      "sha": "57a7dc00df26f4ca9b0b2ca529df50fc6a64ed04"
+    },
+    {
+      "name": "denying_usage_of_unexisting_promotion_coupon.feature",
+      "original_path": "features/promotion/applying_promotion_coupon/denying_usage_of_unexisting_promotion_coupon.feature",
+      "size": 893,
+      "sha": "0621f4de25c653960bdbf4f4ebf6c6801a808ee9"
+    },
+    {
+      "name": "removing_promotion_coupon.feature",
+      "original_path": "features/promotion/applying_promotion_coupon/removing_promotion_coupon.feature",
+      "size": 837,
+      "sha": "5e3c45b6c179b946ab52d15e2c552469dfa7ad4c"
+    },
+    {
+      "name": "reapplying_promotion_on_cart_change.feature",
+      "original_path": "features/promotion/applying_promotion_rules/reapplying_promotion_on_cart_change.feature",
+      "size": 2854,
+      "sha": "cf910dcc873ba77c323f524221ca723f2ea78d0f"
+    },
+    {
+      "name": "receiving_discount_based_on_cart_quantity.feature",
+      "original_path": "features/promotion/applying_promotion_rules/receiving_discount_based_on_cart_quantity.feature",
+      "size": 1901,
+      "sha": "46c57aa75fe3f0bc3190a08367adf3e05db5bbd1"
+    },
+    {
+      "name": "receiving_discount_based_on_chosen_product.feature",
+      "original_path": "features/promotion/applying_promotion_rules/receiving_discount_based_on_chosen_product.feature",
+      "size": 1262,
+      "sha": "3139afc8709210390f1569d0f11753d76a020268"
+    },
+    {
+      "name": "receiving_discount_based_on_customer_group.feature",
+      "original_path": "features/promotion/applying_promotion_rules/receiving_discount_based_on_customer_group.feature",
+      "size": 1703,
+      "sha": "727a4173eb8b061998a3aa334ae3d4a8d2430321"
+    },
+    {
+      "name": "receiving_discount_based_on_items_from_specific_taxons.feature",
+      "original_path": "features/promotion/applying_promotion_rules/receiving_discount_based_on_items_from_specific_taxons.feature",
+      "size": 2572,
+      "sha": "13834889467d273092fcc8630b545e317223c6fe"
+    },
+    {
+      "name": "receiving_discount_based_on_items_total.feature",
+      "original_path": "features/promotion/applying_promotion_rules/receiving_discount_based_on_items_total.feature",
+      "size": 1970,
+      "sha": "cd65e9235c9f57a0d9cbb5002c6cb0ff95bc10e5"
+    },
+    {
+      "name": "receiving_discount_based_on_nth_order.feature",
+      "original_path": "features/promotion/applying_promotion_rules/receiving_discount_based_on_nth_order.feature",
+      "size": 1766,
+      "sha": "0f95c49360f552a5920e326f5544d32d3b9fb409"
+    },
+    {
+      "name": "receiving_discount_based_on_nth_order_for_guest_customer.feature",
+      "original_path": "features/promotion/applying_promotion_rules/receiving_discount_based_on_nth_order_for_guest_customer.feature",
+      "size": 2051,
+      "sha": "b2bf7be34cf848a0b98c5960867110599f1afa0a"
+    },
+    {
+      "name": "receiving_discount_based_on_total_of_items_from_specific_taxon.feature",
+      "original_path": "features/promotion/applying_promotion_rules/receiving_discount_based_on_total_of_items_from_specific_taxon.feature",
+      "size": 2876,
+      "sha": "289492f839df10e9e3c0a366ecad3ef001fd21ba"
+    },
+    {
+      "name": "complex_promotions.feature",
+      "original_path": "features/promotion/complex_promotions.feature",
+      "size": 4310,
+      "sha": "fbbe26e0fda146fdaa1dea0720d5fe493695f209"
+    },
+    {
+      "name": "adding_coupon.feature",
+      "original_path": "features/promotion/managing_coupons/adding_coupon.feature",
+      "size": 836,
+      "sha": "d180a8bcf007d6d8f16da9431384ea8ed11ea8ad"
+    },
+    {
+      "name": "being_unable_to_generate_too_many_coupons_with_prefix_and_suffix.feature",
+      "original_path": "features/promotion/managing_coupons/being_unable_to_generate_too_many_coupons_with_prefix_and_suffix.feature",
+      "size": 2656,
+      "sha": "4285c0f43a0d80cea0ebbf949044a75246f5dd55"
+    },
+    {
+      "name": "browsing_coupon.feature",
+      "original_path": "features/promotion/managing_coupons/browsing_coupon.feature",
+      "size": 623,
+      "sha": "ce854d59c8ccfec3eeab1344c3e61c3b4ef70630"
+    },
+    {
+      "name": "coupon_generate_validation.feature",
+      "original_path": "features/promotion/managing_coupons/coupon_generate_validation.feature",
+      "size": 2178,
+      "sha": "81a2a9e83bd3d7179b0ab79dd2ef0969654a213a"
+    },
+    {
+      "name": "coupon_unique_code_validation.feature",
+      "original_path": "features/promotion/managing_coupons/coupon_unique_code_validation.feature",
+      "size": 932,
+      "sha": "b9a342bed88fb08bbafaa9291f6691ccc7e5331c"
+    },
+    {
+      "name": "coupon_validation.feature",
+      "original_path": "features/promotion/managing_coupons/coupon_validation.feature",
+      "size": 1418,
+      "sha": "cedbd27d7fecd851dcf302b31c44368d89460ae8"
+    },
+    {
+      "name": "deleting_coupon.feature",
+      "original_path": "features/promotion/managing_coupons/deleting_coupon.feature",
+      "size": 700,
+      "sha": "efe196ac6f3fd9fd688f0b09ef3c7b55abdb51be"
+    },
+    {
+      "name": "deleting_multiple_coupons.feature",
+      "original_path": "features/promotion/managing_coupons/deleting_multiple_coupons.feature",
+      "size": 911,
+      "sha": "7144c5669dc3f7482de51b7d0da8016c74dea34b"
+    },
+    {
+      "name": "editing_coupon.feature",
+      "original_path": "features/promotion/managing_coupons/editing_coupon.feature",
+      "size": 1616,
+      "sha": "1ec103d55052d82f1ffeef34cadb3efd60d18739"
+    },
+    {
+      "name": "generating_coupon.feature",
+      "original_path": "features/promotion/managing_coupons/generating_coupon.feature",
+      "size": 1850,
+      "sha": "c5db05f7c149c5566b8e93f40c5df09f59620ee3"
+    },
+    {
+      "name": "generating_coupon_with_prefix_and_suffix.feature",
+      "original_path": "features/promotion/managing_coupons/generating_coupon_with_prefix_and_suffix.feature",
+      "size": 2206,
+      "sha": "f009726f7ef35db0a6da73cc23eaacdd8beb2f7b"
+    },
+    {
+      "name": "preventing_deletion_of_coupons_in_use.feature",
+      "original_path": "features/promotion/managing_coupons/preventing_deletion_of_coupons_in_use.feature",
+      "size": 1121,
+      "sha": "abdaed9f338cbd926083506d7cbd780e52d9c0ce"
+    },
+    {
+      "name": "accessing_promotion_with_rule_that_contains_removed_taxon.feature",
+      "original_path": "features/promotion/managing_promotions/accessing_promotion_with_rule_that_contains_removed_taxon.feature",
+      "size": 1579,
+      "sha": "d9ea97c524bfcacd99905b3322d8396e352072c9"
+    },
+    {
+      "name": "accessing_the_coupons_management_from_the_promotion_page.feature",
+      "original_path": "features/promotion/managing_promotions/accessing_the_coupons_management_from_the_promotion_page.feature",
+      "size": 1040,
+      "sha": "7f798c5c39a3229ab349e10491cfc6d4e4fbfa22"
+    },
+    {
+      "name": "adding_promotion.feature",
+      "original_path": "features/promotion/managing_promotions/adding_promotion.feature",
+      "size": 2776,
+      "sha": "be973d01528737f09a2487dd7e9bf1e8a233b389"
+    },
+    {
+      "name": "adding_promotion_with_action.feature",
+      "original_path": "features/promotion/managing_promotions/adding_promotion_with_action.feature",
+      "size": 886,
+      "sha": "87a0ebc284ab46be7e90fc6ffb5cfc193eb02fc0"
+    },
+    {
+      "name": "adding_promotion_with_action_in_different_channels.feature",
+      "original_path": "features/promotion/managing_promotions/adding_promotion_with_action_in_different_channels.feature",
+      "size": 1142,
+      "sha": "1b9e923a18b058279fc4961b81583aaa20db901c"
+    },
+    {
+      "name": "adding_promotion_with_filter.feature",
+      "original_path": "features/promotion/managing_promotions/adding_promotion_with_filter.feature",
+      "size": 6119,
+      "sha": "6e19e589ece31abac18903906fc60dbd1ca0b42c"
+    },
+    {
+      "name": "adding_promotion_with_rule.feature",
+      "original_path": "features/promotion/managing_promotions/adding_promotion_with_rule.feature",
+      "size": 2542,
+      "sha": "ad93aa803fcafa76a0093354154d6b198556e094"
+    },
+    {
+      "name": "adding_promotion_with_rule_in_different_channels.feature",
+      "original_path": "features/promotion/managing_promotions/adding_promotion_with_rule_in_different_channels.feature",
+      "size": 1079,
+      "sha": "dce0258b1671787f53004a18153da043c6c18548"
+    },
+    {
+      "name": "browsing_promotions.feature",
+      "original_path": "features/promotion/managing_promotions/browsing_promotions.feature",
+      "size": 873,
+      "sha": "94035dbbd3670e36111922f32075ee5688fbb434"
+    },
+    {
+      "name": "deleting_multiple_promotions.feature",
+      "original_path": "features/promotion/managing_promotions/deleting_multiple_promotions.feature",
+      "size": 968,
+      "sha": "4ece0141eef0cd32555b7c1bdc28c091f712e536"
+    },
+    {
+      "name": "deleting_promotion.feature",
+      "original_path": "features/promotion/managing_promotions/deleting_promotion.feature",
+      "size": 673,
+      "sha": "32abb00d58167519d7a03e525e80cf46fab73b8e"
+    },
+    {
+      "name": "editing_promotion.feature",
+      "original_path": "features/promotion/managing_promotions/editing_promotion.feature",
+      "size": 2948,
+      "sha": "6ca86484ed49e6f860c1f9a9883fe2fbc8393dbf"
+    },
+    {
+      "name": "filtering_promotions_by_coupon_code.feature",
+      "original_path": "features/promotion/managing_promotions/filtering_promotions_by_coupon_code.feature",
+      "size": 805,
+      "sha": "e7c3c5d46988a2218da97775c77c735fb49ec6cb"
+    },
+    {
+      "name": "preventing_deletion_of_promotions_in_use.feature",
+      "original_path": "features/promotion/managing_promotions/preventing_deletion_of_promotions_in_use.feature",
+      "size": 1191,
+      "sha": "359a5cbf0cd1240f284545ee45ffb40607d9775f"
+    },
+    {
+      "name": "promotion_unique_code_validation.feature",
+      "original_path": "features/promotion/managing_promotions/promotion_unique_code_validation.feature",
+      "size": 795,
+      "sha": "bbd463ce332792b31f875b8e7f68efcbd0671c39"
+    },
+    {
+      "name": "promotion_validation.feature",
+      "original_path": "features/promotion/managing_promotions/promotion_validation.feature",
+      "size": 3749,
+      "sha": "16af3aaf09e2483c1f28ae0442533b2b4c312ea5"
+    },
+    {
+      "name": "promotions_filter_validation.feature",
+      "original_path": "features/promotion/managing_promotions/promotions_filter_validation.feature",
+      "size": 1846,
+      "sha": "df1622a71187197e1b1e006dafcddb661b917251"
+    },
+    {
+      "name": "sorting_promotions_by_priority.feature",
+      "original_path": "features/promotion/managing_promotions/sorting_promotions_by_priority.feature",
+      "size": 1506,
+      "sha": "2b8bf5b1bc043e1d4abad9d843e188144a124f73"
+    },
+    {
+      "name": "applying_only_promotions_enabled_for_given_channel.feature",
+      "original_path": "features/promotion/receiving_discount/applying_only_promotions_enabled_for_given_channel.feature",
+      "size": 988,
+      "sha": "86bd96c2fa4b7a8e099955abf4ba6795fc859a43"
+    },
+    {
+      "name": "applying_promotion_with_expiration_date.feature",
+      "original_path": "features/promotion/receiving_discount/applying_promotion_with_expiration_date.feature",
+      "size": 1638,
+      "sha": "0cc0bd0cec2836a66defdb183a4947aeaff5c6eb"
+    },
+    {
+      "name": "receiving_discount_from_promotion_with_multiple_actions.feature",
+      "original_path": "features/promotion/receiving_discount/receiving_discount_from_promotion_with_multiple_actions.feature",
+      "size": 1744,
+      "sha": "0f3b47fcc47a1d0e64cabb54f05e888bd3e98b02"
+    },
+    {
+      "name": "receiving_discount_in_order_of_promotions_priority.feature",
+      "original_path": "features/promotion/receiving_discount/receiving_discount_in_order_of_promotions_priority.feature",
+      "size": 2173,
+      "sha": "ab806e16ab985bf6741510fabf51c0052613765c"
+    },
+    {
+      "name": "receiving_fixed_discount_dependent_on_channel.feature",
+      "original_path": "features/promotion/receiving_discount/receiving_fixed_discount_dependent_on_channel.feature",
+      "size": 1339,
+      "sha": "66cd5c46d27acd8e5cfed5a64c02b4e4cf70da33"
+    },
+    {
+      "name": "receiving_fixed_discount_on_cart.feature",
+      "original_path": "features/promotion/receiving_discount/receiving_fixed_discount_on_cart.feature",
+      "size": 2057,
+      "sha": "02499465b9eb75cc4dc80be7f3a5db8722ed112a"
+    },
+    {
+      "name": "receiving_fixed_discount_on_items_on_price_range.feature",
+      "original_path": "features/promotion/receiving_discount/receiving_fixed_discount_on_items_on_price_range.feature",
+      "size": 4496,
+      "sha": "0e73030687fe333d40b4cfeb927a325cb39983ad"
+    },
+    {
+      "name": "receiving_fixed_discount_on_products_from_specific_taxon.feature",
+      "original_path": "features/promotion/receiving_discount/receiving_fixed_discount_on_products_from_specific_taxon.feature",
+      "size": 2843,
+      "sha": "8d4e95e5cb44855f59be4119fb842508fb9f2a7b"
+    },
+    {
+      "name": "receiving_fixed_discount_on_specific_products.feature",
+      "original_path": "features/promotion/receiving_discount/receiving_fixed_discount_on_specific_products.feature",
+      "size": 2804,
+      "sha": "a4788f9d0afb62bccaaf375927a329a4f846cb03"
+    },
+    {
+      "name": "receiving_percentage_discount_on_items_on_price_range.feature",
+      "original_path": "features/promotion/receiving_discount/receiving_percentage_discount_on_items_on_price_range.feature",
+      "size": 3782,
+      "sha": "4c0f3880acab336a554745f98fc544f4091b4adc"
+    },
+    {
+      "name": "receiving_percentage_discount_on_products_from_specific_taxon.feature",
+      "original_path": "features/promotion/receiving_discount/receiving_percentage_discount_on_products_from_specific_taxon.feature",
+      "size": 2076,
+      "sha": "29941b9dd5882948fbab71d189e86abbd11c89ed"
+    },
+    {
+      "name": "receiving_percentage_discount_on_shipping.feature",
+      "original_path": "features/promotion/receiving_discount/receiving_percentage_discount_on_shipping.feature",
+      "size": 3324,
+      "sha": "7c146c8b7b42d35797a435023852b94306084726"
+    },
+    {
+      "name": "receiving_percentage_discount_on_specific_products.feature",
+      "original_path": "features/promotion/receiving_discount/receiving_percentage_discount_on_specific_products.feature",
+      "size": 1843,
+      "sha": "1a3466b45d9dd7cce349b7095c9f9ee863e37a83"
+    },
+    {
+      "name": "receiving_percentage_discount_promotion_on_order.feature",
+      "original_path": "features/promotion/receiving_discount/receiving_percentage_discount_promotion_on_order.feature",
+      "size": 1873,
+      "sha": "4ec5cec8b5765a2a69b8ec281c006e2ed56f8599"
+    },
+    {
+      "name": "receiving_stacked_promotions_with_changing_context.feature",
+      "original_path": "features/promotion/receiving_discount/receiving_stacked_promotions_with_changing_context.feature",
+      "size": 1239,
+      "sha": "78ad79af19fe4cc5c16afa57d43a654254fc88c2"
+    },
+    {
+      "name": "reverting_previously_applied_discount_on_cart.feature",
+      "original_path": "features/promotion/reverting_discount/reverting_previously_applied_discount_on_cart.feature",
+      "size": 1316,
+      "sha": "0546b20944619f273f9e9e98a69c88b533f325b9"
+    },
+    {
+      "name": "checking_promotion_usage.feature",
+      "original_path": "features/promotion/tracking_usage/checking_promotion_usage.feature",
+      "size": 2588,
+      "sha": "c6a4abaef798e670008dc7a205250f7fa79f4614"
+    },
+    {
+      "name": "decreasing_promotion_coupon_usage_after_cancelling_order.feature",
+      "original_path": "features/promotion/tracking_usage/decreasing_promotion_coupon_usage_after_cancelling_order.feature",
+      "size": 1981,
+      "sha": "03f69fc0691a09be0db73a2590d38ab622bdb8fc"
+    },
+    {
+      "name": "decreasing_promotion_usage_after_cancelling_order.feature",
+      "original_path": "features/promotion/tracking_usage/decreasing_promotion_usage_after_cancelling_order.feature",
+      "size": 1072,
+      "sha": "031bb339d0a2bbe9296d83a04954cb8ae8be86a3"
+    },
+    {
+      "name": "increasing_promotion_coupon_usage_after_placing_order.feature",
+      "original_path": "features/promotion/tracking_usage/increasing_promotion_coupon_usage_after_placing_order.feature",
+      "size": 1859,
+      "sha": "9876273759f535c2f0b2b454071f560965a8695f"
+    },
+    {
+      "name": "increasing_promotion_usage_after_placing_order.feature",
+      "original_path": "features/promotion/tracking_usage/increasing_promotion_usage_after_placing_order.feature",
+      "size": 1081,
+      "sha": "53f9fbb9c6fceb0b723de762f0907b475fade8da"
+    },
+    {
+      "name": "applying_correct_shipping_fee_on_order.feature",
+      "original_path": "features/shipping/applying_shipping_fee/applying_correct_shipping_fee_on_order.feature",
+      "size": 1562,
+      "sha": "a97384678e8c2a7063c49c0a2fa840f4dd0c960d"
+    },
+    {
+      "name": "applying_correct_shipping_fee_with_product_taxes_on_order.feature",
+      "original_path": "features/shipping/applying_shipping_fee/applying_correct_shipping_fee_with_product_taxes_on_order.feature",
+      "size": 2175,
+      "sha": "840049e12a0e5c686efbb89fd63aa5c6047a4dfb"
+    },
+    {
+      "name": "applying_correct_shipping_fee_with_taxes_on_order.feature",
+      "original_path": "features/shipping/applying_shipping_fee/applying_correct_shipping_fee_with_taxes_on_order.feature",
+      "size": 2073,
+      "sha": "08a92ee7c704b08f76ae00e9a4e9c4a4f632b858"
+    },
+    {
+      "name": "viewing_available_shipping_methods_based_on_order_total.feature",
+      "original_path": "features/shipping/applying_shipping_method_rules/viewing_available_shipping_methods_based_on_order_total.feature",
+      "size": 2235,
+      "sha": "a723329c81f962439b078b2fa3f82a8a45c684ac"
+    },
+    {
+      "name": "viewing_available_shipping_methods_based_on_total_weight.feature",
+      "original_path": "features/shipping/applying_shipping_method_rules/viewing_available_shipping_methods_based_on_total_weight.feature",
+      "size": 2421,
+      "sha": "e268182be1a0551cc7676bcbe6313bef7d1f3829"
+    },
+    {
+      "name": "accessing_shipments_order_from_shipment_index.feature",
+      "original_path": "features/shipping/managing_shipments/accessing_shipments_order_from_shipment_index.feature",
+      "size": 1165,
+      "sha": "ea348bc659215dae413c8d3a22c59fe86a1cb04c"
+    },
+    {
+      "name": "browsing_shipments.feature",
+      "original_path": "features/shipping/managing_shipments/browsing_shipments.feature",
+      "size": 2101,
+      "sha": "2e92aeb6b52fe2c3d139350c429d45342df54bda"
+    },
+    {
+      "name": "browsing_shipments_from_multiple_channels.feature",
+      "original_path": "features/shipping/managing_shipments/browsing_shipments_from_multiple_channels.feature",
+      "size": 2115,
+      "sha": "b7eb58897e766f7d4a02aa39b7b7b6d68ec29cbe"
+    },
+    {
+      "name": "filtering_shipments_by_channel.feature",
+      "original_path": "features/shipping/managing_shipments/filtering_shipments_by_channel.feature",
+      "size": 2079,
+      "sha": "d7d2806a3074ab1cd43a55d6e5cfb5276e71f549"
+    },
+    {
+      "name": "filtering_shipments_by_shipping_method.feature",
+      "original_path": "features/shipping/managing_shipments/filtering_shipments_by_shipping_method.feature",
+      "size": 1734,
+      "sha": "d5647f8c99624e6f9c8d3f3a23ca06f9adb0b144"
+    },
+    {
+      "name": "filtering_shipments_by_state.feature",
+      "original_path": "features/shipping/managing_shipments/filtering_shipments_by_state.feature",
+      "size": 1646,
+      "sha": "93210f7a1dbe703098b379666b6dd9e296dede50"
+    },
+    {
+      "name": "seeing_shipment_details.feature",
+      "original_path": "features/shipping/managing_shipments/seeing_shipment_details.feature",
+      "size": 1164,
+      "sha": "705dba90bcee2bb4d2ec938c61766bcefa5b9d15"
+    },
+    {
+      "name": "shipping_a_shipment_from_shipment_list.feature",
+      "original_path": "features/shipping/managing_shipments/shipping_a_shipment_from_shipment_list.feature",
+      "size": 2377,
+      "sha": "29f830cf7a48e9ef3add1b01ff23601c69e34a32"
+    },
+    {
+      "name": "adding_shipping_category.feature",
+      "original_path": "features/shipping/managing_shipping_categories/adding_shipping_category.feature",
+      "size": 829,
+      "sha": "33611f3092f0fa0cb6f3f0c8fec8fdc8a3371e9e"
+    },
+    {
+      "name": "browsing_shipping_categories.feature",
+      "original_path": "features/shipping/managing_shipping_categories/browsing_shipping_categories.feature",
+      "size": 650,
+      "sha": "6bfbd96de66ed9af168bdaf4c2773d68cb82dfe0"
+    },
+    {
+      "name": "deleting_multiple_shipping_categories.feature",
+      "original_path": "features/shipping/managing_shipping_categories/deleting_multiple_shipping_categories.feature",
+      "size": 905,
+      "sha": "9acfe00401359879be711735c2d1c03ec442be10"
+    },
+    {
+      "name": "deleting_shipping_category.feature",
+      "original_path": "features/shipping/managing_shipping_categories/deleting_shipping_category.feature",
+      "size": 693,
+      "sha": "4c65065dd2b5c959126f24319705d0a84cb14fad"
+    },
+    {
+      "name": "editing_shipping_category.feature",
+      "original_path": "features/shipping/managing_shipping_categories/editing_shipping_category.feature",
+      "size": 885,
+      "sha": "15e556fbe3689fcd00e63b265089f9c9d388083c"
+    },
+    {
+      "name": "shipping_category_unique_code_validation.feature",
+      "original_path": "features/shipping/managing_shipping_categories/shipping_category_unique_code_validation.feature",
+      "size": 857,
+      "sha": "30b7d51b2f4ad5baf63c3b7a7d79f5034f062657"
+    },
+    {
+      "name": "shipping_category_validation.feature",
+      "original_path": "features/shipping/managing_shipping_categories/shipping_category_validation.feature",
+      "size": 1137,
+      "sha": "77afd3e3321234a288b9ad205b6b3c91da06ed5d"
+    },
+    {
+      "name": "adding_shipping_method.feature",
+      "original_path": "features/shipping/managing_shipping_methods/adding_shipping_method.feature",
+      "size": 4096,
+      "sha": "74c74c3839de81d496b13f3dc2738f199a5472b1"
+    },
+    {
+      "name": "adding_shipping_method_with_rule.feature",
+      "original_path": "features/shipping/managing_shipping_methods/adding_shipping_method_with_rule.feature",
+      "size": 3539,
+      "sha": "f594fb940f4a18fa75513e39fb843bfa66fd6101"
+    },
+    {
+      "name": "archiving_shipping_methods.feature",
+      "original_path": "features/shipping/managing_shipping_methods/archiving_shipping_methods.feature",
+      "size": 1549,
+      "sha": "94064bcb731a5d7762bbdb7b3bb05749cf62d33d"
+    },
+    {
+      "name": "browsing_shipping_methods.feature",
+      "original_path": "features/shipping/managing_shipping_methods/browsing_shipping_methods.feature",
+      "size": 648,
+      "sha": "7a28ae1caa122288a0b7d9d8e0b76c3f24856117"
+    },
+    {
+      "name": "deleting_multiple_shipping_methods.feature",
+      "original_path": "features/shipping/managing_shipping_methods/deleting_multiple_shipping_methods.feature",
+      "size": 895,
+      "sha": "2d50667f61502582084d701d3278e53e3020a986"
+    },
+    {
+      "name": "deleting_shipping_method.feature",
+      "original_path": "features/shipping/managing_shipping_methods/deleting_shipping_method.feature",
+      "size": 680,
+      "sha": "cb5f0d412d275613bbcdcccba3c21b6e8f43ac34"
+    },
+    {
+      "name": "denying_access_to_shipping_methods_for_unauthorized_users.feature",
+      "original_path": "features/shipping/managing_shipping_methods/denying_access_to_shipping_methods_for_unauthorized_users.feature",
+      "size": 2033,
+      "sha": "e432189829f39e18e6f9dce886e9a3b292fe5f04"
+    },
+    {
+      "name": "editing_shipping_method.feature",
+      "original_path": "features/shipping/managing_shipping_methods/editing_shipping_method.feature",
+      "size": 1356,
+      "sha": "75351c4292f5d63b1185f336ce3c4d5198b9c8ed"
+    },
+    {
+      "name": "preventing_deletion_of_used_shipping_method.feature",
+      "original_path": "features/shipping/managing_shipping_methods/preventing_deletion_of_used_shipping_method.feature",
+      "size": 1026,
+      "sha": "afbbb00dd996a9a118fdde992ecc11aa05e56c70"
+    },
+    {
+      "name": "shipping_method_code_validation.feature",
+      "original_path": "features/shipping/managing_shipping_methods/shipping_method_code_validation.feature",
+      "size": 1922,
+      "sha": "90084159bbfc8ae33257dcaf09e367aba3f4c6ca"
+    },
+    {
+      "name": "shipping_method_flat_rate_per_shipment_validation.feature",
+      "original_path": "features/shipping/managing_shipping_methods/shipping_method_flat_rate_per_shipment_validation.feature",
+      "size": 1861,
+      "sha": "9675d60b922669722b1e38ba2cd5b1792abb003a"
+    },
+    {
+      "name": "shipping_method_flat_rate_per_unit_validation.feature",
+      "original_path": "features/shipping/managing_shipping_methods/shipping_method_flat_rate_per_unit_validation.feature",
+      "size": 1839,
+      "sha": "1a5ff7c8fb720b618a68708f13cbb6aa2c7bbb85"
+    },
+    {
+      "name": "shipping_method_unique_code_validation.feature",
+      "original_path": "features/shipping/managing_shipping_methods/shipping_method_unique_code_validation.feature",
+      "size": 1177,
+      "sha": "786493113f4776e2c6f8fa56b33ff2259f91f17b"
+    },
+    {
+      "name": "shipping_method_validation.feature",
+      "original_path": "features/shipping/managing_shipping_methods/shipping_method_validation.feature",
+      "size": 2431,
+      "sha": "f642d9be577b8b601b291ade1f4695c9f7e14364"
+    },
+    {
+      "name": "sorting_shipping_methods_by_name_or_code.feature",
+      "original_path": "features/shipping/managing_shipping_methods/sorting_shipping_methods_by_name_or_code.feature",
+      "size": 3377,
+      "sha": "a191a4365d75e12710f40088264a3025567d0057"
+    },
+    {
+      "name": "sorting_shipping_methods_by_position.feature",
+      "original_path": "features/shipping/managing_shipping_methods/sorting_shipping_methods_by_position.feature",
+      "size": 1576,
+      "sha": "3a13e44ad3fa357c51166aacb6b40bea0ba1db6e"
+    },
+    {
+      "name": "toggling_shipping_method.feature",
+      "original_path": "features/shipping/managing_shipping_methods/toggling_shipping_method.feature",
+      "size": 1158,
+      "sha": "2b13a116e6a37e9b861e295dfc9bb1b1ead73e8b"
+    },
+    {
+      "name": "applying_correct_taxes_based_on_customer_data.feature",
+      "original_path": "features/taxation/applying_taxes/applying_correct_taxes_based_on_customer_data.feature",
+      "size": 1820,
+      "sha": "fa5977f7603e178aa21ace22c84500975a91cd54"
+    },
+    {
+      "name": "applying_correct_taxes_for_items_with_different_tax_rates.feature",
+      "original_path": "features/taxation/applying_taxes/applying_correct_taxes_for_items_with_different_tax_rates.feature",
+      "size": 1305,
+      "sha": "349666083c5be7ace695562dc474e44a5f7eab5a"
+    },
+    {
+      "name": "applying_correct_taxes_for_items_with_the_same_tax_rate.feature",
+      "original_path": "features/taxation/applying_taxes/applying_correct_taxes_for_items_with_the_same_tax_rate.feature",
+      "size": 2051,
+      "sha": "97930032b32075defeb581fe9cb202ac6de4b4a2"
+    },
+    {
+      "name": "applying_correct_taxes_for_order_with_discount_for_an_item_in_order.feature",
+      "original_path": "features/taxation/applying_taxes/applying_correct_taxes_for_order_with_discount_for_an_item_in_order.feature",
+      "size": 2125,
+      "sha": "3aafbd297320ca77d2856931c9288a175dfdbbb7"
+    },
+    {
+      "name": "applying_correct_taxes_for_order_with_discount_for_an_item_in_order_when_tax_rate_included_in_price.feature",
+      "original_path": "features/taxation/applying_taxes/applying_correct_taxes_for_order_with_discount_for_an_item_in_order_when_tax_rate_included_in_price.feature",
+      "size": 2296,
+      "sha": "0e4afa7fbda63ccb5a9137bd9562021ab9ffec38"
+    },
+    {
+      "name": "applying_correct_taxes_for_order_with_discount_for_shipping.feature",
+      "original_path": "features/taxation/applying_taxes/applying_correct_taxes_for_order_with_discount_for_shipping.feature",
+      "size": 2068,
+      "sha": "e2744c29d14bbd91c9a37d1a60753ac1975c8165"
+    },
+    {
+      "name": "applying_correct_taxes_for_order_with_discount_for_shipping_when_tax_rate_included_in_price.feature",
+      "original_path": "features/taxation/applying_taxes/applying_correct_taxes_for_order_with_discount_for_shipping_when_tax_rate_included_in_price.feature",
+      "size": 2976,
+      "sha": "bdc973bf42176662c4cf933f420aec4d0b3b07f2"
+    },
+    {
+      "name": "applying_correct_taxes_for_order_with_discount_for_whole_order.feature",
+      "original_path": "features/taxation/applying_taxes/applying_correct_taxes_for_order_with_discount_for_whole_order.feature",
+      "size": 2607,
+      "sha": "a16ae824e855fafc85936c1fd861fc3683f82e30"
+    },
+    {
+      "name": "applying_correct_taxes_for_order_with_discount_for_whole_order_when_tax_rate_included_in_price.feature",
+      "original_path": "features/taxation/applying_taxes/applying_correct_taxes_for_order_with_discount_for_whole_order_when_tax_rate_included_in_price.feature",
+      "size": 2787,
+      "sha": "76bc1673dedf9d5152883e2605bd43e08d706978"
+    },
+    {
+      "name": "applying_correct_taxes_for_product_with_tax_rate_included_in_price.feature",
+      "original_path": "features/taxation/applying_taxes/applying_correct_taxes_for_product_with_tax_rate_included_in_price.feature",
+      "size": 913,
+      "sha": "1d28e61601096935147bf7ca5143d961a2fe0491"
+    },
+    {
+      "name": "applying_correct_taxes_for_products_with_different_tax_rates_for_different_zones.feature",
+      "original_path": "features/taxation/applying_taxes/applying_correct_taxes_for_products_with_different_tax_rates_for_different_zones.feature",
+      "size": 2642,
+      "sha": "700330219fc119efedc3fa9267b91fc03329463c"
+    },
+    {
+      "name": "applying_correct_taxes_for_shipping.feature",
+      "original_path": "features/taxation/applying_taxes/applying_correct_taxes_for_shipping.feature",
+      "size": 1691,
+      "sha": "3433db8e4f437ac909890ab8af5e6f5d2d8435fb"
+    },
+    {
+      "name": "applying_correct_taxes_for_shipping_with_tax_rate_included_in_price.feature",
+      "original_path": "features/taxation/applying_taxes/applying_correct_taxes_for_shipping_with_tax_rate_included_in_price.feature",
+      "size": 1823,
+      "sha": "9c56353b742babe50a829cee6540c9e2d817eb22"
+    },
+    {
+      "name": "applying_correct_taxes_on_visitor_cart.feature",
+      "original_path": "features/taxation/applying_taxes/applying_correct_taxes_on_visitor_cart.feature",
+      "size": 1280,
+      "sha": "409aaecc9afbfb2fb2aa279bad0c9eabf1207c83"
+    },
+    {
+      "name": "applying_different_taxes_for_variants_with_different_tax_category.feature",
+      "original_path": "features/taxation/applying_taxes/applying_different_taxes_for_variants_with_different_tax_category.feature",
+      "size": 1235,
+      "sha": "81dfa74b3311314ee30945bba94c6dc42d369d49"
+    },
+    {
+      "name": "not_applying_taxes_for_products_without_tax_category.feature",
+      "original_path": "features/taxation/applying_taxes/not_applying_taxes_for_products_without_tax_category.feature",
+      "size": 1141,
+      "sha": "03e9712c8a02b0e74ad36e0a4d9293f696ab51a6"
+    },
+    {
+      "name": "rounding_taxes_on_order_item_level.feature",
+      "original_path": "features/taxation/applying_taxes/rounding_taxes_on_order_item_level.feature",
+      "size": 1446,
+      "sha": "53f8ab96e28a1c1966b36063c2b9b030462f2e15"
+    },
+    {
+      "name": "adding_tax_category.feature",
+      "original_path": "features/taxation/managing_tax_categories/adding_tax_category.feature",
+      "size": 1084,
+      "sha": "023c2af28640ff8acde7c92f3fa9d7d76bc988ae"
+    },
+    {
+      "name": "deleting_multiple_tax_categories.feature",
+      "original_path": "features/taxation/managing_tax_categories/deleting_multiple_tax_categories.feature",
+      "size": 809,
+      "sha": "4e69677b51dcfa9fc3d276b8dd7136b53213c356"
+    },
+    {
+      "name": "deleting_tax_category.feature",
+      "original_path": "features/taxation/managing_tax_categories/deleting_tax_category.feature",
+      "size": 604,
+      "sha": "5758a072dfcb5ecfe746d553cb8504255700add4"
+    },
+    {
+      "name": "editing_tax_category.feature",
+      "original_path": "features/taxation/managing_tax_categories/editing_tax_category.feature",
+      "size": 1143,
+      "sha": "f6c09b78ff1fe78d906589c5572173b71cc35974"
+    },
+    {
+      "name": "tax_category_unique_code_validation.feature",
+      "original_path": "features/taxation/managing_tax_categories/tax_category_unique_code_validation.feature",
+      "size": 747,
+      "sha": "295ba8483a8ed8df799231fbed38e51579aa99f5"
+    },
+    {
+      "name": "tax_category_validation.feature",
+      "original_path": "features/taxation/managing_tax_categories/tax_category_validation.feature",
+      "size": 1455,
+      "sha": "c3c7d4cad0cbbb474f28189797b11b860181d7b6"
+    },
+    {
+      "name": "adding_tax_rate.feature",
+      "original_path": "features/taxation/managing_tax_rates/adding_tax_rate.feature",
+      "size": 1645,
+      "sha": "44e718232f967b95a9c0d0d0da1f25c3b8a68070"
+    },
+    {
+      "name": "deleting_multiple_tax_rates.feature",
+      "original_path": "features/taxation/managing_tax_rates/deleting_multiple_tax_rates.feature",
+      "size": 1044,
+      "sha": "076da1a24597b7a300da35076bfb726b86559a46"
+    },
+    {
+      "name": "deleting_tax_rate.feature",
+      "original_path": "features/taxation/managing_tax_rates/deleting_tax_rate.feature",
+      "size": 745,
+      "sha": "0fe92dced4ea63c68b4893c9b16916e281cb18f4"
+    },
+    {
+      "name": "editing_tax_rate.feature",
+      "original_path": "features/taxation/managing_tax_rates/editing_tax_rate.feature",
+      "size": 2502,
+      "sha": "3f192a6734654d19db799059ff4b808283e9f1c5"
+    },
+    {
+      "name": "tax_rate_unique_code_validation.feature",
+      "original_path": "features/taxation/managing_tax_rates/tax_rate_unique_code_validation.feature",
+      "size": 1164,
+      "sha": "3899604c369f2601ccae7c3c924e04c3d0ac92cc"
+    },
+    {
+      "name": "tax_rate_validation.feature",
+      "original_path": "features/taxation/managing_tax_rates/tax_rate_validation.feature",
+      "size": 3640,
+      "sha": "d0d0e0118bf3a55526ce02424e1c567590934d80"
+    },
+    {
+      "name": "adding_images_to_existing_taxon.feature",
+      "original_path": "features/taxonomy/managing_taxons/adding_images_to_existing_taxon.feature",
+      "size": 2005,
+      "sha": "cdd240dc289ea1962f1e60047862ad51adb0745b"
+    },
+    {
+      "name": "adding_taxon.feature",
+      "original_path": "features/taxonomy/managing_taxons/adding_taxon.feature",
+      "size": 1291,
+      "sha": "00f55a77ea935175fec3f6f75f77ca63d6327936"
+    },
+    {
+      "name": "adding_taxon_for_parent.feature",
+      "original_path": "features/taxonomy/managing_taxons/adding_taxon_for_parent.feature",
+      "size": 843,
+      "sha": "f6dd80f24564d7e25ddd4cbb88cafc98959b5098"
+    },
+    {
+      "name": "adding_taxon_for_with_parent.feature",
+      "original_path": "features/taxonomy/managing_taxons/adding_taxon_for_with_parent.feature",
+      "size": 903,
+      "sha": "4770cf31f0ac5f830e278fd6bd74703a1ffb630b"
+    },
+    {
+      "name": "adding_taxon_with_images.feature",
+      "original_path": "features/taxonomy/managing_taxons/adding_taxon_with_images.feature",
+      "size": 1449,
+      "sha": "e8cb7968bd183cefc2111a2925980bc1c93f73c8"
+    },
+    {
+      "name": "autocomplete_taxon_name.feature",
+      "original_path": "features/taxonomy/managing_taxons/autocomplete_taxon_name.feature",
+      "size": 1311,
+      "sha": "5fd424c9705a6190d7f82224d604b03730586d2b"
+    },
+    {
+      "name": "browsing_taxon.feature",
+      "original_path": "features/taxonomy/managing_taxons/browsing_taxon.feature",
+      "size": 489,
+      "sha": "84104fbfd668ec142e6df889e36ce89fc3ae87d1"
+    },
+    {
+      "name": "changing_images_of_taxon.feature",
+      "original_path": "features/taxonomy/managing_taxons/changing_images_of_taxon.feature",
+      "size": 1380,
+      "sha": "5d3c284b3359594a56ffe4ba89be0d0d79a6545a"
+    },
+    {
+      "name": "choosing_taxon_from_tree.feature",
+      "original_path": "features/taxonomy/managing_taxons/choosing_taxon_from_tree.feature",
+      "size": 897,
+      "sha": "1d5f45d297581dc61f2f27a4f796bf719165e68d"
+    },
+    {
+      "name": "deleting_taxon.feature",
+      "original_path": "features/taxonomy/managing_taxons/deleting_taxon.feature",
+      "size": 1542,
+      "sha": "e797b434a5da487f572a9517657a82d21eed8392"
+    },
+    {
+      "name": "displaying_products_in_proper_taxon_after_trying_to_delete_taxon.feature",
+      "original_path": "features/taxonomy/managing_taxons/displaying_products_in_proper_taxon_after_trying_to_delete_taxon.feature",
+      "size": 1624,
+      "sha": "5bdf105d744e89457af96064d114c3d894eb2a98"
+    },
+    {
+      "name": "editing_taxon.feature",
+      "original_path": "features/taxonomy/managing_taxons/editing_taxon.feature",
+      "size": 1843,
+      "sha": "052e8a32b5442925342fd3b5b4523f0c92981d44"
+    },
+    {
+      "name": "editing_taxon_slug.feature",
+      "original_path": "features/taxonomy/managing_taxons/editing_taxon_slug.feature",
+      "size": 3496,
+      "sha": "5f36c7291d15e3521933972db4b973bb9f8dc809"
+    },
+    {
+      "name": "editing_taxon_slug_in_multiple_locales.feature",
+      "original_path": "features/taxonomy/managing_taxons/editing_taxon_slug_in_multiple_locales.feature",
+      "size": 5032,
+      "sha": "e3d3a3ca39b91b3335b33e8d8f10e4b265efe68b"
+    },
+    {
+      "name": "removing_images_of_taxon.feature",
+      "original_path": "features/taxonomy/managing_taxons/removing_images_of_taxon.feature",
+      "size": 2978,
+      "sha": "90e2e0060d9495986350314591dd59b333820c26"
+    },
+    {
+      "name": "reordering_taxon.feature",
+      "original_path": "features/taxonomy/managing_taxons/reordering_taxon.feature",
+      "size": 1331,
+      "sha": "1e14969e9c75f9732ffae9b2ccb5fca72df3cdc1"
+    },
+    {
+      "name": "taxon_unique_code_validation.feature",
+      "original_path": "features/taxonomy/managing_taxons/taxon_unique_code_validation.feature",
+      "size": 758,
+      "sha": "e3505f6585d02f1083501a7899144a7797244db6"
+    },
+    {
+      "name": "taxon_validation.feature",
+      "original_path": "features/taxonomy/managing_taxons/taxon_validation.feature",
+      "size": 1733,
+      "sha": "a415d50c83f55dff5dbf884a8894af5ae539bdb7"
+    },
+    {
+      "name": "toggling_taxon.feature",
+      "original_path": "features/taxonomy/managing_taxons/toggling_taxon.feature",
+      "size": 1491,
+      "sha": "5a988506cfa1b9b6dcb4a80ca2cee8fa48b3a6de"
+    },
+    {
+      "name": "adding_administrator.feature",
+      "original_path": "features/user/managing_administrators/adding_administrator.feature",
+      "size": 1310,
+      "sha": "a19ca2c72d9c14938edc71d56e8d5e5814a5d790"
+    },
+    {
+      "name": "adding_avatar_to_administrator.feature",
+      "original_path": "features/user/managing_administrators/adding_avatar_to_administrator.feature",
+      "size": 574,
+      "sha": "4e7e8679c1e4a0635895c8ef9ae8906259eae080"
+    },
+    {
+      "name": "administrator_unique_email_and_name_validation.feature",
+      "original_path": "features/user/managing_administrators/administrator_unique_email_and_name_validation.feature",
+      "size": 1107,
+      "sha": "977585b9ea4d8ba00fe4b8c6aac1bb3bc130ad22"
+    },
+    {
+      "name": "administrator_validation.feature",
+      "original_path": "features/user/managing_administrators/administrator_validation.feature",
+      "size": 1179,
+      "sha": "984943ec050e91cf41f28ef96a0166614640797b"
+    },
+    {
+      "name": "browsing_administrator.feature",
+      "original_path": "features/user/managing_administrators/browsing_administrator.feature",
+      "size": 617,
+      "sha": "eddf1bafe46aeb8ada7694b34e2ce781e8a6c494"
+    },
+    {
+      "name": "changing_administrator_avatar.feature",
+      "original_path": "features/user/managing_administrators/changing_administrator_avatar.feature",
+      "size": 550,
+      "sha": "09e489ac95b195641e055fa217a1a68ccd74008d"
+    },
+    {
+      "name": "deleting_administrators.feature",
+      "original_path": "features/user/managing_administrators/deleting_administrators.feature",
+      "size": 1078,
+      "sha": "24a13202b2f2435d54c3a466f61f10d8936b7d62"
+    },
+    {
+      "name": "deleting_multiple_administrators.feature",
+      "original_path": "features/user/managing_administrators/deleting_multiple_administrators.feature",
+      "size": 993,
+      "sha": "fe84b9fb56feee1c7744f3127de1fa49071efc46"
+    },
+    {
+      "name": "editing_administrator.feature",
+      "original_path": "features/user/managing_administrators/editing_administrator.feature",
+      "size": 1561,
+      "sha": "1ff750b410ada8bd5c33002e9207efec38afae4b"
+    },
+    {
+      "name": "removing_administrator_avatar.feature",
+      "original_path": "features/user/managing_administrators/removing_administrator_avatar.feature",
+      "size": 661,
+      "sha": "02591556f34c79265615fa743604cf90629504ac"
+    },
+    {
+      "name": "adding_customer_group.feature",
+      "original_path": "features/user/managing_customer_groups/adding_customer_group.feature",
+      "size": 598,
+      "sha": "db3b32bd856124c7f436f0d2ab972988e2e8769c"
+    },
+    {
+      "name": "browsing_customer_groups.feature",
+      "original_path": "features/user/managing_customer_groups/browsing_customer_groups.feature",
+      "size": 580,
+      "sha": "78d76a43bef67219c8dbfed3fdf6cb1d4aefc33d"
+    },
+    {
+      "name": "customer_group_unique_code_validation.feature",
+      "original_path": "features/user/managing_customer_groups/customer_group_unique_code_validation.feature",
+      "size": 781,
+      "sha": "d3708fc73d4323094b7cb8fe5a54d83de953164b"
+    },
+    {
+      "name": "customer_group_validation.feature",
+      "original_path": "features/user/managing_customer_groups/customer_group_validation.feature",
+      "size": 1007,
+      "sha": "816b424357cf9f431c4650ad0e6b7096e5955ae3"
+    },
+    {
+      "name": "deleting_customer_group.feature",
+      "original_path": "features/user/managing_customer_groups/deleting_customer_group.feature",
+      "size": 565,
+      "sha": "5e7e60bbce202189c32c1f6fd8662a92e432e972"
+    },
+    {
+      "name": "deleting_multiple_customer_groups.feature",
+      "original_path": "features/user/managing_customer_groups/deleting_multiple_customer_groups.feature",
+      "size": 836,
+      "sha": "8ba5b3d1a6b4836434d4a879927eb7159f2086e7"
+    },
+    {
+      "name": "editing_customer_group.feature",
+      "original_path": "features/user/managing_customer_groups/editing_customer_group.feature",
+      "size": 840,
+      "sha": "2889afd97c7b740c2073e4940b8f5e713ff5e752"
+    },
+    {
+      "name": "adding_customer.feature",
+      "original_path": "features/user/managing_customers/adding_customer.feature",
+      "size": 1202,
+      "sha": "7b75da0f2b459f1f8fce1e4e32a370ff4d967340"
+    },
+    {
+      "name": "adding_customer_account.feature",
+      "original_path": "features/user/managing_customers/adding_customer_account.feature",
+      "size": 1365,
+      "sha": "931b533375750dfa448690495272054bc6d56f7a"
+    },
+    {
+      "name": "adding_customer_account_after_failed_creation_action.feature",
+      "original_path": "features/user/managing_customers/adding_customer_account_after_failed_creation_action.feature",
+      "size": 2586,
+      "sha": "249fde2b77f67766771903e4e4df84abd8b72b35"
+    },
+    {
+      "name": "being_able_to_create_account_for_existing_customer.feature",
+      "original_path": "features/user/managing_customers/being_able_to_create_account_for_existing_customer.feature",
+      "size": 1246,
+      "sha": "9e5df736d378f47c9ee8646884447a9917c60b55"
+    },
+    {
+      "name": "browsing_customers.feature",
+      "original_path": "features/user/managing_customers/browsing_customers.feature",
+      "size": 620,
+      "sha": "78601a155962f8e89f2789747945e0f48eb47545"
+    },
+    {
+      "name": "browsing_orders_of_customer.feature",
+      "original_path": "features/user/managing_customers/browsing_orders_of_customer.feature",
+      "size": 1651,
+      "sha": "b440d88563be462686fb0995620114f788440f2d"
+    },
+    {
+      "name": "changing_customer_email.feature",
+      "original_path": "features/user/managing_customers/changing_customer_email.feature",
+      "size": 835,
+      "sha": "5609b526f10133c3e4ac9ed69aad5e0c9c7cd8e3"
+    },
+    {
+      "name": "customer_unique_email_validation.feature",
+      "original_path": "features/user/managing_customers/customer_unique_email_validation.feature",
+      "size": 688,
+      "sha": "f7ede022d09821b3b343d76286a450b258fe18d1"
+    },
+    {
+      "name": "customer_validation.feature",
+      "original_path": "features/user/managing_customers/customer_validation.feature",
+      "size": 2590,
+      "sha": "5f721ab42c0610876bb58eb038f1b606cbcf50fb"
+    },
+    {
+      "name": "editing_customer.feature",
+      "original_path": "features/user/managing_customers/editing_customer.feature",
+      "size": 2071,
+      "sha": "38b03737c90827598ba64ee4f6f51876c74ba6aa"
+    },
+    {
+      "name": "resetting_customer_password.feature",
+      "original_path": "features/user/managing_customers/resetting_customer_password.feature",
+      "size": 682,
+      "sha": "3e06cb20343a500ca5c0c310da2f765e34924bf6"
+    },
+    {
+      "name": "seeing_customer_details.feature",
+      "original_path": "features/user/managing_customers/seeing_customer_details.feature",
+      "size": 2536,
+      "sha": "7503b50951e9d5ffc2e2ffc175374837b3b3193b"
+    },
+    {
+      "name": "seeing_orders_statistics_on_customer_details_page.feature",
+      "original_path": "features/user/managing_customers/seeing_orders_statistics_on_customer_details_page.feature",
+      "size": 2458,
+      "sha": "1913587bdae069ce5f7f0bbf345f8897951f4847"
+    },
+    {
+      "name": "seeing_province_created_manually_on_customer_details_page.feature",
+      "original_path": "features/user/managing_customers/seeing_province_created_manually_on_customer_details_page.feature",
+      "size": 787,
+      "sha": "245567007af2cbee1ecedfb38b97cc697de50ff5"
+    },
+    {
+      "name": "toggling_customer_account.feature",
+      "original_path": "features/user/managing_customers/toggling_customer_account.feature",
+      "size": 1031,
+      "sha": "5812d82e7c3f0951195428703d3e7076a079f8b5"
+    },
+    {
+      "name": "verifying_customer_account.feature",
+      "original_path": "features/user/managing_customers/verifying_customer_account.feature",
+      "size": 616,
+      "sha": "5ae4d4a27a44421b77c0e0886e6d9d0a794045d8"
+    },
+    {
+      "name": "changing_shop_user_password.feature",
+      "original_path": "features/user/managing_users/changing_shop_user_password.feature",
+      "size": 688,
+      "sha": "4b1aaffcef13040a2a3c05d452f1e0b716669088"
+    },
+    {
+      "name": "deleting_account.feature",
+      "original_path": "features/user/managing_users/deleting_account.feature",
+      "size": 828,
+      "sha": "1c075b00ba9113f90c6335edb1bb79e5e9cabb3d"
+    }
+  ],
+  "status": "success"
+}

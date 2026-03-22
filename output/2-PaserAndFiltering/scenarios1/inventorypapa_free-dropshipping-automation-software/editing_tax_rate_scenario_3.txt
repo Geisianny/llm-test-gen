@@ -1,0 +1,8 @@
+Scenario 3: Renaming the tax rate
+  Tags: ['@ui']
+  Given  I want to modify a tax rate "United States Sales Tax"
+  When  I rename it to "US VAT"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this tax rate name should be "US VAT"
+

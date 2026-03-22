@@ -1,0 +1,12 @@
+Scenario 4: uncheck Check/Uncheck All active person field
+  Tags: ['@selenium']
+  Given  I follow "Person's fields"
+  And  I check "person_active"
+  And  I follow "Save changes"
+  And  I uncheck "person_active"
+  And  I follow "Save changes"
+  And  I follow "menu-dropdown"
+  And  I follow "Control panel"
+  And  I follow "Informations" within "#section-profile"
+  Then  I should not see "Custom area of study"
+

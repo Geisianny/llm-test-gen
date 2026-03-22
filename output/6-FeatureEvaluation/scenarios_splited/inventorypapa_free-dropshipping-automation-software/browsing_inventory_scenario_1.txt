@@ -1,0 +1,5 @@
+Scenario: Browse tracked product variants
+  Given there are tracked product variants in the inventory
+  When the administrator accesses the inventory browser
+  Then the system displays a list of tracked product variants
+  And shows the available stock quantity for each variant

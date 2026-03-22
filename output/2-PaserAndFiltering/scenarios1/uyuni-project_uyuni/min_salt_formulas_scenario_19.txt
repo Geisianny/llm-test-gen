@@ -1,0 +1,9 @@
+Scenario 19: Cleanup: remove "locale-formula-group" system group
+  When  I follow the left menu "Systems > System Groups"
+  And  I follow "locale-formula-group" in the content area
+  And  I follow "Delete Group" in the content area
+  When  I click on "Confirm Deletion"
+  Then  I should see a "System group" text
+  And  I should see a "locale-formula-group" text
+  And  I should see a "deleted" text
+

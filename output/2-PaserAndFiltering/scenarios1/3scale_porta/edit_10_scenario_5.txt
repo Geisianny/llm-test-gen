@@ -1,0 +1,8 @@
+Scenario 5: Delete application
+  Given  they go to the application's admin edit page
+  When  follow "Delete"
+  And  confirm the dialog
+  Then  they should see a toast alert with text "The application was successfully deleted"
+  And  there should be 1 application cancelled event
+  And  the current page is the admin portal applications page
+

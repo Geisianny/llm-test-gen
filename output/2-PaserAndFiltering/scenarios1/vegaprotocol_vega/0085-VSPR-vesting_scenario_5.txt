@@ -1,0 +1,18 @@
+Scenario Outline 5: Party receives rewards but does not withdraw them in order to receive a bonus multiplier (0085-RVST-012)(0085-RVST-013)(0085-RVST-014) - Example 1
+  Given  the following network parameters are set:
+  Given  the parties submit the following recurring transfers:
+  And  the network moves ahead "1" blocks
+  Given  the parties place the following orders:
+  And  the network moves ahead "1" epochs
+  Then  "trader1" should have vesting account balance of "10000" for asset "USD.1.10"
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  "trader1" should have vesting account balance of "7500" for asset "USD.1.10"
+  And  "trader2" should have vesting account balance of "2500" for asset "USD.1.10"
+
+  Examples:
+    | minimum quantum balance | reward multiplier | trader1 rewards | trader2 rewards |
+    | "500" | "3" | "7500" | "2500" |
+    | "500" | "4" | "8000" | "2000" |
+    | "5000000" | "3" | "5000" | "5000" |
+

@@ -1,0 +1,11 @@
+Scenario 4: Setup Workflow
+  When  I click edit on workflow form
+  And  I uncheck "accept Applications by Department Managers"
+  And  I uncheck "assign department managers to jobs"
+  And  I wait for the ajax response
+  And  I scroll "#sf-workflowSettings" into view
+  And  I save workflow form
+  And  I wait for the ajax response
+  Then  the "accept Applications by Department Managers" checkbox should not be checked
+  And  the "assign department managers to jobs" checkbox should not be checked
+

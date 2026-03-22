@@ -1,0 +1,8 @@
+Scenario 5: Delete a log-based metric returns "OK" response
+  Tags: ['@team:DataDog/logs-backend', '@team:DataDog/logs-forwarding']
+  Given  there is a valid "logs_metric" in the system
+  And  new "DeleteLogsMetric" request
+  And  request contains "metric_id" parameter from "logs_metric.data.id"
+  When  the request is sent
+  Then  the response status is 204 OK
+

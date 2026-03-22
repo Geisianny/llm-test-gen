@@ -1,0 +1,12 @@
+Scenario 12: Changing service plan throws an error
+  Given  the subscription will return an error when changing its plan
+  And  the table is sorted by "Account"
+  And  the table should contain the following:
+  And  item "Alice" is selected
+  And  select bulk action "Change service plan"
+  And  select "Fancy Plan B" from "Plan"
+  And  press "Change plan"
+  And  confirm the dialog
+  Then  the bulk operation has failed for "Subscription of Alice to service Fancy API"
+  And  the table should contain the following:
+

@@ -1,0 +1,4 @@
+Scenario 1: Retrieve Dummy's resource context with invalid format returns an error
+  When  I send a "GET" request to "/contexts/IriOnlyDummy.json"
+  Then  the response status code should be 404
+

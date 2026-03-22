@@ -1,0 +1,9 @@
+Scenario 5: Create a tag configuration returns "Conflict" response
+  Tags: ['@generated', '@skip', '@team:DataDog/metrics-experience']
+  Given  a valid "appKeyAuth" key in the system
+  And  new "CreateTagConfiguration" request
+  And  request contains "metric_name" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"include_percentiles": false, "metric_type": "distribution", "tags": ["app", "datacenter"]}, "id": "http.endpoint.request", "type": "manage_tags"}}
+  When  the request is sent
+  Then  the response status is 409 Conflict
+

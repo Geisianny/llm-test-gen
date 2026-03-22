@@ -1,0 +1,5 @@
+Scenario 2: Form validation
+  Given  an admin is at a backend api edit page
+  Then  they will not be able to update it without a name
+  And  they will not be able to update it without a valid url
+

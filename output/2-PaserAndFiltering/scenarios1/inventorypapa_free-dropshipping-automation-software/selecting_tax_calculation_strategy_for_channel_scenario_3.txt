@@ -1,0 +1,9 @@
+Scenario 3: Changing tax calculation strategy of existing channel
+  Tags: ['@ui']
+  Given  the store operates on a channel named "Web store"
+  And  I want to modify this channel
+  When  I select the "Order item units based" as tax calculation strategy
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  the tax calculation strategy for the "Web store" channel should be "Order item units based"
+

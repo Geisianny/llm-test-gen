@@ -1,0 +1,48 @@
+Scenario 1: Max open interest changes over time (0041-TSTK-002, 0041-TSTK-003, 0042-LIQF-007)
+  Given  the liquidity monitoring parameters:
+  When  the markets are updated:
+  When  the parties place the following orders:
+  Then  the mark price should be "0" for the market "ETH/DEC21"
+  When  the parties place the following orders:
+  Then  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the opening auction period ends for market "ETH/DEC21"
+  Then  the market data for the market "ETH/DEC21" should be:
+  And  the liquidity fee factor should be "0.005" for the market "ETH/DEC21"
+  Then  the network moves ahead "1" blocks
+  When  the parties place the following orders with ticks:
+  Then  the market data for the market "ETH/DEC21" should be:
+  And  the liquidity fee factor should be "0.004" for the market "ETH/DEC21"
+  Then  the network moves ahead "10" blocks
+  And  the target stake should be "540" for the market "ETH/DEC21"
+  When  the parties place the following orders with ticks:
+  Then  the market data for the market "ETH/DEC21" should be:
+  And  the liquidity fee factor should be "0.003" for the market "ETH/DEC21"
+  And  the target stake should be "540" for the market "ETH/DEC21"
+  And  the liquidity fee factor should be "0.003" for the market "ETH/DEC21"
+  Then  the network moves ahead "1" blocks
+  And  the target stake should be "405" for the market "ETH/DEC21"
+  And  the liquidity fee factor should be "0.003" for the market "ETH/DEC21"
+  Then  the network moves ahead "40" blocks
+  And  the target stake should be "405" for the market "ETH/DEC21"
+  And  the liquidity fee factor should be "0.003" for the market "ETH/DEC21"
+  When  the parties place the following orders with ticks:
+  Then  the market data for the market "ETH/DEC21" should be:
+  And  the liquidity fee factor should be "0.002" for the market "ETH/DEC21"
+  When  the parties place the following orders with ticks:
+  Then  the market data for the market "ETH/DEC21" should be:
+  And  the liquidity fee factor should be "0.002" for the market "ETH/DEC21"
+  Then  the network moves ahead "10" blocks
+  And  the target stake should be "270" for the market "ETH/DEC21"
+  And  the liquidity fee factor should be "0.002" for the market "ETH/DEC21"
+  When  the parties place the following orders:
+  Then  the network moves ahead "1" blocks
+  And  the market data for the market "ETH/DEC21" should be:
+  And  the liquidity fee factor should be "0.001" for the market "ETH/DEC21"
+  When  the parties place the following orders with ticks:
+  Then  the market data for the market "ETH/DEC21" should be:
+  And  the liquidity fee factor should be "0.002" for the market "ETH/DEC21"
+  Then  the network moves ahead "10" blocks
+  And  the market data for the market "ETH/DEC21" should be:
+  And  the liquidity fee factor should be "0.001" for the market "ETH/DEC21"
+

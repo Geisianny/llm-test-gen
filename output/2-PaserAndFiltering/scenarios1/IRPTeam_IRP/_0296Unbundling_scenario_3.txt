@@ -1,0 +1,32 @@
+Scenario 3: _029601 create Unbundling on a product with a specification (specification created in advance, Store does not use Shipment confirmation and Goods receipt)
+  Given  I open hyperlink "e1cib/list/Document.Unbundling"
+  *  Create Unbundling for Dress/A-8, all item keys were created in advance
+  And  I click the button named "FormCreate"
+  And  I click Select button of "Company" field
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I click Select button of "Item bundle" field
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I click Select button of "Item key bundle" field
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I click Choice button of the field named "Unit"
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I input "2,000" text in the field named "Quantity"
+  And  I click Select button of "Store" field
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I move to "Item list" tab
+  And  in the table "ItemList" I click "By specification" button
+  And  I click the button named "FormPost"
+  And  I delete "$$NumberUnbundling0029601$$" variable
+  And  I delete "$$Unbundling0029601$$" variable
+  And  I save the value of "Number" field as "$$NumberUnbundling0029601$$"
+  And  I save the window as "$$Unbundling0029601$$"
+  And  I click the button named "FormPostAndClose"
+  *  Check the creation of Unbundling
+  And  "List" table contains lines
+  And  I close all client application windows
+

@@ -1,0 +1,14 @@
+Scenario 1: Adding a new channel with default tax zone
+  Tags: ['@api', '@ui']
+  When  I want to create a new channel
+  And  I specify its code as "MOBILE"
+  And  I name it "Mobile store"
+  And  I select the "United States" as default tax zone
+  And  I choose "USD" as the base currency
+  And  I make it available in "English (United States)"
+  And  I choose "English (United States)" as a default locale
+  And  I select the "Order items based" as tax calculation strategy
+  And  I add it
+  Then  I should be notified that it has been successfully created
+  And  the default tax zone for the "Mobile store" channel should be "United States"
+

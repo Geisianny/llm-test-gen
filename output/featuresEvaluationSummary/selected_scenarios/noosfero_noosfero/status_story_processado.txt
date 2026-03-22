@@ -1,0 +1,6 @@
+Scenario: Configure new status in community settings
+  Given the user is an administrator of a community
+  And the community has a status configuration section
+  When the user configures a new status
+  Then the new status is available for use in the community's comment section
+  And the status is listed in the community's status configuration

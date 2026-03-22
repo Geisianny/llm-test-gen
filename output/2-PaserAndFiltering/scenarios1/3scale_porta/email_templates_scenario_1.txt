@@ -1,0 +1,16 @@
+Scenario 1: Creating template
+  When  I go to the email templates page
+  And  I follow "Buyer Account approved"
+  Then  I should see default content of email template "account_approved"
+  When  I fill in the draft with "new content for account approved"
+  And  I fill the form with following:
+  And  I press "Create Email Template"
+  Then  I should see "Bcc is an invalid email address"
+  Then  I should see "Cc is an invalid email address"
+  Then  I should see "From does not match the domain of your outbound email"
+  And  I fill the form with following:
+  And  I press "Create Email Template"
+  Then  they should see a toast alert with text "Email Template overridden"
+  And  the content of the email template "account_approved" should be
+  And  the headers of email template "account_approved" should be following:
+

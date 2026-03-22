@@ -1,0 +1,6 @@
+Scenario 1: Create a Sale Order with DSL
+  Given  I need a "sale.order" with name: SO Device Reseller and oid: scenario.so_reseller
+  And  having:
+  Given  I need a "sale.order.line" with name: SO Line 1 Device Reseller and oid: scenario.so_reseller_line1
+  And  having:
+

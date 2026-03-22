@@ -1,0 +1,6 @@
+Scenario 2: Editing a translation for draft translatable document
+  Given  I am a GDS editor
+  And  I have drafted a translatable document "Military officer exchange" with a french translation with the title "Échange officier de l'armée"
+  When  I edit "Military officer exchange"'s french translation's title to "Ministre de l'Éducation nationale"
+  Then  I should see on the admin edition page that "Military officer exchange" has a french translation "Ministre de l'Éducation nationale"
+

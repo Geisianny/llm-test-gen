@@ -1,0 +1,6 @@
+Scenario 2: Get collection ordered in descending order on an integer property and on which order filter has been enabled in whitelist mode
+  When  I send a "GET" request to "/dummies?sort=-id"
+  Then  the response status code should be 200
+  And  the JSON should be valid according to the JSON API schema
+  And  the JSON should be valid according to this schema:
+

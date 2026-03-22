@@ -1,0 +1,6 @@
+Scenario 1: Super Admin successfully changes the address of a charity
+  Tags: ['@vcr']
+  Given  I am signed in as a superadmin
+  And  I update "Friendly" charity address to be "30 pinner road"
+  Then  the address for "Friendly" should be "30 pinner road"
+

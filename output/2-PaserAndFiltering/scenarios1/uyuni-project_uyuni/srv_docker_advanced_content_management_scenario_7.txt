@@ -1,0 +1,7 @@
+Scenario 7: Cleanup: remove image store
+  When  I follow the left menu "Images > Stores"
+  And  I check the row with the "docker_admin" text
+  And  I click on "Delete"
+  And  I click on the red confirmation button
+  And  I should see a "Image store has been deleted." text
+

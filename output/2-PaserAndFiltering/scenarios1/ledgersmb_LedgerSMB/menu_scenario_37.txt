@@ -1,0 +1,9 @@
+Scenario Outline 37: Navigate to menu "<path>" and open screen "<screen>" - Example 37
+  When  I navigate the menu and select the item at "System > Templates"
+  Then  I should see the system templates screen
+
+  Examples:
+    | path | screen |
+    | System > Templates | system templates |
+    | System > Files | system files |
+

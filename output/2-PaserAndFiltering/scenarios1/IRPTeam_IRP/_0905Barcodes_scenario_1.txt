@@ -1,0 +1,12 @@
+Scenario 1: _090500 preparation (Barcodes)
+  When  set True value to the constant
+  *  Load info
+  When  Create catalog ItemKeys objects
+  When  Create catalog ItemTypes objects
+  When  Create catalog Units objects
+  When  Create catalog Items objects
+  When  Create catalog Specifications objects
+  When  Create chart of characteristic types AddAttributeAndProperty objects
+  When  Create catalog AddAttributeAndPropertySets objects
+  When  Create catalog AddAttributeAndPropertyValues objects
+

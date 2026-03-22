@@ -1,0 +1,5 @@
+Scenario: Post-only limit GTT order is placed on the book
+  Given there are no existing orders on the book that cross
+  When a user places a LIMIT GTT order with post-only flag set to TRUE
+  Then the order is placed fully on the book
+  And the order status is "Active"

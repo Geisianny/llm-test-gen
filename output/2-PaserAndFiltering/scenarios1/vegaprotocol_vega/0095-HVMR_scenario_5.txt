@@ -1,0 +1,20 @@
+Scenario Outline 5: Derivative and spot markets using assets with different quantums scale maker volume correctly (0095-HVMR-023)(0095-HVMR-024)(0095-HVMR-025) - Example 1
+  Given  the volume rebate program tiers named "vrt":
+  And  the volume rebate program:
+  And  the network moves ahead "1" epochs
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  Given  the network moves ahead "1" epochs
+  And  the parties place the following orders:
+  Then  debug trades
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+
+  Examples:
+    | usd market | mxn market | usd price | mxn price | party1 rebate | party2 rebate |
+    | BTC/USDT-0-1 | BTC/MXN-0-10 | 50001 | 500000 | 50 | 0 |
+    | BTC/USDT-0-1 | USD-0-1/MXN-0-10 | 50000 | 500000 | 50 | 500 |
+    | MXN-0-1/USD-0-10 | USD-0-1/MXN-0-10 | 50000 | 500001 | 0 | 500 |
+

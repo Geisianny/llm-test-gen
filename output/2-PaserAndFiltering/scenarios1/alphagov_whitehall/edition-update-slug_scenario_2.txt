@@ -1,0 +1,6 @@
+Scenario 2: Admin attempts to update a slug
+  Given  I am an admin
+  And  a published news article "You will never guess" exists
+  And  I visit the edit slug page for "You will never guess"
+  Then  I am told I do not have permissions to access this page
+

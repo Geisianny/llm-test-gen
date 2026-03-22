@@ -1,0 +1,7 @@
+Scenario: Access Custom Educator Listing application form
+  Given there is a Custom Educator Listing available
+  And the user is on the listing page
+  When the user applies to the listing
+  And answers "yes" to the screening question about employment with the San Francisco Unified School District
+  And provides a valid job classification code
+  Then the system displays the full application form

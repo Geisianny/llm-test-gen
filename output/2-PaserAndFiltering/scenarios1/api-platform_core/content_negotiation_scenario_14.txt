@@ -1,0 +1,9 @@
+Scenario 14: Get a security response in JSON
+  Given  there are 1 SecuredDummy objects
+  And  I add "Accept" header equal to "application/json"
+  When  I send a "GET" request to "/secured_dummies"
+  Then  the response status code should be 401
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+

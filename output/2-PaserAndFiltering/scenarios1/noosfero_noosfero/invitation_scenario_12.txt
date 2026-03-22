@@ -1,0 +1,12 @@
+Scenario 12: back to members after invite friends to join a community
+  Tags: ['@selenium']
+  Given  I am on 26 Bsslines's members management
+  And  I follow "Invite people"
+  And  I choose "Email"
+  And  I follow "Next"
+  And  I fill in "manual_import_addresses" with "misfits@devil.doll"
+  And  I follow "Personalize invitation mail"
+  And  I fill in "mail_template" with "Follow this link <url>"
+  When  I follow "Invite!"
+  Then  I should be on /profile/26-bsslines/members
+

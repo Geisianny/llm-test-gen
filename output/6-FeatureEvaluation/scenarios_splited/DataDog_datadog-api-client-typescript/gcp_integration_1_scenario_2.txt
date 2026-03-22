@@ -1,0 +1,6 @@
+Scenario: List existing STS service accounts
+  Given the Datadog API is available
+  And there are existing STS service accounts with names "sts-account-1, sts-account-2"
+  When the user requests to list all STS service accounts
+  Then the system returns a list of existing STS service accounts
+  And includes "sts-account-1" and "sts-account-2" in the list

@@ -1,0 +1,7 @@
+Scenario 2: Create RH SSO new integration
+  Given  they go to the developer portal new sso integration page for "keycloak"
+  When  the form is submitted with:
+  Then  they should see a toast alert with text "Authentication provider created"
+  And  the current page is the developer portal edit integration page
+  And  should see "Customize Red Hat Single Sign-On"
+

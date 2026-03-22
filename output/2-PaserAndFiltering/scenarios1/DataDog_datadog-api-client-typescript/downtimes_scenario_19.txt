@@ -1,0 +1,10 @@
+Scenario 19: Schedule a downtime with until occurrences
+  Tags: ['@team:DataDog/monitor-app']
+  Given  new "CreateDowntime" request
+  And  body from file "downtime_recurrence_payload_until_occurrences.json"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "message" is equal to "{{ unique }}"
+  And  the response "recurrence.period" is equal to 1
+  And  the response "recurrence.until_occurrences" is equal to 3
+

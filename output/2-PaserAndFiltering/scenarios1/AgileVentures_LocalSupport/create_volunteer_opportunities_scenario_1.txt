@@ -1,0 +1,7 @@
+Scenario 1: Org-superadmins can create a volunteer opportunity
+  Tags: ['@vcr']
+  Given  I am signed in as a charity worker related to "Friendly"
+  And  I submit a volunteer op "Hard Work", "For no pay" on the "Friendly" page
+  Then  I should be on the show page for the volunteer_op titled "Hard Work"
+  And  I should see "Hard Work", "For no pay" and "Organisation: Friendly"
+

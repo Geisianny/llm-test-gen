@@ -1,0 +1,8 @@
+Scenario 11: last topic update by autenticated user should link to profile url
+  Tags: ['@selenium']
+  Given  the following forums
+  And  the following articles
+  And  the following comments
+  When  I go to /joaosilva/forum
+  Then  I should see "Joao Silva" within ".forum-post-last-answer"
+

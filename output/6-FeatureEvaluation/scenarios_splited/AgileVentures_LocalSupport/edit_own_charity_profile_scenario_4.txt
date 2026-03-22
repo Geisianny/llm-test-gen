@@ -1,0 +1,6 @@
+Scenario: System accepts protocol-less URLs for charity website
+  Given there is a charity with a website URL "example.com"
+  And a charity worker is associated with the charity
+  When the charity worker edits the charity website URL to "newexample.com"
+  Then the charity's website URL is updated to "newexample.com"
+  And the change is reflected on the charity's public page

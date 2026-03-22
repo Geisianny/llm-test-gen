@@ -1,0 +1,35 @@
+Feature: I want to have a contact and about us link in all the app pages
+Description: As the system owner
+  So that I can be contacted
+  I want to show a contact page and an about us page
+  Tracker story ID: https://www.pivotaltracker.com/story/show/45693625
+
+Background: organisations have been added to database
+  Given  the following organisations exist:
+  Given  the following pages exist:
+
+Scenario Outline 1: the about us page is accessible on all pages - Example 1
+  Tags: ['@vcr']
+  Given  I visit the home page
+  When  I follow "About Us"
+  Then  I should see "abc123"
+
+  Examples:
+    | page |
+    | home page |
+    | organisations index page |
+    | new organisation page |
+    | show page for the organisation named "Friendly Charity" |
+
+Scenario Outline 2: the contact page is accessible on all pages - Example 1
+  Given  I visit the home page
+  When  I follow "Contact"
+  Then  I should see "def456"
+
+  Examples:
+    | page |
+    | home page |
+    | organisations index page |
+    | new organisation page |
+    | show page for the organisation named "Friendly Charity" |
+

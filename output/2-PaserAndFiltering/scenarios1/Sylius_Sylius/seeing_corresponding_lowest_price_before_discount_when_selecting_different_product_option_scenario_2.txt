@@ -1,0 +1,6 @@
+Scenario 2: Seeing correct lowest price when selecting another option value from the list
+  Tags: ['@no-api', '@ui', '@javascript']
+  When  I view product "Wyborowa Vodka"
+  And  I select its "Taste" as "Lemon"
+  Then  I should see "$25.00" as its lowest price before the discount
+

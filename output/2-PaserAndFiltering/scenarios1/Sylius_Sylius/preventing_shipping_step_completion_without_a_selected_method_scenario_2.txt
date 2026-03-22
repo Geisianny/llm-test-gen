@@ -1,0 +1,10 @@
+Scenario 2: Preventing shipping step completion if there are no available shipping methods
+  Tags: ['@no-api', '@ui']
+  Given  the store operates on a single channel in "United States"
+  And  the store has a product "PHP T-Shirt"
+  And  I added product "PHP T-Shirt" to the cart
+  And  I addressed the cart to "United States"
+  When  I want to complete the shipping step
+  Then  I should be informed that my order cannot be shipped to this address
+  And  I should not be able to complete the shipping step
+

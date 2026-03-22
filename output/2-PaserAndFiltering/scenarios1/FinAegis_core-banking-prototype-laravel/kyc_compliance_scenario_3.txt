@@ -1,0 +1,7 @@
+Scenario 3: KYC rejection and resubmission
+  Given  I have submitted KYC documents
+  When  the compliance officer rejects my KYC due to "unclear_documents"
+  Then  my KYC status should be "rejected"
+  And  I should receive rejection notification with reasons
+  And  I should be able to resubmit improved documents
+

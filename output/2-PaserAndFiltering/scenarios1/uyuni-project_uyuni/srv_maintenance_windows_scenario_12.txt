@@ -1,0 +1,10 @@
+Scenario 12: Detach systems from schedules
+  When  I follow the left menu "Systems > System List > All"
+  And  I click on the clear SSM button
+  And  I check the "sle_minion" client
+  And  I follow the left menu "Systems > System Set Manager > Overview"
+  And  I follow "Assign" in the content area
+  And  I select "None - clear schedule" from "scheduleId"
+  And  I click on "Clear All"
+  Then  I should see a "Maintenance schedule has been cleared" text
+

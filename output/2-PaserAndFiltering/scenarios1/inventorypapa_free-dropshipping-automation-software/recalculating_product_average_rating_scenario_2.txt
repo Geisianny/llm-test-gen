@@ -1,0 +1,6 @@
+Scenario 2: Product's average rating is correctly recalculated after review's rate change
+  Tags: ['@ui']
+  When  I delete the "Awesome" product review
+  Then  I should be notified that it has been successfully deleted
+  And  average rating of product "Lamborghini Gallardo Model" should be 3
+

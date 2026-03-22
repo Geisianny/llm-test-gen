@@ -1,0 +1,29 @@
+Scenario: Search for voucher batches by transaction type
+  Given there are existing voucher batches with different transaction types
+  When the user searches for voucher batches by transaction type "Sales"
+  Then the system displays a list of voucher batches with transaction type "Sales"
+  And the list includes batch number, date, description, and values
+
+Scenario: Search for voucher batches by description
+  Given there are existing voucher batches with different descriptions
+  When the user searches for voucher batches with description "January Sales"
+  Then the system displays a list of voucher batches with description containing "January Sales"
+  And the list includes batch number, date, description, and values
+
+Scenario: Search for voucher batches by approval status
+  Given there are existing voucher batches with different approval statuses
+  When the user searches for voucher batches with approval status "Approved"
+  Then the system displays a list of voucher batches with approval status "Approved"
+  And the list includes batch number, date, description, and values
+
+Scenario: Search for voucher batches with multiple parameters
+  Given there are existing voucher batches with different transaction types and approval statuses
+  When the user searches for voucher batches with transaction type "Sales" and approval status "Approved"
+  Then the system displays a list of voucher batches with transaction type "Sales" and approval status "Approved"
+  And the list includes batch number, date, description, and values
+
+Scenario: Search for voucher batches with no matching results
+  Given there are existing voucher batches with different transaction types
+  When the user searches for voucher batches with transaction type "Invalid Type"
+  Then the system displays a message indicating no voucher batches were found
+  And the list is empty

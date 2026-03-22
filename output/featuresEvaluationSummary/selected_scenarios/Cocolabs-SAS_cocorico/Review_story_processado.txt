@@ -1,0 +1,6 @@
+Scenario: User adds a review with invalid rating
+  Given there are two registered users "asker1" and "offerer1"
+  And "asker1" has made a transaction with "offerer1"
+  When "asker1" tries to rate "offerer1" with 6 stars
+  Then the system displays an error message
+  And informs "asker1" that the rating is invalid

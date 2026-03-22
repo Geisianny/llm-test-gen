@@ -1,0 +1,7 @@
+Scenario 52: The Ubuntu 24.04 Salt SSH minion is healthy
+  Tags: ['@ubuntu2404_ssh_minion']
+  Then  "ubuntu2404_ssh_minion" should have a FQDN
+  And  reverse resolution should work for "ubuntu2404_ssh_minion"
+  And  "ubuntu2404_ssh_minion" should communicate with the server using public interface
+  And  the clock from "ubuntu2404_ssh_minion" should be exact
+

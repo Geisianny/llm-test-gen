@@ -1,0 +1,7 @@
+Scenario 4: Create Org Connection returns "OK" response
+  Tags: ['@team:DataDog/aaa-granular-access']
+  Given  new "CreateOrgConnections" request
+  And  body with value {"data": {"type": "org_connection", "relationships": {"sink_org": {"data": {"type": "orgs", "id": "83999dcd-7f97-11f0-8de1-1ecf66f1aa85"}}}, "attributes": {"connection_types": ["logs"]}}}
+  When  the request is sent
+  Then  the response status is 200 Created
+

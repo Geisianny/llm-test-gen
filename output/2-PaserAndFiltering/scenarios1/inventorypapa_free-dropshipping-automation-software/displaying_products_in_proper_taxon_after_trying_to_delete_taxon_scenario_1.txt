@@ -1,0 +1,7 @@
+Scenario 1: Displaying products in proper taxon after trying to delete this taxon
+  Tags: ['@ui', '@javascript']
+  When  I try to delete taxon named "Men"
+  Then  I should be notified that I cannot delete a taxon in use
+  And  I should see in taxon "Men" in the store products "T-Shirt Banana" and "T-Shirt Apple"
+  But  I should not see in taxon "Men" in the store products "T-Shirt Pear" and "T-Shirt Watermelon"
+

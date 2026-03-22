@@ -1,0 +1,13 @@
+Scenario 3: Referee incurs fees when exiting an auction (0029-FEES-024)(0029-FEES-026)
+  Given  the parties place the following orders:
+  When  the network moves ahead "2" epochs
+  Then  the referral set stats for code "referral-code-1" at epoch "2" should have a running volume of 2000:
+  Given  the parties submit the following liquidity provision:
+  And  the network moves ahead "1" epochs
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/USD.1.1"
+  When  the parties place the following orders:
+  Then  the following trades should be executed:
+  And  the parties submit the following liquidity provision:
+  And  the network moves ahead "1" epochs
+  And  the following transfers should happen:
+

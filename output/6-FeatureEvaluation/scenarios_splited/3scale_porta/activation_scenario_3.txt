@@ -1,0 +1,5 @@
+Scenario: Account activation with invalid token
+  Given there is a registered user with an unactivated account
+  When the user attempts to activate their account using an invalid token
+  Then the system denies activation
+  And displays a message indicating that the activation token is invalid

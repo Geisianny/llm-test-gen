@@ -1,0 +1,4 @@
+Scenario 1: With plan by default add github
+  When  I visit the "GitHub" authentication provider edit page
+  Then  I should be on the upgrade notice page for "branding"
+

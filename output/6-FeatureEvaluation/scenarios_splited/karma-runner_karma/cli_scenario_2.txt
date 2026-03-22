@@ -1,0 +1,5 @@
+Scenario: Execute init command successfully
+  Given the user is using the Karma CLI
+  When the user executes the command "karma init"
+  Then the system initializes a new Karma configuration
+  And displays a confirmation message indicating successful initialization

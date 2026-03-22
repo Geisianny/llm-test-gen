@@ -1,0 +1,7 @@
+Scenario 2: Raw list
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  When  I use the API to list customers with parameter "email" with value "one"
+  Then  I should see in the API response the customer "customer.one@example.org"
+  Then  I should not see in the API response the customer "customer.two@example.org"
+

@@ -1,0 +1,7 @@
+Scenario: Application with missing job classification code
+  Given there is a web user applying to Custom Educator Listing 2
+  And the user has employment with the San Francisco Unified School District
+  And has not provided a job classification code
+  When the user submits the application form without a job classification code
+  Then the system rejects the application
+  And displays an error message indicating that the job classification code is required

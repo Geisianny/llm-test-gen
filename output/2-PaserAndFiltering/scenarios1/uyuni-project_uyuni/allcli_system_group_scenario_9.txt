@@ -1,0 +1,5 @@
+Scenario 9: The SLE minion is part of the new group
+  Given  I am on the Systems overview page of this "sle_minion"
+  When  I follow "Groups" in the content area
+  Then  I should see a "new-systems-group" text
+

@@ -1,0 +1,6 @@
+Scenario 1: Accessing a detailed product page using permalink
+  Tags: ['@no-api', '@ui']
+  When  I open page "en_US/products/t-shirt-banana"
+  Then  I should be on "T-Shirt banana" product detailed page
+  And  I should see the product name "T-Shirt banana"
+

@@ -1,0 +1,9 @@
+Scenario 4: Trial period ends and no change plan POSTPAID
+  Given  plan "PaidAsInLunch" has a trial period of 5 days
+  Given  the time is 30 April 2009
+  And  the buyer is signed up to application plan "PaidAsInLunch" on 30th April 2009
+  When  time flies to 3rd June 2009
+  And  I log in as "stallman" on foo.3scale.localhost on 3rd June 2009
+  And  I navigate to invoice issued for me in "May, 2009"
+  Then  I should see line items
+

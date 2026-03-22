@@ -1,0 +1,14 @@
+Feature: View Product
+Description: In order to ensure the data is correct for a product
+  As an API user
+  I need to be able to view the product
+
+Background: 
+  Given  the following accounts exist:
+
+Scenario 1: View Product
+  Given  I have authenticated to the API
+  And  the follow products exist:
+  When  I use the API to view product "Product One"
+  Then  I will see the data "name" with value "Product One"
+

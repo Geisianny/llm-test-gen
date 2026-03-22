@@ -1,0 +1,9 @@
+Scenario 1: Trying to add a new product option without specifying its code
+  Tags: ['@ui', '@api']
+  Given  I want to create a new product option
+  When  I name it "T-Shirt size" in "English (United States)"
+  But  I do not specify its code
+  And  I try to add it
+  Then  I should be notified that code is required
+  And  the product option with name "T-Shirt size" should not be added
+

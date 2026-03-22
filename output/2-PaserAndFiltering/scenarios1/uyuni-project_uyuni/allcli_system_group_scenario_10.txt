@@ -1,0 +1,17 @@
+Scenario 10: Apply a patch to systems in the system group
+  When  I follow the left menu "Systems > System Groups"
+  And  I follow "new-systems-group"
+  And  I follow first "Patches"
+  When  I enter "virgo-dummy" as the filtered synopsis
+  And  I click on the filter button
+  When  I wait until I see "virgo-dummy-3456" text, refreshing the page
+  Then  I should see a "virgo-dummy-3456" link
+  When  I follow "virgo-dummy-3456"
+  And  I follow first "Affected Systems"
+  And  I check the "sle_minion" client
+  And  I click on "Apply Patches"
+  And  I click on "Confirm"
+  Then  I should see a "Patch virgo-dummy-3456 has been scheduled for 1 system" text
+  And  I am on the Systems overview page of this "sle_minion"
+  And  I wait until event "Patch Update: virgo-dummy-3456 - Test update for virgo-dummy scheduled by admin" is completed
+

@@ -1,0 +1,7 @@
+Scenario 15: Delete Cloud Cost Management Azure config returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/cloud-cost-management']
+  Given  new "DeleteCostAzureUCConfig" request
+  And  request contains "cloud_account_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

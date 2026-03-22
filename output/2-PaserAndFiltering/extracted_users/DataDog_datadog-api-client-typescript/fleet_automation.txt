@@ -1,0 +1,278 @@
+Feature: Fleet Automation
+Description: Manage automated deployments across your fleet of hosts.  Fleet Automation
+  provides two types of deployments:  Configuration Deployments
+  (`/configure`): - Apply configuration file changes to target hosts -
+  Support merge-patch operations to update specific configuration fields -
+  Support delete operations to remove configuration files - Useful for
+  updating Datadog Agent settings, integration configs, and more  Package
+  Upgrade Deployments (`/upgrade`): - Upgrade the Datadog Agent to specific
+  versions
+Tags: ['@endpoint(fleet-automation)', '@endpoint(fleet-automation-v2)']
+
+Background: 
+  Given  a valid "apiKeyAuth" key in the system
+  And  a valid "appKeyAuth" key in the system
+  And  an instance of "FleetAutomation" API
+
+Scenario 1: Cancel a deployment returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "CancelFleetDeployment" enabled
+  And  new "CancelFleetDeployment" request
+  And  request contains "deployment_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 2: Cancel a deployment returns "Deployment successfully canceled." response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "CancelFleetDeployment" enabled
+  And  new "CancelFleetDeployment" request
+  And  request contains "deployment_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 204 Deployment successfully canceled.
+
+Scenario 3: Cancel a deployment returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "CancelFleetDeployment" enabled
+  And  new "CancelFleetDeployment" request
+  And  request contains "deployment_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+Scenario 4: Create a configuration deployment returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "CreateFleetDeploymentConfigure" enabled
+  And  new "CreateFleetDeploymentConfigure" request
+  And  body with value {"data": {"attributes": {"config_operations": [{"file_op": "merge-patch", "file_path": "/datadog.yaml", "patch": {"apm_config": {"enabled": true}, "log_level": "debug", "logs_enabled": true}}], "filter_query": "env:prod AND service:web"}, "type": "deployment"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 5: Create a configuration deployment returns "CREATED" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "CreateFleetDeploymentConfigure" enabled
+  And  new "CreateFleetDeploymentConfigure" request
+  And  body with value {"data": {"attributes": {"config_operations": [{"file_op": "merge-patch", "file_path": "/datadog.yaml", "patch": {"apm_config": {"enabled": true}, "log_level": "debug", "logs_enabled": true}}], "filter_query": "env:prod AND service:web"}, "type": "deployment"}}
+  When  the request is sent
+  Then  the response status is 201 CREATED
+
+Scenario 6: Create a schedule returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "CreateFleetSchedule" enabled
+  And  new "CreateFleetSchedule" request
+  And  body with value {"data": {"attributes": {"name": "Weekly Production Agent Updates", "query": "env:prod AND service:web", "rule": {"days_of_week": ["Mon", "Wed", "Fri"], "maintenance_window_duration": 1200, "start_maintenance_window": "02:00", "timezone": "America/New_York"}, "status": "active", "version_to_latest": 0}, "type": "schedule"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 7: Create a schedule returns "CREATED" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "CreateFleetSchedule" enabled
+  And  new "CreateFleetSchedule" request
+  And  body with value {"data": {"attributes": {"name": "Weekly Production Agent Updates", "query": "env:prod AND service:web", "rule": {"days_of_week": ["Mon", "Wed", "Fri"], "maintenance_window_duration": 1200, "start_maintenance_window": "02:00", "timezone": "America/New_York"}, "status": "active", "version_to_latest": 0}, "type": "schedule"}}
+  When  the request is sent
+  Then  the response status is 201 CREATED
+
+Scenario 8: Delete a schedule returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "DeleteFleetSchedule" enabled
+  And  new "DeleteFleetSchedule" request
+  And  request contains "id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 9: Delete a schedule returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "DeleteFleetSchedule" enabled
+  And  new "DeleteFleetSchedule" request
+  And  request contains "id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+Scenario 10: Delete a schedule returns "Schedule successfully deleted." response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "DeleteFleetSchedule" enabled
+  And  new "DeleteFleetSchedule" request
+  And  request contains "id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 204 Schedule successfully deleted.
+
+Scenario 11: Get a configuration deployment by ID returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "GetFleetDeployment" enabled
+  And  new "GetFleetDeployment" request
+  And  request contains "deployment_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 12: Get a configuration deployment by ID returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "GetFleetDeployment" enabled
+  And  new "GetFleetDeployment" request
+  And  request contains "deployment_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+Scenario 13: Get a configuration deployment by ID returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "GetFleetDeployment" enabled
+  And  new "GetFleetDeployment" request
+  And  request contains "deployment_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 200 OK
+
+Scenario 14: Get a deployment by ID returns "OK" response
+  Tags: ['@skip', '@team:DataDog/fleet-automation']
+  Given  operation "GetFleetDeployment" enabled
+  And  there is a valid "deployment" in the system
+  And  new "GetFleetDeployment" request
+  And  request contains "deployment_id" parameter from "deployment.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+
+Scenario 15: Get a schedule by ID returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "GetFleetSchedule" enabled
+  And  new "GetFleetSchedule" request
+  And  request contains "id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 16: Get a schedule by ID returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "GetFleetSchedule" enabled
+  And  new "GetFleetSchedule" request
+  And  request contains "id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+Scenario 17: Get a schedule by ID returns "OK" response
+  Tags: ['@skip', '@team:DataDog/fleet-automation']
+  Given  operation "GetFleetSchedule" enabled
+  And  there is a valid "fleet_schedule" in the system
+  And  new "GetFleetSchedule" request
+  And  request contains "id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 200 OK
+
+Scenario 18: List all available Agent versions returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "ListFleetAgentVersions" enabled
+  And  new "ListFleetAgentVersions" request
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 19: List all available Agent versions returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "ListFleetAgentVersions" enabled
+  And  new "ListFleetAgentVersions" request
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+Scenario 20: List all available Agent versions returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "ListFleetAgentVersions" enabled
+  And  new "ListFleetAgentVersions" request
+  When  the request is sent
+  Then  the response status is 200 OK
+
+Scenario 21: List all deployments returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "ListFleetDeployments" enabled
+  And  new "ListFleetDeployments" request
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 22: List all deployments returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "ListFleetDeployments" enabled
+  And  new "ListFleetDeployments" request
+  When  the request is sent
+  Then  the response status is 200 OK
+
+Scenario 23: List all schedules returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "ListFleetSchedules" enabled
+  And  new "ListFleetSchedules" request
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 24: List all schedules returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "ListFleetSchedules" enabled
+  And  new "ListFleetSchedules" request
+  When  the request is sent
+  Then  the response status is 200 OK
+
+Scenario 25: Trigger a schedule deployment returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "TriggerFleetSchedule" enabled
+  And  new "TriggerFleetSchedule" request
+  And  request contains "id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 26: Trigger a schedule deployment returns "CREATED - Deployment successfully created and started." response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "TriggerFleetSchedule" enabled
+  And  new "TriggerFleetSchedule" request
+  And  request contains "id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 201 CREATED - Deployment successfully created and started.
+
+Scenario 27: Trigger a schedule deployment returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "TriggerFleetSchedule" enabled
+  And  new "TriggerFleetSchedule" request
+  And  request contains "id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+Scenario 28: Update a schedule returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "UpdateFleetSchedule" enabled
+  And  new "UpdateFleetSchedule" request
+  And  request contains "id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"name": "Weekly Production Agent Updates", "query": "env:prod AND service:web", "rule": {"days_of_week": ["Mon", "Wed", "Fri"], "maintenance_window_duration": 1200, "start_maintenance_window": "02:00", "timezone": "America/New_York"}, "status": "active", "version_to_latest": 0}, "type": "schedule"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 29: Update a schedule returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "UpdateFleetSchedule" enabled
+  And  new "UpdateFleetSchedule" request
+  And  request contains "id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"name": "Weekly Production Agent Updates", "query": "env:prod AND service:web", "rule": {"days_of_week": ["Mon", "Wed", "Fri"], "maintenance_window_duration": 1200, "start_maintenance_window": "02:00", "timezone": "America/New_York"}, "status": "active", "version_to_latest": 0}, "type": "schedule"}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+Scenario 30: Update a schedule returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "UpdateFleetSchedule" enabled
+  And  new "UpdateFleetSchedule" request
+  And  request contains "id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"name": "Weekly Production Agent Updates", "query": "env:prod AND service:web", "rule": {"days_of_week": ["Mon", "Wed", "Fri"], "maintenance_window_duration": 1200, "start_maintenance_window": "02:00", "timezone": "America/New_York"}, "status": "active", "version_to_latest": 0}, "type": "schedule"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+
+Scenario 31: Upgrade hosts returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "CreateFleetDeploymentUpgrade" enabled
+  And  new "CreateFleetDeploymentUpgrade" request
+  And  body with value {"data": {"attributes": {"filter_query": "env:prod AND service:web", "target_packages": [{"name": "datadog-agent", "version": "7.52.0"}]}, "type": "deployment"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 32: Upgrade hosts returns "CREATED" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "CreateFleetDeploymentUpgrade" enabled
+  And  new "CreateFleetDeploymentUpgrade" request
+  And  body with value {"data": {"attributes": {"filter_query": "env:prod AND service:web", "target_packages": [{"name": "datadog-agent", "version": "7.52.0"}]}, "type": "deployment"}}
+  When  the request is sent
+  Then  the response status is 201 CREATED
+
+Scenario 33: Upgrade hosts returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "CreateFleetDeploymentUpgrade" enabled
+  And  new "CreateFleetDeploymentUpgrade" request
+  And  body with value {"data": {"attributes": {"filter_query": "env:prod AND service:web", "target_packages": [{"name": "datadog-agent", "version": "7.52.0"}]}, "type": "deployment"}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

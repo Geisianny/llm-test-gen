@@ -1,0 +1,7 @@
+Scenario 4: TagCollector can add cache tags for relations (JSON-LD format)
+  When  I add "Accept" header equal to "application/ld+json"
+  And  I send a "GET" request to "/relation_embedders/2"
+  Then  the response status code should be 200
+  And  the header "Cache-Tags" should be equal to "/related_dummies/1#thirdLevel,/related_dummies/1,/RE/2#anotherRelated,/RE/2#related,/RE/2"
+  And  the JSON should be equal to:
+

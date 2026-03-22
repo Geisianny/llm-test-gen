@@ -1,0 +1,9 @@
+Scenario 14: Get a deployment by ID returns "OK" response
+  Tags: ['@skip', '@team:DataDog/fleet-automation']
+  Given  operation "GetFleetDeployment" enabled
+  And  there is a valid "deployment" in the system
+  And  new "GetFleetDeployment" request
+  And  request contains "deployment_id" parameter from "deployment.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+

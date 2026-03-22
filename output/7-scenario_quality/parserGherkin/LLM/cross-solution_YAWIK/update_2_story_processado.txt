@@ -1,0 +1,55 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: update_2_story_processado.feature
+Caminho relativo: cross-solution_YAWIK\update_2_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\cross-solution_YAWIK\update_2_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: update_2_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Update organization name
+   Steps: 5
+   - Given there is a recruiter logged in
+   - And the recruiter has an organization with the name "Old Name"
+   - When the recruiter updates the organization name to "New Name"
+   - Then the system saves the new organization name
+   - And displays a confirmation message
+2. Update organization location
+   Steps: 5
+   - Given there is a recruiter logged in
+   - And the recruiter has an organization with the location "Old Location"
+   - When the recruiter updates the organization location to "New Location"
+   - Then the system saves the new organization location
+   - And displays a confirmation message
+3. Update organization logo
+   Steps: 5
+   - Given there is a recruiter logged in
+   - And the recruiter has an organization with a logo "old_logo.png"
+   - When the recruiter updates the organization logo to "new_logo.png"
+   - Then the system saves the new organization logo
+   - And displays a confirmation message
+4. Update multiple organization details
+   Steps: 7
+   - Given there is a recruiter logged in
+   - And the recruiter has an organization with the name "Old Name", location "Old Location", and logo "old_logo.png"
+   - When the recruiter updates the organization name to "New Name"
+   - And updates the organization location to "New Location"
+   - And updates the organization logo to "new_logo.png"
+   - Then the system saves the new organization details
+   - And displays a confirmation message
+5. Attempt to update organization with invalid data
+   Steps: 5
+   - Given there is a recruiter logged in
+   - And the recruiter has an organization with the name "Valid Name"
+   - When the recruiter updates the organization name to an empty string
+   - Then the system displays an error message
+   - And does not save the changes to the organization name

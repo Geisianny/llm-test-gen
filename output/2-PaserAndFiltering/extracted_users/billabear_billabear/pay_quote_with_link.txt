@@ -1,0 +1,26 @@
+Feature: Read quote
+
+Background: 
+  Given  the following accounts exist:
+  And  there are the following tax types:
+  And  that the following countries exist:
+  And  the following country tax rules exist:
+  And  the follow products exist:
+  And  the follow prices exist:
+  And  the following features exist:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price 1000 in "USD" with:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price 2000 in "USD" with:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price 3000 in "USD" with:
+  And  the follow customers exist:
+
+Scenario 1: Pay for quote
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  I want to invoice the customer "customer.seven@example.org"
+  And  I want to invoice for a subscription to "Test Two" at 1000 in "USD" per "week"
+  And  I want to invoice for a subscription to "Test Plan" at 2000 in "USD" per "week"
+  And  I want to invoice for a bespoke one-off fee for "Setup Costs" at 5000 in "USD" including tax for a digital goods
+  And  I finalise the quote in APP
+  When  I accept and pay for the quote for "customer.seven@example.org"
+  Then  there should be a subscription for the user "customer.seven@example.org"
+  And  the quote for "customer.seven@example.org" should be marked as paid
+

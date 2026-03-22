@@ -1,0 +1,11 @@
+Scenario 3: Create an AuthN Mapping returns "OK" response
+  Tags: ['@team:DataDog/team-aaa-identity']
+  Given  there is a valid "role" in the system
+  And  new "CreateAuthNMapping" request
+  And  body with value {"data": {"attributes": {"attribute_key": "{{ unique_lower_alnum }}", "attribute_value": "{{ unique }}"}, "relationships": {"role": {"data": {"id": "{{ role.data.id }}", "type": "roles"}}}, "type": "authn_mappings"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.attributes.attribute_key" is equal to "{{ unique_lower_alnum }}"
+  And  the response "data.attributes.attribute_value" is equal to "{{ unique }}"
+  And  the response "data.relationships.role.data.id" is equal to "{{ role.data.id }}"
+

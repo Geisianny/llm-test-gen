@@ -1,0 +1,10 @@
+Scenario 8: Get SLO report status returns "OK" response
+  Tags: ['@team:DataDog/slo-app']
+  Given  operation "GetSLOReportJobStatus" enabled
+  And  new "GetSLOReportJobStatus" request
+  And  there is a valid "report" in the system
+  And  request contains "report_id" parameter from "report.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.type" is equal to "report_id"
+

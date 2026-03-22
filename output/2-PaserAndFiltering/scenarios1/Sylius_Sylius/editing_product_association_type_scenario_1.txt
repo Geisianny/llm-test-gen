@@ -1,0 +1,8 @@
+Scenario 1: Changing a name of an existing product association type
+  Tags: ['@api', '@ui']
+  When  I want to modify the "Cross sell" product association type
+  And  I rename it to "Up sell" in "English (United States)"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this product association type name should be "Up sell"
+

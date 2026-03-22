@@ -1,0 +1,8 @@
+Scenario 1: search communities by category
+  Given  the following category
+  And  the following community
+  When  I go to the search communities page
+  And  I fill in "search-input" with "software livre"
+  And  I press "Search"
+  Then  I should see "Noosfero" within "#search-results"
+

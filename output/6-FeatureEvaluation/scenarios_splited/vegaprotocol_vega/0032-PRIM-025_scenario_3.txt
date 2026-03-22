@@ -1,0 +1,6 @@
+Scenario: Order that triggered auction is executed when market returns to continuous trading
+  Given the market "BTC/ETH" is in auction mode due to an order outside price limits
+  When the network moves ahead "1" blocks
+  Then the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  And the order that triggered the auction is executed
+  And the mark price should be "1050" for the market "BTC/ETH"

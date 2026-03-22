@@ -1,0 +1,13 @@
+Scenario 1: enabling visualization of versions
+  Tags: ['@selenium']
+  Given  the following articles
+  Given  I am on article "New Article"
+  Then  I should not see "All versions"
+  And  I follow "article-options"
+  And  I follow "Edit" within "#article-options-dropdown"
+  And  I check "I want this article to display a link to older versions"
+  And  I follow "Save"
+  Then  I should be on article "New Article"
+  And  I follow "article-options"
+  And  I should see "All versions"
+

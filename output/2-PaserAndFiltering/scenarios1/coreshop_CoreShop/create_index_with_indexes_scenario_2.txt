@@ -1,0 +1,8 @@
+Scenario 2: Create a new index and tow indexes to the table
+  Given  the site has a index "myindex" for class "CoreShopProduct" with type "mysql"
+  And  the index has following fields:
+  And  the index has an index for columns "sku, ean"
+  And  the index has an index for columns "ean, ean2"
+  Then  the index should have an index for "sku, ean"
+  Then  the index should have an index for "ean, ean2"
+

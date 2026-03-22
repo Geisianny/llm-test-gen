@@ -1,0 +1,12 @@
+Scenario 5: Trying to register a new account without confirming password
+  Tags: ['@ui']
+  When  I want to register a new account
+  And  I specify the first name as "Saul"
+  Then  I specify the last name as "Goodman"
+  And  I specify the email as "goodman@gmail.com"
+  And  I specify the password as "heisenberg"
+  And  I do not confirm the password
+  And  I try to register this account
+  Then  I should be notified that the password do not match
+  And  I should not be logged in
+

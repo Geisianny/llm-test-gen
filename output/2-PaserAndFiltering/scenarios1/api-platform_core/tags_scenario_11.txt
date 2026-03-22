@@ -1,0 +1,6 @@
+Scenario 11: Create a Relation3 with many to many
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/relation3s" with body:
+  Then  the response status code should be 201
+  And  "/relation3s,/relation2s/1,/relation2s/2" IRIs should be purged
+

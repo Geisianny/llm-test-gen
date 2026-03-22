@@ -1,0 +1,7 @@
+Scenario 4: Get all hosts with metadata for your organization returns "OK" response
+  Tags: ['@skip-validation', '@team:DataDog/core-index']
+  Given  new "ListHosts" request
+  And  request contains "include_hosts_metadata" parameter with value true
+  When  the request is sent
+  Then  the response status is 200 OK
+

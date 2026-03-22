@@ -1,0 +1,5 @@
+Scenario 1: Cant access if not logged in
+  Given  I am not logged in
+  When  I go to /profile/sample-community/send_mail
+  Then  I should be on login page
+

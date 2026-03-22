@@ -1,0 +1,8 @@
+Scenario 60: Upload Custom Costs File returns "Accepted" response
+  Tags: ['@replay-only', '@team:DataDog/cloud-cost-management']
+  Given  new "UploadCustomCostsFile" request
+  And  body with value [{ "ProviderName": "my_provider", "ChargePeriodStart": "2023-05-06", "ChargePeriodEnd": "2023-06-06","ChargeDescription": "my_description","BilledCost": 250,"BillingCurrency": "USD","Tags": {"key": "value"}}]
+  When  the request is sent
+  Then  the response status is 202 Accepted
+  And  the response "data.attributes.name" is equal to "data.json"
+

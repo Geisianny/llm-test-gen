@@ -1,0 +1,16 @@
+Scenario 1: Create a new cart and add a product and calculate item totals
+  Given  I add the product "T-Shirt" to my cart
+  Then  the cart item with product "T-Shirt" should have converted discount-price with "0" including tax
+  Then  the cart item with product "T-Shirt" should have converted discount-price with "0" excluding tax
+  Then  the cart item with product "T-Shirt" should have converted discount-price with "0" excluding tax
+  Then  the cart item with product "T-Shirt" should have converted discount with "0" including tax
+  Then  the cart item with product "T-Shirt" should have converted discount with "0" excluding tax
+  Then  the cart item with product "T-Shirt" should have converted retail-price with "4800" including tax
+  Then  the cart item with product "T-Shirt" should have converted retail-price with "4000" excluding tax
+  Then  the cart item with product "T-Shirt" should have retail-price with "2400" including tax
+  Then  the cart item with product "T-Shirt" should have retail-price with "2000" excluding tax
+  Then  the cart item with product "T-Shirt" should have converted total with "4800" including tax
+  Then  the cart item with product "T-Shirt" should have converted total with "4000" excluding tax
+  Then  the cart item with product "T-Shirt" should have total with "2400" including tax
+  Then  the cart item with product "T-Shirt" should have total with "2000" excluding tax
+

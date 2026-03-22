@@ -1,0 +1,13 @@
+Scenario Outline 3: organization required fields are displayed on creation - Example 1
+  Given  the following community fields are required fields
+  And  I follow "Groups" within "#section-relationships"
+  And  I follow "Create a new community"
+  When  I press "Create"
+  Then  I should see "Display name can't be blank"
+  Then  I should see "Contact email can't be blank"
+
+  Examples:
+    | organization | creation_button | confirmation_button |
+    | community | "Create a new community" | "Create" |
+    | enterprise | "Register a new enterprise" | "Next" |
+

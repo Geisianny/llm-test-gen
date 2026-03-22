@@ -1,0 +1,4 @@
+Scenario 3: Configure untrusted payment mode
+  Given  I want to configure the following UNTRUSTED Magento payment mode to MANUALLY handle related sale orders workflow:
+  And  I "forbid" partial picking on UNTRUSTED payment mode
+

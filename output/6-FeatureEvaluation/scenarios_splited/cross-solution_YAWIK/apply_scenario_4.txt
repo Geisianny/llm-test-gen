@@ -1,0 +1,6 @@
+Scenario: Apply for a job without a valid profile
+  Given there is a job opening with the title "Software Engineer"
+  And the user does not have a valid profile with personal information
+  When the user attempts to apply for the job "Software Engineer"
+  Then the system prompts the user to complete their profile
+  And does not allow the job application

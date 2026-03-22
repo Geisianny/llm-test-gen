@@ -1,0 +1,5 @@
+Scenario: Delete the only revision of a state channel
+  Given there is an existing state channel named "Test Channel" with a single revision
+  When the user attempts to delete the only revision of the state channel "Test Channel"
+  Then the system prevents the deletion of the only revision
+  And displays a message indicating that at least one revision must exist

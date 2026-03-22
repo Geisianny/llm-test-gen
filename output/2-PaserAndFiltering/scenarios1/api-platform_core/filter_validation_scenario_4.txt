@@ -1,0 +1,4 @@
+Scenario 4: Required filter should not throw an error if set
+  When  I am on "/array_filter_validators?arrayRequired[]=foo&indexedArrayRequired[foo]=foo"
+  Then  the response status code should be 200
+

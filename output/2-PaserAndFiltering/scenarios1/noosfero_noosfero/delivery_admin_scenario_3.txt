@@ -1,0 +1,12 @@
+Scenario 3: create new deliver
+  Tags: ['@selenium']
+  Given  I follow "Preferences" within "#section-shopping"
+  And  I check "Enable shopping basket"
+  And  I follow "New delivery or pickup"
+  And  I select "Deliver" from "Type"
+  And  I fill in "Name" with "Bike"
+  And  I fill in "Fixed cost" with "8.00"
+  And  I fill in "delivery_method_free_over_price" with "35.50"
+  When  I follow "Add"
+  Then  I should see "Bike" within ".delivery-method"
+

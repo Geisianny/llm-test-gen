@@ -1,0 +1,8 @@
+Scenario 11: Get a list of failure events returns "Bad Request" response
+  Tags: ['@team:DataDog/ci-app-backend']
+  Given  a valid "appKeyAuth" key in the system
+  And  new "ListDORAFailures" request
+  And  body with value {"data": {"attributes": {"limit": 10}}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

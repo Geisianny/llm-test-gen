@@ -1,0 +1,5 @@
+Scenario 10: Check that file has been created on Red Hat-like minion
+  Tags: ['@rhlike_minion']
+  When  I wait until file "/etc/s-mgr/config" exists on "rhlike_minion"
+  Then  file "/etc/s-mgr/config" should contain "COLOR=white" on "rhlike_minion"
+

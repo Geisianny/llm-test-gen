@@ -1,0 +1,10 @@
+Scenario 2: Successfully create an event while being signed-in as superadmin
+  Given  I am signed in as a superadmin
+  And  I visit the home page
+  And  I click "New Event"
+  Given  I fill in the new event page validly
+  Then  I press "Create Event"
+  Then  I should see "Event was successfully created"
+  And  I should see "at 09:00"
+  And  I should see "at 09:20"
+

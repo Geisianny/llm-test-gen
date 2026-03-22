@@ -1,0 +1,48 @@
+Scenario 1: Navigation without specs
+  Given  they go to the ActiveDocs page
+  When  they follow "Create your first spec"
+  Then  the current page is the new ActiveDocs spec page
+
+
+
+Scenario Outline 2: Navigation with specs - Example 1
+  Given  the provider has a Swagger 1.2 spec "Echo API"
+  When  they go to the ActiveDocs page
+  And  they follow "Add a new spec"
+  Then  the current page is the new ActiveDocs spec page
+
+  Examples:
+    | swagger version |
+    | Swagger 1.2 |
+    | Swagger 2 |
+    | OAS 3.0 |
+    | OAS 3.1 |
+
+
+
+Scenario Outline 3: Add a new spec - Example 1
+  When  the ActiveDocs form is submitted with:
+  Then  they should see a toast alert with text "ActiveDocs Spec was successfully saved"
+  And  the current page is spec "My Spec" preview page from Product context
+
+  Examples:
+    | swagger version |
+    | Swagger 1.2 |
+    | Swagger 2 |
+    | OAS 3.0 |
+    | OAS 3.1 |
+
+
+
+Scenario Outline 4: Add a new invalid specification - Example 1
+  When  the ActiveDocs form is submitted with:
+  Then  the current page is the ActiveDocs page
+  And  field "API JSON Spec" has inline error "is missing required properties"
+
+  Examples:
+    | swagger version | error |
+    | invalid Swagger 1.2 | is missing required properties |
+    | invalid Swagger 2 | is missing required properties |
+    | invalid OAS 3.0 | is missing required properties |
+    | invalid OAS 3.1 | is missing required properties |
+

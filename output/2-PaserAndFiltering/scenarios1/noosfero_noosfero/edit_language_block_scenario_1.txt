@@ -1,0 +1,8 @@
+Scenario 1: display in all languages
+  Given  I go to edit ArticleBlock of joaosilva
+  And  I fill in "Custom title for this block" with "Block displayed"
+  And  I select "all languages" from "Show for"
+  And  I press "Save"
+  When  I go to joaosilva's homepage
+  Then  I should see "Block displayed"
+

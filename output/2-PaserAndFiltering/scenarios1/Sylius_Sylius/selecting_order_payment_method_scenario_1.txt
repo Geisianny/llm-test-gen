@@ -1,0 +1,14 @@
+Scenario 1: Selecting a payment method
+  Tags: ['@api', '@ui']
+  Given  this payment method is not using Payum
+  And  I have product "PHP T-Shirt" in the cart
+  And  I am at the checkout addressing step
+  When  I specify the email as "jon.snow@example.com"
+  And  I specify the billing address as "Ankh Morpork", "Frost Alley", "90210", "United States" for "Jon Snow"
+  And  I complete the addressing step
+  And  I select "Free" shipping method
+  And  I complete the shipping step
+  And  I select "Bank transfer" payment method
+  And  I complete the payment step
+  Then  I should be on the checkout complete step
+

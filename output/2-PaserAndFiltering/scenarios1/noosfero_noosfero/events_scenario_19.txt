@@ -1,0 +1,4 @@
+Scenario 19: not provide button to create new event if I am not logged
+  When  I am on /profile/josesilva/events/2020/12/1
+  Then  I should not see "New event" link
+

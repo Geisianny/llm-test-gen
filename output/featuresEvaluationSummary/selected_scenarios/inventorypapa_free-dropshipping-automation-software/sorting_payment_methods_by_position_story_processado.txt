@@ -1,0 +1,5 @@
+Scenario: Add new payment method to the end of the list
+  Given there are multiple payment methods with different positions
+  When the administrator adds a new payment method with a higher position than existing ones
+  Then the system adds the new payment method to the end of the list
+  And the payment methods remain sorted in ascending order by position

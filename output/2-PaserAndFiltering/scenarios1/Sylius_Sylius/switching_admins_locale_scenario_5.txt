@@ -1,0 +1,8 @@
+Scenario 5: Locales are saved per each admin's preference
+  Tags: ['@no-api', '@ui']
+  Given  I am using "Spanish (Mexico)" locale for my panel
+  And  there is an administrator "admin@example.com" identified by "sylius"
+  And  this administrator is using "French (France)" locale
+  When  this administrator logs in using "sylius" password
+  Then  they should be viewing the administration panel in "French (France)" locale
+

@@ -1,0 +1,7 @@
+Scenario 5: Get a dashboard list returns "Not Found" response
+  Tags: ['@team:DataDog/dashboards-backend']
+  Given  new "GetDashboardList" request
+  And  request contains "list_id" parameter with value 0
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

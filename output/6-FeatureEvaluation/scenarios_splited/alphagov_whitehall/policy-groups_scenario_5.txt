@@ -1,0 +1,6 @@
+Scenario: Access Policy Group profile from policy page
+  Given there is a policy with the title "New Environmental Policy"
+  And there is a Policy Group with the title "Climate Change Experts"
+  And the Policy Group is associated with the policy "New Environmental Policy"
+  When the citizen clicks on the link "Climate Change Experts" on the policy page
+  Then the system navigates to the Policy Group page

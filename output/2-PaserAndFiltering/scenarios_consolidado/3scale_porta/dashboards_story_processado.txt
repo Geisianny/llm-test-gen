@@ -1,0 +1,44 @@
+Scenario 1: Navigation
+  Given  the current page is the provider dashboard
+  When  they select "Audience" from the context selector
+  And  press "Billing" within the main menu
+  And  follow "Earnings by month" within the main menu
+  Then  they should be on the earnings by month page
+
+
+
+Scenario 2: Empty state
+  When  they go to the earnings by month page
+  Then  they should see an empty state
+
+
+
+Scenario 3: In process invoice
+  Given  the following invoices:
+  When  they go to the earnings by month page
+  Then  the table should contain the following:
+
+
+
+Scenario 4: Paid invoice
+  Given  the following invoices:
+  When  they go to the earnings by month page
+  Then  the table should contain the following:
+
+
+
+Scenario 5: Overdue invoice
+  Given  the following invoices:
+  And  the buyer pays the invoice but failed
+  When  I go to the earnings by month page
+  Then  the table should contain the following:
+
+
+
+Scenario 6: Filter invoices by year
+  Given  the following invoices:
+  And  I go to the earnings by month page
+  And  the table should contain the following:
+  When  the table is filtered with:
+  Then  the table should contain the following:
+

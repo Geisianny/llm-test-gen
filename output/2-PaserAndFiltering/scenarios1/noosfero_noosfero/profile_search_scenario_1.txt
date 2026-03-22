@@ -1,0 +1,7 @@
+Scenario 1: search on profile
+  Given  I go to joaosilva's profile
+  And  I fill in "q" with "bees"
+  And  I follow "profile-search-button"
+  Then  I should see "bees and butterflies" within ".main-block"
+  And  I should not see "whales and dolphins" within ".main-block"
+

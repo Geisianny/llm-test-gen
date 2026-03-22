@@ -1,0 +1,7 @@
+Scenario 12: Upload IdP metadata returns "Unsupported Media Type" response
+  Tags: ['@generated', '@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "UploadIdPForOrg" request
+  And  request contains "public_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 415 Unsupported Media Type
+

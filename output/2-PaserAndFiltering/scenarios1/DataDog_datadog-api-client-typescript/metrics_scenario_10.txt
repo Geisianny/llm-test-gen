@@ -1,0 +1,8 @@
+Scenario 10: Search metrics returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/metrics-experience', '@team:DataDog/metrics-index', '@team:DataDog/metrics-intake', '@team:DataDog/timeseries-query']
+  Given  a valid "appKeyAuth" key in the system
+  And  new "ListMetrics" request
+  And  request contains "q" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

@@ -1,0 +1,93 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 19/01/2026 23:13:57
+Arquivo analisado: edit_own_charity_profile_story_processado.feature
+Caminho relativo: AgileVentures_LocalSupport\edit_own_charity_profile_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/Originais\AgileVentures_LocalSupport\edit_own_charity_profile_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: edit_own_charity_profile_story_processado
+Descrição: Não possui
+Total de cenários: 14
+
+CENÁRIOS IDENTIFICADOS:
+1. Successfully add website url without protocol
+   Steps: 3
+   - Given I am signed in as a charity worker related to "Friendly"
+   - And I update "Friendly" charity website to be "www.friendly.com"
+   - Then the website link for "Friendly" should have a protocol
+2. Successfully change the address of a charity
+   Steps: 3
+   - Given I am signed in as a charity worker related to "Friendly"
+   - And I update "Friendly" charity address to be "30 pinner road"
+   - Then I should be on the show page for the organisation named "Friendly"
+3. Do not see edit button as non-superadmin not associated with Friendly
+   Steps: 3
+   - Given I am signed in as a charity worker unrelated to "Friendly"
+   - And I visit the show page for the organisation named "Friendly"
+   - Then I should not see an edit button for "Friendly" charity
+4. Non-logged in users do not see edit button either
+   Steps: 2
+   - Given I visit the show page for the organisation named "Friendly"
+   - Then I should not see an edit button for "Friendly" charity
+5. Change the address of a charity when Google is indisposed
+   Steps: 5
+   - Given I am signed in as a charity worker related to "Friendly"
+   - And I update "Friendly" charity address to be "83 pinner road" when Google is indisposed
+   - Then I should not see the unable to save organisation error
+   - Then the address for "Friendly" should be "83 pinner road"
+   - And I visit the show page for the organisation named "Friendly"
+6. Redirected to sign-in when not signed-in and edit donation url
+   Steps: 2
+   - Given I visit the edit page for the organisation named "Friendly"
+   - Then I should be on the sign in page
+7. By default, not display organisations address and phone number on home page
+   Steps: 2
+   - Given I visit the show page for the organisation named "Friendly"
+   - Then I should not see any address or telephone information for "Nice" and "Friendly"
+8. By default, not display organisations edit and delete on home page
+   Steps: 2
+   - Given I visit the show page for the organisation named "Friendly"
+   - Then I should not see any edit or delete links
+9. By default, not display organisations address and phone number on details page
+   Steps: 2
+   - Given I visit the show page for the organisation named "Friendly"
+   - Then I should not see any address or telephone information for "Friendly"
+10. By default, not display edit link on details page
+   Steps: 2
+   - Given I visit the show page for the organisation named "Friendly"
+   - Then I should not see any edit link for "Friendly"
+11. Outline 11: Successfully mark a field of a charity as public or private - Example 1
+   Steps: 8
+   - Given I am signed in as a charity worker related to "Friendly"
+   - And I visit the edit page for the organisation named "Friendly"
+   - And the phone for "Friendly" has been marked hidden
+   - And I check "organisation_publish_phone"
+   - And I press "Update Organisation"
+   - Then I should be on the show page for the organisation named "Friendly"
+   - And I should see "020800000"
+   - And I should see "Telephone"
+12. Outline 12: Edit page has scroll box for selecting categories - Example 1
+   Steps: 3
+   - Given I am signed in as a charity worker related to "Friendly"
+   - And I visit the edit page for the organisation named "Friendly"
+   - Then I should see the category named Animal welfare as the 1st category in What you do
+13. Outline 13: Appropriate categories are checked/unchecked by default - Example 1
+   Steps: 3
+   - Given I am signed in as a charity worker related to "Friendly"
+   - And I visit the edit page for the organisation named "Friendly"
+   - Then the category named Health should be checked
+14. Outline 14: Successfully add and remove an organisation's categories - Example 1
+   Steps: 7
+   - Given I am signed in as a charity worker related to "Friendly"
+   - And I visit the edit page for the organisation named "Friendly"
+   - Then I uncheck the category "Health"
+   - And I check the category "Child welfare"
+   - And I press "Update Organisation"
+   - Then I should not see "Health" within "org-categories"
+   - And I should see "Child welfare" within "org-categories"

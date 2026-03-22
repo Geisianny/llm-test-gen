@@ -1,0 +1,9 @@
+Scenario 2: Members per default cannot access stats
+  Given  an active user "member" of account "foo.3scale.localhost"
+  And  user "member" does not belong to the admin group "monitoring" of provider "foo.3scale.localhost"
+  And  current domain is the admin domain of provider "foo.3scale.localhost"
+  When  I log in as provider "member"
+  And  I go to the provider dashboard
+  Then  I should not see the link "Analytics" within the apis dashboard widget
+  And  they should see an error when going to the following pages:
+

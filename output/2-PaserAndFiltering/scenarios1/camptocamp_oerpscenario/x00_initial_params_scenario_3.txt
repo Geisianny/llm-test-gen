@@ -1,0 +1,5 @@
+Scenario 3: LANGUAGE INSTALL
+  Tags: ['@multicompany_base_finance_setup_languages']
+  Given  I install the following languages:
+  Then  the language should be available
+

@@ -1,0 +1,9 @@
+Scenario 1: Receiving a discount on the first order
+  Tags: ['@api', '@ui']
+  Given  there is a promotion "First order promotion"
+  And  it gives "20%" off on the customer's 1st order
+  And  I added product "Metallica dress" to the cart
+  When  I check the details of my cart
+  Then  my cart total should be "$40.00"
+  And  my discount should be "-$10.00"
+

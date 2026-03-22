@@ -1,0 +1,9 @@
+Scenario 33: Remove a member team returns "No Content" response
+  Tags: ['@generated', '@skip', '@team:DataDog/aaa-omg']
+  Given  operation "RemoveMemberTeam" enabled
+  And  new "RemoveMemberTeam" request
+  And  request contains "super_team_id" parameter from "REPLACE.ME"
+  And  request contains "member_team_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 204 No Content
+

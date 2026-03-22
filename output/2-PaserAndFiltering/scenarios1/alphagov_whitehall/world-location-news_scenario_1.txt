@@ -1,0 +1,7 @@
+Scenario 1: Viewing the list presents no world location news message, when no news exists
+  Given  no world locations exist
+  When  I visit the world location news index page
+  Then  I should see the "No active world location news" message
+  When  I click the Inactive tab
+  Then  I should see the "No inactive world location news" message
+

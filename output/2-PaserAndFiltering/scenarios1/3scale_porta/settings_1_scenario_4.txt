@@ -1,0 +1,6 @@
+Scenario 4: Using Braintree as payment gateway
+  Given  the provider is charging its buyers
+  But  the provider doesn't have a payment gateway set up
+  When  they are reviewing the charging and gateway billing settings
+  Then  Braintree can be set as a payment gateway
+

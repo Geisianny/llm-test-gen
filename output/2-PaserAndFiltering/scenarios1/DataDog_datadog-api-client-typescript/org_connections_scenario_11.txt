@@ -1,0 +1,9 @@
+Scenario 11: Update Org Connection returns "OK" response
+  Tags: ['@team:DataDog/aaa-granular-access']
+  Given  there is a valid "org_connection" in the system
+  And  new "UpdateOrgConnections" request
+  And  request contains "connection_id" parameter from "org_connection.data.id"
+  And  body with value {"data": {"type": "org_connection", "id": "{{ org_connection.data.id }}", "attributes": {"connection_types": ["logs", "metrics"]}}}
+  When  the request is sent
+  Then  the response status is 200 OK
+

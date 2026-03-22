@@ -1,0 +1,9 @@
+Scenario 6: Delete an existing incident team returns "OK" response
+  Tags: ['@team:Datadog/incident-app']
+  Given  there is a valid "team" in the system
+  And  operation "DeleteIncidentTeam" enabled
+  And  new "DeleteIncidentTeam" request
+  And  request contains "team_id" parameter from "team.data.id"
+  When  the request is sent
+  Then  the response status is 204 OK
+

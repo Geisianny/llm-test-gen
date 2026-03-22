@@ -1,0 +1,5 @@
+Scenario 2: Updating the webhook
+  When  they go to the edit webhooks page
+  And  the form is submitted with:
+  Then  they should see a toast alert with text "Webhooks settings were successfully updated"
+

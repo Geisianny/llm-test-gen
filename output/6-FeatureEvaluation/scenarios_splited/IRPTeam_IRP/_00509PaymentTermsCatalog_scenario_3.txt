@@ -1,0 +1,7 @@
+Scenario: Edit an existing payment term
+  Given there is an administrator logged into the system
+  And there is a payment term named "Existing Term" in the catalog
+  When the administrator edits the payment term "Existing Term"
+  And changes its name to "Updated Term"
+  Then the system updates the payment term
+  And displays a confirmation message

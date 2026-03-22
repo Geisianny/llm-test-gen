@@ -1,0 +1,12 @@
+Scenario Outline 11: As a non logged-in user I can not manage ripostes - Example 1
+  Given  I send a "POST" request to "/api/v3/ripostes"
+  Then  the response status code should be 401
+
+  Examples:
+    | method | url |
+    | POST | /api/v3/ripostes |
+    | GET | /api/v3/ripostes |
+    | GET | /api/v3/ripostes/220bd36e-4ac4-488a-8473-8e99a71efba4 |
+    | PUT | /api/v3/ripostes/220bd36e-4ac4-488a-8473-8e99a71efba4 |
+    | DELETE | /api/v3/ripostes/220bd36e-4ac4-488a-8473-8e99a71efba4 |
+

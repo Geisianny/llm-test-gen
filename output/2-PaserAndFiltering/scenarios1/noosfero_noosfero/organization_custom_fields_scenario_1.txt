@@ -1,0 +1,13 @@
+Scenario Outline 1: organization active fields are not displayed on creation - Example 1
+  Given  the following community fields are active fields
+  And  I follow "Groups" within "#section-relationships"
+  When  I follow "Create a new community"
+  Then  I should not see "Display name"
+  Then  I should not see "Contact email"
+  Then  I should not see "City"
+
+  Examples:
+    | organization | creation_button |
+    | community | "Create a new community" |
+    | enterprise | "Register a new enterprise" |
+

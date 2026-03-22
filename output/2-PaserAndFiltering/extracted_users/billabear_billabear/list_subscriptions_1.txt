@@ -1,0 +1,17 @@
+Feature: Subscription List
+
+Background: 
+  Given  the following accounts exist:
+  And  the follow products exist:
+  And  the follow prices exist:
+  And  the following features exist:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "Price One" with:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "Price One" with:
+
+Scenario 1: Get customer info
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  When  I request the subscription list api
+  Then  I will see a subscription in the list for "Test Plan"
+

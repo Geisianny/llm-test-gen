@@ -1,0 +1,8 @@
+Scenario 16: Cleanup: remove the auto installation distribution
+  When  I follow the left menu "Systems > Autoinstallation > Distributions"
+  And  I follow "SLE-15-SP4-TFTP"
+  And  I follow "Delete Distribution"
+  And  I click on "Delete Distribution"
+  And  I wait until I do not see "SLE-15-SP4-TFTP" text
+  And  I wait up to 5 minutes to see "TASK COMPLETE" in the last lines of "var/log/cobbler/cobbler.log" on "server"
+

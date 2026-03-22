@@ -1,0 +1,9 @@
+Scenario 7: Delete On-Call schedule returns "No Content" response
+  Tags: ['@team:DataDog/on-call']
+  Given  new "DeleteOnCallSchedule" request
+  And  there is a valid "user" in the system
+  And  there is a valid "schedule" in the system
+  And  request contains "schedule_id" parameter from "schedule.data.id"
+  When  the request is sent
+  Then  the response status is 204 No Content
+

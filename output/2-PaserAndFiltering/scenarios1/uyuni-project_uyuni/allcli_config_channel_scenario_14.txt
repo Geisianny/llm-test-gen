@@ -1,0 +1,6 @@
+Scenario 14: Apply highstate to override changed content on Red Hat-like minion
+  Tags: ['@rhlike_minion']
+  When  I store "COLOR=blue" into file "/etc/s-mgr/config" on "rhlike_minion"
+  And  I apply highstate on "rhlike_minion"
+  Then  file "/etc/s-mgr/config" should contain "COLOR=white" on "rhlike_minion"
+

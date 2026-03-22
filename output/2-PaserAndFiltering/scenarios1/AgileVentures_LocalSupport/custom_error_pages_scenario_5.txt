@@ -1,0 +1,6 @@
+Scenario 5: reset_password_token expired message
+  Given  I requested a new password too long ago
+  When  I visit the reset password page
+  And  I try to reset my password
+  Then  I should see "Reset requested too long ago - please request a new reset by clicking "forgot password" again" within "error_explanation"
+

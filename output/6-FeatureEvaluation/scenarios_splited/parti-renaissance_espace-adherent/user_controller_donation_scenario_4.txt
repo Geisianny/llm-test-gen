@@ -1,0 +1,5 @@
+Scenario: Cancel an active donation
+  Given there is a logged-in adherent with an active donation
+  When the adherent requests to cancel the donation
+  Then the system displays a confirmation message
+  And the donation is marked as cancelled

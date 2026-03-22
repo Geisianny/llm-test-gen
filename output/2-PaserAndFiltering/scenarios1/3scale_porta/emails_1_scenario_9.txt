@@ -1,0 +1,6 @@
+Scenario 9: Validation error for invalid support email format
+  Given  they go to the emails settings page
+  When  the form is submitted with:
+  Then  field "Support email" has inline error "should look like an email address"
+  And  the provider's support email should still be "support@api.test"
+

@@ -1,0 +1,7 @@
+Scenario 7: New product is added as last one
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  Given  I added a product "Big pug"
+  And  I assigned this product to "Soft Toys" taxon
+  When  I am browsing the 3rd page of products from "Soft Toys" taxon
+  Then  the last product on the list within this taxon should have name "Big pug"
+

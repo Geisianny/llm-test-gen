@@ -1,0 +1,6 @@
+Scenario 4: max volume doesn't come from best bid and ask only
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/DEC19" should be:
+  When  the opening auction period ends for market "ETH/DEC19"
+  Then  the market data for the market "ETH/DEC19" should be:
+

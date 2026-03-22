@@ -1,0 +1,7 @@
+Scenario 8: Can't change the plan of subscriptions from different services
+  When  item "Jane" is selected
+  And  item "Bob" is selected
+  And  select bulk action "Change service plan"
+  Then  should not see "Change plan" within the modal
+  And  should see "You have selected subscriptions to plans from different services"
+

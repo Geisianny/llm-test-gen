@@ -1,0 +1,21 @@
+Scenario 4: Admin bans and unbans a user
+  Given  there is a listing with title "Sledgehammer" from "kassi_testperson1" with category "Items" and with listing shape "Requesting"
+  When  I am on the home page
+  Then  I should see "Sledgehammer"
+  Given  I am on the manage members admin page
+  And  I will confirm all following confirmation dialogs in this page if I am running PhantomJS
+  When  I ban user "john doe"
+  Then  I should see "john doe"
+  Then  I wait for 1 seconds
+  And  "kassi_testperson1" should be banned from this community
+  Given  I am on the home page
+  Then  I should not see "Sledgehammer"
+  Given  I am on the manage members admin page
+  And  I will confirm all following confirmation dialogs in this page if I am running PhantomJS
+  When  I unban user "john doe"
+  Then  I should see "john doe"
+  Then  I wait for 1 seconds
+  And  "kassi_testperson1" should not be banned from this community
+  Given  I am on the home page
+  Then  I should not see "Sledgehammer"
+

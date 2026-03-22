@@ -1,0 +1,14 @@
+Scenario 2: Selecting multiple providers from within the directory and requesting an RFP
+  Given  an "active" provider "Brian Flanagan"
+  And  an "active" provider "Paul Campbell"
+  When  I am on the homepage
+  And  I follow "home.find_a_provider" translation
+  And  I press "provider.directory.find_providers" translation
+  Then  I should see "Brian Flanagan"
+  And  I should see "Paul Campbell"
+  When  I check the "Brian Flanagan" checkbox
+  And  I check the "Paul Campbell" checkbox
+  And  I press "next"
+  Then  I should see "Brian Flanagan"
+  And  I should see "Paul Campbell"
+

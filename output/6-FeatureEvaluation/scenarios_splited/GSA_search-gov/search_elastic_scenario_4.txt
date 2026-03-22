@@ -1,0 +1,5 @@
+Scenario: Search with special characters
+  Given the site visitor is on a site using the SearchElastic search engine
+  When the site visitor performs a search with special characters "!@#$"
+  Then the system handles the special characters correctly
+  And displays a message indicating no results were found or provides relevant results if available

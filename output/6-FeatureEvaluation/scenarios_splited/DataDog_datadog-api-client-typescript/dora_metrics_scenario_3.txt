@@ -1,0 +1,5 @@
+Scenario: DORA metrics request with missing appKeyAuth
+  Given the user does not provide an appKeyAuth
+  When the user requests DORA metrics
+  Then the system denies the request
+  And displays an error message indicating missing credentials

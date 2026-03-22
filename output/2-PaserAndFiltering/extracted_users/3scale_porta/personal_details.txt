@@ -1,0 +1,68 @@
+Feature: Dev Portal Buyer Personal Details
+Description: As a buyer
+  I want to change my personal details
+
+Background: 
+  Given  a provider
+  And  the default product of the provider has name "My API"
+  And  the following application plan:
+  And  an approved buyer "John" signed up to the provider
+  And  the following application:
+  And  the buyer logs in
+
+Scenario 1: Buyer doesn't use current password
+  Tags: ['@javascript']
+  Given  they go to the personal details page
+  And  the current page is the personal details page
+  When  they edit their personal details
+  But  fill in "Current Password" with ""
+  Then  they should not be able to edit their personal details
+
+Scenario 2: Buyer uses wrong current password
+  Tags: ['@javascript']
+  Given  they go to the personal details page
+  And  the current page is the personal details page
+  When  they edit their personal details
+  But  fill in "Current Password" with "wrong password"
+  Then  they should not be able to edit their personal details
+
+Scenario 3: Buyer uses correct current password
+  Tags: ['@javascript']
+  Given  they go to the personal details page
+  And  the current page is the personal details page
+  When  they edit their personal details
+  And  they change their password
+  Then  they should be able to edit their personal details
+  And  password has changed
+
+Scenario 4: Provider has custom personal details fields
+  Tags: ['@javascript']
+  Given  the provider has the following fields defined for users:
+  When  they go to the personal details page
+  Then  fields are required:
+  And  they should not see the fields:
+  And  fill in "Current Password" with "supersecret"
+  And  they press "Update Personal Details"
+  Then  they should see error in fields:
+  When  the buyer edits their custom personal details
+  Then  they should be able to edit their custom personal details
+
+Scenario 5: Editing of personal details can be blocked
+  Given  provider "foo.3scale.localhost" has "useraccountarea" disabled
+  And  the buyer follow "Settings"
+  Then  they should not see "Personal Details"
+
+Scenario 6: Buyer sends an empty form
+  Tags: ['@javascript']
+  Given  they go to the personal details page
+  When  they don't provide any personal details
+  Then  they should not be able to edit their personal details
+
+Scenario 7: Buyer sends a wrong email
+  Tags: ['@javascript']
+  Given  they go to the personal details page
+  And  the current page is the personal details page
+  When  they edit their personal details
+  And  fill in "Email" with "wrong"
+  Then  they should not be able to edit the email
+

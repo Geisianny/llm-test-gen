@@ -1,0 +1,7 @@
+Scenario 3: Sorting product reviews ascending by title
+  Tags: ['@api', '@ui']
+  When  I sort the product reviews ascending by title
+  Then  I should see 3 reviews in the list
+  And  the first product review in the list should have title "Awesome"
+  And  the last product review in the list should have title "Not bad"
+

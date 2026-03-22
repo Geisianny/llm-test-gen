@@ -1,0 +1,43 @@
+Feature: Do some tests when dumping data
+Tags: ['@http', '@rest', '@api']
+
+Scenario 1: Test dumper
+  When  I send a "GET" request to "/"
+  Then  the status code should be 200
+  And  the response should be a valid json response
+  And  in the json, "[1].foo" should be equal to "baaz"
+
+Scenario 2: Test dumper with body
+  When  I create a "GET" request to "/"
+  And  I set the following body:
+  And  I send the request
+  Then  the status code should be 200
+  And  the response should be a valid json response
+  And  in the json, "[1].foo" should be equal to "baaz"
+
+Scenario 3: Test valid scenario + @debug + dumper
+  Tags: ['@debug']
+  When  I send a "GET" request to "/"
+  Then  the status code should be 200
+  And  the response should be a valid json response
+  And  in the json, "[0].foo" should be equal to "bar"
+
+Scenario 4: Test valid scenario + @debug + dumper with body
+  Tags: ['@debug']
+  When  I create a "GET" request to "/"
+  And  I set the following body:
+  And  I send the request
+  Then  the status code should be 200
+  And  the response should be a valid json response
+  And  in the json, "[0].foo" should be equal to "bar"
+
+Scenario Outline 5: Test dumper from outline - Example 1
+  When  I send a "GET" request to "/"
+  Then  the status code should be 200
+  And  the response should be a valid json response
+
+  Examples:
+    | status |
+    | 200 |
+    | 400 |
+

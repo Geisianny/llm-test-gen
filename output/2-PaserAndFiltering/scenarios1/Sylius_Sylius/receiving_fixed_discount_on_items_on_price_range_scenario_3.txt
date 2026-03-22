@@ -1,0 +1,8 @@
+Scenario 3: Receiving fixed discount on a single item fulfilling maximum price criteria
+  Tags: ['@api', '@ui']
+  Given  the promotion gives "$10.00" off on every product with maximum price at "$50.00"
+  And  I added product "PHP Mug" to the cart
+  When  I check the details of my cart
+  Then  its price should be decreased by "$10.00"
+  And  my cart total should be "$10.00"
+

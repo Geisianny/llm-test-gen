@@ -1,0 +1,4 @@
+Scenario 19: show date of last update from original author
+  When  I search contents for "whales"
+  Then  I should see "Updated at" within ".search-article-author-changes"
+

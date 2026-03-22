@@ -1,0 +1,11 @@
+Scenario 19: Update Cloudflare account returns "OK" response
+  Tags: ['@replay-only', '@team:DataDog/saas-integrations']
+  Given  there is a valid "cloudflare_account" in the system
+  And  new "UpdateCloudflareAccount" request
+  And  request contains "account_id" parameter from "cloudflare_account.data.id"
+  And  body with value {"data": {"attributes": {"api_key": "fakekey", "email": "dev@datadoghq.com", "zones": ["zone-id-3"]}, "type": "cloudflare-accounts"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.attributes.name" is equal to "{{cloudflare_account.data.attributes.name }}"
+  And  the response "data.attributes.zones" array contains value "zone-id-3"
+

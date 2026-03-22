@@ -1,0 +1,10 @@
+Scenario 3: Trying to add an invalid integer attribute to product
+  Tags: ['@api', '@no-ui']
+  When  I want to create a new configurable product
+  And  I specify its code as "44_MAGNUM"
+  And  I name it "44 Magnum" in "English (United States)" locale
+  And  I set the invalid string value of the non-translatable "Weight" attribute to "ten"
+  And  I try to add it
+  Then  I should be notified that the value of the "Weight" attribute has invalid type
+  And  product with code "44_MAGNUM" should not be added
+

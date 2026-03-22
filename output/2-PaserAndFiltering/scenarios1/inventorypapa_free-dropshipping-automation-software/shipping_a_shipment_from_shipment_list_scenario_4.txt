@@ -1,0 +1,6 @@
+Scenario 4: Shipping a shipment that has been already shipped
+  Tags: ['@api']
+  Given  this order has already been shipped
+  When  I try to ship the shipment of order "#00000001"
+  Then  I should be notified that shipment has been already shipped
+

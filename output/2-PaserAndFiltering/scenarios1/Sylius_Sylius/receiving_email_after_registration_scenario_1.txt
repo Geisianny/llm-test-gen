@@ -1,0 +1,7 @@
+Scenario 1: Receiving a welcoming email after registration when channel has disabled registration verification
+  Tags: ['@api', '@ui', '@email']
+  Given  on this channel account verification is not required
+  When  I register with email "ghastly@bespoke.com" and password "suitsarelife"
+  Then  only one email should have been sent to "ghastly@bespoke.com"
+  And  a welcoming email should have been sent to "ghastly@bespoke.com"
+

@@ -1,0 +1,9 @@
+Scenario 2: Delete connection returns "Connection deleted successfully" response
+  Tags: ['@generated', '@skip', '@team:DataDog/audience-management-backend']
+  Given  operation "DeleteConnection" enabled
+  And  new "DeleteConnection" request
+  And  request contains "id" parameter from "REPLACE.ME"
+  And  request contains "entity" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 204 Connection deleted successfully
+

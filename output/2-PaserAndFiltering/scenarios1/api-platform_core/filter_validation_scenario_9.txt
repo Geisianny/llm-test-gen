@@ -1,0 +1,7 @@
+Scenario 9: Test filter bounds: exclusiveMinimum
+  When  I am on "/filter_validators?required=foo&required-allow-empty&exclusiveMinimum=6"
+  Then  the response status code should be 200
+  When  I am on "/filter_validators?required=foo&required-allow-empty&exclusiveMinimum=5"
+  Then  the response status code should be 422
+  And  the JSON node "detail" should be equal to 'exclusiveMinimum: This value should be greater than 5.'
+

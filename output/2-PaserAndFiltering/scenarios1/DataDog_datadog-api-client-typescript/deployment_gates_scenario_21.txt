@@ -1,0 +1,9 @@
+Scenario 21: Get deployment rule returns "Deployment rule not found." response
+  Tags: ['@generated', '@skip', '@team:DataDog/ci-app-backend']
+  Given  operation "GetDeploymentRule" enabled
+  And  new "GetDeploymentRule" request
+  And  request contains "gate_id" parameter from "REPLACE.ME"
+  And  request contains "id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Deployment rule not found.
+

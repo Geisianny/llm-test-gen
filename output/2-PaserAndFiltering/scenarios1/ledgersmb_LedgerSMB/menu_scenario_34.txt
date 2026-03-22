@@ -1,0 +1,11 @@
+Scenario Outline 34: Navigate to menu "<path>" and open screen "<screen>" - Example 34
+  Tags: ['@wip']
+  When  I navigate the menu and select the item at "Shipping > Receive"
+  Then  I should see the  screen
+
+  Examples:
+    | path | screen |
+    | Shipping > Receive |  |
+    | Shipping > Ship |  |
+    | Shipping > Transfer |  |
+

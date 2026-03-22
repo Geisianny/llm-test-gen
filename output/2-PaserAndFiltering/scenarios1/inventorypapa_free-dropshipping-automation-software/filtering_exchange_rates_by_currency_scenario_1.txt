@@ -1,0 +1,9 @@
+Scenario 1: Filtering exchange rates by a chosen currency
+  Tags: ['@ui', '@api']
+  When  I browse exchange rates of the store
+  And  I choose "Euro" as a currency filter
+  And  I filter
+  Then  I should see 2 exchange rates on the list
+  And  I should see an exchange rate between "Euro" and "British Pound" on the list
+  And  I should also see an exchange rate between "Polish Zloty" and "Euro" on the list
+

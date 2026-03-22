@@ -1,0 +1,7 @@
+Scenario 5: Accessing the product details page through affected product variants list
+  Tags: ['@ui', '@no-api']
+  Given  there is a catalog promotion "PHP T-Shirt promotion" that reduces price by "50%" and applies on "PHP T-Shirt" variant
+  When  I browse variants affected by catalog promotion "PHP T-Shirt promotion"
+  And  I want to view the product of variant "PHP T-Shirt"
+  Then  I should be viewing the details of product "T-Shirt"
+

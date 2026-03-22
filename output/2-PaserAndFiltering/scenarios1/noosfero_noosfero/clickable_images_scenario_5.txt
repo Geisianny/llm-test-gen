@@ -1,0 +1,7 @@
+Scenario 5: zoom image
+  Tags: ['@selenium-fixme']
+  Given  the following article with image
+  When  I go to /booking/zoom
+  And  I follow "Zoom in" within "a#zoomify-image"
+  Then  I should see "fancybox-wrap"
+

@@ -1,0 +1,10 @@
+Scenario 2: Seeing item fixed discount promotion usage increased after order placement
+  Tags: ['@ui']
+  Given  the promotion gives "$10.00" off on every product with minimum price at "$50.00"
+  And  the promotion gives another "$5.00" off on every product classified as "Mugs"
+  And  there is a customer "john.doe@gmail.com" that placed an order "#00000022"
+  And  the customer bought a single "PHP Mug"
+  And  the customer chose "Free" shipping method to "United States" with "Cash on Delivery" payment
+  When  I browse promotions
+  Then  the promotion "Christmas promotion" should be used 1 time
+

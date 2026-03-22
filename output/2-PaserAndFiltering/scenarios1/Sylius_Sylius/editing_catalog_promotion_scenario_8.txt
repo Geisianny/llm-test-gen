@@ -1,0 +1,8 @@
+Scenario 8: Editing catalog promotion action
+  Tags: ['@api', '@ui']
+  When  I want to modify a catalog promotion "Christmas sale"
+  And  I edit its action so that it reduces price by "40%"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this catalog promotion should have "40.00%" percentage discount
+

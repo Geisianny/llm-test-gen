@@ -1,0 +1,8 @@
+Scenario 2: Bulk account closure processing
+  Given  a list of 50 dormant accounts to close
+  When  I execute the account closure batch
+  Then  each account should be processed individually
+  And  balances should be transferred to designated accounts
+  And  accounts should be marked as closed
+  And  compliance notifications should be sent
+

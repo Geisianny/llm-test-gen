@@ -1,0 +1,6 @@
+Scenario 2: Hide the toolbar when seeing drafts
+  When  they visit the developer portal in CMS mode
+  And  follow "Draft"
+  And  press "Toggle toolbar"
+  Then  the cms toolbar shouldn't be visible
+

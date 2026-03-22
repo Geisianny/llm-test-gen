@@ -1,0 +1,6 @@
+Scenario 1: Users should not see organisation's non-published fields
+  Given  that I am logged in as any user
+  When  I visit "Elders Association" organisation page
+  Then  I should see "HA1 4HZ"
+  And  I should not see "64 pinner road"
+

@@ -1,0 +1,5 @@
+Scenario 7: filtering announcements that are not linked to a publications
+  Given  I am a GDS editor in the organisation "Department for Beards"
+  And  there are statistics announcements by my organisation
+  Then  I should be able to filter only the unlinked announcements
+

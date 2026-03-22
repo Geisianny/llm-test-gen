@@ -1,0 +1,4 @@
+Scenario 3: Prepare the minion for SSH key authentication
+  When  I backup the SSH authorized_keys file of host "sle_minion"
+  And  I add pre-generated SSH public key to authorized_keys of host "sle_minion"
+

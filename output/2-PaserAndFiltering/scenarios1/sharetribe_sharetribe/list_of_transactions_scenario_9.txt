@@ -1,0 +1,10 @@
+Scenario 9: Seller sees paid transaction with buyer commission in list
+  Given  there is a listing with title "Let Her Rip" from "kassi_testperson1" with category "Items" and with listing shape "Selling For Profit"
+  And  the price of that listing is 100.00 EUR
+  And  there is a "preauthorized" transaction with buyer commission from "kassi_testperson2" with message "Son of a Gun" about that listing
+  Given  I am logged in as "kassi_testperson1"
+  When  I go to the messages page
+  Then  I should see "Payment authorized"
+  Then  I should see "About listing Let Her Rip"
+  Then  I should see "Waiting for you to accept the request"
+

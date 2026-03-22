@@ -1,0 +1,8 @@
+Scenario 3: Receiving no discount on order while buying product different then discounted
+  Tags: ['@api', '@ui']
+  Given  the store has a product "PHP Mug" priced at "$20.00"
+  And  I added product "PHP Mug" to the cart
+  When  I check the details of my cart
+  Then  my cart total should be "$20.00"
+  And  there should be no discount applied
+

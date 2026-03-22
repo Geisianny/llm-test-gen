@@ -1,0 +1,32 @@
+Feature: limit_customer_story_processado
+
+Scenario: Retrieve subscription limits for an active customer with multiple plans
+    Given there is an authenticated user
+    And there is an active customer with multiple subscriptions to different plans
+    When the user queries the customer's usage limits
+    Then the system returns the total limits per resource for all associated plans
+    And the limits are correctly summed from each plan
+
+Scenario: Retrieve subscription limits for an active customer with a single plan
+    Given there is an authenticated user
+    And there is an active customer with a single subscription to a plan
+    When the user queries the customer's usage limits
+    Then the system returns the limits per resource for the associated plan
+
+Scenario: Retrieve subscription limits for a deactivated customer
+    Given there is an authenticated user
+    And there is a deactivated customer with a subscription to a plan
+    When the user queries the customer's usage limits
+    Then the system returns an empty list of limits
+
+Scenario: Retrieve subscription limits for a customer without subscriptions
+    Given there is an authenticated user
+    And there is an active customer without any subscriptions
+    When the user queries the customer's usage limits
+    Then the system returns an empty list of limits
+
+Scenario: Retrieve subscription limits without authentication
+    Given there is no authenticated user
+    When the user queries a customer's usage limits
+    Then the system denies access
+    And displays a message indicating that authentication is required

@@ -1,0 +1,6 @@
+Scenario 2: Add a new amount payment-provider-rule which is inactive
+  Given  adding a payment-provider-rule named "amount"
+  And  the payment-provider-rule is inactive
+  And  the payment-provider-rule has a condition amount from "50" to "150"
+  Then  the payment-provider-rule should be invalid for my cart with payment provider "Bankwire"
+

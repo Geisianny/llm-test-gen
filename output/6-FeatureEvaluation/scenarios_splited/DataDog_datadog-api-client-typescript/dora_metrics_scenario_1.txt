@@ -1,0 +1,5 @@
+Scenario: Successful DORA metrics request with valid appKeyAuth
+  Given the user has a valid appKeyAuth
+  When the user requests DORA metrics
+  Then the system returns the DORA metrics
+  And displays a success message

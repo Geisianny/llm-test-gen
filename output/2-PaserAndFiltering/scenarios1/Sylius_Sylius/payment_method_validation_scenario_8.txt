@@ -1,0 +1,8 @@
+Scenario 8: Trying to add a new payment method with wrong factory name
+  Tags: ['@api', '@no-ui']
+  When  I want to create a new payment method with wrong factory name
+  And  I name it "Payment method with wrong gateway factory name" in "English (United States)"
+  And  I specify its code as "PMWWFN"
+  And  I try to add it
+  Then  I should be notified that I have to specify factory name that is available
+

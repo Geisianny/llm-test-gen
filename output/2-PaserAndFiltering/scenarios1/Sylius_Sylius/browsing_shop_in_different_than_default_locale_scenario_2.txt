@@ -1,0 +1,5 @@
+Scenario 2: Browsing product details in non-default locale
+  Tags: ['@api', '@ui']
+  When  I check this product's details in the "Chinese (Simplified, China)" locale
+  Then  I should see the product name "香蕉T恤"
+

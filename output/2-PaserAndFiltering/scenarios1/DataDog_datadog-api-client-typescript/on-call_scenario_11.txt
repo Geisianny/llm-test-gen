@@ -1,0 +1,12 @@
+Scenario 11: Get On-Call escalation policy returns "OK" response
+  Tags: ['@team:DataDog/on-call']
+  Given  new "GetOnCallEscalationPolicy" request
+  And  there is a valid "user" in the system
+  And  there is a valid "dd_team" in the system
+  And  there is a valid "schedule" in the system
+  And  there is a valid "escalation_policy" in the system
+  And  request contains "policy_id" parameter from "escalation_policy.data.id"
+  And  request contains "include" parameter with value "steps.targets"
+  When  the request is sent
+  Then  the response status is 200 OK
+

@@ -1,0 +1,6 @@
+Scenario: Create a fake repository for multiple child channels
+  Given there is an authorized user
+  And the system has multiple child channels
+  When the user creates a fake repository for each child channel
+  Then the system creates a fake repository for each child channel
+  And associates each repository with its respective child channel

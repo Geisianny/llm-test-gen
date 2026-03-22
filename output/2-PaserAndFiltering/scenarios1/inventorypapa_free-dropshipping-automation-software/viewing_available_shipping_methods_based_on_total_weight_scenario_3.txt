@@ -1,0 +1,10 @@
+Scenario 3: Seeing shipping methods that handle all goods
+  Tags: ['@ui', '@api']
+  Given  I have product "T-Shirt for Tinkerbell" in the cart
+  And  I add 11 of them to my cart
+  When  I specified the billing address
+  Then  I should be on the checkout shipping step
+  And  I should see "DHL" shipping method
+  And  I should not see "Fairytale Delivery Service" shipping method
+  And  I should not see "Heavy Duty Courier" shipping method
+

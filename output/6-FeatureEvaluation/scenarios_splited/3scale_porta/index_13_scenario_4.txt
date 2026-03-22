@@ -1,0 +1,5 @@
+Scenario: Display empty state for no search results
+  Given there are no customer service subscriptions matching the search criteria "Non-existent Account"
+  When the provider searches for subscriptions by account name "Non-existent Account"
+  Then the system displays a message indicating no subscriptions were found
+  And the message suggests checking the search criteria

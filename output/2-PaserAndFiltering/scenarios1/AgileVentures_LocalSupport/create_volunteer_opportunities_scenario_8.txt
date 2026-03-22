@@ -1,0 +1,5 @@
+Scenario 8: Signed In Users cannot create volunteer opportunities on the sly
+  Given  I am signed in as a charity worker related to "Friendly"
+  And  I visit the new volunteer op page for "Shy"
+  Then  I should see "You must be signed in as an organisation owner or site superadmin to perform this action!"
+

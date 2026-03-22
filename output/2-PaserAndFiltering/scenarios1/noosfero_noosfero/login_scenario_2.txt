@@ -1,0 +1,13 @@
+Scenario 2: login from some profile page
+  Tags: ['@selenium']
+  Given  feature "allow_change_of_redirection_after_login" is disabled on environment
+  And  I am not logged in
+  And  the following users
+  And  the following articles
+  And  I go to mariasilva's homepage
+  And  I follow "Login"
+  And  I wait 0.5 second for popin animation
+  And  I fill in the following:
+  When  I follow "Log in"
+  Then  I should be on mariasilva's homepage
+

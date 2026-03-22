@@ -1,0 +1,6 @@
+Scenario 1: As a logged in user, I can navigate to the edit page of an event
+  Given  that I am logged in as any user
+  And  I visit "Open Source Weekend" event
+  And  I click "Edit"
+  Then  I should be on the edit page for event "Open Source Weekend"
+

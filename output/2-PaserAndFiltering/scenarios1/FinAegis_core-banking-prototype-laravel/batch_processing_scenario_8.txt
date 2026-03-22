@@ -1,0 +1,8 @@
+Scenario 8: Batch operation rollback capability
+  Given  a completed batch operation needs to be undone
+  When  I request a batch rollback
+  Then  the system should analyze the impact
+  And  prompt for confirmation of affected records
+  And  execute compensation for all batch items
+  And  verify the rollback was successful
+

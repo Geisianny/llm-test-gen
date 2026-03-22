@@ -1,0 +1,12 @@
+Scenario 9: Change connection back to a proxy via SSM
+  Given  I wait for "120" seconds
+  When  I follow the left menu "Systems > System List > All"
+  And  I click on the clear SSM button
+  And  I check the "sle_minion" client
+  And  I should see "1" systems selected for SSM
+  And  I follow the left menu "Systems > System Set Manager > Overview"
+  And  I follow "proxy server" in the content area
+  And  I select the hostname of "proxy" from "proxies" if present
+  And  I click on "Change Proxy"
+  And  I wait until I see "scheduled" text
+

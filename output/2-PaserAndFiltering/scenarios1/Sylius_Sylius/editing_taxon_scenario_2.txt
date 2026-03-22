@@ -1,0 +1,8 @@
+Scenario 2: Changing description
+  Tags: ['@api', '@ui']
+  When  I want to modify the "T-Shirts" taxon
+  And  I change its description to "Main taxonomy for stickers" in "English (United States)"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this taxon description should be "Main taxonomy for stickers"
+

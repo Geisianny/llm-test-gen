@@ -1,0 +1,7 @@
+Scenario 5: Viewing a detailed page with product's checkbox attribute
+  Tags: ['@api', '@ui']
+  Given  the store has a product "T-Shirt banana"
+  And  this product has a "checkbox" attribute "T-Shirt with cotton" set to "Yes"
+  When  I check this product's details
+  Then  I should see the product attribute "T-Shirt with cotton" with positive value
+

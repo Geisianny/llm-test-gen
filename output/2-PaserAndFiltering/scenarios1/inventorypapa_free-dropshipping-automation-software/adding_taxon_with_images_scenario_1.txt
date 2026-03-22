@@ -1,0 +1,11 @@
+Scenario 1: Adding a new taxon with a single image
+  Tags: ['@ui', '@javascript']
+  Given  I want to create a new taxon
+  When  I specify its code as "t-shirts"
+  And  I name it "T-Shirts" in "English (United States)"
+  And  I attach the "t-shirts.jpg" image with "banner" type
+  And  I add it
+  Then  I should be notified that it has been successfully created
+  And  the "T-Shirts" taxon should appear in the registry
+  And  this taxon should have an image with "banner" type
+

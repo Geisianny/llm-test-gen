@@ -1,0 +1,5 @@
+Scenario 1: Synchronize the referential settings (shop, website, views)
+  Tags: ['@referential_magento']
+  Given  an instance with absolute id "base_external.magento" exists
+  Then  I synchronize the referential settings (2 - Synchronize Referential Settings)
+

@@ -1,0 +1,17 @@
+Scenario 20: Update a RUM application returns "OK" response
+  Tags: ['@skip-validation', '@team:DataDog/rum-backend']
+  Given  there is a valid "rum_application" in the system
+  And  new "UpdateRUMApplication" request
+  And  request contains "id" parameter from "rum_application.data.id"
+  And  body with value {"data": {"attributes": {"name": "updated_name_for_my_existing_rum_application", "type": "browser"}, "id": "{{ rum_application.data.id }}","type": "rum_application_update"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.type" is equal to "rum_application"
+  And  the response "data.attributes.application_id" is equal to "{{ rum_application.data.id }}"
+  And  the response "data.attributes.type" is equal to "browser"
+  And  the response "data.attributes.name" is equal to "updated_name_for_my_existing_rum_application"
+  And  the response "data.attributes.product_scales.rum_event_processing_scale.state" is equal to "ALL"
+  And  the response "data.attributes.product_scales.product_analytics_retention_scale.state" is equal to "NONE"
+  And  the response "data.attributes.product_scales.rum_event_processing_scale" has field "last_modified_at"
+  And  the response "data.attributes.product_scales.product_analytics_retention_scale" has field "last_modified_at"
+

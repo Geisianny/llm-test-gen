@@ -1,0 +1,6 @@
+Scenario 2: An order which has been shipped gets fulfilled after paying
+  Tags: ['@api', '@ui']
+  Given  the order "#00000123" is already shipped
+  When  I mark this order as paid
+  Then  its state should be "Fulfilled"
+

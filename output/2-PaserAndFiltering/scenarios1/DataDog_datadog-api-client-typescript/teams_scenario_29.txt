@@ -1,0 +1,7 @@
+Scenario 29: Get user memberships returns "API error response." response
+  Tags: ['@generated', '@skip', '@team:DataDog/aaa-omg']
+  Given  new "GetUserMemberships" request
+  And  request contains "user_uuid" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 API error response.
+

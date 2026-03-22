@@ -1,0 +1,5 @@
+Scenario 9: User sees the Search.gov footer site links
+  When  I go to the login page
+  Then  I should see "Our Service"
+  And  I should see a link to "https://search.gov/about/" with text "About Us"
+

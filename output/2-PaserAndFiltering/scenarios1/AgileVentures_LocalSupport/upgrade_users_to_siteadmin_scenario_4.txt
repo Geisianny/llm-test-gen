@@ -1,0 +1,6 @@
+Scenario 4: Upgraded user has site admin privileges
+  Given  superadmin already upgraded "registered-user-2@example.com" user
+  And  I visit the sign in page
+  When  I sign in as "registered-user-2@example.com" with password "pppppppp" on the legacy sign in page
+  Then  I should see "Admin"
+

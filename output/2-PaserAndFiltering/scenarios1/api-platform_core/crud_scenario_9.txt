@@ -1,0 +1,11 @@
+Scenario 9: Create a resource ProcessorEntity
+  Tags: ['@php8', '@createSchema']
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/processor_entities" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the header "Content-Location" should be equal to "/processor_entities/1.jsonld"
+  And  the header "Location" should be equal to "/processor_entities/1"
+  And  the JSON should be equal to:
+

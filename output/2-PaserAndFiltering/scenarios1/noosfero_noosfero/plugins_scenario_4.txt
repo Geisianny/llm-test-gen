@@ -1,0 +1,5 @@
+Scenario 4: a user must not see the plugin\'s tab in in the profile if the plugin is disabled
+  Given  plugin Foo is disabled on environment
+  And  I am on joaosilva's profile
+  Then  I should not see "Foo plugin tab"
+

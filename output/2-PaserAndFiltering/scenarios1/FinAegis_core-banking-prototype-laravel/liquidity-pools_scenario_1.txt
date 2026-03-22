@@ -1,0 +1,6 @@
+Scenario 1: Create a new liquidity pool
+  Given  I am logged in as "alice@example.com"
+  When  I create a liquidity pool for "BTC/EUR" with fee rate "0.003"
+  Then  a liquidity pool should exist for "BTC/EUR"
+  And  the pool should have:
+

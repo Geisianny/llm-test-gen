@@ -1,0 +1,7 @@
+Scenario 8: Emergency stability mechanism activation
+  Given  the stablecoin price deviates by more than 5%
+  When  the stability mechanism is triggered
+  Then  the system should attempt to restore the peg
+  And  emergency measures should be logged
+  And  notifications should be sent to stakeholders
+

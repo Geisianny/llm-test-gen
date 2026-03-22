@@ -1,0 +1,12 @@
+Scenario 25: Add operations to the action chain via API for SSH minions
+  Given  I want to operate on this "ssh_minion"
+  When  I create an action chain with label "minssh_api_chain" via API
+  And  I add a package install to the action chain via API
+  And  I add a package removal to the action chain via API
+  And  I add a package upgrade to the action chain via API
+  And  I add the script "exit 1;" to the action chain via API
+  Then  I should be able to see all these actions in the action chain via API
+  When  I remove each action within the chain via API
+  Then  the current action chain should be empty
+  And  I delete the action chain via API
+

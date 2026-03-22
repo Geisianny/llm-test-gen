@@ -1,0 +1,7 @@
+Scenario 8: Create a pipeline with Decoder Processor returns "OK" response
+  Tags: ['@team:DataDog/event-platform-experience']
+  Given  new "CreateLogsPipeline" request
+  And  body with value {"filter": {"query": "source:python"}, "name": "testDecoderProcessor", "processors": [{"type": "decoder-processor", "is_enabled": true, "name": "test_decoder", "source": "encoded.field", "target": "decoded.field", "binary_to_text_encoding": "base16", "input_representation": "utf_8"}], "tags": []}
+  When  the request is sent
+  Then  the response status is 200 OK
+

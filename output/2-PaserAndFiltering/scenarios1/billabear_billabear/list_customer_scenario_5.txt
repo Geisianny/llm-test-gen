@@ -1,0 +1,7 @@
+Scenario 5: Limited to one
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  When  I use the API to list customers with parameter "limit" with value "1"
+  Then  I should see in the API response with only 1 result in the data set
+  And  the I should see in the API response there are more results
+

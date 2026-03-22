@@ -1,0 +1,5 @@
+Scenario: Published resource with absolute URL
+  Given there is a published resource with the identifier "123"
+  When the client requests the resource "123"
+  Then the system returns the resource with an absolute URL
+  And the URL is in the format "https://example.com/resources/123"

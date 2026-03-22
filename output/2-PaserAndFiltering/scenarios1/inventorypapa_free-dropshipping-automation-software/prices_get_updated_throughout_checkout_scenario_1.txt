@@ -1,0 +1,6 @@
+Scenario 1: Prices get updated on checkout's start
+  Tags: ['@ui', '@no-api']
+  When  the exchange rate of "US Dollar" to "British Pound" is 2.0
+  And  I am at the checkout addressing step
+  Then  the subtotal of "The Pug Mug" item should be "£20.00"
+

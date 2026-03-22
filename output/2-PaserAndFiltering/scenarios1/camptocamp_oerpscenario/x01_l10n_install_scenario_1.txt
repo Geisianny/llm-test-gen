@@ -1,0 +1,12 @@
+Scenario 1: GENERATE ACCOUNT CHART FMA SOCIETE FR
+  Tags: ['@multicompany_base_finance_chart']
+  Given  I need a "res.company" with oid: base.main_company
+  And  having:
+  And  I create monthly periods on the fiscal year with reference "scenario.fy2013"
+  Then  I find a "account.fiscalyear" with oid: scenario.fy2013
+  Given  I have the module account installed
+  And  no account set for company "MA SOCIETE FR"
+  And  I want to generate account chart from chart template named "Plan Comptable Général (France)" with "6" digits for company "MA SOCIETE FR"
+  When  I generate the chart
+  Then  accounts should be available for company "MA SOCIETE FR"
+

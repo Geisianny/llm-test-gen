@@ -1,0 +1,9 @@
+Scenario 5: Trying to remove name from existing channel
+  Tags: ['@ui']
+  Given  the store operates on a channel named "Web Channel"
+  And  I want to modify this channel
+  When  I remove its name
+  And  I try to save my changes
+  Then  I should be notified that name is required
+  And  this channel should still be named "Web Channel"
+

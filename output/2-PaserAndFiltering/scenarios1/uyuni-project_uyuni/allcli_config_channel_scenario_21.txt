@@ -1,0 +1,6 @@
+Scenario 21: Check configuration channel and files via API for Salt minion
+  Tags: ['@sle_minion']
+  Then  channel "mixedchannel" should exist
+  And  channel "mixedchannel" should contain file "/etc/s-mgr/config"
+  And  "sle_minion" should be subscribed to channel "mixedchannel"
+

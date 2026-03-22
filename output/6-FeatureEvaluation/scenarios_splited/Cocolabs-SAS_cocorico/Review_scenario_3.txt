@@ -1,0 +1,6 @@
+Scenario: User tries to add a review for a non-existent user
+  Given there is a registered user "asker1"
+  And there is no registered user "nonexist"
+  When "asker1" tries to add a review for "nonexist"
+  Then the system displays an error message
+  And informs "asker1" that the user does not exist

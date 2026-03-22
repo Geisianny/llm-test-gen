@@ -1,0 +1,7 @@
+Scenario 2: a vAMM submission cannot rebase because it exceeds slippage but exceeds slippage
+  Tags: ['@VAMM']
+  When  the parties submit the following AMM:
+  Then  the AMM pool status should be:
+  When  the parties submit the following AMM:
+  Then  the AMM pool status should be:
+

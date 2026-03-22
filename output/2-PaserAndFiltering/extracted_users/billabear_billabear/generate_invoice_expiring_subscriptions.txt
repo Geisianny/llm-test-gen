@@ -1,0 +1,129 @@
+Feature: Generate new invoices
+
+Background: 
+  Given  the following accounts exist:
+  And  the follow products exist:
+  And  there are the following tax types:
+  And  that the following countries exist:
+  And  the following country tax rules exist:
+  And  the follow prices exist:
+  And  the following features exist:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "Price One" with:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "Price One" with:
+  And  the follow customers exist:
+
+Scenario 1: 
+  Given  the following subscriptions exist:
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  Then  the subscription for "customer.one@example.org" will expire in a week
+  And  the subscription for "customer.two@example.org" will expire in a month
+  And  the subscription for "customer.three@example.org" will expire in a year
+  But  the subscription for "customer.four@example.org" will expire today
+  And  the subscription for "customer.five@example.org" will expire today
+  And  the subscription for "customer.six@example.org" will expire today
+  And  the payment amount stats for the day should be 33000 in the currency "USD"
+
+Scenario 2: 
+  Given  the following subscriptions exist:
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  Then  the subscription for "customer.four@example.org" will expire in a week
+  And  there the latest invoice for "customer.four@example.org" will not be marked as paid
+  And  there is a payment attempt for "customer.four@example.org" will exist
+
+Scenario 3: 
+  Given  the following subscriptions exist:
+  And  stripe billing is enabled
+  When  the background task to reinvoice active subscriptions
+  Then  the subscription for "customer.one@example.org" will expire in a week
+  And  the subscription for "customer.two@example.org" will expire today
+  And  the subscription for "customer.three@example.org" will expire today
+  But  the subscription for "customer.four@example.org" will expire today
+  And  the subscription for "customer.five@example.org" will expire today
+  And  the subscription for "customer.six@example.org" will expire today
+
+Scenario 4: 
+  Given  the following subscriptions exist:
+  And  stripe billing is enabled
+  And  the following credit transactions exist:
+  When  the background task to reinvoice active subscriptions
+  Then  the subscription for "customer.one@example.org" will expire in a week
+  And  the latest invoice for "customer.one@example.org" will have amount due as 900
+
+Scenario 5: 
+  Given  the following subscriptions exist:
+  And  stripe billing is enabled
+  And  the following credit transactions exist:
+  When  the background task to reinvoice active subscriptions
+  Then  the subscription for "customer.one@example.org" will expire in a week
+  And  the latest invoice for "customer.one@example.org" will have amount due as 0
+  And  the credit amount for "customer.one@example.org" should be 100
+
+Scenario 6: 
+  Given  that the tax settings for tax customers with tax number is true
+  Given  the following subscriptions exist:
+  And  stripe billing is enabled
+  And  the following credit transactions exist:
+  When  the background task to reinvoice active subscriptions
+  Then  the subscription for "customer.one@example.org" will expire in a week
+  And  the latest invoice for "customer.one@example.org" will have amount due as 1100
+  And  the latest invoice for "customer.one@example.org" will have tax amount due
+
+Scenario 7: No tax
+  Given  that the tax settings for tax customers with tax number is false
+  Given  the following subscriptions exist:
+  And  stripe billing is enabled
+  And  the following credit transactions exist:
+  When  the background task to reinvoice active subscriptions
+  Then  the subscription for "customer.one@example.org" will expire in a week
+  And  the latest invoice for "customer.one@example.org" will have amount due as 1100
+  And  the latest invoice for "customer.one@example.org" will not have tax amount due
+
+Scenario 8: Has voucher
+  Given  the following subscriptions exist:
+  And  stripe billing is enabled
+  And  the following vouchers exist:
+  And  the customer "customer.one@example.org" has the voucher "Voucher One" applied
+  When  the background task to reinvoice active subscriptions
+  Then  the subscription for "customer.one@example.org" will expire in a week
+  And  the latest invoice for "customer.one@example.org" will have amount due as 500
+
+Scenario 9: Has voucher that was used
+  Given  the following subscriptions exist:
+  And  stripe billing is enabled
+  And  the following vouchers exist:
+  And  the customer "customer.one@example.org" has the voucher "Voucher One" applied that has been used
+  When  the background task to reinvoice active subscriptions
+  Then  the subscription for "customer.one@example.org" will expire in a week
+  And  the latest invoice for "customer.one@example.org" will have amount due as 1000
+
+Scenario 10: 
+  Given  the following subscriptions exist:
+  And  stripe billing is enabled
+  And  the following credit transactions exist:
+  When  the background task to reinvoice active subscriptions
+  Then  the subscription for "customer.one@example.org" will expire in a week
+  And  the latest invoice for "customer.one@example.org" will have amount due as 900
+  And  the latest invoice for "customer.one@example.org" will be due in "30 days"
+
+Scenario 11: Handle credit in the wrong currency
+  Given  the following subscriptions exist:
+  And  stripe billing is enabled
+  And  the following credit transactions exist:
+  When  the background task to reinvoice active subscriptions
+  Then  the subscription for "customer.one@example.org" will expire in a week
+
+Scenario 12: Only subscription
+  Given  the following subscriptions exist:
+  When  the background task to reinvoice active subscriptions
+  Then  there will be no error logs for invoice
+
+Scenario 13: Subscription with Metadata
+  Given  the following subscriptions exist:
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  Then  the subscription for "customer.one@example.org" will expire in a week
+  And  there the latest invoice for "customer.one@example.org" will be for 50000 "USD"
+  And  the latest invoice for "customer.one@example.org" should have metadata '{"key": "value"}'
+

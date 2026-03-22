@@ -1,0 +1,8 @@
+Scenario 1: a user should see its merbership is pending
+  Given  I am logged in as "mario"
+  And  the following communities
+  And  I go to private-community's homepage
+  When  I follow "Join this community"
+  And  I go to private-community's homepage
+  Then  I should see "Your membership is waiting for approval"
+

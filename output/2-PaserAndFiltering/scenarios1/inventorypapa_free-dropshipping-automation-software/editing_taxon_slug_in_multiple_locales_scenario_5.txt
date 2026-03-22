@@ -1,0 +1,10 @@
+Scenario 5: Prevent from editing a slug while changing a taxon name
+  Tags: ['@ui', '@javascript']
+  Given  the store has taxonomy named "Medieval weapons" in "English (United States)" locale and "Bronie średniowieczne" in "Polish (Poland)" locale
+  When  I want to modify the "Medieval weapons" taxon
+  And  I rename it to "Renaissance weapons" in "English (United States)"
+  And  I rename it to "Bronie renesansowe" in "Polish (Poland)"
+  And  I save my changes
+  Then  this taxon should have slug "medieval-weapons" in "English (United States)"
+  Then  this taxon should have slug "bronie-sredniowieczne" in "Polish (Poland)"
+

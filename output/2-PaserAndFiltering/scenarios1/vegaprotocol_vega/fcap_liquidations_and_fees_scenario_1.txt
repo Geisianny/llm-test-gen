@@ -1,0 +1,7 @@
+Scenario 1: Party places a limit order with not enough funds to cover fes
+  Tags: ['@CappedF', '@NoPerp']
+  Given  the parties deposit on asset's general account the following amount:
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+

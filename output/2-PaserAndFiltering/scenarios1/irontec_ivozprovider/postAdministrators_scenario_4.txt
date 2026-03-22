@@ -1,0 +1,8 @@
+Scenario 4: Fails on unauthorized company
+  Tags: ['@createSchema']
+  Given  I add Brand Authorization header
+  When  I add "Content-Type" header equal to "application/json"
+  And  I add "Accept" header equal to "application/json"
+  And  I send a "POST" request to "/administrators" with body:
+  Then  the response status code should be 403
+

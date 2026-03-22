@@ -1,0 +1,10 @@
+Scenario 6: Create a time-slice SLO object returns "OK" response
+  Tags: ['@team:DataDog/slo-app']
+  Given  new "CreateSLO" request
+  And  body with value {"type":"time_slice","description":"string","name":"{{ unique }}","sli_specification":{"time_slice":{"query":{"formulas":[{"formula":"query1"}],"queries":[{"data_source":"metrics","name":"query1","query":"trace.servlet.request{env:prod}"}]},"comparator":">","threshold":5}},"tags":["env:prod"],"thresholds":[{"target":97.0,"target_display":"97.0","timeframe":"7d","warning":98,"warning_display":"98.0"}],"timeframe":"7d","target_threshold":97.0,"warning_threshold":98}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data[0].timeframe" is equal to "7d"
+  And  the response "data[0].target_threshold" is equal to 97.0
+  And  the response "data[0].warning_threshold" is equal to 98.0
+

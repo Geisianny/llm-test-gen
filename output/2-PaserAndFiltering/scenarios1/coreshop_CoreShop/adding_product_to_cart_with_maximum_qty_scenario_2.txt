@@ -1,0 +1,6 @@
+Scenario 2: Adding product to cart with less than minimum quantity to order
+  Given  the product "TShirt" has a maximum order quantity of "100"
+  When  I add 101 of this product to the cart
+  Then  I should be on the cart summary page
+  And  I should be notified that I can only order a maximum of 100 of TShirt
+

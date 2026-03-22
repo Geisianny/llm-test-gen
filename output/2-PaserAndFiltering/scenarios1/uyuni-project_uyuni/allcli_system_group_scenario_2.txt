@@ -1,0 +1,7 @@
+Scenario 2: Pre-requisite: install dummy packages to allow patching
+  Tags: ['@skip_if_github_validation']
+  When  I enable repository "test_repo_rpm_pool" on this "sle_minion"
+  And  I refresh the metadata for "sle_minion"
+  And  I install old package "andromeda-dummy-1.0" on this "sle_minion"
+  And  I install old package "virgo-dummy-1.0" on this "sle_minion"
+

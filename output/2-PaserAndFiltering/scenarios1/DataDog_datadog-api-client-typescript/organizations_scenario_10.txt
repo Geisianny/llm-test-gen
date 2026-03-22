@@ -1,0 +1,8 @@
+Scenario 10: Upload IdP metadata returns "Bad Request" response
+  Tags: ['@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "UploadIdPForOrg" request
+  And  request contains "public_id" parameter from "REPLACE.ME"
+  And  request contains "idp_file" parameter with value "./idp_metadata_invalid.xml"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

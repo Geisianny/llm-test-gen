@@ -1,0 +1,7 @@
+Scenario 58: The SLES 15 SP5 s390x SSH minion is healthy
+  Tags: ['@sle15sp5s390_ssh_minion']
+  Then  "sle15sp5s390_ssh_minion" should have a FQDN
+  And  reverse resolution should work for "sle15sp5s390_ssh_minion"
+  And  "sle15sp5s390_ssh_minion" should communicate with the server using public interface
+  And  the clock from "sle15sp5s390_ssh_minion" should be exact
+

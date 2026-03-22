@@ -1,0 +1,7 @@
+Scenario 17: Check the pillar data after assigning group formula
+  When  I refresh the pillar data
+  Then  the pillar data for "formulas" should be "- locale" on "sle_minion"
+  And  the pillar data for "timezone:name" should be "CET" on "sle_minion"
+  And  the pillar data for "keyboard_and_language:keyboard_layout" should be "English (US)" on "sle_minion"
+  And  the pillar data for "keyboard_and_language:language" should be "English (US)" on "sle_minion"
+

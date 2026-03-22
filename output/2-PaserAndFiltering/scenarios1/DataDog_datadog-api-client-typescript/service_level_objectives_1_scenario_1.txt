@@ -1,0 +1,8 @@
+Scenario 1: Create a new SLO report returns "Bad Request" response
+  Tags: ['@team:DataDog/slo-app']
+  Given  operation "CreateSLOReportJob" enabled
+  And  new "CreateSLOReportJob" request
+  And  body with value {"data": {"attributes": {"from_ts": {{ timestamp('now - 40d') }},  "to_ts": {{ timestamp('now') }}, "query": "slo_type:metric \"SLO Reporting Test\"", "interval": "bad-interval"}}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

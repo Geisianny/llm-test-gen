@@ -1,0 +1,10 @@
+Scenario 1: Being able to create an account for created customer
+  Tags: ['@ui']
+  Given  I want to create a new customer
+  And  I do not choose create account option
+  And  I specify their email as "bananaPotato@example.com"
+  And  I add them
+  Then  I should be notified that it has been successfully created
+  And  I should not be able to specify their password
+  And  I should be able to select create account option
+

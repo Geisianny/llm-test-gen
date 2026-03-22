@@ -1,0 +1,9 @@
+Scenario 2: Being able to confirm order after information appears
+  Tags: ['@api', '@ui']
+  Given  I am a logged in customer
+  And  I added product "PHP T-Shirt" to the cart
+  And  I proceeded through the checkout process
+  And  this product price has been changed to "$25.00"
+  When  I confirm my order
+  Then  my order should not be placed due to changed order total
+

@@ -1,0 +1,14 @@
+Scenario 11: Pre-requisite: subscribe system to Fake Channel
+  Given  I am on the Systems overview page of this "sle_minion"
+  When  I follow "Software" in the content area
+  And  I follow "Software Channels" in the content area
+  And  I wait until I do not see "Loading..." text
+  And  I check radio button "Fake-Base-Channel-SUSE-like"
+  And  I wait until I do not see "Loading..." text
+  And  I check "Fake-Child-Channel-SUSE-like"
+  And  I click on "Next"
+  Then  I should see a "Confirm Software Channel Change" text
+  When  I click on "Confirm"
+  Then  I should see a "Changing the channels has been scheduled." text
+  And  I wait until event "Subscribe channels scheduled" is completed
+

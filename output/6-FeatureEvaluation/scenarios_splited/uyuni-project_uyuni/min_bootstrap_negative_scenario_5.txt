@@ -1,0 +1,5 @@
+Scenario: Register a machine with an invalid port
+  Given there is an authorized user
+  And there is a machine with the name "minion1" on an invalid port
+  When the user registers a new machine with the name "minion1" and valid credentials on the invalid port
+  Then the system denies registration

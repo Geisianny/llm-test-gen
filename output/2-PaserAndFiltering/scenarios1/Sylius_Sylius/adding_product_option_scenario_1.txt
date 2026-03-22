@@ -1,0 +1,13 @@
+Scenario 1: Adding a new product option with two required option values
+  Tags: ['@api', '@ui', '@javascript']
+  When  I want to create a new product option
+  And  I name it "T-Shirt size" in "English (United States)"
+  And  I specify its code as "t_shirt_size"
+  And  I add the "S" option value identified by "OV1"
+  And  I add the "M" option value identified by "OV2"
+  And  I add it
+  Then  I should be notified that it has been successfully created
+  And  the product option "T-Shirt size" should appear in the registry
+  And  product option "T-Shirt size" should have the "S" option value
+  And  product option "T-Shirt size" should have the "M" option value
+

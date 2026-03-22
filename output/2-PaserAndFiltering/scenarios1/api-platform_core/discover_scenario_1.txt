@@ -1,0 +1,5 @@
+Scenario 1: Checks that the Mercure Link is added
+  Tags: ['@createSchema']
+  Given  I send a "GET" request to "/dummy_mercures"
+  Then  the header "Link" should contain '<https://demo.mercure.rocks>; rel="mercure"'
+

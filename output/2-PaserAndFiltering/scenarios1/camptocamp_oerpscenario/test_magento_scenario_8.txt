@@ -1,0 +1,7 @@
+Scenario 8: Set options for payment type to validate the process
+  Tags: ['@sale_config_magento']
+  Given  I the payment type with the name "Essaie" exists
+  When  I set the following options:
+  And  I set the payment journal on "EUR C"
+  Then  I save the payment type
+

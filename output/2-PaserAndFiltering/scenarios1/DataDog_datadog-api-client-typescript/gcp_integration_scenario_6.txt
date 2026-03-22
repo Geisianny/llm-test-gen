@@ -1,0 +1,6 @@
+Scenario 6: List all GCP integrations returns "OK" response
+  Tags: ['@skip-terraform-config', '@team:DataDog/gcp-integrations']
+  Given  new "ListGCPIntegration" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

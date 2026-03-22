@@ -1,0 +1,6 @@
+Scenario 4: Accessing to product show page from simple product edit page
+  Tags: ['@no-api', '@ui']
+  When  I want to modify the "Iron sword" product
+  And  I go to show page
+  Then  I should be on "Iron sword" product show page
+

@@ -1,0 +1,6 @@
+Scenario 20: List datastores returns "OK" response
+  Tags: ['@team:DataDog/app-builder-backend']
+  Given  new "ListDatastores" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

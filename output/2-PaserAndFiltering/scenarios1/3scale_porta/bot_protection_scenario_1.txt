@@ -1,0 +1,5 @@
+Scenario 1: Captcha is disabled
+  Given  the provider has bot protection disabled
+  When  they go to the provider login page
+  Then  the captcha is not present
+

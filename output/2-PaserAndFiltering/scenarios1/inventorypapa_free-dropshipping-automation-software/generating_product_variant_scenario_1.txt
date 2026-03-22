@@ -1,0 +1,9 @@
+Scenario 1: Generating a product variant for product without variants
+  Tags: ['@ui']
+  Given  I want to generate new variants for this product
+  When  I specify that the 1st variant is identified by "WYBOROWA_ORANGE" code and costs "$90" in "United States" channel
+  And  I specify that the 2nd variant is identified by "WYBOROWA_MELON" code and costs "$95" in "United States" channel
+  And  I generate it
+  Then  I should be notified that it has been successfully generated
+  And  I should see 2 variants in the list
+

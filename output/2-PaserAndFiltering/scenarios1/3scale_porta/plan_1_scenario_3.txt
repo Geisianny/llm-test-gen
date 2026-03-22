@@ -1,0 +1,7 @@
+Scenario 3: Remove customization of the plan
+  Given  the application uses a custom plan
+  And  they go to the application's admin page
+  And  they should see "Custom Application Plan"
+  When  they press "Remove customization"
+  Then  should not see "Custom Application Plan"
+

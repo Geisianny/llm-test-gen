@@ -1,0 +1,6 @@
+Scenario 8: Cleanup: undo Prometheus exporter formulas on the Red Hat-like minion
+  When  I follow "Formulas" in the content area
+  And  I uncheck the "prometheus-exporters" formula
+  And  I click on "Save"
+  Then  I wait until I see "Formula saved" text
+

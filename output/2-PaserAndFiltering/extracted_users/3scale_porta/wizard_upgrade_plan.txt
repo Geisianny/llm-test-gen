@@ -1,0 +1,24 @@
+Feature: Wizard Billing information
+Description: In order to provider my billing information
+  As a provider
+  I want a wizard to enter the required account information and credit card information
+Tags: ['@javascript']
+
+Background: 
+  Given  a provider is logged in
+  And  provider "foo.3scale.localhost" doesn't have billing address
+  And  provider "master" is charging its buyers with braintree
+  And  Braintree is stubbed for wizard
+  Given  master provider has the following fields defined for accounts:
+
+Scenario 1: Steps of the wizard
+  When  I go to the billing information wizard page
+  And  I fill in the following:
+  And  I select "Spain" from "Country"
+  And  I press "Save and continue with payment details"
+  And  I should be on the provider braintree edit credit card details page
+  And  I fill in the braintree credit card form
+  And  I press "Save credit card"
+  Then  the current domain should be admin.foo.3scale.localhost
+  And  I should be on the provider account page
+

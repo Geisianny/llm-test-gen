@@ -1,0 +1,11 @@
+Scenario 1: User can browse to about page
+  Tags: ['@javascript']
+  Given  I am on the home page
+  And  I open the menu
+  And  I follow "About" within the menu
+  Then  I should see "This marketplace is powered by Sharetribe platform." within ".about-section"
+  And  I should see "About" within ".left-navi"
+  And  I should see "About" within ".selected.left-navi-link"
+  And  I should see "Terms of Service"
+  And  I should see "Privacy"
+

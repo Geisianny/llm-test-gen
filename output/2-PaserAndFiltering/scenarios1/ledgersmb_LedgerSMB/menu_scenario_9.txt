@@ -1,0 +1,9 @@
+Scenario Outline 9: Navigate to menu "<path>" and open screen "<screen>" - Example 9
+  When  I navigate the menu and select the item at "Accounts Receivable > Sales Invoice"
+  Then  I should see the AR invoice entry screen
+
+  Examples:
+    | path | screen |
+    | Accounts Receivable > Sales Invoice | AR invoice entry |
+    | Accounts Receivable > Search | AR search |
+

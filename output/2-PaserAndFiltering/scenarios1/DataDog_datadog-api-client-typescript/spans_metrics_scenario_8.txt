@@ -1,0 +1,8 @@
+Scenario 8: Get all span-based metrics returns "OK" response
+  Tags: ['@team:DataDog/apm']
+  Given  there is a valid "spans_metric" in the system
+  And  new "ListSpansMetrics" request
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data[0].type" is equal to "spans_metrics"
+

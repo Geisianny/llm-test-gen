@@ -1,0 +1,5 @@
+Scenario: View top clicked URLs
+  Given there are search queries and corresponding clicked URLs in the system
+  When the site administrator views the top clicked URLs report
+  Then the system displays a list of top clicked URLs
+  And the list includes the number of clicks for each URL

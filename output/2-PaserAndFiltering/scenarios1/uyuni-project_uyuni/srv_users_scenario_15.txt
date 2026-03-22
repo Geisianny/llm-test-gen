@@ -1,0 +1,8 @@
+Scenario 15: Display the CSV separator preference
+  Given  I am authorized as "testing" with password "testing"
+  When  I follow the left menu "Home > My Preferences"
+  Then  I should see a "CSV Files" text
+  And  I should see a "Configure a separator character to be used in downloadable CSV files:" text
+  And  I should see a "Comma" text
+  And  I should see a "Semicolon" text
+

@@ -1,0 +1,7 @@
+Scenario 3: Cross-border payment with currency conversion
+  Given  I need to pay a supplier in Japan
+  And  I have 5000 USD in my wallet
+  When  I initiate the payment flow:
+  Then  the system should:
+  And  deduct the correct USD amount including fees
+

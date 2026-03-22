@@ -1,0 +1,6 @@
+Scenario 27: Get all Workflows webhook handles returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/chat-integrations']
+  Given  new "ListWorkflowsWebhookHandles" request
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

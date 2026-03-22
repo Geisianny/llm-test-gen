@@ -1,0 +1,10 @@
+Scenario 2: Clone the first channel before deletion from tool test
+  When  I follow the left menu "Software > Manage > Channels"
+  And  I follow "Clone Channel"
+  And  I select "Fake-RPM-SUSE-Channel" as the origin channel
+  And  I click on "Clone Channel"
+  Then  I should see a "Create Software Channel" text
+  And  I should see a "Current state of the channel" text
+  When  I click on "Clone Channel"
+  Then  I should see a "Clone of Fake-RPM-SUSE-Channel" text
+

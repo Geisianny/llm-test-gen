@@ -1,0 +1,8 @@
+Scenario Outline 22: Navigate to menu "<path>" and open screen "<screen>" - Example 22
+  When  I navigate the menu and select the item at "Goods & Services > Add Assembly"
+  Then  I should see the assembly entry screen
+
+  Examples:
+    | path | screen |
+    | Goods & Services > Add Assembly | assembly entry |
+

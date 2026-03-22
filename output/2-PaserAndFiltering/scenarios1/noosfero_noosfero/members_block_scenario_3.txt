@@ -1,0 +1,7 @@
+Scenario 3: the join-leave button do not appear if the checkbox show-join-leave-button is not checked
+  Given  the following communities
+  And  the following blocks
+  When  I go to sample-community's homepage
+  Then  I should not see "Join this community" within ".members-block"
+  And  I should not see "Leave community" within ".members-block"
+

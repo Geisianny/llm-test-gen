@@ -1,0 +1,6 @@
+Scenario: Delete a special number with insufficient permissions
+  Given there is a user with insufficient permissions
+  And there is a special number with ID "123"
+  When the user sends a DELETE request to the special number API with ID "123"
+  Then the system returns an HTTP 403 status code
+  And displays a message indicating that the user lacks the necessary permissions

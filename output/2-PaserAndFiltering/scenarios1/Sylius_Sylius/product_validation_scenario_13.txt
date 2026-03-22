@@ -1,0 +1,8 @@
+Scenario 13: Trying to set too long meta keywords for a product
+  Tags: ['@api', '@ui']
+  Given  the store has a "Dice Brewing" product
+  When  I want to modify this product
+  And  I set its meta description to too long string in "English (United States)"
+  And  I try to save my changes
+  Then  I should be notified that meta description is too long
+

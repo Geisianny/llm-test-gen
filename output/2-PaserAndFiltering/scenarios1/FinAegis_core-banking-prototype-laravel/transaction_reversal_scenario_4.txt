@@ -1,0 +1,8 @@
+Scenario 4: Reversal authorization and approval workflow
+  Given  a high-value transaction of 10000.00 USD needs reversal
+  When  I submit a reversal request
+  Then  the request should require senior approval
+  And  the transaction should remain unchanged until approved
+  And  the approver should receive notification
+  And  approval details should be tracked
+

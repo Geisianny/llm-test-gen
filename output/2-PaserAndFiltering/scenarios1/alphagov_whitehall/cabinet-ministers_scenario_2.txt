@@ -1,0 +1,5 @@
+Scenario 2: No preview to the ministers index page when not in reshuffle mode
+  Given  reshuffle mode is off
+  When  I visit the Cabinet ministers order page
+  Then  I should not see a preview link to the ministers index page
+

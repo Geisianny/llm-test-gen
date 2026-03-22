@@ -1,0 +1,7 @@
+Scenario 6: Visiting the Click Tracking API Instructions
+  Given  the following BingV7 Affiliates exist:
+  And  I am logged in with email "aff@bar.gov"
+  When  I go to the aff.gov's Activate Search page
+  And  I follow "Click Tracking API Instructions"
+  Then  I should see "Click Tracking API Instructions" within the Admin Center content
+

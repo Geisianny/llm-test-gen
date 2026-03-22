@@ -1,0 +1,13 @@
+Scenario 16: Distributing discount proportionally between different products when one has minimum price specified and promotion does not apply on discounted products
+  Tags: ['@api', '@no-ui']
+  Given  this promotion does not apply on discounted products
+  And  it gives "$27.00" discount to every order
+  And  there is a catalog promotion "Fixed T-Shirt sale" that reduces price by fixed "$2.50" in the "United States" channel and applies on "PHP Mug" product
+  And  I added 2 products "T-Shirt" to the cart
+  And  I added 2 products "PHP Mug" to the cart
+  And  I added product "Symfony Mug" to the cart
+  When  I check the details of my cart
+  And  the "T-Shirt" product should have unit prices discounted by "$5.00" and "$5.00"
+  And  the "PHP Mug" product should have unit prices discounted by "$2.50" and "$2.50"
+  And  the "Symfony Mug" product should have unit price discounted by "$17.00"
+

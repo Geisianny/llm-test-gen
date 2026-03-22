@@ -1,0 +1,6 @@
+Scenario 3: Invalid name
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  When  I create an email template:
+  Then  I will get an error response
+  Then  there will not be an email template for "subscription_created_no" with locale "en"
+

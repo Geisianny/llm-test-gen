@@ -1,0 +1,10 @@
+Scenario 9: Trying to add a new administrator with wrong locale code specified
+  Tags: ['@api', '@no-ui']
+  When  I want to create a new administrator
+  And  I specify its email as "l.skywalker@gmail.com"
+  And  I specify its name as "Luke"
+  And  I specify its password as "lightsaber"
+  And  I specify its locale as a wrong code
+  And  I try to add it
+  Then  I should be notified that this value is not valid locale
+

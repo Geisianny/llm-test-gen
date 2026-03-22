@@ -1,0 +1,8 @@
+Scenario 7: Non-superadmin unsuccessfully attempts to create an organisation
+  Given  I am signed in as a non-superadmin
+  And  I create "Unwanted" org
+  Then  I should be on the organisations index page
+  Then  I should see permission denied
+  And  I should not see "Organisation was successfully created."
+  And  "Unwanted" org should not exist
+

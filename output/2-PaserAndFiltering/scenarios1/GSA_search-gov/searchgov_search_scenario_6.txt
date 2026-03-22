@@ -1,0 +1,8 @@
+Scenario 6: Video news search
+  Given  affiliate "epa" has the following RSS feeds:
+  And  there are 20 video news items for "usgovernment_channel_id"
+  When  I am on epa's search page
+  And  I search for "video"
+  Then  I should see exactly "1" video govbox search result
+  And  I should see "More videos about video"
+

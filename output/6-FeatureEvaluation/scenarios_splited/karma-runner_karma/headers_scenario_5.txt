@@ -1,0 +1,4 @@
+Scenario: Remove custom headers from a file
+  Given there is a test configuration with a file "test.js"
+  And the user has set a custom header "Content-Type" with value "application/javascript" for "test.js"
+  When the user removes the custom header "Content-Type" for "test.js"

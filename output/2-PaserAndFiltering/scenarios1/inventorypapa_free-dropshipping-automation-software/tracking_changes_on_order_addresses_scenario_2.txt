@@ -1,0 +1,10 @@
+Scenario 2: Browsing order's addresses history after changing it by administrator
+  Tags: ['@ui']
+  Given  the customer "Barney Stinson" addressed it to "East 84st Street and 3rd Avenue", "10118" "New York" in the "United States" with identical billing address
+  And  the customer chose "Free" shipping method with "Cash on Delivery" payment
+  When  I want to modify a customer's shipping address of this order
+  And  I specify their shipping address as "New York", "150 W. 85th Street", "10028", "United States" for "Ted Mosby"
+  And  I save my changes
+  And  I browse order's "#00000001" history
+  Then  there should be 2 changes in the registry
+

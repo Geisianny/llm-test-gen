@@ -1,0 +1,6 @@
+Scenario 1: Filtering listed products by taxon
+  Tags: ['@api', '@no-ui']
+  When  I am browsing products from "T-Shirts" taxon
+  Then  I should see the "T-Shirts" taxon
+  But  I should not see the "Jeans" taxon
+

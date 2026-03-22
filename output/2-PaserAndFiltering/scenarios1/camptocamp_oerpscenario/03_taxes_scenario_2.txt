@@ -1,0 +1,19 @@
+Scenario 2: GENERIC CHART OF TAXES
+  Tags: ['@base_finance_taxes']
+  Given  I need a "account.tax" with oid: scen.purchases_vat_10
+  And  having:
+  Given  I need a "account.tax" with oid: scen.purchases_vat_20
+  And  having:
+  Given  I need a "account.tax" with oid: scen.purchases_vat_incl_20
+  And  having:
+  Given  I need a "account.tax" with oid: scen.sales_vat_10
+  And  having:
+  Given  I need a "account.tax" with oid: scen.sales_vat_20
+  And  having:
+  Given  I need a "account.tax" with oid: scen.sales_vat_incl_20
+  And  having:
+  Given  I need a "account.tax" with oid: scen.EU_purchases
+  And  having:
+  Given  I need a "account.tax" with oid: scen.EU_purchases_rev
+  And  having:
+

@@ -1,0 +1,9 @@
+Scenario 4: Introspect types with different serialization groups for item_query and collection_query
+  When  I send the following GraphQL request:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the JSON node "data.type1.description" should be equal to "Dummy with different serialization groups for item_query and collection_query."
+  And  the JSON node "data.type1.fields[3].name" should not exist
+  And  the JSON node "data.type2.fields[3].name" should be equal to "title"
+

@@ -1,0 +1,5 @@
+Scenario 2: Trying to add new currency with used code
+  Tags: ['@no-api', '@ui', '@mink:chromedriver']
+  When  I want to add a new currency
+  Then  I should not be able to choose "Euro"
+

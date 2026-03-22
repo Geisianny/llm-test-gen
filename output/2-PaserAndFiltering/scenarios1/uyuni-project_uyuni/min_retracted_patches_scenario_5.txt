@@ -1,0 +1,15 @@
+Scenario 5: Retracted patch should not affect any system
+  When  I install package "rute-dummy=2.0-1.2" on this "sle_minion"
+  And  I refresh packages list via spacecmd on "sle_minion"
+  And  I wait until refresh package list on "sle_minion" is finished
+  And  I follow the left menu "Software > Channel List > All"
+  And  I follow "Show All Child Channels"
+  And  I follow "Fake-RPM-SUSE-Channel"
+  And  I follow "Patches" in the content area
+  And  I follow "rute-dummy-0817"
+  And  I follow "Affected Systems"
+  Then  I should see a "No systems." text
+  When  I remove package "rute-dummy" from this "sle_minion"
+  And  I refresh packages list via spacecmd on "sle_minion"
+  And  I wait until package "rute-dummy" is removed from "sle_minion" via spacecmd
+

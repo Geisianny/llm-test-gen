@@ -1,0 +1,8 @@
+Scenario 11: Get all service objects returns "OK" response
+  Tags: ['@team:Datadog/collaboration-integrations']
+  Given  there is a valid "opsgenie_service" in the system
+  And  new "ListOpsgenieServices" request
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data[0].type" is equal to "opsgenie-service"
+

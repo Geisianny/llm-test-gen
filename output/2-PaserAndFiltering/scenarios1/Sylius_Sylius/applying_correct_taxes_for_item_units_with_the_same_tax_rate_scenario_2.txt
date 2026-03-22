@@ -1,0 +1,7 @@
+Scenario 2: Applying correct taxes for multiple units of the same product
+  Tags: ['@api', '@ui']
+  Given  I added 3 products "PHP T-Shirt" to the cart
+  When  I check the details of my cart
+  Then  my cart total should be "$369.00"
+  And  my cart taxes should be "$69.00"
+

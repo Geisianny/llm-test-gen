@@ -1,0 +1,12 @@
+Scenario 5: Filter subscriptions by account
+  Tags: ['@search']
+  Given  a buyer "Ben"
+  And  the buyer is subscribed to product "My API"
+  And  a buyer "Bender"
+  And  the buyer is subscribed to product "My API"
+  And  a buyer "Leela"
+  And  the buyer is subscribed to product "My API"
+  When  they go to the provider service subscriptions page
+  And  the table is filtered with:
+  Then  the table should contain the following:
+

@@ -1,0 +1,11 @@
+Scenario 13: List all rules returns "OK" response with pagination
+  Tags: ['@replay-only', '@skip-validation', '@team:DataDog/service-catalog', '@with-pagination']
+  Given  operation "ListScorecardRules" enabled
+  And  new "ListScorecardRules" request
+  And  request contains "page[size]" parameter with value 2
+  And  request contains "fields[rule]" parameter with value "name"
+  And  request contains "filter[rule][custom]" parameter with value true
+  When  the request with pagination is sent
+  Then  the response status is 200 OK
+  And  the response has 4 items
+

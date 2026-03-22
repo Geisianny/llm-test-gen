@@ -1,0 +1,10 @@
+Scenario 4: Accessing to add payment method to the cart by the visitor
+  Tags: ['@api']
+  Given  the visitor has product "Stark T-Shirt" in the cart
+  And  the visitor has specified the email as "jon.snow@example.com"
+  And  the visitor has specified address as "Ankh Morpork", "Frost Alley", "90210", "United States" for "Jon Snow"
+  And  the visitor has completed the addressing step
+  And  the visitor has proceeded "UPS" shipping method
+  When  the visitor proceed with "offline" payment
+  Then  the visitor should have checkout payment step completed
+

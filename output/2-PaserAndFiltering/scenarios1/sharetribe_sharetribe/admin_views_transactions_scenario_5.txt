@@ -1,0 +1,6 @@
+Scenario 5: Admin filters transaction by free status
+  When  I click ".status-select-button"
+  And  I click ".status-select-line[data-status=free]"
+  And  I click ".search-button"
+  Then  I should see 3 transaction with status "Free transaction"
+

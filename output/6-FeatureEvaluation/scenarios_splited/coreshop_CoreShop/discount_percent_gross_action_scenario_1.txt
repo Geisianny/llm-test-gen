@@ -1,0 +1,6 @@
+Scenario: Apply 10 percent discount on a single item cart
+  Given there is an active voucher-type rule with a 10 percent discount
+  And the cart contains one item priced at 100.00
+  When the user applies the voucher code
+  Then the cart total is recalculated to 90.00
+  And the item price is adjusted to 90.00

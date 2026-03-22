@@ -1,0 +1,7 @@
+Scenario 9: Get On-Call escalation policy returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/on-call']
+  Given  new "GetOnCallEscalationPolicy" request
+  And  request contains "policy_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

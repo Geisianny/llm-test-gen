@@ -1,0 +1,29 @@
+Scenario Outline 3: User requests ERC-20 token - Example 1
+  When  I tap on the navbar network title button
+  And  I select "BNB Smart Chain" network option
+  And  the toast is displayed
+  And  On the Main Wallet view I tap on the Receive Action
+  Then  "Scan address to receive payment" is visible
+  When  I tap on button with text "Request Payment"
+  And  I type "BETH" in the Search Assets field
+  Then  "Binance Beacon ETH" is visible
+  When  I tap on button with text "Binance Beacon ETH"
+  Then  "BETH" is visible
+  When  I tap to navigate back from request view
+  And  I am taken back to the Request Search view
+  And  I type "Link" in the Search Assets field
+  Then  "ChainLink Token" is visible
+  When  I tap on button with text "ChainLink Token"
+  And  I type "5" into the Request Amount field
+  And  I tap on button with text "Next"
+  Then  "Your request link is ready to send!" is visible
+  And  I tap on button with text "QR Code"
+  Then  "Payment Request QR Code" is visible
+  And  I close the request screen
+  And  I tap on button with text "Remind me later"
+
+  Examples:
+    | Network | TokenID | FirstTokenName | SecondTokenID | SecondTokenName |
+    | BNB Smart Chain | BETH | Binance Beacon ETH | Link | ChainLink Token |
+    | Ethereum Main Network | QNT | Quant Network | CETH | Compound Ether |
+

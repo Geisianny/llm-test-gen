@@ -1,0 +1,7 @@
+Scenario 3: Recaptcha doesn't break the OAuth workflow
+  Tags: ['@recaptcha']
+  Given  the provider has bot protection enabled
+  And  the Oauth2 user has all the required fields
+  When  the buyer authenticates by OAuth2
+  Then  the page should contain "Signed up successfully"
+

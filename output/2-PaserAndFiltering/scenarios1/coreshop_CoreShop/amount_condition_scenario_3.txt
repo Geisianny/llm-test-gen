@@ -1,0 +1,7 @@
+Scenario 3: Add a new amount condition with is invalid cause of max value
+  Given  adding a cart price rule named "amount"
+  And  the cart rule is active
+  And  the cart rule is not a voucher rule
+  And  the cart rule has a condition amount with value "10" to "90"
+  Then  the cart rule should be invalid for my cart
+

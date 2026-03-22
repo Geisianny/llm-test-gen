@@ -1,0 +1,6 @@
+Scenario: Upload a file exceeding the size limit
+  Given there is an admin user logged in
+  And a file containing affiliate site styles with a size of 5 MB
+  When the admin uploads the file
+  Then the system denies the upload
+  And displays an error message indicating that the file size exceeds the limit

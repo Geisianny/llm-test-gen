@@ -1,0 +1,12 @@
+Scenario 4: Filtering order with total from a specified range
+  Tags: ['@ui']
+  When  I choose "British Pound" as the filter currency
+  And  I specify filter total being greater than 150.50
+  And  I specify filter total being less than 250
+  And  I filter
+  Then  I should see a single order in the list
+  And  I should see an order with "#00000004" number
+  But  I should not see an order with "#00000005" number
+  And  I should not see an order with "#00000006" number
+  And  I should not see any orders with currency "USD"
+

@@ -1,0 +1,7 @@
+Scenario 8: Receiving fixed discount equal to the items total of my cart even if the discount is bigger than the items total
+  Tags: ['@ui']
+  Given  the promotion gives "$30.00" off on every product priced between "$10.00" and "$50.00"
+  When  I add 2 products "PHP Mug" to the cart
+  Then  theirs price should be decreased by "$40.00"
+  Then  my cart total should be "$0.00"
+

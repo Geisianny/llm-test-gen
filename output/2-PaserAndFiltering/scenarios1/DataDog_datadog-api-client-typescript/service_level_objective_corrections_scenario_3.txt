@@ -1,0 +1,7 @@
+Scenario 3: Create an SLO correction returns "SLO Not Found" response
+  Tags: ['@skip', '@team:DataDog/slo-app']
+  Given  new "CreateSLOCorrection" request
+  And  body with value {"data": {"attributes": {"category": "Scheduled Maintenance", "description": "{{ unique }}", "end": {{ timestamp("now + 1h") }}, "slo_id": "sloId", "start": {{ timestamp("now") }}, "timezone": "UTC"}, "type": "correction"}}
+  When  the request is sent
+  Then  the response status is 404 SLO Not Found
+

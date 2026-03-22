@@ -1,0 +1,10 @@
+Scenario 33: Update a role returns "Bad Role ID" response
+  Tags: ['@team:DataDog/aaa-core-access']
+  Given  there is a valid "role" in the system
+  And  there is a valid "permission" in the system
+  And  new "UpdateRole" request
+  And  request contains "role_id" parameter from "role.data.id"
+  And  body with value {"data": {"id": "00000000-dead-beef-dead-ffffffffffff", "type": "roles", "attributes": {"name" : "{{ role.data.attributes.name }}-updated"}, "relationships": {"permissions": {"data": [{"type": "{{ permission.type }}", "id": "{{ permission.id }}"}]}}}}
+  When  the request is sent
+  Then  the response status is 422 Bad Role ID in Request
+

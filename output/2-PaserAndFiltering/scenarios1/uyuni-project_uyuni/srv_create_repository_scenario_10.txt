@@ -1,0 +1,9 @@
+Scenario 10: Add the Debian-like repository to the AMD64 channel
+  Tags: ['@deblike_minion']
+  When  I follow the left menu "Software > Manage > Channels"
+  And  I follow "Fake-Deb-AMD64-Channel"
+  And  I follow "Repositories" in the content area
+  And  I select the "fake-debian-repo" repo
+  And  I click on "Save Repositories"
+  Then  I should see a "Fake-Deb-AMD64-Channel repository information was successfully updated" text
+

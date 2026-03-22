@@ -1,0 +1,30 @@
+Feature: Exchange Rate API
+Description: In order to convert between currencies
+  As an API consumer
+  I need to be able to query exchange rates
+
+Background: 
+  Given  I am authenticated as "api@example.com"
+  And  the following exchange rates exist:
+
+Scenario 1: Get exchange rate between currencies
+  When  I send a GET request to "/api/v1/exchange-rates/USD/EUR"
+  Then  the response status code should be 200
+  And  the response should contain:
+
+Scenario 2: Convert amount between currencies
+  When  I send a GET request to "/api/v1/exchange-rates/USD/EUR/convert?amount=100"
+  Then  the response status code should be 200
+  And  the response should contain:
+
+Scenario 3: List all exchange rates
+  When  I send a GET request to "/api/v1/exchange-rates"
+  Then  the response status code should be 200
+  And  the response should have a "data" field
+  And  the response data should contain 4 exchange rates
+
+Scenario 4: Exchange rate not found
+  When  I send a GET request to "/api/v1/exchange-rates/USD/JPY"
+  Then  the response status code should be 404
+  And  the response should contain:
+

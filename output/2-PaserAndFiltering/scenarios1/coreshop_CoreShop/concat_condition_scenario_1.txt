@@ -1,0 +1,6 @@
+Scenario 1: Create a new contact
+  Given  there is a compare condition with field-name "XY" operator "=" and value "blub" with identifier "eq1"
+  Given  there is a compare condition with field-name "ZX" operator "!=" and value "blub" with identifier "eq2"
+  And  there is a concat condition with field-name "test" operator "AND" and conditions "eq1,eq2"
+  Then  the condition rendered for "mysql" should look like "(`XY` = 'blub' AND `ZX` != 'blub')"
+

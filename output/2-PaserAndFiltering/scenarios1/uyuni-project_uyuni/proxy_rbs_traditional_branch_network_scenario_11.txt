@@ -1,0 +1,9 @@
+Scenario 11: Parametrize TFTP on the branch server
+  When  I follow "Formulas" in the content area
+  And  I follow first "Tftpd" in the content area
+  And  I click on "Expand All Sections"
+  And  I enter the local IP address of "proxy" in internal network address field
+  And  I enter "/srv/saltboot" in TFTP base directory field
+  And  I click on "Save Formula"
+  Then  I should see a "Formula saved" text
+

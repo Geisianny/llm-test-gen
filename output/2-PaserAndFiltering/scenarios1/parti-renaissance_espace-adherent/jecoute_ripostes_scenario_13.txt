@@ -1,0 +1,11 @@
+Scenario Outline 13: As a simple logged-in user on Jemengage mobile I can get and use ripostes - Example 1
+  Given  I am logged with "simple-user@example.ch" via OAuth client "J'écoute" with scope "jemarche_app"
+  When  I send a "GET" request to "/api/v3/ripostes"
+  Then  the response status code should be 200
+
+  Examples:
+    | method | url |
+    | GET | /api/v3/ripostes |
+    | GET | /api/v3/ripostes/220bd36e-4ac4-488a-8473-8e99a71efba4 |
+    | PUT | /api/v3/ripostes/220bd36e-4ac4-488a-8473-8e99a71efba4/action/riposte |
+

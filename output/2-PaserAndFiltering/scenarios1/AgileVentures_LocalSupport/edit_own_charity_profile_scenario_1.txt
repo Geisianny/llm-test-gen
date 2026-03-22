@@ -1,0 +1,6 @@
+Scenario 1: Successfully add website url without protocol
+  Tags: ['@vcr']
+  Given  I am signed in as a charity worker related to "Friendly"
+  And  I update "Friendly" charity website to be "www.friendly.com"
+  Then  the website link for "Friendly" should have a protocol
+

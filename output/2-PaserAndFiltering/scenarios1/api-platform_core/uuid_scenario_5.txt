@@ -1,0 +1,10 @@
+Scenario 5: Create a resource with custom id generator
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/custom_generated_identifiers" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the header "Content-Location" should be equal to "/custom_generated_identifiers/foo.jsonld"
+  And  the header "Location" should be equal to "/custom_generated_identifiers/foo"
+  And  the JSON should be equal to:
+

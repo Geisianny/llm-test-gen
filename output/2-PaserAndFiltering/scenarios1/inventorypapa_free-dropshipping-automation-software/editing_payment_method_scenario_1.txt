@@ -1,0 +1,8 @@
+Scenario 1: Renaming the payment method
+  Tags: ['@ui']
+  Given  I want to modify the "Offline" payment method
+  When  I rename it to "Cash on delivery" in "English (United States)"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this payment method name should be "Cash on delivery"
+

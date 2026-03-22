@@ -1,0 +1,6 @@
+Scenario: Create organization with missing name
+  Given there is an admin user logged in
+  When the admin creates a new organization without a name
+  And provides a valid description "This organization is missing a name"
+  Then the system denies the creation
+  And displays an error message indicating the name is required

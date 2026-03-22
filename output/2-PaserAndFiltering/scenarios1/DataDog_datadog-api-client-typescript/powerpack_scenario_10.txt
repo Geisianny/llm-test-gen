@@ -1,0 +1,25 @@
+Scenario 10: Update a powerpack returns "OK" response
+  Tags: ['@team:DataDog/dashboards-backend']
+  Given  there is a valid "powerpack" in the system
+  And  new "UpdatePowerpack" request
+  And  request contains "powerpack_id" parameter from "powerpack.data.id"
+  And  body from file "powerpack_payload.json"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.type" is equal to "powerpack"
+  And  the response "data.id" has the same value as "powerpack.data.id"
+  And  the response "data.attributes.name" is equal to "{{ unique }}"
+  And  the response "data.attributes.description" is equal to "Sample powerpack"
+  And  the response "data.attributes.template_variables[0].name" is equal to "sample"
+  And  the response "data.attributes.template_variables[0].defaults[0]" is equal to "*"
+  And  the response "data.attributes.group_widget.layout.width" is equal to 12
+  And  the response "data.attributes.group_widget.layout.height" is equal to 3
+  And  the response "data.attributes.group_widget.layout.x" is equal to 0
+  And  the response "data.attributes.group_widget.layout.y" is equal to 0
+  And  the response "data.attributes.group_widget.definition.type" is equal to "group"
+  And  the response "data.attributes.group_widget.definition.layout_type" is equal to "ordered"
+  And  the response "data.attributes.group_widget.definition.show_title" is equal to true
+  And  the response "data.attributes.group_widget.definition.title" is equal to "Sample Powerpack"
+  And  the response "data.attributes.group_widget.definition.widgets[0].definition.type" is equal to "note"
+  And  the response "data.attributes.group_widget.definition.widgets[0].definition.content" is equal to "test"
+

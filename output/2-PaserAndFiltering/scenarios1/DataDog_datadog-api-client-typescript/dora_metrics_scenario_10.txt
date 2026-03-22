@@ -1,0 +1,8 @@
+Scenario 10: Get a list of deployment events returns "OK" response
+  Tags: ['@skip', '@team:DataDog/ci-app-backend']
+  Given  a valid "appKeyAuth" key in the system
+  And  new "ListDORADeployments" request
+  And  body with value {"data": {"attributes": {"from": "2025-03-23T00:00:00Z", "limit": 1, "to": "2025-03-24T00:00:00Z"}, "type": "dora_deployments_list_request"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+

@@ -1,0 +1,8 @@
+Scenario 10: Delete an AWS integration returns "Not Found" response
+  Tags: ['@team:DataDog/aws-integrations']
+  Given  there is a valid "aws_account_v2" in the system
+  And  new "DeleteAWSAccount" request
+  And  request contains "aws_account_config_id" parameter with value "448169a8-251c-4344-abee-1c4edef39f7a"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

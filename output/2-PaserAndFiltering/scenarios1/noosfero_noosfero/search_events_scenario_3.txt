@@ -1,0 +1,6 @@
+Scenario 3: paginate events of the month correctly
+  Given  the following events
+  And  I am on /search/events?year=2018&month=10
+  When  I follow "Next" within "#events-of-the-day"
+  Then  I should see "Party On"
+

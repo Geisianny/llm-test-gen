@@ -1,0 +1,8 @@
+Scenario 14: Get all member teams returns "API error response." response
+  Tags: ['@generated', '@skip', '@team:DataDog/aaa-omg']
+  Given  operation "ListMemberTeams" enabled
+  And  new "ListMemberTeams" request
+  And  request contains "super_team_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 API error response.
+

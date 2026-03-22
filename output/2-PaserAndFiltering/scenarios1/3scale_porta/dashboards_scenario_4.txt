@@ -1,0 +1,5 @@
+Scenario 4: Paid invoice
+  Given  the following invoices:
+  When  they go to the earnings by month page
+  Then  the table should contain the following:
+

@@ -1,0 +1,13 @@
+Scenario 3: Being prevented from creating a new channel with the lowest price for discounted products checking period equal to zero
+  Tags: ['@api', '@ui']
+  When  I want to create a new channel
+  And  I specify its code as "MOBILE"
+  And  I name it "Mobile"
+  And  I choose "Euro" as the base currency
+  And  I make it available in "English (United States)"
+  And  I choose "English (United States)" as a default locale
+  And  I select the "Order items based" as tax calculation strategy
+  And  I specify 0 days as the lowest price for discounted products checking period
+  And  I try to add it
+  Then  I should be notified that the lowest price for discounted products checking period must be greater than 0
+

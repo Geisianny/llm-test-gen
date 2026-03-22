@@ -1,0 +1,7 @@
+Scenario 1: Filtering product attributes by code
+  Tags: ['@api', '@ui']
+  When  I search by "xyz" code
+  Then  I should see 2 product attributes in the list
+  And  I should see the product attribute "T-Shirt with cotton" in the list
+  And  I should also see the product attribute "Book pages" in the list
+

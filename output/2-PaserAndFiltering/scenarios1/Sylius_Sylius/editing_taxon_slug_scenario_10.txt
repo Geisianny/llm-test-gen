@@ -1,0 +1,10 @@
+Scenario 10: Generating a child taxon's slug while editing a taxon's name
+  Tags: ['@api', '@ui', '@javascript']
+  Given  the store has "Medieval weapons" taxonomy
+  And  the "Medieval weapons" taxon has child taxon "Pikes"
+  When  I want to modify the "Pikes" taxon
+  And  I rename it to "Javelins" in "English (United States)"
+  And  I generate its slug in "English (United States)"
+  And  I save my changes
+  Then  the slug of the "Javelins" taxon should be "medieval-weapons/javelins"
+

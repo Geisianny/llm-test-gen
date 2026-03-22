@@ -1,0 +1,11 @@
+Scenario 25: Search with custom no results page
+  Tags: ['@javascript', '@a11y']
+  Given  the following BingV7 Affiliates exist:
+  And  the "search.gov" affiliate has additional links for the no results module
+  When  I am on search.gov's search page
+  And  I fill in "Enter your search term" with "lkssldfkjsldfkjsld kfj"
+  And  I press "Search"
+  Then  I should see "Sorry, there are no results."
+  And  I should see "First no results link"
+  And  I should see "Second no results link"
+

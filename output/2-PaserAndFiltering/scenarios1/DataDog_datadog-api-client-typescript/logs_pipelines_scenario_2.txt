@@ -1,0 +1,7 @@
+Scenario 2: Create a pipeline returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/event-platform-experience']
+  Given  new "CreateLogsPipeline" request
+  And  body with value {"filter": {"query": "source:python"}, "name": "", "processors": [{"grok": {"match_rules": "rule_name_1 foo\nrule_name_2 bar", "support_rules": "rule_name_1 foo\nrule_name_2 bar"}, "is_enabled": false, "samples": [], "source": "message", "type": "grok-parser"}], "tags": []}
+  When  the request is sent
+  Then  the response status is 200 OK
+

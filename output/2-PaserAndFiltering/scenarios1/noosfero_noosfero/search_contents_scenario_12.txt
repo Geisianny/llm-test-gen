@@ -1,0 +1,11 @@
+Scenario 12: link to author on search results
+  Tags: ['@selenium-fixme']
+  When  I go to the search articles page
+  And  I fill in "search-input" with "whales"
+  And  I follow "Search" within ".search-form"
+  Then  I should see "Profile" within ".search-article-profile"
+  Then  I should see "Joao Silva" within ".search-article-profile-name"
+  When  I follow "Joao Silva"
+  And  I wait for 1 seconds
+  Then  I should be on joaosilva's profile
+

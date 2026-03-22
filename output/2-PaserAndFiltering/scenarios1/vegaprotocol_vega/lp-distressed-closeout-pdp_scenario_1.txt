@@ -1,0 +1,19 @@
+Scenario 1: 001, LP gets distressed during continuous trading (0042-LIQF-014)
+  Tags: ['@Liquidation']
+  When  the opening auction period ends for market "ETH/DEC21"
+  And  the auction ends with a traded volume of "1000" at a price of "1000"
+  Then  the market data for the market "ETH/DEC21" should be:
+  And  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  Then  the following trades should be executed:
+  And  the parties should have the following profit and loss:
+  And  the parties should have the following account balances:
+  And  the market data for the market "ETH/DEC21" should be:
+  When  the parties place the following orders with ticks:
+  Then  the market data for the market "ETH/DEC21" should be:
+  And  the parties should have the following account balances:
+  And  the parties should have the following margin levels:
+  When  the network moves ahead "7" blocks
+  Then  the liquidity provisions should have the following states:
+  And  the insurance pool balance should be "1422" for the market "ETH/DEC21"
+

@@ -1,0 +1,13 @@
+Scenario 5: Bootstrap a SLES minion using SSH key
+  When  I follow the left menu "Systems > Bootstrapping"
+  Then  I should see a "Bootstrap Minions" text
+  When  I enter the hostname of "sle_minion" as "hostname"
+  And  I enter "22" as "port"
+  And  I enter "root" as "user"
+  And  I check radio button "SSH Private Key"
+  And  I attach the file "ssh_keypair/id_rsa_bootstrap-passphrase_linux" to "privKeyFile"
+  And  I enter "linux" as "privKeyPwd"
+  And  I select the hostname of "proxy" from "proxies" if present
+  And  I click on "Bootstrap"
+  And  I wait at most 480 seconds until I see "Bootstrap process initiated." text
+

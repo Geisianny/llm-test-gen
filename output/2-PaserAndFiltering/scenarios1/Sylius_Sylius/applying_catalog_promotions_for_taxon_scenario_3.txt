@@ -1,0 +1,7 @@
+Scenario 3: Applying multiple catalog promotions
+  Tags: ['@api', '@ui']
+  Given  there is a catalog promotion "Summer sale" that reduces price by "10%" and applies on "Clothes" taxon
+  When  I view product "T-Shirt"
+  Then  I should see the product price "$12.60"
+  And  I should see the product original price "$20.00"
+

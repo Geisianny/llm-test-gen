@@ -1,0 +1,6 @@
+Scenario 3: redirect to profile page
+  Given  I am on mycommunity's homepage
+  When  I follow "Rate this Community"
+  Then  I should see "Joao Silva" within ".star-profile-name"
+  And  I should see Joao Silva's profile image
+

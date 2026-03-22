@@ -1,0 +1,5 @@
+Scenario: Retrieve a non-existent entity
+  Given there is no entity with the identifier "non-existent-id"
+  When the client requests the entity data via the JSON API
+  Then the system returns a JSON API error response
+  And the response indicates that the entity was not found

@@ -1,0 +1,9 @@
+Scenario 4: Trying to add a new channel without default locale
+  Tags: ['@ui']
+  Given  I want to create a new channel
+  When  I specify its code as "MOBILE"
+  But  I do not choose default locale
+  And  I try to add it
+  Then  I should be notified that default locale is required
+  And  channel with code "MOBILE" should not be added
+

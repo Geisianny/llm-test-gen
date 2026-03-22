@@ -1,0 +1,9 @@
+Scenario 20: Accessing to the customers cart by the admin
+  Tags: ['@api']
+  Given  the customer logged in
+  And  the customer has product "Stark T-Shirt" in the cart
+  And  the customer logged out
+  And  there is logged in the administrator
+  When  the administrator try to see the summary of customer's cart
+  Then  the administrator should see "Stark T-shirt" product with quantity 1 in the customer cart
+

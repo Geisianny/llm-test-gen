@@ -1,0 +1,14 @@
+Scenario 8: List systems by patch status via API before patch
+  When  I follow the left menu "Admin > Task Schedules"
+  And  I follow "cve-server-channels-default"
+  And  I follow "cve-server-channels-bunch"
+  And  I click on "Single Run Schedule"
+  Then  I should see a "bunch was scheduled" text
+  And  I wait until the table contains "FINISHED" or "SKIPPED" followed by "FINISHED" in its first rows
+  When  I call audit.list_systems_by_patch_status() with CVE identifier "CVE-1999-9979"
+  Then  I should get status "NOT_AFFECTED" for "sle_minion"
+  When  I call audit.list_systems_by_patch_status() with CVE identifier "CVE-1999-9999"
+  Then  I should get status "AFFECTED_FULL_PATCH_APPLICABLE" for "sle_minion"
+  And  I should get the "fake-rpm-suse-channel" channel label
+  And  I should get the "milkyway-dummy-2345" patch
+

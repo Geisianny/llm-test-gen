@@ -1,0 +1,98 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 19/01/2026 23:13:57
+Arquivo analisado: batch_processing_story_processado.feature
+Caminho relativo: FinAegis_core-banking-prototype-laravel\batch_processing_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/Originais\FinAegis_core-banking-prototype-laravel\batch_processing_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: batch_processing_story_processado
+Descrição: Não possui
+Total de cenários: 10
+
+CENÁRIOS IDENTIFICADOS:
+1. End-of-day interest calculation batch
+   Steps: 7
+   - Given 1000 active accounts exist
+   - And the daily interest rate is 0.01%
+   - When I execute the interest calculation batch
+   - Then interest should be calculated for all eligible accounts
+   - And interest should be credited to account balances
+   - And a batch summary report should be generated
+   - And the operation should complete within 5 minutes
+2. Bulk account closure processing
+   Steps: 6
+   - Given a list of 50 dormant accounts to close
+   - When I execute the account closure batch
+   - Then each account should be processed individually
+   - And balances should be transferred to designated accounts
+   - And accounts should be marked as closed
+   - And compliance notifications should be sent
+3. Batch processing with partial failures
+   Steps: 7
+   - Given a batch operation to update 100 account limits
+   - And 10 accounts have validation errors
+   - When the batch is executed
+   - Then 90 accounts should be updated successfully
+   - And 10 accounts should fail with specific error messages
+   - And successful operations should remain committed
+   - And failed operations should be logged for retry
+4. Batch operation compensation on failure
+   Steps: 7
+   - Given a batch operation updates account statuses
+   - And the operation fails halfway through
+   - When compensation is triggered
+   - Then all completed updates should be reversed
+   - And accounts should return to original state
+   - And compensation audit trail should be recorded
+   - And administrators should be notified
+5. Scheduled regulatory reporting batch
+   Steps: 6
+   - Given end-of-month reporting is scheduled
+   - When the batch reporting job executes
+   - Then CTR reports should be generated for large transactions
+   - And KYC compliance reports should be compiled
+   - And AML monitoring reports should be created
+   - And all reports should be stored securely
+6. Batch operation monitoring and status
+   Steps: 3
+   - Given a long-running batch operation is in progress
+   - When I check the batch status
+   - Then I should see:
+7. Concurrent batch operation management
+   Steps: 6
+   - Given multiple batch operations are queued
+   - When the batch processor starts
+   - Then operations should be executed in priority order
+   - And critical operations should not be blocked
+   - And resource limits should be respected
+   - And conflicts should be detected and avoided
+8. Batch operation rollback capability
+   Steps: 6
+   - Given a completed batch operation needs to be undone
+   - When I request a batch rollback
+   - Then the system should analyze the impact
+   - And prompt for confirmation of affected records
+   - And execute compensation for all batch items
+   - And verify the rollback was successful
+9. Performance optimization for large batches
+   Steps: 6
+   - Given a batch operation needs to process 10000 records
+   - When the batch is configured for high performance
+   - Then records should be processed in parallel chunks
+   - And database connections should be optimized
+   - And memory usage should remain within limits
+   - And progress should be persisted for resumability
+10. Batch operation audit and compliance
+   Steps: 6
+   - Given batch operations handle sensitive financial data
+   - When any batch operation completes
+   - Then a complete audit log should be created
+   - And include details of all modified records
+   - And maintain data integrity checksums
+   - And be available for regulatory inspection

@@ -1,0 +1,19 @@
+Scenario 6: 0057-TRAN-024 when a party received maker fee f in previous epoch, and transfer.feeDiscountDecayFraction = 0.9, then in 3 epochs the fee-free discount amount would be c = 0.9^3 x f, when a party makes a transfer and the theoretical fee the party should pay is f1, and f1 <= 0.729 x f, then no amount is paid for transfer
+  Tags: ['@transfer', '@fee-discount']
+  Given  the parties have the following transfer fee discounts:
+  When  the network moves ahead "1" epochs
+  Then  the parties have the following transfer fee discounts:
+  Given  the parties have the following transfer fee discounts:
+  When  the network moves ahead "1" epochs
+  Then  the parties have the following transfer fee discounts:
+  Given  the parties have the following transfer fee discounts:
+  When  the network moves ahead "1" epochs
+  Then  the parties have the following transfer fee discounts:
+  Given  the parties submit the following one off transfers:
+  And  time is updated to "2021-08-26T00:00:10Z"
+  When  the parties have the following transfer fee discounts:
+  Then  the following transfers should happen:
+  Given  the parties submit the following one off transfers:
+  When  the parties have the following transfer fee discounts:
+  Then  the following transfers should happen:
+

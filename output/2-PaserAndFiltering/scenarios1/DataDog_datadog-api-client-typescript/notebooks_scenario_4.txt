@@ -1,0 +1,7 @@
+Scenario 4: Delete a notebook returns "Not Found" response
+  Tags: ['@team:DataDog/notebooks']
+  Given  new "DeleteNotebook" request
+  And  request contains "notebook_id" parameter with value 123456
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

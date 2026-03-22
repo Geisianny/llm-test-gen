@@ -1,0 +1,11 @@
+Feature: Compilation tests
+Description: In order to verify everything is working
+  And all needed packages are installed
+  And the OERPScenario's settings are well done
+  I want to launch a test scenario
+Tags: ['@compile']
+
+Scenario 1: Compile Test
+  Given  Build is OK
+  Given  I have file "Rakefile"
+

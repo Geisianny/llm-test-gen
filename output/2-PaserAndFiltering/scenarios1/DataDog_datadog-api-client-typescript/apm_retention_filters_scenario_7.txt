@@ -1,0 +1,8 @@
+Scenario 7: Delete a retention filter returns "OK" response
+  Tags: ['@team:DataDog/apm-trace-intake']
+  Given  there is a valid "retention_filter" in the system
+  And  new "DeleteApmRetentionFilter" request
+  And  request contains "filter_id" parameter from "retention_filter.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+

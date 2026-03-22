@@ -1,0 +1,14 @@
+Scenario 1: Send emails
+  Given  the follow customers exist:
+  And  the following payment details:
+  And  the following customers have cards that will expire in 30 days:
+  And  the following customers have cards that will expired last month:
+  And  the following subscriptions exist:
+  And  there are expiring card process for "customer.one@example.org" for card "0653" has sent the first email
+  And  there are expiring card process for "customer.three@example.org" for card "9434" has sent the first email
+  And  there are expiring card process for "customer.four@example.org" for card "4949" has sent the first email
+  When  the background task for day before next charge for expiring cards is ran
+  Then  the process for expired card for "customer.one@example.org" will be that a day before valid email was sent
+  Then  the process for expired card for "customer.three@example.org" will be that a day before valid email was not sent
+  Then  the process for expired card for "customer.four@example.org" will be that a day before no longer valid email was sent
+

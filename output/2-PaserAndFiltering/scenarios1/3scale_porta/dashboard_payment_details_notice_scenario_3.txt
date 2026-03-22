@@ -1,0 +1,18 @@
+Scenario 3: On paid plan with trial period
+  Given  provider "foo.3scale.localhost" is charging
+  And  the following application plan:
+  When  the current domain is foo.3scale.localhost
+  When  I go to the sign up page for the "Pro" plan
+  And  I fill in all required signup fields as "bob"
+  And  I press "Sign up"
+  When  user "bob" activates himself
+  And  buyer "bob" is approved
+  And  I log in as "bob" on foo.3scale.localhost
+  And  I go to the dashboard
+  Then  I should not see "Payment details required"
+  And  I should see "Trial period"
+  And  I should see "30 days remaining"
+  When  12 days pass
+  And  I go to the dashboard
+  Then  I should see "18 days remaining"
+

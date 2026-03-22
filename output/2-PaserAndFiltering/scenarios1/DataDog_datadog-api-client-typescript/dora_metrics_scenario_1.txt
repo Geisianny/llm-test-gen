@@ -1,0 +1,8 @@
+Scenario 1: Delete a deployment event returns "Accepted" response
+  Tags: ['@skip', '@team:DataDog/ci-app-backend']
+  Given  new "DeleteDORADeployment" request
+  And  a valid "appKeyAuth" key in the system
+  And  request contains "deployment_id" parameter with value "NO_VALUE"
+  When  the request is sent
+  Then  the response status is 202 Accepted
+

@@ -1,0 +1,181 @@
+Feature: Task recurrence rules
+
+Scenario 1: Create recurrence rule (single task)
+  Given  the fixtures files are loaded:
+  And  the user "bob" has role "ROLE_ADMIN"
+  And  the user "bob" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "POST" request to "/api/recurrence_rules" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 2: Create recurrence rule (multiple tasks)
+  Given  the fixtures files are loaded:
+  And  the user "bob" has role "ROLE_ADMIN"
+  And  the user "bob" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "POST" request to "/api/recurrence_rules" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 3: Create recurrence rule (arbitrary price)
+  Given  the fixtures files are loaded:
+  And  the user "bob" has role "ROLE_ADMIN"
+  And  the user "bob" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "POST" request to "/api/recurrence_rules" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 4: Update recurrence rule (single task, new address)
+  Given  the fixtures files are loaded:
+  And  the user "bob" has role "ROLE_ADMIN"
+  And  the user "bob" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "PUT" request to "/api/recurrence_rules/1" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 5: Update recurrence rule address telephone (multiple tasks)
+  Given  the fixtures files are loaded:
+  And  the user "bob" has role "ROLE_ADMIN"
+  And  the user "bob" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "PUT" request to "/api/recurrence_rules/2" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 6: List recurrence rules
+  Given  the fixtures files are loaded:
+  And  the user "bob" has role "ROLE_ADMIN"
+  And  the user "bob" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "GET" request to "/api/recurrence_rules"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 7: Get soft deleted recurrence rules
+  Given  the fixtures files are loaded:
+  And  the user "bob" has role "ROLE_ADMIN"
+  And  the user "bob" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "GET" request to "/api/recurrence_rules/3"
+  Then  the response status code should be 404
+
+Scenario 8: Delete recurrence rules
+  Given  the fixtures files are loaded:
+  And  the user "bob" has role "ROLE_ADMIN"
+  And  the user "bob" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "DELETE" request to "/api/recurrence_rules/2"
+  Then  the response status code should be 204
+
+Scenario 9: Apply recurrence rule
+  Given  the fixtures files are loaded:
+  And  the user "bob" has role "ROLE_ADMIN"
+  And  the user "bob" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "POST" request to "/api/recurrence_rules/2/between" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 10: Apply recurrence rule creates delivery
+  Given  the fixtures files are loaded:
+  And  the user "bob" has role "ROLE_ADMIN"
+  And  the user "bob" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "POST" request to "/api/recurrence_rules/4/between" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 11: Generate orders based on the recurrence rules with an implicit timeSlot
+  Given  the current time is "2025-04-14 9:00:00"
+  Given  the fixtures files are loaded:
+  And  the user "bob" has role "ROLE_ADMIN"
+  And  the user "bob" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "GET" request to "/api/recurrence_rules/generate_orders?date=2025-04-14"
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should match:
+  Then  the database should contain an order with a total price 699
+
+Scenario 12: Generate orders based on the recurrence rules with a range not belonging to a timeSlot
+  Given  the current time is "2025-04-21 11:00:00"
+  Given  the fixtures files are loaded:
+  And  the user "bob" has role "ROLE_ADMIN"
+  And  the user "bob" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "GET" request to "/api/recurrence_rules/generate_orders?date=2025-04-21"
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should match:
+  Then  the database should contain an order with a total price 199
+
+Scenario 13: Can not generate orders based on the recurrence rules in the past
+  Given  the fixtures files are loaded:
+  And  the user "bob" has role "ROLE_ADMIN"
+  And  the user "bob" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "GET" request to "/api/recurrence_rules/generate_orders?date=2025-04-21"
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 14: Generate orders by-weekly based on the recurrence rules
+  Given  the current time is "2025-04-21 11:00:00"
+  Given  the fixtures files are loaded:
+  And  the user "bob" has role "ROLE_ADMIN"
+  And  the user "bob" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "GET" request to "/api/recurrence_rules/generate_orders?date=2025-04-21"
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should match:
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "GET" request to "/api/recurrence_rules/generate_orders?date=2025-04-28"
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should match:
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "GET" request to "/api/recurrence_rules/generate_orders?date=2025-05-05"
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 15: Dont generate orders based on the disabled recurrence rule
+  Given  the current time is "2025-04-14 9:00:00"
+  Given  the fixtures files are loaded:
+  And  the user "bob" has role "ROLE_ADMIN"
+  And  the user "bob" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "GET" request to "/api/recurrence_rules/generate_orders?date=2025-04-15"
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should match:
+

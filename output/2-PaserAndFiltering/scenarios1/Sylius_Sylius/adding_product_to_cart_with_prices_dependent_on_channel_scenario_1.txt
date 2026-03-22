@@ -1,0 +1,7 @@
+Scenario 1: Buying a product in default currency for browsed channel
+  Tags: ['@api', '@ui']
+  Given  I changed my current channel to "Web-EU"
+  And  I added product "Leprechaun's Gold" to the cart
+  When  I check the details of my cart
+  Then  I should see "Leprechaun's Gold" with unit price "€10.00" in my cart
+

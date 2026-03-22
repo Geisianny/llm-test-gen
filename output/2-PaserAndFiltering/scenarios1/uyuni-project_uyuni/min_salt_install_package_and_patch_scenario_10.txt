@@ -1,0 +1,6 @@
+Scenario 10: Cleanup: remove virgo-dummy package from SLE minion
+  When  I remove package "virgo-dummy" from this "sle_minion" without error control
+  And  I refresh the metadata for "sle_minion"
+  And  I refresh packages list via spacecmd on "sle_minion"
+  And  I wait until refresh package list on "sle_minion" is finished
+

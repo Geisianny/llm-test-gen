@@ -1,0 +1,7 @@
+Scenario 1: Edit my address
+  When  I open my addresses
+  And  I choose "Freiung" to edit
+  And  I change my street to "Blumensteig" and number "19/3"
+  And  I save my address
+  Then  the customer "elon@musk.com" address is country "Austria", "4600", "Wels", "Blumensteig", "19/3"
+

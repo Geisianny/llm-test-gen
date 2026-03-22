@@ -1,0 +1,8 @@
+Scenario 11: Get a single dataset by ID returns "Not Found" response
+  Tags: ['@skip', '@skip-terraform-config', '@team:DataDog/aaa-granular-access']
+  Given  operation "GetDataset" enabled
+  And  new "GetDataset" request
+  And  request contains "dataset_id" parameter with value "00000000-0000-0000-0000-000000000000"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

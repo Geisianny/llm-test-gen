@@ -1,0 +1,5 @@
+Scenario 2: A provider tries to log in using a modern browser
+  Given  they are using a modern browser
+  When  the provider tries to log in
+  Then  the current page is the provider dashboard
+

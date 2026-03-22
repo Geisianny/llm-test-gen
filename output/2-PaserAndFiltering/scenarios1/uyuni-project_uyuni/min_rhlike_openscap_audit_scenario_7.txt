@@ -1,0 +1,10 @@
+Scenario 7: Cleanup: delete audit results from Red Hat-like minion
+  Given  I am on the Systems overview page of this "rhlike_minion"
+  When  I follow "Audit" in the content area
+  And  I follow "OpenSCAP" in the content area
+  And  I follow "List Scans" in the content area
+  And  I click on "Select All"
+  And  I click on "Remove"
+  And  I click on "Confirm"
+  Then  I should see a " SCAP Scan(s) deleted. 0 SCAP Scan(s) retained" text
+

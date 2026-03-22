@@ -1,0 +1,7 @@
+Scenario 2: Promotion's default priority is 0 which puts it at the bottom of the list
+  Tags: ['@api', '@ui']
+  Given  there is a promotion "Flying Pigs"
+  When  I want to browse promotions
+  Then  I should see 4 promotions on the list
+  And  the last promotion on the list should have name "Flying Pigs"
+

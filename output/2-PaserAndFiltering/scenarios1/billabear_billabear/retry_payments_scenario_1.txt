@@ -1,0 +1,5 @@
+Scenario 1: 
+  Given  the following invoices with a payment attempt exist:
+  When  I retry failed payments
+  Then  then the invoice for "customer.two@example.org" will be marked as paid
+

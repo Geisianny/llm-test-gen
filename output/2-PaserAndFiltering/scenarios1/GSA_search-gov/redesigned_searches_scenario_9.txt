@@ -1,0 +1,26 @@
+Scenario 9: News search
+  Tags: ['@javascript', '@a11y']
+  Given  the following BingV7 Affiliates exist:
+  And  affiliate "en.agency.gov" has the following RSS feeds:
+  And  affiliate "es.agency.gov" has the following RSS feeds:
+  And  there are 150 news items for "News-1"
+  And  there are 5 news items for "Noticias-1"
+  When  I am on en.agency.gov's "News-1" news search page
+  And  I fill in "Enter your search term" with "news item"
+  And  I press "Search"
+  Then  the "Enter your search term" field should contain "news item"
+  And  I should see exactly "20" web search results
+  And  I should see a link to "2" with class "usa-pagination__button"
+  And  I should see a link to "Next"
+  When  I follow "Next"
+  And  I should see exactly "20" web search results
+  And  I should see a link to "Previous"
+  And  I should see a link to "1" with class "usa-pagination__button"
+  And  I should see "Next"
+  When  I follow page "5"
+  And  I follow page "7"
+  And  I follow page "8"
+  And  I should see exactly "10" web search results
+  When  I am on es.agency.gov's "Noticias-1" news search page
+  And  I should see exactly "5" web search results
+

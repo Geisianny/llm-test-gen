@@ -1,0 +1,6 @@
+Scenario 4: Hide the toolbar when seeing published pages
+  When  they visit the developer portal in CMS mode
+  And  follow "Published"
+  And  follow "Close the CMS toolbar"
+  Then  there should not be a CMS toolbar
+

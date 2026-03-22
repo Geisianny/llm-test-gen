@@ -1,0 +1,11 @@
+Scenario 4: Viewing provider endorsements
+  Given  a provider "Hotpocket" belonging to "paul@test.com"
+  And  "Hotpocket" has an approved endorsement "Vaguely competent service." "3.days.ago"
+  And  "Hotpocket" has a rejected endorsement "Literally crap. Totally awful. Barely even Ruby." "2.days.ago"
+  And  I am on the homepage
+  When  I follow "home.find_a_provider" translation
+  And  I press "provider.directory.find_providers" translation
+  And  I follow "Hotpocket"
+  Then  I should see "Vaguely competent service"
+  And  I should not see "Literally crap."
+

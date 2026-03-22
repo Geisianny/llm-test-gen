@@ -1,0 +1,5 @@
+Scenario 3: Import the customer groups from Prestashop
+  Tags: ['@customer_groups_prestashop']
+  Given  an instance with absolute id "base_external.prestashop" exists
+  Then  I import the customer groups (1 - Import Customer Groups (Partner Categories))
+

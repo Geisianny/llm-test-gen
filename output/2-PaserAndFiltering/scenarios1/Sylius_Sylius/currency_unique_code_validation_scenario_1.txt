@@ -1,0 +1,8 @@
+Scenario 1: Trying to add currency with taken code
+  Tags: ['@api', '@no-ui']
+  When  I want to add a new currency
+  And  I choose "Euro"
+  And  I try to add it
+  Then  I should be notified that currency code must be unique
+  And  there should still be only one currency with code "EUR"
+

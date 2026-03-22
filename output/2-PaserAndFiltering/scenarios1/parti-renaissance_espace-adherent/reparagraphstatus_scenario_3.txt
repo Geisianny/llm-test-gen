@@ -1,0 +1,6 @@
+Scenario 3: Test UX components : ReParagraphStatus dynamic
+  When  I go to "/test/ux-component/ReParagraphStatus/dynamic"
+  Then  I should see 1 "div.re-paragraph-status--error" element
+  When  I click the "button" selector
+  Then  I should see 1 "div.re-paragraph-status--warning" element
+

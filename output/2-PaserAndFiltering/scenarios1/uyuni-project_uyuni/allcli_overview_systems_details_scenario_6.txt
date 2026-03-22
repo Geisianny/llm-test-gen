@@ -1,0 +1,9 @@
+Scenario 6: Debian-like minion hardware refresh
+  Tags: ['@deblike_minion']
+  Given  I am on the Systems overview page of this "deblike_minion"
+  When  I follow "Hardware"
+  And  I click on "Schedule Hardware Refresh"
+  Then  I should see a "You have successfully scheduled a hardware profile refresh" text
+  When  I wait until event "Hardware List Refresh scheduled" is completed
+  And  I wait until there is no Salt job calling the module "hardware.profileupdate" on "deblike_minion"
+

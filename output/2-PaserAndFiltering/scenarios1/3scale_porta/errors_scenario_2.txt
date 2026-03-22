@@ -1,0 +1,4 @@
+Scenario 2: No errors
+  Given  they go to the integration errors page of product "Pepe API"
+  Then  they should see "No integration errors reported for this service"
+

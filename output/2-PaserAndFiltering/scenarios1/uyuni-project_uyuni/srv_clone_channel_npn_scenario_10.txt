@@ -1,0 +1,11 @@
+Scenario 10: Compare channel packages
+  When  I follow the left menu "Software > Manage > Channels"
+  And  I follow "Fake-Clone-2-RPM-SLES15SP4-Channel"
+  And  I follow "Packages" in the content area
+  And  I follow "Compare"
+  And  I select "Fake-Clone-3-RPM-SLES15SP4-Channel" from "selected_channel"
+  And  I click on "View Packages"
+  Then  I should see a "andromeda-dummy" text
+  And  I should see a "2.0-1.1" link
+  And  I should see a "This channel only" text
+

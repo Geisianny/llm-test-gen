@@ -1,0 +1,7 @@
+Scenario 1: Add a new country category price rule which is valid
+  Given  adding a product price rule named "country-discount"
+  And  the price rule is active
+  And  the price rule has a condition countries with country "Austria"
+  Then  the price rule should be valid for product "Shoe"
+  Then  the price rule should be valid for product "Shoe 2"
+

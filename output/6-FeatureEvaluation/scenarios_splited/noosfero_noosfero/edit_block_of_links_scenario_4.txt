@@ -1,0 +1,6 @@
+Scenario: Edit link block with empty link
+  Given there is a profile owner with a link block on their site
+  When the profile owner edits the link block with the title "Empty Link"
+  And clears the link field
+  Then the system displays an error message
+  And does not save the changes

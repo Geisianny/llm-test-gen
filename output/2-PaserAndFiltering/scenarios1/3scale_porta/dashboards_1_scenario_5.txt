@@ -1,0 +1,6 @@
+Scenario 5: '/p/admin' on provider domain sees provider dashboard
+  Tags: ['@javascript']
+  And  I am logged in as provider "foo.3scale.localhost"
+  When  I request the url "/admin"
+  Then  I should be on the provider dashboard
+

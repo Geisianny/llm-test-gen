@@ -1,0 +1,19 @@
+Feature: Create Slack Webhook
+
+Background: 
+  Given  the following accounts exist:
+
+Scenario 1: 
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  the following slack webhooks exist:
+  When  I disable the "DevChat" slack webhook
+  Then  the "DevChat" slack webhook is not enabled
+  Then  the "Finance" slack webhook is enabled
+
+Scenario 2: 
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  the following slack webhooks exist:
+  When  I enable the "DevChat" slack webhook
+  Then  the "DevChat" slack webhook is enabled
+  Then  the "Finance" slack webhook is enabled
+

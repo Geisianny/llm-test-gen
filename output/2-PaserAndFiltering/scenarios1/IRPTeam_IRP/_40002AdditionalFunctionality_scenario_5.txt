@@ -1,0 +1,18 @@
+Scenario 5: _4000203 add hardware	to the workstation
+  Given  I open hyperlink "e1cib/list/Catalog.Workstations"
+  *  Select workstation
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  *  Check add hardware
+  And  in the table "HardwareList" I click the button named "HardwareListAdd"
+  And  I click choice button of "Hardware" attribute in "HardwareList" table
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I activate "Enable" field in "HardwareList" table
+  And  I finish line editing in "HardwareList" table
+  And  I set "Enable" checkbox in "HardwareList" table
+  And  I finish line editing in "HardwareList" table
+  And  I click "Save" button
+  And  "HardwareList" table became equal
+  And  I close all client application windows
+

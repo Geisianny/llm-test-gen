@@ -1,0 +1,8 @@
+Scenario 8: Conversion limits and compliance
+  Given  daily conversion limits are set to 10000.00 USD equivalent
+  And  I have already converted 8000.00 USD today
+  When  I attempt to convert another 3000.00 USD
+  Then  the conversion should be partially allowed
+  And  I should be informed of remaining daily limit
+  And  excess amount should be queued for next day
+

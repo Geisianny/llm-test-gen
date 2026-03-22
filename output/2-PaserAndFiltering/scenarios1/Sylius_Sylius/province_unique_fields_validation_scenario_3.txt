@@ -1,0 +1,8 @@
+Scenario 3: Trying to add new provinces with duplicated codes
+  Tags: ['@api', '@ui', '@javascript']
+  When  I want to edit this country
+  And  I add the "Scotland" province with "GB-SCO" code
+  And  I add the "Not Scotland" province with "GB-SCO" code
+  And  I save my changes
+  Then  I should be notified that all province codes and names within this country need to be unique
+

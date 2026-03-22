@@ -1,0 +1,9 @@
+Scenario 48: Update case description returns "Bad Request" response
+  Tags: ['@skip', '@team:DataDog/case-management']
+  Given  new "UpdateCaseDescription" request
+  And  there is a valid "case" in the system
+  And  request contains "case_id" parameter from "case.id"
+  And  body with value {"data": {"attributes": {"description": "Seeing some weird memory increase... We shouldn't ignore this"}, "type": "case"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

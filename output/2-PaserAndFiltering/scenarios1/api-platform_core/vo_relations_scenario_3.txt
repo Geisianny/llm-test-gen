@@ -1,0 +1,6 @@
+Scenario 3: Update Value object with writable and non writable property (legacy non-standard PUT)
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "PUT" request to "/vo_dummy_inspections/1" with body:
+  Then  the response status code should be 200
+  And  the JSON should be equal to:
+

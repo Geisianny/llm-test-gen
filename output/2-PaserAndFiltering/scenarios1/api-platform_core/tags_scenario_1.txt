@@ -1,0 +1,8 @@
+Scenario 1: Create some embedded resources
+  Tags: ['@createSchema']
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/relation_embedders" with body:
+  Then  the response status code should be 201
+  And  the header "Cache-Tags" should not exist
+  And  "/relation_embedders,/related_dummies,/third_levels" IRIs should be purged
+

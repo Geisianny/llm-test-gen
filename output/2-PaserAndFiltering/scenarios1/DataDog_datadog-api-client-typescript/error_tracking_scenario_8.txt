@@ -1,0 +1,7 @@
+Scenario 8: Search error tracking issues returns "OK" response
+  Tags: ['@team:DataDog/error-tracking']
+  Given  new "SearchIssues" request
+  And  body with value {"data": {"attributes": {"query": "service:orders-* AND @language:go", "from": 1671612804000, "to": 1671620004000, "track": "trace"}, "type": "search_request"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+

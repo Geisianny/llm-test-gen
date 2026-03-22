@@ -1,0 +1,5 @@
+Scenario 4: Adding a translation to an existing worldwide organisation
+  When  I draft a new worldwide organisation "Test Worldwide Organisation" assigned to world location "United Kingdom"
+  And  I add a Welsh translation of the worldwide organisation "Test Worldwide Organisation" named "Translated Name"
+  Then  I should see the Welsh translated title "Translated Name" for the "Test Worldwide Organisation" worldwide organisation
+

@@ -1,0 +1,6 @@
+Scenario 1: Simple subscription
+  And  the following service plan:
+  And  I go to the service subscription page
+  And  I press "Subscribe"
+  Then  I should see "You have successfully subscribed to a service"
+

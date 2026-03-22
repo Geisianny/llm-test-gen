@@ -1,0 +1,8 @@
+Scenario: Attempt to create a duplicate currency movement type
+  Given there is an administrator logged into the system
+  And there is an existing currency movement type with the name "TRY Partner Terms"
+  When the administrator creates a new currency movement type with the name "TRY Partner Terms"
+  And configures it for the Turkish Lira (TRY) currency
+  And links it to the "European Central Bank" exchange rate source
+  Then the system prevents the creation of the duplicate currency movement type
+  And displays an error message indicating that a currency movement type with the same name already exists

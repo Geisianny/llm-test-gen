@@ -1,0 +1,7 @@
+Scenario 2: I should be able to POST an object using a network path
+  Given  I add "Accept" header equal to "application/ld+json"
+  And  I add "Content-Type" header equal to "application/json"
+  And  I send a "POST" request to "/network_path_relation_dummies" with body:
+  Then  the response status code should be 201
+  And  the JSON should be equal to:
+

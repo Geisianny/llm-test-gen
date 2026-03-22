@@ -1,0 +1,11 @@
+Scenario 7: Trying to add a new administrator with too long first name specified
+  Tags: ['@api', '@ui']
+  When  I want to create a new administrator
+  And  I specify its email as "l.skywalker@gmail.com"
+  And  I specify its name as "Luke"
+  And  I specify its password as "lightsaber"
+  And  I specify its locale as "English (United States)"
+  And  I specify its "first name" as too long string
+  And  I try to add it
+  Then  I should be notified that this "first name" is too long
+

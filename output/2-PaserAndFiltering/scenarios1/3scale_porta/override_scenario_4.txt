@@ -1,0 +1,38 @@
+Scenario Outline 4: Override pages - Example 1
+  Tags: ['@search']
+  Given  provider "foo.3scale.localhost" has "account_plans" visible
+  And  provider "foo.3scale.localhost" has "finance" switch visible
+  And  provider "foo.3scale.localhost" is charging its buyers with braintree
+  And  the following account plan:
+  And  the following application plan:
+  And  a buyer "bob" signed up to application plan "Pro"
+  And  provider "foo.3scale.localhost" has "multiple_services" visible
+  And  provider "foo.3scale.localhost" has "service_plans" visible
+  When  I log in as "bob" on foo.3scale.localhost
+  And  I go to the services list for buyers page
+  Then  I should see "Description Plan"
+  When  builtin page "services/index" of provider "foo.3scale.localhost" has content "EDITED services/index"
+  And  I go to the services list for buyers page
+  Then  I should see "EDITED services/index"
+
+  Examples:
+    | system_name | path | original_content |
+    | services/index | services list for buyers | Description Plan |
+    | user/show | personal details | Username |
+    | messages/inbox/index | inbox | Inbox |
+    | messages/inbox/show | inbox show |  |
+    | messages/outbox/index | outbox | Sent Messages |
+    | messages/outbox/show | outbox show |  |
+    | messages/outbox/new | compose | Compose |
+    | messages/trash/index | trash | Trash |
+    | messages/trash/show | trash show |  |
+    | account/show | account | Account Details |
+    | account/edit | account edit | Account Details |
+    | invitations/index | sent invitations | Invitations |
+    | invitations/new | new invitation | Invitation |
+    | account_plans/index | account plans | You are currently on plan |
+    | accounts/payment_gateways/show | credit card details | Entering Credit Card |
+    | stats/index | buyer stats | Graphs |
+    | search/index | search | Search |
+    | dashboards/show | dashboard | Credentials |
+

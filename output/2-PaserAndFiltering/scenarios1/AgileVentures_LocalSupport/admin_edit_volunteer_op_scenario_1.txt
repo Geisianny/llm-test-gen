@@ -1,0 +1,6 @@
+Scenario 1: 
+  Tags: ['@vcr']
+  Given  I am signed in as a superadmin
+  When  I visit the show page for the volunteer_op titled "Litter Box Scooper"
+  Then  I should see an edit button for "Litter Box Scooper" volunteer opportunity
+

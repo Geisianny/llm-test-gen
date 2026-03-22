@@ -1,0 +1,5 @@
+Scenario 4: System name is optional
+  Given  they go to the product's new application plan admin page
+  When  the form is submitted with:
+  And  they should see "Created application plan Premium"
+

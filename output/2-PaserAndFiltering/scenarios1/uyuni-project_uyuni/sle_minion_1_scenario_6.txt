@@ -1,0 +1,4 @@
+Scenario 6: Reboot the SLES minion to use the new kernel
+  Tags: ['@susemanager']
+  When  I reboot the "sle_minion" host through SSH, waiting until it comes back
+

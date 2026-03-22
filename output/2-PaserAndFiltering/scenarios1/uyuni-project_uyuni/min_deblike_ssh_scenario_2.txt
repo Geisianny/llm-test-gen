@@ -1,0 +1,9 @@
+Scenario 2: Delete the Debian-like minion
+  When  I am on the Systems overview page of this "deblike_minion"
+  And  I follow "Delete System"
+  Then  I should see a "Confirm System Profile Deletion" text
+  When  I click on "Delete Profile"
+  And  I wait until I see "has been deleted" text
+  And  I wait until Salt client is inactive on "deblike_minion"
+  Then  "deblike_minion" should not be registered
+

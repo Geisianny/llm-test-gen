@@ -1,0 +1,13 @@
+Scenario 4: Create a single schedule
+  When  I follow the left menu "Schedule > Maintenance Windows > Schedules"
+  And  I wait for "1" second
+  Then  I should see a "No schedules created" text
+  When  I click on "Create" in element "maintenance-windows"
+  Then  I should see a "Schedule Name" text
+  When  I enter "singleschedule" as "name"
+  And  I choose "SINGLE"
+  And  I click on "Add Calendar"
+  And  I select "singlecalendar" from "calendarSelect"
+  And  I click on "Create Schedule"
+  Then  I should see a "Schedule successfully created" text
+

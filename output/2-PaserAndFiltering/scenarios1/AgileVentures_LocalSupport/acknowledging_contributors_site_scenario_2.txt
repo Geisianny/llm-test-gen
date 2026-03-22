@@ -1,0 +1,10 @@
+Scenario Outline 2: Do-it logo is displayed when doit_volunteer_opportunities flag is enabled - Example 1
+  Given  that the doit_volunteer_opportunities flag is enabled
+  Given  I visit the organisations index page
+  Then  I should see the "Do-it" image linked to "https://do-it.org/"
+
+  Examples:
+    | page |
+    | organisations index |
+    | new organisation |
+

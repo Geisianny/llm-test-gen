@@ -1,0 +1,7 @@
+Scenario: Create new account based on existing account
+  Given the user is logged into LedgerSMB
+  And there is an existing account with specific properties
+  When the user creates a new account based on the existing account
+  And modifies the new account's description to "New Account Based on Existing"
+  Then the system creates the new account
+  And displays the new account with the description "New Account Based on Existing"

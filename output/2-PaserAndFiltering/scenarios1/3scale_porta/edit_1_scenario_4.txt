@@ -1,0 +1,6 @@
+Scenario 4: Can't use the same public path twice
+  Given  the product uses the following backends:
+  Given  they go to the edit backend usage page of "Backend 1" for product "My API"
+  When  the form is submitted with:
+  Then  field "Path" has inline error "This path is already taken. Specify a different path."
+

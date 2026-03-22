@@ -1,0 +1,5 @@
+Scenario 2: List available products
+  Tags: ['@uyuni']
+  When  I execute mgr-sync "list products" with user "admin" and password "admin"
+  Then  I should get "[ ] openSUSE Leap 15.6 x86_64"
+

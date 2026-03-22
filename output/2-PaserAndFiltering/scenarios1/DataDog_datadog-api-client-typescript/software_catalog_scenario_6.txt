@@ -1,0 +1,10 @@
+Scenario 6: Create or update software catalog entity using schema v3 returns "ACCEPTED" response
+  Tags: ['@team:DataDog/service-catalog']
+  Given  new "UpsertCatalogEntity" request
+  And  body with value {"apiVersion": "v3", "datadog": {"codeLocations": [{"paths": []}], "events": [{}], "logs": [{}], "performanceData": {"tags": []}, "pipelines": {"fingerprints": []}}, "integrations": {"opsgenie": {"serviceURL": "https://www.opsgenie.com/service/shopping-cart"}, "pagerduty": {"serviceURL": "https://www.pagerduty.com/service-directory/Pshopping-cart"}}, "kind": "service", "metadata": {"additionalOwners": [], "contacts": [{"contact": "https://slack/", "type": "slack"}], "id": "4b163705-23c0-4573-b2fb-f6cea2163fcb", "inheritFrom": "application:default/myapp", "links": [{"name": "mylink", "type": "link", "url": "https://mylink"}], "name": "service-{{ unique_lower_alnum }}", "tags": ["this:tag", "that:tag"]}, "spec": {"dependsOn": [], "languages": []}}
+  When  the request is sent
+  Then  the response status is 202 ACCEPTED
+  And  the response "data[0].attributes.apiVersion" is equal to "v3"
+  And  the response "data[0].attributes.kind" is equal to "service"
+  And  the response "data[0].attributes.name" is equal to "service-{{ unique_lower_alnum }}"
+

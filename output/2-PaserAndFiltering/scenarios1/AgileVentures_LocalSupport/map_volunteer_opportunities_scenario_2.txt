@@ -1,0 +1,9 @@
+Scenario 2: See map when editing my volunteer opportunity
+  Tags: ['@javascript', '@billy']
+  Given  the following organisations exist:
+  Given  the following users are registered:
+  Given  the following volunteer opportunities exist:
+  And  I am signed in as a charity worker related to "Cats Are Us"
+  And  I visit the edit page for the volunteer_op titled "Litter Box Scooper"
+  Then  the map should show the opportunity titled Litter Box Scooper
+

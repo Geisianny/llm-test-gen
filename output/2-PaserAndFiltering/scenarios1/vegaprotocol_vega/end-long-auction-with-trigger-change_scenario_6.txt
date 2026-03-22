@@ -1,0 +1,8 @@
+Scenario 6: Verify that trigger update in continuous trading works as expected
+  When  the network moves ahead "2" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+  And  the price monitoring named "my-price-monitoring-2":
+  When  the markets are updated:
+  And  the network moves ahead "3" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+

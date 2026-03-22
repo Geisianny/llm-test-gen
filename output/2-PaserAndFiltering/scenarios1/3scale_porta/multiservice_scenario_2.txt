@@ -1,0 +1,9 @@
+Scenario 2: Create new product
+  And  provider "foo.3scale.localhost" has "multiple_services" switch allowed
+  And  service discovery is not enabled
+  When  I am on the provider dashboard
+  And  I follow "Create Product"
+  And  I fill in "Name" with "Less fancy API"
+  And  I press "Create Product"
+  Then  I should see "Less fancy API"
+

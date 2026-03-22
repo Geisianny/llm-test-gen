@@ -1,0 +1,10 @@
+Scenario Outline 5: Navigate to menu "<path>" and open screen "<screen>" - Example 5
+  When  I navigate the menu and select the item at "Accounts Receivable > Add Transaction"
+  Then  I should see the AR transaction entry screen
+
+  Examples:
+    | path | screen |
+    | Accounts Receivable > Add Transaction | AR transaction entry |
+    | Accounts Receivable > Credit Invoice | AR credit invoice entry |
+    | Accounts Receivable > Credit Note | AR note entry |
+

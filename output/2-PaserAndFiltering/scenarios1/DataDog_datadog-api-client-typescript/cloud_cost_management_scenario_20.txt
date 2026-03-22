@@ -1,0 +1,7 @@
+Scenario 20: Delete Custom Costs file returns "Not Found" response
+  Tags: ['@team:DataDog/cloud-cost-management']
+  Given  new "DeleteCustomCostsFile" request
+  And  request contains "file_id" parameter with value "00000000-0000-0000-0000-000000000000"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

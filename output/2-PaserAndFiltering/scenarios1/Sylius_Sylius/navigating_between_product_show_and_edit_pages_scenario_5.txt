@@ -1,0 +1,6 @@
+Scenario 5: Accessing to product show page from configurable product edit page
+  Tags: ['@no-api', '@ui']
+  When  I want to modify the "Iron shield" product
+  And  I go to show page
+  Then  I should be on "Iron shield" product show page
+

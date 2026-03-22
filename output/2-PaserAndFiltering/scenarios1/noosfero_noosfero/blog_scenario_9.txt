@@ -1,0 +1,9 @@
+Scenario 9: change address of blog
+  Given  the following blogs
+  And  I go to joaosilva's control panel
+  And  I follow "Configure Blog"
+  And  I fill in "Address" with "blog-two"
+  And  I press "Save"
+  When  I am on /joaosilva/blog-two
+  Then  I should see "Blog One"
+

@@ -1,0 +1,22 @@
+Scenario 2: A provider with lots of endorsements
+  Given  an "active" provider "Hashrocket"
+  And  "Hashrocket" has a new endorsement "Nice work" "3.days.ago"
+  And  "Hashrocket" has a new endorsement "Very good" "2.days.ago"
+  And  "Hashrocket" has a new endorsement "Super cool" "1.day.ago"
+  And  "Hashrocket" has an approved endorsement "Nonchalent" "4.days.ago"
+  And  "Hashrocket" has an approved endorsement "Awesome" "3.days.ago"
+  And  "Hashrocket" has an approved endorsement "Deadly" "2.days.ago"
+  And  "Hashrocket" has an approved endorsement "OK" "1.day.ago"
+  When  I am on the homepage
+  And  I follow "home.find_a_provider" translation
+  And  I press "provider.directory.find_providers" translation
+  And  I follow "Hashrocket"
+  Then  I should see "provider.more_endorsements" translation
+  When  I follow "more-endorsements"
+  Then  I should not see "Nice work"
+  And  I should not see "Very good"
+  And  I should not see "Nice work"
+  And  I should see "Awesome"
+  And  I should see "Deadly"
+  And  I should see "OK"
+

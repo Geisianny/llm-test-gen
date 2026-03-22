@@ -1,0 +1,137 @@
+Scenario 1: Form validation
+  Tags: ['@wip']
+
+
+
+Scenario Outline 2: Navigation - Example 1
+  Given  they go to the product's application plans admin page
+  When  they follow "Free" within the table
+  Then  the current page is application plan "Free" admin edit page
+
+  Examples:
+    | index plans page | plan |
+    | the product's application plans admin page | application plan "Free" |
+    | product "My API" service plans admin page | service plan "Free" |
+    | the account plans admin page | account plan "Free" |
+
+
+
+Scenario Outline 3: Edit a plan without billing enabled - Example 1
+  Given  they go to application plan "Free" admin edit page
+  And  there is no field "Trial Period (days)"
+  And  there is no field "Setup free"
+  And  there is no field "Cost per month"
+  And  field "System name" is disabled
+  When  the form is submitted with:
+  Then  the current page is the product's application plans admin page
+  And  the table has the following row:
+
+  Examples:
+    | index plans page | plan |
+    | the product's application plans admin page | application plan "Free" |
+    | product "My API" service plans admin page | service plan "Free" |
+    | the account plans admin page | account plan "Free" |
+
+
+
+Scenario Outline 4: Edit a plan with billing enabled - Example 1
+  Given  the provider is charging its buyers
+  And  they go to application plan "Free" admin edit page
+  When  the form is submitted with:
+  Then  the current page is the product's application plans admin page
+  And  the table has the following row:
+
+  Examples:
+    | index plans page | plan |
+    | the product's application plans admin page | application plan "Free" |
+    | product "My API" service plans admin page | service plan "Free" |
+    | the account plans admin page | account plan "Free" |
+
+
+
+Scenario Outline 5: Adding a new plan feature - Example 1
+  Given  they go to application plan "Free" admin edit page
+  When  they follow "New feature"
+  And  the modal is submitted with:
+  Then  they should see a toast alert with text "Feature has been created"
+  And  should see the following table within the features:
+
+  Examples:
+    | plan |
+    | application plan "Free" |
+    | service plan "Free" |
+    | account plan "Free" |
+
+
+
+Scenario Outline 6: Plan with no features - Example 1
+  Given  application plan "Free" does not have any features
+  When  they go to application plan "Free" admin edit page
+  Then  they should see "This plan has no features yet" within the features
+
+  Examples:
+    | plan |
+    | application plan "Free" |
+    | service plan "Free" |
+    | account plan "Free" |
+
+
+
+Scenario Outline 7: Disabling plan features - Example 1
+  Given  application plan "Free" has the following features:
+  And  they go to application plan "Free" admin edit page
+  When  they disable feature "Some Feature"
+  Then  they should see a toast alert with text "Feature has been disabled"
+
+  Examples:
+    | plan |
+    | application plan "Free" |
+    | service plan "Free" |
+    | account plan "Free" |
+
+
+
+Scenario Outline 8: Enabling plan features - Example 1
+  Given  application plan "Free" has the following features:
+  And  they go to application plan "Free" admin edit page
+  When  they enable feature "Some Feature"
+  Then  they should see a toast alert with text "Feature has been enabled"
+
+  Examples:
+    | plan |
+    | application plan "Free" |
+    | service plan "Free" |
+    | account plan "Free" |
+
+
+
+Scenario Outline 9: Editting plan features - Example 1
+  Given  application plan "Free" has the following features:
+  And  they go to application plan "Free" admin edit page
+  When  they follow "Edit" that belongs to feature "Some Feature"
+  And  the modal is submitted with:
+  Then  they should see a toast alert with text "Feature has been updated"
+  And  should see the following table within the features:
+
+  Examples:
+    | plan |
+    | application plan "Free" |
+    | service plan "Free" |
+    | account plan "Free" |
+
+
+
+Scenario Outline 10: Deleting plan features - Example 1
+  Given  application plan "Free" has the following features:
+  And  they go to application plan "Free" admin edit page
+  When  they press "Delete" that belongs to feature "Some Feature"
+  And  confirm the dialog
+  Then  they should see a toast alert with text "Feature has been deleted"
+  And  should not see "Some Features" within the features
+
+  Examples:
+    | plan |
+    | application plan "Free" |
+    | service plan "Free" |
+    | account plan "Free" |
+

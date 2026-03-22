@@ -1,0 +1,6 @@
+Scenario 4: Create a new product with a description and a meta description
+  Given  the site has a product "Shoe"
+  And  the products short description is "It is a simple Shoe"
+  And  the products meta description is "A nice new Blue Shoe"
+  Then  the product should have meta description "A nice new Blue Shoe"
+

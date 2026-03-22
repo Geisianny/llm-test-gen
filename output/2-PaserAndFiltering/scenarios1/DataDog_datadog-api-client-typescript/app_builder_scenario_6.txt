@@ -1,0 +1,10 @@
+Scenario 6: Delete App returns "OK" response
+  Tags: ['@skip-typescript', '@team:DataDog/app-builder-backend']
+  Given  there is a valid "app" in the system
+  And  new "DeleteApp" request
+  And  request contains "app_id" parameter from "app.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.id" has the same value as "app.data.id"
+  And  the response "data.type" is equal to "appDefinitions"
+

@@ -1,0 +1,5 @@
+Scenario 14: Check class of flash notice  - success
+  Given  I sign in as "superadmin@example.com" with password "pppppppp"
+  Then  I should be on the home page
+  And  the "flash_notice" should be "alert-success"
+

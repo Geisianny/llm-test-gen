@@ -1,0 +1,10 @@
+Scenario 6: Trying to add a new promotion without specifying a percentage discount
+  Tags: ['@ui', '@javascript']
+  Given  I want to create a new promotion
+  When  I specify its code as "christmas_sale"
+  And  I name it "Christmas sale"
+  And  I add the "Order percentage discount" action configured without a percentage value
+  And  I try to add it
+  Then  I should be notified that this value should not be blank
+  And  promotion with name "Christmas sale" should not be added
+

@@ -1,0 +1,5 @@
+Scenario 2: Viewing a detailed page with product's slug
+  Tags: ['@api', '@no-ui']
+  When  I view product "T-Shirt banana" using slug
+  Then  I should be redirected to "T-Shirt banana" product
+

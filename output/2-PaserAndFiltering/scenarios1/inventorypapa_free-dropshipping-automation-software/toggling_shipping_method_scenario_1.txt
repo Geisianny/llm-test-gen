@@ -1,0 +1,9 @@
+Scenario 1: Disabling the shipping method
+  Tags: ['@ui', '@api']
+  Given  the shipping method "UPS Carrier" is enabled
+  And  I want to modify this shipping method
+  When  I disable it
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this shipping method should be disabled
+

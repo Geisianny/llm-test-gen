@@ -1,0 +1,5 @@
+Scenario 11: Run Cobbler buildiso with selected profile and without dns entries in the Cobbler buildiso context
+  When  I run Cobbler buildiso for distro "buildisodistro" and profile "orchid" without dns entries
+  And  I check Cobbler buildiso ISO "orchid" with xorriso
+  And  I cleanup xorriso temp files
+

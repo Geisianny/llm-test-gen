@@ -1,0 +1,7 @@
+Scenario 5: GDPR data subject request
+  Given  a user submits a GDPR request
+  When  processing the "right to access" request
+  Then  the system should:
+  And  provide data within 30 days
+  And  log the request for compliance records
+

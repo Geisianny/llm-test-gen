@@ -1,0 +1,8 @@
+Scenario 2: Clearing filters
+  Tags: ['@api', '@ui']
+  When  I browse products from taxon "Guns"
+  And  I search for products with name "Magnum"
+  And  I clear filter
+  Then  I should see the product "44 Magnum"
+  And  I should see the product "Glock 17"
+

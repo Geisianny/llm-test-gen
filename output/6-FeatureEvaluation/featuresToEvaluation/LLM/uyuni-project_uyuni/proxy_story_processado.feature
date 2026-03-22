@@ -1,0 +1,36 @@
+Feature: proxy_story_processado
+
+Scenario: Register containerized proxy with valid details
+    Given the system administrator is logged in
+    And the containerized proxy is not already registered
+    When the administrator registers the containerized proxy with valid details
+    Then the system registers the containerized proxy successfully
+    And the proxy is recognized by the server
+
+Scenario: Attempt to register containerized proxy with invalid details
+    Given the system administrator is logged in
+    And the containerized proxy is not already registered
+    When the administrator registers the containerized proxy with invalid details
+    Then the system denies registration
+    And displays an error message indicating the invalid details
+
+Scenario: Register containerized proxy with duplicate details
+    Given the system administrator is logged in
+    And the containerized proxy is already registered
+    When the administrator registers the containerized proxy with the same details
+    Then the system denies registration
+    And displays an error message indicating that the proxy is already registered
+
+Scenario: Register containerized proxy with missing required fields
+    Given the system administrator is logged in
+    And the containerized proxy is not already registered
+    When the administrator registers the containerized proxy with missing required fields
+    Then the system denies registration
+    And displays an error message indicating the missing required fields
+
+Scenario: Successful registration triggers proxy services activation
+    Given the system administrator is logged in
+    And the containerized proxy is not already registered
+    When the administrator registers the containerized proxy with valid details
+    Then the system activates the essential services for the proxy
+    And the containerized proxy environment is installed and started

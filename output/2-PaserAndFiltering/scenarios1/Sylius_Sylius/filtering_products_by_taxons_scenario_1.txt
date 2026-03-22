@@ -1,0 +1,7 @@
+Scenario 1: Filtering products by taxon
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  Given  I am browsing products
+  When  I filter them by "Pugs" taxon
+  Then  I should see 3 products in the list
+  And  I should not see any product with name "Colorful mug"
+

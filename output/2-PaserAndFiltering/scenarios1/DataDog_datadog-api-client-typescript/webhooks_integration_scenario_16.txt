@@ -1,0 +1,8 @@
+Scenario 16: Update a custom variable returns "Item Not Found" response
+  Tags: ['@generated', '@skip', '@team:Datadog/collaboration-integrations']
+  Given  new "UpdateWebhooksIntegrationCustomVariable" request
+  And  request contains "custom_variable_name" parameter from "REPLACE.ME"
+  And  body with value {"name": "CUSTOM_VARIABLE_NAME", "value": "CUSTOM_VARIABLE_VALUE"}
+  When  the request is sent
+  Then  the response status is 404 Item Not Found
+

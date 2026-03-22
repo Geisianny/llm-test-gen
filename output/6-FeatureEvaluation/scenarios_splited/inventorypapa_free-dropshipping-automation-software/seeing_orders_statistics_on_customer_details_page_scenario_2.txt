@@ -1,0 +1,5 @@
+Scenario: View customer order statistics with no orders
+  Given there is a customer with no orders placed
+  When the administrator views the customer's details page
+  Then the system displays zero as the total number of orders
+  And zero as the total value of all orders

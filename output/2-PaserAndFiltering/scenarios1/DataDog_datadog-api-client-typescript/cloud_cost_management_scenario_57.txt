@@ -1,0 +1,9 @@
+Scenario 57: Update Google Cloud Usage Cost config returns "OK" response
+  Tags: ['@replay-only', '@team:DataDog/cloud-cost-management']
+  Given  new "UpdateCostGCPUsageCostConfig" request
+  And  request contains "cloud_account_id" parameter with value 100
+  And  body with value {"data": {"attributes": {"is_enabled": true}, "type": "gcp_uc_config_patch_request"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.attributes.account_id" is equal to "123456_A123BC_12AB34"
+

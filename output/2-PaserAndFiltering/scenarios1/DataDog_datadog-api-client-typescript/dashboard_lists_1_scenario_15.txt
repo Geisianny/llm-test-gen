@@ -1,0 +1,15 @@
+Scenario 15: Update items of a dashboard list returns "OK" response
+  Tags: ['@team:DataDog/dashboards-backend']
+  Given  there is a valid "dashboard_list" in the system
+  And  there is a valid "dashboard" in the system
+  And  there is a valid "screenboard_dashboard" in the system
+  And  the "dashboard_list" has the "dashboard"
+  And  new "UpdateDashboardListItems" request
+  And  request contains "dashboard_list_id" parameter from "dashboard_list.id"
+  And  body with value {"dashboards": [{"id": "{{ screenboard_dashboard.id }}", "type": "custom_screenboard"}]}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "dashboards[0].id" is equal to "{{ screenboard_dashboard.id }}"
+  And  the response "dashboards[0].type" is equal to "custom_screenboard"
+  And  the response "dashboards" has length 1
+

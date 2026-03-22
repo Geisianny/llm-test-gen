@@ -1,0 +1,7 @@
+Scenario 7: Delete a tag filtering entry returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/aws-integrations']
+  Given  new "DeleteAWSTagFilter" request
+  And  body with value {"account_id": "FAKEAC0FAKEAC2FAKEAC", "namespace": "elb"}
+  When  the request is sent
+  Then  the response status is 200 OK
+

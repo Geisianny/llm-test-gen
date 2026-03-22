@@ -1,0 +1,7 @@
+Scenario 13: Get a webhook integration returns "Item Not Found" response
+  Tags: ['@generated', '@skip', '@team:Datadog/collaboration-integrations']
+  Given  new "GetWebhooksIntegration" request
+  And  request contains "webhook_name" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Item Not Found
+

@@ -1,0 +1,6 @@
+Scenario 9: Run Cobbler buildiso with all profiles and check isolinux config file in the Cobbler buildiso context
+  When  I run Cobbler buildiso for distro "buildisodistro" and all profiles
+  And  I check Cobbler buildiso ISO "profile_all" with xorriso
+  And  I check the Cobbler parameter "nameserver" with value "9.9.9.9" in the isolinux.cfg
+  And  I cleanup xorriso temp files
+

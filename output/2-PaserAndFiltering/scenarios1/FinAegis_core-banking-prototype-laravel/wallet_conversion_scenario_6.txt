@@ -1,0 +1,8 @@
+Scenario 6: Conversion workflow with multiple steps
+  Given  I want to convert USD to JPY via EUR
+  When  I initiate the multi-step conversion
+  Then  USD should be converted to EUR first
+  And  EUR should be converted to JPY second
+  And  each step should be optimized for best rates
+  And  the complete conversion should be atomic
+

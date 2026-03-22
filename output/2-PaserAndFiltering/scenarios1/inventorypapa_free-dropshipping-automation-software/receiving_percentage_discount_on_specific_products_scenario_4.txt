@@ -1,0 +1,10 @@
+Scenario 4: Receiving different discounts on different items
+  Tags: ['@ui', '@api']
+  Given  there is a promotion "Mugs promotion"
+  And  it gives "50%" off on a "PHP Mug" product
+  When  I add product "PHP T-Shirt" to the cart
+  And  I add product "PHP Mug" to the cart
+  Then  product "PHP T-Shirt" price should be decreased by "$20.00"
+  And  product "PHP Mug" price should be decreased by "$10.00"
+  And  my cart total should be "$90.00"
+

@@ -1,0 +1,12 @@
+Scenario 3: Admin edits signup information
+  Then  I should see "Signup info"
+  When  I follow "Edit information"
+  And  I change the contents of "signup_info_content" to "Custom signup info"
+  And  I click save on the editor
+  Then  I should see "Edit information"
+  And  I should see "Custom signup info"
+  When  I log out
+  And  I follow "Log in"
+  And  I follow "Create a new account"
+  Then  I should see "Custom signup info"
+

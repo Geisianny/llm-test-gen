@@ -1,0 +1,6 @@
+Scenario 1: Viewing both values for both options when diagonal variants are available
+  Tags: ['@ui']
+  When  I view product "Extra Cool T-Shirt"
+  Then  I should be able to select the "Yellow" and "Blue" color option values
+  And  I should be able to select the "Small" and "Large" size option values
+

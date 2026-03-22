@@ -1,0 +1,98 @@
+Scenario Outline 1: Opening a product's spec will navigate to Product context - Example 1
+  Given  the product has a Swagger 1.2 spec "Echo API"
+  When  they go to the ActiveDocs page
+  And  follow "Echo API"
+  Then  the current page is the spec's preview page from Product context
+
+  Examples:
+    | swagger version |
+    | Swagger 1.2 |
+    | Swagger 2 |
+    | OAS 3.0 |
+
+
+
+Scenario Outline 2: Opening an unattached spec will navigate to Audience context - Example 1
+  Given  the provider has a Swagger 1.2 spec "Unknown API Spec"
+  When  they go to the ActiveDocs page
+  And  follow "Unknown API Spec"
+  Then  the current page is the spec's preview page from Audience context
+
+  Examples:
+    | swagger version |
+    | Swagger 1.2 |
+    | Swagger 2 |
+    | OAS 3.0 |
+
+
+
+Scenario Outline 3: Hide the spec - Example 1
+  Given  the product has a Swagger 1.2 spec "Echo API"
+  And  the spec is published
+  When  they go to the spec's preview page from Audience context
+  And  follow "Hide"
+  Then  they should see a toast alert with text "Spec Echo API is now hidden"
+  And  there should be a link to "Publish"
+
+  Examples:
+    | swagger version |
+    | Swagger 1.2 |
+    | Swagger 2 |
+    | OAS 3.0 |
+
+
+
+Scenario Outline 4: Publish the spec - Example 1
+  Given  the product has a Swagger 1.2 spec "Echo API"
+  And  the spec is not published
+  When  they go to the spec's preview page from Audience context
+  And  follow "Publish"
+  Then  they should see a toast alert with text "Spec Echo API is now visible"
+  And  there should be a link to "Hide"
+
+  Examples:
+    | swagger version |
+    | Swagger 1.2 |
+    | Swagger 2 |
+    | OAS 3.0 |
+
+
+
+Scenario Outline 5: Delete the spec - Example 1
+  Given  the product has a Swagger 1.2 spec "Echo API"
+  When  they go to the spec's preview page from Audience context
+  And  follow "Delete"
+  And  confirm the dialog
+  Then  the current page is the ActiveDocs page
+  And  they should not see "Echo API"
+
+  Examples:
+    | swagger version |
+    | Swagger 1.2 |
+    | Swagger 2 |
+    | OAS 3.0 |
+
+
+
+Scenario Outline 6: Autocomplete - Example 1
+  Given  the product has a Swagger 1.2 spec "Echo API"
+  When  they go to the spec's preview page from Audience context
+  Then  the swagger autocomplete should work for "user_key" with "user_keys"
+
+  Examples:
+    | swagger version |
+    | Swagger 1.2 |
+    | Swagger 2 |
+
+
+
+Scenario Outline 7: Slashes generated curl command for header values - Example 1
+  Given  the product has a Swagger 1.2 spec "Echo API"
+  When  they go to the spec's preview page from Audience context
+  Then  Swagger 1.2 should escape properly the curl string
+
+  Examples:
+    | swagger version |
+    | Swagger 1.2 |
+    | Swagger 2 |
+

@@ -1,0 +1,4 @@
+Scenario 1: Creating a new draft publication
+  When  I draft a new publication "Standard Beard Lengths"
+  Then  I should see the publication "Standard Beard Lengths" in the list of draft documents
+

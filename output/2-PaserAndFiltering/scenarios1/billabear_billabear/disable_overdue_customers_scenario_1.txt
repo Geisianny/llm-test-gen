@@ -1,0 +1,7 @@
+Scenario 1: 
+  Given  the following invoices exist:
+  When  I run the background task to cancel overdue customers
+  Then  the workflow for the invoice for "customer.two@example.org" will be at "customer_disabled"
+  Then  the customer "customer.one@example.org" is enabled
+  Then  the customer "customer.two@example.org" is disabled
+

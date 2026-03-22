@@ -1,0 +1,8 @@
+Scenario 1: Being redirected to previous filtered page after deleting a product
+  Tags: ['@no-api', '@ui']
+  When  I browse products
+  And  I choose enabled filter
+  And  I filter
+  And  I delete the "FC Barcelona T-Shirt" product on filtered page
+  Then  I should be redirected to the previous page of only enabled products
+

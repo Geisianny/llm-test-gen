@@ -1,0 +1,7 @@
+Scenario 5: Member user with access to both finance and charging
+  Given  an active user has access to admin section finance
+  And  the provider is charging its buyers
+  When  the user logs in
+  And  they are reviewing the charging and gateway billing settings
+  Then  payment gateway can be set
+

@@ -1,0 +1,7 @@
+Scenario 6: Check registration on proxy of SLES 12 SP5 minion
+  Tags: ['@proxy']
+  Given  I am on the Systems overview page of this "proxy"
+  When  I follow "Details" in the content area
+  And  I follow "Proxy" in the content area
+  Then  I should see "sle12sp5_minion" hostname
+

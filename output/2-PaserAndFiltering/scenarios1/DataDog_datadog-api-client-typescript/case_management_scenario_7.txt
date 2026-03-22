@@ -1,0 +1,9 @@
+Scenario 7: Comment case returns "Bad Request" response
+  Tags: ['@team:DataDog/case-management']
+  Given  new "CommentCase" request
+  And  there is a valid "case" in the system
+  And  request contains "case_id" parameter from "case.id"
+  And  body with value {"data": {"attributes": {"comment": ""}, "type": "case"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

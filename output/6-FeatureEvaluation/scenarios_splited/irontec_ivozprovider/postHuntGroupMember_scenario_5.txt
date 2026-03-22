@@ -1,0 +1,7 @@
+Scenario: Retrieve created hunt group members
+  Given there is a hunt group with id "123"
+  And there is a user with id "456"
+  And there is a hunt group member with hunt group id "123" and user id "456"
+  When the client admin sends a GET request to retrieve hunt group members
+  And sets the hunt group id to "123"
+  Then the system returns a list of hunt group members

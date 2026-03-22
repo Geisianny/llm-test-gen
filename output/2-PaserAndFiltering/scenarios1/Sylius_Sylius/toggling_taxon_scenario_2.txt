@@ -1,0 +1,9 @@
+Scenario 2: Enabling a Taxon
+  Tags: ['@api', '@ui']
+  Given  the "T-Shirts" taxon is disabled
+  When  I want to modify the "T-Shirts" taxon
+  And  I enable it
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  it should be enabled
+

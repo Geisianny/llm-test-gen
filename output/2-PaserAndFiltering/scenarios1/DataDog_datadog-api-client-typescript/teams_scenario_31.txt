@@ -1,0 +1,8 @@
+Scenario 31: Link Teams with GitHub Teams returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/aaa-omg']
+  Given  operation "SyncTeams" enabled
+  And  new "SyncTeams" request
+  And  body with value {"data": {"attributes": {"source": "github", "type": "link"}, "type": "team_sync_bulk"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+

@@ -1,0 +1,6 @@
+Scenario 4: Pre-requisite: refresh package list and check old packages installed on SSH minion
+  When  I refresh packages list via spacecmd on "ssh_minion"
+  And  I wait until refresh package list on "ssh_minion" is finished
+  Then  spacecmd should show packages "virgo-dummy-1.0" installed on "ssh_minion"
+  And  I wait until package "andromeda-dummy-2.0-1.1" is removed from "ssh_minion" via spacecmd
+

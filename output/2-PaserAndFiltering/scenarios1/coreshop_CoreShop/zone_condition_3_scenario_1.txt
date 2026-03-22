@@ -1,0 +1,6 @@
+Scenario 1: Add a new zone product specific price rule which is valid
+  Given  adding a product specific price rule to product "Shoe" named "zone-discount"
+  And  the specific price rule is active
+  And  the specific price rule has a condition zones with zone "Europe"
+  Then  the specific price rule should be valid for product "Shoe"
+

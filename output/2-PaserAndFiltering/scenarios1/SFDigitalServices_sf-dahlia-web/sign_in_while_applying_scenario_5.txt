@@ -1,0 +1,11 @@
+Scenario 5: Signing in on the welcome back page with different account details
+  Given  I go to the first page of the "Test Listing" application
+  When  I fill out the Name page as "Alice Walker" with birth date "1/5/1955"
+  And  I sign in as "Alice Walker" with my email pre-filled
+  Then  I should be on the "Name" page of the application
+  And  I should see a form alert that says "Your application details were updated to match your account settings"
+  Then  I hit the Next button "1" time
+  And  I fill out the Contact page with an address, NRHP match, and WorkInSF
+  And  I click the Save and Finish Later button
+  And  I sign out
+

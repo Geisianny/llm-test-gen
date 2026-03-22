@@ -1,0 +1,36 @@
+Feature: Local Resident seeking Support
+Description: As a local resident
+  So that I can get support for a specific malady
+  I want to find contact details for a local service specific to my need
+  Tracker story ID: https://www.pivotaltracker.com/story/show/43946779
+
+Background: organisations have been added to database
+  Given  the following organisations exist:
+
+Scenario 1: Find help with care for elderly
+  Tags: ['@vcr']
+  Given  I visit the organisations index page
+  When  I search for "elderly"
+  Then  the index should contain:
+  And  the index should not contain:
+  And  the search box should contain "elderly"
+
+Scenario 2: Find a bereavement counsellor
+  Given  I visit the organisations index page
+  When  I search for "Bereavement Counselling"
+  And  the index should contain:
+  Then  the index should not contain:
+  Then  I should not see the no results message
+
+Scenario 3: Find friendly no search results message
+  Given  I visit the organisations index page
+  When  I search for "non-existent results"
+  Then  I should see the no results message
+  Given  I visit the home page
+  Then  I should not see the no results message
+
+Scenario 4: See a list of current organisations
+  Given  I visit the organisations index page
+  And  cookies are approved
+  Then  the index should contain:
+

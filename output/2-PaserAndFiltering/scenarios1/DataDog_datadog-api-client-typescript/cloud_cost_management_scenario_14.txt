@@ -1,0 +1,7 @@
+Scenario 14: Delete Cloud Cost Management AWS CUR config returns "Not Found" response
+  Tags: ['@team:DataDog/cloud-cost-management']
+  Given  new "DeleteCostAWSCURConfig" request
+  And  request contains "cloud_account_id" parameter with value 123456
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

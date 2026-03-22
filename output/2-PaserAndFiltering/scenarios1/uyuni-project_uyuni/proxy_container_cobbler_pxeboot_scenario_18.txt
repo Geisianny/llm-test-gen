@@ -1,0 +1,9 @@
+Scenario 18: Cleanup: delete the PXE boot minion
+  When  I navigate to the Systems overview page of this "pxeboot_minion"
+  And  I follow "Delete System"
+  Then  I should see a "Confirm System Profile Deletion" text
+  When  I click on "Delete Profile"
+  And  I wait until I see "has been deleted" text
+  And  I wait until Salt client is inactive on the PXE boot minion
+  Then  "pxeboot_minion" should not be registered
+

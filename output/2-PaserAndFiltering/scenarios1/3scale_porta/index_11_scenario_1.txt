@@ -1,0 +1,6 @@
+Scenario 1: Navigation
+  Given  they go to the the buyer accounts page
+  And  they follow "Bob"
+  And  they follow "0 Invoices"
+  Then  the current page is buyer "Bob" invoices page
+

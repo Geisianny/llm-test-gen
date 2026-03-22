@@ -1,0 +1,7 @@
+Scenario 3: Add a new zone cart price rule which is invalid
+  Given  adding a cart price rule named "zone"
+  And  the cart rule is active
+  And  the cart rule is not a voucher rule
+  And  the cart rule has a condition zones with zone "Asia"
+  Then  the cart rule should be invalid for my cart
+

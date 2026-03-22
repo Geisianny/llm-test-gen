@@ -1,0 +1,11 @@
+Scenario 2: Create a monitor configuration policy returns "OK" response
+  Tags: ['@team:DataDog/monitor-app']
+  Given  new "CreateMonitorConfigPolicy" request
+  And  body with value {"data": {"attributes": {"policy_type": "tag", "policy": {"tag_key": "{{ unique_lower_alnum }}", "tag_key_required": false, "valid_tag_values": ["prod", "staging"]}}, "type": "monitor-config-policy"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.type" is equal to "monitor-config-policy"
+  And  the response "data.attributes.policy_type" is equal to "tag"
+  And  the response "data.attributes.policy.tag_key" is equal to "{{ unique_lower_alnum }}"
+  And  the response "data.attributes.policy.valid_tag_values" is equal to ["prod", "staging"]
+

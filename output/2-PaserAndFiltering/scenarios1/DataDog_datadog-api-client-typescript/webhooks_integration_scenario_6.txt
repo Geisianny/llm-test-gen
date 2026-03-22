@@ -1,0 +1,8 @@
+Scenario 6: Delete a custom variable returns "OK" response
+  Tags: ['@skip-terraform-config', '@team:Datadog/collaboration-integrations']
+  Given  there is a valid "webhook_custom_variable" in the system
+  And  new "DeleteWebhooksIntegrationCustomVariable" request
+  And  request contains "custom_variable_name" parameter from "webhook_custom_variable.name"
+  When  the request is sent
+  Then  the response status is 200 OK
+

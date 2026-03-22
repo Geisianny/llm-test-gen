@@ -1,0 +1,5 @@
+Scenario 3: Verify state of Fake-RPM-SUSE-Channel channel
+  Tags: ['@sle_minion']
+  Then  "orion-dummy-1.1-1.1.x86_64.rpm" package should have been stored
+  And  solver file for "fake-rpm-suse-channel" should reference "orion-dummy-1.1-1.1.x86_64.rpm"
+

@@ -1,0 +1,8 @@
+Scenario 5: Receiving no discount if promotion's rules for the applied coupon are not fulfilled
+  Tags: ['@api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  And  I applied the coupon with code "SANTA2016"
+  When  I check the details of my cart
+  And  my cart total should be "$100.00"
+  And  there should be no discount applied
+

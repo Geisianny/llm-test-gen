@@ -1,0 +1,66 @@
+Feature: Do the Magento initial synchronisations
+Tags: ['@test_magento', '@synchro_magento']
+
+Scenario 1: Synchronize the referential settings (shop, website, views)
+  Tags: ['@referential_magento']
+  Given  an instance with absolute id "base_external.magento" exists
+  Then  I synchronize the referential settings (2 - Synchronize Referential Settings)
+
+Scenario 2: Configure store views
+  Tags: ['@store_views_magento']
+  Given  a store view with code "default" exists
+  Then  I set the store view language on "en_US"
+  And  I save the store view
+
+Scenario 3: Import the customer groups from Magento
+  Tags: ['@customer_groups_magento']
+  Given  an instance with absolute id "base_external.magento" exists
+  Then  I import the customer groups (1 - Import Customer Groups (Partner Categories))
+
+Scenario 4: Import the product categories
+  Tags: ['@product_categories_magento']
+  Given  an instance with absolute id "base_external.magento" exists
+  Then  I import the product categories (2 - Import Product Categories)
+
+Scenario 5: Synchronize the attribute sets, groups, attributes and options
+  Tags: ['@attributes_magento']
+  Given  an instance with absolute id "base_external.magento" exists
+  Then  I import the attribute sets (3 - Import Product Attribute Sets)
+  Then  I import the attribute groups (4 - Import Attribute Groups)
+  Then  I import the attributes (5 - Import Product Attributes)
+
+Scenario 6: Configure shops
+  Tags: ['@shops_magento']
+  Given  a shop with name "Main Website Store" exists
+  Then  I set the warehouse of the shop on "stock.warehouse0"
+  And  I set the price list of the shop on reference "product.list0"
+  And  I set the following attributes on the shop:
+  And  I save the shop
+
+Scenario 7: Import the products from Magento
+  Tags: ['@products_import_magento']
+  When  an instance with absolute id "base_external.magento" exists
+  Then  I set the instance default product category on category with name "Root Catalog"
+  And  I save the instance
+  Then  I import the products (6 - Import Products)
+  And  I import the product images (7 - Import Images)
+  And  I import the product links (8 - Import Product Links)
+
+Scenario 8: Set options for payment type to validate the process
+  Tags: ['@sale_config_magento']
+  Given  I the payment type with the name "Essaie" exists
+  When  I set the following options:
+  And  I set the payment journal on "EUR C"
+  Then  I save the payment type
+
+Scenario 9: Import the sales orders from Magento
+  Tags: ['@sale_import_magento']
+  When  an instance with absolute id "base_external.magento" exists
+  And  a shop with name "Main Website Store" exists
+  Then  I import the sale orders (Import Orders)
+  Then  the sale orders should have been created
+  Then  I should see this sale order order_name open
+
+Scenario 10: Export the sale order status and verify it in magento
+  Tags: ['@sale_statut_magento']
+

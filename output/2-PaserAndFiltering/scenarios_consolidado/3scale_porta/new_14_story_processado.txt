@@ -1,0 +1,68 @@
+Scenario 1: Navigation
+  Given  they go to the developer portal users sso integrations page
+  When  they follow "Red Hat Single Sign-On"
+  Then  the current page is the developer portal new sso integration page for "keycloak"
+
+
+
+Scenario 2: Create RH SSO new integration
+  Given  they go to the developer portal new sso integration page for "keycloak"
+  When  the form is submitted with:
+  Then  they should see a toast alert with text "Authentication provider created"
+  And  the current page is the developer portal edit integration page
+  And  should see "Customize Red Hat Single Sign-On"
+
+
+
+Scenario 3: Create Auth0 new integration
+  Given  they go to the developer portal new sso integration page for "auth0"
+  When  the form is submitted with:
+  Then  they should see a toast alert with text "Authentication provider created"
+  And  the current page is the developer portal edit integration page
+  And  should see "Customize Auth0"
+
+
+
+Scenario 4: Create GitHub new integration
+  Given  they go to the developer portal users sso integrations page
+  And  they follow "GitHub"
+  And  they follow "Edit"
+  When  the form is submitted with:
+  Then  they should see a toast alert with text "Authentication provider updated"
+  And  the current page is the developer portal sso integration page
+
+
+
+Scenario 5: Client Secret is required
+  Given  they go to the developer portal new sso integration page for "keycloak"
+  And  there is a required field "Client Secret"
+  When  the form is submitted with:
+  Then  they should see a toast alert with text "Authentication provider has not been updated"
+  And  field "Client Secret" has inline error "can't be blank"
+
+
+
+Scenario 6: Client is required
+  Given  they go to the developer portal new sso integration page for "keycloak"
+  And  there is a required field "Client"
+  When  the form is submitted with:
+  Then  they should see a toast alert with text "Authentication provider has not been updated"
+  And  field "Client" has inline error "can't be blank"
+
+
+
+Scenario 7: Realm is required
+  Given  they go to the developer portal new sso integration page for "keycloak"
+  And  there is a required field "Realm"
+  When  the form is submitted with:
+  Then  they should see a toast alert with text "Authentication provider has not been updated"
+  And  field "Realm" has inline error "can't be blank"
+
+
+
+Scenario 8: Realm validation
+  Given  they go to the developer portal new sso integration page for "keycloak"
+  When  the form is submitted with:
+  Then  they should see a toast alert with text "Authentication provider has not been updated"
+  And  field "Realm" has inline error "Invalid URL format"
+

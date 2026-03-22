@@ -1,0 +1,16 @@
+Scenario Outline 1: Capping distributed rewards at a multiple of fees paid (0057-TRAN-070)(0057-TRAN-071) - Example 1
+  Given  the network moves ahead "1" epochs
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  Given  the current epoch is "1"
+  And  the parties submit the following recurring transfers:
+  When  the network moves ahead "1" epochs
+  Then  parties should have the following vesting account balances:
+
+  Examples:
+    | cap_reward_fee_multiple | party1_rewards | party2_rewards |
+    | 0.1 | 100 | 200 |
+    | 1 | 1000 | 2000 |
+    | 10 | 3333 | 6666 |
+

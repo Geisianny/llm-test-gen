@@ -1,0 +1,22 @@
+Scenario 3: 003 check margin for GFN order type 0011-MARA-009
+  Tags: ['@Liquidation']
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/DEC21"
+  And  the market data for the market "ETH/DEC21" should be:
+  When  the parties place the following orders with ticks:
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  And  the orders should have the following status:
+  When  the parties place the following orders with ticks:
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/DEC21"
+  And  the orders should have the following status:
+

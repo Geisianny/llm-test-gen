@@ -1,0 +1,7 @@
+Scenario 5: Apply filters based on the 'filter' query parameter with second level arguments
+  When  I send a "GET" request to "/dummies?filter[dummyDate][after]=2015-04-28"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be valid according to the JSON API schema
+  And  the JSON node "data" should have 2 elements
+

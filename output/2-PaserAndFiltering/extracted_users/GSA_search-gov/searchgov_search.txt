@@ -1,0 +1,50 @@
+Feature: SearchGov search
+Description: In order to get government-related search results
+  As a site visitor to a site using the Search.gov search engine
+  I want to be able to search for multiple types of data
+
+Background: 
+  Given  the following SearchGov Affiliates exist:
+
+Scenario 1: Everything search
+  When  I am on epa's search page
+  Then  I should see "Please enter a search term in the box above."
+  And  I should not see "Refine your search"
+
+Scenario 2: Collection search
+  Given  affiliate "epa" has the following document collections:
+  When  I am on epa's "News" docs search page
+  Then  I should see "Please enter a search term in the box above."
+
+Scenario 3: News search
+  Given  affiliate "epa" has the following RSS feeds:
+  And  feed "Press" has the following news items:
+  And  the rss govbox is enabled for the site "epa"
+  When  I am on epa's search page
+  And  I search for "exciting"
+  Then  I should see "exciting news"
+  When  I am on epa's "Press" news search page
+  Then  I should see "Refine your search"
+
+Scenario 4: Display an Alert on search page
+  Given  the following Alert exists:
+  When  I am on epa's search page
+  Then  I should see "New alert for the test aff"
+  Given  the following Alert exists:
+  When  I am on epa's search page
+  Then  I should not see "New alert for the test aff"
+
+Scenario 5: Search with site limits
+  Given  there are results for the "searchgov" drawer
+  When  I am on epa's search page with site limited to "www.epa.gov/news"
+  When  I search for "carbon emissions"
+  Then  I should see "We're including results for carbon emissions from www.epa.gov/news only."
+
+Scenario 6: Video news search
+  Given  affiliate "epa" has the following RSS feeds:
+  And  there are 20 video news items for "usgovernment_channel_id"
+  When  I am on epa's search page
+  And  I search for "video"
+  Then  I should see exactly "1" video govbox search result
+  And  I should see "More videos about video"
+

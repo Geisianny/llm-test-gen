@@ -1,0 +1,6 @@
+Scenario: Successful partnership application submission
+  Given there is a financial institution registered with FinAegis
+  When the financial institution submits a partnership application
+  And provides the required partnership details
+  Then the system accepts the partnership application
+  And sends a confirmation notification to the financial institution

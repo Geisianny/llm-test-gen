@@ -1,0 +1,19 @@
+Scenario 1: Admin adds Dropdown custom field
+  Tags: ['@javascript']
+  When  I follow "+ Add a user field"
+  And  I select "Dropdown" from "field_type"
+  And  I fill in "custom_field[name_attributes][en]" with "House type"
+  And  I fill in "custom_field[name_attributes][fi]" with "Talon tyyppi"
+  Then  I follow "+ Add an option"
+  And  I fill in "selector_label[en]" with "Room"
+  And  I fill in "selector_label[fi]" with "Huone"
+  And  I press "Save option"
+  Then  I follow "+ Add an option"
+  And  I fill in "selector_label[en]" with "Appartment"
+  And  I fill in "selector_label[fi]" with "Asunto"
+  And  I press "Save option"
+  Then  I should see "Appartment" within "#optionsList"
+  And  I press submit
+  And  I wait for 5 seconds
+  Then  I should see "House type" within ".custom-field-title"
+

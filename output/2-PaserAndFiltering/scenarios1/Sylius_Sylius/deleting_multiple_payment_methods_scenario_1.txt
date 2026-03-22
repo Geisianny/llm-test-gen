@@ -1,0 +1,10 @@
+Scenario 1: Deleting multiple payment methods at once
+  Tags: ['@no-api', '@ui', '@mink:chromedriver']
+  When  I browse payment methods
+  And  I check the "Offline" payment method
+  And  I check also the "Bank transfer" payment method
+  And  I delete them
+  Then  I should be notified that they have been successfully deleted
+  And  I should see a single payment method in the list
+  And  I should see the payment method "Cash on Delivery" in the list
+

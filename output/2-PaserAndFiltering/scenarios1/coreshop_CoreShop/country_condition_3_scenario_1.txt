@@ -1,0 +1,6 @@
+Scenario 1: Add a new country product specific price rule which is valid
+  Given  adding a product specific price rule to product "Shoe" named "country-discount"
+  And  the specific price rule is active
+  And  the specific price rule has a condition countries with country "Austria"
+  Then  the specific price rule should be valid for product "Shoe"
+

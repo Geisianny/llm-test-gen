@@ -1,0 +1,8 @@
+Scenario 15: Delete a monitor user template returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/monitor-app']
+  Given  operation "DeleteMonitorUserTemplate" enabled
+  And  new "DeleteMonitorUserTemplate" request
+  And  request contains "template_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 204 OK
+

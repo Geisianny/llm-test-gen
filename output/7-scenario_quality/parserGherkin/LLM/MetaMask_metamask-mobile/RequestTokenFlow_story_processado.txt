@@ -1,0 +1,48 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: RequestTokenFlow_story_processado.feature
+Caminho relativo: MetaMask_metamask-mobile\RequestTokenFlow_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\MetaMask_metamask-mobile\RequestTokenFlow_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: RequestTokenFlow_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Request native token successfully
+   Steps: 4
+   - Given the user has a configured network with native token "ETH"
+   - When the user requests the native token "ETH"
+   - Then the system generates a payment link for "ETH"
+   - And displays a QR code for "ETH"
+2. Request ERC-20 token successfully
+   Steps: 4
+   - Given the user has a configured network with ERC-20 token "Link"
+   - When the user requests the ERC-20 token "Link"
+   - Then the system generates a payment link for "Link"
+   - And displays a QR code for "Link"
+3. Request token with unconfigured network
+   Steps: 4
+   - Given the user does not have a configured network with native token "BNB"
+   - When the user requests the native token "BNB"
+   - Then the system displays a message indicating that the network is not configured
+   - And does not generate a payment link or QR code
+4. Request invalid token
+   Steps: 4
+   - Given the user has a configured network
+   - When the user requests an invalid token "InvalidToken"
+   - Then the system displays a message indicating that the token is invalid
+   - And does not generate a payment link or QR code
+5. Share payment link and QR code
+   Steps: 4
+   - Given the user has generated a payment link and QR code for "ETH"
+   - When the user shares the payment link and QR code
+   - Then the system allows the recipient to access the payment link
+   - And the recipient can send "ETH" to the user's wallet

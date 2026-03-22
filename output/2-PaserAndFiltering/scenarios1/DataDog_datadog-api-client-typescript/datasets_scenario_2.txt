@@ -1,0 +1,9 @@
+Scenario 2: Create a dataset returns "Conflict" response
+  Tags: ['@skip-terraform-config', '@team:DataDog/aaa-granular-access']
+  Given  there is a valid "dataset" in the system
+  And  operation "CreateDataset" enabled
+  And  new "CreateDataset" request
+  And  body with value {"data": {"attributes": {"name": "Security Audit Dataset", "principals": ["role:94172442-be03-11e9-a77a-3b7612558ac1"], "product_filters": [{"filters": ["@application.id:ABCD"], "product": "metrics"}]}, "type": "dataset"}}
+  When  the request is sent
+  Then  the response status is 409 Conflict
+

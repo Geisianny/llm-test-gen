@@ -1,0 +1,18 @@
+Feature: Audience menu
+Description: In order to manage my audience
+  As a provider
+  I want to see a menu that lets me do that
+
+Background: 
+  Given  a provider
+  And  a product "My API"
+  And  the following application plan:
+  And  a buyer "Bob"
+  And  the following application:
+  And  the provider logs in
+
+Scenario 1: Application overview
+  Tags: ['@javascript']
+  When  they go to the application's admin page
+  Then  I should see there is no current API
+

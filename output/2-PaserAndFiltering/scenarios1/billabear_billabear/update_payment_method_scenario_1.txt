@@ -1,0 +1,8 @@
+Scenario 1: Update payment method
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  And  the following payment details:
+  When  I update the subscription "Test Plan" for "customer.one@example.org" to use the Payment method "0444" via API
+  Then  the subscription "Test Plan" for "customer.one@example.org" will have the Payment Method "0444"
+

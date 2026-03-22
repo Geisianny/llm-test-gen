@@ -1,0 +1,12 @@
+Scenario 10: AMM crossed with limit order, AMM pushed to boundary
+  Tags: ['@VAMM']
+  And  the parties place the following orders:
+  Then  the parties submit the following AMM:
+  Then  the AMM pool status should be:
+  When  the parties place the following pegged orders:
+  And  set the following AMM sub account aliases:
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the opening auction period ends for market "ETH/MAR22"
+  Then  the following trades should be executed:
+  And  the market data for the market "ETH/MAR22" should be:
+

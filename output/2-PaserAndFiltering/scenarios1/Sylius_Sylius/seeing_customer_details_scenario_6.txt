@@ -1,0 +1,5 @@
+Scenario 6: Not Seeing information about email verification for not registered customer
+  Tags: ['@api', '@ui']
+  When  I view details of the customer "f.baggins@shire.me"
+  Then  I should not see information about email verification
+

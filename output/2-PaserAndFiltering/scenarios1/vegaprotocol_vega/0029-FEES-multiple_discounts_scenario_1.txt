@@ -1,0 +1,21 @@
+Scenario 1: When in continuous trading, fees discounted correctly when party has non-zero referral and volume discount factors (0029-FEES-032)
+  Given  the parties place the following orders:
+  When  the network moves ahead "2" epochs
+  Then  the referral set stats for code "referral-code-1" at epoch "2" should have a running volume of 2000:
+  And  the party "referee1" has the following taker notional "2000"
+  And  the party "referee1" has the following discount infra factor "0.11"
+  And  the party "referee1" has the following discount liquidity factor "0.12"
+  And  the party "referee1" has the following discount maker factor "0.13"
+  Given  the parties place the following orders:
+  When  the following trades should be executed:
+  Then  the following transfers should happen:
+  Given  the network moves ahead "1" epochs
+  Then  the referral set stats for code "referral-code-1" at epoch "3" should have a running volume of 12000:
+  And  the party "referee1" has the following taker notional "12000"
+  And  the party "referee1" has the following discount infra factor "0.11"
+  And  the party "referee1" has the following discount liquidity factor "0.12"
+  And  the party "referee1" has the following discount maker factor "0.13"
+  Given  the parties place the following orders:
+  When  the following trades should be executed:
+  Then  the following transfers should happen:
+

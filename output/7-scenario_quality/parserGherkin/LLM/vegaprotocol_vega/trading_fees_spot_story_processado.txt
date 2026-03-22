@@ -1,0 +1,51 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: trading_fees_spot_story_processado.feature
+Caminho relativo: vegaprotocol_vega\trading_fees_spot_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\vegaprotocol_vega\trading_fees_spot_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: trading_fees_spot_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Order placement with sufficient balance
+   Steps: 4
+   - Given there is a user with sufficient balance in their general account
+   - When the user places an order on a spot market
+   - Then the system reserves the required assets in the holding account
+   - And the order is accepted
+2. Order placement with insufficient balance
+   Steps: 4
+   - Given there is a user with insufficient balance in their general account
+   - When the user places an order on a spot market
+   - Then the system rejects the order
+   - And displays a message indicating insufficient balance
+3. Trade occurrence with order fulfillment
+   Steps: 5
+   - Given there is a user with an accepted order on a spot market
+   - And there is a matching trade for the order
+   - When the trade is executed
+   - Then the system releases the reserved assets
+   - And updates the user's general balance
+4. Trade occurrence with order cancellation
+   Steps: 5
+   - Given there is a user with an accepted order on a spot market
+   - And there is no matching trade for the order
+   - When the order is cancelled
+   - Then the system releases the reserved assets
+   - And updates the user's general balance
+5. Order cancellation due to impossible fulfillment
+   Steps: 5
+   - Given there is a user with an accepted order on a spot market
+   - And the order becomes impossible to fulfill
+   - When the system automatically cancels the order
+   - Then the system releases the reserved assets
+   - And updates the user's general balance

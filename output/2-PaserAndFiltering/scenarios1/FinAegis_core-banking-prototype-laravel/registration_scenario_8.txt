@@ -1,0 +1,8 @@
+Scenario 8: Starting onboarding process
+  Given  I have just registered
+  And  I see the welcome modal
+  When  I click "Start Setup"
+  Then  I should be directed to the KYC verification page
+  And  I should see "Verify Your Identity"
+  And  I should see "This helps us keep your account secure"
+

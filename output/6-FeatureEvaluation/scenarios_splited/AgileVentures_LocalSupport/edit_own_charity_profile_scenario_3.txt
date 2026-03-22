@@ -1,0 +1,6 @@
+Scenario: Charity worker edits charity contact details
+  Given there is a charity with contact details "Old phone number"
+  And a charity worker is associated with the charity
+  When the charity worker edits the charity contact details to "New phone number"
+  Then the charity's contact details are updated to "New phone number"
+  And the change is reflected on the charity's public page

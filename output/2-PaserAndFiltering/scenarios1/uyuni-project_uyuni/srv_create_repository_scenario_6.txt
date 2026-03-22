@@ -1,0 +1,9 @@
+Scenario 6: Add a test repository for i586
+  When  I follow the left menu "Software > Manage > Repositories"
+  And  I follow "Create Repository"
+  And  I enter "fake-i586-repo" as "label"
+  And  I enter "file:///srv/www/htdocs/pub/TestRepoRpmUpdates/" as "url"
+  And  I uncheck "metadataSigned"
+  And  I click on "Create Repository"
+  Then  I should see a "Repository created successfully" text
+

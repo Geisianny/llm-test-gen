@@ -1,0 +1,7 @@
+Scenario 14: Submit distribution points returns "Bad Request" response
+  Tags: ['@integration-only', '@skip-terraform-config', '@skip-validation', '@team:DataDog/metrics-aggregation']
+  Given  new "SubmitDistributionPoints" request
+  And  body with value {"series": [{"metric": "system.load.1.dist", "points": [[1475317847.0, 1.0]]}]}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

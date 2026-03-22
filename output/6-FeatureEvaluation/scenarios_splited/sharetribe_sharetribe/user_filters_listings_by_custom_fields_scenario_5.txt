@@ -1,0 +1,6 @@
+Scenario: Reset filters
+  Given there are listings with custom fields "Location" and "Category" having values "New York", "Los Angeles" and "Electronics", "Furniture"
+  And the user is on the listings page
+  And has selected "New York" from the "Location" filter and "Electronics" from the "Category" filter
+  When the user resets the filters
+  Then the system displays all listings

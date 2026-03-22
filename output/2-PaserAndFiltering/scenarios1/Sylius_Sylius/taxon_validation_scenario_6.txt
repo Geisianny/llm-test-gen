@@ -1,0 +1,10 @@
+Scenario 6: Trying to add a taxon with non unique slug
+  Tags: ['@api', '@ui']
+  Given  the store classifies its products as "T-Shirts"
+  When  I want to create a new taxon
+  And  I specify its code as "t-shirts-2"
+  And  I name it "T-Shirts" in "English (United States)"
+  And  I set its slug to "t-shirts" in "English (United States)"
+  And  I try to add it
+  Then  I should be notified that taxon slug must be unique
+

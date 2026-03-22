@@ -1,0 +1,8 @@
+Scenario 3: Pre-requisite: refresh package list and check installed packages before action chain test on several systems
+  When  I refresh packages list via spacecmd on "sle_minion"
+  And  I wait until refresh package list on "sle_minion" is finished
+  Then  spacecmd should show packages "andromeda-dummy-1.0" installed on "sle_minion"
+  When  I refresh packages list via spacecmd on "ssh_minion"
+  And  I wait until refresh package list on "ssh_minion" is finished
+  Then  spacecmd should show packages "andromeda-dummy-1.0" installed on "ssh_minion"
+

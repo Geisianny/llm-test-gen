@@ -1,0 +1,12 @@
+Scenario 12: Create a profile via the UI
+  When  I follow the left menu "Systems > Autoinstallation > Profiles"
+  And  I follow "Create Kickstart Profile"
+  When  I enter "fedora_kickstart_profile" as "kickstartLabel"
+  And  I click on "Next"
+  And  I click on "Next"
+  And  I enter "linux" as "rootPassword"
+  And  I enter "linux" as "rootPasswordConfirm"
+  And  I click on "Finish"
+  Then  I should see a "Autoinstallation: fedora_kickstart_profile" text
+  And  I should see a "Autoinstallation Details" link
+

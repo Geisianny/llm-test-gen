@@ -1,0 +1,6 @@
+Scenario: View Policy Group page with contents list
+  Given there is a Policy Group with the title "Climate Change Experts"
+  And the description contains headings "Summary", "Key Experts", and "Methodology"
+  When the citizen views the Policy Group page
+  Then the system displays the title "Climate Change Experts"
+  And displays a contents list with anchor links to "Summary", "Key Experts", and "Methodology"

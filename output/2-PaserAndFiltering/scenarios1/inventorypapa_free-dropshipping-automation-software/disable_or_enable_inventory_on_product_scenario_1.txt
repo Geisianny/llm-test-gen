@@ -1,0 +1,9 @@
+Scenario 1: Disabling inventory for a simple product
+  Tags: ['@ui']
+  Given  the "Dice Brewing" product is tracked by the inventory
+  And  I want to modify the "Dice Brewing" product
+  When  I disable its inventory tracking
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  inventory of this product should not be tracked
+

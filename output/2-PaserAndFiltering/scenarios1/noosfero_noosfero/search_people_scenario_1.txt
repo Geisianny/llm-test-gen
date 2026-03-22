@@ -1,0 +1,5 @@
+Scenario 1: show recent people on index (empty query)
+  When  I go to the search people page
+  Then  I should see "Joao Silva" within "#search-results"
+  And  I should see "Jose Araujo" within "#search-results"
+

@@ -1,0 +1,76 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 19/01/2026 23:13:57
+Arquivo analisado: proxy_story_processado.feature
+Caminho relativo: uyuni-project_uyuni\proxy_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/Originais\uyuni-project_uyuni\proxy_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: proxy_story_processado
+Descrição: Não possui
+Total de cenários: 13
+
+CENÁRIOS IDENTIFICADOS:
+1. Clean up sumaform leftovers on the containerized proxy
+   Steps: 1
+   - When I perform a full salt minion cleanup on "proxy"
+2. Reboot after clean up
+   Steps: 1
+   - When I reboot the "proxy" host through SSH, waiting until it comes back
+3. Log in as admin user
+   Steps: 1
+   - Given I am authorized for the "Admin" section
+4. Bootstrap the proxy host as a salt minion
+   Steps: 9
+   - When I follow the left menu "Systems > Bootstrapping"
+   - Then I should see a "Bootstrap Minions" text
+   - When I enter the hostname of "proxy" as "hostname"
+   - And I enter "22" as "port"
+   - And I enter "root" as "user"
+   - And I enter "linux" as "password"
+   - And I select "1-proxy_key" from "activationKeys"
+   - And I click on "Bootstrap"
+   - And I wait until I see "Bootstrap process initiated." text
+5. Reboot the proxy host
+   Steps: 1
+   - When I reboot the "proxy" host through SSH, waiting until it comes back
+6. Wait until the proxy host appears
+   Steps: 1
+   - When I wait until onboarding is completed for "proxy"
+7. Upgrade mgrpxy tool
+   Steps: 1
+   - When I upgrade "proxy" with the last "mgrpxy" version
+8. Reboot after mgrpxy upgrade
+   Steps: 1
+   - When I reboot the "proxy" minion through the web UI
+9. Generate containerized proxy configuration
+   Steps: 2
+   - When I generate the configuration "/tmp/proxy_container_config.tar.gz" of containerized proxy on the server
+   - And I copy the configuration "/tmp/proxy_container_config.tar.gz" of containerized proxy from the server to the proxy
+10. Set up the containerized proxy service to support Avahi
+   Steps: 1
+   - When I add avahi hosts in containerized proxy configuration
+11. Run a containerized proxy
+   Steps: 1
+   - When I run "mgrpxy install podman /tmp/proxy_container_config.tar.gz" on "proxy"
+12. Wait until containerized proxy service is active
+   Steps: 10
+   - And I wait until "uyuni-proxy-pod" service is active on "proxy"
+   - And I wait until "uyuni-proxy-httpd" service is active on "proxy"
+   - And I wait until "uyuni-proxy-salt-broker" service is active on "proxy"
+   - And I wait until "uyuni-proxy-squid" service is active on "proxy"
+   - And I wait until "uyuni-proxy-ssh" service is active on "proxy"
+   - And I wait until "uyuni-proxy-tftpd" service is active on "proxy"
+   - And I wait until port "8022" is listening on "proxy" container
+   - And I wait until port "80" is listening on "proxy" container
+   - And I wait until port "443" is listening on "proxy" container
+   - And I visit "Proxy" endpoint of this "proxy"
+13. The containerized proxy should be registered automatically
+   Steps: 2
+   - When I follow the left menu "Systems"
+   - And I wait until I see the name of "proxy", refreshing the page

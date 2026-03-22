@@ -1,0 +1,6 @@
+Scenario 7: configure blog link to edit blog
+  Given  the following blogs
+  And  I go to joaosilva's control panel
+  When  I follow "Configure Blog"
+  Then  I should be on edit "Blog One" by joaosilva
+

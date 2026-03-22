@@ -1,0 +1,5 @@
+Scenario 1: Check 3 miles
+  Given  I run the import doit service with a radius of 3 miles
+  Then  there should be 45 doit volunteer ops stored
+  And  all imported volunteer ops have latitude and longitude coordinates
+

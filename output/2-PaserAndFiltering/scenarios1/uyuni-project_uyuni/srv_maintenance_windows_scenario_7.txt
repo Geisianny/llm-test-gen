@@ -1,0 +1,7 @@
+Scenario 7: Assign a single system to the single schedule
+  Given  I am on the Systems overview page of this "sle_minion"
+  When  I follow "Properties" in the content area
+  And  I select "singleschedule" from "maintenance-schedule"
+  And  I click on "Update Properties"
+  Then  I should see a "System properties changed" text
+

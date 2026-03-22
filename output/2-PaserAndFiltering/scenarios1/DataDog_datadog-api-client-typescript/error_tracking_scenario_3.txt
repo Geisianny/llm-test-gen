@@ -1,0 +1,9 @@
+Scenario 3: Get the details of an error tracking issue returns "OK" response
+  Tags: ['@team:DataDog/error-tracking']
+  Given  new "GetIssue" request
+  And  there is a valid "issue" in the system
+  And  request contains "issue_id" parameter from "issue.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.id" is equal to "{{ issue.id }}"
+

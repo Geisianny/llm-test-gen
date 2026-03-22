@@ -1,0 +1,6 @@
+Scenario 1: Change Tax Rate
+  Given  I remember the product Version
+  And  the product has the tax rule group "AT10"
+  Then  I restore the remembered product Version
+  And  the product should have tax rule group "AT20"
+

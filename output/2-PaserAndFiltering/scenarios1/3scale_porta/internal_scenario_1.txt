@@ -1,0 +1,13 @@
+Scenario 1: Successful sign in as a provider on the master domain
+  Tags: ['@wip', '@3D']
+  When  current domain is the admin domain of provider "foo.3scale.localhost"
+  And  I go to the provider login page
+  Then  I should feel secure
+  When  I fill in "Username" with "foo.3scale.localhost"
+  And  I fill in "Password" with "supersecret"
+  And  I press "Sign in"
+  Then  I should be logged in as "foo.3scale.localhost"
+  And  I should be on the provider dashboard
+  When  I follow "Logout"
+  Then  I should see "You have been logged out"
+

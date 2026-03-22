@@ -1,0 +1,11 @@
+Scenario 3: see specific version
+  Tags: ['@selenium']
+  Given  I go to article "Edited Article"
+  Then  I should see "Edited Article" within ".title"
+  And  I should see "This is the second version of the article" within ".article-body"
+  And  I follow "article-options"
+  When  I follow "All versions"
+  And  I follow "Version 1"
+  Then  I should see "Sample Article" within ".title"
+  And  I should see "This is the first version of the article" within ".article-body"
+

@@ -1,0 +1,13 @@
+Scenario 4: Prepaid with setup fee and no trial period
+  Tags: ['@commit-transactions']
+  Given  the date is 1st January 2009
+  And  plan "Fixed" has a trial period of 0 days
+  And  plan "Fixed" has a setup fee of 210
+  And  a buyer "zoidberg" signed up to application plan "Fixed" on 1st January 2009
+  And  I log in as "zoidberg" on foo.3scale.localhost
+  When  the time flies to 4th January 2009
+  And  I navigate to invoices issued for me
+  Then  I see my invoice from "January, 2009" is "Pending"
+  When  I navigate to invoice issued for me in "January, 2009"
+  Then  I should see line items
+

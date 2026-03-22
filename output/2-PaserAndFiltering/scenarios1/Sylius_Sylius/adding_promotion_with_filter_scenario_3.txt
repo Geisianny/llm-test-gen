@@ -1,0 +1,12 @@
+Scenario 3: Adding a promotion with fixed discount for all t-shirts
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  Given  the store classifies its products as "T-Shirts" and "Mugs"
+  When  I want to create a new promotion
+  And  I specify its code as "10_for_all_t_shirts"
+  And  I name it "$10 discount for all T-Shirts!"
+  And  I add the "Item fixed discount" action configured with amount of "$10.00" for "United States" channel
+  And  I specify that this action should be applied to items from "T-Shirts" category for "United States" channel
+  And  I add it
+  Then  I should be notified that it has been successfully created
+  And  the "$10 discount for all T-Shirts!" promotion should appear in the registry
+

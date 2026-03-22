@@ -1,0 +1,13 @@
+Scenario 6: Create a custom channel for Debian-like minions
+  Tags: ['@deblike_minion']
+  When  I follow the left menu "Software > Manage > Channels"
+  And  I follow "Create Channel"
+  And  I enter "Devel-Debian-like-Channel" as "Channel Name"
+  And  I enter "devel-debian-like-channel" as "Channel Label"
+  And  I select "Fake-Base-Channel-Debian-like" from "Parent Channel"
+  And  I select "AMD64 Debian" from "Architecture:"
+  And  I enter "Devel-Debian-like-Channel for development repositories" as "Channel Summary"
+  And  I enter "Channel containing development repositories" as "Channel Description"
+  And  I click on "Create Channel"
+  Then  I should see a "Channel Devel-Debian-like-Channel created." text
+

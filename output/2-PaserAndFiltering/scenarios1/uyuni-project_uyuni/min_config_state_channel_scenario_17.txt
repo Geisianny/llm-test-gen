@@ -1,0 +1,9 @@
+Scenario 17: Cleanup: remove the 3rd state channel and the deployed file
+  When  I follow the left menu "Configuration > Channels"
+  And  I follow first "statechannel3"
+  And  I follow "Delete Channel"
+  Then  I should see a "Are you sure you want to delete this config channel?" text
+  When  I click on "Delete Config Channel"
+  Then  I should see a "Channel 'statechannel3' has been deleted." text
+  When  I remove "/root/statechannel3" from "sle_minion"
+

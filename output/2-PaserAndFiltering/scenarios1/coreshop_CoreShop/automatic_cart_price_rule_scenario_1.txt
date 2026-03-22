@@ -1,0 +1,10 @@
+Scenario 1: Applying an automatic cart rule with fixed discount to the cart
+  Given  the cart rule has a action discount with 20 in currency "EUR" off applied on total
+  When  I add this product to the cart
+  Then  I should be on the cart summary page
+  And  I should be notified that the product has been successfully added
+  And  there should be one item in my cart
+  And  this item should have name "TShirt"
+  And  I should see "TShirt" with unit price "€100.00" in my cart
+  And  my cart's total should be "€80.00"
+

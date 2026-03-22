@@ -1,0 +1,4 @@
+Scenario 6: Enable Ubuntu 24.04 Uyuni client tools for creating bootstrap repositories
+  Tags: ['@uyuni']
+  When  I use spacewalk-common-channel to add channel "ubuntu-2404-pool-amd64-uyuni ubuntu-2404-amd64-main-uyuni ubuntu-2404-amd64-main-updates-uyuni ubuntu-2404-amd64-main-security-uyuni ubuntu-2404-amd64-uyuni-client" with arch "amd64-deb"
+

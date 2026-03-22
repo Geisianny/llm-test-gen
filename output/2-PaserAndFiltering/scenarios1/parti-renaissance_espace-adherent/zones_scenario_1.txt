@@ -1,0 +1,10 @@
+Scenario 1: As a non logged-in user I can filter zones by exact types and partial name
+  When  I send a "GET" request to "/api/zones" with parameters:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+  When  I send a "GET" request to "/api/zones" with parameters:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+

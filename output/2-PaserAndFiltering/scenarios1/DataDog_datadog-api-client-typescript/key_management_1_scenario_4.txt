@@ -1,0 +1,7 @@
+Scenario 4: Create an application key for current user returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/credentials-management']
+  Given  new "CreateCurrentUserApplicationKey" request
+  And  body with value {"data": {"attributes": {"name": "Application Key for managing dashboards", "scopes": ["dashboards_read", "dashboards_write", "dashboards_public_share"]}, "type": "application_keys"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

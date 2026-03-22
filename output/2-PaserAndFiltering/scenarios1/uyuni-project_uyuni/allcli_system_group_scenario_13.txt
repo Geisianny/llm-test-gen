@@ -1,0 +1,15 @@
+Scenario 13: Install a package to systems in the SSM
+  Tags: ['@skip_if_github_validation']
+  When  I follow the left menu "Systems > System Set Manager > Overview"
+  And  I follow "Packages"
+  And  I follow "Install"
+  Then  I should see a "Fake-RPM-SUSE-Channel" text
+  When  I follow "Fake-RPM-SUSE-Channel"
+  Then  I should see a "virgo-dummy-2.0-1.1" text
+  And  I enter "virgo-dummy" as the filtered package name
+  And  I click on the filter button
+  When  I check "virgo-dummy-2.0-1.1" in the list
+  And  I click on "Install Packages"
+  And  I click on "Confirm"
+  Then  I should see a "Package installations are being scheduled, it may take several minutes for this to complete." text
+

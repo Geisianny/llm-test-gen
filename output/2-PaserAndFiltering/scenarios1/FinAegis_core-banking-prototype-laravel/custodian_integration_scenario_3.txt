@@ -1,0 +1,8 @@
+Scenario 3: Bank failover during transaction
+  Given  Deutsche Bank becomes unavailable
+  And  a user initiates a 500.00 EUR transfer
+  When  the system detects the bank failure
+  Then  the transaction should be rerouted to Santander
+  And  the user should be notified of the alternative routing
+  And  the transaction should complete successfully
+

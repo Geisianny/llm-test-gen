@@ -1,0 +1,7 @@
+Scenario 1: Products are sorted by ascending codes by default
+  Tags: ['@ui', '@api']
+  Given  I am browsing products
+  Then  I should see 3 products in the list
+  And  I should see a product with code "L_PUG"
+  But  the first product on the list should have code "B_PUG"
+

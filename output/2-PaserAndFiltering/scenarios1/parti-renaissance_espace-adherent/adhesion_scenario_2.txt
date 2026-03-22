@@ -1,0 +1,78 @@
+Scenario 2: I can become sympathizer
+  Given  the following fixtures are loaded:
+  When  I am on "/adhesion"
+  And  I fill in the following:
+  And  I click the "membership_request_consentDataCollect" element
+  And  I wait 2 seconds
+  And  I press "J'adhère"
+  And  I wait 3 seconds
+  And  I click the "membership_request_civility_0_label" element
+  And  I click the ".autocomplete-fields-toggle" selector
+  And  I click the "membership_request_nationality_select_widget" element
+  And  I click the "#membership_request_nationality_select_widget .re-input-option--selected" selector
+  And  I fill in the following:
+  And  I click the "membership_request_address_country_select_widget" element
+  And  I click the "#membership_request_address_country_select_widget .re-input-option--selected" selector
+  And  I press "Suivant"
+  And  I wait 1 second
+  And  I click the "membership_request_exclusiveMembership_1" element
+  Then  I wait 3 seconds until I see "J’appartiens à un autre parti politique"
+  When  I click the "membership_request_partyMembership_2" element
+  And  I click the "membership_request_isPhysicalPerson" element
+  And  I click the "membership_request_allowNotifications" element
+  And  I click the "#step_3 .re-button" selector
+  And  I wait 3 seconds
+  Then  User "sympathisant@renaissance.code" should have 8 subscription types
+  And  User "sympathisant@renaissance.code" should have zones "borough_75108, district_75-4"
+  And  I should be on "/adhesion/confirmation-email" wait otherwise
+  And  I should not see "Votre paiement a bien été validé !"
+  And  I should see "Confirmer votre adresse email"
+  And  I should see "sympathisant@renaissance.code"
+  And  I should have 1 email "AdhesionCodeValidationMessage" for "sympathisant@renaissance.code" with payload:
+  Given  I am on "/adhesion/confirmation-email"
+  Then  I should see "Confirmer votre adresse email"
+  And  I should see "sympathisant@renaissance.code"
+  When  I fill in the following:
+  And  I press "Valider"
+  Then  I should see "Le code d'activation est erroné."
+  When  I fill activation code from email
+  And  I press "Valider"
+  Then  I should be on "/adhesion/creation-mot-de-passe" wait otherwise
+  And  User "sympathisant@renaissance.code" should be in "Comité du QG" committee
+  And  I should see "Votre adresse email a bien été validée !"
+  And  I should see "Nouveau mot de passe"
+  When  I fill in the following:
+  And  I press "Valider"
+  Then  I should see "Votre mot de passe a bien été sauvegardé !"
+  And  I should not see "En déclarant vos mandats ici, nous préviendrons votre Président d’Assemblée départementale qui pourra, le cas échéant, vous inclure dans les élus de Renaissance."
+  When  I click the "#is-elu" selector
+  Then  I should see "En déclarant vos mandats ici, nous préviendrons votre Président d’Assemblée départementale qui pourra, le cas échéant, vous inclure dans les élus de Renaissance."
+  And  I should see "Député"
+  And  I should see "Sénateur"
+  And  I should see "Maire"
+  When  I click the "#is-elu" selector
+  Then  I should not see "Député"
+  And  I should not see "Sénateur"
+  And  I should not see "Maire"
+  When  I press "Continuer"
+  Then  I should see "Ce champ est requis" 3 times
+  And  I click the "adhesion_further_information_birthdate_day_select_widget" element
+  And  I click the "#adhesion_further_information_birthdate_day_select_widget .re-input-option" selector
+  And  I click the "adhesion_further_information_birthdate_month_select_widget" element
+  And  I click the "#adhesion_further_information_birthdate_month_select_widget .re-input-option" selector
+  And  I click the "adhesion_further_information_birthdate_year_select_widget" element
+  And  I click the "#adhesion_further_information_birthdate_year_select_widget .re-input-option" selector
+  Then  I should see "Vous avez moins de 35 ans"
+  And  I press "Continuer"
+  Then  I should be on "/adhesion/rappel-communication" wait otherwise
+  And  I should see "Attention, vous ne recevrez jamais aucune communication par téléphone de notre part"
+  When  I click the "input[name='adhesion_communication[acceptSms]']" selector
+  And  I press "Continuer"
+  Then  I should see "Vous avez accepté de recevoir des informations du parti par SMS ou téléphone, cependant, vous n'avez pas précisé votre numéro de téléphone."
+  When  I fill in the following:
+  And  I press "Continuer"
+  Then  I should be on "/adhesion/felicitations" wait otherwise
+  And  I should see "Vous êtes désormais sympathisant, bienvenue !"
+  When  I click the ".re-button" selector
+  Then  I should be on "/app" wait otherwise
+

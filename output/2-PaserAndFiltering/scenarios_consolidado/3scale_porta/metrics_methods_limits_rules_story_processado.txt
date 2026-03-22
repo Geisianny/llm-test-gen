@@ -1,0 +1,32 @@
+Scenario 1: Pricing rules are hidden when billing disabled
+  Given  they go to application plan "Free" admin edit page
+  Then  they should see "Metrics, Methods & Limits"
+
+
+
+Scenario 2: Pricing rules are visible when billing enabled
+  Given  the provider is charging its buyers
+  When  they go to application plan "Free" admin edit page
+  Then  they should see "Metrics, Methods, Limits & Pricing Rules"
+
+
+
+Scenario 3: Hiding usage limits
+  Given  application plan "Free" has defined the following usage limit:
+  And  application plan "Free" should have visible usage limits
+  When  they go to application plan "Free" admin edit page
+  And  follow "Make metric Single rolls invisible"
+  And  wait a moment
+  Then  they should see a toast alert with text "Metric 'Single rolls' is now invisible"
+  Then  application plan "Free" should not have visible usage limits
+
+
+
+Scenario 4: Adding usage limits
+  Given  they go to application plan "Free" admin edit page
+  When  they follow "Edit limits of Hits"
+  And  follow "New usage limit"
+  And  the modal is submitted with:
+  Then  they should see a toast alert with text "Usage limit was successfully created"
+  And  should see the following table that belongs to metric "Hits" usage limits:
+

@@ -1,0 +1,10 @@
+Scenario 25: Update datastore returns "Not Found" response
+  Tags: ['@team:DataDog/app-builder-backend']
+  Given  new "UpdateDatastore" request
+  And  request contains "datastore_id" parameter with value "c1eb5bb8-726a-4e59-9a61-ccbb26f95329"
+  And  body with value {"data": {"attributes": {"name": "updated name"}, "type": "datastores", "id": "c1eb5bb8-726a-4e59-9a61-ccbb26f95329"}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+  And  the response "errors" has length 1
+  And  the response "errors[0].title" is equal to "datastore not found"
+

@@ -1,0 +1,8 @@
+Scenario 9: Receiving fixed discount equal to the items total of my cart
+  Tags: ['@api', '@ui']
+  Given  the promotion gives "$20.00" off on every product priced between "$10.00" and "$50.00"
+  And  I added 3 products "PHP Mug" to the cart
+  When  I check the details of my cart
+  Then  its price should be decreased by "$60.00"
+  And  my cart total should be "$0.00"
+

@@ -1,0 +1,8 @@
+Scenario 4: Delete a GCP integration returns "OK" response
+  Tags: ['@team:DataDog/gcp-integrations']
+  Given  there is a valid "gcp_account" in the system
+  And  new "DeleteGCPIntegration" request
+  And  body with value {"client_email": "{{unique_hash}}@example.com", "client_id": "{{ timestamp("now") }}{{ timestamp("now") }}0", "project_id": "datadog-apitest"}
+  When  the request is sent
+  Then  the response status is 200 OK
+

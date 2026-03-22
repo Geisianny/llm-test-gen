@@ -1,0 +1,9 @@
+Scenario Outline 18: Navigate to menu "<path>" and open screen "<screen>" - Example 18
+  When  I navigate the menu and select the item at "Fixed Assets > Assets > Search Assets"
+  Then  I should see the asset search screen
+
+  Examples:
+    | path | screen |
+    | Fixed Assets > Assets > Search Assets | asset search |
+    | General Journal > Chart of Accounts | Chart of Accounts |
+

@@ -1,0 +1,8 @@
+Scenario 12: An admin can't see a secured owner-only property, or non-accessible property based on voter, on objects they don't own
+  When  I add "Accept" header equal to "application/ld+json"
+  And  I add "Authorization" header equal to "Basic YWRtaW46a2l0dGVu"
+  And  I send a "GET" request to "/secured_dummies"
+  Then  the response status code should be 200
+  And  the response should not contain "ownerOnlyProperty"
+  And  the response should not contain "attributeBasedProperty"
+

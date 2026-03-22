@@ -1,0 +1,23 @@
+Feature: Tool tip instructions for fields on edit form
+Description: As a charity owner
+  So that I can fill out the edit form correctly
+  I want to be able to have detailed tool tip instructions for edit form
+
+  Tracker story ID: https://www.pivotaltracker.com/story/show/55198634
+
+Background: 
+  Given  the following organisations exist:
+  Given  the following users are registered:
+  And  cookies are approved
+
+Scenario 1: Display tooltip for each field on the edit form
+  Tags: ['@vcr']
+  Given  I am signed in as a charity worker related to "Harrow Bereavement Counselling"
+  And  I visit the edit page for the organisation named "Harrow Bereavement Counselling"
+  Then  the following tooltips should exist:
+
+Scenario 2: Display tooltip for each checkbox on the edit form
+  Given  I am signed in as a charity worker related to "Harrow Bereavement Counselling"
+  And  I visit the edit page for the organisation named "Harrow Bereavement Counselling"
+  Then  the following tooltips should exist:
+

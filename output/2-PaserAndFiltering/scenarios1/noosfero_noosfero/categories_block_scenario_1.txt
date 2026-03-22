@@ -1,0 +1,8 @@
+Scenario 1: List just general categories
+  Tags: ['@selenium']
+  Given  display ".button-bar"
+  And  I follow "Edit" within ".blocks .categories-block"
+  And  I check "General category"
+  When  I follow "Save"
+  Then  I should see "Wood"
+

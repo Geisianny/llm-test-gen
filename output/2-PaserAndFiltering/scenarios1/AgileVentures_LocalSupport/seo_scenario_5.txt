@@ -1,0 +1,6 @@
+Scenario 5: Meta Title and Description for volunteers edit page
+  Given  I am signed in as a superadmin
+  Then  I visit the edit page for the volunteer_op titled "Helping Volunteer"
+  Then  I should have a page with a title tag set to: "Helping Volunteer | Harrow volunteering"
+  And  it should have a Meta Description
+

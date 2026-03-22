@@ -1,0 +1,13 @@
+Feature: Search-Add
+
+Scenario Outline 1: Search Product - Example 1
+  Given  User launched eshop login page
+  When  User logged in eshop using the valid emailid "Ashish@shop.com" and the valid password "Password$1"
+  And  User searches for the "Apple iPhone 6s Plus"
+  And  User adds "Apple iPhone 6s Plus" product to the cart
+  Then  User should be able to view and add the listed product "Apple iPhone 6s Plus"
+
+  Examples:
+    | EmailID | Password | Product |
+    | Ashish@shop.com | Password$1 | Apple iPhone 6s Plus |
+

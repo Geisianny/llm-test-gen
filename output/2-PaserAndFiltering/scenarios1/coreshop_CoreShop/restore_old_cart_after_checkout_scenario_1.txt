@@ -1,0 +1,12 @@
+Scenario 1: I proceed the checkout and create the Order
+  Given  I am at the address checkout step
+  And  I use the last address as invoice address
+  And  I submit the address step
+  When  I submit the shipping step
+  And  I select the payment provider "Bankwire"
+  When  I submit the payment step
+  When  I accept the checkout terms of service
+  And  I submit the order
+  Given  I see the summary of my cart
+  Then  I should see "TShirt" with unit price "€100.00" in my cart
+

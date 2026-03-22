@@ -1,0 +1,5 @@
+Scenario 5: Create an activation key with a channel for salt-ssh
+  Tags: ['@ssh_minion']
+  When  I create an activation key with id "SUSE-SSH-KEY-x86_64", description "SUSE SSH Test Key x86_64", limit of 20 and contact method "ssh-push"
+  Then  I should get the new activation key "1-SUSE-SSH-KEY-x86_64"
+

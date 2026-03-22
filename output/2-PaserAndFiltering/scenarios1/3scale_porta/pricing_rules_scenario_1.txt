@@ -1,0 +1,6 @@
+Scenario 1: Pricing rules have 4 decimals of precision
+  Given  pricing rules on plan "Rocket":
+  When  I go to plan "Rocket" admin edit page
+  And  I follow "Pricing (1)"
+  Then  I should see "0.0001"
+

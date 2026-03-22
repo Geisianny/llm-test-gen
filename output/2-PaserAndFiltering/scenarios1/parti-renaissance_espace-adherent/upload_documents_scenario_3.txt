@@ -1,0 +1,7 @@
+Scenario 3: As an authenticated user I cannot upload a document without a document
+  Given  I am logged with "referent@en-marche-dev.fr" via OAuth client "JeMengage Web" with scope "jemengage_admin"
+  When  I send a "POST" request to "/api/v3/upload/news?scope=president_departmental_assembly"
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+

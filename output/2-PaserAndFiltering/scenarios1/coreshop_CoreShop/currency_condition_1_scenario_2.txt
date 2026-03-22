@@ -1,0 +1,6 @@
+Scenario 2: Add a new currency payment-provider-rule which is inactive
+  Given  adding a payment-provider-rule named "currencies"
+  And  the payment-provider-rule is inactive
+  And  the payment-provider-rule has a condition currencies with currency "EUR"
+  Then  the payment-provider-rule should be invalid for my cart with payment provider "Bankwire"
+

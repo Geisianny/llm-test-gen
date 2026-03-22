@@ -1,0 +1,6 @@
+Scenario 6: As asker i can't send a booking message without filling required fields
+  Given  I make this new booking request:
+  And  I press "Save"
+  Then  I should be on the page which route name is "dashboard_booking_show_asker"
+  And  I should see "An error has occurred." in the "div.flashes div.alert" element
+

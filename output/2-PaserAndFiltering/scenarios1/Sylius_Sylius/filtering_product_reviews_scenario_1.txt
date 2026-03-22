@@ -1,0 +1,7 @@
+Scenario 1: Browsing accepted reviews
+  Tags: ['@api', '@ui']
+  When  I choose "accepted" as a status filter
+  And  I filter
+  Then  I should see a single product review in the list
+  And  I should see the product review "Awesome" in the list
+

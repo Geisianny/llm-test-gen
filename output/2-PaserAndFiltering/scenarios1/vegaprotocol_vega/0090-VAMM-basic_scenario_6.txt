@@ -1,0 +1,9 @@
+Scenario 6: AMM's cannot be submitted/amended/cancelled when a market is terminated
+  Tags: ['@VAMM']
+  When  the oracles broadcast data signed with "0xCAFECAFE19":
+  Then  the market state should be "STATE_TRADING_TERMINATED" for the market "ETH/MAR22"
+  And  the market data for the market "ETH/MAR22" should be:
+  Then  the parties submit the following AMM:
+  Then  the parties amend the following AMM:
+  Then  the parties cancel the following AMM:
+

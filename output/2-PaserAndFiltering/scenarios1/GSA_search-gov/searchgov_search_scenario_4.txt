@@ -1,0 +1,8 @@
+Scenario 4: Display an Alert on search page
+  Given  the following Alert exists:
+  When  I am on epa's search page
+  Then  I should see "New alert for the test aff"
+  Given  the following Alert exists:
+  When  I am on epa's search page
+  Then  I should not see "New alert for the test aff"
+

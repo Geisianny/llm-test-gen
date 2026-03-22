@@ -1,0 +1,31 @@
+Feature: forum_story_processado
+
+Scenario: Create a single forum
+    Given there is a Noosfero user with a personal profile
+    When the user creates a new forum
+    Then the system creates the forum successfully
+    And the forum is visible on the user's profile
+
+Scenario: Create multiple forums
+    Given there is a Noosfero user with a community profile
+    When the user creates multiple new forums
+    Then the system creates all the forums successfully
+    And all the forums are visible on the community profile
+
+Scenario: Forum creation with invalid input
+    Given there is a Noosfero user with a personal profile
+    When the user creates a new forum with invalid input
+    Then the system denies the creation of the forum
+    And displays a message indicating the input is invalid
+
+Scenario: Delete a forum
+    Given there is a Noosfero user with a personal profile and an existing forum
+    When the user deletes the existing forum
+    Then the system deletes the forum successfully
+    And the forum is no longer visible on the user's profile
+
+Scenario: List existing forums
+    Given there is a Noosfero user with a community profile and multiple existing forums
+    When the user views the list of forums
+    Then the system displays a list of all existing forums
+    And the list includes the titles of all the forums

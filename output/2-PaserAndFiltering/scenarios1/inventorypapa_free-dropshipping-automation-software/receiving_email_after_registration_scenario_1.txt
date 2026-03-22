@@ -1,0 +1,5 @@
+Scenario 1: Receiving a welcoming email after registration
+  Tags: ['@ui', '@email']
+  When  I register with email "ghastly@bespoke.com" and password "suitsarelife"
+  Then  a welcoming email should have been sent to "ghastly@bespoke.com"
+

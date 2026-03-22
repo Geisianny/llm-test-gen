@@ -1,0 +1,6 @@
+Scenario 2: Install yawik with empty configuration
+  Given  I go to the install page
+  And  I press "Install"
+  And  I wait for the ajax response
+  Then  I should see "Value is required"
+

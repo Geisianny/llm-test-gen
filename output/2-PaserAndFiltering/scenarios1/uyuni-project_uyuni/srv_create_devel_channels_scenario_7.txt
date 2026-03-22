@@ -1,0 +1,4 @@
+Scenario 7: Create custom repositories inside the Debian-like custom channel
+  Tags: ['@deblike_minion']
+  When  I prepare the development repositories of "deblike_minion" as part of "devel-debian-like-channel" channel
+

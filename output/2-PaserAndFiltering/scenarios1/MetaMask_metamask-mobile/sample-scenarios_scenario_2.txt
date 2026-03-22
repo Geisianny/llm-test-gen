@@ -1,0 +1,11 @@
+Scenario 2: Test the counter increment functionality
+  Tags: ['@sample-feature', '@counter', '@e2e-automated']
+  Given  I am on the Sample Feature screen
+  And  I can see the Counter section with title "Counter"
+  And  the counter value shows "Value: 0"
+  When  I tap on the "Increment" button
+  Then  the counter value should update to "Value: 1"
+  When  I tap on the "Increment" button again
+  Then  the counter value should update to "Value: 2"
+  And  the counter value should persist over sessions and app restart
+

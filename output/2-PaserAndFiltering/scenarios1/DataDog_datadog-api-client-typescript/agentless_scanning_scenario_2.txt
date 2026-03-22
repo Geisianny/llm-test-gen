@@ -1,0 +1,7 @@
+Scenario 2: Create AWS on demand task returns "Bad Request" response
+  Tags: ['@team:DataDog/k9-agentless']
+  Given  new "CreateAwsOnDemandTask" request
+  And  body with value {"data": {"attributes": {"arn": "invalid-arn"}, "type": "aws_resource"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

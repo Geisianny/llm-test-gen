@@ -1,0 +1,9 @@
+Scenario 4: Display date picker when custom field is a date
+  Tags: ['@selenium']
+  Given  I follow "Add new field"
+  And  I select "Date" from "custom-field-type"
+  And  I fill in "custom-field-name" with "New field"
+  When  I follow "Add new field"
+  And  I click "input.custom-datepicker"
+  Then  The page should contain only 1 ".article-custom-field-wrapper input.hasDatepicker"
+

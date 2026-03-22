@@ -1,0 +1,15 @@
+Scenario 2: Add an exchange rate
+  When  I navigate the menu and select the item at "System > Currency > Edit rates"
+  Then  I should see the Edit rates screen
+  And  I expect the report to contain 2 rows
+  When  I select "EUR" from the drop down "Currency"
+  And  I select "Default rate" from the drop down "Rate type"
+  And  I enter "2020-02-01" into "Valid from"
+  And  I enter "1.2" into "Rate"
+  And  I update the form
+  Then  I should see the Edit rates screen
+  And  I expect the report to contain 3 rows
+  And  I expect the 'Currency' report column to contain 'EUR' for Valid From '2020-02-01'
+  And  I expect the 'Rate Type' report column to contain 'Default rate' for Valid From '2020-02-01'
+  And  I expect the 'Rate' report column to contain '1.2' for Valid From '2020-02-01'
+

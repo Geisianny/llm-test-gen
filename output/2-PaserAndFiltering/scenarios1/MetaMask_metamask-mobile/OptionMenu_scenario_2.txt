@@ -1,0 +1,6 @@
+Scenario 2: The user navigates to the Browser screen
+  When  I navigate to the browser
+  And  I am on Home MetaMask website
+  And  I navigate to "https://app.uniswap.org/"
+  Then  the browser view is on the "https://app.uniswap.org/" website
+

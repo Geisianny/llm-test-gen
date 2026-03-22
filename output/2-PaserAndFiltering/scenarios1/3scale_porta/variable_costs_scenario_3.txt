@@ -1,0 +1,20 @@
+Scenario 3: Change plan with variable costs in both plans in the same month. Provider sees it the day after. Buyer end of month (PREPAID)
+  Tags: ['@javascript']
+  Given  the time is 1st May 2009
+  And  provider "foo.3scale.localhost" is charging its buyers in prepaid mode
+  And  the buyer is signed up to application plan "CheapPlan" on 1st May 2009
+  And  buyer "stallman" makes 1 service transactions with:
+  When  time flies to 15th May 2009
+  When  I log in as "stallman" on foo.3scale.localhost
+  And  the buyer changes to application plan "ExpensivePlan" on 15th May 2009 UTC
+  When  time flies to 16th May 2009
+  And  current domain is the admin domain of provider "foo.3scale.localhost"
+  And  I log in as provider "foo.3scale.localhost"
+  And  I go to the earnings by month page
+  And  follow "May, 2009"
+  Then  I should see "EUR 1.00"
+  Then  buyer "stallman" makes 1 service transactions with:
+  And  time flies to 3rd June 2009
+  Then  I should have an invoice of "10.0 EUR"
+  And  I should have an invoice of "1.0 EUR"
+

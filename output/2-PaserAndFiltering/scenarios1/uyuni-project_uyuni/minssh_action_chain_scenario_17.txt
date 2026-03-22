@@ -1,0 +1,11 @@
+Scenario 17: Verify the action chain list on SSH minion
+  When  I follow the left menu "Schedule > Action Chains"
+  And  I follow "minssh_action_chain"
+  Then  I should see a "1. Apply patch(es) andromeda-dummy-6789 on 1 system" text
+  And  I should see a "2. Remove milkyway-dummy from 1 system" text
+  And  I should see a "3. Install or update virgo-dummy on 1 system" text
+  And  I should see a text like "4. Deploy.*/etc/action-chain.cnf.*to 1 system"
+  And  I should see a "5. Apply Highstate" text
+  And  I should see a "6. Reboot 1 system" text
+  And  I should see a "7. Run a remote command on 1 system" text
+

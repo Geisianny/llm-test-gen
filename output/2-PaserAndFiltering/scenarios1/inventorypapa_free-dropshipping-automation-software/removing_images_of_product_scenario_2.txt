@@ -1,0 +1,10 @@
+Scenario 2: Removing a single image of a configurable product
+  Tags: ['@ui', '@javascript']
+  Given  the store has a "Lamborghini Gallardo Model" configurable product
+  And  this product has an image "lamborghini.jpg" with "thumbnail" type
+  When  I want to modify this product
+  And  I remove an image with "thumbnail" type
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this product should not have any images
+

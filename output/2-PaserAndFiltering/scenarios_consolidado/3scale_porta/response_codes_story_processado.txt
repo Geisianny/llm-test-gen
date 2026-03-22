@@ -1,0 +1,6 @@
+Scenario 1: Provider sees stats
+  Given  the provider has response codes stats data
+  When  on the response codes chart page
+  And  I select today from the stats menu
+  Then  there should be a c3 chart with the following data:
+

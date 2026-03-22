@@ -1,0 +1,8 @@
+Scenario 22: Update datastore item returns "Not Found" response
+  Tags: ['@team:DataDog/app-builder-backend']
+  Given  new "UpdateDatastoreItem" request
+  And  request contains "datastore_id" parameter with value "3cfdd0b8-c490-4969-8d51-69add64a70ea"
+  And  body with value {"data": {"attributes": {"item_changes": {}, "item_key": "itemKey"}, "type": "items"}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

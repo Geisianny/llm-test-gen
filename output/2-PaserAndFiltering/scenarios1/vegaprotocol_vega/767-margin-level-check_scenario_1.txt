@@ -1,0 +1,18 @@
+Scenario 1: Traders place orders meeting the maintenance margin, but not the initial margin requirements, and can close out
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the mark price should be "100" for the market "ETH/DEC19"
+  Then  the parties cancel the following orders:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following account balances:
+  And  the cumulated balance for all accounts should be worth "3102026"
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following account balances:
+  And  the cumulated balance for all accounts should be worth "3102026"
+

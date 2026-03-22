@@ -1,0 +1,823 @@
+{
+  "repository_name": "core",
+  "repository_owner": "api-platform",
+  "repository_url": "https://github.com/api-platform/core",
+  "visibility": "public",
+  "is_private": false,
+  "total_feature_files": 135,
+  "downloaded_files": 135,
+  "download_date": "2025-11-26 00:03:43",
+  "feature_files": [
+    {
+      "name": "deny.feature",
+      "original_path": "features/authorization/deny.feature",
+      "size": 14381,
+      "sha": "8aeac46c7bd44b22484ad220e218ca42106426d5"
+    },
+    {
+      "name": "legacy_deny.feature",
+      "original_path": "features/authorization/legacy_deny.feature",
+      "size": 3803,
+      "sha": "b911022c3bd795c1b1598e4e1fa96974ce03a963"
+    },
+    {
+      "name": "boolean_filter.feature",
+      "original_path": "features/doctrine/boolean_filter.feature",
+      "size": 18103,
+      "sha": "e3332eea7bd094836fbc4901759e2f0a897c1fb8"
+    },
+    {
+      "name": "date_filter.feature",
+      "original_path": "features/doctrine/date_filter.feature",
+      "size": 24318,
+      "sha": "7d8d1a906f8829571bc74da1b31104c57e9d2a56"
+    },
+    {
+      "name": "eager_loading.feature",
+      "original_path": "features/doctrine/eager_loading.feature",
+      "size": 4394,
+      "sha": "539330a1c54d5499b07cc2d0bf70a53c93dbdf5d"
+    },
+    {
+      "name": "exists_filter.feature",
+      "original_path": "features/doctrine/exists_filter.feature",
+      "size": 8068,
+      "sha": "e99f2ff445afce40a46a4692b89ee82ad81458ad"
+    },
+    {
+      "name": "handle_links.feature",
+      "original_path": "features/doctrine/handle_links.feature",
+      "size": 637,
+      "sha": "ebfa7b10e4f8a69af31298c705a0999828be8657"
+    },
+    {
+      "name": "subresource_without_get.feature",
+      "original_path": "features/doctrine/issue5722/subresource_without_get.feature",
+      "size": 348,
+      "sha": "ff54949e92615f95536493591427dd4ddc94be88"
+    },
+    {
+      "name": "standard_put_entity_inheritence.feature",
+      "original_path": "features/doctrine/issue6175/standard_put_entity_inheritence.feature",
+      "size": 794,
+      "sha": "07d0d7e88cb90329df86f00267a9bf57c33d612d"
+    },
+    {
+      "name": "multiple_filter.feature",
+      "original_path": "features/doctrine/multiple_filter.feature",
+      "size": 1638,
+      "sha": "d98e36cf264b79ba9de2c29fcd7f29c8d3e84acc"
+    },
+    {
+      "name": "numeric_filter.feature",
+      "original_path": "features/doctrine/numeric_filter.feature",
+      "size": 7757,
+      "sha": "ec449ae0be77e51d1e18c6d5f1e7897a4c60bd56"
+    },
+    {
+      "name": "order_filter.feature",
+      "original_path": "features/doctrine/order_filter.feature",
+      "size": 26026,
+      "sha": "4d3d5587b97eedf0274f7fcc3fb7430095f7ed9b"
+    },
+    {
+      "name": "range_filter.feature",
+      "original_path": "features/doctrine/range_filter.feature",
+      "size": 18023,
+      "sha": "9a9ec12d0742417da7d319b61a8e1fc0e02fc68e"
+    },
+    {
+      "name": "search_filter.feature",
+      "original_path": "features/doctrine/search_filter.feature",
+      "size": 35275,
+      "sha": "50718f81963f9610fd61db584eb845d3164ae030"
+    },
+    {
+      "name": "separated_resource.feature",
+      "original_path": "features/doctrine/separated_resource.feature",
+      "size": 3976,
+      "sha": "90ba193fd6896ac8949b00e1a76eabc2c42f9dbd"
+    },
+    {
+      "name": "match_filter.feature",
+      "original_path": "features/elasticsearch/match_filter.feature",
+      "size": 15298,
+      "sha": "cf0b70413a9c264d8f9ebeec2e09dc59144b6ddd"
+    },
+    {
+      "name": "order_filter_1.feature",
+      "original_path": "features/elasticsearch/order_filter.feature",
+      "size": 23129,
+      "sha": "2fe4ac1e14bbfecb4a15942cc03f6d054559ad4c"
+    },
+    {
+      "name": "read.feature",
+      "original_path": "features/elasticsearch/read.feature",
+      "size": 28529,
+      "sha": "226acafaf619ac08978948898d99c055356b98b1"
+    },
+    {
+      "name": "term_filter.feature",
+      "original_path": "features/elasticsearch/term_filter.feature",
+      "size": 17786,
+      "sha": "97f72fabd65d12a49c3337359308bd14aa20c9ef"
+    },
+    {
+      "name": "filter_validation.feature",
+      "original_path": "features/filter/filter_validation.feature",
+      "size": 5825,
+      "sha": "5119643e5534be426447007cbe9e2e6c2a8d28fe"
+    },
+    {
+      "name": "property_filter.feature",
+      "original_path": "features/filter/property_filter.feature",
+      "size": 1611,
+      "sha": "3b225793d3f098ff0b813587fb340c1b4469650e"
+    },
+    {
+      "name": "authorization.feature",
+      "original_path": "features/graphql/authorization.feature",
+      "size": 20063,
+      "sha": "f1e918b5242de51ffd1240944f4b3c54c5c98028"
+    },
+    {
+      "name": "collection.feature",
+      "original_path": "features/graphql/collection.feature",
+      "size": 36233,
+      "sha": "afc2dc097ece68af5a4676203136de0c9f5b4008"
+    },
+    {
+      "name": "docs.feature",
+      "original_path": "features/graphql/docs.feature",
+      "size": 416,
+      "sha": "7c54a7343f0612e8f1dfe72ee9798ac0be5b8d92"
+    },
+    {
+      "name": "filters.feature",
+      "original_path": "features/graphql/filters.feature",
+      "size": 9307,
+      "sha": "b5927c6598de2ff83cba0be88e68e3432daa8193"
+    },
+    {
+      "name": "input_output.feature",
+      "original_path": "features/graphql/input_output.feature",
+      "size": 5584,
+      "sha": "aac22be3f3c59d1e7407df9876c7f35ef1a80baa"
+    },
+    {
+      "name": "introspection.feature",
+      "original_path": "features/graphql/introspection.feature",
+      "size": 17263,
+      "sha": "356fc67c5773c54d3034599144b378e9dbf92c1a"
+    },
+    {
+      "name": "mutation.feature",
+      "original_path": "features/graphql/mutation.feature",
+      "size": 41300,
+      "sha": "7df064279c153a6690a054d8a9467e180f2c74bf"
+    },
+    {
+      "name": "query.feature",
+      "original_path": "features/graphql/query.feature",
+      "size": 23335,
+      "sha": "732540a65cb11335741a0a807295c56f1c9af107"
+    },
+    {
+      "name": "schema.feature",
+      "original_path": "features/graphql/schema.feature",
+      "size": 2819,
+      "sha": "86a48cebd13ddfc2e9ebb896c21404ade1485daf"
+    },
+    {
+      "name": "subscription.feature",
+      "original_path": "features/graphql/subscription.feature",
+      "size": 7353,
+      "sha": "75863ec04bf42a72b2cfe6a4adb9a3d5e8ad3ada"
+    },
+    {
+      "name": "type.feature",
+      "original_path": "features/graphql/type.feature",
+      "size": 2586,
+      "sha": "03a072785d56827e797efffd1806c848c6ace16e"
+    },
+    {
+      "name": "absolute_url.feature",
+      "original_path": "features/hal/absolute_url.feature",
+      "size": 3382,
+      "sha": "87be61f0670a67de1b7d08c9d5f1a91fb0187ca4"
+    },
+    {
+      "name": "collection_1.feature",
+      "original_path": "features/hal/collection.feature",
+      "size": 17643,
+      "sha": "8507c886621ead390fb63df8bdd10c260301b53f"
+    },
+    {
+      "name": "collection_uri_template.feature",
+      "original_path": "features/hal/collection_uri_template.feature",
+      "size": 2605,
+      "sha": "a71c2d9329ce346363c2b1b7aed525cfa550562d"
+    },
+    {
+      "name": "hal.feature",
+      "original_path": "features/hal/hal.feature",
+      "size": 6567,
+      "sha": "be469651f581ead16764831b05c9c9fedb136f07"
+    },
+    {
+      "name": "input_output_1.feature",
+      "original_path": "features/hal/input_output.feature",
+      "size": 1434,
+      "sha": "c7acbe989f047434281a99a641b8ee12f5fd9696"
+    },
+    {
+      "name": "item_uri_template.feature",
+      "original_path": "features/hal/item_uri_template.feature",
+      "size": 4147,
+      "sha": "5c949d071617a3d3cae60d760e84f4944ecba1fb"
+    },
+    {
+      "name": "max_depth.feature",
+      "original_path": "features/hal/max_depth.feature",
+      "size": 2561,
+      "sha": "ef1b9601dd747c42512b19d0f11da7f855cc7e00"
+    },
+    {
+      "name": "network_path.feature",
+      "original_path": "features/hal/network_path.feature",
+      "size": 3193,
+      "sha": "264d2a49f829b2062c2e2f306bfa65804baf38a7"
+    },
+    {
+      "name": "non_resource.feature",
+      "original_path": "features/hal/non_resource.feature",
+      "size": 1169,
+      "sha": "320ea122b8318051100cdcb5dfc31e8944c4e07e"
+    },
+    {
+      "name": "problem.feature",
+      "original_path": "features/hal/problem.feature",
+      "size": 1955,
+      "sha": "692cd0aa1055a2a10a9893808785bb2b8bb245a7"
+    },
+    {
+      "name": "table_inheritance.feature",
+      "original_path": "features/hal/table_inheritance.feature",
+      "size": 3858,
+      "sha": "55ef27b7cade88d64d055ce08b5c6ea9e68d0894"
+    },
+    {
+      "name": "headers.feature",
+      "original_path": "features/http_cache/headers.feature",
+      "size": 573,
+      "sha": "7c000f79b056d4f1114627f58acefe36bef980f7"
+    },
+    {
+      "name": "tag_collector_service.feature",
+      "original_path": "features/http_cache/tag_collector_service.feature",
+      "size": 8737,
+      "sha": "ed994aadb7e0ccd4d24440c54b5ef25f588dd0c9"
+    },
+    {
+      "name": "tags.feature",
+      "original_path": "features/http_cache/tags.feature",
+      "size": 5173,
+      "sha": "bcc5ed9370c11b099bb2e82acf9888fed0244677"
+    },
+    {
+      "name": "absolute.feature",
+      "original_path": "features/hydra/absolute.feature",
+      "size": 1122,
+      "sha": "ba26000260ae88fa9512a26dcaceffe9d2212c0e"
+    },
+    {
+      "name": "collection_2.feature",
+      "original_path": "features/hydra/collection.feature",
+      "size": 20759,
+      "sha": "8e9b0c33aba6620f3de8f20a6c3ba4163f0f6e6f"
+    },
+    {
+      "name": "docs_1.feature",
+      "original_path": "features/hydra/docs.feature",
+      "size": 6874,
+      "sha": "de6da5aae8ddf93bbd77697db5d75767fb358ebf"
+    },
+    {
+      "name": "entrypoint.feature",
+      "original_path": "features/hydra/entrypoint.feature",
+      "size": 1906,
+      "sha": "b2b8f731d27794c3deb5951232f56217859bde05"
+    },
+    {
+      "name": "error.feature",
+      "original_path": "features/hydra/error.feature",
+      "size": 6265,
+      "sha": "07fe8210f02db1a16fd0c197f80b0c0c2fb72327"
+    },
+    {
+      "name": "item_uri_template_1.feature",
+      "original_path": "features/hydra/item_uri_template.feature",
+      "size": 8145,
+      "sha": "0c7328323510df32790a28f824aff9fe19e8019d"
+    },
+    {
+      "name": "5926.feature",
+      "original_path": "features/issues/5926.feature",
+      "size": 1676,
+      "sha": "640d8a1bc6c10a4b54fd55a02dee483fd66b56e0"
+    },
+    {
+      "name": "input_output_2.feature",
+      "original_path": "features/json/input_output.feature",
+      "size": 1287,
+      "sha": "2a5a11431628b96e6a4cae183b626379afe4a902"
+    },
+    {
+      "name": "relation.feature",
+      "original_path": "features/json/relation.feature",
+      "size": 6501,
+      "sha": "3455d9d41230f2fe575c7e9faed1e61a5df78331"
+    },
+    {
+      "name": "absolute_url_1.feature",
+      "original_path": "features/jsonapi/absolute_url.feature",
+      "size": 3582,
+      "sha": "45b4444e442a83425013956cd3f9e335aeaca294"
+    },
+    {
+      "name": "collection_attributes.feature",
+      "original_path": "features/jsonapi/collection_attributes.feature",
+      "size": 1077,
+      "sha": "6603d36087d1c2552341885eafa5656f71ab94ee"
+    },
+    {
+      "name": "collection_uri_template_1.feature",
+      "original_path": "features/jsonapi/collection_uri_template.feature",
+      "size": 2197,
+      "sha": "6fa13c0073209d2821877d467e3983129f5bb16e"
+    },
+    {
+      "name": "errors.feature",
+      "original_path": "features/jsonapi/errors.feature",
+      "size": 2084,
+      "sha": "24e99594478572c9da110920e7305a9b5ede2bd0"
+    },
+    {
+      "name": "filtering.feature",
+      "original_path": "features/jsonapi/filtering.feature",
+      "size": 2600,
+      "sha": "ce8f209caa50654f0bb21d72a144cfd9a1107ec3"
+    },
+    {
+      "name": "input_output_3.feature",
+      "original_path": "features/jsonapi/input_output.feature",
+      "size": 1750,
+      "sha": "1fb6771081d1632a149c50a6eacd700ad70a651e"
+    },
+    {
+      "name": "item_uri_template_2.feature",
+      "original_path": "features/jsonapi/item_uri_template.feature",
+      "size": 6525,
+      "sha": "7dbfb223580c7a433481645a688f692251e0ec2e"
+    },
+    {
+      "name": "jsonapi.feature",
+      "original_path": "features/jsonapi/jsonapi.feature",
+      "size": 8127,
+      "sha": "39a5d3920ea214dcf809f8b53affbcee2c439876"
+    },
+    {
+      "name": "network_path_1.feature",
+      "original_path": "features/jsonapi/network_path.feature",
+      "size": 3531,
+      "sha": "810ba0f9612574efeca266a4b49b06747edffef8"
+    },
+    {
+      "name": "non_resource_1.feature",
+      "original_path": "features/jsonapi/non_resource.feature",
+      "size": 3778,
+      "sha": "493e83efcc0cfbf423a949846aa9acb9629c1dd0"
+    },
+    {
+      "name": "ordering.feature",
+      "original_path": "features/jsonapi/ordering.feature",
+      "size": 3910,
+      "sha": "b3d4f687a3c6b627711ef228b90ef53877b9a901"
+    },
+    {
+      "name": "pagination.feature",
+      "original_path": "features/jsonapi/pagination.feature",
+      "size": 2156,
+      "sha": "d07afd8d89c1e8b284b65687a2bea5220c31fc00"
+    },
+    {
+      "name": "related-resouces-inclusion.feature",
+      "original_path": "features/jsonapi/related-resouces-inclusion.feature",
+      "size": 53131,
+      "sha": "2a6663d3fd13f3ffec72c6fa8c26ceb486f66db6"
+    },
+    {
+      "name": "absolute_url_2.feature",
+      "original_path": "features/jsonld/absolute_url.feature",
+      "size": 2917,
+      "sha": "9770e6bbb77dccd5ba01c59796a625b3b25a6738"
+    },
+    {
+      "name": "context.feature",
+      "original_path": "features/jsonld/context.feature",
+      "size": 3547,
+      "sha": "49d76b7e3b634eb9e11872fe32421fff7a87338d"
+    },
+    {
+      "name": "disable_id_generation.feature",
+      "original_path": "features/jsonld/disable_id_generation.feature",
+      "size": 393,
+      "sha": "0e396ebe7ad127cb33a414442ed66dd5dd850774"
+    },
+    {
+      "name": "getter_setter_renaming.feature",
+      "original_path": "features/jsonld/getter_setter_renaming.feature",
+      "size": 853,
+      "sha": "d5f876918b888669cbf71ee5728a252e9c0c9929"
+    },
+    {
+      "name": "inheritance.feature",
+      "original_path": "features/jsonld/inheritance.feature",
+      "size": 517,
+      "sha": "0008392cf54fb3937e0bff00baaee4ecf85dcf9e"
+    },
+    {
+      "name": "input_output_4.feature",
+      "original_path": "features/jsonld/input_output.feature",
+      "size": 14198,
+      "sha": "dbe56ab18782157f9d1fdaa31d824b1125b79f93"
+    },
+    {
+      "name": "interface_as_resource.feature",
+      "original_path": "features/jsonld/interface_as_resource.feature",
+      "size": 1660,
+      "sha": "7236ace7ae7d3a399b55faf256c95008f1e59aad"
+    },
+    {
+      "name": "interface_dto_output.feature",
+      "original_path": "features/jsonld/interface_dto_output.feature",
+      "size": 569,
+      "sha": "9c56f8e57bbf95beb5a45ce091e49a4e256ad680"
+    },
+    {
+      "name": "iri_only.feature",
+      "original_path": "features/jsonld/iri_only.feature",
+      "size": 3602,
+      "sha": "170e7f69f869de48ba5849b357816e8693bd1f6c"
+    },
+    {
+      "name": "json_serializable.feature",
+      "original_path": "features/jsonld/json_serializable.feature",
+      "size": 3408,
+      "sha": "57cb57de510d0d2586a5f82e082553f25d6364eb"
+    },
+    {
+      "name": "max_depth_1.feature",
+      "original_path": "features/jsonld/max_depth.feature",
+      "size": 1438,
+      "sha": "58c2e5c1249297ecc846d1eae21ce623d363d62c"
+    },
+    {
+      "name": "network_path_2.feature",
+      "original_path": "features/jsonld/network_path.feature",
+      "size": 3038,
+      "sha": "6d486390e3fc3ae95d8caf67b2c9b73b0980a992"
+    },
+    {
+      "name": "no_output.feature",
+      "original_path": "features/jsonld/no_output.feature",
+      "size": 345,
+      "sha": "09b7a41919a91fac041b6e80ea81983ca857a729"
+    },
+    {
+      "name": "non_resource_2.feature",
+      "original_path": "features/jsonld/non_resource.feature",
+      "size": 4917,
+      "sha": "083770c9a28d1096451ed7d15a4120c1ab204124"
+    },
+    {
+      "name": "attribute_resource.feature",
+      "original_path": "features/main/attribute_resource.feature",
+      "size": 4215,
+      "sha": "da92073e98f0f21d352d90205c78913728dc7106"
+    },
+    {
+      "name": "circular_reference.feature",
+      "original_path": "features/main/circular_reference.feature",
+      "size": 2721,
+      "sha": "f53d44d916455b287b8cd1e9f1f182c6ed8d1dd7"
+    },
+    {
+      "name": "composite.feature",
+      "original_path": "features/main/composite.feature",
+      "size": 5285,
+      "sha": "ab99527bd7f8d9673cfd5865e3bc52f9c157e392"
+    },
+    {
+      "name": "configurable.feature",
+      "original_path": "features/main/configurable.feature",
+      "size": 1965,
+      "sha": "c0e73d1ba2b10f54f177fc87bae061236603b0a8"
+    },
+    {
+      "name": "content_negotiation.feature",
+      "original_path": "features/main/content_negotiation.feature",
+      "size": 7397,
+      "sha": "7f22db3b396454e2845ae193658a26c417337e5b"
+    },
+    {
+      "name": "crud.feature",
+      "original_path": "features/main/crud.feature",
+      "size": 25214,
+      "sha": "5933812bcccfabf7ea46aabca3cde181a46256f2"
+    },
+    {
+      "name": "crud_abstract.feature",
+      "original_path": "features/main/crud_abstract.feature",
+      "size": 5401,
+      "sha": "fc8bd66c69a1613fbe6f683a1d4431de3d4a538e"
+    },
+    {
+      "name": "crud_uri_variables.feature",
+      "original_path": "features/main/crud_uri_variables.feature",
+      "size": 6625,
+      "sha": "37787dc56d21c83e6027232714e59f05ec3b2583"
+    },
+    {
+      "name": "custom_controller.feature",
+      "original_path": "features/main/custom_controller.feature",
+      "size": 3655,
+      "sha": "16516099e53a08f431b5e0a8173769dc783a477f"
+    },
+    {
+      "name": "custom_identifier.feature",
+      "original_path": "features/main/custom_identifier.feature",
+      "size": 4043,
+      "sha": "4af017873090e35774fc2d0796373e2999e457be"
+    },
+    {
+      "name": "custom_identifier_with_subresource.feature",
+      "original_path": "features/main/custom_identifier_with_subresource.feature",
+      "size": 3065,
+      "sha": "74d9c65a4cdff7464f7aac0c354362d24828187e"
+    },
+    {
+      "name": "custom_normalized.feature",
+      "original_path": "features/main/custom_normalized.feature",
+      "size": 7300,
+      "sha": "7d1a49f3feda188e04aa26d492f03b5326cac6f6"
+    },
+    {
+      "name": "custom_put.feature",
+      "original_path": "features/main/custom_put.feature",
+      "size": 826,
+      "sha": "9b286b57cb489a8bddbd61ae5c007f65c660f84c"
+    },
+    {
+      "name": "custom_writable_identifier.feature",
+      "original_path": "features/main/custom_writable_identifier.feature",
+      "size": 4373,
+      "sha": "097d253b9ad2a897234c4eaa4a58083f440c0ebb"
+    },
+    {
+      "name": "default_order.feature",
+      "original_path": "features/main/default_order.feature",
+      "size": 6932,
+      "sha": "ad05e08a835c0708f76556c1923b4c1e6e52b7b1"
+    },
+    {
+      "name": "exception_to_status.feature",
+      "original_path": "features/main/exception_to_status.feature",
+      "size": 2116,
+      "sha": "a182ea848a82d3d01cae085b64552a155bd6e5a7"
+    },
+    {
+      "name": "exposed_state.feature",
+      "original_path": "features/main/exposed_state.feature",
+      "size": 1333,
+      "sha": "1915732f3802345c5a50ed8a49c709b5aae11fc0"
+    },
+    {
+      "name": "headers_1.feature",
+      "original_path": "features/main/headers.feature",
+      "size": 579,
+      "sha": "d61e67695744006b2ee550e4b539fb48fbc977cb"
+    },
+    {
+      "name": "input_output_5.feature",
+      "original_path": "features/main/input_output.feature",
+      "size": 570,
+      "sha": "0c6f49926d9eab408eb6a5c241fb8a99d9d7be44"
+    },
+    {
+      "name": "not_exposed.feature",
+      "original_path": "features/main/not_exposed.feature",
+      "size": 8041,
+      "sha": "809b95dd8e5f5d6c1a8befd6812f2396e5c1372e"
+    },
+    {
+      "name": "operation.feature",
+      "original_path": "features/main/operation.feature",
+      "size": 3134,
+      "sha": "24a82890cfd0fba68245db42a381674069a17724"
+    },
+    {
+      "name": "operation_resource.feature",
+      "original_path": "features/main/operation_resource.feature",
+      "size": 1913,
+      "sha": "b4bd729fcaf6d158def5f2d6a529afcbe6da42ee"
+    },
+    {
+      "name": "overridden_operation.feature",
+      "original_path": "features/main/overridden_operation.feature",
+      "size": 5376,
+      "sha": "d07181de8bdef94073f22d7cb7116f82d59a6b2b"
+    },
+    {
+      "name": "patch.feature",
+      "original_path": "features/main/patch.feature",
+      "size": 3150,
+      "sha": "d6be7ec54378c85861349727ae2c950a3705aa3c"
+    },
+    {
+      "name": "put_collection.feature",
+      "original_path": "features/main/put_collection.feature",
+      "size": 1201,
+      "sha": "2423043b8860082c327d71acdca1699764da529c"
+    },
+    {
+      "name": "relation_1.feature",
+      "original_path": "features/main/relation.feature",
+      "size": 16881,
+      "sha": "5eba540f96e15c5f2273b69fe5ccfab3fdb3fe55"
+    },
+    {
+      "name": "serializable_item_data_provider.feature",
+      "original_path": "features/main/serializable_item_data_provider.feature",
+      "size": 560,
+      "sha": "11a111cf101575031ab450478e37852b2085f4d5"
+    },
+    {
+      "name": "standard_put.feature",
+      "original_path": "features/main/standard_put.feature",
+      "size": 4060,
+      "sha": "670ab6d0d0bafd9ea41e8dabdb74e2a7bc1ad686"
+    },
+    {
+      "name": "sub_resource.feature",
+      "original_path": "features/main/sub_resource.feature",
+      "size": 20785,
+      "sha": "1a8b9e14ad1639687f6ed92898dc34c37ad3a823"
+    },
+    {
+      "name": "table_inheritance_1.feature",
+      "original_path": "features/main/table_inheritance.feature",
+      "size": 21969,
+      "sha": "1c3617f5f924199b1c2d3b5af5ff99387c25125b"
+    },
+    {
+      "name": "union_intersect_types.feature",
+      "original_path": "features/main/union_intersect_types.feature",
+      "size": 3361,
+      "sha": "73195804d380fd0d291d24c9b564dd5af5f20d12"
+    },
+    {
+      "name": "url_encoded_id.feature",
+      "original_path": "features/main/url_encoded_id.feature",
+      "size": 993,
+      "sha": "6e5828bbab32f45967ac73c7a2dac5cc6ea21f12"
+    },
+    {
+      "name": "uuid.feature",
+      "original_path": "features/main/uuid.feature",
+      "size": 8246,
+      "sha": "a7506a15bec5b726239b334eb83f683fe7c69a4b"
+    },
+    {
+      "name": "validation.feature",
+      "original_path": "features/main/validation.feature",
+      "size": 3941,
+      "sha": "40e22bdfb3ace38c3eecc29f21c2bc1856cf650a"
+    },
+    {
+      "name": "discover.feature",
+      "original_path": "features/mercure/discover.feature",
+      "size": 631,
+      "sha": "fecc057506f48637d5bb4d2c558bbbd217c0170a"
+    },
+    {
+      "name": "publish.feature",
+      "original_path": "features/mercure/publish.feature",
+      "size": 2372,
+      "sha": "ac0c27fa7ed1c20b3d450f6616b4563590bab023"
+    },
+    {
+      "name": "deserialize_embed_many_without_target_document.feature",
+      "original_path": "features/mongodb/deserialize_embed_many_without_target_document.feature",
+      "size": 1829,
+      "sha": "5a984a96f3f90687f8596b6da075c229f66d5fea"
+    },
+    {
+      "name": "filters_1.feature",
+      "original_path": "features/mongodb/filters.feature",
+      "size": 1758,
+      "sha": "5bb7c3b07e8435932a45640e27ef5e91f0e15213"
+    },
+    {
+      "name": "push.feature",
+      "original_path": "features/push_relations/push.feature",
+      "size": 962,
+      "sha": "fe4a7d1de75cc072049277148ba521d3c536d143"
+    },
+    {
+      "name": "send_security_headers.feature",
+      "original_path": "features/security/send_security_headers.feature",
+      "size": 1413,
+      "sha": "bca2f6fb9c1831edb12277f376bad65bdfdc5e83"
+    },
+    {
+      "name": "strong_typing.feature",
+      "original_path": "features/security/strong_typing.feature",
+      "size": 6048,
+      "sha": "27e669816dd5a43e201f2ff3c612c5037d79b282"
+    },
+    {
+      "name": "unknown_attributes.feature",
+      "original_path": "features/security/unknown_attributes.feature",
+      "size": 1170,
+      "sha": "efe7b954c0aeb7cf2c03a159bd21225e066c6f4c"
+    },
+    {
+      "name": "validate_incoming_content-types.feature",
+      "original_path": "features/security/validate_incoming_content-types.feature",
+      "size": 1001,
+      "sha": "80c6fd3b65ac0b8eb11954a550f42251fdbad227"
+    },
+    {
+      "name": "validate_response_types.feature",
+      "original_path": "features/security/validate_response_types.feature",
+      "size": 2631,
+      "sha": "2b0884dbb92ae971bfb796ca16484bb4bf29a5b7"
+    },
+    {
+      "name": "deserialize_objects_using_constructor.feature",
+      "original_path": "features/serializer/deserialize_objects_using_constructor.feature",
+      "size": 1138,
+      "sha": "24e5f20af9640ed98e4e93c29e237adb253e7855"
+    },
+    {
+      "name": "dynamic_groups.feature",
+      "original_path": "features/serializer/dynamic_groups.feature",
+      "size": 412,
+      "sha": "2454d0c2418d9a3dbf9ad6841ec8ca2a600d65c4"
+    },
+    {
+      "name": "empty_array_as_object.feature",
+      "original_path": "features/serializer/empty_array_as_object.feature",
+      "size": 1023,
+      "sha": "c0cc85481782c99d2cbdc80a7e883e88e09c6b26"
+    },
+    {
+      "name": "group_filter.feature",
+      "original_path": "features/serializer/group_filter.feature",
+      "size": 31400,
+      "sha": "95de871d40875c63b46fc9b8731d85acb3500971"
+    },
+    {
+      "name": "groups_related.feature",
+      "original_path": "features/serializer/groups_related.feature",
+      "size": 790,
+      "sha": "ad2ca49e3316aaea77bbe93a27bc3aacc9ced1c0"
+    },
+    {
+      "name": "property_filter_1.feature",
+      "original_path": "features/serializer/property_filter.feature",
+      "size": 14334,
+      "sha": "7da85deb692f316a8870be707225a60007b9c3d9"
+    },
+    {
+      "name": "vo_relations.feature",
+      "original_path": "features/serializer/vo_relations.feature",
+      "size": 6126,
+      "sha": "08999440a50f5b931fa6be275b69985c3c0b4a2f"
+    },
+    {
+      "name": "multiple_relation.feature",
+      "original_path": "features/sub_resources/multiple_relation.feature",
+      "size": 1895,
+      "sha": "c774257aa3743c5aed351c7121e802ade023755c"
+    },
+    {
+      "name": "deserialization.feature",
+      "original_path": "features/xml/deserialization.feature",
+      "size": 2955,
+      "sha": "ae2d2ef66ab9a6ad1af01801f8e7088a3f08ecb7"
+    }
+  ],
+  "status": "success"
+}

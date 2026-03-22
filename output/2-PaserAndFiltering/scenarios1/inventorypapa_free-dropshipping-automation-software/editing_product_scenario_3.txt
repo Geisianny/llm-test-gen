@@ -1,0 +1,9 @@
+Scenario 3: Renaming a simple product does not change its variant name
+  Tags: ['@ui']
+  Given  this product only variant was renamed to "Dice Brewing: The Game"
+  And  I want to modify this product
+  When  I rename it to "7 Wonders" in "English (United States)"
+  And  I save my changes
+  And  I want to view all variants of this product
+  Then  the first variant in the list should have name "Dice Brewing: The Game"
+

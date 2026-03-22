@@ -1,0 +1,6 @@
+Scenario 10: List Okta accounts returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "ListOktaAccounts" request
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

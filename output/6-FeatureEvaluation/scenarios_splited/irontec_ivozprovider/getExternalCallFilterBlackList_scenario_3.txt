@@ -1,0 +1,6 @@
+Scenario: Retrieve a specific external call filter blacklist by ID
+  Given there is a client admin with a valid authentication token
+  And there is an existing external call filter blacklist with ID "123"
+  When the client admin sends a GET request to retrieve the blacklist with ID "123"
+  Then the system returns a JSON response with the blacklist details
+  And the response status code is 200

@@ -1,0 +1,5 @@
+Scenario 6: payout time in the past - should be executed immediately
+  Given  the parties submit the following one off transfers:
+  Then  "f0b40ebdc5b92cf2cf82ff5d0c3f94085d23d5ec2d37d0b929e177c6d4d37e4c" should have general account balance of "9985000" for asset "VEGA"
+  Then  "a7c4b181ef9bf5e9029a016f854e4ad471208020fd86187d07f0b420004f06a4" should have general account balance of "2500" for asset "VEGA"
+

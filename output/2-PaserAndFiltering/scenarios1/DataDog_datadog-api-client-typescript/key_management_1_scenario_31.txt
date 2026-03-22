@@ -1,0 +1,7 @@
+Scenario 31: Get an application key returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/credentials-management']
+  Given  new "GetApplicationKey" request
+  And  request contains "app_key_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

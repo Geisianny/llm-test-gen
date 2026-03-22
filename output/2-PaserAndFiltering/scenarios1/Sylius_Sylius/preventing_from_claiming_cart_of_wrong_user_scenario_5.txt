@@ -1,0 +1,10 @@
+Scenario 5: Preventing logged in user from claiming cart of anonymous user
+  Tags: ['@no-api', '@ui', '@javascript']
+  Given  an anonymous user added product "Kotlin T-Shirt" to the cart
+  And  they have completed addressing step with email "robb@stark.com" and "United States" based billing address
+  And  I am logged in as "robb@stark.com"
+  When  I add product "Sylius T-Shirt" to the cart
+  And  I view my cart in the previous session
+  Then  there should be one item in my cart
+  And  my cart total should be "$150.00"
+

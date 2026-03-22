@@ -1,0 +1,9 @@
+Scenario 2: Creation of a new purchase invoice, with taxes
+  Given  part "p1" with this tax:
+  And  vendor "Vendor 1" with this tax:
+  When  I open the purchase invoice entry screen
+  And  I select vendor "Vendor 1"
+  And  I add an invoice line with part "p1" with these values:
+  Then  I expect to see an invoice with these lines
+  And  I expect to see the invoice subtotal of 25.00 and total of 26.25 with these taxes:
+

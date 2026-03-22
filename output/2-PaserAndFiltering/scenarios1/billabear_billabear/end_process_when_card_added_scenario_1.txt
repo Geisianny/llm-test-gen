@@ -1,0 +1,12 @@
+Scenario 1: Send emails
+  Given  the follow customers exist:
+  And  the following payment details:
+  And  the following customers have cards that will expire in 30 days:
+  And  the following customers have cards that will expired last month:
+  And  the following subscriptions exist:
+  And  there are expiring card process for "customer.one@example.org" for card "0653" has sent the first email
+  And  there are expiring card process for "customer.three@example.org" for card "9434" has sent the first email
+  And  there are expiring card process for "customer.four@example.org" for card "4949" has sent the first email
+  When  a new payment card is added for "customer.one@example.org"
+  Then  the expiring card process for "customer.one@example.org" will be terminated at the card_added
+

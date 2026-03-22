@@ -1,0 +1,4 @@
+Scenario: Site name is displayed consistently across different pages
+  Given the user navigates through different pages
+  Then the site name "Harrow Community Network" is displayed consistently
+  And the site's visual identity remains the same

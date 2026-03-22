@@ -1,0 +1,5 @@
+Scenario 23: Unsubscribe systems via API for Salt minion
+  Tags: ['@sle_minion']
+  When  I unsubscribe "sle_minion" from configuration channel "mixedchannel"
+  Then  "sle_minion" should not be subscribed to channel "mixedchannel"
+

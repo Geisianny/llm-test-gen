@@ -1,0 +1,4 @@
+Scenario 3: Creating a Shipping Rule with a fixed price plus and additional percent
+  Given  the shipping rule has a action additional-percent of 10%
+  Then  shipping for my cart with carrier "Post" should be priced at "2200"
+

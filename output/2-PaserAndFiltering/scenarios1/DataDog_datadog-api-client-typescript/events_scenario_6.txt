@@ -1,0 +1,7 @@
+Scenario 6: Post an event returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/monitors-evaluation']
+  Given  new "CreateEvent" request
+  And  body with value {"alert_type": "info", "priority": "normal", "tags": ["environment:test"], "text": "Oh boy!", "title": "Did you hear the news today?"}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

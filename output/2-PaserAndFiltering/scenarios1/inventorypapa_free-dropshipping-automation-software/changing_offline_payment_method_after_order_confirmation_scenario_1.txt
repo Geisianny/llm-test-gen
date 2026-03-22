@@ -1,0 +1,10 @@
+Scenario 1: Retrying the payment with different offline payment
+  Tags: ['@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  When  I complete addressing step with email "john@example.com" and "United States" based billing address
+  And  I have proceeded selecting "Free" shipping method
+  And  I have proceeded selecting "Cash on delivery" payment method
+  And  I have confirmed order
+  And  I retry the payment with "Offline" payment method
+  Then  I should have chosen "Offline" payment method
+

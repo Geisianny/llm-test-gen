@@ -1,0 +1,11 @@
+Scenario 3: Profile Detail Page For an Organization
+  Given  I go to profile page for organization "Cross Solution"
+  Then  I should see "Cross Solution"
+  And  I should see "Some Street 1734"
+  And  I should see "Frankfurt 7536"
+  And  I should see "Phone: 4121345"
+  And  I should see "Fax: 4121345"
+  And  I should see "Software Engineer"
+  And  I should see "Tester"
+  And  I should see "Senior Developer"
+

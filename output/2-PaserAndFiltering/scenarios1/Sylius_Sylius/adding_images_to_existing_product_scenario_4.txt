@@ -1,0 +1,10 @@
+Scenario 4: Adding multiple images of the same type to an existing product
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  Given  the store has a product "Lamborghini Ford Model"
+  When  I want to modify this product
+  And  I attach the "lamborghini.jpg" image with "banner" type to this product
+  And  I attach the "ford.jpg" image with "banner" type to this product
+  And  I save my changes to the images
+  Then  I should be notified that it has been successfully uploaded
+  And  this product should have 2 images
+

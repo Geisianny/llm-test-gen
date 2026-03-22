@@ -1,0 +1,5 @@
+Scenario 4: Cost smaller than 0.01 is rounded down to 2 decimals
+  Given  the buyer has an invoice for January, 2009 with the following item:
+  When  they go to the invoice admin portal page
+  Then  the total cost should be "EUR 1.00"
+

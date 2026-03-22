@@ -1,0 +1,8 @@
+Scenario 2: Seeing shipping method which category is same as category of my unit
+  Tags: ['@api', '@ui']
+  Given  I added product "Star Trek Ship" to the cart
+  And  I addressed the cart
+  When  I go to the shipping step
+  Then  I should see "Invisible Post" shipping method
+  And  I should not see "Raven Post" shipping method
+

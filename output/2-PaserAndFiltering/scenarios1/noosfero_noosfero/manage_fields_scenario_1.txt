@@ -1,0 +1,9 @@
+Scenario 1: check all active person fields
+  Tags: ['@selenium']
+  Given  I follow "Person's fields"
+  And  I check "person_active"
+  And  I follow "Save changes"
+  When  I go to admin_user's control panel
+  And  I follow "Informations" within "#section-profile"
+  Then  I should see "Custom area of study"
+

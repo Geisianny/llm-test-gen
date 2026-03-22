@@ -1,0 +1,7 @@
+Scenario 4: Organization my_org was correctly created
+  Given  I am authorized as "my_org_user" with password "my_org_user"
+  When  I follow the left menu "Home > My Organization"
+  Then  I should see a "my_org" text in the content area
+  When  I follow the left menu "Home > My Organization > Organization Trusts"
+  Then  I should see a "my_org2" text in the content area
+

@@ -1,0 +1,8 @@
+Scenario 5: Run virtual-host-gatherer
+  When  I follow the left menu "Systems > Virtual Host Managers"
+  And  I follow "file-vmware"
+  Then  I should see a "file:///var/tmp/vCenter.json" text
+  And  I should see a "SUSE Test" text
+  When  I click on "Refresh Data"
+  Then  I should see a "Refreshing the data for this Virtual Host Manager has been triggered." text
+

@@ -1,0 +1,8 @@
+Scenario 3: Search based on Entity Name
+  When  I navigate the menu and select the item at "Contacts > Search"
+  Then  I should see the Contact Search screen
+  When  I enter "Antelope" into the "Name" field
+  And  I press "Search"
+  Then  I should see the Contact Search Report screen
+  And  I expect the report to contain 1 row
+

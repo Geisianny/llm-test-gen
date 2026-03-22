@@ -1,0 +1,15 @@
+Scenario 3: Variable only instant bill enabled
+  Given  all the rolling updates features are on
+  And  pricing rules on plan "PureVariable":
+  And  a buyer "varnish"
+  And  the buyer is signed up to application plan "PureVariable" on 10th January 2009
+  And  buyer "varnish" makes 1 service transactions with:
+  And  I log in as "varnish" on xyz.3scale.localhost on 20th January 2009
+  And  the buyer changes to application plan "Variable"
+  When  time flies to 3rd February 2009
+  And  I navigate to invoice issued for me in "January, 2009"
+  Then  I should see line items
+  When  time flies to 3rd March 2009
+  And  I navigate to invoice issued for me in "February, 2009"
+  Then  I should see line items
+

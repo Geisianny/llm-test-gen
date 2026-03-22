@@ -1,0 +1,6 @@
+Scenario 4: Members groups do not show if groups is disabled
+  Given  an user "member" of account "foo.3scale.localhost"
+  Given  the provider has "groups" switch denied
+  And  I go to the provider user edit page for "member"
+  Then  I should not see link to the new CMS groups page
+

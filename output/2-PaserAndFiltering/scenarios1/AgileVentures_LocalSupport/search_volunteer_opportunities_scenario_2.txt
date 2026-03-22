@@ -1,0 +1,5 @@
+Scenario 2: Search a list of current volunteer opportunities with a keyword that won't match
+  Given  I fill in "q" with "non existent text" within the main body
+  And  I press "Search"
+  Then  I should see "Sorry, it seems we don't have quite what you are looking for."
+

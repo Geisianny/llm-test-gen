@@ -1,0 +1,5 @@
+Scenario 3: View API Key
+  Given  the follow api keys exist:
+  When  I use the API key "key-three"
+  Then  I will get an unauthorised error response
+

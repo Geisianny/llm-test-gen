@@ -1,0 +1,8 @@
+Scenario 4: Receiving discount on order while buying multiple products from promoted taxon which fit price criteria
+  Tags: ['@api', '@ui']
+  Given  the promotion gives "$20.00" off if order contains products classified as "Mugs" with a minimum value of "$50.00"
+  And  I added 3 products "PHP Mug" to the cart
+  When  I check the details of my cart
+  Then  my cart total should be "$40.00"
+  And  my discount should be "-$20.00"
+

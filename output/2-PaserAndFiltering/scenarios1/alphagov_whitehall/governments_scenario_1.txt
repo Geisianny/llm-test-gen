@@ -1,0 +1,5 @@
+Scenario 1: creating a government
+  Given  I am a GDS admin
+  When  I create a government called "2005 to 2010 Labour government" starting on "06/05/2005"
+  Then  there should be a government called "2005 to 2010 Labour government" starting on "6 May 2005"
+

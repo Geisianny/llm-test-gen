@@ -1,0 +1,5 @@
+Scenario 5: User changes their mind
+  Given  they go to the edit backend usage page of "Backend 1" for product "My API"
+  When  they follow "Cancel"
+  Then  the current page is the backends of the product
+

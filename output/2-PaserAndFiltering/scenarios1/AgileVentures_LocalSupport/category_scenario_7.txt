@@ -1,0 +1,6 @@
+Scenario 7: Search for organisations in the "Advocacy" category
+  Given  I select the "Advocacy" category from How They Help
+  And  I press "Submit"
+  Then  I should see "I advocate for people"
+  And  I should not see "I hate animals"
+

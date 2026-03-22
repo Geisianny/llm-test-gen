@@ -1,0 +1,9 @@
+Scenario 12: Trying to add a new channel with too long contact phone number
+  Tags: ['@api', '@ui']
+  When  I want to create a new channel
+  And  I specify its code as "MOBILE"
+  And  I specify its contact phone number as a too long string
+  And  I try to add it
+  Then  I should be notified that "contact phone number" is too long
+  And  channel with code "MOBILE" should not be added
+

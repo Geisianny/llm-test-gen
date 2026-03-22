@@ -1,0 +1,7 @@
+Scenario 3: Seeing products only from specific taxon after search
+  Tags: ['@api', '@ui']
+  When  I browse products from taxon "Guns"
+  And  I search for products with name "Mag"
+  Then  I should see the product "44 Magnum"
+  And  I should not see the product "Magic stick"
+

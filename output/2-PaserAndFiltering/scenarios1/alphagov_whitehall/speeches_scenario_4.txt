@@ -1,0 +1,6 @@
+Scenario 4: Submitting a draft speech to a second pair of eyes
+  Given  I am a writer
+  And  a draft speech "Outlaw Moustaches" exists
+  When  I submit the speech "Outlaw Moustaches"
+  Then  I should see the speech "Outlaw Moustaches" in the list of submitted documents
+

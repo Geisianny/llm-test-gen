@@ -1,0 +1,9 @@
+Scenario 2: Removing a province from an existing country
+  Tags: ['@ui', '@javascript', '@api']
+  Given  this country has the "Northern Ireland" province with "GB-NIR" code
+  When  I want to edit this country
+  And  I delete the "Northern Ireland" province of this country
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this country should not have the "Northern Ireland" province
+

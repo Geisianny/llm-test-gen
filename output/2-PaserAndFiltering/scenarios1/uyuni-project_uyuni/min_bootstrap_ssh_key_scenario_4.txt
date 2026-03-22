@@ -1,0 +1,18 @@
+Scenario 4: Bootstrap a SLES minion using SSH key with wrong passphrase
+  When  I follow the left menu "Systems > Bootstrapping"
+  Then  I should see a "Bootstrap Minions" text
+  When  I enter the hostname of "sle_minion" as "hostname"
+  And  I enter "22" as "port"
+  And  I enter "root" as "user"
+  And  I check radio button "SSH Private Key"
+  And  I attach the file "ssh_keypair/id_rsa_bootstrap-passphrase_linux" to "privKeyFile"
+  And  I enter "you-shall-not-pass" as "privKeyPwd"
+  And  I click on "Bootstrap"
+  And  I wait until I see "An error has occurred during salt execution: unable to establish ssh connection." text
+  Then  I should see a "Details" button
+  When  I click on "Details"
+  And  I wait at most 10 seconds until I see modal containing "Error Details" text
+  Then  I should see a "Standard Error" text
+  And  I should see "Permission denied, no authentication information" or "Permission denied (publickey,password,keyboard-interactive)" in the stderr textarea
+  When  I close the modal dialog
+

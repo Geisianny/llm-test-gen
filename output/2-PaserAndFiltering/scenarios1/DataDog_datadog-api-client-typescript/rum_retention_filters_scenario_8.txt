@@ -1,0 +1,8 @@
+Scenario 8: Order RUM retention filters returns "Bad Request" response
+  Tags: ['@team:DataDog/rum-backend']
+  Given  new "OrderRetentionFilters" request
+  And  request contains "app_id" parameter with value "1d4b9c34-7ac4-423a-91cf-9902d926e9b3"
+  And  body with value {"data":[{"type":"retention_filters","id":"325631eb-94c9-49c0-93f9-ab7e4fd24529"}]}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

@@ -1,0 +1,9 @@
+Scenario 12: Searching with custom visual design settings
+  Tags: ['@javascript', '@a11y']
+  Given  the following BingV7 Affiliates exist:
+  When  I am on agency.gov's redesigned docs search page
+  Then  I should see the basic header
+  Given  the following BingV7 Affiliates exist:
+  When  I am on agency.gov's redesigned docs search page
+  Then  I should see the extended header
+

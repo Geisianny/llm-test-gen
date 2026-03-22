@@ -1,0 +1,12 @@
+Scenario Outline 2: Navigation with specs - Example 1
+  Given  the product has a Swagger 1.2 spec "My Spec"
+  When  they go to the product's ActiveDocs page
+  And  they follow "Add a new spec"
+  Then  the current page is the product's new ActiveDocs spec page
+
+  Examples:
+    | swagger version |
+    | Swagger 1.2 |
+    | Swagger 2 |
+    | OAS 3.0 |
+

@@ -1,0 +1,8 @@
+Scenario 14: do not show description on search results
+  Tags: ['@selenium']
+  Given  the following articles
+  When  I go to the search articles page
+  And  I fill in "search-input" with "Herreninsel"
+  And  I follow "Search" within ".search-form"
+  Then  I should not see "Description"
+

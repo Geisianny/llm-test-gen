@@ -1,0 +1,8 @@
+Scenario 5: Delete a limit
+  Given  an usage limit on plan "Basic" for metric "hits" with period hour and value 1500
+  When  I go to plan "Basic" admin edit page
+  And  I follow "Limits (1)" for metric "hits" on application plan "Basic"
+  And  I press "Delete" that belongs to the hourly usage limit for metric "hits" on application plan "Basic"
+  Then  I should not see hourly usage limit for metric "hits"
+  And  plan "Basic" should not have hourly usage limit for metric "hits"
+

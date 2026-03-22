@@ -1,0 +1,8 @@
+Scenario 2: Editing promotions usage limit
+  Tags: ['@ui']
+  Given  I want to modify a "Christmas sale" promotion
+  When  I set its usage limit to 50
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  the "Christmas sale" promotion should be available to be used only 50 times
+

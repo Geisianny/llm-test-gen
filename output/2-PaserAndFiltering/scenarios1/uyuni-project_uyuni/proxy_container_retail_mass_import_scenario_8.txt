@@ -1,0 +1,5 @@
+Scenario 8: Cleanup: delete all imported Retail terminals
+  Given  I am on the Systems page
+  When  I delete all the imported terminals
+  Then  I should not see any terminals imported from the configuration file
+

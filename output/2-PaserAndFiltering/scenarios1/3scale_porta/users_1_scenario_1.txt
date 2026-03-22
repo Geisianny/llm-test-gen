@@ -1,0 +1,6 @@
+Scenario 1: Navigating to page of users of a buyer
+  When  I navigate to the accounts page
+  And  I follow "SpaceWidgets"
+  And  I follow "3 Users"
+  Then  I should see "Users of SpaceWidgets"
+

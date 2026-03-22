@@ -1,0 +1,8 @@
+Scenario 3: Associating an offsite call for evidence with topical events
+  Tags: ['@javascript']
+  Given  I am an editor
+  And  a draft call for evidence "Beard Length Review" exists
+  When  I am on the edit page for call for evidence "Beard Length Review"
+  And  I mark the call for evidence as offsite
+  Then  the call for evidence can be associated with topical events
+

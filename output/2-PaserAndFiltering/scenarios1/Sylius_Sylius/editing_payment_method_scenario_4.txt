@@ -1,0 +1,5 @@
+Scenario 4: Being unable to edit code of an existing payment method
+  Tags: ['@api', '@ui']
+  When  I want to modify the "Offline" payment method
+  Then  I should not be able to edit its code
+

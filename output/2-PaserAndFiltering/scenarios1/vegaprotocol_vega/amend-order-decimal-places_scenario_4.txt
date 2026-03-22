@@ -1,0 +1,10 @@
+Scenario 4: Reduce size success and order cancelled as  < to remaining
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  Then  the parties place the following orders:
+  When  the parties place the following orders:
+  Then  the parties amend the following orders:
+  And  the orders should have the following status:
+

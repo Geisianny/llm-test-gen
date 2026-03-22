@@ -1,0 +1,11 @@
+Scenario 21: display inputs and raw materials description
+  Tags: ['@selenium-fixme']
+  Given  the following product
+  And  the following unit
+  And  the following input
+  And  I am on /catalog/artebonito
+  And  I reload and wait for the page
+  When  I click "#inputs-button"
+  Then  the "#inputs-description" should be visible
+  And  I should see "7.0 Liter of food" within "#inputs-description"
+

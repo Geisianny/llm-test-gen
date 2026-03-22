@@ -1,0 +1,5 @@
+Scenario 10: Check if Monitoring can be enabled on the containerized proxy
+  Given  I am on the Systems overview page of this "proxy"
+  When  I follow "Properties" in the content area
+  Then  the "monitoring_entitled" checkbox should be disabled
+

@@ -1,0 +1,5 @@
+Scenario 2: Test UX components : ReParagraphStatus static icon
+  When  I go to "/test/ux-component/ReParagraphStatus/staticicon"
+  Then  I should see "content"
+  And  I should see 1 "span.re-icon-error" element
+

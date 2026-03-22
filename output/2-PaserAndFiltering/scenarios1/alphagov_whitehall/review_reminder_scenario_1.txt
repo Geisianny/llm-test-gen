@@ -1,0 +1,5 @@
+Scenario 1: Creating a new draft publication with a review date
+  When  I start drafting a new publication "Standard Beard Lengths"
+  And  I add a review date of "2033-1-1" and the email address "test@gmail.com" on the edit page
+  Then  I should see the review date of "1 January 2033" on the edition summary page
+

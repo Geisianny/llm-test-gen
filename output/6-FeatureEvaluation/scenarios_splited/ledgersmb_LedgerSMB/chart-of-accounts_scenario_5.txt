@@ -1,0 +1,5 @@
+Scenario: Attempt to create duplicate account
+  Given the user is logged into LedgerSMB
+  And there is an existing account with a unique account number
+  When the user creates a new account with the same account number as the existing account
+  Then the system prevents the creation of the new account

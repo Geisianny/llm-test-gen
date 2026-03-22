@@ -1,0 +1,23 @@
+Scenario 20: Add/remove Filter Tag
+  Given  the following BingV7 Affiliates exist:
+  And  I am logged in with email "john@agency.gov"
+  When  I go to the agency.gov's Filter Tags page
+  And  I follow "Add Filter Tag"
+  And  I fill in "Tag" with "exclude me"
+  And  I submit the form by pressing "Add"
+  Then  I should see "You have added the tag exclude me to this site"
+  And  I should see the following table rows:
+  When  I press "Remove" and confirm "Are you sure you wish to remove the tag exclude me from this site?"
+  Then  I should see "You have removed the tag exclude me from this site"
+  When  I follow "Add Filter Tag"
+  And  I fill in "Tag" with "require me"
+  And  I choose "Require"
+  And  I submit the form by pressing "Add"
+  Then  I should see "You have added the tag require me to this site"
+  And  I should see the following table rows:
+  When  I follow "Add Filter Tag"
+  And  I fill in "Tag" with "require me"
+  And  I choose "Require"
+  And  I submit the form by pressing "Add"
+  Then  I should see "Tag has already been taken"
+

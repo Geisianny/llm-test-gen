@@ -1,0 +1,11 @@
+Scenario 3: Admin can change to show the listing type
+  Tags: ['@javascript']
+  Given  community "test" has default browse view "list"
+  When  I choose "List"
+  And  I check "Show listing type in the List view"
+  And  I press submit
+  And  I wait for 1 seconds
+  Then  I go to the homepage
+  And  I should see the browse view selected as "List"
+  And  I should see "Requesting"
+

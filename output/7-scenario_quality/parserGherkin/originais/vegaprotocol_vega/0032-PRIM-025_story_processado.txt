@@ -1,0 +1,30 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 19/01/2026 23:13:57
+Arquivo analisado: 0032-PRIM-025_story_processado.feature
+Caminho relativo: vegaprotocol_vega\0032-PRIM-025_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/Originais\vegaprotocol_vega\0032-PRIM-025_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: 0032-PRIM-025_story_processado
+Descrição: Não possui
+Total de cenários: 1
+
+CENÁRIOS IDENTIFICADOS:
+1. Persistent order results in an auction (one trigger breached), no orders placed during auction,
+   Steps: 10
+   - And the market data for the market "BTC/ETH" should be:
+   - Given the parties place the following orders:
+   - When the network moves ahead "1" blocks
+   - Then the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "BTC/ETH"
+   - And the orders should have the following states:
+   - When the network moves ahead "1" blocks
+   - Then the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+   - And the mark price should be "1050" for the market "BTC/ETH"
+   - And the orders should have the following states:
+   - And the market data for the market "BTC/ETH" should be:

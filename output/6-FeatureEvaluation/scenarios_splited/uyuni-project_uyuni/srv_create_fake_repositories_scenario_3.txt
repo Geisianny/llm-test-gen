@@ -1,0 +1,6 @@
+Scenario: Create a fake repository with metadata verification disabled
+  Given there is an authorized user
+  And the system has a child channel
+  When the user creates a fake repository for the child channel with metadata verification disabled
+  Then the system creates the fake repository
+  And the repository has metadata verification disabled

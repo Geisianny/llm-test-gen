@@ -1,0 +1,6 @@
+Scenario 19: List Fastly accounts returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "ListFastlyAccounts" request
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

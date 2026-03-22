@@ -1,0 +1,5 @@
+Scenario 7: go to invitation screen when follow link to invite members
+  Given  I am on /profile/26-bsslines/members
+  When  I follow "Invite people to join"
+  Then  I am on /profile/26-bsslines/invite/friends
+

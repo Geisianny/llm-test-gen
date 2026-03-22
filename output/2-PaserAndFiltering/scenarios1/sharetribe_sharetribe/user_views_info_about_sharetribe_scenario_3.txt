@@ -1,0 +1,11 @@
+Scenario 3: User views register details page
+  Tags: ['@javascript']
+  Given  I am on the home page
+  And  I open the menu
+  And  I follow "About" within the menu
+  And  I follow "Privacy" within ".left-navi"
+  And  I should see "About" within ".left-navi"
+  And  I should see "Terms of Service" within ".left-navi"
+  And  I should see "Privacy" within ".selected.left-navi-link"
+  And  I should see "get started with creating your Privacy Policy"
+

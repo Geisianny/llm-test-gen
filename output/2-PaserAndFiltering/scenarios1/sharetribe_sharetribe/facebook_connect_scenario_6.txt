@@ -1,0 +1,14 @@
+Scenario 6: User gets invitation to an invitation-only community and creates an account with FB
+  Tags: ['@javascript']
+  Given  there are following users:
+  And  community "test" requires invite to join
+  And  I am not logged in
+  And  there is an invitation for community "test" with code "GH1JX8"
+  When  I arrive to sign up page with the link in the invitation email with code "GH1JX8"
+  And  I follow "Sign up with Facebook"
+  Then  I should see "Welcome to Sharetribe, Markus! There's one more step to join"
+  When  I check "community_membership_consent"
+  And  I press "Join Sharetribe"
+  Then  I should see "Welcome to Sharetribe!"
+  And  I should see "Markus"
+

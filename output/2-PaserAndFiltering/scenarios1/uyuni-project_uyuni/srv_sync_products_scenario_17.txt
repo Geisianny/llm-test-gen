@@ -1,0 +1,4 @@
+Scenario 17: Report the synchronization duration for SLES 15 SP4
+  Tags: ['@scc_credentials', '@skip_if_github_validation']
+  When  I report the synchronization duration for "sles15-sp4"
+

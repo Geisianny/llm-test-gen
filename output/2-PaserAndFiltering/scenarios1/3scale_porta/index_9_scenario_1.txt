@@ -1,0 +1,6 @@
+Scenario 1: Navigation from accounts listing
+  Given  the provider has "multiple_applications" visible
+  When  they go to the buyer accounts page
+  And  they follow "2" in the 1st row
+  Then  the current page is buyer "Jane" applications page
+

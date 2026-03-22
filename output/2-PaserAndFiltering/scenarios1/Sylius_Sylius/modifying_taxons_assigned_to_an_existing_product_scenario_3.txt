@@ -1,0 +1,5 @@
+Scenario 3: Being prevented from adding the same taxon twice
+  Tags: ['@api', '@no-ui']
+  When  I try to add "Clothes" taxon to the "T-Shirt" product
+  Then  I should be notified that product taxons cannot be duplicated
+

@@ -1,0 +1,6 @@
+Scenario 4: Create a DummyDtoCustom object without output
+  Tags: ['@createSchema']
+  When  I send a "POST" request to "/dummy_dto_custom_post_without_output" with body:
+  Then  the response status code should be 204
+  And  the response should be empty
+

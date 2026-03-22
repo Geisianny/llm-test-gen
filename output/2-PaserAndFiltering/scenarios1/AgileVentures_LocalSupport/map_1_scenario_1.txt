@@ -1,0 +1,5 @@
+Scenario 1: Show all charities in map on organisations index page map
+  Tags: ['@javascript', '@vcr', '@billy']
+  Given  I visit the organisations index page
+  Then  I should see the following pin markers in the map:
+

@@ -1,0 +1,77 @@
+Feature: Compliance and Regulatory Flows
+Description: In order to meet regulatory requirements
+  As a financial platform
+  I need comprehensive compliance workflows and controls
+
+Background: 
+  Given  compliance services are configured for:
+  And  real-time monitoring is active
+  And  regulatory thresholds are configured
+
+Scenario 1: Enhanced KYC onboarding flow
+  Given  a new user "john.doe@example.com" registers
+  When  the KYC workflow initiates
+  Then  the verification should include:
+  And  verification results should be:
+  And  user should be notified of verification status
+
+Scenario 2: Transaction monitoring and alerting
+  Given  real-time transaction monitoring is active
+  When  various transactions occur:
+  Then  monitoring should:
+  And  generate appropriate compliance reports
+
+Scenario 3: Currency Transaction Report (CTR) generation
+  Given  daily transaction aggregation is running
+  When  transactions exceed $10,000 threshold:
+  Then  CTR should be generated with:
+  And  file with FinCEN within 15 days
+  And  maintain filing records for 5 years
+
+Scenario 4: Suspicious Activity Report (SAR) workflow
+  Given  suspicious activity is detected
+  When  compliance officer reviews the case:
+  Then  the SAR process should:
+  And  not notify the customer about SAR filing
+
+Scenario 5: GDPR data subject request
+  Given  a user submits a GDPR request
+  When  processing the "right to access" request
+  Then  the system should:
+  And  provide data within 30 days
+  And  log the request for compliance records
+
+Scenario 6: AML risk-based approach
+  Given  customers have different risk profiles
+  When  applying risk-based monitoring:
+  Then  controls should be:
+
+Scenario 7: Cross-border compliance coordination
+  Given  a transaction involves multiple jurisdictions
+  When  compliance checks are performed:
+  Then  the system should:
+  And  maintain audit trail for all jurisdictions
+
+Scenario 8: Compliance training and certification
+  Given  staff require compliance training
+  When  managing training requirements:
+  Then  the system should track:
+
+Scenario 9: Regulatory examination preparation
+  Given  a regulatory exam is scheduled
+  When  preparing for examination:
+  Then  the system should:
+  And  provide real-time response during exam
+
+Scenario 10: Sanctions screening workflow
+  Given  real-time sanctions screening is enabled
+  When  screening various entities:
+  Then  the screening should:
+  And  maintain screening records for 5 years
+
+Scenario 11: Regulatory change management
+  Given  new AML regulations are announced
+  When  implementing regulatory changes:
+  Then  the process should include:
+  And  ensure no compliance gaps during transition
+

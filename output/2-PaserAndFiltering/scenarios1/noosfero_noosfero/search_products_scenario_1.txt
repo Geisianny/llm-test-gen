@@ -1,0 +1,5 @@
+Scenario 1: show recent products on index
+  When  I go to the search products page
+  Then  I should see "wikis consultancy" within "#search-results"
+  And  I should see "social networks consultancy" within "#search-results"
+

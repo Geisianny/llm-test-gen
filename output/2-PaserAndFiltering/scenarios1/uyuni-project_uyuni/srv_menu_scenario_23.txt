@@ -1,0 +1,9 @@
+Scenario 23: Sidebar link destination for Systems
+  When  I follow the left menu "Systems > System List"
+  Then  I should see a "All" link in the left menu
+  And  I should see a "Virtual Systems" link in the left menu
+  And  I should see a "Duplicate Systems" link in the left menu
+  And  I should see a "System Currency" link in the left menu
+  And  I should see a "System Types" link in the left menu
+  And  I should see a "Systems" text
+

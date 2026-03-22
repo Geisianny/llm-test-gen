@@ -1,0 +1,7 @@
+Scenario 1: First-time wallet setup and funding
+  Given  I am a new user with an empty wallet
+  When  I complete the wallet setup flow
+  Then  I should:
+  And  my wallet should be fully operational
+  And  I should receive onboarding emails
+

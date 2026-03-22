@@ -1,0 +1,11 @@
+Scenario 19: Get deployment rule returns "Bad Request" response
+  Tags: ['@team:DataDog/ci-app-backend']
+  Given  there is a valid "deployment_gate" in the system
+  And  there is a valid "deployment_rule" in the system
+  And  operation "GetDeploymentRule" enabled
+  And  new "GetDeploymentRule" request
+  And  request contains "gate_id" parameter with value "invalid-gate-id"
+  And  request contains "id" parameter with value "invalid-rule-id"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

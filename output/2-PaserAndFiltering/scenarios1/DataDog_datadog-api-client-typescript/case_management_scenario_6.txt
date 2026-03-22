@@ -1,0 +1,10 @@
+Scenario 6: Assign case returns "OK" response
+  Tags: ['@team:DataDog/case-management']
+  Given  new "AssignCase" request
+  And  there is a valid "case" in the system
+  And  there is a valid "user" in the system
+  And  request contains "case_id" parameter from "case.id"
+  And  body with value {"data": {"attributes": {"assignee_id": "{{user.data.id}}"}, "type": "case"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+

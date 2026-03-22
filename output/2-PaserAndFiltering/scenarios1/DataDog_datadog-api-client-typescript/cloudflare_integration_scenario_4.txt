@@ -1,0 +1,10 @@
+Scenario 4: Add Cloudflare account returns "CREATED" response
+  Tags: ['@replay-only', '@team:DataDog/saas-integrations']
+  Given  new "CreateCloudflareAccount" request
+  And  body with value {"data": {"attributes": {"api_key": "fakekey", "email": "dev@datadoghq.com", "name": "{{ unique_lower_alnum }}"}, "type": "cloudflare-accounts"}}
+  When  the request is sent
+  Then  the response status is 201 CREATED
+  And  the response "data.type" is equal to "cloudflare-accounts"
+  And  the response "data.attributes.email" is equal to "dev@datadoghq.com"
+  And  the response "data.attributes.name" is equal to "{{ unique_lower_alnum }}"
+

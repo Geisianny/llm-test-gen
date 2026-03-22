@@ -1,0 +1,5 @@
+Scenario 2: Archiving a promotion does not remove it from the database
+  Tags: ['@domain']
+  When  I archive the "Christmas sale" promotion
+  Then  the promotion "Christmas sale" should still exist in the registry
+

@@ -1,0 +1,6 @@
+Scenario 2: Configure store views
+  Tags: ['@store_views_magento']
+  Given  a store view with code "default" exists
+  Then  I set the store view language on "en_US"
+  And  I save the store view
+

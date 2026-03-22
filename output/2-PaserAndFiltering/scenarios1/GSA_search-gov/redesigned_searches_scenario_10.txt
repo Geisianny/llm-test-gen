@@ -1,0 +1,16 @@
+Scenario 10: Searchers see English Medline Govbox
+  Tags: ['@javascript', '@a11y']
+  Given  the following BingV7 Affiliates exist:
+  And  the following Medline Topics exist:
+  When  I am on english-nih's search page
+  And  I fill in "searchQuery" with "hippopotomonstrosesquippedaliophobia"
+  And  I press "Search"
+  Then  I should not see "Hippopotomonstrosesquippedaliophobia y otros miedos irracionales"
+  Given  the following Medline Topics exist:
+  And  the following Related Medline Topics for "Hippopotomonstrosesquippedaliophobia" in English exist:
+  When  I am on english-nih's search page
+  And  I fill in "searchQuery" with "hippopotomonstrosesquippedaliophobia"
+  And  I press "Search"
+  Then  I should see "Hippopotomonstrosesquippedaliophobia and Other Irrational Fears" within the serp med topic govbox
+  And  I should see a link to "Hippo1" with url for "https://www.nlm.nih.gov/medlineplus/Hippopotomonstrosesquippedaliophobia.html"
+

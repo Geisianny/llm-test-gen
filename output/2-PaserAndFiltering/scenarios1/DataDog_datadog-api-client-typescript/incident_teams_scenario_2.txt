@@ -1,0 +1,10 @@
+Scenario 2: Create a new incident team returns "CREATED" response
+  Tags: ['@team:Datadog/incident-app']
+  Given  operation "CreateIncidentTeam" enabled
+  And  new "CreateIncidentTeam" request
+  And  body with value {"data": {"type": "teams", "attributes": {"name": "{{ unique }}"}}}
+  When  the request is sent
+  Then  the response status is 201 CREATED
+  And  the response "data.type" is equal to "teams"
+  And  the response "data.attributes.name" is equal to "{{ unique }}"
+

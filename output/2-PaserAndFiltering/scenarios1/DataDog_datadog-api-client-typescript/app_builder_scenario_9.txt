@@ -1,0 +1,10 @@
+Scenario 9: Delete Multiple Apps returns "OK" response
+  Tags: ['@skip-typescript', '@team:DataDog/app-builder-backend']
+  Given  new "DeleteApps" request
+  And  there is a valid "app" in the system
+  And  body with value {"data": [{"id": "{{ app.data.id }}", "type": "appDefinitions"}]}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data" has length 1
+  And  the response "data[0].id" has the same value as "app.data.id"
+

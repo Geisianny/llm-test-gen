@@ -1,0 +1,36 @@
+Scenario: Fill shipping address with country having provinces
+  Given the user is on the checkout page
+  And the user has selected a country with provinces "United States"
+  When the user fills the shipping address form with valid details
+  And selects the province "New York"
+  Then the system validates the shipping address
+  And displays the selected country and province correctly
+
+Scenario: Fill shipping address with country without provinces
+  Given the user is on the checkout page
+  And the user has selected a country without provinces "Singapore"
+  When the user fills the shipping address form with valid details
+  Then the system validates the shipping address
+  And does not prompt for province selection
+
+Scenario: Mismatched country and province
+  Given the user is on the checkout page
+  And the user has selected a country with provinces "United States"
+  When the user fills the shipping address form with valid details
+  And selects a province "Ontario" that does not belong to the selected country
+  Then the system displays an error message
+  And indicates that the selected province does not match the country
+
+Scenario: Separate billing address with valid details
+  Given the user is on the checkout page
+  And the user has filled the shipping address form with valid details
+  When the user chooses to enter a separate billing address
+  And fills the billing address form with valid details
+  Then the system validates both shipping and billing addresses
+  And displays the addresses correctly
+
+Scenario: Empty shipping address fields
+  Given the user is on the checkout page
+  When the user submits the shipping address form without filling any details
+  Then the system displays an error message
+  And prompts the user to fill in the required address fields

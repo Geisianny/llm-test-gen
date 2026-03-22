@@ -1,0 +1,6 @@
+Scenario 4: Only the current service applications are listed
+  When  they go to product "My API" applications page
+  Then  they should see the following table with exact columns:
+  When  they go to product "Another API" applications page
+  Then  they should see the following table with exact columns:
+

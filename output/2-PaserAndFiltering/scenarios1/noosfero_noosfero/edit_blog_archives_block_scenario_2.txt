@@ -1,0 +1,9 @@
+Scenario 2: offer to select blog when I have multiple blogs
+  Given  I am on the homepage
+  And  the following users
+  And  the following blogs
+  And  the following blocks
+  And  I am logged in as "joaosilva"
+  When  I go to edit BlogArchivesBlock of joaosilva
+  Then  I should see "Choose a blog:"
+

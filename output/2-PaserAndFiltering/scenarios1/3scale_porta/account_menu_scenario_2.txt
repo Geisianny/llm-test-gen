@@ -1,0 +1,7 @@
+Scenario 2: Account menu structure
+  When  I go to the provider account page
+  Then  I should see "foo.3scale.localhost"
+  And  I should see menu sections
+  Then  I should see menu items under "Users"
+  And  I should see menu items under "Billing"
+

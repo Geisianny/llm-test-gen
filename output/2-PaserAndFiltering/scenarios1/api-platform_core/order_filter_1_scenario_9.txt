@@ -1,0 +1,7 @@
+Scenario 9: Get collection ordered in ascending order on an identifier property and in ascending order on a nested identifier property with new elasticsearch operations
+  When  I send a "GET" request to "/books?order%5Blibrary.id%5D=asc&order%5Bid%5D=asc"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+

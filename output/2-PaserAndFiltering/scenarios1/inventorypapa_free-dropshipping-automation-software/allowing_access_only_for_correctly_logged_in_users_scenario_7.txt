@@ -1,0 +1,6 @@
+Scenario 7: Accessing to the cart by the logged in customer
+  Tags: ['@api']
+  Given  the customer logged in
+  When  the customer adds "Stark T-Shirt" product to the cart
+  Then  the customer can see "Stark T-Shirt" product in the cart
+

@@ -1,0 +1,9 @@
+Scenario 3: Create an Application key with scopes for current user returns "Created" response
+  Tags: ['@team:DataDog/credentials-management']
+  Given  new "CreateCurrentUserApplicationKey" request
+  And  body with value {"data": {"type": "application_keys", "attributes": {"name": "{{ unique }}", "scopes": ["dashboards_read", "dashboards_write", "dashboards_public_share"]}}}
+  When  the request is sent
+  Then  the response status is 201 Created
+  And  the response "data.attributes.name" is equal to "{{ unique }}"
+  And  the response "data.attributes.scopes" is equal to ["dashboards_read", "dashboards_write", "dashboards_public_share"]
+

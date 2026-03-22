@@ -1,0 +1,8 @@
+Scenario 2: Delete SSH minion system profile before API bootstrap test
+  Given  I am on the Systems overview page of this "ssh_minion"
+  When  I follow "Delete System"
+  Then  I should see a "Confirm System Profile Deletion" text
+  When  I click on "Delete Profile"
+  And  I wait until I see "has been deleted" text
+  Then  "ssh_minion" should not be registered
+

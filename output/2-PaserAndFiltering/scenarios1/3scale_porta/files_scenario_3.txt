@@ -1,0 +1,4 @@
+Scenario 3: Uploading file that is not an image
+  When  I upload a file that is not an image to the cms
+  Then  there is not an image preview of that file
+

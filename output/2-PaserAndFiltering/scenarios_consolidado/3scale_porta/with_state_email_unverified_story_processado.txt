@@ -1,0 +1,73 @@
+Scenario 1: User in unverified_email state can login
+  Given  user "alice" is email unverified
+  When  I log in as "alice" on foo.3scale.localhost
+  Then  I should be logged in as "alice"
+
+
+
+Scenario 2: User in unverified_email state sees notice in personal details page
+  Tags: ['@wip']
+  Given  user "alice" is email unverified
+  When  I log in as "alice" on foo.3scale.localhost
+  And  I navigate to my personal details page
+  Then  I should see the notice to validate my email
+
+
+
+Scenario 3: When user edits his email he should verify its email
+  Tags: ['@wip']
+  Given  user "alice" is active
+  When  I log in as "alice" on foo.3scale.localhost
+  And  I navigate to my personal details page
+  When  I fill in my email with "newmail@3scale.localhost"
+  And  I commit the changes to my personal details
+  Then  "newmail@3scale.localhost" should receive an email to verify email address
+  When  I navigate to my personal details page
+  Then  I should see the notice to validate my email
+
+
+
+Scenario 4: Email_unverified user receives verify email everytime he edits his details
+  Tags: ['@wip']
+  Given  user "alice" is email unverified
+  When  I log in as "alice" on foo.3scale.localhost
+  And  I navigate to my personal details page
+  When  I change my name without changing the email
+  And  I commit the changes to my personal details
+  Then  user "alice" should receive an email to verify email address
+
+
+
+Scenario 5: User verify his email when logged in
+  Tags: ['@wip']
+  Given  user "alice" is active
+  When  I log in as "alice" on foo.3scale.localhost
+  And  I change my email to "newmail@3scale.localhost"
+  Then  "newmail@3scale.localhost" should receive an email to verify email address
+  When  I follow the link to verify email in the email to verify email address
+  Then  I should see the notice that the email is verified
+  And  user "alice" should be active
+
+
+
+Scenario 6: User verify his email when not logged in
+  Tags: ['@wip']
+  Given  user "alice" is active
+  When  I log in as "alice" on foo.3scale.localhost
+  And  I change my email to "newmail@3scale.localhost"
+  Then  "newmail@3scale.localhost" should receive an email to verify email address
+  When  I log out
+  And  I follow the link to verify email in the email to verify email address
+  Then  I should see the notice that the email is verified
+  And  user "alice" should be active
+
+
+
+Scenario 7: User restart email verification process
+  Tags: ['@wip']
+  Given  user "alice" is email unverified
+  When  I log in as "alice" on foo.3scale.localhost
+  And  I navigate to my personal details page
+  And  I resend the email verification
+  Then  user "alice" should receive an email to verify email address
+

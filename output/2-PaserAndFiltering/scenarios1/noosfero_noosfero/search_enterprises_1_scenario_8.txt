@@ -1,0 +1,12 @@
+Scenario 8: filter enterprises by facet
+  Given  the following category
+  And  the following enterprises
+  When  I go to the search enterprises page
+  And  I fill in "search-input" with "Developers"
+  And  I press "Search"
+  And  I follow "Software Livre" within "#facets-menu"
+  Then  I should see "Noosfero Developers" within "#search-results"
+  And  I should not see "Facebook Developers"
+  When  I follow "remove facet" within ".facet-selected"
+  Then  I should see "Facebook Developers"
+

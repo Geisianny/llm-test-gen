@@ -1,0 +1,4 @@
+Scenario: Cold start with a slow device
+  Given the app is not installed on a slow device
+  When the user installs the app for the first time on the slow device
+  Then the app's cold start time is measured

@@ -1,0 +1,12 @@
+Scenario Outline 2: Opening an unattached spec will navigate to Audience context - Example 1
+  Given  the provider has a Swagger 1.2 spec "Unknown API Spec"
+  When  they go to the ActiveDocs page
+  And  follow "Unknown API Spec"
+  Then  the current page is the spec's preview page from Audience context
+
+  Examples:
+    | swagger version |
+    | Swagger 1.2 |
+    | Swagger 2 |
+    | OAS 3.0 |
+

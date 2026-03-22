@@ -1,0 +1,7 @@
+Scenario 30: The Alma 8 Salt SSH minion is healthy
+  Tags: ['@alma8_ssh_minion']
+  Then  "alma8_ssh_minion" should have a FQDN
+  And  reverse resolution should work for "alma8_ssh_minion"
+  And  "alma8_ssh_minion" should communicate with the server using public interface
+  And  the clock from "alma8_ssh_minion" should be exact
+

@@ -1,0 +1,7 @@
+Scenario 2: First invoice is generated after 1 day
+  Given  a provider signed up to plan "Premium"
+  And  the provider logs in
+  When  1 day passes
+  And  they go to the 3scale invoices page
+  Then  the table should contain the following:
+

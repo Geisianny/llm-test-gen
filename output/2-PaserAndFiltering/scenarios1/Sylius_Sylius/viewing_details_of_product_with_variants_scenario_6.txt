@@ -1,0 +1,6 @@
+Scenario 6: Viewing media
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  Given  the "Iron Shield" product has an image "mugs.jpg" with "main" type
+  When  I access the "Iron Shield" product
+  Then  I should see an image related to this product
+

@@ -1,0 +1,5 @@
+Scenario 4: Check the default RPM download point values
+  Given  I am on the Systems overview page of this "sle_minion"
+  Then  the susemanager repo file should exist on the "sle_minion"
+  And  the repo file should contain the normal download endpoint on the "sle_minion"
+

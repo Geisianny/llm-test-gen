@@ -1,0 +1,8 @@
+Scenario 22: Update Scanning Rule returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/sensitive-data-scanner']
+  Given  new "UpdateScanningRule" request
+  And  request contains "rule_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"excluded_namespaces": ["admin.name"], "included_keyword_configuration": {"character_count": 30, "keywords": ["credit card", "cc"]}, "namespaces": ["admin"], "tags": [], "text_replacement": {"type": "none"}}, "relationships": {"group": {"data": {"type": "sensitive_data_scanner_group"}}, "standard_pattern": {"data": {"type": "sensitive_data_scanner_standard_pattern"}}}, "type": "sensitive_data_scanner_rule"}, "meta": {"version": 0}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

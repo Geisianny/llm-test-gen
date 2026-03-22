@@ -1,0 +1,41 @@
+Feature: Application edit page
+Tags: ['@javascript']
+
+Background: 
+  Given  a provider is logged in
+  And  a product "My API"
+  And  the following application plan:
+  And  a buyer "Jane"
+  And  the following application:
+
+Scenario 1: Navigation
+  Given  they go to the application's admin page
+  When  they follow "Edit"
+  Then  the current page is the application's admin edit page
+
+Scenario 2: Name can't be blank
+  Given  they go to the application's admin edit page
+  When  the form is submitted with:
+  Then  field "Name" has inline error "can't be blank"
+
+Scenario 3: Editing an application
+  Given  they go to the application's admin edit page
+  When  the form is submitted with:
+  Then  they should see a toast alert with text "Application was successfully updated"
+  And  the current page is the application's admin page
+
+Scenario 4: Editting an application with extra fields
+  Given  the provider has the following fields defined for applications:
+  And  they go to the application's admin edit page
+  When  the form is submitted with:
+  Then  they should see a toast alert with text "Application was successfully updated"
+  And  they should see "habba babba" within the application details
+
+Scenario 5: Delete application
+  Given  they go to the application's admin edit page
+  When  follow "Delete"
+  And  confirm the dialog
+  Then  they should see a toast alert with text "The application was successfully deleted"
+  And  there should be 1 application cancelled event
+  And  the current page is the admin portal applications page
+

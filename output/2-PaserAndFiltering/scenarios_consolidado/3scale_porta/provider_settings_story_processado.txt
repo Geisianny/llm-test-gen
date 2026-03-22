@@ -1,0 +1,41 @@
+Scenario 1: Provider admin can access settings
+  Given  current domain is the admin domain of provider "foo.3scale.localhost"
+  And  I log in as provider "foo.3scale.localhost"
+  When  I go to the provider dashboard
+  Then  there should be a link to "Billing" within the audience dashboard widget
+  And  there should be a link to "0 Accounts" within the audience dashboard widget
+  And  there should be a link to "Developer Portal" within the audience dashboard widget
+
+
+
+Scenario 2: Provider admin can access settings
+  Given  current domain is the admin domain of provider "foo.3scale.localhost"
+  And  I log in as provider "foo.3scale.localhost"
+  Then  they should be able to go to the following pages:
+
+
+
+Scenario 3: Members per default cannot access settings
+  Given  an active user "member" of account "foo.3scale.localhost"
+  And  user "member" does not belong to the admin group "settings" of provider "foo.3scale.localhost"
+  And  current domain is the admin domain of provider "foo.3scale.localhost"
+  When  I log in as provider "member"
+  And  I go to the provider dashboard
+  Then  there shouldn't be a link to "0 Accounts"
+  And  there shouldn't be a link to "Billing"
+  And  there shouldn't be a link to "Forum"
+  And  there shouldn't be a link to "0 Messages"
+  And  there shouldn't be a link to "Developer Portal"
+  And  they should see an error when going to the following pages:
+
+
+
+Scenario 4: Members of settings group can access settings
+  Given  an active user "member" of account "foo.3scale.localhost"
+  And  user "member" has access to the admin section "settings"
+  And  current domain is the admin domain of provider "foo.3scale.localhost"
+  When  I log in as provider "member"
+  And  I go to the provider dashboard
+  And  I follow "0 Messages"
+  And  they should be able to go to the following pages:
+

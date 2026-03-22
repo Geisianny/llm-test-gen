@@ -1,0 +1,7 @@
+Scenario 13: Schedule a downtime returns "Bad Request" response
+  Tags: ['@team:DataDog/monitor-app']
+  Given  new "CreateDowntime" request
+  And  body from file "downtime_with_many_tags_payload.json"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

@@ -1,0 +1,8 @@
+Scenario 9: Viewing associations block
+  Tags: ['@ui']
+  Given  the store has "Similar" and "Dwarf equipment" product association types
+  And  the store has a "Glass shield" product
+  And  the product "Iron shield" has an association "Similar" with product "Glass shield"
+  When  I access "Iron Shield" product page
+  Then  I should see product association "Similar" with "Glass shield"
+

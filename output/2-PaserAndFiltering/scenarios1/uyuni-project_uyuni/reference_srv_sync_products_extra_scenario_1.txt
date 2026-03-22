@@ -1,0 +1,8 @@
+Scenario 1: Let the products page appear
+  Tags: ['@scc_credentials']
+  Given  I am authorized for the "Admin" section
+  When  I follow the left menu "Admin > Setup Wizard > Products"
+  And  I wait until I see "Product Description" text
+  Then  I should see a "Arch" text
+  And  I should see a "Channels" text
+

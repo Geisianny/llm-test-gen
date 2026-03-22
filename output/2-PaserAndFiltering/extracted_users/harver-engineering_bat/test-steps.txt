@@ -1,0 +1,135 @@
+Feature: API Testing Steps
+Description: As an author of this library
+  I want to test that all the steps work against a mock server
+  So I can sleep at night
+
+Background: Anonymous usage
+  Given  I am anonymous
+  Given  I set the variables:
+
+Scenario 1: Testing Gets
+  Tags: ['@long']
+  When  GET "{base}/pets"
+  And  I add the query string parameters:
+  And  I set the cookie:
+  And  I set the request headers:
+  Then  I should receive a response with the status 200
+  And  I should receive a response within 1000ms
+  And  I should receive the text:
+  And  the response body should validate against its schema
+  And  the response body should validate against the schema:
+  And  the response body json path at "$.[1].name" should equal "Rover"
+  And  the response body json path at "$.[0].age" should equal "10"
+  And  the response body json path at "$.[0].age" should match "\d{2}"
+  And  the response header "Content-Language" should equal "en"
+
+Scenario 2: Testing Alternative Table Syntax for multiples
+  Tags: ['@long']
+  When  I send a 'GET' request to '{base}/pets'
+  And  I add the query string parameters:
+  And  I set the cookies:
+  And  I set the request headers:
+  And  I should receive a response with the status 200
+  And  I should receive a response within 1ms
+
+Scenario 3: Testing Posts
+  Tags: ['@long']
+  When  I send a 'POST' request to '{base}/pets'
+  And  I add the request body:
+  Then  I should receive a response with the status 201
+
+Scenario 4: Testing urlencoded bodies
+  Tags: ['@long']
+  When  I send a 'POST' request to '{base}/pets/form'
+  And  I add the 'form' request body:
+  Then  I should receive a response with the status 201
+  And  the response body json path at "$" should be empty
+
+Scenario 5: Testing Posts using json file
+  Tags: ['@long']
+  When  I send a 'POST' request to '{base}/pets'
+  And  I add the request body from the file: './test/files/json/sample-json.json'
+  Then  I should receive a response with the status 201
+
+Scenario 6: Testing openapi spec intergration
+  Tags: ['@long']
+  When  I send a 'POST' request to '{base}/pets'
+  And  I add the query string parameters:
+  And  I add the example request body
+
+Scenario 7: Reuse previous values
+  Tags: ['@long']
+  When  I send a 'PUT' request to '{base}/pets/{id}'
+  And  I add the request body:
+  And  I add the query string parameters:
+  And  I set the placeholder 'id' using the json path '$.[0].id' from the last 'GET' to '{base}/pets'
+  Then  I should receive a response with the status 200
+  And  the response body json path at "$.name" should equal "Felix"
+
+Scenario 8: Can Test status code 4**
+  Tags: ['@long']
+  When  I send a 'PUT' request to '{base}/pets/5000'
+  Then  I should receive a response with the status 418
+  And  the response body json path at "$.message" should equal "'5000' == '1000'"
+  Then  print the response body
+
+Scenario 9: Testing OAuth support
+  Tags: ['@long', '@oauth']
+  Given  I obtain an access token from '{base}/auth/token' using the credentials:
+  When  I send a 'GET' request to '{base}/secret/jayani'
+  Then  I should receive a response with the status 201
+  Then  print the response body
+
+Scenario 10: Testing basic authentication
+  Tags: ['@long', '@basicauth']
+  Given  I am using basic authentication with the credentials:
+  When  I send a 'GET' request to '{base}/basic/auth/test'
+  Then  I should receive a response with the status 200
+
+Scenario 11: Testing basic authentication
+  Tags: ['@long', '@basicauth']
+  Given  I am using basic authentication using credentials from: "./test/env/dev.json"
+  When  I send a 'GET' request to '{base}/basic/auth/test'
+  Then  I should receive a response with the status 200
+
+Scenario 12: Testing get all pets graphql query
+  Tags: ['@long']
+  When  I send the GraphQL query:
+  Then  receive status 200
+
+Scenario 13: Testing get single pet graphql query
+  Tags: ['@long']
+  When  I send the GraphQL query:
+  Then  receive status 200
+  And  json path at "$.data.pet.id" should equal "1000"
+
+Scenario 14: Testing add a new pet graphql mutation query
+  Tags: ['@long']
+  When  I send the GraphQL query:
+  Then  receive status 200
+  And  json path at "$.data.addPet.id" should equal "3000"
+
+Scenario Outline 15: Testing errors - Example 1
+  Tags: ['@long']
+  When  GET "{base}/error/404"
+  Then  receive status 404
+  And  I should receive the text:
+
+  Examples:
+    | status |
+    | 404 |
+    | 500 |
+
+Scenario Outline 16: Testing redirects - Example 1
+  Tags: ['@long']
+  When  GET "{base}/redirect/301"
+  Then  I should receive a response with the status 301
+
+  Examples:
+    | status |
+    | 301 |
+    | 302 |
+    | 303 |
+    | 307 |
+    | 308 |
+

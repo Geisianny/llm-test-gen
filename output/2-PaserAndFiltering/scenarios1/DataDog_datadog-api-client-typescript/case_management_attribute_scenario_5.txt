@@ -1,0 +1,10 @@
+Scenario 5: Delete custom attributes config returns "No Content" response
+  Tags: ['@skip', '@team:DataDog/case-management']
+  Given  new "DeleteCustomAttributeConfig" request
+  And  there is a valid "case_type" in the system
+  And  there is a valid "custom_attribute" in the system
+  And  request contains "case_type_id" parameter from "case_type.id"
+  And  request contains "custom_attribute_id" parameter from "custom_attribute.id"
+  When  the request is sent
+  Then  the response status is 204 No Content
+

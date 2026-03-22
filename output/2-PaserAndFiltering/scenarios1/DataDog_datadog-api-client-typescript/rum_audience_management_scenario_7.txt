@@ -1,0 +1,8 @@
+Scenario 7: Query accounts returns "Successful response with account data" response
+  Tags: ['@generated', '@skip', '@team:DataDog/audience-management-backend']
+  Given  operation "QueryAccounts" enabled
+  And  new "QueryAccounts" request
+  And  body with value {"data": {"attributes": {"limit": 20, "query": "plan_type:enterprise AND user_count:>100 AND subscription_status:active", "select_columns": ["account_id", "account_name", "user_count", "plan_type", "subscription_status", "created_at", "mrr", "industry"], "sort": {"field": "user_count", "order": "DESC"}, "wildcard_search_term": "tech"}, "id": "query_account_request", "type": "query_account_request"}}
+  When  the request is sent
+  Then  the response status is 200 Successful response with account data
+

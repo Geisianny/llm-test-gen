@@ -1,0 +1,10 @@
+Scenario 3: the user should only see the notifications enabled in the environment
+  Given  the following notifications
+  Given  I am logged in as "joaosilva"
+  Given  I go to joaosilva's control panel
+  When  I follow "Notifications"
+  Then  I should see "Add Friend"
+  And  I should see "New Article"
+  And  I should not see "New Member"
+  And  I should not see "Approve Article"
+

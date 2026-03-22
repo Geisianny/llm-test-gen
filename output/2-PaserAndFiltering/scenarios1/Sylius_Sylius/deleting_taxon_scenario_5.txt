@@ -1,0 +1,10 @@
+Scenario 5: Deleting root taxon above menu taxon
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  Given  the store has "Main Category" taxonomy
+  And  the store has "Clothes Category" taxonomy
+  And  channel "Web Store" has menu taxon "Main Category"
+  When  I want to see all taxons in store
+  And  I move down "Main Category" taxon
+  And  I delete taxon named "Clothes Category"
+  Then  the taxon named "Clothes Category" should no longer exist in the registry
+

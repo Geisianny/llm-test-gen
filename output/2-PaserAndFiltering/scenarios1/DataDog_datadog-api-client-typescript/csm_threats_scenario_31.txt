@@ -1,0 +1,8 @@
+Scenario 31: Update a Workload Protection agent rule (US1-FED) returns "Not Found" response
+  Tags: ['@replay-only', '@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  new "UpdateCloudWorkloadSecurityAgentRule" request
+  And  request contains "agent_rule_id" parameter with value "non-existent-rule-id"
+  And  body with value {"data": {"attributes": {"description": "My Agent rule", "enabled": true, "expression": "exec.file.name == \"sh\""}, "id": "invalid-agent-rule-id", "type": "agent_rule"}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

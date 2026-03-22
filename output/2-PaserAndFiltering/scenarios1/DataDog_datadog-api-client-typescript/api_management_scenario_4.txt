@@ -1,0 +1,8 @@
+Scenario 4: Delete an API returns "API not found error" response
+  Tags: ['@generated', '@skip', '@team:DataDog/api-management']
+  Given  operation "DeleteOpenAPI" enabled
+  And  new "DeleteOpenAPI" request
+  And  request contains "id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 API not found error
+

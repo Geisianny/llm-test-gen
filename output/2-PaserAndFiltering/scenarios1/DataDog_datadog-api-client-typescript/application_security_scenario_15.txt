@@ -1,0 +1,7 @@
+Scenario 15: Get a WAF exclusion filter returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/asm-backend']
+  Given  new "GetApplicationSecurityWafExclusionFilter" request
+  And  request contains "exclusion_filter_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

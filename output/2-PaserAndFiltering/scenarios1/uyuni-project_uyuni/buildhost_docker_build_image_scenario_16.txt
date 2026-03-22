@@ -1,0 +1,6 @@
+Scenario 16: Delete image via API calls with key
+  Tags: ['@scc_credentials']
+  When  I delete the image "suse_key" with version "Latest_key-activation1" via API calls
+  Then  the image "suse_simple" with version "Latest_key-activation1" doesn't exist via API calls
+  When  I wait until no Salt job is running on "build_host"
+

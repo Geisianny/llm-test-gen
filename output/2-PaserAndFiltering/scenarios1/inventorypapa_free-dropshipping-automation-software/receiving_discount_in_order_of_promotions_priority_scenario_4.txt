@@ -1,0 +1,9 @@
+Scenario 4: Receiving discount from an exclusive promotion with higher priority
+  Tags: ['@ui', '@api']
+  Given  there is an exclusive promotion "Golden Pug Market" with priority 2
+  And  it gives "20%" discount to every order
+  And  there is an exclusive promotion "Sloth's Agility" with priority 5
+  And  it gives "$10.00" discount to every order
+  When  I add product "The Pug Mug" to the cart
+  Then  my cart total should be "$90.00"
+

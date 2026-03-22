@@ -1,0 +1,59 @@
+Scenario 2: GENERIC CHART OF ACCOUNT CREATION
+  Tags: ['@base_finance_setup_chart']
+  Given  I need a "account.account" with oid: scen.root
+  And  having:
+  Given  I need a "account.account" with oid: scen.acc_stock_var
+  And  having:
+  Given  I need a "account.account" with oid: scen.acc_fx
+  And  having:
+  Given  I need a "account.account" with oid: scen.acc_wo
+  And  having:
+  Given  I need a "account.account" with oid: scen.acc_exp
+  And  having:
+  Given  I need a "account.account" with oid: scen.acc_inc
+  And  having:
+  Given  I need a "account.account" with oid: scen.acc_sales
+  And  having:
+  Given  I need a "account.account" with oid: scen.acc_purchases
+  And  having:
+  Given  I need a "account.account" with oid: scen.acc_dep
+  And  having:
+  Given  I need a "account.account" with oid: scen.acc_fi_dep
+  And  having:
+  Given  I need a "account.account" with oid: scen.acc_pl
+  And  having:
+  Given  I need a "account.account" with oid: scen.acc_receivable_eur
+  And  having:
+  Given  I need a "account.account" with oid: scen.acc_payable_eur
+  And  having:
+  Given  I need a "account.account" with oid: scen.acc_receivable_usd
+  And  having:
+  Given  I need a "account.account" with oid: scen.acc_receivable_gbp
+  And  having:
+  Given  I need a "account.account" with oid: scen.acc_payable_usd
+  And  having:
+  Given  I need a "account.account" with oid: scen.acc_sales_vat
+  And  having:
+  Given  I need a "account.account" with oid: scen.acc_purchases_vat
+  And  having:
+  Given  I need a "account.account" with oid: scen.acc_EU_purchases_vat
+  And  having:
+  Given  I need a "account.account" with oid: scen.acc_EU_purchases_rev_vat
+  And  having:
+  Given  I need a "account.account" with oid: scen.acc_asset
+  And  having:
+  Given  I need a "account.account" with oid: scen.prov
+  And  having:
+  Given  I need a "account.account" with oid: scen.unrealized_loss
+  And  having:
+  Given  I need a "account.account" with oid: scen.unrealized_gain
+  And  having:
+  Given  I need a "account.account" with oid: scen.acc_inv
+  And  having:
+  Given  I need a "account.account" with oid: scen.acc_bank_eur
+  And  having:
+  Given  I need a "account.account" with oid: scen.acc_bank_usd
+  And  having:
+  Given  I need a "account.account" with oid: scen.acc_bank_gbp
+  And  having:
+

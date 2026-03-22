@@ -1,0 +1,46 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: Breadcrumb_story_processado.feature
+Caminho relativo: Cocolabs-SAS_cocorico\Breadcrumb_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\Cocolabs-SAS_cocorico\Breadcrumb_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: Breadcrumb_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Verify breadcrumbs for Messages under Offerer menu
+   Steps: 4
+   - Given the user is on the homepage
+   - And the user navigates to the "Offerer" menu
+   - When the user clicks on "Messages"
+   - Then the breadcrumbs display "Home > Offerer > Messages"
+2. Verify breadcrumbs for a direct child page
+   Steps: 3
+   - Given the user is on the homepage
+   - When the user navigates to "Offerer"
+   - Then the breadcrumbs display "Home > Offerer"
+3. Verify breadcrumbs for the homepage
+   Steps: 2
+   - Given the user is on the homepage
+   - Then the breadcrumbs display "Home"
+4. Verify breadcrumbs after navigating through multiple levels
+   Steps: 5
+   - Given the user is on the homepage
+   - And the user navigates to "Offerer"
+   - And the user clicks on "Messages"
+   - When the user clicks on "Home" in the breadcrumbs
+   - Then the breadcrumbs display "Home"
+5. Verify breadcrumbs remain consistent on page reload
+   Steps: 4
+   - Given the user is on the "Messages" page under "Offerer"
+   - And the breadcrumbs display "Home > Offerer > Messages"
+   - When the user reloads the page
+   - Then the breadcrumbs still display "Home > Offerer > Messages"

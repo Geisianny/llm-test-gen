@@ -1,0 +1,8 @@
+Scenario 7: Regulatory audit workflow
+  Given  quarterly audit is initiated
+  When  the cross-domain audit workflow runs
+  Then  it should collect from all domains:
+  And  compile comprehensive audit package
+  And  ensure data consistency across domains
+  And  maintain immutable audit trail
+

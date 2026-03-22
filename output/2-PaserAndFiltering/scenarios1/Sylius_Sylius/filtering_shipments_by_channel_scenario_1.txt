@@ -1,0 +1,9 @@
+Scenario 1: Filtering shipments by channel on index
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I browse shipments
+  And  I choose "United States" as a channel filter
+  And  I filter
+  Then  I should see a single shipment in the list
+  And  I should see a shipment of order "#00000001"
+  But  I should not see a shipment of order "#00000003"
+

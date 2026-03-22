@@ -1,0 +1,9 @@
+Scenario 2: Removing a product's price from obsolete channel
+  Tags: ['@ui']
+  Given  this product is disabled in "Web-GB" channel
+  When  I want to modify the "Dice Brewing" product
+  And  I remove its price for "Web-GB" channel
+  And  I save my changes
+  Then  I should not have configured price for "Web-GB" channel
+  But  I should have original price equal to "£70.00" in "Web-GB" channel
+

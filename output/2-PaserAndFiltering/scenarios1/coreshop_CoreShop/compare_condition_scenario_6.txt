@@ -1,0 +1,4 @@
+Scenario 6: Create a new greater-than-equal condition and render it
+  Given  there is a greater-than-equal condition with field-name "XY" and value "1"
+  Then  the condition rendered for "mysql" should look like "`XY` >= '1'"
+

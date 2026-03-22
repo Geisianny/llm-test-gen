@@ -1,0 +1,7 @@
+Scenario 1: Eager loading for a relation
+  Tags: ['@createSchema']
+  Given  there is a RelatedDummy with 2 friends
+  When  I send a "GET" request to "/related_dummies/1"
+  Then  the response status code should be 200
+  And  the DQL should be equal to:
+

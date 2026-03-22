@@ -1,0 +1,8 @@
+Scenario 3: Edit personal details with invalid data
+  When  I navigate to the Account Settings
+  And  I go to the provider personal details page
+  And  I fill in "Username" with "u"
+  And  I fill in "Current password" with "supersecret"
+  And  I press "Update Details"
+  Then  field "Username" has inline error "is too short (minimum is 3 characters)"
+

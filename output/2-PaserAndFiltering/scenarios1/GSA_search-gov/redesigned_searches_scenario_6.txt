@@ -1,0 +1,13 @@
+Scenario 6: News search
+  Tags: ['@javascript', '@a11y']
+  Given  the following BingV7 Affiliates exist:
+  And  affiliate "bar.gov" has the following RSS feeds:
+  And  feed "Press" has the following news items:
+  When  I am on bar.gov's redesigned news search page
+  And  I search for "item" in the redesigned search page
+  Then  I should see "First"
+  And  I should see "Second"
+  And  I should see exactly "2" web search results
+  And  I should see "2 results"
+  And  I should see Powered by Search.gov
+

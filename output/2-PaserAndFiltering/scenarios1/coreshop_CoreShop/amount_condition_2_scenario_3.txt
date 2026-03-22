@@ -1,0 +1,6 @@
+Scenario 3: Add a new amount shipping rule which is invalid
+  Given  adding a payment-provider-rule named "amount"
+  And  the payment-provider-rule is active
+  And  the payment-provider-rule has a condition amount from "50" to "99"
+  Then  the payment-provider-rule should be invalid for my cart with payment provider "Bankwire"
+

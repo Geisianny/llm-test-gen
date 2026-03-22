@@ -1,0 +1,5 @@
+Scenario: Charity worker cancels updating donation link
+  Given there is a charity worker with an organization
+  And the organization's donation link is currently "https://old-donation-link.com"
+  When the charity worker cancels updating the donation link
+  Then the system does not change the donation link

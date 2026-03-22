@@ -1,0 +1,9 @@
+Scenario 19: Update RedHat-like key with to include dev child channel
+  Tags: ['@skip_if_github_validation', '@rhlike_minion']
+  When  I follow the left menu "Systems > Activation Keys"
+  And  I follow "RedHat like Test Key" in the content area
+  And  I wait for child channels to appear
+  And  I check "Devel-RH-like-Channel"
+  And  I click on "Update Activation Key"
+  Then  I should see a "Activation key RedHat like Test Key has been modified" text
+

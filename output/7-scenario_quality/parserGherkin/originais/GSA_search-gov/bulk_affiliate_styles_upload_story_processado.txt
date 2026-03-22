@@ -1,0 +1,33 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 19/01/2026 23:13:57
+Arquivo analisado: bulk_affiliate_styles_upload_story_processado.feature
+Caminho relativo: GSA_search-gov\bulk_affiliate_styles_upload_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/Originais\GSA_search-gov\bulk_affiliate_styles_upload_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: bulk_affiliate_styles_upload_story_processado
+Descrição: Não possui
+Total de cenários: 1
+
+CENÁRIOS IDENTIFICADOS:
+1. Bulk-uploading affiliate styles for on-demand indexing as an admin
+   Steps: 13
+   - Given I am logged in with email "affiliate_admin@fixtures.org"
+   - When I go to the bulk affiliate styles upload admin page
+   - Then I should see "Bulk Affiliate Styles Upload"
+   - And I should see "The maximum file size is 4 MB"
+   - When I attach the file "features/support/bulk_affiliate_styles_upload.csv" to "bulk_upload_affiliate_styles"
+   - And I press "Upload"
+   - Then I should be on the bulk affiliate styles upload admin page
+   - And I should see "Successfully uploaded bulk_affiliate_styles_upload.csv"
+   - And I should see "The results will be emailed to you."
+   - When I do not attach a file to "bulk_upload_affiliate_styles"
+   - And I press "Upload"
+   - Then I should be on the bulk affiliate styles upload admin page
+   - And I should see "Please choose a file to upload"

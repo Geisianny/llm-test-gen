@@ -1,0 +1,9 @@
+Scenario 6: Filter subscriptions by state
+  Given  the buyer is subscribed to product "Banana API"
+  And  the buyer is subscribed to product "Coconut API"
+  When  they go to the buyer's service subscriptions page
+  And  the table is filtered with:
+  Then  they should see an empty search state
+  When  the table is filtered with:
+  Then  the table should contain the following:
+

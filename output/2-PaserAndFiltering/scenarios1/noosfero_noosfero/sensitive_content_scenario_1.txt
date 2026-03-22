@@ -1,0 +1,24 @@
+Scenario 1: select folder with subdirectories to publish
+  Tags: ['@selenium']
+  Given  I am on the homepage
+  And  I follow "New Content"
+  And  I follow "Folder"
+  And  I fill in "Title" with "My Folder"
+  And  I follow "Save"
+  And  I am on the homepage
+  And  I follow "New Content"
+  And  I follow "Folder"
+  And  I fill in "Title" with "My Sub Folder"
+  And  I select "joaosilva/My Folder" from "Parent folder:"
+  And  I follow "Save"
+  And  I am on the homepage
+  And  I follow "New Content"
+  And  I follow "Post to another directory"
+  And  I should see "In which directory do you want to publish?"
+  And  I should see "Blog"
+  And  I should see "Gallery"
+  And  I should see "My Folder"
+  And  I follow "My Folder"
+  And  I follow "Publish here" within ".folder-dropdown"
+  And  I should see "You are publishing in My Folder of Joao Silva"
+

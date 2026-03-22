@@ -1,0 +1,7 @@
+Scenario 1: Digital Goods for a Business with a tax number - Zero tax
+  Given  the following subscriptions exist:
+  And  stripe billing is disabled
+  And  that the tax settings for eu business tax rules is true
+  When  the background task to reinvoice active subscriptions
+  And  there the latest invoice for "customer.one@example.org" will have a zero tax rate
+

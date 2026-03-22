@@ -1,0 +1,4 @@
+Scenario 1: Wrong activation code
+  When  I visit a invalid activation link as a buyer
+  Then  I should see "Activation error"
+

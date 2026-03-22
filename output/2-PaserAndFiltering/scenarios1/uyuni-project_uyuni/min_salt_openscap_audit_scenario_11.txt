@@ -1,0 +1,8 @@
+Scenario 11: Cleanup: remove audit scans retention period
+  When  I follow the left menu "Admin > Organizations"
+  When  I follow "SUSE Test" in the content area
+  And  I follow "Configuration" in the content area
+  And  I enter "0" as "scap_retention_period"
+  And  I click on "Update Organization"
+  Then  I should see a "Organization SUSE Test was successfully updated." text
+

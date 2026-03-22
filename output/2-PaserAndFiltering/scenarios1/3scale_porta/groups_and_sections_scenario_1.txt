@@ -1,0 +1,5 @@
+Scenario 1: Public sections can be visited without being logged in
+  Given  the current domain is "foo.3scale.localhost"
+  When  I request the url "/docs/first"
+  Then  I should see "First"
+

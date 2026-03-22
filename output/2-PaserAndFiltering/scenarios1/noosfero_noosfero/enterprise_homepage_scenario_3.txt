@@ -1,0 +1,5 @@
+Scenario 3: display link to product
+  When  I go to /mayhem/homepage
+  And  I follow "Natural Handmade"
+  Then  I should be taken to "Natural Handmade" product page
+

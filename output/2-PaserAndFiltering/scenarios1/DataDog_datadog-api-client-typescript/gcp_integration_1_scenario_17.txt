@@ -1,0 +1,7 @@
+Scenario 17: List delegate account returns "OK" response
+  Tags: ['@team:DataDog/gcp-integrations']
+  Given  new "GetGCPSTSDelegate" request
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.type" is equal to "gcp_sts_delegate"
+

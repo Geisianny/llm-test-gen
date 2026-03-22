@@ -1,0 +1,5 @@
+Scenario 1: Images are listed on the images tab
+  And  a draft document with images exists
+  When  I visit the images tab of the document with images
+  Then  I should see a list with 2 images
+

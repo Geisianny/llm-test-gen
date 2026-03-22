@@ -1,0 +1,9 @@
+Scenario 15: Cursor-based pagination with ranged items
+  Tags: ['@createSchema']
+  Given  there are 10 of these so many objects
+  When  I send a "GET" request to "/so_manies?order[id]=desc"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+

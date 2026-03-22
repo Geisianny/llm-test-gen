@@ -1,0 +1,11 @@
+Scenario Outline 10: Navigate to menu "<path>" and open screen "<screen>" - Example 10
+  Tags: ['@wip']
+  When  I navigate the menu and select the item at "Accounts Receivable > Vouchers > AR Voucher"
+  Then  I should see the  screen
+
+  Examples:
+    | path | screen |
+    | Accounts Receivable > Vouchers > AR Voucher |  |
+    | Accounts Receivable > Vouchers > Import AR Batch |  |
+    | Accounts Receivable > Vouchers > Invoice Vouchers |  |
+

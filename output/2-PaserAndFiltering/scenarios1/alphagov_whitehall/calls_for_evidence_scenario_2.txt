@@ -1,0 +1,6 @@
+Scenario 2: Submitting a draft call for evidence to a second pair of eyes
+  Given  I am a writer
+  And  a draft call for evidence "Beard Length Review" exists
+  When  I submit the call for evidence "Beard Length Review"
+  Then  I should see the call for evidence "Beard Length Review" in the list of submitted documents
+

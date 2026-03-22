@@ -1,0 +1,7 @@
+Scenario 5: Create a different table inherited resource
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/dummy_table_inheritance_different_children" with body:
+  Then  the response status code should be 201
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+

@@ -1,0 +1,8 @@
+Scenario 53: Update tenant-based handle returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/chat-integrations']
+  Given  new "UpdateTenantBasedHandle" request
+  And  request contains "handle_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"channel_id": "fake-channel-id", "name": "fake-handle-name", "team_id": "00000000-0000-0000-0000-000000000000", "tenant_id": "00000000-0000-0000-0000-000000000001"}, "type": "tenant-based-handle"}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

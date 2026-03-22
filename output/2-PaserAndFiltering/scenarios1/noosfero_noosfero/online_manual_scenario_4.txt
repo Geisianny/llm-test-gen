@@ -1,0 +1,6 @@
+Scenario 4: displaying topic
+  When  I go to /doc
+  And  I follow "User features"
+  And  I follow "Commenting"
+  Then  I should see "How to access"
+

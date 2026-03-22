@@ -1,0 +1,12 @@
+Scenario 4: Adding and removing after saving text attributes on product update page
+  Tags: ['@ui', '@javascript']
+  Given  this product has a text attribute "Gun caliber" with value "11 mm" in "English (United States)" locale
+  When  I want to modify the "44 Magnum" product
+  And  I set its "Overall length" attribute to "30.5 cm" in "English (United States)"
+  And  I save my changes
+  And  I remove its "Gun caliber" attribute
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  attribute "Overall length" of product "44 Magnum" should be "30.5 cm"
+  And  product "44 Magnum" should not have a "Gun caliber" attribute
+

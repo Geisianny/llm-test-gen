@@ -1,0 +1,9 @@
+Scenario 1: Informing customer about order total change due to product price change
+  Tags: ['@api', '@ui']
+  Given  I am a logged in customer
+  And  I added product "PHP T-Shirt" to the cart
+  And  I proceeded through the checkout process
+  And  this product price has been changed to "$25.00"
+  And  I confirm my order
+  Then  my order should not be placed due to changed order total
+

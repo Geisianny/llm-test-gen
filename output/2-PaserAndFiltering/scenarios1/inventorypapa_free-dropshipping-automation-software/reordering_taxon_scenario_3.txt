@@ -1,0 +1,9 @@
+Scenario 3: Changing order of the taxon on list
+  Tags: ['@ui', '@javascript', '@todo']
+  When  I want to see all taxons in store
+  And  I move down "T-Shirts" taxon
+  And  I move down "Belts" taxon
+  And  I move up "Wallets" taxon
+  Then  I should see 4 taxons on the list
+  And  they should have order like "Watches", "Wallets", "T-Shirts" and "Belts"
+

@@ -1,0 +1,9 @@
+Scenario 7: Get ordered collection
+  Tags: ['@mongodb', '@createSchema']
+  Given  there are 5 separated entities
+  When  I send a "GET" request to "/separated_documents?order[value]=desc"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON node "hydra:member[0].value" should be equal to "5"
+

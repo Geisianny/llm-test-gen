@@ -1,0 +1,12 @@
+Scenario 1: As asker i can send a message to an offerer about his listing
+  Given  I am logged in as user "asker@cocorico.rocks" with password "12345678"
+  And  I do a search on the home page
+  And  I find a listing which "listing title" equal to "Listing One"
+  And  I click on the element with css selector "a.contact-opener"
+  And  I wait 2000 ms
+  And  I fill in "message_body" with "Hello, can i rent your listing?"
+  And  I press "Send"
+  Then  I should be on the page which route name is "dashboard_message_thread_view"
+  When  I wait 2000 ms
+  Then  I should see "Hello, can i rent your listing?" in the "div.posts-holder div.post-content" element
+

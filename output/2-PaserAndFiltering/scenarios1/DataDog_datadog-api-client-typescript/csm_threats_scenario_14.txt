@@ -1,0 +1,7 @@
+Scenario 14: Delete a Workload Protection agent rule returns "Not Found" response
+  Tags: ['@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  new "DeleteCSMThreatsAgentRule" request
+  And  request contains "agent_rule_id" parameter with value "non-existent-rule-id"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

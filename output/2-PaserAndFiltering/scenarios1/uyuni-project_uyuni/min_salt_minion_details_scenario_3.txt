@@ -1,0 +1,5 @@
+Scenario 3: Check that installed packages are visible
+  When  I follow "Software" in the content area
+  And  I follow "List / Remove"
+  Then  I should see a "aaa_base" text
+

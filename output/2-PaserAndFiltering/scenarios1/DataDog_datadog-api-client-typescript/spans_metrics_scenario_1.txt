@@ -1,0 +1,7 @@
+Scenario 1: Create a span-based metric returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/apm']
+  Given  new "CreateSpansMetric" request
+  And  body with value {"data": {"attributes": {"compute": {"aggregation_type": "distribution", "include_percentiles": false, "path": "@duration"}, "filter": {"query": "@http.status_code:200 service:my-service"}, "group_by": [{"path": "resource_name", "tag_name": "resource_name"}]}, "id": "my.metric", "type": "spans_metrics"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

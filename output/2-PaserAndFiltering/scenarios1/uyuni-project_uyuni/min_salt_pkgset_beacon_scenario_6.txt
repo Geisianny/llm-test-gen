@@ -1,0 +1,9 @@
+Scenario 6: Install manually a package on a minion
+  When  I follow "Software" in the content area
+  And  I follow "List / Remove"
+  And  I enter "milkyway-dummy" as the filtered package name
+  And  I click on the filter button
+  Then  I should not see a "milkyway-dummy" text
+  When  I install package "milkyway-dummy" on this "sle_minion"
+  And  I click on the filter button until page does not contain "milkyway-dummy" text
+

@@ -1,0 +1,10 @@
+Scenario 14: Get a role returns "OK" response
+  Tags: ['@team:DataDog/aaa-core-access']
+  Given  there is a valid "role" in the system
+  And  new "GetRole" request
+  And  request contains "role_id" parameter from "role.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK for get role
+  And  the response "data.attributes.name" has the same value as "role.data.attributes.name"
+  And  the response "data.id" has the same value as "role.data.id"
+

@@ -1,0 +1,22 @@
+Scenario 2: Party receive rewards from pool funded with a transfer with a non-zero lock period (0085-RVST-011)
+  Given  the parties submit the following recurring transfers:
+  And  the network moves ahead "1" blocks
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  "trader1" should have vesting account balance of "10000" for asset "USD.1.10"
+  When  the network moves ahead "1" epochs
+  Then  "trader1" should have vesting account balance of "10000" for asset "USD.1.10"
+  When  the network moves ahead "1" epochs
+  And  "trader1" should have vesting account balance of "9000" for asset "USD.1.10"
+  Then  "trader1" should have vested account balance of "1000" for asset "USD.1.10"
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  "trader1" should have vesting account balance of "18100" for asset "USD.1.10"
+  And  "trader1" should have vested account balance of "1900" for asset "USD.1.10"
+  When  the network moves ahead "1" epochs
+  Then  "trader1" should have vesting account balance of "17290" for asset "USD.1.10"
+  And  "trader1" should have vested account balance of "2710" for asset "USD.1.10"
+  When  the network moves ahead "1" epochs
+  And  "trader1" should have vesting account balance of "15561" for asset "USD.1.10"
+  Then  "trader1" should have vested account balance of "4439" for asset "USD.1.10"
+

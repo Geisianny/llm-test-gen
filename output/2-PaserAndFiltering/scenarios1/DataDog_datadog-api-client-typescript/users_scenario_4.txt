@@ -1,0 +1,8 @@
+Scenario 4: Create a user returns null access role
+  Tags: ['@replay-only', '@team:DataDog/team-aaa-identity']
+  Given  new "CreateUser" request
+  And  body with value {"access_role": null, "disabled": false, "email": "test@datadoghq.com", "handle": "test@datadoghq.com", "name": "test user"}
+  When  the request is sent
+  Then  the response status is 200 User created
+  And  the response "user.access_role" is equal to null
+

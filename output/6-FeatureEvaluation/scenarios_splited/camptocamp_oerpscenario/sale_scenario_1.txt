@@ -1,0 +1,6 @@
+Scenario: Create a new sales order
+  Given there is a valid customer
+  When the administrator creates a new sales order for the customer
+  And adds a product to the order with a valid quantity
+  Then the system creates a sales order with the correct total amount
+  And the sales order is in the "draft" state

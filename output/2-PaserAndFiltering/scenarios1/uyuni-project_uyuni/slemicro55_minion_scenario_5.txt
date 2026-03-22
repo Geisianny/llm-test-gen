@@ -1,0 +1,6 @@
+Scenario 5: Check the new bootstrapped SLE Micro 5.5 minion in System Overview page
+  When  I wait until onboarding is completed for "slemicro55_minion"
+  And  I follow the left menu "Salt > Keys"
+  Then  I should see a "accepted" text
+  And  the Salt master can reach "slemicro55_minion"
+

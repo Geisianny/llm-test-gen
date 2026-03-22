@@ -1,0 +1,8 @@
+Scenario 8: SSH-managed minion hardware refresh
+  Tags: ['@ssh_minion']
+  Given  I am on the Systems overview page of this "ssh_minion"
+  When  I follow "Hardware"
+  And  I click on "Schedule Hardware Refresh"
+  Then  I should see a "You have successfully scheduled a hardware profile refresh" text
+  And  I wait until event "Hardware List Refresh scheduled" is completed
+

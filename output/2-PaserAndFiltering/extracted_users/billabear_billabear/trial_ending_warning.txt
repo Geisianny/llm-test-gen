@@ -1,0 +1,26 @@
+Feature: Trial Ending Warning
+
+Background: 
+  Given  the following accounts exist:
+  And  the follow products exist:
+  And  there are the following tax types:
+  And  that the following countries exist:
+  And  the following country tax rules exist:
+  And  the follow prices exist:
+  And  the following features exist:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "Price One" with:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "Price One" with:
+  And  the follow customers exist:
+
+Scenario 1: Send trial ending warning email
+  Given  that trial ending emails are to be sent
+  Given  the following subscriptions exist:
+  When  the trial ending check is ran
+  Then  the trial ending warning email is sent to the customer
+
+Scenario 2: Do not send trial ending warning email
+  Given  that trial ending emails are not to be sent
+  Given  the following subscriptions exist:
+  When  the trial ending check is ran
+  Then  the trial ending warning email is not sent to the customer
+

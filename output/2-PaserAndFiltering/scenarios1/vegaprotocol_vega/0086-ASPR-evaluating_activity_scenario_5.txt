@@ -1,0 +1,13 @@
+Scenario Outline 5: Party builds an activity streak and is then inactive for n epochs (0086-ASPR-007) - Example 1
+  Given  the following network parameters are set:
+  Given  the parties place the following orders:
+  And  the parties place the following orders:
+  Given  the network moves ahead "2" epochs
+  Then  the activity streaks at epoch "2" should be:
+
+  Examples:
+    | param | forward to epoch | active for | inactive for | multipliers |
+    | 1 | "2" | 0 | 1 | 1 |
+    | 5 | "5" | 1 | 4 | 2 |
+    | 5 | "6" | 0 | 5 | 1 |
+

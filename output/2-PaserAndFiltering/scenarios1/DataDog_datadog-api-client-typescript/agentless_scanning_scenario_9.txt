@@ -1,0 +1,7 @@
+Scenario 9: Create GCP scan options returns "Conflict" response
+  Tags: ['@team:DataDog/k9-agentless']
+  Given  new "CreateGcpScanOptions" request
+  And  body with value {"data": {"id": "api-spec-test", "type": "gcp_scan_options", "attributes": {"vuln_host_os": true, "vuln_containers_os": true}}}
+  When  the request is sent
+  Then  the response status is 409 Conflict
+

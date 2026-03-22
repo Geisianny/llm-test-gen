@@ -1,0 +1,6 @@
+Scenario: Login with unregistered email
+  Given there is no registered user with the email "unregistered@example.com"
+  When the user logs in with the email "unregistered@example.com"
+  And enters a password
+  Then the system denies access
+  And displays a message indicating that the email or password is incorrect

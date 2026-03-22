@@ -1,0 +1,13 @@
+Scenario 8: Change connection to a proxy
+  Given  I wait for "120" seconds
+  Given  I am on the Systems overview page of this "ssh_minion"
+  When  I follow "Details" in the content area
+  And  I follow "Connection" in the content area
+  And  I follow "Change" in the content area
+  And  I select the hostname of "proxy" from "proxies" if present
+  And  I click on "Change Proxy"
+  And  I wait until I see "scheduled" text
+  And  I follow "Events"
+  And  I follow "History"
+  And  I wait until I see the event "Apply states [channels] scheduled" completed during last minute, refreshing the page
+

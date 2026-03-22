@@ -1,0 +1,12 @@
+Scenario 5: Update an existing pet name
+  Tags: ['@sample-feature', '@petnames', '@update']
+  Given  I am on the Sample Feature screen
+  And  I have an existing pet name "Alice" for address "0x086473d15475Cf20722F5cA7D8d4adfa39Dc6E05"
+  When  I tap on the pet name entry in the list
+  Then  the Address field should be populated with "0x086473d15475Cf20722F5cA7D8d4adfa39Dc6E05"
+  And  the Name field should be populated with "Alice"
+  When  I change the Name field to "Alice my BFF"
+  And  I tap on the "Add Pet Name" button
+  Then  I should see "Alice my BFF" in the pet names list
+  And  I should not see "Alice" in the pet names list
+

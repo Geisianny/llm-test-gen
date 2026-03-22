@@ -1,0 +1,59 @@
+Scenario 2: Check all tab detail breadcrumb as offerer
+  Given  I am logged in as user "offerer@cocorico.rocks" with password "12345678"
+  When  I click on dashboard menu "Listings" of "offerer"
+  Then  I should be on the "dashboard listing" page
+  And  I wait 500 ms for Jquery loading
+  When  I follow "Edit"
+  And  I wait 500 ms for Jquery loading
+  Then  I should see "Home" in the "ul.breadcrumb" element
+  And  I should see "Offerer" in the "ul.breadcrumb" element
+  And  I should see "Listing" in the "ul.breadcrumb" element
+  And  I should see "Listing One" in the "ul.breadcrumb" element
+  And  I should see "presentation" in the "ul.breadcrumb" element
+  When  I follow "Price & conditions"
+  And  I wait 500 ms for Jquery loading
+  Then  I should see "Home" in the "ul.breadcrumb" element
+  And  I should see "Offerer" in the "ul.breadcrumb" element
+  And  I should see "Listing" in the "ul.breadcrumb" element
+  And  I should see "Listing One" in the "ul.breadcrumb" element
+  And  I should see "price and conditions" in the "ul.breadcrumb" element
+  When  I follow "Calendar"
+  And  I wait 500 ms for Jquery loading
+  Then  I should see "Home" in the "ul.breadcrumb" element
+  And  I should see "Offerer" in the "ul.breadcrumb" element
+  And  I should see "Listing" in the "ul.breadcrumb" element
+  And  I should see "Listing One" in the "ul.breadcrumb" element
+  And  I should see "calendar" in the "ul.breadcrumb" element
+  When  I follow "Photos"
+  And  I wait 500 ms for Jquery loading
+  Then  I should see "Home" in the "ul.breadcrumb" element
+  And  I should see "Offerer" in the "ul.breadcrumb" element
+  And  I should see "Listing" in the "ul.breadcrumb" element
+  And  I should see "Listing One" in the "ul.breadcrumb" element
+  And  I should see "photos" in the "ul.breadcrumb" element
+  When  I follow "Characteristics"
+  And  I wait 500 ms for Jquery loading
+  Then  I should see "Home" in the "ul.breadcrumb" element
+  And  I should see "Offerer" in the "ul.breadcrumb" element
+  And  I should see "Listing" in the "ul.breadcrumb" element
+  And  I should see "Listing One" in the "ul.breadcrumb" element
+  And  I should see "characteristics" in the "ul.breadcrumb" element
+  When  I follow "Various information"
+  And  I wait 500 ms for Jquery loading
+  Then  I should see "Home" in the "ul.breadcrumb" element
+  And  I should see "Offerer" in the "ul.breadcrumb" element
+  And  I should see "Listing" in the "ul.breadcrumb" element
+  And  I should see "Listing One" in the "ul.breadcrumb" element
+  And  I should see "various informations" in the "ul.breadcrumb" element
+  When  I click on dashboard menu "Listings" of "offerer"
+  Then  I should be on the "dashboard listing" page
+  And  I wait 500 ms for Jquery loading
+  When  I follow "Show"
+  And  I wait 500 ms for Jquery loading
+  Then  I should see "Home" in the "ol.breadcrumb" element
+  And  I should see "Pays" in the "ol.breadcrumb" element
+  And  I should see "Région" in the "ol.breadcrumb" element
+  And  I should see "Département" in the "ol.breadcrumb" element
+  And  I should see "Lieu dit" in the "ol.breadcrumb" element
+  And  I should see "Code postal" in the "ol.breadcrumb" element
+

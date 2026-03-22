@@ -1,0 +1,8 @@
+Scenario 1: Filtering catalog promotions by a chosen channel
+  Tags: ['@api', '@ui']
+  When  I browse catalog promotions
+  And  I filter by "Web-EU" channel
+  Then  I should see a catalog promotion with name "Surprise sale"
+  And  I should see a catalog promotion with name "Spring sale"
+  But  I should not see a catalog promotion with name "Winter sale"
+

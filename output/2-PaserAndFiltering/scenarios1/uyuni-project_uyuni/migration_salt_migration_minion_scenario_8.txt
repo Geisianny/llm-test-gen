@@ -1,0 +1,24 @@
+Scenario 8: Do some basic testing on the minion with the Salt bundle in the Salt migration context
+  Given  I am on the Systems overview page of this "salt_migration_minion"
+  And  I follow "Software" in the content area
+  And  I follow "Install"
+  And  I enter "adobe-sourcecodepro-fonts" as the filtered package name
+  And  I click on the filter button
+  And  I wait until I see "adobe-sourcecodepro-fonts" text
+  And  I check "adobe-sourcecodepro-fonts" in the list
+  And  I click on "Install Packages"
+  And  I click on "Confirm"
+  When  I wait until event "Package Install/Upgrade scheduled by admin" is completed
+  Then  "adobe-sourcecodepro-fonts" should be installed on "salt_migration_minion"
+  And  I follow "Software" in the content area
+  And  I follow "Install"
+  When  I follow "List / Remove"
+  And  I enter "adobe-sourcecodepro-fonts" as the filtered package name
+  And  I click on the filter button
+  And  I wait until I see "adobe-sourcecodepro-fonts" text
+  And  I check "adobe-sourcecodepro-fonts" in the list
+  And  I click on "Remove Packages"
+  And  I click on "Confirm"
+  When  I wait until event "Package Removal scheduled by admin" is completed
+  Then  "adobe-sourcecodepro-fonts" should not be installed on "salt_migration_minion"
+

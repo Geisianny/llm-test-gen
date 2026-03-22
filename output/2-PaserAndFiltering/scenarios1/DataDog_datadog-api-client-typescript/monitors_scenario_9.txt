@@ -1,0 +1,10 @@
+Scenario 9: Create a ci-tests monitor returns "OK" response
+  Tags: ['@team:DataDog/monitor-app']
+  Given  new "CreateMonitor" request
+  And  body with value {"name": "{{ unique }}","type": "ci-tests alert","query": "ci-tests(\"type:test @git.branch:staging* @test.status:fail\").rollup(\"count\").by(\"@test.name\").last(\"5m\") >= 1","message": "some message Notify: @hipchat-channel", "tags": ["test:{{ unique_lower_alnum }}", "env:ci"],"priority": 3,"options":{"thresholds":{"critical":1}}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "name" is equal to "{{ unique }}"
+  And  the response "type" is equal to "ci-tests alert"
+  And  the response "query" is equal to "ci-tests(\"type:test @git.branch:staging* @test.status:fail\").rollup(\"count\").by(\"@test.name\").last(\"5m\") >= 1"
+

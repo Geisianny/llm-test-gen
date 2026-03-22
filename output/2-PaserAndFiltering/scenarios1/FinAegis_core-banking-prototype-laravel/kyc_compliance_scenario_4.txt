@@ -1,0 +1,8 @@
+Scenario 4: Transaction monitoring and limits
+  Given  I am KYC approved at level 2
+  And  my daily limit is 5000.00 USD
+  When  I attempt a transfer of 6000.00 USD
+  Then  the transaction should be blocked
+  And  I should be prompted to complete higher KYC level
+  And  the compliance team should be alerted
+

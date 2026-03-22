@@ -1,0 +1,7 @@
+Scenario 3: Properly rounded taxes for multiple products with different tax rate
+  Tags: ['@ui']
+  When  I add 2 products "PHP T-Shirt" to the cart
+  And  I add product "PHP Mug" to the cart
+  Then  my cart total should be "$66.90"
+  And  my included in price taxes should be "$7.75"
+

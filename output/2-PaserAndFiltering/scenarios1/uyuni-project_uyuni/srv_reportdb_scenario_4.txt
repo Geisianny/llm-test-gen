@@ -1,0 +1,4 @@
+Scenario 4: Create read-only user
+  When  I create a read-only user for the ReportDB
+  Then  I should see the read-only user listed on the ReportDB user accounts
+

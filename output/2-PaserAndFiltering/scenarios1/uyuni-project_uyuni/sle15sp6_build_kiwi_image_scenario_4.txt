@@ -1,0 +1,7 @@
+Scenario 4: Build Kiwi image for SLES 15 SP6
+  Tags: ['@sle15sp6_buildhost']
+  When  I follow the left menu "Images > Build"
+  And  I select "suse_os_image_15_sp6" from "profileId"
+  And  I select the hostname of "sle15sp6_buildhost" from "buildHostId"
+  And  I click on "submit-btn"
+

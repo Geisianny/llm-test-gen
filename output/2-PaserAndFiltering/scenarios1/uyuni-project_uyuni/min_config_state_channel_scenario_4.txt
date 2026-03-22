@@ -1,0 +1,9 @@
+Scenario 4: Salt state details
+  When  I follow the left menu "Configuration > Channels"
+  And  I follow "My State Channel"
+  Then  I should see a "1 system subscribed" text
+  When  I follow "View/Edit 'init.sls' File"
+  Then  I should see a "Revision 1 of /init.sls from channel My State Channel" text
+  And  I should see a "File Contents" text
+  And  I should see a "touch /root/foobar:" text
+

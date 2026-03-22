@@ -1,0 +1,11 @@
+Scenario Outline 2: Navigation - Example 1
+  Given  they go to the product's application plans admin page
+  When  they follow "Free" within the table
+  Then  the current page is application plan "Free" admin edit page
+
+  Examples:
+    | index plans page | plan |
+    | the product's application plans admin page | application plan "Free" |
+    | product "My API" service plans admin page | service plan "Free" |
+    | the account plans admin page | account plan "Free" |
+

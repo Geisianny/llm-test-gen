@@ -1,0 +1,8 @@
+Scenario 9: Query users returns "Successful response with user data" response
+  Tags: ['@generated', '@skip', '@team:DataDog/audience-management-backend']
+  Given  operation "QueryUsers" enabled
+  And  new "QueryUsers" request
+  And  body with value {"data": {"attributes": {"limit": 25, "query": "user_email:*@techcorp.com AND first_country_code:US AND first_browser_name:Chrome", "select_columns": ["user_id", "user_email", "user_name", "user_org_id", "first_country_code", "first_browser_name", "first_device_type", "last_seen"], "sort": {"field": "first_seen", "order": "DESC"}, "wildcard_search_term": "john"}, "id": "query_users_request", "type": "query_users_request"}}
+  When  the request is sent
+  Then  the response status is 200 Successful response with user data
+

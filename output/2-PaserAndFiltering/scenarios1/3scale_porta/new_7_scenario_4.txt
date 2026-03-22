@@ -1,0 +1,7 @@
+Scenario 4: Create an application for a subscribed product
+  Given  the buyer is subscribed to product "My API"
+  And  they go to buyer "Jane" new application page
+  When  the form is submitted with:
+  Then  they should see a toast alert with text "Application was successfully created"
+  And  the current page is application "New App" admin page
+

@@ -1,0 +1,7 @@
+Scenario 18: View Filter URLs
+  Given  the following BingV7 Affiliates exist:
+  And  the following Excluded URLs exist for the site "agency.gov":
+  And  I am logged in with email "john@agency.gov"
+  When  I go to the agency.gov's Filter URLs page
+  Then  I should see the following table rows:
+

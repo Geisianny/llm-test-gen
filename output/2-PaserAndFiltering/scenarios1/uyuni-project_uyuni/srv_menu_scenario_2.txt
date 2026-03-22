@@ -1,0 +1,9 @@
+Scenario 2: The Home menu
+  When  I follow the left menu "Home"
+  And  I should see a "Overview" link in the left menu
+  Then  I should see a "Overview" text
+  And  I should see a "Notification Messages" link in the left menu
+  And  I should see a "User Account" link in the left menu
+  And  I should see a "My Preferences" link in the left menu
+  And  I should see a "My Organization" link in the left menu
+

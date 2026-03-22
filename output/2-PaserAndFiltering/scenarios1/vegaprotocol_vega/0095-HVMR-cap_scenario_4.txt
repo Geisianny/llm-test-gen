@@ -1,0 +1,28 @@
+Scenario Outline 4: Fees updated mid epoch, fees not affected untill next epoch (0029-FEES-051)(0029-FEES-052) - Example 1
+  Given  the following network parameters are set:
+  And  the volume rebate program tiers named "vrt":
+  And  the volume rebate program:
+  And  the network moves ahead "1" epochs
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  Given  the network moves ahead "1" epochs
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  Then  the following transfers should happen:
+  Then  clear trade events
+  Given  the following network parameters are set:
+  And  the network moves ahead "1" blocks
+  When  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  debug trades
+  Then  the following trades should be executed:
+  Then  the following transfers should happen:
+
+  Examples:
+    | rebate | initial buyback | initial treasury | initial buyback amount | initial treasury amount | initial rebate amount | updated buyback | updated treasury | updated buyback amount | updated treasury amount | updated rebate amount |
+    | 0.003 | 0.004 | 0 | 50 | 0 | 150 | 0.001 | 0 | 0 | 0 | 50 |
+    | 0.003 | 0 | 0.004 | 0 | 50 | 150 | 0 | 0.001 | 0 | 0 | 50 |
+    | 0.003 | 0.002 | 0.002 | 25 | 25 | 150 | 0.001 | 0.001 | 0 | 0 | 100 |
+

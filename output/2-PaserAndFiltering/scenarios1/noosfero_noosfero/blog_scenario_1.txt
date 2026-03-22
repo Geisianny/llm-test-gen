@@ -1,0 +1,10 @@
+Scenario 1: create a blog
+  Tags: ['@selenium']
+  Given  I go to joaosilva's control panel
+  And  I follow "New Blog"
+  Then  I should see "My Blog"
+  When  I fill in "Title" with "My Blog"
+  And  I follow "Save"
+  And  I go to joaosilva's control panel
+  Then  I should see "Configure Blog"
+

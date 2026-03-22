@@ -1,0 +1,9 @@
+Scenario 32: paginate events on the same day correctly
+  Tags: ['@selenium']
+  Given  the following events
+  When  I am on /profile/josesilva/events/2009/10
+  And  I follow "15"
+  And  I follow "Next" within ".xhr-links"
+  Then  I should see "Party On"
+  And  I should see "October 2009" within "#agenda"
+

@@ -1,0 +1,5 @@
+Scenario 7: Historical conversion tracking
+  Given  I have made several conversions
+  When  I view my conversion history
+  Then  I should see all past conversions with:
+

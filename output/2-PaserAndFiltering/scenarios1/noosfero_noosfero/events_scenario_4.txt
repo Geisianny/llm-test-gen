@@ -1,0 +1,5 @@
+Scenario 4: go to previous month in global agenda
+  Given  I am on /search/events?year=2009&month=11
+  When  I follow "October"
+  Then  I should see "October 2009" within ".current-month"
+

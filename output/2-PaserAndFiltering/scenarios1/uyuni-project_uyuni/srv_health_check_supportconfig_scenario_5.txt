@@ -1,0 +1,5 @@
+Scenario 5: I can stop the Health Check tool
+  When  I stop health check tool on "localhost"
+  Then  I check that the health check tool is not running on "localhost"
+  And  I remove test supportconfig on "localhost"
+

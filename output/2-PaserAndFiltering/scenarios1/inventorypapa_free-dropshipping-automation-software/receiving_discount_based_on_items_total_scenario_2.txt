@@ -1,0 +1,7 @@
+Scenario 2: Receiving discount when buying items for more than required total value
+  Tags: ['@ui', '@api']
+  Given  the promotion gives "$10.00" discount to every order with items total at least "$90.00"
+  When  I add 2 products "PHP T-Shirt" to the cart
+  Then  my cart total should be "$150.00"
+  And  my discount should be "-$10.00"
+

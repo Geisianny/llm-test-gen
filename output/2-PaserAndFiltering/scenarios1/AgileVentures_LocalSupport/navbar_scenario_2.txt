@@ -1,0 +1,9 @@
+Scenario Outline 2: Top navbar has a SuperAdmin dropdown menu - Example 1
+  Then  the SuperAdmin menu has a valid Invite Users to become admin of Organisations link
+
+  Examples:
+    | link |
+    | Invite Users to become admin of Organisations |
+    | Invited Users |
+    | Registered Users |
+

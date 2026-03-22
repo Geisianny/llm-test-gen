@@ -1,0 +1,7 @@
+Scenario 5: Get an event returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/event-management']
+  Given  new "GetEvent" request
+  And  request contains "event_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

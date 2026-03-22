@@ -1,0 +1,7 @@
+Scenario 2: Filtering payment requests by payment method
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I browse payment requests of an order "#00000001"
+  And  I filter by the "Credit Card" payment method
+  Then  there should be 1 payment request on the list
+  And  it should be the payment request with payment method "Credit Card"
+

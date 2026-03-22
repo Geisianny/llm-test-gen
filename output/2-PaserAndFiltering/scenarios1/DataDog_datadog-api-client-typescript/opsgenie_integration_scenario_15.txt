@@ -1,0 +1,11 @@
+Scenario 15: Update a single service object returns "OK" response
+  Tags: ['@team:Datadog/collaboration-integrations']
+  Given  there is a valid "opsgenie_service" in the system
+  And  new "UpdateOpsgenieService" request
+  And  request contains "integration_service_id" parameter from "opsgenie_service.data.id"
+  And  body with value {"data": {"attributes": {"name": "{{ opsgenie_service.data.attributes.name }}--updated", "opsgenie_api_key": "00000000-0000-0000-0000-000000000000", "region": "eu"}, "id": "{{opsgenie_service.data.id}}", "type": "opsgenie-service"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.attributes.name" is equal to "{{ opsgenie_service.data.attributes.name }}--updated"
+  And  the response "data.attributes.region" is equal to "eu"
+

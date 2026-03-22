@@ -1,0 +1,10 @@
+Scenario 24: Get a monitor user template returns "OK" response
+  Tags: ['@team:DataDog/monitor-app']
+  Given  there is a valid "monitor_user_template" in the system
+  And  new "GetMonitorUserTemplate" request
+  And  operation "GetMonitorUserTemplate" enabled
+  And  request contains "template_id" parameter from "monitor_user_template.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.type" is equal to "monitor-user-template"
+

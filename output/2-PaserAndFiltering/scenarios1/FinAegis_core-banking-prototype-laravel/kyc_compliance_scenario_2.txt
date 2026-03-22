@@ -1,0 +1,8 @@
+Scenario 2: KYC approval process
+  Given  I have submitted KYC documents
+  And  a compliance officer reviews my application
+  When  the compliance officer approves my KYC
+  Then  my KYC status should be "approved"
+  And  my account limits should be increased
+  And  I should receive approval notification
+

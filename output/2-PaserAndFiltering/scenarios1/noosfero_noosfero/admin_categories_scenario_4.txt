@@ -1,0 +1,13 @@
+Scenario 4: admin user could hide the category tree
+  Tags: ['@selenium']
+  Given  I follow "menu-dropdown"
+  And  I wait for 1 seconds
+  And  I follow "Administration"
+  And  I follow "Categories"
+  When  I follow "Show"
+  Then  I should see "Vegetarian"
+  And  I should see "Steak"
+  When  I follow "Hide"
+  Then  I should not see "Vegetarian"
+  And  I should not see "Steak"
+

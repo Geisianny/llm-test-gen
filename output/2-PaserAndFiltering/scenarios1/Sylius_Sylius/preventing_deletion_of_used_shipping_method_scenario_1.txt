@@ -1,0 +1,6 @@
+Scenario 1: Being unable to delete a shipping method which is in use
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I try to delete shipping method "DHL Express"
+  Then  I should be notified that it is in use
+  And  this shipping method should still be in the registry
+

@@ -1,0 +1,11 @@
+Scenario 5: Get a list of pipelines events returns "OK" response with pagination
+  Tags: ['@replay-only', '@skip-java', '@skip-python', '@skip-typescript', '@skip-validation', '@team:DataDog/ci-app-backend', '@with-pagination']
+  Given  a valid "appKeyAuth" key in the system
+  And  new "ListCIAppPipelineEvents" request
+  And  request contains "filter[from]" parameter with value "{{ timeISO('now - 30s') }}"
+  And  request contains "filter[to]" parameter with value "{{ timeISO('now') }}"
+  And  request contains "page[limit]" parameter with value 2
+  When  the request with pagination is sent
+  Then  the response status is 200 OK
+  And  the response has 2 items
+

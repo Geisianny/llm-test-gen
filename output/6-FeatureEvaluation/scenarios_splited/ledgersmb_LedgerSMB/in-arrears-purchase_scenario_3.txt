@@ -1,0 +1,6 @@
+Scenario: COGS posting with multiple sales without costs
+  Given there are multiple sales recorded without associated costs
+  And a purchase invoice is available with the cost of goods
+  When the purchase invoice is posted
+  Then the system automatically posts the COGS for all applicable sales
+  And updates the accounting records accordingly

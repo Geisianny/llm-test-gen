@@ -1,0 +1,7 @@
+Scenario 2: Test "image.profiles" namespace
+  Tags: ['@scc_credentials']
+  When  I create and delete profiles via API
+  And  I create and delete profile custom values via API
+  And  I list image profiles via API
+  And  I set and get profile details via API
+

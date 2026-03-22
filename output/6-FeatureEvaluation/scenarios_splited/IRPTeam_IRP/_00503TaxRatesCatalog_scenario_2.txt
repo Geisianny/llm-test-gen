@@ -1,0 +1,6 @@
+Scenario: Attempt to create a tax rate with duplicate code
+  Given there is an administrator logged in
+  And there is a tax rate with the code "VAT" and rate "20"
+  When the administrator creates a new tax rate with the code "VAT" and rate "15"
+  Then the system denies the creation
+  And displays an error message indicating that the tax rate code already exists

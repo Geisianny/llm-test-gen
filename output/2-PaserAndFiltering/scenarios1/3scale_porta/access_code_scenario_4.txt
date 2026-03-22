@@ -1,0 +1,7 @@
+Scenario 4: Valid access code in any page not being homepage
+  Given  the provider has site access code "foobar"
+  When  the current domain is foo.3scale.localhost
+  And  I go to the dashboard page
+  And  I enter "foobar" as access code
+  Then  I should not be in the access code page
+

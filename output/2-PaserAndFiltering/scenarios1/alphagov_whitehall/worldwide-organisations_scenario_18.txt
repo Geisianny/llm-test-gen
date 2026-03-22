@@ -1,0 +1,6 @@
+Scenario 18: Adding a translation to an existing worldwide organisation page
+  Given  an worldwide organisation "Test Worldwide Organisation" with a "Personal information charter" page and a translation in French
+  When  I visit the "Pages" tab
+  And  I add a new page translation with a body of "French Body"
+  Then  I should see the "Translated" subheading in the "Offices" tab with my new translation
+

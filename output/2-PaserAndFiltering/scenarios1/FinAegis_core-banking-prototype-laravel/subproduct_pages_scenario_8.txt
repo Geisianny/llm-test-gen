@@ -1,0 +1,10 @@
+Scenario 8: All subproduct pages have working GCU links
+  When  I visit "/subproducts/exchange"
+  Then  I should see a link to "Global Currency Unit" pointing to "/gcu"
+  When  I visit "/subproducts/lending"
+  Then  I should see a link to "Global Currency Unit" pointing to "/gcu"
+  When  I visit "/subproducts/stablecoins"
+  Then  I should see a link to "Global Currency Unit" pointing to "/gcu"
+  When  I visit "/subproducts/treasury"
+  Then  I should see a link to "Global Currency Unit" pointing to "/gcu"
+

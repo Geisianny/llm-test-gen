@@ -1,0 +1,5 @@
+Scenario: Dashboard displays proposals associated with the provider's company
+  Given there is a registered provider with the company "XYZ Inc."
+  And there are 2 proposals associated with "XYZ Inc."
+  When the provider logs in
+  Then the dashboard displays the 2 proposals associated with "XYZ Inc."

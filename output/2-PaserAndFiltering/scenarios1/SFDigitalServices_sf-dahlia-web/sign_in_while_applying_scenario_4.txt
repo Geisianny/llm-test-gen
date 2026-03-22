@@ -1,0 +1,13 @@
+Scenario 4: Signing in on the welcome back page with same account details
+  Given  I go to the first page of the "Test Listing" application
+  When  I fill out the Name page as "Alice Walker"
+  Then  the application page title should be "Welcome back!"
+  When  I sign in as "Alice Walker" with my email pre-filled
+  Then  I should be signed in
+  And  I should be on the "Name" page of the application
+  And  I should only by able to edit my info from account settings
+  And  I should see the account info for "Alice Walker" filled in on the Name page
+  When  I go to the "My Applications" page
+  And  I delete my application for the "Test Listing"
+  And  I sign out
+

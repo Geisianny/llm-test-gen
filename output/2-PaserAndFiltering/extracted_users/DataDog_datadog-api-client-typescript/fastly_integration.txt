@@ -1,0 +1,249 @@
+Feature: Fastly Integration
+Description: Manage your Datadog Fastly integration accounts and services directly
+  through the Datadog API. See the [Fastly integration
+  page](https://docs.datadoghq.com/integrations/fastly/) for more
+  information.
+Tags: ['@endpoint(fastly-integration)', '@endpoint(fastly-integration-v2)']
+
+Background: 
+  Given  a valid "apiKeyAuth" key in the system
+  And  a valid "appKeyAuth" key in the system
+  And  an instance of "FastlyIntegration" API
+
+Scenario 1: Add Fastly account returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "CreateFastlyAccount" request
+  And  body with value {"data": {"attributes": {"api_key": "ABCDEFG123", "name": "test-name", "services": [{"id": "6abc7de6893AbcDe9fghIj", "tags": ["myTag", "myTag2:myValue"]}]}, "type": "fastly-accounts"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 2: Add Fastly account returns "CREATED" response
+  Tags: ['@team:DataDog/saas-integrations']
+  Given  new "CreateFastlyAccount" request
+  And  body with value {"data": {"attributes": {"api_key": "{{ unique_alnum }}", "name": "{{ unique }}", "services": []}, "type": "fastly-accounts"}}
+  When  the request is sent
+  Then  the response status is 201 CREATED
+  And  the response "data.type" is equal to "fastly-accounts"
+  And  the response "data.attributes.name" is equal to "{{ unique }}"
+  And  the response "data.attributes.services" has length 0
+
+Scenario 3: Add Fastly account returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "CreateFastlyAccount" request
+  And  body with value {"data": {"attributes": {"api_key": "ABCDEFG123", "name": "test-name", "services": [{"id": "6abc7de6893AbcDe9fghIj", "tags": ["myTag", "myTag2:myValue"]}]}, "type": "fastly-accounts"}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+Scenario 4: Add Fastly service returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "CreateFastlyService" request
+  And  request contains "account_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"tags": ["myTag", "myTag2:myValue"]}, "id": "abc123", "type": "fastly-services"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 5: Add Fastly service returns "CREATED" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "CreateFastlyService" request
+  And  request contains "account_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"tags": ["myTag", "myTag2:myValue"]}, "id": "abc123", "type": "fastly-services"}}
+  When  the request is sent
+  Then  the response status is 201 CREATED
+
+Scenario 6: Add Fastly service returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "CreateFastlyService" request
+  And  request contains "account_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"tags": ["myTag", "myTag2:myValue"]}, "id": "abc123", "type": "fastly-services"}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+Scenario 7: Delete Fastly account returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "DeleteFastlyAccount" request
+  And  request contains "account_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 8: Delete Fastly account returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "DeleteFastlyAccount" request
+  And  request contains "account_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+Scenario 9: Delete Fastly account returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "DeleteFastlyAccount" request
+  And  request contains "account_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 204 OK
+
+Scenario 10: Delete Fastly service returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "DeleteFastlyService" request
+  And  request contains "account_id" parameter from "REPLACE.ME"
+  And  request contains "service_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 11: Delete Fastly service returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "DeleteFastlyService" request
+  And  request contains "account_id" parameter from "REPLACE.ME"
+  And  request contains "service_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+Scenario 12: Delete Fastly service returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "DeleteFastlyService" request
+  And  request contains "account_id" parameter from "REPLACE.ME"
+  And  request contains "service_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 204 OK
+
+Scenario 13: Get Fastly account returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "GetFastlyAccount" request
+  And  request contains "account_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 14: Get Fastly account returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "GetFastlyAccount" request
+  And  request contains "account_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+Scenario 15: Get Fastly account returns "OK" response
+  Tags: ['@team:DataDog/saas-integrations']
+  Given  there is a valid "fastly_account" in the system
+  And  new "GetFastlyAccount" request
+  And  request contains "account_id" parameter from "fastly_account.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.type" is equal to "fastly-accounts"
+  And  the response "data.attributes.name" is equal to "{{ unique }}"
+  And  the response "data.attributes.services" has length 0
+
+Scenario 16: Get Fastly service returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "GetFastlyService" request
+  And  request contains "account_id" parameter from "REPLACE.ME"
+  And  request contains "service_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 17: Get Fastly service returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "GetFastlyService" request
+  And  request contains "account_id" parameter from "REPLACE.ME"
+  And  request contains "service_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+Scenario 18: Get Fastly service returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "GetFastlyService" request
+  And  request contains "account_id" parameter from "REPLACE.ME"
+  And  request contains "service_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 200 OK
+
+Scenario 19: List Fastly accounts returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "ListFastlyAccounts" request
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 20: List Fastly accounts returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "ListFastlyAccounts" request
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+Scenario 21: List Fastly accounts returns "OK" response
+  Tags: ['@team:DataDog/saas-integrations']
+  Given  there is a valid "fastly_account" in the system
+  And  new "ListFastlyAccounts" request
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data[0].type" is equal to "fastly-accounts"
+
+Scenario 22: List Fastly services returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "ListFastlyServices" request
+  And  request contains "account_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 23: List Fastly services returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "ListFastlyServices" request
+  And  request contains "account_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+Scenario 24: List Fastly services returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "ListFastlyServices" request
+  And  request contains "account_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 200 OK
+
+Scenario 25: Update Fastly account returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "UpdateFastlyAccount" request
+  And  request contains "account_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"api_key": "ABCDEFG123"}, "type": "fastly-accounts"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 26: Update Fastly account returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "UpdateFastlyAccount" request
+  And  request contains "account_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"api_key": "ABCDEFG123"}, "type": "fastly-accounts"}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+Scenario 27: Update Fastly account returns "OK" response
+  Tags: ['@team:DataDog/saas-integrations']
+  Given  there is a valid "fastly_account" in the system
+  And  new "UpdateFastlyAccount" request
+  And  request contains "account_id" parameter from "fastly_account.data.id"
+  And  body with value {"data": {"attributes": {"api_key": "update-secret"}, "type": "fastly-accounts"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.id" is equal to "{{fastly_account.data.id }}"
+  And  the response "data.attributes.name" is equal to "{{fastly_account.data.attributes.name }}"
+
+Scenario 28: Update Fastly service returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "UpdateFastlyService" request
+  And  request contains "account_id" parameter from "REPLACE.ME"
+  And  request contains "service_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"tags": ["myTag", "myTag2:myValue"]}, "id": "abc123", "type": "fastly-services"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 29: Update Fastly service returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "UpdateFastlyService" request
+  And  request contains "account_id" parameter from "REPLACE.ME"
+  And  request contains "service_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"tags": ["myTag", "myTag2:myValue"]}, "id": "abc123", "type": "fastly-services"}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+Scenario 30: Update Fastly service returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "UpdateFastlyService" request
+  And  request contains "account_id" parameter from "REPLACE.ME"
+  And  request contains "service_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"tags": ["myTag", "myTag2:myValue"]}, "id": "abc123", "type": "fastly-services"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+

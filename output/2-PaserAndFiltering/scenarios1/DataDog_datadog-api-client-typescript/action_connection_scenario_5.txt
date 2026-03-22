@@ -1,0 +1,7 @@
+Scenario 5: Get an existing Action Connection returns "Bad Request" response
+  Tags: ['@team:DataDog/workflow-automation-dev']
+  Given  new "GetActionConnection" request
+  And  request contains "connection_id" parameter with value "bad-format"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

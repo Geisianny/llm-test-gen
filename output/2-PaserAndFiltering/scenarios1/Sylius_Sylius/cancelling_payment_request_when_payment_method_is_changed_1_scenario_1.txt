@@ -1,0 +1,8 @@
+Scenario 1: Cancelling only not finalized payment requests when the payment method has changed
+  Tags: ['@api', '@ui']
+  When  I want to browse order details for this order
+  And  I change my payment method to "Bank Transfer"
+  Then  a payment request with action "authorize" for payment method "Cash on Delivery" should have state "cancelled"
+  And  a payment request with action "status" for payment method "Cash on Delivery" should have state "cancelled"
+  And  a payment request with action "capture" for payment method "Cash on Delivery" should have state "completed"
+

@@ -1,0 +1,13 @@
+Scenario 15: Update an existing incident service returns "OK" response
+  Tags: ['@team:Datadog/incident-app']
+  Given  there is a valid "service" in the system
+  And  operation "UpdateIncidentService" enabled
+  And  new "UpdateIncidentService" request
+  And  request contains "service_id" parameter from "service.data.id"
+  And  body with value {"data": {"type": "services", "attributes": {"name": "{{ service.data.attributes.name }}-updated"}}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.id" is equal to "{{service.data.id}}"
+  And  the response "data.type" is equal to "services"
+  And  the response "data.attributes.name" is equal to "{{ service.data.attributes.name }}-updated"
+

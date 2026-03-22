@@ -1,0 +1,9 @@
+Scenario 1: Receiving no discount if promotion for the applied coupon is not enabled in the current channel
+  Tags: ['@api', '@ui']
+  Given  this promotion is not available in any channel
+  And  I added 2 products "PHP T-Shirt" to the cart
+  And  I applied the coupon with code "SANTA2016"
+  When  I check the details of my cart
+  And  my cart total should be "$200.00"
+  And  there should be no discount applied
+

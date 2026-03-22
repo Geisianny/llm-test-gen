@@ -1,0 +1,9 @@
+Scenario 11: Create tag pipeline ruleset returns "OK" response
+  Tags: ['@replay-only', '@team:DataDog/cloud-cost-management']
+  Given  new "CreateTagPipelinesRuleset" request
+  And  body with value {"data": {"attributes": {"enabled": true, "rules": [{"enabled": true, "mapping": null, "name": "Add Cost Center Tag", "query": {"addition": {"key": "cost_center", "value": "engineering"}, "case_insensitivity": false, "if_not_exists": true, "query": "account_id:\"123456789\" AND service:\"web-api\""}, "reference_table": null}]}, "id": "New Ruleset", "type": "create_ruleset"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.type" is equal to "ruleset"
+  And  the response "data.attributes.name" is equal to "New Ruleset"
+

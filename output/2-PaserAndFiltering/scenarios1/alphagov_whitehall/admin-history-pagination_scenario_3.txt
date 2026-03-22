@@ -1,0 +1,13 @@
+Scenario 3: Filtering the history
+  Then  I can see the ten most recent timeline entries
+  When  I set the filter to show "Document history"
+  Then  I can only see the history
+  When  I set the filter to show "Internal notes"
+  Then  I can only see the internal notes
+  When  I click the "Older" history link
+  Then  I can see the second page of internal notes
+  When  I click the "Newer" history link
+  Then  I can only see the internal notes
+  When  I set the filter to show "Everything"
+  Then  I can see the ten most recent timeline entries
+

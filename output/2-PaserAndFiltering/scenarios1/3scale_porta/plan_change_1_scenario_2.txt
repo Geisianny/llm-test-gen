@@ -1,0 +1,10 @@
+Scenario 2: Should not refund but bill upgrade on PREPAID billing
+  Given  the time is 25th April 2009
+  And  the provider is charging its buyers in prepaid mode
+  And  the buyer is signed up to application plan "PaidAsInLunch" on 25th April 2009
+  When  I log in as "stallman" on foo.3scale.localhost
+  And  the buyer changes to application plan "PaidAsInDiplomat" on 15th May 2009 UTC
+  And  time flies to 3rd June 2009
+  And  I navigate to 2nd invoice issued for me in "May, 2009"
+  Then  I should see line items
+

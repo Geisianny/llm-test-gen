@@ -1,0 +1,13 @@
+Scenario 7: 2 plan changes in one month the same day POSTPAID
+  Given  the buyer is signed up to application plan "CheapPlan" on 14th May 2009
+  And  buyer "stallman" makes 1 service transactions with:
+  When  I log in as "stallman" on foo.3scale.localhost on 15th May 2009
+  And  buyer "stallman" makes 1 service transactions with:
+  And  the buyer changes to application plan "ExpensivePlan"
+  And  buyer "stallman" makes 1 service transactions with:
+  And  the buyer changes to application plan "VeryExpensivePlan"
+  And  buyer "stallman" makes 1 service transactions with:
+  And  I navigate to Invoices issued for me on 3rd June 2009
+  Then  I follow "Show"
+  Then  I should see "EUR 301.00"
+

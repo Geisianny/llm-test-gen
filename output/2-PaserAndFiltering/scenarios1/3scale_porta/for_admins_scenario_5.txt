@@ -1,0 +1,7 @@
+Scenario 5: Sent invitations show their state
+  Given  an invitation sent to "alice@lolcats.com" to join account "lol cats" was accepted
+  And  an invitation sent to "bob@lolcats.com" to join account "lol cats"
+  When  I navigate to the page of the invitations of the partner "lol cats"
+  Then  the table should contain an accepted invitation from "alice@lolcats.com"
+  And  the table should contain a pending invitation from "bob@lolcats.com"
+

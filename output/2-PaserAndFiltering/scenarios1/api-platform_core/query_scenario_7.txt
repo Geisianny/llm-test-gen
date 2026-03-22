@@ -1,0 +1,14 @@
+Scenario 7: Retrieve an item with an iterable field
+  Tags: ['@createSchema']
+  Given  there are 2 dummy objects with relatedDummy
+  Given  there are 2 dummy objects with JSON and array data
+  When  I send the following GraphQL request:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the JSON node "data.dummy.id" should be equal to "/dummies/3"
+  And  the JSON node "data.dummy.name" should be equal to "Dummy #1"
+  And  the JSON node "data.dummy.jsonData.foo" should have 2 elements
+  And  the JSON node "data.dummy.jsonData.bar" should be equal to 5
+  And  the JSON node "data.dummy.arrayData[2]" should be equal to baz
+

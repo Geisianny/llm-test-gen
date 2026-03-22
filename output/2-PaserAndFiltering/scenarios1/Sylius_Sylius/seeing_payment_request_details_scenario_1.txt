@@ -1,0 +1,9 @@
+Scenario 1: Seeing payment request's details
+  Tags: ['@api', '@ui']
+  When  I view details of the payment request for the "#00000001" order
+  Then  its method should be "Cash on Delivery"
+  And  its action should be "Authorize"
+  And  its state should be "New"
+  And  its payload should has empty value
+  And  its response data should has empty value
+

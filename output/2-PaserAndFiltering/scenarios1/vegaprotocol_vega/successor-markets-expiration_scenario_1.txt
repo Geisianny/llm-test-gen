@@ -1,0 +1,44 @@
+Scenario 1: 0081-SUCM-035 Enact a successor market once the parent market is settled, and the succession window has expired
+  Tags: ['@SuccessorMarketExpires']
+  Given  the markets:
+  Given  the initial insurance pool balance is "1000" for all the markets
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/DEC19"
+  Then  the market data for the market "ETH/DEC19" should be:
+  And  the parties should have the following account balances:
+  And  the parties should have the following margin levels:
+  And  the liquidity provider fee shares for the market "ETH/DEC19" should be:
+  When  the oracles broadcast data signed with "0xCAFECAFE1":
+  Then  the market state should be "STATE_SETTLED" for the market "ETH/DEC19"
+  When  the successor market "ETH/DEC20" is enacted
+  Then  the market data for the market "ETH/DEC20" should be:
+  And  the last market state should be "STATE_SETTLED" for the market "ETH/DEC19"
+  And  the last market state should be "STATE_PENDING" for the market "ETH/DEC20"
+  And  the insurance pool balance should be "1000" for the market "ETH/DEC19"
+  And  the insurance pool balance should be "1000" for the market "ETH/DEC20"
+  And  the global insurance pool balance should be "0" for the asset "ETH"
+  When  the network moves ahead "8" blocks
+  And  the last market state should be "STATE_SETTLED" for the market "ETH/DEC19"
+  And  the last market state should be "STATE_PENDING" for the market "ETH/DEC20"
+  And  the insurance pool balance should be "1000" for the market "ETH/DEC19"
+  And  the insurance pool balance should be "1000" for the market "ETH/DEC20"
+  And  the global insurance pool balance should be "0" for the asset "ETH"
+  When  the network moves ahead "5" blocks
+  And  the last market state should be "STATE_SETTLED" for the market "ETH/DEC19"
+  And  the last market state should be "STATE_PENDING" for the market "ETH/DEC20"
+  And  the insurance pool balance should be "0" for the market "ETH/DEC19"
+  And  the insurance pool balance should be "1000" for the market "ETH/DEC20"
+  And  the global insurance pool balance should be "1000" for the asset "ETH"
+  And  the parties submit the following liquidity provision:
+  When  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/DEC20"
+  Then  the market data for the market "ETH/DEC20" should be:
+  When  the network moves ahead "2" blocks
+  And  the liquidity provider fee shares for the market "ETH/DEC20" should be:
+  And  the last market state should be "STATE_SETTLED" for the market "ETH/DEC19"
+  And  the last market state should be "STATE_ACTIVE" for the market "ETH/DEC20"
+  And  the insurance pool balance should be "0" for the market "ETH/DEC19"
+  And  the insurance pool balance should be "1000" for the market "ETH/DEC20"
+  And  the global insurance pool balance should be "1000" for the asset "ETH"
+

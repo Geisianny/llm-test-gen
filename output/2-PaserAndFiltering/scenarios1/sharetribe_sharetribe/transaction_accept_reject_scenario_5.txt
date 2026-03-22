@@ -1,0 +1,14 @@
+Scenario 5: Seller accepts paid transaction with buyer commisssion
+  Given  there is a listing with title "Let Her Rip" from "kassi_testperson1" with category "Items" and with listing shape "Selling For Profit"
+  And  the price of that listing is 100.00 EUR
+  And  there is a "preauthorized" transaction with buyer commission from "kassi_testperson2" with message "Son of a Gun" about that listing
+  Given  I am logged in as "kassi_testperson1"
+  When  I visit transaction page of that listing
+  And  I follow "Accept request"
+  Then  I should see "Let Her Rip" within "h3"
+  Then  I should see "Order by Kassi T"
+  Then  I should see "Subtotal: €100" within ".conversation-sum-wrapper"
+  Then  I should see "Sharetribe fee: -€10" within ".conversation-service-fee-wrapper"
+  Then  I should see "Total: €90" within ".conversation-total-wrapper"
+  Then  I should see "Accept" within "#send_testimonial_button"
+

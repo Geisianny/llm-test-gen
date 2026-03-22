@@ -1,0 +1,6 @@
+Scenario 6: Logging out the user doesn't log out my admin account
+  Tags: ['@no-api', '@ui']
+  Given  I am impersonating the customer "remnant@london.uk"
+  When  I log out from the store
+  Then  I should still be able to access the administration dashboard
+

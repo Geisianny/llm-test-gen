@@ -1,0 +1,7 @@
+Scenario 3: Update IP Allowlist returns "Bad Request" response
+  Tags: ['@team:DataDog/aaa-core-access']
+  Given  new "UpdateIPAllowlist" request
+  And  body with value {"data": {"type": "ip_allowlist", "attributes": {"enabled": true, "entries": []}}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

@@ -1,0 +1,12 @@
+Scenario 3: Admin adds numeric field
+  Tags: ['@javascript']
+  When  I follow "+ Add a listing field"
+  And  I select "Number" from "field_type"
+  And  I fill in "custom_field[name_attributes][en]" with "Area"
+  And  I fill in "custom_field[name_attributes][fi]" with "Talon Area"
+  And  I toggle category "Spaces"
+  Then  I set numeric field min value to 0
+  And  I set numeric field max value to 100
+  And  I press "Add the listing field"
+  Then  I should see "Area" within ".custom-field-title"
+

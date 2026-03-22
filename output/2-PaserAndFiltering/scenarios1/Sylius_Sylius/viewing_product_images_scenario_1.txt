@@ -1,0 +1,6 @@
+Scenario 1: Viewing a product's main image on a product details page
+  Tags: ['@api', '@ui', '@javascript']
+  When  I view product "Lamborghini Gallardo Model"
+  Then  I should see the product name "Lamborghini Gallardo Model"
+  And  I should be able to see a main image of type "main"
+

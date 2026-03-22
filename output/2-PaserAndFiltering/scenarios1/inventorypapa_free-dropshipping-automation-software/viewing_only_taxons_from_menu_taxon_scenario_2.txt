@@ -1,0 +1,7 @@
+Scenario 2: Using general taxon if channel does not have a menu taxon specified
+  Tags: ['@ui', '@api']
+  When  I check available taxons
+  Then  I should see "Pens" and "Pencils" in the menu
+  And  I should not see "T-Shirts" and "Guns" in the menu
+  And  I should not see "Rifles" and "Revolvers" in the menu
+

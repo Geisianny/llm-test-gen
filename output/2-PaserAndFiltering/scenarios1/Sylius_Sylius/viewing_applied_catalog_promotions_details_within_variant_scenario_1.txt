@@ -1,0 +1,8 @@
+Scenario 1: Seeing applied catalog promotion details within variant
+  Tags: ['@no-api', '@ui']
+  When  I access "Wyborowa Vodka" product
+  Then  "Wyborowa Vodka Exquisite" variant price should be decreased by catalog promotion "Winter sale" in "United States" channel
+  And  "Wyborowa Vodka Lemon" variant price should not be decreased by catalog promotion "Winter sale" in "United States" channel
+  And  "Wyborowa Vodka Exquisite" variant price should not be decreased by catalog promotion "Christmas sale" in "United States" channel
+  And  "Wyborowa Vodka Lemon" variant price should be decreased by catalog promotion "Christmas sale" in "United States" channel
+

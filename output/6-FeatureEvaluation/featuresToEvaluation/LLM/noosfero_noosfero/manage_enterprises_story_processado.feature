@@ -1,0 +1,33 @@
+Feature: manage_enterprises_story_processado
+
+Scenario: Enterprise owner views enterprise management option
+    Given there is an enterprise owner with registered enterprises
+    And the feature flag for enterprise management is enabled
+    When the user navigates to the main menu
+    Then the system displays the enterprise management option
+
+Scenario: Enterprise owner accesses enterprise dashboard
+    Given there is an enterprise owner with registered enterprises
+    And the feature flag for enterprise management is enabled
+    When the user selects the enterprise management option
+    Then the system displays a list of registered enterprises
+    And the user can access the dashboard of each enterprise
+
+Scenario: User without enterprises does not see enterprise management option
+    Given there is a user without registered enterprises
+    And the feature flag for enterprise management is enabled
+    When the user navigates to the main menu
+    Then the system does not display the enterprise management option
+
+Scenario: Feature flag disabled hides enterprise management option
+    Given there is an enterprise owner with registered enterprises
+    And the feature flag for enterprise management is disabled
+    When the user navigates to the main menu
+    Then the system does not display the enterprise management option
+
+Scenario: Multiple enterprises are listed for enterprise owner
+    Given there is an enterprise owner with multiple registered enterprises
+    And the feature flag for enterprise management is enabled
+    When the user selects the enterprise management option
+    Then the system displays a list of all registered enterprises
+    And the list includes all enterprises associated with the owner

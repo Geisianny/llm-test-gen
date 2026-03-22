@@ -1,0 +1,5 @@
+Scenario 2: Create an activation key with a channel
+  Tags: ['@sle_minion']
+  When  I create an activation key with id "SUSE-KEY-x86_64", description "SUSE Test Key x86_64", limit of 20 and contact method "default"
+  Then  I should get the new activation key "1-SUSE-KEY-x86_64"
+

@@ -1,0 +1,9 @@
+Scenario 54: Update case status returns "Bad Request" response
+  Tags: ['@team:DataDog/case-management']
+  Given  new "UpdateStatus" request
+  And  there is a valid "case" in the system
+  And  request contains "case_id" parameter from "case.id"
+  And  body with value {"data": {"attributes": {"status": "OPENED"}, "type": "case"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

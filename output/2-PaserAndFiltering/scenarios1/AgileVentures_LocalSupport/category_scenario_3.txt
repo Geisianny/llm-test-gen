@@ -1,0 +1,9 @@
+Scenario 3: Search for organisations in Advocacy, Animal Welfare and Animals with plants categories
+  Given  I select the "Animal Welfare" category from What They Do
+  And  I select the "Animals with plants" category from Who They Help
+  And  I select the "Advocacy" category from How They Help
+  And  I press "Submit"
+  Then  I should see "I love dogs"
+  And  I should not see "I love cats"
+  And  I should not see "I advocate for people"
+

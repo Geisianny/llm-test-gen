@@ -1,0 +1,4 @@
+Scenario: Attempt to create a basket asset with invalid composition
+  Given there is a bank customer with an active account
+  When the customer creates a new basket asset with an invalid composition
+  Then the system denies the creation of the basket asset

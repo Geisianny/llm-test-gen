@@ -1,0 +1,13 @@
+Scenario 7: Create SUSE distribution with installer updates
+  When  I follow the left menu "Systems > Autoinstallation > Distributions"
+  And  I follow "Create Distribution"
+  And  I enter "SLE-15-FAKE" as "label"
+  And  I enter "/var/autoinstall/SLES15-SP4-x86_64/DVD1/" as "basepath"
+  And  I select "SLE-Product-SLES15-SP4-Pool for x86_64" from "channelid"
+  And  I select "SUSE Linux Enterprise 15" from "installtype"
+  And  I click on "Create Autoinstallable Distribution"
+  Then  I should see a "Autoinstallable Distributions" text
+  And  I should see a "SLE-15-FAKE" link
+  When  I follow "SLE-15-FAKE"
+  Then  I should see "self_update=http://" in field identified by "kernelopts"
+

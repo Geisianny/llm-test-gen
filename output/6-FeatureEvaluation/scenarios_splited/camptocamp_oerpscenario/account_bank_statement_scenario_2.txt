@@ -1,0 +1,6 @@
+Scenario: Create a new bank statement
+  Given the system has no existing bank statements
+  When the user creates a new bank statement
+  And enters a valid statement date and balance
+  Then the system creates the bank statement successfully
+  And displays the statement status as "draft"

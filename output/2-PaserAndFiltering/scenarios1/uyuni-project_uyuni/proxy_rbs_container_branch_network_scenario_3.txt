@@ -1,0 +1,13 @@
+Scenario 3: Create branch terminals group
+  Given  I am authorized for the "Admin" section
+  When  I follow the left menu "Systems > System Groups"
+  And  I follow "Create Group"
+  And  I enter "example" as "name"
+  And  I enter "Terminal branch: example.org" as "description"
+  And  I click on "Create Group"
+  Then  I should see a "System group example created." text
+  When  I follow "Target Systems"
+  And  I check the "proxy" client
+  And  I click on "Add Systems"
+  Then  I should see a "1 systems were added to example server group." text
+

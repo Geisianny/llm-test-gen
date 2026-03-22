@@ -1,0 +1,9 @@
+Scenario 14: Unsubscribe from a service
+  Given  the buyer is subscribed to product "Banana API"
+  And  they go to the buyer's service subscriptions page
+  And  the table should contain the following:
+  When  they follow "Unsubscribe from Banana API"
+  And  confirm the dialog
+  Then  they should see a toast alert with text "Successfully unsubscribed from the service"
+  And  they should see an empty search state
+

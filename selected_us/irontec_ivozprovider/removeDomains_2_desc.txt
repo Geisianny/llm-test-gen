@@ -1,0 +1,1 @@
+The IVOZ Provider Domain Deletion API is a security management module for the multi-tenant VoIP provider solution. The system must prevent domain deletion through the API, even for super administrators, by returning an HTTP 405 (Method Not Allowed) status code for all deletion attempts, thereby ensuring the integrity and mandatory stability of the multi-tenant framework.

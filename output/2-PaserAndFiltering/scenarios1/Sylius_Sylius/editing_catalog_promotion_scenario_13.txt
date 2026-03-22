@@ -1,0 +1,7 @@
+Scenario 13: Receiving error message after not filling percentage value for percentage discount
+  Tags: ['@api', '@ui']
+  When  I want to modify a catalog promotion "Christmas sale"
+  And  I edit it to have empty amount of percentage discount
+  And  I save my changes
+  Then  I should be notified that the percentage amount should be a number and cannot be empty
+

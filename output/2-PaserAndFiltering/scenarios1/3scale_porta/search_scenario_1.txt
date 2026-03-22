@@ -1,0 +1,6 @@
+Scenario 1: No pages match the search
+  Given  I log in as "bob"
+  When  I fill in "q" with "poiuyt"
+  And  I press "Search"
+  Then  I should see "0 documents matched"
+

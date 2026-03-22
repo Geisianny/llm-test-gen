@@ -1,0 +1,6 @@
+Scenario 1: Edit listing availability
+  When  I am logged in as "kassi_testperson1"
+  And  I go to the listing page
+  And  I follow "Edit listing availability"
+  Then  I should see "Default schedule"
+

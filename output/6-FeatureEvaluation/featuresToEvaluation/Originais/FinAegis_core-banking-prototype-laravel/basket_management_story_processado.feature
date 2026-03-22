@@ -1,0 +1,43 @@
+Feature: basket_management_story_processado
+
+Scenario: Creating a fixed basket
+    When  I create a basket "STABLE" with the following components:
+    Then  the basket should be created successfully
+    And  the basket value should be calculated correctly
+
+
+
+Scenario: Decomposing a basket into components
+    Tags: ['@wip']
+    Given  I have a basket "GCU" with the following components:
+    And  I have an account with balance 1000.00 GCU
+    When  I decompose 100 of basket "GCU"
+    Then  I should have 35.00 USD in my account
+    And  I should have 30.00 EUR in my account
+    And  I should have 25.00 GBP in my account
+    And  I should have 10.00 CHF in my account
+    And  my GCU balance should be 900.00
+
+
+
+Scenario: Composing a basket from components
+    Tags: ['@wip']
+    Given  I have a basket "GCU" with the following components:
+    And  I have an account with balance 100.00 USD
+    And  I have an account with balance 100.00 EUR
+    When  I compose 100 units of basket "GCU"
+    Then  my GCU balance should be 100.00
+    And  my USD balance should be 50.00
+    And  my EUR balance should be 50.00
+
+
+
+Scenario: Dynamic basket rebalancing
+    Tags: ['@wip']
+    Given  I have a dynamic basket "DYNAMIC" with the following components:
+    When  the basket needs rebalancing
+    And  I trigger a rebalance
+    Then  the basket should be rebalanced within the weight limits
+    And  a rebalancing event should be recorded
+
+

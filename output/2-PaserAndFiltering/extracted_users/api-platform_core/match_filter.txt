@@ -1,0 +1,69 @@
+Feature: Match filter on collections from Elasticsearch
+Description: In order to get specific results from a large collections of resources from Elasticsearch
+  As a client software developer
+  I need to search for resources matching the text specified
+Tags: ['@elasticsearch']
+
+Scenario 1: Match filter on a text property
+  When  I send a "GET" request to "/tweets?message=Good%20job"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+Scenario 2: Match filter on a text property
+  When  I send a "GET" request to "/tweets?message%5B%5D=Good%20job&message%5B%5D=run"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+Scenario 3: Match filter on a nested property of text type
+  When  I send a "GET" request to "/tweets?author.firstName=Caroline"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+Scenario 4: Combining match filters on properties of text type and a nested property of text type
+  When  I send a "GET" request to "/tweets?message%5B%5D=Good%20job&message%5B%5D=run&author.firstName=Caroline"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+Scenario 5: Match filter on a text property with new elasticsearch operations
+  When  I send a "GET" request to "/books?message=Good%20job"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+Scenario 6: Match filter on a text property with new elasticsearch operations
+  When  I send a "GET" request to "/books?message%5B%5D=Good%20job&message%5B%5D=run"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+Scenario 7: Match filter on a nested property of text type with new elasticsearch operations
+  When  I send a "GET" request to "/books?library.firstName=Caroline"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+Scenario 8: Combining match filters on properties of text type and a nested property of text type with new elasticsearch operations
+  When  I send a "GET" request to "/books?message%5B%5D=Good%20job&message%5B%5D=run&library.firstName=Caroline"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+Scenario 9: Match filter on a multi-level nested property of text type with new elasticsearch operations
+  When  I send a "GET" request to "/books?library.relatedGenres.name=Fiction"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+

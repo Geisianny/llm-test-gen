@@ -1,0 +1,5 @@
+Scenario 1: Viewing an empty address book
+  Tags: ['@ui', '@api']
+  When  I browse my address book
+  Then  there should be no addresses
+

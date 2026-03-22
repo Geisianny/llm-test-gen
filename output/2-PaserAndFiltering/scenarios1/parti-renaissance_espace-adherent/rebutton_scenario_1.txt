@@ -1,0 +1,5 @@
+Scenario 1: ReButton (simple text) : should show a simple button with text
+  When  I go to "/test/ux-component/ReButton/simple"
+  Then  I should see 1 "button.bg-ui_blue-50" elements
+  And  I should see "Simple button"
+

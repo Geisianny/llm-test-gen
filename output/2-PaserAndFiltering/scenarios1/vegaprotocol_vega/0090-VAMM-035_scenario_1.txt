@@ -1,0 +1,25 @@
+Scenario 1: Double-sided vAMMs
+  Tags: ['@VAMM']
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties place the following orders:
+  And  the opening auction period ends for market "ETH/MAR22"
+  Then  the following trades should be executed:
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the parties submit the following AMM:
+  Then  the AMM pool status should be:
+  And  set the following AMM sub account aliases:
+  And  the following transfers should happen:
+  Then  the parties should have the following account balances:
+  When  the network moves ahead "11" blocks
+  Then  the current epoch is "0"
+  When  the parties place the following orders:
+  Then  the following trades should be executed:
+  When  the network moves ahead "2" blocks
+  And  the parties should have the following profit and loss:
+  When  the parties place the following orders:
+  Then  debug trades
+  Then  the following trades should be executed:
+  When  the network moves ahead "2" blocks
+  And  the parties should have the following profit and loss:
+  Then  the parties should have the following account balances:
+

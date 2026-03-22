@@ -1,0 +1,6 @@
+Scenario 5: Viewing media block
+  Tags: ['@ui', '@javascript']
+  Given  the "Iron shield" product has an image "mugs.jpg" with "main" type
+  When  I access "Iron Shield" product page
+  Then  I should see an image related to this product
+

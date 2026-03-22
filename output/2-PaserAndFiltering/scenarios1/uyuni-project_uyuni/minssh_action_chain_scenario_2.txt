@@ -1,0 +1,8 @@
+Scenario 2: Pre-requisite: downgrade repositories to lower version on SSH minion
+  When  I enable repository "test_repo_rpm_pool" on this "ssh_minion"
+  And  I remove package "andromeda-dummy" from this "ssh_minion" without error control
+  And  I remove package "virgo-dummy" from this "ssh_minion" without error control
+  And  I install package "milkyway-dummy" on this "ssh_minion" without error control
+  And  I install old package "andromeda-dummy-1.0" on this "ssh_minion"
+  And  I refresh the metadata for "ssh_minion"
+

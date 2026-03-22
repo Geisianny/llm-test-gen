@@ -1,0 +1,8 @@
+Scenario 1: User follows another user
+  Tags: ['@javascript']
+  When  I go to the profile page of "kassi_testperson2"
+  And  I follow "Follow"
+  Then  I should see "Following" within ".profile-action-buttons-desktop"
+  When  I go to my profile page
+  Then  I should see "Them" within "#profile-followed-people-list"
+

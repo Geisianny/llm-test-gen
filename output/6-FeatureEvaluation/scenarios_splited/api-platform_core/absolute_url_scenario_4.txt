@@ -1,0 +1,5 @@
+Scenario: Client navigates through absolute URLs
+  Given there is a published resource with an absolute URL "https://example.com/resources/123"
+  When the client navigates to the URL "https://example.com/resources/123"
+  Then the system returns the resource with the identifier "123"
+  And the response contains the expected data

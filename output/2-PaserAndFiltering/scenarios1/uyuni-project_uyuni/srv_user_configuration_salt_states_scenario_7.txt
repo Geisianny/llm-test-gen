@@ -1,0 +1,7 @@
+Scenario 7: User was correctly created
+  Given  I am authorized as "user2" with password "user2"
+  When  I follow the left menu "Systems > System Groups"
+  And  I follow "minions_group"
+  Then  I should see a "minions_group" text
+  And  I should see a "System Group Status" text
+

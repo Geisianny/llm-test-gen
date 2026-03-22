@@ -1,0 +1,8 @@
+Scenario 7: Suspend and unsuspend buttons on the user list
+  And  user "bob" is suspended
+  When  I go to the buyer users page for "SpaceWidgets"
+  Then  I should see button to unsuspend buyer user "bob"
+  And  I should not see button to suspend buyer user "bob"
+  And  I should see button to suspend buyer user "alice"
+  And  I should not see button to unsuspend buyer user "alice"
+

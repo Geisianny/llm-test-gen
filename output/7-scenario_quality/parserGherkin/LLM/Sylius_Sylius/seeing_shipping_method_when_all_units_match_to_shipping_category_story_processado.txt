@@ -1,0 +1,48 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: seeing_shipping_method_when_all_units_match_to_shipping_category_story_processado.feature
+Caminho relativo: Sylius_Sylius\seeing_shipping_method_when_all_units_match_to_shipping_category_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\Sylius_Sylius\seeing_shipping_method_when_all_units_match_to_shipping_category_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: seeing_shipping_method_when_all_units_match_to_shipping_category_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Choose shipping method for items with single shipping category
+   Steps: 4
+   - Given there are items in the cart with shipping category "Standard"
+   - When the user views available shipping methods
+   - Then the system displays shipping methods associated with "Standard" category
+   - And the user can select one of the displayed shipping methods
+2. No shipping methods available for mixed shipping categories
+   Steps: 4
+   - Given there are items in the cart with shipping categories "Standard" and "Over-sized"
+   - When the user views available shipping methods
+   - Then the system displays a message indicating no shipping methods are available
+   - And the user cannot select any shipping method
+3. Choose shipping method for items with Over-sized shipping category
+   Steps: 4
+   - Given there are items in the cart with shipping category "Over-sized"
+   - When the user views available shipping methods
+   - Then the system displays shipping methods associated with "Over-sized" category
+   - And the user can select one of the displayed shipping methods
+4. Shipping methods update when cart contents change
+   Steps: 4
+   - Given there are items in the cart with shipping category "Standard"
+   - And the system displays shipping methods associated with "Standard" category
+   - When the user adds an item with shipping category "Over-sized" to the cart
+   - Then the system displays a message indicating no shipping methods are available
+5. Valid shipping methods for single item in cart
+   Steps: 4
+   - Given there is one item in the cart with shipping category "Standard"
+   - When the user views available shipping methods
+   - Then the system displays shipping methods associated with "Standard" category
+   - And the user can proceed to checkout with the selected shipping method

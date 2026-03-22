@@ -1,0 +1,7 @@
+Scenario 1: Browsing all products
+  Tags: ['@ui', '@api']
+  Given  the store has a product "Doge mascot"
+  When  I am browsing products
+  Then  I should see a product with name "Young pug"
+  And  I should see a product with name "Doge mascot"
+

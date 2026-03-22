@@ -1,0 +1,15 @@
+Scenario 11: Deactivate ordinary user
+  When  I follow the left menu "Users > User List > Active"
+  And  I follow "user1"
+  Then  I should see "role_org_admin" as unchecked
+  When  I follow "Deactivate User"
+  Then  I should see a "This action will deactivate this user. This user will no longer be able to log in or perform actions unless it is reactivated." text
+  When  I click on "Deactivate User"
+  Then  I should see a "Active Users" text
+  And  I should not see a "user1" link
+  When  I follow "Deactivated"
+  Then  I should see a "Deactivated Users" text
+  And  I should see a "user1" link
+  When  I follow "All"
+  Then  I should see a "user1" link
+

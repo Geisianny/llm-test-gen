@@ -1,0 +1,6 @@
+Scenario: Attempt to delete a non-existent domain via API as super admin
+  Given there is a super admin with API access
+  And there is no existing domain "nonexistent.com"
+  When the super admin sends a DELETE request to the domain "nonexistent.com" via API
+  Then the system returns an HTTP 405 status code
+  And the system indicates that the domain deletion is not allowed

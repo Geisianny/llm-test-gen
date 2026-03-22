@@ -1,0 +1,7 @@
+Scenario 7: User see social buttons if community is not private and social sharing is enabled
+  When  Community "test" is not private
+  And  Social share buttons in community "test" enabled
+  Then  I am on the home page
+  And  I follow "Massage"
+  Then  I should see social buttons block
+

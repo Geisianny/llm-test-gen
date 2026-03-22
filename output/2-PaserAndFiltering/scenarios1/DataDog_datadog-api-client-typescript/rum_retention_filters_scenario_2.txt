@@ -1,0 +1,14 @@
+Scenario 2: Create a RUM retention filter returns "Created" response
+  Tags: ['@replay-only', '@team:DataDog/rum-backend']
+  Given  new "CreateRetentionFilter" request
+  And  request contains "app_id" parameter with value "a33671aa-24fd-4dcd-ba4b-5bbdbafe7690"
+  And  body with value {"data":{"type":"retention_filters","attributes":{"name":"Test creating retention filter","event_type":"session","query":"custom_query","sample_rate":50,"enabled":true}}}
+  When  the request is sent
+  Then  the response status is 201 Created
+  And  the response "data.type" is equal to "retention_filters"
+  And  the response "data.attributes.event_type" is equal to "session"
+  And  the response "data.attributes.name" is equal to "Test creating retention filter"
+  And  the response "data.attributes.enabled" is equal to true
+  And  the response "data.attributes.query" is equal to "custom_query"
+  And  the response "data.attributes.sample_rate" is equal to 50
+

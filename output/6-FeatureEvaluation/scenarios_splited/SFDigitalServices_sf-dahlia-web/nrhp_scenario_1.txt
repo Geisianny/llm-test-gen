@@ -1,0 +1,6 @@
+Scenario: Claim NRHP with valid address
+  Given there is an applicant with a valid address within the NRHP area
+  When the applicant fills out the short form application
+  And enters a valid address within the NRHP area
+  Then the system allows the applicant to claim "Live in the Neighborhood"
+  And displays a field to upload supporting documents

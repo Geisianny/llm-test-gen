@@ -1,0 +1,24 @@
+Scenario 1: Create new reconciliation report, update and save.
+is no previous report from which to get an opening balance.
+  Given  the following GL transaction posted on 2017-11-01:
+  And  the following GL transaction posted on 2017-11-02:
+  When  I navigate the menu and select the item at "Cash & Banking > Reconciliation"
+  Then  I should see the New Reconciliation Report screen.
+  When  I select "1060 Checking Account" from the drop down "Account"
+  And  I enter "1000.00" into "Statement Balance"
+  And  I enter "2018-01-01" into "Statement Date"
+  And  I press "Create New Report"
+  Then  I should see the Reconciliation Report screen
+  And  I should see these Reconciliation Report headings:
+  And  I expect the Cleared Transactions totals to be:
+  And  I expect the Outstanding Transactions totals to be:
+  When  I press "Select All"
+  Then  I should see these Reconciliation Report headings:
+  And  I expect the Cleared Transactions totals to be:
+  And  I expect the Outstanding Transactions section to be absent
+  When  I change the "Ending Statement Balance" to "800.00"
+  And  I update the page
+  Then  I should see these Reconciliation Report headings:
+  When  I press "Save"
+  Then  I should see the Search Reconciliation Reports screen
+

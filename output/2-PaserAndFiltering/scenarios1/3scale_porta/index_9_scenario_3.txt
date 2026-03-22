@@ -1,0 +1,6 @@
+Scenario 3: Empty state
+  Given  a buyer "Appsless"
+  When  they go to buyer "Appsless" applications page
+  Then  they should see "No applications yet"
+  And  there should be a link to "Add an application"
+

@@ -1,0 +1,5 @@
+Scenario 1: Everything search
+  When  I am on epa's search page
+  Then  I should see "Please enter a search term in the box above."
+  And  I should not see "Refine your search"
+

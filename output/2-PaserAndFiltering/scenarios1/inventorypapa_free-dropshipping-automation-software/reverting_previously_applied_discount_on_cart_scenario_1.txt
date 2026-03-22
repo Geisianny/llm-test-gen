@@ -1,0 +1,9 @@
+Scenario 1: Reverting discount applied from total item quantity based promotion
+  Tags: ['@ui', '@api']
+  Given  this promotion gives "$10.00" discount to every order with quantity at least 2
+  And  I have product "PHP Mug" in the cart
+  And  I have product "PHP T-Shirt" in the cart
+  When  I remove product "PHP T-Shirt" from the cart
+  Then  my cart total should be "$20.00"
+  And  there should be no discount
+

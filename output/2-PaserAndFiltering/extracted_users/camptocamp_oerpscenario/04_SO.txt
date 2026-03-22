@@ -1,0 +1,10 @@
+Feature: SALE ORDERS CREATION
+Tags: ['@anglosaxon_accounting_data_population']
+
+Scenario 1: SO013 CREATION
+  Tags: ['@anglosaxon_SO013']
+  Given  I need a "sale.order" with name: SO013 and oid: scenario.anglosaxon_SO013
+  And  having:
+  Given  I need a "sale.order.line" with oid: scenario.anglosaxon_SO013_line1
+  And  having:
+

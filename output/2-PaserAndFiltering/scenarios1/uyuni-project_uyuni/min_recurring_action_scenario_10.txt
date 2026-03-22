@@ -1,0 +1,13 @@
+Scenario 10: Create a System group for testing
+  When  I follow the left menu "Systems > System Groups"
+  And  I follow "Create Group"
+  And  I enter "Recurring-Action-test-group" as "name"
+  And  I enter "This is for testing" as "description"
+  And  I click on "Create Group"
+  Then  I should see a "System group Recurring-Action-test-group created." text
+  When  I am on the "Groups" page of this "sle_minion"
+  And  I follow first "Join"
+  And  I check the first row in the list
+  And  I click on "Join Groups"
+  Then  I wait until I see "1 system groups added" text
+

@@ -1,0 +1,8 @@
+Scenario 8: Gets a list of data deletion requests returns "OK" response
+  Tags: ['@replay-only', '@team:DataDog/supportability-engineering']
+  Given  operation "GetDataDeletionRequests" enabled
+  And  there is a valid "deletion_request" in the system
+  And  new "GetDataDeletionRequests" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

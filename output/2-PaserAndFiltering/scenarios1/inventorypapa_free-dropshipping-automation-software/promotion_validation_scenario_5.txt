@@ -1,0 +1,8 @@
+Scenario 5: Trying to add start later then end date for existing promotion
+  Tags: ['@ui']
+  Given  there is a promotion "Christmas sale"
+  And  I want to modify this promotion
+  And  I make it available from "24.12.2017" to "12.12.2017"
+  And  I try to save my changes
+  Then  I should be notified that promotion cannot end before it start
+

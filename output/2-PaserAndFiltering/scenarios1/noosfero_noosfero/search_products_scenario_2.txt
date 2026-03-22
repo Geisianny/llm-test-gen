@@ -1,0 +1,4 @@
+Scenario 2: show empty search results
+  When  I search products for "something unrelated"
+  Then  I should see "None" within ".search-results-type-empty"
+

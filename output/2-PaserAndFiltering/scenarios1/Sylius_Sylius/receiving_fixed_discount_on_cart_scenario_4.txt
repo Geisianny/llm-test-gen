@@ -1,0 +1,13 @@
+Scenario 4: Receiving fixed discount does not affect the shipping fee
+  Tags: ['@api', '@ui']
+  Given  the store has "DHL" shipping method with "$10.00" fee
+  And  there is a promotion "Holiday promotion"
+  And  it gives "$10.00" discount to every order
+  And  I added product "PHP T-Shirt" to the cart
+  And  I addressed the cart
+  When  I chose "DHL" shipping method
+  And  I check the details of my cart
+  Then  my cart total should be "$100.00"
+  And  my cart shipping total should be "$10.00"
+  And  my discount should be "-$10.00"
+

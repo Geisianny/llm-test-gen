@@ -1,0 +1,6 @@
+Scenario: Create unbundling document for a bundle with multiple components
+  Given there is a bundle product with multiple component items
+  And the sales manager has the necessary permissions
+  When the sales manager creates an unbundling document for the bundle product
+  Then the system generates the unbundling document with the component items
+  And the document status is set to "Draft"

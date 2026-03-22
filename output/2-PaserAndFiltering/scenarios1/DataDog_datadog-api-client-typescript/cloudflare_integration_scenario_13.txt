@@ -1,0 +1,6 @@
+Scenario 13: List Cloudflare accounts returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "ListCloudflareAccounts" request
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

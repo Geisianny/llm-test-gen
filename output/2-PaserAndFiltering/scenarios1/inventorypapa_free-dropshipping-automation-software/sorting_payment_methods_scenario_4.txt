@@ -1,0 +1,8 @@
+Scenario 4: Changing the order of sorting payment methods by their names
+  Tags: ['@ui']
+  Given  I am browsing payment methods
+  And  the payment methods are already sorted by name
+  When  I switch the way payment methods are sorted by name
+  Then  I should see 3 payment methods in the list
+  And  the first payment method on the list should have name "PayPal Express Checkout"
+

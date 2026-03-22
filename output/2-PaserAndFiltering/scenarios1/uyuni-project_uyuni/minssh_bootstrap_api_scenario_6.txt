@@ -1,0 +1,4 @@
+Scenario 6: Check contact method of this Salt SSH system
+  Given  I am on the Systems overview page of this "ssh_minion"
+  Then  I should see a "Push via SSH" text
+

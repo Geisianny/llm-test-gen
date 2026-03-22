@@ -1,0 +1,10 @@
+Scenario 1: Adding a new exchange rate
+  Tags: ['@api', '@ui']
+  When  I want to add a new exchange rate
+  And  I specify its ratio as 1.2
+  And  I choose "US Dollar" as the source currency
+  And  I choose "British Pound" as the target currency
+  And  I add it
+  Then  I should be notified that it has been successfully created
+  And  the exchange rate with ratio 1.2 between "US Dollar" and "British Pound" should appear in the store
+

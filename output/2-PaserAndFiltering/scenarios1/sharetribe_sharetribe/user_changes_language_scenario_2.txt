@@ -1,0 +1,7 @@
+Scenario 2: User changes language when logged in
+  Tags: ['@javascript']
+  Given  I am logged in
+  And  I open language menu
+  And  I select "Suomi" from the language menu
+  Then  I should see "Lisää uusi ilmoitus!" within "#new-listing-link"
+

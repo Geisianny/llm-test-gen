@@ -1,0 +1,10 @@
+Scenario 13: View domains
+  Given  the following BingV7 Affiliates exist:
+  When  the following "site domains" exist for the affiliate agency.gov:
+  And  I am logged in with email "john@agency.gov"
+  When  I go to the agency.gov's Manage Content page
+  And  I follow "Domains" within the Admin Center content
+  Then  I should see the following table rows:
+  When  I go to the agency.gov's Manage Content page
+  Then  the "Discover and add the RSS feeds and social media accounts listed on the following page:" field should be empty
+

@@ -1,0 +1,7 @@
+Scenario 8: Search logs (GET) returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-app']
+  Given  a valid "appKeyAuth" key in the system
+  And  new "ListLogsGet" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

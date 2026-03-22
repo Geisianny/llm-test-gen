@@ -1,0 +1,7 @@
+Scenario 8: Get a single service object returns "Conflict" response
+  Tags: ['@generated', '@skip', '@team:Datadog/collaboration-integrations']
+  Given  new "GetOpsgenieService" request
+  And  request contains "integration_service_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 409 Conflict
+

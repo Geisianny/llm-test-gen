@@ -1,0 +1,8 @@
+Scenario 8: Adding a new configurable product without specifying its code
+  Tags: ['@api', '@ui']
+  When  I want to create a new configurable product
+  And  I name it "Dice Brewing" in "English (United States)" locale
+  And  I try to add it
+  Then  I should be notified that code is required
+  And  product with name "Dice Brewing" should not be added
+

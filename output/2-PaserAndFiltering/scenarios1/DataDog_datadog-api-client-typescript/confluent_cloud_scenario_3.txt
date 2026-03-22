@@ -1,0 +1,7 @@
+Scenario 3: Add Confluent account returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "CreateConfluentAccount" request
+  And  body with value {"data": {"attributes": {"api_key": "TESTAPIKEY123", "api_secret": "test-api-secret-123", "resources": [{"enable_custom_metrics": false, "id": "resource-id-123", "resource_type": "kafka", "tags": ["myTag", "myTag2:myValue"]}], "tags": ["myTag", "myTag2:myValue"]}, "type": "confluent-cloud-accounts"}}
+  When  the request is sent
+  Then  the response status is 201 OK
+

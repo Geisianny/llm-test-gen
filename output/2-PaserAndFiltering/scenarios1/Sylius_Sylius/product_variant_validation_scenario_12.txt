@@ -1,0 +1,12 @@
+Scenario 12: Adding a new product variant with same set of options
+  Tags: ['@api', '@ui']
+  Given  this product has option "Taste" with values "Orange" and "Melon"
+  And  this product is available in "Melon" taste priced at "$95.00"
+  When  I want to create a new variant of this product
+  And  I specify its code as "VODKA_WYBOROWA_PREMIUM"
+  And  I set its "Taste" option to "Melon"
+  And  I set its price to "$100.00" for "United States" channel
+  And  I try to add it
+  Then  I should be notified that this variant already exists
+  And  the "Wyborowa Vodka" product should have only one variant
+

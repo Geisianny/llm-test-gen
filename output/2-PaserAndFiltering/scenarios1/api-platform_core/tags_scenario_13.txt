@@ -1,0 +1,7 @@
+Scenario 13: Update a collection member only (legacy non-standard PUT)
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "PUT" request to "/relation3s/1" with body:
+  Then  the response status code should be 200
+  And  the header "Cache-Tags" should not exist
+  And  "/relation3s,/relation3s/1,/relation2s/2,/relation2s,/relation2s/1" IRIs should be purged
+

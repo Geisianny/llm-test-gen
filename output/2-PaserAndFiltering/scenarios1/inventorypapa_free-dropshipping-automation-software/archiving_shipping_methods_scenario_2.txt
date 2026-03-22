@@ -1,0 +1,5 @@
+Scenario 2: Archiving a shipping method does not remove it from the database
+  Tags: ['@domain']
+  When  I archive the "UPS Carrier" shipping method
+  Then  the shipping method "UPS Carrier" should still exist in the registry
+

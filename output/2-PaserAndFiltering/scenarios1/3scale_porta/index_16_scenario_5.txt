@@ -1,0 +1,10 @@
+Scenario 5: Invoices are correct when provider changes from Basic to Premium
+  Given  the time is 5th May 2009
+  And  a provider signed up to plan "Basic"
+  And  time flies to 25th May 2009
+  And  the provider changes to application plan "Premium"
+  And  time flies to 1st June 2009
+  When  the provider logs in
+  And  they go to the 3scale invoice for "May, 2009"
+  Then  I should see line items
+

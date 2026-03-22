@@ -1,0 +1,6 @@
+Scenario: Attempt to create product with invalid rate
+  Given there is an authenticated APP user
+  When the user creates a product with the name "Test Product"
+  And specifies an invalid rate of "abc"
+  Then the system prevents the creation of the product
+  And displays an error message indicating that the rate is invalid

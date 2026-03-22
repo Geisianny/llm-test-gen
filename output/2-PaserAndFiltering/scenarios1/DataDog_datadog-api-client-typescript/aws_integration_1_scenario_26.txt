@@ -1,0 +1,6 @@
+Scenario 26: List available namespaces returns "AWS Namespaces List object" response
+  Tags: ['@team:DataDog/aws-integrations']
+  Given  new "ListAWSNamespaces" request
+  When  the request is sent
+  Then  the response status is 200 AWS Namespaces List object
+

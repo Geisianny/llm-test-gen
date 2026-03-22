@@ -1,0 +1,24 @@
+Scenario 7: Get all powerpacks returns "OK" response
+  Tags: ['@team:DataDog/dashboards-backend']
+  Given  there is a valid "powerpack" in the system
+  And  new "ListPowerpacks" request
+  And  request contains "page[limit]" parameter with value 1000
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data" has item with field "type" with value "powerpack"
+  And  the response "data" has item with field "id" with value "{{ powerpack.data.id }}"
+  And  the response "data" has item with field "attributes.name" with value "{{ unique }}"
+  And  the response "data" has item with field "attributes.description" with value "Sample powerpack"
+  And  the response "data" has item with field "attributes.template_variables[0].name" with value "sample"
+  And  the response "data" has item with field "attributes.template_variables[0].defaults[0]" with value "*"
+  And  the response "data" has item with field "attributes.group_widget.layout.width" with value 12
+  And  the response "data" has item with field "attributes.group_widget.layout.height" with value 3
+  And  the response "data" has item with field "attributes.group_widget.layout.x" with value 0
+  And  the response "data" has item with field "attributes.group_widget.layout.y" with value 0
+  And  the response "data" has item with field "attributes.group_widget.definition.type" with value "group"
+  And  the response "data" has item with field "attributes.group_widget.definition.layout_type" with value "ordered"
+  And  the response "data" has item with field "attributes.group_widget.definition.show_title" with value true
+  And  the response "data" has item with field "attributes.group_widget.definition.title" with value "Sample Powerpack"
+  And  the response "data" has item with field "attributes.group_widget.definition.widgets[0].definition.type" with value "note"
+  And  the response "data" has item with field "attributes.group_widget.definition.widgets[0].definition.content" with value "test"
+

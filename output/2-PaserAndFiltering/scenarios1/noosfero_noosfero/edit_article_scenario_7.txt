@@ -1,0 +1,9 @@
+Scenario 7: cancel button back to cms
+  Tags: ['@selenium']
+  Given  I am on joaosilva's control panel
+  And  I follow "Manage" within "#section-content"
+  And  I follow "New content"
+  And  I follow "Folder"
+  When  I follow "Cancel" within ".main-block"
+  Then  I should see "Control panel"
+

@@ -1,0 +1,14 @@
+Scenario 7: Adding a new simple product without specifying its price for every channel
+  Tags: ['@ui', '@no-api']
+  Given  the store operates on another channel named "Web-GB"
+  When  I want to create a new simple product
+  And  I specify its code as "BOARD_DICE_BREWING"
+  And  I make it available in channel "Web"
+  And  I make it available in channel "Web-GB"
+  And  I set its price to "$10.00" for "Web" channel
+  And  I name it "Dice Brewing" in "English (United States)" locale
+  And  I set its slug to "dice-brewing"
+  And  I try to add it
+  Then  I should be notified that price must be defined for "Web-GB" channel
+  And  product with code "BOARD_DICE_BREWING" should not be added
+

@@ -1,0 +1,6 @@
+Scenario 4: Making file downloadable on the developer portal
+  Tags: ['@wip']
+  Given  there is a downloadable cms file
+  When  I access the file on developer portal
+  Then  the file should be downloaded
+

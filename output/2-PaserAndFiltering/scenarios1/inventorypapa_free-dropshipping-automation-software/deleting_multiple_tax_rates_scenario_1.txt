@@ -1,0 +1,10 @@
+Scenario 1: Deleting multiple tax rates at once
+  Tags: ['@ui', '@javascript']
+  When  I browse tax rates
+  And  I check the "Low VAT" tax rate
+  And  I check also the "High VAT" tax rate
+  And  I delete them
+  Then  I should be notified that they have been successfully deleted
+  And  I should see a single tax rate in the list
+  And  I should see the tax rate "VAT" in the list
+

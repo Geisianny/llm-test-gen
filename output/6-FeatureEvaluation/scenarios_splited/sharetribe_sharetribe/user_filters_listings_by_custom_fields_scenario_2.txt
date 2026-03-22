@@ -1,0 +1,7 @@
+Scenario: Filter listings by multiple custom fields
+  Given there are listings with custom fields "Location" and "Category" having values "New York", "Los Angeles" and "Electronics", "Furniture"
+  And the user is on the listings page
+  When the user selects "New York" from the "Location" filter
+  And selects "Electronics" from the "Category" filter
+  Then the system displays listings with "Location" as "New York" and "Category" as "Electronics"
+  And the listings count is updated accordingly

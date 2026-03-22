@@ -1,0 +1,4 @@
+Scenario 13: Cleanup: restart the salt service on SLES minion
+  Tags: ['@skip_if_github_validation']
+  When  I restart salt-minion on "sle_minion"
+

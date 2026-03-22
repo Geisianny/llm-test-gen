@@ -1,0 +1,6 @@
+Scenario: Admin successful login
+  Given there is an admin user with the username "admin" and password "password123"
+  When the admin logs in with the username "admin"
+  And enters the correct password "password123"
+  Then the system grants access to the admin dashboard
+  And displays a message confirming successful login

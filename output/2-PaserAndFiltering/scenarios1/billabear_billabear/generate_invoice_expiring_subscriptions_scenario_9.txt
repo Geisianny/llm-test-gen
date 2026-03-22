@@ -1,0 +1,9 @@
+Scenario 9: Has voucher that was used
+  Given  the following subscriptions exist:
+  And  stripe billing is enabled
+  And  the following vouchers exist:
+  And  the customer "customer.one@example.org" has the voucher "Voucher One" applied that has been used
+  When  the background task to reinvoice active subscriptions
+  Then  the subscription for "customer.one@example.org" will expire in a week
+  And  the latest invoice for "customer.one@example.org" will have amount due as 1000
+

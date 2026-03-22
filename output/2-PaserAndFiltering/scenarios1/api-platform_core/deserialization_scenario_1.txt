@@ -1,0 +1,7 @@
+Scenario 1: Posting an XML resource with a string value
+  Tags: ['@createSchema']
+  When  I send a "POST" request to "/resource_with_strings" with body:
+  Then  the response status code should be 201
+  And  the response should be in XML
+  And  the header "Content-Type" should be equal to "application/xml; charset=utf-8"
+

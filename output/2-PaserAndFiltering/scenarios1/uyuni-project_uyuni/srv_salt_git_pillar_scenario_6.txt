@@ -1,0 +1,4 @@
+Scenario 6: Pre-Cleanup: Disabling repositories for uninstalling git-core
+  When  I remove repository "SLE-Module-Basesystem15-SP6-Updates" on "server" without error control
+  And  I remove repository "SLE-Module-Basesystem15-SP6-Pool" on "server" without error control
+

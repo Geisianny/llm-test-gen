@@ -1,0 +1,6 @@
+Scenario 1: See opportunities pop-up when marker is clicked
+  Given  the following organisations exist:
+  Given  the following volunteer opportunities exist:
+  Given  I visit the embedded map page
+  Then  I should see an infowindow when I click on the volunteer opportunities map markers:
+

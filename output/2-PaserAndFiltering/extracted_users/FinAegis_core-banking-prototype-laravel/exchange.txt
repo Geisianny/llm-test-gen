@@ -1,0 +1,94 @@
+Feature: Exchange Trading
+Description: In order to trade digital assets
+  As a user with an account
+  I need to be able to place and manage orders
+
+Background: 
+  Given  the following assets exist:
+  And  the following exchange rates exist:
+  And  the following user exists:
+  And  the following account exists:
+  And  the following asset balances exist for account "alice@example.com":
+
+Scenario 1: Place a limit buy order
+  Given  I am logged in as "alice@example.com"
+  When  I place a limit buy order for "0.1" "BTC" at "48000" "EUR"
+  Then  the order should be placed successfully
+  And  the order should have status "open"
+  And  my "EUR" balance should be reduced by "4800.00"
+  And  my locked "EUR" balance should be "4800.00"
+
+Scenario 2: Place a market sell order
+  Given  I am logged in as "alice@example.com"
+  When  I place a market sell order for "1.0" "ETH" for "EUR"
+  Then  the order should be placed successfully
+  And  my "ETH" balance should be reduced by "1.0"
+  And  my locked "ETH" balance should be "1.0"
+
+Scenario 3: Cancel an open order
+  Given  I am logged in as "alice@example.com"
+  And  I have placed a limit buy order for "0.1" "BTC" at "48000" "EUR"
+  When  I cancel the order
+  Then  the order should have status "cancelled"
+  And  my locked "EUR" balance should be "0.00"
+  And  my available "EUR" balance should be restored
+
+Scenario 4: Order matching
+  Given  the following user exists:
+  And  the following account exists:
+  And  the following asset balances exist for account "bob@example.com":
+  And  I am logged in as "alice@example.com"
+  And  I have placed a limit buy order for "0.5" "BTC" at "49000" "EUR"
+  When  user "bob@example.com" places a limit sell order for "0.5" "BTC" at "49000" "EUR"
+  Then  both orders should be matched
+  And  the trade should be executed at price "49000" "EUR"
+  And  "alice@example.com" should receive "0.5" "BTC"
+  And  "bob@example.com" should receive "24500" "EUR" minus fees
+  And  both orders should have status "filled"
+
+Scenario 5: Partial order filling
+  Given  the following user exists:
+  And  the following account exists:
+  And  the following asset balances exist for account "bob@example.com":
+  And  I am logged in as "alice@example.com"
+  And  I have placed a limit buy order for "1.0" "BTC" at "48000" "EUR"
+  When  user "bob@example.com" places a market sell order for "0.3" "BTC" for "EUR"
+  Then  the sell order should be fully filled
+  And  the buy order should be partially filled with "0.3" "BTC"
+  And  the buy order should have status "partially_filled"
+  And  the remaining amount for the buy order should be "0.7" "BTC"
+
+Scenario 6: View order book
+  Given  the following open orders exist:
+  When  I view the order book for "BTC/EUR"
+  Then  I should see the following buy orders:
+  And  I should see the following sell orders:
+  And  the spread should be "1000" "EUR"
+  And  the best bid should be "48000" "EUR"
+  And  the best ask should be "49000" "EUR"
+
+Scenario 7: Fee calculation based on volume
+  Given  I am logged in as "alice@example.com"
+  And  my 30-day trading volume is "0" "EUR"
+  When  I place a market buy order for "0.1" "BTC" for "EUR"
+  And  the order is filled at "50000" "EUR"
+  Then  I should be charged a taker fee of "0.2%" which is "10" "EUR"
+  And  my total cost should be "5010" "EUR"
+
+Scenario 8: Trading pair restrictions
+  Given  I am logged in as "alice@example.com"
+  And  the asset "XRP" is not tradeable
+  When  I try to place an order for "XRP/EUR"
+  Then  I should get an error "Currency pair not available for trading"
+
+Scenario 9: Minimum order validation
+  Given  I am logged in as "alice@example.com"
+  When  I try to place a buy order for "0.00001" "BTC" at "50000" "EUR"
+  Then  I should get an error "Minimum order amount is 0.0001 BTC"
+
+Scenario 10: Insufficient balance
+  Given  I am logged in as "alice@example.com"
+  And  my "EUR" balance is "100.00"
+  When  I try to place a buy order for "1.0" "BTC" at "50000" "EUR"
+  Then  I should get an error "Insufficient EUR balance"
+

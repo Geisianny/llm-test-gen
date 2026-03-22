@@ -1,0 +1,11 @@
+Scenario 1: Mid price works as expected
+  Tags: ['@MidPrice']
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  And  the opening auction period ends for market "DAI/DEC22"
+  Then  the following trades should be executed:
+  And  the market data for the market "DAI/DEC22" should be:
+  And  the order book should have the following volumes for market "DAI/DEC22":
+

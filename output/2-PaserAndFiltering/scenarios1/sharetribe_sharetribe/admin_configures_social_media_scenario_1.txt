@@ -1,0 +1,6 @@
+Scenario 1: Admin adds a twitter handle
+  When  I add "mycommunity" to the Twitter handle field
+  And  I press submit
+  And  I refresh the page
+  Then  I should see "mycommunity" in the Twitter handle field
+

@@ -1,0 +1,5 @@
+Scenario: Login with empty credentials
+  Given there is a registered user with a valid email and password
+  When the user logs in with an empty email
+  And enters an empty password
+  Then the system denies access

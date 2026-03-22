@@ -1,0 +1,33 @@
+Feature: dora_metrics_story_processado
+
+Scenario: Successful DORA metrics request with valid appKeyAuth
+    Given the user has a valid appKeyAuth
+    When the user requests DORA metrics
+    Then the system returns the DORA metrics
+    And displays a success message
+
+Scenario: Unsuccessful DORA metrics request with invalid appKeyAuth
+    Given the user has an invalid appKeyAuth
+    When the user requests DORA metrics
+    Then the system denies the request
+    And displays an error message indicating invalid credentials
+
+Scenario: DORA metrics request with missing appKeyAuth
+    Given the user does not provide an appKeyAuth
+    When the user requests DORA metrics
+    Then the system denies the request
+    And displays an error message indicating missing credentials
+
+Scenario: Delete DORA metrics event with valid appKeyAuth
+    Given the user has a valid appKeyAuth
+    And there is an existing DORA metrics event
+    When the user deletes the DORA metrics event
+    Then the system removes the event
+    And displays a success message
+
+Scenario: Search DORA metrics with valid appKeyAuth
+    Given the user has a valid appKeyAuth
+    And there are existing DORA metrics events
+    When the user searches for DORA metrics events
+    Then the system returns the relevant DORA metrics events
+    And displays the search results

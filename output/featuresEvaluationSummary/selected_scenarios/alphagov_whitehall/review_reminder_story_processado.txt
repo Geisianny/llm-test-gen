@@ -1,0 +1,5 @@
+Scenario: Edit the review date for an existing document
+  Given there is a document with a review date "2024-03-15"
+  When the editor updates the review date to "2024-06-15"
+  Then the system displays the review date "2024-06-15" on the edition summary page
+  And the document has a configured reminder for "2024-06-15"

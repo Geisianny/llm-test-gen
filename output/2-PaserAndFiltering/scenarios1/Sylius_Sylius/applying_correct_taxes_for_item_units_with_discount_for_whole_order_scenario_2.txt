@@ -1,0 +1,7 @@
+Scenario 2: Applying correct taxes for a single item unit with order discount
+  Tags: ['@api', '@ui']
+  Given  I added product "PHP Mug" to the cart
+  When  I check the details of my cart
+  Then  my cart total should be "$50.53"
+  And  my cart taxes should be "$4.59"
+

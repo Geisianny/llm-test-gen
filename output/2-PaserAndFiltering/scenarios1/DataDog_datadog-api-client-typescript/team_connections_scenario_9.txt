@@ -1,0 +1,7 @@
+Scenario 9: List team connections returns "OK" response with pagination
+  Tags: ['@generated', '@skip', '@team:DataDog/aaa-omg', '@with-pagination']
+  Given  operation "ListTeamConnections" enabled
+  And  new "ListTeamConnections" request
+  When  the request with pagination is sent
+  Then  the response status is 200 OK
+

@@ -1,0 +1,12 @@
+Scenario 8: Assign systems to the multi schedule using SSM
+  When  I follow the left menu "Systems > System List > All"
+  And  I click on the clear SSM button
+  And  I check the "rhlike_minion" client
+  And  I follow the left menu "Systems > System Set Manager > Overview"
+  And  I follow "Assign" in the content area
+  And  I select "SAP Maintenance Window" from "scheduleId"
+  And  I check "cancelActions"
+  And  I click on "Assign All"
+  And  I click on "Confirm"
+  Then  I should see a "Maintenance schedule has been assigned" text
+

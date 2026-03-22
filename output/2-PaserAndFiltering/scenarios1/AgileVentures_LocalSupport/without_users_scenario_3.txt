@@ -1,0 +1,9 @@
+Scenario 3: Super Admin should be notified when email is invalid
+  Tags: ['@javascript']
+  Given  cookies are approved
+  Given  I am signed in as a superadmin
+  And  I visit the invite users to become admin of organisations page
+  And  I check the box for "Crazy Email Org"
+  When  I click id "invite_users"
+  Then  I should see "Error: Email is invalid" in the response field for "Crazy Email Org"
+

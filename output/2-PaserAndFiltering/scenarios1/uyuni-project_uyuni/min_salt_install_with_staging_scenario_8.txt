@@ -1,0 +1,13 @@
+Scenario 8: Cleanup: remove virgo-dummy package from SLES minion
+  When  I follow "Software" in the content area
+  And  I follow "List / Remove"
+  And  I enter "orion-dummy" as the filtered package name
+  And  I click on the filter button
+  And  I check row with "orion-dummy" and arch of "sle_minion"
+  And  I enter "virgo-dummy" as the filtered package name
+  And  I click on the filter button
+  And  I check "virgo-dummy" in the list
+  And  I click on "Remove Packages"
+  And  I click on "Confirm"
+  And  I disable repository "test_repo_rpm_pool" on this "sle_minion"
+

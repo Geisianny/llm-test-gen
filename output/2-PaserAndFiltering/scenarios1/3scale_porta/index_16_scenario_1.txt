@@ -1,0 +1,8 @@
+Scenario 1: Empty state
+  Given  a provider signed up to plan "Premium"
+  And  the provider has no invoices
+  When  the provider logs in
+  And  they go to the 3scale invoices page
+  Then  they should see "Nothing to see here"
+  And  they should see "There are no invoices yet"
+

@@ -1,0 +1,8 @@
+Scenario 7: A linked stop order with position size override and scaling will partially flatten the position after being triggered (0014-ORDT-129)
+  When  the parties place the following orders:
+  When  the parties place the following orders:
+  Then  the stop orders should have the following states
+  When  the parties place the following orders:
+  Then  the stop orders should have the following states
+  And  the following trades should be executed:
+

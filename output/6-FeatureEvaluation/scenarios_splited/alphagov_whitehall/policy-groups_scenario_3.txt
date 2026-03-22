@@ -1,0 +1,6 @@
+Scenario: Display Policy Group metadata on policy page
+  Given there is a policy with the title "New Environmental Policy"
+  And there is a Policy Group with the title "Climate Change Experts"
+  When the editor associates the Policy Group "Climate Change Experts" with the policy "New Environmental Policy"
+  Then the system displays the metadata on the policy page
+  And the metadata reads "Groups: Climate Change Experts"

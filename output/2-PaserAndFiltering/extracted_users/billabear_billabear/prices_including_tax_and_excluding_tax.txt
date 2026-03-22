@@ -1,0 +1,28 @@
+Feature: Prices include and exclude tax
+
+Background: 
+  Given  the following accounts exist:
+  And  there are the following tax types:
+  And  that the following countries exist:
+  And  the following country tax rules exist:
+  And  the follow products exist:
+  And  the follow prices exist:
+  And  the following features exist:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "Price One" with:
+  Given  a Subscription Plan exists for product "Product Two" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "Price One" with:
+  And  the follow customers exist:
+
+Scenario 1: Price excludes tax
+  Given  the following subscriptions exist:
+  And  stripe billing is disabled
+  And  that the tax settings for tax customers with tax number is true
+  When  the background task to reinvoice active subscriptions
+  And  there will be an invoice for the amount of 1200 for "customer.four@example.org"
+
+Scenario 2: Price includes tax
+  Given  the following subscriptions exist:
+  And  stripe billing is disabled
+  And  that the tax settings for tax customers with tax number is true
+  When  the background task to reinvoice active subscriptions
+  And  there will be an invoice for the amount of 1000 for "customer.four@example.org"
+

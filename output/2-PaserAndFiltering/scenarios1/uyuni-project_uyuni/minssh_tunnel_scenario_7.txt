@@ -1,0 +1,13 @@
+Scenario 7: Remove a package from this SSH tunnel minion
+  Given  I am on the Systems overview page of this "ssh_minion"
+  And  I follow "Software" in the content area
+  And  I follow "List / Remove"
+  And  I enter "milkyway-dummy" as the filtered package name
+  And  I click on the filter button
+  And  I wait until I see "milkyway-dummy" text
+  And  I check "milkyway-dummy" in the list
+  And  I click on "Remove Packages"
+  And  I click on "Confirm"
+  Then  I should see a "1 package removal has been scheduled" text
+  Then  I wait until event "Package Removal scheduled" is completed
+

@@ -1,0 +1,11 @@
+Scenario 3: I can not register if all required fields are not filled
+  Given  I am on the home page
+  And  I follow "Register"
+  When  I fill in the following:
+  And  I press "Register"
+  Then  I should be on the "register" page
+  And  I should see "Please enter an email"
+  And  I should see "Please enter your first name"
+  And  I should see "Please enter your last name"
+  And  I should see "Password required"
+

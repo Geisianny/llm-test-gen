@@ -1,0 +1,6 @@
+Scenario 3: Inability to impersonate a customer with no account
+  Tags: ['@no-api', '@ui']
+  Given  the store has customer "harold@thrasher.ie" with first name "Harold"
+  When  I view their details
+  Then  I should be unable to impersonate them
+

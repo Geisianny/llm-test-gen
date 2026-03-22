@@ -1,0 +1,5 @@
+Scenario: Attempt to create a topical event with missing information
+  Given there is an editor logged in
+  When the editor creates a new topical event without a title
+  And enters a summary and description for the event
+  Then the system prevents the event from being saved

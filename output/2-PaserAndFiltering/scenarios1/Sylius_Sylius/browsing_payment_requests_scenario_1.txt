@@ -1,0 +1,9 @@
+Scenario 1: Browsing payment requests of a payment
+  Tags: ['@api', '@ui']
+  When  I browse payments
+  And  I want to view the payment requests of the first payment
+  Then  there should be 3 payment requests on the list
+  And  it should be the payment request with action "authorize"
+  And  it should be the payment request with action "capture"
+  And  it should be the payment request with action "sync"
+

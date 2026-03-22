@@ -1,0 +1,6 @@
+Scenario 16: Get AWS integration standard IAM permissions returns "AWS IAM Permissions object" response
+  Tags: ['@team:DataDog/aws-integrations']
+  Given  new "GetAWSIntegrationIAMPermissionsStandard" request
+  When  the request is sent
+  Then  the response status is 200 AWS IAM Permissions object
+

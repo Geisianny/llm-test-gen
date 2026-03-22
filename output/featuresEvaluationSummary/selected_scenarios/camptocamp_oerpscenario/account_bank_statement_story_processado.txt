@@ -1,0 +1,6 @@
+Scenario: Register a new invoice
+  Given there is an existing customer with a valid account
+  When the user creates a new invoice for the customer
+  And enters a valid invoice amount
+  Then the system registers the invoice successfully
+  And displays the invoice status as "open"

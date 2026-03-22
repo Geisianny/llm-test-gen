@@ -1,0 +1,12 @@
+Scenario Outline 2: As a user granted with local scope, I can create an elected representative in a zone I am manager of - Example 1
+  Given  I am logged with "referent@en-marche-dev.fr" via OAuth client "JeMengage Web" with scope "jemengage_admin"
+  When  I send a "POST" request to "/api/v3/elected_representatives?scope=president_departmental_assembly" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+  Examples:
+    | user | scope |
+    | referent@en-marche-dev.fr | president_departmental_assembly |
+    | senateur@en-marche-dev.fr | delegated_08f40730-d807-4975-8773-69d8fae1da74 |
+

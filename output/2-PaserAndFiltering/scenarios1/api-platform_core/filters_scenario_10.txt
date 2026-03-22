@@ -1,0 +1,8 @@
+Scenario 10: Retrieve a collection filtered using the related search filter
+  Tags: ['@createSchema']
+  Given  there are 1 dummy objects having each 2 relatedDummies
+  And  there are 1 dummy objects having each 3 relatedDummies
+  When  I send the following GraphQL request:
+  And  the response status code should be 200
+  And  the JSON node "data.dummies.edges" should have 1 element
+

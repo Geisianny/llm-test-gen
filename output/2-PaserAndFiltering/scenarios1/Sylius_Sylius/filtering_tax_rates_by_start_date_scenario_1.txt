@@ -1,0 +1,8 @@
+Scenario 1: Filtering tax rates from start date
+  Tags: ['@api', '@ui']
+  When  I browse tax rates
+  And  I filter tax rates by start date from "2022-12-26"
+  Then  I should not see a tax rate with name "2022 tax rate"
+  And  I should not see a tax rate with name "3 weeks tax rate"
+  But  I should see the tax rate "2023 tax rate" in the list
+

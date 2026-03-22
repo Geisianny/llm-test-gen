@@ -1,0 +1,13 @@
+Scenario 1: Access the Sample Feature screen
+  Tags: ['@sample-feature', '@navigation', '@e2e-automated']
+  Given  I am on the Wallet home screen
+  When  I tap on the Settings tab
+  And  I scroll down to "Developer Options"
+  And  I tap on "Developer Options"
+  And  I tap on "Navigate to Sample Feature" button
+  Then  I should see the "Sample Feature" screen
+  And  I should see the "Sample Feature Description" text
+  And  I should see the current network display
+  And  I should see the Counter section
+  And  I should see the Pet Names section
+

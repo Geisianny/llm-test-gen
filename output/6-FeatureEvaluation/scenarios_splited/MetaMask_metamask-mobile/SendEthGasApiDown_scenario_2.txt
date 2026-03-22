@@ -1,0 +1,7 @@
+Scenario: Send ETH when Gas API is down with insufficient balance
+  Given the Gas API is unavailable
+  And the user has an insufficient ETH balance for the transaction
+  And the user has entered valid recipient address and amount
+  When the user initiates an ETH send transaction
+  Then the system displays an error message indicating insufficient balance
+  And the transaction is not processed

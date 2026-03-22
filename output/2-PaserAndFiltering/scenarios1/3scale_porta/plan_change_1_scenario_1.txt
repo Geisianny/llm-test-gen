@@ -1,0 +1,9 @@
+Scenario 1: Change without billed cost
+  Given  the time is 5th May 2009
+  And  the buyer is signed up to application plan "PaidAsInLunch" on 5th May 2009
+  When  I log in as "stallman" on foo.3scale.localhost
+  And  the buyer changes to application plan "PaidAsInDiplomat" on 15th May 2009 UTC
+  And  time flies to 3rd June 2009
+  And  I navigate to invoice issued for me in "May, 2009"
+  Then  I should see line items
+

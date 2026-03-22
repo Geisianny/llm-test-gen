@@ -1,0 +1,7 @@
+Scenario 5: Add Cloudflare account returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "CreateCloudflareAccount" request
+  And  body with value {"data": {"attributes": {"api_key": "a94a8fe5ccb19ba61c4c0873d391e987982fbbd3", "email": "test-email@example.com", "name": "test-name", "resources": ["web", "dns", "lb", "worker"], "zones": ["zone_id_1", "zone_id_2"]}, "type": "cloudflare-accounts"}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

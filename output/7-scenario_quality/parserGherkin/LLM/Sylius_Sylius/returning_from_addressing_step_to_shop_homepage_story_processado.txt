@@ -1,0 +1,55 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: returning_from_addressing_step_to_shop_homepage_story_processado.feature
+Caminho relativo: Sylius_Sylius\returning_from_addressing_step_to_shop_homepage_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\Sylius_Sylius\returning_from_addressing_step_to_shop_homepage_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: returning_from_addressing_step_to_shop_homepage_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Return to shop homepage from checkout addressing step
+   Steps: 5
+   - Given there is a visitor with items in the cart
+   - And the visitor is at the checkout addressing step
+   - When the visitor clicks on the link to return to the shop homepage
+   - Then the visitor is redirected to the shop homepage
+   - And the cart items are preserved
+2. Cart contents remain after returning to shop homepage
+   Steps: 5
+   - Given there is a visitor with items in the cart
+   - And the visitor is at the checkout addressing step
+   - When the visitor clicks on the link to return to the shop homepage
+   - Then the cart still contains the items
+   - And the visitor can continue shopping
+3. Visitor can navigate back to checkout
+   Steps: 5
+   - Given there is a visitor with items in the cart
+   - And the visitor is at the checkout addressing step
+   - When the visitor clicks on the link to return to the shop homepage
+   - And the visitor navigates back to checkout
+   - Then the visitor is returned to the checkout addressing step
+4. Return to shop homepage with empty cart
+   Steps: 5
+   - Given there is a visitor with an empty cart
+   - And the visitor is at the checkout addressing step
+   - When the visitor clicks on the link to return to the shop homepage
+   - Then the visitor is redirected to the shop homepage
+   - And the cart remains empty
+5. Multiple attempts to return to shop homepage
+   Steps: 7
+   - Given there is a visitor with items in the cart
+   - And the visitor is at the checkout addressing step
+   - When the visitor clicks on the link to return to the shop homepage
+   - And the visitor navigates back to checkout
+   - And the visitor clicks on the link to return to the shop homepage again
+   - Then the visitor is redirected to the shop homepage
+   - And the cart items are preserved

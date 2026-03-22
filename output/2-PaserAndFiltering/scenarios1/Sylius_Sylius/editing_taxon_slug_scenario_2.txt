@@ -1,0 +1,9 @@
+Scenario 2: Creating a root taxon with a custom slug
+  Tags: ['@api', '@ui']
+  When  I want to create a new taxon
+  And  I specify its code as "MEDIEVAL_WEAPONS"
+  And  I name it "Medieval weapons" in "English (United States)"
+  And  I set its slug to "mw" in "English (United States)"
+  And  I add it
+  Then  this taxon slug should be "mw"
+

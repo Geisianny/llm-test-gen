@@ -1,0 +1,16 @@
+Scenario 1: simple successful transfers when (transfer amount * transfer.fee.factor <= transfer.fee.maxQuantumAmount * quantum) (0057-TRAN-001, 0057-TRAN-007, 0057-TRAN-008)
+  Given  the parties submit the following one off transfers:
+  Then  "f0b40ebdc5b92cf2cf82ff5d0c3f94085d23d5ec2d37d0b929e177c6d4d37e4c" should have general account balance of "9910000" for asset "VEGA"
+  Given  time is updated to "2021-08-26T00:00:01Z"
+  Then  "f0b40ebdc5b92cf2cf82ff5d0c3f94085d23d5ec2d37d0b929e177c6d4d37e4c" should have general account balance of "9910000" for asset "VEGA"
+  Then  "a7c4b181ef9bf5e9029a016f854e4ad471208020fd86187d07f0b420004f06a4" should have general account balance of "10000" for asset "VEGA"
+  Given  time is updated to "2021-08-26T00:00:02Z"
+  Then  "f0b40ebdc5b92cf2cf82ff5d0c3f94085d23d5ec2d37d0b929e177c6d4d37e4c" should have general account balance of "9910000" for asset "VEGA"
+  Then  "a7c4b181ef9bf5e9029a016f854e4ad471208020fd86187d07f0b420004f06a4" should have general account balance of "10000" for asset "VEGA"
+  Then  "576380694832d9271682e86fffbbcebc09ca79c259baa5d4d0298e12ecdee303" should have general account balance of "20000" for asset "VEGA"
+  Given  time is updated to "2021-08-26T00:00:03Z"
+  Then  "f0b40ebdc5b92cf2cf82ff5d0c3f94085d23d5ec2d37d0b929e177c6d4d37e4c" should have general account balance of "9910000" for asset "VEGA"
+  Then  "a7c4b181ef9bf5e9029a016f854e4ad471208020fd86187d07f0b420004f06a4" should have general account balance of "10000" for asset "VEGA"
+  Then  "576380694832d9271682e86fffbbcebc09ca79c259baa5d4d0298e12ecdee303" should have general account balance of "20000" for asset "VEGA"
+  Then  "a3c024b4e23230c89884a54a813b1ecb4cb0f827a38641c66eeca466da6b2ddf" should have general account balance of "30000" for asset "VEGA"
+

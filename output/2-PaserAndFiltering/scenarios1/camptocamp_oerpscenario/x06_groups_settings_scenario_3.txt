@@ -1,0 +1,19 @@
+Scenario 3: GROUP TO HIDE USELESS MENU
+  Tags: ['@multicompany_base_finance_hide_useless_menu']
+  Given  I need a "res.groups" with name: 'hidden menus' and oid: scen.no_voucher_group
+  And  having:
+  Given  I need a "ir.ui.menu" with name: Sales Receipts
+  And  having:
+  Given  I need a "ir.ui.menu" with name: Customer Payments
+  And  having:
+  Given  I need a "ir.ui.menu" with name: Purchase Receipts
+  And  having:
+  Given  I need a "ir.ui.menu" with name: Supplier Payments
+  And  having:
+  Given  I need a "ir.ui.menu" with name: Journal Vouchers
+  And  having:
+  Given  I need a "ir.ui.menu" with name: Automatic Reconciliation
+  And  having:
+  Given  I need a "ir.ui.menu" with name: Multi-Currencies
+  And  having:
+

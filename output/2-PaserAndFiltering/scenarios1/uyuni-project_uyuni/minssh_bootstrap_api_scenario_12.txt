@@ -1,0 +1,4 @@
+Scenario 12: Cleanup and flush the firewall rules
+  Tags: ['@proxy']
+  When  I flush firewall on "ssh_minion"
+

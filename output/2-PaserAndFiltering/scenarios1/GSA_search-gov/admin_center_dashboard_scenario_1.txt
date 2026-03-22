@@ -1,0 +1,12 @@
+Scenario 1: Visiting /sites for user with existing sites
+  Given  the following Affiliates exist:
+  And  I am logged in with email "manager@agency.gov"
+  When  I go to the sites page
+  Then  I should see "agency1 site"
+  When  I go to the 3.agency.gov's Manage Content page
+  And  I follow "Set as my default site"
+  Then  I should see "You have set agency3 site as your default site"
+  And  I should see "Manage Content"
+  When  I go to the sites page
+  Then  I should see "agency3 site (3.agency.gov)" in the site header
+

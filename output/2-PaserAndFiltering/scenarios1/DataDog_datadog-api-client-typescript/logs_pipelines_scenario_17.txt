@@ -1,0 +1,6 @@
+Scenario 17: Get all pipelines returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/event-platform-experience']
+  Given  new "ListLogsPipelines" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

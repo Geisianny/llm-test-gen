@@ -1,0 +1,11 @@
+Scenario 1: Check menu as offerer
+  Given  I am logged in as user "offerer@cocorico.rocks" with password "12345678"
+  When  I click on dashboard menu of "offerer"
+  Then  I should see "Messages" in the "li.dropdown ul.dropdown-menu" element
+  And  I should see "Bookings" in the "li.dropdown ul.dropdown-menu" element
+  And  I should see "Listings" in the "li.dropdown ul.dropdown-menu" element
+  And  I should see "Payments" in the "li.dropdown ul.dropdown-menu" element
+  And  I should see "Comments" in the "li.dropdown ul.dropdown-menu" element
+  And  I should see "Profile" in the "li.dropdown ul.dropdown-menu" element
+  And  I should see "Logout" in the "li.dropdown ul.dropdown-menu" element
+

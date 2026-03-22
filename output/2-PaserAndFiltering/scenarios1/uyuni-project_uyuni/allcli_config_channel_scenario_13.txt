@@ -1,0 +1,6 @@
+Scenario 13: Apply highstate to override changed content on SLE minion
+  Tags: ['@sle_minion']
+  When  I store "COLOR=blue" into file "/etc/s-mgr/config" on "sle_minion"
+  And  I apply highstate on "sle_minion"
+  Then  file "/etc/s-mgr/config" should contain "COLOR=white" on "sle_minion"
+

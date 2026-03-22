@@ -1,0 +1,9 @@
+Scenario 4: Trying to remove email from an existing customer
+  Tags: ['@api', '@ui']
+  Given  the store has customer "l.skywalker@gmail.com"
+  When  I want to edit this customer
+  And  I remove its email
+  And  I try to save my changes
+  Then  I should be notified that email is required
+  And  the customer "l.skywalker@gmail.com" should still have this email
+

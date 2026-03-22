@@ -1,0 +1,6 @@
+Scenario 3: be redirected if user goes to signup page and is logged
+  Given  the following users
+  Given  I am logged in as "joaosilva"
+  And  I go to signup page
+  Then  I should be on joaosilva's control panel
+

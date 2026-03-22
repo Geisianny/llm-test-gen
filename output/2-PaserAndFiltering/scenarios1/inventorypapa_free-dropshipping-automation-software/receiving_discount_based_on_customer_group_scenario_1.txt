@@ -1,0 +1,6 @@
+Scenario 1: Not logged in customer should not receive discount
+  Tags: ['@ui', '@api']
+  When  I add product "PHP T-Shirt" to the cart
+  Then  my cart total should be "$80.00"
+  And  there should be no discount
+

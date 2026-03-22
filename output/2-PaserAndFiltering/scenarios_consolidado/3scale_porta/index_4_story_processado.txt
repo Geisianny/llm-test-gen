@@ -1,0 +1,48 @@
+Scenario 1: Navigation via the products widget
+  Given  they go to the provider dashboard
+  When  they select action "Applications" of "My API" within the products widget
+  Then  the current page is product "My API" applications page
+
+
+
+Scenario 2: Navigation via Context selector
+  When  they select "Products" from the context selector
+  And  follow "My API"
+  And  press "Applications" within the main menu
+  And  follow "Listing" within the main menu's section Applications
+  Then  the current page is product "My API" applications page
+
+
+
+Scenario 3: Empty state
+  Given  a product "No Apps API"
+  When  they go to product "No Apps API" applications page
+  Then  they should see "No applications yet"
+  And  there should be a link to "Add an application"
+
+
+
+Scenario 4: Only the current service applications are listed
+  When  they go to product "My API" applications page
+  Then  they should see the following table with exact columns:
+  When  they go to product "Another API" applications page
+  Then  they should see the following table with exact columns:
+
+
+
+Scenario 5: Plan column is hidden when the API has a single plan
+  When  they go to product "My API" applications page
+  Then  the table has a column "Plan"
+  When  they go to product "Another API" applications page
+  Then  the table does not have a column "Plan"
+
+
+
+Scenario 6: Paid? column is shown when finance is enabled
+  When  the provider has "finance" denied
+  And  they go to product "My API" applications page
+  Then  the table does not have a column "Paid?"
+  When  the provider has "finance" allowed
+  And  they go to product "My API" applications page
+  Then  the table has a column "Paid?"
+

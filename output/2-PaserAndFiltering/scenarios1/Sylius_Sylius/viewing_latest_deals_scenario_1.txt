@@ -1,0 +1,5 @@
+Scenario 1: Viewing latest deals
+  Tags: ['@no-api', '@ui']
+  When  I check latest deals
+  Then  I should see 4 products in the latest deals list
+

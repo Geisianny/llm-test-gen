@@ -1,0 +1,7 @@
+Scenario 3: Show highlight word in pages
+  Given  I log in as "bob"
+  When  I fill in "q" with "title"
+  And  I press "Search"
+  Then  I should see highlighted "title" in "term"
+  And  I should see highlighted "title" in "definition"
+

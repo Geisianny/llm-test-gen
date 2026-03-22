@@ -1,0 +1,16 @@
+Scenario 24: Edit the admin org Recurring Action
+  When  I follow the left menu "Admin > Organizations"
+  And  I follow "SUSE Test" in the content area
+  And  I follow "Recurring Actions" in the content area
+  Then  I should see a "schedule_name" text
+  When  I click the "schedule_name" item edit button
+  And  I wait until I see "Update Schedule" text
+  And  I enter "schedule_name_org" as "scheduleName"
+  And  I check radio button "schedule-cron"
+  And  I enter "0 0 15 3 * ?" as "cron"
+  And  I click on "Update Schedule"
+  Then  I wait until I see "Schedule successfully updated" text
+  And  I should see a "schedule_name_org" text
+  And  I should see a "Organization" text
+  And  I should see a "0 0 15 3 * ?" text
+

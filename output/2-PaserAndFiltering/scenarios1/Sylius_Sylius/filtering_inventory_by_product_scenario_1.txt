@@ -1,0 +1,6 @@
+Scenario 1: Filtering tracked product variants by product
+  Tags: ['@no-api', '@ui', '@mink:chromedriver']
+  When  I filter tracked variants by "RHCP T-Shirt" product
+  Then  I should see only one tracked variant in the list
+  And  I should see that the "RHCP T-Shirt" variant has 25 quantity on hand
+

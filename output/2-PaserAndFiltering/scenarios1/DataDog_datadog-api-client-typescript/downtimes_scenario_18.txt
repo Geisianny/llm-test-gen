@@ -1,0 +1,7 @@
+Scenario 18: Schedule a downtime with mutually exclusive until occurrences and until date properties
+  Tags: ['@team:DataDog/monitor-app']
+  Given  new "CreateDowntime" request
+  And  body from file "downtime_recurrence_payload_until_occurrences_and_until_date_are_mutually_exclusive.json"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

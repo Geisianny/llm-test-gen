@@ -1,0 +1,14 @@
+Scenario 7: Manually changing a taxon's slug while editing a taxon's name
+  Tags: ['@ui', '@javascript']
+  Given  the store has taxonomy named "Medieval weapons" in "English (United States)" locale and "Bronie średniowieczne" in "Polish (Poland)" locale
+  When  I want to modify the "Medieval weapons" taxon
+  And  I enable slug modification in "English (United States)"
+  And  I rename it to "Renaissance weapons" in "English (United States)"
+  And  I set its slug to "renaissance" in "English (United States)"
+  And  I enable slug modification in "Polish (Poland)"
+  And  I rename it to "Bronie renesansowe" in "Polish (Poland)"
+  And  I set its slug to "renesansowe" in "Polish (Poland)"
+  And  I save my changes
+  Then  this taxon should have slug "renaissance" in "English (United States)"
+  Then  this taxon should have slug "renesansowe" in "Polish (Poland)"
+

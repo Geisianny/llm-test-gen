@@ -1,0 +1,11 @@
+Scenario 3: Adding a new promotion with contains product rule
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  Given  the store has a product "PHP T-Shirt" priced at "$100.00"
+  When  I want to create a new promotion
+  And  I specify its code as "PHP_TSHIRT_PROMOTION"
+  And  I name it "PHP T-Shirt promotion"
+  And  I add the "Contains product" rule configured with the "PHP T-Shirt" product
+  And  I add it
+  Then  I should be notified that it has been successfully created
+  And  the "PHP T-Shirt promotion" promotion should appear in the registry
+

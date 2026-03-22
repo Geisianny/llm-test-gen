@@ -1,0 +1,8 @@
+Scenario 2: Seeing the number of errors per channel in product fixed discount
+  Tags: ['@no-api', '@ui']
+  Given  this promotion gives "$2.00" off on every product in the "Web" channel and "$3.00" off in the "Mobile" channel
+  When  I want to modify a "Holiday promotion" promotion
+  And  I remove the discount amount for "Mobile" channel
+  And  I try to save my changes
+  And  I should see that the action for "Mobile" channel has 1 validation error
+

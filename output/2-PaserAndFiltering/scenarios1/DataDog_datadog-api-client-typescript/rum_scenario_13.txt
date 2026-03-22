@@ -1,0 +1,6 @@
+Scenario 13: List all the RUM applications returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/rum-backend']
+  Given  new "GetRUMApplications" request
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

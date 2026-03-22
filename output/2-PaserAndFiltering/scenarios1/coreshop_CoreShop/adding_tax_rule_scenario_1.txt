@@ -1,0 +1,4 @@
+Scenario 1: Simple Tax Rule with 20%
+  Given  I am in country "Austria"
+  Then  the tax rule group should add "4" to the price "20"
+

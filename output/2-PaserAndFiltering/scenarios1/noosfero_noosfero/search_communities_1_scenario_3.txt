@@ -1,0 +1,7 @@
+Scenario 3: find communities without exact query
+  Given  the following communities
+  When  I go to the search communities page
+  And  I fill in "search-input" with "Linux Clue"
+  And  I press "Search"
+  Then  I should see "Linux Users Without a Clue" within "#search-results"
+

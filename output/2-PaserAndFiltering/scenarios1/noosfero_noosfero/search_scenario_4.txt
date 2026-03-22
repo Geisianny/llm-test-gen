@@ -1,0 +1,10 @@
+Scenario 4: simple search for community
+  Tags: ['@selenium']
+  Given  the following communities
+  And  I go to the search communities page
+  And  I fill in "search-input" with "fancy"
+  And  I follow "Search" within ".search-form"
+  And  I wait for 1 seconds
+  Then  I should see "Fancy community" within "#search-results"
+  And  I should not see "Boring community"
+

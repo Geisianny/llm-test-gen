@@ -1,0 +1,9 @@
+Scenario 1: Configure tags for multiple metrics returns "Accepted" response
+  Tags: ['@skip-typescript', '@team:DataDog/metrics-experience']
+  Given  a valid "appKeyAuth" key in the system
+  And  there is a valid "user" in the system
+  And  new "CreateBulkTagsMetricsConfiguration" request
+  And  body with value {"data": {"attributes": {"emails": ["{{ user.data.attributes.email }}"], "tags": ["test", "{{ unique_lower_alnum }}"]}, "id": "system.load.1", "type": "metric_bulk_configure_tags"}}
+  When  the request is sent
+  Then  the response status is 202 Accepted
+

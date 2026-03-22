@@ -1,0 +1,10 @@
+Scenario 8: Distributing percentage order discount promotion
+  Tags: ['@api', '@no-ui']
+  Given  it gives "20%" discount to every order
+  And  I added product "T-Shirt" to the cart
+  And  I added product "PHP Mug" to the cart
+  When  I check the details of my cart
+  Then  product "T-Shirt" price should be decreased by "$5.00"
+  And  product "PHP Mug" price should be decreased by "$9.00"
+  And  my cart total should be "$56.00"
+

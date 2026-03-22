@@ -1,0 +1,5 @@
+Scenario 1: Having all pages show automatically
+  And  I visit the home page
+  Then  I should see "About HCN"
+  And  I should not see "Contact Info"
+

@@ -1,0 +1,5 @@
+Scenario 1: "Steps completed with APIcast"
+  When  I complete the "apicast_gateway_deployed" step
+  And  I go to the dashboard
+  Then  I should be done
+

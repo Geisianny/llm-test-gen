@@ -1,0 +1,4 @@
+Scenario 4: Create a not-like both condition and render it
+  Given  there is a not-like condition with field-name "XY" and pattern "both" and value "blub"
+  Then  the condition rendered for "mysql" should look like "`XY` NOT LIKE '%blub%'"
+

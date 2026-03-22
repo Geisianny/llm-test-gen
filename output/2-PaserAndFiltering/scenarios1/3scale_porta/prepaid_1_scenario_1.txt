@@ -1,0 +1,11 @@
+Scenario 1: Bill one month beforehand
+  Tags: ['@commit-transactions']
+  Given  the date is 1st January 2009
+  When  a buyer "zoidberg" signed up to application plan "Fixed" on 1st January 2009
+  And  I log in as "zoidberg" on foo.3scale.localhost
+  Given  the time flies to 3rd February 2009
+  Then  I should have 2 invoices
+  And  I see my invoice from "January, 2009" is "Pending"
+  When  I navigate to invoice issued for me in "February, 2009"
+  Then  I should see line items
+

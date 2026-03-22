@@ -1,0 +1,6 @@
+Scenario: Validate accounting entries for a sales order
+  Given there is a sales order that has been confirmed and invoiced
+  And the invoice has been paid
+  When the administrator checks the accounting entries for the sales order
+  Then the system displays the correct accounting entries for the transaction
+  And the accounting entries are properly balanced and recorded

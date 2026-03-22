@@ -1,0 +1,12 @@
+Scenario 27: Update deployment rule returns "Bad Request" response
+  Tags: ['@team:DataDog/ci-app-backend']
+  Given  there is a valid "deployment_gate" in the system
+  And  there is a valid "deployment_rule" in the system
+  And  operation "UpdateDeploymentRule" enabled
+  And  new "UpdateDeploymentRule" request
+  And  request contains "gate_id" parameter with value "invalid-gate-id"
+  And  request contains "id" parameter with value "invalid-rule-id"
+  And  body with value {"data": {"attributes": {"dry_run": false, "name": "Updated deployment rule", "options": {"excluded_resources": []}}, "type": "deployment_rule"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

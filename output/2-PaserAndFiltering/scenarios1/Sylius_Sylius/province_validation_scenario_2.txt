@@ -1,0 +1,8 @@
+Scenario 2: Trying to add a new province with a too long code
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I want to create a new province in country "United Kingdom"
+  And  I name the province "Scotland"
+  And  I provide a too long province code
+  And  I try to save my changes
+  Then  I should be informed that the provided province code is too long
+

@@ -1,0 +1,11 @@
+Scenario 3: Registering as a new affiliate user who is a government employee or contractor with .gov email address
+  Tags: ['@javascript']
+  Given  I log in with email "lorem.ipsum@agency.gov"
+  Then  I should be on the user edit account page
+  When  I fill in the following:
+  And  I press "Save"
+  Then  I should see "Account updated!"
+  And  "lorem.ipsum@agency.gov" should receive an email
+  When  I open the email
+  Then  I should see "Welcome to Search.gov" in the email subject
+

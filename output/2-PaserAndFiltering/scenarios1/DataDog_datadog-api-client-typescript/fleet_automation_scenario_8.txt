@@ -1,0 +1,8 @@
+Scenario 8: Delete a schedule returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "DeleteFleetSchedule" enabled
+  And  new "DeleteFleetSchedule" request
+  And  request contains "id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

@@ -1,0 +1,5 @@
+Scenario 3: Republish the "Fields of operation" page
+  Given  a published publication "Fields of operation" exists
+  When  I request a republish of the "Fields of operation" page
+  Then  I can see the "Fields of operation" page has been scheduled for republishing
+

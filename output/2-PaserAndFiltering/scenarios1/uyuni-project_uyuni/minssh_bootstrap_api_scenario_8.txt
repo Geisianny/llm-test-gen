@@ -1,0 +1,4 @@
+Scenario 8: Check spacecmd system ID of SSH minion bootstrapped via API
+  Given  I am on the Systems overview page of this "ssh_minion"
+  Then  I run spacecmd listeventhistory for "ssh_minion"
+

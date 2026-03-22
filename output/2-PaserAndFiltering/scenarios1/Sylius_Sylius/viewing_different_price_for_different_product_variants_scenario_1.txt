@@ -1,0 +1,5 @@
+Scenario 1: Viewing a detailed page with default variant's price
+  Tags: ['@api', '@ui']
+  When  I view product "Wyborowa Vodka"
+  Then  the product price should be "$40.00"
+

@@ -1,0 +1,7 @@
+Scenario 6: Filter invoices by year
+  Given  the following invoices:
+  And  I go to the earnings by month page
+  And  the table should contain the following:
+  When  the table is filtered with:
+  Then  the table should contain the following:
+

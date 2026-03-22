@@ -1,0 +1,7 @@
+Scenario: Edit welcome email content with valid input
+  Given there is an admin logged into the system
+  And the welcome email content is currently "Default welcome email content"
+  When the admin edits the welcome email content to "New welcome email content"
+  And saves the changes
+  Then the system updates the welcome email content to "New welcome email content"
+  And displays a confirmation message

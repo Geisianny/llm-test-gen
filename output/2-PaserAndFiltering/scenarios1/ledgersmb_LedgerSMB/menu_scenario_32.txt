@@ -1,0 +1,10 @@
+Scenario Outline 32: Navigate to menu "<path>" and open screen "<screen>" - Example 32
+  When  I navigate the menu and select the item at "Preferences"
+  Then  I should see the Preferences screen
+
+  Examples:
+    | path | screen |
+    | Preferences | Preferences |
+    | Quotations > Reports > Quotations | Quotation search |
+    | Quotations > Reports > RFQs | RFQ search |
+

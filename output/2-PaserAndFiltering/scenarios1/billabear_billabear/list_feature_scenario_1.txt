@@ -1,0 +1,6 @@
+Scenario 1: Fail to create feature with same code
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  Given  the following features exist:
+  When  I get the list of features via the APP
+  Then  I should see in the site response with only 3 result in the data set
+

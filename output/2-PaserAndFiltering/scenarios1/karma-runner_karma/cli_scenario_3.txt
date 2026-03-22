@@ -1,0 +1,4 @@
+Scenario 3: Error when command is unknown
+  When  I execute Karma with arguments: "strat"
+  Then  the stderr is exactly:
+

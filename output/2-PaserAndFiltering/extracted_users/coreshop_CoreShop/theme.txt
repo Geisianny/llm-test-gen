@@ -1,0 +1,25 @@
+Feature: In order to allow multishop with different designs
+Description: we allow each store a different template
+Tags: ['@domain', '@theme']
+
+Background: 
+  Given  the site operates on a store in "Austria"
+
+Scenario 1: Default Store theme
+  Then  the current theme name should be "standard"
+
+Scenario 2: Store Theme
+  Given  the site has a country "Germany" with currency "EUR"
+  And  the country "Germany" is active
+  And  the site has a store "Germany" with country "Germany" and currency "EUR"
+  And  the store "Germany" uses theme "germany"
+  And  I am in store "Germany"
+  Then  the current theme name should be "germany"
+
+Scenario 3: Multiple Stores with one active
+  Given  the site has a country "Germany" with currency "EUR"
+  And  the country "Germany" is active
+  And  the site has a store "Germany" with country "Germany" and currency "EUR"
+  And  the store "Germany" uses theme "germany"
+  Then  the current theme name should be "standard"
+

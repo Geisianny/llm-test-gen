@@ -1,0 +1,9 @@
+Scenario 5: Add the Rocky 8 Appstream DVD repository
+  When  I follow the left menu "Software > Manage > Repositories"
+  And  I follow "Create Repository"
+  And  I enter "rocky-8-iso-appstream" as "label"
+  And  I enter "file:///srv/www/htdocs/pub/rocky-8-iso/AppStream" as "url"
+  And  I uncheck "metadataSigned"
+  And  I click on "Create Repository"
+  Then  I should see a "Repository created successfully" text
+

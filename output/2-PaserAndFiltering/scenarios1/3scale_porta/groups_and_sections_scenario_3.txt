@@ -1,0 +1,7 @@
+Scenario 3: Access restricted sections are access denied for not logged in users
+  Tags: ['@allow-rescue']
+  Given  the current domain is "foo.3scale.localhost"
+  And  the section "Docs" of provider "foo.3scale.localhost" is access restricted
+  When  I request the url "/docs/first"
+  Then  I should see "Not found"
+

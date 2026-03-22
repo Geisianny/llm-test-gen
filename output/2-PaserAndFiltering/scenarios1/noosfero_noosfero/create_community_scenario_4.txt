@@ -1,0 +1,10 @@
+Scenario 4: environment admin receive a task when a user creates a community
+  Tags: ['@selenium']
+  Given  I am logged in as "joaosilva"
+  And  feature "admin_must_approve_new_communities" is enabled on environment
+  Given  "joaosilva" creates the community "Community for approval"
+  Given  I am logged in as admin
+  And  I go to admin_user's control panel
+  And  I follow "menu-toggle"
+  Then  I should see "Joao Silva wants to create community Community for approval"
+

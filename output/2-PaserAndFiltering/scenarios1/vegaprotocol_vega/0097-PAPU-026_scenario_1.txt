@@ -1,0 +1,12 @@
+Scenario 1: (0097-PAPU-026)
+  When  the protocol automated purchase is defined as:
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  And  the network moves ahead "10" blocks
+  Then  the automated purchase program for market "BTC/ETH" should have a snapshot balance of "5000"
+  And  the parties submit the following one off transfers:
+  Then  the oracles broadcast data with block time signed with "0xCAFECAFE2":
+  And  the network moves ahead "20" blocks
+  Then  the automated purchase program for market "BTC/ETH" should have a snapshot balance of "5100"
+  And  the trading mode should be "TRADING_MODE_PROTOCOL_AUTOMATED_PURCHASE_AUCTION" for the market "BTC/ETH"
+  And  the order book should have the following volumes for market "BTC/ETH":
+

@@ -1,0 +1,6 @@
+Scenario 1: Properly rounded up tax for a single product
+  Tags: ['@ui']
+  When  I add product "Symfony Mug" to the cart
+  Then  my cart total should be "$50.55"
+  And  my cart taxes should be "$4.60"
+

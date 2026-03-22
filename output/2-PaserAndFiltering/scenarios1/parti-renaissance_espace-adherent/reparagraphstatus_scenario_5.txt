@@ -1,0 +1,6 @@
+Scenario 5: Test UX components : ReParagraphStatus dynamic-text
+  When  I go to "/test/ux-component/ReParagraphStatus/dynamictext"
+  Then  I should see "content"
+  When  I click the "button" selector
+  Then  I should see "dynamic content"
+

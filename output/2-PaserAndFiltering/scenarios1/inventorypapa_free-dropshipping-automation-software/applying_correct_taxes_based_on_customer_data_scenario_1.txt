@@ -1,0 +1,7 @@
+Scenario 1: Proper taxes for logged in Customer
+  Tags: ['@ui']
+  Given  I am logged in as "john@example.com"
+  When  I add product "PHP T-Shirt" to the cart
+  Then  my cart total should be "$110.00"
+  And  my cart taxes should be "$10.00"
+

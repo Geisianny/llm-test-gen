@@ -1,0 +1,33 @@
+Feature: List Services
+Description: As a member of a health care team
+  So that I can find out what services are available in my Primary Care Network area
+  I would like to see a list of services organised geographically
+
+Background: organisations with services have been added to database
+  Given  the following organisations exist:
+  And  the following services exist:
+  And  the following self care categories exist:
+  And  I visit the services iframe page
+  And  cookies are approved
+
+Scenario 1: See a list of current services
+  Tags: ['@vcr']
+  Then  the index should contain:
+
+Scenario 2: Not see header
+  And  I should not see element "header"
+  And  I should not see element "footer"
+
+Scenario 3: Category selections maintain defaults following search
+  Given  I select 'Any' from 'Type of Activity'
+  And  no 'Location' is selected
+  And  no 'Self Care Categories' are selected
+  When  I select 'Group' from 'Type of Activity'
+  And  I select 'Westminster' from 'Location'
+  And  I select 'Autism' from 'Self Care Categories'
+  And  I press "Search"
+  Then  'Type of Activity' is set to 'Group'
+  And  'Location' is set to 'Westminster'
+  And  'Self Care Categories' is set to 'Autism'
+  And  I should not see element "navbar"
+

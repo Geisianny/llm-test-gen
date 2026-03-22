@@ -1,0 +1,6 @@
+Scenario 2: Create a product with a default unit
+  Given  the site has a product-unit "Pieces"
+  And  the site has a product "Shoe 2" priced at 200
+  And  the product has the default unit "Pieces"
+  Then  the products default unit should be unit "Pieces"
+

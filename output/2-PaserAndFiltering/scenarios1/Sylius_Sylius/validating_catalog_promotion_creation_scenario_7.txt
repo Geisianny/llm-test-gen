@@ -1,0 +1,12 @@
+Scenario 7: Trying to create a catalog promotion with not configured for variants scope
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I want to create a new catalog promotion
+  And  I specify its code as "winter_sale"
+  And  I name it "Winter sale"
+  And  I specify its label as "Winter -50%" in "English (United States)"
+  And  I describe it as "This promotion gives a 50% discount on all products" in "English (United States)"
+  And  I add for variants scope without variants configured
+  And  I try to add it
+  Then  I should be notified that at least 1 variant is required
+  And  there should be an empty list of catalog promotions
+

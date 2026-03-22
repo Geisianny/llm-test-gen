@@ -1,0 +1,9 @@
+Scenario 15: Update Okta account returns "OK" response
+  Tags: ['@team:DataDog/saas-integrations']
+  Given  there is a valid "okta_account" in the system
+  And  new "UpdateOktaAccount" request
+  And  request contains "account_id" parameter from "okta_account.data.id"
+  And  body with value {"data": {"attributes": {"auth_method": "oauth", "domain": "https://example.okta.com/", "client_id": "client_id", "client_secret":"client_secret"}, "type": "okta-accounts"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+

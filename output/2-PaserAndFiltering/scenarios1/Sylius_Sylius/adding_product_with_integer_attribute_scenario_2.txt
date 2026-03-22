@@ -1,0 +1,13 @@
+Scenario 2: Adding an integer non-translatable attribute to product
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I want to create a new configurable product
+  And  I specify its code as "44_MAGNUM"
+  And  I name it "44 Magnum" in "English (United States)" locale
+  And  I set its slug to "44-magnum"
+  And  I add the "Weight" attribute to it
+  And  I set its non-translatable "Weight" attribute to 10
+  And  I add it
+  Then  I should be notified that it has been successfully created
+  And  the product "44 Magnum" should appear in the store
+  And  non-translatable attribute "Weight" of product "44 Magnum" should be 10
+

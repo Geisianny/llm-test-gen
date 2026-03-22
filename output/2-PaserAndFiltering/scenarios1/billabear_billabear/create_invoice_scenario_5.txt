@@ -1,0 +1,8 @@
+Scenario 5: 
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  I want to invoice the customer "customer.seven@example.org"
+  And  I want to invoice for a subscription to "Test Two" at 1000 in "USD" per "week"
+  And  I want to invoice for a subscription to "Test Three" at 3000 in "USD" per "month"
+  When  I finalise the invoice in APP
+  Then  I will get the error that the payment schedules must all match
+

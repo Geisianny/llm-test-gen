@@ -1,0 +1,9 @@
+Scenario 16: I can POST on a subresource using CreateProvider with parent_uri_template
+  Tags: ['@!mongodb', '@createSchema']
+  Given  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/subresource_categories/1/subresource_bikes" with body:
+  Then  the response status code should be 404
+  Given  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/subresource_categories_with_create_provider/1/subresource_bikes" with body:
+  Then  the response status code should be 201
+

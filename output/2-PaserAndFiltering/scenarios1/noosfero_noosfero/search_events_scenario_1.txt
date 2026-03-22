@@ -1,0 +1,7 @@
+Scenario 1: filter events by day when selecting in the calendar
+  Tags: ['@selenium']
+  Given  I am on /search/events?year=2018&month=10
+  And  I follow "8" within ".agenda-calendar"
+  Then  I should see "Different Conference"
+  And  should not see "Another Conference"
+

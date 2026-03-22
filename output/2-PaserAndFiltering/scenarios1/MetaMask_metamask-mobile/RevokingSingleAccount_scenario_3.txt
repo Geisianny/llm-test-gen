@@ -1,0 +1,6 @@
+Scenario 3: User revokes dapp permission
+  When  I tap on the Network Icon
+  And  I tap on button with text "Permissions"
+  And  I tap on Revoke button
+  Then  I should not be connected to the dapp
+

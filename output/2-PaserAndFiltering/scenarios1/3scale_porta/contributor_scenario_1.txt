@@ -1,0 +1,10 @@
+Scenario 1: Admin can activate contributors
+  When  I log in as "your.acme.com"
+  And  I go to the users page
+  And  I follow "edit" within the row for user "alice"
+  Then  I should see "Contributor"
+  When  I choose "Contributor"
+  And  I press "Update"
+  Then  I should see "User was successfully updated"
+  And  "alice" should be a contributor
+

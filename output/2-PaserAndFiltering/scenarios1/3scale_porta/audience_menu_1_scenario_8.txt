@@ -1,0 +1,6 @@
+Scenario 8: Portal sub menu structure with groups enabled
+  When  the provider has "groups" switch allowed
+  And  I go to the provider dashboard
+  And  I follow "0 Accounts"
+  Then  I should see menu items under "Developer Portal"
+

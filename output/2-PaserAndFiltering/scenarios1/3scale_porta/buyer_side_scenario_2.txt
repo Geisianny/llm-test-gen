@@ -1,0 +1,11 @@
+Scenario 2: Receiving a message
+  Given  a message sent from provider "foo.3scale.localhost" to buyer "bob" with subject "How are you doing?" and body "Just checking if everything is allright"
+  When  I go to the dashboard
+  And  I follow "Messages 1"
+  Then  I should see unread message from "foo.3scale.localhost" with subject "How are you doing?"
+  When  I follow "How are you doing?"
+  Then  I should see "How are you doing?"
+  And  I should see "Just checking if everything is allright"
+  When  I follow "Inbox"
+  Then  I should see read message from "foo.3scale.localhost" with subject "How are you doing?"
+

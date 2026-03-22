@@ -1,0 +1,9 @@
+Scenario 6: Admins in Europe/Madrid timezone should be able to filter by date time after value in their timezone
+  Given  I add Authorization header for "admin"
+  When  I add "Accept" header equal to "application/json"
+  And  I send a "GET" request to "billable_calls?startTime%5Bafter%5D=2019-01-01%2009%3A01%3A37"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json; charset=utf-8"
+  And  the JSON should be like:
+

@@ -1,0 +1,6 @@
+Scenario 1: Meta Title, Meta Description, Meta Keywords and Description for home page
+  Given  I visit the volunteer opportunities page
+  Then  I should have a page with a title tag set to: "Harrow volunteering"
+  And  I should see "Want to volunteer in Harrow?"
+  And  it should have a Meta Description
+

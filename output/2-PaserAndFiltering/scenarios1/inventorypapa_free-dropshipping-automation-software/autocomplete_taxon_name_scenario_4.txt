@@ -1,0 +1,6 @@
+Scenario 4: Getting a taxon from its code
+  Tags: ['@api']
+  When  I want to get taxon with "belts" code
+  Then  I should see 1 taxons on the list
+  And  I should see the taxon named "Belts" in the list
+

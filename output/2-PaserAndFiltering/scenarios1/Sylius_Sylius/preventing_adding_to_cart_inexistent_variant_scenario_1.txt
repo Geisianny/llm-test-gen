@@ -1,0 +1,7 @@
+Scenario 1: Preventing customer from adding nonexistent variant
+  Tags: ['@api', '@no-ui']
+  Given  the "Large" product variant is disabled
+  When  I pick up my cart
+  And  I try to add product "Super Cool T-Shirt" with variant code "Magic"
+  Then  I should be informed that product variant with code "Magic" does not exist
+

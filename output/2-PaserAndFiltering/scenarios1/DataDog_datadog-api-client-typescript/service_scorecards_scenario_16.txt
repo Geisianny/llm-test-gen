@@ -1,0 +1,9 @@
+Scenario 16: Update Scorecard outcomes asynchronously returns "Conflict" response
+  Tags: ['@team:DataDog/service-catalog']
+  Given  operation "UpdateScorecardOutcomesAsync" enabled
+  And  new "UpdateScorecardOutcomesAsync" request
+  And  body with value {"data": {"attributes": {"results": [{"rule_id": "INVALID.RULE_ID", "entity_reference": "service:my-service", "remarks": "See: <a href=\"https://app.datadoghq.com/services\">Services</a>", "state": "pass"}]}, "type": "batched-outcome"}}
+  When  the request is sent
+  Then  the response status is 409 Conflict
+  And  the response "errors" has length 1
+

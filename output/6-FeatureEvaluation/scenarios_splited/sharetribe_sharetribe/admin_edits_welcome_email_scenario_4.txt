@@ -1,0 +1,7 @@
+Scenario: Edit welcome email sender address with valid input
+  Given there is an admin logged into the system
+  And the welcome email sender address is currently "default@example.com"
+  When the admin edits the welcome email sender address to "new@example.com"
+  And saves the changes
+  Then the system updates the welcome email sender address to "new@example.com"
+  And displays a confirmation message

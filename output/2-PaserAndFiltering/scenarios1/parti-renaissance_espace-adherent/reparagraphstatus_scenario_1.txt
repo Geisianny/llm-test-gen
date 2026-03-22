@@ -1,0 +1,5 @@
+Scenario 1: Test UX components : ReParagraphStatus static
+  When  I go to "/test/ux-component/ReParagraphStatus/static"
+  Then  I should see "content"
+  And  I should see 1 "div.re-paragraph-status--error" element
+

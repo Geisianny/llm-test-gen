@@ -1,0 +1,5 @@
+Scenario 1: Only display private sections
+  When  I follow "Create Group"
+  Then  I should see "nothing-to-see-here"
+  But  I should not see "Root"
+

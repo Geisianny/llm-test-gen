@@ -1,0 +1,8 @@
+Scenario 26: Get all monitor notification rules returns "OK" response
+  Tags: ['@team:DataDog/monitor-app']
+  Given  there is a valid "monitor_notification_rule" in the system
+  And  new "GetMonitorNotificationRules" request
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data" has item with field "attributes.name" with value "test rule"
+

@@ -1,0 +1,9 @@
+Scenario 6: Filter by "Account"
+  When  I navigate the menu and select the item at "Cash & Banking > Reports > Reconciliation"
+  Then  I should see the Search Reconciliation Reports screen
+  When  I select "1065 Petty Cash" from the drop down "Account"
+  And  I press "Search"
+  Then  I should see the Reconciliation Search Report screen
+  And  I expect the report to contain 1 row
+  And  I expect the 'Account' report column to contain '1065 Petty Cash' for Statement Date '2018-01-01'
+

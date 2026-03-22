@@ -1,0 +1,6 @@
+Scenario 1: as admin I can configure plugin
+  Tags: ['@selenium']
+  When  I go to the environment control panel
+  And  I follow "Plugins"
+  Then  I should see "Configuration" linking to "/admin/plugin/newsletter"
+

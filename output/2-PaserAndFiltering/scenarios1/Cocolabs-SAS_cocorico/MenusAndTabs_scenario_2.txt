@@ -1,0 +1,11 @@
+Scenario 2: Check tabs as offerer
+  Given  I am logged in as user "offerer@cocorico.rocks" with password "12345678"
+  When  I click on dashboard menu "Bookings" of "offerer"
+  Then  I should be on the "dashboard booking offerer" page
+  And  I should see "Messages" in the "nav.tabset-holder" element
+  And  I should see "Bookings" in the "nav.tabset-holder" element
+  And  I should see "Listings" in the "nav.tabset-holder" element
+  And  I should see "Payments" in the "nav.tabset-holder" element
+  And  I should see "Comments" in the "nav.tabset-holder" element
+  And  I should see "Profile" in the "nav.tabset-holder" element
+

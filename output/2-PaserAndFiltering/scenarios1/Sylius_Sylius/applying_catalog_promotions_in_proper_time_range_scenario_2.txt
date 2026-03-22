@@ -1,0 +1,8 @@
+Scenario 2: Not applying catalog promotion if its start date has not been reached
+  Tags: ['@api', '@ui']
+  Given  it is "2021-12-15" now
+  And  the catalog promotion "Winter sale" operates between "2021-12-20" and "2021-12-30"
+  When  I view product "T-Shirt"
+  Then  I should see the product price "$20.00"
+  And  I should see this product has no catalog promotion applied
+

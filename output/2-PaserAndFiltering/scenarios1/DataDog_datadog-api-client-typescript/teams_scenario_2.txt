@@ -1,0 +1,9 @@
+Scenario 2: Add a member team returns "Added" response
+  Tags: ['@generated', '@skip', '@team:DataDog/aaa-omg']
+  Given  operation "AddMemberTeam" enabled
+  And  new "AddMemberTeam" request
+  And  request contains "super_team_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"id": "aeadc05e-98a8-11ec-ac2c-da7ad0900001", "type": "member_teams"}}
+  When  the request is sent
+  Then  the response status is 204 Added
+

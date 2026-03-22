@@ -1,0 +1,9 @@
+Scenario 51: Update Cloud Cost Management AWS CUR config returns "OK" response
+  Tags: ['@replay-only', '@team:DataDog/cloud-cost-management']
+  Given  new "UpdateCostAWSCURConfig" request
+  And  request contains "cloud_account_id" parameter with value 100
+  And  body with value {"data": {"attributes": {"is_enabled": true}, "type": "aws_cur_config_patch_request"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data[0].attributes.account_id" is equal to "000000000000"
+

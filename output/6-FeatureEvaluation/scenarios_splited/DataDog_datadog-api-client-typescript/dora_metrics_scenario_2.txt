@@ -1,0 +1,5 @@
+Scenario: Unsuccessful DORA metrics request with invalid appKeyAuth
+  Given the user has an invalid appKeyAuth
+  When the user requests DORA metrics
+  Then the system denies the request
+  And displays an error message indicating invalid credentials

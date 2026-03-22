@@ -1,0 +1,5 @@
+Scenario: Create a new product without an associated category
+  Given there is no category "Toys"
+  When the user creates a new product "Toy Car" without an associated category
+  Then the system considers the product invalid
+  And displays a message indicating that a category is required

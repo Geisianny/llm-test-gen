@@ -1,0 +1,6 @@
+Scenario: Multiple browsers, one fails to connect
+  Given a test is running with Karma Test Runner CLI
+  And multiple browsers are configured to run the test
+  When one of the browsers fails to connect to Karma
+  Then the system outputs an error message to stderr
+  And indicates which browser failed to capture

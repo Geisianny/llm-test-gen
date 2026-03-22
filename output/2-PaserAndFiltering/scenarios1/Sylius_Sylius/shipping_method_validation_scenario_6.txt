@@ -1,0 +1,9 @@
+Scenario 6: Trying to remove name from existing shipping method
+  Tags: ['@api', '@ui']
+  Given  the store allows shipping with "UPS Ground"
+  When  I want to modify this shipping method
+  And  I remove its name from "English (United States)" translation
+  And  I try to save my changes
+  Then  I should be notified that name is required
+  And  this shipping method should still be named "UPS Ground"
+

@@ -1,0 +1,9 @@
+Scenario 3: Batch processing with partial failures
+  Given  a batch operation to update 100 account limits
+  And  10 accounts have validation errors
+  When  the batch is executed
+  Then  90 accounts should be updated successfully
+  And  10 accounts should fail with specific error messages
+  And  successful operations should remain committed
+  And  failed operations should be logged for retry
+

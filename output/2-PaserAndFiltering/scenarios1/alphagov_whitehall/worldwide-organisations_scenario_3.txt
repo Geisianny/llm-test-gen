@@ -1,0 +1,7 @@
+Scenario 3: Withdrawing a published worldwide organisation
+  Given  I am a managing editor
+  Given  a published worldwide organisation "Test Worldwide Organisation"
+  When  I withdraw the worldwide organisation "Test Worldwide Organisation" with the explanation "Closed for business"
+  Then  there should be an unpublishing explanation of "Closed for business" and a reason of "No longer current government policy/activity"
+  And  the withdrawal date should be today
+

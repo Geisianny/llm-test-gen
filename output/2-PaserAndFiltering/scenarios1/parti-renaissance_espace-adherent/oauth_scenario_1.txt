@@ -1,0 +1,7 @@
+Scenario 1: OAuth client_id is malformed
+  Given  I am logged as "simple-user@example.ch"
+  When  I am on "/oauth/v2/auth?response_type=code&client_id=-af6d-4ce4-8239-04cfcefd5a19"
+  Then  the response status code should be 401
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+

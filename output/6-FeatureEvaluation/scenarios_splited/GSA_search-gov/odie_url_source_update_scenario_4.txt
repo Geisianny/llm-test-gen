@@ -1,0 +1,8 @@
+Scenario: Update document source job execution
+  Given there is an affiliate with the identifier "valid_affiliate"
+  And the affiliate has indexed documents with source "rss"
+  And the admin has requested to update the document source to "manual" for the affiliate "valid_affiliate"
+  And confirmed the update operation
+  When the queued job to update the document source is executed
+  Then the system updates the document source to "manual" for the affiliate "valid_affiliate"
+  And displays a message confirming the update is successful

@@ -1,0 +1,9 @@
+Scenario 2: Seeing all variants when some don't have translations in my locale which is not the base
+  Tags: ['@no-api', '@ui']
+  Given  I change my locale to "Polish (Poland)"
+  When  I want to view all variants of this product
+  Then  I should see 3 variants in the list
+  And  I should see a variant named "Szałowy Mops z Toporami"
+  And  I should also see a variant named "Szałowy Mops z Mieczem"
+  And  I should also see 1 variant with no name
+

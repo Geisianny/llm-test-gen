@@ -1,0 +1,6 @@
+Scenario 19: Check that a different user cannot see the action chain for Salt minion
+  Given  I am authorized as "testing" with password "testing"
+  When  I follow "Schedule"
+  And  I follow "Action Chains"
+  Then  I should not see a "salt_minion_action_chain" link
+

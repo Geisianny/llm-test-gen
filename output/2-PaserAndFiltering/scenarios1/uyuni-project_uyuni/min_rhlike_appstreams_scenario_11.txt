@@ -1,0 +1,15 @@
+Scenario 11: Ensure only the correct modular package is available and install it
+  Given  I am on the Systems overview page of this "rhlike_minion"
+  And  I follow "Software" in the content area
+  And  I follow "Install"
+  Then  I should see a "scorpio-dummy-2.1" text
+  And  I should see a "scorpio:2.1" text
+  And  I should not see a "scorpio-dummy-2.0" text
+  And  I should not see a "scorpio-dummy-1.0" text
+  When  I check "scorpio-dummy-2.1" in the list
+  And  I click on "Install Packages"
+  And  I click on "Confirm"
+  Then  I should see a "1 package install has been scheduled" text
+  When  I wait until event "Package Install/Upgrade scheduled" is completed
+  Then  "scorpio-dummy-2.1" should be installed on "rhlike_minion"
+

@@ -1,0 +1,5 @@
+Scenario 2: Submitting a draft publication to a second pair of eyes
+  Given  a draft publication "Standard Beard Lengths" exists
+  When  I submit the publication "Standard Beard Lengths"
+  Then  I should see the publication "Standard Beard Lengths" in the list of submitted documents
+

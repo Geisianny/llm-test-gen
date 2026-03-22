@@ -1,0 +1,8 @@
+Scenario 5: Check all requirement sections are displayed
+  Given  I am on "/financial-institutions/apply"
+  Then  I should see the following requirements:
+  And  I should see "Modern API infrastructure"
+  And  I should see "Valid banking license"
+  And  I should see "Minimum €100M in assets"
+  And  I should see "Deposit insurance scheme"
+

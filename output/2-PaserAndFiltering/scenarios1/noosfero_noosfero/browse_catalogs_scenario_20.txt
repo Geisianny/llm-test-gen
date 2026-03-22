@@ -1,0 +1,14 @@
+Scenario 20: display inputs and raw materials button
+  Tags: ['@selenium-fixme']
+  Given  the following product
+  And  the following unit
+  And  the following input
+  And  I am on /catalog/artebonito
+  And  I reload and wait for the page
+  Then  I should see "Vitamina" within "li.product-link"
+  And  I should see "17.99" within "span.product-price"
+  And  the "#inputs-button" should be visible
+  And  I should see "inputs and raw materials" within "#inputs-button"
+  And  the "#inputs-description" should not be visible
+  And  I should see "7.0 Liter of food" within "#inputs-description"
+

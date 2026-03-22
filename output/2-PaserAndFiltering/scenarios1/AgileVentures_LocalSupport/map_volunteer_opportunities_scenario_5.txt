@@ -1,0 +1,9 @@
+Scenario 5: Infowindow continues to work when mouse hovers over volunteer opportunity without long and lat values in table
+  Tags: ['@javascript', '@billy']
+  Given  the following organisations exist:
+  Given  the following volunteer opportunities exist:
+  And  I visit the volunteer opportunities page
+  And  cookies are approved
+  Then  I shouldn't see an infowindow when mouse enters volop without long and lat in table:
+  And  I should see an infowindow when mouse enters volop with long and lat in table:
+

@@ -1,0 +1,6 @@
+Scenario 6: Marking all alerts as read
+  Given  they go to the alerts of "My Product"
+  When  they select toolbar action "Mark all as read"
+  And  confirm the dialog
+  Then  they should see the following table:
+

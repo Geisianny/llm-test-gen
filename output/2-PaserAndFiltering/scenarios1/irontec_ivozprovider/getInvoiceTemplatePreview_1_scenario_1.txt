@@ -1,0 +1,7 @@
+Scenario 1: Preview the invoice templates
+  Tags: ['@createSchema']
+  Given  I add Authorization header
+  And  I send a "GET" request to "invoice_templates/2/preview"
+  Then  the response status code should be 200
+  And  the header "Content-Type" should be equal to "application/pdf"
+

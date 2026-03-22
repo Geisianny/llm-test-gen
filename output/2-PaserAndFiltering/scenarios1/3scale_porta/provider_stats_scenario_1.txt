@@ -1,0 +1,8 @@
+Scenario 1: Provider admin can access stats
+  Given  current domain is the admin domain of provider "foo.3scale.localhost"
+  And  I am logged in as provider "foo.3scale.localhost"
+  When  I go to the provider dashboard
+  And  I follow "API"
+  Then  I should see "Analytics" within the main menu
+  And  they should be able to go to the following pages:
+

@@ -1,0 +1,6 @@
+Scenario 3: Not seeing shipments in cart state
+  Tags: ['@ui', '@api']
+  Given  the customer "customer@example.com" added "Banana" product to the cart
+  When  I browse shipments
+  Then  I should see only 2 shipments in the list
+

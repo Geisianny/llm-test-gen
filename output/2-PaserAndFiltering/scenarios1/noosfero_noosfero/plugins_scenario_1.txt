@@ -1,0 +1,5 @@
+Scenario 1: a user must see the plugin\'s button in the control panel if the plugin is enabled
+  Given  plugin Foo is enabled on environment
+  And  I go to joaosilva's control panel
+  Then  I should see "Foo plugin button"
+

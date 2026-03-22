@@ -1,0 +1,10 @@
+Scenario 5: Edit buyer user
+  When  I go to the buyer user page for "bob"
+  And  I follow "Edit"
+  And  I fill in "Email" with "smith@example.net"
+  And  I fill in "Custom field" with "custom value"
+  And  I press "Update User"
+  Then  I should be on the buyer user page for "bob"
+  And  I should see "smith@example.net"
+  And  I should see "custom value"
+

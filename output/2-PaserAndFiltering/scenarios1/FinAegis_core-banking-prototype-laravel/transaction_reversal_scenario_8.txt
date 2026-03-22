@@ -1,0 +1,8 @@
+Scenario 8: Time-limited reversal windows
+  Given  a transaction was completed 30 days ago
+  When  I attempt to reverse the old transaction
+  Then  the system should check reversal policies
+  And  require additional authorization for old reversals
+  And  possibly reject if beyond maximum time limit
+  And  log the policy check results
+

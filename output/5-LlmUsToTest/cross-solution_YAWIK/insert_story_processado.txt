@@ -1,0 +1,36 @@
+Scenario: Create organization with valid details
+  Given there is an admin user logged in
+  And there is no existing organization with the name "New Organization"
+  When the admin creates a new organization with the name "New Organization"
+  And provides a valid description "This is a new organization"
+  Then the system creates the organization successfully
+  And displays a confirmation message
+
+Scenario: Create organization with duplicate name
+  Given there is an admin user logged in
+  And there is an existing organization with the name "Existing Organization"
+  When the admin creates a new organization with the name "Existing Organization"
+  And provides a valid description "This is a duplicate organization"
+  Then the system denies the creation
+  And displays an error message indicating the organization name already exists
+
+Scenario: Create organization with missing name
+  Given there is an admin user logged in
+  When the admin creates a new organization without a name
+  And provides a valid description "This organization is missing a name"
+  Then the system denies the creation
+  And displays an error message indicating the name is required
+
+Scenario: Create organization with missing description
+  Given there is an admin user logged in
+  When the admin creates a new organization with the name "Organization Without Description"
+  And does not provide a description
+  Then the system creates the organization successfully
+  And displays a confirmation message
+
+Scenario: Cancel creating organization
+  Given there is an admin user logged in
+  When the admin starts creating a new organization
+  And cancels the creation process
+  Then the system does not create the organization
+  And returns to the previous page or displays a list of existing organizations

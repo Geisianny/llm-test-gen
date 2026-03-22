@@ -1,0 +1,78 @@
+Feature: Cross-Domain Workflow Coordination
+Description: In order to handle complex business processes
+  As a platform with multiple bounded contexts
+  I need workflows that coordinate across domain boundaries
+
+Background: 
+  Given  the following domains are configured:
+
+Scenario 1: International wire transfer workflow
+  Given  a user initiates an international wire transfer
+  When  the cross-domain workflow executes
+  Then  it should coordinate across domains:
+  And  maintain transaction consistency across all domains
+  And  handle failures with appropriate compensation
+
+Scenario 2: New account onboarding mega-workflow
+  Given  a new user registers for an account
+  When  the onboarding workflow spans multiple domains
+  Then  the coordination should include:
+  And  each domain should maintain its boundaries
+  And  rollback should work across all domains if needed
+
+Scenario 3: Basket rebalancing with governance
+  Given  a GCU basket needs monthly rebalancing
+  When  the rebalancing workflow triggers
+  Then  it should coordinate:
+  And  ensure atomic rebalancing across all accounts
+
+Scenario 4: Multi-bank settlement workflow
+  Given  end-of-day settlement is required
+  When  the settlement workflow runs
+  Then  it should orchestrate:
+  And  handle bank-specific settlement windows
+  And  manage cross-timezone coordination
+
+Scenario 5: Compliance-triggered account freeze
+  Given  suspicious activity is detected
+  When  compliance initiates emergency freeze
+  Then  the workflow should cascade:
+  And  ensure coordinated freeze across all systems
+  And  maintain audit trail across domains
+
+Scenario 6: Cross-asset arbitrage workflow
+  Given  price discrepancies exist between assets
+  When  arbitrage opportunity is detected
+  Then  the workflow should coordinate:
+  And  ensure exactly-once execution
+  And  handle partial failures gracefully
+
+Scenario 7: Regulatory audit workflow
+  Given  quarterly audit is initiated
+  When  the cross-domain audit workflow runs
+  Then  it should collect from all domains:
+  And  compile comprehensive audit package
+  And  ensure data consistency across domains
+  And  maintain immutable audit trail
+
+Scenario 8: Emergency market halt workflow
+  Given  extreme market volatility is detected
+  When  emergency halt is triggered
+  Then  all domains should coordinate:
+  And  ensure coordinated halt across all systems
+  And  prepare for coordinated resumption
+
+Scenario 9: User data deletion (GDPR)
+  Given  a user requests account deletion
+  When  the GDPR workflow executes
+  Then  it should coordinate deletion:
+  And  ensure compliance across all domains
+  And  provide deletion certificate
+
+Scenario 10: Cross-domain performance optimization
+  Given  system load is increasing
+  When  optimization workflow triggers
+  Then  domains should coordinate:
+  And  maintain service quality across domains
+  And  balance load effectively
+

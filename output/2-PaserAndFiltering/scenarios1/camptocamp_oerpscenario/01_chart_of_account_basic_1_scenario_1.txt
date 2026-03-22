@@ -1,0 +1,11 @@
+Scenario 1: GENERIC CHART OF ACCOUNT CREATION
+  Tags: ['@anglosaxon_setup_chart']
+  Given  I need a "account.account" with oid: scen.acc_grni
+  And  having:
+  Given  I need a "account.account" with oid: scen.acc_gdni
+  And  having:
+  Given  I need a "account.account" with oid: scen.acc_cogs
+  And  having:
+  Given  I need a "account.account" with oid: scen.acc_pricediff
+  And  having:
+

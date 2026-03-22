@@ -1,0 +1,6 @@
+Scenario 2: Edit last name and check if the name is valid
+  When  I want to change my personal information
+  And  I specify the new last name as "Muscle"
+  And  I save my personal information
+  Then  my name should be "Elon Muscle"
+

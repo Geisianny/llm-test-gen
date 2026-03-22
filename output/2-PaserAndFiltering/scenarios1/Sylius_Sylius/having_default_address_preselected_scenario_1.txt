@@ -1,0 +1,6 @@
+Scenario 1: Having a default address preselected on checkout addressing step
+  Tags: ['@no-api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  When  I go to the checkout addressing step
+  Then  address "Lucifer Morningstar", "Seaside Fwy", "90802", "Los Angeles", "United States", "Arkansas" should be filled as billing address
+

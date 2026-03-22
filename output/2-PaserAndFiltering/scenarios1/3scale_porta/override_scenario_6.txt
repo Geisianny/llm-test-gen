@@ -1,0 +1,13 @@
+Scenario Outline 6: As logged out user - Example 1
+  When  the current domain is foo.3scale.localhost
+  When  I go to the forgot password page
+  Then  I should see "Forgot password"
+  And  builtin page "password/new" of provider "foo.3scale.localhost" has content "EDITED password/new"
+  And  I go to the forgot password page
+  Then  I should see "EDITED password/new"
+
+  Examples:
+    | system_name | path | original |
+    | password/new | forgot password | Forgot password |
+    | login/new | login | Sign in |
+

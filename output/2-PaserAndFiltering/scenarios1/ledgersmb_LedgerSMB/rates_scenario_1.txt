@@ -1,0 +1,12 @@
+Scenario 1: View the available exchange rates
+  When  I navigate the menu and select the item at "System > Currency > Edit rates"
+  Then  I should see the Edit rates screen
+  And  I should see the title "Available exchange rates"
+  And  I expect the report to contain 2 rows
+  And  I expect the 'Currency' report column to contain 'EUR' for Valid From '2020-01-01'
+  And  I expect the 'Rate Type' report column to contain 'Default rate' for Valid From '2020-01-01'
+  And  I expect the 'Rate' report column to contain '1.1' for Valid From '2020-01-01'
+  And  I expect the 'Currency' report column to contain 'CAD' for Valid From '2020-01-02'
+  And  I expect the 'Rate Type' report column to contain 'Default rate' for Valid From '2020-01-02'
+  And  I expect the 'Rate' report column to contain '0.8' for Valid From '2020-01-02'
+

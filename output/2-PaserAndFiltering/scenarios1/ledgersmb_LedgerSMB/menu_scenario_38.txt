@@ -1,0 +1,16 @@
+Scenario Outline 38: Navigate to menu "<path>" and open screen "<screen>" - Example 38
+  Tags: ['@wip']
+  When  I navigate the menu and select the item at "System > Language > Add Language"
+  Then  I should see the  screen
+
+  Examples:
+    | path | screen |
+    | System > Language > Add Language |  |
+    | System > Language > List Languages |  |
+    | System > Reporting Units |  |
+    | System > Sequences |  |
+    | System > Sessions |  |
+    | System > SIC > Add SIC |  |
+    | System > SIC > Import |  |
+    | System > SIC > List SIC |  |
+

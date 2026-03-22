@@ -1,0 +1,5 @@
+Scenario 2: Showing available currencies
+  Tags: ['@no-api', '@ui']
+  When  I browse that channel
+  Then  I should be able to shop using the "USD" currency
+

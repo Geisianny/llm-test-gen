@@ -1,0 +1,7 @@
+Scenario 2: As a logged-in user I can filter zones by space and partial name with page limit
+  Given  I am logged with "referent@en-marche-dev.fr" via OAuth client "JeMengage Web"
+  When  I send a "GET" request to "/api/v3/zone/autocomplete" with parameters:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+

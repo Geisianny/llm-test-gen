@@ -1,0 +1,9 @@
+Scenario 13: Update a Slack integration channel returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/chat-integrations']
+  Given  new "UpdateSlackIntegrationChannel" request
+  And  request contains "account_name" parameter from "REPLACE.ME"
+  And  request contains "channel_name" parameter from "REPLACE.ME"
+  And  body with value {"display": {"message": true, "mute_buttons": false, "notified": true, "snapshot": true, "tags": true}, "name": "#general"}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

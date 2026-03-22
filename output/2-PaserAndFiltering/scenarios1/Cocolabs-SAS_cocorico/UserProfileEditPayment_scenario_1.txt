@@ -1,0 +1,8 @@
+Scenario 1: Check required fields
+  Given  I am logged in as user "offerer@cocorico.rocks" with password "12345678"
+  When  I click on dashboard menu "Profile" of "offerer"
+  And  I follow "Payment information"
+  And  I press "Update"
+  Then  I should be on the "user dashboard profile edit payment" page
+  And  I should see "An error has occurred." in the "div.flashes div.alert" element
+

@@ -1,0 +1,5 @@
+Scenario 3: With branding allowed add github
+  Given  the provider has "branding" switch allowed
+  When  I visit the "GitHub" authentication provider edit page
+  Then  I should see "Customize GitHub"
+

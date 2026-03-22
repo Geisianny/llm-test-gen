@@ -1,0 +1,5 @@
+Scenario 4: Verify if both clone channels exists
+  When  I list channels with spacewalk-remove-channel
+  Then  I should get "clone-fake-rpm-suse-channel"
+  And  I should get "clone-clone-fake-rpm-suse-channel"
+

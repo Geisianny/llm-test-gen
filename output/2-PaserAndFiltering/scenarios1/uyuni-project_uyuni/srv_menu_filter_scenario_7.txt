@@ -1,0 +1,4 @@
+Scenario 7: Search a non-existing word and expect no results
+  When  I enter "Null" as the left menu search field
+  Then  I should see left menu empty
+

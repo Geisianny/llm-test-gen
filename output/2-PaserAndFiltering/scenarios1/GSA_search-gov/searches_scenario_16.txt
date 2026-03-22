@@ -1,0 +1,8 @@
+Scenario 16: Searching for site specific results using query
+  Given  the following BingV7 Affiliates exist:
+  When  I am on agency.gov's search page
+  And  I search for "jobs site:www.usa.gov"
+  Then  every result URL should match "usa.gov"
+  And  I search for "jazz site:wikipedia.org"
+  Then  every result URL should match "usa.gov"
+

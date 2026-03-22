@@ -1,0 +1,7 @@
+Scenario 1: International wire transfer workflow
+  Given  a user initiates an international wire transfer
+  When  the cross-domain workflow executes
+  Then  it should coordinate across domains:
+  And  maintain transaction consistency across all domains
+  And  handle failures with appropriate compensation
+

@@ -1,0 +1,8 @@
+Scenario 3: Receiving percentage discount is correct for two items with different price
+  Tags: ['@ui', '@api']
+  Given  the store has a product "Vintage Watch" priced at "$1000.00"
+  When  I add product "PHP T-Shirt" to the cart
+  And  I add product "Vintage Watch" to the cart
+  Then  my cart total should be "$880.00"
+  And  my discount should be "-$220.00"
+

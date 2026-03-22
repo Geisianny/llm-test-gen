@@ -1,0 +1,10 @@
+Scenario 6: Adding a new configurable product without options
+  Tags: ['@ui', '@api']
+  Given  I want to create a new configurable product
+  When  I specify its code as "WHISKEY_GENTLEMEN"
+  And  I name it "Gentleman Jack" in "English (United States)"
+  And  I set its slug to "whiskey/gentleman-jack" in "English (United States)"
+  And  I add it
+  Then  I should be notified that it has been successfully created
+  And  the product "Gentleman Jack" should appear in the store
+

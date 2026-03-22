@@ -1,0 +1,7 @@
+Scenario 4: Create a pipeline with Array Processor Append Operation with preserve_source false returns "OK" response
+  Tags: ['@team:DataDog/event-platform-experience']
+  Given  new "CreateLogsPipeline" request
+  And  body with value {"filter": {"query": "source:python"}, "name": "testPipelineArrayAppendNoPreserve", "processors": [{"type": "array-processor", "is_enabled": true, "name": "append_ip_and_remove_source", "operation": {"type": "append", "source": "network.client.ip", "target": "sourceIps", "preserve_source": false}}], "tags": []}
+  When  the request is sent
+  Then  the response status is 200 OK
+

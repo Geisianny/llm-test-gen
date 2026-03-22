@@ -1,0 +1,7 @@
+Scenario 1: As a offerer i can't update my profile without filling required fields
+  Given  I am logged in as user "offerer@cocorico.rocks" with password "12345678"
+  When  I click on dashboard menu "Profile" of "offerer"
+  And  I press "Update"
+  Then  I should be on the "user dashboard profile edit about me" page
+  And  I should see "An error has occurred." in the "div.flashes div.alert" element
+

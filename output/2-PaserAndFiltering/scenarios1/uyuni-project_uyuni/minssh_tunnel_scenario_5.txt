@@ -1,0 +1,4 @@
+Scenario 5: The contact method is SSH tunnel on this minion
+  Given  I am on the Systems overview page of this "ssh_minion"
+  Then  I should see a "Push via SSH tunnel" text
+

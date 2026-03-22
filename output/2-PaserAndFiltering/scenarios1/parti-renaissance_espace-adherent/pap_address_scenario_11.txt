@@ -1,0 +1,7 @@
+Scenario 11: As a logged-in user I can retrieve building history
+  Given  I am logged with "michelle.dufour@example.ch" via OAuth client "JeMengage Mobile" with scope "jemarche_app"
+  When  I send a "GET" request to "/api/v3/pap/buildings/2bffd913-34fe-48ad-95f4-7381812b93dd/history?campaign_uuid=d0fa7f9c-e976-44ad-8a52-2a0a0d8acaf9"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+

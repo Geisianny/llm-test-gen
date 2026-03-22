@@ -1,0 +1,5 @@
+Scenario: Search DORA metrics with valid appKeyAuth
+  Given the user has a valid appKeyAuth
+  And there are existing DORA metrics events
+  When the user searches for DORA metrics events
+  Then the system returns the relevant DORA metrics events

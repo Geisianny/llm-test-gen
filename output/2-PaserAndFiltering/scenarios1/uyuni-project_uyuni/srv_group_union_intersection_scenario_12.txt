@@ -1,0 +1,9 @@
+Scenario 12: Add an intersection of 2 groups to SSM - Debian-like
+  Tags: ['@deblike_minion']
+  When  I follow the left menu "Systems > System Groups"
+  When  I check "sles" in the list
+  And  I check "deblike" in the list
+  And  I click on "Work With Intersection"
+  And  I should not see a "sle_minion" link
+  And  I should not see a "deblike_minion" link
+

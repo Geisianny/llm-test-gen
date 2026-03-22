@@ -1,0 +1,30 @@
+Scenario 1: 0010-MARG-015,0010-MARG-016,0010-MARG-017
+  Tags: ['@SLABug']
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  Then  the parties place the following orders:
+  When  the network moves ahead "2" blocks
+  Then  the mark price should be "10" for the market "ETH/DEC19"
+  And  the mark price should be "10" for the market "ETH/DEC20"
+  When  the parties place the following orders with ticks:
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following profit and loss:
+  Then  the order book should have the following volumes for market "ETH/DEC19":
+  Then  the order book should have the following volumes for market "ETH/DEC20":
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following profit and loss:
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following profit and loss:
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following profit and loss:
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+

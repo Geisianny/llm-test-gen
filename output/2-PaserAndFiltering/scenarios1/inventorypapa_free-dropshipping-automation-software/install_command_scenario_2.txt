@@ -1,0 +1,5 @@
+Scenario 2: Trying to register administrator account without email
+  Given  I do not provide an email
+  When  I run Sylius CLI installer
+  Then  I should see output "This value should not be blank"
+

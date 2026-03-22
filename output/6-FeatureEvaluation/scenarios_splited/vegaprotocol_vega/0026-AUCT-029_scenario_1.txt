@@ -1,0 +1,7 @@
+Scenario: Market in opening auction with overlapping orders
+  Given the market "BTC/ETH" is in opening auction
+  And there are overlapping orders on the book
+  When the network moves ahead "50" blocks
+  Then the trading mode should be "TRADING_MODE_OPENING_AUCTION" for the market "BTC/ETH"
+  When the network moves ahead "2" more blocks
+  Then the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"

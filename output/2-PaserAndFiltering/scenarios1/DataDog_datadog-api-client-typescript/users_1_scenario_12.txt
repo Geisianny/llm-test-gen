@@ -1,0 +1,11 @@
+Scenario 12: Get user details returns "OK" response
+  Tags: ['@team:DataDog/team-aaa-identity']
+  Given  there is a valid "user" in the system
+  And  new "GetUser" request
+  And  request contains "user_id" parameter from "user.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK for get user
+  And  the response "data.id" is equal to "{{ user.data.id }}"
+  And  the response "data.type" is equal to "users"
+  And  the response "data.attributes.handle" is equal to "{{ unique_lower }}@datadoghq.com"
+

@@ -1,0 +1,10 @@
+Scenario 1: Deleting multiple coupons at once
+  Tags: ['@ui', '@javascript']
+  When  I browse coupons of this promotion
+  And  I check the "SANTA1" coupon
+  And  I check also the "SANTA2" coupon
+  And  I delete them
+  Then  I should be notified that they have been successfully deleted
+  And  I should see a single coupon in the list
+  And  I should see the coupon "SANTA3" in the list
+

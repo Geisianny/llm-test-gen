@@ -1,0 +1,16 @@
+Feature: Seeing myself while login
+Description: In order to be aware who I am
+    As a Customer
+    I want to see my basic data while login
+Tags: ['@customer_login']
+
+Background: 
+  Given  the store operates on a single channel in "United States"
+  And  the store has customer "John Doe" with email "car@better.com"
+  And  I have already registered "car@better.com" account
+
+Scenario 1: Seeing my basic data while login
+  Tags: ['@api', '@ui']
+  When  I log in with the email "car@better.com"
+  Then  I should see who I am
+

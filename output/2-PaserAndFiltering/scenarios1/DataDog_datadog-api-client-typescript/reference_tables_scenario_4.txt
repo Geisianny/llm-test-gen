@@ -1,0 +1,9 @@
+Scenario 4: Create reference table upload returns "Created" response
+  Tags: ['@skip', '@team:DataDog/redapl-experiences']
+  Given  new "CreateReferenceTableUpload" request
+  And  body with value {"data": {"attributes": {"headers": ["id", "name", "value"], "table_name": "test_upload_table_{{ unique }}", "part_count": 1, "part_size": 1024}, "type": "upload"}}
+  When  the request is sent
+  Then  the response status is 201 Created
+  And  the response "data.type" is equal to "upload"
+  And  the response "data.attributes.table_name" is equal to "test_upload_table_{{ unique }}"
+

@@ -1,0 +1,4 @@
+Scenario 1: Buyer shouldn't see any password input
+  Given  they go to the personal details page
+  And  I should not see the fields:
+

@@ -1,0 +1,30 @@
+Scenario 9: Fill in and verify non-default values in minion formula
+  When  I follow "Formulas" in the content area
+  And  I follow first "Testform" in the content area
+  And  I click on "Expand All Sections"
+  And  I enter "min_text1" as "testing#str"
+  And  I enter "min_text2" as "testing#str_def"
+  And  I enter "min_text3" as "testing#str_or_null"
+  And  I enter "min_text4" as "testing#str_opt"
+  And  I enter "101" as "testing#num"
+  And  I enter "102" as "testing#num_def"
+  And  I enter "103" as "testing#num_or_null"
+  And  I enter "104" as "testing#num_opt"
+  And  I enter "min_pw1" as "testing#pw"
+  And  I enter "min_pw2" as "testing#pw_or_null"
+  And  I enter "min_pw3" as "testing#pw_opt"
+  And  I click on "Save Formula"
+  Then  I should see a "Formula saved" text
+  When  I wait for "1" seconds
+  Then  the pillar data for "testing:str" should be "min_text1" on "sle_minion"
+  And  the pillar data for "testing:str_def" should be "min_text2" on "sle_minion"
+  And  the pillar data for "testing:str_or_null" should be "min_text3" on "sle_minion"
+  And  the pillar data for "testing:str_opt" should be "min_text4" on "sle_minion"
+  And  the pillar data for "testing:num" should be "101" on "sle_minion"
+  And  the pillar data for "testing:num_def" should be "102" on "sle_minion"
+  And  the pillar data for "testing:num_or_null" should be "103" on "sle_minion"
+  And  the pillar data for "testing:num_opt" should be "104" on "sle_minion"
+  And  the pillar data for "testing:pw" should be "min_pw1" on "sle_minion"
+  And  the pillar data for "testing:pw_or_null" should be "min_pw2" on "sle_minion"
+  And  the pillar data for "testing:pw_opt" should be "min_pw3" on "sle_minion"
+

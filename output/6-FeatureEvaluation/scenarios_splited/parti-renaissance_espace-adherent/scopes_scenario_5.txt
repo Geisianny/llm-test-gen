@@ -1,0 +1,4 @@
+Scenario: Request scopes with valid OAuth token but no assigned scopes
+  Given the user is authenticated via OAuth with a valid token but has no assigned scopes
+  When the user requests their assigned scopes via the API
+  Then the system returns an empty list of scopes

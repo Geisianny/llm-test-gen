@@ -1,0 +1,4 @@
+Scenario 2: New mapping rule form can't have redirect url
+  When  I go to the create mapping rule page for backend "My Backend"
+  Then  I should not see field "Redirect URL"
+

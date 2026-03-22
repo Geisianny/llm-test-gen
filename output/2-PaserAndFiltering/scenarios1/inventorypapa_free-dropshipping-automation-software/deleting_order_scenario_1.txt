@@ -1,0 +1,5 @@
+Scenario 1: Deleted order should disappear from the registry
+  Tags: ['@domain']
+  When  I delete the order "#00000022"
+  Then  this order should not exist in the registry
+

@@ -1,0 +1,7 @@
+Scenario 1: Resending a confirmation email for a given order
+  Tags: ['@ui', '@email']
+  When  I view the summary of the order "#00000666"
+  And  I resend the order confirmation email
+  Then  I should be notified that the order confirmation email has been successfully resent to the customer
+  And  an email with the confirmation of the order "#00000666" should be sent to "lucy@teamlucifer.com"
+

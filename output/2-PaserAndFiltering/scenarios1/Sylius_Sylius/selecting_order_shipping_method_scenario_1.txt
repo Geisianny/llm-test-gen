@@ -1,0 +1,9 @@
+Scenario 1: Selecting one of available shipping method
+  Tags: ['@api', '@ui']
+  Given  I added product "Targaryen T-Shirt" to the cart
+  And  I addressed the cart
+  When  I go to the shipping step
+  And  I select "Raven Post" shipping method
+  And  I complete the shipping step
+  Then  I should be on the checkout payment step
+

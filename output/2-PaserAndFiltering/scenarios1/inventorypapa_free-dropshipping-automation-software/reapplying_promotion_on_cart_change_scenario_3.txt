@@ -1,0 +1,10 @@
+Scenario 3: Receiving discount after removing an item from the cart and then adding another one
+  Tags: ['@ui']
+  Given  the store has a product "Symfony T-Shirt" priced at "$150.00"
+  And  the promotion gives "$10.00" discount to every order
+  And  I had product "PHP T-Shirt" in the cart
+  But  I removed product "PHP T-Shirt" from the cart
+  When  I add product "Symfony T-Shirt" to the cart
+  Then  my cart total should be "$140.00"
+  And  my discount should be "-$10.00"
+

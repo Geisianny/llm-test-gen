@@ -1,0 +1,6 @@
+Scenario 3: Admin sorts transactions by start date
+  When  I sort records by "started"
+  Then  I should see the transactions in ascending time order by "started"
+  When  I sort records by "started"
+  Then  I should see the transactions in descending time order by "started"
+

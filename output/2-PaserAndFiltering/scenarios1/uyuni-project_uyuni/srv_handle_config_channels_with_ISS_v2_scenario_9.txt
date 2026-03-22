@@ -1,0 +1,8 @@
+Scenario 9: Cleanup: remove the test configuration channel
+  When  I follow the left menu "Configuration > Channels"
+  And  I follow "Test Config Channel"
+  And  I follow "Delete Channel"
+  And  I click on "Delete Config Channel"
+  Then  file "/srv/susemanager/salt/manager_org_1/testconfigchannel/init.sls" should not exist on server
+  And  I should not see a "Test Config Channel" link
+

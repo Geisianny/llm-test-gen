@@ -1,0 +1,7 @@
+Scenario 1: Create a log-based metric returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-forwarding']
+  Given  new "CreateLogsMetric" request
+  And  body with value {"data": {"attributes": {"compute": {"aggregation_type": "distribution", "include_percentiles": true, "path": "@duration"}, "filter": {"query": "service:web* AND @http.status_code:[200 TO 299]"}, "group_by": [{"path": "@http.status_code", "tag_name": "status_code"}]}, "id": "logs.page.load.count", "type": "logs_metrics"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

@@ -1,0 +1,6 @@
+Scenario 12: No stripe configuration
+  Given  I have authenticated to the API
+  And  there are no stripe api keys configured
+  When  I create a customer with the following info
+  Then  there should be an error for "stripe"
+

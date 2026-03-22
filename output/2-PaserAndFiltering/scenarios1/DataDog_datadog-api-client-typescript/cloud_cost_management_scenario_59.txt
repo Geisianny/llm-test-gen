@@ -1,0 +1,8 @@
+Scenario 59: Update tag pipeline ruleset returns "OK" response
+  Tags: ['@replay-only', '@team:DataDog/cloud-cost-management']
+  Given  new "UpdateTagPipelinesRuleset" request
+  And  request contains "ruleset_id" parameter with value "ee10c3ff-312f-464c-b4f6-46adaa6d00a1"
+  And  body with value {"data": {"attributes": {"enabled": true, "last_version": 3611102, "rules": [{"enabled": true, "mapping": {"destination_key": "team_owner", "if_not_exists": true, "source_keys": ["account_name", "account_id"]}, "name": "Account Name Mapping", "query": null, "reference_table": null}]}, "id": "New Ruleset", "type": "update_ruleset"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+

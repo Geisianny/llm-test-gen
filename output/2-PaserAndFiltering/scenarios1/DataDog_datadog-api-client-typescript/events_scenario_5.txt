@@ -1,0 +1,7 @@
+Scenario 5: Post an event in the past returns "Bad Request" response
+  Tags: ['@skip-validation', '@team:DataDog/monitors-evaluation']
+  Given  new "CreateEvent" request
+  And  body with value {"title": "{{ unique }}", "text": "A text message.", "date_happened": 1, "tags": ["test:{{ unique_alnum }}"]}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

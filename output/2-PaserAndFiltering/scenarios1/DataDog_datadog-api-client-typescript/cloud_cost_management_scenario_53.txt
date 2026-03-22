@@ -1,0 +1,8 @@
+Scenario 53: Update Cloud Cost Management Azure config returns "Not Found" response
+  Tags: ['@team:DataDog/cloud-cost-management']
+  Given  new "UpdateCostAzureUCConfigs" request
+  And  request contains "cloud_account_id" parameter with value 123456
+  And  body with value {"data": {"attributes": {"is_enabled": true}, "type": "azure_uc_config_patch_request"}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

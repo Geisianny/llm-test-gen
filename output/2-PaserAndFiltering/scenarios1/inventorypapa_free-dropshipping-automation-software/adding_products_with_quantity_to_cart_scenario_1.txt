@@ -1,0 +1,8 @@
+Scenario 1: Adding a product with stated quantity to the cart
+  Tags: ['@ui', '@api']
+  Given  there are 10 units of product "T-shirt banana" available in the inventory
+  When  I add 5 of them to my cart
+  Then  I should be on my cart summary page
+  And  I should be notified that the product has been successfully added
+  And  I should see "T-shirt banana" with quantity 5 in my cart
+

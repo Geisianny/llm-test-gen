@@ -1,0 +1,10 @@
+Scenario 2: Change an application's plan directly
+  Given  all the rolling updates features are off
+  And  the product allows to change application plan directly
+  When  they go to the application's dev portal edit page
+  And  follow "Review/Change"
+  And  follow "Enterprise"
+  And  press "Change Plan"
+  Then  should see the flash message "Plan change was successful"
+  And  "admin@foo.3scale.localhost" should receive an email with subject "Application My App has changed to plan Enterprise"
+

@@ -1,0 +1,6 @@
+Scenario 1: Edit first name and check if the name is valid
+  When  I want to change my personal information
+  And  I specify the new first name as "Lina"
+  And  I save my personal information
+  Then  my name should be "Lina Musk"
+

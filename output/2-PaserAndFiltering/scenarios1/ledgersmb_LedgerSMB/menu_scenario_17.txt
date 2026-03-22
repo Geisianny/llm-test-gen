@@ -1,0 +1,14 @@
+Scenario Outline 17: Navigate to menu "<path>" and open screen "<screen>" - Example 17
+  Tags: ['@wip']
+  When  I navigate the menu and select the item at "Fixed Assets > Assets > Depreciate"
+  Then  I should see the asset depreciation start screen
+
+  Examples:
+    | path | screen |
+    | Fixed Assets > Assets > Depreciate | asset depreciation start |
+    | Fixed Assets > Assets > Disposal |  |
+    | Fixed Assets > Assets > Import |  |
+    | Fixed Assets > Assets > Reports > Depreciation |  |
+    | Fixed Assets > Assets > Reports > Disposal |  |
+    | Fixed Assets > Assets > Reports > Net Book Value |  |
+

@@ -1,0 +1,5 @@
+Scenario 6: Removing a document from a group
+  Given  a published publication called "Document to be removed" in a published document collection
+  When  I remove the document "Document to be removed" from the group
+  Then  I can see that "Document to be removed" has been removed from the group
+

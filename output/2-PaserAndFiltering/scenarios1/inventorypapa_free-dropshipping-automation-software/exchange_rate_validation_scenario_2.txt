@@ -1,0 +1,10 @@
+Scenario 2: Trying to add a new exchange rate with negative ratio
+  Tags: ['@ui', '@api']
+  Given  I want to add a new exchange rate
+  When  I choose "US Dollar" as the source currency
+  And  I choose "British Pound" as the target currency
+  And  I specify its ratio as -1.2
+  And  I try to add it
+  Then  I should be notified that the ratio must be greater than zero
+  And  the exchange rate between "US Dollar" and "British Pound" should not be added
+

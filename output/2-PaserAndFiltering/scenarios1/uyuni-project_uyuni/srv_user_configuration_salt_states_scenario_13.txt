@@ -1,0 +1,5 @@
+Scenario 13: Cleanup: all organizations were successfully removed
+  When  I follow the left menu "Admin > Organizations"
+  Then  I should not see a "my_org" text
+  And  I should not see a "my_org2" text
+

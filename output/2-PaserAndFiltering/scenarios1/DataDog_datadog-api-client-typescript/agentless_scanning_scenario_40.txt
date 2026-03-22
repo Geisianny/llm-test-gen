@@ -1,0 +1,11 @@
+Scenario 40: Update GCP scan options returns "OK" response
+  Tags: ['@team:DataDog/k9-agentless']
+  Given  new "UpdateGcpScanOptions" request
+  And  request contains "project_id" parameter with value "api-spec-test"
+  And  body with value {"data": {"id": "api-spec-test", "type": "gcp_scan_options", "attributes": {"vuln_containers_os": false}}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.id" is equal to "api-spec-test"
+  And  the response "data.attributes.vuln_host_os" is equal to true
+  And  the response "data.attributes.vuln_containers_os" is equal to false
+

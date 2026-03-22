@@ -1,0 +1,5 @@
+Scenario 7: go to specific day in global agenda
+  Given  I am on the homepage
+  When  I am on /search/events?year=2009&month=11&day=12
+  Then  I should see "Events for November 12, 2009"
+

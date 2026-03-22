@@ -1,0 +1,5 @@
+Scenario 3: I don't create a cart and use the default cart
+  When  I add this product to the cart
+  And  there should be one item in my cart
+  And  Cart with name "My Cart" should have total of "€100.00"
+

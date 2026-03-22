@@ -1,0 +1,10 @@
+Scenario 22: Get AWS scan options returns "OK" response
+  Tags: ['@team:DataDog/k9-agentless']
+  Given  there is a valid "aws_scan_options" in the system
+  And  new "GetAwsScanOptions" request
+  And  request contains "account_id" parameter with value "{{ aws_scan_options.id }}"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.id" is equal to "{{ aws_scan_options.id }}"
+  And  the response "data.type" is equal to "{{ aws_scan_options.type }}"
+

@@ -1,0 +1,7 @@
+Scenario 6: show category hierarchy on search results
+  Given  the following categories
+  And  the following enterprises
+  When  I search enterprises for "Rails"
+  Then  I should see "Software Livre" within ".search-enterprise-category"
+  And  I should see "Rails" within ".search-enterprise-category"
+

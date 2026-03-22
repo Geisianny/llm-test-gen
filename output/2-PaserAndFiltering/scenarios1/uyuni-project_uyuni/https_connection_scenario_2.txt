@@ -1,0 +1,5 @@
+Scenario 2: Connecting to the server securely
+  When  I connect to the server securely
+  Then  the connection should be secured
+  And  the page title should contain "Sign In" text
+

@@ -1,0 +1,14 @@
+Scenario Outline 1: Find help with care for elderly - Example 1
+  Tags: ['@vcr']
+  Given  I visit the home page
+  Then  I should see an active home button in the header
+  And  I click "Home"
+  Then  I should be on the home page
+
+  Examples:
+    | page | status |
+    | home page | active |
+    | volunteer opportunities page | active |
+    | organisations index page | inactive |
+    | show page for the organisation named "Age UK" | inactive |
+

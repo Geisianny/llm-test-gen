@@ -1,0 +1,5 @@
+Scenario 1: Unsuccessfully attempt to create charity without being signed-in
+  Tags: ['@vcr']
+  Given  I visit the new organisation page
+  Then  I should be on the sign in page
+

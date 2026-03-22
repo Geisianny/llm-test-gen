@@ -1,0 +1,8 @@
+Scenario: Create a new STS service account
+  Given the Datadog API is available
+  And there are no existing STS service accounts with the name "new-sts-account"
+  When the user creates a new STS service account with the name "new-sts-account"
+  And configures the filters "filter1, filter2"
+  And enables CSPM and Security Command Center
+  Then the system creates the STS service account successfully
+  And returns the details of the newly created STS service account

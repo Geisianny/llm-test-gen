@@ -1,0 +1,14 @@
+Scenario 3: 0057-TRAN-027 when a party makes a transfer and f would be the theoretical fee the party should pay then the fee on the transfer that is actually charged is -min(f-c,0). The system subsequently updates c <- max(0,c-f). At the end of epoch, update c <- c x D and c <- c + all_trading_fees_for_trades_involved_in, if c < M x quantum(M is transfer.feeDiscountMinimumTrackedAmount), then set c <- 0
+  Tags: ['@transfer', '@fee-discount']
+  Given  the parties have the following transfer fee discounts:
+  And  the following network parameters are set:
+  And  the following assets are updated:
+  When  the network moves ahead "1" epochs
+  Then  the parties have the following transfer fee discounts:
+  Given  the parties submit the following one off transfers:
+  When  time is updated to "2021-08-26T00:00:10Z"
+  Then  the parties have the following transfer fee discounts:
+  Given  the following transfers should happen:
+  When  the network moves ahead "1" epochs
+  Then  the parties have the following transfer fee discounts:
+

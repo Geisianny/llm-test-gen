@@ -1,0 +1,7 @@
+Scenario 1: Delete a method
+  When  I change to tab 'Methods'
+  And  I follow "Margherita"
+  And  I follow "Delete"
+  And  confirm the dialog
+  Then  I should not see metric "Margherita"
+

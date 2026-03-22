@@ -1,0 +1,8 @@
+Scenario 3: Successfully placing an order using custom locale
+  Tags: ['@no-api', '@ui']
+  Given  this payment method is not using Payum
+  And  I added product "PHP T-Shirt" to the cart
+  When  I proceed through checkout process in the "French (France)" locale with email "john@example.com"
+  And  I confirm my order
+  Then  I should see the thank you page in "French (France)"
+

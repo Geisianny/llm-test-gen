@@ -1,0 +1,5 @@
+Scenario 3: Admin adds numeric field
+  Tags: ['@javascript']
+  When  I add a new person numeric field "Area" with min value 0 and max value 100
+  Then  I should see that there is a custom field "Area"
+

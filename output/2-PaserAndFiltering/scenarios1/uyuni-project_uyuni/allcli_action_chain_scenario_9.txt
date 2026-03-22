@@ -1,0 +1,6 @@
+Scenario 9: Verify that the action chain from the system set manager was executed successfully
+  When  I wait until file "/tmp/action_chain_done" exists on "ssh_minion"
+  And  I wait until file "/tmp/action_chain_done" exists on "sle_minion"
+  Then  "andromeda-dummy" should be installed on "ssh_minion"
+  And  "andromeda-dummy" should be installed on "sle_minion"
+

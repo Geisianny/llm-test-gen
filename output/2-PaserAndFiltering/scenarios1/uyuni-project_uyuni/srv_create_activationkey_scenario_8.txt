@@ -1,0 +1,6 @@
+Scenario 8: Create an activation key for the build host
+  Tags: ['@build_host']
+  When  I create an activation key with id "BUILD-HOST-KEY-x86_64", description "Build host Key x86_64"
+  And  I set the entitlements of the activation key "1-BUILD-HOST-KEY-x86_64" to "container_build_host, osimage_build_host"
+  Then  I should get the new activation key "1-BUILD-HOST-KEY-x86_64"
+

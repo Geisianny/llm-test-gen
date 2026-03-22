@@ -1,0 +1,9 @@
+Scenario 1: Preventing payment step completion if there are no available methods
+  Tags: ['@ui', '@todo']
+  Given  I have product "PHP T-Shirt" in the cart
+  When  I specified the billing address as "Ankh Morpork", "Frost Alley", "90210", "United States" for "Jon Snow"
+  And  I proceed selecting "Free" shipping method
+  And  I do not select any payment method
+  Then  I should not be able to complete the payment step
+  And  there should be information about no payment methods available for my order
+

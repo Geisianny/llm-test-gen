@@ -1,0 +1,5 @@
+Scenario 3: Execute logging program with different format
+  Given  a configuration with:
+  When  I start Karma
+  Then  the file at sandbox/console.log contains:
+

@@ -1,0 +1,7 @@
+Scenario 11: Delete a WAF exclusion filter returns "Concurrent Modification" response
+  Tags: ['@generated', '@skip', '@team:DataDog/asm-backend']
+  Given  new "DeleteApplicationSecurityWafExclusionFilter" request
+  And  request contains "exclusion_filter_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 409 Concurrent Modification
+

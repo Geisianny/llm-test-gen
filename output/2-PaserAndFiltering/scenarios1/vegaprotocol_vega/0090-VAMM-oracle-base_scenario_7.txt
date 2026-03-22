@@ -1,0 +1,11 @@
+Scenario 7: 0090-VAMM-043 AMM amended into pending AMM cannot be set into reduce only
+  Tags: ['@VAMM']
+  Then  the parties submit the following AMM:
+  Then  the AMM pool status should be:
+  When  the parties place the following orders:
+  Then  the parties amend the following AMM:
+  Then  the AMM pool status should be:
+  Then  the parties cancel the following AMM:
+  Then  the parties cancel the following AMM:
+  Then  the AMM pool status should be:
+

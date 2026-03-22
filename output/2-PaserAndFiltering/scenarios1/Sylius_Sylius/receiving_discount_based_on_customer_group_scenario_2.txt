@@ -1,0 +1,10 @@
+Scenario 2: Receiving discounts when belonging to a specific customer group
+  Tags: ['@api', '@ui']
+  Given  there is a customer account "wholesale@sylius.com"
+  And  the customer belongs to group "Wholesale"
+  And  I am logged in as "wholesale@sylius.com"
+  And  I added product "PHP T-Shirt" to the cart
+  When  I check the details of my cart
+  Then  my cart total should be "$72.00"
+  And  my discount should be "-$8.00"
+

@@ -1,0 +1,7 @@
+Scenario 2: Create On-Call Page returns "OK." response
+  Tags: ['@generated', '@skip', '@team:DataDog/on-call']
+  Given  new "CreateOnCallPage" request
+  And  body with value {"data": {"attributes": {"description": "Page details.", "tags": ["service:test"], "target": {"identifier": "my-team", "type": "team_handle"}, "title": "Page title", "urgency": "low"}, "type": "pages"}}
+  When  the request is sent
+  Then  the response status is 200 OK.
+

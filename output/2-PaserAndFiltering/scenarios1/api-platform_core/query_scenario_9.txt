@@ -1,0 +1,13 @@
+Scenario 9: Retrieve an item through a GraphQL query with variables
+  Tags: ['@createSchema']
+  Given  there are 2 dummy objects with relatedDummy
+  When  I have the following GraphQL request:
+  And  I send the GraphQL request with variables:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the JSON node "data.dummyItem.id" should be equal to "/dummies/2"
+  And  the JSON node "data.dummyItem.name" should be equal to "Dummy #2"
+  And  the JSON node "data.dummyItem.relatedDummy.id" should be equal to "/related_dummies/2"
+  And  the JSON node "data.dummyItem.relatedDummy.name" should be equal to "RelatedDummy #2"
+

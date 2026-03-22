@@ -1,0 +1,7 @@
+Scenario 13: Get a role returns "Not found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/aaa-core-access']
+  Given  new "GetRole" request
+  And  request contains "role_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not found
+

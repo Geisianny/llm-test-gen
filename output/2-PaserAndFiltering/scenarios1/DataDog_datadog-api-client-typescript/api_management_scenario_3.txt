@@ -1,0 +1,9 @@
+Scenario 3: Delete an API returns "API deleted successfully" response
+  Tags: ['@integration-only', '@skip-terraform-config', '@skip-validation', '@team:DataDog/api-management']
+  Given  operation "DeleteOpenAPI" enabled
+  And  there is a valid "managed_api" in the system
+  And  new "DeleteOpenAPI" request
+  And  request contains "id" parameter from "managed_api.data.id"
+  When  the request is sent
+  Then  the response status is 204 API deleted successfully
+

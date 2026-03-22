@@ -1,0 +1,8 @@
+Scenario 2: show error message if username is already used
+  Tags: ['@selenium']
+  Given  the following users
+  When  I go to signup page
+  And  I fill in "Username" with "josesilva"
+  And  I fill in "Email Address" with "josesilva@email.com"
+  Then  I should see "This login name is unavailable"
+

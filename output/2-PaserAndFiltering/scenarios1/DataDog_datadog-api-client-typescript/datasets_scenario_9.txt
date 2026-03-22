@@ -1,0 +1,10 @@
+Scenario 9: Edit a dataset returns "OK" response
+  Tags: ['@skip-terraform-config', '@team:DataDog/aaa-granular-access']
+  Given  there is a valid "dataset" in the system
+  And  operation "UpdateDataset" enabled
+  And  new "UpdateDataset" request
+  And  request contains "dataset_id" parameter from "dataset.data.id"
+  And  body with value {"data": {"attributes": {"name": "Security Audit Dataset", "principals": ["role:94172442-be03-11e9-a77a-3b7612558ac1"], "product_filters": [{"filters": ["@application.id:1234"], "product": "metrics"}]}, "type": "dataset"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+

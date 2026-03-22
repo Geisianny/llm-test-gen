@@ -1,0 +1,8 @@
+Scenario 16: show events in a range when i follow a specific day
+  Tags: ['@selenium']
+  Given  the following events
+  And  I am on /profile/josesilva/events/2010/10
+  And  I should see "YAPC::Brasil 2010"
+  When  I follow "31"
+  Then  I should see "YAPC::Brasil 2010"
+

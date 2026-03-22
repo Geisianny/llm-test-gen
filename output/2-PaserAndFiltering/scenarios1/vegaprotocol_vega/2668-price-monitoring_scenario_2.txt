@@ -1,0 +1,28 @@
+Scenario 2: Lower bound breached
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  When  the parties place the following orders with ticks:
+  And  the mark price should be "5670000" for the market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  When  the parties place the following orders with ticks:
+  And  the mark price should be "4850000" for the market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  When  the parties place the following orders with ticks:
+  And  the mark price should be "6630000" for the market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  When  the parties place the following orders with ticks:
+  Then  the market state should be "STATE_SUSPENDED" for the market "ETH/DEC20"
+  And  the mark price should be "6630000" for the market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/DEC20"
+  Then  time is updated to "2020-10-16T00:10:00Z"
+  And  the mark price should be "6630000" for the market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/DEC20"
+  When  time is updated to "2020-10-16T00:15:01Z"
+  Then  the market state should be "STATE_ACTIVE" for the market "ETH/DEC20"
+  And  the mark price should be "4840000" for the market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+

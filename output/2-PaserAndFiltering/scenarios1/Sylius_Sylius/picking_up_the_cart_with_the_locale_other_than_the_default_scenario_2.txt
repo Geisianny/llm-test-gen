@@ -1,0 +1,6 @@
+Scenario 2: Picking up the cart without specified locale
+  Tags: ['@api', '@no-ui']
+  When  I pick up cart without specifying locale
+  And  I check the details of my cart
+  Then  my cart's locale should be "French (France)"
+

@@ -1,0 +1,10 @@
+Scenario 3: Uncrossing orders with a low volume AMM
+  Tags: ['@VAMM']
+  Then  the parties submit the following AMM:
+  Then  the AMM pool status should be:
+  And  the market data for the market "ETH/MAR22" should be:
+  And  the parties place the following orders:
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the opening auction period ends for market "ETH/MAR22"
+  And  the market data for the market "ETH/MAR22" should be:
+

@@ -1,0 +1,7 @@
+Scenario 2: AMM decimal best ask rounds up to peg 0 offset
+  Tags: ['@VAMM']
+  When  the parties place the following orders:
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the parties place the following pegged iceberg orders:
+  Then  the order book should have the following volumes for market "ETH/MAR22":
+

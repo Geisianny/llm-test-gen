@@ -1,0 +1,6 @@
+Scenario 2: Navigation from context selector
+  Given  the current page is the provider dashboard
+  When  they select "Backends" from the context selector
+  And  follow "Create a backend"
+  Then  the current page is the admin portal new backend api page
+

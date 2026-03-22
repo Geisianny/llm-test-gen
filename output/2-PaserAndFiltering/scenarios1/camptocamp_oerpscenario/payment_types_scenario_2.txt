@@ -1,0 +1,6 @@
+Scenario 2: Configure trusted payment mode
+  Tags: ['@magento_payment_mode']
+  Given  I want to configure the following TRUSTED Magento payment mode to AUTOMATICALLY handle related sale orders workflow:
+  And  I "allow" partial picking on TRUSTED payment mode
+  And  I demand OpenERP to regulary ask Magento if sale orders are paid
+

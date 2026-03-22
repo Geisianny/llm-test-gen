@@ -1,0 +1,8 @@
+Scenario: Send ETH when Gas API is down and then becomes available
+  Given the Gas API is unavailable
+  And the user has a valid ETH balance
+  And the user has entered valid recipient address and amount
+  When the user initiates an ETH send transaction
+  And the Gas API becomes available during the transaction process
+  Then the system completes the transaction using the fallback gas properties initially
+  And the transaction is processed successfully

@@ -1,0 +1,9 @@
+Scenario 2: Update support and finance support emails
+  Given  they go to the emails settings page
+  And  the "Support email" field should contain "support@api.test"
+  And  the "Finance support email" field should contain "finance-support@api.test"
+  When  the form is submitted with:
+  Then  they should see the flash message "Your support emails have been updated"
+  And  the provider's support email should be "foo@api.test"
+  And  the provider's finance support email should be "finance-foo@api.test"
+

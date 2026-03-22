@@ -1,0 +1,13 @@
+Scenario 4: remember facet filter when searching new query
+  Given  the following categories as facets
+  And  the following category
+  And  the following users
+  When  I go to the search people page
+  And  I fill in "search-input" with "Linus"
+  And  I press "Search"
+  And  I follow "Software Livre" within "#facets-menu"
+  And  I fill in "search-input" with "Richard"
+  And  I press "Search"
+  Then  I should see "Richard Stallman" within "#search-results"
+  And  I should not see "Richard Linus"
+

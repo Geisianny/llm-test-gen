@@ -1,0 +1,6 @@
+Scenario: Delete DORA metrics event with valid appKeyAuth
+  Given the user has a valid appKeyAuth
+  And there is an existing DORA metrics event
+  When the user deletes the DORA metrics event
+  Then the system removes the event
+  And displays a success message

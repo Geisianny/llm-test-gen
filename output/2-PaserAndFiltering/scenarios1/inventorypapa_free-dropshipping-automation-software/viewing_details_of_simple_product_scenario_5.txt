@@ -1,0 +1,8 @@
+Scenario 5: Viewing taxonomy block
+  Tags: ['@ui']
+  Given  this product belongs to "Shield"
+  And  the product "Iron shield" has a main taxon "Equipment"
+  When  I access "Iron Shield" product page
+  Then  I should see main taxon is "Equipment"
+  And  I should see product taxon is "Shield"
+

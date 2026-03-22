@@ -1,0 +1,9 @@
+Scenario 3: Not being able to select shipping method not available for order channel
+  Tags: ['@api', '@ui']
+  Given  the store has "Raven Post" shipping method with "$10.00" fee not assigned to any channel
+  And  the store has "Dragon Post" shipping method with "$30.00" fee
+  And  I added product "Targaryen T-Shirt" to the cart
+  And  I addressed the cart
+  When  I want to complete the shipping step
+  Then  I should not be able to select "Raven Post" shipping method
+

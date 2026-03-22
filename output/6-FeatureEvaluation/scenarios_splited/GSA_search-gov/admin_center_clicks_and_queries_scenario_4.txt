@@ -1,0 +1,5 @@
+Scenario: Generate monthly report of query and click correlation
+  Given there are search queries and corresponding clicked URLs in the system for the current month
+  When the site administrator requests a monthly report
+  Then the system generates a report showing the correlation between search queries and clicked URLs
+  And the report includes the top clicked URLs and their corresponding queries

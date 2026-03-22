@@ -1,0 +1,7 @@
+Scenario 9: Realm or Site is required
+  Given  they go to the new sso integration page
+  And  there is a required field "Client Secret"
+  When  the form is submitted with:
+  Then  they should see a toast alert with text "SSO integration could not be created"
+  And  field "Realm or Site" has inline error "can't be blank"
+

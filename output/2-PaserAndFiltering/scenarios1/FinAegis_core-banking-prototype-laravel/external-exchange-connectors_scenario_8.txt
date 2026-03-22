@@ -1,0 +1,7 @@
+Scenario 8: Align internal prices with external markets
+  Tags: ['@mock']
+  Given  I am the system account
+  And  the external exchanges have weighted average prices for "BTC/EUR":
+  When  the price alignment service runs for "BTC/EUR"
+  Then  market making orders should be placed:
+

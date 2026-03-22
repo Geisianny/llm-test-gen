@@ -1,0 +1,10 @@
+Scenario 1: Receiving percentage discount first when priority is higher
+  Tags: ['@api', '@ui']
+  Given  there is a promotion "Cebula Deal" with priority 1
+  And  it gives "$10.00" discount to every order
+  And  there is a promotion "Santa's Gift" with priority 4
+  And  it gives "20%" discount to every order
+  And  I added product "The Pug Mug" to the cart
+  When  I check the details of my cart
+  Then  my cart total should be "$70.00"
+

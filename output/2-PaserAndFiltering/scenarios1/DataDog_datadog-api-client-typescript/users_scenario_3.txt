@@ -1,0 +1,7 @@
+Scenario 3: Create a user returns "User created" response
+  Tags: ['@generated', '@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "CreateUser" request
+  And  body with value {"access_role": "ro", "disabled": false, "email": "test@datadoghq.com", "handle": "test@datadoghq.com", "name": "test user"}
+  When  the request is sent
+  Then  the response status is 200 User created
+

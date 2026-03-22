@@ -1,0 +1,14 @@
+Scenario 2: Add voucher
+  Given  the follow customers exist:
+  And  the following payment details:
+  And  the following customers have cards that will expire in 30 days:
+  And  the following customers have cards that will expired last month:
+  And  the following subscriptions exist:
+  And  the following vouchers exist:
+  And  there are expiring card process for "customer.one@example.org" for card "0653" has sent the first email
+  And  there are expiring card process for "customer.three@example.org" for card "9434" has sent the first email
+  And  there are expiring card process for "customer.four@example.org" for card "4949" has sent the first email
+  When  a new payment card is added for "customer.one@example.org"
+  Then  there should be a record of "Voucher One" being applied to "customer.one@example.org"
+  Then  there should be a credit for "customer.one@example.org" for 1000 in the currency "USD"
+

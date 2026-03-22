@@ -1,0 +1,6 @@
+Scenario 1: An uncleared journal line is not included in earlier reconciliations
+  being created with an end date before the journal line's date.
+  Given  an uncleared journal line on 2000-02-01
+  When  I create a reconciliation ending on 2000-01-01
+  Then  the journal line is not in the reconciliation
+

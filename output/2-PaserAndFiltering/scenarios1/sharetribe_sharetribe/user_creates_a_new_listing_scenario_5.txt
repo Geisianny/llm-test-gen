@@ -1,0 +1,7 @@
+Scenario 5: Trying to create a new request without being logged in
+  Tags: ['@javascript']
+  Given  I am not logged in
+  And  I am on the home page
+  When  I follow "new-listing-link"
+  And  I should see "Log in to Sharetribe" within "h1"
+

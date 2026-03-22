@@ -1,0 +1,6 @@
+Scenario 2: Applying fixed discount up to minimum price
+  Tags: ['@api', '@ui']
+  Given  there is a catalog promotion "Winter sale" that reduces price by fixed "$10.00" in the "United States" channel and applies on "PHP T-Shirt" variant
+  When  I view "PHP T-Shirt" variant of the "T-Shirt" product
+  Then  I should see this variant is discounted from "$20.00" to "$15.00" with "Winter sale" promotion
+

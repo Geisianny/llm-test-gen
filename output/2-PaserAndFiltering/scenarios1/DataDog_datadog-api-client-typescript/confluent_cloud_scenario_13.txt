@@ -1,0 +1,7 @@
+Scenario 13: Get Confluent account returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "GetConfluentAccount" request
+  And  request contains "account_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

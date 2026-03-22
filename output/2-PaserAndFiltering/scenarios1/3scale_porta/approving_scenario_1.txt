@@ -1,0 +1,7 @@
+Scenario 1: Approving a single buyer account
+  Given  a pending buyer "bob" signed up to provider "foo.3scale.localhost"
+  When  I go to the buyer account page for "bob"
+  And  I press "Approve"
+  Then  I should see "Developer account was approved"
+  And  buyer "bob" should be approved
+

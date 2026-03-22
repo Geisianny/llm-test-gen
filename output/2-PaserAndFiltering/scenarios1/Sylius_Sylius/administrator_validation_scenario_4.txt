@@ -1,0 +1,9 @@
+Scenario 4: Trying to add a new administrator with taken email
+  Tags: ['@api', '@ui']
+  Given  there is an administrator "ted@example.com"
+  When  I want to create a new administrator
+  And  I specify its email as "ted@example.com"
+  And  I try to add it
+  Then  I should be notified that email must be unique
+  And  there should still be only one administrator with an email "ted@example.com"
+

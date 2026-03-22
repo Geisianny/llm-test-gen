@@ -1,0 +1,5 @@
+Scenario 2: Provider admin can access settings
+  Given  current domain is the admin domain of provider "foo.3scale.localhost"
+  And  I log in as provider "foo.3scale.localhost"
+  Then  they should be able to go to the following pages:
+

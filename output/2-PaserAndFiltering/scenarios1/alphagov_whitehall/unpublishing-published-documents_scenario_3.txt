@@ -1,0 +1,5 @@
+Scenario 3: Consolidating a document into another GOV.UK page
+  Given  there is a published document that is a duplicate of another page
+  When  I unpublish the duplicate, marking it as consolidated into the other page
+  Then  the unpublishing should redirect to the existing edition
+

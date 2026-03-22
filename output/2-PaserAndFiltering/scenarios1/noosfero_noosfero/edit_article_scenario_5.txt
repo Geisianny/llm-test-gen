@@ -1,0 +1,17 @@
+Scenario 5: allowed user should see the content of a folder
+  Tags: ['@selenium']
+  Given  the following communities
+  And  the following users
+  And  the following articles
+  And  "Mario Souto" is a member of "Free Software"
+  And  "Maria Silva" is a member of "Free Software"
+  And  I go to /freesoftware/my-folder
+  And  I follow "article-options"
+  When  I follow "Edit"
+  And  I fill in post-access hidden field with "2"
+  And  I follow "Save"
+  And  I add to "My Folder" the following exception "Maria Silva"
+  And  I am logged in as "maria"
+  And  I go to /freesoftware/my-folder
+  Then  I should see "My Folder"
+

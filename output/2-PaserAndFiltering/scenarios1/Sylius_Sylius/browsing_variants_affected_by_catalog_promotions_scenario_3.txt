@@ -1,0 +1,6 @@
+Scenario 3: Browsing product variants affected by a catalog promotion applied on taxons
+  Tags: ['@api', '@ui']
+  Given  there is a catalog promotion "Clothes promotion" that reduces price by "10%" and applies on "Clothes" taxon
+  When  I browse variants affected by catalog promotion "Clothes promotion"
+  Then  there should be 3 product variants on the list
+

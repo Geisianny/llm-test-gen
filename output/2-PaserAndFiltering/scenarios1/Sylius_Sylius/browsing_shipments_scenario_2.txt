@@ -1,0 +1,6 @@
+Scenario 2: Shipments are sorted by newest as default
+  Tags: ['@api', '@ui']
+  When  I browse shipments
+  Then  I should see shipment for the "#00000002" order as 1st in the list
+  And  I should see shipment for the "#00000001" order as 2nd in the list
+

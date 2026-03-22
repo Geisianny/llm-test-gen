@@ -1,0 +1,9 @@
+Scenario 1: Trying to add a new customer group with used code
+  Tags: ['@ui', '@api']
+  When  I want to create a new customer group
+  And  I specify its code as "RETAIL"
+  And  I add it
+  Then  I should be notified that customer group with this code already exists
+  And  I should see 1 customer groups in the list
+  And  I should see the customer group "Retail" in the list
+

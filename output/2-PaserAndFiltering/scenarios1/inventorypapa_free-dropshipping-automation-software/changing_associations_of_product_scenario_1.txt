@@ -1,0 +1,9 @@
+Scenario 1: Changing associated products of a product association
+  Tags: ['@ui', '@javascript']
+  Given  the product "LG G3" has an association "Accessories" with product "LG headphones"
+  When  I want to modify the "LG G3" product
+  And  I associate as "Accessories" the "LG earphones" product
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this product should have an association "Accessories" with products "LG headphones" and "LG earphones"
+

@@ -1,0 +1,6 @@
+Scenario 5: Seeing information about customer groups
+  Tags: ['@ui']
+  Given  the customer belongs to group "Retail"
+  When  I view details of the customer "f.baggins@shire.me"
+  Then  this customer should have "Retail" as their group
+

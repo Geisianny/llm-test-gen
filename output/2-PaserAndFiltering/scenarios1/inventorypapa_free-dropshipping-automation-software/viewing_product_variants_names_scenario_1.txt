@@ -1,0 +1,5 @@
+Scenario 1: Seeing variant's name in default locale
+  Tags: ['@ui', '@api']
+  When  I view product "Die Hard Movie"
+  Then  its current variant should be named "Die Hard - Extended Cut"
+

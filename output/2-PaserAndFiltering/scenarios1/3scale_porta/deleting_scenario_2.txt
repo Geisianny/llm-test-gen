@@ -1,0 +1,9 @@
+Scenario 2: Cannot delete account if there are unsettled invoices
+  Given  the provider is charging its buyers
+  Given  an invoice of buyer "bob" for January, 2011 with items:
+  When  I go to the buyer account page for "bob"
+  And  I follow "Edit"
+  And  I follow "Delete"
+  And  confirm the dialog
+  Then  I should see "Invoices need to be settled before"
+

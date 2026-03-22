@@ -1,0 +1,74 @@
+Feature: Product edit ActiveDocs page
+Description: As a provider, I want to be able to update my ActiveDocs specs.
+Tags: ['@javascript']
+
+Background: 
+  Given  a provider is logged in
+  And  a product
+
+Scenario Outline 1: Navigation from index - Example 1
+  Given  the product has a Swagger 1.2 spec "Echo API"
+  When  they go to the ActiveDocs page
+  And  select action "Edit" of "Echo API"
+  Then  the current page is spec "Echo API" edit page from Product context
+
+  Examples:
+    | swagger version |
+    | Swagger 1.2 |
+    | Swagger 2 |
+    | OAS 3.0 |
+
+Scenario Outline 2: Navigation from preview - Example 1
+  Given  the product has a Swagger 1.2 spec "Echo API"
+  When  they go to the spec's preview page from Product context
+  And  follow "Edit"
+  Then  the current page is spec "Echo API" edit page from Product context
+
+  Examples:
+    | swagger version |
+    | Swagger 1.2 |
+    | Swagger 2 |
+    | OAS 3.0 |
+
+Scenario Outline 3: Update a spec - Example 1
+  Given  the product has a Swagger 1.2 spec "Echo API"
+  And  a product "New service"
+  When  they go to the spec's edit page from Product context
+  And  the form is submitted with:
+  Then  they should see a toast alert with text "ActiveDocs Spec was successfully updated"
+
+  Examples:
+    | swagger version |
+    | Swagger 1.2 |
+    | Swagger 2 |
+    | OAS 3.0 |
+
+Scenario Outline 4: Required fields - Example 1
+  Given  the product has a Swagger 1.2 spec "Echo API"
+  When  they go to the spec's edit page from Product context
+  Then  there is a required field "Name"
+  And  there is a readonly field "System name"
+  And  there is a required field "API JSON Spec"
+
+  Examples:
+    | swagger version |
+    | Swagger 1.2 |
+    | Swagger 2 |
+    | OAS 3.0 |
+
+Scenario Outline 5: API JSON Spec validation - Example 1
+  Given  the product has a Swagger 1.2 spec "Echo API"
+  When  they go to the spec's edit page from Product context
+  And  the form is submitted with:
+  Then  field "API JSON Spec" has inline error "Invalid JSON"
+  When  the form is submitted with:
+  Then  field "API JSON Spec" has inline error "Invalid Swagger version"
+  When  the form is submitted with:
+  Then  field "API JSON Spec" has inline error "JSON Spec is invalid"
+
+  Examples:
+    | swagger version |
+    | Swagger 1.2 |
+    | Swagger 2 |
+    | OAS 3.0 |
+

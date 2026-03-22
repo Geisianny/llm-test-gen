@@ -1,0 +1,8 @@
+Scenario 1: Create an SLO correction returns "Bad Request" response
+  Tags: ['@skip', '@team:DataDog/slo-app']
+  Given  there is a valid "slo" in the system
+  And  new "CreateSLOCorrection" request
+  And  body with value {"data": {"attributes": {"category": "Scheduled Maintenance", "description":  "{{ unique }}", "end": {{ timestamp("now + 1h") }}, "start": {{ timestamp("now") }}, "timezone": "UTC"}, "type": "correction"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

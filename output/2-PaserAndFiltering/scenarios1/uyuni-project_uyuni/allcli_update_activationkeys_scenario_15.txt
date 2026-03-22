@@ -1,0 +1,10 @@
+Scenario 15: Update terminal key with normal SUSE fake channel
+  Tags: ['@susemanager', '@scc_credentials']
+  When  I follow the left menu "Systems > Activation Keys"
+  And  I follow "Terminal Key x86_64" in the content area
+  And  I wait for child channels to appear
+  And  I check "Fake-RPM-SUSE-Channel"
+  And  I wait until "Fake-RPM-SUSE-Channel" has been checked
+  And  I click on "Update Activation Key"
+  Then  I should see a "Activation key Terminal Key x86_64 has been modified" text
+

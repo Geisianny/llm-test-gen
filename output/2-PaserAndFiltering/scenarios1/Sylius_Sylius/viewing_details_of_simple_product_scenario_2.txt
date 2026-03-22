@@ -1,0 +1,7 @@
+Scenario 2: Viewing pricing block
+  Tags: ['@no-api', '@ui']
+  Given  the product "Iron Shield" has original price "$25.00"
+  When  I access the "Iron Shield" product
+  Then  I should see price "$20.00" for channel "United States"
+  And  I should see original price "$25.00" for channel "United States"
+

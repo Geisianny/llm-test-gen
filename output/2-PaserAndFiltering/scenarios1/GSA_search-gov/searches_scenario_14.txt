@@ -1,0 +1,10 @@
+Scenario 14: Searching indexed document collections
+  Given  the following BingV7 Affiliates exist:
+  And  affiliate "agency.gov" has the following document collections:
+  And  the following IndexedDocuments exist:
+  When  I am on agency.gov's search page
+  And  I follow "Petitions" in the search navbar
+  And  I search for "death star r2d2 xyz3"
+  Then  I should see a link to "First petition article" with url for "http://petitions.whitehouse.gov/petition-1.html"
+  And  I should see a link to "Second petition article" with url for "http://petitions.whitehouse.gov/petition-2.html"
+

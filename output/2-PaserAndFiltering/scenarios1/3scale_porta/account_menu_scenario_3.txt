@@ -1,0 +1,7 @@
+Scenario 3: Account menu structure with multiple users enabled
+  Given  the provider has "branding" switch allowed
+  Given  the provider has "multiple_users" switch allowed
+  When  I go to the provider account page
+  Then  I should see menu items under "Users"
+  And  I should see menu items under "Billing"
+

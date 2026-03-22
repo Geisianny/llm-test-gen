@@ -1,0 +1,5 @@
+Scenario 2: Infowindow appears when clicking on map marker
+  Tags: ['@javascript', '@billy']
+  Given  I visit the organisations index page
+  Then  I should see an infowindow when I click on the map pin markers:
+

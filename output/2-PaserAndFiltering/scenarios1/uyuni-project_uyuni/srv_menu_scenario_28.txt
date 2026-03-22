@@ -1,0 +1,6 @@
+Scenario 28: Sidebar link destination for Systems => System Groups
+  When  I follow the left menu "Systems > System Groups"
+  Then  I should see a "System Groups" text
+  And  I should see a "Create Group" link
+  And  I should see a "Your organization has no system groups." text
+

@@ -1,0 +1,5 @@
+Scenario 1: Create a new index and add fields
+  Given  the site has a index "brick_getter" for behat-class "BrickTest" with type "mysql"
+  And  the index has following fields:
+  Then  the index should have columns "brick_name, brick_val"
+

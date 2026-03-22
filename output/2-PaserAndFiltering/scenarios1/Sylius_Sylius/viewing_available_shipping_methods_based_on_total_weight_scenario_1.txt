@@ -1,0 +1,9 @@
+Scenario 1: Seeing shipping methods that handle heavy goods
+  Tags: ['@api', '@ui']
+  Given  I added product "Jacket for the Lochness Monster" to the cart
+  And  I addressed the cart
+  When  I want to complete the shipping step
+  And  I should see "DHL" shipping method
+  And  I should see "Heavy Duty Courier" shipping method
+  And  I should not see "Fairytale Delivery Service" shipping method
+

@@ -1,0 +1,6 @@
+Scenario: Update an existing SLO report
+  Given there is an existing SLO report with ID "12345"
+  And the updated SLO report details are valid
+  When the user updates the SLO report with ID "12345" via the API
+  Then the system returns a success response
+  And the SLO report is updated with the new details

@@ -1,0 +1,7 @@
+Scenario 3: Reordering Cabinet ministers
+  Given  there are multiple Cabinet minister roles with active appointments
+  When  I visit the Cabinet ministers order page
+  And  I click the reorder link in the "#cabinet_minister" tab
+  And  I set the order of the roles to:
+  Then  the roles in the "#cabinet_minister" tab should be in the following order:
+

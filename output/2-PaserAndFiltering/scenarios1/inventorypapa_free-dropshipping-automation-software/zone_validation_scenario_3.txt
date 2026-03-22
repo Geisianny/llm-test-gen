@@ -1,0 +1,10 @@
+Scenario 3: Trying to add a zone without any countries
+  Tags: ['@ui', '@api']
+  When  I want to create a new zone consisting of country
+  And  I name it "European Union"
+  And  I specify its code as "EU"
+  But  I do not add a country member
+  And  I add it
+  Then  I should be notified that at least one zone member is required
+  And  zone with name "European Union" should not be added
+

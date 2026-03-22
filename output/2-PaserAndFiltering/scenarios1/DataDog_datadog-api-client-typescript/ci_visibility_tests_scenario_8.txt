@@ -1,0 +1,8 @@
+Scenario 8: Search tests events returns "OK" response with pagination
+  Tags: ['@replay-only', '@skip-validation', '@team:DataDog/ci-app-backend', '@with-pagination']
+  Given  new "SearchCIAppTestEvents" request
+  And  body with value {"filter": {"from": "now-15m", "query": "@test.status:pass AND -@language:python", "to": "now"}, "page": {"limit": 2}, "sort": "timestamp"}
+  When  the request with pagination is sent
+  Then  the response status is 200 OK
+  And  the response has 2 items
+

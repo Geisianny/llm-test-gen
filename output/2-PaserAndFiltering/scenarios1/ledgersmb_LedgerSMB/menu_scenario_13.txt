@@ -1,0 +1,8 @@
+Scenario Outline 13: Navigate to menu "<path>" and open screen "<screen>" - Example 13
+  When  I navigate the menu and select the item at "Cash & Banking > Reports > Reconciliation"
+  Then  I should see the Search Reconciliation Reports screen
+
+  Examples:
+    | path | screen |
+    | Cash & Banking > Reports > Reconciliation | Search Reconciliation Reports |
+

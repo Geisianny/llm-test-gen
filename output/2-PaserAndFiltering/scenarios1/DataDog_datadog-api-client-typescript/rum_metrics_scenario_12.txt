@@ -1,0 +1,19 @@
+Scenario 12: Update a rum-based metric returns "OK" response
+  Tags: ['@team:DataDog/rum-backend']
+  Given  there is a valid "rum_metric" in the system
+  And  new "UpdateRumMetric" request
+  And  request contains "metric_id" parameter from "rum_metric.data.id"
+  And  body with value {"data": {"id": "{{ rum_metric.data.id }}", "type": "rum_metrics", "attributes": {"compute": {"include_percentiles": false}, "filter": {"query": "@service:rum-config"}, "group_by": [{"path": "@browser.version", "tag_name": "browser_version"}]}}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.id" has the same value as "rum_metric.data.id"
+  And  the response "data.type" has the same value as "rum_metric.data.type"
+  And  the response "data.attributes.event_type" has the same value as "rum_metric.data.attributes.event_type"
+  And  the response "data.attributes.compute.aggregation_type" has the same value as "rum_metric.data.attributes.compute.aggregation_type"
+  And  the response "data.attributes.compute.include_percentiles" is equal to false
+  And  the response "data.attributes.compute.path" has the same value as "rum_metric.data.attributes.compute.path"
+  And  the response "data.attributes.filter.query" is equal to "@service:rum-config"
+  And  the response "data.attributes.group_by[0].path" is equal to "@browser.version"
+  And  the response "data.attributes.group_by[0].tag_name" is equal to "browser_version"
+  And  the response "data.attributes.uniqueness.when" has the same value as "rum_metric.data.attributes.uniqueness.when"
+

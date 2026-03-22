@@ -1,0 +1,5 @@
+Scenario 5: Editing an existing translation
+  Given  a person called "Amanda Appleford" exists with a translation for the locale "Français"
+  When  I edit the "Français" translation for the person "Amanda Appleford" updating the biography to "Ca va bien"
+  Then  I should see the translation "Français" and body text "Ca va bien"
+

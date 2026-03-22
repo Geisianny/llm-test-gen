@@ -1,0 +1,18 @@
+Feature: Update metric counters
+
+Background: 
+  Given  the following accounts exist:
+  And  the follow products exist:
+  And  the following features exist:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "Price One" with:
+  And  the follow customers exist:
+
+Scenario 1: 30
+  Given  the follow metrics exist:
+  Given  the follow price "Product One" for "USD" monthly price with a usage tiered graduated for metric "Test One" with these tiers:
+  Given  the following subscriptions exist:
+  And  the following events exist:
+  And  stripe billing is disabled
+  When  the background task to update metric counters is ran
+  Then  the metric usage for "customer.one@example.org" and metric "Test One" will have the value 30
+

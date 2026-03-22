@@ -1,0 +1,11 @@
+Scenario 12: Apply the Configuration channel state
+  When  I follow "States" in the content area
+  And  I follow "Configuration Channels" in the content area
+  And  I click on "Search" in element "search-row"
+  And  I wait until I see "Execute States" text
+  And  I click on "Execute States"
+  Then  I should see a "Applying the config channels has been scheduled" text
+  And  I wait until event "Apply states [custom] scheduled" is completed
+  And  I wait until file "/root/statechannel" exists on "sle_minion"
+  And  I wait until file "/root/statechannel2" exists on "sle_minion"
+

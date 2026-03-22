@@ -1,0 +1,5 @@
+Scenario 1: Navigation
+  Given  they go to product "My API" service plans admin page
+  When  they select toolbar action "Create service plan"
+  Then  the current page is the product's new service plan admin page
+

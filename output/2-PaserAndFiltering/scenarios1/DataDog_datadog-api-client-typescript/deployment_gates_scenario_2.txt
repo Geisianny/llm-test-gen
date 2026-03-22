@@ -1,0 +1,8 @@
+Scenario 2: Create deployment gate returns "Bad request." response
+  Tags: ['@generated', '@skip', '@team:DataDog/ci-app-backend']
+  Given  operation "CreateDeploymentGate" enabled
+  And  new "CreateDeploymentGate" request
+  And  body with value {"data": {"attributes": {"dry_run": false, "env": "production", "identifier": "pre", "service": "my-service"}, "type": "deployment_gate"}}
+  When  the request is sent
+  Then  the response status is 400 Bad request.
+

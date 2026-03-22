@@ -1,0 +1,5 @@
+Scenario 1: Being unable to see non-own order
+  Tags: ['@api']
+  When  I try to see the order placed by a customer "john@example.com"
+  Then  I should not be able to see that order
+

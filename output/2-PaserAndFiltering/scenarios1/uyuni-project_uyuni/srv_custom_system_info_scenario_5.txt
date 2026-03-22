@@ -1,0 +1,8 @@
+Scenario 5: Edit the key description
+  When  I follow the left menu "Systems > Custom System Info"
+  And  I follow "key-label"
+  And  I enter "key-desc-edited" as "description"
+  And  I click on "Update Key"
+  Then  I should see a "key-label" link
+  And  I should see a "key-desc-edited" text
+

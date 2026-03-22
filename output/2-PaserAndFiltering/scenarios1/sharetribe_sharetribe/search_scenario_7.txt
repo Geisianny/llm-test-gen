@@ -1,0 +1,15 @@
+Scenario 7: Finding by checkbox field
+  Tags: ['@javascript']
+  When  I check "3 people"
+  And  I press "Update view"
+  Then  I should see "old sofa for sale"
+  Then  I should see "light-weigth plastic outdoor sofa"
+  When  I check "Outdoors"
+  And  I press "Update view"
+  Then  I should not see "old sofa for sale"
+  Then  I should see "light-weigth plastic outdoor sofa"
+  When  I check "Indoors"
+  And  I press "Update view"
+  Then  I should not see "old sofa for sale"
+  Then  I should not see "light-weigth plastic outdoor sofa"
+

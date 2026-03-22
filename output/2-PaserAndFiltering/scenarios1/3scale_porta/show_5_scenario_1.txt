@@ -1,0 +1,7 @@
+Scenario 1: RH SSO Navigation
+  Given  a developer portal red hat single sign-on integration
+  When  they go to the developer portal users sso integrations page
+  And  they follow "Red Hat Single Sign-On"
+  Then  the current page is the developer portal sso integration page
+  And  should see "Red Hat Single Sign-On"
+

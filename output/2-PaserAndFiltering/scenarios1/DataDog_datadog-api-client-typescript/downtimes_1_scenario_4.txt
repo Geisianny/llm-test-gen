@@ -1,0 +1,7 @@
+Scenario 4: Get a downtime returns "Not Found" response
+  Tags: ['@skip-validation', '@team:DataDog/monitor-app']
+  Given  new "GetDowntime" request
+  And  request contains "downtime_id" parameter with value "00000000-0000-1234-0000-000000000000"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

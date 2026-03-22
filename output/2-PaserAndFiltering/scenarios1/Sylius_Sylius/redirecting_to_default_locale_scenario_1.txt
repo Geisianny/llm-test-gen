@@ -1,0 +1,6 @@
+Scenario 1: Staying on the current locale if it is available
+  Tags: ['@api', '@ui']
+  When  I browse that channel
+  And  I use the locale "French (France)"
+  Then  I should shop using the "French (France)" locale
+

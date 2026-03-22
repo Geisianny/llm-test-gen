@@ -1,0 +1,4 @@
+Scenario 1: As a non authenticated user I cannot get the resource links list
+  When  I send a "GET" request to "/api/v3/jecoute/resource-links"
+  Then  the response status code should be 401
+

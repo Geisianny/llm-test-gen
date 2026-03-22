@@ -1,0 +1,8 @@
+Scenario 1: show recent communities on index
+  Given  the following community
+  When  I go to the search communities page
+  Then  I should see "Noosfero Community" within "#search-results"
+  And  I should see Noosfero Community's community image
+  And  I should see "Linux Community" within "#search-results"
+  And  I should see Linux Community's community image
+

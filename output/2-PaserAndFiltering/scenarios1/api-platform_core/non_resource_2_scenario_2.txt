@@ -1,0 +1,9 @@
+Scenario 2: Get a resource containing a raw object with selected properties
+  Tags: ['@createSchema']
+  Given  there are 1 dummy objects with relatedDummy and its thirdLevel
+  When  I send a "GET" request to "/contain_non_resources/1?properties[]=id&properties[nested][notAResource][]=foo&properties[notAResource][]=bar"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be a superset of:
+

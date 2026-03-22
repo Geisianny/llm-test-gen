@@ -1,0 +1,5 @@
+Scenario 2: Display avatar and links
+  Given  I visit the contributors page
+  Then  I should see a link avatar for "thomas"
+  And  I should see a link avatar for "john"
+

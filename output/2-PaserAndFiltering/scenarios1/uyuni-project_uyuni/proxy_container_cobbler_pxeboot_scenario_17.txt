@@ -1,0 +1,4 @@
+Scenario 17: Cleanup: remove the auto installation files
+  When  I remove packages "tftpboot-installation-SLE-15-SP4-x86_64 expect" from this "build_host"
+  And  I remove the autoinstallation files from the server
+

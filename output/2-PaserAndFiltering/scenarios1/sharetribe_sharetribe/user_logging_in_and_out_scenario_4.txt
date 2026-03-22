@@ -1,0 +1,5 @@
+Scenario 4: logging out
+  Given  I am logged in
+  When  I log out
+  Then  I should not be logged in
+

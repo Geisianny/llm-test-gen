@@ -1,0 +1,7 @@
+Scenario 13: List tables returns "OK" response
+  Tags: ['@skip', '@team:DataDog/redapl-experiences']
+  Given  new "ListTables" request
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data" has length 1
+

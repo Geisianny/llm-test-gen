@@ -1,0 +1,5 @@
+Scenario 2: Tags must be set for items
+  When  I send a "GET" request to "/relation_embedders/1"
+  Then  the response status code should be 200
+  And  the header "Cache-Tags" should be equal to "/third_levels/1,/related_dummies/1,/relation_embedders/1"
+

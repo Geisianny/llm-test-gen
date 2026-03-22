@@ -1,0 +1,11 @@
+Scenario 1: Add a new account heading
+  When  I navigate the menu and select the item at "General Journal > Chart of Accounts"
+  Then  I should see the Chart of Accounts screen
+  And  I expect the report to contain 78 rows
+  When  I press "Create Heading"
+  Then  I should see the Account screen
+  When  I enter "H0001" into "Account Number"
+  And  I enter "New Heading" into "Description"
+  And  I press "Save"
+  Then  I should see the Account screen
+

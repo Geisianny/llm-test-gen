@@ -1,0 +1,7 @@
+Scenario 1: 
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  the following slack webhooks exist:
+  When  I go to the slack webhook list page
+  Then  I will see a webhook for "DevChat"
+  And  I will see a webhook for "Finance"
+

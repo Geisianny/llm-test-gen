@@ -1,0 +1,7 @@
+Scenario 24: List role templates returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/aaa-core-access']
+  Given  operation "ListRoleTemplates" enabled
+  And  new "ListRoleTemplates" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

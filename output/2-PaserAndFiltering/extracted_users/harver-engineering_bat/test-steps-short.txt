@@ -1,0 +1,137 @@
+Feature: API Testing Steps
+Description: As an author of this library
+  I want to test that all the steps work against a mock server
+  So I can sleep at night
+
+Background: Anonymous usage
+  Given  I am anonymous
+  Given  I set the variables:
+
+Scenario 1: Testing Gets
+  Tags: ['@short']
+  When  GET "{base}/pets"
+  And  qs:
+  And  set cookie:
+  And  set:
+  Then  receive status 200
+  And  within 1000ms
+  And  receive text:
+  And  validate against schema
+  And  validate against the schema:
+  And  json path at "$.[1].name" should equal "Rover"
+  And  json path at "$.[0].age" should equal "10"
+  And  json path at "$.[0].age" should match "\d{2}"
+  And  the response header "Content-Language" should equal "en"
+
+Scenario 2: Testing Alternative Table Syntax for multiples
+  Tags: ['@short']
+  When  GET "{base}/pets"
+  And  qs:
+  And  set cookies:
+  And  set:
+  And  receive status 200
+
+Scenario 3: Testing Posts
+  Tags: ['@short']
+  When  POST "{base}/pets"
+  And  send:
+  Then  receive status 201
+
+Scenario 4: Testing urlencoded bodies
+  Tags: ['@short']
+  When  POST "{base}/pets/form"
+  And  send "form":
+  Then  receive status 201
+  And  json path at "$" should be empty
+
+Scenario 5: Testing Posts using json file
+  Tags: ['@short']
+  When  POST "{base}/pets"
+  And  send from file: "./test/files/json/sample-json.json"
+  Then  receive status 201
+
+Scenario 6: Testing openapi spec intergration
+  Tags: ['@short']
+  When  POST "{base}/pets"
+  And  qs:
+  And  send example body
+
+Scenario 7: Reuse previous values
+  Tags: ['@short']
+  When  PUT "{base}/pets/{id}"
+  And  send:
+  And  qs:
+  And  I set the placeholder "id" using the json path "$.[0].id" from the last "GET" to "{base}/pets"
+  Then  receive status 200
+  And  json path at "$.name" should equal "Felix"
+
+Scenario 8: Can Test status code 4**
+  Tags: ['@short']
+  When  PUT "{base}/pets/5000"
+  Then  receive status 418
+  And  json path at "$.message" should equal "'5000' == '1000'"
+
+Scenario 9: Testing OAuth support for Jayani
+  Tags: ['@short', '@oauth']
+  Given  get token from "{base}/auth/token" using:
+  When  GET "{base}/secret/jayani"
+  Then  receive status 201
+
+Scenario 10: Testing OAuth support for Gerald 1
+  Tags: ['@short', '@oauth']
+  Given  I am a "Gerald"
+  Given  get token from "{base}/auth/token" using:
+  When  GET "{base}/secret/gerald"
+  Then  receive status 201
+  Then  print the response body
+
+Scenario 11: Testing OAuth support for Gerald 1
+  Tags: ['@short', '@oauth']
+  Given  I am a "Gerald"
+  Given  get token from "{base}/auth/token" using:
+  When  GET "{base}/secret/gerald"
+  Then  receive status 201
+  Then  print the response body
+
+Scenario 12: Testing basic authentication
+  Tags: ['@short', '@auth']
+  Given  basic auth using:
+  When  GET "{base}/basic/auth/test"
+  Then  receive status 200
+
+Scenario 13: Testing basic authentication
+  Tags: ['@short', '@basicauth']
+  Given  basic auth using credentials from: "./test/env/dev.json"
+  When  GET "{base}/basic/auth/test"
+  Then  receive status 200
+
+Scenario 14: Testing get all pets graphql query
+  Tags: ['@short']
+  When  GraphQL:
+  Then  receive status 200
+
+Scenario 15: Testing get single pet graphql query
+  Tags: ['@short']
+  When  GraphQL:
+  Then  receive status 200
+  And  json path at "$.data.pet.id" should equal "1000"
+
+Scenario 16: Testing add a new pet graphql mutation query
+  Tags: ['@short']
+  When  GraphQL:
+  Then  receive status 200
+  And  json path at "$.data.addPet.id" should equal "3000"
+
+Scenario Outline 17: Scenario Outline name: Testing redirects - Example 1
+  Tags: ['@short']
+  When  GET "{base}/redirect/301"
+  Then  receive status 301
+
+  Examples:
+    | status |
+    | 301 |
+    | 302 |
+    | 303 |
+    | 307 |
+    | 308 |
+

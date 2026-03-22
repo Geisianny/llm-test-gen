@@ -1,0 +1,6 @@
+Scenario 1: Edit of invoice billing period fails
+  And  I follow "Edit"
+  And  I fill in "Billing Period" with "2011"
+  And  I press "Update Invoice"
+  Then  I should see "Billing period format should be YYYY-MM"
+

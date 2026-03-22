@@ -1,0 +1,7 @@
+Scenario 15: Delete Workflows webhook handle returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/chat-integrations']
+  Given  new "DeleteWorkflowsWebhookHandle" request
+  And  request contains "handle_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 204 OK
+

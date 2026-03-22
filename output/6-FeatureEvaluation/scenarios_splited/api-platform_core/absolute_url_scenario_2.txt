@@ -1,0 +1,5 @@
+Scenario: Collection of resources with absolute URLs
+  Given there is a collection of published resources
+  When the client requests the collection
+  Then the system returns a list of resources with absolute URLs
+  And each URL is in the format "https://example.com/resources/{id}"

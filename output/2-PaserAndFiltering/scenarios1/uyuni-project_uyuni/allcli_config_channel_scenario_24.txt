@@ -1,0 +1,13 @@
+Scenario 24: Re-add SLE Minion via SSM
+  Tags: ['@sle_minion']
+  When  I follow the left menu "Systems > System List > All"
+  And  I click on the clear SSM button
+  And  I check the "sle_minion" client
+  And  I follow the left menu "Systems > System Set Manager > Overview"
+  And  I follow "config channel subscriptions" in the content area
+  And  I check "Mixed Channel" in the list
+  And  I click on "Continue"
+  And  I click on "Apply Subscriptions"
+  And  I click on "Confirm"
+  Then  I should see a "Configuration channel subscriptions changed for 1 system successfully." text
+

@@ -1,0 +1,6 @@
+Scenario 5: Check the new bootstrapped SL Micro 6.1 minion in System Overview page
+  When  I wait until onboarding is completed for "slmicro61_minion"
+  And  I follow the left menu "Salt > Keys"
+  Then  I should see a "accepted" text
+  And  the Salt master can reach "slmicro61_minion"
+

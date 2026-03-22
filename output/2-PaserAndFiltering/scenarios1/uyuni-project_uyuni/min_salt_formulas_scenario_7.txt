@@ -1,0 +1,7 @@
+Scenario 7: Check the pillar data after saving the formula
+  When  I refresh the pillar data
+  Then  the pillar data for "formulas" should be "- locale" on "sle_minion"
+  And  the pillar data for "timezone:name" should be "Etc/GMT-5" on "sle_minion"
+  And  the pillar data for "keyboard_and_language:keyboard_layout" should be "French (Canada)" on "sle_minion"
+  And  the pillar data for "keyboard_and_language:language" should be "French" on "sle_minion"
+

@@ -1,0 +1,9 @@
+Scenario 1: Use a custom type for a field
+  Tags: ['@createSchema']
+  Given  there are 2 dummy objects with dummyDate
+  When  I send the following GraphQL request:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the JSON node "data.dummy.dummyDate" should be equal to "2015-04-01"
+

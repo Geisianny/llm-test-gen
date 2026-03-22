@@ -1,0 +1,7 @@
+Scenario 6: New Tab options
+  When  I tap on browser control menu icon on the bottom right of the browser view
+  Then  browser options menu is displayed
+  And  "New tab" option item is displayed in browser options menu
+  When  I tap the "New Tab" option on the Option Menu
+  Then  new browser tab is added
+

@@ -1,0 +1,344 @@
+Feature: Search - redesign
+Description: In order to get government-related information from specific affiliate agencies
+  As a site visitor
+  I want to be able to search for information on the redesigned Search page
+
+Scenario 1: Search with no query on an affiliate page
+  Tags: ['@javascript', '@a11y']
+  Given  the following BingV7 Affiliates exist:
+  When  I am on bar.gov's redesigned search page
+  Then  I should see "Please enter a search term in the box above."
+  And  I should not see pagination
+
+Scenario 2: Searching a domain with Bing results with pagination
+  Tags: ['@javascript', '@a11y']
+  Given  the following BingV7 Affiliates exist:
+  When  I am on bar.gov's redesigned search page
+  And  I search for "white house" in the redesigned search page
+  Then  I should see exactly "20" web search results
+  And  I should see "The White House"
+  And  I should see "www.whitehouse.gov/"
+  And  I should see "President Biden's Budget Topics: Reproductive Rights"
+  And  I should be on page "1" of results
+  And  I should see pagination
+  And  I should see a link to the "Next" page
+  And  I should not see a link to the "Previous" page
+  When  I click on the "Next" page
+  Then  I should see exactly "20" web search results
+  And  I should be on page "2" of results
+  And  I should see a link to the "Next" page
+  And  I should see a link to the "Previous" page
+  When  I search for "America" in the redesigned search page
+  Then  I should be on page "1" of results
+  And  I should see exactly "20" web search results
+  And  I should see a link to the "Next" page
+  And  I should not see a link to the "Previous" page
+  And  I should see Powered by Bing
+
+Scenario 3: Search with I14y results with pagination
+  Tags: ['@javascript', '@a11y']
+  Given  the following SearchGov Affiliates exist:
+  Given  there are results for the "searchgov" drawer
+  When  I am on healthcare.gov's redesigned search page
+  And  I search for "marketplace" in the redesigned search page
+  Then  I should see exactly "20" web search results
+  And  I should see "Marketplace"
+  And  I should see "www.healthcare.gov/glossary/marketplace"
+  And  I should see "More info on Health Insurance"
+  And  I should see pagination
+  And  I should be on page "1" of results
+  And  I should see a link to the "Next" page
+  And  I should not see a link to the "Previous" page
+  And  I should see a link to the last page ("14")
+  And  I should see "270 results"
+  When  I click on the last page ("14")
+  Then  I should see exactly "20" web search results
+  And  I should be on page "14" of results
+  And  I should not see a link to the "Next" page
+  And  I should see a link to the "Previous" page
+  And  I should see Powered by Search.gov
+
+Scenario 4: Search with blended results
+  Tags: ['@javascript', '@a11y']
+  Given  the following BingV7 Affiliates exist:
+  And  the following IndexedDocuments exist:
+  When  I am on bar.gov's redesigned search page
+  And  I search for "article" in the redesigned search page
+  Then  I should see exactly "6" web search results
+  And  I should see "The last hour article"
+  And  I should see "p.whitehouse.gov/hour.html"
+  And  I should see "Within the last hour article on item"
+  And  I should not see pagination
+  And  I should see "6 results"
+  And  I should see Powered by Search.gov
+
+Scenario 5: Search with best bets
+  Tags: ['@javascript', '@a11y']
+  Given  the following SearchGov Affiliates exist:
+  Given  the following Boosted Content entries exist for the affiliate "healthcare.gov"
+  And  the following featured collections exist for the affiliate "healthcare.gov":
+  Given  there are results for the "searchgov" drawer
+  When  I am on healthcare.gov's redesigned search page
+  And  I search for "hippopotamus" in the redesigned search page
+  Then  I should see 1 Best Bets Text
+  And  I should see 1 Best Bets Graphic
+  And  I should see "Recommended by HealthCare.gov"
+  And  I should see "Hippopotamus item"
+  And  I should see "http://healthcare.gov/hippopotamus-amphibius"
+  And  I should see "large, mostly herbivorous mammal in sub-Saharan Africa"
+  And  I should see "Hippopotamus graphic"
+
+Scenario 6: News search
+  Tags: ['@javascript', '@a11y']
+  Given  the following BingV7 Affiliates exist:
+  And  affiliate "bar.gov" has the following RSS feeds:
+  And  feed "Press" has the following news items:
+  When  I am on bar.gov's redesigned news search page
+  And  I search for "item" in the redesigned search page
+  Then  I should see "First"
+  And  I should see "Second"
+  And  I should see exactly "2" web search results
+  And  I should see "2 results"
+  And  I should see Powered by Search.gov
+
+Scenario 7: Docs search
+  Tags: ['@javascript', '@a11y']
+  Given  the following BingV7 Affiliates exist:
+  When  I am on agency.gov's redesigned docs search page
+  And  I search for "USA" in the redesigned search page
+  Then  I should see exactly "20" web search results
+
+Scenario 8: Job search
+  Tags: ['@javascript', '@a11y']
+  Given  the following BingV7 Affiliates exist:
+  When  I am on en.agency.gov's search page
+  And  I fill in "Enter your search term" with "jobs"
+  And  I press "Search"
+  Then  I should see "Federal Job Openings"
+  And  I should see "Multiple Locations"
+  And  I should see "$64,660.00-$170,800.00 PA"
+  And  I should see an image link to "USAJobs.gov" with url for "https://www.usajobs.gov/"
+  And  I should see a link to "More federal job openings on USAJobs.gov" with url for "https://www.usajobs.gov/Search/Results?hp=public"
+
+Scenario 9: News search
+  Tags: ['@javascript', '@a11y']
+  Given  the following BingV7 Affiliates exist:
+  And  affiliate "en.agency.gov" has the following RSS feeds:
+  And  affiliate "es.agency.gov" has the following RSS feeds:
+  And  there are 150 news items for "News-1"
+  And  there are 5 news items for "Noticias-1"
+  When  I am on en.agency.gov's "News-1" news search page
+  And  I fill in "Enter your search term" with "news item"
+  And  I press "Search"
+  Then  the "Enter your search term" field should contain "news item"
+  And  I should see exactly "20" web search results
+  And  I should see a link to "2" with class "usa-pagination__button"
+  And  I should see a link to "Next"
+  When  I follow "Next"
+  And  I should see exactly "20" web search results
+  And  I should see a link to "Previous"
+  And  I should see a link to "1" with class "usa-pagination__button"
+  And  I should see "Next"
+  When  I follow page "5"
+  And  I follow page "7"
+  And  I follow page "8"
+  And  I should see exactly "10" web search results
+  When  I am on es.agency.gov's "Noticias-1" news search page
+  And  I should see exactly "5" web search results
+
+Scenario 10: Searchers see English Medline Govbox
+  Tags: ['@javascript', '@a11y']
+  Given  the following BingV7 Affiliates exist:
+  And  the following Medline Topics exist:
+  When  I am on english-nih's search page
+  And  I fill in "searchQuery" with "hippopotomonstrosesquippedaliophobia"
+  And  I press "Search"
+  Then  I should not see "Hippopotomonstrosesquippedaliophobia y otros miedos irracionales"
+  Given  the following Medline Topics exist:
+  And  the following Related Medline Topics for "Hippopotomonstrosesquippedaliophobia" in English exist:
+  When  I am on english-nih's search page
+  And  I fill in "searchQuery" with "hippopotomonstrosesquippedaliophobia"
+  And  I press "Search"
+  Then  I should see "Hippopotomonstrosesquippedaliophobia and Other Irrational Fears" within the serp med topic govbox
+  And  I should see a link to "Hippo1" with url for "https://www.nlm.nih.gov/medlineplus/Hippopotomonstrosesquippedaliophobia.html"
+
+Scenario 11: Searchers see Spanish Medline Govbox
+  Tags: ['@javascript', '@a11y']
+  Given  the following BingV7 Affiliates exist:
+  And  the following Medline Topics exist:
+  When  I am on spanish-nih's search page
+  And  I fill in "searchQuery" with "hippopotomonstrosesquippedaliophobia"
+  And  I press "Buscar"
+  Then  I should not see "Hippopotomonstrosesquippedaliophobia and Other Irrational Fears"
+  Given  the following Medline Topics exist:
+  When  I am on spanish-nih's search page
+  And  I fill in "searchQuery" with "hippopotomonstrosesquippedaliophobia"
+  And  I press "Buscar"
+  Then  I should see "Hippopotomonstrosesquippedaliophobia y otros miedos irracionales" within the serp med topic govbox
+
+Scenario 12: Searching with custom visual design settings
+  Tags: ['@javascript', '@a11y']
+  Given  the following BingV7 Affiliates exist:
+  When  I am on agency.gov's redesigned docs search page
+  Then  I should see the basic header
+  Given  the following BingV7 Affiliates exist:
+  When  I am on agency.gov's redesigned docs search page
+  Then  I should see the extended header
+
+Scenario 13: Searching on sites with federal register documents
+  Tags: ['@javascript', '@a11y']
+  And  the following BingV7 Affiliates exist:
+  And  the following Federal Register Document entries exist:
+  When  I am on en.agency.gov's search page
+  And  I fill in "Enter your search term" with "collection"
+  And  I press "Search"
+  And  I should see "A Notice by the Internal Revenue Service, the International Trade Administration and the National Oceanic and Atmospheric Administration posted on June 09, 2014."
+  And  I should see "Comment period ends in 7 days"
+  And  I should see "Pages 33040 - 33041 (2 pages) [FR DOC #: 2014-13420]"
+
+Scenario 14: Search without tabs nor related searches
+  Tags: ['@javascript', '@a11y']
+  Given  the following BingV7 Affiliates exist:
+  When  I am on bar.gov's redesigned search page
+  Then  I should not see "Everything"
+  And  I should not see "More"
+  And  I should not see "Related Searches"
+
+Scenario 15: Search with tabs and one related site on menu
+  Tags: ['@javascript', '@a11y']
+  Given  the following BingV7 Affiliates exist:
+  And  affiliate "bar.gov" has the following document collections:
+  And  the following Connections exist for the affiliate "bar.gov":
+  When  I am on bar.gov's redesigned search page
+  Then  I should see "Everything"
+  And  I should see "Topics"
+  And  I should see "Other Site"
+
+Scenario 16: Search with tabs and more than one related site on menu
+  Tags: ['@javascript', '@a11y']
+  Given  the following BingV7 Affiliates exist:
+  And  affiliate "bar.gov" has the following document collections:
+  And  the following Connections exist for the affiliate "bar.gov":
+  When  I am on bar.gov's redesigned search page
+  Then  I should see "Everything"
+  And  I should see "Topics"
+  And  I press "View topic"
+  And  I should see "Other Site"
+  And  I should see "Third Site"
+
+Scenario 17: Search with too many tabs and multiple related sites
+  Tags: ['@javascript', '@a11y']
+  Given  the following BingV7 Affiliates exist:
+  And  affiliate "bar.gov" has the following document collections:
+  And  the following Connections exist for the affiliate "bar.gov":
+  When  I am on bar.gov's redesigned search page
+  Then  I should see "Everything"
+  And  I should see "Topics"
+  And  I should see "Very very long colllection name one"
+  And  I should not see "Related Searches"
+  And  I press "More"
+  And  I should see "Very very long colllection name two"
+  And  I should see "View topic"
+  And  I should see "Other Site"
+
+Scenario 18: Video news search
+  Tags: ['@javascript', '@a11y']
+  Given  the following BingV7 Affiliates exist:
+  And  affiliate "en.agency.gov" has the following RSS feeds:
+  And  affiliate "es.agency.gov" has the following RSS feeds:
+  And  there are 20 video news items for "usgovernment_channel_id"
+  And  there are 20 video news items for "whitehouse_channel_id"
+  And  there are 5 video news items for "gobiernousa_channel_id"
+  When  I am on en.agency.gov's search page
+  And  I fill in "Enter your search term" with "video"
+  And  I press "Search"
+  Then  I should see exactly "1" redesigned video search result
+  When  I follow "Videos"
+  Then  I should see exactly "20" redesigned video search result
+  And  I should see a link to "2" with class "usa-pagination__button"
+  And  I should see a link to "Next"
+  And  I should see Powered by Search.gov
+  When  I follow "Next"
+  Then  I should see exactly "20" redesigned video search results
+  And  I should see a link to "Previous"
+  And  I should see a link to "1" with class "usa-pagination__button"
+  When  I follow "Previous"
+  And  I follow page "2"
+  Then  I should see exactly "20" redesigned video search results
+  When  I follow page "1"
+  Then  I should see exactly "20" redesigned video search results
+
+Scenario 19: Display an Alert on search page
+  Tags: ['@javascript', '@a11y']
+  Given  the following BingV7 Affiliates exist:
+  Given  the following Alert exists:
+  When  I am on en.agency.gov's search page
+  Then  I should see "New alert for the test aff"
+
+Scenario 20: Hide an Alert on search page
+  Tags: ['@javascript', '@a11y']
+  Given  the following BingV7 Affiliates exist:
+  Given  the following Alert exists:
+  When  I am on en.agency.gov's search page
+  Then  I should not see "New alert for the test aff"
+
+Scenario 21: Searching with spelling suggestions
+  Tags: ['@javascript', '@a11y']
+  Given  the following BingV7 Affiliates exist:
+  When  I am on agency.gov's search page
+  And  I search for "qeury" in the redesigned search page
+  Then  I should see "Showing results for query"
+  And  I should see "Search instead for qeury"
+
+Scenario 22: Related searches module
+  Tags: ['@javascript', '@a11y']
+  Given  the following BingV7 Affiliates exist:
+  And  the following SAYT Suggestions exist for en.agency.gov:
+  When  I am on en.agency.gov's search page
+  And  I fill in "Enter your search term" with "president"
+  And  I press "Search"
+  Then  I should see 2 redesigned related searches
+
+Scenario 23: Search for the results with file extension
+  Tags: ['@javascript', '@a11y']
+  Given  the following BingV7 Affiliates exist:
+  And  the following IndexedDocuments exist:
+  When  I am on bar.gov's redesigned search page
+  And  I search for "PDF" in the redesigned search page
+  Then  I should see exactly "2" web search results
+  And  I should see "The PDF document"
+  And  I should see "p.whitehouse.gov/hour.pdf"
+  And  I should see "Within the last hour PDF on item"
+  And  I should not see pagination
+  And  I should see "2 results"
+
+Scenario 24: Search with site limits
+  Tags: ['@javascript', '@a11y']
+  Given  the following BingV7 Affiliates exist:
+  When  I am on agency.gov's search page with site limited to "www.epa.gov/news"
+  And  I fill in "Enter your search term" with "carbon emissions"
+  And  I press "Search"
+  Then  I should see "We're including results for carbon emissions from www.epa.gov/news only."
+
+Scenario 25: Search with custom no results page
+  Tags: ['@javascript', '@a11y']
+  Given  the following BingV7 Affiliates exist:
+  And  the "search.gov" affiliate has additional links for the no results module
+  When  I am on search.gov's search page
+  And  I fill in "Enter your search term" with "lkssldfkjsldfkjsld kfj"
+  And  I press "Search"
+  Then  I should see "Sorry, there are no results."
+  And  I should see "First no results link"
+  And  I should see "Second no results link"
+
+Scenario 26: Search with video results
+  Tags: ['@javascript', '@a11y_wip']
+  Given  the following BingV7 Affiliates exist:
+  And  affiliate "en.agency.gov" has the following RSS feeds:
+  And  there are 20 video news items for "whitehouse_channel_id"
+  When  I am on en.agency.gov's redesigned search page
+  And  I search for "video" in the redesigned search page
+  Then  I should see exactly "1" video govbox search results in the redesigned SERP
+  And  I should see "7 days ago" in the video govbox
+  And  I should see "More videos about video"
+

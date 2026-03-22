@@ -1,0 +1,6 @@
+Scenario: Preview welcome email content
+  Given there is an admin logged into the system
+  And the welcome email content is currently "Current welcome email content"
+  When the admin previews the welcome email content
+  Then the system displays the welcome email content as "Current welcome email content"
+  And the admin can see the preview of the email

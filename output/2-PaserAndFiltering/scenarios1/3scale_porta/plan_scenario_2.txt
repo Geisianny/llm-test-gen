@@ -1,0 +1,5 @@
+Scenario 2: Plans tab is hidden with multiple account plans but not published
+  Given  the following account plans:
+  When  they go to settings
+  Then  there shouldn't be a link to "Plans"
+

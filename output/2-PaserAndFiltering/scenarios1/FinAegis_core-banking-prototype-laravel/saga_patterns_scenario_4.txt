@@ -1,0 +1,8 @@
+Scenario 4: Saga with external service integration failure
+  Given  payment gateway integration is configured
+  And  account "A" has balance of 500.00 USD
+  When  I initiate an external payment saga
+  And  the external payment gateway times out
+  Then  the saga should:
+  And  circuit breaker should be triggered for the gateway
+

@@ -1,0 +1,5 @@
+Scenario 1: Previewing changes to the ministers index page during reshuffle
+  Given  reshuffle mode is on
+  When  I visit the Cabinet ministers order page
+  Then  I should see a preview link to the ministers index page
+

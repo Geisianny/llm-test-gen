@@ -1,0 +1,4 @@
+Scenario 10: List systems by patch status via API after patch
+  And  I call audit.list_systems_by_patch_status() with CVE identifier "CVE-1999-9999"
+  Then  I should get status "PATCHED" for "sle_minion"
+

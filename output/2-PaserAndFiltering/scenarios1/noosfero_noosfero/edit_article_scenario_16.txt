@@ -1,0 +1,8 @@
+Scenario 16: save and continue
+  Given  I am on /joaosilva/save-the-whales
+  And  I follow "Edit"
+  When  I fill in "Text" with "new text"
+  And  I follow "Save and continue"
+  Then  the "Text" field should contain "new text"
+  And  I should be on "Save the whales" edit page
+

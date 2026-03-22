@@ -1,0 +1,4 @@
+Scenario 3: See emails in volunteer opportunity pages are hyperlinked
+  Given  I visit the show page for the volunteer_op titled "Litter Box Scooper"
+  Then  the page includes email hyperlink "test@test.com"
+

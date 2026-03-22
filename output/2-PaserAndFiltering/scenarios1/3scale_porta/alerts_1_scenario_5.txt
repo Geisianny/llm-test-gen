@@ -1,0 +1,6 @@
+Scenario 5: Deleting alerts
+  Given  they go to the alerts of "My Product"
+  When  they press "Delete" in the 1st row
+  And  confirm the dialog
+  Then  they should see the following table:
+

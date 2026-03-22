@@ -1,0 +1,9 @@
+Scenario 27: Sidebar link destination for Systems => System Types
+  When  I follow the left menu "Systems > System List > System Types"
+  Then  I should see a "System Types" text
+  And  I should see a "Management:" text
+  And  I should see a "Salt:" text
+  And  I should see a "Foreign:" text
+  And  I should see a "Virtualization Host:" text
+  And  the current path is "/rhn/systems/SystemEntitlements.do"
+

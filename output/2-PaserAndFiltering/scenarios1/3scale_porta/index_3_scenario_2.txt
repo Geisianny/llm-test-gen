@@ -1,0 +1,6 @@
+Scenario 2: Navigation via products widget
+  Given  they go to the provider dashboard
+  When  they select action "Applications" of "My API" within the products widget
+  And  follow "Application Plans" within the main menu
+  Then  the current page is the product's application plans admin page
+

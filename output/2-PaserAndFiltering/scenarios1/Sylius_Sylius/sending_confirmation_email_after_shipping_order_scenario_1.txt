@@ -1,0 +1,7 @@
+Scenario 1: Sending a confirmation email after shipping an order
+  Tags: ['@api', '@ui', '@email']
+  When  I view the summary of the order "#00000666"
+  And  specify its tracking code as "#00044"
+  And  I ship this order
+  Then  an email with shipment's details of this order should be sent to "lucy@teamlucifer.com"
+

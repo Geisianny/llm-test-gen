@@ -1,0 +1,7 @@
+Scenario 11: dont list events from other profiles
+  Given  the following users
+  And  the following events
+  When  I am on /profile/josesilva/events/2009/10/24
+  Then  I should see "Another Conference"
+  And  I should not see "Manuel Birthday"
+

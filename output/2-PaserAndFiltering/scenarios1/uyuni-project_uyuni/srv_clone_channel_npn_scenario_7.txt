@@ -1,0 +1,10 @@
+Scenario 7: Check that new patches exists
+  When  I follow the left menu "Patches > Patch List > All"
+  And  I enter "dummy" as the filtered synopsis
+  And  I click on the filter button
+  And  I select "500" from "1154021400_PAGE_SIZE_LABEL"
+  Then  I should see a "CL-hoag-dummy-7890" link
+  And  I should see a "CL-virgo-dummy-3456" link
+  And  I should see a "CL-milkyway-dummy-2345" link
+  And  I should see a "CL-andromeda-dummy-6789" link
+

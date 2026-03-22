@@ -1,0 +1,10 @@
+Scenario 4: Receiving no discount if promotion's usage for the applied coupon is already exceeded
+  Tags: ['@api', '@ui']
+  Given  this promotion has usage limit equal to 100
+  And  this promotion usage limit is already reached
+  And  I added 2 products "PHP T-Shirt" to the cart
+  And  I applied the coupon with code "SANTA2016"
+  When  I check the details of my cart
+  Then  my cart total should be "$200.00"
+  And  there should be no discount applied
+

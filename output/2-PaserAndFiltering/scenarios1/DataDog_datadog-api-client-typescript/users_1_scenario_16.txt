@@ -1,0 +1,7 @@
+Scenario 16: Send invitation emails returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "SendInvitations" request
+  And  body with value {"data": []}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

@@ -1,0 +1,7 @@
+Scenario 4: Buyers don't see their keys on the account details page
+  Given  the following application plan:
+  And  a buyer "bob" signed up to application plan "Default"
+  When  I log in as "bob" on foo.3scale.localhost
+  And  I follow "Settings"
+  Then  I should not see "API Key"
+

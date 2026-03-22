@@ -1,0 +1,8 @@
+Scenario 5: unadmin user
+  Tags: ['@selenium']
+  Given  I follow "Set admin role" within "tr[title='Paulo Santos']"
+  And  I confirm the browser dialog
+  And  I follow "Reset admin role" within "tr[title='Paulo Santos']"
+  When  I confirm the browser dialog
+  Then  the field "tr[title='Paulo Santos'] td.actions a[title='Set admin role']" should be enabled
+

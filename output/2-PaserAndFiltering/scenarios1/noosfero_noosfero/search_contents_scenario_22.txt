@@ -1,0 +1,13 @@
+Scenario 22: show and link last posts on blog search results
+  Given  the following blogs
+  And  the following articles
+  And  the following rss feeds
+  When  I search contents for "JSilva"
+  Then  I should see "Last posts" within ".main-content"
+  And  I should see "post #1"
+  And  I should see "post #2"
+  And  I should not see "post #3"
+  And  I should see "post #4"
+  When  I follow "post #1"
+  Then  I should be on article "post #1"
+

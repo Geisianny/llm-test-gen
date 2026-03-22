@@ -1,0 +1,7 @@
+Scenario 4: Create RH SSO new integration
+  Given  they go to the new sso integration page
+  When  the form is submitted with:
+  Then  they should see a toast alert with text "SSO integration created"
+  And  the current page is the sso integration page
+  And  should see "Red Hat Single Sign-On"
+

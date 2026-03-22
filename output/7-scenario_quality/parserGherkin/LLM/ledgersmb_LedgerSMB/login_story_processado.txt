@@ -1,0 +1,51 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: login_story_processado.feature
+Caminho relativo: ledgersmb_LedgerSMB\login_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\ledgersmb_LedgerSMB\login_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: login_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Admin successful login
+   Steps: 5
+   - Given there is an admin user with the username "admin" and password "password123"
+   - When the admin logs in with the username "admin"
+   - And enters the correct password "password123"
+   - Then the system grants access to the admin dashboard
+   - And displays a message confirming successful login
+2. User successful login
+   Steps: 5
+   - Given there is a user with the username "user1" and password "password123"
+   - When the user logs in with the username "user1"
+   - And enters the correct password "password123"
+   - Then the system grants access to the user dashboard
+   - And displays a message confirming successful login
+3. Login with incorrect credentials
+   Steps: 5
+   - Given there is a user with the username "user1" and password "password123"
+   - When the user logs in with the username "user1"
+   - And enters the incorrect password "wrongPassword"
+   - Then the system denies access
+   - And displays a message indicating that the username or password is incorrect
+4. Automatic redirection to login page from root
+   Steps: 4
+   - Given the user is on the application root page
+   - When the user accesses the root page
+   - Then the system redirects to the login page
+   - And displays the login form
+5. Accessing setup page
+   Steps: 4
+   - Given the system is not configured
+   - When the user accesses the setup page
+   - Then the system displays the setup page
+   - And allows the user to configure the system

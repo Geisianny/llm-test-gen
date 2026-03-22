@@ -1,0 +1,9 @@
+Scenario 1: Adding a simple product with discounted catalog price to the cart
+  Tags: ['@api', '@ui']
+  Given  I added product "T-Shirt" to the cart
+  And  I added product "Mug" to the cart
+  When  I check the details of my cart
+  And  I should see "T-Shirt" with unit price "$15.00" in my cart
+  And  I should see "T-Shirt" with original price "$20.00" in my cart
+  And  I should see "Mug" only with unit price "$40.00" in my cart
+

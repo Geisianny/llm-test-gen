@@ -1,0 +1,7 @@
+Scenario 1: Accepting a product review
+  Tags: ['@ui', '@api']
+  When  I want to browse product reviews
+  And  I accept the "Awesome" product review
+  Then  I should be notified that it has been successfully accepted
+  And  this product review status should be "accepted"
+

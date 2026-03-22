@@ -1,0 +1,7 @@
+Scenario 6: Get a single service object returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "GetPagerDutyIntegrationService" request
+  And  request contains "service_name" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 200 OK
+

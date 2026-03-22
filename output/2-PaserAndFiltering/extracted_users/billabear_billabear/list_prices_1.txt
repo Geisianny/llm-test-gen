@@ -1,0 +1,15 @@
+Feature: View prices
+Description: In order to ensure the price data is correct for a product
+  As an APP user
+  I need to be able to view the prices for a product
+
+Background: 
+  Given  the following accounts exist:
+
+Scenario 1: View Product
+  When  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  the follow products exist:
+  And  the follow prices exist:
+  When  I use the APP to view product "Product One"
+  Then  I will see the "prices" contains 3 items
+

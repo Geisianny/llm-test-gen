@@ -1,0 +1,9 @@
+Scenario 2: Create a new key
+  When  I follow the left menu "Systems > Custom System Info"
+  And  I follow "Create Key"
+  And  I should see a "Create Custom Info Key" text
+  And  I enter "key-label" as "label"
+  And  I enter "key-desc" as "description"
+  And  I click on "Create Key"
+  Then  I should see a "Successfully added 1 custom key." text
+

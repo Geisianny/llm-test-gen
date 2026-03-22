@@ -1,0 +1,11 @@
+Scenario 3: Hit and change plan the same day bills hit on the new plan
+  Tags: ['@javascript']
+  Given  the buyer is signed up to application plan "CheapPlan" on 1st May 2009
+  And  buyer "stallman" makes 1 service transactions with:
+  When  I log in as "stallman" on foo.3scale.localhost
+  And  the buyer changes to application plan "ExpensivePlan"
+  Then  buyer "stallman" makes 1 service transactions with:
+  And  current domain is the admin domain of provider "foo.3scale.localhost" on 3rd June 2009
+  Then  I log in as provider "foo.3scale.localhost"
+  Then  I should have an invoice of "20.0 EUR"
+

@@ -1,0 +1,9 @@
+Scenario 12: Delete deployment rule returns "Bad request." response
+  Tags: ['@generated', '@skip', '@team:DataDog/ci-app-backend']
+  Given  operation "DeleteDeploymentRule" enabled
+  And  new "DeleteDeploymentRule" request
+  And  request contains "gate_id" parameter from "REPLACE.ME"
+  And  request contains "id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad request.
+

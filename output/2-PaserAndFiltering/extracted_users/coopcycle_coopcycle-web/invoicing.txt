@@ -1,0 +1,63 @@
+Feature: Invoicing
+
+Scenario 1: Get invoice line items
+  Given  the fixtures files are loaded with purge:
+  Given  the fixtures files are loaded:
+  Given  the user "admin" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "admin" sends a "GET" request to "/api/invoice_line_items"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "admin" sends a "GET" request to "/api/invoice_line_items?page=34"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 2: Get invoice line items filtered by store
+  Given  the fixtures files are loaded with purge:
+  Given  the fixtures files are loaded:
+  Given  the user "admin" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "admin" sends a "GET" request to "/api/invoice_line_items?store=1"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 3: Get invoice line items filtered by multiple stores
+  Given  the fixtures files are loaded with purge:
+  Given  the fixtures files are loaded:
+  Given  the user "admin" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "admin" sends a "GET" request to "/api/invoice_line_items?store[]=1&store[]=35&itemsPerPage=100"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 4: Get invoice line items grouped by organization
+  Given  the fixtures files are loaded with purge:
+  Given  the fixtures files are loaded:
+  Given  the user "admin" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "admin" sends a "GET" request to "/api/invoice_line_items/grouped_by_organization"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 5: Get invoice line items by date
+  Given  the fixtures files are loaded with purge:
+  Given  the fixtures files are loaded:
+  Given  the user "admin" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "admin" sends a "GET" request to "/api/invoice_line_items?date[after]=2025-01-01&date[before]=2025-01-03"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+

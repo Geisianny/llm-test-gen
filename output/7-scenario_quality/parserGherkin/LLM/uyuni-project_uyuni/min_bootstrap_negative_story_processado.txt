@@ -1,0 +1,54 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: min_bootstrap_negative_story_processado.feature
+Caminho relativo: uyuni-project_uyuni\min_bootstrap_negative_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\uyuni-project_uyuni\min_bootstrap_negative_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: min_bootstrap_negative_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Register a machine with valid parameters
+   Steps: 5
+   - Given there is an authorized user
+   - And there is no registered machine with the name "minion1"
+   - When the user registers a new machine with the name "minion1" and valid credentials
+   - Then the system registers the machine successfully
+   - And displays a message confirming successful registration
+2. Register a machine that is already registered
+   Steps: 5
+   - Given there is an authorized user
+   - And there is a registered machine with the name "minion1"
+   - When the user registers a new machine with the name "minion1" and valid credentials
+   - Then the system denies registration
+   - And displays a message indicating that the machine is already registered
+3. Register a machine with non-existent name
+   Steps: 5
+   - Given there is an authorized user
+   - When the user registers a new machine with a non-existent name "nonexistentminion"
+   - And valid credentials
+   - Then the system denies registration
+   - And displays a message indicating that the machine name does not exist
+4. Register a machine with incorrect access credentials
+   Steps: 6
+   - Given there is an authorized user
+   - And there is a machine with the name "minion1"
+   - When the user registers a new machine with the name "minion1"
+   - And incorrect credentials
+   - Then the system denies registration
+   - And displays a message indicating that the access credentials are incorrect
+5. Register a machine with an invalid port
+   Steps: 5
+   - Given there is an authorized user
+   - And there is a machine with the name "minion1" on an invalid port
+   - When the user registers a new machine with the name "minion1" and valid credentials on the invalid port
+   - Then the system denies registration
+   - And displays a message indicating that the connection cannot be established on the specified port

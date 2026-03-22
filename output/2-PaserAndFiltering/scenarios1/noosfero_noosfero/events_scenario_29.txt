@@ -1,0 +1,6 @@
+Scenario 29: show event name as link
+  Given  the following events
+  And  I am logged in as "josesilva"
+  When  I am on /profile/josesilva/events/2009/10/25
+  Then  I should see "Unpublished event" link
+

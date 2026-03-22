@@ -1,0 +1,5 @@
+Scenario: Verify breadcrumbs for Messages under Offerer menu
+  Given the user is on the homepage
+  And the user navigates to the "Offerer" menu
+  When the user clicks on "Messages"
+  Then the breadcrumbs display "Home > Offerer > Messages"

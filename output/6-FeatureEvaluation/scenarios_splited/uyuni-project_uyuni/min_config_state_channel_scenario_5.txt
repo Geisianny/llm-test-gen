@@ -1,0 +1,5 @@
+Scenario: Remove a system from a state channel
+  Given there is an existing state channel named "Test Channel"
+  And there is a registered system named "Test System" associated with the state channel "Test Channel"
+  When the user removes the system "Test System" from the state channel "Test Channel"
+  Then the system "Test System" is no longer associated with the state channel "Test Channel"

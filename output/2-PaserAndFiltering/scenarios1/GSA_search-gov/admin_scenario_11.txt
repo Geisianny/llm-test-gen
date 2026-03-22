@@ -1,0 +1,21 @@
+Scenario 11: Managing Search.gov URLs
+  Tags: ['@javascript']
+  Given  the following "searchgov domains" exist:
+  And  the following "searchgov urls" exist:
+  When  I go to the admin home page
+  And  I follow "Search.gov Domains"
+  And  I follow "URLs" within the first scaffold row
+  Then  I should see "search.gov/page1"
+  And  I should see "Enqueued for reindex"
+  When  I follow "Fetch"
+  And  I wait for ajax
+  Then  I should see "Your URL has been added to the fetching queue"
+  When  I follow the first "Delete" and confirm in the SearchgovDomain URLs header
+  Then  I should not see "https://search.gov/page1"
+  When  I follow "Search" in the SearchgovDomain URLs table
+  Then  I should see "Enqueued for reindex" in the super admin search form
+  When  I follow "Delete" within the first scaffold row
+  And  I fill in "confirmation" with "DESTROY DOMAIN"
+  And  I press "Confirm Deletion"
+  Then  I should see "Deletion has been enqueued for search.gov"
+

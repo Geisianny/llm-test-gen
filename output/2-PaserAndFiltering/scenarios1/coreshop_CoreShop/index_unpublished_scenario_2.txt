@@ -1,0 +1,5 @@
+Scenario 2: The object instance is enabled and published
+  Given  the object-instance has following values:
+  And  the object-instance is published
+  Then  the index should have indexed the object
+

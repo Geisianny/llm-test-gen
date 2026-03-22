@@ -1,0 +1,8 @@
+Scenario 2: Attempt to bypass ToU without accepting terms
+  When  I kill the app
+  And  I relaunch the app
+  And  the app displayed the splash animation
+  Then  the Welcome Screen is displayed
+  When  I tap "Get started"
+  Then  Terms of Use is displayed
+

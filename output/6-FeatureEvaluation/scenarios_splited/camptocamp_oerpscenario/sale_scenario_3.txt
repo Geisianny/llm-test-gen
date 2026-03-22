@@ -1,0 +1,5 @@
+Scenario: Generate invoice from a confirmed sales order
+  Given there is a confirmed sales order
+  When the administrator generates an invoice from the sales order
+  Then the system creates an invoice with the correct amount
+  And the invoice is in the "open" state

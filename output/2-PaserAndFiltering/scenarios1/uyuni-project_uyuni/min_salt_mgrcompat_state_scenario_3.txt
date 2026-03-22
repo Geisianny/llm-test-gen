@@ -1,0 +1,12 @@
+Scenario 3: Remove saltutil grain and mgrcompat module from minion and schedule Hardware Refresh
+  Given  I remove "minion/extmods/states/mgrcompat.py" from salt cache on "sle_minion"
+  And  I remove "minion/extmods/states/__pycache__/mgrcompat*" from salt cache on "sle_minion"
+  And  I store "grains: {__suse_reserved_saltutil_states_support: False}" into file "custom_grains.conf" in salt minion config directory on "sle_minion"
+  And  I refresh salt-minion grains on "sle_minion"
+  And  I am on the Systems overview page of this "sle_minion"
+  When  I follow "Hardware"
+  And  I click on "Schedule Hardware Refresh"
+  Then  I should see a "You have successfully scheduled a hardware profile refresh" text
+  When  I wait until event "Hardware List Refresh scheduled" is completed
+  And  I wait until there is no Salt job calling the module "hardware.profileupdate" on "sle_minion"
+

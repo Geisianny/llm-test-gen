@@ -1,0 +1,5 @@
+Scenario 2: Confirm contract address warning
+  When  I tap on button with text "I understand the risks, continue"
+  Then  I proceed to the amount view
+  And  I tap on button with text "Cancel"
+

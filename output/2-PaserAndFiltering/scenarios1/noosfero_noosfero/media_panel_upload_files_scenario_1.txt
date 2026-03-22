@@ -1,0 +1,4 @@
+Scenario 1: see media panel collapsed
+  Then  I should see "Insert media"
+  And  I should not see an element ".show-media-panel"
+

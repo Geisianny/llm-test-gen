@@ -1,0 +1,6 @@
+Scenario: Apply price range filter
+  Given there are listings with prices between $10 and $1000
+  When the user types a keyword "electronics" in the search box
+  And hits enter
+  And sets the price range filter to $50 to $200
+  Then the system displays listings containing "electronics" with prices between $50 and $200

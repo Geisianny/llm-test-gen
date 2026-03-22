@@ -1,0 +1,6 @@
+Scenario 6: Test UX components : ReParagraphStatus dynamic-html
+  When  I go to "/test/ux-component/ReParagraphStatus/dynamichtml"
+  Then  I should see 0 "p.dynamic-content" element
+  When  I click the "button" selector
+  Then  I should see 1 "p.dynamic-content" element
+

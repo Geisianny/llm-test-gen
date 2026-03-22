@@ -1,0 +1,9 @@
+Scenario 3: Trying to specify too short last name for an existing customer
+  Tags: ['@ui']
+  Given  the store has customer "l.skywalker@gmail.com" with first name "Luke"
+  And  I want to edit this customer
+  When  I specify their last name as "S"
+  And  I try to save my changes
+  Then  I should be notified that last name should be at least 2 characters long
+  And  the customer "l.skywalker@gmail.com" should still have an empty last name
+

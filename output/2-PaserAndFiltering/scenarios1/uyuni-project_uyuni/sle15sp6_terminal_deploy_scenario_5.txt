@@ -1,0 +1,11 @@
+Scenario 5: Remove a package on the SLES 15 SP6 retail terminal
+  When  I follow "Software" in the content area
+  And  I follow "List / Remove"
+  And  I enter "rust" as the filtered package name
+  And  I click on the filter button
+  And  I check "rust-1" in the list
+  And  I click on "Remove Packages"
+  And  I click on "Confirm"
+  Then  I should see a "1 package removal has been scheduled" text
+  When  I wait until event "Package Removal scheduled" is completed
+

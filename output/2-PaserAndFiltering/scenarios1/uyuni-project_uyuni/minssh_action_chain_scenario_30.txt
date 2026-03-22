@@ -1,0 +1,6 @@
+Scenario 30: Cleanup: remove temporary files for testing action chains on SSH minion
+  When  I run "rm -f /tmp/action_chain.log" on "ssh_minion" without error control
+  And  I run "rm -f /tmp/action_chain_done" on "ssh_minion" without error control
+  And  I run "rm -f /etc/action-chain.cnf" on "ssh_minion" without error control
+  And  I run "rm -f /tmp/action_chain_one_system_done" on "ssh_minion" without error control
+

@@ -1,0 +1,9 @@
+Scenario 22: Cleanup: remove the new group
+  When  I follow the left menu "Systems > System Groups"
+  When  I follow "new-systems-group" in the content area
+  And  I follow "Delete Group" in the content area
+  And  I click on "Confirm Deletion"
+  Then  I should see a "System group" text
+  And  I should see a "new-systems-group" text
+  And  I should see a "deleted" text
+

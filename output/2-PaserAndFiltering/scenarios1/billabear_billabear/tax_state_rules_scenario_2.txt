@@ -1,0 +1,10 @@
+Scenario 2: Doesnt Meet Threshold
+  Given  the following subscriptions exist:
+  And  that the following countries exist:
+  And  the following country tax rules exist:
+  And  the following states exist:
+  And  the following state tax rules exist:
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  Then  there the latest invoice for "customer.eight@example.org" will not have tax state of "Quebec"
+

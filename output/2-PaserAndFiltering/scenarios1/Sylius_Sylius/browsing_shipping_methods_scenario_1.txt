@@ -1,0 +1,6 @@
+Scenario 1: Browsing defined shipping methods
+  Tags: ['@api', '@ui']
+  When  I want to browse shipping methods
+  Then  I should see 2 shipping methods in the list
+  And  the shipping method "FedEx Carrier" should be in the registry
+

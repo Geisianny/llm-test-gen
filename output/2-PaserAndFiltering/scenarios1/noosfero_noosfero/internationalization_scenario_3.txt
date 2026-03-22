@@ -1,0 +1,8 @@
+Scenario 3: detecting language from browser
+  Given  my browser prefers Portuguese
+  When  I go to the homepage
+  Then  the site should be in Portuguese
+  When  my browser prefers French
+  And  I go to the homepage
+  Then  the site should be in French
+

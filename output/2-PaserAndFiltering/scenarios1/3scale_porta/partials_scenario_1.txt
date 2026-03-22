@@ -1,0 +1,11 @@
+Scenario 1: Partial
+  When  I follow "New Partial" from the CMS "New Page" dropdown
+  And  I fill in the following:
+  And  I fill in the draft with:
+  And  I press "Create Partial"
+  Then  I should see "Template created"
+  When  I fill in the following:
+  And  I press "Save"
+  Then  I should see "Template saved"
+  And  CMS Partial "brand-new-potato" should have:
+

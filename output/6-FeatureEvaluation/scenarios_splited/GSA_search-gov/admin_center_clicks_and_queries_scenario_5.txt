@@ -1,0 +1,4 @@
+Scenario: No data available for query and click correlation
+  Given there are no search queries or clicked URLs in the system
+  When the site administrator views the top clicked URLs report
+  Then the system displays a message indicating that there is no data available

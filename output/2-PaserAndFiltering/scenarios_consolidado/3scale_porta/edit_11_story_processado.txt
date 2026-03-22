@@ -1,0 +1,22 @@
+Scenario 1: Navigation
+  Given  they go to the developer portal users sso integrations page
+  When  they follow "Red Hat Single Sign-On"
+  And  the current page is the developer portal sso integration page
+  And  should see "Red Hat Single Sign-On"
+  And  they follow "Edit"
+  Then  the current page is the developer portal edit rh sso integration page
+
+
+
+Scenario 2: Update a RH SSO integration
+  When  they go to the developer portal edit rh sso integration page
+  And  the form is submitted with:
+  Then  they should see a toast alert with text "Authentication provider updated"
+
+
+
+Scenario 3: Missing field
+  When  they go to the developer portal edit rh sso integration page
+  And  the form is submitted with:
+  Then  they should see a toast alert with text "Authentication provider has not been updated"
+

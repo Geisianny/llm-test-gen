@@ -1,0 +1,5 @@
+Scenario 5: Signing out
+  When  I sign out
+  Then  I should land on the Sign In page
+  And  I should see the sign out success message
+

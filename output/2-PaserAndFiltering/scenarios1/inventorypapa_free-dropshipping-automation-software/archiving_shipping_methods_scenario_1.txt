@@ -1,0 +1,6 @@
+Scenario 1: Archiving a shipping method
+  Tags: ['@ui', '@api']
+  Given  I am browsing shipping methods
+  When  I archive the "UPS Carrier" shipping method
+  Then  the only shipping method on the list should be "FedEx Carrier"
+

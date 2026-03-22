@@ -1,0 +1,5 @@
+Scenario 1: not show pagination and facets on recent products
+  When  I go to the search products page
+  Then  The page should not contain "div.pagination"
+  And  The page should not contain "#facets-menu"
+

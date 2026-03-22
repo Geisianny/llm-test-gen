@@ -1,0 +1,8 @@
+Scenario 32: Query scalar data across multiple products returns "OK" response
+  Tags: ['@generated', '@skip', '@team:Datadog/timeseries-query']
+  Given  a valid "appKeyAuth" key in the system
+  And  new "QueryScalarData" request
+  And  body with value {"data": {"attributes": {"formulas": [{"formula": "a+b", "limit": {"count": 10, "order": "desc"}}], "from": 1568899800000, "queries": [{"aggregator": "avg", "data_source": "metrics", "query": "avg:system.cpu.user{*} by {env}"}], "to": 1568923200000}, "type": "scalar_request"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+

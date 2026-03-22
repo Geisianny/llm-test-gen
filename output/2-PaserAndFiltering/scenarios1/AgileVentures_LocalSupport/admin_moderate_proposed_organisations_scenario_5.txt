@@ -1,0 +1,7 @@
+Scenario 5: Superadmin finds list of proposed organisations
+  Tags: ['@vcr']
+  Given  the following proposed organisations exist:
+  And  I visit the home page
+  And  I click on the pending proposed organisations link
+  Then  I should see a view details link for each of the proposed organisations
+

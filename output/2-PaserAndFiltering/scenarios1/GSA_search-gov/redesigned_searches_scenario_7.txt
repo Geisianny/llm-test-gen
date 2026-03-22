@@ -1,0 +1,7 @@
+Scenario 7: Docs search
+  Tags: ['@javascript', '@a11y']
+  Given  the following BingV7 Affiliates exist:
+  When  I am on agency.gov's redesigned docs search page
+  And  I search for "USA" in the redesigned search page
+  Then  I should see exactly "20" web search results
+

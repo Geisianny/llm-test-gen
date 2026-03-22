@@ -1,0 +1,10 @@
+Scenario 3: View Country with tax rules
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  that the following countries exist:
+  And  there are the following tax types:
+  And  the following country tax rules exist:
+  And  the following states exist:
+  And  the following state tax rules exist:
+  When  I view the country for "United States"
+  Then  I should see the state "Texas" in the list of states
+

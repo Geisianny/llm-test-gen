@@ -1,0 +1,5 @@
+Scenario 2: Visiting /sites for user without existing site
+  Given  I am logged in with email "affiliate_manager_with_no_affiliates@fixtures.org"
+  When  I go to the sites page
+  Then  I should see "Add a New Site"
+

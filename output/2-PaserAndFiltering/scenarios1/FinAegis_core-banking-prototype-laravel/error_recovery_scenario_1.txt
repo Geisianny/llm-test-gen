@@ -1,0 +1,7 @@
+Scenario 1: Database connection failure recovery
+  Given  the primary database is operational
+  When  the database connection is lost during a transaction
+  Then  the system should:
+  And  no data loss should occur
+  And  user should see graceful error message
+

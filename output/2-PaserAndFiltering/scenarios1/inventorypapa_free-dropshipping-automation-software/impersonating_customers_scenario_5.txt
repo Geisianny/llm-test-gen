@@ -1,0 +1,8 @@
+Scenario 5: Keeping the administrator access while impersonating a user
+  Tags: ['@ui']
+  When  I view details of the customer "remnant@london.uk"
+  And  I impersonate them
+  And  I visit the store
+  Then  I should be logged in as "Tanith Low"
+  But  I should still be able to access the administration dashboard
+

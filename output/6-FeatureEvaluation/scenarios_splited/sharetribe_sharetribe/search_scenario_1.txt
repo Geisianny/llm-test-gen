@@ -1,0 +1,5 @@
+Scenario: Search listings by keyword
+  Given there are listings with titles and descriptions
+  When the user types a keyword "electronics" in the search box
+  And hits enter
+  Then the system displays listings containing the keyword "electronics" in their titles or descriptions

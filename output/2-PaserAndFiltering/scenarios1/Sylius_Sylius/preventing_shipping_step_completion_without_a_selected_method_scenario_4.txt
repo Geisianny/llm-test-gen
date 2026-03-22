@@ -1,0 +1,15 @@
+Scenario 4: Preventing shipping step completion if there are no available shipping methods for selected country
+  Tags: ['@no-api', '@ui']
+  Given  the store operates on a channel named "Web"
+  And  the store operates in "United States"
+  And  the store operates in "France"
+  And  the store has a product "PHP T-Shirt"
+  And  the store has a zone "Europe" with code "EU"
+  And  this zone has the "France" country member
+  And  the store has "DHL" shipping method with "$20.00" fee within the "EU" zone
+  And  I added product "PHP T-Shirt" to the cart
+  And  I addressed the cart
+  When  I want to complete the shipping step
+  Then  I should be informed that my order cannot be shipped to this address
+  And  I should not be able to complete the shipping step
+

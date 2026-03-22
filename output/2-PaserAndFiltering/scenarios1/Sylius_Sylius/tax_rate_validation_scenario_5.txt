@@ -1,0 +1,10 @@
+Scenario 5: Trying to add a new tax rate without specifying its zone
+  Tags: ['@api', '@ui']
+  Given  the store does not have any zones defined
+  When  I want to create a new tax rate
+  And  I name it "Food and Beverage Tax Rates"
+  But  I do not specify its zone
+  And  I try to add it
+  Then  I should be notified that zone has to be selected
+  And  tax rate with name "Food and Beverage Tax Rates" should not be added
+

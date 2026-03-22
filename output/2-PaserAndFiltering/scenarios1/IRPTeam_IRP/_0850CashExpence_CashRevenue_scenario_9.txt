@@ -1,0 +1,15 @@
+Scenario 9: _085007 check the unavailability of currency selection in Cash expense when it is strongly fixed in the Account
+  *  Open document form
+  Given  I open hyperlink "e1cib/list/Document.CashExpense"
+  And  I click the button named "FormCreate"
+  *  Filling in the details of the document
+  And  I click Select button of "Company" field
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I click Select button of "Account" field
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  *  Check the Currency field unavailability
+  And  in the table "PaymentList" I click the button named "PaymentListAdd"
+  When  I Check the steps for Exception
+

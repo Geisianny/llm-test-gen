@@ -1,0 +1,7 @@
+Scenario 5: Admin changes category listing shapes
+  Tags: ['@javascript']
+  When  I change listing shapes of category "Furniture" to following:
+  Then  category "Furniture" should have the following listing shapes:
+  When  I change listing shapes of category "Furniture" to following:
+  Then  category "Furniture" should have the following listing shapes:
+

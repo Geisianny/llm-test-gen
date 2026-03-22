@@ -1,0 +1,6 @@
+Scenario 4: Seeing the impersonation was successful
+  Tags: ['@no-api', '@ui']
+  When  I view details of the customer "remnant@london.uk"
+  And  I impersonate them
+  Then  I should see that impersonating "remnant@london.uk" was successful
+

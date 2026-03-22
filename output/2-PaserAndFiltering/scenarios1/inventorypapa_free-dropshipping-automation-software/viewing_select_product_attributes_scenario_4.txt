@@ -1,0 +1,7 @@
+Scenario 4: Viewing a detailed page with product's select attribute after removing one of the value
+  Tags: ['@ui', '@javascript']
+  Given  this product has select attribute "T-shirt material" with values "Banana skin" and "Cotton"
+  When  the administrator deletes the value "Cotton" from this product attribute
+  And  I check this product's details
+  Then  I should see the product attribute "T-shirt material" with value "Banana skin"
+

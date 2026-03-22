@@ -1,0 +1,5 @@
+Scenario 1: display rate button and total ratings inside average block
+  Given  I am on mycommunity's homepage
+  Then  I should see "Rate this Community" within ".average-rating-block"
+  And  I should see "Be the first to rate" within ".average-rating-block"
+

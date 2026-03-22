@@ -1,0 +1,8 @@
+Scenario 15: Deleting a site
+  Given  I am logged in with email "affiliate_manager@fixtures.org"
+  When  I go to the usagov's Dashboard page
+  And  I follow "Settings"
+  And  I press "Delete"
+  Then  I should be on the new site page
+  And  I should see "Scheduled site 'USA.gov' for deletion. This could take several hours to complete."
+

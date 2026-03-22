@@ -1,0 +1,6 @@
+Scenario 1: Being able to access the variants list page
+  Tags: ['@no-api', '@ui']
+  When  I modify the "Audi" product
+  And  I go to the variants list
+  Then  I should be on the list of this product's variants
+

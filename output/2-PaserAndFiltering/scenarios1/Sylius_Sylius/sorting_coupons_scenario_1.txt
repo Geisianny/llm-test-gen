@@ -1,0 +1,6 @@
+Scenario 1: Coupons are sorted by descending number of uses by default
+  Tags: ['@api', '@ui']
+  When  I want to view all coupons of this promotion
+  Then  I should see 3 coupons on the list
+  And  the first coupon should have code "Y"
+

@@ -1,0 +1,14 @@
+Scenario 1: Implement trade and order network
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  When  the network moves ahead "1" blocks
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  Then  the parties should have the following account balances:
+  When  the parties place the following orders "1" blocks apart:
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  Then  the parties should have the following account balances:
+  And  the global insurance pool balance should be "0" for the asset "BTC"
+  And  the insurance pool balance should be "12000" for the market "ETH/DEC19"
+  Then  the following network trades should be executed:
+

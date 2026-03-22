@@ -1,0 +1,9 @@
+Scenario 14: Update Scorecard outcomes asynchronously returns "Accepted" response
+  Tags: ['@team:DataDog/service-catalog']
+  Given  operation "UpdateScorecardOutcomesAsync" enabled
+  And  there is a valid "create_scorecard_rule" in the system
+  And  new "UpdateScorecardOutcomesAsync" request
+  And  body with value {"data": {"attributes": {"results": [{"rule_id": "{{create_scorecard_rule.data.id}}", "entity_reference": "service:my-service", "remarks": "See: <a href=\"https://app.datadoghq.com/services\">Services</a>", "state": "pass"}]}, "type": "batched-outcome"}}
+  When  the request is sent
+  Then  the response status is 202 Accepted
+

@@ -1,0 +1,11 @@
+Scenario 10: Receiving different discounts on items from different price ranges
+  Tags: ['@ui', '@api']
+  Given  the promotion gives "$10.00" off on every product with minimum price at "$80.00"
+  And  there is a promotion "Mugs promotion"
+  And  it gives "$5.00" off on every product priced between "$10.00" and "$50.00"
+  When  I add product "PHP T-Shirt" to the cart
+  And  I add product "PHP Mug" to the cart
+  Then  product "PHP T-Shirt" price should be decreased by "$10.00"
+  And  product "PHP Mug" price should be decreased by "$5.00"
+  And  my cart total should be "$105.00"
+

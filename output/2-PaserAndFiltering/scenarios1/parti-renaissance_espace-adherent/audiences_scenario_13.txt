@@ -1,0 +1,11 @@
+Scenario Outline 13: As a non logged-in user I can not manage audiences - Example 1
+  Given  I send a "POST" request to "/api/v3/audiences"
+  Then  the response status code should be 401
+
+  Examples:
+    | method | url |
+    | POST | /api/v3/audiences |
+    | GET | /api/v3/audiences/f7ac8140-0a5b-4832-a5f4-47e661dc130c |
+    | PUT | /api/v3/audiences/f7ac8140-0a5b-4832-a5f4-47e661dc130c |
+    | DELETE | /api/v3/audiences/f7ac8140-0a5b-4832-a5f4-47e661dc130c |
+

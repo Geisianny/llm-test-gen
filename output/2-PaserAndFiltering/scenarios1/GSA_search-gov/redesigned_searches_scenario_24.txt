@@ -1,0 +1,8 @@
+Scenario 24: Search with site limits
+  Tags: ['@javascript', '@a11y']
+  Given  the following BingV7 Affiliates exist:
+  When  I am on agency.gov's search page with site limited to "www.epa.gov/news"
+  And  I fill in "Enter your search term" with "carbon emissions"
+  And  I press "Search"
+  Then  I should see "We're including results for carbon emissions from www.epa.gov/news only."
+

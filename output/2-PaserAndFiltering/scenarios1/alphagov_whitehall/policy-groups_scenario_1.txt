@@ -1,0 +1,5 @@
+Scenario 1: 
+  Tags: ['@disable-sidekiq-test-mode']
+  Given  a policy group "Panel" exists
+  Then  I should be able to add attachments to the policy group "Panel"
+

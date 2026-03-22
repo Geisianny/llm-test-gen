@@ -1,0 +1,6 @@
+Scenario: Trade occurrence with order fulfillment
+  Given there is a user with an accepted order on a spot market
+  And there is a matching trade for the order
+  When the trade is executed
+  Then the system releases the reserved assets
+  And updates the user's general balance

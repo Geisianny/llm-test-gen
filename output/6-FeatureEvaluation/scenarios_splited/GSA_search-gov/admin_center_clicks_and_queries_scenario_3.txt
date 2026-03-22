@@ -1,0 +1,5 @@
+Scenario: View clicked URLs from a specific query
+  Given there is a search query with associated clicked URLs in the system
+  When the site administrator selects a search query to analyze
+  Then the system displays the clicked URLs that resulted from the query
+  And the list includes the number of clicks for each URL

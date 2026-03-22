@@ -1,0 +1,8 @@
+Scenario 8: Cleanup: delete minimal information for payg ssh connection data
+  When  I follow the left menu "Admin > Setup Wizard > PAYG Connections"
+  And  I follow "my-host.local"
+  And  I click on "Delete"
+  And  I click on "Delete" in "Delete PAYG Connection" modal
+  Then  I should not see a "my-host.local" link
+  And  I should not see a "my-host.local" text
+

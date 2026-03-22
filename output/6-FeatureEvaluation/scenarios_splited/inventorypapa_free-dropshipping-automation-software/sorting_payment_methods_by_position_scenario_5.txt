@@ -1,0 +1,4 @@
+Scenario: Change the position of an existing payment method
+  Given there are multiple payment methods with different positions
+  When the administrator updates the position of an existing payment method to a lower value
+  Then the system updates the position of the payment method

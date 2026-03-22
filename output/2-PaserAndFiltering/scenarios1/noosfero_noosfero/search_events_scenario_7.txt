@@ -1,0 +1,6 @@
+Scenario 7: highlight the selected day when a day is selected
+  Tags: ['@selenium']
+  Given  I am on /search/events?year=2018&month=10
+  And  I follow "8"
+  Then  "8" should be visible within ".calendar-day.selected"
+

@@ -1,0 +1,11 @@
+Scenario 2: display block with long description
+  Tags: ['@selenium-fixme']
+  Given  I follow "Manage my groups"
+  And  I follow "Control panel of this group"
+  And  I follow "Edit sideboxes"
+  And  I follow "Edit" within ".featured-products-block"
+  And  I select "Moto"
+  And  I press "Save"
+  When  I am on redemoinho's homepage
+  Then  I should see "Very long description of and auto-mobile moto to b..."
+

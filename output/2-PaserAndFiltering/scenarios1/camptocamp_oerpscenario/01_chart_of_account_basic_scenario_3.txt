@@ -1,0 +1,17 @@
+Scenario 3: DEFAULT ACCOUNT SETTINGS (PROPERTIES)
+  Tags: ['@base_finance_setup_properties']
+  Given  I need a "res.company" with oid: base.main_company
+  And  having:
+  Given  I set global property named "property_account_receivable" for model "res.partner" and field "property_account_receivable"
+  And  the property is related to model "account.account" using column "code" and value "4111"
+  Given  I set global property named "property_account_payable" for model "res.partner" and field "property_account_payable"
+  And  the property is related to model "account.account" using column "code" and value "4011"
+  Given  I set global property named "property_account_expense" for model "product.template" and field "property_account_expense"
+  And  the property is related to model "account.account" using column "code" and value "607"
+  Given  I set global property named "property_account_income" for model "product.template" and field "property_account_income"
+  And  the property is related to model "account.account" using column "code" and value "707"
+  Given  I set global property named "property_stock_account_input" for model "product.template" and field "property_stock_account_input"
+  And  the property is related to model "account.account" using column "code" and value "603"
+  Given  I set global property named "property_stock_account_output" for model "product.template" and field "property_stock_account_output"
+  And  the property is related to model "account.account" using column "code" and value "603"
+

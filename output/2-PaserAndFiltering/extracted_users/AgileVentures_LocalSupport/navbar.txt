@@ -1,0 +1,34 @@
+Feature: Super Admin user interface
+Description: As a site superadmin
+  So that I can have a commanding view of important information
+  I want a specialized interface
+
+Background: 
+  Given  the following pages exist:
+  And  the following users are registered:
+  And  the invitation instructions mail template exists
+  And  I am signed in as a superadmin
+  And  that the volunteer_ops_list flag is enabled
+  And  that the organisations flag is enabled
+  And  I visit the home page
+
+Scenario 1: Highlighted button for Organisations or Volunteers
+  Given  I visit the organisations index page
+  Then  navbar button "Organisations" should be active
+  Then  navbar button "Volunteers" should not be active
+  Given  I visit the volunteer opportunities page
+  Then  navbar button "Volunteers" should be active
+  Then  navbar button "Organisations" should not be active
+  Given  I visit "/pages"
+  Then  navbar button "Volunteers" should not be active
+  Then  navbar button "Organisations" should not be active
+
+Scenario Outline 2: Top navbar has a SuperAdmin dropdown menu - Example 1
+  Then  the SuperAdmin menu has a valid Invite Users to become admin of Organisations link
+
+  Examples:
+    | link |
+    | Invite Users to become admin of Organisations |
+    | Invited Users |
+    | Registered Users |
+

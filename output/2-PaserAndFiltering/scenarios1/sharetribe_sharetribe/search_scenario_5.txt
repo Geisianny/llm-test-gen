@@ -1,0 +1,14 @@
+Scenario 5: Finding by numeric field (and search term)
+  Tags: ['@javascript']
+  When  I set search range for numeric filter "Weight (kg)" between "10" and "200"
+  And  I press "Update view"
+  Then  I should see "old sofa for sale"
+  Then  I should see "light-weigth plastic outdoor sofa"
+  When  I set search range for numeric filter "Weight (kg)" between "100" and "200"
+  And  I press "Update view"
+  Then  I should see "old sofa for sale"
+  Then  I should not see "light-weigth plastic outdoor sofa"
+  When  I fill in "q" with "light-weight"
+  And  I press "search-button"
+  Then  I should see "Sorry, no listings could be found for your search criteria"
+

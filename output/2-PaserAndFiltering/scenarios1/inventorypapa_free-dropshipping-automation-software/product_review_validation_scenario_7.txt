@@ -1,0 +1,9 @@
+Scenario 7: Trying to add a product review with specifying already registered author email
+  Tags: ['@ui', '@api']
+  Given  there is a customer account "sam@winchester.com" identified by "familybusiness"
+  When  I want to review product "Necronomicon"
+  And  I leave a comment "Really good book, with many important info.", titled "Usefull" as "sam@winchester.com"
+  And  I rate it with 4 points
+  And  I try to add it
+  Then  I should be notified that this email is already registered
+

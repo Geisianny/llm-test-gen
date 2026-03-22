@@ -1,0 +1,8 @@
+Scenario 10: Delete tags for multiple metrics returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/metrics-experience']
+  Given  a valid "appKeyAuth" key in the system
+  And  new "DeleteBulkTagsMetricsConfiguration" request
+  And  body with value {"data": {"attributes": {"emails": ["sue@example.com", "bob@example.com"]}, "id": "kafka.lag", "type": "metric_bulk_configure_tags"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

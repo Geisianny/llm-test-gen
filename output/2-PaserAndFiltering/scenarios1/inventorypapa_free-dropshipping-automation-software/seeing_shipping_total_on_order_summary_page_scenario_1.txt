@@ -1,0 +1,8 @@
+Scenario 1: Seeing the shipping total on order summary
+  Tags: ['@ui', '@api']
+  When  I add "Guards! Guards! - book" variant of this product to the cart
+  And  I define the billing address as "Ankh Morpork", "Frost Alley", "90210", "United States" for "Jon Snow"
+  And  I proceed with "UPS" shipping method and "Offline" payment
+  Then  I should be on the checkout summary step
+  And  my order shipping should be "$20.00"
+

@@ -1,0 +1,5 @@
+Scenario 1: Republish all documents
+  Given  Documents exist
+  When  I request a bulk republishing of all documents
+  Then  I can see that all documents have been queued for republishing
+

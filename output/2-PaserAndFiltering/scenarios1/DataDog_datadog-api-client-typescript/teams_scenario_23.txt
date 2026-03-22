@@ -1,0 +1,8 @@
+Scenario 23: Get permission settings for a team returns "OK" response
+  Tags: ['@team:DataDog/aaa-omg']
+  Given  new "GetTeamPermissionSettings" request
+  And  there is a valid "dd_team" in the system
+  And  request contains "team_id" parameter from "dd_team.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+

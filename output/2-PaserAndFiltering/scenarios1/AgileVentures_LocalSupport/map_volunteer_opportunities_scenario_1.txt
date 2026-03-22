@@ -1,0 +1,5 @@
+Scenario 1: Imported "reachskills" volunteer ops with nil coords are assigned default coords
+  Given  reachskills opportunities are imported with nil coordinates
+  Then  there should be zero nil coordinates
+  And  1 default Harrow coordinates should be assigned
+

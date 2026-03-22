@@ -1,0 +1,7 @@
+Scenario 39: List Cloud Cost Management AWS CUR configs returns "OK" response
+  Tags: ['@replay-only', '@team:DataDog/cloud-cost-management']
+  Given  new "ListCostAWSCURConfigs" request
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data[0].attributes.bucket_name" is equal to "test_bucket_name"
+

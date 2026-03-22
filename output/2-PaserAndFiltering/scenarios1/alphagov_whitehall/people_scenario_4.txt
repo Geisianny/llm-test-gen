@@ -1,0 +1,5 @@
+Scenario 4: Adding a new translation
+  Given  a person called "Amanda Appleford" exists with the biography "She was born. She lived. She died."
+  When  I add a new "Français" translation to the person "Amanda Appleford" setting biography to "Ca va"
+  Then  I should see the translation "Français" and body text "Ca va"
+

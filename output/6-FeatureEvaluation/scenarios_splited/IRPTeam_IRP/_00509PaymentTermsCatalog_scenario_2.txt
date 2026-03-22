@@ -1,0 +1,7 @@
+Scenario: Create a new payment term with multilingual descriptions
+  Given there is an administrator logged into the system
+  And the payment terms catalog is empty
+  When the administrator creates a new payment term with the description "English Description" in English
+  And adds a description "French Description" in French
+  Then the system saves the new payment term with multilingual descriptions
+  And displays a confirmation message

@@ -1,0 +1,19 @@
+Feature: Brands list
+Description: In order to manage brands
+  As an APP user
+  I need to be see all the brands
+
+Background: 
+  Given  the following accounts exist:
+
+Scenario 1: List brands
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  When  I go to the brand list
+  Then  I should see the brand "Default"
+
+Scenario 2: List brands
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  the follow brands exist:
+  When  I go to the brand list
+  Then  I should see the brand "Example"
+

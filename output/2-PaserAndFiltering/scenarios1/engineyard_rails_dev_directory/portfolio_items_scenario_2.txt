@@ -1,0 +1,15 @@
+Scenario 2: Create a portfolio item
+  Given  a provider "Hashrocket" belonging to "Olenska@chicka.net"
+  When  I am on the homepage
+  And  I log in as "Olenska@chicka.net" with password "testtest"
+  And  I follow "navigation.company" translation
+  And  I follow "portfolio_item.manage" translation
+  And  I follow "Add a new project to your portfolio"
+  And  I fill in "Name" with "CF Martin"
+  And  I fill in "portfolio_item_url" with "http://www.cfmartin.com"
+  And  I fill in "Description" with "We really screwed the pooch on that one."
+  And  I select "2007" from "portfolio_item[year_completed]"
+  And  I press "Save"
+  Then  I should see the translation for "portfolio_item.saved_successfully"
+  And  I should see "CF Martin"
+

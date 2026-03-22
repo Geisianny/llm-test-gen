@@ -1,0 +1,7 @@
+Scenario 1: Skipping shipping checkout step
+  Tags: ['@no-api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  And  I addressed the cart
+  When  I try to open checkout complete page
+  Then  I should be on the checkout shipping step
+

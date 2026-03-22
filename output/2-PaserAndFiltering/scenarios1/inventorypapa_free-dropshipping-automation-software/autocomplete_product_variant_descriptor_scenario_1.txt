@@ -1,0 +1,6 @@
+Scenario 1: Getting a hint when looking for product variants
+  Tags: ['@api']
+  When  I look for a variant with "i" in descriptor within the "Snake" product
+  Then  I should see 1 product variant on the list
+  And  I should see the product variant named "Bimini" on the list
+

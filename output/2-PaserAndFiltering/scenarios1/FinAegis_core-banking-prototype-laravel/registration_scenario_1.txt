@@ -1,0 +1,8 @@
+Scenario 1: Viewing registration page
+  When  I click on "Register"
+  Then  I should see "Create Account"
+  And  I should see "Name" field
+  And  I should see "Email" field
+  And  I should see "Password" field
+  And  I should see "Confirm Password" field
+

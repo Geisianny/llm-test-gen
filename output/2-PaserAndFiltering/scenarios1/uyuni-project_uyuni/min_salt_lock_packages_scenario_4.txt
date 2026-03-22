@@ -1,0 +1,19 @@
+Scenario 4: Attempt to install a locked package on the client
+  Given  I am on the Systems overview page of this "sle_minion"
+  When  I follow "Software" in the content area
+  And  I follow "Lock / Unlock"
+  And  package "hoag-dummy-1.1-1.1" is reported as locked
+  And  I follow "Install"
+  And  I enter "hoag-dummy-1.1-1.1" as the filtered package name
+  And  I click on the filter button
+  And  I check row with "hoag-dummy-1.1-1.1" and arch of "sle_minion"
+  And  I click on "Install Packages"
+  And  I click on "Confirm"
+  Then  I should see a "1 package install has been scheduled for" text
+  When  I follow "Events"
+  And  I follow "History"
+  And  I wait until I see the event "Package Install/Upgrade scheduled" completed during last minute, refreshing the page
+  And  I follow the event "Package Install/Upgrade scheduled" completed during last minute
+  Then  the package scheduled is "hoag-dummy-1.1-1.1"
+  And  the action status is "Failed"
+

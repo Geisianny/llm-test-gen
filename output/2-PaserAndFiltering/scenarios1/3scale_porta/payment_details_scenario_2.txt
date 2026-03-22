@@ -1,0 +1,6 @@
+Scenario 2: Finance is hidden
+  Given  the provider is charging its buyers
+  But  the provider has "finance" hidden
+  When  the buyer is reviewing their account details
+  Then  the buyer can't add or update any billing information
+

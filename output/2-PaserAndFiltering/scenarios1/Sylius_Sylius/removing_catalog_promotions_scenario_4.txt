@@ -1,0 +1,9 @@
+Scenario 4: Removing a scheduled catalog promotion
+  Tags: ['@api', '@ui']
+  Given  it is "2022-08-22" now
+  And  the catalog promotion "Winter Sale" operates between "2022-12-01" and "2023-02-28"
+  When  I request the removal of "Winter Sale" catalog promotion
+  Then  I should be notified that the removal operation has started successfully
+  And  there should be an empty list of catalog promotions
+  And  "PHP T-Shirt" variant should not be discounted
+

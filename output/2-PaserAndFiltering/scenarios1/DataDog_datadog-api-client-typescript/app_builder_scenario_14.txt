@@ -1,0 +1,6 @@
+Scenario 14: List Apps returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/app-builder-backend']
+  Given  new "ListApps" request
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

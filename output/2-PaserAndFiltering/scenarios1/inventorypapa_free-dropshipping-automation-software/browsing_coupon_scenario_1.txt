@@ -1,0 +1,6 @@
+Scenario 1: Browsing coupons in store
+  Tags: ['@ui']
+  Given  I want to view all coupons of this promotion
+  Then  there should be 1 coupon related to this promotion
+  And  there should be coupon with code "SANTA2016"
+

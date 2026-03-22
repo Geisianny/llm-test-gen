@@ -1,0 +1,7 @@
+Scenario 9: Cross-border compliance
+  Given  I initiate a transfer to a sanctioned country
+  When  the compliance engine processes the transaction
+  Then  the transaction should be automatically blocked
+  And  compliance team should be immediately notified
+  And  the incident should be logged for audit
+

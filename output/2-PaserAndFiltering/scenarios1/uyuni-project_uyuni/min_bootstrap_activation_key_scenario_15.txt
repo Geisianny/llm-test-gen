@@ -1,0 +1,7 @@
+Scenario 15: Cleanup: delete the activation key
+  When  I follow the left menu "Systems > Activation Keys"
+  And  I follow "Minion testing" in the content area
+  And  I follow "Delete Key"
+  And  I click on "Delete Activation Key"
+  Then  I should see a "Activation key Minion testing has been deleted." text
+

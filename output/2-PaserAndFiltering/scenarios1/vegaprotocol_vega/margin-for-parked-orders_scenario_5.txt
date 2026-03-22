@@ -1,0 +1,9 @@
+Scenario 5: In auction a party in isolated margin mode enter pegged order that is rejected 0019-MCAL-049
+  Given  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/FEB23"
+  When  the parties place the following orders:
+  Then  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/FEB23"
+  Given  the parties submit update margin mode:
+  When  the parties place the following pegged orders:
+  And  the parties place the following pegged iceberg orders:
+  Then  the parties should have the following margin levels:
+

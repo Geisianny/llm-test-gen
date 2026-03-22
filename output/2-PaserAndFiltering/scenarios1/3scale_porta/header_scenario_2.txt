@@ -1,0 +1,5 @@
+Scenario 2: Help menu dropdown when Quickstarts enabled
+  Given  quickstarts is enabled
+  And  a provider is logged in
+  Then  the help menu should have the following items:
+

@@ -1,0 +1,10 @@
+Scenario 2: Latest usage
+  Given  the follow metrics exist:
+  Given  the follow price "Product One" for "USD" monthly price with a usage tiered graduated for metric "Test One" with these tiers:
+  Given  the following subscriptions exist:
+  And  the following events exist:
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  Then  the subscription for "customer.one@example.org" will expire in a month
+  And  there the latest invoice for "customer.one@example.org" will be for 2500 "USD"
+

@@ -1,0 +1,39 @@
+Feature: On-Call Paging
+Description: Trigger and manage [Datadog On-
+  Call](https://docs.datadoghq.com/service_management/on-call/) pages
+  directly through the Datadog API.
+Tags: ['@endpoint(on-call-paging)', '@endpoint(on-call-paging-v2)']
+
+Background: 
+  Given  a valid "apiKeyAuth" key in the system
+  And  a valid "appKeyAuth" key in the system
+  And  an instance of "On-CallPaging" API
+
+Scenario 1: Acknowledge On-Call Page returns "Accepted." response
+  Tags: ['@generated', '@skip', '@team:DataDog/on-call']
+  Given  new "AcknowledgeOnCallPage" request
+  And  request contains "page_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 202 Accepted.
+
+Scenario 2: Create On-Call Page returns "OK." response
+  Tags: ['@generated', '@skip', '@team:DataDog/on-call']
+  Given  new "CreateOnCallPage" request
+  And  body with value {"data": {"attributes": {"description": "Page details.", "tags": ["service:test"], "target": {"identifier": "my-team", "type": "team_handle"}, "title": "Page title", "urgency": "low"}, "type": "pages"}}
+  When  the request is sent
+  Then  the response status is 200 OK.
+
+Scenario 3: Escalate On-Call Page returns "Accepted." response
+  Tags: ['@generated', '@skip', '@team:DataDog/on-call']
+  Given  new "EscalateOnCallPage" request
+  And  request contains "page_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 202 Accepted.
+
+Scenario 4: Resolve On-Call Page returns "Accepted." response
+  Tags: ['@generated', '@skip', '@team:DataDog/on-call']
+  Given  new "ResolveOnCallPage" request
+  And  request contains "page_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 202 Accepted.
+

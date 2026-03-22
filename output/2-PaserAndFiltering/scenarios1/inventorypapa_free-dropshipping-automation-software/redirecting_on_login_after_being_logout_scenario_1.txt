@@ -1,0 +1,5 @@
+Scenario 1: Redirecting on login page after being logout
+  Tags: ['@ui']
+  When  I try to open administration dashboard
+  Then  I should be on login page
+

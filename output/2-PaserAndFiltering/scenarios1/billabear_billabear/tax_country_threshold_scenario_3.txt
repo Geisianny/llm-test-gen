@@ -1,0 +1,8 @@
+Scenario 3: 
+  Given  the following subscriptions exist:
+  And  that the following countries exist:
+  And  the following country tax rules exist:
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  And  there the latest invoice for "customer.seven@example.org" will have tax country of "GB"
+

@@ -1,0 +1,6 @@
+Scenario: Charity worker updates donation link to an empty URL
+  Given there is a charity worker with an organization
+  And the organization's donation link is currently "https://old-donation-link.com"
+  When the charity worker updates the donation link to ""
+  Then the system does not save the new donation link
+  And displays an error message indicating that the donation link cannot be empty

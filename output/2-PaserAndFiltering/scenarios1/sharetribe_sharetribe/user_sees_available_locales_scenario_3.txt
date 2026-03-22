@@ -1,0 +1,8 @@
+Scenario 3: There are no locales in community settings
+  Tags: ['@javascript']
+  Given  the test community has following available locales:
+  When  I am on the home page
+  And  I open language menu
+  And  I select "Suomi" from the language menu
+  Then  I should see "Lisää uusi ilmoitus!" within "#new-listing-link"
+

@@ -1,0 +1,6 @@
+Scenario 7: Account menu structure with sso enforced
+  Given  the provider has "multiple_users" switch allowed
+  And  the provider has the following setting:
+  When  I go to the provider account page
+  And  I should see menu items under "Users"
+

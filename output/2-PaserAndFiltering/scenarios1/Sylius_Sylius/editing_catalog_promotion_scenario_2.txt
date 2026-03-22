@@ -1,0 +1,9 @@
+Scenario 2: Changing label and description of catalog promotion
+  Tags: ['@api', '@ui']
+  When  I want to modify a catalog promotion "Christmas sale"
+  And  I specify its label as "Christmas -50%" in "English (United States)"
+  And  I describe it as "This promotion gives a 50% discount on all products" in "English (United States)"
+  And  I save my changes
+  Then  this catalog promotion should be labelled as "Christmas -50%" in "English (United States)" locale
+  And  this catalog promotion should be described as "This promotion gives a 50% discount on all products" in "English (United States)" locale
+

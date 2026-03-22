@@ -1,0 +1,10 @@
+Scenario 5: As offerer i can delete one of my messages
+  Given  A user send me the message "Hello, can i rent your listing?" about my listing "Listing One"
+  When  I am logged in as user "offerer@cocorico.rocks" with password "12345678"
+  And  I click on dashboard menu "Messages" of "offerer"
+  Then  I should be on the "dashboard message" page
+  And  I should see "1 result" in the "span.result-counter" element
+  When  I follow "Delete"
+  Then  I should be on the "dashboard message" page
+  And  I should see "No result" in the "span.result-counter" element
+

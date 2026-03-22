@@ -1,0 +1,10 @@
+Scenario 5: the user should be able to disable notifications
+  Given  the following notifications
+  Given  that the user joaosilva has the following notifications
+  Given  I am logged in as "joaosilva"
+  Given  I go to joaosilva's control panel
+  When  I follow "Notifications"
+  And  I uncheck "settings_add_friend"
+  When  I press "Save"
+  Then  the "settings_add_friend" checkbox should not be checked
+

@@ -1,0 +1,7 @@
+Scenario 2: Buying a product with proper price after channel change
+  Tags: ['@api', '@ui']
+  Given  I changed my current channel to "Web-GB"
+  And  I added product "Leprechaun's Gold" to the cart
+  When  I check the details of my cart
+  Then  I should see "Leprechaun's Gold" with unit price "£15.00" in my cart
+

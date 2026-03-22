@@ -1,0 +1,7 @@
+Scenario 9: User data deletion (GDPR)
+  Given  a user requests account deletion
+  When  the GDPR workflow executes
+  Then  it should coordinate deletion:
+  And  ensure compliance across all domains
+  And  provide deletion certificate
+

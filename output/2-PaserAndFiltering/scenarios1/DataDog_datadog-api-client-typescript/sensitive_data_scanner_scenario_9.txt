@@ -1,0 +1,8 @@
+Scenario 9: Delete Scanning Rule returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/sensitive-data-scanner']
+  Given  new "DeleteScanningRule" request
+  And  request contains "rule_id" parameter from "REPLACE.ME"
+  And  body with value {"meta": {"version": 0}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

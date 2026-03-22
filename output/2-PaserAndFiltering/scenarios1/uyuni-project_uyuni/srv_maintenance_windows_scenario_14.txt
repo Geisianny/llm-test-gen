@@ -1,0 +1,15 @@
+Scenario 14: Delete maintenance schedules
+  When  I follow the left menu "Schedule > Maintenance Windows > Schedules"
+  And  I click the "Core Server Window" item delete button
+  Then  I should see a "Delete maintenance schedule" text
+  When  I click on the red confirmation button
+  And  I wait until I see "Schedule 'Core Server Window' has been deleted." text
+  And  I click the "SAP Maintenance Window" item delete button
+  Then  I should see a "Delete maintenance schedule" text
+  When  I click on the red confirmation button
+  And  I wait until I see "Schedule 'SAP Maintenance Window' has been deleted." text
+  And  I click the "singleschedule" item delete button
+  Then  I should see a "Delete maintenance schedule" text
+  When  I click on the red confirmation button
+  And  I wait until I see "singleschedule' has been deleted." text
+

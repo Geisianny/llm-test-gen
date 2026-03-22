@@ -1,0 +1,5 @@
+Scenario 5: Removed account is no longer connected to dapp
+  When  I navigate to the browser
+  And  I tap on the Network Icon
+  Then  "Account 2" is not displayed
+

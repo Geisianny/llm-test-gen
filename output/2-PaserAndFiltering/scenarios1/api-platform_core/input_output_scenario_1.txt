@@ -1,0 +1,13 @@
+Scenario 1: Retrieve an Output with GraphQL
+  Tags: ['@createSchema']
+  Given  there is a RelatedDummy with 0 friends
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/dummy_dto_input_outputs" with body:
+  Then  the response status code should be 201
+  And  the JSON should be a superset of:
+  When  I send the following GraphQL request:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the JSON should be equal to:
+

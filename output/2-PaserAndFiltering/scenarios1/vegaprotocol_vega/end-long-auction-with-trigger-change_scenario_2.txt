@@ -1,0 +1,10 @@
+Scenario 2: Mark price update, followed by uncrossing trade near the new price
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  And  the network moves ahead "2" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+  When  the parties place the following orders with ticks:
+  And  the network moves ahead "5" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+  When  the network moves ahead "21" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+

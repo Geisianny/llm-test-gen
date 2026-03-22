@@ -1,0 +1,10 @@
+Scenario 3: Use the products and architecture filters
+  Tags: ['@scc_credentials']
+  When  I follow the left menu "Admin > Setup Wizard > Products"
+  And  I wait until I do not see "currently running" text
+  And  I wait until I do not see "Loading" text
+  And  I enter "RHEL and Liberty" as the filtered product description
+  Then  I should see a "RHEL and Liberty 8 Base" text
+  When  I select "x86_64" from "product-arch-filter"
+  Then  I should see a "RHEL and Liberty 8 Base" text
+

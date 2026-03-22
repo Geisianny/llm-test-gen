@@ -1,0 +1,4 @@
+Scenario 5: External read-only user can connect to ReportDB and make queries
+  When  I connect to the ReportDB with read-only user from external machine
+  Then  I should be able to query the ReportDB
+

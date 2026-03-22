@@ -1,0 +1,7 @@
+Scenario 3: Properly rounded taxes for multiple products
+  Tags: ['@api', '@ui']
+  And  I added 10 products "PHP T-Shirt" to the cart
+  When  I check the details of my cart
+  Then  my cart total should be "$124.23"
+  And  my cart taxes should be "$23.23"
+

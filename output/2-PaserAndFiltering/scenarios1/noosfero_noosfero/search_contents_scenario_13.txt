@@ -1,0 +1,9 @@
+Scenario 13: show clean description excerpt on search results
+  Given  the following articles
+  When  I go to the search articles page
+  And  I fill in "search-input" with "island"
+  And  I follow "Search" within ".search-form"
+  Then  I should see "Description" within ".search-article-description"
+  And  I should see "The island Herreninsel, with" within ".search-article-description"
+  And  I should see "and Kraut..." within ".search-article-description"
+

@@ -1,0 +1,6 @@
+Scenario: Attempt to add a new page with duplicate URL
+  Given there is an existing page with URL "/about-us"
+  And there is an Engine Yard administrator logged in
+  When the administrator adds a new page with URL "/about-us"
+  Then the system displays an error message
+  And indicates that the URL is already in use

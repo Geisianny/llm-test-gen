@@ -1,0 +1,13 @@
+Scenario 4: Bootstrap should fail when system already exists in the server
+  Given  I delete "sle_minion" key in the Salt master
+  When  I follow the left menu "Systems > Bootstrapping"
+  Then  I should see a "Bootstrap Minions" text
+  When  I enter the hostname of "sle_minion" as "hostname"
+  And  I enter "22" as "port"
+  And  I enter "root" as "user"
+  And  I enter "linux" as "password"
+  And  I click on "Bootstrap"
+  And  I wait until I see "seems to already exist, please check!" text
+  Then  I should not see a "GenericSaltError" text
+  And  I should see a "with minion id" text
+

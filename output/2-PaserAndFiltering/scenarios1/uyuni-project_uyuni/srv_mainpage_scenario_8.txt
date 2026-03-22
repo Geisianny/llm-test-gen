@@ -1,0 +1,9 @@
+Scenario 8: Top level bar
+  Given  I am authorized for the "Admin" section
+  When  I go to the home page
+  And  I should see a "Manage" link
+  And  I should see a "admin" text
+  And  I should see a "SUSE Test" link
+  And  I should see a "Preferences" link
+  And  I should see a Sign Out link
+

@@ -1,0 +1,239 @@
+Feature: Dashboard
+
+  Scenario: Visiting /sites for user with existing sites
+    Given the following Affiliates exist:
+      | display_name | name         | contact_email      | first_name   | last_name | use_redesigned_results_page |
+      | agency1 site | 1.agency.gov | manager@agency.gov | John         | Manager   | false                       |
+      | agency3 site | 3.agency.gov | manager@agency.gov | John         | Manager   | false                       |
+    And I am logged in with email "manager@agency.gov"
+    When I go to the sites page
+    Then I should see "agency1 site"
+    When I go to the 3.agency.gov's Manage Content page
+    And I follow "Set as my default site"
+    Then I should see "You have set agency3 site as your default site"
+    And I should see "Manage Content"
+    When I go to the sites page
+    Then I should see "agency3 site (3.agency.gov)" in the site header
+
+  Scenario: Visiting /sites for user without existing site
+    Given I am logged in with email "affiliate_manager_with_no_affiliates@fixtures.org"
+    When I go to the sites page
+    Then I should see "Add a New Site"
+
+  Scenario: Viewing a site after logging in
+    Given I am logged in with email "affiliate_manager@fixtures.org"
+    When I go to the usagov's Dashboard page
+    Then I should see "USA.gov" in the site header
+    And I should see a link to "Dashboard" in the active site main navigation
+    And I should see a link to "Site Overview" in the active site sub navigation
+
+  Scenario: Seeing system alerts on the dashboard
+    Given the following SystemAlerts exist:
+      | message                                                             | start_at   | end_at   |
+      | Maintenance window 1 <a href="http://link.to.survey.gov">survey</a> | today      | tomorrow |
+      | Maintenance window 2                                                | next month |          |
+    And I am logged in with email "affiliate_manager@fixtures.org"
+    When I go to the usagov's Dashboard page
+    Then I should see "Maintenance window 1"
+    And I should see a link to "survey" with url for "http://link.to.survey.gov"
+    And I should not see "Maintenace window 2"
+
+  Scenario: Toggling daily snapshot email
+    Given I am logged in with email "affiliate_manager@fixtures.org"
+    When I go to the usagov's Dashboard page
+    And I follow "Send me today's snapshot as a daily email"
+    Then I should see "You have enabled the daily snapshot setting for usagov."
+    When I follow "Stop sending me today's snapshot as a daily email"
+    Then I should see "You have disabled the daily snapshot setting for usagov."
+
+  @javascript
+  Scenario: Toggling filtered analytics
+    Given I am logged in with email "affiliate_manager@fixtures.org"
+    When I go to the usagov's Dashboard page
+    And I follow "Stop filtering bot traffic"
+    Then I should see "You're no longer filtering bot traffic. Analytics include both humans and bots."
+    When I follow "Filter bot traffic"
+    Then I should see "You're now filtering bot traffic. Analytics include likely humans only."
+
+  @javascript
+  Scenario: Updating Settings
+    Given I am logged in with email "affiliate_manager@fixtures.org"
+    When I go to the usagov's Dashboard page
+    And I follow "Settings"
+    Then I should see a link to "Dashboard" in the active site main navigation
+    And I should see a link to "Settings" in the active site sub navigation
+    And I should see "Site Handle usagov"
+    And I should see "Site Language English"
+    When I fill in "Display Name" with "agency site"
+    And I fill in "Homepage URL" with "http://new.usa.gov"
+    And I submit the form by pressing "Save Settings"
+    Then I should see "Your site settings have been updated"
+    And the "Display Name" field should contain "agency site"
+    And the "Homepage URL" field should contain "http://new.usa.gov"
+    When I fill in "Display Name" with ""
+    And I submit the form by pressing "Save Settings"
+    Then I should see "Display name can't be blank"
+
+    When I go to the gobiernousa's Dashboard page
+    And I follow "Settings"
+    Then I should see "Site Handle gobiernousa"
+    And I should see "Site Language Spanish"
+
+  Scenario: List users
+    Given the following Users exist:
+      | first_name | last_name           | email               |
+      | John       | Admin               | admin1@fixtures.gov |
+      | Jane       | Admin               | admin2@fixtures.gov |
+    And the Affiliate "usagov" has the following users:
+      | email               |
+      | admin1@fixtures.gov |
+      | admin2@fixtures.gov |
+    And I am logged in with email "affiliate_manager@fixtures.org"
+    When I go to the usagov's Dashboard page
+    And I follow "Manage Users"
+    Then I should see the following table rows:
+      | Affiliate Manager Smith affiliate_manager@fixtures.org  |
+      | Jane Admin admin2@fixtures.gov                          |
+      | John Admin admin1@fixtures.gov                          |
+
+  @javascript
+  Scenario: Add/remove user
+    Given I am logged in with email "affiliate_manager@fixtures.org"
+    When I go to the usagov's Dashboard page
+    And I follow "Manage Users"
+    And I follow "Add User"
+    When I fill in the following:
+      | First name | Another                                |
+      | Last name  | Admin                                  |
+      | Email      | another_affiliate_manager@fixtures.org |
+    And I submit the form by pressing "Add"
+    Then I should see "You have added another_affiliate_manager@fixtures.org to this site"
+    When I follow "Add User"
+    And I fill in the following:
+      | First name | Admin     |
+      | Last name  | Doe       |
+      | Email      |           |
+    And I submit the form by pressing "Add"
+    Then I should see "Email can't be blank"
+    When I fill in "Email" with "admin@email.gov"
+    And I submit the form by pressing "Add"
+    Then I should see "notified admin@email.gov on how to login and to access this site"
+    When I press "Remove" within the first table body row and confirm "Are you sure you wish to remove admin@email.gov from this site?"
+    Then I should see "You have removed admin@email.gov from this site"
+
+  @javascript
+  Scenario: Complete sign up process
+    Given no emails have been sent
+    And I am logged in with email "affiliate_manager@fixtures.org"
+    When I go to the usagov's Dashboard page
+    And I follow "Manage Users"
+    And I follow "Add User"
+    When I fill in the following:
+      | First name  | Jane           |
+      | Last name   | Doe            |
+      | Email       | jane@admin.org |
+    And I submit the form by pressing "Add"
+    And I sign out
+    Then "jane@admin.org" should receive an email
+
+    When I open the email
+    And I click the complete registration link in the email
+    Then I should see "Security Notification"
+
+  @javascript
+  Scenario: Add existing user to site
+    Given a clear email queue
+    And I am logged in with email "affiliate_manager@fixtures.org"
+    When I go to the usagov's Dashboard page
+    And I follow "Manage Users"
+    And I follow "Add User"
+    When I fill in the following:
+      | First name  | Marylin        |
+      | Last name   | Admin          |
+      | Email | marilyn@fixtures.org |
+    And I submit the form by pressing "Add"
+    And I sign out
+    Then "marilyn@fixtures.org" should receive an email
+    When I open the email
+    Then I should see "You've been added to USA.gov" in the email subject
+
+  @javascript
+  Scenario: Preview
+    Given the following Affiliates exist:
+      | display_name | name              | contact_email   | first_name | last_name | website               | use_redesigned_results_page |
+      | agency site  | www.agency.gov    | john@agency.gov | John       | Bar       | http://www.agency.gov | false                       |
+    And I am logged in with email "john@agency.gov"
+    When I go to the www.agency.gov's Dashboard page
+    And I follow "Preview"
+    Then I should see a link to "Preview" with url that ends with "/search?affiliate=www.agency.gov"
+
+  @javascript
+  Scenario: Adding a new site
+    Given I am logged in with email "affiliate_manager@fixtures.org"
+    When I go to the new site page
+    Then I should see the browser page titled "New Site Setup"
+
+    When I fill in the following:
+      | Homepage URL | http://awesome.gov/ |
+      | Display Name | Agency Gov          |
+      | Site Handle  | x                   |
+    And I submit the form by pressing "Add"
+    Then I should see "Site Handle (visible to searchers in the URL) is too short"
+    And the "Homepage URL" field should contain "http://awesome.gov"
+
+    When I fill in the following:
+      | Homepage URL | https://www.nih.gov/ |
+      | Display Name | Agency Gov           |
+      | Site Handle  | agencygov            |
+    And I select "Arabic" from "Site Language"
+    And I submit the form by pressing "Add"
+    Then I should see "You have added 'Agency Gov' as a site."
+    And I should be on the agencygov's Dashboard page
+    And "affiliate_manager@fixtures.org" should receive an email
+
+    When I follow "Settings"
+    Then the "Homepage URL" field should contain "https://www.nih.gov/"
+    And I should see "Arabic"
+
+    When I follow "Content"
+    Then the "Discover and add the RSS feeds and social media accounts listed on the following page:" field should contain "https://www.nih.gov"
+
+    When I follow "Display"
+    And I follow "Visual design (new)"
+    Then the "Favicon URL" field should contain "http://www.nih.gov/themes/custom/nih2_uswds/assets/img/favicons/custom/favicon-192x192.png"
+
+    When I open the email
+    Then I should see "Your new site: Agency Gov" in the email subject
+    And I should see "Affiliate Manager" in the email body
+    And I should see "Name: Agency Gov" in the email body
+    And I should see "Handle: agencygov" in the email body
+
+  Scenario: Performing site autodiscovery
+    Given the following Affiliates exist:
+      | display_name | name       | contact_email   | first_name | last_name | use_redesigned_results_page |
+      | agency site  | agency.gov | john@agency.gov | John       | Bar       | false                       |
+    And I am logged in with email "john@agency.gov"
+    When I go to the agency.gov's Manage Content page
+    Then the "Discover and add the RSS feeds and social media accounts listed on the following page:" field should be empty
+    And the "autodiscovery_url" input should be required
+
+    When I fill in the following:
+      | Discover and add the RSS feeds and social media accounts listed on the following page: | http:// bad |
+    And I press "Discover"
+    Then I should see "Invalid site URL"
+    And the "Discover and add the RSS feeds and social media accounts listed on the following page:" field should contain "http:// bad"
+
+    When I fill in the following:
+      | Discover and add the RSS feeds and social media accounts listed on the following page: | https://search.gov |
+    And I press "Discover"
+    Then I should see "Discovery complete for https://search.gov"
+    And the "Discover and add the RSS feeds and social media accounts listed on the following page:" field should contain "https://search.gov"
+
+  Scenario: Deleting a site
+    Given I am logged in with email "affiliate_manager@fixtures.org"
+    When I go to the usagov's Dashboard page
+    And I follow "Settings"
+    And I press "Delete"
+    Then I should be on the new site page
+    And I should see "Scheduled site 'USA.gov' for deletion. This could take several hours to complete."
+

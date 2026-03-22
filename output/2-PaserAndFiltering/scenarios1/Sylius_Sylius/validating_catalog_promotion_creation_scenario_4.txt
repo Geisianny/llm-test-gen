@@ -1,0 +1,7 @@
+Scenario 4: Trying to create a catalog promotion with taken code
+  Tags: ['@api', '@ui']
+  Given  there is a catalog promotion with "sale" code and "Summer sale" name
+  When  I create a new catalog promotion with "sale" code and "Winter sale" name
+  Then  I should be notified that catalog promotion with this code already exists
+  And  there should still be only one catalog promotion with code "sale"
+

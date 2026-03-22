@@ -1,0 +1,7 @@
+Scenario 2: Missing required data in OAuth response
+  Given  the Oauth2 user does not have all the required fields
+  When  I authenticate by Oauth2
+  And  I fill and send the missing data for the signup page
+  And  I visit a page showing the current user's SSO data
+  Then  the html should contain the SSO data
+

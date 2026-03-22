@@ -1,0 +1,6 @@
+Scenario: Trade occurrence with order cancellation
+  Given there is a user with an accepted order on a spot market
+  And there is no matching trade for the order
+  When the order is cancelled
+  Then the system releases the reserved assets
+  And updates the user's general balance

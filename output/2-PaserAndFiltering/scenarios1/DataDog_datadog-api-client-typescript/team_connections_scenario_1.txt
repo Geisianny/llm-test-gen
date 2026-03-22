@@ -1,0 +1,8 @@
+Scenario 1: Create team connections returns "Bad Request" response
+  Tags: ['@skip', '@team:DataDog/aaa-omg']
+  Given  operation "CreateTeamConnections" enabled
+  And  new "CreateTeamConnections" request
+  And  body with value {"data": [{"attributes": {"source": "github"}, "relationships": {"connected_team": {"data": {"id": "@MyGitHubAccount/my-team-name", "type": "github_team"}}, "team": {"data": {"type": "team"}}}, "type": "team_connection"}]}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

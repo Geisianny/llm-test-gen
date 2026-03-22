@@ -1,0 +1,6 @@
+Scenario 21: Idempotency of complete menu path and direct link
+  When  I follow the left menu "Software > Manage"
+  Then  I should see a "Software Channel Management" text in the content area
+  When  I follow the left menu "Software > Manage > Channels"
+  Then  I should see a "Software Channel Management" text in the content area
+

@@ -1,0 +1,5 @@
+Scenario 1: MULTICOMPANY SECURITY RULES
+  Tags: ['@multicompany_base_finance_multicompany_security_rules']
+  Given  I need a "ir.rule" with name: "Partner bank company rule"
+  And  having:
+

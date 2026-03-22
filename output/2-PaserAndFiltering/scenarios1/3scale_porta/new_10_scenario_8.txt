@@ -1,0 +1,7 @@
+Scenario 8: Client is required
+  Given  they go to the new sso integration page
+  And  there is a required field "Client"
+  When  the form is submitted with:
+  Then  they should see a toast alert with text "SSO integration could not be created"
+  And  field "Client" has inline error "can't be blank"
+

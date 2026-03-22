@@ -1,0 +1,7 @@
+Scenario 2: Reopen a closed period
+  When  I navigate the menu and select the item at "General Journal > Year End"
+  And  I press "Re-open Period"
+  Then  I can't post a transaction on 2015-11-15
+  When  I post the following GL transaction on 2015-11-16:
+  Then  the Balance Sheet per 2016-01-01 looks like:
+

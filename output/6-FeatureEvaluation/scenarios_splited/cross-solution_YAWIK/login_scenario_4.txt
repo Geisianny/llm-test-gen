@@ -1,0 +1,6 @@
+Scenario: Login with invalid email format
+  Given there is a registered user with a valid email and password
+  When the user logs in with an invalid email format "invalidEmail"
+  And enters the correct password
+  Then the system denies access
+  And displays a message indicating that the email format is invalid

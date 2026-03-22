@@ -1,0 +1,6 @@
+Scenario: Search for an invalid term
+  Given the site visitor is on a site using the SearchElastic search engine
+  And the Elasticsearch index does not contain relevant results for the term " invalidterm"
+  When the site visitor performs a search for "invalidterm"
+  Then the system displays a message indicating no results were found
+  And the message suggests alternatives or provides guidance on refining the search

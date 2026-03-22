@@ -1,0 +1,11 @@
+Scenario 3: Adding translations with all content block types
+  Given  I am a writer
+  And  the configurable document types feature flag is enabled
+  And  the test configurable document type is defined with translations enabled
+  And  I have drafted an English configurable document titled "Digital transformation report"
+  When  I add a Welsh translation "Adroddiad trawsnewid digidol"
+  Then  configured content blocks should appear on the translation page
+  And  the Welsh translation fields should be pre-populated with primary locale content
+  And  the image selections should be preserved from the primary locale
+  And  I should see the original English content in "original text" sections
+

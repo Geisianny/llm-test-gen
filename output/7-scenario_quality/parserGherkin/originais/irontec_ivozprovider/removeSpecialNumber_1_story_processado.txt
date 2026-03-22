@@ -1,0 +1,25 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 19/01/2026 23:13:57
+Arquivo analisado: removeSpecialNumber_1_story_processado.feature
+Caminho relativo: irontec_ivozprovider\removeSpecialNumber_1_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/Originais\irontec_ivozprovider\removeSpecialNumber_1_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: removeSpecialNumber_1_story_processado
+Descrição: Não possui
+Total de cenários: 1
+
+CENÁRIOS IDENTIFICADOS:
+1. Remove a special numbers
+   Steps: 5
+   - Given I add Authorization header
+   - When I add "Content-Type" header equal to "application/json"
+   - And I add "Accept" header equal to "application/json"
+   - And I send a "DELETE" request to "/special_numbers/1"
+   - Then the response status code should be 204

@@ -1,0 +1,18 @@
+Scenario 3: Enable the Retail formulas on the Retail branch server
+  Given  I am on the Systems overview page of this "proxy"
+  When  I follow "Formulas" in the content area
+  And  I check the "branch-network" formula
+  And  I check the "dhcpd" formula
+  And  I check the "bind" formula
+  And  I check the "tftpd" formula
+  And  I check the "vsftpd" formula
+  And  I check the "pxe" formula
+  And  I click on "Save"
+  And  I wait until I see "Formula saved." text
+  Then  the "branch-network" formula should be checked
+  And  the "dhcpd" formula should be checked
+  And  the "bind" formula should be checked
+  And  the "tftpd" formula should be checked
+  And  the "vsftpd" formula should be checked
+  And  the "pxe" formula should be checked
+

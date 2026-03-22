@@ -1,0 +1,11 @@
+Scenario 1: I can find listings by location, categories, characteristics, date and price
+  Given  I do a search on the home page
+  Then  I should be on the "listing search result" page
+  And  I should see "1 results"
+  When  I fill date range with the following:
+  And  I drag range slider ".range-box .ui-slider" with min equal to "40" and max equal to "400"
+  And  I select a characteristic "Characteristic_3" with value "Custom value 1"
+  And  I wait 500 ms for Jquery loading
+  Then  I should be on the "listing search result" page
+  And  I should see "1 results"
+

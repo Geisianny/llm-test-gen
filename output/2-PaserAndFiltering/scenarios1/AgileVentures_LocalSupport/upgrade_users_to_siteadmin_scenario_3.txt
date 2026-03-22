@@ -1,0 +1,6 @@
+Scenario 3: Shows success message when super admin tries to upgrade a regular user
+  Given  I am signed in as a superadmin
+  And  I visit the registered users page
+  When  I click on "Upgrade" for the user "registered-user-2@example.com"
+  Then  I should see "You have successfully upgraded user registered-user-2@example.com"
+

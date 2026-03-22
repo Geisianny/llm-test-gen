@@ -1,0 +1,11 @@
+Scenario 18: Trying to create a catalog promotion with product type with invalid products
+  Tags: ['@api', '@no-ui']
+  When  I want to create a new catalog promotion
+  And  I specify its code as "winter_sale"
+  And  I name it "Winter sale"
+  And  I specify its label as "Winter -50%" in "English (United States)"
+  And  I describe it as "This promotion gives a 50% discount on all products" in "English (United States)"
+  And  I add catalog promotion scope for product with nonexistent products
+  And  I try to add it
+  Then  I should be notified that I can add only existing product
+

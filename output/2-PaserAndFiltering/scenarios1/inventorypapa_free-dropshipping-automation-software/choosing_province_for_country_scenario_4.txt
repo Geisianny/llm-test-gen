@@ -1,0 +1,10 @@
+Scenario 4: Being unable to address an order with country without provinces and province from other country
+  Tags: ['@api']
+  Given  I have product "The Dark Knight T-Shirt" in the cart
+  And  I am at the checkout addressing step
+  When  I specify the billing address as "Nanda Parbat", "League of Assassins House", "11-333", "Nepal" for "Ra's al Ghul"
+  And  I specify billing country province as "New York"
+  And  I complete the addressing step
+  Then  I should be notified that selected province is invalid for billing address
+  And  I should still be on the checkout addressing step
+

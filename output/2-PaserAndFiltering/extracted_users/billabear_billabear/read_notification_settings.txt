@@ -1,0 +1,14 @@
+Feature: Read Notification Settings
+Description: In order to know if the notification settings are correct
+  As an APP user
+  I need to be able to see the notification settings
+
+Background: 
+  Given  the following accounts exist:
+
+Scenario 1: Create email template
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  the notification settings are:
+  When  I view the notification settings
+  Then  I will see that the notification settings for EMSP is "sendgrid"
+

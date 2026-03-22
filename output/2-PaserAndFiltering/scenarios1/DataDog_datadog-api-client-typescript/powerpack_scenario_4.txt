@@ -1,0 +1,7 @@
+Scenario 4: Delete a powerpack returns "Powerpack Not Found" response
+  Tags: ['@team:DataDog/dashboards-backend']
+  Given  new "DeletePowerpack" request
+  And  request contains "powerpack_id" parameter with value "made-up-id"
+  When  the request is sent
+  Then  the response status is 404 Powerpack Not Found
+

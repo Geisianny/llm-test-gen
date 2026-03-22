@@ -1,0 +1,6 @@
+Scenario 5: Retrieve the third level
+  When  I send a "GET" request to "/third_levels/1"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be valid according to the JSON API schema
+

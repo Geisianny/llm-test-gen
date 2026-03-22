@@ -1,0 +1,6 @@
+Scenario 4: Execute a test excluding an file included with brackets patterns
+  Given  a configuration with:
+  When  I start Karma
+  Then  it passes with like:
+  And  it passes with like:
+

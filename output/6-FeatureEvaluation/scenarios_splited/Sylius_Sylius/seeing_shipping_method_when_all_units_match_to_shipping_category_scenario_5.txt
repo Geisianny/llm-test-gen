@@ -1,0 +1,4 @@
+Scenario: Valid shipping methods for single item in cart
+  Given there is one item in the cart with shipping category "Standard"
+  When the user views available shipping methods
+  Then the system displays shipping methods associated with "Standard" category

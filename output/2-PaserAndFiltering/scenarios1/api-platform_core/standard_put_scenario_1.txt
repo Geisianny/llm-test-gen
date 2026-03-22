@@ -1,0 +1,8 @@
+Scenario 1: Create a new resource
+  Tags: ['@createSchema']
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "PUT" request to "/standard_puts/5" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+

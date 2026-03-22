@@ -1,0 +1,10 @@
+Scenario 2: a user creates a community when environment moderates it
+  Given  I am logged in as "joaosilva"
+  And  feature "admin_must_approve_new_communities" is enabled on environment
+  And  I go to joaosilva's control panel
+  And  I follow "Groups" within "#section-relationships"
+  And  I follow "Create a new community"
+  And  I fill in "Name" with "Community for moderation"
+  And  I follow "Create"
+  Then  I should not see "Community for moderation"
+

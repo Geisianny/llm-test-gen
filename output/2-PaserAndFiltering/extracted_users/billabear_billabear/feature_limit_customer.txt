@@ -1,0 +1,25 @@
+Feature: Customer Limits
+
+Background: 
+  Given  the following accounts exist:
+  And  the follow products exist:
+  And  the follow prices exist:
+  And  the following features exist:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "Price One" with:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 15 and price "Price One" with:
+
+Scenario 1: Get customer info
+  When  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  When  I view the customer info via the site for "customer.one@example.org"
+  Then  I should see the limit info that "Feature Two" is limited to 25
+
+Scenario 2: Disabled
+  When  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  And  customer "customer.one@example.org" is disabled
+  When  I view the customer info via the site for "customer.one@example.org"
+  Then  I should see an empty limits response
+

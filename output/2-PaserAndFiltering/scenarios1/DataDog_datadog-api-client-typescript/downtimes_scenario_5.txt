@@ -1,0 +1,9 @@
+Scenario 5: Cancel downtimes by scope returns "OK" response
+  Tags: ['@team:DataDog/monitor-app']
+  Given  there is a valid "downtime" in the system
+  And  new "CancelDowntimesByScope" request
+  And  body with value {"scope": "{{ downtime.scope[0] }}"}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "cancelled_ids[0]" has the same value as "downtime.id"
+

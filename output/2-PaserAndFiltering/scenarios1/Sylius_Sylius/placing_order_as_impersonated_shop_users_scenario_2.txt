@@ -1,0 +1,12 @@
+Scenario 2: Placing an order as an impersonated shop user when the shop user was already logged
+  Tags: ['@no-api', '@ui', '@javascript']
+  When  I sign in with email "john.doe@london.uk" and password "johndoe"
+  And  I view details of the customer "tanith.low@london.uk"
+  And  I impersonate them
+  And  I visit the store
+  And  I add product "PHP T-Shirt" to the cart
+  And  I proceed through checkout process
+  And  I confirm my order
+  And  I browse orders of a customer "tanith.low@london.uk"
+  Then  I should see a single order in the list
+

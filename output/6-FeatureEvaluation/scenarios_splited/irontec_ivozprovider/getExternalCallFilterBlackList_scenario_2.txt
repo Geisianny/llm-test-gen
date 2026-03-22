@@ -1,0 +1,5 @@
+Scenario: Retrieve external call filter blacklists with invalid authentication
+  Given there is a client admin with an invalid authentication token
+  When the client admin sends a GET request to retrieve external call filter blacklists
+  Then the system returns an error response
+  And the response status code is 401

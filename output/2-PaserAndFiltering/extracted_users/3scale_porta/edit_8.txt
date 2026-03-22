@@ -1,0 +1,25 @@
+Feature: Account Settings > Users > SSO Integrations > Edit
+Tags: ['@javascript']
+
+Background: 
+  Given  a provider is logged in
+  And  a red hat single sign-on integration
+
+Scenario 1: Navigation
+  Given  they go to the users sso integrations page
+  When  they follow "Red Hat Single Sign-On"
+  And  the current page is the sso integration page
+  And  should see "Red Hat Single Sign-On"
+  And  they follow "edit"
+  Then  the current page is the edit rh sso integration page
+
+Scenario 2: Update a RH SSO integration
+  When  they go to the edit rh sso integration page
+  And  the form is submitted with:
+  Then  they should see a toast alert with text "SSO integration updated"
+
+Scenario 3: Missing field
+  When  they go to the edit rh sso integration page
+  And  the form is submitted with:
+  Then  they should see a toast alert with text "SSO integration could not be updated"
+

@@ -1,0 +1,12 @@
+Scenario Outline 1: Referral set member is the maker of a trade during continuous trading (0083-RFPR-048) - Example 1
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  the referral set stats for code "referral-code-1" at epoch "1" should have a running volume of 0:
+
+  Examples:
+    | party | maker side | taker side |
+    | referrer1 | buy | sell |
+    | referrer1 | sell | buy |
+    | referee1 | buy | sell |
+    | referee1 | sell | buy |
+

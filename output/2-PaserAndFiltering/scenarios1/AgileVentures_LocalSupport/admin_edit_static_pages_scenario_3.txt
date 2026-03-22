@@ -1,0 +1,7 @@
+Scenario 3: Super Admin can see pages index
+  Given  I am signed in as a superadmin
+  And  I visit the home page
+  When  I follow "About Us"
+  And  I follow "Pages"
+  Then  the URL should contain "pages"
+

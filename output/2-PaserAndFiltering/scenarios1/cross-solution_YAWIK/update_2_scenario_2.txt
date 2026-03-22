@@ -1,0 +1,13 @@
+Scenario 2: Updating Location
+  When  I click edit on location form
+  And  I wait for the ajax response
+  And  I fill in the following:
+  And  I save "organization location" form
+  And  I wait for the ajax response
+  Then  I should see "Some Street"
+  And  I should see "12345"
+  And  I should see "54321"
+  And  I should see "Some City"
+  And  I should see "123123"
+  And  I should see "321321"
+

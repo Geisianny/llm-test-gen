@@ -1,0 +1,10 @@
+Scenario 1: not offer to select blog when I have once blog
+  Given  I am on the homepage
+  And  the following users
+  And  "joaosilva" has no articles
+  And  the following blogs
+  And  the following blocks
+  And  I am logged in as "joaosilva"
+  When  I go to edit BlogArchivesBlock of joaosilva
+  Then  I should not see "Choose a blog:"
+

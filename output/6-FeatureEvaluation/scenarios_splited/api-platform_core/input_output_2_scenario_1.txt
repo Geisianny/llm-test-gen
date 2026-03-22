@@ -1,0 +1,6 @@
+Scenario: Successful password reset using DTO
+  Given there is a registered user with the email "user@example.com"
+  When the client sends a password reset request with the email "user@example.com"
+  And includes a valid JSON payload
+  Then the system returns a 201 status code
+  And includes the dispatch timestamp in the response

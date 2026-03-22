@@ -1,0 +1,5 @@
+Scenario 2: Seeing disabled code field while editing customer group
+  Tags: ['@api', '@ui']
+  When  I want to edit this customer group
+  Then  I should not be able to edit its code
+

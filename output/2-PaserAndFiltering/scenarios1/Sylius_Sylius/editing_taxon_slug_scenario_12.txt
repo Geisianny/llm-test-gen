@@ -1,0 +1,11 @@
+Scenario 12: Generating a child taxon's slug when changing the parent
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  Given  the store has "Renaissance weapons" taxonomy
+  And  the store has "Medieval weapons" taxonomy
+  And  the "Medieval weapons" taxon has child taxon "Pikes"
+  When  I want to modify the "Pikes" taxon
+  And  I change its parent taxon to "Renaissance weapons"
+  And  I generate its slug in "English (United States)"
+  And  I save my changes
+  Then  the slug of the "Pikes" taxon should be "renaissance-weapons/pikes"
+

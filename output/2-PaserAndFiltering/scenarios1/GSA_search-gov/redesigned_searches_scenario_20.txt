@@ -1,0 +1,7 @@
+Scenario 20: Hide an Alert on search page
+  Tags: ['@javascript', '@a11y']
+  Given  the following BingV7 Affiliates exist:
+  Given  the following Alert exists:
+  When  I am on en.agency.gov's search page
+  Then  I should not see "New alert for the test aff"
+

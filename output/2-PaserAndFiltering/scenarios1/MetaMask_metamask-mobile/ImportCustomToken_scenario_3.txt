@@ -1,0 +1,14 @@
+Scenario Outline 3: Importing Custom tokens - Example 1
+  When  I tap on the navbar network title button
+  And  I select "Goerli Test Network" network option
+  Then  "Goerli Test Network" should be displayed in network educational modal
+  When  I tap Import Tokens
+  And  I type 0x326C977E6efc84E512bB9C30f76E30c160eD06FB into token Address field
+  Then  The Token Symbol is displayed
+  When  I tap on the Import button
+  Then  I should see "Imported Token" toast message
+
+  Examples:
+    | NETWORK | TOKENADDRESS |
+    | Goerli Test Network | 0x326C977E6efc84E512bB9C30f76E30c160eD06FB |
+

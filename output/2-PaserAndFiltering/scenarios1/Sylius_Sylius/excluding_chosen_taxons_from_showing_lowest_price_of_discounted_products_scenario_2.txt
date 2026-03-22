@@ -1,0 +1,8 @@
+Scenario 2: Excluding multiple taxons from displaying the lowest price of discounted products
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I want to modify a channel "Poland"
+  And  I exclude the "T-Shirts" and "Caps" taxons from showing the lowest price of discounted products
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this channel should have "T-Shirts" and "Caps" taxons excluded from displaying the lowest price of discounted products
+

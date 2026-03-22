@@ -1,0 +1,7 @@
+Scenario 3: Receiving percentage discount on a single item fulfilling range price criteria
+  Tags: ['@ui', '@api']
+  Given  this promotion gives "50%" off on every product priced between "$15.00" and "$50.00"
+  When  I add product "PHP Mug" to the cart
+  Then  its price should be decreased by "$10.00"
+  And  my cart total should be "$10.00"
+

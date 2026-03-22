@@ -1,0 +1,6 @@
+Scenario 7: Create resource with extraProperties on ApiProperty
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/extra_properties_on_properties" with body:
+  Then  the response status code should be 201
+  And  the header "Cache-Tags" should not exist
+

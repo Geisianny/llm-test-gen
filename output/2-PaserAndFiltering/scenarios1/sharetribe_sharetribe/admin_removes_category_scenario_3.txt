@@ -1,0 +1,6 @@
+Scenario 3: Admin is not able to remove last top level categories
+  Tags: ['@javascript']
+  Given  "Services" is the only top level category in community "test"
+  And  I am on the categories admin page
+  Then  I should not be able to remove category "Services"
+

@@ -1,0 +1,43 @@
+Scenario 11: Signing in to save and finish later with different account details and using new application
+  Given  I go to the first page of the "Test Listing" application
+  When  I fill out the Name page as "Alice Walker" with birth date "2/2/1952"
+  And  I continue without signing in
+  And  I fill out the Contact page with an address, non-NRHP match, and WorkInSF
+  And  I confirm my address
+  And  I don't indicate an alternate contact
+  And  I indicate I will live alone
+  And  I indicate living in public housing
+  And  I indicate no ADA priority
+  And  I indicate having vouchers
+  And  I fill out my income as "50000"
+  And  I continue past the Lottery Preferences intro
+  And  I select Assisted Housing Preference
+  And  I select "Alice Walker" for "assistedHousing" preference
+  And  I upload a Copy of Lease as my proof for Assisted Housing
+  And  I click the Save and Finish Later button
+  And  I click the Sign In button
+  And  I sign in as "Alice Walker" with my email pre-filled
+  Then  I should be on the Choose Draft page
+  When  I select my recent application and submit
+  Then  I should be on a page to reconcile my application details
+  When  I choose to reconcile my application details by changing them to match my account details
+  Then  I should be on the "Name" page of the application
+  And  I should not be able to navigate to the "Income" section
+  And  I should not be able to navigate to the "Preferences" section
+  When  I navigate to the "You" section
+  Then  I should see the account info for "Alice Walker" filled in on the Name page
+  When  I hit the Next button "2" times
+  And  I indicate I will live alone
+  And  I hit the Next button "5" times
+  Then  I should see the "assistedHousing" checkbox un-checked
+  When  I opt out of "Assisted Housing" preference
+  And  I opt out of "Live/Work" preference
+  And  I opt out of "Alice Griffith" preference
+  And  I don't choose COP-DTHP preferences
+  And  I answer "No" to the Veterans preference question
+  And  I continue past the general lottery notice page
+  And  I fill out the optional survey
+  And  I confirm details on the review page
+  And  I agree to the terms and submit
+  And  I sign out without saving
+

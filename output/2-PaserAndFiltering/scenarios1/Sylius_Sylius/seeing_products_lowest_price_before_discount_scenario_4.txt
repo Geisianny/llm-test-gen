@@ -1,0 +1,10 @@
+Scenario 4: Seeing the lowest price information on a product that has a discount, over a month passes, and then seeing the discount change
+  Tags: ['@api', '@ui']
+  Given  it is "2023-03-14" now
+  And  the store has a product "Wyborowa Vodka" priced at "$42.00"
+  And  this product's price changed to "$21.00" and original price changed to "$42.00"
+  And  it is "2023-04-15" now
+  And  this product's price changed to "$33.00"
+  When  I check this product's details
+  Then  I should see "$21.00" as its lowest price before the discount
+

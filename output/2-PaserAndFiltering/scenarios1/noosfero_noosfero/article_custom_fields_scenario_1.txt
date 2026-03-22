@@ -1,0 +1,8 @@
+Scenario 1: Add custom field to an article
+  Tags: ['@selenium']
+  Given  I follow "Add new field"
+  And  I select "Text" from "custom-field-type"
+  And  I fill in "custom-field-name" with "New field"
+  When  I follow "Add new field"
+  Then  should see "New field" within "#article-custom-fields"
+

@@ -1,0 +1,7 @@
+Scenario: Modify heading properties
+  Given the user is logged into LedgerSMB
+  And there is an existing heading with specific properties
+  When the user edits the heading properties
+  And changes the heading description to "New Heading Description"
+  Then the system updates the heading properties
+  And displays the updated heading description "New Heading Description"

@@ -1,0 +1,9 @@
+Scenario 1: Adding a new promotion
+  Tags: ['@ui']
+  Given  I want to create a new promotion
+  When  I specify its code as "FULL_METAL_PROMOTION"
+  And  I name it "Full metal promotion"
+  And  I add it
+  Then  I should be notified that it has been successfully created
+  And  the "Full metal promotion" promotion should appear in the registry
+

@@ -1,0 +1,8 @@
+Scenario 4: Search based on Entity Country
+  When  I navigate the menu and select the item at "Contacts > Search"
+  Then  I should see the Contact Search screen
+  When  I select "Spain" from the drop down "Country"
+  And  I press "Search"
+  Then  I should see the Contact Search Report screen
+  And  I expect the report to contain 1 rows
+

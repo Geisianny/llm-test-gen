@@ -1,0 +1,34 @@
+Feature: service_level_objectives_1_story_processado
+
+Scenario: Create a new SLO report
+    Given the user has valid Datadog API credentials
+    And the SLO report details are valid
+    When the user creates a new SLO report via the API
+    Then the system returns a success response
+    And the SLO report is stored in the system
+
+Scenario: Retrieve an existing SLO report
+    Given there is an existing SLO report with ID "12345"
+    When the user queries the SLO report with ID "12345" via the API
+    Then the system returns the SLO report details
+    And the report details match the stored data
+
+Scenario: Update an existing SLO report
+    Given there is an existing SLO report with ID "12345"
+    And the updated SLO report details are valid
+    When the user updates the SLO report with ID "12345" via the API
+    Then the system returns a success response
+    And the SLO report is updated with the new details
+
+Scenario: Delete an existing SLO report
+    Given there is an existing SLO report with ID "12345"
+    When the user deletes the SLO report with ID "12345" via the API
+    Then the system returns a success response
+    And the SLO report is removed from the system
+
+Scenario: Attempt to create an SLO report with invalid details
+    Given the user has valid Datadog API credentials
+    And the SLO report details are invalid
+    When the user creates a new SLO report via the API
+    Then the system returns an error response
+    And the error message indicates the invalid details

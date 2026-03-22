@@ -1,0 +1,6 @@
+Scenario 7: Check via API old channels are still the same on openSUSE minion before channel change completes
+  Tags: ['@sle_minion', '@uyuni']
+  When  I refresh the metadata for "sle_minion"
+  Then  channel "openSUSE Tumbleweed (x86_64)" should be enabled on "sle_minion"
+  And  channel "Uyuni Client Tools for openSUSE Tumbleweed (x86_64)" should be disabled on "sle_minion"
+

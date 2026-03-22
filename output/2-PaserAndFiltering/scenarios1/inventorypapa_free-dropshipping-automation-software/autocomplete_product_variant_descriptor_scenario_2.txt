@@ -1,0 +1,6 @@
+Scenario 2: Getting a hint when looking for product variants
+  Tags: ['@api']
+  When  I look for a variant with "bo" in descriptor within the "Snake" product
+  Then  I should see 2 product variants on the list
+  And  I should see the product variants named "Ouroboros" and "Boomslang" on the list
+

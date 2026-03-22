@@ -1,0 +1,7 @@
+Scenario 6: Delete a retention filter returns "Not Found" response
+  Tags: ['@team:DataDog/apm-trace-intake']
+  Given  new "DeleteApmRetentionFilter" request
+  And  request contains "filter_id" parameter with value "not_found"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

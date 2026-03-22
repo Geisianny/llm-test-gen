@@ -1,0 +1,7 @@
+Scenario 9: Delete an application key owned by current user returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/credentials-management']
+  Given  new "DeleteCurrentUserApplicationKey" request
+  And  request contains "app_key_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

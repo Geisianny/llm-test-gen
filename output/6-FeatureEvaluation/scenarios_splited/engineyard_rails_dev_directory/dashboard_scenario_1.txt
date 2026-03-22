@@ -1,0 +1,6 @@
+Scenario: Provider views account overview on dashboard after login
+  Given there is a registered provider with the company "ABC Solutions"
+  And the provider has 5 open requests and 2 new endorsements
+  When the provider logs in
+  Then the dashboard displays the provider's account overview
+  And includes the number of open requests and new endorsements

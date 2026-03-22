@@ -1,0 +1,17 @@
+Scenario 5: filter orders by supplier
+  Tags: ['@selenium']
+  Given  the following users
+  And  the following enterprise
+  And  the shopping basket is enabled on "First Church of Springfield"
+  And  the following product_categories
+  And  the following products
+  And  the following purchase from "homer" on "moes-tavern" that is "ordered"
+  And  the following purchase from "homer" on "first-church-of-springfield" that is "ordered"
+  And  I follow "Purchases made"
+  And  I should see "Moes Tavern" within any ".actor-name"
+  And  I should see "First Church of Springfield" within any ".actor-name"
+  And  I select "Moes Tavern" from "supplier_id"
+  When  I press "Filter"
+  Then  I should see "Moes Tavern" within any ".actor-name"
+  And  I should not see "First Church of Springfield" within any ".actor-name"
+

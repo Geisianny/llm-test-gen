@@ -1,0 +1,6 @@
+Scenario 8: Invalid tiers 2
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  I configure tiers pricing of:
+  When  I create a price via the app for the product "Product One"
+  Then  there should not be a tier volume price for "Product One"
+

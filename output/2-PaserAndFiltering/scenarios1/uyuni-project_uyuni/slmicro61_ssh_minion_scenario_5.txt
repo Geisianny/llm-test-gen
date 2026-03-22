@@ -1,0 +1,7 @@
+Scenario 5: Check registration on proxy of SL Micro 6.1 SSH minion
+  Tags: ['@proxy']
+  Given  I am on the Systems overview page of this "proxy"
+  When  I follow "Details" in the content area
+  And  I follow "Proxy" in the content area
+  Then  I should see "slmicro61_ssh_minion" hostname
+

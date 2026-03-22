@@ -1,0 +1,6 @@
+Scenario 6: deny access to versions when disabled on article
+  Tags: ['@selenium']
+  Given  the following articles
+  And  I go to /joaosilva/versions-disabled/versions
+  Then  I should see "Access denied"
+

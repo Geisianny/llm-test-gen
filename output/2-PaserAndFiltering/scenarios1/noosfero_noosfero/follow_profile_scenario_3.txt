@@ -1,0 +1,12 @@
+Scenario 3: Common noosfero user follow a community then cancel the action
+  Tags: ['@selenium']
+  Given  I am logged in as "johnsnow"
+  When  I go to nightswatch's homepage
+  When  I follow "Follow"
+  When  I follow "Cancel"
+  Then  I should not see "Family"
+  And  I should not see "Favorites"
+  And  I should not see "Work"
+  And  I should not see "New Circle"
+  Then  "johnsnow" should not be a follower of "nightswatch"
+

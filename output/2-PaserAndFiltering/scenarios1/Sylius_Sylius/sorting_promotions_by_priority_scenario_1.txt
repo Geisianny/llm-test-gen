@@ -1,0 +1,7 @@
+Scenario 1: Promotions are sorted by priority in descending order by default
+  Tags: ['@api', '@ui']
+  When  I want to browse promotions
+  Then  I should see 3 promotions on the list
+  And  the first promotion on the list should have name "Honour Harambe"
+  And  the last promotion on the list should have name "Pugs For Everyone"
+

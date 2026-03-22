@@ -1,0 +1,5 @@
+Scenario 1: Preventing a potential XSS attack while adding new product
+  Tags: ['@no-api', '@ui', '@mink:chromedriver']
+  When  I want to create a new simple product
+  Then  I should be able to name it "No XSS" in "English (United States)" locale
+

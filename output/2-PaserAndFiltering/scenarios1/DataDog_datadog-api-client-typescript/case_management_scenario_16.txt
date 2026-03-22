@@ -1,0 +1,9 @@
+Scenario 16: Delete case comment returns "Bad Request" response
+  Tags: ['@skip', '@team:DataDog/case-management']
+  Given  new "DeleteCaseComment" request
+  And  there is a valid "case" in the system
+  And  request contains "case_id" parameter from "case.id"
+  And  request contains "cell_id" parameter with value "not-an-uuid"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

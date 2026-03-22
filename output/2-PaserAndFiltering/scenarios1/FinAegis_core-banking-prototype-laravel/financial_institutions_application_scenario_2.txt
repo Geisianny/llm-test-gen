@@ -1,0 +1,15 @@
+Scenario 2: Submit application form with valid data
+  Given  I am on "/financial-institutions/apply"
+  When  I fill in "institution_name" with "Test Bank Ltd"
+  And  I fill in "country" with "Germany"
+  And  I fill in "contact_name" with "John Doe"
+  And  I fill in "contact_email" with "john.doe@testbank.com"
+  And  I fill in "technical_capabilities" with "We have modern REST APIs with OAuth 2.0"
+  And  I fill in "regulatory_compliance" with "Fully licensed by BaFin with EU passporting"
+  And  I fill in "financial_strength" with "€500M AUM, A+ rating"
+  And  I fill in "insurance_coverage" with "Complete deposit insurance coverage"
+  And  I check "terms"
+  And  I press "Submit Application"
+  Then  I should see "Thank you for your application"
+  And  I should be on "/financial-institutions/apply"
+

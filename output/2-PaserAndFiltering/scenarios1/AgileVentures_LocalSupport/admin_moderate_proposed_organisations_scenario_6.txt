@@ -1,0 +1,8 @@
+Scenario 6: Superadmin views details of proposed organisations
+  Tags: ['@vcr']
+  And  the following categories exist:
+  And  the proposed organisations have the categories:
+  And  I visit the proposed organisation show page for the proposed organisation that was proposed
+  Then  I should see the details of the proposed organisation
+  And  I should see the following:
+

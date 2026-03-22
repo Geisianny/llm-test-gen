@@ -1,0 +1,8 @@
+Scenario 26: Update On-Call schedule returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/on-call']
+  Given  new "UpdateOnCallSchedule" request
+  And  request contains "schedule_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"layers": [{"effective_date": "2025-02-03T05:00:00Z", "end_date": "2025-12-31T00:00:00Z", "interval": {"seconds": 3600}, "members": [{"user": {"id": "00000000-aba1-0000-0000-000000000000"}}], "name": "Layer 1", "restrictions": [{"end_day": "friday", "end_time": "17:00:00", "start_day": "monday", "start_time": "09:00:00"}], "rotation_start": "2025-02-01T00:00:00Z"}], "name": "On-Call Schedule Updated", "time_zone": "America/New_York"}, "id": "3653d3c6-0c75-11ea-ad28-fb5701eabc7d", "relationships": {"teams": {"data": [{"id": "00000000-da3a-0000-0000-000000000000", "type": "teams"}]}}, "type": "schedules"}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

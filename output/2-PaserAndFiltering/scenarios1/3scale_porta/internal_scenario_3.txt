@@ -1,0 +1,10 @@
+Scenario 3: Failed attempt to sign in as provider with invalid password
+  Tags: ['@javascript']
+  Given  the admin of account "foo.3scale.localhost" has password "foobar"
+  When  current domain is the admin domain of provider "foo.3scale.localhost"
+  And  I go to the provider login page
+  And  I fill in "Username" with "foo.3scale.localhost"
+  And  I fill in "Password" with "whatever"
+  And  I press "Sign in"
+  Then  I should see "Incorrect email or password. Please try again"
+

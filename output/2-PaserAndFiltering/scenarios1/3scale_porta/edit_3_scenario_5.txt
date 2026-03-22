@@ -1,0 +1,16 @@
+Scenario Outline 5: API JSON Spec validation - Example 1
+  Given  the product has a Swagger 1.2 spec "Echo API"
+  When  they go to the spec's edit page from Product context
+  And  the form is submitted with:
+  Then  field "API JSON Spec" has inline error "Invalid JSON"
+  When  the form is submitted with:
+  Then  field "API JSON Spec" has inline error "Invalid Swagger version"
+  When  the form is submitted with:
+  Then  field "API JSON Spec" has inline error "JSON Spec is invalid"
+
+  Examples:
+    | swagger version |
+    | Swagger 1.2 |
+    | Swagger 2 |
+    | OAS 3.0 |
+

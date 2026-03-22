@@ -1,0 +1,5 @@
+Scenario: Enterprise owner views enterprise management option
+  Given there is an enterprise owner with registered enterprises
+  And the feature flag for enterprise management is enabled
+  When the user navigates to the main menu
+  Then the system displays the enterprise management option

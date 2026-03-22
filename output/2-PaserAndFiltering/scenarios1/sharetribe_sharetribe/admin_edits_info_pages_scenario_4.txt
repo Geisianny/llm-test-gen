@@ -1,0 +1,15 @@
+Scenario 4: Admin user can edit privacy policy page
+  Tags: ['@javascript']
+  Given  I am logged in as "kassi_testperson1"
+  And  I am on the privacy policy page
+  Then  I should not have editor open
+  When  I go to the privacy policy page
+  And  I follow "Edit page"
+  Then  I should have editor open
+  When  I send keys "This is a new line to privacy policy text" to editor
+  And  I click save on the editor
+  Then  I should not have editor open
+  Then  I should see "This is a new line to privacy policy text"
+  When  I refresh the page
+  Then  I should see "This is a new line to privacy policy text"
+

@@ -1,0 +1,13 @@
+Scenario Outline 1: I change user preferences to the <selection> language - Example 1
+  When  I navigate the menu and select the item at "Preferences"
+  And  I select the "Preferences" tab
+  And  I select "American English" from the drop down "Language"
+  And  I save the page
+  And  I select the "Preferences" tab
+  Then  I expect "American English" to be selected for "Language"
+
+  Examples:
+    | selection | translation | language | preferences |
+    | American English | American English | Language | Preferences |
+    | Brazilian Portuguese | português - Brasil | Idioma | Preferências |
+

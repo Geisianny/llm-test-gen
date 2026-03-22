@@ -1,0 +1,5 @@
+Scenario: Attempt to generate receipt for a non-existent payment
+  Given there is an authenticated user with existing subscriptions
+  And the user has no payment with a specific ID
+  When the user requests to generate a receipt for the non-existent payment
+  Then the system displays an error message indicating that the payment does not exist

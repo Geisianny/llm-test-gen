@@ -1,0 +1,6 @@
+Scenario 2: Applying catalog promotion on variant
+  Tags: ['@api', '@ui']
+  When  I view product "Pants"
+  Then  I should see the product price "$70.00"
+  And  I should see the product original price "$100.00"
+

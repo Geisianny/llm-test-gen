@@ -1,0 +1,9 @@
+Scenario 38: Remove a user from a team returns "API error response." response
+  Tags: ['@team:DataDog/aaa-omg']
+  Given  new "DeleteTeamMembership" request
+  And  there is a valid "dd_team" in the system
+  And  request contains "team_id" parameter from "dd_team.data.id"
+  And  request contains "user_id" parameter with value "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 API error response.
+

@@ -1,0 +1,13 @@
+Scenario 4: Parametrize the branch network on the Retail branch server
+  Given  I am on the Systems overview page of this "proxy"
+  When  I follow "Formulas" in the content area
+  And  I follow first "Branch Network" in the content area
+  And  I click on "Expand All Sections"
+  And  I enter "eth1" in NIC field
+  And  I enter the local IP address of "proxy" in IP field
+  And  I uncheck enable route box
+  And  I uncheck enable NAT box
+  And  I enter "example" in branch id field
+  And  I click on "Save Formula"
+  Then  I should see a "Formula saved" text
+

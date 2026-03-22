@@ -1,0 +1,15 @@
+Scenario 2: 002 (0019-MCAL-146) A market in an auction and party with a partially filled iceberg pegged order switches from cross margin mode to isolated margin mode the unfilled portion of the iceberg pegged order is cancelled
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following orders:
+  When  the network moves ahead "2" blocks
+  And  the market data for the market "ETH/FEB23" should be:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  And  the following trades should be executed:
+  Then  the orders should have the following status:
+  And  the parties place the following orders:
+  And  the market data for the market "ETH/FEB23" should be:
+  And  the parties submit update margin mode:
+  Then  the orders should have the following status:
+

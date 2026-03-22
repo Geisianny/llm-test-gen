@@ -1,0 +1,3 @@
+Scenario 10: Cleanup: Disable tools_update_repo tools_pool_repo because they are no longer needed
+  When  I disable the repositories "tools_update_repo tools_pool_repo" on this "deblike_minion" without error control
+

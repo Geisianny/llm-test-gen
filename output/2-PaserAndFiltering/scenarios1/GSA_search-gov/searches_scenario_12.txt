@@ -1,0 +1,22 @@
+Scenario 12: When a searcher on an English site clicks on an RSS Feed and the query is blank
+  Given  the following BingV7 Affiliates exist:
+  And  affiliate "bar.gov" has the following RSS feeds:
+  And  feed "Press" has the following news items:
+  And  feed "en_agency_channel_id" has the following news items:
+  When  I am on bar.gov's search page
+  And  I follow "Press" in the search navbar
+  Then  I should see the browser page titled "Press - bar site Search Results"
+  And  I should see "First item"
+  And  I should see "Second item"
+  And  I should see "2 results"
+  And  I should see exactly "2" web search results
+  When  I am on bar.gov's search page
+  And  I fill in "query" with "first item"
+  And  I press "Search" within the search box
+  And  I follow "Videos" in the search navbar
+  Then  I should see "Refine your search"
+  And  I fill in "query" with ""
+  And  I press "Search" within the search box
+  Then  I should see the browser page titled "Videos - bar site Search Results"
+  And  I should see "First video item"
+

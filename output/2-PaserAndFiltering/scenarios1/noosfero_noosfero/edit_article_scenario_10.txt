@@ -1,0 +1,12 @@
+Scenario 10: create new article with tags
+  Given  I am on joaosilva's control panel
+  And  I follow "New" within "#section-content"
+  When  I follow "Text article"
+  Then  I should see "Tag list"
+  When  I fill in "Title" with "Article with tags"
+  And  I fill in "Tag list" with "aurium, bug"
+  And  I follow "Save"
+  And  I go to /joaosilva/article-with-tags
+  Then  I should see "aurium" within "#article-tags"
+  And  I should see "bug" within "#article-tags"
+

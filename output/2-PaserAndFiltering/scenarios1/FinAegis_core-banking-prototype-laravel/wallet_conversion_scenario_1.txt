@@ -1,0 +1,9 @@
+Scenario 1: Simple currency conversion
+  Given  I have 1000.00 USD in my wallet
+  And  the EUR/USD exchange rate is 1.20
+  When  I convert 500.00 USD to EUR
+  Then  the conversion should be successful
+  And  I should receive approximately 416.67 EUR
+  And  my USD balance should be reduced by 500.00
+  And  conversion fees should be clearly displayed
+

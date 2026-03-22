@@ -1,0 +1,5 @@
+Scenario 3: Adding a product to the cart in the other store
+  Given  I change my current store to "Great Britain"
+  When  I add product "Mug" to the cart
+  Then  I should see "Mug" with unit price "£89.99" in my cart
+

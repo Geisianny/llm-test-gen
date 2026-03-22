@@ -1,0 +1,5 @@
+Scenario: Search for voucher batches by approval status
+  Given there are existing voucher batches with different approval statuses
+  When the user searches for voucher batches with approval status "Approved"
+  Then the system displays a list of voucher batches with approval status "Approved"
+  And the list includes batch number, date, description, and values

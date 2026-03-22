@@ -1,0 +1,5 @@
+Scenario 5: Seeing a customer's name while editing a product review
+  Tags: ['@ui']
+  When  I want to modify the "Awesome" product review
+  Then  I should see the customer's name "Mike Ross"
+

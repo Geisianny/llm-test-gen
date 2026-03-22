@@ -1,0 +1,9 @@
+Scenario 4: Create a new role by cloning an existing role returns "Bad Request" response
+  Tags: ['@team:DataDog/aaa-core-access']
+  Given  there is a valid "role" in the system
+  And  new "CloneRole" request
+  And  request contains "role_id" parameter from "role.data.id"
+  And  body with value {"data": {"attributes": {"name": "    "}, "type": "roles"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

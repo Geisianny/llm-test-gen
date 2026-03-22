@@ -1,0 +1,6 @@
+Scenario 6: Get the total number of active hosts returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/core-index']
+  Given  new "GetHostTotals" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

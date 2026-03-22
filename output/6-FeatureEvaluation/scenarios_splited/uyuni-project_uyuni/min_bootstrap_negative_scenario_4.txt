@@ -1,0 +1,7 @@
+Scenario: Register a machine with incorrect access credentials
+  Given there is an authorized user
+  And there is a machine with the name "minion1"
+  When the user registers a new machine with the name "minion1"
+  And incorrect credentials
+  Then the system denies registration
+  And displays a message indicating that the access credentials are incorrect

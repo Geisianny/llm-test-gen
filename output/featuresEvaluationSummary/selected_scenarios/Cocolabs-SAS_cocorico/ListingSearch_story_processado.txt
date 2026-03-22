@@ -1,0 +1,5 @@
+Scenario: Search listing by features
+  Given there are listings with different features such as "Wi-Fi" and "Pool"
+  When the user searches for listings with the feature "Wi-Fi"
+  Then the system displays listings that have "Wi-Fi"
+  And the listings match the selected feature

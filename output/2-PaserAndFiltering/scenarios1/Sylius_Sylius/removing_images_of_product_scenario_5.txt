@@ -1,0 +1,12 @@
+Scenario 5: Removing only one image of a simple product
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  Given  the store has a product "Lamborghini Gallardo Model"
+  And  this product has an image "lamborghini.jpg" with "thumbnail" type
+  And  it also has an image "lamborghini.jpg" with "main" type
+  When  I want to modify this product
+  And  I remove an image with "thumbnail" type
+  And  I save my changes to the images
+  Then  I should be notified that the changes have been successfully applied
+  And  this product should have an image with "main" type
+  But  it should not have any images with "thumbnail" type
+

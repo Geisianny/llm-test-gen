@@ -1,0 +1,9 @@
+Scenario 2: Browsing only products from specified category
+  Tags: ['@ui', '@api']
+  Given  I am browsing products
+  And  the store has a product "Colorful mug"
+  And  this product belongs to "Mugs"
+  When  I filter them by "Pugs" taxon
+  Then  I should see a product with name "Young pug"
+  But  I should not see any product with name "Colorful mug"
+

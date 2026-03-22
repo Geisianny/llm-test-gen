@@ -1,0 +1,5 @@
+Scenario: Cancel adding product review
+  Given the Administrator is managing product reviews
+  And there is a product review with some details entered
+  When the Administrator cancels adding the product review
+  Then the system discards the review details

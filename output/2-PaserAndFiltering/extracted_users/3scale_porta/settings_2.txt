@@ -1,0 +1,17 @@
+Feature: Settings management
+Description: In order to control the settings
+  As a master
+  I want to be able to manage the settings
+Tags: ['@javascript']
+
+Background: 
+  Given  master admin is logged in
+
+Scenario 1: Settings page loads properly
+  When  they go to the usage rules settings page
+  Then  they should see "Usage Rules"
+
+Scenario 2: Hide services is visible
+  When  they go to the usage rules settings page
+  Then  they should see "Hide services"
+

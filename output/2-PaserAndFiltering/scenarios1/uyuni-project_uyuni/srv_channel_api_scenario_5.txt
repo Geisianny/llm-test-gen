@@ -1,0 +1,4 @@
+Scenario 5: Delete a child software channel
+  When  I delete the software channel with label "foobar-child"
+  Then  "foobar-child" should not get listed with a call of listSoftwareChannels
+

@@ -1,0 +1,7 @@
+Scenario 1: Create a monitor configuration policy returns "Bad Request" response
+  Tags: ['@skip-validation', '@team:DataDog/monitor-app']
+  Given  new "CreateMonitorConfigPolicy" request
+  And  body with value {"data": {"attributes": {"policy_type": "INVALID", "policy": {"tag_key": "datacenter", "tag_key_required": true, "valid_tag_values": ["prod", "staging"]}}, "type": "monitor-config-policy"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

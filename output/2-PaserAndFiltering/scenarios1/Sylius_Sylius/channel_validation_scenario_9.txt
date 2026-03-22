@@ -1,0 +1,9 @@
+Scenario 9: Trying to add a new channel without base currency
+  Tags: ['@api', '@ui']
+  When  I want to create a new channel
+  And  I specify its code as "MOBILE"
+  But  I do not choose base currency
+  And  I try to add it
+  Then  I should be notified that base currency is required
+  And  channel with code "MOBILE" should not be added
+

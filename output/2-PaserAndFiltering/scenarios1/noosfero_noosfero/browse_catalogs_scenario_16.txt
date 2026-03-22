@@ -1,0 +1,10 @@
+Scenario 16: not display price composition button if price is not described
+  Tags: ['@selenium-fixme']
+  Given  the following product
+  And  the following input
+  And  I am on /catalog/artebonito
+  And  I reload and wait for the page
+  Then  I should see "Bananada" within "li.product-link"
+  And  I should see "10.00" within "span.product-price"
+  And  the "#product-price-composition-button" should not be visible
+

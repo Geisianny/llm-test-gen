@@ -1,0 +1,7 @@
+Scenario 14: Cleanup: make sure the Red Hat-like minion is still unchanged
+  Tags: ['@rhlike_minion']
+  Given  I am on the Systems overview page of this "rhlike_minion"
+  When  I follow "Software" in the content area
+  And  I follow "Software Channels" in the content area
+  Then  radio button "Fake-Base-Channel-RH-like" should be checked
+

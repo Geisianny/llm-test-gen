@@ -1,0 +1,6 @@
+Scenario 2: Application details
+  Given  they go to the application's admin page
+  Then  they should see "Jane" within the application details
+  And  should see "My API" within the application details
+  And  should see "Live" within the application details
+

@@ -1,0 +1,4 @@
+Scenario: Retrieve an entity with an empty collection attribute
+  Given there is an entity with an empty collection attribute
+  When the client requests the entity data via the JSON API
+  Then the system returns a valid JSON API response

@@ -1,0 +1,4 @@
+Scenario 1: Finance switched off
+  Given  the provider has "finance" denied
+  Then  they should not be able to review the charging and gateway billing settings
+

@@ -1,0 +1,13 @@
+Scenario Outline 14: As an anonymous I can not get address and voters information - Example 1
+  When  I send a "GET" request to "/api/v3/pap/address/near?latitude=48.879001640&longitude=2.3187434&zoom=15"
+  Then  the response status code should be 401
+
+  Examples:
+    | url |
+    | /api/v3/pap/address/near?latitude=48.879001640&longitude=2.3187434&zoom=15 |
+    | /api/v3/pap/address/near?latitude=48.879001640&longitude=2.3187434&latitudeDelta=0.02&longitudeDelta=0.01 |
+    | /api/v3/pap/address/a0b9231b-9ff5-49b9-aa7a-1d28abbba32f |
+    | /api/v3/pap/address/a0b9231b-9ff5-49b9-aa7a-1d28abbba32f/voters |
+    | /api/v3/pap/buildings/faf30370-80c5-4a46-8c31-f6a361bfa23b/building_blocks |
+    | /api/v3/pap/buildings/2bffd913-34fe-48ad-95f4-7381812b93dd/history |
+

@@ -1,0 +1,4 @@
+Scenario 1: As a non logged-in user I can not see Agoras
+  When  I send a "GET" request to "/api/v3/agoras"
+  Then  the response status code should be 401
+

@@ -1,0 +1,8 @@
+Scenario 3: 0090-VAMM-030: The volume quoted to move from price 110 to 90 is the same as the volume to move from 100 to 110 + 100 to 90.
+  Tags: ['@VAMM']
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/MAR23" should be:
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/MAR23" should be:
+

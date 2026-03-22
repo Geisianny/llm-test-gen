@@ -1,0 +1,5 @@
+Scenario 3: Connecting to the server securely while using CA certificate file
+  When  I connect to the server securely while using CA certificate file
+  Then  the connection should be secured
+  And  the page title should contain "Sign In" text
+

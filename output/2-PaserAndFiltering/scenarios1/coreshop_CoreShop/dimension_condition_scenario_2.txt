@@ -1,0 +1,6 @@
+Scenario 2: Add a new dimension shipping rule which is inactive
+  Given  adding a shipping rule named "weight"
+  And  the shipping rule is inactive
+  And  the shipping rule has a condition dimension with 150x150x150
+  Then  the shipping rule should be invalid for my cart with carrier "Post"
+

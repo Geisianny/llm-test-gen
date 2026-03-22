@@ -1,0 +1,7 @@
+Scenario 12: Disaster recovery activation
+  Given  primary data center fails
+  When  disaster recovery is triggered
+  Then  the failover should:
+  And  achieve RTO of 30 minutes
+  And  maintain RPO of 5 minutes
+

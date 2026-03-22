@@ -1,0 +1,6 @@
+Scenario 2: Create the accounting journals used to create the payments for orders imported from Magento
+  Tags: ['@payment_types_journal']
+  Given  I need an "account.journal" with reference "paypal_journal"
+  When  I update it with values:
+  Then  I save it
+

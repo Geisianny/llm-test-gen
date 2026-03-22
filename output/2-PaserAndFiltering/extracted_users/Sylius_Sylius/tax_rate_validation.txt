@@ -1,0 +1,111 @@
+Feature: Tax rate validation
+Description: In order to avoid making mistakes when managing a tax rate
+    As an Administrator
+    I want to be prevented from adding it without specifying required fields
+Tags: ['@managing_tax_rates']
+
+Background: 
+  Given  the store operates on a single channel in "United States"
+  And  the store has a tax category "Food and Beverage"
+  And  I am logged in as an administrator
+
+Scenario 1: Trying to add a new tax rate without specifying its code
+  Tags: ['@api', '@ui']
+  When  I want to create a new tax rate
+  And  I name it "Food and Beverage Tax Rates"
+  But  I do not specify its code
+  And  I try to add it
+  Then  I should be notified that code is required
+  And  tax rate with name "Food and Beverage Tax Rates" should not be added
+
+Scenario 2: Trying to add a new tax rate with a too long code
+  Tags: ['@api', '@ui']
+  When  I want to create a new tax rate
+  And  I name it "Food and Beverage Tax Rates"
+  And  I specify a too long code
+  And  I try to add it
+  Then  I should be notified that code is too long
+
+Scenario 3: Trying to add a new tax rate without specifying its amount
+  Tags: ['@no-api', '@ui']
+  When  I want to create a new tax rate
+  And  I name it "Food and Beverage Tax Rates"
+  But  I do not specify its amount
+  And  I try to add it
+  Then  I should be notified that amount is required
+  And  tax rate with name "Food and Beverage Tax Rates" should not be added
+
+Scenario 4: Trying to add a new tax rate without specifying its name
+  Tags: ['@api', '@ui']
+  When  I want to create a new tax rate
+  And  I specify its code as "UNITED_STATES_SALES_TAX"
+  But  I do not name it
+  And  I try to add it
+  Then  I should be notified that name is required
+  And  tax rate with code "UNITED_STATES_SALES_TAX" should not be added
+
+Scenario 5: Trying to add a new tax rate without specifying its zone
+  Tags: ['@api', '@ui']
+  Given  the store does not have any zones defined
+  When  I want to create a new tax rate
+  And  I name it "Food and Beverage Tax Rates"
+  But  I do not specify its zone
+  And  I try to add it
+  Then  I should be notified that zone has to be selected
+  And  tax rate with name "Food and Beverage Tax Rates" should not be added
+
+Scenario 6: Trying to add a new tax rate without specifying its category
+  Tags: ['@api', '@ui']
+  Given  the store does not have any categories defined
+  When  I want to create a new tax rate
+  And  I name it "Food and Beverage Tax Rates"
+  But  I do not specify related tax category
+  And  I try to add it
+  Then  I should be notified that category has to be selected
+  And  tax rate with name "Food and Beverage Tax Rates" should not be added
+
+Scenario 7: Trying to remove amount from existing tax rate
+  Tags: ['@no-api', '@ui']
+  Given  the store has "United States Sales Tax" tax rate of 20% for "Sports gear" within the "US" zone
+  When  I want to modify this tax rate
+  And  I remove its amount
+  And  I try to save my changes
+  Then  I should be notified that amount is required
+  And  this tax rate amount should still be 20%
+
+Scenario 8: Trying to remove name from existing tax rate
+  Tags: ['@api', '@ui']
+  Given  the store has "United States Sales Tax" tax rate of 20% for "Sports gear" within the "US" zone
+  When  I want to modify this tax rate
+  And  I remove its name
+  And  I try to save my changes
+  Then  I should be notified that name is required
+  And  this tax rate should still be named "United States Sales Tax"
+
+Scenario 9: Trying to remove zone from existing tax rate
+  Tags: ['@no-api', '@ui']
+  Given  the store has "United States Sales Tax" tax rate of 20% for "Sports gear" within the "US" zone
+  When  I want to modify this tax rate
+  And  I remove its zone
+  And  I try to save my changes
+  Then  I should be notified that zone has to be selected
+
+Scenario 10: Trying to add a new tax rate with negative amount
+  Tags: ['@api', '@ui']
+  When  I want to create a new tax rate
+  And  I name it "Food and Beverage Tax Rates"
+  And  I specify its amount as -20%
+  And  I try to add it
+  Then  I should be notified that amount is invalid
+  And  tax rate with name "Food and Beverage Tax Rates" should not be added
+
+Scenario 11: Trying to add a new tax rate with end date before start date
+  Tags: ['@api', '@ui']
+  When  I want to create a new tax rate
+  And  I name it "Food and Beverage Tax Rates"
+  And  I specify its amount as -20%
+  And  I make it start at "31-12-2023" and end at "01-01-2023"
+  And  I try to add it
+  Then  I should be notified that tax rate should not end before it starts
+  And  tax rate with name "Food and Beverage Tax Rates" should not be added
+

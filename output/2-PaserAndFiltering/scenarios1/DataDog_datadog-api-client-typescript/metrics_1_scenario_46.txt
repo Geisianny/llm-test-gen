@@ -1,0 +1,8 @@
+Scenario 46: Timeseries cross product query returns "Bad Request" response
+  Tags: ['@skip', '@team:Datadog/timeseries-query']
+  Given  a valid "appKeyAuth" key in the system
+  And  new "QueryTimeseriesData" request
+  And  body with value {"data": {"attributes": {"formulas": [{"formula": "a+b", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}, "interval": 5000, "queries": [{"data_source": "metrics", "query": "avg:system.cpu.user{*}"}], "to": {{ timestamp('now') }}}, "type": "timeseries_rquest"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

@@ -1,0 +1,8 @@
+Scenario 14: Denying access to add product to the customer cart by the visitor
+  Tags: ['@api', '@no-ui']
+  Given  the customer logged in
+  And  the customer has created empty cart
+  And  the customer logged out
+  When  the visitor try to add product "Stark T-Shirt" in the customer cart
+  Then  the visitor has no access to customer's cart
+

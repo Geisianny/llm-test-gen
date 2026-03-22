@@ -1,0 +1,4 @@
+Scenario 1: New event form has event address field
+  When  I visit the new event page
+  Then  I should see a text field for "event_address"
+

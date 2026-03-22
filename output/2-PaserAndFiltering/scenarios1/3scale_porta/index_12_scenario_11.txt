@@ -1,0 +1,11 @@
+Scenario 11: Change an existing subscription
+  Given  the buyer is subscribed to product "Banana API"
+  And  the following service plans:
+  And  they go to the buyer's service subscriptions page
+  And  the table should contain the following:
+  When  they follow "Change Banana API subscription"
+  And  there is a select "Plan" with options:
+  And  the modal is submitted with:
+  Then  they should see a toast alert with text "Plan of the contract was changed"
+  And  the table should contain the following:
+

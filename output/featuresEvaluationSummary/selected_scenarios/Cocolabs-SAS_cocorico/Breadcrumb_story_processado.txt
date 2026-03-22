@@ -1,0 +1,4 @@
+Scenario: Verify breadcrumbs for a direct child page
+  Given the user is on the homepage
+  When the user navigates to "Offerer"
+  Then the breadcrumbs display "Home > Offerer"

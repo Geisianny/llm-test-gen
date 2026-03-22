@@ -1,0 +1,6 @@
+Scenario 3: Submit application form without required fields
+  Given  I am on "/financial-institutions/apply"
+  When  I press "Submit Application"
+  Then  I should see "This field is required"
+  And  I should be on "/financial-institutions/apply"
+

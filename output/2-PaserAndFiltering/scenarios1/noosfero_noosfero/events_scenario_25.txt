@@ -1,0 +1,5 @@
+Scenario 25: events have lead field
+  Given  I am logged in as "josesilva"
+  And  I am on josesilva's Event creation
+  Then  I should see "Lead"
+

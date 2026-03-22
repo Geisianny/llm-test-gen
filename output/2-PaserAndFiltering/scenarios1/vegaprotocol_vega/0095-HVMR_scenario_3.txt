@@ -1,0 +1,21 @@
+Scenario Outline 3: Trades on auction uncrossing do not contribute towards the maker volume fraction (0095-HVMR-017)(0095-HVMR-018) - Example 1
+  Given  the volume rebate program tiers named "vrt":
+  And  the volume rebate program:
+  And  the network moves ahead "1" epochs
+  Given  the parties place the following orders:
+  And  the parties cancel the following orders:
+  Then  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "BTC/USD-0-1"
+  Given  the parties place the following orders:
+  When  the network moves ahead "2" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/USD-0-1"
+  And  the following trades should be executed:
+  Given  the network moves ahead "1" epochs
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+
+  Examples:
+    | market | market string |
+    | BTC/USD-0-1 | "BTC/USD-0-1" |
+    | MXN-0-10/USD-0-1 | "MXN-0-10/USD-0-1" |
+

@@ -1,0 +1,8 @@
+Scenario 10: Discover playbooks and display them
+  Given  I am on the Systems overview page of this "ssh_minion"
+  When  I follow "Ansible" in the content area
+  And  I follow "Playbooks" in the content area
+  And  I wait until I see "/srv/playbooks" text
+  And  I click on "/srv/playbooks"
+  Then  I wait until I see "/srv/playbooks/orion_dummy/playbook_orion_dummy.yml" text
+

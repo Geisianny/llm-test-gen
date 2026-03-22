@@ -1,0 +1,6 @@
+Scenario: Add product review with missing title
+  Given the Administrator is managing product reviews
+  And there is a product review without a title
+  When the Administrator attempts to add the product review
+  Then the system prevents the addition of the review
+  And displays a message indicating that the title is required

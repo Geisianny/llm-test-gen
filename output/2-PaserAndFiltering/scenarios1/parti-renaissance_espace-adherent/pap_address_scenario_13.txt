@@ -1,0 +1,7 @@
+Scenario 13: As a logged-in user I can change building type
+  Given  I am logged with "michelle.dufour@example.ch" via OAuth client "JeMengage Mobile" with scope "jemarche_app"
+  When  I send a "PUT" request to "api/v3/pap/buildings/faf30370-80c5-4a46-8c31-f6a361bfa23b" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+

@@ -1,0 +1,19 @@
+Scenario 2: User views somebody else's profile page
+  Tags: ['@javascript']
+  Given  there are following users:
+  And  there is a listing with title "car spare parts" from "kassi_testperson1" with category "Items" and with listing shape "Selling"
+  And  there is a listing with title "massage" from "kassi_testperson1" with category "Services" and with listing shape "Requesting"
+  And  there is a listing with title "Helsinki - Turku" from "kassi_testperson1" with category "Services" and with listing shape "Selling services"
+  And  there is a listing with title "Housing" from "kassi_testperson2" with category "Spaces" and with listing shape "Selling"
+  And  there is a listing with title "apartment" from "kassi_testperson1" with category "Spaces" and with listing shape "Requesting"
+  And  that listing is closed
+  And  I am not logged in
+  And  I am on the home page
+  When  I follow "car spare parts"
+  When  I follow "listing-author-link"
+  Then  I should see "car spare parts"
+  And  I should see "Helsinki - Turku"
+  And  I should not see "Housing"
+  And  I should not see "apartment"
+  And  I should see "massage"
+

@@ -1,0 +1,9 @@
+Scenario 3: Admin views multiple users with pagination
+  Given  there are 100 users with name prefix "User" "Number 100"
+  And  I go to the manage users admin2 page
+  Then  I should see 100 users
+  And  the first user should be "User Number 100"
+  When  I follow "Next"
+  Then  I should see 3 users
+  And  the first user should be "matti manager Admin"
+

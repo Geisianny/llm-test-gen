@@ -1,0 +1,14 @@
+Scenario 4: Mark price update, followed by trigger update (+ trade in auction, after market update)
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  And  the network moves ahead "2" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+  And  the price monitoring named "my-price-monitoring-2":
+  When  the markets are updated:
+  And  the network moves ahead "3" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+  When  the parties place the following orders with ticks:
+  And  the network moves ahead "1" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+  And  the network moves ahead "2" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+

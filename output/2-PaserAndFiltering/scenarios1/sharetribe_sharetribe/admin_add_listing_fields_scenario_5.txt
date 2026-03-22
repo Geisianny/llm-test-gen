@@ -1,0 +1,10 @@
+Scenario 5: Admin adds Date custom field
+  Tags: ['@javascript']
+  When  I follow "+ Add a listing field"
+  And  I select "Date" from "field_type"
+  And  I fill in "custom_field[name_attributes][en]" with "Area Date"
+  And  I fill in "custom_field[name_attributes][fi]" with "Talon Area"
+  And  I toggle category "Spaces"
+  And  I press "Add the listing field"
+  Then  I should see "Area Date" within ".custom-field-title"
+

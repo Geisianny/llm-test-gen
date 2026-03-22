@@ -1,0 +1,6 @@
+Scenario 13: List all users returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "ListUsers" request
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

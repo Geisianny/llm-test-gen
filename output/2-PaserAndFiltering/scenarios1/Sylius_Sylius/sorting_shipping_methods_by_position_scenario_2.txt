@@ -1,0 +1,6 @@
+Scenario 2: Shipping method added at no position is added as the last one
+  Tags: ['@api', '@ui']
+  Given  the store also allows shipping with "Yellow Submarine"
+  When  I want to browse shipping methods
+  Then  the last shipping method on the list should have name "Yellow Submarine"
+

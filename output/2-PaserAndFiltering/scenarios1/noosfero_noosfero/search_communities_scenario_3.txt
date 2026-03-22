@@ -1,0 +1,8 @@
+Scenario 3: simple search for community
+  When  I go to the search communities page
+  And  I fill in "search-input" with "noosfero"
+  And  I follow "search-button"
+  Then  I should see "Noosfero Community" within "#search-results"
+  And  I should see "Noosfero Community" within ".only-one-result-box"
+  And  I should see Noosfero Community's community image
+

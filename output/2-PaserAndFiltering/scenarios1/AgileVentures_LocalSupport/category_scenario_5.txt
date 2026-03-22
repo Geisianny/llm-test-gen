@@ -1,0 +1,7 @@
+Scenario 5: Search for doges when selected categories exclude I love dogs
+  Given  I select the "Plant Welfare" category from What They Do
+  And  I select the "Advocacy" category from How They Help
+  And  I select the "People with disabilities" category from Who They Help
+  And  I search for "dogs"
+  And  I should not see "I love dogs"
+

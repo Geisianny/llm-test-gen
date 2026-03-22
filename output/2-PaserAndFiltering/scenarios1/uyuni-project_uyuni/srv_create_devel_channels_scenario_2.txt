@@ -1,0 +1,13 @@
+Scenario 2: Create a custom channel for SUSE minions
+  Tags: ['@sle_minion']
+  When  I follow the left menu "Software > Manage > Channels"
+  And  I follow "Create Channel"
+  And  I enter "Devel-SUSE-Channel" as "Channel Name"
+  And  I enter "devel-suse-channel" as "Channel Label"
+  And  I select the parent channel for the "sle_minion" from "Parent Channel"
+  And  I select "x86_64" from "Architecture:"
+  And  I enter "Devel-SUSE-Channel for development repositories" as "Channel Summary"
+  And  I enter "Channel containing development repositories" as "Channel Description"
+  And  I click on "Create Channel"
+  Then  I should see a "Channel Devel-SUSE-Channel created." text
+

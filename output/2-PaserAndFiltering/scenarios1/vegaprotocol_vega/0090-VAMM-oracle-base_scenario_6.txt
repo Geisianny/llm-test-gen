@@ -1,0 +1,12 @@
+Scenario 6: 0090-VAMM-043 AMM amendment uses slippage straight away
+  Tags: ['@VAMM']
+  Then  the parties submit the following AMM:
+  Then  the AMM pool status should be:
+  And  the market data for the market "ETH/MAR22" should be:
+  Then  the parties amend the following AMM:
+  Then  the AMM pool status should be:
+  When  the parties place the following orders:
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  Then  the AMM pool status should be:
+

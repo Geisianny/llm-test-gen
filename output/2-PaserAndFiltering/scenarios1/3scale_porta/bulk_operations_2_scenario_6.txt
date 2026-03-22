@@ -1,0 +1,12 @@
+Scenario 6: Send email in bulk
+  Given  the buyer has received no emails
+  And  item "Bob's App" is selected
+  And  item "Jane's Lite App" is selected
+  And  item "Jane's Full App" is selected
+  When  they select bulk action "Send email"
+  And  the modal is submitted with:
+  And  confirm the dialog
+  Then  they should see a toast alert with text "Successfully sent 3 emails"
+  Then  buyer "Bob" has received 1 email
+  And  buyer "Jane" has received 2 email
+

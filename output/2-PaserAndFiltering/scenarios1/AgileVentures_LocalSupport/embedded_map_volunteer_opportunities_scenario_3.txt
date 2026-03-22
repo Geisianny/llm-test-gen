@@ -1,0 +1,6 @@
+Scenario 3: See only the map container rendered in the body
+  Given  the following organisations exist:
+  Given  the following volunteer opportunities exist:
+  Given  I visit the embedded map page
+  Then  I should only see the map container element on the page
+

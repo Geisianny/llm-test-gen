@@ -1,0 +1,8 @@
+Scenario: Create a new hunt group member with invalid hunt group id
+  Given there is no hunt group with id "invalid"
+  And there is a user with id "456"
+  When the client admin sends a POST request to create a new hunt group member
+  And sets the hunt group id to "invalid"
+  And sets the user id to "456"
+  Then the system returns an error response
+  And displays a message indicating that the hunt group id is invalid

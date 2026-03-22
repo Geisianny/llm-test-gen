@@ -1,0 +1,9 @@
+Scenario 39: Remove a user from a team returns "No Content" response
+  Tags: ['@skip', '@team:DataDog/aaa-omg']
+  Given  new "DeleteTeamMembership" request
+  And  there is a valid "dd_team" in the system
+  And  request contains "team_id" parameter from "dd_team.data.id"
+  And  request contains "user_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 204 No Content
+

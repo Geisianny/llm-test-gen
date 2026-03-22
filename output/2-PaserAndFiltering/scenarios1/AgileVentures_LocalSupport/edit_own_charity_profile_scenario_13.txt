@@ -1,0 +1,17 @@
+Scenario Outline 13: Appropriate categories are checked/unchecked by default - Example 1
+  Given  I am signed in as a charity worker related to "Friendly"
+  And  I visit the edit page for the organisation named "Friendly"
+  Then  the category named Health should be checked
+
+  Examples:
+    | category | status |
+    | Health | checked |
+    | Education | checked |
+    | Animal welfare | unchecked |
+    | Child welfare | unchecked |
+    | Feed the hungry | unchecked |
+    | Accommodation | unchecked |
+    | General | unchecked |
+    | Teach them things | unchecked |
+    | Give them things | unchecked |
+

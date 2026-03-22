@@ -1,0 +1,9 @@
+Scenario 10: Create a metric monitor returns "OK" response
+  Tags: ['@team:DataDog/monitor-app']
+  Given  new "CreateMonitor" request
+  And  body with value {"name": "{{ unique }}", "type": "metric alert", "query": "avg(current_1mo):avg:system.load.5{*} > 0.5", "message": "some message Notify: @hipchat-channel", "options":{"thresholds":{"critical":0.5}, "scheduling_options":{"evaluation_window":{"day_starts":"04:00", "month_starts":1}}}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "name" is equal to "{{ unique }}"
+  And  the response "query" is equal to "avg(current_1mo):avg:system.load.5{*} > 0.5"
+

@@ -1,0 +1,4 @@
+Scenario 8: non logged in user should not see new organisation link
+  Given  I visit the home page
+  Then  I should not see a new organisations link
+

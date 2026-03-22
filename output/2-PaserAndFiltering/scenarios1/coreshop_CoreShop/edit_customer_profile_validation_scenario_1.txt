@@ -1,0 +1,7 @@
+Scenario 1: Trying to remove first name
+  When  I want to change my personal information
+  And  I remove the first name
+  And  I save my personal information
+  Then  I should be notified that the firstname is required
+  Then  my name should still be "Elon Musk"
+

@@ -1,0 +1,4 @@
+Scenario 4: Login as the new Malaysian user
+  Given  I am authorized as "MalaysianUser" with password "MalaysianUser"
+  Then  I should see a "MalaysianUser" link
+

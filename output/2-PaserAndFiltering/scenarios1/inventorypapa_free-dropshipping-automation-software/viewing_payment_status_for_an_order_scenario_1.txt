@@ -1,0 +1,5 @@
+Scenario 1: Seeing payment status before it's paid
+  Tags: ['@ui', '@api']
+  When  I view the summary of my order "#00000666"
+  Then  I should see its payment status as "New"
+

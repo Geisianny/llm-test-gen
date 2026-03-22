@@ -1,0 +1,70 @@
+Feature: Listing deposit
+Description: As a visitor I want to deposit a new listing so that i can rent it
+Tags: ['@listing', '@javascript']
+
+Scenario 1: As offerer i can deposit my new listing as logged in user
+  Given  I am logged in as user "offerer@cocorico.rocks" with password "12345678"
+  And  I follow "Publish your listing"
+  When  I select category "Category1_1"
+  And  I fill in the following:
+  And  I attach the file "images\listing.png" to "listing_image_new"
+  And  I select "France" from "Country"
+  And  I fill in the following:
+  And  I follow "Validate this address"
+  And  I check hidden "I accept the terms and conditions"
+  And  I press "Publish"
+  And  I wait 3000 ms
+  Then  I should be on the "dashboard listing edit presentation" page which "listing title" equal to "My listing"
+  And  I should see "SUCCESS! You have created a new listing successfully"
+  And  I should receive the "listing_activated_offerer" mail on "offerer@cocorico.rocks"
+  When  I click on the element with xpath selector "//a[@href='#fr']"
+  And  I wait 500 ms for Jquery loading
+  Then  the "listing_translations_fr_title" field should contain "Ma fiche"
+  And  the "listing_translations_fr_description" field should contain "Beau et pas cher"
+  And  the "listing_translations_fr_rules" field should contain "Ne fumez pas"
+
+Scenario 2: As a visitor can deposit my new listing while registering
+  Given  I am on the home page
+  And  I follow "Publish your listing"
+  When  I select category "Category1_1"
+  And  I fill in the following:
+  And  I attach the file "images\listing.png" to "listing_image_new"
+  And  I select "United Kingdom" from "Country"
+  And  I fill in the following:
+  And  I follow "Validate this address"
+  And  I check hidden "I accept the terms and conditions"
+  And  I press "Publish"
+  And  I wait 3000 ms
+  Then  I should be on the "dashboard listing edit presentation" page which "listing title" equal to "My listing"
+  And  I should see "SUCCESS! You have created a new listing successfully"
+  And  I should receive the "registration" mail on "arnaud@cocorico.rocks"
+  And  I should receive the "listing_activated_offerer" mail on "arnaud@cocorico.rocks"
+  When  I click on the element with xpath selector "//a[@href='#fr']"
+  And  I wait 500 ms for Jquery loading
+  Then  the "listing_translations_fr_title" field should contain "Ma fiche"
+  And  the "listing_translations_fr_description" field should contain "Beau et pas cher"
+  And  the "listing_translations_fr_rules" field should contain "Ne fumez pas"
+
+Scenario 3: As offerer i can deposit my new listing while logging in
+  Given  I am on the home page
+  And  I follow "Publish your listing"
+  When  I select category "Category1_1"
+  And  I fill in the following:
+  And  I attach the file "images\listing.png" to "listing_image_new"
+  And  I select "France" from "Country"
+  And  I fill in the following:
+  And  I click on "#profile" tab
+  And  I fill in the following:
+  And  I follow "Validate this address"
+  And  I check hidden "I accept the terms and conditions"
+  And  I press "Publish"
+  And  I wait 3000 ms
+  Then  I should be on the "dashboard listing edit presentation" page which "listing title" equal to "My listing"
+  And  I should see "SUCCESS! You have created a new listing successfully"
+  And  I should receive the "listing_activated_offerer" mail on "offerer@cocorico.rocks"
+  When  I click on the element with xpath selector "//a[@href='#fr']"
+  And  I wait 500 ms for Jquery loading
+  Then  the "listing_translations_fr_title" field should contain "Ma fiche"
+  And  the "listing_translations_fr_description" field should contain "Beau et pas cher"
+  And  the "listing_translations_fr_rules" field should contain "Ne fumez pas"
+

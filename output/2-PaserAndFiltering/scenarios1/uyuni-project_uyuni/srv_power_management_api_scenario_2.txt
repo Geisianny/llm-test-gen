@@ -1,0 +1,4 @@
+Scenario 2: Check the power management settings for API test
+  When  I fetch power management values
+  Then  power management results should have "ipmilan" for "powerType"
+

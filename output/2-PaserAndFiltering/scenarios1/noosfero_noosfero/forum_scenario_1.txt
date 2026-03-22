@@ -1,0 +1,11 @@
+Scenario 1: create a forum
+  Tags: ['@selenium', '@ignore-hidden-elements']
+  Given  I am on joaosilva's control panel
+  And  I follow "Manage" within "#section-content"
+  And  I follow "New content"
+  And  I follow "Forum"
+  And  I fill in "Title" with "My Forum"
+  And  I follow "Save"
+  When  I follow "article-options"
+  Then  I should see "Configure forum"
+

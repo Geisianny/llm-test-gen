@@ -1,0 +1,7 @@
+Scenario 10: List APIs returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/api-management']
+  Given  operation "ListAPIs" enabled
+  And  new "ListAPIs" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

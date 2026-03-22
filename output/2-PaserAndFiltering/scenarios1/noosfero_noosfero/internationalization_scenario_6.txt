@@ -1,0 +1,5 @@
+Scenario 6: using the generic form of a language
+  Given  my browser prefers Brazilian Portuguese
+  When  I go to the homepage
+  Then  the site should be in Portuguese
+

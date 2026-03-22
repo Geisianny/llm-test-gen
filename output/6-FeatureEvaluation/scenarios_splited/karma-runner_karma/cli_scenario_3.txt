@@ -1,0 +1,5 @@
+Scenario: Display error message for unknown command
+  Given the user is using the Karma CLI
+  When the user executes the command "karma unknown"
+  Then the system displays an error message indicating that the command is unknown
+  And suggests using the "--help" option for available commands

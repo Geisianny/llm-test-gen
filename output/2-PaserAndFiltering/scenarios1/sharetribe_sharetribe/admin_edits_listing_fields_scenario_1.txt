@@ -1,0 +1,5 @@
+Scenario 1: Admin changes custom field name
+  Tags: ['@javascript']
+  When  I change custom field "House type" name to "Room type"
+  Then  I should see "Room type"
+

@@ -1,0 +1,9 @@
+Scenario 12: Accessing to increase quantity of an item in the cart by the customer
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  Given  the customer logged in
+  Given  the customer added product "Stark T-Shirt" to the cart
+  When  the customer checks the details of their cart
+  When  I check the details of my cart
+  And  the customer change product "Stark T-Shirt" quantity to 2 in his cart
+  Then  the customer should see product "Stark T-Shirt" with quantity 2 in his cart
+

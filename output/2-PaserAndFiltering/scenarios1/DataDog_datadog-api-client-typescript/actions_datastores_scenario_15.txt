@@ -1,0 +1,9 @@
+Scenario 15: Get datastore returns "Not Found" response
+  Tags: ['@team:DataDog/app-builder-backend']
+  Given  new "GetDatastore" request
+  And  request contains "datastore_id" parameter with value "5bf53b3f-b230-4b35-ab1a-b39f2633eb22"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+  And  the response "errors" has length 1
+  And  the response "errors[0].title" is equal to "datastore not found"
+

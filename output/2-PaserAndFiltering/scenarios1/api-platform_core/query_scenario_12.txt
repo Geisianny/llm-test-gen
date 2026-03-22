@@ -1,0 +1,5 @@
+Scenario 12: Query a serialized name
+  Given  there is a DummyCar entity with related colors
+  When  I send the following GraphQL request:
+  Then  the JSON node "data.dummyCar.carBrand" should be equal to "DummyBrand"
+

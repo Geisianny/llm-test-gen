@@ -1,0 +1,7 @@
+Scenario 7: Cleanup: remove authenticated image store
+  When  I follow the left menu "Images > Stores"
+  And  I check the row with the "auth_registry" text
+  And  I click on "Delete"
+  And  I click on the red confirmation button
+  And  I should see a "Image store has been deleted." text
+

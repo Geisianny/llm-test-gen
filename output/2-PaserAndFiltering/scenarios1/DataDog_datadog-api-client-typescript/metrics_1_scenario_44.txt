@@ -1,0 +1,8 @@
+Scenario 44: Tag Configuration Cardinality Estimator returns "API error response." response
+  Tags: ['@generated', '@skip', '@team:DataDog/metrics-experience']
+  Given  a valid "appKeyAuth" key in the system
+  And  new "EstimateMetricsOutputSeries" request
+  And  request contains "metric_name" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 API error response.
+

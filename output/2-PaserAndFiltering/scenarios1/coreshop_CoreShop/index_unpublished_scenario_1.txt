@@ -1,0 +1,4 @@
+Scenario 1: The object instance is enabled but unpublished
+  Given  the object-instance has following values:
+  Then  the index should not have indexed the object
+

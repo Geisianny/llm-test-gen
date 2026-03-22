@@ -1,0 +1,7 @@
+Scenario 1: Viewing multiple pages of history
+  Then  I can see the ten most recent timeline entries
+  When  I click the "Older" history link
+  Then  I can see the second page of timeline entries
+  When  I click the "Newer" history link
+  Then  I can see the ten most recent timeline entries
+

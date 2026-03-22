@@ -1,0 +1,25 @@
+Scenario 1: 008 Amending expiry time of an active GTT order to a past time whilst also simultaneously amending the price of the order will cause the order to immediately expire with the order details updated to reflect the order details requiring amendment (0004-AMND-048)
+  Tags: ['@AmendBug']
+  Given  time is updated to "2019-11-30T00:00:00Z"
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "BTC/ETH"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  When  time is updated to "2019-11-30T00:00:04Z"
+  When  the parties place the following orders:
+  And  the parties amend the following orders:
+  And  the order book should have the following volumes for market "BTC/ETH":
+  When  time is updated to "2020-01-30T00:00:00Z"
+  And  the order book should have the following volumes for market "BTC/ETH":
+  When  time is updated to "2020-01-30T10:00:00Z"
+  When  the parties place the following orders:
+  And  the parties amend the following orders:
+  And  the order book should have the following volumes for market "BTC/ETH":
+  When  time is updated to "2020-01-30T12:00:01Z"
+  And  the order book should have the following volumes for market "BTC/ETH":
+  When  time is updated to "2020-01-30T12:01:01Z"
+  When  the parties place the following orders:
+  And  the order book should have the following volumes for market "BTC/ETH":
+  When  time is updated to "2020-02-01T12:00:01Z"
+  And  the order book should have the following volumes for market "BTC/ETH":
+

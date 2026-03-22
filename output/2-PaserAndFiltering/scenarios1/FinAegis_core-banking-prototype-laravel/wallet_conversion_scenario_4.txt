@@ -1,0 +1,7 @@
+Scenario 4: Conversion with insufficient balance
+  Given  I have 100.00 USD in my wallet
+  When  I attempt to convert 200.00 USD to EUR
+  Then  the conversion should fail with error "Insufficient balance"
+  And  no currency exchange should occur
+  And  my balances should remain unchanged
+

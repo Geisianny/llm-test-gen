@@ -1,0 +1,9 @@
+Scenario 2: A persistent GTT iceberg order that is not crossed with the order book is included in the order book
+  And  the parties place the following orders:
+  And  the opening auction period ends for market "BTC/ETH"
+  When  the network moves ahead "1" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  And  the parties place the following orders:
+  When  the parties place the following iceberg orders:
+  Then  the order book should have the following volumes for market "BTC/ETH":
+

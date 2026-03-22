@@ -1,0 +1,47 @@
+Feature: Audience > Developer Portal > Settings > SSO Integrations > Show
+Tags: ['@javascript']
+
+Background: 
+  Given  a provider is logged in
+  And  the provider has "branding" switch allowed
+  And  the provider has "iam_tools" switch allowed
+
+Scenario 1: RH SSO Navigation
+  Given  a developer portal red hat single sign-on integration
+  When  they go to the developer portal users sso integrations page
+  And  they follow "Red Hat Single Sign-On"
+  Then  the current page is the developer portal sso integration page
+  And  should see "Red Hat Single Sign-On"
+
+Scenario 2: Auth0 Navigation
+  Given  a developer portal auth0 integration
+  When  they go to the developer portal users sso integrations page
+  And  they follow "Auth0"
+  Then  the current page is the developer portal sso integration page
+  And  should see "Auth0"
+
+Scenario 3: GitHub Navigation
+  Given  a developer portal github integration
+  When  they go to the developer portal users sso integrations page
+  And  they follow "GitHub"
+  Then  the current page is the developer portal sso integration page
+  And  should see "GitHub"
+
+Scenario 4: Client secret should be *****
+  Given  a red hat single sign-on integration
+  When  they go to the users sso integrations page
+  When  they follow "Red Hat Single Sign-On"
+  Then  they should see the following details:
+
+Scenario 5: Red Hat Single Sign-On integration details
+  Given  a red hat single sign-on integration
+  When  they go to the users sso integrations page
+  And  they follow "Red Hat Single Sign-On"
+  Then  they should see the following details:
+
+Scenario 6: Auth0 integration details
+  Given  an auth0 integration
+  When  they go to the users sso integrations page
+  And  they follow "Auth0"
+  Then  they should see the following details:
+

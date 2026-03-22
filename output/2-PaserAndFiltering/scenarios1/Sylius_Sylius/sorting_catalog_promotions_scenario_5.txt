@@ -1,0 +1,7 @@
+Scenario 5: Sorting catalog promotion by start date in ascending order
+  Tags: ['@api', '@ui', '@no-postgres']
+  When  I browse catalog promotions
+  And  I sort catalog promotions by ascending "start date"
+  Then  I should see 3 catalog promotions on the list
+  And  the first catalog promotion should have code "not-b"
+

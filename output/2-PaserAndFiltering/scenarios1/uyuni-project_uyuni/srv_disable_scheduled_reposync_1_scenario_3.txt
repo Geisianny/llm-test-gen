@@ -1,0 +1,7 @@
+Scenario 3: Disable scheduled Cobbler syncs
+  When  I follow the left menu "Admin > Task Schedules"
+  And  I follow "cobbler-sync-default"
+  And  I choose "disabled"
+  And  I click on "Update Schedule"
+  And  I click on "Disable Schedule"
+

@@ -1,0 +1,18 @@
+Scenario Outline 4: A user adds an address to their contacts from the send flow and confirms it is visible on the contacts view - Example 1
+  When  On the Main Wallet view I tap on the Send Action
+  When  I enter address "0x1FDb169Ef12954F20A15852980e1F0C122BfC1D6" in the sender's input box
+  And  I tap on button with text "Add this address to your address book"
+  Then  On the Address book modal Cancel button is enabled
+  When  I enter in a contact name "TestAlias"
+  Then  the Save button becomes enabled
+  When  I tap the Save button
+  And  the contact name "TestAlias" appears in the senders input box above the contact address
+  And  I navigate to the main wallet screen
+  And  I tap on the Settings tab option
+  And  In settings I tap on "Contacts"
+  Then  the saved contact "TestAlias" should appear
+
+  Examples:
+    | Address | ContactName |
+    | 0x1FDb169Ef12954F20A15852980e1F0C122BfC1D6 | TestAlias |
+

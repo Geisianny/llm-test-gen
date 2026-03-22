@@ -1,0 +1,8 @@
+Scenario 1: With transactions
+  And  buyer "alice" makes 2 service transactions with:
+  And  buyer "bob" makes 1 service transactions with:
+  And  I go to the provider stats apps page
+  Then  I should see a list of metrics:
+  When  I select today from the stats menu
+  Then  there should be a c3 chart with the following data:
+

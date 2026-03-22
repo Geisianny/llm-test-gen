@@ -1,0 +1,6 @@
+Scenario 3: As a logged-in user I can filter Agoras by name
+  Given  I am logged with "michelle.dufour@example.ch" via OAuth client "JeMengage Mobile" with scope "jemarche_app"
+  When  I send a "GET" request to "/api/v3/agoras?name=Première"
+  Then  the response status code should be 200
+  And  the JSON should be equal to:
+

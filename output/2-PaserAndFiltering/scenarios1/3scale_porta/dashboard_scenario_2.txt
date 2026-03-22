@@ -1,0 +1,5 @@
+Scenario 2: Audience widget with Finance enabled
+  Given  the provider is charging its buyers
+  And  I go to the provider dashboard
+  Then  I should see the link "BILLING" within the audience dashboard widget
+

@@ -1,0 +1,7 @@
+Scenario 9: The OpenSCAP submenu menu
+  When  I follow the left menu "Audit > OpenSCAP"
+  Then  I should see a "OpenSCAP Scans" text
+  And  I should see a "All Scans" link in the left menu
+  And  I should see a "XCCDF Diff" link in the left menu
+  And  I should see a "Advanced Search" link in the left menu
+

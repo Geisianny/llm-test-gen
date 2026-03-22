@@ -1,0 +1,7 @@
+Scenario 2: Having no country selected if there is more than one country available
+  Tags: ['@ui', '@no-api']
+  Given  the store operates in "United Kingdom"
+  When  I add product "PHP T-Shirt" to the cart
+  And  I am at the checkout addressing step
+  Then  I should have no country selected
+

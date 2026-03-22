@@ -1,0 +1,3 @@
+Scenario 1: Pre-requisite: enable test_repo_deb_pool repository on the Debian-like minion
+  When  I enable repository "test_repo_deb_pool" on this "deblike_minion"
+

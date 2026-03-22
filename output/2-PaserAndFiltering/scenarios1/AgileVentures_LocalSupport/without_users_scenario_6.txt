@@ -1,0 +1,10 @@
+Scenario 6: Table columns should be sortable
+  Tags: ['@javascript', '@billy']
+  Given  cookies are approved
+  Given  I am signed in as a superadmin
+  And  I visit the invite users to become admin of organisations page
+  And  I click tableheader "Name"
+  Then  I should see "Crazy Email Org" before "The Organisation"
+  When  I click tableheader "Name"
+  Then  I should see "The Organisation" before "Crazy Email Org"
+

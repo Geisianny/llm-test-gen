@@ -1,0 +1,13 @@
+Scenario 2: Party funds pool with recurring transfer scoping individuals with transfer interval 5
+  Given  the parties submit the following recurring transfers:
+  And  the parties place the following orders:
+  When  the network moves ahead "5" epochs
+  Then  "referee1" should have vesting account balance of "4000" for asset "USD-1-10"
+  And  "referee2" should have vesting account balance of "4000" for asset "USD-1-10"
+  And  "referee3" should have vesting account balance of "2000" for asset "USD-1-10"
+  And  the parties place the following orders:
+  When  the network moves ahead "5" epochs
+  Then  "referee1" should have vesting account balance of "8000" for asset "USD-1-10"
+  And  "referee2" should have vesting account balance of "8000" for asset "USD-1-10"
+  And  "referee3" should have vesting account balance of "4000" for asset "USD-1-10"
+

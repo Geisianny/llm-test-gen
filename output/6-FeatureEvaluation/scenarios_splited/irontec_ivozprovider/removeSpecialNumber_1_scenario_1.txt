@@ -1,0 +1,6 @@
+Scenario: Delete a special number successfully
+  Given there is a super admin with valid credentials
+  And there is a special number with ID "123"
+  When the super admin sends a DELETE request to the special number API with ID "123"
+  Then the system returns an HTTP 204 status code
+  And the special number with ID "123" is deleted

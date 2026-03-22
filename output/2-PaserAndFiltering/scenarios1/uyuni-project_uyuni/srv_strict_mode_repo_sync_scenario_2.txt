@@ -1,0 +1,10 @@
+Scenario 2: Prepare repos for strict test
+  Given  I am authorized for the "Admin" section
+  And  I follow the left menu "Software > Manage > Repositories"
+  And  I follow "Create Repository"
+  And  I enter "fake-rpm-repo-modified" as "label"
+  And  I enter "http://localhost/pub/TestRepoRpmUpdates_STRICT_TEST/" as "url"
+  And  I uncheck "metadataSigned"
+  And  I click on "Create Repository"
+  Then  I should see a "Repository created successfully" text
+

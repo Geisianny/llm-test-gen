@@ -1,0 +1,9 @@
+Scenario 1: Trying to add a new tax rate without specifying its code
+  Tags: ['@api', '@ui']
+  When  I want to create a new tax rate
+  And  I name it "Food and Beverage Tax Rates"
+  But  I do not specify its code
+  And  I try to add it
+  Then  I should be notified that code is required
+  And  tax rate with name "Food and Beverage Tax Rates" should not be added
+

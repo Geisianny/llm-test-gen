@@ -1,0 +1,5 @@
+Scenario: Unbundling document creation fails due to missing bundle product
+  Given there is no bundle product with the specified ID
+  And the sales manager has the necessary permissions
+  When the sales manager attempts to create an unbundling document for the non-existent bundle product
+  Then the system displays an error message indicating that the bundle product does not exist

@@ -1,0 +1,7 @@
+Scenario 7: Create a pipeline with Array Processor Select Operation returns "OK" response
+  Tags: ['@team:DataDog/event-platform-experience']
+  Given  new "CreateLogsPipeline" request
+  And  body with value {"filter": {"query": "source:python"}, "name": "testPipelineArraySelect", "processors": [{"type": "array-processor", "is_enabled": true, "name": "extract_referrer", "operation": {"type": "select", "source": "httpRequest.headers", "target": "referrer", "filter": "name:Referrer", "value_to_extract": "value"}}], "tags": []}
+  When  the request is sent
+  Then  the response status is 200 OK
+

@@ -1,0 +1,6 @@
+Scenario 43: List Custom Costs files returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/cloud-cost-management']
+  Given  new "ListCustomCostsFiles" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

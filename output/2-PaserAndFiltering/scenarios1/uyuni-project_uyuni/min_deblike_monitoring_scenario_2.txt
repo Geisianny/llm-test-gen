@@ -1,0 +1,9 @@
+Scenario 2: Apply Prometheus exporter formulas on the Debian-like minion
+  Given  I am on the Systems overview page of this "deblike_minion"
+  When  I follow "Formulas" in the content area
+  Then  I should see a "Choose formulas:" text
+  And  I should see a "Monitoring" text
+  When  I check the "prometheus-exporters" formula
+  And  I click on "Save"
+  And  I wait until I see "Formula saved" text
+

@@ -1,0 +1,9 @@
+Scenario 1: Preventing payment step completion if there are no available methods
+  Tags: ['@api', '@no-ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  When  I addressed the cart to "United States"
+  And  I proceed with selecting "Free" shipping method
+  And  I check the details of my cart
+  Then  I should see that no payment method is assigned
+  And  there should not be any payment methods available for selection
+

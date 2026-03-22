@@ -1,0 +1,7 @@
+Scenario 13: Get an existing Workflow returns "Bad request" response
+  Tags: ['@team:DataDog/workflow-automation-dev']
+  Given  new "GetWorkflow" request
+  And  request contains "workflow_id" parameter with value "bad-format"
+  When  the request is sent
+  Then  the response status is 400 Bad request
+

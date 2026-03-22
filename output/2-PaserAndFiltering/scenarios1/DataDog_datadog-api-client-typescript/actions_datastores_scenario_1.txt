@@ -1,0 +1,9 @@
+Scenario 1: Bulk delete datastore items returns "Bad Request" response
+  Tags: ['@team:DataDog/app-builder-backend']
+  Given  new "BulkDeleteDatastoreItems" request
+  And  there is a valid "datastore" in the system
+  And  request contains "datastore_id" parameter from "datastore.data.id"
+  And  body with value {"data": {"attributes": {"item_keys": []}, "type": "items"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

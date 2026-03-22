@@ -1,0 +1,7 @@
+Scenario 2: Seeing shipping cost if some of the order items require shipping
+  Tags: ['@api', '@ui']
+  Given  I added "Guards! Guards! - book" variant of product "Guards! Guards!" to the cart
+  And  I added "Guards! Guards! - ebook" variant of product "Guards! Guards!" to the cart
+  When  I see the summary of my cart
+  Then  my cart shipping total should be "$5.00"
+

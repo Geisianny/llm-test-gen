@@ -1,0 +1,11 @@
+Scenario 1: For an iceberg order sitting on the book, when a batch containing normal orders and other iceberg orders that will trades
+            batch (0014-ORDT-095)
+  When  the parties place the following iceberg orders:
+  Then  the party "party1" starts a batch instruction
+  Then  the party "party1" adds the following orders to a batch:
+  Then  the party "party1" adds the following iceberg orders to a batch:
+  Then  the party "party1" adds the following orders to a batch:
+  Then  the party "party1" submits their batch instruction
+  Then  the following trades should be executed:
+  Then  the orders should have the following states:
+

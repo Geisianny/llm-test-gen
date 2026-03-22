@@ -1,0 +1,5 @@
+Scenario 1: Syntax Error in a test file
+  Given  a configuration with:
+  When  I start Karma
+  Then  it fails with:
+

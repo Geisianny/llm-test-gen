@@ -1,0 +1,7 @@
+Scenario 2: Custom portal and admin sub-domains
+  Tags: ['@wip']
+  Given  current domain is the admin domain of provider "master"
+  Given  I go to the provider sign up page
+  And  I fill in the following:
+  Then  I should see a correct and un-editable admin portal subdomain
+

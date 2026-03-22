@@ -1,0 +1,9 @@
+Scenario 4: Display with full mode for sub-enterprises
+  Given  "school" is a sub organization of "springfield"
+  When  I go to springfield's homepage
+  And  I follow "View all" within ".related-organizations-block"
+  And  I should see "Springfield's sub-enterprises"
+  And  I follow "Full" within ".search-customize-options"
+  Then  I should see "School description" within ".related-organizations-description"
+  And  I should see "Terra do Nunca, Billy Jean" within ".related-organizations-region-name"
+

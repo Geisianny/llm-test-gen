@@ -1,0 +1,11 @@
+Scenario 4: Edit the value
+  When  I follow the left menu "Systems > System List > All"
+  And  I follow this "sle_minion" link
+  And  I follow "Custom Info"
+  And  I follow "key-value"
+  And  I should see a "Edit Custom Value" text
+  And  I enter "key-value-edited" as "value"
+  And  I click on "Update Key"
+  Then  I should see a "key-label" text
+  And  I should see a "key-value-edited" link
+

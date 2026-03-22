@@ -1,0 +1,48 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: forum_story_processado.feature
+Caminho relativo: noosfero_noosfero\forum_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\noosfero_noosfero\forum_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: forum_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Create a single forum
+   Steps: 4
+   - Given there is a Noosfero user with a personal profile
+   - When the user creates a new forum
+   - Then the system creates the forum successfully
+   - And the forum is visible on the user's profile
+2. Create multiple forums
+   Steps: 4
+   - Given there is a Noosfero user with a community profile
+   - When the user creates multiple new forums
+   - Then the system creates all the forums successfully
+   - And all the forums are visible on the community profile
+3. Forum creation with invalid input
+   Steps: 4
+   - Given there is a Noosfero user with a personal profile
+   - When the user creates a new forum with invalid input
+   - Then the system denies the creation of the forum
+   - And displays a message indicating the input is invalid
+4. Delete a forum
+   Steps: 4
+   - Given there is a Noosfero user with a personal profile and an existing forum
+   - When the user deletes the existing forum
+   - Then the system deletes the forum successfully
+   - And the forum is no longer visible on the user's profile
+5. List existing forums
+   Steps: 4
+   - Given there is a Noosfero user with a community profile and multiple existing forums
+   - When the user views the list of forums
+   - Then the system displays a list of all existing forums
+   - And the list includes the titles of all the forums

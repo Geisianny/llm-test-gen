@@ -1,0 +1,10 @@
+Scenario 1: Adding a country with a province
+  Tags: ['@ui', '@javascript', '@api']
+  When  I want to add a new country
+  And  I choose "United Kingdom"
+  And  I add the "Scotland" province with "GB-SCT" code
+  And  I add it
+  Then  I should be notified that it has been successfully created
+  And  the country "United Kingdom" should appear in the store
+  And  the country "United Kingdom" should have the "Scotland" province
+

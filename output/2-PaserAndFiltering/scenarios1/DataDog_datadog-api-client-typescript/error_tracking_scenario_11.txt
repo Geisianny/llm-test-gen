@@ -1,0 +1,9 @@
+Scenario 11: Update the assignee of an issue returns "OK" response
+  Tags: ['@team:DataDog/error-tracking']
+  Given  new "UpdateIssueAssignee" request
+  And  there is a valid "issue" in the system
+  And  request contains "issue_id" parameter from "issue.id"
+  And  body with value {"data": {"id": "87cb11a0-278c-440a-99fe-701223c80296", "type": "assignee"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+

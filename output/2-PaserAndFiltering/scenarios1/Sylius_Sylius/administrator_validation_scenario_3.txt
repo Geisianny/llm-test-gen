@@ -1,0 +1,7 @@
+Scenario 3: Trying to add a new administrator with invalid email
+  Tags: ['@api', '@ui']
+  When  I want to create a new administrator
+  And  I specify its email as "Ted"
+  And  I try to add it
+  Then  I should be notified that this email is not valid
+

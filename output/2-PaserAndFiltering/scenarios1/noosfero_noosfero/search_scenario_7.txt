@@ -1,0 +1,11 @@
+Scenario 7: search different types of entities with the same query
+  Tags: ['@selenium']
+  Given  the following enterprises
+  And  the following communities
+  When  I go to the search page
+  And  I fill in "search-input" with "noosfero"
+  And  I follow "Search" within ".search-form"
+  And  I wait for 1 seconds
+  Then  I should see "Colivre - Noosfero dev." within "#search-results"
+  And  I should see "Noosfero users" within "div.search-results-communities"
+

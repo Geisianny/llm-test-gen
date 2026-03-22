@@ -1,0 +1,4 @@
+Scenario 2: Pre-requisite: install virgo-dummy-1.0 package on SSH minion
+  When  I refresh the metadata for "ssh_minion"
+  And  I install old package "virgo-dummy-1.0" on this "ssh_minion" without error control
+

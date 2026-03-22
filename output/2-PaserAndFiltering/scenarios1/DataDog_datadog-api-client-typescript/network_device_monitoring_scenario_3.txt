@@ -1,0 +1,6 @@
+Scenario 3: Get the list of devices returns "Bad Request" response
+  Tags: ['@replay-only', '@team:DataDog/network-device-monitoring']
+  Given  new "ListDevices" request
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

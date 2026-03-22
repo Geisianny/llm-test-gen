@@ -1,0 +1,4 @@
+Scenario 7: Check spacecmd system ID of minion bootstrapped via API
+  Given  I am on the Systems overview page of this "sle_minion"
+  Then  I run spacecmd listeventhistory for "sle_minion"
+

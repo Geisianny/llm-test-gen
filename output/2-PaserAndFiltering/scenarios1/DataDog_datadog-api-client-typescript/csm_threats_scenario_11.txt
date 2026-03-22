@@ -1,0 +1,7 @@
+Scenario 11: Create a Workload Protection policy returns "OK" response
+  Tags: ['@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  new "CreateCSMThreatsAgentPolicy" request
+  And  body with value {"data": {"attributes": {"description": "My agent policy", "enabled": true, "hostTagsLists": [["env:test"]], "name": "my_agent_policy_2"}, "type": "policy"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+

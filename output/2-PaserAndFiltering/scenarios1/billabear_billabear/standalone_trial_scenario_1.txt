@@ -1,0 +1,6 @@
+Scenario 1: 
+  Given  the following subscriptions exist:
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  Then  the subscription for "customer.one@example.org" will expire today
+

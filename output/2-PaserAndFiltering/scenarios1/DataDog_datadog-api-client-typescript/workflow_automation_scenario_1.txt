@@ -1,0 +1,8 @@
+Scenario 1: Cancel a workflow instance returns "Bad Request" response
+  Tags: ['@replay-only', '@team:DataDog/workflow-automation-dev']
+  Given  new "CancelWorkflowInstance" request
+  And  request contains "workflow_id" parameter with value "malformed"
+  And  request contains "instance_id" parameter with value "malformed"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

@@ -1,0 +1,5 @@
+Scenario: Start Karma server successfully
+  Given the user has a valid Karma configuration
+  When the user executes the command "karma start"
+  Then the system starts the Karma server
+  And displays a message confirming the server is running

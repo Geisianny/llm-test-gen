@@ -1,0 +1,6 @@
+Scenario 5: Plan column is hidden when the API has a single plan
+  When  they go to product "My API" applications page
+  Then  the table has a column "Plan"
+  When  they go to product "Another API" applications page
+  Then  the table does not have a column "Plan"
+

@@ -1,0 +1,4 @@
+Scenario 1: Not logged in user has access denied to protected content in page
+  When  I go to the homepage
+  Then  I should see "Protected Content Access DENIED"
+

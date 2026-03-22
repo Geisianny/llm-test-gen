@@ -1,0 +1,8 @@
+Scenario 14: Get a webhook integration returns "OK" response
+  Tags: ['@skip-terraform-config', '@team:Datadog/collaboration-integrations']
+  Given  there is a valid "webhook" in the system
+  And  new "GetWebhooksIntegration" request
+  And  request contains "webhook_name" parameter from "webhook.name"
+  When  the request is sent
+  Then  the response status is 200 OK
+

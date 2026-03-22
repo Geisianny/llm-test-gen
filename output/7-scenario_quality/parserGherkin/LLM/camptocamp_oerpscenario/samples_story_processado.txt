@@ -1,0 +1,49 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: samples_story_processado.feature
+Caminho relativo: camptocamp_oerpscenario\samples_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\camptocamp_oerpscenario\samples_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: samples_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Create a new partner
+   Steps: 4
+   - Given there is no existing partner with the name "Test Partner"
+   - When the user creates a new partner with the name "Test Partner"
+   - Then the system creates the partner successfully
+   - And the partner is visible in the partner list
+2. Update an existing partner
+   Steps: 4
+   - Given there is an existing partner with the name "Test Partner"
+   - When the user updates the partner with the new name "Updated Test Partner"
+   - Then the system updates the partner successfully
+   - And the partner is visible with the new name "Updated Test Partner"
+3. Validate an invoice
+   Steps: 4
+   - Given there is an existing invoice with the status "draft"
+   - When the user validates the invoice
+   - Then the system updates the invoice status to "open"
+   - And the invoice is marked as validated
+4. Use stored variables across scenarios
+   Steps: 5
+   - Given there is an existing partner with the name "Test Partner"
+   - And the partner's ID is stored as a variable "partner_id"
+   - When the user creates a new invoice for the partner with ID "partner_id"
+   - Then the system creates the invoice successfully
+   - And the invoice is associated with the partner "Test Partner"
+5. Locate a record using helpers
+   Steps: 4
+   - Given there is an existing partner with the name "Test Partner"
+   - When the user searches for the partner using the helper "partner_name"
+   - Then the system locates the partner successfully
+   - And the partner's details are displayed correctly

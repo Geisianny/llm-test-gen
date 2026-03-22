@@ -1,0 +1,5 @@
+Scenario 1: The Aurium's gravatar picture must link to his gravatar profile
+  Tags: ['@selenium']
+  When  I go to article "My Article"
+  Then  I should see "Aurium (unauthenticated user)" linking to "//www.gravatar.com/24a625896a07aa37fdb2352e302e96de"
+

@@ -1,0 +1,7 @@
+Scenario 6: Get an existing Action Connection returns "Not Found" response
+  Tags: ['@team:DataDog/workflow-automation-dev']
+  Given  new "GetActionConnection" request
+  And  request contains "connection_id" parameter with value "aaa11111-aa11-aa11-aaaa-aaaaaa111111"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

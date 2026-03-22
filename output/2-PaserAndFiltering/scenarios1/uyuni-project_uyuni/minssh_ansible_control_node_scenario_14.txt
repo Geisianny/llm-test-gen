@@ -1,0 +1,6 @@
+Scenario 14: Cleanup: Disable OS pool repository
+  Tags: ['@skip_if_github_validation', '@uyuni']
+  Given  I am on the Systems overview page of this "ssh_minion"
+  When  I disable repository "os_pool_repo" on this "ssh_minion"
+  And  I refresh the metadata for "ssh_minion"
+

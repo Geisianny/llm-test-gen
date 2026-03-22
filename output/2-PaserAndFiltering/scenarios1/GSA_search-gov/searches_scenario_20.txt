@@ -1,0 +1,7 @@
+Scenario 20: Entering a blank advanced search
+  Given  the following BingV7 Affiliates exist:
+  When  I am on usagov's advanced search page
+  And  I press "Search"
+  Then  I should be on the search page
+  And  I should see "Please enter a search term"
+

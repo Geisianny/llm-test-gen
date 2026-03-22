@@ -1,0 +1,51 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: service_level_objectives_1_story_processado.feature
+Caminho relativo: DataDog_datadog-api-client-typescript\service_level_objectives_1_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\DataDog_datadog-api-client-typescript\service_level_objectives_1_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: service_level_objectives_1_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Create a new SLO report
+   Steps: 5
+   - Given the user has valid Datadog API credentials
+   - And the SLO report details are valid
+   - When the user creates a new SLO report via the API
+   - Then the system returns a success response
+   - And the SLO report is stored in the system
+2. Retrieve an existing SLO report
+   Steps: 4
+   - Given there is an existing SLO report with ID "12345"
+   - When the user queries the SLO report with ID "12345" via the API
+   - Then the system returns the SLO report details
+   - And the report details match the stored data
+3. Update an existing SLO report
+   Steps: 5
+   - Given there is an existing SLO report with ID "12345"
+   - And the updated SLO report details are valid
+   - When the user updates the SLO report with ID "12345" via the API
+   - Then the system returns a success response
+   - And the SLO report is updated with the new details
+4. Delete an existing SLO report
+   Steps: 4
+   - Given there is an existing SLO report with ID "12345"
+   - When the user deletes the SLO report with ID "12345" via the API
+   - Then the system returns a success response
+   - And the SLO report is removed from the system
+5. Attempt to create an SLO report with invalid details
+   Steps: 5
+   - Given the user has valid Datadog API credentials
+   - And the SLO report details are invalid
+   - When the user creates a new SLO report via the API
+   - Then the system returns an error response
+   - And the error message indicates the invalid details

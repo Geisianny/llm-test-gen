@@ -1,0 +1,16 @@
+Scenario 9: User creates a new listing with custom text field
+  Tags: ['@javascript', '@sphinx', '@no-transaction']
+  Given  I am logged in
+  And  there is a custom text field "Details" in community "test" in category "Spaces"
+  When  I follow "new-listing-link"
+  And  I select "Spaces" from listing type menu
+  And  I select "Selling" from listing type menu
+  And  I fill in "listing_title" with "My house"
+  And  I fill in text field "Details" with "Test details"
+  And  I press "Post listing"
+  And  the Listing indexes are processed
+  When  I go to the home page
+  And  I fill in "q" with "Test details"
+  And  I press "search-button"
+  Then  I should see "My house"
+

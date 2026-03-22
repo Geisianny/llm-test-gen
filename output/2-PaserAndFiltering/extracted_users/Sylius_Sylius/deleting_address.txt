@@ -1,0 +1,18 @@
+Feature: Removing an address from my book
+Description: In order to have only relevant addresses in my address book
+    As a Customer
+    I want to be able to remove an address
+Tags: ['@address_book']
+
+Background: 
+  Given  the store operates on a single channel in "United States"
+  And  I am a logged in customer
+  And  I have an address "Lucifer Morningstar", "Seaside Fwy", "90802", "Los Angeles", "United States", "Arkansas" in my address book
+
+Scenario 1: 
+  Tags: ['@api', '@ui']
+  When  I browse my address book
+  And  I delete the "Lucifer Morningstar" address
+  Then  I should be notified that the address has been successfully deleted
+  And  there should be no addresses
+

@@ -1,0 +1,10 @@
+Scenario 23: Update datastore item returns "OK" response
+  Tags: ['@skip-typescript', '@team:DataDog/app-builder-backend']
+  Given  new "UpdateDatastoreItem" request
+  And  there is a valid "datastore" in the system
+  And  there is a valid "datastore_item" in the system
+  And  request contains "datastore_id" parameter from "datastore.data.id"
+  And  body with value {"data": {"attributes": {"item_changes": {}, "item_key": "test-key"}, "type": "items"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+

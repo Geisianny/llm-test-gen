@@ -1,0 +1,10 @@
+Scenario 16: Detect product loading issues from the UI
+  Tags: ['@scc_credentials']
+  Given  I am authorized for the "Admin" section
+  When  I follow the left menu "Admin > Setup Wizard > Products"
+  And  I wait until I see "Setup Wizard" text
+  And  I wait until I do not see "Loading" text
+  Then  I should not see a "Operation not successful" text
+  And  I select "250" from "pageSize"
+  And  I should only see success signs in the product list
+

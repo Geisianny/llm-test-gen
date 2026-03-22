@@ -1,0 +1,13 @@
+Scenario 35: Get one application key owned by current user returns "OK" response
+  Tags: ['@team:DataDog/credentials-management']
+  Given  there is a valid "application_key" in the system
+  And  new "GetCurrentUserApplicationKey" request
+  And  request contains "app_key_id" parameter from "application_key.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.type" is equal to "application_keys"
+  And  the response "data.id" is equal to "{{ application_key.data.id }}"
+  And  the response "data.attributes.name" is equal to "{{ application_key.data.attributes.name }}"
+  And  the response "data.attributes" has field "scopes"
+  And  the response "data.attributes" has field "last_used_at"
+

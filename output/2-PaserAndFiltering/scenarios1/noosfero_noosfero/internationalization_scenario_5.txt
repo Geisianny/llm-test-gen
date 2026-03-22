@@ -1,0 +1,7 @@
+Scenario 5: language set by previous users
+  Tags: ['@fixme']
+  Given  a user accessed in English before
+  And  my browser prefers Portuguese
+  When  I go to the homepage
+  Then  the site should be in Portuguese
+

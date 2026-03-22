@@ -1,0 +1,12 @@
+Scenario Outline 8: As an logged in user, I can not create a new referral with an invalid email address - Example 1
+  Given  I am logged with "michelle.dufour@example.ch" via OAuth client "JeMengage Mobile" with scope "jemarche_app"
+  And  I send a "POST" request to "/api/v3/referrals" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+  Examples:
+    | email |
+    | jacques.picard@en-marche.fr |
+    | disabled-email@test.com |
+

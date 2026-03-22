@@ -1,0 +1,9 @@
+Scenario 25: Cleanup: remove remaining Salt minion from configuration channel
+  Tags: ['@sle_minion']
+  When  I follow the left menu "Configuration > Channels"
+  And  I follow "Mixed Channel"
+  And  I follow "Systems" in the content area
+  And  I check the "sle_minion" client
+  And  I click on "Unsubscribe systems"
+  Then  I should see a "Successfully unsubscribed 1 system(s)." text
+

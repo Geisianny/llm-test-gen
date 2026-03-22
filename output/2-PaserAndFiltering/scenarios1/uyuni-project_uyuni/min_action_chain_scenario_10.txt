@@ -1,0 +1,9 @@
+Scenario 10: Create a configuration channel for testing action chain on Salt minion
+  When  I follow the left menu "Configuration > Channels"
+  And  I follow "Create Config Channel"
+  And  I enter "Action Chain Channel" as "cofName"
+  And  I enter "actionchainchannel" as "cofLabel"
+  And  I enter "This is a test channel" as "cofDescription"
+  And  I click on "Create Config Channel"
+  Then  I should see a "Action Chain Channel" text
+

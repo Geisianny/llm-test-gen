@@ -1,0 +1,6 @@
+Scenario 9: As a non logged-in user I can not create a contact with no cgu accepted
+  Given  I send a "POST" request to "/api/contacts" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+

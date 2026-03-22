@@ -1,0 +1,9 @@
+Scenario 2: Applying correct taxes for shipping with tax rate included in price
+  Tags: ['@api', '@ui']
+  Given  I added product "PHP Mug" to the cart
+  When  I check the details of my cart
+  Then  my cart items total should be "$10.00"
+  And  my cart estimated shipping cost should be "$10.00"
+  And  my cart included in price taxes should be "$1.39"
+  And  my cart total should be "$20.00"
+

@@ -1,0 +1,7 @@
+Scenario 1: Accessing a disabled taxon
+  Tags: ['@ui']
+  Given  the store has "T-Shirts" taxonomy
+  And  the "T-Shirts" taxon is disabled
+  When  I try to browse products from taxon "T-Shirts"
+  Then  I should be informed that the taxon does not exist
+

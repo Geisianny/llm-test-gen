@@ -1,0 +1,9 @@
+Scenario 4: Trying to add a new tax rate without specifying its name
+  Tags: ['@api', '@ui']
+  When  I want to create a new tax rate
+  And  I specify its code as "UNITED_STATES_SALES_TAX"
+  But  I do not name it
+  And  I try to add it
+  Then  I should be notified that name is required
+  And  tax rate with code "UNITED_STATES_SALES_TAX" should not be added
+

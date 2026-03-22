@@ -1,0 +1,9 @@
+Scenario 2: added a code from an activated enterprise
+  Given  feature "enterprise_activation" is enabled on environment
+  And  the following enterprises
+  And  I am on joaosilva's control panel
+  And  enterprise "Products Factory" is enabled
+  And  I fill in "Enterprise activation code" with code of "Products Factory"
+  When  I follow "Activate"
+  Then  I should see "This enterprise is already active"
+

@@ -1,0 +1,10 @@
+Scenario 6: Common noosfero user create a new circle when following a community
+  Tags: ['@selenium']
+  Given  I am logged in as "johnsnow"
+  When  I go to nightswatch's homepage
+  When  I follow "Follow"
+  When  I follow "New Circle"
+  And  I fill in "text-field-name-new-circle" with "Winterfell"
+  When  I follow "Create"
+  Then  I should see "Winterfell"
+

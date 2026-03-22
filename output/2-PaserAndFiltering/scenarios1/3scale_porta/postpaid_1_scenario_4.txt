@@ -1,0 +1,10 @@
+Scenario 4: Bill fixed fee in the beginning, variable in the end of the month
+  Given  the date is 31st December 2008
+  And  a buyer "tycoon" signed up to application plan "Variable"
+  Given  time flies to 14th January 2009
+  And  buyer "tycoon" makes 2 service transactions with:
+  When  time flies to 3rd February 2009
+  And  I log in as "tycoon" on xyz.3scale.localhost
+  And  I navigate to invoice issued for me in "January, 2009"
+  Then  I should see line items
+

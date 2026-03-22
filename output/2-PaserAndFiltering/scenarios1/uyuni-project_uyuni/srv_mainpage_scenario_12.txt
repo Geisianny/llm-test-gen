@@ -1,0 +1,10 @@
+Scenario 12: Main content
+  Given  I am authorized
+  Then  I should see a "Tasks" text
+  And  I should see a "Inactive Systems" text
+  And  I should see a "Most Critical Systems" text
+  And  I should see a "Recently Scheduled Actions" text
+  And  I should see a "Relevant Security Patches" text
+  And  I should see a "System Group Name" text
+  And  I should see a "Recently Registered Systems" text
+

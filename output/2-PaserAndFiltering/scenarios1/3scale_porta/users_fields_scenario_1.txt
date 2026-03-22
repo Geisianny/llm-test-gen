@@ -1,0 +1,6 @@
+Scenario 1: Hidden and not editable extra fields should not be editable
+  Given  I log in as "bob" on foo.3scale.localhost
+  When  I go to the user edit page for "bob"
+  Then  I should see the fields:
+  But  I should not see the fields:
+

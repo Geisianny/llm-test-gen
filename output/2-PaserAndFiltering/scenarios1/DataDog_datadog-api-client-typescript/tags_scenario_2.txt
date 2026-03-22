@@ -1,0 +1,8 @@
+Scenario 2: Add tags to a host returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/core-index']
+  Given  new "CreateHostTags" request
+  And  request contains "host_name" parameter from "REPLACE.ME"
+  And  body with value {"host": "test.host", "tags": ["environment:production"]}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

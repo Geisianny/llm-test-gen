@@ -1,0 +1,8 @@
+Scenario 2: Aggregate spans returns "OK" response
+  Tags: ['@team:DataDog/apm']
+  Given  new "AggregateSpans" request
+  And  body with value {"data":{"attributes": {"compute": [{"aggregation": "count", "interval": "5m", "type": "timeseries"}],"filter": {"from": "now-15m", "query": "*", "to": "now"}},"type":"aggregate_request"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "meta.status" is equal to "done"
+

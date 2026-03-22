@@ -1,0 +1,5 @@
+Scenario 41: "Create Kickstart Profile" page Systems => Autoinstallation => Profiles => Create Kickstart Profile
+  When  I follow the left menu "Systems > Autoinstallation > Profiles"
+  And  I follow "Create Kickstart Profile"
+  Then  I should see a "Step 1: Create Kickstart Profile" text
+

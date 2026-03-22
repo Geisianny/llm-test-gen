@@ -1,0 +1,9 @@
+Scenario 6: Delete a pipeline returns "OK" response
+  Tags: ['@team:DataDog/observability-pipelines']
+  Given  operation "DeletePipeline" enabled
+  And  there is a valid "pipeline" in the system
+  And  new "DeletePipeline" request
+  And  request contains "pipeline_id" parameter from "pipeline.data.id"
+  When  the request is sent
+  Then  the response status is 204 OK
+

@@ -1,0 +1,11 @@
+Scenario 4: Trying to add a new text product attribute with wrong configuration
+  Tags: ['@ui']
+  When  I want to create a new text product attribute
+  And  I name it "T-shirt brand" in "English (United States)"
+  And  I specify its code as "t_shirt_brand"
+  And  I specify its min length as 8
+  And  I specify its max length as 6
+  And  I try to add it
+  Then  I should be notified that max length must be greater or equal to the min length
+  And  the attribute with code "t_shirt_brand" should not appear in the store
+

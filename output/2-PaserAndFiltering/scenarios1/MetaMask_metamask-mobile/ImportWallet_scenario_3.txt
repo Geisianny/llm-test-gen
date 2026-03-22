@@ -1,0 +1,6 @@
+Scenario 3: Finish flow
+  Then  "Help us improve MetaMask" is displayed
+  And  On Wallet Setup Screen I tap "Agree"
+  And  I tap "Done"
+  Then  I am on the main wallet view
+

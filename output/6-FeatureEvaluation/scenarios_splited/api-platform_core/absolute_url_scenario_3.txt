@@ -1,0 +1,5 @@
+Scenario: Relation with absolute URL
+  Given there is a published resource with a related resource
+  When the client requests the resource
+  Then the system returns the related resource with an absolute URL
+  And the URL is in the format "https://example.com/related-resources/{id}"

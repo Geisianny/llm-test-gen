@@ -1,0 +1,5 @@
+Scenario: COGS posting when transactions are out-of-order
+  Given transactions are entered out-of-order during periodic bookkeeping
+  And there are sales recorded without associated costs
+  When the purchase invoice is posted
+  Then the system automatically posts the COGS

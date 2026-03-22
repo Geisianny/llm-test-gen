@@ -1,0 +1,6 @@
+Scenario 5: Captcha is disabled
+  Tags: ['@recaptcha']
+  Given  the provider has bot protection disabled for its buyers
+  When  the buyer wants to log in
+  Then  the captcha is not present
+

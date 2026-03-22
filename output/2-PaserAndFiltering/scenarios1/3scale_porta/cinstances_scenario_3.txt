@@ -1,0 +1,9 @@
+Scenario 3: Credit card details on postpaid billing
+  Tags: ['@wip']
+  Given  provider "foo.3scale.localhost" has postpaid billing enabled
+  And  a buyer "cecilia" signed up to application plan "Basic"
+  And  the buyer "cecilia" has activated its account
+  When  I navigate to buyer "cecilia" details
+  Then  I should see buyer "cecilia" details page
+  But  I should not see "Credit Card Details"
+

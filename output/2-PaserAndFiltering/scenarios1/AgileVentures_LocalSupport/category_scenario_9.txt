@@ -1,0 +1,10 @@
+Scenario 9: Using category dropselects to successively filter the results
+  Given  I select the "Animals with plants" category from Who They Help
+  And  I press "Submit"
+  Then  the organisation results should contain:
+  Then  the organisation results should not contain:
+  And  I select the "Watering" category from How They Help
+  And  I press "Submit"
+  Then  the organisation results should contain:
+  Then  the organisation results should not contain:
+

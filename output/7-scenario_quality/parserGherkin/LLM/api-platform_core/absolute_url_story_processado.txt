@@ -1,0 +1,48 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: absolute_url_story_processado.feature
+Caminho relativo: api-platform_core\absolute_url_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\api-platform_core\absolute_url_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: absolute_url_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Published resource with absolute URL
+   Steps: 4
+   - Given there is a published resource with the identifier "123"
+   - When the client requests the resource "123"
+   - Then the system returns the resource with an absolute URL
+   - And the URL is in the format "https://example.com/resources/123"
+2. Collection of resources with absolute URLs
+   Steps: 4
+   - Given there is a collection of published resources
+   - When the client requests the collection
+   - Then the system returns a list of resources with absolute URLs
+   - And each URL is in the format "https://example.com/resources/{id}"
+3. Relation with absolute URL
+   Steps: 4
+   - Given there is a published resource with a related resource
+   - When the client requests the resource
+   - Then the system returns the related resource with an absolute URL
+   - And the URL is in the format "https://example.com/related-resources/{id}"
+4. Client navigates through absolute URLs
+   Steps: 4
+   - Given there is a published resource with an absolute URL "https://example.com/resources/123"
+   - When the client navigates to the URL "https://example.com/resources/123"
+   - Then the system returns the resource with the identifier "123"
+   - And the response contains the expected data
+5. Client submits information using absolute URL
+   Steps: 4
+   - Given there is a published resource with an absolute URL "https://example.com/resources/123"
+   - When the client submits information to the URL "https://example.com/resources/123"
+   - Then the system processes the submitted information
+   - And the resource with the identifier "123" is updated accordingly

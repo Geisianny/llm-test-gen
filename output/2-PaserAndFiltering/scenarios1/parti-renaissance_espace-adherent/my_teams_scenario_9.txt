@@ -1,0 +1,6 @@
+Scenario 9: As a referent I can edit a member in my team
+  Given  I am logged with "referent@en-marche-dev.fr" via OAuth client "JeMengage Web" with scope "jemengage_admin"
+  When  I send a "PUT" request to "/api/v3/my_team_members/d11d6ddd-dfba-4972-97b2-4c0bdf289559?scope=president_departmental_assembly" with body:
+  Then  the response status code should be 200
+  And  the JSON should be equal to:
+

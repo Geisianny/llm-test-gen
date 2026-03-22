@@ -1,0 +1,6 @@
+Scenario 4: Not being able to access the product shop page from the admin panel when the product has no translations meeting the criteria
+  Tags: ['@no-api', '@ui']
+  Given  this product has no translations with a defined slug
+  When  I want to edit this product
+  Then  the show product's page button should be disabled
+

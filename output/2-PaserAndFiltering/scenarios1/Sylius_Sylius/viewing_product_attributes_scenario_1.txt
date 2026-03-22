@@ -1,0 +1,7 @@
+Scenario 1: Viewing a detailed page with product's text attribute
+  Tags: ['@api', '@ui']
+  Given  the store has a product "T-Shirt banana"
+  And  this product has a text attribute "T-Shirt material" with value "Banana skin"
+  When  I check this product's details
+  Then  I should see the product attribute "T-Shirt material" with value "Banana skin"
+

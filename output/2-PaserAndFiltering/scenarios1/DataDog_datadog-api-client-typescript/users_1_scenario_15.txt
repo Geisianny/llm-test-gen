@@ -1,0 +1,8 @@
+Scenario 15: List all users returns "OK" response with pagination
+  Tags: ['@replay-only', '@skip-validation', '@team:DataDog/team-aaa-identity', '@with-pagination']
+  Given  new "ListUsers" request
+  And  request contains "page[size]" parameter with value 2
+  When  the request with pagination is sent
+  Then  the response status is 200 OK
+  And  the response has 3 items
+

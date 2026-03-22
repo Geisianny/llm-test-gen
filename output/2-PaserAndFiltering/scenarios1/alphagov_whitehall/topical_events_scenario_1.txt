@@ -1,0 +1,4 @@
+Scenario 1: Adding a new topical event
+  When  I create a new topical event "An Event" with summary "A topical event" and description "About this topical event"
+  Then  I should see the topical event "An Event" in the admin interface
+

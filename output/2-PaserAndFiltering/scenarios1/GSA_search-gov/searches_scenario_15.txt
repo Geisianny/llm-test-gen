@@ -1,0 +1,11 @@
+Scenario 15: Searching on non navigable document collection
+  Given  the following BingV7 Affiliates exist:
+  And  affiliate "agency.gov" has the following document collections:
+  When  I am on agency.gov's "Blog" docs search page
+  Then  I should see "Blog" in the search navbar
+  And  I should not see a link to "Web"
+  And  I should not see a link to "Blog"
+  When  I search for "sba"
+  Then  I should see at least "1" web search results
+  And  I should not see a link to "Blog" in the search navbar
+

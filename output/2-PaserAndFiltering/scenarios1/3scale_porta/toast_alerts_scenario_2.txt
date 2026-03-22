@@ -1,0 +1,5 @@
+Scenario 2: Close alert manually
+  Given  a toast alert is displayed with text "This is closeable"
+  When  press "Close alert"
+  Then  they should not see any toast alerts
+

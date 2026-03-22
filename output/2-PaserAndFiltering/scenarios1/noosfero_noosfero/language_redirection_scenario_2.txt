@@ -1,0 +1,5 @@
+Scenario 2: view page in Pt as En guest with redirection disabled by default
+  Given  my browser prefers English
+  When  I go to /manuel/meu-artigo
+  Then  the site should be in Portuguese
+

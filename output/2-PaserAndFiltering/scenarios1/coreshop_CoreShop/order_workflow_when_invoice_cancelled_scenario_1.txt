@@ -1,0 +1,15 @@
+Scenario 1: Create order with payment and shipment which still is completed
+  Given  I create an order from my cart
+  And  I apply transition "confirm" to my order
+  And  I create a payment for my order with payment provider "Bankwire" and amount 2400
+  And  I apply payment transition "complete" to latest order payment
+  And  I create a invoice for my order
+  And  I apply order invoice transition "request_invoice" to my order
+  And  I apply invoice transition "cancel" to latest order invoice
+  Then  the order invoice state should be "ready"
+  And  I create another invoice for my order
+  And  I apply invoice transition "complete" to latest order invoice
+  Then  the order invoice state should be "invoiced"
+  And  the order payment state should be "paid"
+  And  the order state should be "confirmed"
+

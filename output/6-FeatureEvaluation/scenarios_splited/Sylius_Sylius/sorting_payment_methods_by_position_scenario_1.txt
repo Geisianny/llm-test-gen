@@ -1,0 +1,4 @@
+Scenario: Sort payment methods in ascending order by default
+  Given there are multiple payment methods with different positions
+  When the administrator views the payment methods
+  Then the payment methods are displayed in ascending order by position

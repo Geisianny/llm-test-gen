@@ -1,0 +1,7 @@
+Scenario 11: Multi-pool liquidity provision
+  Given  the following liquidity pools exist:
+  And  I am logged in as "alice@example.com"
+  When  I view my liquidity positions
+  Then  I should see positions in multiple pools
+  And  each position should show:
+

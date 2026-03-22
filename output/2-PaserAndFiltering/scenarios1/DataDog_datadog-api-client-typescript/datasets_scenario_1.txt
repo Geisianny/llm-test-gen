@@ -1,0 +1,8 @@
+Scenario 1: Create a dataset returns "Bad Request" response
+  Tags: ['@skip-go', '@skip-java', '@skip-python', '@skip-ruby', '@skip-rust', '@skip-terraform-config', '@skip-typescript', '@skip-validation', '@team:DataDog/aaa-granular-access']
+  Given  new "CreateDataset" request
+  And  operation "CreateDataset" enabled
+  And  body with value {"test": "bad_request"}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

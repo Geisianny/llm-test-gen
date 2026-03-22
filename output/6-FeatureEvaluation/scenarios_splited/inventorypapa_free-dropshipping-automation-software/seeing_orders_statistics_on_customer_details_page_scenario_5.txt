@@ -1,0 +1,4 @@
+Scenario: View customer order statistics with average order value
+  Given there is a customer with multiple orders placed
+  When the administrator views the customer's details page
+  Then the system displays the average value of the customer's orders

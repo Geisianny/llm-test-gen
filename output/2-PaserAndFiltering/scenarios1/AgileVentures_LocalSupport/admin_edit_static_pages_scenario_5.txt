@@ -1,0 +1,6 @@
+Scenario 5: Non-superadmin cannot see pages index
+  Given  I am signed in as a non-superadmin
+  And  I visit "/pages"
+  Then  I should see "You must be signed in as a superadmin to perform this action!"
+  And  I should be on the home page
+

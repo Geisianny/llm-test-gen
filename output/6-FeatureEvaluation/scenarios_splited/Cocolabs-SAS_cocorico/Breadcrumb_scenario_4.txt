@@ -1,0 +1,6 @@
+Scenario: Verify breadcrumbs after navigating through multiple levels
+  Given the user is on the homepage
+  And the user navigates to "Offerer"
+  And the user clicks on "Messages"
+  When the user clicks on "Home" in the breadcrumbs
+  Then the breadcrumbs display "Home"

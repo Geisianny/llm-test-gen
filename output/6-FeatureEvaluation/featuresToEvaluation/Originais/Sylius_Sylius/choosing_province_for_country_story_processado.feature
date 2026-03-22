@@ -1,0 +1,53 @@
+Feature: choosing_province_for_country_story_processado
+
+Scenario: Address an order with country and its province
+    Tags: ['@api', '@ui', '@javascript']
+    Given  I added product "The Dark Knight T-Shirt" to the cart
+    And  I am at the checkout addressing step
+    When  I specify the email as "bruce.wayne@example.com"
+    And  I specify the billing address as "Gotham", "Mountain Drive", "1007", "United States" for "Bruce Wayne"
+    And  I specify billing country province as "New York"
+    And  I complete the addressing step
+    Then  I should be on the checkout shipping step
+
+
+
+Scenario: Address an order with country and its province and specify country without province for different billing address
+    Tags: ['@api', '@ui', '@mink:chromedriver']
+    Given  I added product "The Dark Knight T-Shirt" to the cart
+    And  I am at the checkout addressing step
+    When  I specify the email as "bruce.wayne@example.com"
+    And  I specify the billing address as "Nanda Parbat", "League of Assassins House", "11-333", "Nepal" for "Ra's al Ghul"
+    And  I specify the shipping address as "Gotham", "Mountain Drive", "1007", "United States" for "Bruce Wayne"
+    And  I specify shipping country province as "New York"
+    And  I complete the addressing step
+    Then  I should be on the checkout shipping step
+
+
+
+Scenario: Address an order with country and its province and specify country with province for different billing address
+    Tags: ['@api', '@ui', '@javascript']
+    Given  I added product "The Dark Knight T-Shirt" to the cart
+    And  I am at the checkout addressing step
+    When  I specify the email as "bruce.wayne@example.com"
+    And  I specify the billing address as "Gotham", "Mountain Drive", "1007", "United States" for "Bruce Wayne"
+    And  I specify billing country province as "New York"
+    And  I specify the shipping address as "Metropolis", "Clinton Str.", "344", "United States" for "Clark Kent"
+    And  I specify shipping country province as "New York"
+    And  I complete the addressing step
+    Then  I should be on the checkout shipping step
+
+
+
+Scenario: Being unable to address an order with country without provinces and province from other country
+    Tags: ['@api', '@no-ui']
+    Given  I added product "The Dark Knight T-Shirt" to the cart
+    And  I am at the checkout addressing step
+    When  I specify the email as "bruce.wayne@example.com"
+    And  I specify the billing address as "Nanda Parbat", "League of Assassins House", "11-333", "Nepal" for "Ra's al Ghul"
+    And  I specify billing country province as "New York"
+    And  I complete the addressing step
+    Then  I should be notified that selected province is invalid for billing address
+    And  I should still be on the checkout addressing step
+
+

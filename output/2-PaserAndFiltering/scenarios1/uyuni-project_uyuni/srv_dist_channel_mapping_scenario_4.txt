@@ -1,0 +1,12 @@
+Scenario 4: Create new map for x86_64 openSUSE clients
+  Tags: ['@scc_credentials', '@uyuni']
+  When  I follow the left menu "Software > Distribution Channel Mapping"
+  And  I follow "Create Distribution Channel Mapping"
+  Then  I should see a "Create Distribution Channel Map" text
+  When  I enter "openSUSE Tumbleweed" as "os"
+  And  I enter "20250928" as "release"
+  And  I select "x86_64" from "architecture"
+  And  I select "openSUSE Tumbleweed (x86_64)" from "channel_label"
+  And  I click on "Create Mapping"
+  Then  I should see a "openSUSE Tumbleweed" link in the content area
+

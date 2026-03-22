@@ -1,0 +1,11 @@
+Scenario Outline 3: Lock Wallet - Example 1
+  When  I tap on the Settings tab option
+  And  In settings I tap on the Lock Option
+  Then  device alert Do you really want to lock your wallet? is displayed
+  When  I tap Yes on alert
+  Then  Login screen is displayed
+
+  Examples:
+    | alert_msg |
+    | Do you really want to lock your wallet? |
+

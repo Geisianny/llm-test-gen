@@ -1,0 +1,6 @@
+Scenario 4: Create a new cart for a different Tax Rate, add a product and calculate subtotals
+  Given  I add the product "CH T-Shirt" with unit "Carton" to my cart
+  Given  I add the product "CH T-Shirt" with unit "Pieces" to my cart
+  Then  the cart total should be "36590" including tax
+  Then  the cart total tax should be "2616"
+

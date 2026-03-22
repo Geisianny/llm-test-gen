@@ -1,0 +1,7 @@
+Scenario 4: A server can be stopped programmatically
+  Given  a configuration with:
+  When  I start a server in background
+  And  I stop a server programmatically
+  Then  The server is dead with exit code 0
+  And  The stopper is dead with exit code 0
+

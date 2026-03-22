@@ -1,0 +1,9 @@
+Scenario 3: Adding a new product variant without specifying its code
+  Tags: ['@ui']
+  Given  I want to create a new variant of this product
+  When  I set its price to "$80.00" for "United States" channel
+  But  I do not specify its code
+  And  I try to add it
+  Then  I should be notified that code is required
+  And  the "Wyborowa Vodka" product should have no variants
+

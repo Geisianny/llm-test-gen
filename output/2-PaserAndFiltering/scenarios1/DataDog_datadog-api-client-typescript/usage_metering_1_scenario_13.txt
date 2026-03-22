@@ -1,0 +1,9 @@
+Scenario 13: Get hourly usage by product family returns "Bad Request" response
+  Tags: ['@team:DataDog/revenue-query']
+  Given  new "GetHourlyUsage" request
+  And  request contains "filter[timestamp][start]" parameter with value "{{ timeISO('now - 3d') }}"
+  And  request contains "filter[product_families]" parameter with value "infra_hosts"
+  And  request contains "filter[timestamp][end]" parameter with value "{{ timeISO('now - 5d') }}"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

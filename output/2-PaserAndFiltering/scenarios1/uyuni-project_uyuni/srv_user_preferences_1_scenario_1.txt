@@ -1,0 +1,7 @@
+Scenario 1: Change page size to 100 per page in admin user
+  Given  I am authorized as "admin" with password "admin"
+  When  I follow the left menu "Home > My Preferences"
+  And  I select "100" from "pagesize"
+  And  I click on "Save Preferences"
+  Then  I should see a "Preferences modified" text
+

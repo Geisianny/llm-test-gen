@@ -1,0 +1,7 @@
+Scenario 4: show percentage (50%) of solidary economy inputs in results
+  Given  the following inputs
+  When  I go to the search products page
+  And  I fill in "search-input" with "wikis"
+  And  I follow "Search" within ".search-form"
+  Then  I should see "50%" within "div.search-product-ecosol-percentage-icon-50"
+

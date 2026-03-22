@@ -1,0 +1,9 @@
+Scenario 1: Common noosfero user follow a community
+  Tags: ['@selenium-fixme']
+  Given  I am logged in as "johnsnow"
+  When  I go to nightswatch's homepage
+  And  I follow "Follow"
+  And  I check "Work"
+  And  I follow "Follow"
+  Then  I should see "You are now following Nights Watch"
+

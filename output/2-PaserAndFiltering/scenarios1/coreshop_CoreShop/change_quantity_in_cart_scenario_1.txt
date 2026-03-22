@@ -1,0 +1,5 @@
+Scenario 1: Increasing quantity of an item in cart
+  Given  I see the summary of my cart
+  When  I change "TShirt" quantity to 2
+  Then  I should see "TShirt" with quantity 2 in my cart
+

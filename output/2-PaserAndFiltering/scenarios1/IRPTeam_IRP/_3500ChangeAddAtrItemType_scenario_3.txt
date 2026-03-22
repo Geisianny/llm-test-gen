@@ -1,0 +1,66 @@
+Scenario 3: _350001 check the connection between adding additional details to item type and displaying them in the set for item key
+  *  Open item type Stockings
+  Given  I open hyperlink "e1cib/list/Catalog.ItemTypes"
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  *  Open Additional attribute sets for item key
+  Given  I open hyperlink "e1cib/list/Catalog.AddAttributeAndPropertySets"
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  *  Check the ligament
+  *  Add additional attribute in item type
+  When  in opened panel I select "Item types"
+  And  in the table "AvailableAttributes" I click the button named "AvailableAttributesAdd"
+  And  I click choice button of "Attribute" attribute in "AvailableAttributes" table
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I set "Required" checkbox in "AvailableAttributes" table
+  And  I finish line editing in "AvailableAttributes" table
+  And  in the table "AvailableAttributes" I click the button named "AvailableAttributesAdd"
+  And  I click choice button of "Attribute" attribute in "AvailableAttributes" table
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I finish line editing in "AvailableAttributes" table
+  And  I click "Save" button
+  *  Check to add them to Additional attribute sets by item key
+  When  in opened panel I select "Additional attribute sets"
+  And  in the table "AttributesTree" I click "List" button
+  And  "AttributesTree" table contains lines
+  *  Removing an additional attribute from an item type and checking to delete it from Additional attribute sets by item key
+  When  in opened panel I select "Item types"
+  And  I go to line in "AvailableAttributes" table
+  And  I delete a line in "AvailableAttributes" table
+  And  I click "Save" button
+  When  in opened panel I select "Additional attribute sets"
+  And  "AttributesTree" table does not contain lines
+  *  Add additional attribute back and check ligament
+  When  in opened panel I select "Item types"
+  And  in the table "AvailableAttributes" I click the button named "AvailableAttributesAdd"
+  And  I click choice button of "Attribute" attribute in "AvailableAttributes" table
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I click "Save" button
+  When  in opened panel I select "Additional attribute sets"
+  And  in the table "AttributesTree" I click "List" button
+  And  "AttributesTree" table contains lines
+  And  I close all client application windows
+  *  Deletion of additional attributes from Additional attribute sets by item key and check of linkage with item type
+  *  Delete additional attribute AddAttributeAndPropertySets from item key
+  Given  I open hyperlink "e1cib/list/Catalog.AddAttributeAndPropertySets"
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I go to line in "AttributesTree" table
+  And  in the table "AttributesTree" I click "Delete item type" button
+  *  Open item type and check deletion
+  Given  I open hyperlink "e1cib/list/Catalog.ItemTypes"
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  "AvailableAttributes" table does not contain lines
+  *  Add additional attribute back
+  And  in the table "AvailableAttributes" I click the button named "AvailableAttributesAdd"
+  And  I click choice button of "Attribute" attribute in "AvailableAttributes" table
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I click "Save" button
+  And  I close all client application windows
+

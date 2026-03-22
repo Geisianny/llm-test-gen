@@ -1,0 +1,7 @@
+Scenario 6: Member user with access to finance but not charging
+  Given  an active user has access to admin section finance
+  And  the provider is billing but not charging
+  When  the user logs in
+  And  they are reviewing the charging and gateway billing settings
+  Then  payment gateway cannot be set
+

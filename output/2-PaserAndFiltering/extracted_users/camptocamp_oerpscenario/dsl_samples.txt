@@ -1,0 +1,33 @@
+Feature: Make some DSL samples
+Tags: ['@dsl_samples']
+
+Scenario 1: Create/Update a user
+  Tags: ['@tmp']
+  Given  I need a "res.users" with name: Cucumber and login: is rocking
+  And  having:
+
+Scenario 2: Create/Update with some subtility
+  Given  I need a "res.users" with name: Scenario and login: rulezzz
+  And  having:
+
+Scenario 3: Create/Update a user with some other subtility
+  Given  I need a "res.users" with name: Scenario and login: rulezzz
+  And  having:
+
+Scenario 4: Ensure user is unique at creation
+  Given  I create a "res.users" with name: Scenario and login: rulezzz
+  And  having:
+
+Scenario 5: Ensure Someting exists
+  Given  I find a "res.users" with name: Scenario and login: rulezzz
+  And  having:
+
+Scenario 6: find all
+  Given  I find all "res.partner" with customer: 1
+
+Scenario 7: Create a Sale Order with DSL and system wide id
+  Given  I need a "sale.order" with name: SO Device Reseller and oid: scenario.so_reseller
+  And  having:
+  Given  I need a "sale.order.line" with name: SO Line 1 Device Reseller and oid: scenario.so_reseller_line1
+  And  having:
+

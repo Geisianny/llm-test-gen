@@ -1,0 +1,5 @@
+Scenario 1: Page shows only invited users
+  Tags: ['@vcr']
+  Then  I should see "invited@user.org"
+  And  I should not see "regular@user.org"
+

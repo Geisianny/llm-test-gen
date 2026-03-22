@@ -1,0 +1,8 @@
+Scenario 3: Get an event returns "Item Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/monitors-evaluation']
+  Given  a valid "appKeyAuth" key in the system
+  And  new "GetEvent" request
+  And  request contains "event_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Item Not Found
+

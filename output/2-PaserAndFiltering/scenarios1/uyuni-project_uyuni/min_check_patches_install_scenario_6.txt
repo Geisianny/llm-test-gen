@@ -1,0 +1,10 @@
+Scenario 6: Check relevant patches for this client
+  Given  I am on the Systems overview page of this "sle_minion"
+  When  I follow "Software" in the content area
+  And  I follow "Patches" in the content area
+  Then  I should see a "Relevant Patches" text
+  When  I enter "dummy" as the filtered synopsis
+  And  I click on the filter button
+  Then  I should see a "Test update for andromeda-dummy" text
+  And  I should see a "Test update for virgo-dummy" text
+

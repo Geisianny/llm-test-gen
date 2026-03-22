@@ -1,0 +1,7 @@
+Scenario 3: Create a ThirdLevel
+  When  I send a "POST" request to "/third_levels" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should be valid according to the JSON API schema
+  And  the JSON node "data.id" should not be an empty string
+

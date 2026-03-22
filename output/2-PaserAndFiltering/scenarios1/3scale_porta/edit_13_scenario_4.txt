@@ -1,0 +1,6 @@
+Scenario 4: Webhook endpoint is wrong
+  Given  the provider has a webhook with endpoint "http:://banana"
+  When  they go to the edit webhooks page
+  And  press "Ping!"
+  Then  they should see a toast alert with text "Hostname not supplied: 'http:://banana'"
+

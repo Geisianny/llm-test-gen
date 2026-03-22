@@ -1,0 +1,9 @@
+Scenario 32: Update a Workload Protection agent rule (US1-FED) returns "OK" response
+  Tags: ['@replay-only', '@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  there is a valid "agent_rule" in the system
+  And  new "UpdateCloudWorkloadSecurityAgentRule" request
+  And  request contains "agent_rule_id" parameter from "agent_rule.data.id"
+  And  body with value {"data": {"attributes": {"description": "Updated Agent rule", "expression": "exec.file.name == \"sh\""}, "id": "{{ agent_rule.data.id }}", "type": "agent_rule"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+

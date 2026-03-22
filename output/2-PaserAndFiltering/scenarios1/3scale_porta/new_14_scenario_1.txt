@@ -1,0 +1,5 @@
+Scenario 1: Navigation
+  Given  they go to the developer portal users sso integrations page
+  When  they follow "Red Hat Single Sign-On"
+  Then  the current page is the developer portal new sso integration page for "keycloak"
+

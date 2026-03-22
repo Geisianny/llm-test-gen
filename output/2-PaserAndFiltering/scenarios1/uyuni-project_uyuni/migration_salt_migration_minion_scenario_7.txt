@@ -1,0 +1,22 @@
+Scenario 7: Check if the Salt bundle migration was successful
+  When  I follow the left menu "Salt > Remote Commands"
+  Then  I should see a "Remote Commands" text in the content area
+  When  I enter command "file /etc/salt/minion.d"
+  And  I enter the hostname of "salt_migration_minion" as "target"
+  And  I click on preview
+  Then  I should see "salt_migration_minion" hostname
+  And  I wait until I do not see "pending" text
+  When  I click on run
+  And  I wait until I do not see "pending" text
+  And  I expand the results for "salt_migration_minion"
+  Then  I should see "/etc/salt/minion.d: cannot open `/etc/salt/minion.d' (No such file or directory)" in the command output for "salt_migration_minion"
+  When  I enter command "file /etc/venv-salt-minion/minion.d"
+  And  I enter the hostname of "salt_migration_minion" as "target"
+  And  I click on preview
+  Then  I should see "salt_migration_minion" hostname
+  And  I wait until I do not see "pending" text
+  When  I click on run
+  And  I wait until I do not see "pending" text
+  And  I expand the results for "salt_migration_minion"
+  Then  I should see "/etc/venv-salt-minion/minion.d: directory" in the command output for "salt_migration_minion"
+

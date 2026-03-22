@@ -1,0 +1,12 @@
+Scenario 7: Monthly fee: contracts activated in middle of month. With billable contracts
+  Given  all the rolling updates features are off
+  And  I have billable_contracts feature enabled
+  And  the date is 1st January 2009
+  And  the buyer is signed up to service plan "Service Plan"
+  And  the buyer plan "Service Plan" contract is pending
+  When  time flies to 15th January 2009
+  And  the buyer plan "Service Plan" contract gets accepted
+  When  time flies to 3rd March 2009
+  Then  the buyer should have following line items for "January, 2009" invoice:
+  Then  the buyer should have following line items for "February, 2009" invoice:
+

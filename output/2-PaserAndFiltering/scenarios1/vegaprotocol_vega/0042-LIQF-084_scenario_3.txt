@@ -1,0 +1,14 @@
+Scenario 3: LP fulfills the mininum time fraction but is not always on the book when the sla competition factor is zero. (0042-LIQF-085)
+  Tags: ['@SPOTSLA']
+  Given  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  And  the network moves ahead "45" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  When  the parties place the following orders:
+  Then  the accumulated liquidity fees should be "101" for the market "BTC/ETH"
+  When  the network moves ahead "5" blocks
+  Then  the parties cancel the following orders:
+  When  the network moves ahead "1" epochs
+  Then  the following transfers should happen:
+

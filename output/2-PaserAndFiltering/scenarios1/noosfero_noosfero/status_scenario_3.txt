@@ -1,0 +1,15 @@
+Scenario 3: admin configure status
+  Tags: ['@selenium']
+  Given  I am not logged in
+  And  I am logged in as admin
+  And  I am on the environment control panel
+  And  I follow "Plugins"
+  And  I follow "Configuration"
+  And  I follow "Manage Status"
+  Then  I should see "no status registered yet" within "#comment-classification-status"
+  When  I follow "Add a new status"
+  And  I fill in "Name" with "Merged"
+  And  I check "Enable this status"
+  And  I follow "Save"
+  Then  I should see "Merged" within "#comment-classification-status"
+

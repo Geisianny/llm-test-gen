@@ -1,0 +1,13 @@
+Scenario 2: As offerer i can add a discount
+  Given  I am logged in as user "offerer@cocorico.rocks" with password "12345678"
+  When  I click on dashboard menu "Listings" of "offerer"
+  And  I follow "Edit"
+  And  I follow "Price & conditions"
+  And  I click on the element with css selector ".form-area a.add"
+  And  I wait 1000 ms
+  And  I fill in the following:
+  And  I press button with css "#discount-form-container [type=submit]"
+  And  I wait 2000 ms
+  Then  I should be on the "dashboard listing edit availabilities prices" page which "listing title" equal to "Listing One"
+  And  I should see "Saved"
+

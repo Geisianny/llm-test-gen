@@ -1,0 +1,8 @@
+Scenario 3: Cleanup: remove custom system info
+  Tags: ['@scc_credentials']
+  Given  I am authorized
+  When  I follow the left menu "Systems > Custom System Info"
+  And  I follow "arancio"
+  And  I follow "Delete Key"
+  And  I click on "Delete Key"
+

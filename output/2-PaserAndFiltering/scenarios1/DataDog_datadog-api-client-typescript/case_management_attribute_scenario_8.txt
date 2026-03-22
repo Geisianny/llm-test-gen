@@ -1,0 +1,6 @@
+Scenario 8: Get all custom attributes returns "OK" response
+  Tags: ['@team:DataDog/case-management']
+  Given  new "GetAllCustomAttributes" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

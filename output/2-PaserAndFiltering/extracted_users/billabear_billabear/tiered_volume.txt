@@ -1,0 +1,41 @@
+Feature: Tier Volume Pricing
+
+Background: 
+  Given  the following accounts exist:
+  And  the follow products exist:
+  And  the following features exist:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "Price One" with:
+  And  the follow customers exist:
+
+Scenario 1: 
+  Given  the follow price "Product One" for "USD" monthly price with tiered volume with these tiers:
+  Given  the following subscriptions exist:
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  Then  the subscription for "customer.one@example.org" will expire in a month
+  And  there the latest invoice for "customer.one@example.org" will be for 1500 "USD"
+
+Scenario 2: 
+  Given  the follow price "Product One" for "USD" monthly price with tiered volume with these tiers:
+  Given  the following subscriptions exist:
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  Then  the subscription for "customer.one@example.org" will expire in a month
+  And  there the latest invoice for "customer.one@example.org" will be for 1000 "USD"
+
+Scenario 3: 
+  Given  the follow price "Product One" for "USD" monthly price with tiered volume with these tiers:
+  Given  the following subscriptions exist:
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  Then  the subscription for "customer.one@example.org" will expire in a month
+  And  there the latest invoice for "customer.one@example.org" will be for 10000 "USD"
+
+Scenario 4: 
+  Given  the follow price "Product One" for "USD" monthly price with tiered volume with these tiers:
+  Given  the following subscriptions exist:
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  Then  the subscription for "customer.one@example.org" will expire in a month
+  And  there the latest invoice for "customer.one@example.org" will be for 2200 "USD"
+

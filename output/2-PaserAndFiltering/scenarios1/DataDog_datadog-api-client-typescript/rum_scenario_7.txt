@@ -1,0 +1,7 @@
+Scenario 7: Delete a RUM application returns "Not Found" response
+  Tags: ['@team:DataDog/rum-backend']
+  Given  new "DeleteRUMApplication" request
+  And  request contains "id" parameter with value "abcde-12345"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

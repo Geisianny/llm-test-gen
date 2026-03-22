@@ -1,0 +1,5 @@
+Scenario 1: Let all product price rules apply
+  Then  the product "Shoe" should have the prices, price: "7000" and retail-price: "10000" and discount: "3000"
+  And  the product "Shoe 2" should have the prices, price: "10500" and retail-price: "15000" and discount: "4500"
+  And  the product "Jacket" should have the prices, price: "28000" and retail-price: "40000" and discount: "12000"
+

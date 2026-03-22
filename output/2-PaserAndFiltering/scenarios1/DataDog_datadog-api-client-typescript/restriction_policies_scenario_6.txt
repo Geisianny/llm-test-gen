@@ -1,0 +1,14 @@
+Scenario 6: Update a restriction policy returns "OK" response
+  Tags: ['@team:DataDog/aaa-granular-access']
+  Given  there is a valid "role" in the system
+  And  there is a valid "user" in the system
+  And  the "user" has the "role"
+  And  new "UpdateRestrictionPolicy" request
+  And  request contains "resource_id" parameter with value "dashboard:test-update"
+  And  body with value {"data": {"id": "dashboard:test-update", "type": "restriction_policy", "attributes": {"bindings": [{"relation": "editor", "principals": ["org:{{ user.data.relationships.org.data.id }}"]}]}}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.type" is equal to "restriction_policy"
+  And  the response "data.id" is equal to "dashboard:test-update"
+  And  the response "data.attributes.bindings[0]" is equal to {"relation": "editor", "principals": ["org:{{ user.data.relationships.org.data.id }}"]}
+

@@ -1,0 +1,11 @@
+Scenario 27: List tag configuration by name returns "Success" response
+  Tags: ['@replay-only', '@skip-validation', '@team:DataDog/metrics-experience']
+  Given  a valid "appKeyAuth" key in the system
+  And  there is a valid "metric" in the system
+  And  there is a valid "metric_tag_configuration" in the system
+  And  new "ListTagConfigurationByName" request
+  And  request contains "metric_name" parameter from "metric_tag_configuration.data.id"
+  When  the request is sent
+  Then  the response status is 200 Success
+  And  the response "data.id" has the same value as "metric_tag_configuration.data.id"
+

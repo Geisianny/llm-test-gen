@@ -1,0 +1,4 @@
+Scenario 2: Execute Health Check tool with server supportconfig
+  When  I start the health check tool with supportconfig "/root/server-supportconfig/uyuni-server-supportconfig/" on "localhost"
+  Then  I check that the health check tool is running on "localhost"
+

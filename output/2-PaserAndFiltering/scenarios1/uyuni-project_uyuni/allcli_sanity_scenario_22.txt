@@ -1,0 +1,7 @@
+Scenario 22: The SLE Micro 5.4 SSH minion is healthy
+  Tags: ['@slemicro54_ssh_minion']
+  Then  "slemicro54_ssh_minion" should have a FQDN
+  And  reverse resolution should work for "slemicro54_ssh_minion"
+  And  "slemicro54_ssh_minion" should communicate with the server using public interface
+  And  the clock from "slemicro54_ssh_minion" should be exact
+

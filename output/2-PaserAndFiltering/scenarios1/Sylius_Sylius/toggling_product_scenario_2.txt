@@ -1,0 +1,9 @@
+Scenario 2: Enabling a simple product
+  Tags: ['@ui', '@no-api']
+  Given  the "Dice Brewing" product is disabled
+  When  I want to modify the "Dice Brewing" product
+  And  I enable it
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this product should be enabled along with its variant
+

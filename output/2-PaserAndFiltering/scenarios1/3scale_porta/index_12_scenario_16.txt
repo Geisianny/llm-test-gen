@@ -1,0 +1,10 @@
+Scenario Outline 16: Ordering - Example 1
+  When  they go to the buyer's service subscriptions page
+  And  the table is sorted by "State"
+  Then  the table should be sorted by "State"
+
+  Examples:
+    | order by |
+    | State |
+    | Created On |
+

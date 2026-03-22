@@ -1,0 +1,10 @@
+Scenario 9: Add a test repository for Debian-like
+  Tags: ['@deblike_minion']
+  When  I follow the left menu "Software > Manage > Repositories"
+  And  I follow "Create Repository"
+  And  I enter "fake-debian-repo" as "label"
+  And  I select "deb" from "contenttype"
+  And  I enter "http://localhost/pub/TestRepoDebUpdates/" as "url"
+  And  I click on "Create Repository"
+  Then  I should see a "Repository created successfully" text
+

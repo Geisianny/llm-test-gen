@@ -1,0 +1,8 @@
+Scenario 2: An uncleared journal line is included in matching reconciliations
+  created with an end date *on* the journal line's date -- until the
+  line is cleared.
+  Given  an uncleared journal line on 2000-01-01
+  When  I create two reconciliations ending on 2000-01-01
+  Then  the journal line is in the first reconciliation
+  And  the journal line is in the second reconciliation
+

@@ -1,0 +1,10 @@
+Scenario 4: Renaming a zone
+  Tags: ['@ui', '@api']
+  Given  the store has a zone "European Union" with code "EU"
+  And  it has the "France" country member
+  When  I want to modify the zone named "European Union"
+  And  I rename it to "EU"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this zone name should be "EU"
+

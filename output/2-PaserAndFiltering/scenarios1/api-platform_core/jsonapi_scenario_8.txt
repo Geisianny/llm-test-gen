@@ -1,0 +1,8 @@
+Scenario 8: Update a resource with a many-to-many relationship via PATCH
+  When  I send a "PATCH" request to "/dummies/1" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be valid according to the JSON API schema
+  And  the JSON node "data.relationships.relatedDummies.data" should have 1 elements
+  And  the JSON node "data.relationships.relatedDummy.data.id" should be equal to "/related_dummies/1"
+

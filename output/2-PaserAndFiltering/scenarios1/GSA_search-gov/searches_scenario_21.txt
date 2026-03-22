@@ -1,0 +1,8 @@
+Scenario 21: Searching with type-ahead suggestions
+  Tags: ['@javascript']
+  Given  the following BingV7 Affiliates exist:
+  And  the following SAYT Suggestions exist for agency.gov:
+  When  I am on agency.gov's search page
+  And  I fill in "query" with "popular"
+  Then  I should see a suggestion to search for "popular search phrase"
+

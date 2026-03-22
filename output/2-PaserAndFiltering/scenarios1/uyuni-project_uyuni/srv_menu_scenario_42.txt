@@ -1,0 +1,7 @@
+Scenario 42: "Upload Kickstart/AutoYaST File" page Systems => Autoinstallation => Profiles => Upload Kickstart/AutoYaST File
+  When  I follow the left menu "Systems > Autoinstallation > Profiles"
+  And  I follow "Upload Kickstart/AutoYaST File"
+  Then  I should see a "Create Autoinstallation Profile" text
+  And  I should see a "File Contents:" text
+  And  I should see a "Autoinstallation Details" text
+

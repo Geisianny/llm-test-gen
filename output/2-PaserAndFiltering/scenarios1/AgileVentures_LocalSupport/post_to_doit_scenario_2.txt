@@ -1,0 +1,5 @@
+Scenario 2: Cannot post to doit with an end date before the start date
+  Given  I am signed in as a superadmin
+  And  I submit a volunteer op with an end date before the start date
+  Then  I should see "Advertise end date is invalid"
+

@@ -1,0 +1,8 @@
+Scenario 3: Create a new pimcore class with a parent class set
+  Given  there is a pimcore class "IndexTest"
+  And  the definition has a checkbox field "enabled"
+  And  the definition has a localized input field "name"
+  And  the definitions parent class is set to "\CoreShop\Behat\Model\Index\TestIndex"
+  Then  an instance of definition should implement "\CoreShop\Behat\Model\Index\TestIndex"
+  Then  an instance of definition should implement "\CoreShop\Component\Index\Model\IndexableInterface"
+

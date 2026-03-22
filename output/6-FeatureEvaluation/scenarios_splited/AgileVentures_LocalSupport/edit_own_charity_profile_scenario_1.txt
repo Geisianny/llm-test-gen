@@ -1,0 +1,6 @@
+Scenario: Charity worker edits charity description
+  Given there is a charity with a description "Old description"
+  And a charity worker is associated with the charity
+  When the charity worker edits the charity description to "New description"
+  Then the charity's description is updated to "New description"
+  And the change is reflected on the charity's public page

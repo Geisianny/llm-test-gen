@@ -1,0 +1,8 @@
+Scenario 3: Setting date when a shipment has been shipped
+  Tags: ['@ui', '@api']
+  Given  it is "20-02-2020 10:30:05" now
+  When  I browse shipments
+  And  I ship the shipment of order "#00000001"
+  Then  I should see the shipment of order "#00000001" as "Shipped"
+  And  I should see the shipment of order "#00000001" shipped at "20-02-2020 10:30:05"
+

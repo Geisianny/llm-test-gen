@@ -1,0 +1,25 @@
+Scenario Outline 4: Volume made in previous window correctly contributes towards maker volume fraction (0095-HVMR-019)(0095-HVMR-020)(0095-HVMR-021)(0095-HVMR-022) - Example 1
+  Given  the volume rebate program tiers named "vrt":
+  And  the volume rebate program:
+  And  the network moves ahead "1" epochs
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  Given  the network moves ahead "0" epochs
+  When  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  When  the network moves ahead "1" epochs
+  When  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+
+  Examples:
+    | market | window length | epochs between trades | party1 rebate | party2 rebate |
+    | BTC/USD-0-1 | 2 | "0" | 50 | 50 |
+    | BTC/USD-0-1 | 2 | "1" | 50 | 50 |
+    | BTC/USD-0-1 | 2 | "2" | 0 | 50 |
+    | MXN-0-10/USD-0-1 | 2 | "0" | 50 | 50 |
+    | MXN-0-10/USD-0-1 | 2 | "1" | 50 | 50 |
+    | MXN-0-10/USD-0-1 | 2 | "2" | 0 | 50 |
+

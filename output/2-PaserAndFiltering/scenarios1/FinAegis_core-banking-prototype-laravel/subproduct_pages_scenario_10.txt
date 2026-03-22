@@ -1,0 +1,8 @@
+Scenario 10: Subproduct pages are accessible from the homepage
+  When  I visit "/"
+  Then  I should see links to all subproducts
+  And  the "FinAegis Exchange" link should point to "/subproducts/exchange"
+  And  the "FinAegis Lending" link should point to "/subproducts/lending"
+  And  the "FinAegis Stablecoins" link should point to "/subproducts/stablecoins"
+  And  the "FinAegis Treasury" link should point to "/subproducts/treasury"
+

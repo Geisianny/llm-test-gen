@@ -1,0 +1,7 @@
+Scenario 3: Paying a fee without change plan POSTPAID
+  Given  the time is 28th April 2009
+  And  the buyer is signed up to application plan "PaidAsInLunch" on 28th April 2009
+  When  I log in as "stallman" on foo.3scale.localhost on 15th June 2009
+  And  I navigate to 1st invoice issued for me in "May, 2009"
+  Then  I should see line items
+

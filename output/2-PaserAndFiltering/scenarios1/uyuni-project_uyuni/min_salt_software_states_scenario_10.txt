@@ -1,0 +1,8 @@
+Scenario 10: Verify the package states
+  When  I follow "States" in the content area
+  And  I follow "Packages"
+  And  I should see a "Package States" text
+  And  I should see a "milkyway-dummy" text
+  And  I should see a "andromeda-dummy" text
+  And  I should see a "virgo-dummy" text
+

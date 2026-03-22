@@ -1,0 +1,5 @@
+Scenario 1: Super Admin can enter edit email template page for invitation instructions
+  And  I visit the invite users to become admin of organisations page
+  And  I click "Edit template"
+  Then  I should be on the edit page for the MailTemplate named "Invitation instructions"
+

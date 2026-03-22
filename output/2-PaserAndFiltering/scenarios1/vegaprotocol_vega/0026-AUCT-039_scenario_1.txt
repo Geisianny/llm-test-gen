@@ -1,0 +1,10 @@
+Scenario 1: 0026-AUCT-039: No best bid after leaving opening auction. Also covers 0016-PFUT-025: normal futures can be submitted without specifying the capped futures fields - all futures tests do this.
+  Tags: ['@NewAuct']
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/DEC20" should be:
+  When  the network moves ahead "2" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  And  the order book should have the following volumes for market "ETH/DEC20":
+  And  the following trades should be executed:
+  And  the mark price should be "1000000" for the market "ETH/DEC20"
+

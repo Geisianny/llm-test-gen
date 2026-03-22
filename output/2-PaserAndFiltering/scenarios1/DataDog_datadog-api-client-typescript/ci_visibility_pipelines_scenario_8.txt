@@ -1,0 +1,9 @@
+Scenario 8: Search pipelines events returns "OK" response with pagination
+  Tags: ['@replay-only', '@skip-java', '@skip-python', '@skip-typescript', '@skip-validation', '@team:DataDog/ci-app-backend', '@with-pagination']
+  Given  a valid "appKeyAuth" key in the system
+  And  new "SearchCIAppPipelineEvents" request
+  And  body with value {"filter": {"from": "now-30s", "to": "now"}, "options": {"timezone": "GMT"}, "page": {"limit": 2}, "sort": "timestamp"}
+  When  the request with pagination is sent
+  Then  the response status is 200 OK
+  And  the response has 2 items
+

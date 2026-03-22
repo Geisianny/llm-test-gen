@@ -1,0 +1,4 @@
+Scenario 5: Create dummy profile
+  Given  cobblerd is running
+  When  I create a "testprofile" profile via the API using import file for "testdistro" distribution
+

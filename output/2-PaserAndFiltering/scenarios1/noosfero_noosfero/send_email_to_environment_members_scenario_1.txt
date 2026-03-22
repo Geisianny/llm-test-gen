@@ -1,0 +1,6 @@
+Scenario 1: Cant access if not logged in
+  Tags: ['@selenium']
+  Given  I am not logged in
+  When  I go to /admin/users/send_mail
+  Then  I should be on login page
+

@@ -1,0 +1,6 @@
+Scenario 1: Deleting account should not delete customer details
+  Tags: ['@api', '@no-ui']
+  When  I delete the account of "theodore@example.com" user
+  Then  the user account should be deleted
+  But  the customer with this email should still exist
+

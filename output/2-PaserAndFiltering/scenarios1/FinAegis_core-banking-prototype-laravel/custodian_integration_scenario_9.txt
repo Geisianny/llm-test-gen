@@ -1,0 +1,8 @@
+Scenario 9: Multi-bank transaction coordination
+  Given  a large transfer requires multiple banks
+  When  transferring 50000.00 EUR internationally
+  Then  the system should coordinate across banks
+  And  ensure atomic transaction completion
+  And  handle partial failures with compensation
+  And  provide unified status tracking
+

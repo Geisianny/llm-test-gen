@@ -1,0 +1,9 @@
+Scenario 4: Eager loading for a relation and a property filter with multiple relations
+  Given  there is a dummy travel
+  When  I send a "GET" request to "/dummy_travels/1?properties[]=confirmed&properties[car][]=brand&properties[passenger][]=nickname"
+  Then  the response status code should be 200
+  And  the JSON node "confirmed" should be equal to "true"
+  And  the JSON node "car.carBrand" should be equal to "DummyBrand"
+  And  the JSON node "passenger.nickname" should be equal to "Tom"
+  And  the DQL should be equal to:
+

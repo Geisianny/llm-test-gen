@@ -1,0 +1,5 @@
+Scenario 8: _9809 check Items info
+  Given  I open hyperlink "e1cib/app/Report.ItemsInfo"
+  And  I click "Run report" button
+  And  "Result" spreadsheet document contains "ErrorTest9809" template lines by template
+

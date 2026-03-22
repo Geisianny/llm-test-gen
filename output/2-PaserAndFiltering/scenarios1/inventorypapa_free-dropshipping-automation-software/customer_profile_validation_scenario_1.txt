@@ -1,0 +1,8 @@
+Scenario 1: Trying to remove my first name
+  Tags: ['@ui', '@api']
+  When  I want to modify my profile
+  And  I remove the first name
+  And  I try to save my changes
+  Then  I should be notified that the first name is required
+  And  my name should still be "Francis Underwood"
+

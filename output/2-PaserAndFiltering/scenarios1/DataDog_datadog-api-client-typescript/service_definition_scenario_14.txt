@@ -1,0 +1,9 @@
+Scenario 14: Get all service definitions returns "OK" response
+  Tags: ['@team:DataDog/service-catalog']
+  Given  new "ListServiceDefinitions" request
+  And  request contains "schema_version" parameter with value "v2.1"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data[0].attributes.meta.ingestion-source" is equal to "api"
+  And  the response "data[0].attributes.schema.schema-version" is equal to "v2.1"
+

@@ -1,0 +1,7 @@
+Scenario 8: KYC document expiry management
+  Given  my KYC documents are expiring in 30 days
+  When  the system performs daily checks
+  Then  I should receive renewal notification
+  And  my account should be flagged for re-verification
+  And  temporary restrictions may apply after expiry
+

@@ -1,0 +1,8 @@
+Scenario 2: Admin removes a top level category
+  Tags: ['@javascript']
+  Given  I am on the categories admin page
+  When  I remove category "Items" which needs confirmation
+  Then  I should see warning about the removal of subcategory "Tools"
+  When  I confirm category removal
+  Then  the category "Items" should be removed
+

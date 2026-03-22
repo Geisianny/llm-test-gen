@@ -1,0 +1,7 @@
+Scenario 15: Add the new group to SSM
+  When  I follow the left menu "Systems > System Groups"
+  And  I click on "Use in SSM" in row "new-systems-group"
+  Then  I should see a "Selected Systems List" text
+  And  I should see "rhlike_minion" as link
+  And  I should see "sle_minion" as link
+

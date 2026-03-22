@@ -1,0 +1,7 @@
+Scenario 1: Browsing shipments and their states in one channel
+  Tags: ['@api', '@ui']
+  When  I browse shipments
+  Then  I should see 2 shipments in the list
+  And  I should see the shipment of order "#00000001" as "Shipped"
+  And  I should see the shipment of order "#00000002" as "Ready"
+

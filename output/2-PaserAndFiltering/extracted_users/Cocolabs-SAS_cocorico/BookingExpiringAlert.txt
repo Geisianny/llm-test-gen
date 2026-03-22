@@ -1,0 +1,13 @@
+Feature: Bookings expiring alert command
+Description: As a system user i want to alert offerer having expiring bookings so that offerer can accept or refuse them
+Tags: ['@booking', '@javascript']
+
+Background: 
+  Given  there are following availabilities:
+
+Scenario 1: I can alert offerer having expiring bookings
+  Given  An asker make this new booking request:
+  When  I run "cocorico:bookings:alertExpiring" command
+  Then  I should see "1 booking(s) expiring alerted" on console
+  And  He should receive the "booking_request_expiration_alert_offerer" mail on "offerer@cocorico.rocks"
+

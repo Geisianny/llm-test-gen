@@ -1,0 +1,5 @@
+Scenario 2: Provider lands in admin dashboard when he requests public login page
+  Given  the provider logs in
+  When  they go to the provider login page
+  Then  the current page is the provider dashboard
+

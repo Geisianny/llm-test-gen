@@ -1,0 +1,6 @@
+Scenario 6: Trying to restore a shipping method
+  Tags: ['@api']
+  Given  the shipping method "UPS Carrier" is archival
+  When  I try to restore the "UPS Carrier" shipping method
+  Then  I should be notified that my access has been denied
+

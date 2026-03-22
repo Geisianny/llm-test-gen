@@ -1,0 +1,8 @@
+Scenario 7: The facebook login doesn't succeed
+  Tags: ['@javascript']
+  Given  I am on the home page
+  And  there will be and error in my Facebook login
+  When  I follow log in link
+  And  I follow "fb-login"
+  Then  I should see "Could not authorize you from Facebook"
+

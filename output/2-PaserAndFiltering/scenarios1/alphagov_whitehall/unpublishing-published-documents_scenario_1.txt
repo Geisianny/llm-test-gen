@@ -1,0 +1,7 @@
+Scenario 1: Unpublishing a published document
+  Tags: ['@not-quite-as-fake-search']
+  Given  a published document "Published by accident" exists
+  When  I unpublish the document because it was published in error
+  Then  there should be an editorial remark recording the fact that the document was unpublished
+  And  there should be an unpublishing explanation of "This page should never have existed" and a reason of "Published in error"
+

@@ -1,0 +1,10 @@
+Scenario 4: Get a list of tests events returns "OK" response
+  Tags: ['@team:DataDog/ci-app-backend']
+  Given  new "ListCIAppTestEvents" request
+  And  request contains "filter[query]" parameter with value "@test.service:web-ui-tests"
+  And  request contains "filter[from]" parameter with value "{{ timeISO('now - 30s') }}"
+  And  request contains "filter[to]" parameter with value "{{ timeISO('now') }}"
+  And  request contains "page[limit]" parameter with value 5
+  When  the request is sent
+  Then  the response status is 200 OK
+

@@ -1,0 +1,8 @@
+Scenario 8: Seeing rule and action configuration forms
+  Tags: ['@no-api', '@ui', '@mink:chromedriver']
+  When  I want to create a new promotion
+  And  I add a new rule
+  And  I add a new action
+  Then  I should see the rule configuration form
+  And  I should see the action configuration form
+

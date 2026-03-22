@@ -1,0 +1,16 @@
+Scenario Outline 3: Party opens position in market (0086-ASPR-005)(0086-ASPR-006) - Example 1
+  Given  the following network parameters are set:
+  Given  the current epoch is "1"
+  And  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  the activity streaks at epoch "1" should be:
+
+  Examples:
+    | trader side | counterparty side | epochs | size | active for | inactive for | multipliers |
+    | buy | sell | "1" | 1 | 0 | 1 | 1 |
+    | sell | buy | "1" | 1 | 0 | 1 | 1 |
+    | buy | sell | "1" | 11 | 1 | 0 | 2 |
+    | sell | buy | "1" | 11 | 1 | 0 | 2 |
+    | buy | sell | "2" | 11 | 2 | 0 | 2 |
+    | sell | buy | "2" | 11 | 2 | 0 | 2 |
+

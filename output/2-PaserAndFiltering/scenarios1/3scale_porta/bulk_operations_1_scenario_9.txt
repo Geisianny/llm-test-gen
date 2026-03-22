@@ -1,0 +1,11 @@
+Scenario 9: Change state in bulk
+  Given  the table should contain the following:
+  When  item "Bob" is selected
+  And  item "Jane" is selected
+  And  select bulk action "Change state"
+  And  select "Suspend" from "Action"
+  And  press "Change state" within the modal
+  And  confirm the dialog
+  Then  should see a toast alert with text "Successfully changed the state of 2 subscriptions"
+  And  the table should contain the following:
+

@@ -1,0 +1,16 @@
+Scenario 1: Adding two text attributes to a product
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I want to create a new configurable product
+  And  I specify its code as "HARRY_POTTER_1"
+  And  I name it "Harry Potter and the Sorcerer's Stone" in "English (United States)" locale
+  And  I generate its slug in "English (United States)" locale
+  And  I add the "Author" attribute
+  And  I add the "ISBN" attribute
+  And  I set its non-translatable "Author" attribute to "J.K. Rowling"
+  And  I set its non-translatable "ISBN" attribute to "978-1338878929"
+  And  I add it
+  Then  I should be notified that it has been successfully created
+  And  the product "Harry Potter and the Sorcerer's Stone" should appear in the store
+  And  non-translatable attribute "Author" of product "Harry Potter and the Sorcerer's Stone" should be "J.K. Rowling"
+  And  non-translatable attribute "ISBN" of product "Harry Potter and the Sorcerer's Stone" should be "978-1338878929"
+

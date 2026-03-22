@@ -1,0 +1,8 @@
+Scenario 15: Refresh the channel's repository data
+  When  I follow the left menu "Admin > Task Schedules"
+  And  I follow "channel-repodata-default"
+  And  I follow "channel-repodata-bunch"
+  And  I click on "Single Run Schedule"
+  Then  I should see a "bunch was scheduled" text
+  And  I wait until the table contains "FINISHED" or "SKIPPED" followed by "FINISHED" in its first rows
+

@@ -1,0 +1,6 @@
+Scenario 35: Search cases returns "OK" response with pagination
+  Tags: ['@generated', '@skip', '@team:DataDog/case-management', '@with-pagination']
+  Given  new "SearchCases" request
+  When  the request with pagination is sent
+  Then  the response status is 200 OK
+

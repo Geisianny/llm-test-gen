@@ -1,0 +1,8 @@
+Scenario 1: Applying catalog promotion with its time range
+  Tags: ['@api', '@ui']
+  Given  it is "2021-12-25" now
+  And  the catalog promotion "Winter sale" operates between "2021-12-20" and "2021-12-30"
+  When  I view product "T-Shirt"
+  Then  I should see the product price "$14.00"
+  And  I should see the product original price "$20.00"
+

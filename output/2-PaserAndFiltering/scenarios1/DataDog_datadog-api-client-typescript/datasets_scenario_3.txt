@@ -1,0 +1,8 @@
+Scenario 3: Create a dataset returns "OK" response
+  Tags: ['@skip-terraform-config', '@team:DataDog/aaa-granular-access']
+  Given  new "CreateDataset" request
+  And  operation "CreateDataset" enabled
+  And  body with value {"data": {"attributes": {"name": "Security Audit Dataset", "principals": ["role:94172442-be03-11e9-a77a-3b7612558ac1"], "product_filters": [{"filters": ["@application.id:ABCD"], "product": "metrics"}]}, "type": "dataset"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+

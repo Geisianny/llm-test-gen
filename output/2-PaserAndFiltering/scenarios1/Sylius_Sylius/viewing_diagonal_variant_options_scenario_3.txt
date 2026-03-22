@@ -1,0 +1,7 @@
+Scenario 3: Not seeing unavailable variants
+  Tags: ['@api', '@no-ui']
+  When  I view variants of the "Extra Cool T-Shirt" product
+  And  I filter them by "Blue" option value
+  And  I filter them by "Small" option value
+  Then  I should not see any variants
+

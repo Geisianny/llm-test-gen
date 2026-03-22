@@ -1,0 +1,4 @@
+Scenario 2: Current version
+  When  I execute Karma with arguments: "--version"
+  Then  the stdout matches RegExp:
+

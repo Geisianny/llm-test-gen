@@ -1,0 +1,13 @@
+Scenario Outline 2: Navigate to menu "<path>" and open screen "<screen>" - Example 2
+  Tags: ['@wip']
+  When  I navigate the menu and select the item at "Accounts Payable > Import Batch"
+  Then  I should see the Batch import screen
+
+  Examples:
+    | path | screen |
+    | Accounts Payable > Import Batch | Batch import |
+    | Accounts Payable > Reports > AP Aging |  |
+    | Accounts Payable > Reports > Customer History |  |
+    | Accounts Payable > Reports > Outstanding |  |
+    | Accounts Payable > Reports > Vendor History |  |
+

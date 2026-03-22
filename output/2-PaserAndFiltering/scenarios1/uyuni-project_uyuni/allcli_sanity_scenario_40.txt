@@ -1,0 +1,7 @@
+Scenario 40: The Oracle 9 Salt SSH minion is healthy
+  Tags: ['@oracle9_ssh_minion']
+  Then  "oracle9_ssh_minion" should have a FQDN
+  And  reverse resolution should work for "oracle9_ssh_minion"
+  And  "oracle9_ssh_minion" should communicate with the server using public interface
+  And  the clock from "oracle9_ssh_minion" should be exact
+

@@ -1,0 +1,8 @@
+Scenario 9: Cross-domain saga coordination
+  Given  multiple domain services are involved
+  When  I execute a saga spanning:
+  Then  each domain should participate correctly
+  And  compensation should cascade across domains
+  And  domain boundaries should be respected
+  And  event correlation should track the entire saga
+

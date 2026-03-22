@@ -1,0 +1,7 @@
+Scenario 1: Proper taxes for different taxed products
+  Tags: ['@ui']
+  When  I add product "PHP T-Shirt" to the cart
+  And  I add product "Symfony Mug" to the cart
+  Then  my cart total should be "$175.50"
+  And  my cart taxes should be "$25.50"
+

@@ -1,0 +1,6 @@
+Scenario 5: Queue processing failure recovery
+  Given  1000 messages are in the processing queue
+  When  the queue worker crashes at message 500
+  Then  the recovery should:
+  And  message ordering should be preserved where required
+

@@ -1,0 +1,14 @@
+Scenario 2: 2 Make sure each TIF is handled correctly with one order per block
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  When  the parties place the following orders with ticks:
+  When  the parties place the following orders with ticks:
+  When  the parties place the following orders:
+  Then  the network moves ahead "10" blocks
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC23"
+  When  the parties place the following orders with ticks:
+  When  the parties place the following orders with ticks:
+  When  the parties place the following orders with ticks:
+  When  the parties place the following orders with ticks:
+  When  the parties place the following orders with ticks:
+

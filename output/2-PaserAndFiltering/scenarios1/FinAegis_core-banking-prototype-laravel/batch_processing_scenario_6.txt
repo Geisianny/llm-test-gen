@@ -1,0 +1,5 @@
+Scenario 6: Batch operation monitoring and status
+  Given  a long-running batch operation is in progress
+  When  I check the batch status
+  Then  I should see:
+

@@ -1,0 +1,5 @@
+Scenario: Vote on an existing proposal with sufficient voting power
+  Given there is a stakeholder with tokens staked and a proposal exists
+  When the stakeholder votes on the existing proposal
+  Then the system records the vote
+  And updates the proposal's voting results

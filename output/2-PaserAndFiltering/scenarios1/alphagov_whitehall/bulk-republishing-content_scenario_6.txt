@@ -1,0 +1,5 @@
+Scenario 6: Republish all individual pages
+  Given  the "Past Prime Ministers" page can be republished
+  When  I request a bulk republishing of all individual pages
+  Then  I can see that all individual pages have been queued for republishing
+

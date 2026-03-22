@@ -1,0 +1,6 @@
+Scenario 4: approval method is by region validator but there are no validators
+  Given  organization_approval_method is "region" on environment
+  And  I follow "Groups" within "#section-relationships"
+  When  I follow "Register a new enterprise"
+  Then  I should see "There are no validators to validate the registration of this new enterprise. Contact your administrator for instructions."
+

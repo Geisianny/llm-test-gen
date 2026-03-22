@@ -1,0 +1,11 @@
+Scenario 2: Seeing promotion discount on order's items while buying a product from a promoted taxon
+  Tags: ['@api', '@ui']
+  Given  the promotion gives "$10.00" off on every product classified as "T-Shirts"
+  And  the customer bought a single "Angel T-Shirt"
+  And  the customer chose "Free" shipping method to "United States" with "Cash on Delivery" payment
+  When  I view the summary of the order "#00000666"
+  Then  the order's items total should be "$29.00"
+  And  the order's promotion total should be "-$10.00"
+  And  the order's promotion discount should be "-$10.00" from "Holiday promotion" promotion
+  And  the order's total should be "$29.00"
+

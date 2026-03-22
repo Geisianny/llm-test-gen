@@ -1,0 +1,5 @@
+Scenario 3: Admin edits dropdown options
+  Tags: ['@javascript']
+  When  I edit person dropdown "House type" options
+  Then  options should be stored correctly
+

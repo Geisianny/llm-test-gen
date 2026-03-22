@@ -1,0 +1,10 @@
+Scenario 2: Adding a new product option without any option values
+  Tags: ['@api', '@ui']
+  When  I want to create a new product option
+  And  I name it "T-Shirt size" in "English (United States)"
+  And  I specify its code as "t_shirt_size"
+  But  I do not add an option value
+  And  I try to add it
+  Then  I should be notified that it has been successfully created
+  And  the product option "T-Shirt size" should appear in the registry
+

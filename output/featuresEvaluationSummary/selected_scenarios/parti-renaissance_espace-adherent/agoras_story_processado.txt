@@ -1,0 +1,5 @@
+Scenario: Unauthenticated user cannot access Agoras API
+  Given there is an unauthenticated user
+  When the user attempts to access the Agoras API
+  Then the system denies access
+  And displays an error message indicating authentication is required

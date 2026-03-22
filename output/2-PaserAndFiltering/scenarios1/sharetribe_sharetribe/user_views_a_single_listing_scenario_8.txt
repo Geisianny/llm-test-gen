@@ -1,0 +1,7 @@
+Scenario 8: User don't see social buttons if community is private
+  When  Community "test" is private
+  And  I am logged in as "kassi_testperson1"
+  And  I am on the home page
+  Then  I follow "Massage"
+  And  I should not see social buttons block
+

@@ -1,0 +1,16 @@
+Scenario 1: User page requires login
+  Given  user is not logged in
+  When  they go to the provider users page
+  Then  the current page is the provider login page
+
+
+
+Scenario 2: Members can't access users page
+  Tags: ['@security', '@allow-rescue']
+  Given  user "hunk" logs in
+  When  they select "Account Settings" from the context selector
+  Then  there should not be a button to "Users" within the main menu
+  And  there should not be a link to the provider users page
+  When  they go to the provider users page
+  Then  they should be denied the access
+

@@ -1,0 +1,7 @@
+Scenario 1: Party submits delegations which by the time they are processed are uncovered
+  When  the parties submit the following delegations:
+  Then  the parties should have the following delegation balances for epoch 2:
+  Given  the parties withdraw from staking account the following amount:
+  When  the network moves ahead "63" blocks
+  Then  the parties should have the following delegation balances for epoch 2:
+

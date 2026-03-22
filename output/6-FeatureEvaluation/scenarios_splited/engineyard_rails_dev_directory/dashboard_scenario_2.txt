@@ -1,0 +1,4 @@
+Scenario: Dashboard displays correct number of open requests
+  Given there is a registered provider with 3 open requests
+  When the provider logs in
+  Then the dashboard displays 3 open requests

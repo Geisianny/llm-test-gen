@@ -1,0 +1,5 @@
+Scenario: Successfully configure multiple statuses in community settings
+  Given the user is an administrator of a community
+  And the community has a status configuration section
+  When the user configures multiple new statuses
+  Then all new statuses are available for use in the community's comment section

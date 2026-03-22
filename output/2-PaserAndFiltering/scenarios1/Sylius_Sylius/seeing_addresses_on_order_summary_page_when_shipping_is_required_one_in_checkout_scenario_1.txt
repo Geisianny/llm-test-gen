@@ -1,0 +1,8 @@
+Scenario 1: Seeing the same shipping and billing address on order summary
+  Tags: ['@api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  And  I addressed the cart with "Jon Snow" as the shipping address
+  And  I chose "Free" shipping method and "Cash on Delivery" payment method
+  When  I check summary of my order
+  Then  address to "Jon Snow" should be used for both shipping and billing of my order
+

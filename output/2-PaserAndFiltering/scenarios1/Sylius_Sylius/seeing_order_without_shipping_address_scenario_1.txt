@@ -1,0 +1,8 @@
+Scenario 1: Seeing basic information about an order
+  Tags: ['@api', '@ui']
+  When  I view the summary of the order "#00000666"
+  Then  it should have been placed by the customer "lucy@teamlucifer.com"
+  And  it should have "Mike Ross", "350 5th Ave", "10118", "New York", "United States" as its billing address
+  And  it should be paid with "Cash on Delivery"
+  And  it should have no shipping address set
+

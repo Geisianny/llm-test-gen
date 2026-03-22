@@ -1,0 +1,10 @@
+Scenario 19: display inputs and raw materials button when not completely filled
+  Tags: ['@selenium-fixme']
+  Given  the following product
+  And  the following unit
+  And  the following input
+  And  I am on /catalog/artebonito
+  And  I reload and wait for the page
+  Then  the "#inputs-button" should be visible
+  And  I should see "inputs and raw materials" within "#inputs-button"
+

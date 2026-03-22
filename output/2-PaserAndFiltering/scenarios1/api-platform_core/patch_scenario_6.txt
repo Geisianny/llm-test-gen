@@ -1,0 +1,7 @@
+Scenario 6: Patch a non-readable resource
+  Tags: ['@use_listener', '@controller']
+  When  I add "Content-Type" header equal to "application/merge-patch+json"
+  And  I send a "PATCH" request to "/order_products/1/count" with body:
+  Then  the response status code should be 200
+  And  the JSON node "id" should contain "1"
+

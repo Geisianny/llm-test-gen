@@ -1,0 +1,6 @@
+Scenario 12: link to parent when viewing a forum topic
+  Given  the following forums
+  And  the following articles
+  When  I go to /joaosilva/silva-forum/post-one
+  Then  I should see "Silva Forum" within ".path-to-parents"
+

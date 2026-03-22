@@ -1,0 +1,6 @@
+Scenario: Retrieve subscription limits for an active customer with multiple plans
+  Given there is an authenticated user
+  And there is an active customer with multiple subscriptions to different plans
+  When the user queries the customer's usage limits
+  Then the system returns the total limits per resource for all associated plans
+  And the limits are correctly summed from each plan

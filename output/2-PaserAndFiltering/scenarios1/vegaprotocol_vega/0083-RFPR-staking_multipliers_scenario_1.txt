@@ -1,0 +1,16 @@
+Scenario Outline 1: Referrer stakes a variable amount and receives a multiplier on their referral rewards (0083-RFPR-046)(0083-RFPR-047)(0029-FEES-023)(0029-FEES-025) - Example 1
+  Then  the parties deposit on staking account the following amount:
+  Then  the parties submit the following delegations:
+  Given  the parties place the following orders:
+  When  the network moves ahead "2" epochs
+  Then  the referral set stats for code "referral-code-1" at epoch "2" should have a running volume of 1000:
+  Given  the parties place the following orders:
+  When  the following trades should be executed:
+  Then  the following transfers should happen:
+
+  Examples:
+    | staking amount | expected discounted fees | expected reward |
+    | 1001 | 96 | 6 |
+    | 2001 | 94 | 12 |
+    | 3001 | 89 | 27 |
+

@@ -1,0 +1,5 @@
+Scenario 3: Download package, user with an invalid token for the org
+  Given  I have an invalid token for organization "1"
+  When  I try to download "virgo-dummy-2.0-1.1.noarch.rpm" from channel "fake-rpm-suse-channel"
+  Then  the download should get a 403 response
+

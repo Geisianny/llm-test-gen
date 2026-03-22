@@ -1,0 +1,12 @@
+Scenario 5: Generating a taxon's slug while editing a taxon's name
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  Given  the store has taxonomy named "Medieval weapons" in "English (United States)" locale and "Bronie średniowieczne" in "Polish (Poland)" locale
+  When  I want to modify the "Medieval weapons" taxon
+  And  I rename it to "Renaissance weapons" in "English (United States)"
+  And  I generate its slug in "English (United States)"
+  And  I rename it to "Bronie renesansowe" in "Polish (Poland)"
+  And  I generate its slug in "Polish (Poland)"
+  And  I save my changes
+  Then  this taxon should have slug "renaissance-weapons" in "English (United States)"
+  Then  this taxon should have slug "bronie-renesansowe" in "Polish (Poland)"
+

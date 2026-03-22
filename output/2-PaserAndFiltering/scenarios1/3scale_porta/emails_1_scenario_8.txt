@@ -1,0 +1,5 @@
+Scenario 8: DNS domains are not readonly
+  Given  DNS domains are not readonly
+  When  they go to the emails settings page
+  Then  they should not see "Outbound Email Addresses"
+

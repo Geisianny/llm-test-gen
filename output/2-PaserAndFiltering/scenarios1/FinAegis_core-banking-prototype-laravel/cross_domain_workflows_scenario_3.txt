@@ -1,0 +1,6 @@
+Scenario 3: Basket rebalancing with governance
+  Given  a GCU basket needs monthly rebalancing
+  When  the rebalancing workflow triggers
+  Then  it should coordinate:
+  And  ensure atomic rebalancing across all accounts
+

@@ -1,0 +1,5 @@
+Scenario 2: Sign in with wrong password for an existing non-superadmin user unassociated with any organisation
+  Given  I sign in as "normal_user@example.com" with password "12345"
+  Then  I should be on the sign in page
+  And  I should see "I'm sorry, you are not authorized to login to the system."
+

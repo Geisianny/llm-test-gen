@@ -1,0 +1,6 @@
+Scenario 2: Provider admin can access portal groups
+  When  I log in as provider "foo.3scale.localhost"
+  Then  they should see an error when going to the groups page
+  When  provider "foo.3scale.localhost" has "groups" switch allowed
+  Then  they should be able to go to the groups page
+

@@ -1,0 +1,7 @@
+Scenario 7: Gets a list of data deletion requests returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/supportability-engineering']
+  Given  operation "GetDataDeletionRequests" enabled
+  And  new "GetDataDeletionRequests" request
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

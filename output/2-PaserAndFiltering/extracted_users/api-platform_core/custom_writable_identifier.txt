@@ -1,0 +1,58 @@
+Feature: Using custom writable identifier on resource
+Description: In order to use an hypermedia API
+  As a client software developer
+  I need to be able to user other identifier than id in resource and set it via API call on POST / PUT.
+
+Scenario 1: Create a resource
+  Tags: ['@createSchema']
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/custom_writable_identifier_dummies" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the header "Content-Location" should be equal to "/custom_writable_identifier_dummies/my_slug.jsonld"
+  And  the header "Location" should be equal to "/custom_writable_identifier_dummies/my_slug"
+  And  the JSON should be equal to:
+
+Scenario 2: Get a resource
+  When  I send a "GET" request to "/custom_writable_identifier_dummies/my_slug"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+Scenario 3: Get a collection
+  When  I send a "GET" request to "/custom_writable_identifier_dummies"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+Scenario 4: Update a resource (legacy non-standard PUT)
+  Tags: ['@!mongodb']
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "PUT" request to "/custom_writable_identifier_dummies/my_slug" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the header "Content-Location" should be equal to "/custom_writable_identifier_dummies/slug_modified.jsonld"
+  And  the JSON should be equal to:
+
+Scenario 5: API docs are correctly generated
+  When  I send a "GET" request to "/docs.jsonld"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the Hydra class "CustomWritableIdentifierDummy" exists
+  And  4 operations are available for Hydra class "CustomWritableIdentifierDummy"
+  And  2 properties are available for Hydra class "CustomWritableIdentifierDummy"
+  And  "name" property is readable for Hydra class "CustomWritableIdentifierDummy"
+  And  "name" property is writable for Hydra class "CustomWritableIdentifierDummy"
+  And  "slug" property is readable for Hydra class "CustomWritableIdentifierDummy"
+  And  "slug" property is writable for Hydra class "CustomWritableIdentifierDummy"
+
+Scenario 6: Delete a resource
+  Tags: ['@!mongodb']
+  When  I send a "DELETE" request to "/custom_writable_identifier_dummies/slug_modified"
+  Then  the response status code should be 204
+  And  the response should be empty
+

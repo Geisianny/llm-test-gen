@@ -1,0 +1,7 @@
+Scenario 1: Create a new cart, add two products and the correct shipping should be applied
+  And  I add the product "Book" to my cart
+  And  I add the product "DVD" to my cart
+  Then  the cart shipping should be "1176" including tax
+  And  the cart shipping should be "1000" excluding tax
+  And  the loaded carts shipping tax rate should be "17.6"
+

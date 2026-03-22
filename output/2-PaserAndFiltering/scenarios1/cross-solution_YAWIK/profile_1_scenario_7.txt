@@ -1,0 +1,15 @@
+Scenario 7: Filter organization profile by user roles
+  Given  I have a recruiter with the following:
+  And  organization "Recruiter Organization" have jobs:
+  And  I am logged out
+  When  I want to see list organization profiles
+  Then  I should see "Cross Solution"
+  And  I should see "Recruiter Organization"
+  When  I am logged in as "recruiter@example.com" identified by "test"
+  And  I want to see list organization profiles
+  Then  I should see "Recruiter Organization"
+  And  I should not see "Cross Solution"
+  And  I should not see "Profile Active Job"
+  When  I go to profile page for organization "Recruiter Organization"
+  Then  I should see "Job Recruiter"
+

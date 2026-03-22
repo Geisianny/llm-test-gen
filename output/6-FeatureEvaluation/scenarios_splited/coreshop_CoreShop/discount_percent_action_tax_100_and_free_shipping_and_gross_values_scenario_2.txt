@@ -1,0 +1,6 @@
+Scenario: Apply 100% discount voucher to cart with non-taxable products
+  Given there is a cart with non-taxable products worth $100
+  And there is a voucher with a 100% discount
+  When the user applies the voucher to the cart
+  Then the cart total is $0
+  And the shipping cost is $0

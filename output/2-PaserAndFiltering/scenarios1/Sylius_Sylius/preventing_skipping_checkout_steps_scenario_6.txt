@@ -1,0 +1,11 @@
+Scenario 6: Not being able go to payment checkout step when order total is zero and payments not exists
+  Tags: ['@no-api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  And  I added product "Paganini T-Shirt" to the cart
+  And  I addressed the cart
+  When  I try to open checkout complete page
+  And  I have selected "Free" shipping method
+  And  I complete the shipping step
+  And  I want to pay for order
+  Then  I should be on the checkout complete step
+

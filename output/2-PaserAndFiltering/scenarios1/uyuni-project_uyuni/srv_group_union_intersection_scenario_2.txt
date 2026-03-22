@@ -1,0 +1,8 @@
+Scenario 2: Create a sles group
+  When  I follow the left menu "Systems > System Groups"
+  When  I follow "Create Group"
+  And  I enter "sles" as "name"
+  And  I enter "SLES systems" as "description"
+  And  I click on "Create Group"
+  Then  I should see a "System group sles created." text
+

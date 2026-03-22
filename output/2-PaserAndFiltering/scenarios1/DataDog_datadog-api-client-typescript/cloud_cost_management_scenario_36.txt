@@ -1,0 +1,9 @@
+Scenario 36: Get cost AWS CUR config returns "OK" response
+  Tags: ['@replay-only', '@team:DataDog/cloud-cost-management']
+  Given  new "GetCostAWSCURConfig" request
+  And  request contains "cloud_account_id" parameter with value 123456
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.type" is equal to "aws_cur_config"
+  And  the response "data.attributes.account_id" is equal to "123456123456"
+

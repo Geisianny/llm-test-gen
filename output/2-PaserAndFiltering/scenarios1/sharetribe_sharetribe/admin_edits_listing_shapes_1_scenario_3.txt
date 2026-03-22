@@ -1,0 +1,10 @@
+Scenario 3: Admin user create new order type Renting products
+  When  I go to the order types admin2 page of community "test"
+  Then  I should see "Order types determine how the order process works on your marketplace."
+  When  I follow "+ Add an order type"
+  Then  I select "Renting products" from "template_order_type"
+  Then  I should see "heckout button label"
+  When  I fill in "Renting something nice" for "name_en"
+  When  I press "Add the order type"
+  Then  I should see "Renting something nice"
+

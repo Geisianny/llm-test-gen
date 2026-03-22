@@ -1,0 +1,5 @@
+Scenario 3: Can't use an invalid path
+  Given  they go to the edit backend usage page of "Backend 1" for product "My API"
+  When  the form is submitted with:
+  Then  field "Path" has inline error "must be a path separated by \"/\". E.g. \"\" or \"my/path\""
+

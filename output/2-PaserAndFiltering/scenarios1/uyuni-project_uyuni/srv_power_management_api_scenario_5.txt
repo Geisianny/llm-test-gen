@@ -1,0 +1,9 @@
+Scenario 5: Cleanup: reset IPMI values for API test
+  When  I set power management value "" for "powerAddress"
+  And  I set power management value "" for "powerUsername"
+  And  I set power management value "" for "powerPassword"
+  Then  the cobbler report should contain "Power Management Address       :" for "sle_minion"
+  And  the cobbler report should contain "Power Management Username      :" for "sle_minion"
+  And  the cobbler report should contain "Power Management Password      :" for "sle_minion"
+  And  the cobbler report should contain "Power Management Type          : ipmilan" for "sle_minion"
+

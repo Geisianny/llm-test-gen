@@ -1,0 +1,14 @@
+Feature: Customer Disable APP
+Description: In order to manage a customer
+  As an APP user
+  I need to be see what the customer info
+
+Background: 
+  Given  the following accounts exist:
+
+Scenario 1: Get customer info
+  When  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  the follow customers exist:
+  When  I disable the customer info via the site for "customer.one@example.org"
+  Then  the customer "customer.one@example.org" is disabled
+

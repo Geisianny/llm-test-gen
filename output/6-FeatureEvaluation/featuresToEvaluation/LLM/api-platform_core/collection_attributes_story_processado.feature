@@ -1,0 +1,31 @@
+Feature: collection_attributes_story_processado
+
+Scenario: Retrieve a simple entity with a collection attribute
+    Given there is an entity with a collection attribute
+    When the client requests the entity data via the JSON API
+    Then the system returns a valid JSON API response
+    And the response contains the entity's collection attribute
+
+Scenario: Retrieve an entity with a nested collection attribute
+    Given there is an entity with a nested collection attribute
+    When the client requests the entity data via the JSON API
+    Then the system returns a valid JSON API response
+    And the response contains the entity's nested collection attribute
+
+Scenario: Retrieve an entity with a circular reference in its collection attribute
+    Given there is an entity with a circular reference in its collection attribute
+    When the client requests the entity data via the JSON API
+    Then the system returns a valid JSON API response
+    And the response contains the entity's collection attribute without infinite recursion
+
+Scenario: Retrieve a non-existent entity
+    Given there is no entity with the identifier "non-existent-id"
+    When the client requests the entity data via the JSON API
+    Then the system returns a JSON API error response
+    And the response indicates that the entity was not found
+
+Scenario: Retrieve an entity with an empty collection attribute
+    Given there is an entity with an empty collection attribute
+    When the client requests the entity data via the JSON API
+    Then the system returns a valid JSON API response
+    And the response contains an empty collection attribute for the entity

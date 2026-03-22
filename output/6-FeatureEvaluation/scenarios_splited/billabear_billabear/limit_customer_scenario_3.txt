@@ -1,0 +1,5 @@
+Scenario: Retrieve subscription limits for a deactivated customer
+  Given there is an authenticated user
+  And there is a deactivated customer with a subscription to a plan
+  When the user queries the customer's usage limits
+  Then the system returns an empty list of limits

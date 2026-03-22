@@ -1,0 +1,9 @@
+Scenario 1: Trying to add a new promotion without specifying its code
+  Tags: ['@ui']
+  Given  I want to create a new promotion
+  When  I name it "No-VAT promotion"
+  And  I do not specify its code
+  And  I try to add it
+  Then  I should be notified that code is required
+  And  promotion with name "No-VAT promotion" should not be added
+

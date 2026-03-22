@@ -1,0 +1,9 @@
+Scenario 6: Sort products descending by name from chosen locale translations
+  Tags: ['@ui', '@api']
+  When  I change my locale to "Polish (Poland)"
+  And  I browse products
+  And  the products are already sorted ascending by name
+  And  I sort the products descending by name
+  Then  I should see 3 products in the list
+  And  the first product on the list should have name "Szałowy Mops"
+

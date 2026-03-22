@@ -1,0 +1,20 @@
+Scenario 3: As offerer i can accept a booking request
+  Given  An asker make this new booking request:
+  And  I am logged in as user "offerer@cocorico.rocks" with password "12345678"
+  When  I click on dashboard menu "Bookings" of "offerer"
+  Then  I should be on the "dashboard booking offerer" page
+  And  I should see "1 result"
+  When  I follow "Show"
+  Then  I should be on the page which route name is "dashboard_booking_show_offerer"
+  And  I should see "285" in the ".post [data-id=booking-total]" element
+  When  I follow "Accept"
+  And  I wait 3000 ms
+  Then  I should see "285" in the ".modal-body [data-id=booking-total]" element
+  When  I fill in "booking_message" with "Ok let's go!"
+  And  I check hidden "I accept the terms of use"
+  And  I click on the element with css selector "#booking-edit-submit"
+  And  I wait 20000 ms
+  Then  I should see "SUCCESS!"
+  And  I should receive the "booking_accepted_offerer" mail on "offerer@cocorico.rocks"
+  And  He should receive the "booking_accepted_asker" mail on "asker@cocorico.rocks"
+

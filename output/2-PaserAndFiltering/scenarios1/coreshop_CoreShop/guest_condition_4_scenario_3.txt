@@ -1,0 +1,5 @@
+Scenario 3: Add a new guest shipping rule for a customer which is invalid
+  Given  I am customer "some-customer@something.com"
+  And  I add the product "Shoe" to my cart
+  Then  the shipping rule should be invalid for my cart with carrier "Post"
+

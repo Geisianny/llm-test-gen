@@ -1,0 +1,11 @@
+Scenario 2: display the simplest possible product
+  Given  the following products
+  And  I am on /catalog/artebonito
+  Then  I should see "categ1" within "li.product-link"
+  And  I should see "No image" within ".no-image"
+  And  I should not see "unit" within "#product-list"
+  And  I should not see "product unavailable"
+  And  I should not see "description"
+  And  I should not see "qualifiers"
+  And  I should not see "price composition"
+

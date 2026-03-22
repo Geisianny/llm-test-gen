@@ -1,0 +1,6 @@
+Scenario 2: INSTALL MODULES
+  Tags: ['@customer_addons']
+  Given  I update the module list
+  Given  I install the required modules with dependencies:
+  Then  my modules should have been installed and models reloaded
+

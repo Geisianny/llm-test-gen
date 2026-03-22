@@ -1,0 +1,7 @@
+Scenario 3: I can not log in without username and password
+  Given  I am on the home page
+  And  I follow "Login"
+  When  I press "Login"
+  Then  I should be on the "login" page
+  And  I should see "This value is required."
+

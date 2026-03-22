@@ -1,0 +1,1 @@
+Test simply checks if an asset and market is configured such that the market decimal places are greater than the asset decimal places, yielding a negative price factor, the market still operates correctly. This is validated by checking an LP meets their obligation when their orders are sized and priced correctly. i.e. they are not penalised at the end of the epoch.

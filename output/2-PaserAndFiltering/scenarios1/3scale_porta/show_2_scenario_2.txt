@@ -1,0 +1,7 @@
+Scenario 2: Application fields visibility for buyers
+  Given  the provider has the following fields defined for applications:
+  And  the application has the following extra fields:
+  When  they go to the application's dev portal page
+  Then  they should see the following details:
+  But  should not see "Ketchup"
+

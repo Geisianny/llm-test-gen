@@ -1,0 +1,7 @@
+Scenario: User views another user's reviews
+  Given there are two registered users "asker1" and "offerer1"
+  And "asker1" has made a transaction with "offerer1"
+  And "asker1" has added a review for "offerer1" with 5 stars
+  When "asker1" views "offerer1"'s profile
+  Then "asker1" sees the review they left for "offerer1"
+  And "asker1" sees "offerer1"'s overall rating

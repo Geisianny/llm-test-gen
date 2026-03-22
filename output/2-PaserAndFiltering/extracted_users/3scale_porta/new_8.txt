@@ -1,0 +1,44 @@
+Feature: Audience > Accounts > New
+Tags: ['@javascript']
+
+Background: 
+  Given  a provider is logged in
+
+Scenario 1: Navigation
+  Given  they go to the provider dashboard
+  When  they follow "0 Accounts" within the audience dashboard widget
+  And  follow "Add your first account"
+  Then  the current page is the new buyer account page
+
+Scenario 2: Creating an account
+  Given  they go to the new buyer account page
+  And  the form is submitted with:
+  Then  they should see a toast alert with text "Developer account was successfully created"
+  Then  the current page is the buyer account page for "Alice's Web Widget"
+
+Scenario 3: Creating an account without legal terms
+  Given  the provider has no legal terms
+  When  they go to the new buyer account page
+  And  the form is submitted with:
+  Then  they should see a toast alert with text "Developer account was successfully created"
+  And  the current page is the buyer account page for "Alice's Web Widget"
+  And  account "Alice's Web Widget" should be approved
+  And  user "alice" should be active
+  But  "alice@web-widgets.com" should receive no emails
+
+Scenario 4: Fields validation
+  Given  they go to the new buyer account page
+  When  the form is submitted with:
+  Then  field "Username" has inline error "is too short"
+  And  field "Email" has inline error "should look like an email address"
+  But  field "Password" has no inline error
+
+Scenario 5: Create account with fields with choices
+  Given  the provider has the following fields defined for accounts:
+  When  they go to the new buyer account page
+  And  there is a select "Country" that includes options:
+  And  there is a select "Fields with choices" that includes options:
+  And  the form is submitted with:
+  Then  the current page is the buyer account page for "Alice's Web Widget"
+  And  the inverted table has the following rows within the account details card:
+

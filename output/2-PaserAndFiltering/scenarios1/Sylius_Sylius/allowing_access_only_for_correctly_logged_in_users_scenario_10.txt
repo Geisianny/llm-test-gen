@@ -1,0 +1,10 @@
+Scenario 10: Accessing to add payment method to the cart by the customer
+  Tags: ['@api', '@ui']
+  Given  the customer logged in
+  And  the customer has product "Stark T-Shirt" in the cart
+  And  the customer addressed the cart
+  And  the customer chose "UPS" shipping method
+  When  the customer is at the checkout payment step
+  And  the customer proceeds with "Offline" payment method
+  Then  the customer should have checkout payment step completed
+

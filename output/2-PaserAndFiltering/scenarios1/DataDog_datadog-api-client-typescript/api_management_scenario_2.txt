@@ -1,0 +1,7 @@
+Scenario 2: Create a new API returns "Bad request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/api-management']
+  Given  operation "CreateOpenAPI" enabled
+  And  new "CreateOpenAPI" request
+  When  the request is sent
+  Then  the response status is 400 Bad request
+

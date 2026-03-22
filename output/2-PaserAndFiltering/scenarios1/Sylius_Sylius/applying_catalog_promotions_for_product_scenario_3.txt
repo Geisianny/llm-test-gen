@@ -1,0 +1,6 @@
+Scenario 3: Applying multiple catalog promotions
+  Tags: ['@api', '@ui']
+  Given  there is a catalog promotion "Christmas sale" that reduces price by "10%" and applies on "T-Shirt" product
+  When  I view "PHP T-Shirt" variant of the "T-Shirt" product
+  Then  I should see this variant is discounted from "$20.00" to "$9.00" with "Winter sale" and "Christmas sale" promotions
+

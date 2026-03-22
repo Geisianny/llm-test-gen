@@ -1,0 +1,6 @@
+Scenario 3: Multi-currency account
+  Given  I have an account with balance 100.00 USD
+  And  I have an account with balance 50.00 EUR
+  When  I check my total balance
+  Then  I should see:
+

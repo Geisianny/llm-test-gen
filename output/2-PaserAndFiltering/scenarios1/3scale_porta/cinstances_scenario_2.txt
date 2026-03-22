@@ -1,0 +1,9 @@
+Scenario 2: Credit card details on prepaid billing
+  Tags: ['@wip']
+  Given  provider "foo.3scale.localhost" has prepaid billing enabled
+  And  a buyer "bob" signed up to application plan "Basic"
+  And  the buyer "bob" has activated its account
+  When  I navigate to buyer "bob" details
+  Then  I should see buyer "bob" details page
+  But  I should not see "Credit Card Details"
+

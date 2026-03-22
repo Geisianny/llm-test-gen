@@ -1,0 +1,4 @@
+Scenario 7: Check the list of packages is not empty
+  Tags: ['@skip_if_github_validation']
+  Then  the list of packages of image "suse_key" with version "latest" is not empty
+

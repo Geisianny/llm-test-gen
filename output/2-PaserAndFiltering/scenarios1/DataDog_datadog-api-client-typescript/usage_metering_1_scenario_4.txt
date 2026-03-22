@@ -1,0 +1,6 @@
+Scenario 4: Get active billing dimensions for cost attribution returns "OK" response
+  Tags: ['@team:DataDog/revenue-query']
+  Given  new "GetActiveBillingDimensions" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

@@ -1,0 +1,10 @@
+Scenario 5: Trying to add a new shipping method without specifying its zone
+  Tags: ['@api', '@ui']
+  Given  the store does not have any zones defined
+  When  I want to create a new shipping method
+  And  I name it "FedEx Carrier" in "English (United States)"
+  But  I do not specify its zone
+  And  I try to add it
+  Then  I should be notified that zone has to be selected
+  And  shipping method with name "Food and Beverage Tax Rates" should not be added
+

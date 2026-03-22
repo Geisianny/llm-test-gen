@@ -1,0 +1,53 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: login_story_processado.feature
+Caminho relativo: cross-solution_YAWIK\login_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\cross-solution_YAWIK\login_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: login_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Successful login with valid credentials
+   Steps: 5
+   - Given there is a registered user with a valid email and password
+   - When the user logs in with the valid email
+   - And enters the correct password
+   - Then the system grants access to Yawik
+   - And displays the user's dashboard
+2. Login with incorrect password
+   Steps: 5
+   - Given there is a registered user with a valid email and password
+   - When the user logs in with the valid email
+   - And enters an incorrect password
+   - Then the system denies access
+   - And displays a message indicating that the email or password is incorrect
+3. Login with unregistered email
+   Steps: 5
+   - Given there is no registered user with the email "unregistered@example.com"
+   - When the user logs in with the email "unregistered@example.com"
+   - And enters a password
+   - Then the system denies access
+   - And displays a message indicating that the email or password is incorrect
+4. Login with invalid email format
+   Steps: 5
+   - Given there is a registered user with a valid email and password
+   - When the user logs in with an invalid email format "invalidEmail"
+   - And enters the correct password
+   - Then the system denies access
+   - And displays a message indicating that the email format is invalid
+5. Login with empty credentials
+   Steps: 5
+   - Given there is a registered user with a valid email and password
+   - When the user logs in with an empty email
+   - And enters an empty password
+   - Then the system denies access
+   - And displays a message indicating that email and password are required

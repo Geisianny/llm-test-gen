@@ -1,0 +1,22 @@
+Scenario 6: _9805 check partner, legal name, Partner term, company and store input by search in line in a document Retail sales receipt (in english)
+  And  I close all client application windows
+  *  Open a creation form Retail sales receipt
+  Given  I open hyperlink "e1cib/list/Document.RetailSalesReceipt"
+  And  I click the button named "FormCreate"
+  *  Partner input by search in line
+  And  I select from "Partner" drop-down list by "fer" string
+  *  Legal name input by search in line
+  And  I select from "Legal name" drop-down list by "com" string
+  *  Partner term input by search in line
+  And  I select from "Partner term" drop-down list by "TRY" string
+  *  Company input by search in line
+  And  I select from "Company" drop-down list by "main" string
+  *  Store input by search in line
+  And  I select from the drop-down list named "Store" by "01" string
+  *  Check entered values
+  Then  the form attribute named "Partner" became equal to "Ferron BP"
+  Then  the form attribute named "LegalName" became equal to "Company Ferron BP"
+  Then  the form attribute named "Agreement" became equal to "Basic Partner terms, TRY"
+  Then  the form attribute named "Company" became equal to "Main Company"
+  Then  the form attribute named "Store" became equal to "Store 01"
+

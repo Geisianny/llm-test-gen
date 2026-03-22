@@ -1,0 +1,12 @@
+Scenario 13: Update build host key with dev child channel
+  Tags: ['@skip_if_github_validation', '@scc_credentials', '@uyuni']
+  When  I follow the left menu "Systems > Activation Keys"
+  And  I follow "Build host Key x86_64" in the content area
+  And  I wait for child channels to appear
+  And  I select the parent channel for the "build_host" from "selectedBaseChannel"
+  And  I wait for child channels to appear
+  And  I check "Devel-Build-Host-Channel"
+  And  I wait until "Devel-Build-Host-Channel" has been checked
+  And  I click on "Update Activation Key"
+  Then  I should see a "Activation key Build host Key x86_64 has been modified" text
+

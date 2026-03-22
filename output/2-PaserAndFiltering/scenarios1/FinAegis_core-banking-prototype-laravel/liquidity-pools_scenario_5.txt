@@ -1,0 +1,8 @@
+Scenario 5: Execute swap through liquidity pool
+  Given  a liquidity pool exists for "BTC/EUR" with reserves:
+  And  I am logged in as "bob@example.com"
+  When  I swap "0.1" "BTC" for "EUR" in the pool
+  Then  I should receive approximately "4776.14" "EUR"
+  And  the pool should have collected fees of "14.40" "EUR"
+  And  the pool reserves should be:
+

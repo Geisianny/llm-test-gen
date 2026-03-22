@@ -1,0 +1,107 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 19/01/2026 23:13:57
+Arquivo analisado: index_13_story_processado.feature
+Caminho relativo: 3scale_porta\index_13_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/Originais\3scale_porta\index_13_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: index_13_story_processado
+Descrição: Não possui
+Total de cenários: 11
+
+CENÁRIOS IDENTIFICADOS:
+1. Navigation
+   Steps: 4
+   - Given the current page is the provider dashboard
+   - When they select "Audience" from the context selector
+   - And they follow "Subscriptions" within the main menu's section Accounts
+   - Then the current page is the provider service subscriptions page
+2. Empty view
+   Steps: 3
+   - Given the provider has no service subscriptions
+   - When they go to the provider service subscriptions page
+   - Then they should see an empty state
+3. Empty search
+   Steps: 5
+   - Given a buyer "Mouse"
+   - And the buyer is subscribed to product "Elephant Taming"
+   - When they go to the provider service subscriptions page
+   - And the table is filtered with:
+   - Then they should see an empty search state
+4. Filter subscriptions by product
+   Steps: 7
+   - Given a buyer "Mouse"
+   - And the buyer is subscribed to product "Elephant Taming"
+   - And the buyer is subscribed to product "Zeebra Stripe Drawing"
+   - When they go to the provider service subscriptions page
+   - And the table should contain the following:
+   - When the table is filtered with:
+   - And the table should contain the following:
+5. Filter subscriptions by account
+   Steps: 9
+   - Given a buyer "Ben"
+   - And the buyer is subscribed to product "My API"
+   - And a buyer "Bender"
+   - And the buyer is subscribed to product "My API"
+   - And a buyer "Leela"
+   - And the buyer is subscribed to product "My API"
+   - When they go to the provider service subscriptions page
+   - And the table is filtered with:
+   - Then the table should contain the following:
+6. Filter subscriptions by service plan
+   Steps: 5
+   - Given the following service plans:
+   - And the following buyers with service subscriptions signed up to the provider:
+   - When they go to the provider service subscriptions page
+   - And the table is filtered with:
+   - Then the table should contain the following:
+7. Filter subscriptions by state
+   Steps: 9
+   - Given a buyer "Bender"
+   - And the buyer is subscribed to product "Elephant Taming"
+   - And a buyer "Leela"
+   - And the buyer is subscribed to product "Zeebra Stripe Drawing"
+   - When they go to the provider service subscriptions page
+   - And the table is filtered with:
+   - Then they should see an empty search state
+   - When the table is filtered with:
+   - Then the table should contain the following:
+8. Filter paid subscriptions
+   Steps: 5
+   - Given the following service plans:
+   - And the following buyers with service subscriptions signed up to the provider:
+   - When they go to the provider service subscriptions page
+   - And the table is filtered with:
+   - Then the table should contain the following:
+9. Ordering and filtering by service
+   Steps: 10
+   - Given the following service plan:
+   - Given a buyer "First"
+   - And a buyer "Second"
+   - And buyer "First" is subscribed to plan "Service Plan"
+   - And buyer "Second" is subscribed to plan "Service Plan"
+   - And buyer "First" plan "Service Plan" contract gets suspended
+   - When they go to the provider service subscriptions page
+   - When the table is filtered with:
+   - And the table is sorted by "State"
+   - And the table should contain the following:
+10. Order by plan name
+   Steps: 7
+   - Given a buyer "Someone"
+   - And the following service plans:
+   - And the following buyers with service subscriptions signed up to the provider:
+   - When they go to the buyer's service subscriptions page
+   - Then the table should contain the following:
+   - And the table is sorted by "Plan"
+   - Then the table should contain the following:
+11. Outline 11: Ordering - Example 1
+   Steps: 3
+   - When they go to the provider service subscriptions page
+   - And the table is sorted by "Account"
+   - Then the table should be sorted by "Account"

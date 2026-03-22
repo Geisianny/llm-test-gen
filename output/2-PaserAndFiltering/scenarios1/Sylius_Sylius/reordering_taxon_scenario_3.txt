@@ -1,0 +1,7 @@
+Scenario 3: Moving up the first taxon on list
+  Tags: ['@no-api', '@ui', '@mink:chromedriver']
+  When  I want to see all taxons in store
+  And  I move up "T-Shirts" taxon
+  Then  I should see 4 taxons on the list
+  And  the first taxon on the list should be "T-Shirts"
+

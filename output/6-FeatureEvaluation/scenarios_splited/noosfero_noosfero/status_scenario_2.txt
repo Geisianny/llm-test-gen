@@ -1,0 +1,6 @@
+Scenario: Attempt to add status to comment in personal profile context
+  Given the user is on their personal profile
+  And the personal profile has a comment section
+  When the user attempts to add a status to a comment
+  Then the system denies the action
+  And displays a message indicating that status addition is not allowed on personal profiles

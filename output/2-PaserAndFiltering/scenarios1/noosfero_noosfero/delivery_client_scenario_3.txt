@@ -1,0 +1,24 @@
+Scenario 3: gets free delivery due to free over price
+  Tags: ['@selenium-fixme']
+  Given  I follow "Add to basket"
+  And  I follow "Add to basket"
+  And  I wait 0.2 seconds to finish the request
+  And  I follow "Add to basket"
+  And  I wait 0.2 seconds to finish the request
+  And  I follow "Add to basket"
+  And  I wait 0.2 seconds to finish the request
+  And  I follow "Add to basket"
+  And  I wait 0.2 seconds to finish the request
+  And  I follow "Add to basket"
+  And  I wait 0.2 seconds to finish the request
+  And  I should see "Show basket"
+  And  I follow "Show basket"
+  And  I wait 1 second for animations
+  And  I follow "Shopping checkout"
+  And  I fill in "Contact phone" with "123456789"
+  When  I select "Bike ($8.00)" from "Option"
+  Then  I should see "My good old bike." within ".instructions"
+  And  I should see "Address"
+  And  I should see "Bike" within "#delivery-name"
+  And  I should see "0.00" within "#delivery-price"
+

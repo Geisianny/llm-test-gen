@@ -1,0 +1,6 @@
+Scenario 1: Seeing email in checkout header as a guest
+  Tags: ['@no-api', '@ui']
+  Given  I added product "Gaming chair" to the cart
+  When  I complete addressing step with email "john@example.com" and "United States" based billing address
+  Then  I should be making an order as "john@example.com"
+

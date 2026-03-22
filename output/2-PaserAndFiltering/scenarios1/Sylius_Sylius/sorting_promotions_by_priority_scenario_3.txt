@@ -1,0 +1,7 @@
+Scenario 3: Promotion added with priority -1 is set at the top of the list
+  Tags: ['@api', '@ui']
+  Given  there is a promotion "Flying Pigs" with priority -1
+  When  I want to browse promotions
+  Then  I should see 4 promotions on the list
+  And  the first promotion on the list should have name "Flying Pigs"
+

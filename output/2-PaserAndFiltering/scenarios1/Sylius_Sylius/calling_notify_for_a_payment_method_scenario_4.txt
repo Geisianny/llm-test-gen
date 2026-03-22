@@ -1,0 +1,6 @@
+Scenario 4: Using Payum I want to send HTTP request to the payment method notify and failed
+  Tags: ['@ui']
+  When  I call the payment method notify page with the code "not_existing"
+  Then  no payment request with "notify" action should exists
+  And  the response status code should be 404
+

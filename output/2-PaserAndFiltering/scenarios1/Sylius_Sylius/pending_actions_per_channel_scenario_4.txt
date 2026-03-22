@@ -1,0 +1,7 @@
+Scenario 4: Seeing product variants out of stock in pending actions
+  Tags: ['@no-api', '@ui']
+  Given  the store has a product "Symfony T-Shirt"
+  And  the product "Symfony T-Shirt" is out of stock
+  When  I open administration dashboard
+  Then  I should see 1 product variant out of stock in the pending actions
+

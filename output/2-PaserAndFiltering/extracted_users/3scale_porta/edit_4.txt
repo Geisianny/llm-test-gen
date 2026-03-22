@@ -1,0 +1,15 @@
+Feature: Service subscription approval required
+Tags: ['@javascript']
+
+Background: 
+  Given  a provider is logged in
+  And  the provider has "service_plans" allowed
+  And  a product "My API"
+  And  the following service plan:
+
+Scenario 1: Make new accounts require approval from admin
+  Given  they go to service plan "Free" admin edit page
+  When  the form is submitted with:
+  Then  the current page is the product's service plans admin page
+  And  new service subscriptions with service plan "Free" will be pending for approval
+

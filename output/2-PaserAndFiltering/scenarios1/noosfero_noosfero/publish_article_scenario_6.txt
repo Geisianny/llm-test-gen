@@ -1,0 +1,22 @@
+Scenario 6: ask to publish an article that was deleted before approval
+  Tags: ['@selenium-fixme']
+  Given  I am logged in as "joaosilva"
+  And  "Joao Silva" is admin of "Sample Community"
+  And  I am on sample-community's control panel
+  And  I follow "Informations" within "#section-profile"
+  And  I choose "profile_data_moderated_articles_true"
+  And  I follow "Save"
+  And  I am on joaosilva's control panel
+  And  I follow "Manage" within "#section-content"
+  And  I follow "article-options"
+  And  I follow "Spread"
+  And  I type in "Sample Community" into autocomplete list "search-communities-to-publish" and I choose "Sample Community"
+  And  I follow "Spread this"
+  And  "joaosilva" has no articles
+  And  I am on sample-community's control panel
+  When  I follow "Tasks"
+  Then  I should see "The article was removed."
+  And  I choose "Accept"
+  And  I follow "Save tasks"
+  Then  I should not see "The article was removed."
+

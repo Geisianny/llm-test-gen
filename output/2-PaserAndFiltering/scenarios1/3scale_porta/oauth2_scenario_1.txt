@@ -1,0 +1,6 @@
+Scenario 1: All required data in OAuth2 response
+  Given  the Oauth2 user has all the required fields
+  When  I authenticate by Oauth2
+  And  I visit a page showing the current user's SSO data
+  Then  the html should contain the SSO data
+

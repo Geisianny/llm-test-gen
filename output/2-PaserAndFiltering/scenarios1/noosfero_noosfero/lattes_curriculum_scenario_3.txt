@@ -1,0 +1,16 @@
+Scenario 3: Don't show lattes informations for blank lattes urls
+  Tags: ['@selenium']
+  And  I check "Lattes Curriculum Plugin"
+  And  I follow "Save changes"
+  And  I go to /admin/features/manage_fields
+  Given  I follow "Person's fields"
+  And  I check "person_fields_lattes_url_active"
+  And  I check "person_fields_lattes_url_signup"
+  And  I follow "Save changes"
+  Given  I am on admin_user's control panel
+  And  the field lattes_url is public for all users
+  When  I follow "Informations" within "#section-profile"
+  And  I follow "Save"
+  And  I go to /profile/admin_user
+  Then  I should not see "Lattes"
+

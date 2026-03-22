@@ -1,0 +1,3 @@
+Scenario 12: Bootstrap a salt-ssh system with activation key and default contact method
+  When  I call system.bootstrap() on a Salt minion with saltSSH = true, but with activation key with default contact method, I should get an API fault
+

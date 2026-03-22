@@ -1,0 +1,4 @@
+Scenario 5: Admin filters transaction by free status
+  When  I select "Free transaction (3)" from "status_"
+  Then  I should see 3 transaction with status "Free transaction"
+

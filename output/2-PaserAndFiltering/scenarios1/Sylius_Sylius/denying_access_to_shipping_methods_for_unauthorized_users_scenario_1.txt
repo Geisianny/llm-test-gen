@@ -1,0 +1,6 @@
+Scenario 1: Trying to add a new shipping method as a unauthorized user
+  Tags: ['@api', '@no-ui']
+  When  I try to create a new shipping method with valid data
+  And  I try to add it
+  Then  I should be notified that my access has been denied
+

@@ -1,0 +1,5 @@
+Scenario: Confirm a sales order
+  Given there is a sales order in the "draft" state
+  When the administrator confirms the sales order
+  Then the system updates the sales order state to "confirmed"
+  And generates a corresponding document for the sales order

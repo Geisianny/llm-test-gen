@@ -1,0 +1,8 @@
+Scenario 6: Cancel creation of mailing
+  Given  I am logged in as "joaosilva"
+  And  I go to Sample Community's members management
+  And  I check "checkbox-manoel"
+  And  I follow "Send e-mail to members"
+  When  I follow "Cancel"
+  Then  I should see "Sample Community"
+

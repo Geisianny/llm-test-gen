@@ -1,0 +1,8 @@
+Scenario 3: Add systems to the sles group
+  When  I follow the left menu "Systems > System Groups"
+  When  I follow "sles"
+  And  I follow "Target Systems"
+  And  I check the "sle_minion" client
+  And  I click on "Add Systems"
+  Then  I should see a "added to sles server group." text
+

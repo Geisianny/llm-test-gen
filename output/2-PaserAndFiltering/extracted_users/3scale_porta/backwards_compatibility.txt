@@ -1,0 +1,13 @@
+Feature: Dev portal backwards compatibility
+Description: As a long time 3scale user, I don't want any new updates in 3scale to break my developer portal.
+
+Background: 
+  Given  a provider
+  And  the current domain is "foo.3scale.localhost"
+
+Scenario 1: Essential assets
+  Given  the provider has main layout with:
+  And  the cms page "/" has main layout
+  When  they go to the homepage
+  Then  they should see "Good news everyone!"
+

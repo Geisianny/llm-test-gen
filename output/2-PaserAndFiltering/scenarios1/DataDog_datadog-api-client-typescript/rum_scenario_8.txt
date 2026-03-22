@@ -1,0 +1,7 @@
+Scenario 8: Get a RUM application returns "Not Found" response
+  Tags: ['@team:DataDog/rum-backend']
+  Given  new "GetRUMApplication" request
+  And  request contains "id" parameter with value "abcd1234-0000-0000-abcd-1234abcd5678"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

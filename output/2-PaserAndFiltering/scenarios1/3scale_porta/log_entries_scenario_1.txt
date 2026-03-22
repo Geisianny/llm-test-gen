@@ -1,0 +1,12 @@
+Scenario 1: Log Entry is created when invoice is issued
+  Tags: ['@wip']
+  Given  the time is 25th April 2009
+  And  provider "foo.3scale.localhost" is charging
+  And  a buyer "stallman" signed up to application plan "PaidAsInLunch"
+  When  time flies to 15th May 2009
+  And  current domain is the admin domain of provider "foo.3scale.localhost"
+  When  I log in as provider "foo.3scale.localhost"
+  When  I go to the log entries page
+  And  I wait for 3 seconds
+  Then  I should see the following log entries:
+

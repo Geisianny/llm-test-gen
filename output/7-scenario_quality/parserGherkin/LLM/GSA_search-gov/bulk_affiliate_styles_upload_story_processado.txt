@@ -1,0 +1,54 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: bulk_affiliate_styles_upload_story_processado.feature
+Caminho relativo: GSA_search-gov\bulk_affiliate_styles_upload_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\GSA_search-gov\bulk_affiliate_styles_upload_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: bulk_affiliate_styles_upload_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Upload a valid file within the size limit
+   Steps: 5
+   - Given there is an admin user logged in
+   - And a valid file containing affiliate site styles with a size of 3 MB
+   - When the admin uploads the file
+   - Then the system processes the file
+   - And displays a confirmation message
+2. Upload a file exceeding the size limit
+   Steps: 5
+   - Given there is an admin user logged in
+   - And a file containing affiliate site styles with a size of 5 MB
+   - When the admin uploads the file
+   - Then the system denies the upload
+   - And displays an error message indicating that the file size exceeds the limit
+3. Upload an invalid file type
+   Steps: 5
+   - Given there is an admin user logged in
+   - And a file of type "image/jpeg" containing affiliate site styles
+   - When the admin uploads the file
+   - Then the system denies the upload
+   - And displays an error message indicating that the file type is not supported
+4. Receive email notification after file processing
+   Steps: 5
+   - Given there is an admin user logged in
+   - And a valid file containing affiliate site styles with a size of 3 MB
+   - When the admin uploads the file
+   - And the system processes the file
+   - Then the admin receives an email notification with the processing results
+5. Upload a file with incorrect formatting
+   Steps: 6
+   - Given there is an admin user logged in
+   - And a file containing affiliate site styles with incorrect formatting
+   - When the admin uploads the file
+   - Then the system processes the file
+   - And the admin receives an email notification indicating that the file has errors
+   - And the email contains details about the errors found

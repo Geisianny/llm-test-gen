@@ -1,0 +1,6 @@
+Scenario 3: Invitations can be resent
+  Tags: ['@javascript', '@billy']
+  Given  I check the box for "Invited Organisation"
+  When  I click id "invite_users"
+  Then  I should see "Invited!" in the response field for "Invited Organisation"
+

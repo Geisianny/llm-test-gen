@@ -1,0 +1,4 @@
+Scenario: Share payment link and QR code
+  Given the user has generated a payment link and QR code for "ETH"
+  When the user shares the payment link and QR code
+  Then the system allows the recipient to access the payment link

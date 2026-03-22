@@ -1,0 +1,10 @@
+Scenario 4: User should not see invitation code in the form, if it's not needed
+  Tags: ['@javascript']
+  Given  I am not logged in
+  And  community "test" does not require invite to join
+  And  I am on the signup page
+  Then  I should not see "Invitation code"
+  Given  community "test" requires invite to join
+  And  I am on the signup page
+  Then  I should see "Invitation code"
+

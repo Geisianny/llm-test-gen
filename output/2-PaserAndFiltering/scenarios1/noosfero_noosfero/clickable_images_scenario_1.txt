@@ -1,0 +1,7 @@
+Scenario 1: show link if image is scaled
+  Tags: ['@selenium']
+  Given  the following article with image
+  When  I go to /booking/small
+  And  display ".zoomify-image"
+  Then  I should see "Zoom in"
+

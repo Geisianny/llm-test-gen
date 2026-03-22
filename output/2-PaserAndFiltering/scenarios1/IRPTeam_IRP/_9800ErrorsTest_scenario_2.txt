@@ -1,0 +1,37 @@
+Scenario 2: _9801 filling user settings for Sales order
+  Given  I open hyperlink "e1cib/list/Catalog.Users"
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I input "CI" text in the field named "Description_en"
+  And  I select "English" exact value from "Interface localization" drop-down list
+  And  I click "Save" button
+  And  I click "User settings" button
+  *  Fill in custom settings for Sales order
+  And  I go to line in "MetadataTree" table
+  And  I activate "Group name" field in "MetadataTree" table
+  And  I go to line in "MetadataTree" table
+  And  I activate "Value" field in "MetadataTree" table
+  And  I select current line in "MetadataTree" table
+  And  I click choice button of "Value" attribute in "MetadataTree" table
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I finish line editing in "MetadataTree" table
+  And  I go to line in "MetadataTree" table
+  And  I select current line in "MetadataTree" table
+  And  I click choice button of "Value" attribute in "MetadataTree" table
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I finish line editing in "MetadataTree" table
+  And  I go to line in "MetadataTree" table
+  And  I activate "Use" field in "MetadataTree" table
+  And  I change "Use" checkbox in "MetadataTree" table
+  And  I finish line editing in "MetadataTree" table
+  And  I activate "Value" field in "MetadataTree" table
+  And  I select current line in "MetadataTree" table
+  And  I click choice button of "Value" attribute in "MetadataTree" table
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I finish line editing in "MetadataTree" table
+  And  I click "Ok" button
+  And  I click "Save and close" button
+

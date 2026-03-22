@@ -1,0 +1,13 @@
+Scenario Outline 6: API JSON Spec validation with invalid spec - Example 1
+  Given  the provider has a Swagger 1.2 spec "Echo API"
+  When  they go to the spec's edit page from Audience context
+  And  the ActiveDocs form is submitted with:
+  Then  field "API JSON Spec" has inline error "is missing required properties"
+
+  Examples:
+    | swagger version | invalid swagger version | error |
+    | Swagger 1.2 | invalid Swagger 1.2 | is missing required properties |
+    | Swagger 2 | invalid Swagger 2 | is missing required properties |
+    | OAS 3.0 | invalid OAS 3.0 | is missing required properties |
+    | OAS 3.1 | invalid OAS 3.1 | is missing required properties |
+

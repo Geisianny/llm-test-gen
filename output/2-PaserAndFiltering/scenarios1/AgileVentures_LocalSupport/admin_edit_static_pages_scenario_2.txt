@@ -1,0 +1,6 @@
+Scenario 2: Non-superadmin cannot edit
+  Given  I am signed in as a non-superadmin
+  And  I visit the home page
+  When  I follow "About Us"
+  Then  I should not see a link with text "Edit"
+

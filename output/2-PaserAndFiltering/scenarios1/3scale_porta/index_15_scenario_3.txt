@@ -1,0 +1,7 @@
+Scenario 3: Subscribe to a product with a public plan
+  Given  the buyer is not subscribed to product "dcc-rpg-wiki"
+  And  the following service plan:
+  When  they go to the the services list for buyers
+  And  follow "Subscribe to dcc-rpg-wiki"
+  Then  the buyer should be subscribed to product "dcc-rpg-wiki"
+

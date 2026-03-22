@@ -1,0 +1,7 @@
+Scenario 11: When a searcher clicks on a collection and the query is blank
+  Given  the following BingV7 Affiliates exist:
+  And  affiliate "aff.gov" has the following document collections:
+  When  I go to aff.gov's search page
+  And  I follow "Topics" in the search navbar
+  Then  I should see "Please enter a search term"
+

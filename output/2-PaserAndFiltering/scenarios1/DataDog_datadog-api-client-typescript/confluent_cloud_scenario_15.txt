@@ -1,0 +1,12 @@
+Scenario 15: Get Confluent account returns "OK" response
+  Tags: ['@team:DataDog/saas-integrations']
+  Given  there is a valid "confluent_account" in the system
+  And  new "GetConfluentAccount" request
+  And  request contains "account_id" parameter from "confluent_account.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.type" is equal to "confluent-cloud-accounts"
+  And  the response "data.attributes.api_key" is equal to "{{ unique_alnum }}"
+  And  the response "data.attributes.resources[0].resource_type" is equal to "kafka"
+  And  the response "data.attributes.resources[0].enable_custom_metrics" is equal to false
+

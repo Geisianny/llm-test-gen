@@ -1,0 +1,8 @@
+Scenario 10: List all APM retention filters returns "OK" response
+  Tags: ['@team:DataDog/apm-trace-intake']
+  Given  there is a valid "retention_filter" in the system
+  And  new "ListApmRetentionFilters" request
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data" has item with field "id" with value "{{ retention_filter.data.id }}"
+

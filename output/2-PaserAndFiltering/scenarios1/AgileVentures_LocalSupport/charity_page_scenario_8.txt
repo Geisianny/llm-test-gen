@@ -1,0 +1,9 @@
+Scenario Outline 8: show labels if field is present - Example 1
+  Then  I should see "Postcode"
+
+  Examples:
+    | label |
+    | Postcode |
+    | Email |
+    | Website |
+

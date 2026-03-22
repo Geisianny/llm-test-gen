@@ -1,0 +1,9 @@
+Scenario 3: Accessing to add shipping method to the cart by the visitor
+  Tags: ['@api']
+  Given  the visitor has product "Stark T-Shirt" in the cart
+  And  the visitor has specified the email as "jon.snow@example.com"
+  And  the visitor has specified address as "Ankh Morpork", "Frost Alley", "90210", "United States" for "Jon Snow"
+  And  the visitor has completed the addressing step
+  When  the visitor proceed with "UPS" shipping method
+  Then  the visitor should have checkout shipping method step completed
+

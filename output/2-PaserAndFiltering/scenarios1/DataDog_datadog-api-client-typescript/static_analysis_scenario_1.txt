@@ -1,0 +1,8 @@
+Scenario 1: POST request to resolve vulnerable symbols returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/k9-vm-sca']
+  Given  operation "CreateSCAResolveVulnerableSymbols" enabled
+  And  new "CreateSCAResolveVulnerableSymbols" request
+  And  body with value {"data": {"attributes": {"purls": []}, "type": "resolve-vulnerable-symbols-request"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+

@@ -1,0 +1,5 @@
+Scenario 5: Editing of personal details can be blocked
+  Given  provider "foo.3scale.localhost" has "useraccountarea" disabled
+  And  the buyer follow "Settings"
+  Then  they should not see "Personal Details"
+

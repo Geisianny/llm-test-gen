@@ -1,0 +1,6 @@
+Scenario 6: Search a word and expect several results
+  Tags: ['@uyuni']
+  When  I enter "Uyuni" as the left menu search field
+  Then  I should see a "Uyuni Server" text
+  And  I should see a "Uyuni Proxy" text
+

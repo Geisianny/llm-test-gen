@@ -1,0 +1,21 @@
+Scenario 1: I have to pay monthly and setup fee when the trial is over
+  Given  the date is 23rd November 1989
+  And  plan "Rocket" has a setup fee of 210
+  And  plan "Rocket" has a monthly fee of 31
+  And  plan "Rocket" has a trial period of 15 days
+  And  a buyer "zoidberg" signed up to application plan "Rocket"
+  When  10 days pass
+  And  buyer "zoidberg" makes 5 service transaction with:
+  And  I log in as "zoidberg" on planet.express.com
+  Then  I should have 0 invoices
+  And  I navigate to invoices issued for me
+  When  6 days pass
+  And  I log in as "zoidberg" on planet.express.com
+  Then  I should have 0 invoices
+  When  25 days pass
+  And  I navigate to invoices issued for me
+  Then  I should not see "November, 1989"
+  And  I should see "December, 1989"
+  When  I navigate to invoice issued for me in "December, 1989"
+  Then  I should see line items
+

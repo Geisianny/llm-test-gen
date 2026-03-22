@@ -1,0 +1,5 @@
+Scenario 2: Admin adds category with invalid data
+  Tags: ['@javascript']
+  When  I add a new category "Buildings" with invalid data
+  Then  I should see 2 validation errors
+

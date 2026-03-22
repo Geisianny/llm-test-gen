@@ -1,0 +1,5 @@
+Scenario 3: Index does show the API column
+  Given  the product has a Swagger 2 spec "Echo API"
+  When  they go to the ActiveDocs page
+  Then  the table should have a column "API"
+

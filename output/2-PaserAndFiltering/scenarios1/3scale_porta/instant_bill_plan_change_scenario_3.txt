@@ -1,0 +1,26 @@
+Scenario 3: Billing variable cost with multiple plan changes within a month
+  Given  the following application plans:
+  And  pricing rules on plan "PureVariable":
+  And  pricing rules on plan "PureVariable101":
+  Given  the buyer is signed up to plan "PureVariable" on 1st May 2018
+  And  the buyer makes a service transactions with:
+  When  time flies to 4th May 2018
+  And  the buyer changes to application plan "PureVariable101"
+  When  time flies to 7th May 2018
+  Then  the buyer should have following line items for "May, 2018" in the 1st invoice:
+  And  the buyer makes a service transactions with:
+  When  time flies to 8th May 2018
+  And  the buyer changes to application plan "FreePlan"
+  When  time flies to 11th May 2018
+  Then  the buyer should have 1 invoices
+  And  the buyer makes a service transactions with:
+  When  time flies to 15th May 2018
+  And  the buyer changes to application plan "PureVariable"
+  When  time flies to 18th May 2018
+  Then  the buyer should have 1 invoices
+  And  the buyer makes a service transactions with:
+  When  time flies to 19th May 2018
+  And  the buyer changes to application plan "FreePlan"
+  When  time flies to 22th May 2018
+  Then  the buyer should have following line items for "May, 2018" in the 2nd invoice:
+

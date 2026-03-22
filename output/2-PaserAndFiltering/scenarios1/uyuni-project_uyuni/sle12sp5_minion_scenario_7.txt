@@ -1,0 +1,4 @@
+Scenario 7: Check events history for failures on SLES 12 SP5 minion
+  Given  I am on the Systems overview page of this "sle12sp5_minion"
+  Then  I check for failed events on history event page
+

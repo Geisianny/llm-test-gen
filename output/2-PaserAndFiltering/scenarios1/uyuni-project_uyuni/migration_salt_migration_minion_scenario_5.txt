@@ -1,0 +1,5 @@
+Scenario 5: Migrate the minion to the Salt bundle
+  When  I apply highstate on "salt_migration_minion"
+  Then  "venv-salt-minion" should be installed on "salt_migration_minion"
+  And  I wait until "venv-salt-minion" service is active on "salt_migration_minion"
+

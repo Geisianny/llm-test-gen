@@ -1,0 +1,13 @@
+Scenario Outline 15: As Anonymous user I cannot access teams endpoints - Example 1
+  When  I send a "GET" request to "/api/v3/my_teams"
+  Then  the response status code should be 401
+
+  Examples:
+    | method | url |
+    | GET | /api/v3/my_teams |
+    | POST | /api/v3/my_teams |
+    | POST | /api/v3/my_team_members |
+    | PUT | /api/v3/my_team_members/d11d6ddd-dfba-4972-97b2-4c0bdf289559 |
+    | GET | /api/v3/my_team_members/d11d6ddd-dfba-4972-97b2-4c0bdf289559 |
+    | DELETE | /api/v3/my_team_members/d11d6ddd-dfba-4972-97b2-4c0bdf289559 |
+

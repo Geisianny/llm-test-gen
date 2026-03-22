@@ -1,0 +1,19 @@
+Feature: Integration errors of a product
+Description: As an admin I want to see the list of integration errors of a product
+  and I want to be able to empty such list
+Tags: ['@javascript']
+
+Background: 
+  Given  a provider is logged in
+  And  a product "Pepe API"
+
+Scenario 1: Navigation
+  Given  they go to the overview page of product "Pepe API"
+  When  they press "Analytics" within the main menu
+  And  follow "Integration Errors" within the main menu
+  Then  the current page is the integration errors page of product "Pepe API"
+
+Scenario 2: No errors
+  Given  they go to the integration errors page of product "Pepe API"
+  Then  they should see "No integration errors reported for this service"
+

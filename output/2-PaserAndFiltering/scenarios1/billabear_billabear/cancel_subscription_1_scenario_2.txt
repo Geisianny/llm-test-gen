@@ -1,0 +1,9 @@
+Scenario 2: Cancel subscription
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  When  I cancel via the stripe interopt api the subscription "Test Plan" for "customer.one@example.org" with prorata cancellation
+  Then  the subscription "Test Plan" for "customer.one@example.org" will be cancelled
+  And  the monthly recurring revenue estimate should be 6000
+  And  the annual recurring revenue estimate should be 72000
+

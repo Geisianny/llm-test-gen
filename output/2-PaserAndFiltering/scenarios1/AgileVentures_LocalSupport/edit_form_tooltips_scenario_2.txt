@@ -1,0 +1,5 @@
+Scenario 2: Display tooltip for each checkbox on the edit form
+  Given  I am signed in as a charity worker related to "Harrow Bereavement Counselling"
+  And  I visit the edit page for the organisation named "Harrow Bereavement Counselling"
+  Then  the following tooltips should exist:
+

@@ -1,0 +1,14 @@
+Scenario Outline 2: organization active fields are displayed on edition - Example 1
+  Given  the following community fields are active fields
+  And  the following community
+  And  "Joao Silva" is admin of "Organization"
+  And  I am on organization's control panel
+  And  I follow "Informations" within "#section-profile"
+  Then  I should see "Display name"
+  Then  I should see "Contact email"
+
+  Examples:
+    | organization |
+    | community |
+    | enterprise |
+

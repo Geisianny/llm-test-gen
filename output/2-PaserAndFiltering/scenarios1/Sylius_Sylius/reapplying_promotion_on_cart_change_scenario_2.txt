@@ -1,0 +1,15 @@
+Scenario 2: Receiving discount on shipping after shipping method change
+  Tags: ['@api', '@ui']
+  Given  the store has "DHL" shipping method with "$10.00" fee
+  And  the store has "FedEx" shipping method with "$30.00" fee
+  And  the promotion gives "100%" discount on shipping to every order
+  And  I added product "PHP T-Shirt" to the cart
+  And  I addressed the cart
+  And  I chose "DHL" shipping method
+  When  I decide to change shipping method
+  And  I change shipping method to "FedEx"
+  And  I complete the shipping step
+  And  I check the details of my cart
+  Then  my cart total should be "$100.00"
+  And  my cart shipping should be for free
+

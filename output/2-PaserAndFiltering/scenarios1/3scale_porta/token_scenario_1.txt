@@ -1,0 +1,5 @@
+Scenario 1: Buyer can't login with an invalid token
+  Given  another provider generated a sso token for another buyer
+  When  the buyer authenticates by token
+  Then  the page should contain "Invalid SSO Token"
+

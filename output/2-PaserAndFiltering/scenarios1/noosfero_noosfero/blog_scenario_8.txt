@@ -1,0 +1,8 @@
+Scenario 8: configure blog when viewing it
+  Tags: ['@selenium']
+  Given  the following blogs
+  And  I go to /joaosilva/blog-one
+  And  I follow "article-options"
+  When  I follow "Configure blog"
+  Then  I should be on edit "Blog One" by joaosilva
+

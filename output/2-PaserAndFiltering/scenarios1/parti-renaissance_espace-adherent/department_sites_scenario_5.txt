@@ -1,0 +1,6 @@
+Scenario 5: As referent I can get my department site
+  Given  I am logged with "referent@en-marche-dev.fr" via OAuth client "JeMengage Web" with scope "jemengage_admin"
+  When  I send a "GET" request to "/api/v3/department_sites?scope=president_departmental_assembly"
+  Then  the response status code should be 200
+  And  the JSON should be equal to:
+

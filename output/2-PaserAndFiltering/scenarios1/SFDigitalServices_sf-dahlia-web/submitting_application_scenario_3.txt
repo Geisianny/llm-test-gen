@@ -1,0 +1,42 @@
+Scenario 3: Filling out all details of application and saving draft
+  Given  I go to the first page of the "Test Listing" application
+  When  I fill out the Name page as "Jane Valerie Doe"
+  And  I fill out the Contact page with my address, NRHP match, and mailing address
+  And  I confirm my address
+  And  I fill out an alternate contact
+  And  I indicate living with other people
+  And  I add another household member named "Coleman Francis" with same address as primary
+  And  I indicate being done adding people
+  And  I indicate not living in public housing
+  And  I enter "4000" for each of my monthly rents
+  And  I indicate ADA Mobility and Vision impairments
+  And  I do not indicate having vouchers
+  And  I fill out my income as "72000"
+  And  I continue past the Lottery Preferences intro
+  And  I select Rent Burdened Preference
+  And  I upload a Copy of Lease and "Money order" as my proof for Rent Burden
+  And  I hit the Next button "1" time
+  And  I select "Jane Doe" for "neighborhoodResidence" preference
+  And  I upload a "Gas bill" as my proof of preference for "neighborhoodResidence"
+  And  I click the Next button on the Live in the Neighborhood page
+  And  I select "Coleman Francis" for "aliceGriffith" preference
+  And  I upload a "Letter from SFHA verifying address" as my proof of preference for "aliceGriffith"
+  And  I fill out my address for Alice Griffith
+  And  I hit the Next button "1" time
+  And  I confirm my address
+  And  I select "Jane Doe" for "certOfPreference" preference
+  And  I fill out my "certOfPreference" certificate number
+  And  I select "Coleman Francis" for "displaced" preference
+  And  I fill out my "displaced" certificate number
+  And  I submit my preferences
+  And  I answer "Yes" to the Veterans preference question and select "Jane Doe"
+  And  I fill out the optional survey
+  Then  on the Review Page I should see my contact details for "Jane Valerie Doe"
+  Then  on the Review Page I should see my alternate contact details
+  Then  on the Review Page I should see my household member details
+  Then  on the Review Page I should see my income details
+  Then  on the Review Page I should see my preference details on my "draft" application
+  And  I click the Save and Finish Later button
+  And  I create an account for "Jane Valerie Doe" with my pre-filled application details
+  Then  I should be on the login page with the email confirmation popup
+

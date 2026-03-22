@@ -1,0 +1,7 @@
+Scenario 24: List all schedules returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "ListFleetSchedules" enabled
+  And  new "ListFleetSchedules" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

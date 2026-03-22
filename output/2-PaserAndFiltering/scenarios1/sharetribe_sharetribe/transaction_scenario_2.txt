@@ -1,0 +1,13 @@
+Scenario 2: Buyer sees paid transaction
+  Given  there is a listing with title "car spare parts" from "kassi_testperson1" with category "Items" and with listing shape "Selling For Profit"
+  And  the price of that listing is 100.00 EUR
+  And  there is a "preauthorized" transaction from "kassi_testperson2" with message "Hear, Hear" about that listing
+  Given  I am logged in as "kassi_testperson2"
+  When  I visit transaction page of that listing
+  Then  I should see "car spare parts" within "h2"
+  Then  I should see "Total: €100" within ".initiate-transaction-total-wrapper"
+  Then  I should see "Payment authorized" within "#transaction_status"
+  Then  I should see "Waiting for Kassi T to accept the request. As soon as Kassi T accepts, you will be charged." within "#transaction_status"
+  Then  I should see "Payment authorized" within ".message-row:nth-child(1)"
+  Then  I should see "Hear, Hear" within ".message-row:nth-child(2)"
+

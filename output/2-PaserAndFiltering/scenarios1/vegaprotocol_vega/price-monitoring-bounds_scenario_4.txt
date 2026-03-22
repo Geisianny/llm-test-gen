@@ -1,0 +1,18 @@
+Scenario 4: Trades above maximum price bound by 1 decimal after market update
+  Tags: ['@PriceBounds']
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC20"
+  And  the market data for the market "ETH/DEC20" should be:
+  When  the markets are updated:
+  Then  the market data for the market "ETH/DEC20" should be:
+  When  the network moves ahead "1" blocks
+  And  the parties place the following orders:
+  Then  the market data for the market "ETH/DEC20" should be:
+  When  the network moves ahead "1" blocks
+  Then  the mark price should be "10000000000" for the market "ETH/DEC20"
+  When  the network moves ahead "30" blocks
+  Then  the market data for the market "ETH/DEC20" should be:
+

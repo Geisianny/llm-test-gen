@@ -1,0 +1,7 @@
+Scenario 2: Seeing full name in checkout header as a logged user with full name
+  Tags: ['@no-api', '@ui']
+  Given  I am a logged in customer with name "John Doe"
+  And  I have product "Gaming chair" in the cart
+  When  I complete addressing step with "United States" based billing address
+  Then  I should be making an order as "John Doe"
+

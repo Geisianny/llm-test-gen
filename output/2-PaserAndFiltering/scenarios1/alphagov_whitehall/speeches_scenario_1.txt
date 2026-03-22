@@ -1,0 +1,5 @@
+Scenario 1: Creating a new draft speech
+  Given  I am a writer
+  When  I draft a new speech "Outlaw Moustaches"
+  Then  I should see the speech "Outlaw Moustaches" in the list of draft documents
+

@@ -1,0 +1,8 @@
+Scenario 12: Cannot add duplicate custom support email for same product
+  Given  a product "Bananas"
+  And  product "Bananas" has support email set to "help@bananas.org"
+  And  they go to the emails settings page
+  When  they press "Add a custom support email"
+  Then  they should see "API" within the modal
+  But  they should not see "Bananas" within the modal
+

@@ -1,0 +1,9 @@
+Scenario 1: Add a new discount rule with 20 percent discount
+  Given  adding a product specific price rule to product "Shoe" named "discount"
+  And  the specific price rule is active
+  And  the specific price rule has a action discount-percent with 20% discount
+  Then  the specific price rule should be valid for product "Shoe"
+  And  the product "Shoe" should be priced at "8000"
+  And  the product "Shoe" discount should be "2000"
+  And  the product "Shoe" retail-price should be "10000"
+

@@ -1,0 +1,19 @@
+Feature: Overdue notification
+
+Background: 
+  Given  the following accounts exist:
+  And  the follow products exist:
+  And  the follow prices exist:
+  And  the following features exist:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "Price One" with:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "Price One" with:
+  And  the follow customers exist:
+  Given  the following subscriptions exist:
+
+Scenario 1: 
+  Given  the following invoices exist:
+  When  I run the background task to cancel overdue customers
+  Then  the workflow for the invoice for "customer.two@example.org" will be at "customer_disabled"
+  Then  the customer "customer.one@example.org" is enabled
+  Then  the customer "customer.two@example.org" is disabled
+

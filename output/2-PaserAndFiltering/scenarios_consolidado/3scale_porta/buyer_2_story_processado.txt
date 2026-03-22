@@ -1,0 +1,33 @@
+Scenario 1: Simple subscription
+  And  the following service plan:
+  And  I go to the service subscription page
+  And  I press "Subscribe"
+  Then  I should see "You have successfully subscribed to a service"
+
+
+
+Scenario 2: Subscription with approval
+  Given  the following service plan:
+  When  I go to the service subscription page
+  And  I select "Platinum" from "Plan"
+  And  press "Subscribe"
+  Then  I should see "You have successfully subscribed to a service"
+  And  I should see "Platinum (pending)"
+
+
+
+Scenario 3: Subscribe with legal terms
+  Given  provider "foo.3scale.localhost" has service subscription legal terms:
+  And  the following service plan:
+  When  I go to the service subscription page
+  Then  I should see "Magna Charta"
+  And  I press "Subscribe"
+  Then  I should see "You have successfully subscribed to a service"
+
+
+
+Scenario 4: Fast lane - automatically subscribed when there is no plan to choose from
+  When  I log in as "bob" on foo.3scale.localhost
+  And  I go to the service subscription page
+  Then  I should see "You have successfully subscribed to a service"
+

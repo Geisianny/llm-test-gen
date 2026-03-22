@@ -1,0 +1,6 @@
+Scenario 3: As a logged-in user I can get a riposte
+  Given  I am logged with "deputy@en-marche-dev.fr" via OAuth client "JeMengage Web"
+  When  I send a "GET" request to "/api/v3/ripostes/220bd36e-4ac4-488a-8473-8e99a71efba4?scope=national"
+  Then  the response status code should be 200
+  And  the JSON should be equal to:
+

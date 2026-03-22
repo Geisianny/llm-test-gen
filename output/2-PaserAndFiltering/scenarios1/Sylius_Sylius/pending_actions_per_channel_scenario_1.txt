@@ -1,0 +1,7 @@
+Scenario 1: Seeing channel related pending actions
+  Tags: ['@no-api', '@ui']
+  When  I open administration dashboard
+  Then  I should see 2 orders to process in the pending actions
+  And  I should see 2 shipments to ship in the pending actions
+  And  I should see 2 pending payments in the pending actions
+

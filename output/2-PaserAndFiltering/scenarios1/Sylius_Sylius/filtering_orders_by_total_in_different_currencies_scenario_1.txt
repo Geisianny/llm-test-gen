@@ -1,0 +1,7 @@
+Scenario 1: Filtering orders by currency alone
+  Tags: ['@api', '@ui']
+  When  I choose "British Pound" as the filter currency
+  And  I filter
+  Then  I should see 3 orders in the list
+  But  I should not see any orders with currency "USD"
+

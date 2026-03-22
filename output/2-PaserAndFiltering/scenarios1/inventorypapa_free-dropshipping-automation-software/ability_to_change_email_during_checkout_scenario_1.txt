@@ -1,0 +1,8 @@
+Scenario 1: Being able to change the email when checking out as a guest
+  Tags: ['@ui']
+  Given  I have product "Mantis blade" in the cart
+  When  I complete addressing step with email "john@example.com" and "United States" based billing address
+  And  I go back to addressing step of the checkout
+  And  I complete addressing step with email "new-email@example.com" and "United States" based billing address
+  Then  I should be checking out as "new-email@example.com"
+

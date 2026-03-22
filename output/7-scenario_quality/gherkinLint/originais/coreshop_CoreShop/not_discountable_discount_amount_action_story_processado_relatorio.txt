@@ -1,0 +1,55 @@
+RELATÓRIO INDIVIDUAL - ANÁLISE GHERKIN-LINT
+============================================================
+Data da análise: 19/01/2026 23:14:15
+Arquivo analisado: output/6-FeatureEvaluation/featuresToEvaluation/Originais\coreshop_CoreShop\not_discountable_discount_amount_action_story_processado.feature
+Comando executado: node 6-FeatureEvaluation/gherkin-lint/dist/main.js -c 6-FeatureEvaluation/gherkin-lint/.gherkin-lintrc output/6-FeatureEvaluation/featuresToEvaluation/Originais\coreshop_CoreShop\not_discountable_discount_amount_action_story_processado.feature
+
+Status: ENCONTRADOS 12 PROBLEMAS
+
+PROBLEMAS ENCONTRADOS:
+----------------------------------------
+1. [0;4mD:\Meus Documentos\Documents\teste\output\6-FeatureEvaluation\featuresToEvaluation\Originais\coreshop_CoreShop\not_discountable_discount_amount_action_story_processado.feature[24m
+
+2. [38;5;243m1 [0m    Feature name is too long. Length of 56 is longer than the maximum allowed: 50                 [38;5;243mname-length[0m
+
+3. [38;5;243m4 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                      [38;5;243mindentation[0m
+
+4. [38;5;243m5 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                      [38;5;243mindentation[0m
+
+5. [38;5;243m6 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                      [38;5;243mindentation[0m
+
+6. [38;5;243m7 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                      [38;5;243mindentation[0m
+
+7. [38;5;243m8 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                      [38;5;243mindentation[0m
+
+8. [38;5;243m9 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                      [38;5;243mindentation[0m
+
+9. [38;5;243m10[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                      [38;5;243mindentation[0m
+
+10. [38;5;243m10[0m    Step "Then the cart total should be "10000" including tax" should use And instead of Then     [38;5;243muse-and[0m
+
+11. [38;5;243m12[0m    Multiple empty lines are not allowed                                                          [38;5;243mno-multiple-empty-lines[0m
+
+12. [38;5;243m13[0m    Multiple empty lines are not allowed                                                          [38;5;243mno-multiple-empty-lines[0m
+
+AVISOS/INFORMAÇÕES ADICIONAIS:
+----------------------------------------
+[0;4mD:\Meus Documentos\Documents\teste\output\6-FeatureEvaluation\featuresToEvaluation\Originais\coreshop_CoreShop\not_discountable_discount_amount_action_story_processado.feature[24m
+  [38;5;243m1 [0m    Feature name is too long. Length of 56 is longer than the maximum allowed: 50                 [38;5;243mname-length[0m
+  [38;5;243m4 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                      [38;5;243mindentation[0m
+  [38;5;243m5 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                      [38;5;243mindentation[0m
+  [38;5;243m6 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                      [38;5;243mindentation[0m
+  [38;5;243m7 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                      [38;5;243mindentation[0m
+  [38;5;243m8 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                      [38;5;243mindentation[0m
+  [38;5;243m9 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                      [38;5;243mindentation[0m
+  [38;5;243m10[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                      [38;5;243mindentation[0m
+  [38;5;243m10[0m    Step "Then the cart total should be "10000" including tax" should use And instead of Then     [38;5;243muse-and[0m
+  [38;5;243m12[0m    Multiple empty lines are not allowed                                                          [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m13[0m    Multiple empty lines are not allowed                                                          [38;5;243mno-multiple-empty-lines[0m
+
+
+
+
+RESUMO DOS PROBLEMAS POR TIPO:
+----------------------------------------
+  other: 12 ocorrência(s)

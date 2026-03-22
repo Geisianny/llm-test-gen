@@ -1,0 +1,8 @@
+Scenario 12: Fields are not required/hidden/read_only for Provider when editing users
+  Given  the provider has the following fields defined for users:
+  When  I go to the buyer user edit page for "alice"
+  Then  fields should be required:
+  Then  I should see the fields:
+  When  I press "Update User"
+  Then  I should see "User was successfully updated"
+

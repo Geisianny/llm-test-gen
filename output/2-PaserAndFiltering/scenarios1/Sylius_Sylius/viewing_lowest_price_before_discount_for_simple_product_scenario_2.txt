@@ -1,0 +1,5 @@
+Scenario 2: Seeing price block without lowest price before the discount
+  Tags: ['@no-api', '@ui']
+  When  I access the "Bizon Z056" product
+  Then  I should not see the lowest price before the discount in "United States" channel
+

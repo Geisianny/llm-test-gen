@@ -1,0 +1,3 @@
+Scenario 3: Create an empty minion profile with hostname via API
+  When  I call system.create_system_profile() with name "empty-profile-hostname" and hostname "min-retail.mgr.suse.de"
+

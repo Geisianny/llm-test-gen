@@ -1,0 +1,8 @@
+Scenario 6: Using Payum successfully placing an order using custom locale
+  Tags: ['@api', '@no-ui']
+  Given  I pick up cart in the "French (France)" locale
+  When  I add product "PHP T-Shirt" to the cart
+  And  I proceed through checkout process
+  And  I confirm my order
+  Then  my order's locale should be "French (France)"
+

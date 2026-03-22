@@ -1,0 +1,7 @@
+Scenario 3: Switching a currency applies only to the current channel
+  Tags: ['@no-api', '@ui']
+  When  I browse the "Web" channel
+  And  I switch to the "GBP" currency
+  And  I start browsing the "Mobile" channel
+  Then  I should still shop using the "USD" currency
+

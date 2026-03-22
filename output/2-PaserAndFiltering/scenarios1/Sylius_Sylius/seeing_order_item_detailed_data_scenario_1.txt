@@ -1,0 +1,12 @@
+Scenario 1: Seeing details of item in one row
+  Tags: ['@api', '@ui']
+  Given  I view the summary of the order "#00000666"
+  When  I check "Marvel T-Shirt" data
+  Then  its code should be "IRON_MAN_T_SHIRT"
+  And  its unit price should be $49.00
+  And  its total should be $193.60
+  And  its quantity should be 4
+  And  its discounted unit price should be $44.00
+  And  its subtotal should be $176.00
+  And  its tax should be $17.60
+

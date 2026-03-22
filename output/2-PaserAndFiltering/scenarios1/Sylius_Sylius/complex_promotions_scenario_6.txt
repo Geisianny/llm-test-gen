@@ -1,0 +1,11 @@
+Scenario 6: Receiving a discount on products from a specific taxon together with fixed discount on order
+  Tags: ['@api', '@ui']
+  Given  there is a promotion "Jacket-trousers pack"
+  And  it gives "10%" off on every product classified as "Jackets" and "$20.00" discount on every order
+  And  I added product "Iron Maiden trousers" to the cart
+  And  I added product "Black Sabbath jacket" to the cart
+  When  I check the details of my cart
+  Then  product "Black Sabbath jacket" price should be discounted by "$10.00"
+  And  my discount should be "-$30.00"
+  And  my cart total should be "$150.00"
+

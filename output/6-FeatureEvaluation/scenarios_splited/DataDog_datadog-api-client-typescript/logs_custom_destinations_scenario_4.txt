@@ -1,0 +1,5 @@
+Scenario: Update an existing custom destination
+  Given there is a custom destination with the name "My HTTP Destination" and URL "https://example.com/logs"
+  When the user updates the custom destination "My HTTP Destination" with the new URL "https://example.com/new-logs"
+  Then the system updates the custom destination successfully
+  And reflects the changes in the custom destinations page

@@ -1,0 +1,4 @@
+Scenario: Attempt to send a message to a non-existent user
+  Given there is no user with the email "nonexistent@example.com"
+  When a user sends a message to "nonexistent@example.com"
+  Then the system denies sending the message

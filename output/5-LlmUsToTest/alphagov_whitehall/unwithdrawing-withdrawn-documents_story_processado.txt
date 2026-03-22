@@ -1,0 +1,30 @@
+Scenario: Unwithdraw a withdrawn document
+  Given there is a withdrawn document with title "Example Document"
+  When the Managing Editor unwithdraws the document
+  Then the document status changes to "Draft"
+  And the document is available for editing
+
+Scenario: Unwithdraw a non-existent document
+  Given there is no document with title "Non Existent Document"
+  When the Managing Editor attempts to unwithdraw the document
+  Then the system displays an error message indicating that the document does not exist
+
+Scenario: Unwithdraw a document that is not withdrawn
+  Given there is a published document with title "Published Document"
+  When the Managing Editor attempts to unwithdraw the document
+  Then the system displays an error message indicating that the document is not withdrawn
+
+Scenario: Edit and re-withdraw a document after unwithdrawal
+  Given there is a withdrawn document with title "Example Document"
+  When the Managing Editor unwithdraws the document
+  And edits the document with new banners
+  And withdraws the document again
+  Then the document status changes to "Withdrawn"
+  And the document is not publicly accessible
+
+Scenario: Unwithdraw a document with annotations
+  Given there is a withdrawn document with title "Example Document"
+  When the Managing Editor unwithdraws the document
+  And adds annotations to the document
+  Then the document contains the added annotations
+  And the document status remains "Draft"

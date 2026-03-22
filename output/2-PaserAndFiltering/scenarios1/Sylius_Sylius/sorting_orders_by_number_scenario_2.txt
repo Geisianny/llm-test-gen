@@ -1,0 +1,7 @@
+Scenario 2: Changing the number sorting order
+  Tags: ['@api', '@ui']
+  Given  I am browsing orders
+  When  I switch the way orders are sorted by number
+  Then  I should see an order with "#000000003" number
+  But  the first order should have number "#000000001"
+

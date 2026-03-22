@@ -1,0 +1,8 @@
+Scenario 16: Cleanup: let the terminal be reinstalled again
+  When  I navigate to the Systems overview page of this "pxeboot_minion"
+  And  I follow "Remote Command"
+  And  I enter "#!/bin/sh\nrm /etc/ImageVersion*" as "script_body" text area
+  And  I click on "Schedule"
+  Then  I should see a "Remote Command has been scheduled" text
+  When  I wait until event "Remote Command" is completed
+

@@ -1,0 +1,4 @@
+Scenario 1: Install inter server sync package
+  When  I install packages "inter-server-sync" on this "server"
+  Then  "inter-server-sync" should be installed on "server"
+

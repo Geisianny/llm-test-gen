@@ -1,0 +1,13 @@
+Feature: Content for and content of
+
+Scenario 1: Store something by tag and print it by drop
+  Given  a provider "foo.3scale.localhost"
+  And  the current provider is foo.3scale.localhost
+  And  the current domain is foo.3scale.localhost
+  And  the provider has cms page "/some-page" with:
+  And  the provider has main layout with:
+  And  the cms page "/some-page" has main layout
+  And  I visit "/some-page"
+  Then  the html body should contain "<content></content>"
+  And  the html head should contain "<something></something>"
+

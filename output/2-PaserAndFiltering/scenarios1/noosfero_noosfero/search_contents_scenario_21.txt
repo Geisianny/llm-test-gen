@@ -1,0 +1,6 @@
+Scenario 21: show basic info on blog search results
+  Given  the following blogs
+  When  I search contents for "JSilva"
+  Then  I should see "JSilva blog" within ".search-result-title"
+  And  The page should contain ".icon-content-blog"
+

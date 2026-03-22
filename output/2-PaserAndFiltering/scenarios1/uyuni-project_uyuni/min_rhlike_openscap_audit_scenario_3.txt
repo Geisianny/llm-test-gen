@@ -1,0 +1,8 @@
+Scenario 3: Install the OpenSCAP packages on the Red Hat-like minion
+  Tags: ['@skip_if_github_validation']
+  Given  I am on the Systems overview page of this "rhlike_minion"
+  And  I install OpenSCAP dependencies on "rhlike_minion"
+  And  I follow "Software" in the content area
+  And  I click on "Update Package List"
+  And  I wait until event "Package List Refresh" is completed
+

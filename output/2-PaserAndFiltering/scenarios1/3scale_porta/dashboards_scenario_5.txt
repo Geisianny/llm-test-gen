@@ -1,0 +1,6 @@
+Scenario 5: Overdue invoice
+  Given  the following invoices:
+  And  the buyer pays the invoice but failed
+  When  I go to the earnings by month page
+  Then  the table should contain the following:
+

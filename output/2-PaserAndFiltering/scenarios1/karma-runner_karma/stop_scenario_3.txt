@@ -1,0 +1,6 @@
+Scenario 3: A server can be stopped and give informative output
+  Given  a configuration with:
+  When  I start a server in background
+  And  I stop Karma with additional arguments: "--log-level info"
+  Then  it passes with like:
+

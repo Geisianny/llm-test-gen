@@ -1,0 +1,7 @@
+Scenario 2: Physical Goods for a Business with tax number - Reverse tax
+  Given  the following subscriptions exist:
+  And  stripe billing is disabled
+  And  that the tax settings for eu business tax rules is true
+  When  the background task to reinvoice active subscriptions
+  And  there the latest invoice for "customer.one@example.org" will have a reverse charge
+

@@ -1,0 +1,9 @@
+Scenario 6: Trying to remove amount from existing tax rate
+  Tags: ['@ui']
+  Given  the store has "United States Sales Tax" tax rate of 20% for "Sports gear" within the "US" zone
+  And  I want to modify this tax rate
+  When  I remove its amount
+  And  I try to save my changes
+  Then  I should be notified that amount is required
+  And  this tax rate amount should still be 20%
+

@@ -1,0 +1,8 @@
+Scenario 1: Removing cart item
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  Given  I added product "T-Shirt banana" to the cart
+  When  I see the summary of my cart
+  And  I remove product "T-Shirt banana" from the cart
+  Then  my cart should be empty
+  And  my cart's total should be "$0.00"
+

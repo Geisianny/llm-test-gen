@@ -1,0 +1,5 @@
+Scenario 7: Visit monitoring endpoints on the Red Hat-like minion
+  When  I visit "Prometheus node exporter" endpoint of this "rhlike_minion"
+  And  I visit "Prometheus apache exporter" endpoint of this "rhlike_minion"
+  And  I visit "Prometheus postgres exporter" endpoint of this "rhlike_minion"
+

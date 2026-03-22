@@ -1,0 +1,8 @@
+Scenario 6: Retrieve a collection filtered using the search filter and a name converter
+  Tags: ['@createSchema']
+  Given  there are 10 dummy objects
+  When  I send the following GraphQL request:
+  Then  the JSON node "data.dummies.edges" should have 1 element
+  And  the JSON node "data.dummies.edges[0].node.id" should be equal to "/dummies/2"
+  And  the JSON node "data.dummies.edges[0].node.name_converted" should be equal to "Converted 2"
+

@@ -1,0 +1,13 @@
+Scenario 6: select destination folder
+  Tags: ['@selenium-fixme']
+  When  I follow "Show/Hide"
+  And  I attach the file "public/images/rails.png" to "file"
+  And  I select "joaosilva" from "parent_id" within "#media-upload-form"
+  And  I attach the file "public/503.jpg" to "file"
+  And  I go to joaosilva's cms
+  Then  I should not see "rails.png"
+  But  I should see "503"
+  When  I follow "Gallery"
+  Then  I should see "rails"
+  But  I should not see "503"
+

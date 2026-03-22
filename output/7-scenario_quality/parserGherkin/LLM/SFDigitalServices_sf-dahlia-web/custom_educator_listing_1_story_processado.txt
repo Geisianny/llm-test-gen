@@ -1,0 +1,59 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: custom_educator_listing_1_story_processado.feature
+Caminho relativo: SFDigitalServices_sf-dahlia-web\custom_educator_listing_1_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\SFDigitalServices_sf-dahlia-web\custom_educator_listing_1_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: custom_educator_listing_1_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Apply to Custom Educator Listing with affirmative response
+   Steps: 6
+   - Given there is a Custom Educator Listing available
+   - And the user is on the listing page
+   - When the user applies to the listing
+   - And answers "yes" to the screening question about employment with the San Francisco Unified School District
+   - And provides a valid job classification code
+   - Then the system allows the user to proceed with the full application
+2. Apply to Custom Educator Listing with negative response
+   Steps: 6
+   - Given there is a Custom Educator Listing available
+   - And the user is on the listing page
+   - When the user applies to the listing
+   - And answers "no" to the screening question about employment with the San Francisco Unified School District
+   - Then the system blocks the user from proceeding
+   - And displays an error message indicating ineligibility
+3. Apply to Custom Educator Listing with invalid job classification code
+   Steps: 7
+   - Given there is a Custom Educator Listing available
+   - And the user is on the listing page
+   - When the user applies to the listing
+   - And answers "yes" to the screening question about employment with the San Francisco Unified School District
+   - And provides an invalid job classification code
+   - Then the system blocks the user from proceeding
+   - And displays an error message indicating invalid job classification code
+4. Access Custom Educator Listing application form
+   Steps: 6
+   - Given there is a Custom Educator Listing available
+   - And the user is on the listing page
+   - When the user applies to the listing
+   - And answers "yes" to the screening question about employment with the San Francisco Unified School District
+   - And provides a valid job classification code
+   - Then the system displays the full application form
+5. Cancel application to Custom Educator Listing
+   Steps: 6
+   - Given there is a Custom Educator Listing available
+   - And the user is on the listing page
+   - And has started the application process
+   - When the user cancels the application
+   - Then the system returns the user to the listing page
+   - And the user's application progress is not saved

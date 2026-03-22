@@ -1,0 +1,7 @@
+Scenario 6: Filtering non-translatable product attributes
+  Tags: ['@api', '@ui']
+  When  I choose "No" in the translatable filter
+  And  I filter
+  Then  I should see a single product attribute in the list
+  And  I should see the product attribute "T-Shirt with cotton" in the list
+

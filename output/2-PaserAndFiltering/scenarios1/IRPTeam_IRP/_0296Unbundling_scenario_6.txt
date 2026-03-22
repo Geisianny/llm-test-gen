@@ -1,0 +1,42 @@
+Scenario 6: _029611 create Unbundling (+check movements) for bundl (there is a Bundling document) for which the specification was changed
+  *  Change specification Dress+Trousers
+  Given  I open hyperlink "e1cib/list/Catalog.Specifications"
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I activate field named "Quantity*" in "FormTable*" table
+  And  I input "4,000" text in "Quantity" field of "FormTable*" table
+  And  I finish line editing in "FormTable*" table
+  And  I click "Save and close" button
+  And  Delay 5
+  *  Create Unbundling for item Dress+Trousers
+  Given  I open hyperlink "e1cib/list/Document.Unbundling"
+  And  I click the button named "FormCreate"
+  And  I click Select button of "Company" field
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I click Select button of "Item bundle" field
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I click Select button of "Item key bundle" field
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I click Choice button of the field named "Unit"
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I input "2,000" text in the field named "Quantity"
+  And  I click Select button of "Store" field
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I move to "Item list" tab
+  And  in the table "ItemList" I click "By bundle content" button
+  And  "ItemList" table contains lines
+  And  I click the button named "FormPost"
+  And  I delete "$$NumberUnbundling0029611$$" variable
+  And  I delete "$$Unbundling0029611$$" variable
+  And  I save the value of "Number" field as "$$NumberUnbundling0029611$$"
+  And  I save the window as "$$Unbundling0029611$$"
+  And  I click the button named "FormPostAndClose"
+  *  Check the creation of Unbundling
+  And  "List" table contains lines
+  And  I close all client application windows
+

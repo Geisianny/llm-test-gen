@@ -1,0 +1,6 @@
+Scenario: Charity worker updates donation link successfully
+  Given there is a charity worker with an organization
+  And the organization's donation link is currently "https://old-donation-link.com"
+  When the charity worker updates the donation link to "https://new-donation-link.com"
+  Then the system saves the new donation link
+  And displays a confirmation message that the donation link has been updated

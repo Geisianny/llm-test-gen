@@ -1,0 +1,11 @@
+Scenario 13: hide description
+  Tags: ['@selenium-fixme']
+  Given  the following products
+  And  I am on /catalog/artebonito
+  And  I reload and wait for the page
+  When  I click "product-description-button"
+  Then  I should see "A small description" within "#product-description"
+  And  the "product-description" should be visible
+  When  I click "product-list"
+  Then  the "product-description" should not be visible
+

@@ -1,0 +1,8 @@
+Scenario 2: Cancel a downtime returns "OK" response
+  Tags: ['@team:DataDog/monitor-app']
+  Given  there is a valid "downtime" in the system
+  And  new "CancelDowntime" request
+  And  request contains "downtime_id" parameter from "downtime.id"
+  When  the request is sent
+  Then  the response status is 204 OK
+

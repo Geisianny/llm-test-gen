@@ -1,0 +1,8 @@
+Scenario 14: Search without tabs nor related searches
+  Tags: ['@javascript', '@a11y']
+  Given  the following BingV7 Affiliates exist:
+  When  I am on bar.gov's redesigned search page
+  Then  I should not see "Everything"
+  And  I should not see "More"
+  And  I should not see "Related Searches"
+

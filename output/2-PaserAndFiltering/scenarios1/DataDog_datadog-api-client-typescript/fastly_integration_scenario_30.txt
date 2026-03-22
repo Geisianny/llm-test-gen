@@ -1,0 +1,9 @@
+Scenario 30: Update Fastly service returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "UpdateFastlyService" request
+  And  request contains "account_id" parameter from "REPLACE.ME"
+  And  request contains "service_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"tags": ["myTag", "myTag2:myValue"]}, "id": "abc123", "type": "fastly-services"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+

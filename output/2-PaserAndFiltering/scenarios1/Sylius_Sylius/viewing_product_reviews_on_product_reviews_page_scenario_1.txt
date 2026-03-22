@@ -1,0 +1,5 @@
+Scenario 1: Viewing all accepted product reviews on product's reviews page
+  Tags: ['@api', '@ui']
+  When  I check this product's reviews
+  Then  I should see 3 product reviews in the list
+

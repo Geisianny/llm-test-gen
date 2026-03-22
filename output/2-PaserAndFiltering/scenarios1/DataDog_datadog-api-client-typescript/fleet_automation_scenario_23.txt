@@ -1,0 +1,7 @@
+Scenario 23: List all schedules returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "ListFleetSchedules" enabled
+  And  new "ListFleetSchedules" request
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

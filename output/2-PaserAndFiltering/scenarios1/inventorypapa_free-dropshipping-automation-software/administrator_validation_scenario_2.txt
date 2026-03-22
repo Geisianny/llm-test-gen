@@ -1,0 +1,7 @@
+Scenario 2: Trying to add a new administrator without password
+  Tags: ['@ui', '@api']
+  When  I want to create a new administrator
+  And  I do not specify its password
+  And  I try to add it
+  Then  I should be notified that the password is required
+

@@ -1,0 +1,11 @@
+Scenario 4: Members of partners group can activate and approve accounts
+  Given  an active user "member" of account "foo.3scale.localhost"
+  And  user "member" has access to the admin section "partners"
+  And  current domain is the admin domain of provider "foo.3scale.localhost"
+  And  provider "foo.3scale.localhost" has "multiple_users" switch allowed
+  Given  a pending buyer "pending account" signed up to provider "foo.3scale.localhost"
+  When  I log in as provider "member"
+  And  I follow "2 Accounts"
+  And  I follow "Approve"
+  Then  I should see "Developer account was approved"
+

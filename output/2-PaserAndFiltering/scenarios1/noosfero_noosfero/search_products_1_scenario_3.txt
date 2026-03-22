@@ -1,0 +1,10 @@
+Scenario 3: search products by category
+  Given  the following product_category
+  And  the following product
+  When  I go to the search products page
+  And  I fill in "search-input" with "software livre"
+  And  I press "Search"
+  Then  I should see "Noosfero" within "#search-results"
+  And  I should not see "wikis consultancy"
+  And  I should not see "social networks consultancy"
+

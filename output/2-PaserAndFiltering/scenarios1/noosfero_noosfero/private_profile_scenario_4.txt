@@ -1,0 +1,5 @@
+Scenario 4: community private profiles should not display sensible information
+  Given  I am logged in as "joao"
+  When  I go to Safernet's homepage
+  Then  I should not see "Basic information"
+

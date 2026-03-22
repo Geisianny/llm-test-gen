@@ -1,0 +1,11 @@
+Scenario 2: New Application
+  Given  provider "foo.3scale.localhost" has "multiple_applications" visible
+  And  the following service plan:
+  And  a buyer "john" signed up to service plan "Gold"
+  When  I log in as "john" on foo.3scale.localhost
+  And  I go to the dev portal new application page
+  Then  I should see "New Application"
+  When  builtin page "applications/new" of provider "foo.3scale.localhost" has content "EDITED app page"
+  And  I go to the dev portal new application page
+  Then  I should see "EDITED app page"
+

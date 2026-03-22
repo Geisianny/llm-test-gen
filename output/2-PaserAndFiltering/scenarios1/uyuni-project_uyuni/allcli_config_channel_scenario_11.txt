@@ -1,0 +1,5 @@
+Scenario 11: Check that file has been created on Debian-like minion
+  Tags: ['@deblike_minion']
+  When  I wait until file "/etc/s-mgr/config" exists on "deblike_minion"
+  Then  file "/etc/s-mgr/config" should contain "COLOR=white" on "deblike_minion"
+

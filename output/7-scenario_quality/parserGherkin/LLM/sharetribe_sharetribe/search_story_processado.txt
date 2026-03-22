@@ -1,0 +1,52 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: search_story_processado.feature
+Caminho relativo: sharetribe_sharetribe\search_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\sharetribe_sharetribe\search_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: search_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Search listings by keyword
+   Steps: 4
+   - Given there are listings with titles and descriptions
+   - When the user types a keyword "electronics" in the search box
+   - And hits enter
+   - Then the system displays listings containing the keyword "electronics" in their titles or descriptions
+2. Search listings with partial keyword matching
+   Steps: 4
+   - Given there are listings with titles "Smartphone" and "Electronic Accessories"
+   - When the user types a keyword "phone" in the search box
+   - And hits enter
+   - Then the system displays listings containing "Smartphone" in the results
+3. Apply price range filter
+   Steps: 5
+   - Given there are listings with prices between $10 and $1000
+   - When the user types a keyword "electronics" in the search box
+   - And hits enter
+   - And sets the price range filter to $50 to $200
+   - Then the system displays listings containing "electronics" with prices between $50 and $200
+4. Apply custom numeric field filter
+   Steps: 5
+   - Given there are listings with a custom numeric field "year"
+   - When the user types a keyword "vintage" in the search box
+   - And hits enter
+   - And sets the custom numeric field "year" filter to 1990 to 2000
+   - Then the system displays listings containing "vintage" with "year" between 1990 and 2000
+5. Search with multiple filters
+   Steps: 6
+   - Given there are listings with titles, descriptions, prices, and custom numeric fields
+   - When the user types a keyword "electronics" in the search box
+   - And hits enter
+   - And sets the price range filter to $100 to $500
+   - And sets the custom numeric field "year" filter to 2010 to 2020
+   - Then the system displays listings containing "electronics" with prices between $100 and $500 and "year" between 2010 and 2020

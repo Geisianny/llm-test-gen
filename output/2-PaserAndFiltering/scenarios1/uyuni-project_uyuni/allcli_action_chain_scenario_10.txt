@@ -1,0 +1,6 @@
+Scenario 10: Cleanup: remove package and repository used in action chain for several systems
+  When  I remove package "andromeda-dummy" from this "sle_minion" without error control
+  And  I remove package "andromeda-dummy" from this "ssh_minion" without error control
+  And  I disable repository "test_repo_rpm_pool" on this "sle_minion" without error control
+  And  I disable repository "test_repo_rpm_pool" on this "ssh_minion" without error control
+

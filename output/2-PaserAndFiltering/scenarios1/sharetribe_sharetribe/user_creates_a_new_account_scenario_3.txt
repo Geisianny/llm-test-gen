@@ -1,0 +1,9 @@
+Scenario 3: Trying to create account with unavailable email
+  When  I fill in "First name" with "Testmanno"
+  And  I fill in "Last name" with "Namez"
+  And  I fill in "person_password1" with "test"
+  And  I fill in "Confirm password" with "test"
+  And  I fill in "Email address" with "kassi_testperson2@example.com"
+  And  I press "Create account"
+  Then  I should see "The email you gave is already in use."
+

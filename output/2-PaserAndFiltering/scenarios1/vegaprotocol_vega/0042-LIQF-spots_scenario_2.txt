@@ -1,0 +1,16 @@
+Scenario 2: 002: Liquidity fee factors are recalculated every time the liquidity demand estimate changes.  (0042-LIQF-064)
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the parties place the following orders:
+  Then  the opening auction period ends for market "BTC/ETH"
+  When  the network moves ahead "1" blocks
+  And  the following trades should be executed:
+  And  the liquidity fee factor should be "0.001" for the market "BTC/ETH"
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the network moves ahead "1" blocks
+  And  the liquidity fee factor should be "0.001" for the market "BTC/ETH"
+  When  the network moves ahead "1" epochs
+  And  the liquidity fee factor should be "0.002" for the market "BTC/ETH"
+

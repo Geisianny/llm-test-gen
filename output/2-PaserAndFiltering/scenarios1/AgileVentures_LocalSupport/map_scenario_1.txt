@@ -1,0 +1,5 @@
+Scenario 1: Show all events in map on events page map
+  Tags: ['@javascript', '@vcr', '@billy']
+  Given  I visit the events page
+  Then  I should see the following event markers in the map:
+

@@ -1,0 +1,6 @@
+Scenario 6: Search for organisations in the "People with disabilities" category
+  Given  I select the "People with disabilities" category from Who They Help
+  And  I press "Submit"
+  Then  I should see "I help people"
+  And  I should not see "I hate animals"
+

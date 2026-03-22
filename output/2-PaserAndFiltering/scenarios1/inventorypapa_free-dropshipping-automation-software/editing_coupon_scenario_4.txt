@@ -1,0 +1,5 @@
+Scenario 4: Seeing a disabled code field when editing a coupon
+  Tags: ['@ui']
+  Given  I want to modify the "SANTA2016" coupon for this promotion
+  Then  the code field should be disabled
+

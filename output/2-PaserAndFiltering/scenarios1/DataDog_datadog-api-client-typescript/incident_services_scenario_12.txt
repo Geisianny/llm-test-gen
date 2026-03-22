@@ -1,0 +1,12 @@
+Scenario 12: Get details of an incident service returns "OK" response
+  Tags: ['@team:Datadog/incident-app']
+  Given  there is a valid "service" in the system
+  And  operation "GetIncidentService" enabled
+  And  new "GetIncidentService" request
+  And  request contains "service_id" parameter from "service.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.id" is equal to "{{service.data.id}}"
+  And  the response "data.type" is equal to "services"
+  And  the response "data.attributes.name" has the same value as "service.data.attributes.name"
+

@@ -1,0 +1,19 @@
+Scenario 9: Add/remove user
+  Tags: ['@javascript']
+  Given  I am logged in with email "affiliate_manager@fixtures.org"
+  When  I go to the usagov's Dashboard page
+  And  I follow "Manage Users"
+  And  I follow "Add User"
+  When  I fill in the following:
+  And  I submit the form by pressing "Add"
+  Then  I should see "You have added another_affiliate_manager@fixtures.org to this site"
+  When  I follow "Add User"
+  And  I fill in the following:
+  And  I submit the form by pressing "Add"
+  Then  I should see "Email can't be blank"
+  When  I fill in "Email" with "admin@email.gov"
+  And  I submit the form by pressing "Add"
+  Then  I should see "notified admin@email.gov on how to login and to access this site"
+  When  I press "Remove" within the first table body row and confirm "Are you sure you wish to remove admin@email.gov from this site?"
+  Then  I should see "You have removed admin@email.gov from this site"
+

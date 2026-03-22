@@ -1,0 +1,26 @@
+Scenario 14: Create a recurring action to apply "uptodate" state to a system group
+  When  I follow the left menu "Systems > System Groups"
+  And  I follow "Recurring-Action-test-group"
+  And  I follow "Recurring Actions" in the content area
+  Then  I should see a "No schedules created. Use Create to add a schedule" text
+  When  I click on "Create"
+  And  I wait until I see "Schedule Name" text
+  And  I enter "Recurring action to keep Recurring-Action-test-group uptodate" as "scheduleName"
+  And  I select "Custom state" from "actionTypeDescription"
+  And  I wait until I see "Configure states to execute" text
+  And  I check radio button "schedule-daily"
+  And  I enter 1 minutes from now as "time-daily_time"
+  And  I check "Update System-cbox"
+  And  I click on "Save Changes"
+  And  I wait until I see "Edit State Ranks" text
+  And  I click on "Confirm"
+  And  I click on "Create Schedule"
+  Then  I wait until I see "Schedule successfully created" text
+  And  I should see a "Recurring action to keep Recurring-Action-test-group uptodate" text
+  And  I should see a "Group" text
+  When  I am on the "Events" page of this "sle_minion"
+  And  I follow "History"
+  Then  I wait until I see the event "Apply recurring states [uptodate] scheduled" completed during last minute, refreshing the page
+  When  I am on the Systems overview page of this "sle_minion"
+  Then  I wait at most 500 seconds until I do not see "System is up to date" text, refreshing the page
+

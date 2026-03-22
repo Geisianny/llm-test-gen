@@ -1,0 +1,5 @@
+Scenario 2: As a referent I cannot create my department site with a different scope than referent
+  Given  I am logged with "referent@en-marche-dev.fr" via OAuth client "JeMengage Web" with scope "jemengage_admin"
+  When  I send a "POST" request to "/api/v3/department_sites?scope=deputy"
+  Then  the response status code should be 403
+

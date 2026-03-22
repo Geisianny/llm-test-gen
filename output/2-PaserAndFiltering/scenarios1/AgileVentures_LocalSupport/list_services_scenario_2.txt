@@ -1,0 +1,4 @@
+Scenario 2: See a list of current services
+  Tags: ['@vcr']
+  Then  the index should contain:
+

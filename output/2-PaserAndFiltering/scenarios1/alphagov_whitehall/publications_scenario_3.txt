@@ -1,0 +1,7 @@
+Scenario 3: Publishing an edition I submitted is forbidden
+  Given  I am an editor
+  And  there is a user called "Beardy"
+  And  "Beardy" drafts a new publication "Britain's Hairiest Ministers"
+  When  I submit the publication "Britain's Hairiest Ministers"
+  Then  I should not be able to publish the publication "Britain's Hairiest Ministers"
+

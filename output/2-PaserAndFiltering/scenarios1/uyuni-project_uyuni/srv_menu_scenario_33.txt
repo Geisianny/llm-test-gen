@@ -1,0 +1,6 @@
+Scenario 33: Sidebar link destination for Systems => Custom System Info
+  When  I follow the left menu "Systems > Custom System Info"
+  Then  I should see a "Custom System Info Keys" text
+  And  I should see a "Create Key" link
+  And  I should see a "No Custom Info Keys Found" text
+

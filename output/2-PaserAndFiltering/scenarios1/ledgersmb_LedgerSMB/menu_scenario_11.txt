@@ -1,0 +1,11 @@
+Scenario Outline 11: Navigate to menu "<path>" and open screen "<screen>" - Example 11
+  When  I navigate the menu and select the item at "Budgets > Add Budget"
+  Then  I should see the Budget screen
+
+  Examples:
+    | path | screen |
+    | Budgets > Add Budget | Budget |
+    | Budgets > Search | Budget search |
+    | Cash & Banking > Payment | Single Payment Vendor Selection |
+    | Cash & Banking > Receipt | Single Payment Customer Selection |
+

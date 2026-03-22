@@ -1,0 +1,7 @@
+Scenario 3: See only the map container and search form rendered in the body
+  Given  the following organisations exist:
+  Given  the following volunteer opportunities exist:
+  Given  I visit the embedded index page
+  Then  I should see the map container element on the page
+  And  I should see the search form
+

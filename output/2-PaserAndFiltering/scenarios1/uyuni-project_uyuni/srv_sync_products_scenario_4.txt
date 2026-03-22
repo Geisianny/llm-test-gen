@@ -1,0 +1,12 @@
+Scenario 4: View the channels list in the products page
+  Tags: ['@scc_credentials', '@susemanager']
+  When  I follow the left menu "Admin > Setup Wizard > Products"
+  And  I wait until I do not see "currently running" text
+  And  I wait until I do not see "Loading" text
+  And  I enter "SUSE Linux Enterprise Server for SAP Applications 15 x86_64" as the filtered product description
+  And  I click the channel list of product "SUSE Linux Enterprise Server for SAP Applications 15 x86_64"
+  Then  I should see a "Product Channels" text
+  And  I should see a "Mandatory Channels" text
+  And  I should see a "Optional Channels" text
+  When  I close the modal dialog
+

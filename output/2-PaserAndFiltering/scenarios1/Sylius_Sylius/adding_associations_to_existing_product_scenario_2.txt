@@ -1,0 +1,6 @@
+Scenario 2: Adding an association to na existing product
+  Tags: ['@api', '@no-ui']
+  When  I associate as "Accessories" the product "LG G3" with the products "LG headphones" and "LG earphones"
+  And  this product should have an association "Accessories"
+  And  this association should have products "LG headphones" and "LG earphones"
+

@@ -1,0 +1,10 @@
+Scenario 3: As offerer i can't reply to a new message without filling required fields
+  Given  A user send me the message "Hello, can i rent your listing?" about my listing "Listing One"
+  When  I am logged in as user "offerer@cocorico.rocks" with password "12345678"
+  And  I click on dashboard menu "Messages" of "offerer"
+  Then  I should be on the "dashboard message" page
+  And  I should see "1 result" in the "span.result-counter" element
+  When  I follow "Reply"
+  And  I press "Send"
+  Then  I should see "An error has occurred." in the "div.flashes div.alert" element
+

@@ -1,0 +1,4 @@
+Scenario 3: Add a new guest cart rule for a customer which is invalid
+  Given  the cart belongs to customer "some-customer@something.com"
+  Then  the cart rule should be invalid for my cart
+

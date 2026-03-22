@@ -1,0 +1,16 @@
+Scenario 20: Change file on Salt minion and compare
+  Tags: ['@sle_minion']
+  When  I am on the Systems overview page of this "sle_minion"
+  And  I store "COLOR=red" into file "/etc/s-mgr/config" on "sle_minion"
+  And  I follow "Configuration" in the content area
+  And  I follow "Compare Files" in the content area
+  And  I check "/etc/s-mgr/config" in the list
+  And  I click on "Compare Files"
+  And  I click on "Schedule Compare"
+  Then  I should see a "1 files scheduled for comparison." text
+  When  I wait until event "Show differences between profiled config files and deployed config files scheduled" is completed
+  Then  I should see a "Differences exist" link
+  When  I follow "Differences exist"
+  Then  I should see a "+COLOR=white" text
+  And  I should see a "-COLOR=red" text
+

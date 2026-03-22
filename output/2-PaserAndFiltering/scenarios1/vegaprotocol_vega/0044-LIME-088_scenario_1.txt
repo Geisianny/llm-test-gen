@@ -1,0 +1,18 @@
+Scenario 1: 001: If a liquidity provider has `fraction_of_time_on_book` = `0.3`, `market.liquidity.commitmentMinTimeFraction = 0.6`, `market.liquidity.sla.nonPerformanceBondPenaltySlope = 0.7`, `market.liquidity.sla.nonPerformanceBondPenaltyMax = 0.6`and the market parameter change `market.liquidity.commitmentMinTimeFraction = 0.3` is enacted during the epoch then at the end of the current epoch LP will have their bond slashed. If the LP has `fraction_of_time_on_book` = `0.3` at the end of the next epoch, they are meeting their commitment and will not forfeit any of their bond stake. (0044-LIME-088)
+  Tags: ['@Now']
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  When  the network moves ahead "1" blocks
+  Then  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/MAR22"
+  And  the following trades should be executed:
+  And  the market data for the market "ETH/MAR22" should be:
+  And  the liquidity fee factor should be "0.015" for the market "ETH/MAR22"
+  When  the network moves ahead "7" blocks
+  And  the parties place the following pegged iceberg orders:
+  When  the network moves ahead "4" blocks
+  Then  the following transfers should happen:
+  Then  the markets are updated:
+  Then  the network moves ahead "1" epochs
+  Then  the following transfers should happen:
+

@@ -1,0 +1,6 @@
+Scenario 5: Admin removes custom fields from category
+  Tags: ['@javascript']
+  When  I remove listing field "House type"
+  And  I remove listing field "Balcony type"
+  Then  I should see that I do not have any listing fields
+

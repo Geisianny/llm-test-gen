@@ -1,0 +1,12 @@
+Scenario 6: Not being able to select shipping method not available for shipping category of products in cart
+  Tags: ['@api', '@ui']
+  Given  the store has "Over-sized" shipping category
+  And  product "Targaryen T-Shirt" belongs to "Over-sized" shipping category
+  And  the store has "Raven Post" shipping method with "$10.00" fee
+  And  the store has "Dragon Post" shipping method with "$30.00" fee
+  And  this shipping method requires that no units match to "Over-sized" shipping category
+  And  I added product "Targaryen T-Shirt" to the cart
+  And  I addressed the cart
+  When  I want to complete the shipping step
+  Then  I should not be able to select "Dragon Post" shipping method
+

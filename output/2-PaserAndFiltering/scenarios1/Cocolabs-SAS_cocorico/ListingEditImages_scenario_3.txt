@@ -1,0 +1,12 @@
+Scenario 3: As offerer i can delete an image from my listing
+  Given  I am logged in as user "offerer@cocorico.rocks" with password "12345678"
+  When  I click on dashboard menu "Listings" of "offerer"
+  And  I follow "Edit"
+  And  I follow "Photos"
+  And  I click on the element with css selector "#listing_images a.remove"
+  And  I wait 1000 ms
+  And  I press button with css ".form-area [type=submit]"
+  And  I wait 1000 ms
+  Then  I should be on the "dashboard listing edit images" page which "listing title" equal to "Listing One"
+  And  I should see "Update successful"
+

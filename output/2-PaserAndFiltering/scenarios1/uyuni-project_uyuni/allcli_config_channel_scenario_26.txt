@@ -1,0 +1,7 @@
+Scenario 26: Cleanup: remove the mixed configuration channel
+  When  I follow the left menu "Configuration > Channels"
+  And  I follow "Mixed Channel"
+  And  I follow "Delete Channel"
+  And  I click on "Delete Config Channel"
+  Then  file "/srv/susemanager/salt/manager_org_1/mixedchannel/init.sls" should not exist on server
+

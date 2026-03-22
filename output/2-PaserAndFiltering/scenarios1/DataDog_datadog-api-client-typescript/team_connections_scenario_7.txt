@@ -1,0 +1,7 @@
+Scenario 7: List team connections returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/aaa-omg']
+  Given  operation "ListTeamConnections" enabled
+  And  new "ListTeamConnections" request
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

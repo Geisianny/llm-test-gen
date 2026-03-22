@@ -1,0 +1,13 @@
+Scenario 3: Add a user to a role returns "OK" response
+  Tags: ['@team:DataDog/aaa-core-access']
+  Given  there is a valid "role" in the system
+  And  there is a valid "user" in the system
+  And  new "AddUserToRole" request
+  And  request contains "role_id" parameter from "role.data.id"
+  And  body with value {"data": {"id": "{{ user.data.id}}", "type": "{{ user.data.type }}"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data[0].id" is equal to "{{ user.data.id }}"
+  And  the response "data[0].type" is equal to "{{ user.data.type }}"
+  And  the response "data[0].relationships.roles.data" has item with field "id" with value "{{ role.data.id }}"
+

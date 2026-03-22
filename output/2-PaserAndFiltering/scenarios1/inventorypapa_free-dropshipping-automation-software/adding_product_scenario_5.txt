@@ -1,0 +1,14 @@
+Scenario 5: Adding a new configurable product
+  Tags: ['@ui']
+  Given  the store has a product option "Bottle size" with a code "bottle_size"
+  And  this product option has the "0.7" option value with code "bottle_size_medium"
+  And  this product option has also the "0.5" option value with code "bottle_size_small"
+  And  I want to create a new configurable product
+  When  I specify its code as "WHISKEY_GENTLEMEN"
+  And  I name it "Gentleman Jack" in "English (United States)"
+  And  I add the "Bottle size" option to it
+  And  I set its slug to "whiskey/gentleman-jack" in "English (United States)"
+  And  I add it
+  Then  I should be notified that it has been successfully created
+  And  the product "Gentleman Jack" should appear in the store
+

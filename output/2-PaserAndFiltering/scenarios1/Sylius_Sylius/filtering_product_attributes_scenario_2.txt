@@ -1,0 +1,7 @@
+Scenario 2: Filtering product attributes by name
+  Tags: ['@api', '@ui']
+  When  I search by "T-Shirt" name
+  Then  I should see 2 product attributes in the list
+  And  I should see the product attribute "T-Shirt brand" in the list
+  And  I should also see the product attribute "T-Shirt with cotton" in the list
+

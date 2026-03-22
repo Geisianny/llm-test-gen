@@ -1,0 +1,16 @@
+Scenario 4: _090502 check barcode display by Item and item key
+  *  Opening the item catalog and selecting Dress
+  Given  I open hyperlink "e1cib/list/Catalog.Items"
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  *  CheckItem barcodes by Item
+  And  In this window I click command interface button "Barcodes"
+  And  "List" table contains lines
+  *  CheckItem barcodes by Item key
+  And  In this window I click command interface button "Item keys"
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  In this window I click command interface button "Barcodes"
+  And  "List" table contains lines
+  And  I close all client application windows
+

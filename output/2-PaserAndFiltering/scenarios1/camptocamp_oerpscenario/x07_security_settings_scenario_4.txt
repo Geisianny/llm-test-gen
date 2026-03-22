@@ -1,0 +1,5 @@
+Scenario 4: MULTICOMPANY SECURITY RULES
+  Tags: ['@multicompany_base_finance_multicompany_security_rules']
+  Given  I need a "ir.rule" with name: "res_partner: read access on my partner"
+  And  having:
+

@@ -1,0 +1,4 @@
+Scenario 4: Get an error when provided page number is not valid
+  When  I send a "GET" request to "/dummies?page[page]=0"
+  Then  the response status code should be 400
+

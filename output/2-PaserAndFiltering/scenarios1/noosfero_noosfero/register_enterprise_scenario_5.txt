@@ -1,0 +1,8 @@
+Scenario 5: some signup fields
+  Given  the following enterprise fields are signup fields
+  And  I follow "Groups" within "#section-relationships"
+  When  I follow "Register a new enterprise"
+  Then  I should see "Foundation year"
+  Then  I should see "Contact person"
+  Then  I should see "Contact email"
+

@@ -1,0 +1,13 @@
+Scenario 13: Update an SLO correction returns "OK" response
+  Tags: ['@team:DataDog/slo-app']
+  Given  there is a valid "slo" in the system
+  And  there is a valid "correction" for "slo"
+  And  new "UpdateSLOCorrection" request
+  And  request contains "slo_correction_id" parameter from "correction.data.id"
+  And  body with value {"data": {"attributes": {"category": "Deployment", "description": "{{ unique }}", "end": {{ timestamp("now + 1h") }}, "start": {{ timestamp("now") }}, "timezone": "UTC"}, "type": "correction"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.id" has the same value as "correction.data.id"
+  And  the response "data.attributes.slo_id" has the same value as "correction.data.attributes.slo_id"
+  And  the response "data.attributes.category" is equal to "Deployment"
+

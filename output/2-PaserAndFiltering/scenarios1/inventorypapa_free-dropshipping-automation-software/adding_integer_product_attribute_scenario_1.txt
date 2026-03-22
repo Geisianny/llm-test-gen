@@ -1,0 +1,9 @@
+Scenario 1: Adding a new integer product attribute
+  Tags: ['@ui']
+  Given  I want to create a new integer product attribute
+  When  I specify its code as "book_pages"
+  And  I name it "Book pages" in "English (United States)"
+  And  I add it
+  Then  I should be notified that it has been successfully created
+  And  the integer attribute "Book pages" should appear in the store
+

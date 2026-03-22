@@ -1,0 +1,7 @@
+Scenario 5: User views listing and payments are not enabled
+  And  there is a listing with title "Lecture" from "kassi_testperson1" with category "Services" and with listing shape "Lending"
+  And  I am on the home page
+  When  I follow "Lecture"
+  Then  I should see "Borrow this item"
+  Then  I should not see payment logos
+

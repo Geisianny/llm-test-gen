@@ -1,0 +1,7 @@
+Scenario 1: added an unexistent code
+  Given  feature "enterprise_activation" is enabled on environment
+  And  I am on joaosilva's control panel
+  And  I fill in "Enterprise activation code" with "abcde"
+  When  I follow "Activate"
+  Then  I should see "Invalid enterprise code"
+

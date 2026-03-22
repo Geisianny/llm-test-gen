@@ -1,0 +1,6 @@
+Scenario: Autocomplete zones for authenticated user within assigned area
+  Given there is an authenticated user with scope to manage "city" zones
+  And there are "city" zones within the user's assigned area
+  When the user requests autocomplete suggestions for "city" zones with "new" via the API
+  Then the system returns a list of "city" zones with names containing "new" within the user's assigned area
+  And the response is successful

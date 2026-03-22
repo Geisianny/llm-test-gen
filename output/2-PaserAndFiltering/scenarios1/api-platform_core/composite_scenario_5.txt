@@ -1,0 +1,6 @@
+Scenario 5: Get the first composite relation with a missing identifier
+  Tags: ['@createSchema']
+  Given  there are Composite identifier objects
+  When  I send a "GET" request to "/composite_relations/compositeLabel=1;"
+  Then  the response status code should be 404
+

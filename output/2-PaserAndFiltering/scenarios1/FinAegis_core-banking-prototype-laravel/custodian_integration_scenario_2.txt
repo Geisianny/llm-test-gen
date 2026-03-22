@@ -1,0 +1,9 @@
+Scenario 2: Distributed fund allocation
+  Given  a user has 1000.00 EUR to deposit
+  And  bank allocation is set to:
+  When  the user deposits the funds
+  Then  400.00 EUR should go to Paysera LT
+  And  300.00 EUR should go to Deutsche Bank
+  And  300.00 EUR should go to Santander
+  And  all deposits should be confirmed
+

@@ -1,0 +1,40 @@
+Scenario 1: Network long then liquidates short positions (0003-MTMK-015)(0012-POSR-016)
+  Tags: ['@NetPNL']
+  Given  the initial insurance pool balance is "10000" for all the markets
+  And  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  When  the parties place the following orders:
+  When  the parties place the following orders:
+  And  the opening auction period ends for market "ETH/MAR22"
+  Then  the market data for the market "ETH/MAR22" should be:
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the parties should have the following profit and loss:
+  And  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+  Given  the parties amend the following orders:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the mark price should be "100" for the market "ETH/MAR22"
+  And  the parties should have the following profit and loss:
+  And  the insurance pool balance should be "10000" for the market "ETH/MAR22"
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the parties should have the following profit and loss:
+  And  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+  Given  the parties amend the following orders:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the mark price should be "120" for the market "ETH/MAR22"
+  And  the parties should have the following profit and loss:
+  And  the insurance pool balance should be "10000" for the market "ETH/MAR22"
+  Given  the parties amend the following orders:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the mark price should be "60" for the market "ETH/MAR22"
+  And  the parties should have the following profit and loss:
+  And  the insurance pool balance should be "10060" for the market "ETH/MAR22"
+

@@ -1,0 +1,5 @@
+Scenario 2: Check the VHM page
+  When  I follow the left menu "Systems > Virtual Host Managers"
+  Then  I should see a "Virtual Host Managers" text
+  And  I should see a "No Virtual Host Managers." text
+

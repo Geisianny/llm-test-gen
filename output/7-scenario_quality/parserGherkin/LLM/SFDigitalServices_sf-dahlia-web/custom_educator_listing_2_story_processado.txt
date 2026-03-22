@@ -1,0 +1,57 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: custom_educator_listing_2_story_processado.feature
+Caminho relativo: SFDigitalServices_sf-dahlia-web\custom_educator_listing_2_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\SFDigitalServices_sf-dahlia-web\custom_educator_listing_2_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: custom_educator_listing_2_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Successful application with valid job classification code
+   Steps: 6
+   - Given there is a web user applying to Custom Educator Listing 2
+   - And the user has employment with the San Francisco Unified School District
+   - And has a valid job classification code "12345"
+   - When the user submits the application form with the job classification code "12345"
+   - Then the system accepts the application
+   - And displays a confirmation message
+2. Application with invalid job classification code
+   Steps: 6
+   - Given there is a web user applying to Custom Educator Listing 2
+   - And the user has employment with the San Francisco Unified School District
+   - And has an invalid job classification code "invalid"
+   - When the user submits the application form with the job classification code "invalid"
+   - Then the system rejects the application
+   - And displays an error message indicating that the job classification code is invalid
+3. Application with negative response to employment question
+   Steps: 5
+   - Given there is a web user applying to Custom Educator Listing 2
+   - And the user does not have employment with the San Francisco Unified School District
+   - When the user submits the application form
+   - Then the system allows the user to complete the full application
+   - And displays an informational note about the eligibility criteria
+4. Application with missing job classification code
+   Steps: 6
+   - Given there is a web user applying to Custom Educator Listing 2
+   - And the user has employment with the San Francisco Unified School District
+   - And has not provided a job classification code
+   - When the user submits the application form without a job classification code
+   - Then the system rejects the application
+   - And displays an error message indicating that the job classification code is required
+5. Successful completion of full application after negative response
+   Steps: 6
+   - Given there is a web user applying to Custom Educator Listing 2
+   - And the user does not have employment with the San Francisco Unified School District
+   - And has completed the full application form
+   - When the user submits the full application
+   - Then the system accepts the full application
+   - And displays a confirmation message indicating successful submission

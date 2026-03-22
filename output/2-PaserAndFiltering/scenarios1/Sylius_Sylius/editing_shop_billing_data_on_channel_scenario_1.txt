@@ -1,0 +1,10 @@
+Scenario 1: Editing shop billing data on channel
+  Tags: ['@api', '@ui']
+  When  I want to modify a channel "Web Store"
+  And  I specify shop billing data for this channel as "Götterdämmerung", "Valhalla", "123", "Asgard", "666777" tax ID and "United States" country
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this channel company should be "Götterdämmerung"
+  And  this channel tax ID should be "666777"
+  And  this channel shop billing address should be "Valhalla", "123" "Asgard" and "United States" country
+

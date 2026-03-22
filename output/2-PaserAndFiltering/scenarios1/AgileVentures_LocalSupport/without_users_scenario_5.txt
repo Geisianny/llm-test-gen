@@ -1,0 +1,7 @@
+Scenario 5: As a non-superadmin trying to access orphans index
+  Given  cookies are approved
+  Given  I am signed in as a non-superadmin
+  And  I visit the invite users to become admin of organisations page
+  Then  I should be on the home page
+  And  I should see "You must be signed in as a superadmin to perform this action!"
+

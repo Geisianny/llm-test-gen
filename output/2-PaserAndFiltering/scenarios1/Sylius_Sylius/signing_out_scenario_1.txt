@@ -1,0 +1,6 @@
+Scenario 1: Signing out
+  Tags: ['@no-api', '@ui']
+  When  I log out
+  Then  I should be redirected to the homepage
+  And  I should not be logged in
+

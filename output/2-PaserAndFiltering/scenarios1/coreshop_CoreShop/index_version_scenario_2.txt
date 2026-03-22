@@ -1,0 +1,4 @@
+Scenario 2: Save object as version, index should not update
+  Given  the object-instance has following values as version:
+  Then  the index column "booleanTest" for object-instance "test1" should have integer value "0"
+

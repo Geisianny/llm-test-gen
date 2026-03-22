@@ -1,0 +1,6 @@
+Scenario: View payments for a user with subscriptions but no payments
+  Given there is an authenticated user with existing subscriptions
+  And the user has no payments linked to their subscriptions
+  When the user requests to view all payments
+  Then the system displays an empty list of payments
+  And displays a message indicating that there are no payments associated with their subscriptions

@@ -1,0 +1,5 @@
+Scenario 6: Admin tries to remove all listing shapes
+  Tags: ['@javascript']
+  When  I try to remove all listing shapes from category "Furniture"
+  Then  I should see 1 validation errors
+

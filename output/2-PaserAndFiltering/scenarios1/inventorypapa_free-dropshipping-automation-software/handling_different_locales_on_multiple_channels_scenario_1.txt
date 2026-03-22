@@ -1,0 +1,7 @@
+Scenario 1: Showing locales only from the current channel
+  Tags: ['@ui']
+  When  I browse the "Mobile" channel
+  Then  I should shop using the "polski (Polska)" locale
+  And  I should be able to shop using the "norweski (Norwegia)" locale
+  And  I should not be able to shop using the "angielski (Stany Zjednoczone)" locale
+

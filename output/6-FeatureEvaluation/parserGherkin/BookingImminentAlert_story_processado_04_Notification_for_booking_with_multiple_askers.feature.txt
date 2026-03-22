@@ -1,0 +1,24 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 17/12/2025 23:40:59
+Arquivo analisado: BookingImminentAlert_story_processado_04_Notification_for_booking_with_multiple_askers.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation\BookingImminentAlert_story_processado_04_Notification_for_booking_with_multiple_askers.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: Notification for booking with multiple askers
+Descrição: Não possui
+Total de cenários: 1
+
+CENÁRIOS IDENTIFICADOS:
+1. Notification for booking with multiple askers
+   Steps: 5
+   - Given there are multiple askers who have requested the same booking
+   - And the booking is scheduled to start soon
+   - When the booking is about to start
+   - Then the system sends a notification to each of the askers
+   - And each asker is informed that the booking is about to start

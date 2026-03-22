@@ -1,0 +1,6 @@
+Scenario 2: Execute a test excluding an explicitly included file
+  Given  a configuration with:
+  When  I start Karma
+  Then  it passes with like:
+  And  it passes with like:
+

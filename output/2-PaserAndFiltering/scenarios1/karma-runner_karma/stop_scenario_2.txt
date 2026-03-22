@@ -1,0 +1,6 @@
+Scenario 2: A server can be stopped
+  Given  a configuration with:
+  When  I start a server in background
+  And  I stop Karma
+  Then  The server is dead with exit code 0
+

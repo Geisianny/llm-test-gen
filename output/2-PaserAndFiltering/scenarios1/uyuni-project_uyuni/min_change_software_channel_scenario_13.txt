@@ -1,0 +1,20 @@
+Scenario 13: Cleanup: subscribe the system back to previous channels
+  Tags: ['@susemanager']
+  When  I follow "Software" in the content area
+  And  I follow "Software Channels" in the content area
+  And  I wait until I do not see "Loading..." text
+  Then  radio button "SLE-Product-SLES15-SP4-Pool for x86_64" should be checked
+  And  I wait until I do not see "Loading..." text
+  And  I wait until I see "SLE15-SP4-Installer-Updates for x86_64" text
+  And  I include the recommended child channels
+  And  I check "SLE-Module-DevTools15-SP4-Pool for x86_64"
+  And  I check "Fake-RPM-SUSE-Channel"
+  And  I uncheck "SLE15-SP4-Installer-Updates for x86_64"
+  And  I click on "Next"
+  Then  I should see a "Confirm Software Channel Change" text
+  When  I click on "Confirm"
+  Then  I should see a "Changing the channels has been scheduled." text
+  When  I follow "scheduled" in the content area
+  And  I wait until I see "1 system successfully completed this action." text, refreshing the page
+  Then  channel "SLE15-SP4-Installer-Updates for x86_64" should be disabled on "sle_minion"
+

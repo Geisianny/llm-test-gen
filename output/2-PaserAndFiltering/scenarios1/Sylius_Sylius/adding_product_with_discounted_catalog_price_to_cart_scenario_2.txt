@@ -1,0 +1,11 @@
+Scenario 2: Adding a simple product with catalog and cart promotion to the cart
+  Tags: ['@api', '@ui']
+  Given  there is a promotion "Cheap Stuff"
+  And  this promotion gives "50%" off on every product when the item total is at least "$5.00"
+  And  I added product "T-Shirt" to the cart
+  And  I added product "Mug" to the cart
+  When  I check the details of my cart
+  And  I should see "T-Shirt" with discounted unit price "$7.50" in my cart
+  And  I should see "T-Shirt" with original price "$20.00" in my cart
+  And  I should see "Mug" with discounted unit price "$20.00" in my cart
+

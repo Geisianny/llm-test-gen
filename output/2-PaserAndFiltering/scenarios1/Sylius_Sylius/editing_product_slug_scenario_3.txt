@@ -1,0 +1,8 @@
+Scenario 3: Prevent from editing a slug while changing a product name
+  Tags: ['@api', '@ui']
+  Given  the store has a product "Mansion of Madness"
+  When  I want to modify this product
+  And  I rename it to "Mansion of Madness: Second Edition" in "English (United States)" locale
+  And  I save my changes
+  Then  the slug of the "Mansion of Madness: Second Edition" product should still be "mansion-of-madness"
+

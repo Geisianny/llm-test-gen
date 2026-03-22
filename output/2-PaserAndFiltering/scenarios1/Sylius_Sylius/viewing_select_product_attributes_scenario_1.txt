@@ -1,0 +1,7 @@
+Scenario 1: Viewing a detailed page with product's select attribute
+  Tags: ['@api', '@ui']
+  Given  this product has select attribute "T-Shirt material" with values "Banana skin" and "Cotton"
+  When  I check this product's details
+  Then  I should see the product attribute "T-Shirt material" with value "Banana skin" on the list
+  And  I should also see the product attribute "T-Shirt material" with value "Cotton" on the list
+

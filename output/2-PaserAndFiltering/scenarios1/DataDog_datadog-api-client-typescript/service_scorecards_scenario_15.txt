@@ -1,0 +1,11 @@
+Scenario 15: Update Scorecard outcomes asynchronously returns "Bad Request" response
+  Tags: ['@team:DataDog/service-catalog']
+  Given  operation "UpdateScorecardOutcomesAsync" enabled
+  And  there is a valid "create_scorecard_rule" in the system
+  And  new "UpdateScorecardOutcomesAsync" request
+  And  body with value {"data": {"attributes": {"results": [{"rule_id": "{{create_scorecard_rule.data.id}}", "entity_reference": "service:my-service", "state": "INVALID"}]}, "type": "batched-outcome"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+  And  the response "errors" has length 1
+  And  the response "errors[0]" has field "detail"
+

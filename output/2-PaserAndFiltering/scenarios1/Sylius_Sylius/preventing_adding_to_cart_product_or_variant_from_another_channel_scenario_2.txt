@@ -1,0 +1,7 @@
+Scenario 2: Preventing customer from adding product with variant from another channel
+  Tags: ['@api', '@no-ui']
+  Given  I am browsing channel "Poland"
+  When  I pick up my cart
+  And  I try to add "Large" variant of product "Baquette"
+  Then  I should be informed that product "Baquette" does not exist
+

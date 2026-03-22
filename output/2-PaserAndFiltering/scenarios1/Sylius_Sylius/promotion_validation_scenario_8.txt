@@ -1,0 +1,8 @@
+Scenario 8: Adding a promotion with label exceeding 255 characters
+  Tags: ['@api', '@ui']
+  Given  there is a promotion "Christmas sale"
+  When  I want to modify this promotion
+  And  I replace its label with a string exceeding the limit in "Polish (Poland)" locale
+  And  I try to save my changes
+  Then  I should be notified that promotion label in "Polish (Poland)" locale is too long
+

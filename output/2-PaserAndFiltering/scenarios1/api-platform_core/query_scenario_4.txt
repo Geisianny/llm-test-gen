@@ -1,0 +1,17 @@
+Scenario 4: Retrieve an item with different relations (all unset)
+  Tags: ['@createSchema']
+  Given  there are 2 multiRelationsDummy objects having each 0 manyToOneRelation, 0 manyToManyRelations, 0 oneToManyRelations and 0 embeddedRelations
+  When  I send the following GraphQL request:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the JSON node "errors" should not exist
+  And  the JSON node "data.multiRelationsDummy.id" should be equal to "/multi_relations_dummies/2"
+  And  the JSON node "data.multiRelationsDummy.name" should be equal to "Dummy #2"
+  And  the JSON node "data.multiRelationsDummy.manyToOneRelation" should be null
+  And  the JSON node "data.multiRelationsDummy.manyToOneResolveRelation" should be null
+  And  the JSON node "data.multiRelationsDummy.manyToManyRelations.edges" should have 0 element
+  And  the JSON node "data.multiRelationsDummy.oneToManyRelations.edges" should have 0 element
+  And  the JSON node "data.multiRelationsDummy.nestedCollection" should have 0 element
+  And  the JSON node "data.multiRelationsDummy.nestedPaginatedCollection.edges" should have 0 element
+

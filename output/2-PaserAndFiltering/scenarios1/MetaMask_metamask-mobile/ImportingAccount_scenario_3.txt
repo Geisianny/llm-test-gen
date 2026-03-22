@@ -1,0 +1,15 @@
+Scenario Outline 3: Import an account using a valid private key - Example 1
+  Given  I am on the wallet view
+  When  I tap on the Identicon
+  Then  the account list should be visible
+  When  I tap import account
+  Then  I am taken to the Import Account screen
+  When  I type cbfd798afcfd1fd8ecc48cbecb6dc7e876543395640b758a90e11d986e758ad1 into the private key input field
+  And  I tap on the private key import button
+  Then  The account is imported
+  And  I am on the wallet view
+
+  Examples:
+    | PRIVATEKEY |
+    | cbfd798afcfd1fd8ecc48cbecb6dc7e876543395640b758a90e11d986e758ad1 |
+

@@ -1,0 +1,5 @@
+Scenario 2: 
+  Given  I am signed in as a charity worker related to "Dogs Rule"
+  And  I visit the show page for the volunteer_op titled "Litter Box Scooper 2"
+  Then  I should not see a link or button "Delete"
+

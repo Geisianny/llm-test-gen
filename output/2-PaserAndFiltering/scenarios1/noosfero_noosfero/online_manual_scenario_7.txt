@@ -1,0 +1,6 @@
+Scenario 7: adding title on browser in a topic
+  When  I go to /doc
+  And  I follow "User features"
+  And  I follow "Commenting articles"
+  Then  the page title should be "Commenting articles - User features - Online Manual - Colivre.net"
+

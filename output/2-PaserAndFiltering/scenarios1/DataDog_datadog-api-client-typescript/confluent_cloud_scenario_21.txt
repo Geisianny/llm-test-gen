@@ -1,0 +1,7 @@
+Scenario 21: List Confluent Account resources returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "ListConfluentResource" request
+  And  request contains "account_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 200 OK
+

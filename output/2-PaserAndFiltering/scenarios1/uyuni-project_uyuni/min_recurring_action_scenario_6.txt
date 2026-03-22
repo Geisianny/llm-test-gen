@@ -1,0 +1,8 @@
+Scenario 6: Cleanup: Delete the minion Custom state Recurring Action
+  When  I am on the "Recurring Actions" page of this "sle_minion"
+  Then  I should see a "custom_state_schedule_name_changed" text
+  When  I click the "custom_state_schedule_name_changed" item delete button
+  And  I wait until I see "Delete Recurring Action Schedule" text
+  And  I click on the red confirmation button
+  Then  I wait until I see "Schedule 'custom_state_schedule_name_changed' has been deleted." text
+

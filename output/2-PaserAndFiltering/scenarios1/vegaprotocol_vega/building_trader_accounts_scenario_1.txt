@@ -1,0 +1,5 @@
+Scenario 1: a party is added to the system. A general account is created for each asset
+  Given  the parties deposit on asset's general account the following amount:
+  Then  "party1" should have one account per asset
+  And  "party1" should have one margin account per market
+

@@ -1,0 +1,6 @@
+Scenario 3: Meta Title and Description for organisation edit page
+  Given  I am signed in as a superadmin
+  Then  I visit the edit page for the organisation named "Friendly"
+  Then  I should have a page with a title tag set to: "Friendly | Harrow volunteering"
+  And  it should have a Meta Description
+

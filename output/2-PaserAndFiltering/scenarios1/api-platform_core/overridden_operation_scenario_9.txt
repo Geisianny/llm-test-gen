@@ -1,0 +1,6 @@
+Scenario 9: Use a POST operation to do a Remote Procedure Call without identifiers
+  Tags: ['@createSchema']
+  When  I add "Content-Type" header equal to "application/json"
+  And  I send a "POST" request to "/rpc"
+  Then  the response status code should be 202
+

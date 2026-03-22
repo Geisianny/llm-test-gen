@@ -1,0 +1,6 @@
+Scenario 2: Impersonating a customer in new tab
+  Tags: ['@no-api', '@ui']
+  When  I impersonate the customer "remnant@london.uk"
+  And  I visit the store
+  Then  I should be logged in as "Tanith Low"
+

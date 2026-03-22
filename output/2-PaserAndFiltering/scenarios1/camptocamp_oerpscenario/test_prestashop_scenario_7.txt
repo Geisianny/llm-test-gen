@@ -1,0 +1,9 @@
+Scenario 7: Import the products from Prestashop
+  Tags: ['@products_import_prestashop']
+  When  an instance with absolute id "base_external.prestashop" exists
+  Then  I set the instance default product category on category with name "Root Catalog"
+  And  I save the instance
+  Then  I import the products (6 - Import Products)
+  And  I import the product images (7 - Import Images)
+  And  I import the product links (8 - Import Product Links)
+

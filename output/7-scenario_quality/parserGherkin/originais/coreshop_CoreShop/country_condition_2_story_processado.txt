@@ -1,0 +1,33 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 19/01/2026 23:13:57
+Arquivo analisado: country_condition_2_story_processado.feature
+Caminho relativo: coreshop_CoreShop\country_condition_2_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/Originais\coreshop_CoreShop\country_condition_2_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: country_condition_2_story_processado
+Descrição: Não possui
+Total de cenários: 2
+
+CENÁRIOS IDENTIFICADOS:
+1. Add a new country category price rule which is valid
+   Steps: 5
+   - Given adding a product price rule named "country-discount"
+   - And the price rule is active
+   - And the price rule has a condition countries with country "Austria"
+   - Then the price rule should be valid for product "Shoe"
+   - Then the price rule should be valid for product "Shoe 2"
+2. Add a new country category price rule which is invalid
+   Steps: 6
+   - Given the site has a country "Germany" with currency "EUR"
+   - Given adding a product price rule named "country-discount"
+   - And the price rule is active
+   - And the price rule has a condition countries with country "Germany"
+   - Then the price rule should be invalid for product "Shoe"
+   - Then the price rule should be invalid for product "Shoe 2"

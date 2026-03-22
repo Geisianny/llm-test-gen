@@ -1,0 +1,6 @@
+Scenario: COGS posting with existing inventory sold short
+  Given there are sales recorded without associated costs
+  And a purchase invoice is available with the cost of goods
+  When the purchase invoice is posted
+  Then the system automatically posts the COGS
+  And updates the accounting records accordingly

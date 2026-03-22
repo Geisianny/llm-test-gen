@@ -1,0 +1,15 @@
+Scenario 6: Get a RUM retention filter returns "OK" response
+  Tags: ['@replay-only', '@team:DataDog/rum-backend']
+  Given  new "GetRetentionFilter" request
+  And  request contains "app_id" parameter with value "a33671aa-24fd-4dcd-ba4b-5bbdbafe7690"
+  And  request contains "rf_id" parameter with value "4b95d361-f65d-4515-9824-c9aaeba5ac2a"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.id" is equal to "4b95d361-f65d-4515-9824-c9aaeba5ac2a"
+  And  the response "data.type" is equal to "retention_filters"
+  And  the response "data.attributes.event_type" is equal to "session"
+  And  the response "data.attributes.name" is equal to "Test retention filter for session"
+  And  the response "data.attributes.enabled" is equal to true
+  And  the response "data.attributes.query" is equal to "custom_query"
+  And  the response "data.attributes.sample_rate" is equal to 25
+

@@ -1,0 +1,9 @@
+Scenario 3: Contributor can create content
+  And  current domain is the admin domain of provider "foo.3scale.localhost"
+  And  I log in as "bob"
+  And  I follow "Add New Content"
+  Then  I should be on the new html block page
+  When  I fill in the following:
+  And  I press "Save"
+  Then  I should see "Text 'Test Html Block' was created"
+

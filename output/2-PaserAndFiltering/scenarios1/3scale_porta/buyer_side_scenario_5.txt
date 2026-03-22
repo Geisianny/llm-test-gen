@@ -1,0 +1,10 @@
+Scenario 5: Restoring a received deleted message
+  Given  a message sent from provider "foo.3scale.localhost" to buyer "bob" with subject "Wassup?" and body "Everything OK?"
+  When  I go to the dashboard
+  And  I follow "Messages 1"
+  And  I follow "Delete message"
+  And  I follow "Trash"
+  And  I press a button to restore the message from "foo.3scale.localhost" with subject "Wassup?"
+  And  I follow "Inbox"
+  Then  I should see a message from "foo.3scale.localhost" with subject "Wassup?"
+

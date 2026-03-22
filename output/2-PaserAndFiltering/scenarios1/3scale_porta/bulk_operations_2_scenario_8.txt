@@ -1,0 +1,7 @@
+Scenario 8: Can't change the plan of applications from different services
+  Given  item "Bob's App" is selected
+  And  item "Another API App" is selected
+  When  they select bulk action "Change application plan"
+  Then  should not see "Change plan" within the modal
+  And  should see "You have selected applications from different services"
+

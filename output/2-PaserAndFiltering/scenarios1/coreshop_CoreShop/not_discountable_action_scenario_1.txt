@@ -1,0 +1,4 @@
+Scenario 1: Adding no not-discountable price rule
+  Given  I add the product "Shoe" to my cart
+  Then  the cart item with product should not have a custom attribute named "not_discountable"
+

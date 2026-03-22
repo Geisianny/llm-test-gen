@@ -1,0 +1,8 @@
+Scenario 11: Search events returns "OK" response
+  Tags: ['@team:DataDog/event-management']
+  Given  new "SearchEvents" request
+  And  body with value {"filter": {"query": "datadog-agent", "from": "2020-09-17T11:48:36+01:00", "to": "2020-09-17T12:48:36+01:00"}, "sort": "timestamp", "page": {"limit": 5}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data" has length 0
+

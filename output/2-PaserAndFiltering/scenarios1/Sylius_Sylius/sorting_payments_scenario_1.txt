@@ -1,0 +1,7 @@
+Scenario 1: Sorting payments by date in ascending order
+  Tags: ['@api', '@ui']
+  When  I browse payments
+  And  I sort payments by date in ascending order
+  Then  I should see payment for the "#00000001" order as 1st in the list
+  And  I should see payment for the "#00000002" order as 2nd in the list
+

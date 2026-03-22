@@ -1,0 +1,8 @@
+Scenario 1: Get a validation error on an attribute
+  Tags: ['@createSchema']
+  When  I send a "POST" request to "/dummy_problems" with body:
+  Then  the response status code should be 422
+  And  the response should be in JSON
+  And  the JSON should be valid according to the JSON API schema
+  And  the JSON should be equal to:
+

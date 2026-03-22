@@ -1,0 +1,7 @@
+Scenario 53: The Debian 12 minion is healthy
+  Tags: ['@debian12_minion']
+  Then  "debian12_minion" should have a FQDN
+  And  reverse resolution should work for "debian12_minion"
+  And  "debian12_minion" should communicate with the server using public interface
+  And  the clock from "debian12_minion" should be exact
+

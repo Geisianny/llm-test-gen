@@ -1,0 +1,7 @@
+Scenario 3: USER RIGHTS SETTINGS
+  Given  we select users below:
+  Then  we assign all groups to the users
+  Given  I need a "res.users" with oid: scen.fr_main_user
+  And  having:
+  And  we assign to user the groups bellow
+

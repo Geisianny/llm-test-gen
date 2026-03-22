@@ -1,0 +1,8 @@
+Scenario 5: Get SLO report returns "OK" response
+  Tags: ['@skip', '@team:DataDog/slo-app']
+  Given  operation "GetSLOReport" enabled
+  And  new "GetSLOReport" request
+  And  request contains "report_id" parameter with value "9fb2dc2a-ead0-11ee-a174-9fe3a9d7627f"
+  When  the request is sent
+  Then  the response status is 200 OK
+

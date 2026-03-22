@@ -1,0 +1,7 @@
+Scenario 33: The Amazon 2023 Salt minion is healthy
+  Tags: ['@amazon2023_minion']
+  Then  "amazon2023_minion" should have a FQDN
+  And  reverse resolution should work for "amazon2023_minion"
+  And  "amazon2023_minion" should communicate with the server using public interface
+  And  the clock from "amazon2023_minion" should be exact
+

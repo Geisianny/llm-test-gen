@@ -1,0 +1,9 @@
+Scenario 1: End-of-day interest calculation batch
+  Given  1000 active accounts exist
+  And  the daily interest rate is 0.01%
+  When  I execute the interest calculation batch
+  Then  interest should be calculated for all eligible accounts
+  And  interest should be credited to account balances
+  And  a batch summary report should be generated
+  And  the operation should complete within 5 minutes
+

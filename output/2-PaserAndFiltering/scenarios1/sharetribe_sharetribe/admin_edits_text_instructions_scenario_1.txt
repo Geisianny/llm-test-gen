@@ -1,0 +1,15 @@
+Scenario 1: Admin user can edit private marketplace homepage content
+  Then  I should not see "Private marketplace homepage content"
+  When  community "test" is private
+  And  I refresh the page
+  Then  I should see "Private marketplace homepage content"
+  When  I follow "Edit information"
+  And  I change the contents of "private_community_homepage_content" to "Private homepage info"
+  And  I click save on the editor
+  Then  I should see "Edit information"
+  When  I refresh the page
+  Then  I should see "Private homepage info"
+  When  I log out
+  And  I go to the homepage
+  Then  I should see "Private homepage info"
+

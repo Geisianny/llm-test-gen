@@ -1,0 +1,18 @@
+Feature: Read quote
+
+Background: 
+  Given  the following accounts exist:
+  And  the follow products exist:
+  And  the follow prices exist:
+  And  the following features exist:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price 1000 in "USD" with:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price 2000 in "USD" with:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price 3000 in "USD" with:
+  And  the follow customers exist:
+
+Scenario 1: Read Quote
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  a quote for "customer.seven@example.org" exists in "USD":
+  When  I view the quote for "customer.seven@example.org"
+  Then  I will see a quote for a total of 10000
+

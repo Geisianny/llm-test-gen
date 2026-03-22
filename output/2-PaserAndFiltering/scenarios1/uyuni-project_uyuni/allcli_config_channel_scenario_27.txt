@@ -1,0 +1,4 @@
+Scenario 27: Cleanup: delete configuration files on remaining Salt minion
+  Tags: ['@sle_minion']
+  When  I destroy "/etc/s-mgr" directory on "sle_minion"
+

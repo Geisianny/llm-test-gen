@@ -1,0 +1,6 @@
+Scenario 1: See a list of current volunteer opportunities
+  Tags: ['@vcr']
+  Given  I visit the volunteer opportunities page
+  And  cookies are approved
+  Then  the index should contain:
+

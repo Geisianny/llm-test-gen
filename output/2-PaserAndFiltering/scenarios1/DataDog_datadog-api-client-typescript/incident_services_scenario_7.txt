@@ -1,0 +1,7 @@
+Scenario 7: Get a list of all incident services returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:Datadog/incident-app']
+  Given  operation "ListIncidentServices" enabled
+  And  new "ListIncidentServices" request
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

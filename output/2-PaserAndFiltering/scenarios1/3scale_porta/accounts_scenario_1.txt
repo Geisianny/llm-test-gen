@@ -1,0 +1,16 @@
+Scenario 1: Edit and show account details
+  Tags: ['@javascript']
+  Given  the admin of account "foo.3scale.localhost" has email "admin@foo.3scale.localhost"
+  Given  master provider has the following fields defined for accounts:
+  And  current domain is the admin domain of provider "foo.3scale.localhost"
+  When  I log in as provider "foo.3scale.localhost"
+  And  I go to the provider edit account page
+  Then  I should see "Edit Account Details"
+  When  I fill in the following:
+  And  I select "United States of America" from "Country"
+  And  I select "Santiago" from "Time Zone"
+  And  I press "Update Account"
+  Then  I should see "The account information was updated"
+  And  I should see the account details:
+  And  provider "Fantastically awesome API" time zone should be "Santiago"
+

@@ -1,0 +1,50 @@
+Scenario 1: Navigation from Dashboard widget
+  Given  the current page is the provider dashboard
+  When  they follow "Create Backend" within the apis dashboard widget
+  Then  the current page is the admin portal new backend api page
+
+
+
+Scenario 2: Navigation from context selector
+  Given  the current page is the provider dashboard
+  When  they select "Backends" from the context selector
+  And  follow "Create a backend"
+  Then  the current page is the admin portal new backend api page
+
+
+
+Scenario 3: Create a new Backend API
+  Given  they go to the admin portal new backend api page
+  When  the form is submitted with:
+  Then  they should see a toast alert with text "Backend created"
+  And  the current page is the admin portal overview page of backend "My Backend"
+
+
+
+Scenario 4: The form won't be submitted without Name and URL
+  Given  they go to the admin portal new backend api page
+  When  the form is submitted with:
+  And  the current page is the admin portal new backend api page
+  When  the form is submitted with:
+  And  the current page is the admin portal new backend api page
+  But  the form is submitted with:
+  Then  they should see a toast alert with text "Backend created"
+  And  the current page is the admin portal overview page of backend "My Backend"
+
+
+
+Scenario 5: System name is invalid
+  Given  they go to the admin portal new backend api page
+  When  the form is submitted with:
+  Then  they should see a toast alert with text "Backend could not be created"
+  And  field "System name" has inline error "invalid"
+
+
+
+Scenario 6: System name is in use
+  Given  the provider has the following backend api:
+  Given  they go to the admin portal new backend api page
+  When  the form is submitted with:
+  Then  they should see a toast alert with text "Backend could not be created"
+  Then  field "System name" has inline error "has already been taken"
+

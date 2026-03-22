@@ -1,0 +1,13 @@
+Scenario 4: Pre-requisite: ensure the errata cache is computed before software states tests
+  Given  I am on the Systems overview page of this "sle_minion"
+  When  I follow "Software" in the content area
+  And  I follow "List / Remove" in the content area
+  And  I enter "andromeda-dummy" as the filtered package name
+  And  I click on the filter button until page does contain "andromeda-dummy-1.0" text
+  When  I follow the left menu "Admin > Task Schedules"
+  And  I follow "errata-cache-default"
+  And  I follow "errata-cache-bunch"
+  Then  I click on "Single Run Schedule"
+  And  I should see a "bunch was scheduled" text
+  Then  I wait until the table contains "FINISHED" or "SKIPPED" followed by "FINISHED" in its first rows
+

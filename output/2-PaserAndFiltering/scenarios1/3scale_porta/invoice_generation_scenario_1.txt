@@ -1,0 +1,10 @@
+Scenario 1: Multiple buyers subscribed to a paid plan
+  Tags: ['@commit-transactions', '@ignore-backend']
+  Given  the following application plans:
+  And  a buyer "Jane" signed up to application plan "Premium"
+  And  time flies to 10th February 2011
+  And  a buyer "Bob" signed up to application plan "Premium"
+  And  time flies to 20th April 2011
+  When  they go to the admin portal invoices page
+  Then  the table should contain the following:
+

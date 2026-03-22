@@ -1,0 +1,3 @@
+Scenario 11: Bootstrap via API a non-existing system
+  When  I call system.bootstrap() on unknown host, I should get an API fault
+

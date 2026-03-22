@@ -1,0 +1,5 @@
+Scenario 3: Hidden and not editable extra fields should not be editable
+  When  they go to the dev portal new application page
+  Then  they should see the fields:
+  But  they should not see the fields:
+

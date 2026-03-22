@@ -1,0 +1,17 @@
+Scenario 16: Cleanup: subscribe system back to default base channel
+  Tags: ['@uyuni']
+  Given  I am on the Systems overview page of this "sle_minion"
+  When  I follow "Software" in the content area
+  And  I disable repository "test_repo_rpm_pool" on this "sle_minion" without error control
+  And  I follow "Software Channels" in the content area
+  And  I wait until I do not see "Loading..." text
+  And  I check default base channel radio button of this "sle_minion"
+  And  I wait for child channels to appear
+  And  I check "Uyuni Client Tools for openSUSE Tumbleweed (x86_64) (Development)"
+  And  I check "Fake-RPM-SUSE-Channel"
+  And  I click on "Next"
+  Then  I should see a "Confirm Software Channel Change" text
+  When  I click on "Confirm"
+  Then  I should see a "Changing the channels has been scheduled." text
+  And  I wait until event "Subscribe channels scheduled" is completed
+

@@ -1,0 +1,8 @@
+Scenario 4: As a logged-in user I can reply to a national survey for Jemarche data survey (new body structure)
+  Given  I am logged with "michelle.dufour@example.ch" via OAuth client "J'écoute" with scope "jemarche_app"
+  When  I send a "POST" request to "/api/v3/jemarche_data_surveys/5191f388-ccb0-4a93-b7f9-a15f107287fb/reply" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+  And  I should have 0 email
+

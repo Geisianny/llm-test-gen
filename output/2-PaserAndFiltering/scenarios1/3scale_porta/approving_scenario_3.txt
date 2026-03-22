@@ -1,0 +1,5 @@
+Scenario 3: Approve button is not shown for rejected accounts
+  Given  a rejected buyer "bob" signed up to provider "foo.3scale.localhost"
+  When  I go to the buyer account page for "bob"
+  Then  I should not see button to approve buyer "bob"
+

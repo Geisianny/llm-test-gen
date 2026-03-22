@@ -1,0 +1,5 @@
+Scenario 3: Import the customer groups from Magento
+  Tags: ['@customer_groups_magento']
+  Given  an instance with absolute id "base_external.magento" exists
+  Then  I import the customer groups (1 - Import Customer Groups (Partner Categories))
+

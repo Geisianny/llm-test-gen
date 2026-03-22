@@ -1,0 +1,6 @@
+Scenario 5: Logging in as a new approved affiliate user without government affiliated email address
+  Given  the following Users exist:
+  And  I am logged in with email "jschmo@random.com"
+  Then  I should be on the new site page
+  And  I should not see "Because you don't have a .gov or .mil email address, we need additional information."
+

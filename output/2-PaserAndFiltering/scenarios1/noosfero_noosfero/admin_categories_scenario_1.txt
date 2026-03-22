@@ -1,0 +1,9 @@
+Scenario 1: admin user could access new category
+  Tags: ['@selenium']
+  Given  I follow "menu-dropdown"
+  And  I wait for 1 seconds
+  And  I follow "Administration"
+  And  I follow "Categories"
+  And  I follow "New category"
+  Then  I should be on /admin/categories/new
+

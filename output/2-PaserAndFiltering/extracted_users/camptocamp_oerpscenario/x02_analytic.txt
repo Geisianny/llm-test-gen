@@ -1,0 +1,20 @@
+Feature: CUSTOM ANALYTIC ACCOUNTS CHART IMPORT BASED ON CSV TEMPLATE + ANALYTIC JOURNALS SETTINGS
+Tags: ['@multicompany_base_finance']
+
+Scenario 1: deleting analytic accounts
+  Given  I execute the SQL commands
+
+Scenario 2: importing analytic_chart
+  Tags: ['@multicompany_base_finance_csv_analytic_chart_import']
+  Given  "account.analytic.account" is imported from CSV "Plan_analytique.csv" using delimiter ";"
+
+Scenario 3: ANALYTIC JOURNALS
+  Tags: ['@multicompany_base_finance_analytic_journal_fr']
+  Given  I need a "account.analytic.journal" with oid: scen.fr_analytic_journal
+  And  having:
+
+Scenario 4: ANALYTIC JOURNALS
+  Tags: ['@multicompany_base_finance_analytic_journal_lu']
+  Given  I need a "account.analytic.journal" with oid: scen.ch_analytic_journal
+  And  having:
+

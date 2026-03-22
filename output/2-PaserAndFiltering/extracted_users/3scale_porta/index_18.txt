@@ -1,0 +1,66 @@
+Feature: Audience > Developer portal > ActiveDocs
+Description: As a provider, I want to manage all my ActiveDocs specs from all my APIs in the same page
+Tags: ['@javascript']
+
+Background: 
+  Given  a provider is logged in
+  And  a product "My API"
+
+Scenario 1: Navigation
+  When  they select "Audience" from the context selector
+  And  they press "Developer Portal" within the main menu
+  And  follow "ActiveDocs" within the main menu
+  Then  the current page is the ActiveDocs page
+
+Scenario 2: Empty view
+  When  they go to the ActiveDocs page
+  Then  there should be a link to "Create your first spec"
+
+Scenario 3: Index does show the API column
+  Given  the product has a Swagger 2 spec "Echo API"
+  When  they go to the ActiveDocs page
+  Then  the table should have a column "API"
+
+Scenario Outline 4: Hide the spec - Example 1
+  Given  the product has a Swagger 1.2 spec "Echo API"
+  And  the spec is published
+  When  they go to the ActiveDocs page
+  And  they select action "Hide" of "Echo API"
+  Then  they should see a toast alert with text "Spec Echo API is now hidden"
+  And  the table has the following row:
+
+  Examples:
+    | swagger version |
+    | Swagger 1.2 |
+    | Swagger 2 |
+    | OAS 3.0 |
+
+Scenario Outline 5: Publish the spec - Example 1
+  Given  the product has a Swagger 1.2 spec "Echo API"
+  And  the spec is not published
+  When  they go to the ActiveDocs page
+  And  they select action "Publish" of "Echo API"
+  Then  they should see a toast alert with text "Spec Echo API is now visible"
+  And  the table has the following row:
+
+  Examples:
+    | swagger version |
+    | Swagger 1.2 |
+    | Swagger 2 |
+    | OAS 3.0 |
+
+Scenario Outline 6: Delete the spec - Example 1
+  Given  the product has a Swagger 1.2 spec "Echo API"
+  When  they go to the ActiveDocs page
+  And  they select action "Delete" of "Echo API"
+  And  they should see "Yes, I want to delete spec Echo API forever" within the modal
+  And  press "Delete spec" within the modal
+  Then  they should see a toast alert with text "ActiveDocs Spec was successfully deleted"
+  And  they should not see "Echo API"
+
+  Examples:
+    | swagger version |
+    | Swagger 1.2 |
+    | Swagger 2 |
+    | OAS 3.0 |
+

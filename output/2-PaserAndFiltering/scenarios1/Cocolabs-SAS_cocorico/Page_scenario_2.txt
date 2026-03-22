@@ -1,0 +1,14 @@
+Scenario 2: I can see editorial pages content in french
+  Given  I am on the home page
+  When  I click on the element with css selector ".link-flag"
+  And  I follow "Fr"
+  And  I wait 500 ms for Jquery loading
+  And  I follow "Qui sommes nous?"
+  Then  I should see "Qui sommes nous?" in the "div.container h1" element
+  And  I follow "Comment ca marche?"
+  Then  I should see "Comment ca marche?" in the "div.container h1" element
+  And  I follow "Mentions légales"
+  Then  I should see "Mentions légales" in the "div.container h1" element
+  And  I follow "FAQ"
+  Then  I should see "FAQ" in the "div.container h1" element
+

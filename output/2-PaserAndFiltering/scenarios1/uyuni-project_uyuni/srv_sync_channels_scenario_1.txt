@@ -1,0 +1,7 @@
+Scenario 1: List available channels
+  When  I refresh SCC
+  And  I execute mgr-sync "list channels -e" with user "admin" and password "admin"
+  Then  I should get "[ ] SLE-Product-SLES15-SP4-Pool for x86_64 SUSE Linux Enterprise Server 15 SP4 x86_64 [sle-product-sles15-sp4-pool-x86_64]"
+  And  I should get "    [ ] SLE-Product-SLES15-SP4-Updates for x86_64 SUSE Linux Enterprise Server 15 SP4 x86_64 [sle-product-sles15-sp4-updates-x86_64]"
+  And  I should get "    [ ] SLE15-SP4-Installer-Updates for x86_64 SUSE Linux Enterprise Server 15 SP4 x86_64 [sle15-sp4-installer-updates-x86_64]"
+

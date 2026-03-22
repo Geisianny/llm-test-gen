@@ -1,0 +1,5 @@
+Scenario 1: Navigation
+  Given  they go to the account plans admin page
+  When  they select toolbar action "Create account plan"
+  Then  the current page is the new account plan admin page
+

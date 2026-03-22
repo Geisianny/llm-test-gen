@@ -1,0 +1,5 @@
+Scenario: Filter collection by single numerical value
+  Given there is a collection of resources with numerical properties
+  When the client requests the collection with a filter by numerical value "10"
+  Then the system returns a JSON-LD response with the filtered collection
+  And the response includes the correct pagination metadata

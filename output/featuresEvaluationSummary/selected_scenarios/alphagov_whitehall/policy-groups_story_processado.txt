@@ -1,0 +1,6 @@
+Scenario: Associate multiple Policy Groups with a single policy
+  Given there is a policy with the title "New Environmental Policy"
+  And there are two Policy Groups with titles "Climate Change Experts" and "Renewable Energy Advocates"
+  When the editor associates the Policy Groups "Climate Change Experts" and "Renewable Energy Advocates" with the policy "New Environmental Policy"
+  Then the system displays the metadata on the policy page
+  And the metadata reads "Groups: Climate Change Experts, Renewable Energy Advocates"

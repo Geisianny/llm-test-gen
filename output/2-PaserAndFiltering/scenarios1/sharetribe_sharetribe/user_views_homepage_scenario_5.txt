@@ -1,0 +1,10 @@
+Scenario 5: Unlogged user views private community
+  Tags: ['@javascript']
+  Given  there are following users:
+  And  I am not logged in
+  And  there is a listing with title "car spare parts" from "kassi_testperson1" with category "Items" and with listing shape "Selling"
+  And  community "test" is private
+  When  I am on the home page
+  Then  I should not see "car spare parts"
+  And  I should see "Sign up"
+

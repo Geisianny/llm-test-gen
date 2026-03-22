@@ -1,0 +1,5 @@
+Scenario 2: Seeing menu in my language
+  Tags: ['@no-api', '@ui']
+  When  I open administration dashboard
+  Then  I should be viewing the administration panel in "Polish (Poland)" locale
+

@@ -1,0 +1,24 @@
+Feature: Extend trial subscription
+
+Background: 
+  Given  the following accounts exist:
+  And  the follow products exist:
+  And  the follow prices exist:
+  And  the following features exist:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "Price One" with:
+  Given  a Subscription Plan exists for product "Product Two" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price 4500 in "USD" with:
+
+Scenario 1: Cancel subscription
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  When  I extend via the API the subscription "Test Plan" for "customer.one@example.org" with the follow:
+  Then  the subscription "Test Plan" for "customer.one@example.org" will be active
+  Then  there should be a trial converted event for "customer.one@example.org"
+  And  the trial extended daily stat for the day should be 1
+  And  the trial extended monthly stat for the day should be 1
+  And  the trial extended yearly stat for the day should be 1
+  And  the subscriber daily stat for the day should be 1
+  And  the subscriber monthly stat for the day should be 1
+  And  the subscriber yearly stat for the day should be 1
+

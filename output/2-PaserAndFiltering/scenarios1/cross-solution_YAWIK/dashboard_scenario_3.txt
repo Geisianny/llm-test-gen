@@ -1,0 +1,5 @@
+Scenario 3: Successfully access dashboard
+  Given  I am logged in as an administrator
+  When  I go to dashboard page
+  Then  the "h1" element should contain "Dashboard"
+

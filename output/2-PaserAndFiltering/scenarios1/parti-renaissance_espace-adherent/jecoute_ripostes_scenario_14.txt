@@ -1,0 +1,20 @@
+Scenario Outline 14: As a logged-in user with correct rights I can get, edit or delete any riposte (not mine, disabled or old more that 24 hours) - Example 1
+  Given  I am logged with "deputy@en-marche-dev.fr" via OAuth client "JeMengage Web"
+  When  I send a "GET" request to "/api/v3/ripostes/220bd36e-4ac4-488a-8473-8e99a71efba4?scope=national"
+  Then  the response status code should be 200
+
+  Examples:
+    | method | url | status |
+    | GET | /api/v3/ripostes/220bd36e-4ac4-488a-8473-8e99a71efba4 | 200 |
+    | PUT | /api/v3/ripostes/220bd36e-4ac4-488a-8473-8e99a71efba4 | 200 |
+    | DELETE | /api/v3/ripostes/220bd36e-4ac4-488a-8473-8e99a71efba4 | 204 |
+    | PUT | /api/v3/ripostes/220bd36e-4ac4-488a-8473-8e99a71efba4/action/riposte | 200 |
+    | GET | /api/v3/ripostes/10ac465f-a2f9-44f1-9d80-8f2653a1b496 | 200 |
+    | PUT | /api/v3/ripostes/10ac465f-a2f9-44f1-9d80-8f2653a1b496 | 200 |
+    | DELETE | /api/v3/ripostes/10ac465f-a2f9-44f1-9d80-8f2653a1b496 | 204 |
+    | PUT | /api/v3/ripostes/10ac465f-a2f9-44f1-9d80-8f2653a1b496/action/detail_view | 200 |
+    | GET | /api/v3/ripostes/80b2eb70-38c3-425e-8c1d-a90e84e1a4b3 | 200 |
+    | PUT | /api/v3/ripostes/80b2eb70-38c3-425e-8c1d-a90e84e1a4b3 | 200 |
+    | DELETE | /api/v3/ripostes/80b2eb70-38c3-425e-8c1d-a90e84e1a4b3 | 204 |
+    | PUT | /api/v3/ripostes/80b2eb70-38c3-425e-8c1d-a90e84e1a4b3/action/source_view | 200 |
+

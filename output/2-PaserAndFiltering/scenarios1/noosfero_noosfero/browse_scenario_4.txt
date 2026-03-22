@@ -1,0 +1,18 @@
+Scenario 4: Communities browse menu should add logged information
+  Tags: ['@selenium-fixme']
+  Given  I am logged in as "joaosilva"
+  When  I go to /joaosilva
+  Then  I should not see "More recent"
+  And  I should not see "More active"
+  And  I should not see "More popular"
+  And  I should not see "My communities"
+  And  I should not see "New community"
+  And  I go to /search/communities
+  And  display "#submenu-communities-trigger"
+  When  I follow "submenu-communities-trigger"
+  Then  I should see "More recent"
+  And  I should see "More active"
+  And  I should see "More popular"
+  And  I should see "My communities"
+  And  I should see "New community"
+

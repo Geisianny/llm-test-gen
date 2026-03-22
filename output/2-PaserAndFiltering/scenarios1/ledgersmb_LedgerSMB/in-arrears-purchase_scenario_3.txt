@@ -1,0 +1,6 @@
+Scenario 3: COGS posting when purchasing parts in arrears (partly into inventory)
+  Given  10 units sold
+  When  20 units are purchased at 10 USD each
+  Then  the inventory should be at 100 USD
+  And  COGS should be at 100 USD
+

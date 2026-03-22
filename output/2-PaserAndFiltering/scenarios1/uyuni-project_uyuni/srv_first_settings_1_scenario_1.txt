@@ -1,0 +1,3 @@
+Scenario 1: Cleanup Salt files
+  When  I run "rm -Rf /srv/salt/*" on "server"
+

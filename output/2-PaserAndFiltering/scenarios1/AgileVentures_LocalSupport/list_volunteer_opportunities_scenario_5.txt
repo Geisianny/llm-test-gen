@@ -1,0 +1,9 @@
+Scenario Outline 5: Top navbar has links to Volunteers when feature is enabled - Example 1
+  Given  that the volunteer_ops_list flag is enabled
+  And  I visit the home page
+  Then  the navbar should have a link to Volunteers
+
+  Examples:
+    | link |
+    | Volunteers |
+

@@ -1,0 +1,8 @@
+Scenario 3: Reload options
+  When  I tap on browser control menu icon on the bottom right of the browser view
+  Then  browser options menu is displayed
+  And  "Reload" option item is displayed in browser options menu
+  When  I tap the "Reload" option on the Option Menu
+  Then  active browser tab is refreshed
+  And  the browser view is on the "https://app.uniswap.org/" website
+

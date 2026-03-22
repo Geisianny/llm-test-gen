@@ -1,0 +1,25 @@
+Feature: Buyer signups to service
+Description: In order to create applications for specific service
+  As a buyer
+  I want to signup up to specific service
+Tags: ['@javascript']
+
+Background: 
+  Given  a provider "foo.3scale.localhost" with default plans
+  And  a default service of provider "foo.3scale.localhost" has name "API"
+  And  the current domain is foo.3scale.localhost
+
+Scenario 1: Signup with approval required
+  Given  the following service plan:
+  When  I go to the sign up page
+  And  I fill in the signup fields as "hugo"
+  Then  I should see the registration succeeded
+  And  the account "hugo's stuff" should have a pending service contract with the plan "Gold"
+
+Scenario 2: Signup without approval required
+  Given  the following service plan:
+  When  I go to the sign up page
+  And  I fill in the signup fields as "hugo"
+  Then  I should see the registration succeeded
+  And  the account "hugo's stuff" should have a live service contract with the plan "Gold"
+

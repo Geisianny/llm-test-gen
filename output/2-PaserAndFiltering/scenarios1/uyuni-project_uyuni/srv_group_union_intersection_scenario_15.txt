@@ -1,0 +1,8 @@
+Scenario 15: Cleanup: remove the deblike group
+  Tags: ['@deblike_minion']
+  When  I follow the left menu "Systems > System Groups"
+  When  I follow "deblike" in the content area
+  And  I follow "Delete Group" in the content area
+  And  I click on "Confirm Deletion"
+  Then  I should see a "deleted" text
+

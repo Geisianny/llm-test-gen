@@ -1,0 +1,10 @@
+Scenario 1: Deleting multiple administrators at once
+  Tags: ['@ui', '@javascript']
+  Given  I browse administrators
+  And  I check the "banana@example.com" administrator
+  And  I check also the "orange@example.com" administrator
+  And  I delete them
+  Then  I should be notified that they have been successfully deleted
+  And  I should see a single administrator in the list
+  And  I should see the administrator "watermelon@example.com" in the list
+

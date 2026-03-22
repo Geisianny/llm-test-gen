@@ -1,0 +1,27 @@
+Feature: sorting_payment_methods_by_position_story_processado
+
+Scenario: Sort payment methods in ascending order by default
+    Given there are multiple payment methods with different positions
+    When the administrator views the payment methods
+    Then the payment methods are displayed in ascending order by position
+
+Scenario: Sort payment methods in descending order
+    Given there are multiple payment methods with different positions
+    When the administrator chooses to sort payment methods in descending order
+    Then the payment methods are displayed in descending order by position
+
+Scenario: Add new payment method to the end of the list
+    Given there are multiple payment methods with different positions
+    When the administrator adds a new payment method with a higher position than existing ones
+    Then the new payment method is displayed at the end of the list
+
+Scenario: Add new payment method to the beginning of the list
+    Given there are multiple payment methods with different positions
+    When the administrator adds a new payment method with a lower position than existing ones
+    Then the new payment method is displayed at the beginning of the list
+
+Scenario: Change the position of an existing payment method
+    Given there are multiple payment methods with different positions
+    When the administrator updates the position of an existing payment method to a new value
+    Then the payment methods are reordered according to their updated positions
+    And the updated payment method is displayed in its new position relative to other methods

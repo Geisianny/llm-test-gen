@@ -1,0 +1,6 @@
+Scenario 5: Cleanup: Check for the expected pillar data after disabling Git pillar
+  When  I refresh the pillar data
+  Then  the pillar data for "git_pillar_foobar" should be empty on "sle_minion"
+  And  the pillar data for "org_id" should be "1" on "sle_minion"
+  And  the pillar data for "git_pillar_foobar" should be empty on the Salt master
+

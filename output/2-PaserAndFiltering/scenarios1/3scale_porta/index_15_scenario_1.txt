@@ -1,0 +1,6 @@
+Scenario 1: Can't subscribe to a product with no public or default plans
+  Given  the buyer is not subscribed to product "dcc-rpg-wiki"
+  And  the following service plan:
+  When  they go to the the services list for buyers
+  Then  there shouldn't be a link to "Subscribe to dcc-rpg-wiki"
+

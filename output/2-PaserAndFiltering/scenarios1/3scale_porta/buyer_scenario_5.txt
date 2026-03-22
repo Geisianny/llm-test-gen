@@ -1,0 +1,13 @@
+Scenario 5: I should be warned 10 days before my credit card expires and never ever after
+  Tags: ['@commit-transactions']
+  Given  the time is 16th May 2009
+  And  a buyer "broke" signed up to application plan "FreeAsInBeer"
+  And  buyer "broke" has a valid credit card with no money that expires on May 27, 2009
+  When  the time flies to 17th May 2009
+  And  I act as "broke"
+  Then  I should receive an email with subject "Credit card expiry"
+  And  "admin@foo.3scale.localhost" should receive an email with subject "broke’s credit card is due to expire"
+  Given  a clear email queue
+  And  the time flies to 27th May 2009
+  Then  I should receive no email with subject "Credit card expiry"
+

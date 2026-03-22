@@ -1,0 +1,10 @@
+Scenario 5: Apply the new state
+  When  I am on the Systems overview page of this "sle_minion"
+  And  I follow "States" in the content area
+  And  I follow "Configuration Channels" in the content area
+  Then  I should see a "Execute States" button
+  When  I click on "Execute States"
+  Then  I should see a "Applying the config channels has been scheduled" text
+  When  I wait until event "Apply states [custom] scheduled" is completed
+  And  I wait until file "/root/foobar" exists on "sle_minion"
+

@@ -1,0 +1,9 @@
+Scenario 12: Update a pipeline returns "Not Found" response
+  Tags: ['@team:DataDog/observability-pipelines']
+  Given  operation "UpdatePipeline" enabled
+  And  new "UpdatePipeline" request
+  And  request contains "pipeline_id" parameter with value "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+  And  body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["filter-processor"], "type": "datadog_logs"}], "processors": [{"id": "filter-processor", "include": "service:my-service", "inputs": ["datadog-agent-source"], "type": "filter"}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Main Observability Pipeline"}, "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "type": "pipelines"}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

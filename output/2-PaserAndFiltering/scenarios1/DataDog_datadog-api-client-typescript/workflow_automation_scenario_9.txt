@@ -1,0 +1,8 @@
+Scenario 9: Execute a workflow returns "Created" response
+  Tags: ['@replay-only', '@team:DataDog/workflow-automation-dev']
+  Given  new "CreateWorkflowInstance" request
+  And  request contains "workflow_id" parameter with value "ccf73164-1998-4785-a7a3-8d06c7e5f558"
+  And  body with value { "meta": { "payload": { "input": "value" } } }
+  When  the request is sent
+  Then  the response status is 200 Created
+

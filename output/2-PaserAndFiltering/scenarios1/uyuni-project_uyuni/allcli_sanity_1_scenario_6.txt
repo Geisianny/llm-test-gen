@@ -1,0 +1,7 @@
+Scenario 6: The Red Hat-like minion is healthy
+  Tags: ['@rhlike_minion']
+  Then  "rhlike_minion" should have a FQDN
+  And  reverse resolution should work for "rhlike_minion"
+  And  "rhlike_minion" should communicate with the server using public interface
+  And  the clock from "rhlike_minion" should be exact
+

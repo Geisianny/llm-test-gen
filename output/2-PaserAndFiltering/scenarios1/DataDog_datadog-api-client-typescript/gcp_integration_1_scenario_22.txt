@@ -1,0 +1,9 @@
+Scenario 22: Update STS Service Account returns "OK" response with enable resource collection turned on
+  Tags: ['@team:DataDog/gcp-integrations']
+  Given  there is a valid "gcp_sts_account" in the system
+  And  new "UpdateGCPSTSAccount" request
+  And  request contains "account_id" parameter from "gcp_sts_account.data.id"
+  And  body with value {"data": {"attributes": {"client_email": "Test-{{ unique_hash }}@example.com", "resource_collection_enabled": true}, "id": "{{ gcp_sts_account.data.id }}", "type": "gcp_service_account"}}
+  When  the request is sent
+  Then  the response status is 201 OK
+

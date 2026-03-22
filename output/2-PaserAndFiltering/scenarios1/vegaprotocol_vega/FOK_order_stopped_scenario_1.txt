@@ -1,0 +1,12 @@
+Scenario 1: 001 FOK market order unable to trade
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/DEC20"
+  And  the mark price should be "10" for the market "ETH/DEC20"
+  And  the order book should have the following volumes for market "ETH/DEC20":
+  When  the parties place the following orders with ticks:
+  And  the order book should have the following volumes for market "ETH/DEC20":
+  And  the orders should have the following status:
+

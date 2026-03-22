@@ -1,0 +1,6 @@
+Scenario 9: Get estimated cost across your account returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/revenue-query']
+  Given  new "GetEstimatedCostByOrg" request
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

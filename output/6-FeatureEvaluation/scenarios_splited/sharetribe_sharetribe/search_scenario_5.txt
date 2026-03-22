@@ -1,0 +1,6 @@
+Scenario: Search with multiple filters
+  Given there are listings with titles, descriptions, prices, and custom numeric fields
+  When the user types a keyword "electronics" in the search box
+  And hits enter
+  And sets the price range filter to $100 to $500
+  And sets the custom numeric field "year" filter to 2010 to 2020

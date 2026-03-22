@@ -1,0 +1,7 @@
+Scenario 6: Receiving fixed discount on multiple items fulfilling range price criteria
+  Tags: ['@ui']
+  Given  the promotion gives "$10.00" off on every product priced between "$50.00" and "$150.00"
+  When  I add 3 products "PHP T-Shirt" to the cart
+  Then  theirs price should be decreased by "$30.00"
+  And  my cart total should be "$270.00"
+

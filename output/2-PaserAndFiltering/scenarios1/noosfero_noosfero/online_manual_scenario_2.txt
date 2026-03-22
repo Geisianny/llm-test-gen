@@ -1,0 +1,5 @@
+Scenario 2: displaying index content
+  When  I go to /doc
+  Then  I should see "User features"
+  And  I should see "Content Management"
+

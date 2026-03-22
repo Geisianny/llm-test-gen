@@ -1,0 +1,7 @@
+Scenario 25: Get Azure scan options returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/k9-agentless']
+  Given  new "GetAzureScanOptions" request
+  And  request contains "subscription_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 200 OK
+

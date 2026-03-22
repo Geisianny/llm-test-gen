@@ -1,0 +1,8 @@
+Scenario 1: Create a new rule returns "Bad Request" response
+  Tags: ['@team:DataDog/service-catalog']
+  Given  operation "CreateScorecardRule" enabled
+  And  new "CreateScorecardRule" request
+  And  body with value {"data": {"attributes": {"enabled": true, "level": 2, "name": "Team Defined", "scorecard_id": "NOT.FOUND"}, "type": "rule"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

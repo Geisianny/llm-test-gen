@@ -1,0 +1,9 @@
+Scenario 3: Configure emails incoming
+  Tags: ['@crm_mail_incoming']
+  Given  I need a "FetchmailServer" with reference "openerp_imap_contact"
+  When  I update it with values:
+  And  I set the incoming mail new record on model "crm.lead"
+  And  I save it
+  Then  I should have a "FetchmailServer" with reference "openerp_imap_contact"
+  And  I test and confirm the fetchmail server with reference "openerp_imap_contact"
+

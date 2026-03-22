@@ -1,0 +1,7 @@
+Scenario 51: The Ubuntu 24.04 minion is healthy
+  Tags: ['@ubuntu2404_minion']
+  Then  "ubuntu2404_minion" should have a FQDN
+  And  reverse resolution should work for "ubuntu2404_minion"
+  And  "ubuntu2404_minion" should communicate with the server using public interface
+  And  the clock from "ubuntu2404_minion" should be exact
+

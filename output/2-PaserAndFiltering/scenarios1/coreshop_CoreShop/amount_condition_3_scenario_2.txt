@@ -1,0 +1,6 @@
+Scenario 2: Add a new amount shipping rule which is inactive
+  Given  adding a shipping rule named "amount"
+  And  the shipping rule is inactive
+  And  the shipping rule has a condition amount from "50" to "150"
+  Then  the shipping rule should be invalid for my cart with carrier "Post"
+

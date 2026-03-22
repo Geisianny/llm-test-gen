@@ -1,0 +1,6 @@
+Scenario 3: Editing an application
+  Given  they go to the application's admin edit page
+  When  the form is submitted with:
+  Then  they should see a toast alert with text "Application was successfully updated"
+  And  the current page is the application's admin page
+

@@ -1,0 +1,12 @@
+Feature: Markdown/Textile Handlers
+Description: In order to simplify writing content
+  As a provider
+  I want to write markdown/textile format
+
+Scenario 1: 
+  Given  a provider "foo.3scale.localhost"
+  And  I have cms page "/page" of provider "foo.3scale.localhost" with markdown content
+  And  the current domain is "foo.3scale.localhost"
+  When  I visit "/page"
+  Then  I should see rendered markdown content
+

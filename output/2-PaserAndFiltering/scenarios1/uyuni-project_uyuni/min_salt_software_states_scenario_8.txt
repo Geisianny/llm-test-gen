@@ -1,0 +1,15 @@
+Scenario 8: Install an already installed package through the UI
+  When  I follow "States" in the content area
+  And  I follow "Packages"
+  And  I follow "Search"
+  And  I should see a "Package States" text
+  And  I list packages with "dummy"
+  And  I wait until I see "virgo-dummy" text
+  Then  "virgo-dummy-1.0" should be installed on "sle_minion"
+  And  I change the state of "virgo-dummy" to "Installed" and "Any"
+  Then  I should see a "1 Change" text
+  And  I click save
+  Then  I wait until I see "Package states have been saved." text
+  And  I click apply
+  And  I wait for "virgo-dummy-1.0" to be installed on "sle_minion"
+

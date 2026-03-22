@@ -1,0 +1,6 @@
+Scenario 2: Viewing information about empty list of products from a given taxon in selected channel
+  Tags: ['@api', '@ui']
+  Given  I am browsing channel "United States"
+  When  I browse products from taxon "Funny"
+  Then  I should see empty list of products
+

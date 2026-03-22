@@ -1,0 +1,13 @@
+Scenario 15: Update an existing incident team returns "OK" response
+  Tags: ['@team:Datadog/incident-app']
+  Given  there is a valid "team" in the system
+  And  operation "UpdateIncidentTeam" enabled
+  And  new "UpdateIncidentTeam" request
+  And  request contains "team_id" parameter from "team.data.id"
+  And  body with value {"data": {"type": "teams", "attributes": {"name": "{{ team.data.attributes.name }}-updated"}}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.type" is equal to "teams"
+  And  the response "data.id" is equal to "{{ team.data.id }}"
+  And  the response "data.attributes.name" is equal to "{{ team.data.attributes.name }}-updated"
+

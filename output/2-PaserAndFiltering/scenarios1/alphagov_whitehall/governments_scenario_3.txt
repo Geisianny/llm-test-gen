@@ -1,0 +1,6 @@
+Scenario 3: editing a government's start and end dates
+  Given  a government exists called "2005 to 2010 Labour government" between dates "06/05/2004" and "11/05/2009"
+  And  I am a GDS admin
+  When  I edit the government called "2005 to 2010 Labour government" to have dates "06/05/2005" and "11/05/2010"
+  Then  there should be a government called "2005 to 2010 Labour government" between dates "6 May 2005" and "11 May 2010"
+

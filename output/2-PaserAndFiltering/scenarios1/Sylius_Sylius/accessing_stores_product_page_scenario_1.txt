@@ -1,0 +1,8 @@
+Scenario 1: Accessing the product shop page from the admin panel when the product has a translation with a defined slug in the administrator's chosen language
+  Tags: ['@no-api', '@ui']
+  Given  the locale "Polish (Poland)" is enabled
+  And  this product is named "Bulldog francuski T-Shirt" in the "Polish (Poland)" locale
+  When  I want to edit this product
+  Then  the show product's page button should be enabled
+  And  it should be leading to the product's page in the "Polish (Poland)" locale
+

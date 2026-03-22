@@ -1,0 +1,8 @@
+Scenario 6: Delete a single service object returns "OK" response
+  Tags: ['@team:Datadog/collaboration-integrations']
+  Given  there is a valid "opsgenie_service" in the system
+  And  new "DeleteOpsgenieService" request
+  And  request contains "integration_service_id" parameter from "opsgenie_service.data.id"
+  When  the request is sent
+  Then  the response status is 204 OK
+

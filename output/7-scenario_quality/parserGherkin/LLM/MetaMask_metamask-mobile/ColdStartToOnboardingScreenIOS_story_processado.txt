@@ -1,0 +1,49 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: ColdStartToOnboardingScreenIOS_story_processado.feature
+Caminho relativo: MetaMask_metamask-mobile\ColdStartToOnboardingScreenIOS_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\MetaMask_metamask-mobile\ColdStartToOnboardingScreenIOS_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: ColdStartToOnboardingScreenIOS_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Cold start with successful app installation
+   Steps: 4
+   - Given the app is not installed on the device
+   - When the user installs the app for the first time
+   - Then the app's cold start time is measured
+   - And the wallet setup screen loads in under 700 milliseconds
+2. Cold start time exceeds the threshold
+   Steps: 5
+   - Given the app is not installed on the device
+   - When the user installs the app for the first time
+   - And the app's cold start time is measured
+   - Then the cold start time exceeds 700 milliseconds
+   - And the system logs the performance issue
+3. Wallet setup screen is displayed after cold start
+   Steps: 4
+   - Given the app is not installed on the device
+   - When the user installs the app for the first time
+   - Then the wallet setup screen is displayed
+   - And the user can interact with the screen
+4. Cold start measurement for multiple installations
+   Steps: 4
+   - Given the app is not installed on multiple devices
+   - When the user installs the app for the first time on each device
+   - Then the app's cold start time is measured on each device
+   - And the results are consistent across devices
+5. Cold start with a slow device
+   Steps: 4
+   - Given the app is not installed on a slow device
+   - When the user installs the app for the first time on the slow device
+   - Then the app's cold start time is measured
+   - And the system logs the performance on the slow device

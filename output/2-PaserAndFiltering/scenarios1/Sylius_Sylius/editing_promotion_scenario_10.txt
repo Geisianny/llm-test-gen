@@ -1,0 +1,10 @@
+Scenario 10: Removing rule and action from existing promotion
+  Tags: ['@ui', '@mink:chromedriver']
+  Given  the promotion gives "$10.00" discount to every order with quantity at least 1
+  When  I want to modify a "Holiday sale" promotion
+  And  I remove its last rule
+  And  I remove its last action
+  And  I save my changes
+  Then  I should not see the rule configuration form
+  And  I should not see the action configuration form
+

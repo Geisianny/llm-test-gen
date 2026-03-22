@@ -1,0 +1,7 @@
+Scenario 1: Successfully placing an order with sufficient stock
+  Tags: ['@api', '@ui']
+  Given  I added 3 products "Iron Maiden T-Shirt" to the cart
+  And  I proceeded through the checkout process
+  When  I confirm my order
+  Then  my order should be completed successfully
+

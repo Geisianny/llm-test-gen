@@ -1,0 +1,54 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: removeDomains_2_story_processado.feature
+Caminho relativo: irontec_ivozprovider\removeDomains_2_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\irontec_ivozprovider\removeDomains_2_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: removeDomains_2_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Attempt to delete a domain via API as super admin
+   Steps: 5
+   - Given there is a super admin with API access
+   - And there is an existing domain "example.com"
+   - When the super admin sends a DELETE request to the domain "example.com" via API
+   - Then the system returns an HTTP 405 status code
+   - And the domain "example.com" remains unchanged
+2. Attempt to delete a non-existent domain via API as super admin
+   Steps: 5
+   - Given there is a super admin with API access
+   - And there is no existing domain "nonexistent.com"
+   - When the super admin sends a DELETE request to the domain "nonexistent.com" via API
+   - Then the system returns an HTTP 405 status code
+   - And the system indicates that the domain deletion is not allowed
+3. Verify API response for domain deletion attempt
+   Steps: 5
+   - Given there is a super admin with API access
+   - And there is an existing domain "example.com"
+   - When the super admin sends a DELETE request to the domain "example.com" via API
+   - Then the system returns an HTTP 405 status code
+   - And the response body contains a message indicating that the method is not allowed
+4. Check domain integrity after failed deletion attempt
+   Steps: 5
+   - Given there is a super admin with API access
+   - And there is an existing domain "example.com"
+   - When the super admin sends a DELETE request to the domain "example.com" via API
+   - Then the domain "example.com" remains unchanged
+   - And the system's domain list still includes "example.com"
+5. Validate API behavior for multiple deletion attempts
+   Steps: 6
+   - Given there is a super admin with API access
+   - And there are existing domains "example1.com" and "example2.com"
+   - When the super admin sends a DELETE request to the domain "example1.com" via API
+   - And the super admin sends a DELETE request to the domain "example2.com" via API
+   - Then the system returns an HTTP 405 status code for both requests
+   - And both domains "example1.com" and "example2.com" remain unchanged

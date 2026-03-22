@@ -1,0 +1,10 @@
+Scenario 2: Adding a simple product to the cart after picked up more than one cart
+  Tags: ['@api', '@no-ui']
+  When  I pick up my cart
+  And  I pick up my cart again
+  And  I add this product to the cart
+  Then  I should be on my cart summary page
+  And  I should be notified that the product has been successfully added
+  And  there should be one item in my cart
+  And  this item should have name "T-Shirt banana"
+

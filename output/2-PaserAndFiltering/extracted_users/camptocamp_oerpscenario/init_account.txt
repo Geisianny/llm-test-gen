@@ -1,0 +1,30 @@
+Feature: Param the new database
+Description: In order to have a coherent installation
+  I autmated the manual steps.
+Tags: ['@init_account']
+
+Scenario 1: install modules
+  Given  I update the module list
+  Given  I install the required modules with dependencies:
+  Then  my modules should have been installed and models reloaded
+  Given  I give all groups right access to admin user
+
+Scenario 2: Configure Taxes
+  Given  a purchase tax called 'Buy 19.6%' with a rate of 0.196 exists
+  And  a sale tax called 'Sale 19.6%' with a rate of 0.196 exists
+
+Scenario 3: Configure banque account:
+  Given  there is a bank account named "XX-XXXX-X" linked to partner "Customer_name"
+  And  I set the bank account with the following data :
+
+Scenario 4: Create new account
+  Given  I have created a cash account in USD
+  And  I have created a cash account in CHF
+  And  I have created a cash account in EUR
+
+Scenario 5: Initialize Account Journal settings
+  Given  a cash journal in USD exists
+  And  a cash journal in CHF exists
+  And  a cash journal in EUR exists
+  And  on all journal entries can be canceled
+

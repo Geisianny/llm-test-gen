@@ -1,0 +1,6 @@
+Scenario 1: Can create new service setting
+  Given  the provider has the following setting:
+  When  I am on the provider dashboard
+  Then  I should see "Create Product"
+  Then  I should see "Create Backend"
+

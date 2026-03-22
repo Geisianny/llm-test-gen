@@ -1,0 +1,9 @@
+Scenario 20: Update an existing scorecard rule returns "Not Found" response
+  Tags: ['@team:DataDog/service-catalog']
+  Given  operation "UpdateScorecardRule" enabled
+  And  new "UpdateScorecardRule" request
+  And  request contains "rule_id" parameter with value "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"enabled": true, "level": 2, "name": "Team Defined", "scorecard_name": "Deployments automated via Deployment Trains"}, "type": "rule"}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

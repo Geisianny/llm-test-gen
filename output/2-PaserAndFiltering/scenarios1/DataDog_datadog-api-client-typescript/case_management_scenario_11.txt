@@ -1,0 +1,12 @@
+Scenario 11: Create a case returns "CREATED" response
+  Tags: ['@team:DataDog/case-management']
+  Given  new "CreateCase" request
+  And  there is a valid "user" in the system
+  And  body with value {"data": {"attributes": {"priority": "NOT_DEFINED", "title": "Security breach investigation in {{ unique_hash }}", "type_id": "00000000-0000-0000-0000-000000000001"}, "relationships": {"assignee": {"data": {"id": "{{user.data.id}}", "type": "user"} }, "project": {"data": {"id": "d4bbe1af-f36e-42f1-87c1-493ca35c320e", "type": "project"}}}, "type": "case"}}
+  When  the request is sent
+  Then  the response status is 201 CREATED
+  And  the response "data" has field "id"
+  And  the response "data.attributes.title" is equal to "Security breach investigation in {{ unique_hash }}"
+  And  the response "data.attributes.type" is equal to "STANDARD"
+  And  the response "data.attributes.priority" is equal to "NOT_DEFINED"
+

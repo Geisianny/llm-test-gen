@@ -1,0 +1,6 @@
+Scenario 3: ReButton (loader-static): should show a button with loader
+  When  I go to "/test/ux-component/ReButton/loaderstatic"
+  Then  I should see 1 "button" elements
+  And  I should not see "Simple button"
+  And  I should see 1 ".re-icon.re-icon-loading" elements
+

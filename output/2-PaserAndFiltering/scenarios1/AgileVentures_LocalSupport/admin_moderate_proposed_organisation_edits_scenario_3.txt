@@ -1,0 +1,8 @@
+Scenario 3: Editability is enforced at moderate time even if it has changed since proposal of edit
+  Given  I am signed in as a superadmin
+  And  the following proposed edits exist:
+  And  I visit the most recently created proposed edit for "Newness"
+  When  I press "Accept Edit"
+  Then  I should be on the show page for the organisation named "Unfriendly"
+  And  the organisation named "Unfriendly" should have fields as follows:
+

@@ -1,0 +1,50 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: zones_story_processado.feature
+Caminho relativo: parti-renaissance_espace-adherent\zones_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\parti-renaissance_espace-adherent\zones_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: zones_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Access zones API as a non-logged-in user
+   Steps: 4
+   - Given there is a non-logged-in user
+   - When the user requests a list of zones via the API
+   - Then the system returns a list of zones
+   - And the response is successful
+2. Filter zones by type via API
+   Steps: 4
+   - Given there are zones of different types
+   - When the non-logged-in user requests zones of type "country" via the API
+   - Then the system returns a list of zones of type "country"
+   - And the response is successful
+3. Search zones by partial name via API
+   Steps: 4
+   - Given there are zones with names containing "par"
+   - When the non-logged-in user searches for zones with "par" via the API
+   - Then the system returns a list of zones with names containing "par"
+   - And the response is successful
+4. Autocomplete zones for authenticated user within assigned area
+   Steps: 5
+   - Given there is an authenticated user with scope to manage "city" zones
+   - And there are "city" zones within the user's assigned area
+   - When the user requests autocomplete suggestions for "city" zones with "new" via the API
+   - Then the system returns a list of "city" zones with names containing "new" within the user's assigned area
+   - And the response is successful
+5. Autocomplete zones for authenticated user outside assigned area
+   Steps: 5
+   - Given there is an authenticated user with scope to manage "city" zones
+   - And there are "city" zones outside the user's assigned area
+   - When the user requests autocomplete suggestions for "city" zones with "new" via the API
+   - Then the system does not return "city" zones outside the user's assigned area
+   - And the response is successful

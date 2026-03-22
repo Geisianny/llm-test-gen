@@ -1,0 +1,7 @@
+Scenario 10: Scheduled job failure recovery
+  Given  daily reconciliation is scheduled at 2 AM
+  When  the job fails due to temporary issue
+  Then  the scheduler should:
+  And  prevent duplicate executions
+  And  maintain job execution history
+

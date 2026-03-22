@@ -1,0 +1,5 @@
+Scenario: Analyze queries that led to a clicked URL
+  Given there is a clicked URL with associated search queries in the system
+  When the site administrator selects a clicked URL to analyze
+  Then the system displays the search queries that led to the clicked URL
+  And the list includes the frequency of each query

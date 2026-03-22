@@ -1,0 +1,6 @@
+Scenario 14: Reset password with an invalid payload through an input DTO without DataTransformer
+  Tags: ['@!mongodb']
+  And  I send a "POST" request to "/user-reset-password" with body:
+  Then  the response status code should be 422
+  And  the response should be in JSON
+

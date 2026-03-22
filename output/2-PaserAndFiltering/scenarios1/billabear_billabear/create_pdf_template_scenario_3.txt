@@ -1,0 +1,6 @@
+Scenario 3: Invalid name
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  When  I create a pdf template:
+  Then  I will get an error response
+  Then  there will not be an pdf template for "invoice_two" with locale "en"
+

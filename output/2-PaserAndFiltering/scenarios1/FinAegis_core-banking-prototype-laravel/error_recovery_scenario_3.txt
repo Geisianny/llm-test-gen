@@ -1,0 +1,7 @@
+Scenario 3: Circuit breaker activation and recovery
+  Given  the exchange rate service is healthy
+  When  the service fails 5 consecutive times
+  Then  the circuit breaker should:
+  And  cached rates should be used when circuit is open
+  And  monitoring should track circuit state changes
+

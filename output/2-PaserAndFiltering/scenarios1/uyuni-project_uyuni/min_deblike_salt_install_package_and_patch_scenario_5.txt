@@ -1,0 +1,9 @@
+Scenario 5: Pre-requisite: refresh package list and check newly installed packages on Debian-like minion
+  Given  I am on the Systems overview page of this "deblike_minion"
+  When  I follow "Software" in the content area
+  And  I click on "Update Package List"
+  And  I follow "Events" in the content area
+  And  I wait until I do not see "Package List Refresh scheduled" text, refreshing the page
+  And  I wait until package "virgo-dummy" is installed on "deblike_minion" via spacecmd
+  And  I wait until package "andromeda-dummy" is removed from "deblike_minion" via spacecmd
+

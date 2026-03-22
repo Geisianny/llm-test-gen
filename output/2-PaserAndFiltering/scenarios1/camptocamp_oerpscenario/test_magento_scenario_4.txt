@@ -1,0 +1,5 @@
+Scenario 4: Import the product categories
+  Tags: ['@product_categories_magento']
+  Given  an instance with absolute id "base_external.magento" exists
+  Then  I import the product categories (2 - Import Product Categories)
+

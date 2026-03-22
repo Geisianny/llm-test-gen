@@ -1,0 +1,8 @@
+Feature: Adding a new pimcore Class
+Tags: ['@domain', '@pimcore']
+
+Scenario 1: Create a new pimcore class
+  Given  there is a pimcore class "Car"
+  And  the definitions parent class is set to "\CoreShop\Behat\Model\Car"
+  And  the class "Car" is registered as Pimcore Resource
+

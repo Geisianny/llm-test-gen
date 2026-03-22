@@ -1,0 +1,6 @@
+Scenario 4: Withdraw a document that is no longer current
+  Given  a published publication "Shaving kits for all" exists
+  When  I withdraw the publication with the explanation "Policy change"
+  Then  there should be an unpublishing explanation of "Policy change" and a reason of "No longer current government policy/activity"
+  And  the withdrawal date should be today
+

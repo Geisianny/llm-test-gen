@@ -1,0 +1,19 @@
+Scenario 3: Visiting the affiliate admin page as an admin
+  Given  the following Affiliates exist:
+  And  the following "site domains" exist for the affiliate agency.gov:
+  When  I go to the admin home page
+  And  I follow "Sites" within ".main"
+  And  I follow "Show" within the first scaffold row
+  Then  I should see "agency site (agency site) [Active]"
+  When  I follow "Close"
+  Then  I should see the following breadcrumbs: Super Admin > Sites
+  And  I should see "Display name"
+  And  I should see "Site Handle (visible to searchers in the URL)"
+  And  I should see "agency site"
+  And  I should see "agency.gov"
+  And  I should see "www1.agency-site.gov"
+  And  I should see "Search elastic"
+  And  I should see a link to "beta.agency.gov" with url for "http://beta.agency.gov"
+  When  I follow "www1.agency-site.gov"
+  Then  I should see "Agency Website"
+

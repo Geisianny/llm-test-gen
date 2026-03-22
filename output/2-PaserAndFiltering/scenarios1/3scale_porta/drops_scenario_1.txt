@@ -1,0 +1,7 @@
+Scenario 1: MenuDrop
+  Given  a buyer "bob" of provider "foo.3scale.localhost"
+  And  I am logged in as "bob"
+  When  provider "foo.3scale.localhost" has following template
+  Then  page "the homepage" should contain
+  And  page "the account page" should contain
+

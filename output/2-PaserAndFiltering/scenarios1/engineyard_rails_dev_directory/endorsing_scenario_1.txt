@@ -1,0 +1,29 @@
+Scenario 1: Leaving a endorsement for a provider
+  Given  an "active" provider "Hashrocket"
+  And  "Hashrocket" has an approved endorsement "Sweet" "3.days.ago"
+  And  "Hashrocket" has an approved endorsement "Awesome" "3.days.ago"
+  And  "Hashrocket" has an approved endorsement "Very good" "2.days.ago"
+  And  "Hashrocket" has an approved endorsement "Super cool" "1.day.ago"
+  And  "Hashrocket" has a new endorsement "Nice work" "1.day.ago"
+  When  I am on the homepage
+  And  I follow "home.find_a_provider" translation
+  And  I press "provider.directory.find_providers" translation
+  And  I follow "Hashrocket"
+  Then  I should see "provider.more_endorsements" translation
+  Given  "Hashrocket" have requested "Brian Flanagan <btf@coralmade.net>" submit an endorsement
+  And  "btf@coralmade.net" follows the emailed endorsement link
+  Then  I should see "provider.endorsement_headline" translation
+  When  I fill in "endorsement[name]" with "Brian Flanagan"
+  And  I select "2007" from "endorsement[year_hired]"
+  And  I fill in "endorsement[company]" with "Coral Made"
+  And  I fill in "endorsement[email]" with "btf@coralmade.net"
+  And  I fill in "endorsement[url]" with "coralmade.net"
+  And  I fill in "endorsement[position]" with "Vice President of Human Resources"
+  And  I fill in "endorsement[endorsement]" with "80% perfect"
+  And  I press "endorsement_submit"
+  Then  I should see "endorsement.thanks" translation
+  And  I should not see "80% perfect"
+  And  I should not see "Nice work"
+  When  I follow "more-endorsements"
+  Then  I should not see "Nice work"
+

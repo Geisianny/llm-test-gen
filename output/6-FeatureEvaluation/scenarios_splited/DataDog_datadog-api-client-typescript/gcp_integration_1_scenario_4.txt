@@ -1,0 +1,6 @@
+Scenario: Delete an existing STS service account
+  Given the Datadog API is available
+  And there is an existing STS service account with the name "sts-account-to-delete"
+  When the user deletes the STS service account "sts-account-to-delete"
+  Then the system deletes the STS service account successfully
+  And returns a confirmation of the deletion

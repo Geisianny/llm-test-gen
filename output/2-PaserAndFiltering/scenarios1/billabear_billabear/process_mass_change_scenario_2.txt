@@ -1,0 +1,7 @@
+Scenario 2: Process Mass Change price
+  When  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  there are the following mass subscription changes exists:
+  When  I process mass change subscriptions
+  Then  there will be 7 subscriptions on "Test Two"
+  Then  there will be 4 subscriptions with the price 3400 "USD" per "month"
+

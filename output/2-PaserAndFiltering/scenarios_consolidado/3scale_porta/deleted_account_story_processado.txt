@@ -1,0 +1,13 @@
+Scenario 1: I cannot but view the invoices of a deleted buyer
+  Tags: ['@commit-transactions']
+  Given  an invoice of buyer "bob" for January, 2011 with items:
+  And  I issue the invoice number "2011-01-00000001"
+  And  account "bob" is deleted
+  And  I go to the admin portal invoices page
+  Then  I should see 1 invoice
+  When  I follow "2011-01-00000001"
+  Then  I should see "2011-01-00000001"
+  But  I should not see "Cancel invoice"
+  And  I should not see "Mark as paid"
+  And  I should not see /Charge$/
+

@@ -1,0 +1,11 @@
+Scenario 12: Retrieve a collection ordered correctly given the order of the argument
+  Tags: ['@createSchema']
+  Given  there are dummies with similar properties
+  When  I send the following GraphQL request:
+  Then  the response status code should be 200
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the JSON node "data.dummies.edges[0].node.name" should be equal to "baz"
+  And  the JSON node "data.dummies.edges[0].node.description" should be equal to "bar"
+  And  the JSON node "data.dummies.edges[1].node.name" should be equal to "foo"
+  And  the JSON node "data.dummies.edges[1].node.description" should be equal to "bar"
+

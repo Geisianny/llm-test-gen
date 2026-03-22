@@ -1,0 +1,26 @@
+Scenario 10: Add/edit/remove Collection
+  Given  the following BingV7 Affiliates exist:
+  And  I am logged in with email "john@agency.gov"
+  When  I go to the agency.gov's Manage Content page
+  And  I follow "Collection" within the Admin Center content
+  And  I follow "Add Collection"
+  When  I fill in the following:
+  And  I add the following Collection URL Prefixes:
+  And  I submit the form by pressing "Add"
+  Then  I should see "You have added News to this site"
+  When  I follow "Edit"
+  Then  the "Name" field should contain "News"
+  And  the "URL Prefix 1" field should contain "http://1.agency3.gov/"
+  And  the "URL Prefix 2" field should contain "http://www.agency1.gov/news/"
+  And  the "URL Prefix 3" field should contain "http://www.agency2.gov/news/"
+  When  I fill in the following:
+  And  I add the following Collection URL Prefixes:
+  And  I submit the form by pressing "Save"
+  Then  I should see "You have updated News and Blog"
+  When  I follow "Edit"
+  Then  the "URL Prefix 1" field should contain "blog.agency4.gov"
+  When  I follow "View All"
+  Then  I should see "News and Blog"
+  When  I press "Remove" and confirm "Are you sure you wish to remove News and Blog from this site?"
+  Then  I should see "You have removed News and Blog from this site"
+

@@ -1,0 +1,8 @@
+Scenario 2: Changing coupons usage limit
+  Tags: ['@ui']
+  Given  I want to modify the "SANTA2016" coupon for this promotion
+  When  I change its usage limit to 50
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this coupon should have 50 usage limit
+

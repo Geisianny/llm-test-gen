@@ -1,0 +1,9 @@
+Scenario 1: Trying to add a new administrator without email and name
+  Tags: ['@api', '@ui']
+  When  I want to create a new administrator
+  And  I do not specify its email
+  And  I do not specify its name
+  And  I try to add it
+  Then  I should be notified that the email is required
+  And  I should be notified that the name is required
+

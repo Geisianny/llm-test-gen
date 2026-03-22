@@ -1,0 +1,6 @@
+Scenario 1: Getting a hint when looking for taxons
+  Tags: ['@api']
+  When  I look for a taxon with "b" in name
+  Then  I should see 1 taxons on the list
+  And  I should see the taxon named "Belts" in the list
+

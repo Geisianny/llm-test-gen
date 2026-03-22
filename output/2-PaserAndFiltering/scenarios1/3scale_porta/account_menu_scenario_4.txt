@@ -1,0 +1,7 @@
+Scenario 4: finance disabled should not disable 3scale invoices
+  Given  provider "foo.3scale.localhost" has "finance" switch denied
+  When  I go to the provider account page
+  Then  I should see menu items under "Billing"
+  And  I go to the 3scale invoices page
+  Then  I should be on the 3scale invoices page
+

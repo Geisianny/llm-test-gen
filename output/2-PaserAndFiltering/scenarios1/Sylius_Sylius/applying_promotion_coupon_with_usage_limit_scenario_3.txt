@@ -1,0 +1,13 @@
+Scenario 3: Cancelled orders do not affect the usage limit by default
+  Tags: ['@api', '@ui']
+  Given  this coupon can be used once
+  And  I placed an order "#00000022"
+  And  I bought a single "PHP T-Shirt" using "SANTA2016" coupon
+  And  I chose "Free" shipping method to "United States" with "Cash on Delivery" payment
+  But  I cancelled this order
+  And  I added product "PHP T-Shirt" to the cart
+  And  I applied the coupon with code "SANTA2016"
+  When  I check the details of my cart
+  Then  my cart total should be "$90.00"
+  And  my discount should be "-$10.00"
+

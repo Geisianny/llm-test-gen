@@ -1,0 +1,4 @@
+Scenario 9: Cleanup: Log in as admin user again and remove scheduled actions
+  Given  I am authorized for the "Admin" section
+  And  I cancel all scheduled actions via API
+

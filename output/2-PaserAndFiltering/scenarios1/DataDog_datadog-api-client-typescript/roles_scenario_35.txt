@@ -1,0 +1,11 @@
+Scenario 35: Update a role returns "OK" response
+  Tags: ['@skip', '@team:DataDog/aaa-core-access']
+  Given  there is a valid "role" in the system
+  And  there is a valid "permission" in the system
+  And  new "UpdateRole" request
+  And  request contains "role_id" parameter from "role.data.id"
+  And  body with value {"data": {"id": "{{ role.data.id }}", "type": "roles", "attributes": {"name" : "{{ role.data.attributes.name }}-updated"}, "relationships": {"permissions": {"data": [{"id": "{{ permission.id }}", "type": "{{ permission.type }}"}]}}}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.attributes.name" is equal to "{{ role.data.attributes.name }}-updated"
+

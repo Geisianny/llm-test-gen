@@ -1,0 +1,7 @@
+Scenario 12: Delete Cloud Cost Management AWS CUR config returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/cloud-cost-management']
+  Given  new "DeleteCostAWSCURConfig" request
+  And  request contains "cloud_account_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

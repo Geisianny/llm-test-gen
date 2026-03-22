@@ -1,0 +1,7 @@
+Scenario 4: Execute with missing reporter, plugin and browser
+  Given  a configuration with:
+  When  I start Karma
+  Then  it fails with like:
+  And  it fails with like:
+  And  it fails with like:
+

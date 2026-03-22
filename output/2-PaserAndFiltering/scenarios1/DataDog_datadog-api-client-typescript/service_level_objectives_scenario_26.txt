@@ -1,0 +1,9 @@
+Scenario 26: Update an SLO returns "Bad Request" response
+  Tags: ['@team:DataDog/slo-app']
+  Given  new "UpdateSLO" request
+  And  there is a valid "slo" in the system
+  And  request contains "slo_id" parameter from "slo.data[0].id"
+  And  body with value {"type":"monitor","name":"{{ unique }}","thresholds":[{"target":95.0,"target_display":"95.0","timeframe":"7d","warning":98,"warning_display":"98.0"}]}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

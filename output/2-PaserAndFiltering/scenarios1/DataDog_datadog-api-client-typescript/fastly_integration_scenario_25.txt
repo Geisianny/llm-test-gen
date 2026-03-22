@@ -1,0 +1,8 @@
+Scenario 25: Update Fastly account returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "UpdateFastlyAccount" request
+  And  request contains "account_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"api_key": "ABCDEFG123"}, "type": "fastly-accounts"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

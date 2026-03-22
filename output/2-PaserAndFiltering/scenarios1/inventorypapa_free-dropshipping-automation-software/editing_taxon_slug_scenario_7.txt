@@ -1,0 +1,9 @@
+Scenario 7: Automatically changing a taxon's slug while editing a taxon's name
+  Tags: ['@ui', '@javascript']
+  Given  the store has "Medieval weapons" taxonomy
+  When  I want to modify the "Medieval weapons" taxon
+  And  I enable slug modification
+  And  I rename it to "Renaissance weapons" in "English (United States)"
+  And  I save my changes
+  Then  the slug of the "Renaissance weapons" taxon should be "renaissance-weapons"
+

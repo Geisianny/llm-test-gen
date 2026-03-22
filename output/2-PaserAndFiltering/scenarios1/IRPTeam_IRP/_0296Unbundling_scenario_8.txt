@@ -1,0 +1,9 @@
+Scenario 8: _300520 check connection to Unbundling report "Related documents"
+  Given  I open hyperlink "e1cib/list/Document.Unbundling"
+  *  Form report Related documents
+  And  I go to line in "List" table
+  And  I click the button named "FormFilterCriterionRelatedDocumentsRelatedDocuments"
+  And  Delay 1
+  Then  "* Related documents" window is opened
+  And  I close all client application windows
+

@@ -1,0 +1,8 @@
+Scenario 1: View product with quantity price rule
+  Given  the quantity price rule has a range starting from 5 with behaviour percentage-decrease of 10%
+  And  the price range is only valid for unit "Pieces"
+  When  I open the product's detail page
+  Then  I should see the price "€100.00"
+  And  I should see one quantity price rule with price "€90.00" for unit "Pieces"
+  And  I should see the quantity price rule 1 starting from "5" for unit "Pieces"
+

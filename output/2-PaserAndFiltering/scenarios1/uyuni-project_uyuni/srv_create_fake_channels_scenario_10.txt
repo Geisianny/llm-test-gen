@@ -1,0 +1,14 @@
+Scenario 10: Add Debian-like AMD64 base channel
+  Tags: ['@deblike_minion']
+  When  I follow the left menu "Software > Manage > Channels"
+  And  I follow "Create Channel"
+  And  I enter "Fake-Base-Channel-Debian-like" as "Channel Name"
+  And  I enter "fake-base-channel-debian-like" as "Channel Label"
+  And  I select "None" from "Parent Channel"
+  And  I select "AMD64 Debian" from "Architecture:"
+  And  I enter "Fake-Base-Channel-Debian-like for testing" as "Channel Summary"
+  And  I enter "No more description for base channel." as "Channel Description"
+  And  I uncheck "gpg_check"
+  And  I click on "Create Channel"
+  Then  I should see a "Channel Fake-Base-Channel-Debian-like created." text
+

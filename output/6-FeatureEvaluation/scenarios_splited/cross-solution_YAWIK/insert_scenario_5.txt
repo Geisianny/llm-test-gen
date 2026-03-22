@@ -1,0 +1,5 @@
+Scenario: Cancel creating organization
+  Given there is an admin user logged in
+  When the admin starts creating a new organization
+  And cancels the creation process
+  Then the system does not create the organization

@@ -1,0 +1,9 @@
+Scenario 1: I can log in with correct username and password and enabled account
+  Given  I am on the home page
+  And  I follow "Login"
+  When  I fill in the following:
+  And  I press "Login"
+  Then  I should be on the "home" page
+  When  I click on dashboard menu of "offerer"
+  Then  I should see "Logout"
+

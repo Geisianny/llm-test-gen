@@ -1,0 +1,8 @@
+Scenario 9: Update a dashboard list returns "Not Found" response
+  Tags: ['@team:DataDog/dashboards-backend']
+  Given  new "UpdateDashboardList" request
+  And  request contains "list_id" parameter with value 0
+  And  body with value {"name": "Not found"}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

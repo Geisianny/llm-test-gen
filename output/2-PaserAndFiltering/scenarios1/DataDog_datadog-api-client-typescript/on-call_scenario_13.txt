@@ -1,0 +1,9 @@
+Scenario 13: Get On-Call schedule returns "OK" response
+  Tags: ['@team:DataDog/on-call']
+  Given  new "GetOnCallSchedule" request
+  And  there is a valid "user" in the system
+  And  there is a valid "schedule" in the system
+  And  request contains "schedule_id" parameter from "schedule.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+

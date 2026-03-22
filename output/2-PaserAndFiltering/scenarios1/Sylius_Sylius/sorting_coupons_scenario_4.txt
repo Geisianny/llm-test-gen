@@ -1,0 +1,7 @@
+Scenario 4: Sorting coupons by code in ascending order
+  Tags: ['@api', '@ui']
+  Given  I am browsing coupons of this promotion
+  When  I sort coupons by ascending code
+  Then  I should see 3 coupons on the list
+  And  the first coupon should have code "X"
+

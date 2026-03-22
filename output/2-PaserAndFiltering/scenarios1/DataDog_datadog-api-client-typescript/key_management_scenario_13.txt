@@ -1,0 +1,8 @@
+Scenario 13: Edit an API key returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/credentials-management']
+  Given  new "UpdateAPIKey" request
+  And  request contains "key" parameter from "REPLACE.ME"
+  And  body with value {"name": "example user"}
+  When  the request is sent
+  Then  the response status is 200 OK
+

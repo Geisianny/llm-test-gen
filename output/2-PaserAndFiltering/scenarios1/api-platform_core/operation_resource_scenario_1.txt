@@ -1,0 +1,6 @@
+Scenario 1: Create an operation resource
+  Tags: ['@php8', '@createSchema', '@!mongodb']
+  When  I add "Content-Type" header equal to "application/json"
+  And  I send a "POST" request to "/operation_resources" with body:
+  Then  the response status code should be 201
+

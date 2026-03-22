@@ -1,0 +1,613 @@
+{
+  "repository_name": "noosfero",
+  "repository_owner": "noosfero",
+  "repository_url": "https://github.com/noosfero/noosfero",
+  "visibility": "public",
+  "is_private": false,
+  "total_feature_files": 100,
+  "downloaded_files": 100,
+  "download_date": "2025-11-26 08:25:33",
+  "feature_files": [
+    {
+      "name": "accept_member.feature",
+      "original_path": "features/accept_member.feature",
+      "size": 4060,
+      "sha": "1f08f6c2afb6c24d97c431fd0b4e4174a1f9cfa3"
+    },
+    {
+      "name": "activate_enterprise.feature",
+      "original_path": "features/activate_enterprise.feature",
+      "size": 6737,
+      "sha": "2ed76271ef7d4b0cc2890bb1b96f8f2a12d56a79"
+    },
+    {
+      "name": "admin_categories.feature",
+      "original_path": "features/admin_categories.feature",
+      "size": 2240,
+      "sha": "89ab9b3b1bf37bb36049fa32451232bd4e7e6f32"
+    },
+    {
+      "name": "approve_article.feature",
+      "original_path": "features/approve_article.feature",
+      "size": 3216,
+      "sha": "9a01041f9da4b5fd2c723ffa78c0dfeb70372c6b"
+    },
+    {
+      "name": "article_custom_fields.feature",
+      "original_path": "features/article_custom_fields.feature",
+      "size": 3141,
+      "sha": "eb9ce83d805fc3d8d4f972e56721edf4b830e845"
+    },
+    {
+      "name": "article_versioning.feature",
+      "original_path": "features/article_versioning.feature",
+      "size": 3961,
+      "sha": "74346b1b386df967fe0456e057f4e100e458d1f6"
+    },
+    {
+      "name": "article_visualization.feature",
+      "original_path": "features/article_visualization.feature",
+      "size": 1130,
+      "sha": "f27767313155efe239c6c7a4ac3f6cd82c495ace"
+    },
+    {
+      "name": "balloon.feature",
+      "original_path": "features/balloon.feature",
+      "size": 2267,
+      "sha": "a0e5297f34da668a819cef4b541ac6168f280156"
+    },
+    {
+      "name": "blog.feature",
+      "original_path": "features/blog.feature",
+      "size": 4287,
+      "sha": "15459709d17128e23b9eb2da5a0068db457fc402"
+    },
+    {
+      "name": "browse.feature",
+      "original_path": "features/browse.feature",
+      "size": 4298,
+      "sha": "ff47c01c6b595b33fe596d99eaf5b771d0725e37"
+    },
+    {
+      "name": "browse_enterprises.feature",
+      "original_path": "features/browse_enterprises.feature",
+      "size": 1338,
+      "sha": "790c0e8d73448dcd02da4f4442a1559fda3613fe"
+    },
+    {
+      "name": "categories_block.feature",
+      "original_path": "features/categories_block.feature",
+      "size": 1007,
+      "sha": "0e2f58e8218a4a5c98cdd39b330cd13575c1bf06"
+    },
+    {
+      "name": "change_appearance.feature",
+      "original_path": "features/change_appearance.feature",
+      "size": 795,
+      "sha": "75df5194c26e9b991160d249a2a3a1e01a74403e"
+    },
+    {
+      "name": "clickable_images.feature",
+      "original_path": "features/clickable_images.feature",
+      "size": 1831,
+      "sha": "e08ebee3c5c1f8519acce5bb63bc8a5b5042717b"
+    },
+    {
+      "name": "comment.feature",
+      "original_path": "features/comment.feature",
+      "size": 2287,
+      "sha": "68f7d8ca1ff9444faa8efe1062e06e7fcb3bfdb8"
+    },
+    {
+      "name": "comment_reply.feature",
+      "original_path": "features/comment_reply.feature",
+      "size": 3542,
+      "sha": "17420251beb8f20d890ae63f278395a65ab53426"
+    },
+    {
+      "name": "contact.feature",
+      "original_path": "features/contact.feature",
+      "size": 749,
+      "sha": "7c5884231b2c0709b888493288ae8c57518de651"
+    },
+    {
+      "name": "create_community.feature",
+      "original_path": "features/create_community.feature",
+      "size": 6431,
+      "sha": "debd98845dd21dd543065bacedc285394768bc14"
+    },
+    {
+      "name": "delete_profile.feature",
+      "original_path": "features/delete_profile.feature",
+      "size": 4761,
+      "sha": "b3498847bd19096bacb8e0dc3184142826bf8758"
+    },
+    {
+      "name": "edit_article.feature",
+      "original_path": "features/edit_article.feature",
+      "size": 10674,
+      "sha": "322357a572be7106f9616ef63f3cad8a860a0df4"
+    },
+    {
+      "name": "edit_block_of_links.feature",
+      "original_path": "features/edit_block_of_links.feature",
+      "size": 683,
+      "sha": "509a16c87edf5ca843382218ef50202a0d58e321"
+    },
+    {
+      "name": "edit_blog_archives_block.feature",
+      "original_path": "features/edit_blog_archives_block.feature",
+      "size": 1168,
+      "sha": "9a34089458b0fa1eb77611b874273a0f1725e6db"
+    },
+    {
+      "name": "edit_image.feature",
+      "original_path": "features/edit_image.feature",
+      "size": 1017,
+      "sha": "6f2d28193a6270876c8a257768d9126559380f7d"
+    },
+    {
+      "name": "edit_language_block.feature",
+      "original_path": "features/edit_language_block.feature",
+      "size": 1422,
+      "sha": "5fc6532bd92d57a2d8175d221e566467aae6ca48"
+    },
+    {
+      "name": "edit_profile.feature",
+      "original_path": "features/edit_profile.feature",
+      "size": 994,
+      "sha": "3aa209c1ebb895f7f025a123d795a819bbadcaf0"
+    },
+    {
+      "name": "events.feature",
+      "original_path": "features/events.feature",
+      "size": 13520,
+      "sha": "492f36800cdc8a37066f476b45089f09a29c7157"
+    },
+    {
+      "name": "follow_profile.feature",
+      "original_path": "features/follow_profile.feature",
+      "size": 2430,
+      "sha": "b0d40baa138d59c79f4a288d63473a81b17e2acf"
+    },
+    {
+      "name": "forum.feature",
+      "original_path": "features/forum.feature",
+      "size": 6268,
+      "sha": "8b2a86808e29bfea38c3c74ef5cd0c715667f7f8"
+    },
+    {
+      "name": "gravatar_support.feature",
+      "original_path": "features/gravatar_support.feature",
+      "size": 1392,
+      "sha": "2ffe8f1d031dc615528948f19f4395ef6722fba7"
+    },
+    {
+      "name": "internationalization.feature",
+      "original_path": "features/internationalization.feature",
+      "size": 1599,
+      "sha": "5f427f0981f62db9b510febf8834a4b115894997"
+    },
+    {
+      "name": "invitation.feature",
+      "original_path": "features/invitation.feature",
+      "size": 7342,
+      "sha": "ef454aadbffbfda7ff1b76147ef53abc10365507"
+    },
+    {
+      "name": "language_redirection.feature",
+      "original_path": "features/language_redirection.feature",
+      "size": 1514,
+      "sha": "ffb61b35e3bbb0d3558032e91527093ddb9cceac"
+    },
+    {
+      "name": "last_administrator_leaving.feature",
+      "original_path": "features/last_administrator_leaving.feature",
+      "size": 2212,
+      "sha": "2039286830d600363d6e48915b146a96639e3638"
+    },
+    {
+      "name": "location.feature",
+      "original_path": "features/location.feature",
+      "size": 1701,
+      "sha": "1e7173c8e704f933a2cb004060ecb74cc683a5ac"
+    },
+    {
+      "name": "login.feature",
+      "original_path": "features/login.feature",
+      "size": 1900,
+      "sha": "ddb3d51870d74257c7f4a8e9839b31d5df9b09ea"
+    },
+    {
+      "name": "manage_categories.feature",
+      "original_path": "features/manage_categories.feature",
+      "size": 955,
+      "sha": "1f08431ca7325926d2dcab1d03e55025d2b4ab5c"
+    },
+    {
+      "name": "manage_enterprises.feature",
+      "original_path": "features/manage_enterprises.feature",
+      "size": 990,
+      "sha": "6391d53fe81f9a2f9d6693f73f503b9d03a94ec6"
+    },
+    {
+      "name": "manage_fields.feature",
+      "original_path": "features/manage_fields.feature",
+      "size": 2923,
+      "sha": "a15ea64a04a17909c1cfe20589b90674c956c9bf"
+    },
+    {
+      "name": "manage_tasks.feature",
+      "original_path": "features/manage_tasks.feature",
+      "size": 2189,
+      "sha": "ffdef9bd84b93bb0f59ba45a746261cf273e0627"
+    },
+    {
+      "name": "manage_users.feature",
+      "original_path": "features/manage_users.feature",
+      "size": 1752,
+      "sha": "4228da72df27e22217845f3385158246c8a5ee82"
+    },
+    {
+      "name": "media_panel_upload_files.feature",
+      "original_path": "features/media_panel_upload_files.feature",
+      "size": 11280,
+      "sha": "526c9b48ebd332cf5eb551641186fa208e0235f4"
+    },
+    {
+      "name": "members_block.feature",
+      "original_path": "features/members_block.feature",
+      "size": 2136,
+      "sha": "ebc9e2838da0acaca6cca61ad5b643945bcb23e0"
+    },
+    {
+      "name": "new_content_on_cms.feature",
+      "original_path": "features/new_content_on_cms.feature",
+      "size": 1935,
+      "sha": "09379feaa24bffef2fccaace3e57edc92a239614"
+    },
+    {
+      "name": "online_manual.feature",
+      "original_path": "features/online_manual.feature",
+      "size": 1297,
+      "sha": "62c1f374a56f5291350ff7826a7f3e43ef8d607d"
+    },
+    {
+      "name": "organization_custom_fields.feature",
+      "original_path": "features/organization_custom_fields.feature",
+      "size": 3703,
+      "sha": "fd00db12f4433f932125b273800760f82583b8ff"
+    },
+    {
+      "name": "plugins.feature",
+      "original_path": "features/plugins.feature",
+      "size": 2048,
+      "sha": "6b7e25e9880de16374ae26236300adca43cb39d1"
+    },
+    {
+      "name": "private_profile.feature",
+      "original_path": "features/private_profile.feature",
+      "size": 1494,
+      "sha": "68cbc231233e0c2a9d5e9c08d6b8cbc152756fad"
+    },
+    {
+      "name": "profile_domain.feature",
+      "original_path": "features/profile_domain.feature",
+      "size": 2269,
+      "sha": "ad59dff820d0a6319b0004e02d503b73ace69f21"
+    },
+    {
+      "name": "profile_search.feature",
+      "original_path": "features/profile_search.feature",
+      "size": 2746,
+      "sha": "404fd4a0ac9e655360e810addb8b9e281babb84f"
+    },
+    {
+      "name": "publish_article.feature",
+      "original_path": "features/publish_article.feature",
+      "size": 7437,
+      "sha": "deead98dabacf933b39f4c69dd3850f5665ac7e2"
+    },
+    {
+      "name": "register_enterprise.feature",
+      "original_path": "features/register_enterprise.feature",
+      "size": 8711,
+      "sha": "ef9a0dc3d583a455899255ae0c1e00fb6f7229c4"
+    },
+    {
+      "name": "roles.feature",
+      "original_path": "features/roles.feature",
+      "size": 1027,
+      "sha": "153d3e4a6b6741540f7106bcd05b9e9f52ae9f09"
+    },
+    {
+      "name": "search.feature",
+      "original_path": "features/search.feature",
+      "size": 4280,
+      "sha": "a877d1f63678e772c274fb864846deedc55941a5"
+    },
+    {
+      "name": "search_communities.feature",
+      "original_path": "features/search_communities.feature",
+      "size": 1865,
+      "sha": "2328d6813868f977aa214e96805591fc8e923248"
+    },
+    {
+      "name": "search_contents.feature",
+      "original_path": "features/search_contents.feature",
+      "size": 11169,
+      "sha": "cc555011c264c2c380de68639aa449276e84bc85"
+    },
+    {
+      "name": "search_enterprises.feature",
+      "original_path": "features/search_enterprises.feature",
+      "size": 3137,
+      "sha": "054c7683e0b527a2952c2902634e161b4438694c"
+    },
+    {
+      "name": "search_events.feature",
+      "original_path": "features/search_events.feature",
+      "size": 5994,
+      "sha": "f3037a139155cc6f95e95e31b073a3f8d764592a"
+    },
+    {
+      "name": "search_people.feature",
+      "original_path": "features/search_people.feature",
+      "size": 1377,
+      "sha": "fc7b8e6cc084cd0747ea04e9d9f2cdea38e06123"
+    },
+    {
+      "name": "secret_community.feature",
+      "original_path": "features/secret_community.feature",
+      "size": 1785,
+      "sha": "b554f43b7005e061243e516fede6408b4287355a"
+    },
+    {
+      "name": "send_email_to_environment_members.feature",
+      "original_path": "features/send_email_to_environment_members.feature",
+      "size": 2571,
+      "sha": "6dc68218cda440bd128ff95354cfb83b9d6edd22"
+    },
+    {
+      "name": "send_email_to_organization_members.feature",
+      "original_path": "features/send_email_to_organization_members.feature",
+      "size": 3348,
+      "sha": "e84771411148b4e0035b547bc307d18e4f321a75"
+    },
+    {
+      "name": "sensitive_content.feature",
+      "original_path": "features/sensitive_content.feature",
+      "size": 11109,
+      "sha": "1f257b99aeef023c561fa9d5efb96a5c9bc5ec1c"
+    },
+    {
+      "name": "signup.feature",
+      "original_path": "features/signup.feature",
+      "size": 2094,
+      "sha": "f8bcf2d2bff569e5b7a5916524f7d7cf641f26e9"
+    },
+    {
+      "name": "suggest_article.feature",
+      "original_path": "features/suggest_article.feature",
+      "size": 2342,
+      "sha": "be888e49363a00c416dff5da4af2a1ea8182304f"
+    },
+    {
+      "name": "tags.feature",
+      "original_path": "features/tags.feature",
+      "size": 1439,
+      "sha": "538c2e198044d11cf8763729879b383524a7f9a0"
+    },
+    {
+      "name": "tiny_mce.feature",
+      "original_path": "features/tiny_mce.feature",
+      "size": 870,
+      "sha": "2740170bace1f50cb0afe6fd42a604eae5535b1b"
+    },
+    {
+      "name": "unblock_button.feature",
+      "original_path": "features/unblock_button.feature",
+      "size": 1274,
+      "sha": "a8941f95d7df893fb7f16f09547ff45bdf3a8217"
+    },
+    {
+      "name": "upload_files.feature",
+      "original_path": "features/upload_files.feature",
+      "size": 947,
+      "sha": "488a9fb1ef7e8533d6a6e3ba4f549dacbf8ea07e"
+    },
+    {
+      "name": "message_edition.feature",
+      "original_path": "plugins/admin_notifications/features/message_edition.feature",
+      "size": 547,
+      "sha": "df8236a93a67d80f1a08452c31e09899d8920518"
+    },
+    {
+      "name": "labels.feature",
+      "original_path": "plugins/comment_classification/features/labels.feature",
+      "size": 2323,
+      "sha": "6c8ccfb8d8bb6729740f5b0bbe5fdc7018bd0ec5"
+    },
+    {
+      "name": "status.feature",
+      "original_path": "plugins/comment_classification/features/status.feature",
+      "size": 4388,
+      "sha": "ba3f5bb46027a3f93a7abb163e111a1d7c76926e"
+    },
+    {
+      "name": "cms.feature",
+      "original_path": "plugins/comment_paragraph/features/cms.feature",
+      "size": 775,
+      "sha": "e82eb6feaad9c2d177b90c4cd8a524a8859db98c"
+    },
+    {
+      "name": "video_player.feature",
+      "original_path": "plugins/html5_video/features/video_player.feature",
+      "size": 807,
+      "sha": "c9eb1fbec0d79b6ce27291d056d3aed69dcb3afa"
+    },
+    {
+      "name": "lattes_curriculum.feature",
+      "original_path": "plugins/lattes_curriculum/features/lattes_curriculum.feature",
+      "size": 2985,
+      "sha": "388cf477659fff39f0632c92310fa8c5d76a0bc8"
+    },
+    {
+      "name": "newsletter_plugin.feature",
+      "original_path": "plugins/newsletter/features/newsletter_plugin.feature",
+      "size": 3123,
+      "sha": "d29d2284255d559d4796ff9c98edc825f7b51fce"
+    },
+    {
+      "name": "create_provider.feature",
+      "original_path": "plugins/oauth_client/features/create_provider.feature",
+      "size": 871,
+      "sha": "6605c306caeaf042ce00a5453c0952c63ddcbcf3"
+    },
+    {
+      "name": "rate_community.feature",
+      "original_path": "plugins/organization_ratings/features/rate_community.feature",
+      "size": 1543,
+      "sha": "5c90c88f15d1c6f46b21f65c99f7ba17b854f1a7"
+    },
+    {
+      "name": "vote_once_disable_cooldown.feature",
+      "original_path": "plugins/organization_ratings/features/vote_once_disable_cooldown.feature",
+      "size": 919,
+      "sha": "9bc3827b7a8f6adf7a9132e2f1f2716fd8a60f17"
+    },
+    {
+      "name": "person_tags.feature",
+      "original_path": "plugins/person_tags/features/person_tags.feature",
+      "size": 541,
+      "sha": "386a2a8a133eb5daf87d1405fa841c2607c59899"
+    },
+    {
+      "name": "profile_advanced_search.feature",
+      "original_path": "plugins/pg_search/features/profile_advanced_search.feature",
+      "size": 1474,
+      "sha": "5096d4c180cf139054a9c2d515b9f1e02c51dbd0"
+    },
+    {
+      "name": "browse_catalogs.feature",
+      "original_path": "plugins/products/features/browse_catalogs.feature",
+      "size": 13799,
+      "sha": "8df0cb869b287b3d21bc72c19d05aedd7488a251"
+    },
+    {
+      "name": "enterprise_homepage.feature",
+      "original_path": "plugins/products/features/enterprise_homepage.feature",
+      "size": 1469,
+      "sha": "ec6ac6c6435f638398aa7c56065d74e722ad927c"
+    },
+    {
+      "name": "featured_products_block.feature",
+      "original_path": "plugins/products/features/featured_products_block.feature",
+      "size": 1741,
+      "sha": "cddcbab0d8fd82a79620f78b5893399423097a0f"
+    },
+    {
+      "name": "search_products.feature",
+      "original_path": "plugins/products/features/search_products.feature",
+      "size": 4908,
+      "sha": "b3f218c81cacc170c879cee2362868615516d4fa"
+    },
+    {
+      "name": "push_notification_admin.feature",
+      "original_path": "plugins/push_notification/features/push_notification_admin.feature",
+      "size": 1850,
+      "sha": "f8c5c9e626800c7ffde25bab16f0330a4c4ab68e"
+    },
+    {
+      "name": "push_notification_user_config.feature",
+      "original_path": "plugins/push_notification/features/push_notification_user_config.feature",
+      "size": 2583,
+      "sha": "c3843964d80076f9660a4bf23767a954861bd159"
+    },
+    {
+      "name": "add_recent_content.feature",
+      "original_path": "plugins/recent_content/features/add_recent_content.feature",
+      "size": 3775,
+      "sha": "ea89b5ac8aad102417fbdfa2a3dab0d6dc87b91f"
+    },
+    {
+      "name": "require_auth_to_comment.feature",
+      "original_path": "plugins/require_auth_to_comment/features/require_auth_to_comment.feature",
+      "size": 501,
+      "sha": "2ef3bbdcd61f1b74c8c97fb0543c92ead068f3fa"
+    },
+    {
+      "name": "send_email_plugin.feature",
+      "original_path": "plugins/send_email/features/send_email_plugin.feature",
+      "size": 1504,
+      "sha": "532987948959a3898686ab12b6cde8ba3235cad7"
+    },
+    {
+      "name": "delivery_admin.feature",
+      "original_path": "plugins/shopping_cart/features/delivery_admin.feature",
+      "size": 2685,
+      "sha": "1321023a8ed28ce67a2967117f204bc5ffa2108b"
+    },
+    {
+      "name": "delivery_client.feature",
+      "original_path": "plugins/shopping_cart/features/delivery_client.feature",
+      "size": 3542,
+      "sha": "481c45247910ba266e2a0268b94c0ffbf2ab7a4d"
+    },
+    {
+      "name": "purchases.feature",
+      "original_path": "plugins/shopping_cart/features/purchases.feature",
+      "size": 6951,
+      "sha": "204cce702c866537ca917a69651e1b2a587dbc29"
+    },
+    {
+      "name": "sales.feature",
+      "original_path": "plugins/shopping_cart/features/sales.feature",
+      "size": 4430,
+      "sha": "0101c3e6f583d168b627f439f441197100b82c6b"
+    },
+    {
+      "name": "search_communities_1.feature",
+      "original_path": "plugins/solr/features/search_communities.feature",
+      "size": 3634,
+      "sha": "9ded7ec330452e172b4382afdf8860ee599eea08"
+    },
+    {
+      "name": "search_contents_1.feature",
+      "original_path": "plugins/solr/features/search_contents.feature",
+      "size": 3706,
+      "sha": "cbdf8f958d8f18c27364ec0374b6ebe4c8e3c3a3"
+    },
+    {
+      "name": "search_enterprises_1.feature",
+      "original_path": "plugins/solr/features/search_enterprises.feature",
+      "size": 5058,
+      "sha": "f92b3e789cefbe0b5e061177f6b561f8d4dd16e8"
+    },
+    {
+      "name": "search_people_1.feature",
+      "original_path": "plugins/solr/features/search_people.feature",
+      "size": 3145,
+      "sha": "fa959ad2a2d5b17ec886c9e15113f82fee46eb36"
+    },
+    {
+      "name": "search_products_1.feature",
+      "original_path": "plugins/solr/features/search_products.feature",
+      "size": 5939,
+      "sha": "55eb9c85116883fddb2254b265f6cabada468479"
+    },
+    {
+      "name": "sub_organizations_block.feature",
+      "original_path": "plugins/sub_organizations/features/sub_organizations_block.feature",
+      "size": 2387,
+      "sha": "0a5eb57baaef2d343edc096408c4023ec745d56c"
+    },
+    {
+      "name": "sub_organizations_display.feature",
+      "original_path": "plugins/sub_organizations/features/sub_organizations_display.feature",
+      "size": 4120,
+      "sha": "39a835f3257aed4bf1b0d2b9fe629d75d1bafd9f"
+    }
+  ],
+  "status": "success"
+}

@@ -1,0 +1,6 @@
+Scenario 6: Create an application with extra fields
+  When  they go to the dev portal new application page
+  And  the form is submitted with:
+  Then  they should see the flash message "Application was successfully created"
+  And  buyer "Jane" should have 1 cinstance
+

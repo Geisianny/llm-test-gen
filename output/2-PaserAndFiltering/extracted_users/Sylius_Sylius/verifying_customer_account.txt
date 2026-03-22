@@ -1,0 +1,18 @@
+Feature: Toggling a customer account
+Description: In order to control whether the customer is verified
+    As an Administrator
+    I want to be able to verify their account
+Tags: ['@managing_customers']
+
+Background: 
+  Given  I am logged in as an administrator
+
+Scenario 1: Verifying customer account
+  Tags: ['@api', '@ui']
+  Given  there is enabled customer account "f.baggins@example.com" with password "psw"
+  When  I want to verify "f.baggins@example.com"
+  And  I verify it
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this customer should be verified
+

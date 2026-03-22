@@ -1,0 +1,13 @@
+Scenario 4: Create a custom channel for Build Host
+  Tags: ['@uyuni', '@build_host']
+  When  I follow the left menu "Software > Manage > Channels"
+  And  I follow "Create Channel"
+  And  I enter "Devel-Build-Host-Channel" as "Channel Name"
+  And  I enter "devel-build-host-channel" as "Channel Label"
+  And  I select the parent channel for the "build_host" from "Parent Channel"
+  And  I select "x86_64" from "Architecture:"
+  And  I enter "Devel-Build-Host-Channel for development repositories" as "Channel Summary"
+  And  I enter "Channel containing development repositories" as "Channel Description"
+  And  I click on "Create Channel"
+  Then  I should see a "Channel Devel-Build-Host-Channel created." text
+

@@ -1,0 +1,7 @@
+Scenario 3: Adding product with quantity price rule and unit in quantity 20
+  When  I add 20 of this product in unit "Carton" to the cart
+  Then  I should be on the cart summary page
+  And  I should be notified that the product has been successfully added
+  And  I should see product "TShirt" in unit "Carton" with unit price "€1,800.00" in my cart
+  And  I should see product "TShirt" in unit "Carton" with total price "€36,000.00" in my cart
+

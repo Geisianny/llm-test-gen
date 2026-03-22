@@ -1,0 +1,13 @@
+Scenario Outline 1: Party trades during continuous trading (0086-ASPR-004)(0086-ASPR-006) - Example 1
+  Given  the following network parameters are set:
+  When  the parties place the following orders:
+  Then  the network moves ahead "1" epochs
+  Given  the activity streaks at epoch "1" should be:
+
+  Examples:
+    | maker | taker | size | active for | inactive for | multipliers |
+    | aux1 | trader1 | 1 | 0 | 1 | 1 |
+    | trader1 | aux1 | 1 | 0 | 1 | 1 |
+    | aux1 | trader1 | 11 | 1 | 0 | 2 |
+    | trader1 | aux1 | 11 | 1 | 0 | 2 |
+

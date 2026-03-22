@@ -1,0 +1,16 @@
+Scenario 6: Pre-requisite: Add custom channel to minion
+  Given  I am on the Systems overview page of this "sle_minion"
+  When  I follow "Software" in the content area
+  And  I follow "Software Channels" in the content area
+  And  I wait until I do not see "Loading..." text
+  Then  radio button "SLE-Product-SLES15-SP4-Pool for x86_64" should be checked
+  And  I wait until I do not see "Loading..." text
+  And  I check "Custom Channel for SLES15SP4 PTFs"
+  And  I click on "Next"
+  Then  I should see a "Confirm Software Channel Change" text
+  And  I click on "Confirm"
+  Then  I should see a "Changing the channels has been scheduled." text
+  When  I follow "scheduled" in the content area
+  And  I wait until I see "1 system successfully completed this action." text, refreshing the page
+  Then  channel "Custom Channel for SLES15SP4 PTFs" should be enabled on "sle_minion"
+

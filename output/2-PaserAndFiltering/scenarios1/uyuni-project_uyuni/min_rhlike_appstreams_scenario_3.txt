@@ -1,0 +1,7 @@
+Scenario 3: Verify that channel AppStreams are available for the system
+  Given  I am on the Systems overview page of this "rhlike_minion"
+  When  I follow "Software" in the content area
+  And  I follow "AppStreams"
+  Then  I should see "scorpio:2.1-cbox" as unchecked
+  And  I should see "scorpio:2.0-cbox" as unchecked
+

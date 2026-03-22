@@ -1,0 +1,8 @@
+Scenario 3: Receiving a discount on 6th order when 5th one was cancelled
+  Tags: ['@ui']
+  Given  I have already placed 5 orders choosing "PHP T-Shirt" product, "Free" shipping method to "United States" with "Cash on Delivery" payment
+  But  I cancelled my last order
+  When  I add product "PHP T-Shirt" to the cart
+  Then  my cart total should be "$80.00"
+  And  my discount should be "-$20.00"
+

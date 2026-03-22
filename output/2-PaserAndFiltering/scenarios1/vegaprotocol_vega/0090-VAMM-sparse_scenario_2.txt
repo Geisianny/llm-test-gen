@@ -1,0 +1,13 @@
+Scenario 2: Sparse AMM incoming orders makes it short
+  Tags: ['@VAMM']
+  When  the parties place the following orders:
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the parties place the following orders:
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the parties place the following orders:
+  Then  the following trades should be executed:
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the parties place the following orders:
+  When  the parties place the following orders:
+  And  the market data for the market "ETH/MAR22" should be:
+

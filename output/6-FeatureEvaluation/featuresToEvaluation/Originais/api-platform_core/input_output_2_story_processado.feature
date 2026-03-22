@@ -1,0 +1,21 @@
+Feature: input_output_2_story_processado
+
+Scenario: Request a password reset
+    Tags: ['@createSchema']
+    And  I send a "POST" request to "/users_reset/password_reset_request" with body:
+    Then  the response status code should be 201
+    And  the response should be in JSON
+    And  the header "Content-Type" should be equal to "application/json; charset=utf-8"
+    And  the JSON should be equal to:
+
+
+
+Scenario: Request a password reset for a non-existent user
+    Tags: ['@createSchema']
+    And  I send a "POST" request to "/users_reset/password_reset_request" with body:
+    Then  the response status code should be 404
+    And  the response should be in JSON
+    And  the header "Content-Type" should be equal to "application/problem+json; charset=utf-8"
+    And  the JSON node "detail" should be equal to "User does not exist."
+
+

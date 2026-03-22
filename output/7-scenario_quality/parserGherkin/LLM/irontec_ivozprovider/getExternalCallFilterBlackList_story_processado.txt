@@ -1,0 +1,50 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: getExternalCallFilterBlackList_story_processado.feature
+Caminho relativo: irontec_ivozprovider\getExternalCallFilterBlackList_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\irontec_ivozprovider\getExternalCallFilterBlackList_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: getExternalCallFilterBlackList_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Retrieve external call filter blacklists with valid authentication
+   Steps: 4
+   - Given there is a client admin with a valid authentication token
+   - When the client admin sends a GET request to retrieve external call filter blacklists
+   - Then the system returns a JSON response with the list of blacklists
+   - And the response status code is 200
+2. Retrieve external call filter blacklists with invalid authentication
+   Steps: 4
+   - Given there is a client admin with an invalid authentication token
+   - When the client admin sends a GET request to retrieve external call filter blacklists
+   - Then the system returns an error response
+   - And the response status code is 401
+3. Retrieve a specific external call filter blacklist by ID
+   Steps: 5
+   - Given there is a client admin with a valid authentication token
+   - And there is an existing external call filter blacklist with ID "123"
+   - When the client admin sends a GET request to retrieve the blacklist with ID "123"
+   - Then the system returns a JSON response with the blacklist details
+   - And the response status code is 200
+4. Retrieve a non-existent external call filter blacklist by ID
+   Steps: 5
+   - Given there is a client admin with a valid authentication token
+   - And there is no existing external call filter blacklist with ID "456"
+   - When the client admin sends a GET request to retrieve the blacklist with ID "456"
+   - Then the system returns an error response
+   - And the response status code is 404
+5. Retrieve external call filter blacklists with missing authentication token
+   Steps: 4
+   - Given there is a client admin without an authentication token
+   - When the client admin sends a GET request to retrieve external call filter blacklists
+   - Then the system returns an error response
+   - And the response status code is 401

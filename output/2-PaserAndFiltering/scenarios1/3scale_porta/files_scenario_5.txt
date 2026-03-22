@@ -1,0 +1,6 @@
+Scenario 5: Files accessible from the Developer Portal
+  Tags: ['@wip']
+  Given  there is a cms file
+  When  I access the file on developer portal
+  Then  the file should be the same as uploaded
+

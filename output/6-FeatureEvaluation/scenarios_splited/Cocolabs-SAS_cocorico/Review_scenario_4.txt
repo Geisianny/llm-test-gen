@@ -1,0 +1,6 @@
+Scenario: User tries to add a review without a transaction history
+  Given there are two registered users "asker1" and "offerer1"
+  And "asker1" has not made a transaction with "offerer1"
+  When "asker1" tries to add a review for "offerer1"
+  Then the system displays an error message
+  And informs "asker1" that they cannot review "offerer1" without a transaction

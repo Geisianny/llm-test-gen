@@ -1,0 +1,8 @@
+Scenario 7: Schedule a remote script in the future and see the correct timezone as a pop up
+  Given  I am on the Systems overview page of this "sle_minion"
+  When  I follow "Remote Command" in the content area
+  And  I enter as remote command this script in
+  And  I enter "00:00" as "date_timepicker_widget_input"
+  And  I click on "Schedule"
+  Then  I should see a "00:00:00 MYT" text
+

@@ -1,0 +1,5 @@
+Scenario 5: Download package, user with an non expired valid token for the org
+  Given  I have a valid token expiring tomorrow for organization "1"
+  When  I try to download "virgo-dummy-2.0-1.1.noarch.rpm" from channel "fake-rpm-suse-channel"
+  Then  the download should get no error
+

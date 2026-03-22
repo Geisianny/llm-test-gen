@@ -1,0 +1,8 @@
+Scenario 2: Sorting products by their dates with ascending order
+  Tags: ['@api', '@ui']
+  When  I browse products from taxon "Fluffy Pets"
+  And  I sort products by the oldest date first
+  Then  I should see 4 products in the list
+  And  I should see a product with name "Berserk Pug"
+  But  the first product on the list should have name "Xtreme Pug"
+

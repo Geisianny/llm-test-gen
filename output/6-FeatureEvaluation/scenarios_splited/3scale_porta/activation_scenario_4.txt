@@ -1,0 +1,5 @@
+Scenario: Login after successful account activation
+  Given there is a registered user with an activated account
+  When the user logs in to their account with valid credentials
+  Then the system grants access
+  And displays a message confirming successful login

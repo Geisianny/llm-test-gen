@@ -1,0 +1,10 @@
+Scenario 2: Set a custom app key
+  Given  they are reviewing the provider's application details
+  When  follow "Set a custom User Key" within the API Credentials card
+  And  fill in "Current password" with "supersecret"
+  And  press "Confirm Password"
+  And  fill in "User key" with "new-valid-key"
+  And  press "Save"
+  Then  should see "new-valid-key" within the API Credentials card
+  And  should see "User key has been updated"
+

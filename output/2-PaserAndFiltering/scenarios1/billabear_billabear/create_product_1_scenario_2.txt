@@ -1,0 +1,5 @@
+Scenario 2: Successfully create product with tax rate
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  When  I create a product via the app with the following info
+  Then  the product "Product Four" should have the tax rate 20
+

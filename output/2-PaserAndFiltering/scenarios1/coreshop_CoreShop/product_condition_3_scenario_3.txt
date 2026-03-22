@@ -1,0 +1,7 @@
+Scenario 3: Add a new product shipping rule which is invalid
+  Given  adding a shipping rule named "product"
+  And  the shipping rule is active
+  And  the shipping rule has a condition products with product "Shoe"
+  And  I add the product "Jacket" to my cart
+  Then  the shipping rule should be invalid for my cart with carrier "Post"
+

@@ -1,0 +1,13 @@
+Scenario 10: Update map for IA-32 SUSE clients using amd deb test channel
+  Tags: ['@scc_credentials']
+  When  I follow the left menu "Software > Distribution Channel Mapping"
+  Then  I should see the text "SUSE Linux Enterprise Server 15 SP 4 iSeries" in the Operating System field
+  And  I should see the text "iSeries" in the Architecture field
+  And  I should see the text "fake-base-channel-i586" in the Channel Label field
+  When  I follow "SUSE Linux Enterprise Server 15 SP 4 iSeries"
+  And  I enter "SUSE Linux Enterprise Server 15 SP 4 iSeries modified" as "os"
+  And  I select "Fake-Base-Channel-Debian-like" from "channel_label"
+  And  I click on "Update Mapping"
+  Then  I should see the text "SUSE Linux Enterprise Server 15 SP 4 iSeries modified" in the Operating System field
+  And  I should see the text "fake-base-channel-debian-like" in the Channel Label field
+

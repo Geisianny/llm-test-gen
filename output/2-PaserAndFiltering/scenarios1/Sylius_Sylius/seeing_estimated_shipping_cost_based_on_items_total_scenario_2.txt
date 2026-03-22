@@ -1,0 +1,6 @@
+Scenario 2: Seeing valid estimated shipping cost for the cart with a value under maximum price configured on the shipping method
+  Tags: ['@api', '@ui']
+  Given  I added product "Cheap Jacket" to the cart
+  When  I check the details of my cart
+  Then  my cart estimated shipping cost should be "$10.00"
+

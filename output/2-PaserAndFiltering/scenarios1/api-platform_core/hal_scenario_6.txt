@@ -1,0 +1,10 @@
+Scenario 6: Update a resource (legacy PUT as standard_put: false)
+  When  I add "Accept" header equal to "application/hal+json"
+  And  I add "Content-Type" header equal to "application/json"
+  And  I send a "PUT" request to "/dummies/1" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be valid according to the JSON HAL schema
+  And  the header "Content-Type" should be equal to "application/hal+json; charset=utf-8"
+  And  the JSON should be equal to:
+

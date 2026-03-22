@@ -1,0 +1,5 @@
+Scenario 2: Seeing disabled code field when editing tax category
+  Tags: ['@ui', '@api']
+  When  I want to modify a tax category "Alcohol"
+  Then  I should not be able to edit its code
+

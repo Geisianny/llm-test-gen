@@ -1,0 +1,12 @@
+Feature: not_discountable_discount_amount_action_story_processado
+
+Scenario: Add a new discount rule with 20 percent discount for all products
+    Given  adding a cart price rule named "discount"
+    And  the cart rule is active
+    And  the cart rule is a voucher rule with code "asdf"
+    And  the cart rule has a action discount with 20 in currency "EUR" off
+    And  I apply the voucher code "asdf" to my cart
+    Then  the cart discount should be "0" including tax
+    Then  the cart total should be "10000" including tax
+
+

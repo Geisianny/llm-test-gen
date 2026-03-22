@@ -1,0 +1,7 @@
+Scenario 4: Cancel downtimes by scope returns "Downtimes not found" response
+  Tags: ['@team:DataDog/monitor-app']
+  Given  new "CancelDowntimesByScope" request
+  And  body with value {"scope": "test:{{ unique_lower_alnum }}_invalid"}
+  When  the request is sent
+  Then  the response status is 404 Downtimes not found
+

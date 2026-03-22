@@ -1,0 +1,8 @@
+Scenario 6: Non-superadmin unsuccessfully attempts to create an event
+  Given  I am signed in as a non-superadmin
+  And  I create "Unwanted" event
+  Then  I should be on the events page
+  Then  I should see permission denied
+  And  I should not see "Event was successfully created"
+  And  "Unwanted" event should not exist
+

@@ -1,0 +1,6 @@
+Scenario 8: Migration of Cobbler settings
+  Given  cobblerd is running
+  And  cobbler settings are successfully migrated
+  When  I restart cobbler on the server
+  Then  service "cobblerd" is active on "server"
+

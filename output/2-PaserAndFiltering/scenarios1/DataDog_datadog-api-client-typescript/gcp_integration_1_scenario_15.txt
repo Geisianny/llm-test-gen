@@ -1,0 +1,6 @@
+Scenario 15: List all GCP STS-enabled service accounts returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/gcp-integrations']
+  Given  new "ListGCPSTSAccounts" request
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

@@ -1,0 +1,7 @@
+Scenario 2: Sorting product variants in descending order
+  Tags: ['@api', '@api']
+  When  I view all variants of the product "Opel Insignia"
+  And  I start sorting variants by position
+  Then  the first variant in the list should have name "Opel Insignia Sports Tourer"
+  And  the last variant in the list should have name "Opel Insignia Hatchback"
+

@@ -1,0 +1,59 @@
+Feature: Members of HCN may propose edits to organisations
+Description: As the site superadmin for the Harrow Community Network
+  So I can improve the accuracy of HCN and to save time
+  I want to be able to moderate proposed edits to organisations listed on the HCN
+
+Background: organisations have been added to database
+  Given  the following organisations exist:
+  And  the following users are registered:
+  And  the following proposed edits exist:
+  And  cookies are approved
+
+Scenario 1: Nonsuperadmins do not see pending proposed edits link
+  Tags: ['@vcr']
+  Given  I am signed in as an non-superadmin
+  And  I visit the home page
+  Then  I should not see the pending proposed edits link
+
+Scenario 2: Moderate a proposed edit
+  Given  I am signed in as a superadmin
+  And  I visit the home page
+  And  I click on the pending proposed edits link
+  And  I should not see links for archived edits
+  And  I click on view details for the proposed edit for the organisation named "Friendly"
+  And  I should see a link or button "Accept Edit"
+  And  I should see a link or button "Keep Current Information"
+
+Scenario 3: Editability is enforced at moderate time even if it has changed since proposal of edit
+  Given  I am signed in as a superadmin
+  And  the following proposed edits exist:
+  And  I visit the most recently created proposed edit for "Newness"
+  When  I press "Accept Edit"
+  Then  I should be on the show page for the organisation named "Unfriendly"
+  And  the organisation named "Unfriendly" should have fields as follows:
+
+Scenario 4: Accept a proposed edit
+  Given  I am signed in as a superadmin
+  And  I visit the most recently created proposed edit for "Friendly"
+  When  I press "Accept Edit"
+  Then  I should be on the show page for the organisation named "Unfriendly"
+  And  "Friendly" should be updated as follows:
+  And  the most recently updated proposed edit for "Unfriendly" should be updated as follows:
+  And  I should see "The edit you accepted has been applied and archived"
+
+Scenario 5: Accept a proposed edit from a siteadmin edits nonpublic fields
+  Tags: ['@vcr']
+  Given  I am signed in as a superadmin
+  And  the following proposed edits exist:
+  And  I visit the most recently created proposed edit for "Newness"
+  When  I press "Accept Edit"
+  Then  "Newness" should be updated as follows:
+
+Scenario 6: Reject a proposed edit
+  Given  I am signed in as a superadmin
+  And  I visit the most recently created proposed edit for "Friendly"
+  When  I press "Keep Current Information"
+  Then  I should be on the show page for the organisation named "Friendly"
+  And  the most recently updated proposed edit for "Friendly" should be updated as follows:
+  And  I should see "The edit you rejected has been archived"
+

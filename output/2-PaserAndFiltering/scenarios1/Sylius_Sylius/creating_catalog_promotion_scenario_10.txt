@@ -1,0 +1,8 @@
+Scenario 10: Adding a new catalog promotion with priorities with others already existing
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  Given  there is a catalog promotion "PHP stuff promotion" with priority 100 that reduces price by "30%" and applies on "PHP T-Shirt" variant
+  And  there is a catalog promotion "T-Shirt sale" with priority 200 that reduces price by "10%" and applies on "PHP T-Shirt" variant
+  When  I create a "Winter sale" catalog promotion with 90 priority that applies on "T-Shirt" product and reduces price by "25%" in "United States" channel
+  Then  the visitor should see that the "PHP T-Shirt" variant is discounted from "$20.00" to "$9.45" with 3 promotions
+  And  the visitor should see that the "Kotlin T-Shirt" variant is discounted from "$40.00" to "$30.00" with "Winter sale" promotion
+

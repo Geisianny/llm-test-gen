@@ -1,0 +1,6 @@
+Scenario 3: displaying section
+  When  I go to /doc
+  And  I follow "User features"
+  Then  I should see "Accepting friends"
+  And  I should see "Commenting"
+

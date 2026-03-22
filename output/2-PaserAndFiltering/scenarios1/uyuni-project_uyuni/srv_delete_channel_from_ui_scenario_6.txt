@@ -1,0 +1,11 @@
+Scenario 6: Clone a child channel to the clone of x86_64 test channel
+  When  I follow the left menu "Software > Manage > Channels"
+  And  I follow "Clone Channel"
+  And  I select "Fake-RPM-SUSE-Channel" as the origin channel
+  And  I click on "Clone Channel"
+  Then  I should see a "Create Software Channel" text
+  And  I should see a "Current state of the channel" text
+  When  I select "Clone of Fake-Base-Channel-SUSE-like" from "Parent Channel"
+  And  I click on "Clone Channel"
+  Then  I should see a "Clone of Fake-RPM-SUSE-Channel" text
+

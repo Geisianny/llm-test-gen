@@ -1,0 +1,7 @@
+Scenario: Send ETH when Gas API is down with invalid recipient address
+  Given the Gas API is unavailable
+  And the user has a valid ETH balance
+  And the user has entered an invalid recipient address
+  When the user initiates an ETH send transaction
+  Then the system displays an error message indicating invalid recipient address
+  And the transaction is not processed

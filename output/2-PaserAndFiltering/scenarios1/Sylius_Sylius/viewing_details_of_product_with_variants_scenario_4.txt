@@ -1,0 +1,7 @@
+Scenario 4: Viewing variants
+  Tags: ['@api', '@ui']
+  When  I access the "Iron Shield" product
+  Then  I should see 2 variants
+  And  I should see the "Iron Shield - very big" variant
+  And  I should see the "Iron Shield - very small" variant
+

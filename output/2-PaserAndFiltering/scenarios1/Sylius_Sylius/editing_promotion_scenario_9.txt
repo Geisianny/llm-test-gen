@@ -1,0 +1,8 @@
+Scenario 9: Setting promotion to the lowest priority
+  Tags: ['@api', '@ui']
+  When  I want to modify a "Christmas sale" promotion
+  And  I set its priority to "-1"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  the "Christmas sale" promotion should have priority 1
+

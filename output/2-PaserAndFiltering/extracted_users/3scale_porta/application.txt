@@ -1,0 +1,32 @@
+Feature: Application stats
+Description: As an admin of provider account
+  In order to know the usage of a given buyer's application
+  I want to see this data in a chart
+Tags: ['@javascript']
+
+Background: 
+  Given  a provider is logged in
+  And  the default product of the provider has name "My API"
+  And  the following application plan:
+  And  the following service plan:
+  And  the following account plan:
+  And  a buyer "The Buyer INC."
+  And  the following application:
+  And  all the rolling updates features are off
+
+Scenario 1: Developer's Application chart has data
+  Given  the buyer made 2 service transactions 12 hours ago:
+  When  they go to application "Test App" admin page
+  And  they follow "Analytics"
+  Then  there should be a c3 chart with the following data:
+
+Scenario 2: Developer's Current Utilization section has data
+  Given  the following application plan:
+  And  an usage limit on plan "Limited" for metric "hits" with period hour and value 100
+  And  the buyer changes to application plan "Limited"
+  And  the buyer makes 2 service transactions with:
+  And  the backend responds to a utilization request for application "Test App" with:
+  When  they go to application "Test App" admin page
+  Then  they should see "Overview of the current state of this application's limits"
+  And  they should see the following table within the current utilization card:
+

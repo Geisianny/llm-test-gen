@@ -1,0 +1,7 @@
+Scenario 4: Get all aggregated connections returns "Bad Request" response
+  Tags: ['@skip-python', '@skip-ruby', '@team:Datadog/networks']
+  Given  new "GetAggregatedConnections" request
+  And  request contains "limit" parameter with value 8000
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

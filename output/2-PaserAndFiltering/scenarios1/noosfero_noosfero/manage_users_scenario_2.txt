@@ -1,0 +1,8 @@
+Scenario 2: activate user
+  Tags: ['@selenium']
+  Given  I follow "Deactivate user" within "tr[title='Paulo Santos']"
+  And  I confirm the browser dialog
+  And  I follow "Activate user" within "tr[title='Paulo Santos']"
+  When  I confirm the browser dialog
+  Then  the field "tr[title='Paulo Santos'] td.actions a[title='Deactivate user']" should be enabled
+

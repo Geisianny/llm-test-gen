@@ -1,0 +1,5 @@
+Scenario: Search listing by category
+  Given there are listings categorized as "Apartments" and "Houses"
+  When the user searches for listings categorized as "Apartments"
+  Then the system displays listings categorized as "Apartments"
+  And the listings match the selected category

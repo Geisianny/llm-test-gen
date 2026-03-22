@@ -1,0 +1,6 @@
+Scenario 1: Normal postpaid life-cycle
+  Tags: ['@commit-transactions']
+  When  buyer "alice" has a valid credit card
+  And  I see my invoice from "May, 2009" is "Pending" on 3rd June 2009
+  And  I see my invoice from "May, 2009" is "Paid" on 5th June 2009
+

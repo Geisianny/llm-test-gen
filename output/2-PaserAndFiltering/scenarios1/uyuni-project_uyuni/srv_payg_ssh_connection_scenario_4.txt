@@ -1,0 +1,7 @@
+Scenario 4: Check pay-as-you-go list
+  When  I follow the left menu "Admin > Setup Wizard > PAYG Connections"
+  Then  I should see a "my-host.local" link
+  And  I should see a "My Instance" text
+  And  I should see a "my-host-full.local" link
+  And  I should see a "My Full Instance" text
+

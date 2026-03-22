@@ -1,0 +1,11 @@
+Scenario 10: List all rule outcomes returns "OK" response with pagination
+  Tags: ['@replay-only', '@skip-validation', '@team:DataDog/service-catalog', '@with-pagination']
+  Given  operation "ListScorecardOutcomes" enabled
+  And  new "ListScorecardOutcomes" request
+  And  request contains "page[size]" parameter with value 2
+  And  request contains "fields[outcome]" parameter with value "state"
+  And  request contains "filter[outcome][service_name]" parameter with value "my-service"
+  When  the request with pagination is sent
+  Then  the response status is 200 OK
+  And  the response has 2 items
+

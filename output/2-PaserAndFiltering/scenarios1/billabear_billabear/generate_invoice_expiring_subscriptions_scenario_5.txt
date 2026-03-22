@@ -1,0 +1,9 @@
+Scenario 5: 
+  Given  the following subscriptions exist:
+  And  stripe billing is enabled
+  And  the following credit transactions exist:
+  When  the background task to reinvoice active subscriptions
+  Then  the subscription for "customer.one@example.org" will expire in a week
+  And  the latest invoice for "customer.one@example.org" will have amount due as 0
+  And  the credit amount for "customer.one@example.org" should be 100
+

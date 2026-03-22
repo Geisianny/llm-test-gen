@@ -1,0 +1,8 @@
+Scenario 16: Edit a monitor configuration policy returns "Not Found" response
+  Tags: ['@team:DataDog/monitor-app']
+  Given  new "UpdateMonitorConfigPolicy" request
+  And  request contains "policy_id" parameter with value "00000000-0000-1234-0000-000000000000"
+  And  body with value {"data": {"attributes": {"policy": {"tag_key": "datacenter", "tag_key_required": false, "valid_tag_values": ["prod", "staging"]}, "policy_type": "tag"}, "id": "00000000-0000-1234-0000-000000000000", "type": "monitor-config-policy"}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

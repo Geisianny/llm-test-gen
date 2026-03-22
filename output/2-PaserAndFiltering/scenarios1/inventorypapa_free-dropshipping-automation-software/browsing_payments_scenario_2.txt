@@ -1,0 +1,6 @@
+Scenario 2: Not seeing payments in cart state
+  Tags: ['@ui', '@api']
+  Given  the customer "customer@example.com" added "Apple" product to the cart
+  When  I browse payments
+  Then  I should see a single payment in the list
+

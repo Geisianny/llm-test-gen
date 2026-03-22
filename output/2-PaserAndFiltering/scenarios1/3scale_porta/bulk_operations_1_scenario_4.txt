@@ -1,0 +1,8 @@
+Scenario 4: Send an email without subject
+  When  item "Jane" is selected
+  And  press "Send email"
+  And  fill in "Subject" with ""
+  And  fill in "Body" with "This is the body"
+  And  press "Send"
+  Then  "jane@example.com" should receive no emails
+

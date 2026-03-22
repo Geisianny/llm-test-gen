@@ -1,0 +1,4 @@
+Scenario 4: Ask cobbler to create a distribution via API
+  Given  cobblerd is running
+  When  I create "testdistro" kickstart tree via the API
+

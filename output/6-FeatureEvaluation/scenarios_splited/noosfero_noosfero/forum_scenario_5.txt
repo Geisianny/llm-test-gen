@@ -1,0 +1,4 @@
+Scenario: List existing forums
+  Given there is a Noosfero user with a community profile and multiple existing forums
+  When the user views the list of forums
+  Then the system displays a list of all existing forums

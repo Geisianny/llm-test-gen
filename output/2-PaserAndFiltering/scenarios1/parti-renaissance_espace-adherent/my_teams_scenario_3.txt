@@ -1,0 +1,6 @@
+Scenario 3: As a referent I can create my team
+  Given  I am logged with "referent-75-77@en-marche-dev.fr" via OAuth client "JeMengage Web" with scope "jemengage_admin"
+  When  I send a "POST" request to "/api/v3/my_teams?scope=president_departmental_assembly"
+  Then  the response status code should be 201
+  And  the JSON should be equal to:
+

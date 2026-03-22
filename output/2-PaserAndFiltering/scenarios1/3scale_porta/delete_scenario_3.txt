@@ -1,0 +1,5 @@
+Scenario 3: Default metric can't be deleted
+  When  I change to tab 'Metrics'
+  And  I follow "Hits"
+  Then  I should not see "Delete"
+

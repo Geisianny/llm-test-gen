@@ -1,0 +1,7 @@
+Scenario 2: Clearing cart after logging out
+  Tags: ['@api', '@no-ui']
+  Given  I am a logged in customer
+  And  I have product "Stark T-Shirt" in the cart
+  When  I log out
+  Then  I should not have access to the summary of my previous cart
+

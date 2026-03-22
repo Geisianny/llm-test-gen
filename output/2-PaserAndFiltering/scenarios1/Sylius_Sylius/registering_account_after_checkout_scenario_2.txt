@@ -1,0 +1,14 @@
+Scenario 2: Registering a new account after checkout when channel has enabled registration verification
+  Tags: ['@no-api', '@ui']
+  Given  on this channel account verification is required
+  And  I added product "PHP T-Shirt" to the cart
+  When  I complete addressing step with email "john@example.com" and "United States" based billing address
+  And  I proceed with "Free" shipping method and "Offline" payment
+  And  I confirm my order
+  When  I proceed to the registration
+  And  I specify a password as "sylius"
+  And  I confirm this password
+  And  I register this account
+  And  I verify my account using link sent to "john@example.com"
+  Then  I should be able to log in as "john@example.com" with "sylius" password
+

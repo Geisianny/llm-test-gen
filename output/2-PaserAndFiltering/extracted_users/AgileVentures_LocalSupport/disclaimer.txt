@@ -1,0 +1,23 @@
+Feature: Disclaimer about not being able to guarantee accuracy of sites content and notice about being beta site
+Description: As the system owner
+  So that I can avoid any liability
+  I want to show a link to a disclaimer on every page
+  Tracker story ID: https://www.pivotaltracker.com/story/show/49757817
+
+Background: organisations have been added to database
+  Given  the following organisations exist:
+  Given  the following pages exist:
+
+Scenario Outline 1: the disclaimer page is accessible on all pages - Example 1
+  Tags: ['@vcr']
+  Given  I visit the home page
+  When  I follow "Disclaimer"
+  Then  I should see "We disclaim everything!"
+
+  Examples:
+    | page |
+    | home page |
+    | organisations index page |
+    | new organisation page |
+    | show page for the organisation named "Friendly Charity" |
+

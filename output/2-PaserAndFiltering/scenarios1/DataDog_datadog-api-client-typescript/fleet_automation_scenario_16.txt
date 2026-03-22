@@ -1,0 +1,8 @@
+Scenario 16: Get a schedule by ID returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "GetFleetSchedule" enabled
+  And  new "GetFleetSchedule" request
+  And  request contains "id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

@@ -1,0 +1,3 @@
+Scenario 7: Cleanup: make sure salt-minion is stopped after mass import
+  When  I wait until Salt client is inactive on the PXE boot minion
+

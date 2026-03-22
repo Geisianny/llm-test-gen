@@ -1,0 +1,70 @@
+Feature: RequestTokenFlow_story_processado
+
+Scenario: Create wallet and then add a network
+    Given  I create a new wallet
+    And  I select remind me later on secure wallet screen
+    And  Select "Skip" on remind secure modal
+    And  I tap No Thanks on the Enable security check screen
+    And  I tap No thanks on the onboarding welcome tutorial
+    And  I tap the remind me later button on the Protect Your Wallet Modal
+    Then  I am on the main wallet view
+    When  I tap on the navbar network title button
+    And  I tap on the Add a Network button
+    When  I tap on network "BNB Smart Chain" to add it
+    Then  the network approval modal should appear
+    When  I tap on button with text "Approve"
+    Then  the network approval modal has button "Switch Network" displayed
+    When  I tap on button with text "Close"
+    And  I close the networks screen view
+    And  I navigate to the wallet
+    Then  I am on the main wallet view
+
+
+
+Scenario: Outline 2: Request native token - Example 1
+    When  I tap on the navbar network title button
+    And  I select "BNB Smart Chain" network option
+    Then  "BNB Smart Chain" should be displayed in network educational modal
+    Then  I see "BNB Smart Chain" visible in the top navigation bar
+    When  On the Main Wallet view I tap on the Receive Action
+    Then  "Scan address to receive payment" is visible
+    When  I tap on button with text "Request Payment"
+    And  I tap on button with text "BNB"
+    And  I type "3" into the Request Amount field
+    And  I tap on button with text "Reset"
+    Then  "3" is not displayed
+    When  I type "12" into the Request Amount field
+    And  I tap on button with text "Next"
+    Then  "Your request link is ready to send!" is visible
+    And  I tap on the close payment request icon
+    And  I tap on button with text "Remind me later"
+
+
+
+
+Scenario: Outline 3: User requests ERC-20 token - Example 1
+    When  I tap on the navbar network title button
+    And  I select "BNB Smart Chain" network option
+    And  the toast is displayed
+    And  On the Main Wallet view I tap on the Receive Action
+    Then  "Scan address to receive payment" is visible
+    When  I tap on button with text "Request Payment"
+    And  I type "BETH" in the Search Assets field
+    Then  "Binance Beacon ETH" is visible
+    When  I tap on button with text "Binance Beacon ETH"
+    Then  "BETH" is visible
+    When  I tap to navigate back from request view
+    And  I am taken back to the Request Search view
+    And  I type "Link" in the Search Assets field
+    Then  "ChainLink Token" is visible
+    When  I tap on button with text "ChainLink Token"
+    And  I type "5" into the Request Amount field
+    And  I tap on button with text "Next"
+    Then  "Your request link is ready to send!" is visible
+    And  I tap on button with text "QR Code"
+    Then  "Payment Request QR Code" is visible
+    And  I close the request screen
+    And  I tap on button with text "Remind me later"
+
+
+

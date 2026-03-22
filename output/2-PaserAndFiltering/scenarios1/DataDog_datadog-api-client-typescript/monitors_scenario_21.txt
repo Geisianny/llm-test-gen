@@ -1,0 +1,7 @@
+Scenario 21: Get a monitor's details returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/monitor-app']
+  Given  new "GetMonitor" request
+  And  request contains "monitor_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

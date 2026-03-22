@@ -1,0 +1,7 @@
+Scenario 3: Invoices are generated and finalized month by month
+  Given  a provider signed up to plan "Premium"
+  And  the provider logs in
+  When  time flies to 1st June 2009
+  And  they go to the 3scale invoices page
+  Then  the table should contain the following:
+

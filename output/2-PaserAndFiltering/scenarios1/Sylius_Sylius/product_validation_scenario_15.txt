@@ -1,0 +1,11 @@
+Scenario 15: Trying to enable a configurable product in another channel without specifying the variant prices for it
+  Tags: ['@api', '@ui']
+  Given  the store has a "7 Wonders" configurable product
+  And  this product has "7 Wonders: Cities" variant priced at "$30.00"
+  And  this product has "7 Wonders: Leaders" variant priced at "$20.00"
+  And  the store operates on another channel named "Mobile Channel"
+  When  I want to modify the "7 Wonders" product
+  And  I enable it in channel "Mobile Channel"
+  And  I save my changes
+  Then  I should be notified that I have to define product variants' prices for newly assigned channels first
+

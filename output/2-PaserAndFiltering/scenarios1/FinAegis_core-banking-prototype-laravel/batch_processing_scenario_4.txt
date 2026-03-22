@@ -1,0 +1,9 @@
+Scenario 4: Batch operation compensation on failure
+  Given  a batch operation updates account statuses
+  And  the operation fails halfway through
+  When  compensation is triggered
+  Then  all completed updates should be reversed
+  And  accounts should return to original state
+  And  compensation audit trail should be recorded
+  And  administrators should be notified
+

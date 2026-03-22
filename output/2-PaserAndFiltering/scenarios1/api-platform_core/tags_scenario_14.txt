@@ -1,0 +1,7 @@
+Scenario 14: Delete the collection owner
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "DELETE" request to "/relation3s/1"
+  Then  the response status code should be 204
+  And  the header "Cache-Tags" should not exist
+  And  "/relation3s,/relation3s/1,/relation2s/2" IRIs should be purged
+

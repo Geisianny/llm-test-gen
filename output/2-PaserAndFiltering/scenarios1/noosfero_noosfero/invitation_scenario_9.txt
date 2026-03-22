@@ -1,0 +1,4 @@
+Scenario 9: not see link to invite members to enterprise
+  When  I am on /profile/beatles-for-sale/members
+  Then  I should not see "Invite people to join" link
+

@@ -1,0 +1,5 @@
+Scenario 3: Organisation map has large icon for organisation with no users
+  Tags: ['@javascript', '@billy']
+  Given  I visit the organisations index page
+  Then  the organisation "Indian Elders Association" should have a large icon
+

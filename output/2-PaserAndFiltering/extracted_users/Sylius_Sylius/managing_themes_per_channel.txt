@@ -1,0 +1,27 @@
+Feature: Managing themes per channel
+Description: In order to allow customizing channels' appearance
+    As a store owner
+    I want to be able to set theme per channel
+Tags: ['@theming']
+
+Background: 
+  Given  the store operates on a channel named "United States"
+  And  the store has "maverick/meerkat" theme
+  And  I am logged in as an administrator
+
+Scenario 1: None of the themes are used by default
+  Tags: ['@ui', '@no-api']
+  When  I create a new channel "Poland"
+  Then  that channel should not use any theme
+
+Scenario 2: Setting a theme on a channel
+  Tags: ['@ui', '@no-api']
+  When  I set "United States" channel theme to "maverick/meerkat"
+  Then  that channel should use that theme
+
+Scenario 3: Unsetting a channel theme
+  Tags: ['@ui', '@no-api']
+  Given  channel "United States" uses "maverick/meerkat" theme
+  When  I unset theme on that channel
+  Then  that channel should not use any theme
+

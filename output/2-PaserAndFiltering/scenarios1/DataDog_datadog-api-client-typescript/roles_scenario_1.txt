@@ -1,0 +1,8 @@
+Scenario 1: Add a user to a role returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/aaa-core-access']
+  Given  new "AddUserToRole" request
+  And  request contains "role_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"id": "00000000-0000-0000-2345-000000000000", "type": "users"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

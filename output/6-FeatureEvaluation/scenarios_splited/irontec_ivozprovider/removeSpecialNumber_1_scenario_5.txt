@@ -1,0 +1,4 @@
+Scenario: Delete a special number with invalid ID
+  Given there is a super admin with valid credentials
+  When the super admin sends a DELETE request to the special number API with an invalid ID "abc"
+  Then the system returns an HTTP 400 status code

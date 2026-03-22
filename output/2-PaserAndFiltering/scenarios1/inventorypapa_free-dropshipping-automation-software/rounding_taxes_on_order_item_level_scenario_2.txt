@@ -1,0 +1,6 @@
+Scenario 2: Properly rounded down tax for single product
+  Tags: ['@ui']
+  When  I add product "PHP Mug" to the cart
+  Then  my cart total should be "$50.53"
+  And  my cart taxes should be "$4.59"
+

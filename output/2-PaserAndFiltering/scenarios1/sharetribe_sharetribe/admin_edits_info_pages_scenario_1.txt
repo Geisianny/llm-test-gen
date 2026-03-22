@@ -1,0 +1,6 @@
+Scenario 1: Normal user can not edit about page
+  Tags: ['@javascript']
+  Given  I am logged in as "kassi_testperson2"
+  And  I am on the about page
+  Then  I should not see "Edit page"
+

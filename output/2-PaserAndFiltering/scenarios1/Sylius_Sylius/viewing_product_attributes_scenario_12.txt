@@ -1,0 +1,7 @@
+Scenario 12: Viewing a detailed page with product's percent non-translatable attribute
+  Tags: ['@api', '@ui']
+  Given  the store has a product "T-Shirt banana"
+  And  this product has non-translatable percent attribute "T-Shirt cotton content" with value 50%
+  When  I check this product's details
+  Then  I should see the product attribute "T-Shirt cotton content" with value 50%
+

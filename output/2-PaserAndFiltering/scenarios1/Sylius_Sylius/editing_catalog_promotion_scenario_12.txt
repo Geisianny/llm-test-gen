@@ -1,0 +1,10 @@
+Scenario 12: Receiving error message after not filling price for all channels
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  Given  the store operates on another channel named "Poland"
+  When  I want to modify a catalog promotion "Christmas sale"
+  When  I remove its last action
+  And  I add action that gives "$10.00" of fixed discount in the "United States" channel
+  And  I make it available in channel "Poland"
+  And  I save my changes
+  Then  I should be notified that not all channels are filled
+

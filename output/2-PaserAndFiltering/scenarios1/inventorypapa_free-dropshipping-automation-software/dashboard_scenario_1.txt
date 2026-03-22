@@ -1,0 +1,10 @@
+Scenario 1: Seeing basic statistics for entire store
+  Tags: ['@ui']
+  Given  3 customers have fulfilled 4 orders placed for total of "$8566.00"
+  And  then 2 more customers have paid 2 orders placed for total of "$459.00"
+  When  I open administration dashboard
+  Then  I should see 6 new orders
+  And  I should see 5 new customers
+  And  there should be total sales of "$9,025.00"
+  And  the average order value should be "$1,504.17"
+

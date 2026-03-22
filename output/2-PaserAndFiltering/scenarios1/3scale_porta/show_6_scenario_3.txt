@@ -1,0 +1,8 @@
+Scenario 3: Only accessible products are visible
+  Given  a product
+  And  a backend
+  And  the backend is used by the product
+  And  the product becomes inaccessible
+  When  an admin is in the backend overview page
+  Then  the product is not in the list of all products using it
+

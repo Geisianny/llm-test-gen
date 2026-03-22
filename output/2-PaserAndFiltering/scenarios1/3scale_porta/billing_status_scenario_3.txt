@@ -1,0 +1,7 @@
+Scenario 3: Provider has charging enabled but no payment gateway
+  Given  the provider is charging its buyers
+  But  the provider doesn't have a payment gateway set up
+  When  an admin is reviewing the buyer's account
+  Then  they should see the buyer is being charged monthly
+  And  monthly charging can be disabled
+

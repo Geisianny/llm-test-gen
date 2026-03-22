@@ -1,0 +1,5 @@
+Scenario 7: Republish the "Departments, agencies and public bodies" page
+  Given  a published publication "Departments, agencies and public bodies" exists
+  When  I request a republish of the "Departments, agencies and public bodies" page
+  Then  I can see the "Departments, agencies and public bodies" page has been scheduled for republishing
+

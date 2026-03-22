@@ -1,0 +1,6 @@
+Scenario 3: Create a new category with a sub-category
+  And  the site has a category "Shirts"
+  And  the site has a category "Men"
+  And  the category is child of category "Shirts"
+  Then  the category "Men" should be child of category "Shirts"
+

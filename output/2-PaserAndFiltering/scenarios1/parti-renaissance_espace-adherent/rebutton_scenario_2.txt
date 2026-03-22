@@ -1,0 +1,6 @@
+Scenario 2: ReButton (icon) : should show a button with icon
+  When  I go to "/test/ux-component/ReButton/icon"
+  Then  I should see 1 ".re-icon.re-icon-unlock" elements
+  And  I should see 1 "button" elements
+  And  I should see "Simple button"
+

@@ -1,0 +1,5 @@
+Scenario: Filter customer service subscriptions by status
+  Given there are customer service subscriptions with different statuses for a provider
+  When the provider filters subscriptions by status "Active"
+  Then the system displays a list of customer service subscriptions with "Active" status
+  And the list includes the plan, billing type, value, and service for each subscription

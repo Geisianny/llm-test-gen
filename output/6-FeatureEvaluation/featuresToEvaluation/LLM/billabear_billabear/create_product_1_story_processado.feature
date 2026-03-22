@@ -1,0 +1,35 @@
+Feature: create_product_1_story_processado
+
+Scenario: Create product with valid name and rate
+    Given there is an authenticated APP user
+    When the user creates a product with the name "Test Product"
+    And specifies a rate of "9.99"
+    Then the system creates the product successfully
+    And displays the product details
+
+Scenario: Create product with valid name and rate type
+    Given there is an authenticated APP user
+    When the user creates a product with the name "Test Product"
+    And specifies a rate type of "monthly"
+    Then the system creates the product successfully
+    And displays the available rate types
+
+Scenario: Attempt to create product with empty name
+    Given there is an authenticated APP user
+    When the user creates a product with an empty name
+    And specifies a rate of "9.99"
+    Then the system prevents the creation of the product
+    And displays an error message indicating that the name is required
+
+Scenario: Attempt to create product with invalid rate
+    Given there is an authenticated APP user
+    When the user creates a product with the name "Test Product"
+    And specifies an invalid rate of "abc"
+    Then the system prevents the creation of the product
+    And displays an error message indicating that the rate is invalid
+
+Scenario: Create product with valid name and no rate or rate type
+    Given there is an authenticated APP user
+    When the user creates a product with the name "Test Product"
+    Then the system creates the product successfully
+    And displays the product details with no rate or rate type specified

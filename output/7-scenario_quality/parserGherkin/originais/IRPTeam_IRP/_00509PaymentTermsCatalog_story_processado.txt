@@ -1,0 +1,27 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 19/01/2026 23:13:57
+Arquivo analisado: _00509PaymentTermsCatalog_story_processado.feature
+Caminho relativo: IRPTeam_IRP\_00509PaymentTermsCatalog_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/Originais\IRPTeam_IRP\_00509PaymentTermsCatalog_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: _00509PaymentTermsCatalog_story_processado
+Descrição: Não possui
+Total de cenários: 1
+
+CENÁRIOS IDENTIFICADOS:
+1. _005024 filling in the "Payment terms" catalog
+   Steps: 7
+   - When set True value to the constant
+   - * Opening a form and creating Payment terms
+   - Given I open hyperlink "e1cib/list/Catalog.PaymentSchedules"
+   - When create a catalog element with the name Test
+   - * Check for created Payment terms
+   - Then I check for the "PaymentSchedules" catalog element with the "Description_en" "Test ENG"
+   - Then I check for the "PaymentSchedules" catalog element with the "Description_tr" "Test TR"

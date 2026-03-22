@@ -1,0 +1,6 @@
+Scenario 6: Seeing a disabled type field when adding country type zone
+  Tags: ['@ui']
+  When  I want to create a new zone consisting of country
+  Then  I should not be able to edit its type
+  And  it should be of country type
+

@@ -1,0 +1,13 @@
+Scenario 4: Order matching
+  Given  the following user exists:
+  And  the following account exists:
+  And  the following asset balances exist for account "bob@example.com":
+  And  I am logged in as "alice@example.com"
+  And  I have placed a limit buy order for "0.5" "BTC" at "49000" "EUR"
+  When  user "bob@example.com" places a limit sell order for "0.5" "BTC" at "49000" "EUR"
+  Then  both orders should be matched
+  And  the trade should be executed at price "49000" "EUR"
+  And  "alice@example.com" should receive "0.5" "BTC"
+  And  "bob@example.com" should receive "24500" "EUR" minus fees
+  And  both orders should have status "filled"
+

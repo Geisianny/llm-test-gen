@@ -1,0 +1,7 @@
+Scenario 1: I can expire booking not accepted or not refused by the offerer for some time
+  Given  An asker make this new booking request:
+  When  I run "cocorico:bookings:expire" command
+  Then  I should see "1 booking(s) expired" on console
+  And  He should receive the "booking_request_expired_offerer" mail on "offerer@cocorico.rocks"
+  And  He should receive the "booking_request_expired_asker" mail on "asker@cocorico.rocks"
+

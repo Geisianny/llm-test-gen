@@ -1,0 +1,9 @@
+Scenario 2: Creation of a new sales invoice, with taxes
+  Given  part "p1" with this tax:
+  And  customer "Customer 1" with this tax:
+  When  I open the sales invoice entry screen
+  And  I select customer "Customer 1"
+  And  I add an invoice line with part "p1"
+  Then  I expect to see an invoice with these lines
+  And  I expect to see the invoice subtotal of 30.00 and total of 31.50 with these taxes:
+

@@ -1,0 +1,7 @@
+Scenario 38: Get custom allocation rule returns "OK" response
+  Tags: ['@replay-only', '@team:DataDog/cloud-cost-management']
+  Given  new "GetCustomAllocationRule" request
+  And  request contains "rule_id" parameter with value 683
+  When  the request is sent
+  Then  the response status is 200 OK
+

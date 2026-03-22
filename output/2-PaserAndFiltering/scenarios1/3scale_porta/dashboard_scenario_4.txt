@@ -1,0 +1,7 @@
+Scenario 4: Messages link shows all messages count when there are no unread messages
+  And  a buyer "john" signed up to provider "foo.3scale.localhost"
+  And  5 messages sent from buyer "john" to the provider with subject "any" and body "any"
+  And  the provider reads all messages
+  And  I go to the provider dashboard
+  And  I should see the link "5 MESSAGES" within the audience dashboard widget
+

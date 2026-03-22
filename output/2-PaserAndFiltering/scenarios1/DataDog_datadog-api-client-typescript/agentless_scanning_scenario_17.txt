@@ -1,0 +1,7 @@
+Scenario 17: Get AWS on demand task returns "Bad Request" response
+  Tags: ['@team:DataDog/k9-agentless']
+  Given  new "GetAwsOnDemandTask" request
+  And  request contains "task_id" parameter with value "invalid-uuid"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

@@ -1,0 +1,12 @@
+Scenario 47: Update case custom attribute returns "OK" response
+  Tags: ['@skip', '@team:DataDog/case-management']
+  Given  new "UpdateCaseCustomAttribute" request
+  And  there is a valid "case_type" in the system
+  And  there is a valid "custom_attribute" in the system
+  And  there is a valid "case" with a custom "case_type" in the system
+  And  request contains "case_id" parameter from "case_with_type.id"
+  And  request contains "custom_attribute_key" parameter from "custom_attribute.attributes.key"
+  And  body with value {"data": {"attributes": {"type": "TEXT", "is_multi": true, "value": ["Abba", "The Cure"]}, "type": "case"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+

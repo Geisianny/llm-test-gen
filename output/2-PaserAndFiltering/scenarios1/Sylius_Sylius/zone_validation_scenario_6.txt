@@ -1,0 +1,6 @@
+Scenario 6: Being unable to add itself to members during editing an existing zone
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  Given  the store has a zone "European Union" with code "EU"
+  When  I want to modify the zone named "European Union"
+  Then  I should not be able to add the "European Union" zone as a member
+

@@ -1,0 +1,7 @@
+Scenario 35: Validate a monitor returns "OK" response
+  Tags: ['@team:DataDog/monitor-app']
+  Given  new "ValidateMonitor" request
+  And  body from file "monitor_payload.json"
+  When  the request is sent
+  Then  the response status is 200 OK
+

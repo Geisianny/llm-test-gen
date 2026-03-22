@@ -1,0 +1,7 @@
+Scenario 2: Receiving discount on order while buying promoted product
+  Tags: ['@api', '@ui']
+  Given  I added 2 products "PHP T-Shirt" to the cart
+  When  I check the details of my cart
+  Then  my cart total should be "$180.00"
+  And  my discount should be "-$20.00"
+

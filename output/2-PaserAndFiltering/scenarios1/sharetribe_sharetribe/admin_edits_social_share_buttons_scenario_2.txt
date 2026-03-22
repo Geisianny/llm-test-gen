@@ -1,0 +1,5 @@
+Scenario 2: Admin can not change social share buttons property
+  Tags: ['@javascript']
+  When  Community "test" is private
+  Then  I should not see "community_enable_social_share_buttons_true"
+

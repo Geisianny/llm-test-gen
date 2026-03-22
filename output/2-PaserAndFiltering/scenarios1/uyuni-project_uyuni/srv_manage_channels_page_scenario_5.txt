@@ -1,0 +1,10 @@
+Scenario 5: Fail when trying to use reserved names for channels
+  Tags: ['@scc_credentials']
+  When  I follow the left menu "Software > Manage > Channels"
+  And  I follow "Create Channel"
+  And  I enter "openSUSE-Leap-15.6-Pool for x86_64" as "Channel Name"
+  And  I enter "test123" as "Channel Label"
+  And  I enter "test123" as "Channel Summary"
+  And  I click on "Create Channel"
+  Then  I should see a "The channel name 'openSUSE-Leap-15.6-Pool for x86_64' is reserved, please enter a different name" text
+

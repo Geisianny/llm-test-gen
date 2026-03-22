@@ -1,0 +1,19 @@
+Scenario 16: Assign locale formula to minion via group formula
+  When  I follow the left menu "Systems > System Groups"
+  When  I follow "Create Group"
+  And  I enter "locale-formula-group" as "name"
+  And  I enter "Test group with locale formula added" as "description"
+  And  I click on "Create Group"
+  Then  I should see a "System group locale-formula-group created." text
+  When  I follow "Formulas" in the content area
+  Then  I should see a "Choose formulas:" text
+  And  I should see a "General System Configuration" text
+  And  I should see a "Locale" text
+  When  I check the "locale" formula
+  And  I click on "Save"
+  And  I wait until I see "Formula saved." text
+  And  I follow "Target"
+  And  I check the "sle_minion" client
+  And  I click on "Add Systems"
+  Then  I should see a "1 systems were added to locale-formula-group server group." text
+

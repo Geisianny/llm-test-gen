@@ -1,0 +1,9 @@
+Scenario 20: Trying to add a text attribute in different locales to an existing product without specifying its value in additional locale with proper length
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I want to modify the "Symfony Mug" product
+  And  I add the "Mug material" attribute
+  And  I set its "Mug material" attribute to "Dr" in "Polish (Poland)" locale
+  And  I set its "Mug material" attribute to "Wood" in "English (United States)" locale
+  And  I save my changes
+  Then  I should be notified that the "Mug material" attribute in "Polish (Poland)" locale should be longer than 3
+

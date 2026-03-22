@@ -1,0 +1,18 @@
+Scenario 3: find person without exact query
+  Given  the following users
+  When  I go to the search people page
+  And  I fill in "search-input" with "Adalberto Silva"
+  And  I press "Search"
+  Then  I should see "Joao Adalberto de Oliveira Silva" within "#search-results"
+  Given  the following categories as facets
+  And  the following category
+  And  the following users
+  When  I go to the search people page
+  And  I fill in "search-input" with "Linus"
+  And  I press "Search"
+  And  I follow "Software Livre" within "#facets-menu"
+  Then  I should see "Linus Torvalds" within "#search-results"
+  And  I should not see "Other Linus"
+  When  I follow "remove facet" within ".facet-selected"
+  Then  I should see "Other Linus"
+

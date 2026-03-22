@@ -1,0 +1,7 @@
+Scenario 1: Immediate orders, continuous trading An aggressive persistent (GTC) limit order that is partially filled
+            limit order price, at the back of the queue of orders at that price. (0014-ORDT-083)
+  And  the parties place the following orders:
+  And  the parties place the following orders:
+  Then  the orders should have the following states:
+  And  the order book should have the following volumes for market "BTC/ETH":
+

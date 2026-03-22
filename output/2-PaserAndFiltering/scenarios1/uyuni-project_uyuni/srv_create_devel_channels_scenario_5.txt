@@ -1,0 +1,4 @@
+Scenario 5: Create custom repositories inside the Build Host custom channel
+  Tags: ['@uyuni', '@build_host']
+  When  I prepare the development repositories of "build_host" as part of "devel-build-host-channel" channel
+

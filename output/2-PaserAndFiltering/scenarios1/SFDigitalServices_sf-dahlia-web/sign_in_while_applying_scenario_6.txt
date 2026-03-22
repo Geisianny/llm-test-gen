@@ -1,0 +1,10 @@
+Scenario 6: Signing in on welcome back page with draft application and continuing draft
+  Given  I go to the first page of the "Test Listing" application
+  And  I fill out the Name page as "Alice Walker"
+  And  I sign in as "Alice Walker" with my email pre-filled
+  Then  the application page title should be "Pick up where you left off"
+  When  I choose to continue my saved draft
+  Then  I should be on the "Contact" page of the application
+  And  I should see my address, NRHP match, on the Contact page
+  And  I sign out without saving
+

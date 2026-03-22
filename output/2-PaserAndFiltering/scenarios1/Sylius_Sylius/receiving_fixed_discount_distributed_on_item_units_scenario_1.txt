@@ -1,0 +1,8 @@
+Scenario 1: Applying stacked fixed discounts on multiple item units
+  Tags: ['@ui', '@api', '@mink:chromedriver']
+  When  I add 3 products "PHP T-Shirt" to the cart
+  And  I add 1 products "Symfony Mug" to the cart
+  Then  my cart total should be "$1.26"
+  And  my discount should be "-$91.68"
+  And  my cart shipping total should be "$1.26"
+

@@ -1,0 +1,14 @@
+Scenario 9: All subproduct pages have consistent navigation
+  When  I visit "/subproducts/exchange"
+  Then  I should see the main navigation
+  And  I should see the footer
+  When  I visit "/subproducts/lending"
+  Then  I should see the main navigation
+  And  I should see the footer
+  When  I visit "/subproducts/stablecoins"
+  Then  I should see the main navigation
+  And  I should see the footer
+  When  I visit "/subproducts/treasury"
+  Then  I should see the main navigation
+  And  I should see the footer
+

@@ -1,0 +1,13 @@
+Scenario 3: Verify the reserved inventory is back in stock after cancellation of a new order with two variants of product
+  Tags: ['@ui']
+  Given  there is a customer "john.doe@gmail.com" that placed an order "#00000023"
+  And  the customer bought 3 units of "Green" variant of product "T-shirt banana"
+  And  the customer bought 2 units of "Red" variant of product "T-shirt banana"
+  And  the customer chose "Free" shipping method to "United States" with "Cash on Delivery" payment
+  And  the order "#00000023" was cancelled
+  When  I view all variants of the product "T-shirt banana"
+  Then  the variant "Green" should have 5 items on hand
+  And  the "Green" variant should have 0 items on hold
+  And  the variant "Red" should have 5 items on hand
+  And  the "Red" variant should have 0 items on hold
+

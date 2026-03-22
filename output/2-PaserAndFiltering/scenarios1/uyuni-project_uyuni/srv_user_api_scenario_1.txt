@@ -1,0 +1,4 @@
+Scenario 1: List users
+  When  I call user.list_users()
+  Then  I should get at least user "admin"
+

@@ -1,0 +1,11 @@
+Scenario 27: Update Fastly account returns "OK" response
+  Tags: ['@team:DataDog/saas-integrations']
+  Given  there is a valid "fastly_account" in the system
+  And  new "UpdateFastlyAccount" request
+  And  request contains "account_id" parameter from "fastly_account.data.id"
+  And  body with value {"data": {"attributes": {"api_key": "update-secret"}, "type": "fastly-accounts"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.id" is equal to "{{fastly_account.data.id }}"
+  And  the response "data.attributes.name" is equal to "{{fastly_account.data.attributes.name }}"
+

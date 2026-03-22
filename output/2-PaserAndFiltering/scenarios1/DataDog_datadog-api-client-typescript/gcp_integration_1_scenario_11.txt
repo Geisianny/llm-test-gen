@@ -1,0 +1,10 @@
+Scenario 11: Create a new entry for your service account with resource collection enabled returns "OK" response
+  Tags: ['@team:DataDog/gcp-integrations']
+  Given  new "CreateGCPSTSAccount" request
+  And  body with value {"data": {"attributes": {"resource_collection_enabled": true, "client_email": "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
+  When  the request is sent
+  Then  the response status is 201 OK
+  And  the response "data.type" is equal to "gcp_service_account"
+  And  the response "data.attributes.client_email" is equal to "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com"
+  And  the response "data.attributes.resource_collection_enabled" is equal to true
+

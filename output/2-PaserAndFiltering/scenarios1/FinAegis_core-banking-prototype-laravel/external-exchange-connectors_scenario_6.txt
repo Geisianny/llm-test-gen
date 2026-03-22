@@ -1,0 +1,5 @@
+Scenario 6: Handle unsupported trading pair
+  When  I request "GET /api/external-exchange/ticker/XXX/YYY"
+  Then  the response status should be 200
+  And  the response should contain empty tickers
+

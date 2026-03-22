@@ -1,0 +1,8 @@
+Scenario 5: Accept a proposed edit from a siteadmin edits nonpublic fields
+  Tags: ['@vcr']
+  Given  I am signed in as a superadmin
+  And  the following proposed edits exist:
+  And  I visit the most recently created proposed edit for "Newness"
+  When  I press "Accept Edit"
+  Then  "Newness" should be updated as follows:
+

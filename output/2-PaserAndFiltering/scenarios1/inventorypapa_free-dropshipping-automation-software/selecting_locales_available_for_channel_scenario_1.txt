@@ -1,0 +1,12 @@
+Scenario 1: Adding a new channel with locales
+  Tags: ['@ui']
+  Given  I want to create a new channel
+  When  I specify its code as "MOBILE"
+  And  I name it "Mobile channel"
+  And  I make it available in "English (United States)"
+  And  I choose "Euro" as the base currency
+  And  I choose "English (United States)" as a default locale
+  And  I add it
+  Then  I should be notified that it has been successfully created
+  And  the channel "Mobile channel" should be available in "English (United States)"
+

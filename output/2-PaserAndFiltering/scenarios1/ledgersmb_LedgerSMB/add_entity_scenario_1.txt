@@ -1,0 +1,11 @@
+Scenario 1: Add a new Customer with minimal information
+  When  I navigate the menu and select the item at "Contacts > Add Entity"
+  Then  I should see the Edit Contact screen
+  And  I expect the "Company" tab to be selected
+  When  I enter "Company A" into "Name"
+  And  I select "Spain" from the drop down "Country"
+  And  I press "Save"
+  Then  I expect the "Credit Accounts" tab to be selected
+  When  I press "Save New"
+  Then  I expect the Accounts table to contain 1 row
+

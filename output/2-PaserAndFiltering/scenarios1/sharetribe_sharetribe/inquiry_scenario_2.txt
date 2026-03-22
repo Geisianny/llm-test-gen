@@ -1,0 +1,18 @@
+Scenario 2: Two people engage in inquiry conversation
+  Tags: ['@javascript']
+  Given  there are following users:
+  And  community "test" has following listing shapes enabled:
+  And  community "test" has following category structure:
+  And  there is a listing with title "Test message" from "kassi_testperson1" with category "Free message" and with listing shape "Inquiry"
+  And  I am logged in as "kassi_testperson2"
+  And  free conversations are disabled
+  When  I follow "Test message"
+  Then  I should not see "Contact"
+  When  I follow "FirstUser"
+  Then  I should not see "Contact"
+  When  free conversations are enabled
+  When  I follow "Test message"
+  Then  I should see "Contact"
+  When  I follow "FirstUser"
+  Then  I should see "Contact"
+

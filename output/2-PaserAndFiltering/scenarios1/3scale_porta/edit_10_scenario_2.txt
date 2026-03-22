@@ -1,0 +1,5 @@
+Scenario 2: Name can't be blank
+  Given  they go to the application's admin edit page
+  When  the form is submitted with:
+  Then  field "Name" has inline error "can't be blank"
+

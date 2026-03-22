@@ -1,0 +1,4 @@
+Scenario 7: Check events history for failures on monitoring server
+  Given  I am on the Systems overview page of this "monitoring_server"
+  Then  I check for failed events on history event page
+

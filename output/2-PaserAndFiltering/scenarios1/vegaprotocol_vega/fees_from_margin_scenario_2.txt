@@ -1,0 +1,37 @@
+Scenario Outline 2: With no funds in the general account, reducing short position with a limit order at various prices - Example 1
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the parties should have the following profit and loss:
+  And  the parties should have the following account balances:
+  And  the parties should have the following margin levels:
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  And  the parties should have the following account balances:
+  And  the parties should have the following margin levels:
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  debug trades
+  And  the following trades should be executed:
+  And  the parties should have the following account balances:
+
+  Examples:
+    | size | price | fee | margin | general | type |
+    | 1 | 1040 | 11 | 0 | 0 | TYPE_LIMIT |
+    | 9 | 1040 | 94 | 124 | 632 | TYPE_LIMIT |
+    | 10 | 1040 | 104 | 0 | 746 | TYPE_LIMIT |
+    | 1 | 1020 | 11 | 1039 | 0 | TYPE_LIMIT |
+    | 9 | 1020 | 92 | 122 | 836 | TYPE_LIMIT |
+    | 10 | 1020 | 102 | 0 | 948 | TYPE_LIMIT |
+    | 1 | 1000 | 10 | 1240 | 0 | TYPE_LIMIT |
+    | 9 | 1000 | 90 | 120 | 1040 | TYPE_LIMIT |
+    | 10 | 1000 | 100 | 0 | 1150 | TYPE_LIMIT |
+    | 1 | 1040 | 11 | 0 | 0 | TYPE_MARKET |
+    | 9 | 1040 | 94 | 124 | 632 | TYPE_MARKET |
+    | 10 | 1040 | 104 | 0 | 746 | TYPE_MARKET |
+    | 1 | 1020 | 11 | 1039 | 0 | TYPE_MARKET |
+    | 9 | 1020 | 92 | 122 | 836 | TYPE_MARKET |
+    | 10 | 1020 | 102 | 0 | 948 | TYPE_MARKET |
+    | 1 | 1000 | 10 | 1240 | 0 | TYPE_MARKET |
+    | 9 | 1000 | 90 | 120 | 1040 | TYPE_MARKET |
+    | 10 | 1000 | 100 | 0 | 1150 | TYPE_MARKET |
+

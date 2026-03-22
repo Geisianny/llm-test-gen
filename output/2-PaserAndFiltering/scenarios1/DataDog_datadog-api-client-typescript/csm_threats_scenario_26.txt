@@ -1,0 +1,6 @@
+Scenario 26: Get all Workload Protection agent rules (US1-FED) returns "OK" response
+  Tags: ['@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  new "ListCloudWorkloadSecurityAgentRules" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

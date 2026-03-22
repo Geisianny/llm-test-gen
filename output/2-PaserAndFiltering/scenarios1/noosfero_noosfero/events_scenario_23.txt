@@ -1,0 +1,6 @@
+Scenario 23: events that are not allowed to the user should not be displayed nor listed in the calendar
+  Given  the following events
+  When  I am on /profile/josesilva/events/2009/10/25
+  Then  I should not see "Private event" within "#agenda-items"
+  And  I should not see "25" link
+

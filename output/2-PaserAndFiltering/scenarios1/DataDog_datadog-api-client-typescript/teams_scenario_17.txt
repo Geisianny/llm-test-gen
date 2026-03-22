@@ -1,0 +1,8 @@
+Scenario 17: Get all teams returns "OK" response
+  Tags: ['@team:DataDog/aaa-omg']
+  Given  new "ListTeams" request
+  And  there is a valid "dd_team" in the system
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data" has item with field "id" with value "{{ dd_team.data.id }}"
+

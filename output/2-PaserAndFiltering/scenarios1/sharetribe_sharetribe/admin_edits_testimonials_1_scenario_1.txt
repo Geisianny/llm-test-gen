@@ -1,0 +1,10 @@
+Scenario 1: Admin see list of testimonials
+  And  there is paid transaction with testimonials for a listing with title "Massage" starter "kassi_testperson2"
+  When  I go to the testimonials admin2 page of community "test"
+  When  click to testimonial edit link
+  Then  I should see "Hi from author" within field "provider_comment"
+  Then  I fill in "provider_comment" with "What is up?"
+  Then  I press "Save"
+  Then  click to testimonial edit link
+  Then  I should see "What is up?"
+

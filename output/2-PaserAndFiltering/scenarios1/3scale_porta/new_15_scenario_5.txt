@@ -1,0 +1,6 @@
+Scenario 5: System name is invalid
+  Given  they go to the admin portal new backend api page
+  When  the form is submitted with:
+  Then  they should see a toast alert with text "Backend could not be created"
+  And  field "System name" has inline error "invalid"
+

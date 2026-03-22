@@ -1,0 +1,7 @@
+Scenario 4: Trying to add a new country with no code
+  Tags: ['@api', '@no-ui']
+  When  I want to add a new country
+  And  I do not specify the country code
+  And  I try to save my changes
+  Then  I should be notified that the country code is required
+

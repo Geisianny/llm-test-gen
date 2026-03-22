@@ -1,0 +1,10 @@
+Scenario 46: Update case custom attribute returns "Not Found" response
+  Tags: ['@team:DataDog/case-management']
+  Given  new "UpdateCaseCustomAttribute" request
+  And  there is a valid "case" in the system
+  And  request contains "case_id" parameter from "case.id"
+  And  request contains "custom_attribute_key" parameter with value "invalid_key"
+  And  body with value {"data": {"attributes": {"type": "TEXT", "is_multi": true, "value": ["Abba", "The Cure"]}, "type": "case"}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

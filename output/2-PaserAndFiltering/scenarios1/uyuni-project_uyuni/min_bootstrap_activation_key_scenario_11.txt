@@ -1,0 +1,5 @@
+Scenario 11: Verify that minion bootstrapped with base channel
+  Tags: ['@uyuni']
+  Given  I am on the Systems page
+  Then  I should see a "openSUSE Tumbleweed (x86_64)" text
+

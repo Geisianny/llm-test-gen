@@ -1,0 +1,7 @@
+Scenario: Sign-in while filling out an application anonymously with invalid credentials
+  Given there is a user with an existing account
+  And the user is filling out an application anonymously
+  When the user chooses to sign in with their account
+  And enters invalid email or password
+  Then the system denies access
+  And displays a message indicating that the email or password is incorrect

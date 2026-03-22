@@ -1,0 +1,5 @@
+Scenario: View list of customer service subscriptions
+  Given there are customer service subscriptions for a provider
+  When the provider navigates to the subscriptions page
+  Then the system displays a list of customer service subscriptions
+  And the list includes the status, plan, billing type, value, and service for each subscription

@@ -1,0 +1,9 @@
+Scenario 1: Disabling the product variant
+  Tags: ['@api', '@ui']
+  Given  the "Wyborowa Vodka Exquisite" product variant is enabled
+  When  I want to modify the "Wyborowa Vodka Exquisite" product variant
+  And  I disable it
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this variant should be disabled
+

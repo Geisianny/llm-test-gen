@@ -1,0 +1,4 @@
+Scenario 7: Check for errors in Cobbler monitoring
+  Tags: ['@skip_if_github_validation']
+  Then  the local logs for Cobbler should not contain errors
+

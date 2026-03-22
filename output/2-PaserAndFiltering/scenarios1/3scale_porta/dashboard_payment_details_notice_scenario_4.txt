@@ -1,0 +1,20 @@
+Scenario 4: On free plan, then upgrade to paid plan with trial period
+  Tags: ['@wip', '@buyer_change_plan']
+  Given  a provider "foo.3scale.localhost" is charging
+  And  the following application plans:
+  When  the current domain is foo.3scale.localhost
+  And  I go to the sign up page for the "Basic" plan
+  And  I fill in all required signup fields as "bob"
+  And  I press "Sign up"
+  And  user "bob" activates himself
+  And  buyer "bob" is approved
+  And  I log in as "bob" on foo.3scale.localhost
+  And  I go to the dashboard
+  Then  I should not see "Payment details required"
+  And  I should not see "Trial period"
+  When  31 days pass
+  And  buyer "bob" upgrades to plan "Pro"
+  And  I go to the dashboard
+  Then  I should see "Payment details required"
+  And  I should not see "Trial period"
+

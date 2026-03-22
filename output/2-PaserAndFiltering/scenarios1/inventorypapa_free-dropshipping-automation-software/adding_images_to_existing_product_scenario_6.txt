@@ -1,0 +1,9 @@
+Scenario 6: Adding an image to an existing product without providing its type
+  Tags: ['@ui', '@javascript']
+  Given  the store has a product "Lamborghini Gallardo Model"
+  And  I want to modify this product
+  When  I attach the "lamborghini.jpg" image
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this product should have only one image
+

@@ -1,0 +1,5 @@
+Scenario 11: Verify state of Fake-RPM-Terminal-Channel custom channel
+  Tags: ['@pxeboot_minion', '@uyuni', '@scc_credentials']
+  Then  "orion-dummy-1.1-1.1.x86_64.rpm" package should have been stored
+  And  solver file for "fake-rpm-terminal-channel" should reference "orion-dummy-1.1-1.1.x86_64.rpm"
+

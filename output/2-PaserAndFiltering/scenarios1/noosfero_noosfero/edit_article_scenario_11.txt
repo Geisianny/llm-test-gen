@@ -1,0 +1,11 @@
+Scenario 11: redirect to the created article
+  Tags: ['@selenium']
+  Given  I am on joaosilva's control panel
+  And  I follow "New" within "#section-content"
+  When  I follow "Text article"
+  And  I fill in "Title" with "My Article"
+  And  I fill in post-access hidden field with "1"
+  And  I follow "Save"
+  Then  I should see "My Article"
+  And  I should be on /joaosilva/my-article
+

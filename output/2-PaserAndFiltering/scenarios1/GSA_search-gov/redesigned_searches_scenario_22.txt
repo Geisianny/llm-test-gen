@@ -1,0 +1,9 @@
+Scenario 22: Related searches module
+  Tags: ['@javascript', '@a11y']
+  Given  the following BingV7 Affiliates exist:
+  And  the following SAYT Suggestions exist for en.agency.gov:
+  When  I am on en.agency.gov's search page
+  And  I fill in "Enter your search term" with "president"
+  And  I press "Search"
+  Then  I should see 2 redesigned related searches
+

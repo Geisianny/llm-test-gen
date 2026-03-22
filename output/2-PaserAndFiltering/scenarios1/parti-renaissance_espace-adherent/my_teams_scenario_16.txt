@@ -1,0 +1,12 @@
+Scenario Outline 16: As a logged-in user without correct right I cannot access teams endpoints - Example 1
+  Given  I am logged with "jacques.picard@en-marche.fr" via OAuth client "JeMengage Web" with scope "jemengage_admin"
+  When  I send a "GET" request to "/api/v3/my_teams?scope=president_departmental_assembly"
+  Then  the response status code should be 403
+
+  Examples:
+    | method | url |
+    | GET | /api/v3/my_teams?scope=president_departmental_assembly |
+    | POST | /api/v3/my_teams?scope=president_departmental_assembly |
+    | GET | /api/v3/my_team_members/d11d6ddd-dfba-4972-97b2-4c0bdf289559?scope=president_departmental_assembly |
+    | DELETE | /api/v3/my_team_members/d11d6ddd-dfba-4972-97b2-4c0bdf289559?scope=president_departmental_assembly |
+

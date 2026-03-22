@@ -1,0 +1,7 @@
+Scenario 3: Create Org Connection returns "Not Found" response
+  Tags: ['@team:DataDog/aaa-granular-access']
+  Given  new "CreateOrgConnections" request
+  And  body with value {"data": {"type": "org_connection", "relationships": {"sink_org": {"data": {"type": "orgs", "id": "nonexistent-org-id"}}}, "attributes": {"connection_types": ["logs"]}}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

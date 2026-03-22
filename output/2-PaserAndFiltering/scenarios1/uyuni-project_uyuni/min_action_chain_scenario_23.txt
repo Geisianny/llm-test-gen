@@ -1,0 +1,7 @@
+Scenario 23: Delete the action chain for Salt minion
+  When  I follow "Schedule"
+  And  I follow "Action Chains"
+  And  I follow "salt_minion_action_chain_to_delete"
+  And  I follow "Delete Action Chains" in the content area
+  And  I click on "Delete"
+

@@ -1,0 +1,34 @@
+Scenario: Add a new page with valid information
+  Given there is an Engine Yard administrator logged in
+  When the administrator adds a new page with title "About Us" and URL "/about-us"
+  And enters the content "This is the about us page"
+  Then the system creates the new page
+  And displays a confirmation message
+
+Scenario: Edit an existing page
+  Given there is an existing page with title "About Us" and URL "/about-us"
+  And there is an Engine Yard administrator logged in
+  When the administrator edits the page with title "About Us"
+  And changes the content to "This is the updated about us page"
+  Then the system updates the page
+  And displays a confirmation message
+
+Scenario: Delete an existing page
+  Given there is an existing page with title "About Us" and URL "/about-us"
+  And there is an Engine Yard administrator logged in
+  When the administrator deletes the page with title "About Us"
+  Then the system removes the page
+  And displays a confirmation message
+
+Scenario: Attempt to add a new page with duplicate URL
+  Given there is an existing page with URL "/about-us"
+  And there is an Engine Yard administrator logged in
+  When the administrator adds a new page with URL "/about-us"
+  Then the system displays an error message
+  And indicates that the URL is already in use
+
+Scenario: Attempt to add a new page with missing required fields
+  Given there is an Engine Yard administrator logged in
+  When the administrator adds a new page with missing title
+  Then the system displays an error message
+  And indicates that the title is required

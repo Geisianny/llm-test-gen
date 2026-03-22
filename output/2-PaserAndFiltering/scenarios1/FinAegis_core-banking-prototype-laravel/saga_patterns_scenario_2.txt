@@ -1,0 +1,8 @@
+Scenario 2: Transfer saga with compensation on deposit failure
+  Given  account "A" has balance of 1000.00 USD
+  And  account "B" is frozen for compliance
+  When  I initiate a transfer saga of 200.00 USD from "A" to "B"
+  Then  the saga should execute with compensation:
+  And  final balances should be:
+  And  compensation events should be recorded
+

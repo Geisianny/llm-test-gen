@@ -1,0 +1,5 @@
+Scenario 2: Unauthenticated user cannot view orders
+  Tags: ['@api', '@ui']
+  When  I try to browse my orders
+  Then  I should be denied an access to order list
+

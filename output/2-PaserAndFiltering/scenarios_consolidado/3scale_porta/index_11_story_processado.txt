@@ -1,0 +1,22 @@
+Scenario 1: Navigation
+  Given  they go to the the buyer accounts page
+  And  they follow "Bob"
+  And  they follow "0 Invoices"
+  Then  the current page is buyer "Bob" invoices page
+
+
+
+Scenario 2: List buyer account's invoices
+  Given  the following invoices:
+  When  they go to buyer "Bob" overview page
+  And  follow "2 Invoices"
+  Then  the table should contain the following:
+  And  the table does not have a column "Account"
+
+
+
+Scenario 3: Invoices tab not visible when billling disabled
+  Given  the provider has "finance" denied
+  When  they go to buyer "Bob" overview page
+  Then  they should not see "Invoices"
+

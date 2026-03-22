@@ -1,0 +1,9 @@
+Scenario 20: Schedule a monitor downtime returns "OK" response
+  Tags: ['@team:DataDog/monitor-app']
+  Given  there is a valid "monitor" in the system
+  And  new "CreateDowntime" request
+  And  body with value {"message": "{{ unique }}", "start": {{ timestamp("now") }}, "timezone": "Etc/UTC", "scope": ["test:{{ unique_lower_alnum }}"], "monitor_id": {{ monitor.id }}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "monitor_id" has the same value as "monitor.id"
+

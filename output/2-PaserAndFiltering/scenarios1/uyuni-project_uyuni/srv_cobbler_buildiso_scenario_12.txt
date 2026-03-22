@@ -1,0 +1,5 @@
+Scenario 12: Run Cobbler buildiso airgapped with all profiles in the Cobbler buildiso context
+  When  I run Cobbler buildiso "airgapped" for distro "buildisodistro"
+  And  I check Cobbler buildiso ISO "airgapped" with xorriso
+  And  I cleanup xorriso temp files
+

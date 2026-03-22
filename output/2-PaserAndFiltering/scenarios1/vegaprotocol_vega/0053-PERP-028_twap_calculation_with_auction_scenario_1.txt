@@ -1,0 +1,45 @@
+Scenario 1: 0053-PERP-028 Internal and External TWAP calculation, auction in funding period
+  Tags: ['@Perpetual', '@twap']
+  Given  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  time is updated to "2020-10-16T00:05:00Z"
+  When  the parties place the following orders:
+  Then  time is updated to "2020-10-16T00:10:00Z"
+  Given  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  And  the mark price should be "10" for the market "ETH/DEC19"
+  Given  the network moves ahead "60" blocks
+  Then  the product data for the market "ETH/DEC19" should be:
+  Given  the parties place the following orders:
+  And  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  Given  the network moves ahead "60" blocks
+  Then  the product data for the market "ETH/DEC19" should be:
+  Given  the network moves ahead "60" blocks
+  Then  the product data for the market "ETH/DEC19" should be:
+  Given  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  Given  the network moves ahead "60" blocks
+  Then  the product data for the market "ETH/DEC19" should be:
+  Given  the network moves ahead "60" blocks
+  Then  the product data for the market "ETH/DEC19" should be:
+  Given  the parties place the following orders:
+  And  the parties cancel the following orders:
+  Then  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/DEC19"
+  Given  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  Given  the network moves ahead "60" blocks
+  Then  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/DEC19"
+  Then  the product data for the market "ETH/DEC19" should be:
+  Given  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  Given  the network moves ahead "60" blocks
+  Then  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/DEC19"
+  Then  the product data for the market "ETH/DEC19" should be:
+  Then  the network moves ahead "1" blocks
+  Given  the network moves ahead "60" blocks
+  Then  the product data for the market "ETH/DEC19" should be:
+  Given  the parties place the following orders:
+  And  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  Given  the network moves ahead "60" blocks
+  Then  the product data for the market "ETH/DEC19" should be:
+  Given  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  Given  the network moves ahead "60" blocks
+  Then  the markets are updated:
+  When  the parties place the following orders:
+  Then  the product data for the market "ETH/DEC19" should be:
+

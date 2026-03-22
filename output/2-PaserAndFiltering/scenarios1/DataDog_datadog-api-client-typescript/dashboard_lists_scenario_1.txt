@@ -1,0 +1,7 @@
+Scenario 1: Create a dashboard list returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/dashboards-backend']
+  Given  new "CreateDashboardList" request
+  And  body with value {"name": "My Dashboard"}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

@@ -1,0 +1,7 @@
+Scenario 25: Delete a budget returns "No Content" response
+  Tags: ['@generated', '@skip', '@team:DataDog/cloud-cost-management']
+  Given  new "DeleteBudget" request
+  And  request contains "budget_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 204 No Content
+

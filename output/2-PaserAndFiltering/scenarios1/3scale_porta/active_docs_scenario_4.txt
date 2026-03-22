@@ -1,0 +1,7 @@
+Scenario 4: Loading OAS 3.0 template with javascript packs
+  Given  the product has a OAS 3.0 spec "Echo"
+  And  the provider has cms page "/swagger-ui-3" with:
+  And  the cms page "/swagger-ui-3" has main layout
+  When  they visit "/swagger-ui-3"
+  Then  they should see "A sample echo API"
+

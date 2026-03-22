@@ -1,0 +1,9 @@
+Scenario 3: Making an existing customer subscribed to the newsletter
+  Tags: ['@ui']
+  Given  the store has customer "Mike Ross" with email "ross@teammike.com"
+  When  I want to edit this customer
+  And  I make them subscribed to the newsletter
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this customer should be subscribed to the newsletter
+

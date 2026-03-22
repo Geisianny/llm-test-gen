@@ -1,0 +1,4 @@
+Scenario 9: Check events history for failures on SLE Micro 5.1 minion
+  Given  I am on the Systems overview page of this "slemicro51_minion"
+  Then  I check for failed events on history event page
+

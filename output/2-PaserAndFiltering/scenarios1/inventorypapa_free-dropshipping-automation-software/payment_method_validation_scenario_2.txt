@@ -1,0 +1,9 @@
+Scenario 2: Trying to add a new payment method without specifying its name
+  Tags: ['@ui']
+  Given  I want to create a new payment method with "Paypal Express Checkout" gateway factory
+  When  I specify its code as "PEC"
+  But  I do not name it
+  And  I add it
+  Then  I should be notified that name is required
+  And  the payment method with code "PEC" should not be added
+

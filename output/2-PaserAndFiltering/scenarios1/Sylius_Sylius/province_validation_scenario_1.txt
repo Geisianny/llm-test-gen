@@ -1,0 +1,9 @@
+Scenario 1: Trying to add a new province without specifying its code
+  Tags: ['@api', '@ui', '@javascript']
+  When  I want to create a new province in country "United Kingdom"
+  And  I name the province "Scotland"
+  But  I do not specify the province code
+  And  I try to save my changes
+  Then  I should be notified that code is required
+  And  province with name "Scotland" should not be added in this country
+

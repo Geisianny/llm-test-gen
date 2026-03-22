@@ -1,0 +1,6 @@
+Scenario 3: Get All Containers returns "OK" response
+  Tags: ['@replay-only', '@team:DataDog/container-experiences']
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data[0].attributes.name" is equal to "test_name"
+

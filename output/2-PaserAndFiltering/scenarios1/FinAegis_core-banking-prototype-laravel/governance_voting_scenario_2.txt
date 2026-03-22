@@ -1,0 +1,8 @@
+Scenario 2: Voting on a basket composition change
+  Given  a proposal exists to add "BTC" to the "CRYPTO_BASKET"
+  And  the proposal is active for voting
+  When  I vote "yes" on the proposal
+  Then  my vote should be recorded
+  And  my voting power of 100 should be applied
+  And  the proposal should show updated vote counts
+

@@ -1,0 +1,9 @@
+Scenario 1: Provider has prepaid monthly charging enabled
+  Given  the provider is charging its buyers in prepaid mode
+  And  the provider has "finance" visible
+  And  1 month pass
+  When  the buyer logs in
+  And  the buyer is reviewing their account settings
+  Then  they should have access last's month invoice
+  And  the buyer should receive some emails
+

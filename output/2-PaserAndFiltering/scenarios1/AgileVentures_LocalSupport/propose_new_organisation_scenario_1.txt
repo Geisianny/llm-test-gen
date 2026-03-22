@@ -1,0 +1,6 @@
+Scenario 1: Link not live when feature flag disabled
+  Tags: ['@javascript', '@billy']
+  Given  that the automated_propose_org flag is disabled
+  And  I visit the home page
+  Then  I should not see an add organisation link
+

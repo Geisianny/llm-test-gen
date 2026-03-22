@@ -1,0 +1,9 @@
+Scenario 3: Burning stablecoins to release collateral
+  Given  I have 200.00 FGUSDC stablecoins
+  And  300.00 USD locked as collateral
+  When  I burn 100.00 FGUSDC stablecoins
+  Then  the burning should be successful
+  And  I should have 100.00 FGUSDC remaining
+  And  150.00 USD collateral should be released
+  And  150.00 USD should remain locked
+

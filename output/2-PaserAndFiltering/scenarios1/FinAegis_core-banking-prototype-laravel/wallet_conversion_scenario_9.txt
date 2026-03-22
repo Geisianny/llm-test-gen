@@ -1,0 +1,7 @@
+Scenario 9: Automated conversion based on rules
+  Given  I set up automatic conversion rules:
+  When  my USD balance exceeds 5000
+  Then  automatic conversion should trigger
+  And  convert excess USD to EUR
+  And  notify me of the automatic action
+

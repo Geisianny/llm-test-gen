@@ -1,0 +1,7 @@
+Scenario 3: Seeing only archived shipping methods
+  Tags: ['@ui', '@api']
+  Given  the shipping method "UPS Carrier" is archival
+  And  I am browsing shipping methods
+  When  I filter archival shipping methods
+  Then  the only shipping method on the list should be "UPS Carrier"
+

@@ -1,0 +1,7 @@
+Scenario 1: Search for all Entities without filtering
+  When  I navigate the menu and select the item at "Contacts > Search"
+  Then  I should see the Contact Search screen
+  When  I press "Search"
+  Then  I should see the Contact Search Report screen
+  And  I expect the report to contain 2 rows
+

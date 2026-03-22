@@ -1,0 +1,5 @@
+Scenario 5: wkhtmltopdf - error
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  When  I set the pdf generator to:
+  Then  there should be an error for "bin"
+

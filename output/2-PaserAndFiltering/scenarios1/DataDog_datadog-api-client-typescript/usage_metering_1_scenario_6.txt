@@ -1,0 +1,6 @@
+Scenario 6: Get billing dimension mapping for usage endpoints returns "OK" response
+  Tags: ['@skip', '@team:DataDog/revenue-query']
+  Given  new "GetBillingDimensionMapping" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

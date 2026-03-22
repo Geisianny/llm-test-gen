@@ -1,0 +1,7 @@
+Scenario 15: Add a reboot action to the action chain on SSH minion
+  Given  I am on the Systems overview page of this "ssh_minion"
+  When  I follow first "Schedule System Reboot"
+  And  I check radio button "schedule-by-action-chain"
+  And  I click on "Reboot system"
+  Then  I should see a "Action has been successfully added to the Action Chain" text
+

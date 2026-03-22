@@ -1,0 +1,56 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: apply_story_processado.feature
+Caminho relativo: cross-solution_YAWIK\apply_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\cross-solution_YAWIK\apply_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: apply_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Apply for a job with valid information
+   Steps: 6
+   - Given there is a job opening with the title "Software Engineer"
+   - And the user has a valid profile with personal information
+   - When the user applies for the job "Software Engineer"
+   - And provides valid application information
+   - Then the system accepts the job application
+   - And displays a confirmation message
+2. Apply for a non-existent job
+   Steps: 5
+   - Given there is no job opening with the title "Non Existent Job"
+   - When the user applies for the job "Non Existent Job"
+   - And provides valid application information
+   - Then the system denies the job application
+   - And displays a message indicating that the job is not available
+3. Apply for a job with missing information
+   Steps: 6
+   - Given there is a job opening with the title "Software Engineer"
+   - And the user has a valid profile with personal information
+   - When the user applies for the job "Software Engineer"
+   - And provides incomplete application information
+   - Then the system denies the job application
+   - And displays a message indicating the required fields
+4. Apply for a job without a valid profile
+   Steps: 5
+   - Given there is a job opening with the title "Software Engineer"
+   - And the user does not have a valid profile with personal information
+   - When the user attempts to apply for the job "Software Engineer"
+   - Then the system prompts the user to complete their profile
+   - And does not allow the job application
+5. Multiple job applications for the same position
+   Steps: 6
+   - Given there is a job opening with the title "Software Engineer"
+   - And the user has a valid profile with personal information
+   - And the user has already applied for the job "Software Engineer"
+   - When the user attempts to apply again for the job "Software Engineer"
+   - Then the system denies the duplicate job application
+   - And displays a message indicating that the user has already applied

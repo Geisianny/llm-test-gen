@@ -1,0 +1,6 @@
+Scenario 2: Get a collection resource not impacted by groups
+  When  I send a "GET" request to "/relation_group_impact_on_collections"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON node "hydra:member[0].related" should be equal to "/relation_group_impact_on_collection_relations/1"
+

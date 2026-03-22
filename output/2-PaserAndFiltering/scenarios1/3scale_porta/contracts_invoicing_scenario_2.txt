@@ -1,0 +1,8 @@
+Scenario 2: Monthly fee on account plan (no billable contracts)
+  Given  all the rolling updates features are off
+  And  the date is 1st January 2009
+  And  the buyer is signed up to account plan "Account Plan"
+  And  the buyer plan "Account Plan" contract is pending
+  When  time flies to 3rd March 2009
+  Then  the buyer should have following line items for "January, 2009" invoice:
+

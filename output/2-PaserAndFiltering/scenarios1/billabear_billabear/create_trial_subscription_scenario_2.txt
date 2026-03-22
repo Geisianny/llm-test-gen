@@ -1,0 +1,6 @@
+Scenario 2: Create
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  When  I create a trial subscription via the API for "customer.one@example.org" with the follow:
+  Then  there should not be a subscription for the user "customer.one@example.org"
+

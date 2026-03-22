@@ -1,0 +1,31 @@
+Scenario 1: 001: lp1 and lp2 on the market BTC/ETH, 0044-LIME-091, 0044-LIME-113, 0044-LIME-029, 0044-LIME-115
+  Tags: ['@Now']
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  When  the network moves ahead "11" blocks
+  And  the parties place the following pegged iceberg orders:
+  Then  the parties place the following orders:
+  Then  the opening auction period ends for market "BTC/ETH"
+  And  the following trades should be executed:
+  And  the market data for the market "BTC/ETH" should be:
+  And  the liquidity fee factor should be "0.02" for the market "BTC/ETH"
+  Then  the spot markets are updated:
+  Then  the network moves ahead "1" epochs
+  And  the network treasury balance should be "0" for the asset "ETH"
+  Then  the network moves ahead "1" epochs
+  And  the network treasury balance should be "0" for the asset "ETH"
+  Then  the spot markets are updated:
+  Then  the network moves ahead "3" epochs
+  Then  the following transfers should happen:
+  And  the network treasury balance should be "6720" for the asset "ETH"
+  When  the parties place the following orders:
+  Then  the market data for the market "BTC/ETH" should be:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following orders:
+  Then  the network moves ahead "4" blocks
+  Then  the parties should have the following account balances:
+  When  the network moves ahead "11" blocks
+  And  the network treasury balance should be "6780" for the asset "ETH"
+  And  the market data for the market "BTC/ETH" should be:
+  Then  the parties should have the following account balances:
+

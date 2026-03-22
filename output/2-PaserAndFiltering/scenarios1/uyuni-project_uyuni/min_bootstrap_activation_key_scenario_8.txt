@@ -1,0 +1,7 @@
+Scenario 8: Verify that minion bootstrapped with Salt key and packages
+  When  I follow the left menu "Salt > Keys"
+  Then  I should see a "accepted" text
+  And  the Salt master can reach "sle_minion"
+  When  I wait for "orion-dummy" to be installed on "sle_minion"
+  And  I wait for "perseus-dummy" to be installed on "sle_minion"
+

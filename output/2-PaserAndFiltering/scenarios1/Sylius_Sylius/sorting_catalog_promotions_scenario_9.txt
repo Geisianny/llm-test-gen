@@ -1,0 +1,7 @@
+Scenario 9: Sorting catalog promotion by priority in ascending order
+  Tags: ['@api', '@ui']
+  When  I browse catalog promotions
+  And  I sort catalog promotions by ascending priority
+  Then  I should see 3 catalog promotions on the list
+  And  the first catalog promotion should have code "not-b"
+

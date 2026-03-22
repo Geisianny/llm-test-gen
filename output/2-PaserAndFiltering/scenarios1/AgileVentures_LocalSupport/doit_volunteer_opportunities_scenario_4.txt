@@ -1,0 +1,5 @@
+Scenario 4: See a list of current doit volunteer opportunities with a link to opportunity page
+  Given  I visit the volunteer opportunities page
+  Then  the index should contain:
+  Then  I should see a tracking link to "Scout Leader (volunteering with 10-14 year olds) 27th Harrow" page "https://do-it.org/opportunities/79ae1022-9059-40c0-82dd-3f5b15dd796a"
+

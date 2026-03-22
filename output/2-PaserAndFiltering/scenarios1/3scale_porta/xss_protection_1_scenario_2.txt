@@ -1,0 +1,6 @@
+Scenario 2: XSS Protection is disabled
+  When  provider has xss protection disabled
+  And  I visit "/some-page"
+  Then  I should see "Hello malicious buyer"
+  Then  I should see "Value malicious buyer"
+

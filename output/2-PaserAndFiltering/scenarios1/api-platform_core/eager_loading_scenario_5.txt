@@ -1,0 +1,6 @@
+Scenario 5: Eager loading for a relation with complex sub-query filter
+  Given  there is a RelatedDummy with 2 friends
+  When  I send a "GET" request to "/related_dummies?complex_sub_query_filter=1"
+  Then  the response status code should be 200
+  And  the DQL should be equal to:
+

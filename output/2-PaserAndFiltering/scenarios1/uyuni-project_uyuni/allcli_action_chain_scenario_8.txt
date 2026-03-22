@@ -1,0 +1,10 @@
+Scenario 8: Verify action chain for two systems
+  Given  I am on the Systems overview page of this "sle_minion"
+  When  I follow "Schedule"
+  And  I follow "Action Chains"
+  And  I follow "two_systems_action_chain"
+  And  I should see a "1. Install or update andromeda-dummy on 2 systems" text
+  And  I should see a "2. Run a remote command on 2 systems" text
+  And  I click on "Save and Schedule"
+  Then  I should see a "Action Chain two_systems_action_chain has been scheduled for execution." text
+

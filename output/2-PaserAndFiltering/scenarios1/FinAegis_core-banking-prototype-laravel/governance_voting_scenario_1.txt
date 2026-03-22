@@ -1,0 +1,6 @@
+Scenario 1: Creating a configuration update proposal
+  When  I create a poll to update configuration:
+  Then  the proposal should be created successfully
+  And  the proposal status should be "pending"
+  And  other stakeholders should be notified
+

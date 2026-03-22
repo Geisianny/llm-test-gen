@@ -1,0 +1,7 @@
+Scenario 4: Product with the highest position is set as the last one
+  Tags: ['@ui']
+  When  I am browsing products from "Soft Toys" taxon
+  And  I set the position of "Young pug" to 12
+  And  I save my new configuration
+  Then  the last product on the list should have name "Young pug"
+

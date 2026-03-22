@@ -1,0 +1,21 @@
+Scenario 3: 003: If passage of time causes the liquidity demand estimate to change, the fee factor is correctly recalculated.  (0042-LIQF-065)
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the parties place the following orders:
+  Then  the opening auction period ends for market "BTC/ETH"
+  When  the network moves ahead "1" blocks
+  And  the following trades should be executed:
+  Then  the liquidity fee factor should be "0.002" for the market "BTC/ETH"
+  And  the parties submit the following liquidity provision:
+  When  the network moves ahead "1" epochs
+  Then  the liquidity fee factor should be "0.002" for the market "BTC/ETH"
+  When  the network moves ahead "9" blocks
+  Then  the liquidity fee factor should be "0.002" for the market "BTC/ETH"
+  When  the network moves ahead "1" blocks
+  Then  the liquidity fee factor should be "0.001" for the market "BTC/ETH"
+

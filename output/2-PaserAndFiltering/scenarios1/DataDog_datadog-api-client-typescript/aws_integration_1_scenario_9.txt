@@ -1,0 +1,8 @@
+Scenario 9: Delete an AWS integration returns "No Content" response
+  Tags: ['@team:DataDog/aws-integrations']
+  Given  there is a valid "aws_account_v2" in the system
+  And  new "DeleteAWSAccount" request
+  And  request contains "aws_account_config_id" parameter from "aws_account_v2.data.id"
+  When  the request is sent
+  Then  the response status is 204 No Content
+

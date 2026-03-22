@@ -1,0 +1,6 @@
+Scenario 3: Eedit of billing period should succeed
+  And  I follow "Edit"
+  And  I fill in "Billing Period" with "2011-02"
+  And  I press "Update Invoice"
+  Then  I should see "Invoice for February 2011"
+

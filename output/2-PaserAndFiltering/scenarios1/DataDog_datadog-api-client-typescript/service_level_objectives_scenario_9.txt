@@ -1,0 +1,7 @@
+Scenario 9: Delete an SLO returns "Conflict" response
+  Tags: ['@generated', '@skip', '@team:DataDog/slo-app']
+  Given  new "DeleteSLO" request
+  And  request contains "slo_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 409 Conflict
+

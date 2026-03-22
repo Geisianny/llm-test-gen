@@ -1,0 +1,11 @@
+Scenario 13: Create a monitor returns "OK" response
+  Tags: ['@team:DataDog/monitor-app']
+  Given  there is a valid "role" in the system
+  And  new "CreateMonitor" request
+  And  body with value {"name": "{{ unique }}", "type": "log alert", "query": "logs(\"service:foo AND type:error\").index(\"main\").rollup(\"count\").by(\"source\").last(\"5m\") > 2", "message": "some message Notify: @hipchat-channel", "tags": ["test:{{ unique_lower_alnum }}", "env:ci"], "priority": 3, "restricted_roles": ["{{ role.data.id }}"]}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "name" is equal to "{{ unique }}"
+  And  the response "type" is equal to "log alert"
+  And  the response "query" is equal to "logs(\"service:foo AND type:error\").index(\"main\").rollup(\"count\").by(\"source\").last(\"5m\") > 2"
+

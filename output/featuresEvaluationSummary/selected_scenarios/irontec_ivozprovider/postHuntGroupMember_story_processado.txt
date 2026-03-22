@@ -1,0 +1,9 @@
+Scenario: Create a new hunt group member with invalid priority value
+  Given there is a hunt group with id "123"
+  And there is a user with id "456"
+  When the client admin sends a POST request to create a new hunt group member
+  And sets the hunt group id to "123"
+  And sets the user id to "456"
+  And sets the priority to "invalid"
+  Then the system returns an error response
+  And displays a message indicating that the priority is invalid

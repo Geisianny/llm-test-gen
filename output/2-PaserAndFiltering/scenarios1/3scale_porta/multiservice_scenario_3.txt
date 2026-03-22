@@ -1,0 +1,9 @@
+Scenario 3: Create new product: with blank product name
+  And  provider "foo.3scale.localhost" has "multiple_services" switch allowed
+  And  service discovery is not enabled
+  When  I am on the provider dashboard
+  And  I follow "Create Product"
+  And  I fill in "System name" with "Less fancy API"
+  And  I press "Create Product"
+  Then  I should see "Can't be blank"
+

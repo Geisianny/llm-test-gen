@@ -1,0 +1,12 @@
+Scenario 3: filter orders by situation
+  Tags: ['@selenium']
+  Given  the following purchase from "homer" on "moes-tavern" that is "accepted"
+  And  the following purchase from "homer" on "moes-tavern" that is "delivered"
+  And  I follow "Purchases made"
+  And  I should see "Accepted" within any ".situation"
+  And  I should see "Delivered" within any ".situation"
+  And  I select "Delivered" from "status"
+  When  I press "Filter"
+  Then  I should not see "Accepted" within any ".situation"
+  And  I should see "Delivered" within any ".situation"
+

@@ -1,0 +1,8 @@
+Scenario 1: Trying to add shipping method translation in unexisting locale
+  Tags: ['@api', '@no-ui']
+  When  I want to create a new shipping method
+  And  I specify its code as "UPS"
+  And  I name it "Transporteur UPS" in "French (France)"
+  And  I try to save my changes
+  Then  I should be notified that the locale is not available
+

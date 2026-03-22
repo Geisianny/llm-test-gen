@@ -1,0 +1,6 @@
+Scenario 2: changing the price list number
+  And  I input "0" text in "Number" field
+  Then  "1C:Enterprise" window is opened
+  And  I click "Yes" button
+  Then  "Price list (create) *" window is opened
+

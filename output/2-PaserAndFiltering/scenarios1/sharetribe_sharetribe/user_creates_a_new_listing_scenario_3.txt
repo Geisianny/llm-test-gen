@@ -1,0 +1,13 @@
+Scenario 3: Creating a new item offer successfully
+  Tags: ['@javascript']
+  Given  I am logged in
+  And  I am on the home page
+  When  I follow "new-listing-link"
+  And  I select "Items" from listing type menu
+  And  I select "Tools" from listing type menu
+  And  I select "Lending" from listing type menu
+  And  I fill in "listing_title" with "My offer"
+  And  I fill in "listing_description" with "My description"
+  And  I press "Post listing"
+  Then  I should see "My offer" within "#listing-title"
+

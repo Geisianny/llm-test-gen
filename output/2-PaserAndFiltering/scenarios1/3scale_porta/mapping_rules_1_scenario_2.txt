@@ -1,0 +1,5 @@
+Scenario 2: New mapping rule form with proxy pro
+  Given  I have proxy_pro feature enabled
+  When  I go to the create mapping rule page for service "one"
+  Then  I should see field "Redirect URL"
+

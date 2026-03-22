@@ -1,0 +1,7 @@
+Scenario 3: Enabling catalog promotion
+  Tags: ['@api', '@ui']
+  Given  this catalog promotion is disabled
+  When  I enable "Christmas sale" catalog promotion
+  Then  this catalog promotion should be active
+  And  "PHP T-Shirt" variant should be discounted
+

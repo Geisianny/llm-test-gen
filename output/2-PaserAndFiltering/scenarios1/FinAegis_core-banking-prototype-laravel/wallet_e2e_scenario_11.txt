@@ -1,0 +1,7 @@
+Scenario 11: Wallet closure and migration
+  Given  I want to close my wallet account
+  When  I initiate account closure:
+  Then  account should be properly closed
+  And  data retention should follow regulations
+  And  reopening should be possible within 30 days
+

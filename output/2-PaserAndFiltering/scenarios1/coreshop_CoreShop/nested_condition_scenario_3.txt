@@ -1,0 +1,6 @@
+Scenario 3: Add a new nested product specific price rule with store and country which is valid
+  Given  adding a product specific price rule to product "Shoe" named "store-discount"
+  And  the specific price rule is active
+  And  the specific price rule has a condition nested with operator "and" for store "Austria" and country "Austria"
+  Then  the specific price rule should be valid for product "Shoe"
+

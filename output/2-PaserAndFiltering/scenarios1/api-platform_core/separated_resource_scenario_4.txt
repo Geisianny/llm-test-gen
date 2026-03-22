@@ -1,0 +1,6 @@
+Scenario 4: Get all EntityClassAndCustomProviderResources
+  Tags: ['@!mongodb', '@createSchema']
+  Given  there are 1 separated entities
+  When  I send a "GET" request to "/entityClassAndCustomProviderResources"
+  Then  the response status code should be 200
+

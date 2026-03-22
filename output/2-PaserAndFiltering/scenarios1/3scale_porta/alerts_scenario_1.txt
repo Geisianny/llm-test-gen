@@ -1,0 +1,7 @@
+Scenario 1: Navigation
+  Given  the current page is the provider dashboard
+  When  they select "Audience" from the context selector
+  And  press "Applications" within the main menu
+  And  follow "Alerts" within the main menu
+  Then  the current page is the alerts page
+

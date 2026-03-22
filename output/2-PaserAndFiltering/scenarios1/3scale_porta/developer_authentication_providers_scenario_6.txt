@@ -1,0 +1,5 @@
+Scenario 6: With iam_tools allowed add github
+  Given  the provider has "iam_tools" switch allowed
+  When  I visit the "GitHub" authentication provider edit page
+  Then  I should be on the upgrade notice page for "branding"
+

@@ -1,0 +1,25 @@
+Scenario 1: using lognormal risk model, set "designatedLoser " closeout while the position of "designatedLoser " is not fully covered by orders on the order book
+  Tags: ['@Liquidation']
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the mark price should be "150" for the market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  When  the parties place the following orders with ticks:
+  Then  the order book should have the following volumes for market "ETH/DEC19":
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following account balances:
+  Then  the parties should have the following profit and loss:
+  Then  the order book should have the following volumes for market "ETH/DEC19":
+  Then  the parties cancel the following orders:
+  When  the parties place the following orders:
+  When  the parties place the following orders with ticks:
+  And  the mark price should be "140" for the market "ETH/DEC19"
+  Then  the parties should have the following account balances:
+  Then  the parties should have the following profit and loss:
+  When  the network moves ahead "1" blocks
+  Then  the following transfers should happen:
+  And  the insurance pool balance should be "0" for the market "ETH/DEC19"
+

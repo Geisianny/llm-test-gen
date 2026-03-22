@@ -1,0 +1,20 @@
+Scenario 4: An LP with bid orders outside valid range during auction is penalised (0044-LIME-098)
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  When  the network moves ahead "2" blocks
+  Then  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/JAN23"
+  And  the following trades should be executed:
+  And  the market data for the market "ETH/JAN23" should be:
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/JAN23" should be:
+  When  the network moves ahead "2" blocks
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/JAN23"
+  Then  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/JAN23"
+  Then  the parties should have the following account balances:
+  When  the network moves ahead "2" epochs
+  Then  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/JAN23"
+  Then  the parties should have the following account balances:
+

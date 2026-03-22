@@ -1,0 +1,5 @@
+Scenario 8: Republish all published Organisation "About us" pages
+  Given  Published organisation "About us" pages exist
+  When  I request a bulk republishing of all published organisation "About us" pages
+  Then  I can see all published organisation "About us" pages have been queued for republishing
+

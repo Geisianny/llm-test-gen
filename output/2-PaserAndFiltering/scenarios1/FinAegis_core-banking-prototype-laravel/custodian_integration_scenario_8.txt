@@ -1,0 +1,7 @@
+Scenario 8: Compliance across custodians
+  Given  different banks have different compliance requirements
+  When  a high-value transaction is initiated
+  Then  the system should route to compliant banks only
+  And  apply the strictest requirements across all banks
+  And  maintain audit trails for all custodians
+

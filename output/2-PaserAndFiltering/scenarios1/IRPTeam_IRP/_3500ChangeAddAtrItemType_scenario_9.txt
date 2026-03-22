@@ -1,0 +1,18 @@
+Scenario 9: _350007 check error when duplicating an additional attribute of an item key
+  *  Open Item type for Stockings
+  Given  I open hyperlink "e1cib/list/Catalog.ItemTypes"
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  *  Check additional attribute
+  And  "AvailableAttributes" table contains lines
+  *  Add additional attribute Brand Stockings
+  And  in the table "AvailableAttributes" I click the button named "AvailableAttributesAdd"
+  And  I click choice button of "Attribute" attribute in "AvailableAttributes" table
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I finish line editing in "AvailableAttributes" table
+  *  Check save error message
+  And  I click "Save" button
+  Then  I wait that in user messages the "Duplicate attribute.: Brand Stockings" substring will appear in 10 seconds
+  And  I close all client application windows
+

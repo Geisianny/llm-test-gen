@@ -1,0 +1,13 @@
+Scenario 3: Create a purchase order manually
+  Tags: ['@PO002']
+  Given  I need a "purchase.order" with name: PO1002
+  And  having:
+  And  containing the following purchase order lines:
+  When  I confirm the PO
+  Then  1 picking should be created for the PO
+  When  I process all moves on %Y-01-17
+  And  I create a supplier invoice for the picking on %Y-01-17
+  Then  the picking should be in state done
+  And  1 draft invoice should be created for the PO
+  When  I open the credit invoice
+

@@ -1,0 +1,5 @@
+Scenario 2: Seeing menu in my language
+  Tags: ['@ui']
+  When  I open administration dashboard
+  Then  I should see sidebar catalog section configuration in "Polish (Poland)" locale
+

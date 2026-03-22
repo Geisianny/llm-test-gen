@@ -1,0 +1,8 @@
+Scenario 5: Send gzip logs returns "Response from server (always 200 empty JSON)." response
+  Tags: ['@integration-only', '@skip-terraform-config', '@skip-validation', '@team:DataDog/event-platform-intake']
+  Given  new "SubmitLog" request
+  And  body with value [{"message": "{{ unique }}", "ddtags": "host:{{ unique_alnum }}"}]
+  And  request contains "Content-Encoding" parameter with value "gzip"
+  When  the request is sent
+  Then  the response status is 200 Response from server (always 200 empty JSON).
+

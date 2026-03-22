@@ -1,0 +1,9 @@
+Scenario 4: Members of settings group can access settings
+  Given  an active user "member" of account "foo.3scale.localhost"
+  And  user "member" has access to the admin section "settings"
+  And  current domain is the admin domain of provider "foo.3scale.localhost"
+  When  I log in as provider "member"
+  And  I go to the provider dashboard
+  And  I follow "0 Messages"
+  And  they should be able to go to the following pages:
+

@@ -1,0 +1,6 @@
+Scenario 6: Wait for services
+  When  I wait until "prometheus" service is active on "sle_minion"
+  And  I wait until "node" exporter service is active on "sle_minion"
+  And  I wait until "apache" exporter service is active on "sle_minion"
+  And  I wait until "postgres" exporter service is active on "sle_minion"
+

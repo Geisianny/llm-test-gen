@@ -1,0 +1,6 @@
+Scenario 28: show place of the event
+  Given  I am on /profile/josesilva/events/2009/10
+  And  the following events
+  When  I am on /profile/josesilva/events/2009/10/26
+  Then  I should see "Place: Earth Planet"
+

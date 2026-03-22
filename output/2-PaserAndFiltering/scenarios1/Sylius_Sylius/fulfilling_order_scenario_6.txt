@@ -1,0 +1,6 @@
+Scenario 6: Fulfilled orders cannot be cancelled
+  Tags: ['@api', '@ui']
+  When  I mark this order as paid
+  And  I ship this order
+  Then  I should not be able to cancel this order
+

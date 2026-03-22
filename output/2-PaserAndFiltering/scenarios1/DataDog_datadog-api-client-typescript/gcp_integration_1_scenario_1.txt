@@ -1,0 +1,6 @@
+Scenario 1: Create a Datadog GCP principal returns "Conflict" response
+  Tags: ['@generated', '@skip', '@team:DataDog/gcp-integrations']
+  Given  new "MakeGCPSTSDelegate" request
+  When  the request is sent
+  Then  the response status is 409 Conflict
+

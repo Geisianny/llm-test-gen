@@ -1,0 +1,5 @@
+Scenario 2: Just delete an Customer Account
+  Given  the site has a customer "some-other@something.com"
+  And  the customer "some-other@something.com" has an address with country "Austria", "4600", "Wels", "Freiung", "9-11/N3"
+  Then  It should not throw an error deleting the customer "some-other@something.com"
+

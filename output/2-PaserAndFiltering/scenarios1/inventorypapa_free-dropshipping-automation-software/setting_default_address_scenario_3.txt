@@ -1,0 +1,9 @@
+Scenario 3: Only one address can be default
+  Tags: ['@ui', '@api']
+  Given  my default address is of "Lucifer Morningstar"
+  When  I browse my address book
+  And  I set the address of "Archangelo Prime" as default
+  Then  I should be notified that the address has been set as default
+  And  address "Archangelo Prime", "Mountain Av", "90640", "Isla del Muerte", "United States" should be set as my default address
+  And  the address assigned to "Lucifer Morningstar" should be in my book
+

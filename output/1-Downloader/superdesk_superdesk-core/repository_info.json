@@ -1,0 +1,637 @@
+{
+  "repository_name": "superdesk-core",
+  "repository_owner": "superdesk",
+  "repository_url": "https://github.com/superdesk/superdesk-core",
+  "visibility": "public",
+  "is_private": false,
+  "total_feature_files": 104,
+  "downloaded_files": 104,
+  "download_date": "2025-11-26 09:13:55",
+  "feature_files": [
+    {
+      "name": "activity.feature",
+      "original_path": "features/activity.feature",
+      "size": 6014,
+      "sha": "e91c90ee7abfc763b2f6996d2af666a63bdd9509"
+    },
+    {
+      "name": "amazons3.feature",
+      "original_path": "features/amazons3.feature",
+      "size": 5633,
+      "sha": "46703e3398d9cc3e5d3d5f8a24a2d13c29042bec"
+    },
+    {
+      "name": "archive.feature",
+      "original_path": "features/archive.feature",
+      "size": 58469,
+      "sha": "5661d398512a01953bbd8e8a25070dab313acdff"
+    },
+    {
+      "name": "archive_autocomplete.feature",
+      "original_path": "features/archive_autocomplete.feature",
+      "size": 2051,
+      "sha": "6c67b424f7c521ec62c744d1f4c51e1fd28d913b"
+    },
+    {
+      "name": "archive_broadcast.feature",
+      "original_path": "features/archive_broadcast.feature",
+      "size": 62856,
+      "sha": "fde6eb80fe4c591e4cbc6074bcf279af5270725e"
+    },
+    {
+      "name": "archive_comments.feature",
+      "original_path": "features/archive_comments.feature",
+      "size": 8226,
+      "sha": "bc83e31ddb0b211f02f5a8c39ae3fc5cd9a8b347"
+    },
+    {
+      "name": "archive_history.feature",
+      "original_path": "features/archive_history.feature",
+      "size": 27846,
+      "sha": "5b766578580d36d2d242a5f20261ceb284e8055f"
+    },
+    {
+      "name": "archived_kill.feature",
+      "original_path": "features/archived_kill.feature",
+      "size": 54065,
+      "sha": "a37490d881499425999ea92de74134416f4549d1"
+    },
+    {
+      "name": "attachments.feature",
+      "original_path": "features/attachments.feature",
+      "size": 807,
+      "sha": "50d521627a576670fbf2046050ff37831f3100ee"
+    },
+    {
+      "name": "auth.feature",
+      "original_path": "features/auth.feature",
+      "size": 7734,
+      "sha": "5f3589891ab0db525f376d9a61ed9421c859da6f"
+    },
+    {
+      "name": "auth_server.feature",
+      "original_path": "features/auth_server.feature",
+      "size": 848,
+      "sha": "dfc31613705d96510cfa7cacd343a82c7f7c4040"
+    },
+    {
+      "name": "auto_routing.feature",
+      "original_path": "features/auto_routing.feature",
+      "size": 38399,
+      "sha": "da33e4861305919afe8b6f1c8257d6699d20f64f"
+    },
+    {
+      "name": "backend_meta.feature",
+      "original_path": "features/backend_meta.feature",
+      "size": 180,
+      "sha": "ea92bca2353ad2c0d2d0c5a535f28eff8474c09b"
+    },
+    {
+      "name": "client_config.feature",
+      "original_path": "features/client_config.feature",
+      "size": 621,
+      "sha": "f32ca9be8e6cf966fa8ffd6f4c79d385995a0c92"
+    },
+    {
+      "name": "comments.feature",
+      "original_path": "features/comments.feature",
+      "size": 2652,
+      "sha": "2e996de682df1994caf4d4517ec097c81c19392b"
+    },
+    {
+      "name": "concept_items.feature",
+      "original_path": "features/concept_items.feature",
+      "size": 27335,
+      "sha": "aeac2c2d577d8dc974dc45934d30b8722e6a44b8"
+    },
+    {
+      "name": "config.feature",
+      "original_path": "features/config.feature",
+      "size": 2525,
+      "sha": "4e238153751abd83ddcb4cca0666ed2480e99249"
+    },
+    {
+      "name": "contacts.feature",
+      "original_path": "features/contacts.feature",
+      "size": 6683,
+      "sha": "facd0dab753f560ed1d36fc08afe997aae30f43c"
+    },
+    {
+      "name": "content_autosave.feature",
+      "original_path": "features/content_autosave.feature",
+      "size": 2568,
+      "sha": "158e159258224d5c1665b8e4e0fd3a31b5fdb5a9"
+    },
+    {
+      "name": "content_copy.feature",
+      "original_path": "features/content_copy.feature",
+      "size": 1628,
+      "sha": "78ba5c790149bb3dd25846bca3bf15f9390623b2"
+    },
+    {
+      "name": "content_crop.feature",
+      "original_path": "features/content_crop.feature",
+      "size": 16467,
+      "sha": "3c37f1c4a5482b387f06b66b71952ba5c896e6fa"
+    },
+    {
+      "name": "content_duplication.feature",
+      "original_path": "features/content_duplication.feature",
+      "size": 22001,
+      "sha": "e9a20a4581ed3b3d1bb836baee8aced8a5f3e546"
+    },
+    {
+      "name": "content_expire_not_published.feature",
+      "original_path": "features/content_expire_not_published.feature",
+      "size": 6766,
+      "sha": "0a2854c0a4ed6c18c04035a1fd2edd77e14891e1"
+    },
+    {
+      "name": "content_expire_published.feature",
+      "original_path": "features/content_expire_published.feature",
+      "size": 43315,
+      "sha": "abc48404dfe592ac2cf15894c3ca21f3e2b6be84"
+    },
+    {
+      "name": "content_fetch.feature",
+      "original_path": "features/content_fetch.feature",
+      "size": 33538,
+      "sha": "38fb94cddeb663410453af1e12b702b1f049a87d"
+    },
+    {
+      "name": "content_filter.feature",
+      "original_path": "features/content_filter.feature",
+      "size": 9229,
+      "sha": "fd0c08ed040b42f8785232620602eb79395b48db"
+    },
+    {
+      "name": "content_filter_tests.feature",
+      "original_path": "features/content_filter_tests.feature",
+      "size": 10749,
+      "sha": "91c0ea09a4eee0975986f7ef354e24b154b3c34c"
+    },
+    {
+      "name": "content_link.feature",
+      "original_path": "features/content_link.feature",
+      "size": 5130,
+      "sha": "b1dd2245e29755ecdbf6cf48ab9a459761e63b78"
+    },
+    {
+      "name": "content_lock.feature",
+      "original_path": "features/content_lock.feature",
+      "size": 14213,
+      "sha": "d1934bd4bcb7731b1fc3caee32502abca7c1e671"
+    },
+    {
+      "name": "content_move.feature",
+      "original_path": "features/content_move.feature",
+      "size": 21164,
+      "sha": "3f68d3636e6886ad2765f316a5600cba1e942827"
+    },
+    {
+      "name": "content_profile.feature",
+      "original_path": "features/content_profile.feature",
+      "size": 35106,
+      "sha": "77b5de8c7cbc25aceaf49ccd9a6c473210992152"
+    },
+    {
+      "name": "content_publish.feature",
+      "original_path": "features/content_publish.feature",
+      "size": 197189,
+      "sha": "1620d2fbb4afd3f452e42c151f0232b471f3a032"
+    },
+    {
+      "name": "content_renditions.feature",
+      "original_path": "features/content_renditions.feature",
+      "size": 2047,
+      "sha": "f4564165676fcf09eac26cd98333fcbbf4878789"
+    },
+    {
+      "name": "content_rewrite.feature",
+      "original_path": "features/content_rewrite.feature",
+      "size": 89910,
+      "sha": "44e8c9e368d23e775e7d5cc5c5637732f92f1560"
+    },
+    {
+      "name": "content_spike.feature",
+      "original_path": "features/content_spike.feature",
+      "size": 15645,
+      "sha": "01cb9057c320453df7217f4642b7d1ff3bbd4c28"
+    },
+    {
+      "name": "content_translate.feature",
+      "original_path": "features/content_translate.feature",
+      "size": 6314,
+      "sha": "478324aafc9bb0fad3e7b39e6ebf3c36dffa8783"
+    },
+    {
+      "name": "custom_field.feature",
+      "original_path": "features/custom_field.feature",
+      "size": 1733,
+      "sha": "ed5fd73da9f0e7326e857e472f227c48c77c5c23"
+    },
+    {
+      "name": "desks.feature",
+      "original_path": "features/desks.feature",
+      "size": 30530,
+      "sha": "65511a0946affaac33237cf7c075ae614ba3a857"
+    },
+    {
+      "name": "dictionaries.feature",
+      "original_path": "features/dictionaries.feature",
+      "size": 8432,
+      "sha": "2c8dc51a6c374f86aa969fa5c5a28295e959047b"
+    },
+    {
+      "name": "embargo.feature",
+      "original_path": "features/embargo.feature",
+      "size": 29501,
+      "sha": "f03108338c2a9ffa84b48840233b9f380d999874"
+    },
+    {
+      "name": "export.feature",
+      "original_path": "features/export.feature",
+      "size": 4139,
+      "sha": "c26b6abdc6d8d5cd32029728beb28e342cd22287"
+    },
+    {
+      "name": "extra.feature",
+      "original_path": "features/extra.feature",
+      "size": 404,
+      "sha": "eb2912ad19977899b310ab3d750f63e79b860040"
+    },
+    {
+      "name": "filter_condition.feature",
+      "original_path": "features/filter_condition.feature",
+      "size": 3780,
+      "sha": "839c3ccb01d7a4b39130e14f89166b4ff353c7c7"
+    },
+    {
+      "name": "formatters.feature",
+      "original_path": "features/formatters.feature",
+      "size": 1282,
+      "sha": "06c7263bbdc5e920e41e4592b45e591fa368cbf9"
+    },
+    {
+      "name": "highlights.feature",
+      "original_path": "features/highlights.feature",
+      "size": 14560,
+      "sha": "c51e99887a0abc9e5d3a09e8003652d08c1051c4"
+    },
+    {
+      "name": "http_push.feature",
+      "original_path": "features/http_push.feature",
+      "size": 3203,
+      "sha": "77515ee8f80002dd612b7654d182a3378431a73f"
+    },
+    {
+      "name": "ingest.feature",
+      "original_path": "features/ingest.feature",
+      "size": 22471,
+      "sha": "c25ce8fa5dae181ac84999b351ea93947997779f"
+    },
+    {
+      "name": "ingest_errors.feature",
+      "original_path": "features/ingest_errors.feature",
+      "size": 1842,
+      "sha": "2feb58e37295e0544af9982e54337b29f69f8068"
+    },
+    {
+      "name": "ingest_ftp.feature",
+      "original_path": "features/ingest_ftp.feature",
+      "size": 861,
+      "sha": "25aac0eae48ae6627b0040ea492e53bf5f2438b6"
+    },
+    {
+      "name": "ingest_provider.feature",
+      "original_path": "features/ingest_provider.feature",
+      "size": 11579,
+      "sha": "1467dc953bb4efb7591da4117bf692b21d08ffcf"
+    },
+    {
+      "name": "ingest_rule_handlers.feature",
+      "original_path": "features/ingest_rule_handlers.feature",
+      "size": 1521,
+      "sha": "d7080cd7b46ae7e9da365a3901634271705d307b"
+    },
+    {
+      "name": "internal_destinations.feature",
+      "original_path": "features/internal_destinations.feature",
+      "size": 31279,
+      "sha": "d10493295297e46940d7b4f2cf4edbbc73cd92d0"
+    },
+    {
+      "name": "keywords.feature",
+      "original_path": "features/keywords.feature",
+      "size": 2642,
+      "sha": "fded1d82a9a06cd4d74f4a42f2267eb2b0f39d3a"
+    },
+    {
+      "name": "legal_archive.feature",
+      "original_path": "features/legal_archive.feature",
+      "size": 1442,
+      "sha": "e605a22d89c1c557a7da1f079c4ff71b91bd744f"
+    },
+    {
+      "name": "links.feature",
+      "original_path": "features/links.feature",
+      "size": 2426,
+      "sha": "bef3fd36687d382aaa0bd0283c3bc0c1d2a982ee"
+    },
+    {
+      "name": "locales.feature",
+      "original_path": "features/locales.feature",
+      "size": 364,
+      "sha": "06f8a1282322a5b7ef6346243bddbb61f0e19e2a"
+    },
+    {
+      "name": "locators.feature",
+      "original_path": "features/locators.feature",
+      "size": 646,
+      "sha": "0f9c372fa4b1674126f4db16b5cfc117f8d3fd3c"
+    },
+    {
+      "name": "macros.feature",
+      "original_path": "features/macros.feature",
+      "size": 2437,
+      "sha": "a5356d4c28baf3d4a09af68418187d5429f69088"
+    },
+    {
+      "name": "marked_desks.feature",
+      "original_path": "features/marked_desks.feature",
+      "size": 999,
+      "sha": "3d2957098677df462dce5d7dd2aa2f242bb0ffdc"
+    },
+    {
+      "name": "news.feature",
+      "original_path": "features/news.feature",
+      "size": 1026,
+      "sha": "46dff4f51386729892b80226b02775da68557465"
+    },
+    {
+      "name": "output_formats.feature",
+      "original_path": "features/output_formats.feature",
+      "size": 314,
+      "sha": "cfcdf2e895a339e73f871d623346b5f29e2fdd24"
+    },
+    {
+      "name": "package_publish.feature",
+      "original_path": "features/package_publish.feature",
+      "size": 204218,
+      "sha": "ea8bcf618cd178cd58fffdf2e62822dfeb45b9d2"
+    },
+    {
+      "name": "packages.feature",
+      "original_path": "features/packages.feature",
+      "size": 33679,
+      "sha": "8789428fa6ac503f0b907489590717294e1f1ae5"
+    },
+    {
+      "name": "places.feature",
+      "original_path": "features/places.feature",
+      "size": 2686,
+      "sha": "da84f571428a7b698788d40315095838150406ff"
+    },
+    {
+      "name": "preferences.feature",
+      "original_path": "features/preferences.feature",
+      "size": 8973,
+      "sha": "e1d4809521a1861adfe17afe2af2b5c57c56f769"
+    },
+    {
+      "name": "prepopulate.feature",
+      "original_path": "features/prepopulate.feature",
+      "size": 4411,
+      "sha": "a8d6d651ddbca4b3e3a48affe5a7454dab98504e"
+    },
+    {
+      "name": "privilege.feature",
+      "original_path": "features/privilege.feature",
+      "size": 954,
+      "sha": "4b9caaa786f47e62b7f4f6687bf8e217152f6a63"
+    },
+    {
+      "name": "product_tests.feature",
+      "original_path": "features/product_tests.feature",
+      "size": 1926,
+      "sha": "925e11175636694a35319213c4a1053817f7b4c3"
+    },
+    {
+      "name": "products.feature",
+      "original_path": "features/products.feature",
+      "size": 4679,
+      "sha": "c080f06dcd96950007f7e52981f9010369976aea"
+    },
+    {
+      "name": "publish_correction.feature",
+      "original_path": "features/publish_correction.feature",
+      "size": 10819,
+      "sha": "20bf0c9dde49a0b2acf1816855475f5a65d33beb"
+    },
+    {
+      "name": "publish_embedded.feature",
+      "original_path": "features/publish_embedded.feature",
+      "size": 22247,
+      "sha": "e3270d8b444499c40057c6191ca04a33a51d9fa7"
+    },
+    {
+      "name": "publish_publicapi.feature",
+      "original_path": "features/publish_publicapi.feature",
+      "size": 27868,
+      "sha": "f00dd03ae15785bc48415e1cda8071cb7b1ecd2c"
+    },
+    {
+      "name": "publish_queue.feature",
+      "original_path": "features/publish_queue.feature",
+      "size": 19218,
+      "sha": "dc204f6f64632dda7fb97d8c3ce8af9d0832654d"
+    },
+    {
+      "name": "published.feature",
+      "original_path": "features/published.feature",
+      "size": 2040,
+      "sha": "05019579c78eeb2099a3bc888fda4f6e71e5b0b0"
+    },
+    {
+      "name": "related_items.feature",
+      "original_path": "features/related_items.feature",
+      "size": 615,
+      "sha": "547fd8bf57e355d742a688fec459a450be925d87"
+    },
+    {
+      "name": "resend.feature",
+      "original_path": "features/resend.feature",
+      "size": 24923,
+      "sha": "e90833338d27400fce5115c9ca9bee3e2dc6b1f6"
+    },
+    {
+      "name": "role.feature",
+      "original_path": "features/role.feature",
+      "size": 7781,
+      "sha": "2363d9a30c88232213e599aafbf536a61802b0b9"
+    },
+    {
+      "name": "routing_rules.feature",
+      "original_path": "features/routing_rules.feature",
+      "size": 21748,
+      "sha": "f2b3e5e09b044325f778032583f8fce089591c4f"
+    },
+    {
+      "name": "rule_sets.feature",
+      "original_path": "features/rule_sets.feature",
+      "size": 2392,
+      "sha": "c03c8369ddfc0a56a870dbc66aef7e2b591a388e"
+    },
+    {
+      "name": "rundowns.feature",
+      "original_path": "features/rundowns.feature",
+      "size": 30992,
+      "sha": "303715b968f8e98593470bede5b0cecfe46f1b12"
+    },
+    {
+      "name": "sams_media_storage.feature",
+      "original_path": "features/sams_media_storage.feature",
+      "size": 2394,
+      "sha": "7fdb11ff668c9a9a92c6fb9e92af9c906989a9bd"
+    },
+    {
+      "name": "saved_searches.feature",
+      "original_path": "features/saved_searches.feature",
+      "size": 12968,
+      "sha": "bcfbc9a36d2d8455abf47b1671e1f3351455a7c7"
+    },
+    {
+      "name": "search.feature",
+      "original_path": "features/search.feature",
+      "size": 22580,
+      "sha": "acc39ee7b493ef93b3f5025fcd4cb91a9b4f6c27"
+    },
+    {
+      "name": "search_content_api.feature",
+      "original_path": "features/search_content_api.feature",
+      "size": 8024,
+      "sha": "ef72950af5c47c07898c1c17d79493ee7682fc39"
+    },
+    {
+      "name": "search_providers.feature",
+      "original_path": "features/search_providers.feature",
+      "size": 4880,
+      "sha": "0846e767dd9e4f5a499139f215b00752727ceef5"
+    },
+    {
+      "name": "sessions.feature",
+      "original_path": "features/sessions.feature",
+      "size": 386,
+      "sha": "c1191917036a437fb7ad8574e0bdfefaed8dede4"
+    },
+    {
+      "name": "spellcheck.feature",
+      "original_path": "features/spellcheck.feature",
+      "size": 1169,
+      "sha": "dc42135780b1ce1c8390c29dd449a4da1bb2639b"
+    },
+    {
+      "name": "stages.feature",
+      "original_path": "features/stages.feature",
+      "size": 12992,
+      "sha": "007b007e0665219c4fb57db0372daf9a29e8bd9e"
+    },
+    {
+      "name": "subjectcodes.feature",
+      "original_path": "features/subjectcodes.feature",
+      "size": 261,
+      "sha": "7a24603d4440515eb1a518ae14452be91d36f1eb"
+    },
+    {
+      "name": "subscribers.feature",
+      "original_path": "features/subscribers.feature",
+      "size": 16834,
+      "sha": "e6365f0bad2abec577cef638f3efb9450fa7d270"
+    },
+    {
+      "name": "system.feature",
+      "original_path": "features/system.feature",
+      "size": 371,
+      "sha": "29b0738dbc2ba8572ddbfecfd4dd34cea61e460f"
+    },
+    {
+      "name": "system_messages.feature",
+      "original_path": "features/system_messages.feature",
+      "size": 3137,
+      "sha": "d05dccce0995d9dd3ee7a9037661aacc3ee720e6"
+    },
+    {
+      "name": "targeted_publishing.feature",
+      "original_path": "features/targeted_publishing.feature",
+      "size": 17085,
+      "sha": "1c4bc00f6425900cdab67fd36098b4da58917e77"
+    },
+    {
+      "name": "tasks.feature",
+      "original_path": "features/tasks.feature",
+      "size": 4012,
+      "sha": "1a0a0bf3ae7f223d99fe121baa6afc3b43932b78"
+    },
+    {
+      "name": "templates.feature",
+      "original_path": "features/templates.feature",
+      "size": 27835,
+      "sha": "30958eef4a7c596c5097bed252960e1098610cdf"
+    },
+    {
+      "name": "unpublish.feature",
+      "original_path": "features/unpublish.feature",
+      "size": 18032,
+      "sha": "92b11c919e9ddc0873670d411c29456d1dbbeb34"
+    },
+    {
+      "name": "upload.feature",
+      "original_path": "features/upload.feature",
+      "size": 1806,
+      "sha": "aaf4177b43af770e5d79339769c5dda93b3f342a"
+    },
+    {
+      "name": "usage_metrics.feature",
+      "original_path": "features/usage_metrics.feature",
+      "size": 983,
+      "sha": "f032d7407b139f0e26a0b5b5c37ed925f5639283"
+    },
+    {
+      "name": "user.feature",
+      "original_path": "features/user.feature",
+      "size": 17770,
+      "sha": "ebf5f5718a476e65832689088abb9dd551c5abae"
+    },
+    {
+      "name": "user_availability.feature",
+      "original_path": "features/user_availability.feature",
+      "size": 15806,
+      "sha": "15bbe76c7d62b412a61417ee0662e2509aa7ebfe"
+    },
+    {
+      "name": "user_content.feature",
+      "original_path": "features/user_content.feature",
+      "size": 2277,
+      "sha": "a0c55a896dd8d666d769812a0e35ab65a7225e40"
+    },
+    {
+      "name": "validate.feature",
+      "original_path": "features/validate.feature",
+      "size": 13264,
+      "sha": "bec515eb47fa78d42e58e7190283a613b7b93fc1"
+    },
+    {
+      "name": "vocabularies.feature",
+      "original_path": "features/vocabularies.feature",
+      "size": 10936,
+      "sha": "ec5a09dc791f71e5a9b3686ff86e6d2f6b5e64cd"
+    },
+    {
+      "name": "workspace.feature",
+      "original_path": "features/workspace.feature",
+      "size": 1446,
+      "sha": "dc0d1ca287c51aca39c38b793356cd465dd11939"
+    }
+  ],
+  "status": "success"
+}

@@ -1,0 +1,7 @@
+Scenario 9: Search logs (GET) returns "OK" response with pagination
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-app', '@with-pagination']
+  Given  a valid "appKeyAuth" key in the system
+  And  new "ListLogsGet" request
+  When  the request with pagination is sent
+  Then  the response status is 200 OK
+

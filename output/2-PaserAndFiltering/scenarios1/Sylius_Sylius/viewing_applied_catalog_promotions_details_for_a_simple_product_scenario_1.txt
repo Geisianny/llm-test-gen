@@ -1,0 +1,5 @@
+Scenario 1: Seeing applied catalog promotion details on a simple product
+  Tags: ['@no-api', '@ui']
+  When  I access "Ursus C-355" product
+  Then  this product price should be decreased by catalog promotion "Company bankruptcy sale" in "United States" channel
+

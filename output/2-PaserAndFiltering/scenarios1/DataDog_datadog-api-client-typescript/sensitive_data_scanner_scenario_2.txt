@@ -1,0 +1,10 @@
+Scenario 2: Create Scanning Group returns "OK" response
+  Tags: ['@team:DataDog/sensitive-data-scanner']
+  Given  a valid "configuration" in the system
+  And  new "CreateScanningGroup" request
+  And  body with value {"meta":{},"data":{"type":"sensitive_data_scanner_group","attributes":{"name":"{{ unique }}","is_enabled":false,"product_list":["logs"],"filter":{"query":"*"}},"relationships":{"configuration":{"data":{"type":"sensitive_data_scanner_configuration","id":"{{ configuration.data.id }}"}},"rules":{"data":[]}}}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.type" is equal to "sensitive_data_scanner_group"
+  And  the response "data.attributes.name" is equal to "{{ unique }}"
+

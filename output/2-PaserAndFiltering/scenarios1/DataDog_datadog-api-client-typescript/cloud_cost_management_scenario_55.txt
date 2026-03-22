@@ -1,0 +1,8 @@
+Scenario 55: Update Google Cloud Usage Cost config returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/cloud-cost-management']
+  Given  new "UpdateCostGCPUsageCostConfig" request
+  And  request contains "cloud_account_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"is_enabled": true}, "type": "gcp_uc_config_patch_request"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

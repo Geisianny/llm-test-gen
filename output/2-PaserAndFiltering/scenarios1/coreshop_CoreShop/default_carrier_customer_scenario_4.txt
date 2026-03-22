@@ -1,0 +1,13 @@
+Scenario 4: When I change my cart, It should automatically invalidate the carrier and resolve a new default carrier
+  Given  the shipping rule "post" has a condition amount from "1" to "150"
+  And  the site has another carrier "DPD"
+  And  adding a shipping rule named "DPD"
+  And  the shipping rule is active
+  And  the shipping rule has a condition amount from "151" to "1000"
+  And  the shipping rule has a action price of 40 in currency "EUR"
+  And  the shipping rule belongs to carrier "DPD"
+  And  I add the product "Shoe" to my cart
+  Then  the cart should use carrier "Post"
+  Given  I add another product "Shoe" to my cart
+  Then  the cart should use carrier "DPD"
+

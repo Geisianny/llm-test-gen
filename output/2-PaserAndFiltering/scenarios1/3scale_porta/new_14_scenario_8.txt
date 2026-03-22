@@ -1,0 +1,6 @@
+Scenario 8: Realm validation
+  Given  they go to the developer portal new sso integration page for "keycloak"
+  When  the form is submitted with:
+  Then  they should see a toast alert with text "Authentication provider has not been updated"
+  And  field "Realm" has inline error "Invalid URL format"
+

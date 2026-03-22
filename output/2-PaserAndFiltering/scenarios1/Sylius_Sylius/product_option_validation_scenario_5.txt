@@ -1,0 +1,8 @@
+Scenario 5: Trying to remove name from an existing product option
+  Tags: ['@api', '@ui']
+  When  I want to modify the "T-Shirt color" product option
+  And  I remove its name from "English (United States)" translation
+  And  I try to save my changes
+  Then  I should be notified that name is required
+  And  this product option should still be named "T-Shirt color"
+

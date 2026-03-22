@@ -1,0 +1,7 @@
+Scenario 2: Seeing no shipping methods when all of my products are excluded from the shipping category
+  Tags: ['@api', '@ui']
+  Given  I added product "Star Trek Ship" to the cart
+  And  I addressed the cart
+  When  I go to the shipping step
+  Then  there should be information about no available shipping methods
+

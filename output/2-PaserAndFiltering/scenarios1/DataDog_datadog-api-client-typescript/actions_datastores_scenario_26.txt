@@ -1,0 +1,10 @@
+Scenario 26: Update datastore returns "OK" response
+  Tags: ['@team:DataDog/app-builder-backend']
+  Given  new "UpdateDatastore" request
+  And  there is a valid "datastore" in the system
+  And  request contains "datastore_id" parameter from "datastore.data.id"
+  And  body with value {"data": {"attributes": {"name": "updated name"}, "type": "datastores", "id": "{{datastore.data.id}}"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.attributes.name" is equal to "updated name"
+

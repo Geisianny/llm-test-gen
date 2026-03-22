@@ -1,0 +1,14 @@
+Scenario 7: Delete custom timeboard dashboard from an existing dashboard list returns "OK" response
+  Tags: ['@team:DataDog/dashboards-backend']
+  Given  there is a valid "dashboard_list" in the system
+  And  there is a valid "dashboard" in the system
+  And  the "dashboard_list" has the "dashboard"
+  And  new "DeleteDashboardListItems" request
+  And  request contains "dashboard_list_id" parameter from "dashboard_list.id"
+  And  body with value {"dashboards": [{"id": "{{ dashboard.id }}", "type": "custom_timeboard"}]}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "deleted_dashboards_from_list[0].type" is equal to "custom_timeboard"
+  And  the response "deleted_dashboards_from_list[0].id" is equal to "{{ dashboard.id }}"
+  And  the response "deleted_dashboards_from_list" has length 1
+

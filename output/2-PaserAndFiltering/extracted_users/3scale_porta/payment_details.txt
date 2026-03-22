@@ -1,0 +1,25 @@
+Feature: Dev Portal Buyer Payment Details
+Description: In order to pay for the service
+  As a buyer
+  I want to enter my billing and credit card details and keep them up to date
+
+Background: 
+  Given  a provider
+  And  the default product of the provider has name "My API"
+  And  the following application plan:
+  And  an approved buyer "John" signed up to the provider
+  And  the following application:
+  And  the buyer logs in
+
+Scenario 1: Finance is disabled
+  Given  the provider is charging its buyers
+  But  the provider has "finance" denied
+  When  the buyer is reviewing their account settings
+  Then  the buyer can't add or update any billing information
+
+Scenario 2: Finance is hidden
+  Given  the provider is charging its buyers
+  But  the provider has "finance" hidden
+  When  the buyer is reviewing their account details
+  Then  the buyer can't add or update any billing information
+

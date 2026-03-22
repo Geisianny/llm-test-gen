@@ -1,0 +1,11 @@
+Scenario Outline 9: As a superadmin I should be able to see status of all users - Example 1
+  Given  I am signed in as a superadmin
+  And  I visit the registered users page
+  Then  I should see "nonsuperadmin@myorg.com"
+
+  Examples:
+    | email |
+    | nonsuperadmin@myorg.com |
+    | superadmin@myorg.com |
+    | pending@myorg.com |
+

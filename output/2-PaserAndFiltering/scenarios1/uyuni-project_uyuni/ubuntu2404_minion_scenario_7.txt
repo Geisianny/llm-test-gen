@@ -1,0 +1,4 @@
+Scenario 7: Enable Universe repository on Ubuntu 24.04 minion
+  When  I enable Debian-like "universe" repository on "ubuntu2404_minion"
+  And  I refresh the metadata for "ubuntu2404_minion"
+

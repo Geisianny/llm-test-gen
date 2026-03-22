@@ -1,0 +1,9 @@
+Scenario 2: Bulk operations card shows when an items are selected
+  When  item "Alice" is selected
+  And  item "Bob" is selected
+  Then  they should be able to see the bulk operations
+  And  should see "You have selected 2 service subscriptions and you can make following operations with them:"
+  But  item "Alice" is unselected
+  And  item "Bob" is unselected
+  Then  they should not be able to see the bulk operations
+

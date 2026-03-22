@@ -1,0 +1,7 @@
+Scenario 1: Getting errors in my language
+  Tags: ['@api', '@ui']
+  Given  I am editing my details
+  When  I change its email to "wrong-email"
+  And  I save my changes
+  Then  I should be notified that this email is not valid in "Polish (Poland)" locale
+

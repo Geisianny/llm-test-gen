@@ -1,0 +1,7 @@
+Scenario 1: Raw list
+  When  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  the follow customers exist:
+  When  I use the site to list customers
+  Then  I should see in the site response the customer "customer.one@example.org"
+  And  I should see in the site response the customer "customer.two@example.org"
+

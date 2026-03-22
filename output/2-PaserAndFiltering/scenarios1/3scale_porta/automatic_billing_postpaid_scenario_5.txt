@@ -1,0 +1,13 @@
+Scenario 5: Monthly fee on several application plan upgrades in the middle of the month
+  Given  all the rolling updates features are off
+  And  the following application plans:
+  And  the date is 1st January 2017
+  And  the buyer is signed up to plan "Paid"
+  And  time flies to 2nd January 2017
+  Then  the buyer changes to application plan "Expensive"
+  And  time flies to 3rd January 2017
+  Then  the buyer changes to application plan "ExpensiveAsHell"
+  When  time flies to 3rd February 2017
+  Then  the buyer should have following line items for "January, 2017" invoice:
+  And  there is only one invoice for "January, 2017"
+

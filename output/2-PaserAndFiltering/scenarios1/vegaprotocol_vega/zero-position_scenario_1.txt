@@ -1,0 +1,35 @@
+Scenario 1: 001, 2 parties get close-out at the same time. Distressed position gets taken over by LP, distressed order gets canceled (0005-COLL-002; 0012-POSR-001; 0012-POSR-002; 0012-POSR-004; 0012-POSR-005; 0007-POSN-015)
+  Tags: ['@ZeroPos', '@Liquidation']
+  Given  the insurance pool balance should be "0" for the market "ETH/DEC19"
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the mark price should be "10" for the market "ETH/DEC19"
+  When  the parties place the following orders:
+  Then  the order book should have the following volumes for market "ETH/DEC19":
+  And  the parties should have the following account balances:
+  When  the parties place the following orders:
+  Then  the order book should have the following volumes for market "ETH/DEC19":
+  And  the parties should have the following margin levels:
+  When  the network moves ahead "1" blocks
+  And  the parties cancel the following orders:
+  Then  the order book should have the following volumes for market "ETH/DEC19":
+  When  the parties place the following orders:
+  Then  the network moves ahead "3" blocks
+  And  the mark price should be "100" for the market "ETH/DEC19"
+  Then  the following trades should be executed:
+  And  the order book should have the following volumes for market "ETH/DEC19":
+  And  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+  Then  the parties should have the following profit and loss:
+  And  the insurance pool balance should be "0" for the market "ETH/DEC19"
+  When  the parties place the following orders:
+  When  the parties place the following orders:
+  Then  the network moves ahead "4" blocks
+  And  the order book should have the following volumes for market "ETH/DEC19":
+  And  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+

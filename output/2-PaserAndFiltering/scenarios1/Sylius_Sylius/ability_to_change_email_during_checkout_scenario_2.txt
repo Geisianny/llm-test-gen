@@ -1,0 +1,8 @@
+Scenario 2: Being unable to change the email when checking out as a logged in user
+  Tags: ['@api', '@ui']
+  Given  I am logged in as "john@example.com"
+  And  I have product "Mantis blade" in the cart
+  When  I complete addressing step with "United States" based billing address
+  And  I go to the addressing step
+  Then  I should not be able to change email
+

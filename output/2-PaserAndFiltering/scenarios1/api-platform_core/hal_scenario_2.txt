@@ -1,0 +1,5 @@
+Scenario 2: Create a third level
+  When  I add "Content-Type" header equal to "application/json"
+  And  I send a "POST" request to "/third_levels" with body:
+  Then  the response status code should be 201
+

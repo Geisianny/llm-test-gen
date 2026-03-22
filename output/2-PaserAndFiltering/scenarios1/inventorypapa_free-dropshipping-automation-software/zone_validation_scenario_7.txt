@@ -1,0 +1,6 @@
+Scenario 7: Seeing a disabled type field when adding province type zone
+  Tags: ['@ui']
+  When  I want to create a new zone consisting of province
+  Then  I should not be able to edit its type
+  And  it should be of province type
+

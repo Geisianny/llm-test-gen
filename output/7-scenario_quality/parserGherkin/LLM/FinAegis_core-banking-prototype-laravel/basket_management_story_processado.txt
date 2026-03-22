@@ -1,0 +1,51 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: basket_management_story_processado.feature
+Caminho relativo: FinAegis_core-banking-prototype-laravel\basket_management_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\FinAegis_core-banking-prototype-laravel\basket_management_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: basket_management_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Create a new basket asset
+   Steps: 4
+   - Given there is a bank customer with an active account
+   - When the customer creates a new basket asset with a valid composition
+   - Then the system creates the basket asset
+   - And displays a confirmation message
+2. Add assets to an existing basket
+   Steps: 5
+   - Given there is a bank customer with an existing basket asset
+   - And the basket asset has an initial composition
+   - When the customer adds new assets to the basket
+   - Then the system updates the basket composition
+   - And displays the updated basket details
+3. Decompose an existing basket asset
+   Steps: 5
+   - Given there is a bank customer with an existing basket asset
+   - And the basket asset has a valid composition
+   - When the customer decomposes the basket asset
+   - Then the system removes the basket asset
+   - And distributes the underlying assets to the customer's account
+4. Rebalance an existing basket asset
+   Steps: 5
+   - Given there is a bank customer with an existing basket asset
+   - And the basket asset has a valid composition
+   - When the customer requests rebalancing of the basket
+   - Then the system rebalances the basket asset according to the defined rules
+   - And displays the updated basket composition
+5. Attempt to create a basket asset with invalid composition
+   Steps: 4
+   - Given there is a bank customer with an active account
+   - When the customer creates a new basket asset with an invalid composition
+   - Then the system denies the creation of the basket asset
+   - And displays an error message indicating the invalid composition

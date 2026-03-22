@@ -1,0 +1,8 @@
+Scenario 1: Provider admin can access plans
+  Given  an admin "admin" of the provider
+  When  I log in as provider "admin"
+  And  they go to the provider dashboard
+  Then  should see "Zoo API" within the apis dashboard widget
+  And  should see "Zoo Backend" within the apis dashboard widget
+  And  they should be able to go to the following pages:
+

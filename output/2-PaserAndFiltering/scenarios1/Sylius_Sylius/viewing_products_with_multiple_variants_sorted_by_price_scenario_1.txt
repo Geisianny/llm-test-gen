@@ -1,0 +1,8 @@
+Scenario 1: Sorting products by price of their first variant with ascending order
+  Tags: ['@api', '@ui']
+  When  I browse products from taxon "Alcohols"
+  And  I sort products by the lowest price first
+  Then  I should see 3 products in the list
+  And  the first product on the list should have name "Johnnie Walker"
+  And  the last product on the list should have name "Wyborowa Vodka"
+

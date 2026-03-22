@@ -1,0 +1,7 @@
+Scenario 1: Deleting an administrator
+  Tags: ['@api', '@ui']
+  When  I want to browse administrators
+  And  I delete administrator with email "mr.banana@example.com"
+  Then  I should be notified that it has been successfully deleted
+  And  there should not be "mr.banana@example.com" administrator anymore
+

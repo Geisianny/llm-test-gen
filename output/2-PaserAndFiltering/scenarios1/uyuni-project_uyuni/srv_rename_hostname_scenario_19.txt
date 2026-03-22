@@ -1,0 +1,4 @@
+Scenario 19: Apply high state on the build host to populate new server CA
+  Tags: ['@build_host']
+  When  I apply highstate on "build_host"
+

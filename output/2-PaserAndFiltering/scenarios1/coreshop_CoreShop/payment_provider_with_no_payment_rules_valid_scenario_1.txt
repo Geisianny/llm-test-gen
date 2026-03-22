@@ -1,0 +1,4 @@
+Scenario 1: Payment Provider with not payment rule should be valid
+  Given  I add the product "Shoe" to my cart
+  Then  there should be a payment provider "Bankwire"
+

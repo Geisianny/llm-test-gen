@@ -1,0 +1,4 @@
+Scenario: Delete a custom destination
+  Given there is a custom destination with the name "My HTTP Destination"
+  When the user deletes the custom destination "My HTTP Destination"
+  Then the system deletes the custom destination successfully

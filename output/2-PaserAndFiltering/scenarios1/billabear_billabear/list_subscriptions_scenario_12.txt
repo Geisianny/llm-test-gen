@@ -1,0 +1,9 @@
+Scenario 12: 
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  When  I fetch the subscription list from the stripe interopt layer for collection type "send_invoice"
+  Then  I will see 1 results in the stripe interopt list
+  Then  I will see a subscription in the stripe interopt list for "Test Plan"
+  And  I will not see a subscription in the stripe interopt list for "Test Two"
+

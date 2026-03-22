@@ -1,0 +1,5 @@
+Scenario 24: Sidebar link destination for Systems => Virtual Systems
+  When  I follow the left menu "Systems > System List > Virtual Systems"
+  Then  I should see a "Virtual Systems" text
+  And  the current path is "/rhn/manager/systems/list/virtual"
+

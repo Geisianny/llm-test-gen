@@ -1,0 +1,6 @@
+Scenario 27: Get all monitors returns "OK" response
+  Tags: ['@integration-only', '@team:DataDog/monitor-app']
+  Given  new "ListMonitors" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

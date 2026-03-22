@@ -1,0 +1,7 @@
+Scenario 2: Displaying correct tax after specifying billing address
+  Tags: ['@ui']
+  Given  I have product "PHP T-Shirt" in the cart
+  When  I proceed selecting "Germany" as billing country
+  Then  my cart total should be "$123.00"
+  And  my cart taxes should be "$23.00"
+

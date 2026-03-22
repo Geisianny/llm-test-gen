@@ -1,0 +1,6 @@
+Scenario 2: Seeing shipment status after shipping
+  Tags: ['@ui', '@api']
+  Given  this order has already been shipped
+  When  I view the summary of my order "#00000666"
+  Then  the shipment status should be "Shipped"
+

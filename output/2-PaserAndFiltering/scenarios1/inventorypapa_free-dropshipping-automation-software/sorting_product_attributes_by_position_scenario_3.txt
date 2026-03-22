@@ -1,0 +1,7 @@
+Scenario 3: Product attribute added at position 0 is added as the first one
+  Tags: ['@ui']
+  Given  the store has also a text product attribute "Drive type" at position 0
+  When  I want to see all product attributes in store
+  Then  I should see 4 product attributes in the list
+  Then  the first product attribute on the list should have name "Drive type"
+

@@ -1,0 +1,6 @@
+Scenario 3: Empty state
+  Given  a product "No Apps API"
+  When  they go to product "No Apps API" applications page
+  Then  they should see "No applications yet"
+  And  there should be a link to "Add an application"
+

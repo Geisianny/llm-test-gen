@@ -1,0 +1,8 @@
+Scenario 2: search for event on profile
+  Given  the following events
+  When  I go to joaosilva's profile
+  And  I fill in "q" with "birthday"
+  And  I follow "profile-search-button"
+  Then  I should see "John Doe's birthday" within ".main-block"
+  And  I should not see "Group meeting" within ".main-block"
+

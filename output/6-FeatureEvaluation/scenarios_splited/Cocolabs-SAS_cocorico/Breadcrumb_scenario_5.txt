@@ -1,0 +1,4 @@
+Scenario: Verify breadcrumbs remain consistent on page reload
+  Given the user is on the "Messages" page under "Offerer"
+  And the breadcrumbs display "Home > Offerer > Messages"
+  When the user reloads the page

@@ -1,0 +1,8 @@
+Scenario 3: I should see balloon when clicked on people block trigger
+  Tags: ['@selenium-fixme']
+  Given  feature "show_balloon_with_profile_links_when_clicked" is enabled on environment
+  And  I go to /search/people
+  And  display ".person-trigger"
+  And  I follow "Profile links"
+  Then  I should see "Friends"
+

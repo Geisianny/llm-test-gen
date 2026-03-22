@@ -1,0 +1,11 @@
+Scenario 4: Adding a new payment method for channel
+  Tags: ['@api', '@ui']
+  When  I want to create a new offline payment method
+  And  I name it "Offline" in "English (United States)"
+  And  I specify its code as "OFF"
+  And  make it available in channel "United States"
+  And  I add it
+  Then  I should be notified that it has been successfully created
+  And  the payment method "Offline" should appear in the registry
+  And  the payment method "Offline" should be available in channel "United States"
+

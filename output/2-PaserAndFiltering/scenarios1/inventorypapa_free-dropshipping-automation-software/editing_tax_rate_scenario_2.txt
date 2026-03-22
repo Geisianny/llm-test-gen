@@ -1,0 +1,5 @@
+Scenario 2: Seeing disabled code field when editing tax rate
+  Tags: ['@ui']
+  When  I want to modify a tax rate "United States Sales Tax"
+  Then  the code field should be disabled
+

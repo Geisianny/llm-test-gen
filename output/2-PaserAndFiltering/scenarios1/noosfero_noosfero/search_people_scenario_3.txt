@@ -1,0 +1,4 @@
+Scenario 3: show empty search results
+  When  I search people for "something unrelated"
+  Then  I should see "None" within ".search-results-type-empty"
+

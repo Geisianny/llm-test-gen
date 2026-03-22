@@ -1,0 +1,9 @@
+Scenario 4: Update a resource
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "PUT" request to "/uuid_identifier_dummies/41b29566-144b-11e6-a148-3e1d05defe78" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the header "Content-Location" should be equal to "/uuid_identifier_dummies/41b29566-144b-11e6-a148-3e1d05defe78.jsonld"
+  And  the JSON should be equal to:
+

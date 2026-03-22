@@ -1,0 +1,8 @@
+Scenario 8: Proposal history and auditability
+  Given  multiple proposals have been voted on
+  When  I view the governance history
+  Then  I should see all past proposals
+  And  their voting results
+  And  implementation status
+  And  be able to verify the integrity of the voting process
+

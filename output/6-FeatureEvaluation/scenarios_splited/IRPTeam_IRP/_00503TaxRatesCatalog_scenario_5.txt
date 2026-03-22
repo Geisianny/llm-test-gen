@@ -1,0 +1,5 @@
+Scenario: Delete a tax rate
+  Given there is an administrator logged in
+  And there is a tax rate with the code "VAT" and rate "20"
+  When the administrator deletes the tax rate "VAT"
+  Then the system removes the tax rate

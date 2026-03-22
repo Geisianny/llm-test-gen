@@ -1,0 +1,6 @@
+Scenario 1: Provider admin can access portal
+  When  I log in as provider "foo.3scale.localhost"
+  When  I go to the provider dashboard
+  Then  there should be a link to "Developer Portal"
+  Then  they should be able to go to the following pages:
+

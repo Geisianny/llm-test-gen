@@ -1,0 +1,5 @@
+Scenario 2: Seeing proper variant's name after locale change
+  Tags: ['@api', '@ui']
+  When  I view product "Die Hard Movie" in the "Polish (Poland)" locale
+  Then  its current variant should be named "Szklana Pułapka - Wersja Reżyserska"
+

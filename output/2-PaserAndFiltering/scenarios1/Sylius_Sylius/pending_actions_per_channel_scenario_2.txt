@@ -1,0 +1,8 @@
+Scenario 2: Seeing channel related pending actions in different channel
+  Tags: ['@no-api', '@ui', '@mink:chromedriver']
+  When  I open administration dashboard
+  And  I choose "Canada" channel
+  Then  I should see 1 order to process in the pending actions
+  And  I should see 1 shipment to ship in the pending actions
+  And  I should see 1 pending payment in the pending actions
+

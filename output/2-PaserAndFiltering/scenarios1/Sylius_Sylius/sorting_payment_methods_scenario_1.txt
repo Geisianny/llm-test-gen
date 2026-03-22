@@ -1,0 +1,7 @@
+Scenario 1: Payment methods can be sorted by their codes
+  Tags: ['@api', '@ui']
+  Given  I am browsing payment methods
+  When  I start sorting payment methods by code
+  Then  I should see 3 payment methods in the list
+  And  the first payment method on the list should have code "bank_transfer"
+

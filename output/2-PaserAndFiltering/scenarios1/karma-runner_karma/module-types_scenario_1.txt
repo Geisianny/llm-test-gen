@@ -1,0 +1,5 @@
+Scenario 1: Globbing modules, with both .js and .mjs extensions
+  Given  a configuration with:
+  When  I start Karma
+  Then  it passes with like:
+

@@ -1,0 +1,7 @@
+Scenario 2: Sign in with bad credentials
+  When  I want to log in
+  And  I specify the username as "test@example.com"
+  And  I specify the password as "false"
+  And  I log in
+  Then  I should see "Authentication failed."
+

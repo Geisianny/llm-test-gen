@@ -1,0 +1,22 @@
+Feature: Refund Read API
+Description: In order to know refund info
+  As an API user
+  I need to be to fetch refund info
+
+Background: 
+  Given  the following accounts exist:
+  And  the follow products exist:
+  And  the follow prices exist:
+  And  the following features exist:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "Price One" with:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "Price One" with:
+
+Scenario 1: Get customer info
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  And  there is a payments for:
+  And  there is a full refund for a payment for "customer.one@example.org" for 3500
+  When  I view the full refund for a payment for "customer.one@example.org" for 3500 via API
+  Then  I will see the refund api response has the amount of 3500
+

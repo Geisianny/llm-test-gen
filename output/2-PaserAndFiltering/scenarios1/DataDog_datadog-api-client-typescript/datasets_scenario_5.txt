@@ -1,0 +1,9 @@
+Scenario 5: Delete a dataset returns "No Content" response
+  Tags: ['@skip-terraform-config', '@team:DataDog/aaa-granular-access']
+  Given  there is a valid "dataset" in the system
+  And  operation "DeleteDataset" enabled
+  And  new "DeleteDataset" request
+  And  request contains "dataset_id" parameter from "dataset.data.id"
+  When  the request is sent
+  Then  the response status is 204 No Content
+

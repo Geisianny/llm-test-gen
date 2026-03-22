@@ -1,0 +1,43 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: admin_promoting_site_story_processado.feature
+Caminho relativo: AgileVentures_LocalSupport\admin_promoting_site_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\AgileVentures_LocalSupport\admin_promoting_site_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: admin_promoting_site_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Site name is displayed on the homepage
+   Steps: 3
+   - Given the user is on the homepage
+   - Then the site name "Harrow Community Network" is displayed prominently
+   - And the site's visual identity is visible
+2. Site name is displayed on internal pages
+   Steps: 3
+   - Given the user is on an internal page
+   - Then the site name "Harrow Community Network" is displayed prominently
+   - And the site's visual identity is visible
+3. Site name is displayed consistently across different pages
+   Steps: 3
+   - Given the user navigates through different pages
+   - Then the site name "Harrow Community Network" is displayed consistently
+   - And the site's visual identity remains the same
+4. Site name is displayed with correct branding
+   Steps: 3
+   - Given the user is on any page of the site
+   - Then the site name "Harrow Community Network" is displayed with the correct branding
+   - And the site's visual identity matches the brand guidelines
+5. Site name is visible on page load
+   Steps: 3
+   - Given the user loads a page on the site
+   - Then the site name "Harrow Community Network" is visible on page load
+   - And there are no delays in displaying the site name

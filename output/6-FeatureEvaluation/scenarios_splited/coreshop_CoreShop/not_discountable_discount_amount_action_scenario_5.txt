@@ -1,0 +1,6 @@
+Scenario: Non-discountable rule and percentage discount voucher
+  Given there is a product with a price of $100
+  And a non-discountable price rule is applied to the product
+  And there is an active voucher offering a 20% discount
+  When the customer adds the product to the cart
+  And applies the voucher to the cart

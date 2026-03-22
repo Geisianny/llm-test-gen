@@ -1,0 +1,8 @@
+Scenario 2: Create a new index, add fields and index some objects
+  Given  the site has a index "brick_getter" for behat-class "BrickTest" with type "mysql"
+  And  the index has following fields:
+  And  there is an instance of behat-class "BrickTest" with key "test1"
+  And  the object-instance has following values:
+  Then  the index column "brick_name" for object-instance should have value "val1"
+  And  the index column "brick_val" for object-instance should have value "val2"
+

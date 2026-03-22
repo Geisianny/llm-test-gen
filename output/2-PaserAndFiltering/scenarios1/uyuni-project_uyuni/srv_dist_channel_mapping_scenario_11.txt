@@ -1,0 +1,13 @@
+Scenario 11: Cleanup: delete the map created for x68_64 SUSE clients
+  Tags: ['@scc_credentials', '@susemanager']
+  When  I follow the left menu "Software > Distribution Channel Mapping"
+  Then  I should see the text "SUSE Linux Enterprise Server 15 SP 4 modified" in the Operating System field
+  And  I should see the text "x86_64" in the Architecture field
+  When  I follow "SUSE Linux Enterprise Server 15 SP 4 modified"
+  Then  I should see a "Update Distribution Channel Map" text
+  And  I should see a "Delete Distribution Channel" link
+  When  I follow "Delete Distribution Channel Mapping"
+  Then  I should see a "Delete Distribution Channel Map" text
+  When  I click on "Delete Mapping"
+  Then  I should not see a "SUSE Linux Enterprise Server 15 SP 4 modified" link
+

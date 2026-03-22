@@ -1,0 +1,4 @@
+Scenario 14: Apply the Configuration channel state with spacecmd
+  When  I schedule apply configchannels for "sle_minion"
+  And  I wait until file "/root/statechannel3" exists on "sle_minion"
+

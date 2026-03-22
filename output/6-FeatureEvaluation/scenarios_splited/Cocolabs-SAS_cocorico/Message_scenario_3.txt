@@ -1,0 +1,5 @@
+Scenario: Reply to a received message
+  Given there is an offerer "offerer@example.com" with a received message from "asker@example.com"
+  When the offerer "offerer@example.com" replies to the message
+  Then the system records the reply
+  And the asker "asker@example.com" receives the reply

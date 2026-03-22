@@ -1,0 +1,7 @@
+Scenario 3: The minion is healthy
+  Tags: ['@sle_minion']
+  Then  "sle_minion" should have a FQDN
+  And  reverse resolution should work for "sle_minion"
+  And  "sle_minion" should communicate with the server using public interface
+  And  the clock from "sle_minion" should be exact
+

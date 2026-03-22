@@ -1,0 +1,6 @@
+Scenario 1: Being unable to delete a payment method which is in use
+  Tags: ['@api', '@ui']
+  When  I try to delete the "Cash on Delivery" payment method
+  Then  I should be notified that it is in use
+  And  this payment method should still be in the registry
+

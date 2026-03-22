@@ -1,0 +1,238 @@
+Feature: Dispatch
+
+Scenario 1: Not authorized to list task lists
+  Given  the fixtures files are loaded:
+  And  the user "bob" is loaded:
+  And  the user "bob" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "GET" request to "/api/task_lists"
+  Then  the response status code should be 403
+
+Scenario 2: Not authorized to retrieve task list
+  Given  the fixtures files are loaded:
+  And  the user "bob" is loaded:
+  And  the user "bob" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "GET" request to "/api/task_lists/1"
+  Then  the response status code should be 403
+
+Scenario 3: Retrieve task lists (legacy)
+  Given  the fixtures files are loaded:
+  And  the user "sarah" has role "ROLE_COURIER"
+  And  the user "bob" has role "ROLE_ADMIN"
+  And  the user "bob" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "GET" request to "/api/task_lists?date=2018-12-01"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 4: Retrieve task lists
+  Given  the fixtures files are loaded:
+  And  the user "sarah" has role "ROLE_COURIER"
+  And  the user "bob" has role "ROLE_ADMIN"
+  And  the user "bob" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "GET" request to "/api/task_lists/v2?date=2018-12-01"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 5: Create task list
+  Given  the fixtures files are loaded:
+  And  the user "sarah" has role "ROLE_COURIER"
+  And  the user "bob" has role "ROLE_ADMIN"
+  And  the user "bob" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "POST" request to "/api/task_lists" with body:
+  Then  the response status code should be 201
+
+Scenario 6: Create task list already existing
+  Given  the fixtures files are loaded:
+  And  the user "sarah" has role "ROLE_COURIER"
+  And  the user "bob" has role "ROLE_ADMIN"
+  And  the user "bob" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "POST" request to "/api/task_lists" with body:
+  Then  the response status code should be 201
+
+Scenario 7: Administrator can assign task
+  Given  the fixtures files are loaded:
+  And  the user "bob" has role "ROLE_ADMIN"
+  And  the user "bob" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "PUT" request to "/api/tasks/4/assign" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 8: Courier can self-assign task
+  Given  the fixtures files are loaded:
+  And  the user "sarah" has role "ROLE_COURIER"
+  And  the user "sarah" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "sarah" sends a "PUT" request to "/api/tasks/6/assign" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 9: Courier can't self-assign task already assigned to someone else
+  Given  the fixtures files are loaded:
+  And  the user "sarah" has role "ROLE_COURIER"
+  And  the user "sarah" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "sarah" sends a "PUT" request to "/api/tasks/4/assign" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 10: Administrator can self-assign task already assigned to someone else
+  Given  the fixtures files are loaded:
+  And  the user "bob" has role "ROLE_ADMIN"
+  And  the user "bob" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "PUT" request to "/api/tasks/4/assign" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+
+Scenario 11: Courier can unassign task assigned to him/her
+  Given  the fixtures files are loaded:
+  And  the user "sarah" has role "ROLE_COURIER"
+  And  the user "sarah" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "sarah" sends a "PUT" request to "/api/tasks/1/unassign" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 12: Courier can't unassign task not assigned to him/her
+  Given  the fixtures files are loaded:
+  And  the user "sarah" has role "ROLE_COURIER"
+  And  the user "sarah" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "sarah" sends a "PUT" request to "/api/tasks/3/unassign" with body:
+  Then  the response status code should be 403
+  And  the response should be in JSON
+
+Scenario 13: Get optimized task list
+  Given  the fixtures files are loaded:
+  And  the user "bob" has role "ROLE_ADMIN"
+  And  the user "bob" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "GET" request to "/api/task_lists/3/optimize"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 14: Create task group
+  Given  the fixtures files are loaded:
+  And  the user "bob" has role "ROLE_ADMIN"
+  And  the user "bob" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "POST" request to "/api/task_groups" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 15: Retrieve task lists as OAuth client
+  Given  the fixtures files are loaded:
+  And  the store with name "Acme" has an OAuth client named "Acme"
+  And  the OAuth client with name "Acme" has an access token
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the OAuth client "Acme" sends a "GET" request to "/api/task_lists?date=2018-12-01"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 16: Retrieve tasks filtered by organization
+  Given  the fixtures files are loaded:
+  And  the user "bob" has role "ROLE_ADMIN"
+  And  the user "bob" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "GET" request to "/api/tasks?date=2018-12-01&organization=Acme"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 17: Create delivery from tasks
+  Given  the fixtures files are loaded:
+  And  the user "sarah" has role "ROLE_ADMIN"
+  And  the user "sarah" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "sarah" sends a "POST" request to "/api/deliveries/from_tasks" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 18: Create delivery from tasks (multiple)
+  Given  the fixtures files are loaded:
+  And  the user "sarah" has role "ROLE_ADMIN"
+  And  the user "sarah" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "sarah" sends a "POST" request to "/api/deliveries/from_tasks" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 19: Create tour from tasks
+  Given  the fixtures files are loaded:
+  And  the user "sarah" has role "ROLE_ADMIN"
+  And  the user "sarah" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "sarah" sends a "POST" request to "/api/tours" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 20: Add/reorder tasks of a tour
+  Given  the fixtures files are loaded:
+  And  the user "sarah" has role "ROLE_ADMIN"
+  And  the user "sarah" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "sarah" sends a "PUT" request to "/api/tours/1" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 21: Create tour with tasks
+  Given  the fixtures files are loaded:
+  And  the user "sarah" has role "ROLE_ADMIN"
+  And  the user "sarah" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "sarah" sends a "POST" request to "/api/tours" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 22: Administrator can assign multiple tasks at once
+  Given  the fixtures files are loaded:
+  And  the user "bob" has role "ROLE_ADMIN"
+  And  the user "bob" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "PUT" request to "/api/tasks/assign" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+

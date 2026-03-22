@@ -1,0 +1,7 @@
+Scenario 9: Delete a monitor configuration policy returns "Bad Request" response
+  Tags: ['@team:DataDog/monitor-app']
+  Given  new "DeleteMonitorConfigPolicy" request
+  And  request contains "policy_id" parameter with value "INVALID_UUID"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

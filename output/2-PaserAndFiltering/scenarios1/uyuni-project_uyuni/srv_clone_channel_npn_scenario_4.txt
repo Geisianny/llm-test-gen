@@ -1,0 +1,12 @@
+Scenario 4: Clone a channel with patches
+  When  I follow the left menu "Software > Manage > Channels"
+  And  I follow "Clone Channel"
+  And  I select "Fake-RPM-SUSE-Channel" as the origin channel
+  And  I choose "current"
+  And  I click on "Clone Channel"
+  And  I enter "Fake-Clone-2-RPM-SLES15SP4-Channel" as "Channel Name"
+  And  I should see a "Create Software Channel" text
+  And  I should see a "Current state of the channel" text
+  And  I click on "Clone Channel"
+  Then  I should see a "Fake-Clone-2-RPM-SLES15SP4-Channel" text
+

@@ -1,0 +1,6 @@
+Scenario: Auction is triggered due to order outside price limits
+  Given the market "BTC/ETH" is in continuous trading mode
+  And the current price is "1000"
+  When a party places an order outside the price limits for the market "BTC/ETH"
+  Then the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "BTC/ETH"
+  And the order should be in a pending state

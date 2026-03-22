@@ -1,0 +1,16 @@
+Scenario 13: filter media with search
+  Tags: ['@selenium-fixme']
+  Given  the following galleries
+  And  the following files
+  When  I go to /myprofile/joaosilva/cms/new?type=TextArticle
+  And  I follow "Show/Hide"
+  And  I select "Recent media" from "parent_id" within "#published-media"
+  And  I fill in "Search" with "rails" within "#published-media"
+  Then  I should see div with title "rails" within ".items"
+  When  I select "joaosilva/Gallery" from "parent_id" within "#published-media"
+  And  I fill in "Search" with "rails" within "#published-media"
+  Then  I should not see div with title "rails.png" within ".items"
+  When  I select "joaosilva/other-gallery" from "parent_id" within "#published-media"
+  And  I fill in "Search" with "rails" within "#published-media"
+  Then  I should see div with title "rails" within ".items"
+

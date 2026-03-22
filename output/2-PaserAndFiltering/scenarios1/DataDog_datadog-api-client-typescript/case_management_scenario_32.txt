@@ -1,0 +1,6 @@
+Scenario 32: Search cases returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/case-management']
+  Given  new "SearchCases" request
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

@@ -1,0 +1,12 @@
+Scenario 14: Edit an API key returns "OK" response
+  Tags: ['@team:DataDog/credentials-management']
+  Given  there is a valid "api_key" in the system
+  And  new "UpdateAPIKey" request
+  And  request contains "api_key_id" parameter from "api_key.data.id"
+  And  body with value {"data": {"type": "api_keys", "id": "{{ api_key.data.id }}", "attributes": {"name": "{{ unique }}"}}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.type" is equal to "api_keys"
+  And  the response "data.id" is equal to "{{ api_key.data.id }}"
+  And  the response "data.attributes.name" is equal to "{{ unique }}"
+

@@ -1,0 +1,9 @@
+Scenario 2: Receiving no discount from valid coupon that has reached its usage limit
+  Tags: ['@ui', '@api']
+  Given  this coupon has already reached its usage limit
+  When  I add product "PHP T-Shirt" to the cart
+  And  I use coupon with code "SANTA2016"
+  Then  I should be notified that the coupon is invalid
+  And  my cart total should be "$100.00"
+  And  there should be no discount
+

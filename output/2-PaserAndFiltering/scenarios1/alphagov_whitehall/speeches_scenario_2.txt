@@ -1,0 +1,6 @@
+Scenario 2: Editing an existing draft speech
+  Given  I am a writer
+  And  a draft speech "Outlaw Moustaches" exists
+  When  I edit the speech "Outlaw Moustaches" changing the title to "Ban Moustaches"
+  Then  I should see the speech "Ban Moustaches" in the list of draft documents
+

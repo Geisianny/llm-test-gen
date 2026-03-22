@@ -1,0 +1,6 @@
+Scenario 15: List Apps returns "OK" response
+  Tags: ['@skip-typescript', '@team:DataDog/app-builder-backend']
+  Given  new "ListApps" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

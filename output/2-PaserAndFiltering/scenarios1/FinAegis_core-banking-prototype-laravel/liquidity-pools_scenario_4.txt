@@ -1,0 +1,6 @@
+Scenario 4: Prevent adding liquidity with wrong ratio
+  Given  a liquidity pool exists for "BTC/EUR" with reserves:
+  And  I am logged in as "bob@example.com"
+  When  I try to add liquidity to the "BTC/EUR" pool:
+  Then  the transaction should fail with "Input amounts deviate too much from pool ratio"
+

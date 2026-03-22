@@ -1,0 +1,12 @@
+Scenario 4: Trying to add new customer with an account without required information
+  Tags: ['@ui', '@javascript']
+  Given  I want to create a new customer account
+  When  I choose create account option
+  And  I specify their password as "Na"
+  And  I try to add them
+  Then  I should still be on the customer creation page
+  And  I should be able to specify their password
+  And  I should not be able to select create account option
+  And  I should be notified that the password must be at least 4 characters long
+  And  I should be notified that email is required
+

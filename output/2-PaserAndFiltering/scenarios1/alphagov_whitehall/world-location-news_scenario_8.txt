@@ -1,0 +1,5 @@
+Scenario 8: Creating a non-GOV.UK link
+  When  I visit the world location news page
+  And  I create a new a non-GOV.UK link with the title "Featured link"
+  Then  I can see the non-GOV.UK link with the title "Featured link"
+

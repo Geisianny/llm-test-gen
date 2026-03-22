@@ -1,0 +1,12 @@
+Scenario 1: View the available currencies
+  Given  the following exchange rate:
+  When  I navigate the menu and select the item at "System > Currency > Edit currencies"
+  Then  I should see the Edit currencies screen
+  And  I should see the title "Defined currencies"
+  And  I expect the report to contain 3 rows
+  And  I expect the '' report column to contain 'default' for ID 'USD'
+  And  I expect the '' report column to contain 'in use' for ID 'EUR'
+  And  I expect the 'Description' report column to contain 'USD' for ID 'USD'
+  And  I expect the 'Description' report column to contain 'EUR' for ID 'EUR'
+  And  I expect the 'Description' report column to contain 'CAD' for ID 'CAD'
+

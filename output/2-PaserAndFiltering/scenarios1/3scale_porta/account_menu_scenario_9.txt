@@ -1,0 +1,5 @@
+Scenario 9: Navigate to export to csv
+  When  I go to the provider account page
+  And  I follow "Export"
+  Then  I should see the form to export data to csv
+

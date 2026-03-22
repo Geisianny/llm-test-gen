@@ -1,0 +1,5 @@
+Scenario: Create multiple forums
+  Given there is a Noosfero user with a community profile
+  When the user creates multiple new forums
+  Then the system creates all the forums successfully
+  And all the forums are visible on the community profile

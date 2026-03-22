@@ -1,0 +1,6 @@
+Scenario 1: Navigation
+  When  they select "Audience" from the context selector
+  And  they press "Developer Portal" within the main menu
+  And  follow "ActiveDocs" within the main menu
+  Then  the current page is the ActiveDocs page
+

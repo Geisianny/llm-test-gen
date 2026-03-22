@@ -1,0 +1,4 @@
+Scenario: Create product with valid name and no rate or rate type
+  Given there is an authenticated APP user
+  When the user creates a product with the name "Test Product"
+  Then the system creates the product successfully

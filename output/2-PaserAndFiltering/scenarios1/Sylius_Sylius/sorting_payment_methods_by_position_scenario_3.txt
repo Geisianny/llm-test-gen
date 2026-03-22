@@ -1,0 +1,6 @@
+Scenario 3: Payment method added at position 0 is added as the first one
+  Tags: ['@api', '@ui']
+  Given  the store also allows paying with "Credit Card" at position 0
+  When  I browse payment methods
+  Then  the first payment method on the list should have name "Credit Card"
+

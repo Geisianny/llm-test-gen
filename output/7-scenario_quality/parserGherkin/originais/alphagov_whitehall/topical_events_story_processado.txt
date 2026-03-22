@@ -1,0 +1,36 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 19/01/2026 23:13:57
+Arquivo analisado: topical_events_story_processado.feature
+Caminho relativo: alphagov_whitehall\topical_events_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/Originais\alphagov_whitehall\topical_events_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: topical_events_story_processado
+Descrição: Não possui
+Total de cenários: 4
+
+CENÁRIOS IDENTIFICADOS:
+1. Adding a new topical event
+   Steps: 2
+   - When I create a new topical event "An Event" with summary "A topical event" and description "About this topical event"
+   - Then I should see the topical event "An Event" in the admin interface
+2. Archiving a new topical event
+   Steps: 2
+   - When I create a new topical event "An Event" with summary "A topical event", description "About this topical event" and it ends today
+   - Then I should see the topical event "An Event" in the admin interface
+3. Adding more information about the event
+   Steps: 4
+   - Given I'm administering a topical event
+   - And I add a page of information about the event
+   - Then I should be able to edit the event's about page
+   - And I should see the about page is updated
+4. Deleting a topical event
+   Steps: 2
+   - Given a topical event called "An event" with summary "A topical event" and description "A topical event"
+   - Then I should be able to delete the topical event "An event"

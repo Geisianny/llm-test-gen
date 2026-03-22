@@ -1,0 +1,7 @@
+Scenario 1: Create a Color Attribute Group
+  Given  the site has a attribute group "Color"
+  And  the site has a color attribute "red" with hex code "#FF0000" in attribute group
+  And  the site has a color attribute "blue" with hex code "#0000FF" in attribute group
+  And  the site has a color attribute "green" with hex code "#00FF00" in attribute group
+  Then  the attribute group "Color" should have 3 attributes
+

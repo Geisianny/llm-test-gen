@@ -1,0 +1,12 @@
+Scenario 8: Wait until containerized proxy service is active
+  And  I wait until "uyuni-proxy-pod" service is active on "proxy"
+  And  I wait until "uyuni-proxy-httpd" service is active on "proxy"
+  And  I wait until "uyuni-proxy-salt-broker" service is active on "proxy"
+  And  I wait until "uyuni-proxy-squid" service is active on "proxy"
+  And  I wait until "uyuni-proxy-ssh" service is active on "proxy"
+  And  I wait until "uyuni-proxy-tftpd" service is active on "proxy"
+  And  I wait until port "8022" is listening on "proxy" container
+  And  I wait until port "80" is listening on "proxy" container
+  And  I wait until port "443" is listening on "proxy" container
+  And  I visit "Proxy" endpoint of this "proxy"
+

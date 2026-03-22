@@ -1,0 +1,5 @@
+Scenario 10: Create a distribution via the API, with kernel options
+  When  I create a kickstart tree with kernel options via the API
+  When  I follow the left menu "Systems > Autoinstallation > Distributions"
+  Then  I should see a "fedora_kickstart_distro_kernel_api" link
+

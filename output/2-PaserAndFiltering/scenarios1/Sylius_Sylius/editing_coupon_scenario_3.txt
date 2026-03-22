@@ -1,0 +1,8 @@
+Scenario 3: Changing coupons per customer usage limit
+  Tags: ['@api', '@ui']
+  When  I want to modify the "SANTA2016" coupon for this promotion
+  And  I change its per customer usage limit to 20
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this coupon should have 20 per customer usage limit
+

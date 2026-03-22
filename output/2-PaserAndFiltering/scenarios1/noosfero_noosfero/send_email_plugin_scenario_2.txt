@@ -1,0 +1,6 @@
+Scenario 2: expand macro in block content
+  Given  plugin SendEmail is enabled on environment
+  And  the following blocks
+  When  I go to Joao Silva's homepage
+  Then  I should see "URL path to /profile/joaosilva/plugin/send_email/deliver action"
+

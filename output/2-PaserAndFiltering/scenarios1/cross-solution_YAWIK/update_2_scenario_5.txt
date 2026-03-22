@@ -1,0 +1,12 @@
+Scenario 5: Add and remove logo
+  When  I want to edit my organization
+  And  I attach logo from file "img/logo.jpg"
+  And  I wait for the ajax response
+  Then  I should see an "img.img-polaroid" element
+  When  I remove logo from organization
+  And  I wait for the ajax response
+  And  I want to edit my organization
+  Then  the "h1" element should contain "Organization"
+  And  I wait for 2 seconds
+  And  I should not see an "img.img-polaroid" element
+

@@ -1,0 +1,9 @@
+Scenario 3: check all active community fields
+  Tags: ['@selenium']
+  Given  I follow "Community's fields"
+  And  I check "community_active"
+  And  I follow "Save changes"
+  When  I go to mycommunity's control panel
+  And  I follow "Informations" within "#section-profile"
+  Then  I should see "Economic activity"
+

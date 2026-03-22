@@ -1,0 +1,7 @@
+Scenario 4: Viewing variants block
+  Tags: ['@ui']
+  When  I access "Iron Shield" product page
+  Then  I should see 2 variants
+  And  I should see "Iron shield" variant with code "123456789-xl", priced "$25.00" and current stock 5
+  And  I should see "Iron shield" variant with code "123456789-xs", priced "$15.00" and current stock 12
+

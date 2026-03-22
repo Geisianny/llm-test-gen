@@ -1,0 +1,8 @@
+Scenario 7: Receiving fixed discount on a single item with price equal to filter range maximum criteria
+  Tags: ['@api', '@ui']
+  Given  the promotion gives "$10.00" off on every product priced between "$15.00" and "$20.00"
+  And  I added product "PHP Mug" to the cart
+  When  I check the details of my cart
+  Then  its price should be decreased by "$10.00"
+  And  my cart total should be "$10.00"
+

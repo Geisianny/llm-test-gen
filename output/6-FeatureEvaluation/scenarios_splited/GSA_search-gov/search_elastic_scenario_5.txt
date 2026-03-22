@@ -1,0 +1,5 @@
+Scenario: Search with multiple terms
+  Given the site visitor is on a site using the SearchElastic search engine
+  And the Elasticsearch index contains relevant results for the terms "space exploration"
+  When the site visitor performs a search for "space exploration"
+  Then the system displays a list of relevant search results

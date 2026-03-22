@@ -1,0 +1,8 @@
+Scenario 13: Delete datastore returns "OK" response
+  Tags: ['@skip-typescript', '@skip-validation', '@team:DataDog/app-builder-backend']
+  Given  new "DeleteDatastore" request
+  And  there is a valid "datastore" in the system
+  And  request contains "datastore_id" parameter from "datastore.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+

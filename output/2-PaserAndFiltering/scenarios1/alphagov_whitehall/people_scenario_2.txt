@@ -1,0 +1,5 @@
+Scenario 2: Editing a person
+  Given  a person called "Dave Camerine"
+  When  I update the person called "Dave Camerine" to have the name "Nick Clogg"
+  Then  I should be able to see "Nick Clogg" in the list of people
+

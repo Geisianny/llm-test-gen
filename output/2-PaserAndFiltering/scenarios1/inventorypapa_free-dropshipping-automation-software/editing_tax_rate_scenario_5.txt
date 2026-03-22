@@ -1,0 +1,9 @@
+Scenario 5: Changing related tax category
+  Tags: ['@ui']
+  Given  the store has a tax category "Food and Beverage" also
+  And  I want to modify a tax rate "United States Sales Tax"
+  When  I change it to be applicable for the "Food and Beverage" tax category
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this tax rate should be applicable for the "Food and Beverage" tax category
+

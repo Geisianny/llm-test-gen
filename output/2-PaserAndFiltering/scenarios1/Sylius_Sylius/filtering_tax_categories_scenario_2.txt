@@ -1,0 +1,6 @@
+Scenario 2: Filtering tax categories by code
+  Tags: ['@api', '@ui']
+  When  I search by "alcohol" code
+  Then  I should see a single tax category in the list
+  And  I should see the tax category "Alcohol"
+

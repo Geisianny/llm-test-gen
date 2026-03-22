@@ -1,0 +1,7 @@
+Scenario 8: Filter on a to-many relation
+  When  I send a "GET" request to "/dummies?relatedDummies[]=%2Frelated_dummies%2F1"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+

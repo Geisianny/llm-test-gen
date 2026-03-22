@@ -1,0 +1,9 @@
+Scenario 14: provide links to all days between start and end date
+  Given  the following users
+  And  the following events
+  And  I am on /profile/fudencio/events/2010/10
+  Then  I should not see "29" link
+  And  I should see "30" link
+  And  I should see "31" link
+  And  I should see "1" link
+

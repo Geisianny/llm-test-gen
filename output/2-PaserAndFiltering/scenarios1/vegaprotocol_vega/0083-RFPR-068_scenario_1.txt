@@ -1,0 +1,17 @@
+Scenario 1: (0083-RFPR-068) Assert that a user joining a team is not eligible for rewards until the number of epochs since joining the team as specified in the rewards.team.minEpochsInTeam network parameter has passed.
+  Tags: ['@TeamStep']
+  Given  the parties submit the following recurring transfers:
+  When  the network moves ahead "1" epochs
+  And  the parties apply the following referral codes:
+  Given  the parties deposit on asset's general account the following amount:
+  When  the network moves ahead "3" epochs
+  And  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  parties should have the following vesting account balances:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  parties should have the following vesting account balances:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  parties should have the following vesting account balances:
+

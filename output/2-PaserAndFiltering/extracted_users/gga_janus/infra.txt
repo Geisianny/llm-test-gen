@@ -1,0 +1,17 @@
+Feature: Infrastructure and support
+Description: In order to effectively integrate Janus into my project
+  As a developer
+  I want to be able to execute custom code before starting my conformance run
+
+Scenario 1: janus should execute *.clj files in the contracts/support directory
+  Given  a directory named "contracts/support"
+  And  a file named "contracts/support/env.clj" with:
+  When  I run janus
+  Then  the output from janus should contain "hello from env"
+
+Scenario 2: janus should allow code to be executed after all work has been done
+  Given  a directory named "contracts/support"
+  And  a file named "contracts/support/env.clj" with:
+  When  I run janus
+  Then  the output from janus should contain "exiting"
+

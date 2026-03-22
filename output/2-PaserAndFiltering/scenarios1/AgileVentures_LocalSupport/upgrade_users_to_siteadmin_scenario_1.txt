@@ -1,0 +1,5 @@
+Scenario 1: Users have the Upgrade button
+  Given  I am signed in as a superadmin
+  When  I visit the registered users page
+  Then  I should see for "registered-user-2@example.com" the "Upgrade" button
+

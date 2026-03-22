@@ -1,0 +1,8 @@
+Scenario 2: Administrator with id zero is filtered
+  Tags: ['@createSchema']
+  Given  I add Brand Authorization header
+  When  I add "Content-Type" header equal to "application/json"
+  And  I add "Accept" header equal to "application/json"
+  And  I send a "DELETE" request to "/administrators/0"
+  Then  the response status code should be 404
+

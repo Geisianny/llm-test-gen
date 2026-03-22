@@ -1,0 +1,6 @@
+Scenario: Add status to comment without permission
+  Given the user is a member of a community but not an administrator
+  And the community has a comment section
+  When the user attempts to add a status to a comment
+  Then the system denies the action
+  And displays a message indicating that the user lacks permission to add status

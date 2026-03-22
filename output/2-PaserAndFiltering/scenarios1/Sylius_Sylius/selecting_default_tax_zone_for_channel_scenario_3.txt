@@ -1,0 +1,10 @@
+Scenario 3: Removing existing channel default tax zone
+  Tags: ['@api', '@ui']
+  Given  the store operates on a channel named "Web store"
+  And  its default tax zone is zone "US"
+  When  I want to modify this channel
+  And  I remove its default tax zone
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  channel "Web store" should not have default tax zone
+

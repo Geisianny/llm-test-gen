@@ -1,0 +1,10 @@
+Scenario 22: Get hourly usage for observability pipelines returns "OK" response
+  Tags: ['@team:DataDog/revenue-query']
+  Given  new "GetUsageObservabilityPipelines" request
+  And  request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
+  And  request contains "end_hr" parameter with value "{{ timeISO('now - 3d') }}"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data[0].type" is equal to "usage_timeseries"
+  And  the response "data[0].attributes.product_family" is equal to "observability-pipelines"
+

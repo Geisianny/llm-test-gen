@@ -1,0 +1,7 @@
+Scenario 6: Destroying invitations
+  Given  an invitation sent to "alice@lolcats.com" to join account "lol cats"
+  When  I navigate to the page of the invitations of the partner "lol cats"
+  And  I press "Delete" for an invitation from account "lol cats" for "alice@lolcats.com"
+  And  confirm the dialog
+  Then  I should not see invitation for "alice@lolcats.com"
+

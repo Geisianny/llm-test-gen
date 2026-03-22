@@ -1,0 +1,8 @@
+Scenario 4: Filtering product attributes by multiple types
+  Tags: ['@api', '@ui']
+  When  I choose "text" and "integer" in the type filter
+  And  I filter
+  Then  I should see 2 product attributes in the list
+  And  I should see the product attribute "T-Shirt brand" in the list
+  And  I should also see the product attribute "Book pages" in the list
+

@@ -1,0 +1,19 @@
+Scenario 4: As offerer i can set prices for some of my listing availabilities days
+  Given  I am logged in as user "offerer@cocorico.rocks" with password "12345678"
+  When  I click on dashboard menu "Listings" of "offerer"
+  And  I follow "Edit"
+  And  I follow "Price & conditions"
+  And  I wait 500 ms for Jquery loading
+  And  I fill date range with the following:
+  And  I check hidden "Monday"
+  And  I check hidden "Tuesday"
+  And  I check hidden "Wednesday"
+  And  I check hidden "Thursday"
+  And  I check hidden "Friday"
+  And  I check hidden "Saturday"
+  And  I fill in the following:
+  And  I press button with css "#prices-form [type=submit]"
+  And  I wait 500 ms for Jquery loading
+  Then  I should be on the "dashboard listing edit availabilities prices" page which "listing title" equal to "Listing One"
+  And  I should see "Success! Update successful"
+

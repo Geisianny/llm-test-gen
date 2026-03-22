@@ -1,0 +1,8 @@
+Scenario 5: I can not register with an already existing email
+  Given  I am on the home page
+  And  I follow "Register"
+  When  I fill in the following:
+  And  I press "Register"
+  Then  I should be on the "register" page
+  And  I should see "This email is already used"
+

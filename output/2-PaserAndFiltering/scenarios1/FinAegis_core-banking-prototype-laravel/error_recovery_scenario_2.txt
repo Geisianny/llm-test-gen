@@ -1,0 +1,7 @@
+Scenario 2: Payment gateway timeout with retry
+  Given  a payment is being processed
+  When  the payment gateway times out after 30 seconds
+  Then  the retry mechanism should:
+  And  duplicate payment prevention should be active
+  And  idempotency key should be used
+

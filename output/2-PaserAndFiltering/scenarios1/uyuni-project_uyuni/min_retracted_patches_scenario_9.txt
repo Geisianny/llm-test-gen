@@ -1,0 +1,8 @@
+Scenario 9: Retracted packages in the patches list
+  When  I follow the left menu "Patches > Patch List > All"
+  And  I enter "dummy" as the filtered synopsis
+  And  I click on the filter button
+  Then  the table row for "rute-dummy-0815" should contain "retracted" icon
+  And  the table row for "rute-dummy-0816" should not contain "retracted" icon
+  And  the table row for "rute-dummy-0817" should contain "retracted" icon
+

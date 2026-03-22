@@ -1,0 +1,14 @@
+Scenario 5: Filtering orders placed at midnight or just before midnight
+  Tags: ['@api', '@ui']
+  Given  this customer has placed an order "#00000004" at "2016-12-10 00:00"
+  And  this customer has also placed an order "#00000005" at "2016-12-11 23:59"
+  And  this customer has also placed an order "#00000006" at "2016-12-12 00:00"
+  When  I browse orders
+  And  I specify filter date from as "2016-12-10"
+  And  I specify filter date to as "2016-12-11 23:59"
+  And  I filter
+  Then  I should see 2 orders in the list
+  And  I should see an order with "#00000004" number
+  And  I should see an order with "#00000005" number
+  But  I should not see an order with "#00000006" number
+

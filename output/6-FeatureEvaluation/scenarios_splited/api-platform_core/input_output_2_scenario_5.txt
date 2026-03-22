@@ -1,0 +1,4 @@
+Scenario: Successful DTO processing with application/json
+  Given there is a registered user with the email "user@example.com"
+  When the client sends a request with a valid DTO in application/json format
+  Then the system processes the DTO successfully

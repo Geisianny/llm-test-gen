@@ -1,0 +1,10 @@
+Scenario 2: Admin user can edit custom css script
+  When  I go to the custom script admin page
+  And  I fill in "community_custom_css_script" with "body{color: red;}"
+  Then  I press submit
+  And  I wait for 1 seconds
+  And  I refresh the page
+  And  I should see "body{color: red;}" in the "community_custom_css_script" input
+  Then  I go to the homepage
+  And  Page should contain "body{color: red;}"
+

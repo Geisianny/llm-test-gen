@@ -1,0 +1,9 @@
+Scenario 6: Change the triage state of a security signal returns "OK" response
+  Tags: ['@replay-only', '@team:DataDog/k9-cloud-security-platform']
+  Given  new "EditSecurityMonitoringSignalState" request
+  And  request contains "signal_id" parameter with value "AQAAAYDiB_Ol8PbzFAAAAABBWURpQl9PbEFBQU0yeXhGTG9ZV2JnQUE"
+  And  body with value {"archiveReason": "none", "state": "open"}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "status" is equal to "done"
+

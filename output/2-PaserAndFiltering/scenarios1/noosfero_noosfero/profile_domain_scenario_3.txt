@@ -1,0 +1,7 @@
+Scenario 3: access user page
+  Given  I am logged in as "joaosilva"
+  And  I am on joaosilva's profile
+  Then  I should be on joaosilva's profile
+  And  I should see "Joao Silva" within any "h1"
+  And  the page title should be "Joao Silva"
+

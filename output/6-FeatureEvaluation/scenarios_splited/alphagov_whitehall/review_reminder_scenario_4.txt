@@ -1,0 +1,5 @@
+Scenario: Attempt to set an invalid review date
+  Given there is a document without a review date
+  When the editor sets a review date for the document
+  And the review date is "invalid-date"
+  Then the system displays an error message indicating that the review date is invalid

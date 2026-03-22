@@ -1,0 +1,13 @@
+Scenario 2: Enter minimal information for payg ssh connection data
+  When  I follow the left menu "Admin > Setup Wizard > PAYG Connections"
+  And  I click on "Add PAYG Connection"
+  And  I enter "My Instance" as "description"
+  And  I enter "my-host.local" as "host"
+  And  I enter "root" as "username"
+  And  I click on "Create"
+  Then  I should see a "PAYG my-host.local created successfully" text
+  And  I should see a "My Instance" text in element "Info-panel-wrapper"
+  And  I should see a "my-host.local" text in element "Instance-panel-wrapper"
+  And  I should see a "root" text in element "Instance-panel-wrapper"
+  And  I should see a "Delete" button
+

@@ -1,0 +1,12 @@
+Scenario 3: AMM has a static base price and amends itself to a oracle drive base price where old base it out of range
+  Tags: ['@VAMM']
+  Then  the parties submit the following AMM:
+  Then  the AMM pool status should be:
+  And  set the following AMM sub account aliases:
+  And  the market data for the market "ETH/MAR22" should be:
+  Then  the parties amend the following AMM:
+  Then  the AMM pool status should be:
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  Then  the market data for the market "ETH/MAR22" should be:
+

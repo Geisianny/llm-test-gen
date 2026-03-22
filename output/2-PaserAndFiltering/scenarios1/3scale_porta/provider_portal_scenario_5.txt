@@ -1,0 +1,8 @@
+Scenario 5: Members of portal group can access portal
+  Given  an active user "member" of account "foo.3scale.localhost"
+  And  user "member" has access to the admin section "portal"
+  When  I log in as provider "member"
+  And  I go to the provider dashboard
+  And  there should be a link to "Developer Portal" within the audience dashboard widget
+  Then  they should be able to go to the following pages:
+

@@ -1,0 +1,7 @@
+Scenario 1: Filtering product variants by code
+  Tags: ['@api', '@ui']
+  Given  I am browsing variants affected by catalog promotion "T-Shirt promotion"
+  When  I filter by code containing "PHP"
+  Then  there should be 1 product variant on the list
+  And  it should be the "PHP T-Shirt" product variant
+

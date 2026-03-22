@@ -1,0 +1,8 @@
+Scenario 7: Sample to create a random resource with the generic sentences
+  Given  I need a "res.partner" with reference "partner_rincewind"
+  When  I update it with values:
+  Then  I save it
+  Given  I need a "res.partner.address" with reference "partner_address_rincewind"
+  When  I update it with values:
+  Then  I save it
+

@@ -1,0 +1,8 @@
+Scenario 1: the user should see his devices
+  Given  that the user joaosilva has the following devices
+  Given  I am logged in as "joaosilva"
+  Given  I go to joaosilva's control panel
+  When  I follow "Notifications"
+  Then  I should see "Banana Phone"
+  And  I should see "Zamzung Phone"
+

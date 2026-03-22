@@ -1,0 +1,7 @@
+Scenario 5: Delete a rum-based metric returns "Not Found" response
+  Tags: ['@team:DataDog/rum-backend']
+  Given  new "DeleteRumMetric" request
+  And  request contains "metric_id" parameter with value "{{ unique }}"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

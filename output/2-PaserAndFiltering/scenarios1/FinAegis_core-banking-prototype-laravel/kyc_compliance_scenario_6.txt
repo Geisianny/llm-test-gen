@@ -1,0 +1,7 @@
+Scenario 6: PEP (Politically Exposed Person) screening
+  Given  I am flagged as a PEP during KYC
+  When  my application is processed
+  Then  enhanced due diligence should be required
+  And  senior compliance approval should be needed
+  And  ongoing monitoring should be increased
+

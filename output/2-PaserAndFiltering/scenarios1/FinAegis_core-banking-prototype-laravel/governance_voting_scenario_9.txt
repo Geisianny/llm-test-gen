@@ -1,0 +1,7 @@
+Scenario 9: Delegated voting
+  Given  I want to delegate my voting power
+  When  I delegate 50 tokens to "expert@example.com"
+  Then  my available voting power should be reduced by 50
+  And  the delegate should be able to vote with those tokens
+  And  I should be able to revoke delegation at any time
+

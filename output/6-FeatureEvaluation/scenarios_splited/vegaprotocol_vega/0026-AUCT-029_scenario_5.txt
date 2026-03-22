@@ -1,0 +1,4 @@
+Scenario: Market remains in opening auction with no overlapping orders
+  Given the market "BTC/ETH" is in opening auction
+  And there are no overlapping orders on the book
+  When the network moves ahead "52" blocks

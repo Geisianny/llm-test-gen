@@ -1,0 +1,11 @@
+Scenario 25: List roles returns "OK" response
+  Tags: ['@team:DataDog/aaa-core-access']
+  Given  there is a valid "role" in the system
+  And  new "ListRoles" request
+  And  request contains "filter" parameter from "role.data.attributes.name"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "meta.page.total_filtered_count" is equal to 1
+  And  the response "data[0].id" has the same value as "role.data.id"
+  And  the response "data[0].attributes.name" has the same value as "role.data.attributes.name"
+

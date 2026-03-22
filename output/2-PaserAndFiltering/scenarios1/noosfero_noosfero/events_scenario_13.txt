@@ -1,0 +1,7 @@
+Scenario 13: provide links to days with events
+  Tags: ['@selenium']
+  Given  I am on /profile/josesilva/events/2009/10
+  Then  I should see "24" link
+  When  I follow "November"
+  Then  I should not see "24" link
+

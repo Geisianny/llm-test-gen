@@ -1,0 +1,11 @@
+Scenario 2: Create a single calendar
+  When  I follow the left menu "Schedule > Maintenance Windows > Calendars"
+  And  I wait for "1" second
+  Then  I should see a "No calendars created" text
+  When  I click on "Create" in element "maintenance-windows"
+  Then  I should see a "Calendar Name" text
+  When  I enter "singlecalendar" as "name"
+  And  I add "maintenance-windows-exchange.ics" calendar file as url
+  And  I click on "Create Calendar"
+  Then  I should see a "Calendar successfully created" text
+

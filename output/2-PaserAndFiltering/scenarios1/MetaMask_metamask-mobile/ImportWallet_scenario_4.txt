@@ -1,0 +1,10 @@
+Scenario Outline 4: Password Strength - Example 1
+  When  I type metapass1 in new password field
+  Then  password strength Password strength: Weak is displayed
+
+  Examples:
+    | password | strength |
+    | metapass1 | Password strength: Weak |
+    | Metapass12345 | Password strength: Good |
+    | Metapass12345!@ | Password strength: Strong |
+

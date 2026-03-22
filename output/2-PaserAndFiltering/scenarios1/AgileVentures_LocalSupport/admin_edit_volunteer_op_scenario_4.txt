@@ -1,0 +1,5 @@
+Scenario 4: Super Admin successfully changes the description of an opportunity
+  Given  I am signed in as a superadmin
+  When  I update "Litter Box Scooper" volunteer op description to be "Clean up cat mess"
+  Then  I should see "Clean up cat mess"
+

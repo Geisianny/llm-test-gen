@@ -1,0 +1,6 @@
+Scenario: Update organization logo
+  Given there is a recruiter logged in
+  And the recruiter has an organization with a logo "old_logo.png"
+  When the recruiter updates the organization logo to "new_logo.png"
+  Then the system saves the new organization logo
+  And displays a confirmation message

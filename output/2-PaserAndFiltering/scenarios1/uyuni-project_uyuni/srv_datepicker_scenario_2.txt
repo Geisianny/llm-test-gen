@@ -1,0 +1,5 @@
+Scenario 2: Date picker is by default set to today
+  When  I follow "Remote Command" in the content area
+  And  I open the date picker
+  Then  the date picker title should be the current month and year
+

@@ -1,0 +1,12 @@
+Scenario 5: Cleanup: Disable IP forwarding
+  Tags: ['@skip_if_github_validation']
+  When  I follow the left menu "Salt > Remote Commands"
+  Then  I should see a "Remote Commands" text in the content area
+  When  I enter command "echo 0 > /proc/sys/net/ipv4/conf/all/forwarding"
+  And  I enter target "sle_minion"
+  And  I click on preview
+  And  I click on run
+  Then  I should see "sle_minion" hostname
+  And  I wait until I see "show response" text
+  And  file "/proc/sys/net/ipv4/conf/all/forwarding" should contain "0" on "sle_minion"
+

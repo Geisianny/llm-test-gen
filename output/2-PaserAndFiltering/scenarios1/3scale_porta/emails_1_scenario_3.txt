@@ -1,0 +1,5 @@
+Scenario 3: Product without a specific support email uses the default one
+  Given  a product "Bananas"
+  And  the provider has support email set to "support@api.test"
+  Then  the product's support email should be "support@api.test"
+

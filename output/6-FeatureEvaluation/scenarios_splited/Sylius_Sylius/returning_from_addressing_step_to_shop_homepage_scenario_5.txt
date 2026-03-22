@@ -1,0 +1,7 @@
+Scenario: Multiple attempts to return to shop homepage
+  Given there is a visitor with items in the cart
+  And the visitor is at the checkout addressing step
+  When the visitor clicks on the link to return to the shop homepage
+  And the visitor navigates back to checkout
+  And the visitor clicks on the link to return to the shop homepage again
+  Then the visitor is redirected to the shop homepage

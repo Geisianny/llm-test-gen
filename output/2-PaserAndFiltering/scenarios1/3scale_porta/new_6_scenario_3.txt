@@ -1,0 +1,5 @@
+Scenario 3: System name is optional
+  Given  they go to the new account plan admin page
+  When  the form is submitted with:
+  And  they should see "Created account plan Premium"
+

@@ -1,0 +1,21 @@
+Scenario 1: Charging variable cost on plan change
+  Given  the following application plans:
+  And  pricing rules on plan "WithVariable":
+  And  the date is 1st January 2017
+  And  the buyer is signed up to plan "NoVariable"
+  And  the buyer makes a service transactions with:
+  When  time flies to 3rd January 2017
+  And  the buyer changes to application plan "WithVariable"
+  And  the buyer makes a service transactions with:
+  When  time flies to 4th January 2017
+  And  the buyer changes to application plan "NoVariable"
+  And  the buyer makes a service transactions with:
+  When  time flies to 6th January 2017
+  And  the buyer changes to application plan "WithVariable"
+  And  the buyer makes a service transactions with:
+  When  time flies to 3rd February 2017
+  Then  the buyer should have following line items for "January, 2017" in the 1st invoice:
+  And  the buyer should have following line items for "January, 2017" in the 2nd invoice:
+  And  the buyer should have following line items for "January, 2017" in the 3rd invoice:
+  And  the buyer should have following line items for "February, 2017" invoice:
+

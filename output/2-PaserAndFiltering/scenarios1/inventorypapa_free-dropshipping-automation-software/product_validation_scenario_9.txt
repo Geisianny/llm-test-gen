@@ -1,0 +1,9 @@
+Scenario 9: Adding a new configurable product without specifying its name
+  Tags: ['@ui', '@api']
+  When  I want to create a new configurable product
+  And  I specify its code as "BOARD_DICE_BREWING"
+  When  I do not name it
+  And  I try to add it
+  Then  I should be notified that name is required
+  And  product with code "BOARD_DICE_BREWING" should not be added
+

@@ -1,0 +1,9 @@
+Scenario 10: Test Grafana dashboards of monitoring server
+  Tags: ['@susemanager']
+  When  I visit the grafana dashboards of this "monitoring_server"
+  And  I wait until I do not see "Loading Grafana" text
+  Then  I should see a "Apache2" text
+  And  I should see a "PostgreSQL database insights" text
+  And  I should see a "SUSE Multi-Linux Manager Client Systems" text
+  And  I should see a "SUSE Multi-Linux Manager Server" text
+

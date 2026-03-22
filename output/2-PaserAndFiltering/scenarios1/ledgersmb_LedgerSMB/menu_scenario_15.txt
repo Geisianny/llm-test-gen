@@ -1,0 +1,9 @@
+Scenario Outline 15: Navigate to menu "<path>" and open screen "<screen>" - Example 15
+  When  I navigate the menu and select the item at "Contacts > Search"
+  Then  I should see the Contact Search screen
+
+  Examples:
+    | path | screen |
+    | Contacts > Search | Contact Search |
+    | Contacts > Add Entity | Edit Contact |
+

@@ -1,0 +1,8 @@
+Scenario 1: Trying to add a product review without specifying a rate
+  Tags: ['@api', '@ui', '@javascript']
+  When  I want to review product "Necronomicon"
+  And  I leave a comment "This book made me sad, but plot was fine.", titled "Not good, not bad" as "bartholomew@heaven.com"
+  But  I do not rate it
+  And  I try to add it
+  Then  I should be notified that I must check review rating
+

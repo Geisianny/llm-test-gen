@@ -1,0 +1,7 @@
+Scenario 36: The CentOS 7 Salt SSH minion is healthy
+  Tags: ['@centos7_ssh_minion']
+  Then  "centos7_ssh_minion" should have a FQDN
+  And  reverse resolution should work for "centos7_ssh_minion"
+  And  "centos7_ssh_minion" should communicate with the server using public interface
+  And  the clock from "centos7_ssh_minion" should be exact
+

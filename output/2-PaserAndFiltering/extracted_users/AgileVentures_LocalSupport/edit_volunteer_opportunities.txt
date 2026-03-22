@@ -1,0 +1,27 @@
+Feature: Org owner can edit volunteer opportunities
+Description: As an org owner
+  To keep my volunteer opportunities fresh
+  I would like to be able to edit them
+  https://www.pivotaltracker.com/story/show/73959288
+
+Background: 
+  Given  the following organisations exist:
+  And  the following users are registered:
+  And  the following volunteer opportunities exist:
+  Given  I am signed in as a charity worker related to "Cats Are Us"
+  And  I visit the show page for the volunteer_op titled "Litter Box Scooper"
+  And  I click "Edit"
+  Then  I should be on the edit page for the volunteer_op titled "Litter Box Scooper"
+  Given  I am signed in as a charity worker related to "Dogs Rule"
+  And  I visit the show page for the volunteer_op titled "Litter Box Scooper"
+  And  I should not see a link or button "Edit"
+  And  I visit the edit page for the volunteer_op titled "Litter Box Scooper"
+  Then  I should see "You must be signed in as an organisation owner or site superadmin to perform this action!"
+
+Scenario 1: Enable edit of a volunteer op field
+  Given  I am signed in as a charity worker related to "Cats Are Us"
+  And  I visit the show page for the volunteer_op titled "Litter Box Scooper"
+  And  I click "Edit"
+  Then  I should be on the edit page for the volunteer_op titled "Litter Box Scooper"
+  Then  I update "Litter Box Scooper" volunteer op title to be "No Box Scooper"
+

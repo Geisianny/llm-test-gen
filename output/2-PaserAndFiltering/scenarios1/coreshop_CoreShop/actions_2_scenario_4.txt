@@ -1,0 +1,9 @@
+Scenario 4: Add a price rule with a retail price of 80
+  Given  adding a product specific price rule to product "Shoe" named "discount"
+  And  the specific price rule is active
+  And  the specific price rule has a action price of 80 in currency "EUR"
+  Then  the specific price rule should be valid for product "Shoe"
+  And  the product "Shoe" should be priced at "8000"
+  And  the product "Shoe" discount should be "0"
+  And  the product "Shoe" retail-price should be "8000"
+

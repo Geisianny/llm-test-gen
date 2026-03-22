@@ -1,0 +1,7 @@
+Scenario 3: Changing my email if channel requires verification
+  Tags: ['@api', '@no-ui']
+  When  I want to modify my profile
+  And  I specify the customer email as "frank@underwood.com"
+  And  I save my changes
+  And  I should not be logged in
+

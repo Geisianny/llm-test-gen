@@ -1,0 +1,5 @@
+Scenario 1: Create a new cart and add a product
+  Given  I add the product "T-Shirt" with unit "Pieces" to my cart
+  Then  there should be one product in my cart
+  And  the first item in my cart should have unit "Pieces"
+

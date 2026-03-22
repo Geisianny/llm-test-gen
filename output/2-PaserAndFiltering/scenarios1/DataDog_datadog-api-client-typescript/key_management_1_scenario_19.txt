@@ -1,0 +1,8 @@
+Scenario 19: Edit an application key returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/credentials-management']
+  Given  new "UpdateApplicationKey" request
+  And  request contains "app_key_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"name": "Application Key for managing dashboards", "scopes": ["dashboards_read", "dashboards_write", "dashboards_public_share"]}, "id": "00112233-4455-6677-8899-aabbccddeeff", "type": "application_keys"}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

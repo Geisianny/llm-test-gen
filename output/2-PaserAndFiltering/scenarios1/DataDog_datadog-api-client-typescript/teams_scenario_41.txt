@@ -1,0 +1,10 @@
+Scenario 41: Update a team link returns "API error response." response
+  Tags: ['@team:DataDog/aaa-omg']
+  Given  new "UpdateTeamLink" request
+  And  there is a valid "dd_team" in the system
+  And  request contains "team_id" parameter from "dd_team.data.id"
+  And  request contains "link_id" parameter with value "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"label": "Link label", "url": "https://example.com"}, "type": "team_links"}}
+  When  the request is sent
+  Then  the response status is 404 API error response.
+

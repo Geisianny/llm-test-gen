@@ -1,0 +1,12 @@
+Scenario 1: Create a situation where we have parties in different teams, and some not in teams, then change the teams
+  Tags: ['@TeamStep']
+  Given  the parties submit the following recurring transfers:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  parties should have the following vesting account balances:
+  When  the parties apply the following referral codes:
+  Then  the team "team2" has the following members:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  parties should have the following vesting account balances:
+

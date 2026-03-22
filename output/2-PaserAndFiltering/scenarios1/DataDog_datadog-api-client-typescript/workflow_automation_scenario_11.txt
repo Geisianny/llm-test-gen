@@ -1,0 +1,8 @@
+Scenario 11: Get a workflow instance returns "Not Found" response
+  Tags: ['@replay-only', '@team:DataDog/workflow-automation-dev']
+  Given  new "GetWorkflowInstance" request
+  And  request contains "workflow_id" parameter with value "0233a3b7-b7ba-425e-a8cc-375ca2020b5b"
+  And  request contains "instance_id" parameter with value "e0c64dc8-f946-4ae8-8d79-54569031ce67"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

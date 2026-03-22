@@ -1,0 +1,7 @@
+Scenario 6: Receiving account verification email after registration
+  Tags: ['@ui', '@email', '@api']
+  When  I register with email "ghastly@bespoke.com" and password "suitsarelife"
+  Then  I should be notified that my account has been created and the verification email has been sent
+  And  2 emails should be sent to "ghastly@bespoke.com"
+  But  I should not be able to log in as "ghastly@bespoke.com" with "suitsarelife" password
+

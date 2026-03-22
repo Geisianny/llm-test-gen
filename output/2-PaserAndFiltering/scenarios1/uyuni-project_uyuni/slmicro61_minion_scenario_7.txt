@@ -1,0 +1,7 @@
+Scenario 7: Check connection from SL Micro 6.1 minion to proxy
+  Tags: ['@proxy']
+  Given  I am on the Systems overview page of this "slmicro61_minion"
+  When  I follow "Details" in the content area
+  And  I follow "Connection" in the content area
+  Then  I should see "proxy" short hostname
+

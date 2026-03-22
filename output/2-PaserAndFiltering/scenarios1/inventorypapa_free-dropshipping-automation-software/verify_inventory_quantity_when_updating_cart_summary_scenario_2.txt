@@ -1,0 +1,7 @@
+Scenario 2: Placing an order with products that have sufficient quantity
+  Tags: ['@ui', '@api']
+  Given  I have added 3 products "Iron Maiden T-Shirt" in the cart
+  When  I change product "Iron Maiden T-Shirt" quantity to 5 in my cart
+  And  I update my cart
+  Then  I should not be notified that this product cannot be updated
+

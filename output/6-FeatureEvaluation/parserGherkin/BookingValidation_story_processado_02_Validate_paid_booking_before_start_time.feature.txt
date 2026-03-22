@@ -1,0 +1,24 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 17/12/2025 23:40:59
+Arquivo analisado: BookingValidation_story_processado_02_Validate_paid_booking_before_start_time.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation\BookingValidation_story_processado_02_Validate_paid_booking_before_start_time.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: Validate paid booking before start time
+Descrição: Não possui
+Total de cenários: 1
+
+CENÁRIOS IDENTIFICADOS:
+1. Validate paid booking before start time
+   Steps: 5
+   - Given there is a paid booking with a start time in the future
+   - And the booking is for a service offered by an offerer
+   - When the system attempts to validate the booking
+   - Then the system prevents validation
+   - And displays a message indicating that the booking has not started yet

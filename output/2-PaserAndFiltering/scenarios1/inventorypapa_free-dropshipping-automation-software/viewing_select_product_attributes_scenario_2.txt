@@ -1,0 +1,7 @@
+Scenario 2: Viewing a detailed page with product's select attribute after changing a value
+  Tags: ['@ui']
+  Given  this product has select attribute "T-shirt material" with values "Banana skin" and "Cotton"
+  When  the administrator changes this product attribute's value "Cotton" to "Orange skin"
+  And  I check this product's details
+  Then  I should see the product attribute "T-shirt material" with value "Banana skin, Orange skin"
+

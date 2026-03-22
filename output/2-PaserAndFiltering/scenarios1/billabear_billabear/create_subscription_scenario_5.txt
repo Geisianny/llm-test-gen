@@ -1,0 +1,8 @@
+Scenario 5: Create using code name - fails no such plan
+  Given  I have authenticated to the API
+  And  stripe billing is disabled
+  And  the follow customers exist:
+  When  I create a subscription with code and currency via the API for "customer.one@example.org" with the follow:
+  Then  there should not be a subscription for the user "customer.one@example.org"
+  And  there should be an error for "subscription_plan"
+

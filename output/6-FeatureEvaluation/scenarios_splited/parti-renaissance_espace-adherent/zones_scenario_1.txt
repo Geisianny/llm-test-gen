@@ -1,0 +1,5 @@
+Scenario: Access zones API as a non-logged-in user
+  Given there is a non-logged-in user
+  When the user requests a list of zones via the API
+  Then the system returns a list of zones
+  And the response is successful

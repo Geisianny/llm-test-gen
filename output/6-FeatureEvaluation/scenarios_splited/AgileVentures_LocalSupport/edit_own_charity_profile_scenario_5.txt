@@ -1,0 +1,7 @@
+Scenario: External failure does not prevent charity details update
+  Given there is a charity with contact details "Old email"
+  And a charity worker is associated with the charity
+  And an external service is unavailable
+  When the charity worker edits the charity contact details to "New email"
+  Then the charity's contact details are updated to "New email"
+  And the change is reflected on the charity's public page

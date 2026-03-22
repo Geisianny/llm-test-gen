@@ -1,0 +1,19 @@
+Scenario 2: when previous mark price is outside the bounds implied by the auction uncrossing trade the market will only return to continuous trading once the last oracle feed became stale
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the mark price should be "0" for the market "ETH/FEB23"
+  And  the trading mode should be "TRADING_MODE_OPENING_AUCTION" for the market "ETH/FEB23"
+  Then  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  And  the market data for the market "ETH/FEB23" should be:
+  When  the network moves ahead "5" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+  When  the parties place the following orders with ticks:
+  Then  the market data for the market "ETH/FEB23" should be:
+  When  the network moves ahead "5" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+  When  the network moves ahead "3" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+

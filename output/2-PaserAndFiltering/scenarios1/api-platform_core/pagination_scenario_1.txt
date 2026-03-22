@@ -1,0 +1,11 @@
+Scenario 1: Get the first page of a paginated collection according to basic config
+  Tags: ['@createSchema']
+  Given  there are 10 dummy objects
+  When  I send a "GET" request to "/dummies"
+  Then  the response status code should be 200
+  And  the JSON should be valid according to the JSON API schema
+  And  the JSON node "data" should have 3 elements
+  And  the JSON node "meta.totalItems" should be equal to the number 10
+  And  the JSON node "meta.itemsPerPage" should be equal to the number 3
+  And  the JSON node "meta.currentPage" should be equal to the number 1
+

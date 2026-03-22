@@ -1,0 +1,6 @@
+Scenario: Apply for a non-existent job
+  Given there is no job opening with the title "Non Existent Job"
+  When the user applies for the job "Non Existent Job"
+  And provides valid application information
+  Then the system denies the job application
+  And displays a message indicating that the job is not available

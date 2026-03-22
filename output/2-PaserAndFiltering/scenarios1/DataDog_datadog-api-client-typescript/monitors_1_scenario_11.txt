@@ -1,0 +1,8 @@
+Scenario 11: Delete a monitor configuration policy returns "OK" response
+  Tags: ['@team:DataDog/monitor-app']
+  Given  there is a valid "monitor_configuration_policy" in the system
+  And  new "DeleteMonitorConfigPolicy" request
+  And  request contains "policy_id" parameter from "monitor_configuration_policy.data.id"
+  When  the request is sent
+  Then  the response status is 204 OK
+

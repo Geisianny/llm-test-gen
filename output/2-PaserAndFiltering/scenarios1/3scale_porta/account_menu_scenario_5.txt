@@ -1,0 +1,5 @@
+Scenario 5: Account menu when master is billing
+  Given  master is billing tenants
+  When  I go to the provider account page
+  Then  I should see menu items under "Billing"
+

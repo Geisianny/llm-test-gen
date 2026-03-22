@@ -1,0 +1,1003 @@
+INFORMAÇÕES DO REPOSITÓRIO
+==================================================
+
+Nome: uyuni
+Proprietário: uyuni-project
+URL: https://github.com/uyuni-project/uyuni
+Visibilidade: public
+Privado: Não
+Data: 2025-11-26 01:53:26
+Arquivos .feature encontrados: 247
+Arquivos baixados: 247
+Status: success
+
+ARQUIVOS BAIXADOS
+------------------------------
+• monitoring_server_add_maintenance_update_repositories.feature (2450 bytes)
+  Path original: testsuite/features/build_validation/add_MU_repositories/monitoring_server_add_maintenance_update_repositories.feature
+  SHA: ab7ed25c6c439fd3431afd1871415efe3c74713c
+
+• centos7_minion_add_iso.feature (2439 bytes)
+  Path original: testsuite/features/build_validation/add_non_MU_repositories/centos7_minion_add_iso.feature
+  SHA: 8c4fb4a83862d7d27ac82f68288f7b052750397c
+
+• rocky8_minion_add_iso.feature (3586 bytes)
+  Path original: testsuite/features/build_validation/add_non_MU_repositories/rocky8_minion_add_iso.feature
+  SHA: 59353f6cd802f4f04cad426eb2479b341694bd68
+
+• allcli_sanity.feature (20785 bytes)
+  Path original: testsuite/features/build_validation/core/allcli_sanity.feature
+  SHA: 56f93b13e5aa51089e28c5d442673a90f7f1901d
+
+• srv_add_configuration_channel_and_file.feature (1253 bytes)
+  Path original: testsuite/features/build_validation/core/srv_add_configuration_channel_and_file.feature
+  SHA: b00f87dc4980e3cd7a998b270cfa58e1da7d1c41
+
+• srv_first_settings.feature (2793 bytes)
+  Path original: testsuite/features/build_validation/core/srv_first_settings.feature
+  SHA: dc1bcc1d10aa570002a1dc8dfdd104305d88d253
+
+• srv_user_preferences.feature (853 bytes)
+  Path original: testsuite/features/build_validation/core/srv_user_preferences.feature
+  SHA: 96066c894ecd025a4a9c77432a97f30b5d4ab313
+
+• allcli_debug.feature (243 bytes)
+  Path original: testsuite/features/build_validation/finishing/allcli_debug.feature
+  SHA: e83a7fa270160d60b26bd15c57b2fc1db7300e32
+
+• srv_debug.feature (448 bytes)
+  Path original: testsuite/features/build_validation/finishing/srv_debug.feature
+  SHA: 96ed06d982e45ec07b77b6146f652cae97d8b3df
+
+• alma8_minion.feature (1710 bytes)
+  Path original: testsuite/features/build_validation/init_clients/alma8_minion.feature
+  SHA: fe18b71b1c922390d8885a332a580e1b143b739a
+
+• alma8_ssh_minion.feature (1816 bytes)
+  Path original: testsuite/features/build_validation/init_clients/alma8_ssh_minion.feature
+  SHA: d0fb00cb60b83bb531b597b312ecbc90e067b528
+
+• alma9_minion.feature (1710 bytes)
+  Path original: testsuite/features/build_validation/init_clients/alma9_minion.feature
+  SHA: daecdfb712df13d3ad887b2fbc24fe564b0eec4f
+
+• alma9_ssh_minion.feature (1816 bytes)
+  Path original: testsuite/features/build_validation/init_clients/alma9_ssh_minion.feature
+  SHA: 4b93d33d497b09fad5467395467d881bdebf7a25
+
+• amazon2023_minion.feature (1785 bytes)
+  Path original: testsuite/features/build_validation/init_clients/amazon2023_minion.feature
+  SHA: 7b864162964675afef3e60dab07b176487f08d59
+
+• amazon2023_ssh_minion.feature (1939 bytes)
+  Path original: testsuite/features/build_validation/init_clients/amazon2023_ssh_minion.feature
+  SHA: 0fd75f132789a1958d7d2db4560d516c9dc8cbca
+
+• centos7_minion.feature (1745 bytes)
+  Path original: testsuite/features/build_validation/init_clients/centos7_minion.feature
+  SHA: 5b6781ba37e836f981156ce28f768fca4e42c49e
+
+• centos7_ssh_minion.feature (1846 bytes)
+  Path original: testsuite/features/build_validation/init_clients/centos7_ssh_minion.feature
+  SHA: 058de9a8a721ac9531f11a786003aa43cc258f96
+
+• debian12_minion.feature (1804 bytes)
+  Path original: testsuite/features/build_validation/init_clients/debian12_minion.feature
+  SHA: c303cee86b971018b7e036943ed2af764e8201bf
+
+• debian12_ssh_minion.feature (1354 bytes)
+  Path original: testsuite/features/build_validation/init_clients/debian12_ssh_minion.feature
+  SHA: 6978db7d28f566b3cc2873f0ac4338d31ad3dcce
+
+• liberty9_minion.feature (1976 bytes)
+  Path original: testsuite/features/build_validation/init_clients/liberty9_minion.feature
+  SHA: 823c9ec182f0bbf4bb03553df7c1165db7cc03ff
+
+• liberty9_ssh_minion.feature (2090 bytes)
+  Path original: testsuite/features/build_validation/init_clients/liberty9_ssh_minion.feature
+  SHA: aa7b54beabd23f725f5dc76bc72b081c8b5bcb63
+
+• monitoring_server.feature (4846 bytes)
+  Path original: testsuite/features/build_validation/init_clients/monitoring_server.feature
+  SHA: e12900d241533a8ee71dbba0af0ccf95a627a723
+
+• opensuse156arm_minion.feature (2038 bytes)
+  Path original: testsuite/features/build_validation/init_clients/opensuse156arm_minion.feature
+  SHA: 776befa8ac5b80aba68c12a720981df244ff6f90
+
+• opensuse156arm_ssh_minion.feature (1851 bytes)
+  Path original: testsuite/features/build_validation/init_clients/opensuse156arm_ssh_minion.feature
+  SHA: e6b8f8cd0c9e17b93ca3b42d45b4b9021400b80c
+
+• oracle9_minion.feature (1898 bytes)
+  Path original: testsuite/features/build_validation/init_clients/oracle9_minion.feature
+  SHA: 82e0b11beda9ebeddcd5bc13cd183e5a45665c76
+
+• oracle9_ssh_minion.feature (2012 bytes)
+  Path original: testsuite/features/build_validation/init_clients/oracle9_ssh_minion.feature
+  SHA: d5b64c8d0d76f0147d1e135d52b5fc1652d6364c
+
+• proxy.feature (3205 bytes)
+  Path original: testsuite/features/build_validation/init_clients/proxy.feature
+  SHA: 07165e2a2f3ad5c99904f464aa79716ecc4d7afb
+
+• rhel9_minion.feature (1710 bytes)
+  Path original: testsuite/features/build_validation/init_clients/rhel9_minion.feature
+  SHA: 844c9deca34deeb266225acbc43e7e426a9a5b96
+
+• rhel9_ssh_minion.feature (1742 bytes)
+  Path original: testsuite/features/build_validation/init_clients/rhel9_ssh_minion.feature
+  SHA: eb4628d21621001ccb3aa494e050128f405fcbdb
+
+• rocky8_minion.feature (1730 bytes)
+  Path original: testsuite/features/build_validation/init_clients/rocky8_minion.feature
+  SHA: b2c4eb635e6b07a8b4a62b65c0d20c3a5d2725a3
+
+• rocky8_ssh_minion.feature (1831 bytes)
+  Path original: testsuite/features/build_validation/init_clients/rocky8_ssh_minion.feature
+  SHA: 6473d41bb9fb4d6bf078c002a422ba2a08a371c7
+
+• rocky9_minion.feature (1725 bytes)
+  Path original: testsuite/features/build_validation/init_clients/rocky9_minion.feature
+  SHA: d7b968bcf8965f43c6098189e7a3305d7815c8a6
+
+• rocky9_ssh_minion.feature (1831 bytes)
+  Path original: testsuite/features/build_validation/init_clients/rocky9_ssh_minion.feature
+  SHA: c31dca01f72ca294f19754d840a01d0e5c316937
+
+• salt_migration_minion.feature (728 bytes)
+  Path original: testsuite/features/build_validation/init_clients/salt_migration_minion.feature
+  SHA: ae2eecb6963adbad171863f861d38554908c5a2b
+
+• sle12sp5_minion.feature (1947 bytes)
+  Path original: testsuite/features/build_validation/init_clients/sle12sp5_minion.feature
+  SHA: 7f6d1b2c9af26dc56eebeeaa24087bdd6fca10e8
+
+• sle12sp5_ssh_minion.feature (1767 bytes)
+  Path original: testsuite/features/build_validation/init_clients/sle12sp5_ssh_minion.feature
+  SHA: f6158dcab330cf5052946baf328ec75d1c38eba3
+
+• sle15sp3_minion.feature (1947 bytes)
+  Path original: testsuite/features/build_validation/init_clients/sle15sp3_minion.feature
+  SHA: c89b75c21c73d47be4f878584f44b95bd92234a6
+
+• sle15sp3_ssh_minion.feature (1767 bytes)
+  Path original: testsuite/features/build_validation/init_clients/sle15sp3_ssh_minion.feature
+  SHA: 945f27eab598998ecccf69e6570adab672cb8e30
+
+• sle15sp4_minion.feature (2302 bytes)
+  Path original: testsuite/features/build_validation/init_clients/sle15sp4_minion.feature
+  SHA: 88c2bddea8168309521b36776c05b632e04481d3
+
+• sle15sp4_ssh_minion.feature (2147 bytes)
+  Path original: testsuite/features/build_validation/init_clients/sle15sp4_ssh_minion.feature
+  SHA: 6087fb7c928a9839b3fa940dc5c7c10373320fd8
+
+• sle15sp5_minion.feature (1942 bytes)
+  Path original: testsuite/features/build_validation/init_clients/sle15sp5_minion.feature
+  SHA: a05f67329d9a65f29e8bd1749684380dc1444259
+
+• sle15sp5_ssh_minion.feature (1767 bytes)
+  Path original: testsuite/features/build_validation/init_clients/sle15sp5_ssh_minion.feature
+  SHA: e4871a990f067701a3431d0031ba707e18a2dac4
+
+• sle15sp5s390_minion.feature (2025 bytes)
+  Path original: testsuite/features/build_validation/init_clients/sle15sp5s390_minion.feature
+  SHA: fce15d0934e4d771cb4baf1d4f91af4868d612a2
+
+• sle15sp5s390_ssh_minion.feature (1835 bytes)
+  Path original: testsuite/features/build_validation/init_clients/sle15sp5s390_ssh_minion.feature
+  SHA: d264a00f1913587b2f6c8c5d8d85ccd4ad519e6d
+
+• sle15sp6_minion.feature (1942 bytes)
+  Path original: testsuite/features/build_validation/init_clients/sle15sp6_minion.feature
+  SHA: fb06600f30e081d8fcf15ab1a1e2ad449267112d
+
+• sle15sp6_ssh_minion.feature (1767 bytes)
+  Path original: testsuite/features/build_validation/init_clients/sle15sp6_ssh_minion.feature
+  SHA: a06abeab9a5eef6ceaae2efba5d26bb5748ad7df
+
+• sle15sp7_minion.feature (1942 bytes)
+  Path original: testsuite/features/build_validation/init_clients/sle15sp7_minion.feature
+  SHA: 9b178075f7e1aee0d6ac6209ee98cc7cebf108da
+
+• sle15sp7_ssh_minion.feature (1762 bytes)
+  Path original: testsuite/features/build_validation/init_clients/sle15sp7_ssh_minion.feature
+  SHA: c27bff9d79cfbafc3018824c131807e278ed0ecc
+
+• slemicro51_minion.feature (3269 bytes)
+  Path original: testsuite/features/build_validation/init_clients/slemicro51_minion.feature
+  SHA: 9ad01f5540d71da99f2127a9eba2f29c2388cb06
+
+• slemicro51_ssh_minion.feature (2019 bytes)
+  Path original: testsuite/features/build_validation/init_clients/slemicro51_ssh_minion.feature
+  SHA: 1934ab97876e959ac77ddb52c8d64012b95a3a73
+
+• slemicro52_minion.feature (3269 bytes)
+  Path original: testsuite/features/build_validation/init_clients/slemicro52_minion.feature
+  SHA: cc3aa875c8c70c9d27280f4d0589676ca403dbc3
+
+• slemicro52_ssh_minion.feature (2023 bytes)
+  Path original: testsuite/features/build_validation/init_clients/slemicro52_ssh_minion.feature
+  SHA: 11d405ebd68a0df91718423bba3b205e3f5455fc
+
+• slemicro53_minion.feature (3269 bytes)
+  Path original: testsuite/features/build_validation/init_clients/slemicro53_minion.feature
+  SHA: 44d988052e463eba37298424da7d1b3d0533a909
+
+• slemicro53_ssh_minion.feature (2023 bytes)
+  Path original: testsuite/features/build_validation/init_clients/slemicro53_ssh_minion.feature
+  SHA: 46df98805a5b831cf4823c18d1402615d3241db8
+
+• slemicro54_minion.feature (3269 bytes)
+  Path original: testsuite/features/build_validation/init_clients/slemicro54_minion.feature
+  SHA: aa16c5b401572193cb27a442fbfa64df2d058744
+
+• slemicro54_ssh_minion.feature (2023 bytes)
+  Path original: testsuite/features/build_validation/init_clients/slemicro54_ssh_minion.feature
+  SHA: 6b2db8c9fe96b69a5817d6aeff06d58e146f1d4e
+
+• slemicro55_minion.feature (3269 bytes)
+  Path original: testsuite/features/build_validation/init_clients/slemicro55_minion.feature
+  SHA: c5e6c8bc761428a7185a4bf20531f293cf0ac956
+
+• slemicro55_ssh_minion.feature (2023 bytes)
+  Path original: testsuite/features/build_validation/init_clients/slemicro55_ssh_minion.feature
+  SHA: 2c7c5574083088c88779698b963111b4d3f3b0d1
+
+• slmicro60_minion.feature (3162 bytes)
+  Path original: testsuite/features/build_validation/init_clients/slmicro60_minion.feature
+  SHA: 9fb67e6c7f769efc4b5deaa5b2096ce42ec37b08
+
+• slmicro60_ssh_minion.feature (1912 bytes)
+  Path original: testsuite/features/build_validation/init_clients/slmicro60_ssh_minion.feature
+  SHA: 102579ac2f4fc958eb91f0011803d920ecb5ab8f
+
+• slmicro61_minion.feature (3162 bytes)
+  Path original: testsuite/features/build_validation/init_clients/slmicro61_minion.feature
+  SHA: 355b663677fd3d085529f892c5104566311b54e6
+
+• slmicro61_ssh_minion.feature (1912 bytes)
+  Path original: testsuite/features/build_validation/init_clients/slmicro61_ssh_minion.feature
+  SHA: 655f1728d6628f0c1b47c7a19102555f25fba829
+
+• ubuntu2004_minion.feature (1868 bytes)
+  Path original: testsuite/features/build_validation/init_clients/ubuntu2004_minion.feature
+  SHA: 9649abf2f6a7fe791f93d92a1fb216cd23bb7d60
+
+• ubuntu2004_ssh_minion.feature (1375 bytes)
+  Path original: testsuite/features/build_validation/init_clients/ubuntu2004_ssh_minion.feature
+  SHA: 500b42324d7b843629d3a5e258206c90aff172b0
+
+• ubuntu2204_minion.feature (1868 bytes)
+  Path original: testsuite/features/build_validation/init_clients/ubuntu2204_minion.feature
+  SHA: 7f26c4f69cff36b0b9c9ac058b5feb3205f1c736
+
+• ubuntu2204_ssh_minion.feature (1375 bytes)
+  Path original: testsuite/features/build_validation/init_clients/ubuntu2204_ssh_minion.feature
+  SHA: 169d0649019a076f07dc4d1763d197be90ee3bf2
+
+• ubuntu2404_minion.feature (2056 bytes)
+  Path original: testsuite/features/build_validation/init_clients/ubuntu2404_minion.feature
+  SHA: fd9661eaf4485e85f24db92c7394fa86eb92032a
+
+• ubuntu2404_ssh_minion.feature (1583 bytes)
+  Path original: testsuite/features/build_validation/init_clients/ubuntu2404_ssh_minion.feature
+  SHA: fce0d31c12bbd16d5f6d7a7e0de3121b4ce4c858
+
+• migration_salt_migration_minion.feature (5933 bytes)
+  Path original: testsuite/features/build_validation/migration/migration_salt_migration_minion.feature
+  SHA: 82e1651e5ef4815afe2b143b73b0ccf459b2e8d1
+
+• migration_sle15sp6_minion.feature (2956 bytes)
+  Path original: testsuite/features/build_validation/migration/migration_sle15sp6_minion.feature
+  SHA: 218c27986be27dd0c90e920dfe96943d93cb1e4e
+
+• migration_sle15sp6_ssh_minion.feature (2904 bytes)
+  Path original: testsuite/features/build_validation/migration/migration_sle15sp6_ssh_minion.feature
+  SHA: e62a90d60a349878fd7f106a225912bf98cec526
+
+• migration_slemicro54_minion.feature (2330 bytes)
+  Path original: testsuite/features/build_validation/migration/migration_slemicro54_minion.feature
+  SHA: 9ed59ee502d04ba52c90992ecd9b9ac44f1d6dbf
+
+• migration_slemicro55_minion.feature (2421 bytes)
+  Path original: testsuite/features/build_validation/migration/migration_slemicro55_minion.feature
+  SHA: 5c5404414d790529cdcfeb0f097ae9e8b519c596
+
+• srv_disable_scheduled_reposync.feature (722 bytes)
+  Path original: testsuite/features/build_validation/reposync/srv_disable_scheduled_reposync.feature
+  SHA: b40772fdd082b08de5ed2ff8f89344debcc4c0bd
+
+• srv_sync_all_products.feature (48574 bytes)
+  Path original: testsuite/features/build_validation/reposync/srv_sync_all_products.feature
+  SHA: c6c8bc5f5c2d2f32d177d6c441176e11d1bcf091
+
+• init_sle15sp6_buildhost.feature (2555 bytes)
+  Path original: testsuite/features/build_validation/retail/init_sle15sp6_buildhost.feature
+  SHA: 01a153a578ac464f3fb9f1b3c48199d09c9ac20b
+
+• init_sle15sp7_buildhost.feature (2555 bytes)
+  Path original: testsuite/features/build_validation/retail/init_sle15sp7_buildhost.feature
+  SHA: 6cb4a51c8d110cb9c768d1d001cc32af6296c03d
+
+• proxy_rbs_container_branch_network.feature (3694 bytes)
+  Path original: testsuite/features/build_validation/retail/proxy_rbs_container_branch_network.feature
+  SHA: 502c696313da569f4318e2219a2a632a33750d36
+
+• proxy_rbs_traditional_branch_network.feature (10559 bytes)
+  Path original: testsuite/features/build_validation/retail/proxy_rbs_traditional_branch_network.feature
+  SHA: 6abb503ea65f98b0de8939ea5143803f539f3342
+
+• sle15sp6_build_kiwi_image.feature (2017 bytes)
+  Path original: testsuite/features/build_validation/retail/sle15sp6_build_kiwi_image.feature
+  SHA: b715ced573c4efe6cce35c328f715dccfe7095b3
+
+• sle15sp6_terminal_deploy.feature (2908 bytes)
+  Path original: testsuite/features/build_validation/retail/sle15sp6_terminal_deploy.feature
+  SHA: d47308d8ab8ced5983f2720e2fcdaa5d69a508a2
+
+• sle15sp6_terminal_prepare_group_saltboot.feature (2507 bytes)
+  Path original: testsuite/features/build_validation/retail/sle15sp6_terminal_prepare_group_saltboot.feature
+  SHA: 37b014ab0f6d004a395ed40585ba5f5b3156fb9d
+
+• sle15sp7_build_kiwi_image.feature (2019 bytes)
+  Path original: testsuite/features/build_validation/retail/sle15sp7_build_kiwi_image.feature
+  SHA: 1df4d7207acb195f35bf248d6326e4da2c56fd36
+
+• sle15sp7_terminal_deploy.feature (2908 bytes)
+  Path original: testsuite/features/build_validation/retail/sle15sp7_terminal_deploy.feature
+  SHA: abdfcae88a7846ab36411e426479132d2ff013fa
+
+• sle15sp7_terminal_prepare_group_saltboot.feature (2507 bytes)
+  Path original: testsuite/features/build_validation/retail/sle15sp7_terminal_prepare_group_saltboot.feature
+  SHA: 2966bd2a807bd9d60ca8da96ebc4d9b125cf33f7
+
+• allcli_sanity_1.feature (3621 bytes)
+  Path original: testsuite/features/core/allcli_sanity.feature
+  SHA: 425a05d1dff7fa39e2bbc445a5bd2c1931e1db8f
+
+• srv_disable_local_repos_off.feature (377 bytes)
+  Path original: testsuite/features/core/srv_disable_local_repos_off.feature
+  SHA: bf63b0068d78ed32b25362727b67439d26d2962d
+
+• srv_docker.feature (803 bytes)
+  Path original: testsuite/features/core/srv_docker.feature
+  SHA: 7809eb08c419bad97a85a699cb5bda365871cdcb
+
+• srv_first_settings_1.feature (3383 bytes)
+  Path original: testsuite/features/core/srv_first_settings.feature
+  SHA: 0fce90a1a2b93af7e1e74713b703ba8d5f47a2f9
+
+• srv_organization_credentials.feature (586 bytes)
+  Path original: testsuite/features/core/srv_organization_credentials.feature
+  SHA: 0d408d577a459377724666361be7cc8e126c2884
+
+• srv_osimage.feature (480 bytes)
+  Path original: testsuite/features/core/srv_osimage.feature
+  SHA: 6d44ba3c2baf41003b3e7249a87260fc37b69ccb
+
+• srv_user_preferences_1.feature (853 bytes)
+  Path original: testsuite/features/core/srv_user_preferences.feature
+  SHA: 96066c894ecd025a4a9c77432a97f30b5d4ab313
+
+• allcli_debug_1.feature (243 bytes)
+  Path original: testsuite/features/finishing/allcli_debug.feature
+  SHA: e83a7fa270160d60b26bd15c57b2fc1db7300e32
+
+• srv_count_scc_access.feature (504 bytes)
+  Path original: testsuite/features/finishing/srv_count_scc_access.feature
+  SHA: 467cc67e6249bb5e2a967ef3767d41a362e6bc4a
+
+• srv_debug_1.feature (662 bytes)
+  Path original: testsuite/features/finishing/srv_debug.feature
+  SHA: 87ea50660bb696c773ba834c1f537960c1b97356
+
+• srv_selinux.feature (389 bytes)
+  Path original: testsuite/features/finishing/srv_selinux.feature
+  SHA: 4e87df3c9ef77c3e269ca53ace3d6459e993dd28
+
+• first_settings.feature (1002 bytes)
+  Path original: testsuite/features/github_validation/core/first_settings.feature
+  SHA: 2d7ce516ee537e9c84d804adfbc8be320df23801
+
+• buildhost_bootstrap.feature (1287 bytes)
+  Path original: testsuite/features/github_validation/init_clients/buildhost_bootstrap.feature
+  SHA: 51cf1edd4bdae5a8c95ae8a93fbcb3d3917109f3
+
+• min_deblike_salt.feature (764 bytes)
+  Path original: testsuite/features/github_validation/init_clients/min_deblike_salt.feature
+  SHA: 1cd800bcdbb38c6a3c9ba6d9bd9f85160f6b108a
+
+• min_rhlike_salt.feature (749 bytes)
+  Path original: testsuite/features/github_validation/init_clients/min_rhlike_salt.feature
+  SHA: 4deff04c0f8988e15c3aa036ae7b40dff44dc2b4
+
+• sle_minion.feature (661 bytes)
+  Path original: testsuite/features/github_validation/init_clients/sle_minion.feature
+  SHA: 73dc08425472256b335dac66e72bc8d0f1984512
+
+• sle_ssh_minion.feature (1601 bytes)
+  Path original: testsuite/features/github_validation/init_clients/sle_ssh_minion.feature
+  SHA: 4abf8ebdabc83c71a2f2146247a1f321fbaa6487
+
+• buildhost_bootstrap_1.feature (2464 bytes)
+  Path original: testsuite/features/init_clients/buildhost_bootstrap.feature
+  SHA: e292503e2b75f4f808372410022f30bfa75cd571
+
+• min_deblike_salt_1.feature (2736 bytes)
+  Path original: testsuite/features/init_clients/min_deblike_salt.feature
+  SHA: ccfce6758217b0dd1300282ada392265fdef3ddd
+
+• min_rhlike_salt_1.feature (2638 bytes)
+  Path original: testsuite/features/init_clients/min_rhlike_salt.feature
+  SHA: cc73fb57a80257e82718e809c63cc9da4d5e99b1
+
+• sle_minion_1.feature (2311 bytes)
+  Path original: testsuite/features/init_clients/sle_minion.feature
+  SHA: cd14be69d43ee54f6c56ca99dffe9445f421e747
+
+• sle_ssh_minion_1.feature (1872 bytes)
+  Path original: testsuite/features/init_clients/sle_ssh_minion.feature
+  SHA: 12ca68ff7e1060bd0df81cc86d9ec9c0da49f596
+
+• proxy_container.feature (3008 bytes)
+  Path original: testsuite/features/proxy/proxy_container.feature
+  SHA: 4ef783ea7d0d7c5bad21ea40380b7663b799bfd8
+
+• proxy_rbs_container_branch_network_1.feature (1658 bytes)
+  Path original: testsuite/features/proxy/proxy_rbs_container_branch_network.feature
+  SHA: 2940d32cdd670d3a7069655332f16a79534a47a7
+
+• allcli_update_activationkeys.feature (15471 bytes)
+  Path original: testsuite/features/reposync/allcli_update_activationkeys.feature
+  SHA: 7198437232080cccc9638fa3667e273d05e78fa5
+
+• reference_srv_check_reposync.feature (3379 bytes)
+  Path original: testsuite/features/reposync/reference_srv_check_reposync.feature
+  SHA: 61984162644082e3fa83a3f45bf1b01e28b20027
+
+• reference_srv_sync_products_extra.feature (2443 bytes)
+  Path original: testsuite/features/reposync/reference_srv_sync_products_extra.feature
+  SHA: ffe3601d9cc931733c65c7d1e089cbc6047b43a0
+
+• srv_create_activationkey.feature (4037 bytes)
+  Path original: testsuite/features/reposync/srv_create_activationkey.feature
+  SHA: 0e3dd739b4fb07256150f5e3b063b4fdb2495559
+
+• srv_create_bootstrap_repositories.feature (847 bytes)
+  Path original: testsuite/features/reposync/srv_create_bootstrap_repositories.feature
+  SHA: 7bd9083d1c85ee773f992d47a063f7be7e06dafe
+
+• srv_create_devel_channels.feature (3978 bytes)
+  Path original: testsuite/features/reposync/srv_create_devel_channels.feature
+  SHA: e7b9393d472718110e5cae75e6730c868b33ae06
+
+• srv_create_fake_channels.feature (8867 bytes)
+  Path original: testsuite/features/reposync/srv_create_fake_channels.feature
+  SHA: 93710d5c76522cbf81088b2f826ec3cc8b82c4f8
+
+• srv_create_fake_repositories.feature (7597 bytes)
+  Path original: testsuite/features/reposync/srv_create_fake_repositories.feature
+  SHA: 519c87b15e675ce92a0fce73b34b65cfb8e47d4f
+
+• srv_create_repository.feature (8207 bytes)
+  Path original: testsuite/features/reposync/srv_create_repository.feature
+  SHA: eb1289be209efafa5806a7eaca2a0ea836c09712
+
+• srv_disable_scheduled_reposync_1.feature (722 bytes)
+  Path original: testsuite/features/reposync/srv_disable_scheduled_reposync.feature
+  SHA: 2bc0377e35859d508d7bca1861b58eac6edf17c5
+
+• srv_strict_mode_repo_sync.feature (2599 bytes)
+  Path original: testsuite/features/reposync/srv_strict_mode_repo_sync.feature
+  SHA: c663bf72e86da08f289298a543e69944e54ed6fb
+
+• srv_sync_channels.feature (2681 bytes)
+  Path original: testsuite/features/reposync/srv_sync_channels.feature
+  SHA: 0e0103802d2fc481b99b393781e136949b61b2e4
+
+• srv_sync_devel_channels.feature (2684 bytes)
+  Path original: testsuite/features/reposync/srv_sync_devel_channels.feature
+  SHA: b55b30ad8c92a8e93f96752ff45ed6c701965e47
+
+• srv_sync_fake_channels.feature (7151 bytes)
+  Path original: testsuite/features/reposync/srv_sync_fake_channels.feature
+  SHA: 0ade17e00e3a6550f1c2bf28a98edb127ba0460b
+
+• srv_sync_products.feature (15050 bytes)
+  Path original: testsuite/features/reposync/srv_sync_products.feature
+  SHA: d0b76e5c324ca95f54f73c46fcd9b411217865c8
+
+• allcli_action_chain.feature (6081 bytes)
+  Path original: testsuite/features/secondary/allcli_action_chain.feature
+  SHA: 9a1ab5ea22eede278e0dd8e4cf9dea6eeac60952
+
+• allcli_config_channel.feature (10758 bytes)
+  Path original: testsuite/features/secondary/allcli_config_channel.feature
+  SHA: f8b06ef5ddfaee660ae85c60d0631b1f62ea210a
+
+• allcli_overview_systems_details.feature (6332 bytes)
+  Path original: testsuite/features/secondary/allcli_overview_systems_details.feature
+  SHA: 90c893dcbf576ab6b1e285908e6dfdd99ff75ea4
+
+• allcli_reboot.feature (3105 bytes)
+  Path original: testsuite/features/secondary/allcli_reboot.feature
+  SHA: fd40371cdec6dae19726d0f3a2ac64fb8667a1b9
+
+• allcli_software_channels.feature (12003 bytes)
+  Path original: testsuite/features/secondary/allcli_software_channels.feature
+  SHA: 813778420a1e9d4c32cd95d9f576f3d9ff98bda3
+
+• allcli_software_channels_dependencies.feature (5127 bytes)
+  Path original: testsuite/features/secondary/allcli_software_channels_dependencies.feature
+  SHA: 151f585498e74899273116bf637e52d0ed88237c
+
+• allcli_system_group.feature (9496 bytes)
+  Path original: testsuite/features/secondary/allcli_system_group.feature
+  SHA: 6afa33d55a89cf280ed67a4e23ddf308fe227976
+
+• buildhost_docker_auth_registry.feature (3094 bytes)
+  Path original: testsuite/features/secondary/buildhost_docker_auth_registry.feature
+  SHA: 6161427984894f55848c4737cf9da9156e1afe95
+
+• buildhost_docker_build_image.feature (11478 bytes)
+  Path original: testsuite/features/secondary/buildhost_docker_build_image.feature
+  SHA: d9702b3f472f909be584cd2762874a6c49b1a72c
+
+• buildhost_osimage_build_image.feature (3074 bytes)
+  Path original: testsuite/features/secondary/buildhost_osimage_build_image.feature
+  SHA: 887f36af2c6046a74f89a38bb0fff757625a1d08
+
+• https_connection.feature (987 bytes)
+  Path original: testsuite/features/secondary/https_connection.feature
+  SHA: 4c232b8cd67877af3512204260af2464b3ca7025
+
+• min_action_chain.feature (14866 bytes)
+  Path original: testsuite/features/secondary/min_action_chain.feature
+  SHA: 9e906d7c40abf26693ef0ea711d8e3abdb4069f4
+
+• min_ansible_control_node.feature (5730 bytes)
+  Path original: testsuite/features/secondary/min_ansible_control_node.feature
+  SHA: 1bf2a1939f166ddb51393685290b15a55baff928
+
+• min_bootstrap_activation_key.feature (7115 bytes)
+  Path original: testsuite/features/secondary/min_bootstrap_activation_key.feature
+  SHA: c100f37bd589a195f43716a4d05a390ba017e0f9
+
+• min_bootstrap_api.feature (4183 bytes)
+  Path original: testsuite/features/secondary/min_bootstrap_api.feature
+  SHA: 680444251906a450ec71052bcc7de34d04d59455
+
+• min_bootstrap_negative.feature (3394 bytes)
+  Path original: testsuite/features/secondary/min_bootstrap_negative.feature
+  SHA: 1159fd730a780648f9c3ceec9f6880c6c4b29554
+
+• min_bootstrap_reactivation.feature (4064 bytes)
+  Path original: testsuite/features/secondary/min_bootstrap_reactivation.feature
+  SHA: 71ae661e5d52e999729a09e2c9a11f764a056eb1
+
+• min_bootstrap_script.feature (5254 bytes)
+  Path original: testsuite/features/secondary/min_bootstrap_script.feature
+  SHA: 15ec3e2f7dc75ea8addc5fc474a89dc9e88ef919
+
+• min_bootstrap_ssh_key.feature (3426 bytes)
+  Path original: testsuite/features/secondary/min_bootstrap_ssh_key.feature
+  SHA: a255a200b63e5ef4112b21c4130ecc44dbafdb78
+
+• min_change_software_channel.feature (8994 bytes)
+  Path original: testsuite/features/secondary/min_change_software_channel.feature
+  SHA: 12a65011f212de6cf04b74482b8ab4c034067a8f
+
+• min_check_patches_install.feature (3132 bytes)
+  Path original: testsuite/features/secondary/min_check_patches_install.feature
+  SHA: 97dad134f3df5cc65a479fd10a7b2ad0b9f1848b
+
+• min_config_state_channel.feature (9406 bytes)
+  Path original: testsuite/features/secondary/min_config_state_channel.feature
+  SHA: 945e4c340d57330fbdf3f7d822c5a058552573da
+
+• min_config_state_channel_api.feature (993 bytes)
+  Path original: testsuite/features/secondary/min_config_state_channel_api.feature
+  SHA: 70610cbddd61a40500479ee2622d22f5737b946a
+
+• min_custom_pkg_download_endpoint.feature (6642 bytes)
+  Path original: testsuite/features/secondary/min_custom_pkg_download_endpoint.feature
+  SHA: 385c56faaefef4211157c0a14a6bf7053e7cde6b
+
+• min_cve_audit.feature (5279 bytes)
+  Path original: testsuite/features/secondary/min_cve_audit.feature
+  SHA: 7dda38b5481a6af981bc4aefd3f7ba41f45f38ad
+
+• min_cve_id_new_syntax.feature (1479 bytes)
+  Path original: testsuite/features/secondary/min_cve_id_new_syntax.feature
+  SHA: 7d74f6082332e257b90b79436d9f5feab2ce98e1
+
+• min_deblike_monitoring.feature (3439 bytes)
+  Path original: testsuite/features/secondary/min_deblike_monitoring.feature
+  SHA: bcb493f39c19a30432cedd6b117cf44ad7291151
+
+• min_deblike_openscap_audit.feature (4105 bytes)
+  Path original: testsuite/features/secondary/min_deblike_openscap_audit.feature
+  SHA: 16119b09a24bade27928aa802a7af65b66c4a973
+
+• min_deblike_remote_command.feature (942 bytes)
+  Path original: testsuite/features/secondary/min_deblike_remote_command.feature
+  SHA: 9231dbf49ff90ba678f876d94554d30b5f4c1776
+
+• min_deblike_salt_install_package_and_patch.feature (2785 bytes)
+  Path original: testsuite/features/secondary/min_deblike_salt_install_package_and_patch.feature
+  SHA: 20a46d28cbbf6e9134d9593bdc3f92b277db0ed6
+
+• min_deblike_salt_install_with_staging.feature (3886 bytes)
+  Path original: testsuite/features/secondary/min_deblike_salt_install_with_staging.feature
+  SHA: f56a8e94d97ccec5bc39343f2d13f87cbeb6b952
+
+• min_deblike_ssh.feature (5923 bytes)
+  Path original: testsuite/features/secondary/min_deblike_ssh.feature
+  SHA: d27e5354589e807fcc3b136d05609a4a44233ed4
+
+• min_docker_api.feature (1381 bytes)
+  Path original: testsuite/features/secondary/min_docker_api.feature
+  SHA: 081c75476d7d3ee313d580922f08ed0f471f22c7
+
+• min_empty_system_profiles.feature (2228 bytes)
+  Path original: testsuite/features/secondary/min_empty_system_profiles.feature
+  SHA: 6018a299f752ec330bb65e5bcc1d38434296631e
+
+• min_monitoring.feature (3229 bytes)
+  Path original: testsuite/features/secondary/min_monitoring.feature
+  SHA: 6e30e0689f4955d2f1c25f77d2355e55793c4abf
+
+• min_move_from_and_to_proxy.feature (4638 bytes)
+  Path original: testsuite/features/secondary/min_move_from_and_to_proxy.feature
+  SHA: 302bb6ebf6a6e583252fe5e8e8b2ee21d02daf64
+
+• min_project_lotus.feature (5967 bytes)
+  Path original: testsuite/features/secondary/min_project_lotus.feature
+  SHA: 4a7a1563060ceda9df3ad12da72e8bcdfb41a379
+
+• min_reboot_required_flag.feature (2626 bytes)
+  Path original: testsuite/features/secondary/min_reboot_required_flag.feature
+  SHA: 73769cc59fde4ef93d54e103f955648557294341
+
+• min_recurring_action.feature (22467 bytes)
+  Path original: testsuite/features/secondary/min_recurring_action.feature
+  SHA: 15d884852f274ebd83101a94939ad3b6a2c388ed
+
+• min_retracted_patches.feature (6370 bytes)
+  Path original: testsuite/features/secondary/min_retracted_patches.feature
+  SHA: 45daa18b346c39b755b01d041fff00245bc2d951
+
+• min_rhlike_appstreams.feature (7650 bytes)
+  Path original: testsuite/features/secondary/min_rhlike_appstreams.feature
+  SHA: 9f73fcd48369db9dfdab3370bebae36d7cecfdfc
+
+• min_rhlike_monitoring.feature (3433 bytes)
+  Path original: testsuite/features/secondary/min_rhlike_monitoring.feature
+  SHA: 813eefffc9495f99f285a63f18b19cdd020603fa
+
+• min_rhlike_openscap_audit.feature (4672 bytes)
+  Path original: testsuite/features/secondary/min_rhlike_openscap_audit.feature
+  SHA: dcdbcac07f4b53f5a6177c846254ec61cce3557e
+
+• min_rhlike_remote_command.feature (986 bytes)
+  Path original: testsuite/features/secondary/min_rhlike_remote_command.feature
+  SHA: b3c4eb5709e77d781dd6fa3b8a9d2b8475b32f7c
+
+• min_rhlike_salt_install_package_and_patch.feature (4044 bytes)
+  Path original: testsuite/features/secondary/min_rhlike_salt_install_package_and_patch.feature
+  SHA: 563853ef702bd1273bb8fa6da56753be66916abb
+
+• min_rhlike_ssh.feature (5976 bytes)
+  Path original: testsuite/features/secondary/min_rhlike_ssh.feature
+  SHA: 2e54f944293581d3a342ced6fcf0fabb23f28067
+
+• min_salt_formulas.feature (8491 bytes)
+  Path original: testsuite/features/secondary/min_salt_formulas.feature
+  SHA: 8ba519ed90f29de366a3b3a778c7508b93bd92ed
+
+• min_salt_formulas_advanced.feature (15267 bytes)
+  Path original: testsuite/features/secondary/min_salt_formulas_advanced.feature
+  SHA: ec88254bce5a52fe1a1f06f9c8bcda6774e277bc
+
+• min_salt_install_package_and_patch.feature (4256 bytes)
+  Path original: testsuite/features/secondary/min_salt_install_package_and_patch.feature
+  SHA: 38bf9b64d739c5488b6cef9eb481e2a24a2cdc4d
+
+• min_salt_install_with_staging.feature (3999 bytes)
+  Path original: testsuite/features/secondary/min_salt_install_with_staging.feature
+  SHA: b884782307a9fd3269a64464f812cd7023cc64a7
+
+• min_salt_lock_packages.feature (7973 bytes)
+  Path original: testsuite/features/secondary/min_salt_lock_packages.feature
+  SHA: 43e8a617aaa9a64f883b888c5576ac87f244ff64
+
+• min_salt_mgrcompat_state.feature (5835 bytes)
+  Path original: testsuite/features/secondary/min_salt_mgrcompat_state.feature
+  SHA: c6789a937a98fc3b4f7676571f58d4ee73649a1e
+
+• min_salt_minion_details.feature (1375 bytes)
+  Path original: testsuite/features/secondary/min_salt_minion_details.feature
+  SHA: 8e68276082bd1b069ccbfc96fb4a027c17fe78b9
+
+• min_salt_minions_page.feature (4067 bytes)
+  Path original: testsuite/features/secondary/min_salt_minions_page.feature
+  SHA: e2fe1481ff7d160f76e1a39ec042c09d6c60d0b2
+
+• min_salt_openscap_audit.feature (6289 bytes)
+  Path original: testsuite/features/secondary/min_salt_openscap_audit.feature
+  SHA: 4ab61469f5f5eda91f50e9cba6a1c6317de54d44
+
+• min_salt_pkgset_beacon.feature (2939 bytes)
+  Path original: testsuite/features/secondary/min_salt_pkgset_beacon.feature
+  SHA: c5eea2d456b60ac2c5ef975fe2a5d8e34705b83f
+
+• min_salt_software_states.feature (6943 bytes)
+  Path original: testsuite/features/secondary/min_salt_software_states.feature
+  SHA: 02476d2db5d04b7971594c4aa8e9fedf5adc1cde
+
+• min_salt_user_states.feature (1333 bytes)
+  Path original: testsuite/features/secondary/min_salt_user_states.feature
+  SHA: bfd1cf8d16e173752a13cf0dfcd7d2f207866f51
+
+• min_timezone.feature (4184 bytes)
+  Path original: testsuite/features/secondary/min_timezone.feature
+  SHA: 73ccde3df5cbf2ef9eb8629ea020a1956991e489
+
+• minssh_action_chain.feature (14411 bytes)
+  Path original: testsuite/features/secondary/minssh_action_chain.feature
+  SHA: 773615d3146da07d4a85070ffc99703f4d890453
+
+• minssh_ansible_control_node.feature (5741 bytes)
+  Path original: testsuite/features/secondary/minssh_ansible_control_node.feature
+  SHA: e2081fb25e3f1f07484d83ec81067cd4b331dd12
+
+• minssh_bootstrap_api.feature (4163 bytes)
+  Path original: testsuite/features/secondary/minssh_bootstrap_api.feature
+  SHA: 8467049fc0f8207dfdfe1a19625f1322e402a985
+
+• minssh_move_from_and_to_proxy.feature (4421 bytes)
+  Path original: testsuite/features/secondary/minssh_move_from_and_to_proxy.feature
+  SHA: 8a9cac58e02e363c3f13a0820c8658092c19e9d4
+
+• minssh_salt_install_package_and_patch.feature (4260 bytes)
+  Path original: testsuite/features/secondary/minssh_salt_install_package_and_patch.feature
+  SHA: 661edd59ff0756136f26d2162b2b280937e78fdc
+
+• minssh_tunnel.feature (4374 bytes)
+  Path original: testsuite/features/secondary/minssh_tunnel.feature
+  SHA: 15fa2caa6058b6aa8165ebc716c7aa06dc3e884a
+
+• proxy_container_cobbler_pxeboot.feature (7636 bytes)
+  Path original: testsuite/features/secondary/proxy_container_cobbler_pxeboot.feature
+  SHA: a97d473f16a8dd2e339d25800c016d91487f947a
+
+• proxy_container_retail_mass_import.feature (4292 bytes)
+  Path original: testsuite/features/secondary/proxy_container_retail_mass_import.feature
+  SHA: a67ba4c82d41ac1332b3820f137f9d3785261ce9
+
+• proxy_container_retail_pxeboot.feature (9953 bytes)
+  Path original: testsuite/features/secondary/proxy_container_retail_pxeboot.feature
+  SHA: e45de2db80f73d15bd89a29ffd20cf0074310e18
+
+• srv_activationkey_api.feature (732 bytes)
+  Path original: testsuite/features/secondary/srv_activationkey_api.feature
+  SHA: fd4d48106c0f8cc56af47e1b34ef330bf92ba1e3
+
+• srv_advanced_search.feature (2641 bytes)
+  Path original: testsuite/features/secondary/srv_advanced_search.feature
+  SHA: 9f17f74e52c3ea72c1736099da8b97dda9933cfb
+
+• srv_change_password.feature (1896 bytes)
+  Path original: testsuite/features/secondary/srv_change_password.feature
+  SHA: e6a15465bcd09ade53cb87c3a6799aca5b1ec3c4
+
+• srv_change_task_schedule.feature (1807 bytes)
+  Path original: testsuite/features/secondary/srv_change_task_schedule.feature
+  SHA: 41c2791c3dcd82aa2fb9b3a4f9c62c78f57ab619
+
+• srv_channel_api.feature (2423 bytes)
+  Path original: testsuite/features/secondary/srv_channel_api.feature
+  SHA: f9bb77d68780f93297e4b99e3d082c0f458cb1a1
+
+• srv_check_channels_page.feature (4068 bytes)
+  Path original: testsuite/features/secondary/srv_check_channels_page.feature
+  SHA: 73dc7ffd64d2d931c943b595f643d494caa7cf3c
+
+• srv_check_sync_source_packages.feature (1051 bytes)
+  Path original: testsuite/features/secondary/srv_check_sync_source_packages.feature
+  SHA: 35df2f3ffcd19399e329c22da686bd08becfc986
+
+• srv_clone_channel_npn.feature (6168 bytes)
+  Path original: testsuite/features/secondary/srv_clone_channel_npn.feature
+  SHA: 7b06255db42247c02ac710a8c87e95fcbdd2af09
+
+• srv_cobbler_buildiso.feature (4572 bytes)
+  Path original: testsuite/features/secondary/srv_cobbler_buildiso.feature
+  SHA: 7b041d129769f12eb97ae1d5b16be65b82314803
+
+• srv_cobbler_distro.feature (10039 bytes)
+  Path original: testsuite/features/secondary/srv_cobbler_distro.feature
+  SHA: 4be1a7b6532fb68fa40e64020aa82bb2773f35a9
+
+• srv_cobbler_profile.feature (4730 bytes)
+  Path original: testsuite/features/secondary/srv_cobbler_profile.feature
+  SHA: 0326f80381543aa89ff7ca53dfa26fec2e2c5510
+
+• srv_cobbler_sync.feature (2452 bytes)
+  Path original: testsuite/features/secondary/srv_cobbler_sync.feature
+  SHA: 4d567cf3a1e3abc77c46c4266180a4a5cf200fca
+
+• srv_content_lifecycle.feature (35020 bytes)
+  Path original: testsuite/features/secondary/srv_content_lifecycle.feature
+  SHA: ce974ed6c9b9ceca0d91a9697b1450351e81f00e
+
+• srv_custom_system_info.feature (2272 bytes)
+  Path original: testsuite/features/secondary/srv_custom_system_info.feature
+  SHA: 545c4e803f3eb5bb09062156b7da80ae1d599dd8
+
+• srv_datepicker.feature (961 bytes)
+  Path original: testsuite/features/secondary/srv_datepicker.feature
+  SHA: d942acf3436589cde1789be69ad7befede6b6fc5
+
+• srv_delete_channel_from_ui.feature (4521 bytes)
+  Path original: testsuite/features/secondary/srv_delete_channel_from_ui.feature
+  SHA: 3d746579c1bc26eb246008f53bb37bf122c0d3ed
+
+• srv_delete_channel_with_tool.feature (2538 bytes)
+  Path original: testsuite/features/secondary/srv_delete_channel_with_tool.feature
+  SHA: 59fa283c7c0cf825ae66a11d263263dd497e6775
+
+• srv_dist_channel_mapping.feature (9754 bytes)
+  Path original: testsuite/features/secondary/srv_dist_channel_mapping.feature
+  SHA: e694a2932352ebb1e0f4f047852d8dca240d784c
+
+• srv_docker_advanced_content_management.feature (2030 bytes)
+  Path original: testsuite/features/secondary/srv_docker_advanced_content_management.feature
+  SHA: 8f616658925b4c893da80187a8d43818ce500cad
+
+• srv_errata_api.feature (433 bytes)
+  Path original: testsuite/features/secondary/srv_errata_api.feature
+  SHA: 18531deaaf2a0a73fe9d93a107f53fd3da7810d1
+
+• srv_group_union_intersection.feature (4866 bytes)
+  Path original: testsuite/features/secondary/srv_group_union_intersection.feature
+  SHA: 09b94fb73c9758d30cb8be27030b2c4a5ab8ac66
+
+• srv_handle_config_channels_with_ISS_v2.feature (3224 bytes)
+  Path original: testsuite/features/secondary/srv_handle_config_channels_with_ISS_v2.feature
+  SHA: 68396457633a9bafcbb1f1fa3254952485903c4c
+
+• srv_handle_software_channels_with_ISS_v2.feature (3028 bytes)
+  Path original: testsuite/features/secondary/srv_handle_software_channels_with_ISS_v2.feature
+  SHA: 2f3197adca1bd769c3326f845b81e5539e27910b
+
+• srv_health_check_supportconfig.feature (1385 bytes)
+  Path original: testsuite/features/secondary/srv_health_check_supportconfig.feature
+  SHA: 513c75dff55268b3339ae66467e74c859d6cb5c9
+
+• srv_logfile.feature (934 bytes)
+  Path original: testsuite/features/secondary/srv_logfile.feature
+  SHA: 5c199b6d994d64127353fee56d52df2a5e794d28
+
+• srv_mainpage.feature (3895 bytes)
+  Path original: testsuite/features/secondary/srv_mainpage.feature
+  SHA: 2184939023f1d70d3ccc997f7443c99dca0a0b95
+
+• srv_maintenance_windows.feature (7508 bytes)
+  Path original: testsuite/features/secondary/srv_maintenance_windows.feature
+  SHA: ea1b032b35d64e176b97bc67bf3c396f3181f344
+
+• srv_manage_activationkey.feature (4772 bytes)
+  Path original: testsuite/features/secondary/srv_manage_activationkey.feature
+  SHA: fd7b298bac988ae417e69a1def411e6428570225
+
+• srv_manage_channels_page.feature (4148 bytes)
+  Path original: testsuite/features/secondary/srv_manage_channels_page.feature
+  SHA: 8bd518f53fe9f8b0c3799f01b305a55f3c612fd2
+
+• srv_menu.feature (16858 bytes)
+  Path original: testsuite/features/secondary/srv_menu.feature
+  SHA: 61d03473cc25a0fbdf54ebfb86b91ee2957960b2
+
+• srv_menu_filter.feature (1531 bytes)
+  Path original: testsuite/features/secondary/srv_menu_filter.feature
+  SHA: 47ec8f02e89b61861787cccebe53863fb3ce5dec
+
+• srv_mgr_sync_list_products.feature (916 bytes)
+  Path original: testsuite/features/secondary/srv_mgr_sync_list_products.feature
+  SHA: c5340664106130fe159bb3a519c4755414b96e62
+
+• srv_monitoring.feature (5733 bytes)
+  Path original: testsuite/features/secondary/srv_monitoring.feature
+  SHA: ad6c114b8a0af2b7edd34643bbb3df47bc17ae6a
+
+• srv_notifications.feature (1243 bytes)
+  Path original: testsuite/features/secondary/srv_notifications.feature
+  SHA: c74fab0e80f604b4acd6466c1f56abc1aedc3dbb
+
+• srv_password_restriction.feature (4319 bytes)
+  Path original: testsuite/features/secondary/srv_password_restriction.feature
+  SHA: 7b6af85841bcac64452a370a686445a35e8cada9
+
+• srv_patches_page.feature (4234 bytes)
+  Path original: testsuite/features/secondary/srv_patches_page.feature
+  SHA: 43c9b2868a582c23fa6a1151bea66d8d6164f06b
+
+• srv_payg_ssh_connection.feature (6502 bytes)
+  Path original: testsuite/features/secondary/srv_payg_ssh_connection.feature
+  SHA: db1742e285c99f20189f8926e2f271d93fde8276
+
+• srv_power_management.feature (4859 bytes)
+  Path original: testsuite/features/secondary/srv_power_management.feature
+  SHA: 156c616eab58ebb9cccf901dd7dd5b47847adcb5
+
+• srv_power_management_api.feature (2170 bytes)
+  Path original: testsuite/features/secondary/srv_power_management_api.feature
+  SHA: 42275bab502403514dce3b976a19fb750dc0bf2a
+
+• srv_power_management_redfish.feature (4815 bytes)
+  Path original: testsuite/features/secondary/srv_power_management_redfish.feature
+  SHA: dca79a42d99bc6eb52358ce0ecdffba8d972107a
+
+• srv_push_package.feature (1724 bytes)
+  Path original: testsuite/features/secondary/srv_push_package.feature
+  SHA: 15d6a7ee01bd5123269160408cad7cc5ad2e02b9
+
+• srv_rename_hostname.feature (4345 bytes)
+  Path original: testsuite/features/secondary/srv_rename_hostname.feature
+  SHA: d93a44788fe8759053cba1d6ccc0d7f83e3b1b73
+
+• srv_reportdb.feature (2720 bytes)
+  Path original: testsuite/features/secondary/srv_reportdb.feature
+  SHA: 94ed3268c6599ce58a499389465f764f04ae6cab
+
+• srv_restart.feature (1101 bytes)
+  Path original: testsuite/features/secondary/srv_restart.feature
+  SHA: 1175b4449e25968f26c3f1bbedd1fb7524598072
+
+• srv_restart_postgres.feature (827 bytes)
+  Path original: testsuite/features/secondary/srv_restart_postgres.feature
+  SHA: 92f94bf0b3cab3bef04692f473a60ff38a40c474
+
+• srv_salt.feature (1410 bytes)
+  Path original: testsuite/features/secondary/srv_salt.feature
+  SHA: 30969028e6cb9685031e979d8aeee1241b659db0
+
+• srv_salt_download_endpoint.feature (2165 bytes)
+  Path original: testsuite/features/secondary/srv_salt_download_endpoint.feature
+  SHA: 1683b9fbe69c990a738cc5a692ec037162fe1787
+
+• srv_salt_git_pillar.feature (2290 bytes)
+  Path original: testsuite/features/secondary/srv_salt_git_pillar.feature
+  SHA: aa7e0a2f91af24dcf5a6033bed0f652e80b36d49
+
+• srv_scc_user_credentials.feature (3272 bytes)
+  Path original: testsuite/features/secondary/srv_scc_user_credentials.feature
+  SHA: b585ce91ff78994fce3cf14fac89d6d7321d7893
+
+• srv_security.feature (1175 bytes)
+  Path original: testsuite/features/secondary/srv_security.feature
+  SHA: 6e8a2beda19c4151c8f9eb6c77a42fa5a6311794
+
+• srv_task_status_engine.feature (3072 bytes)
+  Path original: testsuite/features/secondary/srv_task_status_engine.feature
+  SHA: a00af31997997dcbaf98a4dbd56ac26412dab5bf
+
+• srv_user_api.feature (1001 bytes)
+  Path original: testsuite/features/secondary/srv_user_api.feature
+  SHA: 57fb69a6b4dfc0044bb0868eb8ab2061cea6da8a
+
+• srv_user_configuration_salt_states.feature (3924 bytes)
+  Path original: testsuite/features/secondary/srv_user_configuration_salt_states.feature
+  SHA: 6ca730177c66427b2916242da787a04b6ce69b52
+
+• srv_users.feature (9672 bytes)
+  Path original: testsuite/features/secondary/srv_users.feature
+  SHA: a73c725e06a651868eebdb33ecf83c71a80c6dd9
+
+• srv_virtual_host_manager.feature (2973 bytes)
+  Path original: testsuite/features/secondary/srv_virtual_host_manager.feature
+  SHA: 6fad2125830e5ea5fd4e4b8772f303ba8de21e73
+

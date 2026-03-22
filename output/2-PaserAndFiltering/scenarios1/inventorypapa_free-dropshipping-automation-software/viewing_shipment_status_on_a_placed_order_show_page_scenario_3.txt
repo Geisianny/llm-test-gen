@@ -1,0 +1,5 @@
+Scenario 3: Seeing order's shipment status when it has not been shipped yet
+  Tags: ['@ui', '@api']
+  When  I view the summary of my order "#00000666"
+  Then  the order's shipment status should be "Ready"
+

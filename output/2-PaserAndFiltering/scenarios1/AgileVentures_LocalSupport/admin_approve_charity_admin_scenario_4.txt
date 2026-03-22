@@ -1,0 +1,6 @@
+Scenario 4: As a superadmin about to recover a deleted user
+  Given  I am signed in as a superadmin
+  And  I visit the home page
+  And  I click on the deleted users link
+  Then  I should be on the deleted users page
+

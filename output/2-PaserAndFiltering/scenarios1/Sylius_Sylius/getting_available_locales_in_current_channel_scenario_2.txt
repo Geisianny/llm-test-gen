@@ -1,0 +1,5 @@
+Scenario 2: Get locales details
+  Tags: ['@api', '@no-ui']
+  When  I get "English (United States)" locale
+  Then  I should have "English (United States)" with code "en_US"
+

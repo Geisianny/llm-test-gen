@@ -1,0 +1,7 @@
+Scenario 6: As a logged-in user I can not post a report with no reason
+  When  I am logged as "jacques.picard@en-marche.fr"
+  And  I send a "POST" request to "/api/report/comites/515a56c0-bde8-56ef-b90c-4745b1c93818" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+

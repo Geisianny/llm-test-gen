@@ -1,0 +1,8 @@
+Scenario 1: Viewing taxons list only from the channel menu taxon
+  Tags: ['@api', '@ui']
+  Given  this channel has menu taxon "Guns"
+  When  I check available taxons
+  Then  I should see "Rifles" and "Revolvers" in the menu
+  And  I should not see "Pens" and "Pencils" in the menu
+  And  I should not see "T-Shirts" and "Caps" in the menu
+

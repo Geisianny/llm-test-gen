@@ -1,0 +1,4 @@
+Scenario 4: Get a not found exception
+  When  I send a "GET" request to "/overridden_operation_dummies/42"
+  Then  the response status code should be 404
+

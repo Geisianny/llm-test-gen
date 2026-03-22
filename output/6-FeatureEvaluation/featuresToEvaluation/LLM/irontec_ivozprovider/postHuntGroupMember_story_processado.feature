@@ -1,0 +1,49 @@
+Feature: postHuntGroupMember_story_processado
+
+Scenario: Create a new hunt group member with valid parameters
+    Given there is a hunt group with id "123"
+    And there is a user with id "456"
+    When the client admin sends a POST request to create a new hunt group member
+    And sets the hunt group id to "123"
+    And sets the user id to "456"
+    And sets the timeout time to "30"
+    And sets the priority to "1"
+    Then the system creates a new hunt group member
+    And returns a successful response with the created member details
+
+Scenario: Create a new hunt group member with missing required parameters
+    Given there is a hunt group with id "123"
+    And there is a user with id "456"
+    When the client admin sends a POST request to create a new hunt group member
+    And sets the hunt group id to "123"
+    And omits the user id
+    Then the system returns an error response
+    And displays a message indicating that the user id is required
+
+Scenario: Create a new hunt group member with invalid hunt group id
+    Given there is no hunt group with id "invalid"
+    And there is a user with id "456"
+    When the client admin sends a POST request to create a new hunt group member
+    And sets the hunt group id to "invalid"
+    And sets the user id to "456"
+    Then the system returns an error response
+    And displays a message indicating that the hunt group id is invalid
+
+Scenario: Create a new hunt group member with invalid priority value
+    Given there is a hunt group with id "123"
+    And there is a user with id "456"
+    When the client admin sends a POST request to create a new hunt group member
+    And sets the hunt group id to "123"
+    And sets the user id to "456"
+    And sets the priority to "invalid"
+    Then the system returns an error response
+    And displays a message indicating that the priority is invalid
+
+Scenario: Retrieve created hunt group members
+    Given there is a hunt group with id "123"
+    And there is a user with id "456"
+    And there is a hunt group member with hunt group id "123" and user id "456"
+    When the client admin sends a GET request to retrieve hunt group members
+    And sets the hunt group id to "123"
+    Then the system returns a list of hunt group members
+    And includes the created hunt group member with user id "456"

@@ -1,0 +1,9 @@
+Scenario 5: simple search for forum
+  Given  the following forums
+  When  I search contents for "Games"
+  Then  I should see "Games Forum" within ".main-content"
+  And  I should see "None" within ".search-forum-items"
+  And  I should not see "Movies Folder"
+  When  I follow "Games Forum"
+  Then  I should be on article "Games Forum"
+

@@ -1,0 +1,6 @@
+Scenario 3: Get Tags returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/core-index']
+  Given  new "ListHostTags" request
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

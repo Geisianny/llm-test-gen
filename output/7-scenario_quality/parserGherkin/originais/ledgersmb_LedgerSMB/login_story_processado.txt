@@ -1,0 +1,30 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 19/01/2026 23:13:57
+Arquivo analisado: login_story_processado.feature
+Caminho relativo: ledgersmb_LedgerSMB\login_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/Originais\ledgersmb_LedgerSMB\login_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: login_story_processado
+Descrição: Não possui
+Total de cenários: 3
+
+CENÁRIOS IDENTIFICADOS:
+1. Redirecting / to /login.pl
+   Steps: 2
+   - When I navigate to the application root
+   - Then I should see the application login page
+2. Viewing setup.pl
+   Steps: 2
+   - When I navigate to the setup login page
+   - Then I should see the setup login page
+3. Viewing login.pl
+   Steps: 2
+   - When I navigate to the application login page
+   - Then I should see the application login page

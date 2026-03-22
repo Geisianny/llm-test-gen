@@ -1,0 +1,5 @@
+Scenario 7: Add Uyuni Proxy product for Tumbleweed, including Uyuni Client Tools
+  Tags: ['@containerized_server', '@proxy', '@uyuni']
+  When  I use spacewalk-common-channel to add all "uyuni-proxy" channels with arch "x86_64"
+  And  I wait until all synchronized channels for "uyuni-proxy" have finished
+

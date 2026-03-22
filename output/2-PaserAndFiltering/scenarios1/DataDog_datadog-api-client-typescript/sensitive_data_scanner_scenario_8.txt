@@ -1,0 +1,10 @@
+Scenario 8: Delete Scanning Group returns "OK" response
+  Tags: ['@team:DataDog/sensitive-data-scanner']
+  Given  a valid "configuration" in the system
+  And  there is a valid "scanning_group" in the system
+  And  new "DeleteScanningGroup" request
+  And  request contains "group_id" parameter from "group.data.id"
+  And  body with value {"meta": {}}
+  When  the request is sent
+  Then  the response status is 200 OK
+

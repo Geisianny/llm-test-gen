@@ -1,0 +1,7 @@
+Scenario: Create a new topical event
+  Given there is an editor logged in
+  And there are no existing topical events with the title "New Event"
+  When the editor creates a new topical event with the title "New Event"
+  And enters a summary and description for the event
+  Then the system saves the new topical event
+  And displays a confirmation message

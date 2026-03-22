@@ -1,0 +1,12 @@
+Scenario 7: Copy a company
+  Given  a nonexistent company named "setup-test2"
+  And  an existing company named "setup-test"
+  When  I navigate to the setup login page
+  And  I log into the company using the super-user credentials
+  Then  I should see the setup admin page
+  When  I copy the company to "setup-test2"
+  Then  I should see the setup confirmation page
+  When  I navigate to the setup login page
+  And  I log into "setup-test2" using the super-user credentials
+  Then  I should see the setup admin page
+

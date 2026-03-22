@@ -1,0 +1,5 @@
+Scenario 10: Republish a role
+  Given  a published role "An Existing Role" exists
+  When  I request a republish of the "An Existing Role" role
+  Then  I can see the "An Existing Role" role has been republished
+

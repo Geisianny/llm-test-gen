@@ -1,0 +1,21 @@
+Scenario 1: Bug time-weighted average position not updated correctly during closeout trades
+  Tags: ['@Liquidation']
+  When  the parties place the following orders:
+  Then  the network moves ahead "1" epochs
+  Given  the parties submit the following recurring transfers:
+  When  the parties place the following orders:
+  Then  the network moves ahead "1" epochs
+  Then  parties should have the following vesting account balances:
+  Given  the network moves ahead "5" blocks
+  And  the parties place the following orders:
+  When  the network moves ahead "2" blocks
+  Then  the following trades should be executed:
+  And  the parties should have the following profit and loss:
+  Then  parties should have the following vesting account balances:
+  Given  the network moves ahead "1" epochs
+  Then  parties should have the following vesting account balances:
+  Given  the network moves ahead "1" epochs
+  Then  parties should have the following vesting account balances:
+  Given  the network moves ahead "1" epochs
+  Then  parties should have the following vesting account balances:
+

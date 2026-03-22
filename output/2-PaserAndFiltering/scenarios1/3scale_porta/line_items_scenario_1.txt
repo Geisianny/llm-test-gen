@@ -1,0 +1,10 @@
+Scenario 1: Adding a new item
+  Given  the table should contain the following within the line items card:
+  And  the total cost is "EUR 42.00"
+  When  they follow "Add" within the line items card
+  And  the modal is submitted with:
+  And  wait a moment
+  Then  they should see a toast alert with text "Line item added"
+  And  the table should contain the following within the line items card:
+  And  the total cost should be "EUR -158.00"
+

@@ -1,0 +1,7 @@
+Scenario 23: Delete Google Cloud Usage Cost config returns "Not Found" response
+  Tags: ['@team:DataDog/cloud-cost-management']
+  Given  new "DeleteCostGCPUsageCostConfig" request
+  And  request contains "cloud_account_id" parameter with value 123456
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

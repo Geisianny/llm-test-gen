@@ -1,0 +1,1 @@
+Tests checks: - the cap_reward_fee_multiple correctly caps rewards distributed to parties to a multiple of the total fees paid by each respective party. - reallocation of unallocated rewards is attempted upto 10 times. - unallocated rewards are carried over to the next epoch.

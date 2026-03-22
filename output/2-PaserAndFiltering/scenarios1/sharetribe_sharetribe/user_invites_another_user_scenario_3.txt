@@ -1,0 +1,11 @@
+Scenario 3: User tries to invite another user with invalid email address
+  Tags: ['@javascript']
+  And  I am logged in as "kassi_testperson1"
+  And  I am on invitations page
+  And  users can invite new users to join community "test"
+  And  I press "Send invitation"
+  Then  I should see "This field is required."
+  When  I fill in "invitation_email" with "test"
+  And  I press "Send invitation"
+  Then  I should see "Check that the email addresses you added are valid and don't contain any unusual characters."
+

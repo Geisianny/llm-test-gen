@@ -1,0 +1,24 @@
+Scenario 6: Non-persistent order results in an auction (one trigger breached), orders placed during auction result in trade with indicative price outside the price monitoring bounds, but auction extension is longer than horizon of the 2nd trigger, hence it gets deactivated and auction concludes immediately. (0032-PRIM-009)
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC21"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC21"
+  And  the mark price should be "110000" for the market "ETH/DEC21"
+  When  time is updated to "2020-10-16T00:02:00Z"
+  Then  the parties place the following orders:
+  And  the market data for the market "ETH/DEC21" should be:
+  When  time is updated to "2020-10-16T00:02:10Z"
+  Then  the parties place the following orders:
+  And  the market data for the market "ETH/DEC21" should be:
+  When  time is updated to "2020-10-16T00:03:10Z"
+  Then  the parties place the following orders:
+  And  the market data for the market "ETH/DEC21" should be:
+  When  time is updated to "2020-10-16T00:06:11Z"
+  And  the market data for the market "ETH/DEC21" should be:
+  When  time is updated to "2020-10-16T00:12:11Z"
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC21"
+  And  the mark price should be "133000" for the market "ETH/DEC21"
+  And  the market data for the market "ETH/DEC21" should be:
+

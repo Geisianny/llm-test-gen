@@ -1,0 +1,8 @@
+Scenario 1: Trying to change tax rate code
+  Tags: ['@todo']
+  Given  I want to modify a tax rate "United States Sales Tax"
+  When  I change its code to "us_vat"
+  And  I save my changes
+  Then  I should be notified that code cannot be changed
+  And  tax rate "United States Sales Tax" should still have code "united_states_sales_tax"
+

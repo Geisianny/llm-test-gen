@@ -1,0 +1,10 @@
+Scenario 2: Trying to remove name from an existing customer group
+  Tags: ['@ui', '@api']
+  Given  the store has a customer group "Retail"
+  When  I want to edit this customer group
+  And  I remove its name
+  And  I try to save my changes
+  Then  I should be notified that name is required
+  And  I should be informed that this form contains errors
+  And  this customer group should still be named "Retail"
+

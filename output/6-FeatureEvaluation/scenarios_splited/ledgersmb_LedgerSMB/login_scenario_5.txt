@@ -1,0 +1,4 @@
+Scenario: Accessing setup page
+  Given the system is not configured
+  When the user accesses the setup page
+  Then the system displays the setup page

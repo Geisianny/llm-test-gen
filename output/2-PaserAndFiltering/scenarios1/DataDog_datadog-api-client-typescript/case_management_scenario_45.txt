@@ -1,0 +1,12 @@
+Scenario 45: Update case custom attribute returns "Bad Request" response
+  Tags: ['@skip', '@team:DataDog/case-management']
+  Given  new "UpdateCaseCustomAttribute" request
+  And  there is a valid "case_type" in the system
+  And  there is a valid "custom_attribute" in the system
+  And  there is a valid "case" with a custom "case_type" in the system
+  And  request contains "case_id" parameter from "case_with_type.id"
+  And  request contains "custom_attribute_key" parameter from "custom_attribute.attributes.key"
+  And  body with value {"data": {"attributes": {"type": "FLOAT", "is_multi": true, "value": [1.0, 2.4]}, "type": "case"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

@@ -1,0 +1,6 @@
+Scenario 27: show range date of event
+  Given  I am on /profile/josesilva/events/2009/10
+  And  the following events
+  When  I am on /profile/josesilva/events/2009/10/26
+  Then  I should see "October 25, 2009 0:00 to October 27, 2009 0:00"
+

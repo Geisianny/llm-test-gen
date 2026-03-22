@@ -1,0 +1,7 @@
+Scenario 2: Having all the countries listed if channel does not define available ones
+  Tags: ['@no-api', '@ui']
+  Given  this channel does not define operating countries
+  And  I added product "PHP T-Shirt" to the cart
+  When  I go to the checkout addressing step
+  Then  I should have both "United States" and "Poland" countries available to choose from
+

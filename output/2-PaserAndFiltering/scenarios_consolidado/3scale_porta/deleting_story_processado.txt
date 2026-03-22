@@ -1,0 +1,20 @@
+Scenario 1: Deleting buyer account from the account summary page
+  When  I go to the buyer account page for "bob"
+  And  I follow "Edit"
+  And  I follow "Delete"
+  And  confirm the dialog
+  Then  I should be on the buyer accounts page
+  And  I should see "The account was successfully deleted"
+  And  I should not see "bob"
+
+
+
+Scenario 2: Cannot delete account if there are unsettled invoices
+  Given  the provider is charging its buyers
+  Given  an invoice of buyer "bob" for January, 2011 with items:
+  When  I go to the buyer account page for "bob"
+  And  I follow "Edit"
+  And  I follow "Delete"
+  And  confirm the dialog
+  Then  I should see "Invoices need to be settled before"
+

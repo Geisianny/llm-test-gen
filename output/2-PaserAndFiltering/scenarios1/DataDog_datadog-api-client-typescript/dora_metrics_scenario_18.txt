@@ -1,0 +1,7 @@
+Scenario 18: Send a failure event returns "OK" response
+  Tags: ['@replay-only', '@team:DataDog/ci-app-backend']
+  Given  new "CreateDORAIncident" request
+  And  body with value {"data": {"attributes": {"finished_at": 1707842944600000000, "git": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_url": "https://github.com/organization/example-repository"}, "name": "Webserver is down failing all requests", "services": ["shopist"], "severity": "High", "started_at": 1707842944500000000, "team": "backend", "version": "v1.12.07"}}}
+  When  the request is sent
+  Then  the response status is 200 OK
+

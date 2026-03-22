@@ -1,0 +1,8 @@
+Scenario 9: Accessing to add shipping method to the cart by the customer
+  Tags: ['@api', '@ui']
+  Given  the customer logged in
+  And  the customer added product "Stark T-Shirt" to the cart
+  And  the customer addressed the cart
+  When  the customer proceeds with "UPS" shipping method
+  Then  the customer should have checkout shipping method step completed
+

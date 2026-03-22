@@ -1,0 +1,7 @@
+Scenario 40: Get tenant-based handle information returns "Failed Precondition" response
+  Tags: ['@generated', '@skip', '@team:DataDog/chat-integrations']
+  Given  new "GetTenantBasedHandle" request
+  And  request contains "handle_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 412 Failed Precondition
+

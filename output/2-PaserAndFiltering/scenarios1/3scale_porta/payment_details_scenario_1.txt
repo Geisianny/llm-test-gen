@@ -1,0 +1,6 @@
+Scenario 1: Finance is disabled
+  Given  the provider is charging its buyers
+  But  the provider has "finance" denied
+  When  the buyer is reviewing their account settings
+  Then  the buyer can't add or update any billing information
+

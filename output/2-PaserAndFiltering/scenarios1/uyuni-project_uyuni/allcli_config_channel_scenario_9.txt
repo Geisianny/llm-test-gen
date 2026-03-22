@@ -1,0 +1,5 @@
+Scenario 9: Check that file has been created on SLE minion
+  Tags: ['@sle_minion']
+  When  I wait until file "/etc/s-mgr/config" exists on "sle_minion"
+  Then  file "/etc/s-mgr/config" should contain "COLOR=white" on "sle_minion"
+

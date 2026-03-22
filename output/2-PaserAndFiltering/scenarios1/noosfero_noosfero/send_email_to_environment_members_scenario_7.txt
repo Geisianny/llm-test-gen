@@ -1,0 +1,10 @@
+Scenario 7: Should display recipients options
+  Tags: ['@selenium']
+  Given  I am logged in as admin
+  And  I go to /admin/users/send_mail
+  Then  I should see "Recipients"
+  Then  I should see "All Users"
+  Then  I should see "Only Admins"
+  Then  I should see "Environment Admins"
+  Then  I should see "Profile Admins"
+

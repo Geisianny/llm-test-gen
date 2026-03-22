@@ -1,0 +1,7 @@
+Scenario 2: Check if a monitor can be deleted returns "Deletion conflict error" response
+  Tags: ['@generated', '@skip', '@team:DataDog/monitor-app']
+  Given  new "CheckCanDeleteMonitor" request
+  And  request contains "monitor_ids" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 409 Deletion conflict error
+

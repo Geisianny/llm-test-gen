@@ -1,0 +1,8 @@
+Scenario 9: Import the sales orders from Magento
+  Tags: ['@sale_import_magento']
+  When  an instance with absolute id "base_external.magento" exists
+  And  a shop with name "Main Website Store" exists
+  Then  I import the sale orders (Import Orders)
+  Then  the sale orders should have been created
+  Then  I should see this sale order order_name open
+

@@ -1,0 +1,6 @@
+Scenario 5: Valid with invalid filters
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  I want to have the following filters on a metric
+  When  I create a metric via the app with the following:
+  Then  there should not be a metric called "Testing Metric"
+

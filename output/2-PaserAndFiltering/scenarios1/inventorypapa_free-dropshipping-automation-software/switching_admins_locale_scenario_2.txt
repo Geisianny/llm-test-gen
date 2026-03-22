@@ -1,0 +1,7 @@
+Scenario 2: Changing my preferred language to a locale that does not exist in the store
+  Tags: ['@ui']
+  Given  the locale "French (France)" does not exist in the store
+  And  I am editing my details
+  When  I set my locale to "French (France)"
+  Then  I should be viewing the administration panel in "French (France)"
+

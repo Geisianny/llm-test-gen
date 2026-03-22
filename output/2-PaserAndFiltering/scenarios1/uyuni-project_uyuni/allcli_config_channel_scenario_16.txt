@@ -1,0 +1,6 @@
+Scenario 16: Apply highstate to override changed content on SSH minion
+  Tags: ['@ssh_minion']
+  When  I store "COLOR=blue" into file "/etc/s-mgr/config" on "ssh_minion"
+  And  I apply highstate on "ssh_minion"
+  Then  file "/etc/s-mgr/config" should contain "COLOR=white" on "ssh_minion"
+

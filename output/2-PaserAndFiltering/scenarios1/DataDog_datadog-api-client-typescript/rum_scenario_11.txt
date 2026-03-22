@@ -1,0 +1,6 @@
+Scenario 11: Get a list of RUM events returns "OK" response
+  Tags: ['@team:DataDog/rum-backend']
+  Given  new "ListRUMEvents" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

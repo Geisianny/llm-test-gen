@@ -1,0 +1,78 @@
+Feature: Org superadmin creating a volunteer work opportunity
+Description: As an organisation superadmin
+  So that I can recruit volunteers
+  I would like to be able to add a volunteering opportunity to the system
+  https://www.pivotaltracker.com/story/show/66059456
+
+Background: 
+  Given  the following organisations exist:
+  And  the following users are registered:
+  And  that the volunteer_ops_create flag is enabled
+  And  cookies are approved
+
+Scenario 1: Org-superadmins can create a volunteer opportunity
+  Tags: ['@vcr']
+  Given  I am signed in as a charity worker related to "Friendly"
+  And  I submit a volunteer op "Hard Work", "For no pay" on the "Friendly" page
+  Then  I should be on the show page for the volunteer_op titled "Hard Work"
+  And  I should see "Hard Work", "For no pay" and "Organisation: Friendly"
+
+Scenario 2: Org-superadmins can create a volunteer opportunity with different address
+  Tags: ['@vcr', '@javascript']
+  Given  I am signed in as a charity worker related to "Friendly"
+  And  I submit a volunteer op with address on the org page
+  Then  I should see "Ops1", "For free", "Station Rd, HA8 7BD" and "Organisation: Friendly"
+
+Scenario 3: Org-superadmins can create a volunteer opportunity with all fields
+  Tags: ['@vcr', '@javascript']
+  Given  I am signed in as a charity worker related to "Friendly"
+  And  I submit a volunteer op with address on the org page
+  Then  I should see "should be active"
+  Then  I should see "knowledge"
+  Then  I should see "street 3"
+
+Scenario 4: Org-superadmins can create a volunteer opportunity but get warning with invalid data
+  Given  I am signed in as a charity worker related to "Friendly"
+  And  I submit a blank volunteer op on the "Friendly" page
+  Then  I should see "Title can't be blank" and "Description can't be blank"
+
+Scenario 5: Site Super Admin users can create Volunteer Opportunities
+  Given  I am signed in as a superadmin
+  And  I submit a volunteer op "Hard Work", "For no pay" on the "Friendly" page
+  Then  I should be on the show page for the volunteer_op titled "Hard Work"
+  And  I should see "Hard Work", "For no pay" and "Organisation: Friendly"
+
+Scenario 6: New Volunteer Opportunity created by a super admin is posted to twitter
+  Given  I am signed in as a superadmin
+  Then  there should be 1 post to twitter
+  When  I submit a valid volunteer opportunity
+
+Scenario 7: Signed In Users cannot create volunteer opportunities
+  Given  I am signed in as a charity worker related to "Shy"
+  And  I visit the show page for the organisation named "Friendly"
+  Then  I should not see a link with text "Create a Volunteer Opportunity"
+
+Scenario 8: Signed In Users cannot create volunteer opportunities on the sly
+  Given  I am signed in as a charity worker related to "Friendly"
+  And  I visit the new volunteer op page for "Shy"
+  Then  I should see "You must be signed in as an organisation owner or site superadmin to perform this action!"
+
+Scenario 9: Not Signed In Users cannot create volunteer opportunities
+  Given  I visit the show page for the organisation named "Friendly"
+  Then  I should not see a link with text "Create a Volunteer Opportunity"
+
+Scenario 10: Not Signed In Users cannot create volunteer opportunities on the sly
+  And  I visit the new volunteer op page for "Shy"
+  Then  I should see "You must be signed in as an organisation owner or site superadmin to perform this action!"
+
+Scenario 11: Org-superadmins can see a Volunteer Opportunity button when feature is enabled
+  And  I am signed in as a charity worker related to "Shy"
+  And  I visit the show page for the organisation named "Shy"
+  Then  I should see a link with text "Create a Volunteer Opportunity"
+
+Scenario 12: Org-superadmins cannot see a Volunteer Opportunity button when feature is disabled
+  Given  that the volunteer_ops_create flag is disabled
+  And  I am signed in as a charity worker related to "Shy"
+  And  I visit the show page for the organisation named "Shy"
+  Then  I should not see a link with text "Create a Volunteer Opportunity"
+

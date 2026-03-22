@@ -1,0 +1,6 @@
+Scenario: Attempt to create a duplicate payment term
+  Given there is an administrator logged into the system
+  And there is a payment term named "Existing Term" in the catalog
+  When the administrator creates a new payment term with the name "Existing Term"
+  Then the system prevents the creation of the duplicate payment term
+  And displays an error message indicating that the term already exists

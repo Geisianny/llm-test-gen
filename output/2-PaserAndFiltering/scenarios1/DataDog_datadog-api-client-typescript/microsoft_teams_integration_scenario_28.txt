@@ -1,0 +1,6 @@
+Scenario 28: Get all Workflows webhook handles returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/chat-integrations']
+  Given  new "ListWorkflowsWebhookHandles" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

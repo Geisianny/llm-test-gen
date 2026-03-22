@@ -1,0 +1,6 @@
+Scenario 1: Seeing applied catalog promotion on products list
+  Tags: ['@no-api', '@ui']
+  When  I browse products from taxon "T-Shirts"
+  Then  I should see "Programming T-Shirt" product discounted from "$20.00" to "$10.00" by "Winter sale" on the list
+  And  I should see "Nerd T-Shirt" product not discounted on the list
+

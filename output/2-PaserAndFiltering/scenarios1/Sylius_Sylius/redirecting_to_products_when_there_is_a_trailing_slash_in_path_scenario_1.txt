@@ -1,0 +1,7 @@
+Scenario 1: Redirecting to products when there is a trailing slash in path
+  Tags: ['@no-api', '@ui']
+  When  I try to browse products from taxon "T-Shirts" with a trailing slash in the path
+  Then  I should be redirected on the product list from taxon "T-Shirts"
+  And  I should see the product "T-Shirt Banana"
+  But  I should not see the product "Plastic Tomato"
+

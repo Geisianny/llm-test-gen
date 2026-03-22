@@ -1,0 +1,8 @@
+Scenario 1: Activation with valid activation token
+  Tags: ['@emails']
+  Given  a pending user "alice" of account "foo.3scale.localhost"
+  When  I follow the activation link in an email sent to user "alice"
+  And  I try to log in as provider "alice"
+  Then  they should see "Hello alice"
+  And  the current page is the provider onboarding wizard page
+

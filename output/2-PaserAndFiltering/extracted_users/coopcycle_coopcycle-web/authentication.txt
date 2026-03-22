@@ -1,0 +1,187 @@
+Feature: Authenticate
+
+Scenario 1: Login success
+  Given  the user is loaded:
+  When  I add "Accept" header equal to "application/ld+json"
+  And  I send a "POST" request to "/api/login_check" with parameters:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 2: Refresh token
+  Given  the user is loaded:
+  And  the user "bob" has a refresh token "123456"
+  And  I send a "POST" request to "/api/token/refresh" with parameters:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 3: Login by email success
+  And  the user is loaded:
+  When  I add "Accept" header equal to "application/ld+json"
+  And  I send a "POST" request to "/api/login_check" with parameters:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 4: Login failure
+  When  I add "Accept" header equal to "application/ld+json"
+  And  I send a "POST" request to "/api/login_check" with parameters:
+  Then  the response status code should be 401
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 5: Authenticated request
+  Given  the user is loaded:
+  And  the user "bob" is authenticated
+  When  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "GET" request to "/api/me"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 6: Authenticated request with OAuth (for store)
+  Given  the fixtures files are loaded:
+  And  the store with name "Acme" has an OAuth client named "Acme"
+  And  the OAuth client with name "Acme" has an access token
+  When  I add "Accept" header equal to "application/ld+json"
+  And  the OAuth client "Acme" sends a "GET" request to "/api/me"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 7: Authenticated request with OAuth (for shop)
+  Given  the fixtures files are loaded:
+  And  the restaurant with name "Nodaiwa" has an OAuth client named "Nodaiwa"
+  And  the OAuth client with name "Nodaiwa" has an access token
+  When  I add "Accept" header equal to "application/ld+json"
+  And  the OAuth client "Nodaiwa" sends a "GET" request to "/api/me"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 8: Authenticated request with API key
+  Given  the fixtures files are loaded:
+  And  the store with name "Acme" has an API key
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the store with name "Acme" sends a "GET" request to "/api/me"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 9: Register success
+  When  I add "Accept" header equal to "application/ld+json"
+  And  I send a "POST" request to "/api/register" with parameters:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 10: Register success (with full name)
+  When  I add "Accept" header equal to "application/ld+json"
+  And  I send a "POST" request to "/api/register" with parameters:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 11: Register failure (empty username)
+  When  I add "Accept" header equal to "application/ld+json"
+  And  I send a "POST" request to "/api/register" with parameters:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 12: Register failure (existing canonical username)
+  Given  the user is loaded:
+  When  I add "Accept" header equal to "application/ld+json"
+  And  I send a "POST" request to "/api/register" with parameters:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 13: Register failure (existing canonical email)
+  Given  the user is loaded:
+  When  I add "Accept" header equal to "application/ld+json"
+  And  I send a "POST" request to "/api/register" with parameters:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 14: Confirm registration success
+  Given  the user is loaded:
+  When  I add "Accept" header equal to "application/ld+json"
+  And  I send a "GET" request to "/api/register/confirm/123456"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 15: Confirm registration failure
+  Given  the user is loaded:
+  When  I add "Accept" header equal to "application/ld+json"
+  And  I send a "GET" request to "/api/register/confirm/654321"
+  Then  the response status code should be 401
+  And  the response should be in JSON
+
+Scenario 16: Reset request success
+  Given  the user is loaded:
+  When  I add "Accept" header equal to "application/ld+json"
+  And  I send a "POST" request to "/api/resetting/send-email" with parameters:
+  Then  the response status code should be 202
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 17: Reset request failure, user does not exist
+  When  I add "Accept" header equal to "application/ld+json"
+  And  I send a "POST" request to "/api/resetting/send-email" with parameters:
+  Then  the response status code should be 202
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 18: Set new password success
+  Given  the user is loaded:
+  When  I add "Accept" header equal to "application/ld+json"
+  And  I send a "POST" request to "/api/resetting/reset/123456" with parameters:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 19: Set new password failure, token expired
+  Given  the user is loaded:
+  When  I add "Accept" header equal to "application/ld+json"
+  And  I send a "POST" request to "/api/resetting/reset/123456" with parameters:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 20: Set new password failure, wrong token
+  Given  the user is loaded:
+  When  I add "Accept" header equal to "application/ld+json"
+  And  I send a "POST" request to "/api/resetting/reset/wrong_token" with parameters:
+  Then  the response status code should be 401
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 21: Retrieve Centrifugo token
+  Given  the user "bob" is loaded:
+  And  the user "bob" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "GET" request to "/api/centrifugo/token"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 22: Login with Facebook (access denied)
+  When  I add "Content-Type" header equal to "application/json"
+  And  I send a "POST" request to "/api/facebook/login" with body:
+  Then  the response status code should be 403
+
+Scenario 23: Delete account
+  Given  the user is loaded:
+  And  the user "bob" is authenticated
+  When  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "DELETE" request to "/api/me"
+  Then  the response status code should be 204
+  Given  the user "bob" sends a "GET" request to "/api/me"
+  Then  the response status code should be 401
+

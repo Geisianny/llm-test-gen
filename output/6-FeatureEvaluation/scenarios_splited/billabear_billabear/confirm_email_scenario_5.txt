@@ -1,0 +1,5 @@
+Scenario: Confirm account with already confirmed user
+  Given there is a user who has registered with a valid email "user@example.com"
+  And the user's account is already confirmed
+  When the user enters a verification code
+  Then the system displays a message indicating that the account is already confirmed

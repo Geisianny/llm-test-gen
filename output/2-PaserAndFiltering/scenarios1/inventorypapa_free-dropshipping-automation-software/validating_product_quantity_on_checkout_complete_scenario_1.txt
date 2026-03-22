@@ -1,0 +1,7 @@
+Scenario 1: Placing an order with products that have sufficient quantity
+  Tags: ['@ui', '@api']
+  When  I add 3 products "Iron Maiden T-Shirt" to the cart
+  And  I proceed through checkout process
+  And  I confirm my order
+  Then  I should see the thank you page
+

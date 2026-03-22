@@ -1,0 +1,7 @@
+Scenario 3: As a granted user, I can post general conventions
+  Given  I am logged with "carl999@example.fr" via OAuth client "Make App" with scopes "write:general_conventions"
+  And  I send a "POST" request to "/api/v3/general_conventions" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+

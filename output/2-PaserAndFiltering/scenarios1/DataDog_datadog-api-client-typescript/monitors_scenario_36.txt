@@ -1,0 +1,7 @@
+Scenario 36: Validate a multi-alert monitor returns "OK" response
+  Tags: ['@team:DataDog/monitor-app']
+  Given  new "ValidateMonitor" request
+  And  body from file "multi_alert_monitor_payload.json"
+  When  the request is sent
+  Then  the response status is 200 OK
+

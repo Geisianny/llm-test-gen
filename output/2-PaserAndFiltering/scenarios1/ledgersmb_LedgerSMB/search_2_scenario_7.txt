@@ -1,0 +1,12 @@
+Scenario 7: Search by date, specifying current period
+  When  I navigate the menu and select the item at "Accounts Payable > Search"
+  Then  I should see the AP search screen
+  When  I select "February" from the drop down "From Month"
+  And  I select "2025" from the drop down "From Year"
+  And  I select 'Current' as the period
+  And  I press "Continue"
+  Then  I should see the Search AP Report screen
+  And  I expect the report to contain 2 rows
+  And  I expect the 'Date' report column to contain '2025-03-31' for Invoice 'INV102'
+  And  I expect the 'Date' report column to contain '2025-04-01' for Invoice 'INV103'
+

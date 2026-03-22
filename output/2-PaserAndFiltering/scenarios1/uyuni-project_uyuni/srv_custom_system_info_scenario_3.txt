@@ -1,0 +1,11 @@
+Scenario 3: Add a value to a system
+  When  I follow the left menu "Systems > System List > All"
+  And  I follow this "sle_minion" link
+  And  I follow "Custom Info"
+  And  I follow "Create Value"
+  And  I follow "key-label"
+  And  I enter "key-value" as "value"
+  And  I click on "Update Key"
+  Then  I should see a "key-label" text
+  And  I should see a "key-value" link
+

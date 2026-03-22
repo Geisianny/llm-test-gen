@@ -1,0 +1,9 @@
+Scenario 2: Setting two products to position -1 on the last page
+  Tags: ['@no-api', '@ui', '@mink:chromedriver']
+  When  I am browsing the 2nd page of products from "Soft Toys" taxon
+  And  I set the position of "Pug XL" to "-1"
+  And  I set the position of "Pug XS" to "-1"
+  And  I save my new configuration
+  Then  the one before last product on the list should have name "Pug XL" with position 18
+  And  the last product on the list should have name "Pug XS" with position 19
+

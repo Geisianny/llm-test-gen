@@ -1,0 +1,7 @@
+Scenario: Update a published topical event
+  Given there is an editor logged in
+  And there is a published topical event with the title "New Event"
+  When the editor updates the summary of the topical event "New Event"
+  And saves the changes
+  Then the system updates the event details
+  And displays a confirmation message

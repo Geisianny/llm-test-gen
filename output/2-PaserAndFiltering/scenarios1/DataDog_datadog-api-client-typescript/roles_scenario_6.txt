@@ -1,0 +1,8 @@
+Scenario 6: Create a new role by cloning an existing role returns "Not found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/aaa-core-access']
+  Given  new "CloneRole" request
+  And  request contains "role_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"name": "cloned-role"}, "type": "roles"}}
+  When  the request is sent
+  Then  the response status is 404 Not found
+

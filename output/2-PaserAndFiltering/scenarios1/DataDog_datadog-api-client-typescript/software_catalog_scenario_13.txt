@@ -1,0 +1,8 @@
+Scenario 13: Delete an entity returns "Not Found" response
+  Tags: ['@skip', '@team:DataDog/service-catalog']
+  Given  new "DeleteCatalogEntity" request
+  And  request contains "entity_id" parameter with value "service:not-a-service"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+  And  the response "errors[0]" is equal to "Not Found"
+

@@ -1,0 +1,6 @@
+Scenario 5: List your managed organizations returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "ListOrgs" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

@@ -1,0 +1,7 @@
+Scenario 8: Viewing association types
+  Tags: ['@api', '@ui']
+  Given  the store has a "Glass shield" product
+  And  the product "Iron Shield" has an association "Similar" with product "Glass shield"
+  When  I access the "Iron Shield" product
+  Then  I should see product association type "Similar"
+

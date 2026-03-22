@@ -1,0 +1,13 @@
+Scenario 1: Link to facebook
+  Tags: ['@javascript', '@profile-facebook', '@social-profile', '@travis-exclude']
+  When  I go to profile page
+  And  I press "Facebook"
+  And  I wait for the ajax response
+  And  I switch to popup "fetch social profile"
+  And  I fill in login form with Facebook user
+  And  I press "loginbutton"
+  And  I wait for 5 seconds
+  And  I switch back to main window
+  And  I wait for the ajax response
+  Then  I should see an ".btn-success .fa-facebook" element
+

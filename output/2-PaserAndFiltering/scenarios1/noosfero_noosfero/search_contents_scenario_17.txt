@@ -1,0 +1,9 @@
+Scenario 17: link to categories on search results
+  Given  the following category
+  And  the following articles
+  When  I go to the search articles page
+  And  I fill in "search-input" with "hockey"
+  And  I follow "Search" within ".search-form"
+  Then  I should see "Categories" within ".search-article-categories"
+  And  I should see "Soviet" within ".search-article-category"
+

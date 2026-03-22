@@ -1,0 +1,5 @@
+Scenario 1: Fail to create product
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  When  I create a product via the app with the following info
+  Then  there should not be a product with the name "Product Four"
+

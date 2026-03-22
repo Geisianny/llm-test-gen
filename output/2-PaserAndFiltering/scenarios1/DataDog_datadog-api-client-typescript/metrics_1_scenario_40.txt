@@ -1,0 +1,8 @@
+Scenario 40: Submit metrics returns "Payload accepted" response
+  Tags: ['@team:DataDog/metrics-intake']
+  Given  new "SubmitMetrics" request
+  And  body with value {"series": [{"metric": "system.load.1", "type": 0, "points": [{"timestamp": {{ timestamp('now') }}, "value": 0.7}], "resources": [{"name": "dummyhost", "type": "host"}]}]}
+  When  the request is sent
+  Then  the response status is 202 Payload accepted
+  And  the response "errors" has length 0
+

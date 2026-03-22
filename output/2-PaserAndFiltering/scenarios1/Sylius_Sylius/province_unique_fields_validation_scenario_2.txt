@@ -1,0 +1,7 @@
+Scenario 2: Trying to add a new province with a taken name
+  Tags: ['@api', '@ui', '@javascript']
+  When  I want to edit this country
+  And  I add the "Northern Ireland" province with "GB-NI" code
+  And  I save my changes
+  Then  I should be notified that province name must be unique
+

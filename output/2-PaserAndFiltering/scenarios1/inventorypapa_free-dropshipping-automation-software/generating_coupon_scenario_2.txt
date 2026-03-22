@@ -1,0 +1,10 @@
+Scenario 2: Generating new coupons without expiration date
+  Tags: ['@ui']
+  When  I want to generate new coupons for this promotion
+  And  I choose the amount of 5 coupons to be generated
+  And  I specify their code length as 6
+  And  I limit generated coupons usage to 25 times
+  And  I generate these coupons
+  Then  I should be notified that they have been successfully generated
+  And  there should be 5 coupons related to this promotion
+

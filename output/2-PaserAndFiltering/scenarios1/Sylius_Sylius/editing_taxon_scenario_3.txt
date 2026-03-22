@@ -1,0 +1,8 @@
+Scenario 3: Changing parent taxon
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I want to modify the "T-Shirts" taxon
+  And  I change its parent taxon to "Accessories"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this taxon should belongs to "Accessories"
+

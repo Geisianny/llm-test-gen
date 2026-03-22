@@ -1,0 +1,10 @@
+Scenario 1: I don't want to get email if I am on free plan
+  Given  the time is 29th May 2009
+  And  a buyer "stallman" signed up to application plan "FreeAsInBeer"
+  And  I act as "stallman"
+  And  no emails have been sent
+  When  the time flies to 1st June 2009
+  Then  I should receive no email
+  When  the time flies to 30th June 2009
+  Then  I should receive no email
+

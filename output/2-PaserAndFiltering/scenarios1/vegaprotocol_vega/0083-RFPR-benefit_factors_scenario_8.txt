@@ -1,0 +1,15 @@
+Scenario Outline 8: Referral set generates variable running taker volume with a referee with variable epochs in set (0083-RFPR-036)(0083-RFPR-037)(0083-RFPR-038)(0083-RFPR-039)(0083-RFPR-040) - Example 1
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  the referral set stats for code "referral-code-1" at epoch "1" should have a running volume of 1000:
+  Given  the parties place the following orders:
+
+  Examples:
+    | initial volume | running volume | time in set | max infra reward factor | max maker reward factor | max liquidity reward factor | max infra discount factor | max maker discount factor | max liquidity discount factor |
+    | 10 | 1000 | "1" | 0 | 0 | 0 | 0 | 0 | 0 |
+    | 10 | 1000 | "4" | 0 | 0 | 0 | 0 | 0 | 0 |
+    | 20 | 2000 | "1" | 0.021 | 0.022 | 0.023 | 0 | 0 | 0 |
+    | 30 | 3000 | "2" | 0.21 | 0.22 | 0.23 | 0.024 | 0.025 | 0.026 |
+    | 20 | 2000 | "3" | 0.021 | 0.022 | 0.023 | 0.024 | 0.025 | 0.026 |
+    | 30 | 3000 | "3" | 0.21 | 0.22 | 0.23 | 0.24 | 0.25 | 0.26 |
+

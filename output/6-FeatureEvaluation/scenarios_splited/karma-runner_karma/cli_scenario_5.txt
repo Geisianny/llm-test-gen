@@ -1,0 +1,4 @@
+Scenario: Display error message for missing configuration
+  Given the user is using the Karma CLI without a configuration file
+  When the user executes the command "karma start"
+  Then the system displays an error message indicating that the configuration file is missing

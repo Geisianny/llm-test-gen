@@ -1,0 +1,5 @@
+Scenario 6: Requesting publications in alternative format
+  And  I set the alternative format contact email of "Ministry of Pop" to "alternative.format@ministry-of-pop.gov.uk"
+  And  a published publication "Charleston styles today" with a PDF attachment and alternative format provider "Ministry of Pop"
+  Then  the alternative format contact email is "alternative.format@ministry-of-pop.gov.uk"
+

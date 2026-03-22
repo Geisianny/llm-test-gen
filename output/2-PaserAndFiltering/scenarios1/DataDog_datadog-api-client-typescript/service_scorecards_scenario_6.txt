@@ -1,0 +1,8 @@
+Scenario 6: Delete a rule returns "Not Found" response
+  Tags: ['@team:DataDog/service-catalog']
+  Given  operation "DeleteScorecardRule" enabled
+  And  new "DeleteScorecardRule" request
+  And  request contains "rule_id" parameter with value "2a4f524e-168a-429d-bb75-7b1ffeab0cbb"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

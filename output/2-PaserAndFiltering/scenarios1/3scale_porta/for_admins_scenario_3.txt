@@ -1,0 +1,7 @@
+Scenario 3: Sending an invitation for a partner account
+  Tags: ['@emails']
+  When  I navigate to the page of the invitations of the partner "lol cats"
+  And  I send an invitation to "new@lolcats.net"
+  Then  I should see "Invitation was successfully created and will be sent soon"
+  And  "new@lolcats.net" should receive an invitation to account "lol cats"
+

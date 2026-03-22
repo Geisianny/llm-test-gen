@@ -1,0 +1,13 @@
+Scenario 2: Receiving no discount on an order if it is not first order placed
+  Tags: ['@api', '@ui']
+  Given  there is a promotion "1st order promotion"
+  And  it gives "$20.00" off customer's 1st order
+  And  the customer "john.doe@example.com" has already placed an order "#001"
+  And  the customer bought a single "PHP T-Shirt"
+  And  the customer chose "Free" shipping method to "United States" with "Cash on Delivery" payment
+  And  I added product "PHP T-Shirt" to the cart
+  And  I addressed the cart
+  When  I check the details of my cart
+  Then  my cart total should be "$100.00"
+  And  there should be no discount applied
+

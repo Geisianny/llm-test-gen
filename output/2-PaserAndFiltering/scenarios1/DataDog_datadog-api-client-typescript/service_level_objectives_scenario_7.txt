@@ -1,0 +1,7 @@
+Scenario 7: Create an SLO object returns "Bad Request" response
+  Tags: ['@team:DataDog/slo-app']
+  Given  new "CreateSLO" request
+  And  body with value {"type":"monitor","name":"{{ unique }}","thresholds":[{"target":95.0,"target_display":"95.0","timeframe":"7d","warning":98,"warning_display":"98.0"}]}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

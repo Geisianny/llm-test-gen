@@ -1,0 +1,60 @@
+Scenario 3: _300302 create Unbundling and check creation item key
+  *  Filling the document header Unbundling
+  Given  I open hyperlink "e1cib/list/Document.Unbundling"
+  And  I click the button named "FormCreate"
+  And  I click Select button of "Company" field
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I click Select button of "Item bundle" field
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I click Select button of "Item key bundle" field
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I click Choice button of the field named "Unit"
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I input "2,000" text in the field named "Quantity"
+  And  I click Select button of "Store" field
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I move to "Item list" tab
+  And  in the table "ItemList" I click "By specification" button
+  And  "ItemList" table contains lines
+  And  I click the button named "FormPostAndClose"
+  *  Create item key
+  Given  I open hyperlink "e1cib/list/Catalog.ItemKeys"
+  And  "List" table contains lines
+  And  I close all client application windows
+  *  Check that when re-create Unbundling, lines are not duplicated
+  *  Create one more Unbundling
+  Given  I open hyperlink "e1cib/list/Document.Unbundling"
+  And  I click the button named "FormCreate"
+  And  I click Select button of "Company" field
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I click Select button of "Item bundle" field
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I click Select button of "Item key bundle" field
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I click Choice button of the field named "Unit"
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I input "2,000" text in the field named "Quantity"
+  And  I click Select button of "Store" field
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I move to "Item list" tab
+  And  in the table "ItemList" I click "By specification" button
+  And  "ItemList" table contains lines
+  And  I click the button named "FormPostAndClose"
+  *  Check that item key was not duplicated
+  Given  I open hyperlink "e1cib/list/Catalog.Items"
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  In this window I click command interface button "Item keys"
+  Then  the number of "List" table lines is "меньше или равно" 6
+  And  I close all client application windows
+

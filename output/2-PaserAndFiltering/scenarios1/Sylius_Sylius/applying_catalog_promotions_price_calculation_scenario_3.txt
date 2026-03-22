@@ -1,0 +1,6 @@
+Scenario 3: Discounted price is rounded to an upper last digit on 4/5 scenario
+  Tags: ['@api', '@ui']
+  When  I view product "Peach Juice"
+  Then  I should see the product price "$8.93"
+  And  I should see the product original price "$10.50"
+

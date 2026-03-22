@@ -1,0 +1,4 @@
+Scenario 1: Groups not accessible if not enabled
+  Given  the provider has "groups" switch denied
+  When  I request the url of the groups page then I should see an exception
+

@@ -1,0 +1,5 @@
+Scenario 3: With multiple applications, the widget is hidden
+  Given  the following applications:
+  When  they go to the overview page of account "Bob"
+  Then  they should not be able to see the application widget
+

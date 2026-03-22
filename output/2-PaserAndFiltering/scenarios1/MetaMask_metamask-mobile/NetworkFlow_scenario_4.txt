@@ -1,0 +1,24 @@
+Scenario Outline 4: I can remove a custom network that was added via the custom network flow - Example 1
+  Given  the network screen is displayed
+  When  I tap on the Add Network button
+  Then  "POPULAR" tab is displayed on networks screen
+  And  "CUSTOM NETWORKS" tab is displayed on networks screen
+  When  I tap on the "CUSTOM NETWORKS" tab
+  And  I type "Celo Mainnet" into Network name field
+  And  I type "https://forno.celo.org" into the RPC url field
+  And  I type "42220" into the Chain ID field
+  And  I type "Celo Mainnet" into the Network symbol field
+  And  I tap on the Add button to add Custom Network
+  Then  "Celo Mainnet" should be displayed in network educational modal
+  Then  I should see the added network name "Celo Mainnet" in the top navigation bar
+  When  I tap on the Settings tab option
+  And  In settings I tap on "Networks"
+  And  the network screen is displayed
+  And  I tap on network "Celo Mainnet" on networks screen
+  And  I tap the "Delete" button
+  Then  "Celo Mainnet" should be removed from the list of RPC networks
+
+  Examples:
+    | Network | rpcUrl | ChainID |  |
+    | Celo Mainnet | https://forno.celo.org | 42220 |  |
+

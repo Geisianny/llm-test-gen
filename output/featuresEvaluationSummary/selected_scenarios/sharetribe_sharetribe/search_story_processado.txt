@@ -1,0 +1,6 @@
+Scenario: Apply custom numeric field filter
+  Given there are listings with a custom numeric field "year"
+  When the user types a keyword "vintage" in the search box
+  And hits enter
+  And sets the custom numeric field "year" filter to 1990 to 2000
+  Then the system displays listings containing "vintage" with "year" between 1990 and 2000

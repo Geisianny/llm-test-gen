@@ -1,0 +1,13 @@
+Scenario 3: As offerer i can set cancellation policy and durations
+  Given  I am logged in as user "offerer@cocorico.rocks" with password "12345678"
+  When  I click on dashboard menu "Listings" of "offerer"
+  And  I follow "Edit"
+  And  I follow "Price & conditions"
+  And  I select hidden "listing_min_duration" with value "4"
+  And  I select hidden "listing_max_duration" with value "30"
+  And  I select hidden "listing_cancellation_policy" with value "Strict"
+  And  I press button with css "#duration-form-container [type=submit]"
+  And  I wait 2000 ms
+  Then  I should be on the "dashboard listing edit availabilities prices" page which "listing title" equal to "Listing One"
+  And  I should see "Saved"
+

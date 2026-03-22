@@ -1,0 +1,10 @@
+Scenario 8: Filter by "Submission Status" is "Not Submitted"
+  When  I navigate the menu and select the item at "Cash & Banking > Reports > Reconciliation"
+  Then  I should see the Search Reconciliation Reports screen
+  When  I select "Not Submitted" from the drop down "Submission Status"
+  And  I press "Search"
+  Then  I should see the Reconciliation Search Report screen
+  And  I expect the report to contain 2 rows
+  And  I expect the 'Statement Date' report column to contain '2018-01-01' for Account '1060 Checking Account'
+  And  I expect the 'Statement Date' report column to contain '2018-01-01' for Account '1065 Petty Cash'
+

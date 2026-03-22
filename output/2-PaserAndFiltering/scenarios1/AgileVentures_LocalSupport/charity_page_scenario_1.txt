@@ -1,0 +1,7 @@
+Scenario 1: Search for organisations on an organisation individual page
+  Tags: ['@vcr']
+  Given  I select the "Advocacy" category from How They Help
+  And  I press "Submit"
+  Then  I should see "Unfriendly"
+  And  I should not see "Friendly"
+

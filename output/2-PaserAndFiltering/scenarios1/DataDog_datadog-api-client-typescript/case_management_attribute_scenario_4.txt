@@ -1,0 +1,9 @@
+Scenario 4: Delete custom attributes config returns "Bad Request" response
+  Tags: ['@team:DataDog/case-management']
+  Given  new "DeleteCustomAttributeConfig" request
+  And  there is a valid "case_type" in the system
+  And  request contains "case_type_id" parameter from "case_type.id"
+  And  request contains "custom_attribute_id" parameter with value "not-an-uuid"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

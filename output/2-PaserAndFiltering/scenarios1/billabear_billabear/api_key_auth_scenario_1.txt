@@ -1,0 +1,5 @@
+Scenario 1: Valid
+  Given  the follow api keys exist:
+  When  I use the API key "key-one"
+  Then  I will get a valid response
+

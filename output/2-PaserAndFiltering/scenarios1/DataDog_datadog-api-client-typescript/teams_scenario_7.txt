@@ -1,0 +1,8 @@
+Scenario 7: Create a team returns "API error response." response
+  Tags: ['@team:DataDog/aaa-omg']
+  Given  new "CreateTeam" request
+  And  there is a valid "dd_team" in the system
+  And  body with value {"data": {"attributes": {"handle": "{{dd_team.data.attributes.handle}}", "name": "Example Team"}, "relationships": {"users": {"data": []}}, "type": "team"}}
+  When  the request is sent
+  Then  the response status is 409 API error response.
+

@@ -1,0 +1,29 @@
+Scenario 4: Get the list of devices returns "OK" response
+  Tags: ['@replay-only', '@team:DataDog/network-device-monitoring']
+  Given  new "ListDevices" request
+  And  request contains "page[size]" parameter with value 1
+  And  request contains "page[number]" parameter with value 0
+  And  request contains "filter[tag]" parameter with value "device_namespace:default"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data[0].type" is equal to "device"
+  And  the response "data[0].id" is equal to "default:1.2.3.4"
+  And  the response "data[0].attributes.description" is equal to "a device monitored with NDM"
+  And  the response "data[0].attributes.device_type" is equal to "other"
+  And  the response "data[0].attributes.ip_address" is equal to "1.2.3.4"
+  And  the response "data[0].attributes.location" is equal to "paris"
+  And  the response "data[0].attributes.model" is equal to "xx-123"
+  And  the response "data[0].attributes.name" is equal to "example device"
+  And  the response "data[0].attributes.os_name" is equal to "example OS"
+  And  the response "data[0].attributes.os_version" is equal to "1.0.2"
+  And  the response "data[0].attributes.ping_status" is equal to "unmonitored"
+  And  the response "data[0].attributes.product_name" is equal to "example device"
+  And  the response "data[0].attributes.serial_number" is equal to "X12345"
+  And  the response "data[0].attributes.status" is equal to "ok"
+  And  the response "data[0].attributes.sys_object_id" is equal to "1.3.6.1.4.1.99999"
+  And  the response "data[0].attributes.tags" is equal to ["device_ip:1.2.3.4","device_id:default:1.2.3.4"]
+  And  the response "data[0].attributes.interface_statuses.up" is equal to 2
+  And  the response "data[0].attributes.interface_statuses.warning" is equal to 4
+  And  the response "data[0].attributes.interface_statuses.down" is equal to 13
+  And  the response "meta.page.total_filtered_count" is equal to 1
+

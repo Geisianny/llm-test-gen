@@ -1,0 +1,7 @@
+Scenario 20: Get a Workload Protection agent rule (US1-FED) returns "Not Found" response
+  Tags: ['@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  new "GetCloudWorkloadSecurityAgentRule" request
+  And  request contains "agent_rule_id" parameter with value "abc-def-ghi"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

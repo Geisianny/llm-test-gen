@@ -1,0 +1,4 @@
+Scenario 3: Reboot the proxy host
+  Tags: ['@skip_if_cloud', '@transactional_server']
+  When  I reboot the "proxy" host through SSH, waiting until it comes back
+

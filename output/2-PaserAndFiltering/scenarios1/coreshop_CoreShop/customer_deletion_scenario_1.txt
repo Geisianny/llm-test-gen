@@ -1,0 +1,7 @@
+Scenario 1: Create a new order and delete the customer
+  Given  I add the product "T-Shirt" to my cart
+  And  the cart ships to customer "some-customer@something.com" address with postcode "4600"
+  And  the cart invoices to customer "some-customer@something.com" address with postcode "4600"
+  And  I create an order from my cart
+  Then  It should throw an error deleting the customer "some-customer@something.com"
+

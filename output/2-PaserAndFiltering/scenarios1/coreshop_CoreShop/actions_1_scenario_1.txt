@@ -1,0 +1,11 @@
+Scenario 1: Add a new discount rule with 20 percent discount for all products
+  Given  adding a product price rule named "discount"
+  And  the price rule is active
+  And  the price rule has a action discount-percent with 20% discount
+  Then  the price rule should be valid for product "Shoe"
+  And  the price rule should be valid for product "Shoe 2"
+  And  the price rule should be valid for product "Jacket"
+  And  the product "Shoe" should have the prices, price: "8000" and retail-price: "10000" and discount: "2000"
+  And  the product "Shoe 2" should have the prices, price: "12000" and retail-price: "15000" and discount: "3000"
+  And  the product "Jacket" should have the prices, price: "32000" and retail-price: "40000" and discount: "8000"
+

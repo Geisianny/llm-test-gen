@@ -1,0 +1,7 @@
+Scenario 2: User in unverified_email state sees notice in personal details page
+  Tags: ['@wip']
+  Given  user "alice" is email unverified
+  When  I log in as "alice" on foo.3scale.localhost
+  And  I navigate to my personal details page
+  Then  I should see the notice to validate my email
+

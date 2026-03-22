@@ -1,0 +1,8 @@
+Scenario 4: Delete an existing Action Connection returns "The resource was deleted successfully." response
+  Tags: ['@team:DataDog/workflow-automation-dev']
+  Given  there is a valid "action_connection" in the system
+  And  new "DeleteActionConnection" request
+  And  request contains "connection_id" parameter from "action_connection.data.id"
+  When  the request is sent
+  Then  the response status is 204 The resource was deleted successfully.
+

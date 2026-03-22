@@ -1,0 +1,7 @@
+Scenario 1: Get the device details returns "Not Found" response
+  Tags: ['@replay-only', '@team:DataDog/network-device-monitoring']
+  Given  new "GetDevice" request
+  And  request contains "device_id" parameter with value "unknown_device_id"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

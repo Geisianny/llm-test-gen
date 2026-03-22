@@ -1,0 +1,7 @@
+Scenario: Modify account properties
+  Given the user is logged into LedgerSMB
+  And there is an existing account with specific properties
+  When the user edits the account properties
+  And changes the account description to "New Account Description"
+  Then the system updates the account properties
+  And displays the updated account description "New Account Description"

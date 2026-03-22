@@ -1,0 +1,8 @@
+Scenario 2: Sorting customers by ascending registration date
+  Tags: ['@api', '@ui']
+  When  I want to see all customers in store
+  And  I sort customers by ascending registration date
+  Then  I should see 3 customers on the list
+  And  the first customer should be "g.bespoke@example.com"
+  And  the last customer should be "l.abhorsen@example.com"
+

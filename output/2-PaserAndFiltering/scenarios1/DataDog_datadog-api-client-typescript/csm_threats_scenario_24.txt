@@ -1,0 +1,7 @@
+Scenario 24: Get a Workload Protection policy returns "Not Found" response
+  Tags: ['@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  new "GetCSMThreatsAgentPolicy" request
+  And  request contains "policy_id" parameter with value "non-existent-policy-id"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

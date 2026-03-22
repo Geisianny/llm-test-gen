@@ -1,0 +1,14 @@
+Scenario 7: An LP leaves a market that is above target stake when their fee bid is currently being used: fee changes to fee bid by the LP who takes their place in the bidding order (0042-LIQF-079)
+  Given  the following network parameters are set:
+  And  the liquidity monitoring parameters:
+  And  the spot markets are updated:
+  Given  the parties submit the following liquidity provision:
+  When  the parties place the following orders:
+  And  the network moves ahead "2" blocks
+  Then  the market data for the market "BTC/USDT" should be:
+  And  the liquidity fee factor should be "0.03" for the market "BTC/USDT"
+  Given  the parties submit the following liquidity provision:
+  When  the network moves ahead "1" epochs
+  Then  the market data for the market "BTC/USDT" should be:
+  And  the liquidity fee factor should be "0.02" for the market "BTC/USDT"
+

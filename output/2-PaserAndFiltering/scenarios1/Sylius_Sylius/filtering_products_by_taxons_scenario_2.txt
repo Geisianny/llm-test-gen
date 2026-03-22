@@ -1,0 +1,8 @@
+Scenario 2: Filtering products by main taxon
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  Given  I am browsing products
+  When  I filter them by "Pugs" main taxon
+  Then  I should see 2 products in the list
+  And  I should see a product with name "Young pug"
+  And  I should see a product with name "Old pug"
+

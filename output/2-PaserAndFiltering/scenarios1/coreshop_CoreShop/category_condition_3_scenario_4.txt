@@ -1,0 +1,6 @@
+Scenario 4: Add a new category product price rule for a child category which is valid
+  Given  adding a product price rule named "category-discount"
+  And  the price rule is active
+  And  the price rule has a condition categories with category "Shoes" and it is recursive
+  And  the price rule should be valid for product "Sneaker"
+

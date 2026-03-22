@@ -1,0 +1,8 @@
+Scenario 2: Generating a product's variant without code
+  Tags: ['@no-api', '@ui']
+  When  I want to generate new variants for this product
+  And  I specify that the 1st variant costs "$90.00" in "United States" channel
+  And  I try to generate it
+  Then  I should be notified that code is required for the 1st variant
+  And  I should not see any variants in the list
+

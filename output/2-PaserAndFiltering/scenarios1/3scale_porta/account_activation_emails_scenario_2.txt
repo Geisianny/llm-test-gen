@@ -1,0 +1,14 @@
+Scenario 2: Custom account activation email
+  Tags: ['@javascript']
+  Given  current domain is the admin domain of provider "foo.3scale.localhost"
+  And  I am logged in as provider "foo.3scale.localhost"
+  When  I go to the email templates page
+  And  I follow "Sign up notification for buyer"
+  And  I fill in the draft with "provider custom account notification email"
+  And  I press "Create Email Template"
+  Given  the current domain is foo.3scale.localhost
+  When  someone signs up with the email "user@3scale.localhost"
+  And  they should see "We have sent you an email to confirm your email address."
+  And  "user@3scale.localhost" opens the account activation email
+  Then  they should see "provider custom account notification email" in the email body
+

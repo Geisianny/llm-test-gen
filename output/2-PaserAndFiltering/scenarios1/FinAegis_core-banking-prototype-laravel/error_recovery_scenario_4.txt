@@ -1,0 +1,6 @@
+Scenario 4: Distributed transaction partial failure
+  Given  a multi-bank transfer is initiated
+  When  one bank API fails after partial completion
+  Then  the recovery process should:
+  And  maintain ACID properties across systems
+

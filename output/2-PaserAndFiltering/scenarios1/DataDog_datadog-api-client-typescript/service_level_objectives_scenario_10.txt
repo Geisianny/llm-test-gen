@@ -1,0 +1,7 @@
+Scenario 10: Delete an SLO returns "Not found" response
+  Tags: ['@team:DataDog/slo-app']
+  Given  new "DeleteSLO" request
+  And  request contains "slo_id" parameter with value "{{ unique_lower_alnum }}"
+  When  the request is sent
+  Then  the response status is 404 Not found
+

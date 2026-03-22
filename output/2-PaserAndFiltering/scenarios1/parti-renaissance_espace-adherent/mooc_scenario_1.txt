@@ -1,0 +1,6 @@
+Scenario 1: As a non logged-in user I can get the MOOC landing page configuration
+  When  I am on "/api/mooc"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+

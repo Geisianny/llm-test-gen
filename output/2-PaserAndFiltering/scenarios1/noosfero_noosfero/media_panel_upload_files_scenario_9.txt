@@ -1,0 +1,12 @@
+Scenario 9: hide and show upload list
+  Tags: ['@selenium-fixme']
+  When  I follow "Show/Hide"
+  And  I attach the file "public/images/rails.png" to "file"
+  And  I attach the file "public/503.jpg" to "file"
+  And  I follow "Hide all uploads"
+  Then  I should not see "503"
+  And  I should not see "rails"
+  When  I follow "Show all uploads"
+  Then  I should see "503"
+  And  I should see "rails"
+

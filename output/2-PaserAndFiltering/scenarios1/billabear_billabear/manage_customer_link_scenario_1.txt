@@ -1,0 +1,5 @@
+Scenario 1: Fetch Customer Manage Link
+  Given  I have authenticated to the API
+  When  I request the manage customer link for "customer.one@example.org"
+  Then  I will be given a token that is valid for managing the customer "customer.one@example.org"
+

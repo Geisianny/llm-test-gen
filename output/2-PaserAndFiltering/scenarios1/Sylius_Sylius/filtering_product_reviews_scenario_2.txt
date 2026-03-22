@@ -1,0 +1,6 @@
+Scenario 2: Filtering product reviews by title
+  Tags: ['@api', '@ui']
+  When  I filter with title containing "Great"
+  Then  I should see a single product review in the list
+  And  I should see the product review "Great book" in the list
+

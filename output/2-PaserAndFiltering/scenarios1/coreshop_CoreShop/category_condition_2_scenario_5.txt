@@ -1,0 +1,8 @@
+Scenario 5: Add a new category payment-provider-rule with two products which is valid
+  Given  adding a payment-provider-rule named "category"
+  And  the payment-provider-rule is active
+  And  the payment-provider-rule has a condition categories with category "Coats"
+  And  I add the product "Jacket" to my cart
+  And  I add the product "Shoe" to my cart
+  Then  the payment-provider-rule should be valid for my cart with payment provider "Bankwire"
+

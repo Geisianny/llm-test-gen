@@ -1,0 +1,4 @@
+Scenario 1: Immediate orders, continuous trading A GTT order submitted at a time >= its expiry time is rejected. (0014-ORDT-085)
+  Given  time is updated to "2024-01-01T00:01:00Z"
+  And  the parties place the following orders:
+

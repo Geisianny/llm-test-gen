@@ -1,0 +1,8 @@
+Scenario 11: Not seeing validation error for duplicated code if product code has not been changed
+  Tags: ['@ui', '@api']
+  Given  the store has a "Dice Brewing" product
+  And  I want to modify this product
+  When  I remove its name from "English (United States)" translation
+  And  I try to save my changes
+  Then  this product should still be named "Dice Brewing"
+

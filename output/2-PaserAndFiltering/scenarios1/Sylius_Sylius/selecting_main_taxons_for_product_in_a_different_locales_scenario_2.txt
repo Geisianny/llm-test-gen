@@ -1,0 +1,8 @@
+Scenario 2: Choosing only taxons from the French locale
+  Tags: ['@ui', '@mink:chromedriver', '@no-api']
+  Given  I am using "French (France)" locale for my panel
+  When  I want to choose main taxon for product "T-Shirt Batman"
+  Then  I should be able to choose taxon "Men-T-Shirts_FR" from the list
+  And  I should be able to choose taxon "Woman-T-Shirts_FR" from the list
+  And  I should not be able to choose taxon "Woman-T-Shirts_UA" from the list
+

@@ -1,0 +1,5 @@
+Scenario 4: Seeing disabled base currency field during channel edition
+  Tags: ['@ui']
+  When  I want to modify a channel "Web Channel"
+  Then  the base currency field should be disabled
+

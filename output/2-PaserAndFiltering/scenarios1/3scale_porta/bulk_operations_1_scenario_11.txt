@@ -1,0 +1,10 @@
+Scenario 11: Changing state throws an error
+  Given  the subscription will return an error when suspended
+  When  item "Jane" is selected
+  And  select bulk action "Change state"
+  When  select "Suspend" from "Action"
+  And  press "Change state" within the modal
+  And  confirm the dialog
+  Then  the bulk operation has failed for "Subscription of Jane to service Another API"
+  And  the table should contain the following:
+

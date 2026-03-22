@@ -1,0 +1,6 @@
+Scenario 1: Deleted payment method should disappear from the registry
+  Tags: ['@api', '@ui']
+  When  I delete the "Offline" payment method
+  Then  I should be notified that it has been successfully deleted
+  And  this payment method should no longer exist in the registry
+

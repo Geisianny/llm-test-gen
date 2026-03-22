@@ -1,0 +1,14 @@
+Scenario 7: Install a patch on the SLE minion
+  Given  I am on the Systems overview page of this "sle_minion"
+  When  I follow "Software" in the content area
+  And  I follow "Patches" in the content area
+  And  I enter "virgo" as the filtered synopsis
+  And  I click on the filter button
+  And  I check "virgo-dummy-3456" in the list
+  And  I check "allowVendorChange"
+  And  I click on "Apply Patches"
+  And  I click on "Confirm"
+  Then  I should see a "1 patch update has been scheduled for" text
+  When  I wait for "virgo-dummy-2.0-1.1" to be installed on "sle_minion"
+  Then  vendor change should be enabled for package actions on "sle_minion"
+

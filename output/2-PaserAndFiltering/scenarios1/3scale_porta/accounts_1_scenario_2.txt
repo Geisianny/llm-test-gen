@@ -1,0 +1,6 @@
+Scenario 2: Test application does not show in the application widget
+  Given  provider "foo.3scale.localhost" has test application
+  When  I follow "Accounts"
+  And  I follow "foo.3scale.localhost"
+  Then  I should not see "Application on plan test" within the application widget
+

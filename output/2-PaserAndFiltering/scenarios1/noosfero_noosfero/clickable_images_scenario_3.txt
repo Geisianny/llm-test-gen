@@ -1,0 +1,7 @@
+Scenario 3: not show link if image does not have dimensions set
+  Tags: ['@selenium']
+  Given  the following article with image
+  When  I go to /booking/not-set
+  And  display ".zoomify-image"
+  Then  "Zoom in" should not be visible within "a#zoomify-image"
+

@@ -1,0 +1,5 @@
+Scenario 1: Accessing a product which does not exist
+  Tags: ['@ui']
+  When  I try to reach unexistent product
+  Then  I should be informed that the product does not exist
+

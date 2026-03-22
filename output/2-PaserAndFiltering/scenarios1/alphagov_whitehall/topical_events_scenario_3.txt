@@ -1,0 +1,6 @@
+Scenario 3: Adding more information about the event
+  Given  I'm administering a topical event
+  And  I add a page of information about the event
+  Then  I should be able to edit the event's about page
+  And  I should see the about page is updated
+

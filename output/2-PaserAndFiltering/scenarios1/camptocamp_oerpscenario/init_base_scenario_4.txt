@@ -1,0 +1,9 @@
+Scenario 4: Configure main partner and company
+  Given  I should have a company
+  Given  the company has the "logo.png" logo
+  And  his rml header set to "rml_header.txt"
+  Then  I set the company with the following data :
+  And  the main company currency is "EUR" with a rate of "1.00"
+  And  I set the company main partner with the following data :
+  And  I set the main address with the following data :
+

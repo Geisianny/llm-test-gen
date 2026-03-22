@@ -1,0 +1,7 @@
+Scenario 17: Unregister an App Key returns "Not found" response
+  Tags: ['@team:DataDog/workflow-automation-dev']
+  Given  new "UnregisterAppKey" request
+  And  request contains "app_key_id" parameter with value "57cc69ae-9214-4ecc-8df8-43ecc1d92d99"
+  When  the request is sent
+  Then  the response status is 404 Not found
+

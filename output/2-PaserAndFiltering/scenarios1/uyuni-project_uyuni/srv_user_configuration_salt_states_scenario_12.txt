@@ -1,0 +1,4 @@
+Scenario 12: Cleanup: uninstall the uyuni-config formula from the server
+  Tags: ['@skip_if_containerized_server']
+  And  I manually uninstall the "uyuni-config" formula from the server
+

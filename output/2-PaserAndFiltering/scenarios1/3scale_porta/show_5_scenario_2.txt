@@ -1,0 +1,7 @@
+Scenario 2: Auth0 Navigation
+  Given  a developer portal auth0 integration
+  When  they go to the developer portal users sso integrations page
+  And  they follow "Auth0"
+  Then  the current page is the developer portal sso integration page
+  And  should see "Auth0"
+

@@ -1,0 +1,4 @@
+Scenario: Dashboard displays correct number of new endorsements
+  Given there is a registered provider with 4 new endorsements
+  When the provider logs in
+  Then the dashboard displays 4 new endorsements

@@ -1,0 +1,27 @@
+Scenario 18: Video news search
+  Tags: ['@javascript', '@a11y']
+  Given  the following BingV7 Affiliates exist:
+  And  affiliate "en.agency.gov" has the following RSS feeds:
+  And  affiliate "es.agency.gov" has the following RSS feeds:
+  And  there are 20 video news items for "usgovernment_channel_id"
+  And  there are 20 video news items for "whitehouse_channel_id"
+  And  there are 5 video news items for "gobiernousa_channel_id"
+  When  I am on en.agency.gov's search page
+  And  I fill in "Enter your search term" with "video"
+  And  I press "Search"
+  Then  I should see exactly "1" redesigned video search result
+  When  I follow "Videos"
+  Then  I should see exactly "20" redesigned video search result
+  And  I should see a link to "2" with class "usa-pagination__button"
+  And  I should see a link to "Next"
+  And  I should see Powered by Search.gov
+  When  I follow "Next"
+  Then  I should see exactly "20" redesigned video search results
+  And  I should see a link to "Previous"
+  And  I should see a link to "1" with class "usa-pagination__button"
+  When  I follow "Previous"
+  And  I follow page "2"
+  Then  I should see exactly "20" redesigned video search results
+  When  I follow page "1"
+  Then  I should see exactly "20" redesigned video search results
+

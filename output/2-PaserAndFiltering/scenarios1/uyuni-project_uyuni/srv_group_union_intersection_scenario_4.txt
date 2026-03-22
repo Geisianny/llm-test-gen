@@ -1,0 +1,9 @@
+Scenario 4: Create a rhlike group
+  Tags: ['@rhlike_minion']
+  When  I follow the left menu "Systems > System Groups"
+  When  I follow "Create Group"
+  And  I enter "rhlike" as "name"
+  And  I enter "Red Hat-like systems" as "description"
+  And  I click on "Create Group"
+  Then  I should see a "System group rhlike created." text
+

@@ -1,0 +1,10 @@
+Scenario 3: Create a span-based metric returns "OK" response
+  Tags: ['@team:DataDog/apm']
+  Given  new "CreateSpansMetric" request
+  And  body with value {"data": {"attributes": {"compute": {"aggregation_type": "distribution", "include_percentiles": false, "path": "@duration"}, "filter": {"query": "@http.status_code:200 service:my-service"}, "group_by": [{"path": "resource_name", "tag_name": "resource_name"}]}, "id": "{{ unique_alnum }}", "type": "spans_metrics"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.id" has the same value as "unique_alnum"
+  And  the response "data.type" is equal to "spans_metrics"
+  And  the response "data.attributes.compute.aggregation_type" is equal to "distribution"
+

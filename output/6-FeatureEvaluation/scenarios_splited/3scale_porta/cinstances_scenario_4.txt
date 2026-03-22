@@ -1,0 +1,6 @@
+Scenario: Edit customer details
+  Given there is a customer with existing details
+  When the provider edits the customer's details
+  And saves the changes
+  Then the system updates the customer's details
+  And displays a confirmation message

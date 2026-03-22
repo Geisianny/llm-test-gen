@@ -1,0 +1,11 @@
+Scenario 7: Filter subscriptions by state
+  Given  a buyer "Bender"
+  And  the buyer is subscribed to product "Elephant Taming"
+  And  a buyer "Leela"
+  And  the buyer is subscribed to product "Zeebra Stripe Drawing"
+  When  they go to the provider service subscriptions page
+  And  the table is filtered with:
+  Then  they should see an empty search state
+  When  the table is filtered with:
+  Then  the table should contain the following:
+

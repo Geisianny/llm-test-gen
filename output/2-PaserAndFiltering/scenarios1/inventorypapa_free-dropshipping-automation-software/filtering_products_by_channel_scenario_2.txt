@@ -1,0 +1,10 @@
+Scenario 2: Filtering products by a chosen channel
+  Tags: ['@ui']
+  When  I browse products
+  And  I choose "Web-US" as a channel filter
+  And  I filter
+  Then  I should see a single product in the list
+  And  I should not see any product with name "MacBook Air"
+  And  I should not see any product with name "MacBook Pro"
+  But  I should see a product with name "HP Spectre"
+

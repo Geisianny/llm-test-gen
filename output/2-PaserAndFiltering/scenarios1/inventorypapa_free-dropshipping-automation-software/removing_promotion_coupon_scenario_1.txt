@@ -1,0 +1,6 @@
+Scenario 1: Removing coupon code from cart
+  Tags: ['@api']
+  When  I remove coupon from my cart
+  Then  my cart total should be "$100.00"
+  And  there should be no discount
+

@@ -1,0 +1,6 @@
+Scenario 2: Buyer lands in dashboard when he requests login page
+  Given  the current domain is foo.3scale.localhost
+  And  I log in as "bob" on foo.3scale.localhost
+  And  I go to the login page
+  Then  I should be on the dashboard
+

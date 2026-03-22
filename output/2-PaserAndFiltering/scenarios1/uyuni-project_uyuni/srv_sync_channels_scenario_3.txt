@@ -1,0 +1,4 @@
+Scenario 3: List Server product
+  When  I execute mgr-sync "list products"
+  Then  I should get "[ ] SUSE Linux Enterprise Server 15 SP4 x86_64"
+

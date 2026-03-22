@@ -1,0 +1,180 @@
+Feature: Key Management
+Description: Manage your Datadog API and application keys. You need an API key and an
+  application key for a user with the required permissions to interact with
+  these endpoints.  Consult the following pages to view and manage your
+  keys:  - [API Keys](https://app.datadoghq.com/organization-settings/api-
+  keys) - [Application Keys](https://app.datadoghq.com/personal-
+  settings/application-keys)
+Tags: ['@endpoint(key-management)', '@endpoint(key-management-v1)']
+
+Background: 
+  Given  a valid "apiKeyAuth" key in the system
+  And  a valid "appKeyAuth" key in the system
+  And  an instance of "KeyManagement" API
+
+Scenario 1: Create an API key returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/credentials-management']
+  Given  new "CreateAPIKey" request
+  And  body with value {"name": "example user"}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 2: Create an API key returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/credentials-management']
+  Given  new "CreateAPIKey" request
+  And  body with value {"name": "example user"}
+  When  the request is sent
+  Then  the response status is 200 OK
+
+Scenario 3: Create an application key returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/credentials-management']
+  Given  new "CreateApplicationKey" request
+  And  body with value {"name": "example user"}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 4: Create an application key returns "Conflict" response
+  Tags: ['@generated', '@skip', '@team:DataDog/credentials-management']
+  Given  new "CreateApplicationKey" request
+  And  body with value {"name": "example user"}
+  When  the request is sent
+  Then  the response status is 409 Conflict
+
+Scenario 5: Create an application key returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/credentials-management']
+  Given  new "CreateApplicationKey" request
+  And  body with value {"name": "example user"}
+  When  the request is sent
+  Then  the response status is 200 OK
+
+Scenario 6: Delete an API key returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/credentials-management']
+  Given  new "DeleteAPIKey" request
+  And  request contains "key" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 7: Delete an API key returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/credentials-management']
+  Given  new "DeleteAPIKey" request
+  And  request contains "key" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+Scenario 8: Delete an API key returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/credentials-management']
+  Given  new "DeleteAPIKey" request
+  And  request contains "key" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 200 OK
+
+Scenario 9: Delete an application key returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/credentials-management']
+  Given  new "DeleteApplicationKey" request
+  And  request contains "key" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+Scenario 10: Delete an application key returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/credentials-management']
+  Given  new "DeleteApplicationKey" request
+  And  request contains "key" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 200 OK
+
+Scenario 11: Edit an API key returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/credentials-management']
+  Given  new "UpdateAPIKey" request
+  And  request contains "key" parameter from "REPLACE.ME"
+  And  body with value {"name": "example user"}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 12: Edit an API key returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/credentials-management']
+  Given  new "UpdateAPIKey" request
+  And  request contains "key" parameter from "REPLACE.ME"
+  And  body with value {"name": "example user"}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+Scenario 13: Edit an API key returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/credentials-management']
+  Given  new "UpdateAPIKey" request
+  And  request contains "key" parameter from "REPLACE.ME"
+  And  body with value {"name": "example user"}
+  When  the request is sent
+  Then  the response status is 200 OK
+
+Scenario 14: Edit an application key returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/credentials-management']
+  Given  new "UpdateApplicationKey" request
+  And  request contains "key" parameter from "REPLACE.ME"
+  And  body with value {"name": "example user"}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 15: Edit an application key returns "Conflict" response
+  Tags: ['@generated', '@skip', '@team:DataDog/credentials-management']
+  Given  new "UpdateApplicationKey" request
+  And  request contains "key" parameter from "REPLACE.ME"
+  And  body with value {"name": "example user"}
+  When  the request is sent
+  Then  the response status is 409 Conflict
+
+Scenario 16: Edit an application key returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/credentials-management']
+  Given  new "UpdateApplicationKey" request
+  And  request contains "key" parameter from "REPLACE.ME"
+  And  body with value {"name": "example user"}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+Scenario 17: Edit an application key returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/credentials-management']
+  Given  new "UpdateApplicationKey" request
+  And  request contains "key" parameter from "REPLACE.ME"
+  And  body with value {"name": "example user"}
+  When  the request is sent
+  Then  the response status is 200 OK
+
+Scenario 18: Get API key returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/credentials-management']
+  Given  new "GetAPIKey" request
+  And  request contains "key" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+Scenario 19: Get API key returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/credentials-management']
+  Given  new "GetAPIKey" request
+  And  request contains "key" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 200 OK
+
+Scenario 20: Get all API keys returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/credentials-management']
+  Given  new "ListAPIKeys" request
+  When  the request is sent
+  Then  the response status is 200 OK
+
+Scenario 21: Get all application keys returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/credentials-management']
+  Given  new "ListApplicationKeys" request
+  When  the request is sent
+  Then  the response status is 200 OK
+
+Scenario 22: Get an application key returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/credentials-management']
+  Given  new "GetApplicationKey" request
+  And  request contains "key" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+Scenario 23: Get an application key returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/credentials-management']
+  Given  new "GetApplicationKey" request
+  And  request contains "key" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 200 OK
+

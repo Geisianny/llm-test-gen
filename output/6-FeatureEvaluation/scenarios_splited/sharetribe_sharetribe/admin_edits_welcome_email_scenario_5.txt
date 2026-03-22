@@ -1,0 +1,6 @@
+Scenario: Attempt to save welcome email content with invalid input
+  Given there is an admin logged into the system
+  And the welcome email content is currently "Current welcome email content"
+  When the admin edits the welcome email content to a value exceeding the maximum allowed characters
+  And attempts to save the changes
+  Then the system displays an error message indicating that the input is invalid

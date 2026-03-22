@@ -1,0 +1,8 @@
+Scenario 1: Adding product reviews as a logged in customer
+  Tags: ['@ui', '@api']
+  When  I want to review product "Necronomicon"
+  And  I leave a comment "Great book for every advanced sorcerer.", titled "Scary but astonishing"
+  And  I rate it with 5 points
+  And  I add it
+  Then  I should be notified that my review is waiting for the acceptation
+

@@ -1,0 +1,10 @@
+Scenario 2: Admin remove social logo file
+  When  I attach the file "./spec/fixtures/Australian_painted_lady.jpg" to "community_social_logo_attributes_image"
+  Then  I press submit
+  And  I wait for 1 seconds
+  And  I refresh the page
+  And  I should see "Australian_painted_lady.jpg"
+  Then  I follow "Reset to default image for social media"
+  And  I follow "Delete the image for social media permanently"
+  And  I should not see "Australian_painted_lady.jpg"
+

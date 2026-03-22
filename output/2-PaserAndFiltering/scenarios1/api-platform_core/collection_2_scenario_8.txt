@@ -1,0 +1,9 @@
+Scenario 8: Change the number of element by page client side with v3, attributes and PHP8. Defaults (max 40) should not override resource attribute (max 30)
+  Tags: ['@!mongodb', '@php8']
+  Given  there are 80 pagination entities
+  When  I send a "GET" request to "/pagination_entities?page=2&itemsPerPage=40"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+

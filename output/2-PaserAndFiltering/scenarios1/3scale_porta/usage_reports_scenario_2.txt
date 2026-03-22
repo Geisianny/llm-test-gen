@@ -1,0 +1,4 @@
+Scenario 2: usage report not sent daily
+  And  daily reports are dispatched
+  Then  "fake@email.com" should receive no email
+

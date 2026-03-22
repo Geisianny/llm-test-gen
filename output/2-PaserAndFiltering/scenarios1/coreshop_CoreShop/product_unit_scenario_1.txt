@@ -1,0 +1,6 @@
+Scenario 1: Create a new unit
+  Given  the site has a product-unit "Pieces"
+  And  the site has a product-unit "Carton"
+  And  the site has a product-unit "Palette"
+  Then  there should be a unit "Pieces"
+

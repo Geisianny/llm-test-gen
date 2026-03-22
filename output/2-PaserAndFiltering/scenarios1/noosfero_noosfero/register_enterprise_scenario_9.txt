@@ -1,0 +1,25 @@
+Scenario 9: a user register an enterprise successfully through the region
+  Tags: ['@selenium']
+  Given  organization_approval_method is "region" on environment
+  And  I follow "Groups" within "#section-relationships"
+  And  the following enterprise
+  And  the following validation info
+  And  the following states
+  And  I follow "Register a new enterprise"
+  And  I fill in the following:
+  And  I select "Sample State" from "Region"
+  And  I follow "Next"
+  Then  I should see "Validator"
+  Then  I should see "Sample methodology"
+  When  I choose "Validator"
+  And  I follow "Confirm"
+  Then  I should see "Enterprise registration completed"
+  And  I am on validator's control panel
+  When  I follow "Tasks"
+  Then  I should see "Joao Silva wants to create enterprise My Enterprise."
+  And  I choose "Accept"
+  And  I follow "Save tasks"
+  And  I am on joaosilva's control panel
+  When  I follow "Groups" within "#section-relationships"
+  Then  I should see "My Enterprise"
+

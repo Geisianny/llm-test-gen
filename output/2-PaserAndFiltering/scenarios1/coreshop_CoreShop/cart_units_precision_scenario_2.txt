@@ -1,0 +1,5 @@
+Scenario 2: Create a new cart, add a product and calculate subtotals
+  Given  I add the product "Shoes" with unit "Carton" in quantity 2.2 to my cart
+  Given  I add the product "Shoes" with unit "Palette" in quantity 2.4512 to my cart
+  Then  the cart total should be "372080" excluding tax
+

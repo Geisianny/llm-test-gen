@@ -1,0 +1,4 @@
+Scenario: Claim NRHP with missing supporting documents
+  Given there is an applicant who has claimed "Live in the Neighborhood" with a valid address
+  When the applicant submits the application without uploading supporting documents
+  Then the system displays a message requesting the upload of supporting documents

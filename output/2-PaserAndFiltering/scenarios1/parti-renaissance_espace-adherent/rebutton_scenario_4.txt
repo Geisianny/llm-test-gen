@@ -1,0 +1,10 @@
+Scenario 4: ReButton (loader-dynamic): should show loader with apline reactive property
+  When  I go to "/test/ux-component/ReButton/loaderdynamic"
+  Then  I should see 1 "button" elements
+  And  I should see "Simple button"
+  And  I should see 1 ".re-icon.re-icon-loading" elements
+  And  the '.re-icon' element should not be visible
+  When  I click the 'button' selector
+  Then  the '.re-icon' element should be visible
+  And  I should not see "Simple button"
+

@@ -1,0 +1,5 @@
+Scenario 1: Adapt the proxy for Retail
+  When  I rename the proxy for Retail
+  And  I connect the second interface of the proxy to the private network
+  And  I restart all proxy containers
+

@@ -1,0 +1,5 @@
+Scenario: Unwithdraw a document with annotations
+  Given there is a withdrawn document with title "Example Document"
+  When the Managing Editor unwithdraws the document
+  And adds annotations to the document
+  Then the document contains the added annotations

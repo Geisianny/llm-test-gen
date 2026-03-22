@@ -1,0 +1,6 @@
+Scenario: Claim NRHP with invalid address
+  Given there is an applicant with an address outside the NRHP area
+  When the applicant fills out the short form application
+  And enters an address outside the NRHP area
+  Then the system does not allow the applicant to claim "Live in the Neighborhood"
+  And displays a message indicating that the address is not within the NRHP area

@@ -1,0 +1,6 @@
+Scenario: Create a new account during application
+  Given there is no user with an existing account
+  And the user is filling out an application anonymously
+  When the user chooses to create a new account
+  And enters valid account information
+  Then the system creates a new account

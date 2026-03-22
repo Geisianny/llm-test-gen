@@ -1,0 +1,7 @@
+Scenario 5: Set the custom RPM download point
+  Given  I am on the Systems overview page of this "sle_minion"
+  When  I install a salt pillar top file for "pkg_endpoint" with target "*" on the server
+  And  I wait for "1" seconds
+  And  I install the package download endpoint pillar file on the server
+  And  I refresh the pillar data
+

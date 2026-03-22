@@ -1,0 +1,9 @@
+Scenario 8: The facebook login doesn't return any email address
+  Tags: ['@javascript']
+  Given  I am on the home page
+  And  there will be no email returned in my Facebook login
+  When  I follow log in link
+  And  I follow "fb-login"
+  Then  I should see "Could not get email address from Facebook"
+  And  I should see "Sign up with email"
+

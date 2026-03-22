@@ -1,0 +1,10 @@
+Scenario 4: Applying correct taxes for multiple units of different products with discount and decimal calculator
+  Tags: ['@api', '@ui']
+  Given  the "US VAT" tax rate has decimal calculator configured
+  And  the "Low VAT" tax rate has decimal calculator configured
+  And  I added 2 products "PHP T-Shirt" to the cart
+  And  I added 2 products "Symfony Mug" to the cart
+  When  I check the details of my cart
+  Then  my cart total should be "$125.69"
+  And  my cart taxes should be "$13.79"
+

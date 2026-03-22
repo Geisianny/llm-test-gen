@@ -1,0 +1,8 @@
+Scenario 9: View the minion Highstate Recurring Action details
+  When  I am on the "Recurring Actions" page of this "sle_minion"
+  Then  I should see a "schedule_name_minion" text
+  When  I click the "schedule_name_minion" item details button
+  Then  I should see a "Every Wednesday at 01:35" text
+  When  I click on "Back"
+  Then  I should see a "Schedules" text
+

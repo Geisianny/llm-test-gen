@@ -1,0 +1,5 @@
+Scenario 3: Trying to delete address as a Visitor
+  Tags: ['@api']
+  When  I try to delete address belongs to "John Doe"
+  Then  I should not be able to delete it
+

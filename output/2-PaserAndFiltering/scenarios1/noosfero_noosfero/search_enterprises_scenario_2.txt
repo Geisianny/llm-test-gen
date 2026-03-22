@@ -1,0 +1,11 @@
+Scenario 2: simple search for enterprise
+  Tags: ['@selenium-fixme']
+  Given  the following enterprises
+  When  I go to the search enterprises page
+  And  I fill in "search-input" with "shoes"
+  And  I follow "Search" within ".search-form"
+  Then  I should see "Shoes shop" within ".only-one-result-box"
+  And  I should see Shoes shop's profile image
+  And  I should not see "Fruits shop"
+  And  I should not see Fruits shop's profile image
+

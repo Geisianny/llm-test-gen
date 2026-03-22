@@ -1,0 +1,5 @@
+Scenario: Attempt to create a fake repository without authorization
+  Given there is an unauthorized user
+  And the system has a child channel
+  When the user attempts to create a fake repository for the child channel
+  Then the system denies the request

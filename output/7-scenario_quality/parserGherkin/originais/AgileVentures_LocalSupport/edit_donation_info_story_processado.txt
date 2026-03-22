@@ -1,0 +1,28 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 19/01/2026 23:13:57
+Arquivo analisado: edit_donation_info_story_processado.feature
+Caminho relativo: AgileVentures_LocalSupport\edit_donation_info_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/Originais\AgileVentures_LocalSupport\edit_donation_info_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: edit_donation_info_story_processado
+Descrição: Não possui
+Total de cenários: 1
+
+CENÁRIOS IDENTIFICADOS:
+1. Successfully change the donation url for a charity
+   Steps: 8
+   - Given I visit the home page
+   - And I sign in as "registered_user@example.com" with password "pppppppp"
+   - Given I visit the edit page for the organisation named "Friendly"
+   - And I edit the donation url to be "http://www.friendly.com/donate"
+   - And I press "Update Organisation"
+   - Then I should be on the show page for the organisation named "Friendly"
+   - And I should see "Organisation was successfully updated"
+   - And the donation_info URL for "Friendly" should refer to "http://www.friendly.com/donate"

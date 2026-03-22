@@ -1,0 +1,11 @@
+Scenario 27: Update Confluent account returns "OK" response
+  Tags: ['@team:DataDog/saas-integrations']
+  Given  there is a valid "confluent_account" in the system
+  And  new "UpdateConfluentAccount" request
+  And  request contains "account_id" parameter from "confluent_account.data.id"
+  And  body with value {"data": {"attributes": {"api_key": "{{confluent_account.data.attributes.api_key}}", "api_secret": "update-secret", "tags": ["updated_tag:val"]}, "type": "confluent-cloud-accounts"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.attributes.tags[0]" is equal to "updated_tag:val"
+  And  the response "data.attributes.api_key" is equal to "{{ confluent_account.data.attributes.api_key }}"
+

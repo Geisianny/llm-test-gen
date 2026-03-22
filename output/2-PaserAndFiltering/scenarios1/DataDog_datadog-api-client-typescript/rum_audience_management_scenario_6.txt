@@ -1,0 +1,8 @@
+Scenario 6: List connections returns "Successful response with list of connections" response
+  Tags: ['@generated', '@skip', '@team:DataDog/audience-management-backend']
+  Given  operation "ListConnections" enabled
+  And  new "ListConnections" request
+  And  request contains "entity" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 200 Successful response with list of connections
+

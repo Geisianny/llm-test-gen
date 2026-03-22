@@ -1,0 +1,4 @@
+Scenario 4: Public cannot see delete button
+  Given  I visit the show page for the organisation named "Friendly"
+  And  I should not see "Delete"
+

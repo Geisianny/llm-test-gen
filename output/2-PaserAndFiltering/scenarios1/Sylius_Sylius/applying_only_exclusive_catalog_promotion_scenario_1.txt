@@ -1,0 +1,6 @@
+Scenario 1: Applying only exclusive catalog promotion
+  Tags: ['@api', '@ui']
+  When  I view product "T-Shirt"
+  Then  I should see the product price "$70.00"
+  And  I should see the product original price "$100.00"
+

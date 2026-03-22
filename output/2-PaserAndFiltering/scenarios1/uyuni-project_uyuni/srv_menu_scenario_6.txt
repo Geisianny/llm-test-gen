@@ -1,0 +1,6 @@
+Scenario 6: The content lifeycle menu
+  When  I follow the left menu "Content Lifecycle"
+  Then  I should see a "Content Lifecycle Projects" text
+  And  I should see a "Projects" link in the left menu
+  And  I should see a "Filters" link in the left menu
+

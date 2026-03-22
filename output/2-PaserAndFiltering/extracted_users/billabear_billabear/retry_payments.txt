@@ -1,0 +1,31 @@
+Feature: Retry failed payments
+
+Background: 
+  Given  the following accounts exist:
+  And  the follow products exist:
+  And  the follow prices exist:
+  And  the following features exist:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "Price One" with:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "Price One" with:
+  And  the follow customers exist:
+  Given  the following subscriptions exist:
+
+Scenario 1: 
+  Given  the following invoices with a payment attempt exist:
+  When  I retry failed payments
+  Then  then the invoice for "customer.two@example.org" will be marked as paid
+
+Scenario 2: 
+  Given  the following invoices with a payment attempt exist:
+  When  I retry failed payments
+  Then  then the invoice for "customer.four@example.org" will not be marked as paid
+  And  the retry count for payment failure process for "customer.four@example.org" will be 2
+  Then  the subscription "Test Plan" for "customer.four@example.org" will not be cancelled
+
+Scenario 3: 
+  Given  the following invoices with a payment attempt exist:
+  When  I retry failed payments
+  Then  then the invoice for "customer.four@example.org" will not be marked as paid
+  And  the retry count for payment failure process for "customer.four@example.org" will be 5
+  Then  the subscription "Test Plan" for "customer.four@example.org" will be cancelled
+

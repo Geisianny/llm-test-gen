@@ -1,0 +1,7 @@
+Scenario 1: Trying to add new address as a Visitor
+  Tags: ['@api']
+  When  I want to add a new address to my address book
+  And  I specify the address as "Lucifer Morningstar", "Seaside Fwy", "90802", "Los Angeles", "United States", "Arkansas"
+  And  I try to add it
+  Then  I should not be able to add it
+

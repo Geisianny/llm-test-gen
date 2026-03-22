@@ -1,0 +1,5 @@
+Scenario: Create a single forum
+  Given there is a Noosfero user with a personal profile
+  When the user creates a new forum
+  Then the system creates the forum successfully
+  And the forum is visible on the user's profile

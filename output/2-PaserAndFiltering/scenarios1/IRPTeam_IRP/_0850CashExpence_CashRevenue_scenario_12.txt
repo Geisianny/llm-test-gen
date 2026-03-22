@@ -1,0 +1,12 @@
+Scenario 12: _085010 copy Cash revenue and change date
+  *  Select Cash revenue
+  Given  I open hyperlink "e1cib/list/Document.CashRevenue"
+  And  I go to line in "List" table
+  *  Copy Cash revenue
+  And  in the table "List" I click the button named "ListContextMenuCopy"
+  And  I move to "Other" tab
+  And  I move to "More" tab
+  And  I input "14.03.2022 00:00:00" text in the field named "Date"
+  And  I click "Post" button
+  Then  user message window does not contain messages
+

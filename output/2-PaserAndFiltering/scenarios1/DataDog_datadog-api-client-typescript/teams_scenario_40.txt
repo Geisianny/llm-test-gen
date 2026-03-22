@@ -1,0 +1,8 @@
+Scenario 40: Sync teams returns "OK" response
+  Tags: ['@replay-only', '@team:DataDog/aaa-omg']
+  Given  new "SyncTeams" request
+  And  operation "SyncTeams" enabled
+  And  body with value {"data": {"attributes": {"source": "github", "type": "link"}, "type": "team_sync_bulk"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+

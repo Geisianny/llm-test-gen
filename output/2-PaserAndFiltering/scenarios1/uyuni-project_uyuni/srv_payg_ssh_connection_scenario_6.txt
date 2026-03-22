@@ -1,0 +1,17 @@
+Scenario 6: Edit instance ssh connection data
+  When  I follow the left menu "Admin > Setup Wizard > PAYG Connections"
+  And  I follow "my-host-full.local"
+  And  I click on "Edit Instance"
+  And  I enter "221" as "port"
+  And  I enter "NewRootFull" as "username"
+  And  I enter "NewPasswordFull" as "password"
+  And  I enter "newKeyFull" as "key"
+  And  I enter "newKeyPasswordFull" as "key_password"
+  And  I click on "Save" in "Instance SSH connection" modal
+  Then  I should see a "PAYG properties updated successfully" text
+  And  I should see a "221" text in element "Instance-panel-wrapper"
+  And  I should see a "NewRootFull" text in element "Instance-panel-wrapper"
+  And  I should not see a "NewPasswordFull" text in element "Instance-panel-wrapper"
+  And  I should not see a "newKeyFull" text in element "Instance-panel-wrapper"
+  And  I should not see a "newKeyPasswordFull" text in element "Instance-panel-wrapper"
+

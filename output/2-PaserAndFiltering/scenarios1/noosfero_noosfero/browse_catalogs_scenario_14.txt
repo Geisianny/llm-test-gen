@@ -1,0 +1,9 @@
+Scenario 14: display unavailable product
+  Given  the following products
+  And  I am on /catalog/artebonito
+  Then  I should see "Prod3" within "li.not-available"
+  And  I should see "12.34" within "li.not-available"
+  And  I should see "product unavailable" within "li.product-unavailable"
+  And  I should not see "qualifiers"
+  And  I should not see "price composition"
+

@@ -1,0 +1,15 @@
+Scenario 1: set up 2 parties with balance
+  When  the parties place the following orders:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  When  the parties withdraw the following assets:
+  Then  the parties should have the following account balances:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the following trades should be executed:
+  And  the mark price should be "10000" for the market "ETH/DEC19"
+  When  the network moves ahead "1" blocks
+  Then  the orders should have the following status:
+  Then  the parties should have the following account balances:
+

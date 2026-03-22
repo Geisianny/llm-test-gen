@@ -1,0 +1,8 @@
+Scenario 2: Trying to add a zone with a too long code
+  Tags: ['@api', '@ui']
+  When  I want to create a new zone consisting of country
+  And  I name it "European Union"
+  And  I specify a too long code
+  And  I try to add it
+  Then  I should be notified that code is too long
+

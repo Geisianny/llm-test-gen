@@ -1,0 +1,5 @@
+Scenario 3: Reject button is not shown for approved accounts
+  Given  an approved buyer "bob" signed up to provider "foo.3scale.localhost"
+  When  I go to the buyer account page for "bob"
+  Then  I should not see button to reject buyer "bob"
+

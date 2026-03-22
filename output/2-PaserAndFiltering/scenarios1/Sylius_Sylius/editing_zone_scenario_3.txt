@@ -1,0 +1,11 @@
+Scenario 3: Removing a province from a zone
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  Given  the store has a zone "United States" with code "USA"
+  And  it has the "Alabama" province member
+  And  it also has the "Arizona" province member
+  When  I want to modify the zone named "United States"
+  And  I remove the "Arizona" province member
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this zone should have only the "Alabama" province member
+

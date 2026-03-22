@@ -1,0 +1,16 @@
+Scenario Outline 8: Delete the spec - Example 1
+  Tags: ['@wip']
+  Given  the product has a Swagger 1.2 spec "Echo API"
+  When  they go to the product's ActiveDocs page
+  And  they select action "Delete" of "Echo API"
+  And  they should see "Yes, I want to delete spec Echo API forever" within the modal
+  And  press "Delete spec" within the modal
+  Then  they should see a toast alert with text "ActiveDocs Spec was successfully deleted"
+  And  they should not see "Echo API"
+
+  Examples:
+    | swagger version |
+    | Swagger 1.2 |
+    | Swagger 2 |
+    | OAS 3.0 |
+

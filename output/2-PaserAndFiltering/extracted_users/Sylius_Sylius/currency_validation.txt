@@ -1,0 +1,30 @@
+Feature: Currency validation
+Description: In order to avoid making mistakes when managing currencies
+    As an Administrator
+    I want to be prevented from adding an invalid currency
+Tags: ['@managing_currencies']
+
+Background: 
+  Given  I am logged in as an administrator
+
+Scenario 1: Trying to add currency without code
+  Tags: ['@api', '@no-ui']
+  When  I want to add a new currency
+  And  I do not choose a code
+  And  I try to add it
+  Then  I should be notified that a code is required
+
+Scenario 2: Trying to add a currency with an invalid code
+  Tags: ['@api', '@no-ui']
+  When  I want to add a new currency
+  And  I set code to "invalid"
+  And  I try to add it
+  Then  I should be notified that the code is invalid
+
+Scenario 3: Trying to add a currency with an non-existent code
+  Tags: ['@api', '@no-ui']
+  When  I want to add a new currency
+  And  I set code to "B0B"
+  And  I try to add it
+  Then  I should be notified that the code is invalid
+

@@ -1,0 +1,7 @@
+Scenario 9: Social wallet features
+  Given  social features are enabled
+  When  I interact with other users:
+  Then  social features should respect privacy
+  And  notifications should be timely
+  And  settlement should be automatic
+

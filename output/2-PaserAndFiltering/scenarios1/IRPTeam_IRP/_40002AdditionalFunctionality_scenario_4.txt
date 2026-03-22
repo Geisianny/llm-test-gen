@@ -1,0 +1,17 @@
+Scenario 4: _4000202 hardware
+  Given  I open hyperlink "e1cib/list/Catalog.Hardware"
+  And  I click the button named "FormCreate"
+  And  I input "Test input device" text in "Description" field
+  And  I select "Input device" exact value from "Types of Equipment" drop-down list
+  And  I click Select button of "Driver" field
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I click "Save" button
+  And  I move to "Driver settings" tab
+  And  in the table "DriverParameter" I click "Reload settings" button
+  And  I move to "Predefined settings" tab
+  And  in the table "ConnectParameters" I click "Load settings" button
+  And  "ConnectParameters" table contains lines
+  And  I click "Save" button
+  And  I click the button named "FormWriteAndClose"
+

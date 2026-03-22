@@ -1,0 +1,7 @@
+Scenario 1: Navigation
+  Given  they go to the provider dashboard
+  When  they select "Account Settings" from the context selector
+  And  press "Integrate" within the main menu
+  And  follow "Webhooks" within the main menu
+  Then  the current page is the edit webhooks page
+

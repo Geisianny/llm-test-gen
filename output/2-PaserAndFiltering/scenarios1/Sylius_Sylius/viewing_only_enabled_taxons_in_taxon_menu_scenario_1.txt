@@ -1,0 +1,8 @@
+Scenario 1: Viewing only enabled taxons in taxon menu
+  Tags: ['@api', '@ui']
+  Given  the "Clothes" taxon is disabled
+  And  the "Belts" taxon is disabled
+  When  I check available taxons
+  Then  I should see "Accessories" and "Caps" in the menu
+  And  I should not see "Clothes", "T-Shirts", "Coats" and "Belts" in the menu
+

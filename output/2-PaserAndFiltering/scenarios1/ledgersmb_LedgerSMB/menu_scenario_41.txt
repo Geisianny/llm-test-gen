@@ -1,0 +1,8 @@
+Scenario Outline 41: Navigate to menu "<path>" and open screen "<screen>" - Example 41
+  When  I navigate the menu and select the item at "Timecards > Generate > Sales Orders"
+  Then  I should see the timecard order generation screen
+
+  Examples:
+    | path | screen |
+    | Timecards > Generate > Sales Orders | timecard order generation |
+

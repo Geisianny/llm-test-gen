@@ -1,0 +1,8 @@
+Scenario 3: Members by default cannot access portal
+  Given  an active user "member" of account "foo.3scale.localhost"
+  And  current domain is the admin domain of provider "foo.3scale.localhost"
+  When  I log in as provider "member"
+  And  I go to the provider dashboard
+  And  there should not be a link to "Developer Portal"
+  And  they should see an error when going to the following pages:
+

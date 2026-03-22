@@ -1,0 +1,9 @@
+Scenario 5: Edit connection description
+  When  I follow the left menu "Admin > Setup Wizard > PAYG Connections"
+  And  I follow "my-host-full.local"
+  And  I click on "Edit Information"
+  And  I enter "My new Full Instance" as "description"
+  And  I click on "Save" in "Information" modal
+  Then  I should see a "PAYG properties updated successfully" text
+  And  I should see a "My new Full Instance" text in element "Info-panel-wrapper"
+

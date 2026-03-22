@@ -1,0 +1,3 @@
+Scenario 11: Run a containerized proxy
+  When  I run "mgrpxy install podman /tmp/proxy_container_config.tar.gz" on "proxy"
+

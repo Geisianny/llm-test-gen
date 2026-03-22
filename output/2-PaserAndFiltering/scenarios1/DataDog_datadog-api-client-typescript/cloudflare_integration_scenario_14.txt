@@ -1,0 +1,8 @@
+Scenario 14: List Cloudflare accounts returns "OK" response
+  Tags: ['@replay-only', '@team:DataDog/saas-integrations']
+  Given  there is a valid "cloudflare_account" in the system
+  And  new "ListCloudflareAccounts" request
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data[0].type" is equal to "cloudflare-accounts"
+

@@ -1,0 +1,5 @@
+Scenario 8: Republish an organisation
+  Given  a published organisation "An Existing Organisation" exists
+  When  I request a republish of the "An Existing Organisation" organisation
+  Then  I can see the "An Existing Organisation" organisation has been republished
+

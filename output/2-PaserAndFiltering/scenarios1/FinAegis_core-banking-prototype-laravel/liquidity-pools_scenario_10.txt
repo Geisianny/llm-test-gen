@@ -1,0 +1,8 @@
+Scenario 10: Rebalance pool through external liquidity
+  Given  a liquidity pool exists for "BTC/EUR" with reserves:
+  And  the target price ratio is "48000"
+  When  the pool is rebalanced
+  Then  the pool should execute rebalancing trades
+  And  the pool reserves should maintain the constant product
+  And  the new ratio should be closer to "48000"
+

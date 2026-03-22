@@ -1,0 +1,8 @@
+Scenario Outline 5: Password Matching - Example 1
+  When  I type Metapass12345!@ in confirm password field
+  Then  green check mark is displayed
+
+  Examples:
+    | password |
+    | Metapass12345!@ |
+

@@ -1,0 +1,9 @@
+Scenario 1: configure the api key
+  Given  I am on the environment control panel
+  And  I follow "Plugins"
+  And  I follow "Configuration"
+  And  I fill in "Server API key" with "ABCDEFGH1234567890"
+  When  I follow "Save"
+  Then  I should be on /admin/plugin/push_notification
+  Then  the "Server API key" field should contain "ABCDEFGH1234567890"
+

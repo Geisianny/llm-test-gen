@@ -1,0 +1,6 @@
+Scenario 12: The systems submenu in the configuration menu
+  When  I follow the left menu "Configuration > Systems"
+  Then  I should see a "Managed Systems" text
+  And  I should see a "Managed" link in the left menu
+  And  I should see a "Target" link in the left menu
+

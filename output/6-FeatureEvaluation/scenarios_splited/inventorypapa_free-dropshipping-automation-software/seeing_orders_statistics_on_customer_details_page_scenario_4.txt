@@ -1,0 +1,5 @@
+Scenario: View customer order statistics with different fulfillment statuses
+  Given there is a customer with orders having different fulfillment statuses
+  When the administrator views the customer's details page
+  Then the system displays order statistics segmented by fulfillment status
+  And the total value of orders for each fulfillment status

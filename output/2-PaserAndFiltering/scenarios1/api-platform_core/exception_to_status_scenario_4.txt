@@ -1,0 +1,7 @@
+Scenario 4: Override validation exception status code from delete operation
+  Tags: ['@!mongodb']
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "DELETE" request to "/error_with_overriden_status/1"
+  Then  the response status code should be 403
+  And  the JSON node "status" should be equal to 403
+

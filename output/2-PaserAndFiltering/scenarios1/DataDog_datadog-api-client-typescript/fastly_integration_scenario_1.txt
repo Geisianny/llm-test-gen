@@ -1,0 +1,7 @@
+Scenario 1: Add Fastly account returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "CreateFastlyAccount" request
+  And  body with value {"data": {"attributes": {"api_key": "ABCDEFG123", "name": "test-name", "services": [{"id": "6abc7de6893AbcDe9fghIj", "tags": ["myTag", "myTag2:myValue"]}]}, "type": "fastly-accounts"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

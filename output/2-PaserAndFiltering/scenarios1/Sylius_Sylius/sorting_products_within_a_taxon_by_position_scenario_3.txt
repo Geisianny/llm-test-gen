@@ -1,0 +1,16 @@
+Scenario 3: Setting two products to the already occupied position on the other page
+  Tags: ['@no-api', '@ui', '@mink:chromedriver', '@failing']
+  When  I am browsing the 1st page of products from "Soft Toys" taxon
+  And  I set the position of "Old pug" to "15"
+  And  I set the position of "Young pug" to "15"
+  And  I save my new configuration
+  And  I go to the 2nd page of products from "Soft Toys" taxon
+  Then  the 4th product on this page should be named "Pug Senior"
+  And  this product should be at position 13
+  And  the 5th product on this page should be named "Old pug"
+  And  this product should be at position 14
+  And  the 6th product on this page should be named "Young pug"
+  And  this product should be at position 15
+  And  the 7th product on this page should be named "Pug Master"
+  And  this product should be at position 16
+

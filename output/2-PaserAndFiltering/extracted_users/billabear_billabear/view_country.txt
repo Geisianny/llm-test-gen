@@ -1,0 +1,31 @@
+Feature: View country for tax purposes
+
+Background: 
+  Given  the following accounts exist:
+
+Scenario 1: View Country
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  that the following countries exist:
+  When  I view the country for "United Kingdom"
+  Then  I will see that there is a threshold for the country of 1770
+  And  I will see the currency is "GBP"
+  And  I will see the ISO code is "GB"
+
+Scenario 2: View Country with tax rules
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  that the following countries exist:
+  And  there are the following tax types:
+  And  the following country tax rules exist:
+  When  I view the country for "United Kingdom"
+  Then  I should see the tax rule for tax type "Digital Goods" with the tax rate 17.5
+
+Scenario 3: View Country with tax rules
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  that the following countries exist:
+  And  there are the following tax types:
+  And  the following country tax rules exist:
+  And  the following states exist:
+  And  the following state tax rules exist:
+  When  I view the country for "United States"
+  Then  I should see the state "Texas" in the list of states
+

@@ -1,0 +1,7 @@
+Scenario 14: Get On-Call team routing rules returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/on-call']
+  Given  new "GetOnCallTeamRoutingRules" request
+  And  request contains "team_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 200 OK
+

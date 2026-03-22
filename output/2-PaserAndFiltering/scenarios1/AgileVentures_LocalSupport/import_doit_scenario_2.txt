@@ -1,0 +1,5 @@
+Scenario 2: Check import removes ops that are no longer on doit
+  Given  there is a doit volunteer op named "no longer on doit"
+  And  I run the import doit service with a radius of 0.5 miles
+  Then  the doit volunteer op named "no longer on doit" should be deleted
+

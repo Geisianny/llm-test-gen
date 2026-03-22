@@ -1,0 +1,4 @@
+Scenario 3: Create custom repositories inside the SUSE custom channel
+  Tags: ['@sle_minion']
+  When  I prepare the development repositories of "sle_minion" as part of "devel-suse-channel" channel
+

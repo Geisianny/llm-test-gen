@@ -1,0 +1,8 @@
+Scenario 3: Creating a new case study and selecting previously published with no publication date
+  Given  the date is 2018-06-07
+  And  I am a writer in the organisation "Department of Examples"
+  When  I start a new case study
+  And  I select that this document has been previously published
+  And  I click save
+  Then  I see a validation error for the missing publication date
+

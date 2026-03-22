@@ -1,0 +1,6 @@
+Scenario: Delete an existing page
+  Given there is an existing page with title "About Us" and URL "/about-us"
+  And there is an Engine Yard administrator logged in
+  When the administrator deletes the page with title "About Us"
+  Then the system removes the page
+  And displays a confirmation message

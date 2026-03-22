@@ -1,0 +1,9 @@
+Scenario 6: Change profile variables using the UI
+  When  I follow the left menu "Systems > Autoinstallation > Profiles"
+  And  I follow "iseprofile_ui"
+  And  I follow "Variables"
+  And  I enter "ise_ui_test=ISE_UI_TEST" as "variables"
+  And  I click on "Update Variables"
+  And  I refresh the page
+  Then  I should see a "ISE_UI_TEST" text
+

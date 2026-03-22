@@ -1,0 +1,10 @@
+Scenario 20: Update Scanning Group returns "OK" response
+  Tags: ['@team:DataDog/sensitive-data-scanner']
+  Given  a valid "configuration" in the system
+  And  there is a valid "scanning_group" in the system
+  And  new "UpdateScanningGroup" request
+  And  request contains "group_id" parameter from "group.data.id"
+  And  body with value {"meta": {},"data":{"id": "{{ group.data.id }}", "type":"sensitive_data_scanner_group","attributes":{"name":"{{ unique }}","is_enabled":false,"product_list":["logs"],"filter":{"query":"*"}},"relationships":{"configuration":{"data":{"type":"sensitive_data_scanner_configuration","id":"{{ configuration.data.id }}"}},"rules":{"data":[]}}}}
+  When  the request is sent
+  Then  the response status is 200 OK
+

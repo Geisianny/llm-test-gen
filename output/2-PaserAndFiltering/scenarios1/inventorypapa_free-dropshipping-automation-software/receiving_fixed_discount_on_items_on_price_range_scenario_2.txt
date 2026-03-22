@@ -1,0 +1,7 @@
+Scenario 2: Receiving fixed discount on a single item with price equal to filter minimum criteria
+  Tags: ['@ui', '@api']
+  Given  the promotion gives "$10.00" off on every product with minimum price at "$100.00"
+  When  I add product "PHP T-Shirt" to the cart
+  Then  its price should be decreased by "$10.00"
+  And  my cart total should be "$90.00"
+

@@ -1,0 +1,10 @@
+Scenario 1: Deleting multiple promotions at once
+  Tags: ['@no-api', '@ui', '@mink:chromedriver']
+  When  I browse promotions
+  And  I check the "Christmas sale" promotion
+  And  I check also the "New Year sale" promotion
+  And  I delete them
+  Then  I should be notified that they have been successfully deleted
+  And  I should see a single promotion in the list
+  And  I should see the promotion "Easter sale" in the list
+

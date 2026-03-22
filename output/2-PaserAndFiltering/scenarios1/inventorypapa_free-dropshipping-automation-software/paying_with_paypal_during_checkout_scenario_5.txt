@@ -1,0 +1,11 @@
+Scenario 5: Retrying the payment and failing
+  Tags: ['@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  And  I have proceeded selecting "PayPal" payment method
+  And  I have confirmed my order with paypal payment
+  But  I have cancelled PayPal payment
+  When  I try to pay again
+  And  I cancel my PayPal payment
+  Then  I should be notified that my payment has been cancelled
+  And  I should be able to pay again
+

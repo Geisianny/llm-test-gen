@@ -1,0 +1,10 @@
+Scenario 10: Trying to add a zone of type province with wrong province code
+  Tags: ['@api', '@no-ui']
+  When  I want to create a new zone consisting of province
+  And  I name it "United States"
+  And  I specify its code as "USA"
+  And  I add a member with a code "AL"
+  And  I try to add it
+  Then  I should be notified that "AL" is not a valid province code
+  And  zone with name "United States" should not be added
+

@@ -1,0 +1,9 @@
+Scenario 2: Trying to add a new product association type without specifying its name
+  Tags: ['@api', '@ui']
+  When  I want to create a new product association type
+  And  I specify its code as "up_sell"
+  But  I do not name it
+  And  I try to add it
+  Then  I should be notified that name is required
+  And  the product association type with code "up_sell" should not be added
+

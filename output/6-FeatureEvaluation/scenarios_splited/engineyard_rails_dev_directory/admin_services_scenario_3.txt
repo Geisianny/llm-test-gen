@@ -1,0 +1,6 @@
+Scenario: Edit service information
+  Given there is a service with the name "Existing Service"
+  And the service has a description "Old Description"
+  When the administrator edits the service "Existing Service"
+  And updates the description to "New Description"
+  Then the system lists the service "Existing Service" with the description "New Description"

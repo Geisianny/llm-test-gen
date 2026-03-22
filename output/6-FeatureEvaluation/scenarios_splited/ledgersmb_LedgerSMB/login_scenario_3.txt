@@ -1,0 +1,6 @@
+Scenario: Login with incorrect credentials
+  Given there is a user with the username "user1" and password "password123"
+  When the user logs in with the username "user1"
+  And enters the incorrect password "wrongPassword"
+  Then the system denies access
+  And displays a message indicating that the username or password is incorrect

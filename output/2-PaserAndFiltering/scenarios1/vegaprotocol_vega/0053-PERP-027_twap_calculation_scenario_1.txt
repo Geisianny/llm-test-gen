@@ -1,0 +1,35 @@
+Scenario 1: 0053-PERP-027 Internal and External TWAP calculation
+  Tags: ['@Perpetual', '@twap']
+  Given  the following network parameters are set:
+  And  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following orders:
+  And  the market data for the market "ETH/DEC19" should be:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  Given  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  When  time is updated to "2020-10-16T00:02:00Z"
+  Then  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  Given  time is updated to "2020-10-16T00:03:00Z"
+  When  the parties place the following orders:
+  And  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  Given  time is updated to "2020-10-16T00:05:00Z"
+  And  the mark price should be "11" for the market "ETH/DEC19"
+  When  the parties place the following orders:
+  Then  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  Given  time is updated to "2020-10-16T00:07:00Z"
+  And  the mark price should be "10" for the market "ETH/DEC19"
+  When  the parties place the following orders:
+  Then  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  Given  time is updated to "2020-10-16T00:08:00Z"
+  And  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  When  time is updated to "2020-10-16T00:09:00Z"
+  And  the mark price should be "9" for the market "ETH/DEC19"
+  And  the parties place the following orders:
+  Then  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  Given  time is updated to "2020-10-16T00:11:00Z"
+  And  the mark price should be "8" for the market "ETH/DEC19"
+  When  the parties place the following orders:
+  Then  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  Given  time is updated to "2020-10-16T00:12:00Z"
+  Then  the product data for the market "ETH/DEC19" should be:
+

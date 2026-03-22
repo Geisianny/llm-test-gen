@@ -1,0 +1,6 @@
+Scenario 1: 
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  the following slack webhooks exist:
+  When  I create a slack notification rule:
+  Then  there will be a slack notification rule for the webhook "DevChat" and event "customer_created"
+

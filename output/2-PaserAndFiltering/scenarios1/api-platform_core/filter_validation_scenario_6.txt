@@ -1,0 +1,7 @@
+Scenario 6: Test filter bounds: maximum
+  When  I am on "/filter_validators?required=foo&required-allow-empty&maximum=10"
+  Then  the response status code should be 200
+  When  I am on "/filter_validators?required=foo&required-allow-empty&maximum=11"
+  Then  the response status code should be 422
+  And  the JSON node "detail" should be equal to 'maximum: This value should be less than or equal to 10.'
+

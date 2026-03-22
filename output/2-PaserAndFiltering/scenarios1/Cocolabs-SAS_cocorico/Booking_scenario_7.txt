@@ -1,0 +1,8 @@
+Scenario 7: As asker i can send a booking message
+  Given  I make this new booking request:
+  When  I fill in the following:
+  And  I press "Save"
+  Then  I should be on the page which route name is "dashboard_booking_show_asker"
+  And  I wait 2000 ms
+  And  I should see "I forgot to tell you that i have a dog" in the "div.blog div.posts-holder" element
+

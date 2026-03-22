@@ -1,0 +1,6 @@
+Scenario 1: An anonymous user retrieve a secured resource
+  Tags: ['@createSchema']
+  When  I add "Accept" header equal to "application/ld+json"
+  And  I send a "GET" request to "users_cdrs"
+  Then  the response status code should be 401
+

@@ -1,0 +1,8 @@
+Scenario 4: Create all terminals group
+  When  I follow the left menu "Systems > System Groups"
+  And  I follow "Create Group"
+  And  I enter "TERMINALS" as "name"
+  And  I enter "All terminals" as "description"
+  And  I click on "Create Group"
+  Then  I should see a "System group TERMINALS created." text
+

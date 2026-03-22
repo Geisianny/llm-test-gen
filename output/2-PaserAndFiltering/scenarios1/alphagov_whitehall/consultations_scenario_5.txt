@@ -1,0 +1,8 @@
+Scenario 5: Adding public feedback to a closed consultation
+  Tags: ['@disable-sidekiq-test-mode']
+  Given  I am an editor
+  And  a closed consultation exists
+  When  I add public feedback to the consultation
+  And  I save and publish the amended consultation
+  Then  I can see that the consultation has been published
+

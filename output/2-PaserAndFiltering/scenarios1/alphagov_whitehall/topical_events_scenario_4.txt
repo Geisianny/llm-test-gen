@@ -1,0 +1,4 @@
+Scenario 4: Deleting a topical event
+  Given  a topical event called "An event" with summary "A topical event" and description "A topical event"
+  Then  I should be able to delete the topical event "An event"
+

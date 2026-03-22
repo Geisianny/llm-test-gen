@@ -1,0 +1,53 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: cinstances_story_processado.feature
+Caminho relativo: 3scale_porta\cinstances_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\3scale_porta\cinstances_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: cinstances_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. View customer details with informational billing model
+   Steps: 5
+   - Given there is a customer with payment details
+   - And the provider is using the informational billing model
+   - When the provider accesses the customer's profile
+   - Then the system displays the customer's details
+   - And displays the customer's payment details
+2. View customer details with pre-paid billing model
+   Steps: 5
+   - Given there is a customer with payment details
+   - And the provider is using the pre-paid billing model
+   - When the provider accesses the customer's profile
+   - Then the system displays the customer's details
+   - And does not display the customer's payment details
+3. View customer details with post-paid billing model
+   Steps: 5
+   - Given there is a customer with payment details
+   - And the provider is using the post-paid billing model
+   - When the provider accesses the customer's profile
+   - Then the system displays the customer's details
+   - And does not display the customer's payment details
+4. Edit customer details
+   Steps: 5
+   - Given there is a customer with existing details
+   - When the provider edits the customer's details
+   - And saves the changes
+   - Then the system updates the customer's details
+   - And displays a confirmation message
+5. Cancel editing customer details
+   Steps: 5
+   - Given there is a customer with existing details
+   - When the provider edits the customer's details
+   - And cancels the changes
+   - Then the system does not update the customer's details
+   - And displays the customer's original details

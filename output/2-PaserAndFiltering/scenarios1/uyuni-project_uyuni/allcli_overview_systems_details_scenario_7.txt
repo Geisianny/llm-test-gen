@@ -1,0 +1,22 @@
+Scenario 7: Debian-like minion grains are displayed correctly on the details page
+  Tags: ['@deblike_minion']
+  Given  I am on the Systems overview page of this "deblike_minion"
+  Then  the hostname for "deblike_minion" should be correct
+  And  the kernel for "deblike_minion" should be correct
+  And  the OS version for "deblike_minion" should be correct
+  And  the IPv4 address for "deblike_minion" should be correct
+  And  the IPv6 address for "deblike_minion" should be correct
+  And  the system ID for "deblike_minion" should be correct
+  And  the system name for "deblike_minion" should be correct
+  And  the uptime for "deblike_minion" should be correct
+  And  I should see a "UUID" text
+  And  I should see a "Virtualization" text
+  And  I should see a "Installed Products" text
+  And  I should see a "Checked In" text
+  And  I should see a "Registered" text
+  And  I should see a "Contact Method" text
+  And  I should see a "Auto Patch Update" text
+  And  I should see a "Maintenance Schedule" text
+  And  I should see a "Description" text
+  And  I should see a "Location" text
+

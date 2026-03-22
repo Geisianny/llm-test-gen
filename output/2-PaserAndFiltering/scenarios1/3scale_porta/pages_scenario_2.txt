@@ -1,0 +1,12 @@
+Scenario 2: Builtin page
+  Given  provider "foo.3scale.localhost" has all the templates setup
+  When  I go to the CMS page
+  And  I choose builtin page "dashboards/show" in the CMS sidebar
+  And  I fill in the draft with:
+  And  I press "Save"
+  Then  I should see "Template saved"
+  And  I press "Publish"
+  Then  I should see "Template saved and published"
+  And  I follow "Hide" from the CMS "Publish" dropdown
+  Then  I should see "Template has been hidden"
+

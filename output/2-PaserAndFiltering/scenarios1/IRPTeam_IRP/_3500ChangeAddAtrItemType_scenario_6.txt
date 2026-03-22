@@ -1,0 +1,17 @@
+Scenario 6: _350004 edit Item type and check changes in Add atribute and property sets by item key
+  *  Open Additional attribute sets for item key
+  Given  I open hyperlink "e1cib/list/Catalog.AddAttributeAndPropertySets"
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  *  Edit item type Stockings
+  Given  I open hyperlink "e1cib/list/Catalog.ItemTypes"
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I input "Warm Stockings" text in the field named "Description_en"
+  And  I click "Save and close" button
+  *  Check item type replacement in Add atribute and property sets by item key
+  When  in opened panel I select "Additional attribute sets"
+  And  in the table "AttributesTree" I click "List" button
+  And  "AttributesTree" table contains lines
+  And  I close all client application windows
+

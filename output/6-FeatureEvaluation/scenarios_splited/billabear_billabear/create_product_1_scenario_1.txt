@@ -1,0 +1,6 @@
+Scenario: Create product with valid name and rate
+  Given there is an authenticated APP user
+  When the user creates a product with the name "Test Product"
+  And specifies a rate of "9.99"
+  Then the system creates the product successfully
+  And displays the product details

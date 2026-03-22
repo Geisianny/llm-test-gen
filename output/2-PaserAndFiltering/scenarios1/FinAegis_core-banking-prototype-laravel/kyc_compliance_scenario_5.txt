@@ -1,0 +1,7 @@
+Scenario 5: Suspicious activity detection
+  Given  I have been making normal transactions
+  When  I suddenly make multiple large transactions:
+  Then  the system should flag suspicious activity
+  And  my account should be temporarily restricted
+  And  compliance investigation should be initiated
+

@@ -1,0 +1,10 @@
+Scenario 14: The users menu
+  When  I follow the left menu "Users"
+  Then  I should see a "Active Users" text
+  And  I should see a "Users" link in the left menu
+  And  I should see a "User List" link in the left menu
+  And  I should see a "Active" link in the left menu
+  And  I should see a "Deactivated" link in the left menu
+  And  I should see a "All" link in the left menu
+  And  I should see a "System Group Configuration" link in the left menu
+

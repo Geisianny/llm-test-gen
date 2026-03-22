@@ -1,0 +1,98 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 19/01/2026 23:13:57
+Arquivo analisado: NetworkFlow_story_processado.feature
+Caminho relativo: MetaMask_metamask-mobile\NetworkFlow_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/Originais\MetaMask_metamask-mobile\NetworkFlow_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: NetworkFlow_story_processado
+Descrição: Não possui
+Total de cenários: 4
+
+CENÁRIOS IDENTIFICADOS:
+1. Outline 1: Adding a network via the new popular network flow - Example 1
+   Steps: 22
+   - Given the app displayed the splash animation
+   - And I have imported my wallet
+   - And I tap No Thanks on the Enable security check screen
+   - And I tap No thanks on the onboarding welcome tutorial
+   - When I tap on the navbar network title button
+   - And I tap on the Add a Network button
+   - Then "POPULAR" tab is displayed on networks screen
+   - And "CUSTOM NETWORKS" tab is displayed on networks screen
+   - And I am on the Popular network view
+   - When I tap on network "Palm" to add it
+   - Then the network approval modal should appear
+   - When I select approve
+   - Then the network approval modal has button "Switch Network" displayed
+   - And the network approval modal has button "Close" displayed
+   - When I tap on Switch network
+   - Then "Palm" should be displayed in network educational modal
+   - And I should see the added network name "Palm" in the top navigation bar
+   - When I tap on the Settings tab option
+   - And In settings I tap on "Networks"
+   - Then "Palm" should be visible below the Custom Networks section
+   - When I tap on the Add Network button
+   - Then "Palm" is not visible in the Popular Networks section
+2. Outline 2: Adding a network via the custom network flow - Example 1
+   Steps: 12
+   - Given the network screen is displayed
+   - And I tap on the Add Network button
+   - Then "POPULAR" tab is displayed on networks screen
+   - And "CUSTOM NETWORKS" tab is displayed on networks screen
+   - When I tap on the "CUSTOM NETWORKS" tab
+   - And I type "Gnosis" into Network name field
+   - And I type "https://xdai-rpc.gateway.pokt.network" into the RPC url field
+   - And I type "100" into the Chain ID field
+   - And I type "Gnosis" into the Network symbol field
+   - And I tap on the Add button to add Custom Network
+   - Then "Gnosis" should be displayed in network educational modal
+   - And I should see the added network name "Gnosis" in the top navigation bar
+3. Outline 3: I can remove a custom network that was added via the popular network flow - Example 1
+   Steps: 20
+   - Given I tap on the Settings tab option
+   - And In settings I tap on "Networks"
+   - And the network screen is displayed
+   - And I tap on the Add Network button
+   - Then "POPULAR" tab is displayed on networks screen
+   - And "CUSTOM NETWORKS" tab is displayed on networks screen
+   - When I tap on the "POPULAR" tab
+   - And I tap on network "Optimism" to add it
+   - And I select approve
+   - Then the network approval modal has button "Switch Network" displayed
+   - And the network approval modal has button "Close" displayed
+   - When I tap on Switch network
+   - Then "Optimism" should be displayed in network educational modal
+   - Then I should see the added network name "Optimism" in the top navigation bar
+   - When I tap on the Settings tab option
+   - And In settings I tap on "Networks"
+   - And I tap and hold network "Optimism"
+   - And I click "Delete" on remove network modal
+   - Then "Ethereum Main Network" should be displayed in network educational modal
+   - And "Optimism" should be removed from the list of RPC networks
+4. Outline 4: I can remove a custom network that was added via the custom network flow - Example 1
+   Steps: 18
+   - Given the network screen is displayed
+   - When I tap on the Add Network button
+   - Then "POPULAR" tab is displayed on networks screen
+   - And "CUSTOM NETWORKS" tab is displayed on networks screen
+   - When I tap on the "CUSTOM NETWORKS" tab
+   - And I type "Celo Mainnet" into Network name field
+   - And I type "https://forno.celo.org" into the RPC url field
+   - And I type "42220" into the Chain ID field
+   - And I type "Celo Mainnet" into the Network symbol field
+   - And I tap on the Add button to add Custom Network
+   - Then "Celo Mainnet" should be displayed in network educational modal
+   - Then I should see the added network name "Celo Mainnet" in the top navigation bar
+   - When I tap on the Settings tab option
+   - And In settings I tap on "Networks"
+   - And the network screen is displayed
+   - And I tap on network "Celo Mainnet" on networks screen
+   - And I tap the "Delete" button
+   - Then "Celo Mainnet" should be removed from the list of RPC networks

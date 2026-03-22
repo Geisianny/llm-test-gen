@@ -1,0 +1,6 @@
+Scenario 5: Get the list of devices returns "OK" response with pagination
+  Tags: ['@generated', '@skip', '@team:DataDog/network-device-monitoring', '@with-pagination']
+  Given  new "ListDevices" request
+  When  the request with pagination is sent
+  Then  the response status is 200 OK
+

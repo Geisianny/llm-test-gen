@@ -1,0 +1,10 @@
+Scenario 6: Manually changing a product's slug while editing a product's name
+  Tags: ['@ui', '@javascript', '@api']
+  Given  the store has a product "Mansion of Madness"
+  When  I want to modify this product
+  And  I enable slug modification
+  And  I rename it to "Small World" in "English (United States)"
+  And  I set its slug to "small-world-board-game" in "English (United States)"
+  And  I save my changes
+  Then  the slug of the "Small World" product should be "small-world-board-game"
+

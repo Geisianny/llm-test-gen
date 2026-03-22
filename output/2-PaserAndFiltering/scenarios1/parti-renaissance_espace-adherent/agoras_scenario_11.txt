@@ -1,0 +1,6 @@
+Scenario 11: As a logged-in Agora Manager I can see the Agoras I am manager of
+  Given  I am logged with "luciole1989@spambox.fr" via OAuth client "JeMengage Web" with scope "jemengage_admin"
+  When  I send a "GET" request to "/api/v3/agoras?scope=agora_general_secretary"
+  Then  the response status code should be 200
+  And  the JSON should be equal to:
+

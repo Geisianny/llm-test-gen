@@ -1,0 +1,15 @@
+Scenario 1: Don't accept edit the profile with invalid lattes url
+  Tags: ['@selenium']
+  And  I check "Lattes Curriculum Plugin"
+  And  I follow "Save changes"
+  And  I go to /admin/features/manage_fields
+  Given  I follow "Person's fields"
+  And  I check "person_fields_lattes_url_active"
+  And  I check "person_fields_lattes_url_signup"
+  And  I follow "Save changes"
+  Given  I am on admin_user's control panel
+  When  I follow "Informations" within "#section-profile"
+  And  I fill in "Lattes URL" with "http://youtube.com.br/"
+  And  I follow "Save"
+  Then  I should see "Lattes url is invalid."
+

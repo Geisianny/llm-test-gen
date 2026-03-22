@@ -1,0 +1,10 @@
+Scenario 5: Receiving discount on order while buying products from both of promoted taxons which fits price criteria
+  Tags: ['@ui', '@api']
+  Given  the promotion gives "$10.00" off if order contains products classified as "T-Shirts" with a minimum value of "$50.00"
+  And  there is a promotion "Mugs promotion"
+  And  the promotion gives "$5.00" off if order contains products classified as "Mugs" with a minimum value of "$30.00"
+  When  I add product "PHP T-Shirt" to the cart
+  And  I add 2 products "PHP Mug" to the cart
+  Then  my cart total should be "$125.00"
+  And  my discount should be "-$15.00"
+

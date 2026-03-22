@@ -1,0 +1,7 @@
+Scenario 3: Viewing a detailed page with product's associations within current channel
+  Tags: ['@api', '@ui']
+  Given  I am browsing channel "Notebook Store"
+  When  I view product "LG Gram"
+  Then  I should see the product association "Alternatives" with product "LG AC Adapter"
+  And  I should not see the product association "Alternatives" with product "LG headphones"
+

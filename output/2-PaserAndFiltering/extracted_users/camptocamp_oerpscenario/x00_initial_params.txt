@@ -1,0 +1,53 @@
+Feature: INITIAL SET-UP FOR NEW DATABASE
+Tags: ['@multicompany_base_finance']
+
+Scenario 1: CREATE DATABASE
+  Tags: ['@multicompany_base_finance_create_db']
+  Given  I create database "7XA" with admin password "admin"
+
+Scenario 2: MODULES INSTALLATION
+  Tags: ['@multicompany_base_finance_setup_install_modules']
+  Given  I do not want all demo data to be loaded on install
+  And  I update the module list
+  And  I install the required modules with dependencies:
+  Then  my modules should have been installed and models reloaded
+
+Scenario 3: LANGUAGE INSTALL
+  Tags: ['@multicompany_base_finance_setup_languages']
+  Given  I install the following languages:
+  Then  the language should be available
+
+Scenario 4: LANGUAGE INSTALL
+  Given  I install the following languages:
+  Then  the language should be available
+
+Scenario 5: LANGUAGE SETTINGS
+  Given  I need a "res.lang" with code: en_US
+  And  having:
+  Given  I need a "res.lang" with code: fr_FR
+  And  having:
+  Given  I need a "res.lang" with code: de_DE
+  And  having:
+
+Scenario 6: CREATION OF FISCAL YEAR 2012
+  Tags: ['@multicompany_base_finance_setup_create_fy']
+  Given  I need a "account.fiscalyear" with oid: scenario.fy2012
+  And  having:
+  And  I create monthly periods on the fiscal year with reference "scenario.fy2012"
+  Then  I find a "account.fiscalyear" with oid: scenario.fy2012
+
+Scenario 7: CREATION OF FISCAL YEAR 2013
+  Given  I need a "account.fiscalyear" with oid: scenario.fy2013
+  And  having:
+  And  I create monthly periods on the fiscal year with reference "scenario.fy2013"
+  Then  I find a "account.fiscalyear" with oid: scenario.fy2013
+  Given  I install the required modules with dependencies:
+
+Scenario 8: SETUP WEBKIT
+  Given  I need a "res.company" with oid: base.main_company
+  And  I set the webkit path to "/srv/openerp/webkit_library/wkhtmltopdf-amd64"
+
+Scenario 9: CURRENCY RATES SETTINGS
+  Tags: ['@multicompany_base_finance_setup_currency_rates']
+  Given  I set the following currency rates:
+

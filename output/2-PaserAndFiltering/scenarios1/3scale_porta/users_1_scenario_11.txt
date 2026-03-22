@@ -1,0 +1,5 @@
+Scenario 11: Editing role of the only buyer admin
+  Given  buyer "SpaceWidgets" has only one admin "alice"
+  And  I navigate to the edit page of user "alice" of buyer "SpaceWidgets"
+  Then  I should not see the user role field
+

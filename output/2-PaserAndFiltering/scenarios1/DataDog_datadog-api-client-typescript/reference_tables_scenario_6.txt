@@ -1,0 +1,7 @@
+Scenario 6: Create reference table without upload or access details returns "Bad Request" response
+  Tags: ['@team:DataDog/redapl-experiences']
+  Given  new "CreateReferenceTable" request
+  And  body with value {"data": {"attributes": {"description": "Test reference table without upload or access details", "source": "LOCAL_FILE", "schema": {"fields": [{"name": "id", "type": "STRING"}], "primary_keys": ["id"]}, "table_name": "test_invalid_table_{{ unique }}", "tags": ["test_tag"]}, "type": "reference_table"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

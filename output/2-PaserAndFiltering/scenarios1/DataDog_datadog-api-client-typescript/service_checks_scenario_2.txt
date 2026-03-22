@@ -1,0 +1,6 @@
+Scenario 2: Submit a Service Check returns "Payload accepted" response
+  Tags: ['@skip-validation', '@team:DataDog/monitors-evaluation']
+  Given  body with value [{"check": "app.ok", "host_name": "host", "status": 0, "tags": ["test:{{ unique_alnum }}"]}]
+  When  the request is sent
+  Then  the response status is 202 Payload accepted
+

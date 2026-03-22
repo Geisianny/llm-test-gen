@@ -1,0 +1,10 @@
+Scenario 3: Check VMware page
+  When  I click on "Create"
+  And  I follow "VMWare-based"
+  Then  I should see a "Add a VMWare-based Virtual Host Manager" text
+  And  I should see a "Label" text
+  And  I should see a "Hostname" text
+  And  I should see a "Port" text
+  And  I should see a "Username" text
+  And  I should see a "Password" text
+

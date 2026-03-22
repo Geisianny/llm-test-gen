@@ -1,0 +1,5 @@
+Scenario 5: Configure main partner and company
+  Given  I should have a company
+  And  the company currency is "CHF" with a rate of "1.00"
+  And  I update the address country code to CH
+

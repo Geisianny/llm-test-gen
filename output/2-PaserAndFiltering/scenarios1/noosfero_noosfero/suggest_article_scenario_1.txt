@@ -1,0 +1,17 @@
+Scenario 1: highlight an article before approval of a suggested article
+  Tags: ['@selenium-fixme']
+  Given  I am on Sample Community's blog
+  And  I follow "article-options"
+  And  I follow "Suggest an article"
+  And  I fill in "Title" with "Suggestion"
+  And  I fill in "Your name" with "Some Guy"
+  And  I fill in "Email" with "someguy@somewhere.com"
+  And  I follow "Save"
+  When  I am logged in as "joaosilva"
+  And  I go to sample-community's control panel
+  And  I follow "menu-toggle"
+  And  I choose "Accept"
+  And  I follow "Save tasks"
+  And  I should see "suggested the publication of the article"
+  Then  I should see "Highlight this article" within ".task_box"
+

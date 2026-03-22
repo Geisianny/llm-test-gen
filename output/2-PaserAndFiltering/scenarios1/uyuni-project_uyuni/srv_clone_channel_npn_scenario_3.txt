@@ -1,0 +1,7 @@
+Scenario 3: Check that this channel has no patches
+  When  I follow the left menu "Software > Manage > Channels"
+  And  I follow "Fake-Clone-RPM-SLES15SP4-Channel"
+  And  I follow "Patches" in the content area
+  And  I follow "List/Remove Patches"
+  Then  I should see a "There are no patches associated with this channel." text
+

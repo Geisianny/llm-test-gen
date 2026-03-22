@@ -1,0 +1,6 @@
+Scenario 3: Messages link shows only unread messages count when there are unread messages
+  And  a buyer "john" signed up to provider "foo.3scale.localhost"
+  And  5 messages sent from buyer "john" to the provider with subject "any" and body "any"
+  And  I go to the provider dashboard
+  And  I should see "5 UNREAD MESSAGES" within the audience dashboard widget
+

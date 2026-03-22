@@ -1,0 +1,7 @@
+Scenario 14: Download the profile from the UI
+  When  I follow the left menu "Systems > Autoinstallation > Profiles"
+  And  I follow "15-sp4-cobbler"
+  And  I follow "Autoinstallation File" in the content area
+  And  I follow "Download Autoinstallation File"
+  Then  I should see a "<profile " text
+

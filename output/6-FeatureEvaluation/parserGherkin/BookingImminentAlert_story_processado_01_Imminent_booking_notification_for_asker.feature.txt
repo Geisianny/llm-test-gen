@@ -1,0 +1,24 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 17/12/2025 23:40:59
+Arquivo analisado: BookingImminentAlert_story_processado_01_Imminent_booking_notification_for_asker.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation\BookingImminentAlert_story_processado_01_Imminent_booking_notification_for_asker.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: Imminent booking notification for asker
+Descrição: Não possui
+Total de cenários: 1
+
+CENÁRIOS IDENTIFICADOS:
+1. Imminent booking notification for asker
+   Steps: 5
+   - Given there is a booking scheduled to start soon
+   - And the asker has requested the booking
+   - When the booking is about to start
+   - Then the system sends a notification to the asker
+   - And the asker is informed that the booking is about to start

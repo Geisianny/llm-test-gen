@@ -1,0 +1,10 @@
+Scenario 1: Cancelling an order
+  Tags: ['@api', '@ui']
+  When  I view the summary of the order "#00000022"
+  And  I cancel this order
+  Then  I should be notified that it has been successfully updated
+  And  its state should be "Cancelled"
+  And  it should have shipment in state "Cancelled"
+  And  it should have payment state "Cancelled"
+  And  there should be only 1 payment
+

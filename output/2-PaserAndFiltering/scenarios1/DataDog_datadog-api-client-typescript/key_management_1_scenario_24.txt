@@ -1,0 +1,10 @@
+Scenario 24: Get all API keys returns "OK" response
+  Tags: ['@team:DataDog/credentials-management']
+  Given  there is a valid "api_key" in the system
+  And  new "ListAPIKeys" request
+  And  request contains "filter" parameter from "api_key.data.attributes.name"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data[0].type" is equal to "api_keys"
+  And  the response "data[0].attributes" has field "date_last_used"
+

@@ -1,0 +1,11 @@
+Scenario 10: Get an SLO correction for an SLO returns "OK" response
+  Tags: ['@team:DataDog/slo-app']
+  Given  there is a valid "slo" in the system
+  And  there is a valid "correction" for "slo"
+  And  new "GetSLOCorrection" request
+  And  request contains "slo_correction_id" parameter from "correction.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.type" has the same value as "correction.data.type"
+  And  the response "data.attributes.category" has the same value as "correction.data.attributes.category"
+

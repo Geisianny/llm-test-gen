@@ -1,0 +1,8 @@
+Scenario 2: Specifying main taxon for simple product
+  Tags: ['@ui', '@mink:chromedriver', '@no-api']
+  When  I want to modify the "T-Shirt Batman" product
+  And  I choose main taxon "Sad"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  main taxon of product "T-Shirt Batman" should be "Sad"
+

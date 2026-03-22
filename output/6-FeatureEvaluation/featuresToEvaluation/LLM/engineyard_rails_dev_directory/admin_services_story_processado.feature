@@ -1,0 +1,31 @@
+Feature: admin_services_story_processado
+
+Scenario: Add a new service
+    Given there is no service with the name "New Service"
+    When the administrator adds a new service with the name "New Service"
+    And provides a valid description for the service
+    Then the system lists the service "New Service"
+    And the service is enabled by default
+
+Scenario: Remove an existing service
+    Given there is a service with the name "Existing Service"
+    When the administrator removes the service "Existing Service"
+    Then the system no longer lists the service "Existing Service"
+
+Scenario: Edit service information
+    Given there is a service with the name "Existing Service"
+    And the service has a description "Old Description"
+    When the administrator edits the service "Existing Service"
+    And updates the description to "New Description"
+    Then the system lists the service "Existing Service" with the description "New Description"
+
+Scenario: Disable a service
+    Given there is a service with the name "Existing Service"
+    And the service is enabled
+    When the administrator disables the service "Existing Service"
+    Then the system lists the service "Existing Service" as disabled
+
+Scenario: Attempt to remove a non-existent service
+    Given there is no service with the name "Non Existent Service"
+    When the administrator removes the service "Non Existent Service"
+    Then the system displays an error message indicating that the service does not exist

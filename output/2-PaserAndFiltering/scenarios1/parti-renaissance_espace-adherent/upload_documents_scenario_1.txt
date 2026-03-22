@@ -1,0 +1,4 @@
+Scenario 1: As a non authenticated user I cannot upload a document
+  When  I send a "POST" request to "/api/v3/upload/news"
+  Then  the response status code should be 401
+

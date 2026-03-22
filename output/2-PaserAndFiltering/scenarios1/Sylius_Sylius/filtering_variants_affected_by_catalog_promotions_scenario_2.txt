@@ -1,0 +1,7 @@
+Scenario 2: Filtering product variants by name
+  Tags: ['@api', '@ui']
+  Given  I am browsing variants affected by catalog promotion "T-Shirt promotion"
+  When  I filter by name containing "Sylius"
+  Then  there should be 1 product variant on the list
+  And  it should be the "Sylius T-Shirt" product variant
+

@@ -1,0 +1,9 @@
+Scenario 2: Test order payment states
+  Then  the order payment state should be "awaiting_payment"
+  And  I should not be able to apply payment transition "request_payment" to my order
+  And  I should not be able to apply payment transition "partially_refund" to my order
+  And  I should not be able to apply payment transition "refund" to my order
+  And  I should be able to apply payment transition "partially_pay" to my order
+  And  I should be able to apply payment transition "cancel" to my order
+  And  I should be able to apply payment transition "pay" to my order
+

@@ -1,0 +1,7 @@
+Scenario 5: Search a word and expect several results
+  Tags: ['@susemanager']
+  When  I enter "SUSE" as the left menu search field
+  Then  I should see a "SUSE" text
+  And  I should see a "SUSE Multi-Linux Manager Server" text
+  And  I should see a "SUSE Multi-Linux Manager Proxy" text
+

@@ -1,0 +1,9 @@
+Scenario 2: Aggregate RUM events returns "OK" response
+  Tags: ['@team:DataDog/rum-backend']
+  Given  new "AggregateRUMEvents" request
+  And  body with value {"compute": [{"aggregation": "pc90", "metric": "@view.time_spent", "type": "total"}], "filter": {"from": "now-15m", "query": "@type:view AND @session.type:user", "to": "now"}, "group_by": [{"facet": "@view.time_spent", "limit": 10, "total": false}], "options": {"timezone": "GMT"}, "page": { "limit": 25}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "meta.status" is equal to "done"
+  And  the response "data.buckets" has length 0
+

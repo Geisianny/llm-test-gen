@@ -1,0 +1,7 @@
+Scenario 3: Being able to access the variant generation page
+  Tags: ['@no-api', '@ui']
+  Given  this product has option "Model" with values "RS6" and "RS7"
+  When  I modify the "Audi" product
+  And  I go to the variant generation page
+  Then  I should be on the variant generation page for this product
+

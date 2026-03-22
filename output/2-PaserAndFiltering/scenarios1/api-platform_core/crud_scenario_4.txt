@@ -1,0 +1,5 @@
+Scenario 4: Get a not found exception
+  When  I send a "GET" request to "/dummies/42"
+  Then  the response status code should be 404
+  And  the header "Content-Location" should not exist
+

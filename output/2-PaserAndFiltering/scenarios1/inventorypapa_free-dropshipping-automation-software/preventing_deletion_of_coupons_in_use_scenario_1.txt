@@ -1,0 +1,6 @@
+Scenario 1: Being unable to delete a used coupon
+  Tags: ['@domain', '@ui']
+  When  I try to delete "SANTA2016" coupon related to this promotion
+  Then  I should be notified that it is in use and cannot be deleted
+  And  this coupon should still exist in the registry
+

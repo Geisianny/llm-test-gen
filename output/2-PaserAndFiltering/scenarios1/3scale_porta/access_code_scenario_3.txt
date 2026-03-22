@@ -1,0 +1,8 @@
+Scenario 3: Valid access code
+  Given  the provider has site access code "foobar"
+  When  the current domain is foo.3scale.localhost
+  And  I go to the homepage
+  And  I fill in "Access code" with "foobar"
+  And  I press "Enter"
+  Then  I should not see "Access code"
+

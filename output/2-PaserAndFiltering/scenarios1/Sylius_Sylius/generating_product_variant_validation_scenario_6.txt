@@ -1,0 +1,7 @@
+Scenario 6: Trying to remove an existing product variant during generation
+  Tags: ['@no-api', '@ui']
+  Given  the product "Wyborowa Vodka" has "Wyborowa Vodka Orange" variant priced at "$40.00" configured with "Orange" option value
+  When  I want to generate new variants for this product
+  Then  I should not be able to remove 1st product variant
+  And  I should be able to remove 2nd product variant
+

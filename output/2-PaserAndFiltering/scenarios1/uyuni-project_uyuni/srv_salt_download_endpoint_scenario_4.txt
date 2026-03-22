@@ -1,0 +1,5 @@
+Scenario 4: Download package, user with an expired valid token for the org
+  Given  I have an expired valid token for organization "1"
+  When  I try to download "virgo-dummy-2.0-1.1.noarch.rpm" from channel "fake-rpm-suse-channel"
+  Then  the download should get a 403 response
+

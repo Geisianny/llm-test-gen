@@ -1,0 +1,8 @@
+Scenario 12: Preview
+  Tags: ['@javascript']
+  Given  the following Affiliates exist:
+  And  I am logged in with email "john@agency.gov"
+  When  I go to the www.agency.gov's Dashboard page
+  And  I follow "Preview"
+  Then  I should see a link to "Preview" with url that ends with "/search?affiliate=www.agency.gov"
+

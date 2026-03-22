@@ -1,0 +1,5 @@
+Scenario 7: unsupported locale
+  Given  my browser prefers Klingon
+  When  I go to the homepage
+  Then  the site should be in English
+

@@ -1,0 +1,7 @@
+Scenario 3: List all available products
+  Tags: ['@susemanager']
+  When  I execute mgr-sync "list products -e"
+  Then  I should get "[ ] SUSE Linux Enterprise Desktop 15 SP3 x86_64"
+  And  I should get "  [ ] (R) Basesystem Module 15 SP3 x86_64"
+  And  I should get "  [ ] Desktop Applications Module 15 SP3 x86_64"
+

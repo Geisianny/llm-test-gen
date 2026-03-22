@@ -1,0 +1,5 @@
+Scenario 1: CONFIGURE BANQUE ACCOUNT:
+  Tags: ['@multicompany_base_finance_bank_account']
+  Given  I need a "res.partner.bank" with oid: scen.main_bank1
+  And  having:
+

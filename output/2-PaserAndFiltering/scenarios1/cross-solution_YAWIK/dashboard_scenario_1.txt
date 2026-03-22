@@ -1,0 +1,5 @@
+Scenario 1: Access homepage without login
+  Given  I am on the homepage
+  Then  I should see "Welcome to YAWIK!"
+  And  I should not see "Dashboard"
+

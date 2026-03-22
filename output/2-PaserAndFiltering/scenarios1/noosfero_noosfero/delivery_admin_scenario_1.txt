@@ -1,0 +1,6 @@
+Scenario 1: enable delivery
+  Tags: ['@selenium']
+  Given  I follow "Preferences" within "#section-shopping"
+  When  I check "Enable shopping basket"
+  Then  I should see "Deliveries or pickups"
+

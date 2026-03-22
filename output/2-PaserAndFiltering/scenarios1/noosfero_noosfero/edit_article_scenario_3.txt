@@ -1,0 +1,14 @@
+Scenario 3: Hide token field when show to members is activated
+  Tags: ['@selenium']
+  Given  the following communities
+  And  the following users
+  And  "Mario Souto" is a member of "Free Software"
+  And  "Maria Silva" is a member of "Free Software"
+  And  I am on freesoftware's control panel
+  And  I follow "New" within "#section-content"
+  And  I should see "Folder"
+  When  I follow "Folder"
+  And  I fill in "Title" with "My Folder"
+  And  I fill in post-access hidden field with "1"
+  Then  I should not see "Fill in the search"
+

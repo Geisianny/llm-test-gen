@@ -1,0 +1,6 @@
+Scenario 2: 002 check if entity_scope is team
+  Given  the parties submit the following recurring transfers:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  parties should have the following vesting account balances:
+

@@ -1,0 +1,31 @@
+Feature: Simple ATM withdrawal
+Description: No PIN retry, No Amount re-enter
+
+Scenario 1: Successful transaction
+  Given  Entered Correct PIN number
+  And  Balance is sufficient
+  When  enter amount
+  Then  dispense notes
+  And  print receipt
+  And  eject the card
+
+Scenario 2: Not enough money
+  Tags: ['@important']
+  Given  Entered Correct PIN number
+  And  Insufficient balance
+  When  enter amount
+  Then  display "Insufficient balance"
+  And  eject the card
+
+Scenario Outline 3: PIN is incorrect - Example 1
+  Given  User's PIN is 123456
+  When  insert card
+  And  User enters 325212
+  Then  display "incorrect PIN"
+  And  eject the card
+
+  Examples:
+    | pin | input |
+    | 123456 | 325212 |
+    | 123456 |  |
+

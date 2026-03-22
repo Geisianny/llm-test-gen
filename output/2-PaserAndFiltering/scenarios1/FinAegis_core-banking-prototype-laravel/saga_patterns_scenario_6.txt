@@ -1,0 +1,7 @@
+Scenario 6: Saga compensation with idempotency
+  Given  a saga has partially completed with compensation
+  When  the same compensation is triggered again
+  Then  the system should:
+  And  no double compensation should occur
+  And  system state should remain consistent
+

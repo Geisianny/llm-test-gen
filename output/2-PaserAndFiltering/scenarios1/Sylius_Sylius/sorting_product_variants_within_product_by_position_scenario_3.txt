@@ -1,0 +1,7 @@
+Scenario 3: New product variant with no position is added as the last one
+  Tags: ['@api', '@api']
+  Given  the product "Opel Insignia" has also an "Opel Insignia Country Tourer" variant
+  When  I view all variants of the product "Opel Insignia"
+  Then  I should see 4 variants in the list
+  And  the last variant in the list should have name "Opel Insignia Country Tourer"
+

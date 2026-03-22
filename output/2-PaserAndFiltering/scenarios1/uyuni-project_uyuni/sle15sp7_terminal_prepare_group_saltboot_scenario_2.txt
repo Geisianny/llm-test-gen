@@ -1,0 +1,8 @@
+Scenario 2: Create hardware type group for SLES 15 SP7 terminal
+  When  I follow the left menu "Systems > System Groups"
+  And  I follow "Create Group"
+  And  I enter "HWTYPE:HP-ProLiantDL580Gen9" as "name"
+  And  I enter "Terminal hardware type: HP host" as "description"
+  And  I click on "Create Group"
+  Then  I should see a "System group HWTYPE:HP-ProLiantDL580Gen9 created." text
+

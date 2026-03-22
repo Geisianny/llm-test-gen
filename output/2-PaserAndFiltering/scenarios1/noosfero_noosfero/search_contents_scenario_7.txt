@@ -1,0 +1,8 @@
+Scenario 7: simple search for uploaded file
+  Given  the following uploaded files
+  When  I search contents for "rails"
+  Then  I should see "rails.png" within ".main-content"
+  And  I should not see "shoes"
+  When  I follow "rails"
+  Then  I should be on article "rails"
+

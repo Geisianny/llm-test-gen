@@ -1,0 +1,5 @@
+Scenario 9: Republish a person
+  Given  a published person "Existing Person" exists
+  When  I request a republish of the "Existing Person" person
+  Then  I can see the "Existing Person" person has been republished
+

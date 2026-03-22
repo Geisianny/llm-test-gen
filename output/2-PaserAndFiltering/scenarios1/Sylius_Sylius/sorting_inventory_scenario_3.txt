@@ -1,0 +1,7 @@
+Scenario 3: Sorting tracked product variants ascending by code
+  Tags: ['@ui', '@no-api']
+  When  I sort the tracked variants ascending by code
+  Then  I should see 2 tracked variants in the list
+  And  the first variant on the list should have code "IRON_MAIDEN_T_SHIRT"
+  And  the last variant on the list should have code "RHCP_T_SHIRT"
+

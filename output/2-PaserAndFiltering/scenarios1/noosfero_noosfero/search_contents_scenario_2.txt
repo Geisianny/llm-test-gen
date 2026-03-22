@@ -1,0 +1,8 @@
+Scenario 2: simple search for text articles
+  When  I search contents for "whales"
+  Then  I should see "whales and dolphins" within ".search-text-article-item"
+  And  I should see "whales and dolphins" within ".only-one-result-box"
+  And  I should not see "bees and butterflies"
+  When  I follow "whales and dolphins"
+  Then  I should be on article "whales and dolphins"
+

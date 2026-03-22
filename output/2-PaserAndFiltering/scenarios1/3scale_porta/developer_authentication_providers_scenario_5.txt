@@ -1,0 +1,5 @@
+Scenario 5: With iam_tools allowed add auth0
+  Given  the provider has "iam_tools" switch allowed
+  When  I visit the "Auth0" authentication provider page
+  Then  I press "Create"
+

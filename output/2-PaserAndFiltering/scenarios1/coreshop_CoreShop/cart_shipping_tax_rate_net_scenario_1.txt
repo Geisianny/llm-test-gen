@@ -1,0 +1,6 @@
+Scenario 1: Create a new cart, add a product and shipping should be applied
+  And  I add the product "Shoe" to my cart
+  Then  the cart shipping should be "1000" excluding tax
+  And  the cart shipping should be "1077" including tax
+  And  the loaded carts shipping tax rate should be "7.7"
+

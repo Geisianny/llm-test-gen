@@ -1,0 +1,6 @@
+Scenario 14: Get a list of entities returns "OK" response
+  Tags: ['@team:DataDog/service-catalog']
+  Given  new "ListCatalogEntity" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

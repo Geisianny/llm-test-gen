@@ -1,0 +1,22 @@
+Feature: Admin all users page
+Description: As an Admin
+  So that I can quickly see which users are in which Organisation
+  I would like all orgs hyperlinked and have sorting work
+
+Background: 
+  Given  the following organisations exist:
+  And  the following users are registered:
+  And  I am signed in as a superadmin
+
+Scenario 1: having org links targeting new page
+  When  I visit the registered users page
+  Then  I should see link "Harrow Bereavement Counselling" targeting new page
+
+Scenario 2: sorting by last sign it date
+  Tags: ['@javascript']
+  When  I visit the registered users page
+  And  I click column header "Last Login"
+  Then  I should see "user3@example.com" before "user2@example.com"
+  And  I should see "user2@example.com" before "user1@example.com"
+  And  I should see "user3@example.com" before "user1@example.com"
+

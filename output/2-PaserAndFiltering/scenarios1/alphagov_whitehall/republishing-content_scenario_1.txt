@@ -1,0 +1,6 @@
+Scenario 1: Republish the "Past Prime Ministers" page
+  Given  a published publication "Past Prime Ministers" exists
+  And  the "Past Prime Ministers" page can be republished
+  When  I request a republish of the "Past Prime Ministers" page
+  Then  I can see the "Past Prime Ministers" page has been scheduled for republishing
+

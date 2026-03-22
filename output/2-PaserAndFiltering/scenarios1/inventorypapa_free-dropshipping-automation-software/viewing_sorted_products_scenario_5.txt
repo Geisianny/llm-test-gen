@@ -1,0 +1,8 @@
+Scenario 5: Sorting products by their names from a to z
+  Tags: ['@ui']
+  When  I browse products from taxon "Fluffy Pets"
+  And  I sort products alphabetically from a to z
+  Then  I should see 3 products in the list
+  And  the first product on the list should have name "Berserk Pug"
+  And  the last product on the list should have name "Xtreme Pug"
+

@@ -1,0 +1,8 @@
+Scenario 3: Cancel an open order
+  Given  I am logged in as "alice@example.com"
+  And  I have placed a limit buy order for "0.1" "BTC" at "48000" "EUR"
+  When  I cancel the order
+  Then  the order should have status "cancelled"
+  And  my locked "EUR" balance should be "0.00"
+  And  my available "EUR" balance should be restored
+

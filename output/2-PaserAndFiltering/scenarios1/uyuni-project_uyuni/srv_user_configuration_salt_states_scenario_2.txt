@@ -1,0 +1,4 @@
+Scenario 2: Apply configuration salt state to server
+  Tags: ['@skip_if_containerized_server']
+  When  I manually install the "uyuni-config" formula on the server
+

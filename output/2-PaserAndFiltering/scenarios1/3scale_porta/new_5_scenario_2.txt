@@ -1,0 +1,7 @@
+Scenario 2: Create an service plan
+  Given  they go to the product's new service plan admin page
+  When  the form is submitted with:
+  Then  the current page is the product's service plans admin page
+  And  they should see "Created service plan Premium"
+  And  the table has the following row:
+

@@ -1,0 +1,8 @@
+Scenario 4: Proposal fails without majority
+  Given  a proposal to increase fees with 40% support
+  And  the voting period is ending
+  When  the voting period closes
+  Then  the proposal should be marked as "rejected"
+  And  the current configuration should remain unchanged
+  And  stakeholders should be notified of the result
+

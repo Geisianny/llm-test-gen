@@ -1,0 +1,48 @@
+Feature: Audience > Applications > Alerts
+Tags: ['@javascript']
+
+Background: 
+  Given  a provider
+  And  a product "API 1"
+  And  a product "API 2"
+  And  the following application plans:
+  And  a buyer "Jane" of the provider
+  And  the following applications:
+  And  the following alerts:
+  And  the provider logs in
+
+Scenario 1: Navigation
+  Given  the current page is the provider dashboard
+  When  they select "Audience" from the context selector
+  And  press "Applications" within the main menu
+  And  follow "Alerts" within the main menu
+  Then  the current page is the alerts page
+
+Scenario 2: Listing alerts
+  Given  they go to the alerts page
+  Then  they should see the following table:
+
+Scenario 3: Reading alerts
+  Given  they go to the alerts page
+  When  they follow "Read" in the 1st row
+  And  follow "Read" in the 3rd row
+  Then  they should see the following table:
+
+Scenario 4: Deleting alerts
+  Given  they go to the alerts page
+  When  they press "Delete" in the 1st row
+  And  confirm the dialog
+  Then  they should see the following table:
+
+Scenario 5: Marking all alerts as read
+  Given  they go to the alerts page
+  When  they select toolbar action "Mark all as read"
+  And  confirm the dialog
+  Then  they should see the following table:
+
+Scenario 6: Deleting all alerts
+  Given  they go to the alerts page
+  When  they select toolbar action "Delete all"
+  And  confirm the dialog
+  Then  they should see "All clear"
+

@@ -1,0 +1,8 @@
+Scenario 1: I can register if all required fields (First name, Last name, Email, Username, Password) are filled. After successful registration i receive a Welcome email and i'm automatically logged.
+  Given  I am on the home page
+  And  I follow "Register"
+  When  I fill in the following:
+  And  I press "Register"
+  Then  I should see "Your account has been created successfully"
+  And  I should receive the "registration" mail on "jean@cocorico.rocks"
+

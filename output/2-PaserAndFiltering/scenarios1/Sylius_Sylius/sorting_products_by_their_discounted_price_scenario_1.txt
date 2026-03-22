@@ -1,0 +1,7 @@
+Scenario 1: Sorting products by discounted price of their first variant with ascending order
+  Tags: ['@api', '@ui']
+  When  I browse products from taxon "Merchandise"
+  And  I sort products by the lowest price first
+  Then  the first product on the list should have name "Mug"
+  And  the last product on the list should have name "T-Shirt"
+

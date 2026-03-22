@@ -1,0 +1,6 @@
+Scenario 9: image links to product page
+  Given  the following products
+  And  I am on /catalog/artebonito
+  When  I follow "Agrotox" within ".product-link"
+  Then  I should be taken to "Agrotox" product page
+

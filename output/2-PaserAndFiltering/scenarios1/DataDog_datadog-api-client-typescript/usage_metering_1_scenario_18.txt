@@ -1,0 +1,8 @@
+Scenario 18: Get hourly usage for Observability Pipelines returns "Bad Request" response
+  Tags: ['@team:DataDog/revenue-query']
+  Given  new "GetUsageObservabilityPipelines" request
+  And  request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
+  And  request contains "end_hr" parameter with value "{{ timeISO('now - 5d') }}"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

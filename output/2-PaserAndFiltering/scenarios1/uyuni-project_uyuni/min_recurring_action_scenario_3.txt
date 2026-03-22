@@ -1,0 +1,23 @@
+Scenario 3: Enable IP forwarding through a custom state recurring action
+  When  I am on the "Recurring Actions" page of this "sle_minion"
+  Then  I should see a "No schedules created. Use Create to add a schedule" text
+  When  I click on "Create"
+  And  I wait until I see "Action Type" text
+  And  I enter "IP forwarding custom state recurring action" as "scheduleName"
+  And  I select "Custom state" from "actionTypeDescription"
+  And  I wait until I see "Configure states to execute" text
+  And  I check radio button "schedule-daily"
+  And  I enter 1 minutes from now as "time-daily_time"
+  And  I check "statechannel-recurring-cbox"
+  And  I click on "Save Changes"
+  And  I wait until I see "Edit State Ranks" text
+  And  I click on "Confirm"
+  And  I click on "Create Schedule"
+  Then  I wait until I see "Schedule successfully created" text
+  And  I should see a "IP forwarding custom state recurring action" text
+  And  I should see a "Minion" text
+  When  I follow "Events"
+  And  I follow "History"
+  Then  I wait at most 420 seconds until event "Apply recurring states [manager_org_1.statechannel-recurring] schedule" is completed
+  And  file "/proc/sys/net/ipv4/conf/all/forwarding" should contain "1" on "sle_minion"
+

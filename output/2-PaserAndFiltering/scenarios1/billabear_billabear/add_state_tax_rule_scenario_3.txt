@@ -1,0 +1,10 @@
+Scenario 3: Fails to create when overlapping valid times
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  that the following countries exist:
+  And  there are the following tax types:
+  And  the following states exist:
+  And  the following country tax rules exist:
+  And  the following state tax rules exist:
+  When  I create a state tax rule with the following data:
+  Then  there should be an error for "validUntil"
+

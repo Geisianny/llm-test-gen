@@ -1,0 +1,9 @@
+Scenario 1: Successfully change settings
+  Tags: ['@javascript', '@settings']
+  Given  I go to settings page
+  When  I select "German" from "choose your language"
+  And  I select "Europe/Berlin" from "choose your timzone"
+  And  I press "Save"
+  And  I wait for the ajax response
+  Then  I should see "Changes successfully saved"
+

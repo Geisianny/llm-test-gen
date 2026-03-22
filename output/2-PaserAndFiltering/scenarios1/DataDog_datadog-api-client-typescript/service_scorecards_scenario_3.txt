@@ -1,0 +1,9 @@
+Scenario 3: Create outcomes batch returns "Bad Request" response
+  Tags: ['@team:DataDog/service-catalog']
+  Given  there is a valid "create_scorecard_rule" in the system
+  And  operation "CreateScorecardOutcomesBatch" enabled
+  And  new "CreateScorecardOutcomesBatch" request
+  And  body with value {"data": {"attributes": {"results": [{"remarks": "See: <a href=\"https://app.datadoghq.com/services\">Services</a>", "rule_id": "{{ create_scorecard_rule.data.id }}", "state": "pass", "service_name": ""}]}, "type": "batched-outcome"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

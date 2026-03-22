@@ -1,0 +1,11 @@
+Scenario 5: Update a restriction policy returns "Bad Request" response
+  Tags: ['@team:DataDog/aaa-granular-access']
+  Given  there is a valid "role" in the system
+  And  there is a valid "user" in the system
+  And  the "user" has the "role"
+  And  new "UpdateRestrictionPolicy" request
+  And  request contains "resource_id" parameter with value "malformed"
+  And  body with value {"data": {"id": "dashboard:abc-def-ghi", "type": "restriction_policy", "attributes": {"bindings": [{"relation": "editor", "principals": ["org:{{ user.data.relationships.org.data.id }}"]}]}}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

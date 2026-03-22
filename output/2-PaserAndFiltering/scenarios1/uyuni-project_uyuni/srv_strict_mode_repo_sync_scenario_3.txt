@@ -1,0 +1,25 @@
+Scenario 3: Testing strict mode
+  Given  I am authorized for the "Admin" section
+  And  I follow the left menu "Software > Manage > Channels"
+  And  I follow "Test-Strict-Channel"
+  And  I follow "Repositories" in the "content area"
+  And  I check "fake-rpm-repo" in the list
+  And  I click on "Save Repositories"
+  And  I follow "Sync" in the "content area"
+  And  I click on "Sync Now"
+  And  I wait at most 60 seconds until I do not see "Repository sync is running." text, refreshing the page
+  And  I store the amount of packages in channel "test-strict-channel"
+  And  I follow "Add / Remove"
+  And  I uncheck "fake-rpm-repo" in the list
+  And  I check "fake-rpm-repo-modified" in the list
+  And  I click on "Save Repositories"
+  And  I follow "Sync" in the "content area"
+  And  I check "no-strict"
+  And  I click on "Sync Now"
+  And  I wait at most 60 seconds until I do not see "Repository sync is running." text, refreshing the page
+  Then  The amount of packages in channel "Test-Strict-Channel" should be the same as before
+  And  I uncheck "no-strict"
+  And  I click on "Sync Now"
+  And  I wait at most 60 seconds until I do not see "Repository sync is running." text, refreshing the page
+  Then  The amount of packages in channel "Test-Strict-Channel" should be fewer than before
+

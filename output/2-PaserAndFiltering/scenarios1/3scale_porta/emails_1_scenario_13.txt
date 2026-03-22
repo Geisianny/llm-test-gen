@@ -1,0 +1,11 @@
+Scenario 13: Validation error for invalid custom product support email
+  Given  a product "Bananas"
+  And  they go to the emails settings page
+  When  they press "Add a custom support email"
+  And  select the product "Bananas"
+  And  fill in "Bananas" with "invalid@email"
+  And  press "Save support email for Bananas"
+  And  1 second pass
+  Then  they should see a danger toast alert with text "Couldn't update support email"
+  And  the product's support email should still be "support@api.test"
+

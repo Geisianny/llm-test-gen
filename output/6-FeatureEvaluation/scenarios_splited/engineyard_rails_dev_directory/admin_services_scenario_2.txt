@@ -1,0 +1,4 @@
+Scenario: Remove an existing service
+  Given there is a service with the name "Existing Service"
+  When the administrator removes the service "Existing Service"
+  Then the system no longer lists the service "Existing Service"

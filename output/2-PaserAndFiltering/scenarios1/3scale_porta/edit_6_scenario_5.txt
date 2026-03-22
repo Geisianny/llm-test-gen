@@ -1,0 +1,12 @@
+Scenario 5: Edit fields with choices
+  Given  the provider has the following fields defined for accounts:
+  And  the provider has the following buyers:
+  And  buyer "Alice" has extra fields:
+  When  they go to the buyer account "Alice" edit page
+  And  "Spain" is the option selected in "Country"
+  And  "option1" is the option selected in "Fields with choices"
+  And  they select "United States of America" from "Country"
+  And  they select "option2" from "Fields with choices"
+  And  they press "Update Account"
+  And  the inverted table has the following rows within the account details card:
+

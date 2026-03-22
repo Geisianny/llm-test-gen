@@ -1,0 +1,14 @@
+Scenario 4: Preventing anonymous user from claiming cart of logged in user
+  Tags: ['@no-api', '@ui', '@mink:chromedriver']
+  Given  on this channel account verification is not required
+  When  I add product "PHP T-Shirt" to the cart
+  And  I register with email "eddard@stark.com" and password "handOfTheKing"
+  And  I log out
+  And  an anonymous user in another browser adds products "PHP T-Shirt" and "Kotlin T-Shirt" to the cart
+  And  they complete addressing step with email "robb@stark.com" and "United States" based billing address
+  And  they add product "Symfony T-Shirt" to the cart
+  And  I sign in again with email "eddard@stark.com" and password "handOfTheKing" in the previous session
+  And  I see the summary of my previous cart
+  Then  there should be one item in my cart
+  And  my cart total should be "$20.00"
+

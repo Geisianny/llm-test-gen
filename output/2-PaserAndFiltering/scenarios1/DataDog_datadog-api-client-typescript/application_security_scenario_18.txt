@@ -1,0 +1,6 @@
+Scenario 18: List all WAF exclusion filters returns "OK" response
+  Tags: ['@team:DataDog/asm-backend']
+  Given  new "ListApplicationSecurityWafExclusionFilters" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

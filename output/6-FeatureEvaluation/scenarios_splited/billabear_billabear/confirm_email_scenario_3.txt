@@ -1,0 +1,7 @@
+Scenario: Confirm account with expired verification code
+  Given there is a user who has registered with a valid email "user@example.com"
+  And the system has sent a verification code to "user@example.com" that has expired
+  When the user enters the expired verification code
+  Then the system does not confirm the user's account
+  And the user's account status remains unconfirmed
+  And the system displays a message indicating that the verification code has expired

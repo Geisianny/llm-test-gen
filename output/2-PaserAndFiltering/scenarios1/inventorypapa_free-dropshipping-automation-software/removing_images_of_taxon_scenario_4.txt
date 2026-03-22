@@ -1,0 +1,10 @@
+Scenario 4: Removing only one image of a simple product when all images have same type
+  Tags: ['@ui', '@javascript']
+  Given  the "T-Shirts" taxon has an image "t-shirts.jpg" with "banner" type
+  And  the "T-Shirts" taxon also has an image "mugs.jpg" with "banner" type
+  And  I want to modify the "T-Shirts" taxon
+  When  I remove the first image
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this taxon should have only one image
+

@@ -1,0 +1,9 @@
+Scenario 7: Adding an image to an existing configurable product without providing its type
+  Tags: ['@ui', '@javascript']
+  Given  the store has a "Lamborghini Gallardo Model" configurable product
+  And  I want to modify this product
+  When  I attach the "lamborghini.jpg" image
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this product should have only one image
+

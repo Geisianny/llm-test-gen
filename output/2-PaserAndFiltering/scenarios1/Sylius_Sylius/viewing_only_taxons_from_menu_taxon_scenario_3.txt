@@ -1,0 +1,11 @@
+Scenario 3: Seeing correct taxons after switching the channel
+  Tags: ['@api', '@ui']
+  Given  the store also operates on a channel named "Poland" with hostname "pl.store.com"
+  And  channel "United States" has menu taxon "Guns"
+  And  channel "Poland" has menu taxon "Clothes"
+  When  I change my current channel to "Poland"
+  And  I check available taxons
+  Then  I should see "T-Shirts" and "Caps" in the menu
+  And  I should not see "Rifles" and "Revolvers" in the menu
+  And  I should not see "Pens" and "Pencils" in the menu
+

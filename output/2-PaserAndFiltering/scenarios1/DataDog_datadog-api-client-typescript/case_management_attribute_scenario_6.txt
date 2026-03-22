@@ -1,0 +1,7 @@
+Scenario 6: Get all custom attributes config of case type returns "Bad Request" response
+  Tags: ['@skip', '@team:DataDog/case-management']
+  Given  new "GetAllCustomAttributeConfigsByCaseType" request
+  And  request contains "case_type_id" parameter with value "not-an-uuid"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

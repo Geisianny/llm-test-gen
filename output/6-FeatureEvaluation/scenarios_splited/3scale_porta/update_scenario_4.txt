@@ -1,0 +1,7 @@
+Scenario: Update notification preferences with invalid input
+  Given the provider user is on the notification preferences page
+  And there are notification types available for selection
+  When the provider user makes invalid changes to the notification preferences
+  And submits the updated preferences
+  Then the system displays an error message
+  And does not update the notification preferences

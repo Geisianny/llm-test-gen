@@ -1,0 +1,6 @@
+Scenario 3: Being unable to access product show page in shop when the product is disabled
+  Tags: ['@ui']
+  Given  this product has been disabled
+  When  I access "Bugatti" product page
+  Then  I should not be able to show this product in shop
+

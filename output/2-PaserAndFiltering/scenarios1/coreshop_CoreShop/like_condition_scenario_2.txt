@@ -1,0 +1,4 @@
+Scenario 2: Create a like right condition and render it
+  Given  there is a like condition with field-name "XY" and pattern "right" and value "blub"
+  Then  the condition rendered for "mysql" should look like "`XY` LIKE 'blub%'"
+

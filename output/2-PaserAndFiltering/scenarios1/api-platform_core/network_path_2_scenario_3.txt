@@ -1,0 +1,6 @@
+Scenario 3: I should be able to GET an Item with network paths
+  Given  I add "Accept" header equal to "application/ld+json"
+  And  I add "Content-Type" header equal to "application/json"
+  And  I send a "GET" request to "/network_path_dummies/1"
+  And  the JSON should be equal to:
+

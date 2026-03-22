@@ -1,0 +1,36 @@
+Feature: financial_institutions_application_story_processado
+
+Scenario: Successful partnership application submission
+    Given there is a financial institution registered with FinAegis
+    When the financial institution submits a partnership application
+    And provides the required partnership details
+    Then the system accepts the partnership application
+    And sends a confirmation notification to the financial institution
+
+Scenario: Partnership application submission with missing details
+    Given there is a financial institution registered with FinAegis
+    When the financial institution submits a partnership application
+    And omits required partnership details
+    Then the system rejects the partnership application
+    And displays an error message indicating the missing details
+
+Scenario: Unregistered financial institution attempts to submit partnership application
+    Given there is no financial institution registered with FinAegis with the identifier "FI123"
+    When the unregistered financial institution submits a partnership application
+    And provides the required partnership details
+    Then the system rejects the partnership application
+    And displays an error message indicating that the institution is not registered
+
+Scenario: Duplicate partnership application submission
+    Given there is a financial institution registered with FinAegis
+    And the financial institution has already submitted a partnership application
+    When the financial institution submits another partnership application
+    Then the system rejects the duplicate partnership application
+    And displays an error message indicating that an application is already pending
+
+Scenario: Partnership application submission with invalid data
+    Given there is a financial institution registered with FinAegis
+    When the financial institution submits a partnership application
+    And provides invalid partnership details
+    Then the system rejects the partnership application
+    And displays an error message indicating the invalid data fields

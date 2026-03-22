@@ -1,0 +1,6 @@
+Scenario 11: Retrieve a collection in JSON should not be possible if the format has been removed at resource level
+  When  I add "Accept" header equal to "application/json"
+  And  I send a "GET" request to "/dummy_custom_formats"
+  Then  the response status code should be 406
+  And  the header "Content-Type" should be equal to "application/problem+json; charset=utf-8"
+

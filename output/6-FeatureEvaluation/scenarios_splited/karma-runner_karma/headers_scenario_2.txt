@@ -1,0 +1,6 @@
+Scenario: Serve multiple files with different custom headers
+  Given there is a test configuration with files "test1.js" and "test2.css"
+  When the user sets a custom header "Cache-Control" with value "no-cache" for "test1.js"
+  And sets a custom header "Content-Type" with value "text/css" for "test2.css"
+  Then the system serves "test1.js" with the header "Cache-Control" and value "no-cache"
+  And serves "test2.css" with the header "Content-Type" and value "text/css"

@@ -1,0 +1,7 @@
+Scenario 3: Attempting to reverse an already reversed transaction
+  Given  transaction "txn_67890" has already been reversed
+  When  I attempt to reverse "txn_67890" again
+  Then  the reversal should fail with error "Transaction already reversed"
+  And  no balance changes should occur
+  And  the attempt should be logged for audit
+

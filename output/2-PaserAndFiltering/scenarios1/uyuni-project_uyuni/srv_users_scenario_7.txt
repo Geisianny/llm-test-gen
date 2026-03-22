@@ -1,0 +1,26 @@
+Scenario 7: Add roles
+  Tags: ['@uyuni']
+  When  I follow the left menu "Users > User List > Active"
+  And  I follow "user1"
+  When  the "role_satellite_admin" checkbox should be disabled
+  And  I check "role_org_admin"
+  And  I check "role_system_group_admin"
+  And  I check "role_channel_admin"
+  And  I check "role_activation_key_admin"
+  And  I check "role_config_admin"
+  And  I click on "Update"
+  Then  the "role_satellite_admin" checkbox should be disabled
+  And  I should see a "Uyuni Administrator" text
+  And  I should see "role_org_admin" as checked
+  And  I should see a "Organization Administrator" text
+  And  I should see "role_system_group_admin" as checked
+  And  I should see a "System Group Administrator" text
+  And  I should see "role_channel_admin" as checked
+  And  I should see a "Channel Administrator" text
+  And  I should see "role_activation_key_admin" as checked
+  And  I should see a "Activation Key Administrator" text
+  And  I should see "role_config_admin" as checked
+  And  I should see a "Configuration Administrator" text
+  And  I should see "role_regular_user" as checked
+  And  I should see a "Regular User" text
+

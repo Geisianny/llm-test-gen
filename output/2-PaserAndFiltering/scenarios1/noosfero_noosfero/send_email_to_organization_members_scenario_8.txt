@@ -1,0 +1,5 @@
+Scenario 8: Show button "Send e-Mail to members" of community to an moderator
+  Given  I am logged in as "jose"
+  When  I go to Sample Community's members page
+  Then  I should see "Send e-mail to members"
+

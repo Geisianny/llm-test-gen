@@ -1,0 +1,28 @@
+Scenario 2: 002, test negative PDP when trading mode is continuous (0003-MTMK-014, 0019-MCAL-010, 0029-FEES-014)
+  Tags: ['@Now']
+  Given  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "USD/DEC22"
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "USD/DEC22"
+  And  the auction ends with a traded volume of "10" at a price of "10"
+  And  the market data for the market "USD/DEC22" should be:
+  And  the parties should have the following account balances:
+  And  the parties should have the following margin levels:
+  And  the following trades should be executed:
+  Then  the parties should have the following profit and loss:
+  Then  the order book should have the following volumes for market "USD/DEC22":
+  And  the parties place the following orders with ticks:
+  And  the following trades should be executed:
+  And  the following transfers should happen:
+  Then  the parties should have the following profit and loss:
+  And  the parties should have the following account balances:
+  And  the parties should have the following margin levels:
+  And  the parties place the following orders with ticks:
+  And  the following trades should be executed:
+  And  the market data for the market "USD/DEC22" should be:
+  Then  the parties should have the following profit and loss:
+  And  the parties should have the following account balances:
+  And  the parties should have the following margin levels:
+

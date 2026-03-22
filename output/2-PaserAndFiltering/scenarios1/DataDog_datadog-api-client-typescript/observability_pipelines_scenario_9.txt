@@ -1,0 +1,14 @@
+Scenario 9: List pipelines returns "OK" response
+  Tags: ['@team:DataDog/observability-pipelines']
+  Given  operation "ListPipelines" enabled
+  And  there is a valid "pipeline" in the system
+  And  new "ListPipelines" request
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data[0]" has field "id"
+  And  the response "data[0].type" is equal to "pipelines"
+  And  the response "data[0].attributes.name" is equal to "Main Observability Pipeline"
+  And  the response "data[0].attributes.config.sources" has length 1
+  And  the response "data[0].attributes.config.processors" has length 1
+  And  the response "data[0].attributes.config.destinations" has length 1
+

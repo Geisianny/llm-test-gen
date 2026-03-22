@@ -1,0 +1,4 @@
+Scenario 21: Cleanup: uninstall formula from the server
+  Tags: ['@skip_if_containerized_server']
+  When  I manually uninstall the "locale" formula from the server
+

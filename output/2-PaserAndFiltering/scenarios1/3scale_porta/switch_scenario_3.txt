@@ -1,0 +1,5 @@
+Scenario 3: In allowed state (hidden and visible), I should be able to access the page by url
+  Given  the provider has "multiple_services" switch allowed
+  And  I go to the new service page
+  Then  I should see "New Product"
+

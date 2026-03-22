@@ -1,0 +1,4 @@
+Scenario: View detailed information of a tracked product variant
+  Given there is a tracked product variant in the inventory
+  When the administrator selects the tracked product variant
+  Then the system displays detailed information about the tracked product variant

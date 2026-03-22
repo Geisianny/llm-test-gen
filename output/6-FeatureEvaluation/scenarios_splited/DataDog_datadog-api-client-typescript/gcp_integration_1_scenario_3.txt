@@ -1,0 +1,8 @@
+Scenario: Update an existing STS service account
+  Given the Datadog API is available
+  And there is an existing STS service account with the name "existing-sts-account"
+  When the user updates the STS service account "existing-sts-account"
+  And changes the filters to "new-filter1, new-filter2"
+  And disables CSPM
+  Then the system updates the STS service account successfully
+  And returns the updated details of the STS service account

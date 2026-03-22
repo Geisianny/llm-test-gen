@@ -1,0 +1,19 @@
+Scenario 4: Create new enhancement patch with no bnc URL
+  When  I follow the left menu "Patches > Manage Patches"
+  And  I follow "Create Patch"
+  When  I enter "Enhancement Patch" as "synopsis"
+  And  I enter "Enhancement Advisory" as "advisoryName"
+  And  I select "Product Enhancement Advisory" from "advisoryType"
+  And  I enter "Enhancement Product" as "product"
+  And  I enter "Enhancement Topic" as "topic"
+  And  I enter "Enhancement Description" as "description"
+  And  I enter "Enhancement Solution" as "solution"
+  And  I enter "1234" as "buglistId"
+  And  I enter "Enhancement Summary" as "buglistSummary"
+  And  I enter "Enhancement,keywords" as "keywords"
+  And  I enter "Enhancement Reference" as "refersTo"
+  And  I enter "Enhancement Note" as "notes"
+  And  I check test channel
+  And  I click on "Create Patch"
+  Then  I should see a "Patch: Enhancement Advisory-1" text
+

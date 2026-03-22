@@ -1,0 +1,7 @@
+Scenario 5: Filter subscriptions by service plan
+  Given  the following service plans:
+  And  the following buyers with service subscriptions signed up to the provider:
+  When  they go to the buyer's service subscriptions page
+  And  the table is filtered with:
+  Then  the table should contain the following:
+

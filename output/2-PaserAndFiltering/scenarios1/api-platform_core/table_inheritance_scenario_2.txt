@@ -1,0 +1,8 @@
+Scenario 2: Get the parent entity collection
+  When  some dummy table inheritance data but not api resource child are created
+  When  I send a "GET" request to "/dummy_table_inheritances"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/hal+json; charset=utf-8"
+  And  the JSON should be equal to:
+

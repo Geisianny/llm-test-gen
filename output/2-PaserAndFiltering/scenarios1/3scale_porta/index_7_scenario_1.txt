@@ -1,0 +1,7 @@
+Scenario 1: Sorting services
+  Tags: ['@search']
+  Given  a backend "First"
+  And  a backend "Last"
+  When  an admin is reviewing backend apis index page
+  Then  they can filter the table by "Name"
+

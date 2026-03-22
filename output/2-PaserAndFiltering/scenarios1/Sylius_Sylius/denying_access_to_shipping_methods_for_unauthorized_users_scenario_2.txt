@@ -1,0 +1,7 @@
+Scenario 2: Trying to rename the shipping method
+  Tags: ['@api', '@no-ui']
+  Given  I try to modify a shipping method "UPS Carrier"
+  When  I rename it to "UPS Transport" in "English (United States)"
+  And  I try to save my changes
+  Then  I should be notified that my access has been denied
+

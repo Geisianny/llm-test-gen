@@ -1,0 +1,9 @@
+Scenario 1: 
+  Tags: ['@javascript']
+  Given  I visit the events page
+  Then  I should see "My first event"
+  And  I should see "An Event today" within "calendar"
+  And  I should see "An Event today" within "events_scroll"
+  And  I should see "Start: Sunday, October 20, 2030 at 10:40"
+  And  I should see "End: Sunday, October 20, 2030 at 10:50"
+

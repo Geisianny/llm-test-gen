@@ -1,0 +1,10 @@
+Scenario 19: Update an existing scorecard rule returns "Bad Request" response
+  Tags: ['@team:DataDog/service-catalog']
+  Given  operation "UpdateScorecardRule" enabled
+  And  there is a valid "create_scorecard_rule" in the system
+  And  new "UpdateScorecardRule" request
+  And  request contains "rule_id" parameter from "create_scorecard_rule.data.id"
+  And  body with value {"data": {"attributes": {"enabled": true, "level": 2, "name": "Team Defined", "scorecard_id": "NOT.FOUND"}, "type": "rule"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

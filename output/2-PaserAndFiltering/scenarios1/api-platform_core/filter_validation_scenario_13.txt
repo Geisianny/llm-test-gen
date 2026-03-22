@@ -1,0 +1,7 @@
+Scenario 13: Test filter enum
+  When  I am on "/filter_validators?required=foo&required-allow-empty&enum=in-enum"
+  Then  the response status code should be 200
+  When  I am on "/filter_validators?required=foo&required-allow-empty&enum=not-in-enum"
+  Then  the response status code should be 422
+  And  the JSON node "detail" should be equal to 'enum: The value you selected is not a valid choice.'
+

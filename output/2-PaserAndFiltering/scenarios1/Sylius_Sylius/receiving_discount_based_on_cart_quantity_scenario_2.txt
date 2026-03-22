@@ -1,0 +1,8 @@
+Scenario 2: Receiving discount when buying the required quantity
+  Tags: ['@api', '@ui']
+  Given  the promotion gives "$10.00" discount to every order with quantity at least 4
+  And  I added 4 products "PHP T-Shirt" to the cart
+  When  I check the details of my cart
+  Then  my cart total should be "$390.00"
+  And  my discount should be "-$10.00"
+

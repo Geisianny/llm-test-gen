@@ -1,0 +1,54 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: not_discountable_discount_amount_action_story_processado.feature
+Caminho relativo: coreshop_CoreShop\not_discountable_discount_amount_action_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\coreshop_CoreShop\not_discountable_discount_amount_action_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: not_discountable_discount_amount_action_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Apply non-discountable rule to cart
+   Steps: 4
+   - Given there is a product with a price of $100
+   - And a non-discountable price rule is applied to the product
+   - When the customer adds the product to the cart
+   - Then the cart total remains $100
+2. Non-discountable rule overrides voucher discount
+   Steps: 6
+   - Given there is a product with a price of $100
+   - And a non-discountable price rule is applied to the product
+   - And there is an active voucher offering a $20 discount
+   - When the customer adds the product to the cart
+   - And applies the voucher to the cart
+   - Then the cart total remains $100
+3. Non-discountable rule does not affect other products
+   Steps: 6
+   - Given there are two products, product A with a price of $100 and product B with a price of $50
+   - And a non-discountable price rule is applied to product A
+   - And there is an active voucher offering a $10 discount on product B
+   - When the customer adds both products to the cart
+   - And applies the voucher to the cart
+   - Then the cart total is $140
+4. Multiple non-discountable rules on the same product
+   Steps: 4
+   - Given there is a product with a price of $100
+   - And multiple non-discountable price rules are applied to the product
+   - When the customer adds the product to the cart
+   - Then the cart total remains $100
+5. Non-discountable rule and percentage discount voucher
+   Steps: 6
+   - Given there is a product with a price of $100
+   - And a non-discountable price rule is applied to the product
+   - And there is an active voucher offering a 20% discount
+   - When the customer adds the product to the cart
+   - And applies the voucher to the cart
+   - Then the cart total remains $100

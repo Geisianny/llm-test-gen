@@ -1,0 +1,6 @@
+Scenario 1: Add a new stores shipping rule which is valid
+  Given  adding a shipping rule named "stores"
+  And  the shipping rule is active
+  And  the shipping rule has a condition stores with store "Austria"
+  Then  the shipping rule should be valid for my cart with carrier "Post"
+

@@ -1,0 +1,8 @@
+Scenario 1: Not being able to pay for cancelled order
+  Tags: ['@ui']
+  Given  the customer bought 3 "Iron Maiden T-Shirt" products
+  And  the customer chose "Free" shipping method to "United States" with "offline" payment
+  And  this order was cancelled
+  When  I want to browse order details for this order
+  Then  I should not be able to pay
+

@@ -1,0 +1,9 @@
+Scenario 3: Configure Prometheus formula
+  When  I follow "Formulas" in the content area
+  And  I follow "Prometheus" in the content area
+  And  I click on "Expand All Sections"
+  And  I enter "admin" as "Username"
+  And  I enter "admin" as "Password"
+  And  I click on "Save Formula"
+  Then  I should see a "Formula saved" text
+

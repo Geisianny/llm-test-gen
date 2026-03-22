@@ -1,0 +1,8 @@
+Scenario 17: Update a custom destination returns "Conflict" response
+  Tags: ['@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-forwarding']
+  Given  new "UpdateLogsCustomDestination" request
+  And  request contains "custom_destination_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"enabled": false, "forward_tags": false, "forward_tags_restriction_list": ["datacenter", "host"], "forward_tags_restriction_list_type": "ALLOW_LIST", "forwarder_destination": {"auth": {"password": "datadog-custom-destination-password", "type": "basic", "username": "datadog-custom-destination-username"}, "endpoint": "https://example.com", "type": "http"}, "name": "Nginx logs", "query": "source:nginx"}, "type": "custom_destination"}}
+  When  the request is sent
+  Then  the response status is 409 Conflict
+

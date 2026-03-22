@@ -1,0 +1,9 @@
+Scenario 17: Update Cloudflare account returns "Bad Request" response due to missing required email
+  Tags: ['@replay-only', '@team:DataDog/saas-integrations']
+  Given  there is a valid "cloudflare_account" in the system
+  And  new "UpdateCloudflareAccount" request
+  And  request contains "account_id" parameter from "cloudflare_account.data.id"
+  And  body with value {"data": {"attributes": {"api_key": "fakekey"}, "type": "cloudflare-accounts"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

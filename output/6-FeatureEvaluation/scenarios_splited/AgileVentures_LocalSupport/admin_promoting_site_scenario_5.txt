@@ -1,0 +1,3 @@
+Scenario: Site name is visible on page load
+  Given the user loads a page on the site
+  Then the site name "Harrow Community Network" is visible on page load

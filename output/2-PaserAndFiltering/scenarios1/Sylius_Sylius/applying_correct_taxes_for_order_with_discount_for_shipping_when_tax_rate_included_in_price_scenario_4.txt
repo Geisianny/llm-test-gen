@@ -1,0 +1,15 @@
+Scenario 4: Properly calculated taxes when item belongs to different tax category and not has tax included in price
+  Tags: ['@api', '@ui']
+  Given  the store has "Standard VAT" tax rate of 23% for "Mugs" within the "US" zone
+  And  the store has a product "Sonata Mug" priced at "$10.00"
+  And  it belongs to "Mugs" tax category
+  And  the store has "DHL" shipping method with "$50.00" fee
+  And  shipping method "DHL" belongs to "Shipping" tax category
+  And  I added product "Sonata Mug" to the cart
+  And  I addressed the cart
+  And  I chose "DHL" shipping method
+  When  I check the details of my cart
+  Then  my cart total should be "$57.30"
+  And  my included in price taxes should be "$4.09"
+  And  my cart taxes should be "$2.30"
+

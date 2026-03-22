@@ -1,0 +1,12 @@
+Scenario 21: List permissions for a role returns "OK" response
+  Tags: ['@team:DataDog/aaa-core-access']
+  Given  there is a valid "role" in the system
+  And  there is a valid "permission" in the system
+  And  the "permission" is granted to the "role"
+  And  new "ListRolePermissions" request
+  And  request contains "role_id" parameter from "role.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data[0].type" is equal to "{{ permission.type }}"
+  And  the response "data" has item with field "id" with value "{{ permission.id }}"
+

@@ -1,0 +1,12 @@
+Scenario 1: Create a resource with 1 level of descendants
+  Tags: ['@createSchema']
+  When  I add "Accept" header equal to "application/hal+json"
+  And  I add "Content-Type" header equal to "application/json"
+  And  I send a "POST" request to "/max_depth_eager_dummies" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/hal+json; charset=utf-8"
+  Then  the JSON node "_embedded" should exist
+  Then  the JSON node "_embedded.child" should exist
+  Then  the JSON node "_embedded.child._embedded" should not exist
+

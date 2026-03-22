@@ -1,0 +1,6 @@
+Scenario 1: Browsing defined products
+  Tags: ['@api', '@ui']
+  When  I want to browse products
+  Then  I should see 2 products in the list
+  And  the product "Dice Brewing" should be in the shop
+

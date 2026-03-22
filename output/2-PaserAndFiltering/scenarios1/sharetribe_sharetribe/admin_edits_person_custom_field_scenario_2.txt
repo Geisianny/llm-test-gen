@@ -1,0 +1,5 @@
+Scenario 2: Admin tries to give custom field invalid name
+  Tags: ['@javascript']
+  When  I change person custom field "House type" name to ""
+  Then  I should see 1 validation errors
+

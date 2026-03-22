@@ -1,0 +1,55 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: choosing_province_for_country_story_processado.feature
+Caminho relativo: Sylius_Sylius\choosing_province_for_country_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\Sylius_Sylius\choosing_province_for_country_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: choosing_province_for_country_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Fill shipping address with country having provinces
+   Steps: 6
+   - Given the user is on the checkout page
+   - And the user has selected a country with provinces "United States"
+   - When the user fills the shipping address form with valid details
+   - And selects the province "New York"
+   - Then the system validates the shipping address
+   - And displays the selected country and province correctly
+2. Fill shipping address with country without provinces
+   Steps: 5
+   - Given the user is on the checkout page
+   - And the user has selected a country without provinces "Singapore"
+   - When the user fills the shipping address form with valid details
+   - Then the system validates the shipping address
+   - And does not prompt for province selection
+3. Mismatched country and province
+   Steps: 6
+   - Given the user is on the checkout page
+   - And the user has selected a country with provinces "United States"
+   - When the user fills the shipping address form with valid details
+   - And selects a province "Ontario" that does not belong to the selected country
+   - Then the system displays an error message
+   - And indicates that the selected province does not match the country
+4. Separate billing address with valid details
+   Steps: 6
+   - Given the user is on the checkout page
+   - And the user has filled the shipping address form with valid details
+   - When the user chooses to enter a separate billing address
+   - And fills the billing address form with valid details
+   - Then the system validates both shipping and billing addresses
+   - And displays the addresses correctly
+5. Empty shipping address fields
+   Steps: 4
+   - Given the user is on the checkout page
+   - When the user submits the shipping address form without filling any details
+   - Then the system displays an error message
+   - And prompts the user to fill in the required address fields

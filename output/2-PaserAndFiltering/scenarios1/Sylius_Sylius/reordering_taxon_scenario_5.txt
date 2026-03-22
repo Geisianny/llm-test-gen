@@ -1,0 +1,9 @@
+Scenario 5: Changing order of the taxon on list
+  Tags: ['@no-api', '@ui', '@mink:chromedriver']
+  When  I want to see all taxons in store
+  And  I move down "T-Shirts" taxon
+  And  I move down "Belts" taxon
+  And  I move up "Wallets" taxon
+  Then  I should see 4 taxons on the list
+  And  the order of taxons should be "Watches", "Wallets", "T-Shirts" and "Belts"
+

@@ -1,0 +1,5 @@
+Scenario 4: Pre-requisite: Enable OS pool repository
+  Tags: ['@skip_if_github_validation', '@uyuni']
+  When  I enable repository "os_pool_repo" on this "ssh_minion"
+  And  I refresh the metadata for "ssh_minion"
+

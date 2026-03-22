@@ -1,0 +1,6 @@
+Scenario 2: Fail to create feature with same code
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  Given  the following features exist:
+  When  I create a feature via the APP with the info:
+  Then  there should be an error for "code"
+

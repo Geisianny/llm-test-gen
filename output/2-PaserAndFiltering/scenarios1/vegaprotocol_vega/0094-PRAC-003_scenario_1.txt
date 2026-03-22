@@ -1,0 +1,27 @@
+Scenario 1: 0094-PRAC-003: long/slow block triggers auction on all markets.
+  Tags: ['@LBA']
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/DEC20" should be:
+  And  the market data for the market "ETH/DEC19" should be:
+  When  the network moves ahead "2" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the order book should have the following volumes for market "ETH/DEC20":
+  And  the order book should have the following volumes for market "ETH/DEC19":
+  And  the following trades should be executed:
+  And  the mark price should be "1000000" for the market "ETH/DEC20"
+  And  the mark price should be "1000000" for the market "ETH/DEC19"
+  When  the previous block duration was "90s"
+  Then  the trading mode should be "TRADING_MODE_LONG_BLOCK_AUCTION" for the market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_LONG_BLOCK_AUCTION" for the market "ETH/DEC19"
+  When  the parties place the following orders:
+  Then  the trading mode should be "TRADING_MODE_LONG_BLOCK_AUCTION" for the market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_LONG_BLOCK_AUCTION" for the market "ETH/DEC19"
+  When  the network moves ahead "9m50s" with block duration of "2s"
+  Then  the trading mode should be "TRADING_MODE_LONG_BLOCK_AUCTION" for the market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_LONG_BLOCK_AUCTION" for the market "ETH/DEC19"
+  When  the network moves ahead "11" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the following trades should be executed:
+

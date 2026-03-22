@@ -1,0 +1,10 @@
+Scenario 1: Going back to payment step
+  Tags: ['@no-api', '@ui']
+  Given  I am a logged in customer
+  And  I have product "Stark Robe" in the cart
+  And  I addressed the cart
+  And  I proceed with "Free" shipping method and "Cash on Delivery" payment
+  When  I decide to change the payment method
+  Then  I should be redirected to the payment step
+  And  I should be able to go to the summary page again
+

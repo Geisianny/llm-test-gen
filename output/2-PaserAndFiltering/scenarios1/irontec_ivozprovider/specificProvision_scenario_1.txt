@@ -1,0 +1,6 @@
+Scenario 1: Checking the service is serving specific provision with subpath
+  Tags: ['@createSchema']
+  When  I go to "https://ivozprovider:1443/optional_subpath/0011223344bb"
+  Then  the response status code should be 200
+  And  the response should be equal to:
+

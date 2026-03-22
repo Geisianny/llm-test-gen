@@ -1,0 +1,6 @@
+Scenario 3: Get active billing dimensions for cost attribution returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/revenue-query']
+  Given  new "GetActiveBillingDimensions" request
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

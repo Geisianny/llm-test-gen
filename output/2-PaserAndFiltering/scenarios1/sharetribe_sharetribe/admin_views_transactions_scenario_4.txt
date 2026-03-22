@@ -1,0 +1,6 @@
+Scenario 4: Admin sorts transactions by latest activity
+  When  I sort by "latest activity"
+  Then  I should see the transactions in ascending time order by "latest activity"
+  When  I sort by "latest activity"
+  Then  I should see the transactions in descending time order by "latest activity"
+

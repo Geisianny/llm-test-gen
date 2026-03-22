@@ -1,0 +1,8 @@
+Scenario 1: Sign in with email and password
+  Tags: ['@api', '@ui']
+  When  I want to log in
+  And  I specify the username as "admin@example.com"
+  And  I specify the password as "sylius"
+  And  I log in
+  Then  I should be logged in
+

@@ -1,0 +1,6 @@
+Scenario: Add assets to an existing basket
+  Given there is a bank customer with an existing basket asset
+  And the basket asset has an initial composition
+  When the customer adds new assets to the basket
+  Then the system updates the basket composition
+  And displays the updated basket details

@@ -1,0 +1,9 @@
+Scenario 5: Plan upgrade from free to free at 10th May 12:00 AM UTC
+  Given  the following application plan:
+  And  the time is 30th April 2009
+  When  the buyer is signed up to application plan "FreeAsInBeer" on 30th April 2009
+  And  I log in as "stallman" on foo.3scale.localhost
+  And  the buyer changes to application plan "FreeAsInCzechBeer" on 10th May 2009 12:00 UTC
+  And  time flies to 8th June
+  Then  I should have 0 invoice
+

@@ -1,0 +1,8 @@
+Scenario 4: Ensure only the non-modular package is available when AppStreams are disabled
+  Given  I am on the Systems overview page of this "rhlike_minion"
+  And  I follow "Software" in the content area
+  And  I follow "Install"
+  Then  I should see a "scorpio-dummy-1.0" text
+  And  I should not see a "scorpio-dummy-2.0" text
+  And  I should not see a "scorpio-dummy-2.1" text
+

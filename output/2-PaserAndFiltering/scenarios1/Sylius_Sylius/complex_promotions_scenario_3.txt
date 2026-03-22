@@ -1,0 +1,9 @@
+Scenario 3: Receiving a discount on products from a specific taxon if an order contains products from an another taxon
+  Tags: ['@api', '@ui']
+  Given  there is a promotion "Jacket-trousers pack"
+  And  it gives "10%" off on every product classified as "Jackets" if order contains any product classified as "Trousers"
+  And  I added products "Iron Maiden trousers" and "Black Sabbath jacket" to the cart
+  When  I check the details of my cart
+  Then  product "Black Sabbath jacket" price should be discounted by "$10.00"
+  And  my cart total should be "$170.00"
+

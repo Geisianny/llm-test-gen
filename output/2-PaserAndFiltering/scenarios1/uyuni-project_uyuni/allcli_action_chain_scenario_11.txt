@@ -1,0 +1,4 @@
+Scenario 11: Cleanup: remove temporary files for testing action chains on several systems
+  When  I run "rm /tmp/action_chain_done" on "sle_minion" without error control
+  And  I run "rm /tmp/action_chain_done" on "ssh_minion" without error control
+

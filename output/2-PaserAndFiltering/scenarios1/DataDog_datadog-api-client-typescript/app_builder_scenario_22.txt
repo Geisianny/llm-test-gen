@@ -1,0 +1,11 @@
+Scenario 22: Update App returns "Bad Request" response
+  Tags: ['@skip-typescript', '@team:DataDog/app-builder-backend']
+  Given  new "UpdateApp" request
+  And  there is a valid "app" in the system
+  And  request contains "app_id" parameter from "app.data.id"
+  And  body with value {"data": {"attributes": {"rootInstanceName": ""}, "id": "{{ app.data.id }}", "type": "appDefinitions"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+  And  the response "errors" has length 1
+  And  the response "errors[0].title" is equal to "missing required field"
+

@@ -1,0 +1,9 @@
+Scenario 5: Create reference table with upload returns "Created" response
+  Tags: ['@skip', '@team:DataDog/redapl-experiences']
+  Given  new "CreateReferenceTable" request
+  And  body with value {"data": {"attributes": {"description": "Test reference table created via BDD test {{ unique }}", "source": "LOCAL_FILE", "file_metadata": {"upload_id": "test-upload-id-{{ unique }}"}, "schema": {"fields": [{"name": "id", "type": "STRING"}, {"name": "name", "type": "STRING"}, {"name": "value", "type": "INT32"}], "primary_keys": ["id"]}, "table_name": "test_reference_table_{{ unique }}", "tags": ["test_tag"]}, "type": "reference_table"}}
+  When  the request is sent
+  Then  the response status is 201 Created
+  And  the response "data.type" is equal to "reference_table"
+  And  the response "data.attributes.table_name" is equal to "test_reference_table_{{ unique }}"
+

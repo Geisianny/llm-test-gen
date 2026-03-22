@@ -1,0 +1,6 @@
+Scenario 2: Test product price with tax
+  Then  the product "T-Shirt" should be priced at "2000"
+  And  the product "T-Shirt" retail-price should be "2000"
+  And  the product "T-Shirt" should be priced at "2400" including tax
+  And  the product "T-Shirt" retail-price should be "2400" including tax
+

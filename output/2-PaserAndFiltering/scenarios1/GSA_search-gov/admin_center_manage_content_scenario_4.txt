@@ -1,0 +1,38 @@
+Scenario 4: Add/edit/remove best bets graphics
+  Given  the following BingV7 Affiliates exist:
+  And  I am logged in with email "john@agency.gov"
+  When  I go to the agency.gov's Manage Content page
+  And  I follow "Best Bets: Graphics" within the Admin Center content
+  And  I follow "Add Best Bets: Graphics"
+  When  I fill in the following:
+  And  I attach the file "features/support/small.jpg" to "Image"
+  And  I add the following best bets keywords:
+  And  I check "Match Keywords Only?"
+  And  I add the following best bets graphics links:
+  And  I submit the form by pressing "Add"
+  Then  I should see "You have added 2010 Atlantic Hurricane Season to this site"
+  And  I should see a link to "2010 Atlantic Hurricane Season" with url for "http://www.nhc.noaa.gov/2010atlan.shtml"
+  And  I should see "Status: Active"
+  And  I should see "Match Keywords Only"
+  And  I should see the following best bets keywords:
+  When  I follow "Edit"
+  Then  I should see the following:
+  And  I should see an s3 image "small.jpg"
+  When  I fill in "Title" with "2011 Atlantic Hurricane Season"
+  And  I check "Mark Image for Deletion"
+  And  I uncheck "Match Keywords Only?"
+  And  I submit the form by pressing "Save"
+  Then  I should see "You have updated 2011 Atlantic Hurricane Season"
+  And  I should not see "Match Keywords Only"
+  When  I follow "Edit"
+  Then  I should not see "Mark Image for Deletion"
+  When  I fill in the following:
+  And  I submit the form by pressing "Save"
+  Then  I should see "2 errors prohibited this featured collection from being saved"
+  Then  I should see "There were problems with the following fields:"
+  Then  I should see "Best bets: graphics links title can't be blank"
+  Then  I should see "Best bets: graphics links url can't be blank"
+  When  I follow "View All"
+  And  I press "Remove" and confirm "Are you sure you wish to remove 2011 Atlantic Hurricane Season from this site?"
+  Then  I should see "You have removed 2011 Atlantic Hurricane Season from this site"
+

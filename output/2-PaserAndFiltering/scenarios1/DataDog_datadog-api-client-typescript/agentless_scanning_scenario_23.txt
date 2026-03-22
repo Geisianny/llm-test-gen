@@ -1,0 +1,7 @@
+Scenario 23: Get Azure scan options returns "Bad Request" response
+  Tags: ['@skip', '@team:DataDog/k9-agentless']
+  Given  new "GetAzureScanOptions" request
+  And  request contains "subscription_id" parameter with value "invalid uuid"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

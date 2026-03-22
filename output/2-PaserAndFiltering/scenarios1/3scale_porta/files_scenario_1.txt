@@ -1,0 +1,5 @@
+Scenario 1: Deleting a file
+  Given  there is a downloadable cms file
+  When  the file is deleted
+  Then  there is not an image preview of that file
+

@@ -1,0 +1,7 @@
+Scenario 3: Get organization information returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "GetOrg" request
+  And  request contains "public_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

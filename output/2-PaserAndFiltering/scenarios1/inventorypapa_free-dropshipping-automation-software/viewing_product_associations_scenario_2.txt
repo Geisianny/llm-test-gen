@@ -1,0 +1,6 @@
+Scenario 2: Viewing a detailed page with product's associations after locale change
+  Tags: ['@ui']
+  When  I view product "LG G3" in the "Polish (Poland)" locale
+  Then  I should see the product association "Akcesoria" with products "LG headphones" and "LG earphones"
+  And  I should also see the product association "Alternatywy" with products "LG G4" and "LG G5"
+

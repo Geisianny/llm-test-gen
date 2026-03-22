@@ -1,0 +1,9 @@
+Scenario 5: Facebook connect to log in when the accounts are already linked
+  Tags: ['@javascript']
+  Given  there are following users:
+  Given  I am on the home page
+  When  I follow log in link
+  And  I follow "fb-login"
+  Then  I should see "Successfully authorized from Facebook account"
+  And  I should see "Marko"
+

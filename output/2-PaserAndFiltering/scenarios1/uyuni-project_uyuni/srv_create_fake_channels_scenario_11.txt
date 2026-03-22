@@ -1,0 +1,13 @@
+Scenario 11: Add a RedHat-like base channel
+  Tags: ['@rhlike_minion']
+  When  I follow the left menu "Software > Manage > Channels"
+  And  I follow "Create Channel"
+  And  I enter "Fake-Base-Channel-RH-like" as "Channel Name"
+  And  I enter "fake-base-channel-rh-like" as "Channel Label"
+  And  I select "None" from "Parent Channel"
+  And  I select "x86_64" from "Architecture:"
+  And  I enter "Fake-Base-Channel-RH-like for testing" as "Channel Summary"
+  And  I enter "No more description for base channel." as "Channel Description"
+  And  I click on "Create Channel"
+  Then  I should see a "Channel Fake-Base-Channel-RH-like created." text
+

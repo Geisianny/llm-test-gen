@@ -1,0 +1,12 @@
+Scenario 9: Get a RUM application returns "OK" response
+  Tags: ['@skip-validation', '@team:DataDog/rum-backend']
+  Given  there is a valid "rum_application" in the system
+  And  new "GetRUMApplication" request
+  And  request contains "id" parameter from "rum_application.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.type" is equal to "rum_application"
+  And  the response "data.attributes.type" is equal to "ios"
+  And  the response "data.attributes.name" is equal to "test-rum-{{ unique_hash }}"
+  And  the response "data.attributes" has field "product_scales"
+

@@ -1,0 +1,9 @@
+Scenario 5: Partial reversal of batch operations
+  Given  a batch operation processed 100 transactions
+  And  5 transactions need to be reversed
+  When  I submit partial reversal requests
+  Then  only the specified 5 transactions should be reversed
+  And  the remaining 95 should remain intact
+  And  the batch operation status should be updated
+  And  individual reversal confirmations should be provided
+

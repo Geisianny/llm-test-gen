@@ -1,0 +1,5 @@
+Scenario 6: not display search on private profiles
+  Given  the following users
+  And  I go to /profile/mariasilva/search
+  Then  I should see "friends only"
+

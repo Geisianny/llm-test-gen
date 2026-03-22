@@ -1,0 +1,7 @@
+Scenario 48: Reorder custom allocation rules returns "Successfully reordered rules" response
+  Tags: ['@generated', '@skip', '@team:DataDog/cloud-cost-management']
+  Given  new "ReorderCustomAllocationRules" request
+  And  body with value {"data": [{"id": "456", "type": "arbitrary_rule"}, {"id": "123", "type": "arbitrary_rule"}, {"id": "789", "type": "arbitrary_rule"}]}
+  When  the request is sent
+  Then  the response status is 204 Successfully reordered rules
+

@@ -1,0 +1,4 @@
+Scenario: Attempt to reconcile an already reconciled invoice
+  Given there is an invoice that has already been reconciled
+  When the user attempts to reconcile the invoice again with a bank statement line
+  Then the system prevents the reconciliation

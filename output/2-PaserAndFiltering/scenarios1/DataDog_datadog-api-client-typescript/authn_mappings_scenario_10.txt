@@ -1,0 +1,8 @@
+Scenario 10: Edit an AuthN Mapping returns "Unprocessable Entity" response
+  Tags: ['@generated', '@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "UpdateAuthNMapping" request
+  And  request contains "authn_mapping_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"attribute_key": "member-of", "attribute_value": "Development"}, "id": "3653d3c6-0c75-11ea-ad28-fb5701eabc7d", "relationships": {"role": {"data": {"id": "3653d3c6-0c75-11ea-ad28-fb5701eabc7d", "type": "roles"}}}, "type": "authn_mappings"}}
+  When  the request is sent
+  Then  the response status is 422 Unprocessable Entity
+

@@ -1,0 +1,16 @@
+Feature: Not being able to delete a last available channel
+Description: In order to continuously provide access to store
+    As an Administrator
+    I want to be prevented from deleting last available channel
+Tags: ['@managing_channels']
+
+Background: 
+  Given  the store operates on a channel named "Web Store"
+  And  I am logged in as an administrator
+
+Scenario 1: Preventing from deleting only channel
+  Tags: ['@api', '@', '@ui']
+  When  I delete channel "Web Store"
+  Then  I should be notified that it cannot be deleted
+  And  this channel should still be in the registry
+

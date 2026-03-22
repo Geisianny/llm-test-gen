@@ -1,0 +1,9 @@
+Scenario 27: Get all monitor user templates returns "OK" response
+  Tags: ['@team:DataDog/monitor-app']
+  Given  there is a valid "monitor_user_template" in the system
+  And  new "ListMonitorUserTemplates" request
+  And  operation "ListMonitorUserTemplates" enabled
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data" has length 1
+

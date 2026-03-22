@@ -1,0 +1,26 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 17/12/2025 23:40:59
+Arquivo analisado: BookingValidation_story_processado_05_Successful_validation_of_paid_booking.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation\BookingValidation_story_processado_05_Successful_validation_of_paid_booking.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: Successful validation of paid booking
+Descrição: Não possui
+Total de cenários: 1
+
+CENÁRIOS IDENTIFICADOS:
+1. Successful validation of paid booking
+   Steps: 7
+   - Given there is a paid booking with a start time in the past
+   - And the booking is for a service offered by an offerer
+   - And all necessary information is complete
+   - When the system validates the booking
+   - Then the review process is released for both parties
+   - And the payment is processed for the offerer
+   - And the system displays a confirmation message for successful validation

@@ -1,0 +1,6 @@
+Scenario 6: There are no governments available to view
+  Given  that there no governments available to view
+  And  I am a GDS admin
+  When  I visit the governments page
+  Then  I should see no governments message
+

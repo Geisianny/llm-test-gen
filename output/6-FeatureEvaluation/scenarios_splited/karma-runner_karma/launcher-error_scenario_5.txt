@@ -1,0 +1,5 @@
+Scenario: No browsers configured
+  Given a test is running with Karma Test Runner CLI
+  And no browsers are configured to run the test
+  When the test is executed
+  Then the system outputs an error message to stderr

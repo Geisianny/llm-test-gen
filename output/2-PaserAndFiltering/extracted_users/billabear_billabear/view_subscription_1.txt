@@ -1,0 +1,29 @@
+Feature: Customer Subscription Read APP
+Description: In order to manage a customer's subscriptions
+  As an APP user
+  I need to be see customer's Subscription
+
+Background: 
+  Given  the following accounts exist:
+  And  the follow products exist:
+  And  the follow prices exist:
+  And  the following features exist:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "Price One" with:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "Price One" with:
+
+Scenario 1: Get subscription
+  When  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  When  I view the subscription "Test Plan" for "customer.one@example.org"
+  Then  I will see the subscription has the plan "Test Plan"
+  Then  I will see the subscription has the schedule "month"
+  Then  I will see the payments for the subscription
+
+Scenario 2: Get subscription for trial
+  When  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  When  I view the subscription "Trial Plan" for "customer.one@example.org"
+  Then  I will see the subscription has the plan "Trial Plan"
+

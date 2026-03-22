@@ -1,0 +1,8 @@
+Scenario 9: linking a document to a statistics announcement
+  Tags: ['@javascript']
+  Given  I am a GDS editor in the organisation "Department for Beards"
+  And  a draft statistics publication called "Beard statistics - January 2014"
+  And  a statistics announcement called "January's beard statistics" exists
+  When  I link the announcement to the publication
+  Then  I should see that the announcement is linked to the publication
+

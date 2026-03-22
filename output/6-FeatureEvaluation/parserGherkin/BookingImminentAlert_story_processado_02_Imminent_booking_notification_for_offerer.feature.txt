@@ -1,0 +1,24 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 17/12/2025 23:40:59
+Arquivo analisado: BookingImminentAlert_story_processado_02_Imminent_booking_notification_for_offerer.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation\BookingImminentAlert_story_processado_02_Imminent_booking_notification_for_offerer.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: Imminent booking notification for offerer
+Descrição: Não possui
+Total de cenários: 1
+
+CENÁRIOS IDENTIFICADOS:
+1. Imminent booking notification for offerer
+   Steps: 5
+   - Given there is a booking scheduled to start soon
+   - And the offerer has accepted the booking request
+   - When the booking is about to start
+   - Then the system sends a notification to the offerer
+   - And the offerer is informed that the booking is about to start

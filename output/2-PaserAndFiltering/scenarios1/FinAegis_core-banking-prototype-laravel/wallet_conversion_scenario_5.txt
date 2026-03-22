@@ -1,0 +1,8 @@
+Scenario 5: Real-time rate expiry during conversion
+  Given  I initiate a conversion with quoted rate 1.2000
+  And  the rate quote is valid for 30 seconds
+  When  the rate expires during processing
+  Then  I should be offered a new rate
+  And  given option to accept or cancel
+  And  the original quote should no longer be valid
+

@@ -1,0 +1,7 @@
+Scenario 33: display all events for the current month
+  Tags: ['@selenium']
+  Given  I am on /profile/josesilva/events/2009/10/24
+  When  I follow "October"
+  Then  I should see "Another Conference"
+  Then  I should see "Some Conference"
+

@@ -1,0 +1,8 @@
+Scenario 4: Prices get updated after the select shipping step
+  Tags: ['@ui', '@no-api']
+  Given  I specified the billing address as "Ankh Morpork", "Frost Alley", "90210", "United States" for "Jon Snow"
+  And  I have selected "Pigeon Mail" shipping method
+  When  the exchange rate of "US Dollar" to "British Pound" is 2.0
+  And  I complete the shipping step
+  Then  the subtotal of "The Pug Mug" item should be "£20.00"
+

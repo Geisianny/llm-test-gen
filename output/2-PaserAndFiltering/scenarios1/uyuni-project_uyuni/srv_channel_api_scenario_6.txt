@@ -1,0 +1,5 @@
+Scenario 6: Delete a software channel
+  When  I delete the repo with label "foobar"
+  And  I delete the software channel with label "foobar"
+  Then  "foobar" should not get listed with a call of listSoftwareChannels
+

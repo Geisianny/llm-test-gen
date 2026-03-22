@@ -1,0 +1,8 @@
+Scenario 3: show link to see all results
+  Tags: ['@selenium']
+  Given  the following users
+  When  I go to the search page
+  And  I should see "see all (9)"
+  When  I follow "see all (9)"
+  Then  I should be on the search people page
+

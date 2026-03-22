@@ -1,0 +1,16 @@
+Scenario 1: 950300 preparation
+  Then  I connect launched Test client "Этот клиент"
+  *  Check test user roles
+  And  In the command interface I select "Settings" "Users"
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I move to "Roles" tab
+  Then  the number of "RoleList" table lines is "равно" 0
+  And  I click "Save and close" button
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I move to "Roles" tab
+  Then  the number of "RoleList" table lines is "равно" 0
+  And  I click "Save and close" button
+  And  I close all client application windows
+

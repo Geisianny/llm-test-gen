@@ -1,0 +1,6 @@
+Scenario 5: Featuring a topical event for an organisation
+  When  an active topical event called "Super topical" exists
+  And  I visit the the organisation feature page for "Ministry of Pop"
+  And  I feature "Super topical"
+  Then  I see that "Super topical" has been featured
+

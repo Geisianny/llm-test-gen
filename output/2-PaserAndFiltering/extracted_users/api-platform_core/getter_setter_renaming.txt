@@ -1,0 +1,13 @@
+Feature: Resource should contain one field for each property
+Description: In order to use API resource
+  As a developer
+  I need to have one field exposed for each property (which take getter/setter name)
+
+Scenario 1: I should be able to POST a new entity
+  Tags: ['@createSchema']
+  When  I add "Accept" header equal to "application/ld+json"
+  And  I add "Content-Type" header equal to "application/ld+json"
+  When  I send a "POST" request to "/entity_with_renamed_getter_and_setters" with body:
+  Then  the response status code should be 201
+  And  the JSON should be equal to:
+

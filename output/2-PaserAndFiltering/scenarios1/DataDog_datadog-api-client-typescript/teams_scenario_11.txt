@@ -1,0 +1,10 @@
+Scenario 11: Get a team link returns "OK" response
+  Tags: ['@team:DataDog/aaa-omg']
+  Given  new "GetTeamLink" request
+  And  there is a valid "dd_team" in the system
+  And  there is a valid "team_link" in the system
+  And  request contains "team_id" parameter from "dd_team.data.id"
+  And  request contains "link_id" parameter from "team_link.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+

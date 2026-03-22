@@ -1,0 +1,7 @@
+Scenario 1: Create a child organization returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "CreateChildOrg" request
+  And  body with value {"billing": {"type": "parent_billing"}, "name": "New child org", "subscription": {"type": "pro"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

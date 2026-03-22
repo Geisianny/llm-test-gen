@@ -1,0 +1,7 @@
+Scenario 1: Viewing products from taxon children
+  Tags: ['@ui', '@api']
+  When  I browse products from taxon "T-Shirts"
+  Then  I should see the product "T-Shirt Banana"
+  And  I should see the product "T-Shirt Banana For Men"
+  And  I should see the product "T-Shirt Banana For Men XXL"
+

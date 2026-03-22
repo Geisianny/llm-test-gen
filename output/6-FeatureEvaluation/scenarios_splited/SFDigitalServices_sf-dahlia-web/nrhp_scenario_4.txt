@@ -1,0 +1,5 @@
+Scenario: Upload supporting documents for NRHP claim
+  Given there is an applicant who has claimed "Live in the Neighborhood" with a valid address
+  When the applicant uploads supporting documents for the NRHP claim
+  Then the system accepts the uploaded documents
+  And displays a confirmation that the NRHP claim has been successfully submitted

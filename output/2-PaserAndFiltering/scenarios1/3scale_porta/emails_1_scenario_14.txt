@@ -1,0 +1,12 @@
+Scenario 14: Cancel adding custom support email
+  Given  a product "Bananas"
+  And  they go to the emails settings page
+  When  they press "Add a custom support email"
+  And  select the product "Bananas"
+  And  fill in "Bananas" with "help@bananas.org"
+  And  they should see button "Add a custom support email" disabled
+  And  press "Cancel"
+  Then  they should see button "Add a custom support email" enabled
+  And  they should see no custom support emails
+  And  the product's support email should be "support@api.test"
+

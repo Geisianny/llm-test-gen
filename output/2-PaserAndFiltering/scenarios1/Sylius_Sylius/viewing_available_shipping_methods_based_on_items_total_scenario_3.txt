@@ -1,0 +1,9 @@
+Scenario 3: Seeing shipping methods that handle all goods
+  Tags: ['@api', '@ui']
+  Given  I added 2 products "Cheap Jacket" to the cart
+  And  I addressed the cart
+  When  I want to complete the shipping step
+  And  I should see "DHL" shipping method
+  And  I should not see "Above $50" shipping method
+  And  I should not see "Below $29.99" shipping method
+

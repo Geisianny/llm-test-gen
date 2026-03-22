@@ -1,0 +1,4 @@
+Scenario 1: usage report sent weekly
+  When  weekly reports are dispatched
+  Then  "fake@email.com" should receive an email
+

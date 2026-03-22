@@ -1,0 +1,6 @@
+Scenario 6: Seeing the correct lowest price from 1 day before the discount
+  Tags: ['@api', '@ui']
+  Given  this channel has 1 day set as the lowest price for discounted products checking period
+  When  I check this product's details
+  Then  I should see "$13.00" as its lowest price before the discount
+

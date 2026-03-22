@@ -1,0 +1,4 @@
+Scenario 3: See emails in services pages are hyperlinked
+  Given  I visit the show page for the service named "Litter Box Scooper"
+  Then  the page includes email hyperlink "test@test.com"
+

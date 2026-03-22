@@ -1,0 +1,6 @@
+Scenario: Create a new custom destination
+  Given the user has the necessary permissions to create custom destinations
+  When the user creates a new custom destination with the name "My HTTP Destination" and type "HTTP"
+  And configures the destination with the URL "https://example.com/logs"
+  Then the system creates the custom destination successfully
+  And lists the new custom destination in the custom destinations page

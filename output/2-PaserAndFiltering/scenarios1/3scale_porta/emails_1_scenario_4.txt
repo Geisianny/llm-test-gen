@@ -1,0 +1,12 @@
+Scenario 4: Add a custom support email to a product
+  Given  a product "Bananas"
+  And  they go to the emails settings page
+  When  they press "Add a custom support email"
+  And  select the product "Bananas"
+  And  they should see button "Add a custom support email" disabled
+  And  fill in "Bananas" with "help@bananas.org"
+  And  press "Save support email for Bananas"
+  And  1 second pass
+  Then  they should see a toast alert with text "Support email updated successfully"
+  And  the product's support email should be "help@bananas.org"
+

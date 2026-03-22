@@ -1,0 +1,6 @@
+Scenario 7: Adding a comma separated tag list
+  Given  there is a cms file
+  When  I fill in the tags list with "pasta, tomato"
+  And  I press "Save"
+  Then  I should see the tags "pasta, tomato"
+

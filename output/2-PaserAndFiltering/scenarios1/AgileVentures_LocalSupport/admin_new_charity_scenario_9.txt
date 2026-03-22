@@ -1,0 +1,5 @@
+Scenario 9: logged in non-superadmin user should not see new organisation link
+  Given  I am signed in as a non-superadmin
+  Given  I visit the home page
+  Then  I should not see a new organisations link
+

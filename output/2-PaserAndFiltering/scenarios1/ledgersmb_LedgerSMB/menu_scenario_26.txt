@@ -1,0 +1,8 @@
+Scenario Outline 26: Navigate to menu "<path>" and open screen "<screen>" - Example 26
+  When  I navigate the menu and select the item at "Goods & Services > Add Service"
+  Then  I should see the service entry screen
+
+  Examples:
+    | path | screen |
+    | Goods & Services > Add Service | service entry |
+

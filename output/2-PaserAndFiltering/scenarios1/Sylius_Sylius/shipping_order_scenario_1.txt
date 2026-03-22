@@ -1,0 +1,8 @@
+Scenario 1: Finalizing order's shipment
+  Tags: ['@api', '@ui']
+  Given  I view the summary of the order "#00000666"
+  When  specify its tracking code as "#00044"
+  And  I ship this order
+  Then  I should be notified that the order has been successfully shipped
+  And  it should have shipment in state shipped
+

@@ -1,0 +1,8 @@
+Scenario 3: The user account submenu under the Home menu
+  When  I follow the left menu "Home > User Account"
+  Then  I should see a "My Account" text
+  And  I should see a "My Account" link in the left menu
+  And  I should see a "Addresses" link in the left menu
+  And  I should see a "Change Email" link in the left menu
+  And  I should see a "Account Deactivation" link in the left menu
+

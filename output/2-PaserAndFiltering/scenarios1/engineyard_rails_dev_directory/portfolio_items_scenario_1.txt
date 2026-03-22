@@ -1,0 +1,8 @@
+Scenario 1: New from empty
+  Given  a provider "Hashrocket" belonging to "Olenska@chicka.net"
+  When  I am on the homepage
+  And  I log in as "Olenska@chicka.net" with password "testtest"
+  And  I follow "Company"
+  And  I follow "You can add one now"
+  Then  I should see "portfolio_item.year_completed" translation
+

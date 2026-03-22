@@ -1,0 +1,6 @@
+Scenario: User has no messages in inbox
+  Given there is a user with no received or sent messages
+  And the user is logged in
+  When the user navigates to the inbox
+  Then the system displays a message indicating no messages
+  And the user is prompted to start a new conversation

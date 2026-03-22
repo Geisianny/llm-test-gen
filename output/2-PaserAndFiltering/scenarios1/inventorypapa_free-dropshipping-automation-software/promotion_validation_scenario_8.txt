@@ -1,0 +1,10 @@
+Scenario 8: Trying to add a new promotion with a negative percentage discount
+  Tags: ['@ui', '@javascript']
+  Given  I want to create a new promotion
+  When  I specify its code as "christmas_sale"
+  And  I name it "Christmas sale"
+  And  I add the "Order percentage discount" action configured with a percentage value of -20%
+  And  I try to add it
+  Then  I should be notified that a percentage discount value must be at least 0%
+  And  promotion with name "Christmas sale" should not be added
+

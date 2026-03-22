@@ -1,0 +1,9 @@
+Scenario Outline 31: Navigate to menu "<path>" and open screen "<screen>" - Example 31
+  Tags: ['@wip']
+  When  I navigate the menu and select the item at "Quotations > Quotation"
+  Then  I should see the  screen
+
+  Examples:
+    | path | screen |
+    | Quotations > Quotation |  |
+

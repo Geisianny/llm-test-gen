@@ -1,0 +1,9 @@
+Scenario 3: Edit metric metadata returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/metrics-experience', '@team:DataDog/metrics-index', '@team:DataDog/metrics-intake', '@team:DataDog/timeseries-query']
+  Given  a valid "appKeyAuth" key in the system
+  And  new "UpdateMetricMetadata" request
+  And  request contains "metric_name" parameter from "REPLACE.ME"
+  And  body with value {"per_unit": "second", "type": "count", "unit": "byte"}
+  When  the request is sent
+  Then  the response status is 200 OK
+

@@ -1,0 +1,6 @@
+Scenario 1: Filtering tracked product variants by code
+  Tags: ['@ui', '@no-api']
+  When  I filter tracked variants with code containing "iron"
+  Then  I should see only one tracked variant in the list
+  And  I should see that the "Iron Maiden T-Shirt" variant has 5 quantity on hand
+

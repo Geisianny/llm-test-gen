@@ -1,0 +1,7 @@
+Scenario: Update notification preferences with valid selections
+  Given the provider user is on the notification preferences page
+  And there are notification types available for selection
+  When the provider user selects some notification types
+  And submits the updated preferences
+  Then the system updates the notification preferences
+  And displays a success confirmation message

@@ -1,0 +1,10 @@
+Scenario Outline 6: Autocomplete - Example 1
+  Given  the product has a Swagger 1.2 spec "Echo API"
+  When  they go to the spec's preview page from Audience context
+  Then  the swagger autocomplete should work for "user_key" with "user_keys"
+
+  Examples:
+    | swagger version |
+    | Swagger 1.2 |
+    | Swagger 2 |
+

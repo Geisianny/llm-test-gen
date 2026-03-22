@@ -1,0 +1,7 @@
+Scenario 29: The Alma 8 Salt minion is healthy
+  Tags: ['@alma8_minion']
+  Then  "alma8_minion" should have a FQDN
+  And  reverse resolution should work for "alma8_minion"
+  And  "alma8_minion" should communicate with the server using public interface
+  And  the clock from "alma8_minion" should be exact
+

@@ -1,0 +1,7 @@
+Scenario 1: Update a metric
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  the follow metrics exist:
+  When  I update the metric "Test One" via the app with the following:
+  Then  there should not be a metric called "Test One"
+  And  there should be a metric called "Testing Metric"
+

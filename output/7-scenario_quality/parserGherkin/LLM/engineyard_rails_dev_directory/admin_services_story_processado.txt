@@ -1,0 +1,48 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: admin_services_story_processado.feature
+Caminho relativo: engineyard_rails_dev_directory\admin_services_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\engineyard_rails_dev_directory\admin_services_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: admin_services_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Add a new service
+   Steps: 5
+   - Given there is no service with the name "New Service"
+   - When the administrator adds a new service with the name "New Service"
+   - And provides a valid description for the service
+   - Then the system lists the service "New Service"
+   - And the service is enabled by default
+2. Remove an existing service
+   Steps: 3
+   - Given there is a service with the name "Existing Service"
+   - When the administrator removes the service "Existing Service"
+   - Then the system no longer lists the service "Existing Service"
+3. Edit service information
+   Steps: 5
+   - Given there is a service with the name "Existing Service"
+   - And the service has a description "Old Description"
+   - When the administrator edits the service "Existing Service"
+   - And updates the description to "New Description"
+   - Then the system lists the service "Existing Service" with the description "New Description"
+4. Disable a service
+   Steps: 4
+   - Given there is a service with the name "Existing Service"
+   - And the service is enabled
+   - When the administrator disables the service "Existing Service"
+   - Then the system lists the service "Existing Service" as disabled
+5. Attempt to remove a non-existent service
+   Steps: 3
+   - Given there is no service with the name "Non Existent Service"
+   - When the administrator removes the service "Non Existent Service"
+   - Then the system displays an error message indicating that the service does not exist

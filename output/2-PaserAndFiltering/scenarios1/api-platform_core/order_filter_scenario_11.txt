@@ -1,0 +1,9 @@
+Scenario 11: Get collection filtered using a name converter
+  Tags: ['@createSchema']
+  Given  there are 3 convertedInteger objects
+  When  I send a "GET" request to "/converted_integers?order[name_converted]=desc"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+

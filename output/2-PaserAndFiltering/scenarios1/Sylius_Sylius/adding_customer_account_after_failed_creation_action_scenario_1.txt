@@ -1,0 +1,8 @@
+Scenario 1: Trying to add new customer with an account without required information
+  Tags: ['@api', '@ui']
+  When  I want to create a new customer account
+  And  I do not specify any information
+  And  I try to add them
+  Then  I should still be on the customer creation page
+  And  I should be notified that email is required
+

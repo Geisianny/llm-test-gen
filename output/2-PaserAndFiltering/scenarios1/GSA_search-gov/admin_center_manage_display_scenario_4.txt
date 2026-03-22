@@ -1,0 +1,33 @@
+Scenario 4: Editing Image Assets
+  Tags: ['@javascript']
+  Given  the following BingV7 Affiliates exist:
+  And  I am logged in with email "john@agency.gov"
+  When  I go to the agency.gov's Image Assets page
+  And  I fill in "Favicon URL" with "https://d3qcdigd1fhos0.cloudfront.net/blog/img/favicon.ico"
+  And  I attach the file "features/support/logo_mobile_en.png" to "Logo"
+  And  I select "left" from "Logo Alignment"
+  When  I fill in "Logo Alt Text" with "  Awesome   Agency  "
+  And  I submit the form by pressing "Save"
+  Then  I should see "You have updated your image assets"
+  And  the "Favicon URL" field should contain "https://d3qcdigd1fhos0.cloudfront.net/blog/img/favicon.ico"
+  And  I should see an image with alt text "Logo"
+  And  the "Logo Alignment" field should contain "left"
+  And  the "Logo Alt Text" field should contain "Awesome Agency"
+  When  I am on agency.gov's search page
+  Then  I should see an image link to "Awesome Agency" with url for "http://main.agency.gov"
+  And  the page body should contain "logo_mobile_en.png"
+  And  I should see a left aligned SERP logo
+  When  I go to the agency.gov's Image Assets page
+  And  I select "right" from "Logo Alignment"
+  And  I submit the form by pressing "Save"
+  Then  I should see "You have updated your image assets"
+  When  I am on agency.gov's search page
+  Then  I should see an image link to "Awesome Agency" with url for "http://main.agency.gov"
+  And  the page body should contain "logo_mobile_en.png"
+  And  I should see a right aligned SERP logo
+  When  I go to the agency.gov's Image Assets page
+  And  I check "Mark Logo for Deletion"
+  And  I submit the form by pressing "Save"
+  Then  I should see "You have updated your image assets"
+  And  I should not see an image with alt text "Logo"
+

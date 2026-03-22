@@ -1,0 +1,6 @@
+Scenario 8: Trading pair restrictions
+  Given  I am logged in as "alice@example.com"
+  And  the asset "XRP" is not tradeable
+  When  I try to place an order for "XRP/EUR"
+  Then  I should get an error "Currency pair not available for trading"
+

@@ -1,0 +1,43 @@
+Scenario 1: Provider dashboard
+  Tags: ['@javascript']
+  And  the service of provider "foo.3scale.localhost" has traffic
+  When  I log in as provider "foo.3scale.localhost"
+  Then  I should be on the provider dashboard
+  And  I should see "Last 30 Days"
+  And  I should see a sparkline for "hits"
+
+
+
+Scenario 2: Buyer dashboard in multiple application mode
+  Given  provider "foo.3scale.localhost" has "multiple_applications" visible
+  And  a buyer "bob" signed up to provider "foo.3scale.localhost"
+  When  I log in as "bob" on foo.3scale.localhost
+  And  I go to the dashboard
+  Then  I should be on the dashboard
+
+
+
+Scenario 3: '/admin' on buyer domain sees buyer dashboard
+  Given  provider "foo.3scale.localhost" has "multiple_applications" visible
+  When  the current domain is foo.3scale.localhost
+  And  a buyer "bob" signed up to provider "foo.3scale.localhost"
+  And  I log in as "bob" on foo.3scale.localhost
+  And  I request the url "/admin"
+  Then  I should be on the dashboard
+
+
+
+Scenario 4: '/admin' on provider domain redirects to '/p/admin'
+  Tags: ['@javascript']
+  And  I am logged in as provider "foo.3scale.localhost"
+  When  I request the url "/admin"
+  Then  I should be on the provider dashboard
+
+
+
+Scenario 5: '/p/admin' on provider domain sees provider dashboard
+  Tags: ['@javascript']
+  And  I am logged in as provider "foo.3scale.localhost"
+  When  I request the url "/admin"
+  Then  I should be on the provider dashboard
+

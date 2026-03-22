@@ -1,0 +1,5 @@
+Scenario: Search with empty query
+  Given the site visitor is on a site using the SearchElastic search engine
+  When the site visitor performs a search with an empty query
+  Then the system displays a message indicating the query is empty
+  And the message requests the user to enter a valid search term

@@ -1,0 +1,6 @@
+Scenario 1: Viewing a detailed page with product's associations in default locale
+  Tags: ['@ui']
+  When  I view product "LG G3"
+  Then  I should see the product association "Accessories" with products "LG headphones" and "LG earphones"
+  And  I should also see the product association "Alternatives" with products "LG G4" and "LG G5"
+

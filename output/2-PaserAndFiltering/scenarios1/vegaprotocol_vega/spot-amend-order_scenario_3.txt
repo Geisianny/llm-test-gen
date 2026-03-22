@@ -1,0 +1,12 @@
+Scenario 3: Reduce size success and order cancelled as remaining is less than or equal to 0 (0004-AMND-058)
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "BTC/ETH"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  When  the parties place the following orders:
+  And  the parties amend the following orders:
+  Then  the orders should have the following status:
+  When  the parties place the following orders:
+  And  the parties amend the following orders:
+  Then  the orders should have the following status:
+

@@ -1,0 +1,7 @@
+Scenario 7: Spin-off Child Organization returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "DowngradeOrg" request
+  And  request contains "public_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 200 OK
+

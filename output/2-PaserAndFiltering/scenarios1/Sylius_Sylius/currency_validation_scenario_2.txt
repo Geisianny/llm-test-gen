@@ -1,0 +1,7 @@
+Scenario 2: Trying to add a currency with an invalid code
+  Tags: ['@api', '@no-ui']
+  When  I want to add a new currency
+  And  I set code to "invalid"
+  And  I try to add it
+  Then  I should be notified that the code is invalid
+

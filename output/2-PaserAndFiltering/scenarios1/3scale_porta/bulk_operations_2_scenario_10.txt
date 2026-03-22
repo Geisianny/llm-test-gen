@@ -1,0 +1,9 @@
+Scenario 10: Sending email throws an error
+  Given  the email will fail when sent
+  And  item "Bob's App" is selected
+  When  they select bulk action "Send email"
+  And  the modal is submitted with:
+  And  confirm the dialog
+  Then  the bulk operation has failed for "Bob"
+  And  the buyer has received no emails
+

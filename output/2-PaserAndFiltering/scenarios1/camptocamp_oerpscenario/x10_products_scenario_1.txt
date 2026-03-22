@@ -1,0 +1,9 @@
+Scenario 1: CREATION OF PRODUCT CATEGORIES
+  Tags: ['@multicompany_base_finance_product_category_creation']
+  Given  I need a "product.category" with name: Cat_A and oid: scenario.cat_A
+  And  having:
+  Given  I need a "product.category" with name: Cat_B and oid: scenario.cat_B
+  And  having:
+  Given  I need a "product.category" with name: Cat_C and oid: scenario.cat_C
+  And  having:
+

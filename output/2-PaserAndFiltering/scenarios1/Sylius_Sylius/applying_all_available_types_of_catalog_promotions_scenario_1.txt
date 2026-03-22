@@ -1,0 +1,5 @@
+Scenario 1: Applying multiple catalog promotions
+  Tags: ['@api', '@ui']
+  When  I view "PHP T-Shirt" variant of the "T-Shirt" product
+  Then  I should see this variant is discounted from "$100.00" to "$57.90" with 6 promotions
+

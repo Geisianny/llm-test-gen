@@ -1,0 +1,6 @@
+Scenario: Filter listings by category selection
+  Given there are listings under categories "Electronics" and "Furniture"
+  And the user is on the listings page
+  When the user selects the "Electronics" category
+  Then the system displays listings under the "Electronics" category
+  And the listings count is updated accordingly

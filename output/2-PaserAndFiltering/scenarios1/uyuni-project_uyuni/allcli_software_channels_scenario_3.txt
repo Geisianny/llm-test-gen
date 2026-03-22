@@ -1,0 +1,25 @@
+Scenario 3: Change child channels for openSUSE minion subscribed to a base channel
+  Tags: ['@sle_minion', '@uyuni']
+  When  I follow the left menu "Systems > System List > All"
+  And  I click on the clear SSM button
+  And  I check the "sle_minion" client
+  And  I should see "1" systems selected for SSM
+  And  I follow the left menu "Systems > System Set Manager > Overview"
+  And  I follow "channel memberships" in the content area
+  Then  I should see a "Base Channel" text
+  And  I should see a "Next" text
+  When  I select "Fake-Base-Channel-SUSE-like" from drop-down in table line with "openSUSE Tumbleweed (x86_64)"
+  And  I click on "Next"
+  Then  I should see a "Child Channels" text
+  And  I should see a "Fake-Base-Channel-SUSE-like" text
+  And  I should see a "1 system(s) to subscribe" text
+  When  I choose radio button "Subscribe" for child channel "Fake-Child-Channel-SUSE-like"
+  And  I click on "Next"
+  Then  I should see a "Channel Changes Overview" text
+  And  I should see a "1 system(s) to subscribe" text
+  When  I schedule action to 3 minutes from now
+  And  I click on "Confirm"
+  And  I remember when I scheduled an action
+  Then  I wait until I see "Channel Changes Actions" text
+  And  a table line should contain system "sle_minion", "Scheduled"
+

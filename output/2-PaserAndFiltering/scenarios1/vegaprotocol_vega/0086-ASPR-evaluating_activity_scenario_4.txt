@@ -1,0 +1,13 @@
+Scenario Outline 4: Party splits trading between two markets using different settlement assets (0086-ASPR-004)(0086-ASPR-005) - Example 1
+  Given  the following network parameters are set:
+  Then  the network moves ahead "1" blocks
+  And  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  the activity streaks at epoch "1" should be:
+
+  Examples:
+    | min open volume | min trade volume |
+    | 10000 | 1000000000000000 |
+    | 1000000000000000 | 10000 |
+    | 10000 | 10000 |
+

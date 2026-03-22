@@ -1,0 +1,7 @@
+Scenario 10: Bank-specific feature management
+  Given  different banks support different features
+  When  a user requests cryptocurrency conversion
+  Then  the system should route to banks supporting crypto
+  And  fall back gracefully if features are unavailable
+  And  inform the user of available alternatives
+

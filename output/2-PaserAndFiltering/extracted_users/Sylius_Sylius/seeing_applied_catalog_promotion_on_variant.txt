@@ -1,0 +1,23 @@
+Feature: Seeing applied catalog promotions on variant
+Description: In order to be informed about applied catalog promotion on product
+    As a Customer
+    I want to see discounted product variant
+Tags: ['@applying_catalog_promotions']
+
+Background: 
+  Given  the store operates on a single channel in "United States"
+  And  the store has a "T-Shirt" configurable product
+  And  this product has "PHP T-Shirt" variant priced at "$20.00"
+  And  this product has "Sylius T-Shirt" variant priced at "$15.00"
+  And  there is a catalog promotion "Winter sale" that reduces price by "50%" and applies on "PHP T-Shirt" variant
+
+Scenario 1: Seeing applied catalog promotion on variant
+  Tags: ['@api', '@ui']
+  When  I view "PHP T-Shirt" variant of the "T-Shirt" product
+  Then  I should see this variant is discounted from "$20.00" to "$10.00" with "Winter sale" promotion
+
+Scenario 2: Seeing no applied catalog promotion on variant
+  Tags: ['@api', '@ui', '@javascript']
+  When  I view "Sylius T-Shirt" variant of the "T-Shirt" product
+  Then  I should see this variant is not discounted
+

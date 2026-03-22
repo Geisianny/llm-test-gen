@@ -1,0 +1,9 @@
+Scenario 1: Disabling a simple product
+  Tags: ['@ui']
+  Given  the "Dice Brewing" product is enabled
+  And  I want to modify the "Dice Brewing" product
+  When  I disable it
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this product should be disabled along with its variant
+

@@ -1,0 +1,11 @@
+Scenario 11: Get Cloudflare account returns "OK" response
+  Tags: ['@replay-only', '@team:DataDog/saas-integrations']
+  Given  there is a valid "cloudflare_account" in the system
+  And  new "GetCloudflareAccount" request
+  And  request contains "account_id" parameter from "cloudflare_account.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.type" is equal to "cloudflare-accounts"
+  And  the response "data.attributes.email" is equal to "dev@datadog.com"
+  And  the response "data.attributes.name" is equal to "{{ unique_lower_alnum }}"
+

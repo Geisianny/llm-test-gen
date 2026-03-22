@@ -1,0 +1,3 @@
+Scenario 3: Apply setup_users_configuration state to server
+  When  I apply "setup_users_configuration" local salt state on "server"
+

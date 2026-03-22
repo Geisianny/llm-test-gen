@@ -1,0 +1,11 @@
+Scenario 1: Create Test-strict-channel
+  Given  I am authorized for the "Admin" section
+  And  I prepare a channel clone for strict mode testing
+  And  I follow the left menu "Software > Manage > Channels"
+  And  I follow "Create Channel"
+  And  I enter "Test-Strict-Channel" as "Channel Name"
+  And  I enter "test-strict-channel" as "Channel Label"
+  And  I enter "Test-Strict-Channel for testing" as "Channel Summary"
+  And  I click on "Create Channel"
+  Then  I should see a "Channel Test-Strict-Channel created." text
+

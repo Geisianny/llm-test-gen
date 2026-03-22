@@ -1,0 +1,6 @@
+Scenario 6: Reposync of openSUSE Tumbleweed channels has finished
+  Tags: ['@uyuni']
+  When  I wait until the channel "opensuse_tumbleweed-x86_64" has been synced
+  And  I wait until the channel "opensuse_tumbleweed-uyuni-client-devel-x86_64" has been synced
+  And  I wait until the channel "uyuni-proxy-devel-tumbleweed-x86_64" has been synced
+

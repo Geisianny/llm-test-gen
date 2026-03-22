@@ -1,0 +1,8 @@
+Scenario 3: Changing per unit shipping fee after decreasing quantity of item
+  Tags: ['@ui']
+  Given  I have 2 products "PHP T-Shirt" in the cart
+  And  I chose "UPS" shipping method
+  When  I change "PHP T-Shirt" quantity to 1
+  Then  my cart total should be "$105.00"
+  And  my cart shipping total should be "$5.00"
+

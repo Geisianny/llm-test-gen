@@ -1,0 +1,11 @@
+Scenario 2: Create On-Call escalation policy returns "Created" response
+  Tags: ['@team:DataDog/on-call']
+  Given  new "CreateOnCallEscalationPolicy" request
+  And  there is a valid "user" in the system
+  And  there is a valid "schedule" in the system
+  And  there is a valid "dd_team" in the system
+  And  body with value {"data": {"attributes": {"name": "{{ unique }}", "resolve_page_on_policy_end": true, "retries": 2, "steps": [{"assignment": "default", "escalate_after_seconds": 3600, "targets": [{"id": "{{ user.data.id }}", "type": "users"}, {"id": "{{ schedule.data.id }}", "type": "schedules"}, {"id": "{{ dd_team.data.id }}", "type": "teams"}]}, {"assignment": "round-robin", "escalate_after_seconds": 3600, "targets": [{"id": "{{ dd_team.data.id }}", "type": "teams"}]}]}, "relationships": {"teams": {"data": [{"id": "{{ dd_team.data.id }}", "type": "teams"}]}}, "type": "policies"}}
+  And  request contains "include" parameter with value "steps.targets"
+  When  the request is sent
+  Then  the response status is 201 Created
+

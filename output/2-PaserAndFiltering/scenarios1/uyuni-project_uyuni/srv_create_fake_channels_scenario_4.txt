@@ -1,0 +1,13 @@
+Scenario 4: Add a SUSE fake child channel to the SUSE Product base channel
+  Tags: ['@sle_minion']
+  When  I follow the left menu "Software > Manage > Channels"
+  And  I follow "Create Channel"
+  And  I enter "Fake-RPM-SUSE-Channel" as "Channel Name"
+  And  I enter "fake-rpm-suse-channel" as "Channel Label"
+  And  I select the parent channel for the "sle_minion" from "Parent Channel"
+  And  I select "x86_64" from "Architecture:"
+  And  I enter "Fake-RPM-SUSE-Channel for testing" as "Channel Summary"
+  And  I enter "Description for Fake-RPM-SUSE-Channel Child Channel." as "Channel Description"
+  And  I click on "Create Channel"
+  Then  I should see a "Channel Fake-RPM-SUSE-Channel created." text
+

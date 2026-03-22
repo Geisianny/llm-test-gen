@@ -1,0 +1,8 @@
+Scenario 1: Trying to add promotion with translation in unexisting locale
+  Tags: ['@api', '@no-ui']
+  Given  there is a promotion "Christmas sale"
+  When  I want to modify this promotion
+  And  I specify its label as "Vente de Noël" in "French (France)" locale
+  And  I try to save my changes
+  Then  I should be notified that the locale is not available
+

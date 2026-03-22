@@ -1,0 +1,9 @@
+Scenario 14: The OneToOne sub-resource should be accessible from owned side
+  Tags: ['@createSchema']
+  Given  there is a RelatedOwnedDummy object with OneToOne relation
+  When  I send a "GET" request to "/related_owned_dummies/1/owning_dummy"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+

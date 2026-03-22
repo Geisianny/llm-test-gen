@@ -1,0 +1,5 @@
+Scenario 2: Account approval required checkbox is enabled
+  Given  the provider has 1 account plan
+  When  I go to the usage rules settings page
+  Then  field "Account approval required" is not disabled
+

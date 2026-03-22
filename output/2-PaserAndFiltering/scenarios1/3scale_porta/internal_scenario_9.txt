@@ -1,0 +1,7 @@
+Scenario 9: Failed attempt to sign in as user with pending account
+  Tags: ['@security']
+  Given  a pending buyer "wickedwidgets" signed up to provider "foo.3scale.localhost"
+  When  the current domain is foo.3scale.localhost
+  And  I try to log in as "wickedwidgets"
+  Then  I should not be logged in
+

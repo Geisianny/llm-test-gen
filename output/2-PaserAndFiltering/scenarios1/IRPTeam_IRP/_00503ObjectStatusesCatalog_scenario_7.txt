@@ -1,0 +1,14 @@
+Scenario 7: _005045 check for clearing the UniqueID field when copying the status
+  *  Opening a form for creating Objects status historyes
+  Given  I open hyperlink "e1cib/list/Catalog.ObjectStatuses"
+  And  I go to line in "List" table
+  And  I expand current line in "List" table
+  *  Copy status
+  And  I expand a line in "List" table
+  And  I go to line in "List" table
+  And  in the table "List" I click the button named "ListContextMenuCopy"
+  *  Check UniqueID field deleting
+  Then  the form attribute named "UniqueID" became equal to ""
+  Then  the form attribute named "Description_en" became equal to "Wait"
+  And  I close all client application windows
+

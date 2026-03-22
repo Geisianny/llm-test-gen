@@ -1,0 +1,12 @@
+Scenario 4: Create a new cart and add a product when I come from a different country
+  Given  the site has a country "Germany" with currency "EUR"
+  And  the country "Germany" is active
+  And  the country "Germany" is valid for store "Austria"
+  And  I am in country "Germany"
+  And  I add the product "T-Shirt" to my cart
+  Then  there should be one product in my cart
+  And  the cart total should be "2000" including tax
+  And  the cart total should be "2000" excluding tax
+  And  the cart subtotal should be "2000" including tax
+  And  the cart subtotal should be "2000" excluding tax
+

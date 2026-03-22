@@ -1,0 +1,146 @@
+Feature: JSON-LD DTO input and output
+Description: In order to use a hypermedia API
+  As a client software developer
+  I need to be able to use DTOs on my resources as Input or Output objects.
+
+Background: 
+  Given  I add "Accept" header equal to "application/ld+json"
+  And  I add "Content-Type" header equal to "application/ld+json"
+
+Scenario 1: Create a resource with a custom Input
+  Tags: ['@createSchema']
+  When  I send a "POST" request to "/dummy_dto_customs" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+Scenario 2: Get an item with a custom output
+  Tags: ['@createSchema']
+  Given  there is a DummyDtoCustom
+  When  I send a "GET" request to "/dummy_dto_custom_output/1"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be a superset of:
+
+Scenario 3: Get a collection with a custom output
+  Tags: ['@createSchema']
+  Given  there are 2 DummyDtoCustom
+  When  I send a "GET" request to "/dummy_dto_custom_output"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be a superset of:
+
+Scenario 4: Create a DummyDtoCustom object without output
+  Tags: ['@createSchema']
+  When  I send a "POST" request to "/dummy_dto_custom_post_without_output" with body:
+  Then  the response status code should be 204
+  And  the response should be empty
+
+Scenario 5: Create and update a DummyInputOutput
+  Tags: ['@createSchema']
+  When  I send a "POST" request to "/dummy_dto_input_outputs" with body:
+  Then  the response status code should be 201
+  And  the JSON should be a superset of:
+  When  I add "Accept" header equal to "application/ld+json"
+  And  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "PUT" request to "/dummy_dto_input_outputs/1" with body:
+  Then  the response status code should be 200
+  And  the JSON should be a superset of:
+
+Scenario 6: Use DTO with relations on User
+  Tags: ['@!mongodb', '@createSchema']
+  When  I send a "POST" request to "/users" with body:
+  Then  the response status code should be 201
+  When  I add "Accept" header equal to "application/ld+json"
+  And  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "PUT" request to "/users/recover/1" with body:
+  Then  the response status code should be 200
+  And  the JSON should be a superset of:
+
+Scenario 7: Create a resource with no input
+  Tags: ['@createSchema', '@controller']
+  When  I send a "POST" request to "/dummy_dto_no_inputs"
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be a superset of:
+
+Scenario 8: Update a resource with no input
+  Tags: ['@controller']
+  When  I send a "POST" request to "/dummy_dto_no_inputs/1/double_bat"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be a superset of:
+
+Scenario 9: Use messenger with an input where the handler gives a synchronous result
+  Tags: ['@!mongodb']
+  When  I send a "POST" request to "/messenger_with_inputs" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+Scenario 10: Use messenger with an input where the handler gives a synchronous Response result
+  Tags: ['@!mongodb']
+  When  I send a "POST" request to "/messenger_with_responses" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the JSON should be equal to:
+
+Scenario 11: Initialize input data with a DataTransformerInitializer
+  Tags: ['@createSchema']
+  Given  there is an InitializeInput object with id 1
+  When  I send a "PUT" request to "/initialize_inputs/1" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+Scenario 12: Create a resource with a custom Input
+  When  I send a "POST" request to "/dummy_dto_customs" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the JSON node "detail" should be equal to "The input data is misformatted."
+
+Scenario 13: Reset password through an input DTO without DataTransformer
+  Tags: ['@!mongodb']
+  When  I send a "POST" request to "/user-reset-password" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON node "email" should be equal to "user@example.com"
+
+Scenario 14: Reset password with an invalid payload through an input DTO without DataTransformer
+  Tags: ['@!mongodb']
+  And  I send a "POST" request to "/user-reset-password" with body:
+  Then  the response status code should be 422
+  And  the response should be in JSON
+
+Scenario 15: Get a collection with a custom output and without item operations, from a resource without identifier
+  Tags: ['@v3']
+  When  I send a "GET" request to "/dummy_collection_dtos"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+Scenario 16: Get a collection with a custom output and itemUriTemplate, from a resource without identifier
+  Tags: ['@v3']
+  When  I send a "GET" request to "/dummy_foo_collection_dtos"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+Scenario 17: Get a collection with a custom output and without item operations, from a resource with an identifier
+  Tags: ['@v3']
+  When  I send a "GET" request to "/dummy_id_collection_dtos"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+

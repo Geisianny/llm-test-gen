@@ -1,0 +1,8 @@
+Scenario 4: Regular user can't edit other users
+  Given  a provider "Kooky" belonging to "paul@joy.com"
+  And  a user "Billow" belonging to the "Kooky" provider
+  When  I am on the homepage
+  And  I log in as "billowlowha@test.com" with password "buxtonbuxton"
+  And  I follow "navigation.users" translation
+  Then  I should not see "general.edit"
+

@@ -1,0 +1,12 @@
+Scenario 4: filter orders by code
+  Tags: ['@selenium']
+  Given  the following purchase from "homer" on "moes-tavern" that is "ordered"
+  And  the following purchase from "homer" on "moes-tavern" that is "ordered"
+  And  I follow "Purchases made"
+  And  I should see "1" within any ".code"
+  And  I should see "2" within any ".code"
+  And  I fill in "code" with "2"
+  When  I press "Filter"
+  Then  I should not see "1" within any ".code"
+  Then  I should see "2" within any ".code"
+

@@ -1,0 +1,7 @@
+Scenario 4: Combining term filters on a property of integer type and a property of keyword type
+  When  I send a "GET" request to "/users?age=42&gender=male"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+

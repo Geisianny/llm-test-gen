@@ -1,0 +1,50 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: dora_metrics_story_processado.feature
+Caminho relativo: DataDog_datadog-api-client-typescript\dora_metrics_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\DataDog_datadog-api-client-typescript\dora_metrics_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: dora_metrics_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Successful DORA metrics request with valid appKeyAuth
+   Steps: 4
+   - Given the user has a valid appKeyAuth
+   - When the user requests DORA metrics
+   - Then the system returns the DORA metrics
+   - And displays a success message
+2. Unsuccessful DORA metrics request with invalid appKeyAuth
+   Steps: 4
+   - Given the user has an invalid appKeyAuth
+   - When the user requests DORA metrics
+   - Then the system denies the request
+   - And displays an error message indicating invalid credentials
+3. DORA metrics request with missing appKeyAuth
+   Steps: 4
+   - Given the user does not provide an appKeyAuth
+   - When the user requests DORA metrics
+   - Then the system denies the request
+   - And displays an error message indicating missing credentials
+4. Delete DORA metrics event with valid appKeyAuth
+   Steps: 5
+   - Given the user has a valid appKeyAuth
+   - And there is an existing DORA metrics event
+   - When the user deletes the DORA metrics event
+   - Then the system removes the event
+   - And displays a success message
+5. Search DORA metrics with valid appKeyAuth
+   Steps: 5
+   - Given the user has a valid appKeyAuth
+   - And there are existing DORA metrics events
+   - When the user searches for DORA metrics events
+   - Then the system returns the relevant DORA metrics events
+   - And displays the search results

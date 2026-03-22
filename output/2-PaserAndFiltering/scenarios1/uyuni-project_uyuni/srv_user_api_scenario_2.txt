@@ -1,0 +1,4 @@
+Scenario 2: List roles
+  When  I call user.list_roles() on user "admin"
+  Then  I should get at least one role that matches "_admin" suffix
+

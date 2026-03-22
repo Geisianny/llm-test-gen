@@ -1,0 +1,3 @@
+Scenario 3: Bootstrap a SLES minion via API
+  When  I call system.bootstrap() on host "sle_minion" and salt-ssh "disabled"
+

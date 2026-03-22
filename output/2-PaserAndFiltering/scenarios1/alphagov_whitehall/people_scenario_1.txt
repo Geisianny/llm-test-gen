@@ -1,0 +1,4 @@
+Scenario 1: Adding a person
+  When  I add a new person called "Dave Cameroon"
+  Then  I should be able to see "Dave Cameroon" in the list of people
+

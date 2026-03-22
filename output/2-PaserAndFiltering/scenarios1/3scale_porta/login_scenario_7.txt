@@ -1,0 +1,7 @@
+Scenario 7: Developer can log in with Captcha enabled
+  Tags: ['@recaptcha']
+  Given  the provider has bot protection enabled for its buyers
+  And  the client will not be marked as a bot
+  When  the developer tries to log in
+  Then  the page should contain "Signed in successfully"
+

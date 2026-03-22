@@ -1,0 +1,6 @@
+Scenario 3: Viewing no review message if there are no reviews
+  Tags: ['@api', '@ui']
+  Given  the store has a product "Lux perpetua"
+  When  I check this product's reviews
+  Then  I should be notified that there are no reviews
+

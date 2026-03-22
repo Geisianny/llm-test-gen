@@ -1,0 +1,11 @@
+Scenario 2: Only admin of the marketplace cannot delete acccount
+  Tags: ['@javascript']
+  Given  there are following users:
+  And  I am logged in as "kassi_testperson2"
+  When  I open user menu
+  When  I follow "Settings"
+  And  I follow "Account" within ".left-navi"
+  And  I will confirm all following confirmation dialogs in this page if I am running PhantomJS
+  And  I press "Permanently delete my account"
+  Then  I should see "Your account is now deleted."
+

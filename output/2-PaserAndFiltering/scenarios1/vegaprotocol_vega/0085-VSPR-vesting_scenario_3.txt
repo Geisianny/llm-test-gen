@@ -1,0 +1,10 @@
+Scenario 3: Parties attempt to transfer rewards to or from vesting and vested accounts (0085-RVST-006)(0085-RVST-007)(0085-RVST-008)
+  Given  the parties submit the following recurring transfers:
+  And  the network moves ahead "1" blocks
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  "a3c024b4e23230c89884a54a813b1ecb4cb0f827a38641c66eeca466da6b2ddf" should have vesting account balance of "9000" for asset "USD.1.10"
+  And  "a3c024b4e23230c89884a54a813b1ecb4cb0f827a38641c66eeca466da6b2ddf" should have vested account balance of "1000" for asset "USD.1.10"
+  Given  the parties submit the following one off transfers:
+  And  "a3c024b4e23230c89884a54a813b1ecb4cb0f827a38641c66eeca466da6b2ddf" should have vested account balance of "999" for asset "USD.1.10"
+

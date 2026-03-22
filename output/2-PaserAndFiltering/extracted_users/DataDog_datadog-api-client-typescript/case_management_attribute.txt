@@ -1,0 +1,78 @@
+Feature: Case Management Attribute
+Description: View and configure custom attributes within Case Management. See the [Case
+  Management
+  page](https://docs.datadoghq.com/service_management/case_management/) for
+  more information.
+Tags: ['@endpoint(case-management-attribute)', '@endpoint(case-management-attribute-v2)']
+
+Background: 
+  Given  a valid "apiKeyAuth" key in the system
+  And  a valid "appKeyAuth" key in the system
+  And  an instance of "CaseManagementAttribute" API
+
+Scenario 1: Create custom attribute config for a case type returns "Bad Request" response
+  Tags: ['@team:DataDog/case-management']
+  Given  new "CreateCustomAttributeConfig" request
+  And  there is a valid "case_type" in the system
+  And  request contains "case_type_id" parameter from "case_type.id"
+  And  body with value {"data": {"attributes": {"display_name": "AWS Region {{uuid}}", "is_multi": true, "key": "region_{{unique_hash}}", "type": "FLOAT"}, "type": "custom_attribute"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 2: Create custom attribute config for a case type returns "CREATED" response
+  Tags: ['@team:DataDog/case-management']
+  Given  new "CreateCustomAttributeConfig" request
+  And  there is a valid "case_type" in the system
+  And  request contains "case_type_id" parameter from "case_type.id"
+  And  body with value {"data": {"attributes": {"display_name": "AWS Region {{uuid}}", "is_multi": true, "key": "region_{{unique_hash}}", "type": "NUMBER"}, "type": "custom_attribute"}}
+  When  the request is sent
+  Then  the response status is 201 CREATED
+
+Scenario 3: Create custom attribute config for a case type returns "Not Found" response
+  Tags: ['@team:DataDog/case-management']
+  Given  new "CreateCustomAttributeConfig" request
+  And  request contains "case_type_id" parameter with value "9fd476d7-a955-454a-851d-980c655c02d3"
+  And  body with value {"data": {"attributes": {"display_name": "AWS Region {{unique_hash}}", "is_multi": true, "key": "region_{{unique_hash}}", "type": "NUMBER"}, "type": "custom_attribute"}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+Scenario 4: Delete custom attributes config returns "Bad Request" response
+  Tags: ['@team:DataDog/case-management']
+  Given  new "DeleteCustomAttributeConfig" request
+  And  there is a valid "case_type" in the system
+  And  request contains "case_type_id" parameter from "case_type.id"
+  And  request contains "custom_attribute_id" parameter with value "not-an-uuid"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 5: Delete custom attributes config returns "No Content" response
+  Tags: ['@skip', '@team:DataDog/case-management']
+  Given  new "DeleteCustomAttributeConfig" request
+  And  there is a valid "case_type" in the system
+  And  there is a valid "custom_attribute" in the system
+  And  request contains "case_type_id" parameter from "case_type.id"
+  And  request contains "custom_attribute_id" parameter from "custom_attribute.id"
+  When  the request is sent
+  Then  the response status is 204 No Content
+
+Scenario 6: Get all custom attributes config of case type returns "Bad Request" response
+  Tags: ['@skip', '@team:DataDog/case-management']
+  Given  new "GetAllCustomAttributeConfigsByCaseType" request
+  And  request contains "case_type_id" parameter with value "not-an-uuid"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+Scenario 7: Get all custom attributes config of case type returns "OK" response
+  Tags: ['@team:DataDog/case-management']
+  Given  new "GetAllCustomAttributeConfigsByCaseType" request
+  And  there is a valid "case_type" in the system
+  And  request contains "case_type_id" parameter from "case_type.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+
+Scenario 8: Get all custom attributes returns "OK" response
+  Tags: ['@team:DataDog/case-management']
+  Given  new "GetAllCustomAttributes" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

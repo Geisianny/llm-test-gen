@@ -1,0 +1,9 @@
+Scenario 4: Unchecking all filtered taxons
+  Tags: ['@no-api', '@ui', '@mink:chromedriver']
+  When  I want to modify the "T-Shirt" product
+  And  I filter taxons by "T-Shirts"
+  And  I uncheck all taxons
+  And  I save my changes
+  Then  the product "Shirt" should not have the "T-Shirts" taxon
+  But  the product "Shirt" should have the "Clothes" taxon
+

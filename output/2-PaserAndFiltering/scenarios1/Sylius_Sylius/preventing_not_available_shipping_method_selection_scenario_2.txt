@@ -1,0 +1,10 @@
+Scenario 2: Not being able to select shipping method not available for my shipping address
+  Tags: ['@api', '@ui']
+  Given  there is a zone "The Rest of the World" containing all other countries
+  And  the store has "Dragon Post" shipping method with "$30.00" fee for the rest of the world
+  And  the store has "Raven Post" shipping method with "$10.00" fee within the "US" zone
+  And  I added product "Targaryen T-Shirt" to the cart
+  And  I addressed the cart
+  When  I want to complete the shipping step
+  Then  I should not be able to select "Dragon Post" shipping method
+

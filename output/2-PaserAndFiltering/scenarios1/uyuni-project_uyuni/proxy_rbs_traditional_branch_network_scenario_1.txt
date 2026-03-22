@@ -1,0 +1,5 @@
+Scenario 1: Install the Retail pattern on the server
+  When  I install pattern "suma_retail" on this "server"
+  And  I wait for "patterns-suma_retail" to be installed on "server"
+  And  I synchronize all Salt dynamic modules on "proxy"
+

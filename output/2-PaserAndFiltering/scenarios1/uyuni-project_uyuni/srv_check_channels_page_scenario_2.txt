@@ -1,0 +1,17 @@
+Scenario 2: Completeness of the channels page
+  When  I follow the left menu "Software > Channel List > All"
+  Then  I should see a "Full Software Channel List" text
+  And  I should see a "Channel List" link in the left menu
+  And  I should see a "All" link in the left menu
+  And  I should see a "Popular" link in the left menu
+  And  I should see a "My Channels" link in the left menu
+  And  I should see a "Shared" link in the left menu
+  And  I should see a "Retired" link in the left menu
+  And  I should see a "Package Search" link in the left menu
+  And  I should see a "Manage" link in the left menu
+  And  I should see a "All" link in the content area
+  And  I should see a "Popular" link in the content area
+  And  I should see a "My Channels" link in the content area
+  And  I should see a "Shared" link in the content area
+  And  I should see a "Retired" link in the content area
+

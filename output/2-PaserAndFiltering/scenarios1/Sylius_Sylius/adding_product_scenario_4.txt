@@ -1,0 +1,12 @@
+Scenario 4: Adding a new simple product with specific shipping category
+  Tags: ['@ui', '@no-api']
+  When  I want to create a new simple product
+  And  I specify its code as "BOARD_DICE_BREWING"
+  And  I name it "Dice Brewing" in "English (United States)" locale
+  And  I set its slug to "dice-brewing"
+  And  I set its price to "$10.00" for "United States" channel
+  And  I set its shipping category as "Standard"
+  And  I add it
+  Then  I should be notified that it has been successfully created
+  And  the product "Dice Brewing" should appear in the store
+

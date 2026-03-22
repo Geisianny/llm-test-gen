@@ -1,0 +1,6 @@
+Scenario 22: Get all projects returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/case-management']
+  Given  new "GetProjects" request
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

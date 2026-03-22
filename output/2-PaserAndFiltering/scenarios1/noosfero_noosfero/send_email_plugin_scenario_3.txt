@@ -1,0 +1,6 @@
+Scenario 3: as admin I can configure plugin
+  Given  I am logged in as admin
+  When  I go to the environment control panel
+  And  I follow "Plugins"
+  Then  I should see "Configuration" linking to "/admin/plugin/send_email/admin"
+

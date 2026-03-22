@@ -1,0 +1,7 @@
+Scenario 16: Delete GCP scan options returns "Not Found" response
+  Tags: ['@team:DataDog/k9-agentless']
+  Given  new "DeleteGcpScanOptions" request
+  And  request contains "project_id" parameter with value "nonexistent-project-id"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

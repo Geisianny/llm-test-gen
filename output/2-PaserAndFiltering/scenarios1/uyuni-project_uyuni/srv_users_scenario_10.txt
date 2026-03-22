@@ -1,0 +1,12 @@
+Scenario 10: Remove role
+  When  I follow the left menu "Users > User List > Active"
+  And  I follow "user1"
+  When  I uncheck "role_org_admin"
+  And  I click on "Update"
+  Then  I should see "role_org_admin" as unchecked
+  And  I should see "role_system_group_admin" as checked
+  And  I should see "role_channel_admin" as checked
+  And  I should see "role_activation_key_admin" as checked
+  And  I should see "role_config_admin" as checked
+  And  I should see "role_regular_user" as checked
+

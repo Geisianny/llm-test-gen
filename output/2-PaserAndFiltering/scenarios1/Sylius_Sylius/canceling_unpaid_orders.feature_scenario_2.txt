@@ -1,0 +1,9 @@
+Scenario 2: The order with paid state has not been canceled
+  Tags: ['@cli']
+  And  the customer bought a single "PHP T-Shirt"
+  And  the customer chose "Free" shipping method to "United States" with "Offline" payment
+  And  the order "#00000026" is already paid
+  When  I run cancel unpaid orders command
+  Then  only the order with number "#00000025" should be canceled
+  And  I should be informed that unpaid orders have been canceled
+

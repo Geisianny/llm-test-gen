@@ -1,0 +1,9 @@
+Scenario 1: Trying to add a new tax category without specifying its code
+  Tags: ['@api', '@ui']
+  When  I want to create a new tax category
+  And  I name it "Food and Beverage"
+  But  I do not specify its code
+  And  I try to add it
+  Then  I should be notified that code is required
+  And  tax category with name "Food and Beverage" should not be added
+

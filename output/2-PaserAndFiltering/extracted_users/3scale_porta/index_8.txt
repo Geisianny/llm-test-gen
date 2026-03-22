@@ -1,0 +1,16 @@
+Feature: Account plans index page
+Description: In order to manage account plans from the index page, I want to perform the following
+  actions: create, copy, edit, delete, publish and hide. Moreover, I want to sort the table
+  by name, no. of apps and state.
+Tags: ['@javascript']
+
+Background: 
+  Given  a provider is logged in
+  And  the provider has "account_plans" allowed
+  But  the provider has no account plans
+
+Scenario 1: Navigation via context selector
+  When  they select "Audience" from the context selector
+  And  follow "Account Plans" within the main menu
+  Then  the current page is the account plans admin page
+

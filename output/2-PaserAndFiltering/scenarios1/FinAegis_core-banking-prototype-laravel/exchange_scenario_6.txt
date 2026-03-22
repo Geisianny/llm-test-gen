@@ -1,0 +1,9 @@
+Scenario 6: View order book
+  Given  the following open orders exist:
+  When  I view the order book for "BTC/EUR"
+  Then  I should see the following buy orders:
+  And  I should see the following sell orders:
+  And  the spread should be "1000" "EUR"
+  And  the best bid should be "48000" "EUR"
+  And  the best ask should be "49000" "EUR"
+

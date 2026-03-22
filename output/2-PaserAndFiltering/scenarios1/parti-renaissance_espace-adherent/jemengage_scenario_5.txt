@@ -1,0 +1,4 @@
+Scenario 5: As a non logged-in user I cannot get a non-existent header block
+  Given  I send a "GET" request to "/api/je-mengage/headers/connexion"
+  Then  the response status code should be 404
+

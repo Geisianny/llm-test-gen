@@ -1,0 +1,5 @@
+Scenario 2: Checking order payment state of a placed order
+  Tags: ['@api', '@ui']
+  When  I browse orders
+  Then  the order "#00000666" should have order payment state "Awaiting payment"
+

@@ -1,0 +1,7 @@
+Scenario 6: Fail to create a group with only its description
+  When  I follow the left menu "Systems > System Groups"
+  And  I follow "Create Group"
+  And  I enter "My new group" as "description"
+  And  I click on "Create Group"
+  Then  I should see a "Both name and description are required for System Groups." text
+

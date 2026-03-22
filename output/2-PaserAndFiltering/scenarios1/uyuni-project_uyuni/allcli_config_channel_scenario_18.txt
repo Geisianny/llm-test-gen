@@ -1,0 +1,10 @@
+Scenario 18: Unsubscribe Debian-like minion and delete configuration files
+  Tags: ['@deblike_minion']
+  When  I follow the left menu "Configuration > Channels"
+  And  I follow "Mixed Channel"
+  And  I follow "Systems" in the content area
+  And  I check the "deblike_minion" client
+  And  I click on "Unsubscribe systems"
+  Then  I should see a "Successfully unsubscribed 1 system(s)." text
+  And  I destroy "/etc/s-mgr" directory on "deblike_minion"
+

@@ -1,0 +1,8 @@
+Scenario 2: Get all processes returns "OK" response
+  Tags: ['@team:DataDog/container-experiences']
+  Given  request contains "search" parameter with value "process-agent"
+  And  request contains "tags" parameter with value "testing:true"
+  And  request contains "page[limit]" parameter with value 2
+  When  the request is sent
+  Then  the response status is 200 OK
+

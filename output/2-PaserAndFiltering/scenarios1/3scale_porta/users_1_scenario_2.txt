@@ -1,0 +1,7 @@
+Scenario 2: Listing users
+  When  I go to the buyer users page for "SpaceWidgets"
+  Then  I should see buyer user "bob"
+  And  I should see link to the buyer user edit page for "bob"
+  And  I should see buyer user "alice"
+  And  I should see link to the buyer user edit page for "alice"
+

@@ -1,0 +1,14 @@
+Scenario 1: Adding a product with a text attribute in different locales
+  Tags: ['@ui', '@javascript']
+  When  I want to create a new simple product
+  And  I specify its code as "mug"
+  And  I name it "PHP Mug" in "English (United States)"
+  And  I set its price to "$100.00" for "Web" channel
+  And  I set its "Mug material" attribute to "Wood" in "English (United States)"
+  And  I set its "Mug material" attribute to "Drewno" in "Polish (Poland)"
+  And  I add it
+  Then  I should be notified that it has been successfully created
+  And  the product "PHP Mug" should appear in the store
+  And  attribute "Mug material" of product "PHP Mug" should be "Wood" in "English (United States)"
+  And  attribute "Mug material" of product "PHP Mug" should be "Drewno" in "Polish (Poland)"
+

@@ -1,0 +1,8 @@
+Scenario 7: Mobile wallet synchronization
+  Given  I use wallet on multiple devices
+  When  I perform operations across devices:
+  Then  all devices should show synchronized data
+  And  push notifications should work across devices
+  And  no duplicate transactions should occur
+  And  offline changes should sync when online
+

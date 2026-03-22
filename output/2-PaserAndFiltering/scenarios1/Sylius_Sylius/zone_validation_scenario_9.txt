@@ -1,0 +1,10 @@
+Scenario 9: Trying to add a zone of type country with wrong country code
+  Tags: ['@api', '@no-ui']
+  When  I want to create a new zone consisting of country
+  And  I name it "European Union"
+  And  I specify its code as "EU"
+  And  I add a member with a code "UK"
+  And  I try to add it
+  Then  I should be notified that "UK" is not a valid country code
+  And  zone with name "European Union" should not be added
+

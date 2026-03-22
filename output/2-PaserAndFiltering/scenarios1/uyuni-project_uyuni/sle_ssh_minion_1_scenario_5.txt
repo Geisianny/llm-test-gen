@@ -1,0 +1,4 @@
+Scenario 5: Reboot the SSH minion to use the new kernel
+  Tags: ['@susemanager']
+  When  I reboot the "ssh_minion" host through SSH, waiting until it comes back
+

@@ -1,0 +1,6 @@
+Scenario 2: Unpublishing a published worldwide organisation
+  Given  I am a managing editor
+  Given  a published worldwide organisation "Test Worldwide Organisation"
+  When  I unpublish the document and ask for a redirect to "https://www.test.gov.uk/example"
+  Then  the unpublishing should redirect to "https://www.test.gov.uk/example"
+

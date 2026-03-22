@@ -1,0 +1,7 @@
+Scenario 13: Delete Workflows webhook handle returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/chat-integrations']
+  Given  new "DeleteWorkflowsWebhookHandle" request
+  And  request contains "handle_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

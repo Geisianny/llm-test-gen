@@ -1,0 +1,8 @@
+Scenario 2: Receiving no discount on an order if it's not nth order placed
+  Tags: ['@api', '@ui']
+  Given  I have already placed 3 orders choosing "PHP T-Shirt" product, "Free" shipping method to "United States" with "Cash on Delivery" payment
+  And  I added product "PHP T-Shirt" to the cart
+  When  I check the details of my cart
+  Then  my cart total should be "$100.00"
+  And  there should be no discount applied
+

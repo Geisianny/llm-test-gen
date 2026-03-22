@@ -1,0 +1,9 @@
+Scenario 15: show events when i follow a specific day
+  Tags: ['@selenium']
+  Given  I am on /profile/josesilva/events/2009/10
+  And  I should see "Another Conference" within "#agenda"
+  And  I should see "Some Conference" within "#agenda"
+  When  I follow "24"
+  Then  I should see "Another Conference" within "#agenda"
+  And  I should not see "Some Conference" within "#agenda"
+

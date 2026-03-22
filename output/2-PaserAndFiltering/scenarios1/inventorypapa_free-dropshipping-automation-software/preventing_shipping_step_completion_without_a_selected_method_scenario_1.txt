@@ -1,0 +1,10 @@
+Scenario 1: Preventing shipping step completion if there are no available shipping methods
+  Tags: ['@ui', '@todo']
+  Given  the store operates on a single channel in "United States"
+  And  the store has a product "PHP T-Shirt" priced at "$19.99"
+  And  I have product "PHP T-Shirt" in the cart
+  When  I specified the billing address as "Ankh Morpork", "Frost Alley", "90210", "United States" for "Jon Snow"
+  And  I do not select any shipping method
+  Then  I should not be able to complete the shipping step
+  And  there should be information about no shipping methods available for my shipping address
+

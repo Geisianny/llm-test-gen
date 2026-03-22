@@ -1,0 +1,11 @@
+Scenario 4: Provider should see all fields defined for account
+  And  the provider has the following fields defined for accounts:
+  And  buyer "Pepe" has extra fields:
+  And  buyer "Pepe" has telephone number "666"
+  And  VAT rate of buyer "Pepe" is 9%
+  And  VAT code of buyer "Pepe" is 9
+  And  they go to the buyer account "Pepe" edit page
+  Then  they should see the fields:
+  When  they press "Update Account"
+  Then  they should not see error in fields:
+

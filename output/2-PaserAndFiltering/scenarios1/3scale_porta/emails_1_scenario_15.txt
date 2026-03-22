@@ -1,0 +1,12 @@
+Scenario 15: Cancel editing a custom support email
+  Given  a product "Bananas"
+  And  the product has support email set to "help@bananas.org"
+  And  they go to the emails settings page
+  When  they press "Edit support email for Bananas"
+  And  they should see button "Add a custom support email" disabled
+  And  fill in "Bananas" with "support@bananas.com"
+  And  press "Cancel edit of support email for Bananas"
+  Then  they should see button "Add a custom support email" enabled
+  And  there is a readonly field "Bananas"
+  And  the "Bananas" field should contain "help@bananas.org"
+

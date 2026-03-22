@@ -1,0 +1,5 @@
+Scenario 23: show empty last posts on blog search results
+  Given  the following blogs
+  When  I search contents for "JSilva"
+  Then  I should see "None" within ".search-blog-items"
+

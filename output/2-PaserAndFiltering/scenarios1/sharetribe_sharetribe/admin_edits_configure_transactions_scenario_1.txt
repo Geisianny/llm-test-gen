@@ -1,0 +1,6 @@
+Scenario 1: Admin user can edit send automatic newsletters to all users
+  When  I go to the admin2 automatic newsletter community "test"
+  And  I check "community_automatic_newsletters"
+  Then  I press submit
+  And  the "community_automatic_newsletters" checkbox should be checked
+

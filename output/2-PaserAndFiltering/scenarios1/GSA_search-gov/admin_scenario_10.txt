@@ -1,0 +1,38 @@
+Scenario 10: Managing Search.gov Domains
+  Tags: ['@javascript']
+  Given  the following "searchgov domains" exist:
+  And  the following "sitemaps" exist:
+  When  I go to the admin home page
+  And  I follow "Search.gov Domains"
+  Then  I should see the following breadcrumbs: Super Admin > Search.gov Domains
+  And  I should see "Export"
+  And  I should see "Search"
+  And  I should see "Create New"
+  And  I should see "Delete"
+  And  I should see "search.gov"
+  And  I should see "old.gov"
+  And  I should see "new.gov"
+  And  I should see "idle"
+  When  I follow "Sitemaps" within the first scaffold row
+  Then  I should see "search.gov/sitemap.xml"
+  And  I follow the first "Delete" and confirm in the SearchgovDomain Sitemaps table
+  Then  I should not see "search.gov/sitemap.xml"
+  When  I follow "Create New" in the SearchgovDomain Sitemaps table
+  And  I fill in "Url" with "search.gov/sitemap.txt"
+  And  I press "Create"
+  Then  I should see "search.gov/sitemap.txt"
+  And  I follow "Close"
+  When  I follow "Create New"
+  And  I fill in "Domain" with "www.state.gov"
+  And  I press "Create"
+  Then  I should see "www.state.gov has been created. Sitemaps will automatically begin indexing."
+  When  I follow "Reindex" within the first scaffold row and confirm "Are you sure you want to reindex this entire domain?"
+  And  I wait for ajax
+  Then  I should see "Reindexing has been enqueued for www.state.gov"
+  When  I follow "Edit" within the first scaffold row
+  Then  I should see "Render Javascript"
+  When  I check "Render Javascript"
+  Then  the "Render Javascript" checkbox should be checked
+  And  I press "Update"
+  Then  I should see "www.state.gov"
+

@@ -1,0 +1,6 @@
+Scenario 2: a party deposit collateral onto Vega. The general account for this asset increase
+  Given  the parties deposit on asset's general account the following amount:
+  Then  "party1" should have one account per asset
+  When  the parties deposit on asset's general account the following amount:
+  Then  "party1" should have general account balance of "300" for asset "VUSD"
+

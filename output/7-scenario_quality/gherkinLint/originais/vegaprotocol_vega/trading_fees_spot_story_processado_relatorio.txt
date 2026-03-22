@@ -1,0 +1,34 @@
+RELATÓRIO INDIVIDUAL - ANÁLISE GHERKIN-LINT
+============================================================
+Data da análise: 19/01/2026 23:14:33
+Arquivo analisado: output/6-FeatureEvaluation/featuresToEvaluation/Originais\vegaprotocol_vega\trading_fees_spot_story_processado.feature
+Comando executado: node 6-FeatureEvaluation/gherkin-lint/dist/main.js -c 6-FeatureEvaluation/gherkin-lint/.gherkin-lintrc output/6-FeatureEvaluation/featuresToEvaluation/Originais\vegaprotocol_vega\trading_fees_spot_story_processado.feature
+
+Status: ENCONTRADOS 5 PROBLEMAS
+
+PROBLEMAS ENCONTRADOS:
+----------------------------------------
+1. [0;4mD:\Meus Documentos\Documents\teste\output\6-FeatureEvaluation\featuresToEvaluation\Originais\vegaprotocol_vega\trading_fees_spot_story_processado.feature[24m
+
+2. [38;5;243m3[0m    Scenario name is too long. Length of 134 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+
+3. [38;5;243m5[0m    Multiple empty lines are not allowed                                               [38;5;243mno-multiple-empty-lines[0m
+
+4. [38;5;243m6[0m    Multiple empty lines are not allowed                                               [38;5;243mno-multiple-empty-lines[0m
+
+5. [38;5;243m7[0m    Multiple empty lines are not allowed                                               [38;5;243mno-multiple-empty-lines[0m
+
+AVISOS/INFORMAÇÕES ADICIONAIS:
+----------------------------------------
+[0;4mD:\Meus Documentos\Documents\teste\output\6-FeatureEvaluation\featuresToEvaluation\Originais\vegaprotocol_vega\trading_fees_spot_story_processado.feature[24m
+  [38;5;243m3[0m    Scenario name is too long. Length of 134 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+  [38;5;243m5[0m    Multiple empty lines are not allowed                                               [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m6[0m    Multiple empty lines are not allowed                                               [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m7[0m    Multiple empty lines are not allowed                                               [38;5;243mno-multiple-empty-lines[0m
+
+
+
+
+RESUMO DOS PROBLEMAS POR TIPO:
+----------------------------------------
+  other: 5 ocorrência(s)

@@ -1,0 +1,11 @@
+Scenario 1: Edit an user
+  And  current domain is the admin domain of provider "foo.3scale.localhost"
+  When  I log in as provider "foo.3scale.localhost"
+  And  I go to the provider users page
+  And  I follow "Edit" for user "alice"
+  Then  I should see "Edit user"
+  And  I fill in "Email" with "alice@foo.3scale.localhost"
+  And  I press "Update User"
+  Then  I should see "User was successfully updated"
+  And  I should be on the provider users page
+

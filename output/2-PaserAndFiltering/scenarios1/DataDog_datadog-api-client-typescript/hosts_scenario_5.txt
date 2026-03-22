@@ -1,0 +1,6 @@
+Scenario 5: Get the total number of active hosts returns "Invalid Parameter Error" response
+  Tags: ['@generated', '@skip', '@team:DataDog/core-index']
+  Given  new "GetHostTotals" request
+  When  the request is sent
+  Then  the response status is 400 Invalid Parameter Error
+

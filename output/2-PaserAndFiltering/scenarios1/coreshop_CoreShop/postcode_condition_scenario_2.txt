@@ -1,0 +1,6 @@
+Scenario 2: Add a new postcode range shipping rule which is inactive
+  Given  adding a shipping rule named "postcodes"
+  And  the shipping rule is inactive
+  And  the shipping rule has a condition postcode with "46-48"
+  Then  the shipping rule should be invalid for my cart with carrier "Post"
+

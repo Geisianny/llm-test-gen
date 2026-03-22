@@ -1,0 +1,31 @@
+Feature: BackendApi > Metrics index > Metric
+Description: In Order to change a plan
+  As a provider
+  I should be able to delete a metric
+Tags: ['@javascript']
+
+Background: 
+  Given  a provider is logged in
+  And  a backend api with the following metrics:
+  And  a backend api with the following methods:
+  And  I go to the metrics and methods page of my backend api
+
+Scenario 1: Delete a method
+  When  I change to tab 'Methods'
+  And  I follow "Margherita"
+  And  I follow "Delete"
+  And  confirm the dialog
+  Then  I should not see metric "Margherita"
+
+Scenario 2: Delete a metric
+  When  I change to tab 'Metrics'
+  And  I follow "Pizza"
+  And  I follow "Delete"
+  And  confirm the dialog
+  Then  I should not see metric "Pizza"
+
+Scenario 3: Default metric can't be deleted
+  When  I change to tab 'Metrics'
+  And  I follow "Hits"
+  Then  I should not see "Delete"
+

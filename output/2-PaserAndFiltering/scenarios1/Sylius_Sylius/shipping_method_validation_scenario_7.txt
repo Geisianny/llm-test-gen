@@ -1,0 +1,8 @@
+Scenario 7: Trying to remove zone from existing shipping method
+  Tags: ['@api', '@ui']
+  Given  the store allows shipping with "UPS Ground"
+  When  I want to modify this shipping method
+  And  I remove its zone
+  And  I try to save my changes
+  Then  I should be notified that the zone is required
+

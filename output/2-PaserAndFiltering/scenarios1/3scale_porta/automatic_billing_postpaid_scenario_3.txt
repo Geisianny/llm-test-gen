@@ -1,0 +1,9 @@
+Scenario 3: Monthly fee on application plan downgrading in the middle of the same day
+  Given  all the rolling updates features are off
+  And  the date is 1st January 2017
+  And  the buyer is signed up to plan "Expensive"
+  And  the date is 1st January 2017 12:00
+  Then  the buyer changes to application plan "Paid"
+  When  time flies to 3rd February 2017
+  Then  the buyer should have following line items for "January, 2017" invoice:
+

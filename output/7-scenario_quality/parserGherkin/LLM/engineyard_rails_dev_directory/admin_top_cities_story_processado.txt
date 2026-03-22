@@ -1,0 +1,54 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: admin_top_cities_story_processado.feature
+Caminho relativo: engineyard_rails_dev_directory\admin_top_cities_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\engineyard_rails_dev_directory\admin_top_cities_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: admin_top_cities_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Add a new top city with valid information
+   Steps: 6
+   - Given there is an admin logged in
+   - And the city "New York" does not exist in the top cities list
+   - When the admin adds "New York" as a top city
+   - And sets its state to "New York" and country to "USA"
+   - Then the system includes "New York" in the top cities list
+   - And displays "New York" with its state and country
+2. Attempt to add a duplicate top city
+   Steps: 5
+   - Given there is an admin logged in
+   - And the city "New York" already exists in the top cities list
+   - When the admin adds "New York" as a top city
+   - Then the system does not add "New York" again
+   - And displays a message indicating that the city already exists
+3. Add a new top city with missing information
+   Steps: 5
+   - Given there is an admin logged in
+   - When the admin adds "Los Angeles" as a top city
+   - And sets its state to "California" but leaves the country blank
+   - Then the system does not add "Los Angeles" to the top cities list
+   - And displays a message indicating that the country is required
+4. Add a new top city with invalid information
+   Steps: 5
+   - Given there is an admin logged in
+   - When the admin adds "123" as a top city
+   - And sets its state to "New York" and country to "USA"
+   - Then the system does not add "123" to the top cities list
+   - And displays a message indicating that the city name is invalid
+5. Verify that the new top city is displayed in the featured cities section
+   Steps: 5
+   - Given there is an admin logged in
+   - And the city "Chicago" is added as a top city with state "Illinois" and country "USA"
+   - When the admin views the featured cities section
+   - Then the system displays "Chicago" in the featured cities section
+   - And shows its state as "Illinois" and country as "USA"

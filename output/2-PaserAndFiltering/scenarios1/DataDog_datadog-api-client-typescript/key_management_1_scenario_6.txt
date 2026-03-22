@@ -1,0 +1,8 @@
+Scenario 6: Delete an API key returns "No Content" response
+  Tags: ['@team:DataDog/credentials-management']
+  Given  there is a valid "api_key" in the system
+  And  new "DeleteAPIKey" request
+  And  request contains "api_key_id" parameter from "api_key.data.id"
+  When  the request is sent
+  Then  the response status is 204 No Content
+

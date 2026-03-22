@@ -1,0 +1,12 @@
+Scenario 4: filter contents by facet
+  Given  the following categories
+  And  the following articles
+  When  I go to the search articles page
+  And  I fill in "search-input" with "this is an article"
+  And  I press "Search"
+  And  I follow "Software Livre" within "#facets-menu"
+  Then  I should see "noosfero and debian" within "#search-results"
+  And  I should not see "facebook and 1984"
+  When  I follow "remove facet" within ".facet-selected"
+  Then  I should see "facebook and 1984"
+

@@ -1,0 +1,9 @@
+Scenario 7: Cleanup: Delete first empty minion profile
+  When  I follow the left menu "Systems > System List"
+  And  I wait until I see the "empty-profile" system, refreshing the page
+  And  I follow "empty-profile"
+  And  I follow "Delete System"
+  Then  I should see a "Confirm System Profile Deletion" text
+  When  I click on "Delete Profile"
+  And  I wait until I see "has been deleted" text
+

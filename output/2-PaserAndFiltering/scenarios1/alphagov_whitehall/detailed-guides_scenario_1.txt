@@ -1,0 +1,5 @@
+Scenario 1: Creating a new draft detailed guide
+  Given  I am a writer in the organisation "Department of Examples"
+  When  I draft a new detailed guide "The finer points of moustache trimming"
+  Then  I should see the detailed guide "The finer points of moustache trimming" in the list of draft documents
+

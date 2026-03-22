@@ -1,0 +1,10 @@
+Scenario 6: Selecting payment method after complete checkout
+  Tags: ['@ui']
+  Given  I had product "PHP T-Shirt" in the cart
+  And  I specified the billing address as "Ankh Morpork", "Frost Alley", "90210", "United States" for "Jon Snow"
+  And  I have proceeded order with "Free" shipping method and "Offline" payment
+  When  I go back to payment step of the checkout
+  And  I select "PayPal Express Checkout" payment method
+  And  I complete the payment step
+  Then  I should be on the checkout summary step
+

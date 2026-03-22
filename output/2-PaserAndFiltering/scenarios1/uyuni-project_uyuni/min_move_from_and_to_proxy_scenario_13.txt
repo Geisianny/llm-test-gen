@@ -1,0 +1,4 @@
+Scenario 13: Check events history for failures on the minion
+  Given  I am on the Systems overview page of this "sle_minion"
+  Then  I check for failed events on history event page
+

@@ -1,0 +1,25 @@
+Scenario 1: 001 Replicate a scenario from Lewis with Elias' implementation on Exit_price when there is insufficient orders, linear slippage factor = 1e6, quadratic slippage factor = 1e6, 0019-MCAL-001, 0019-MCAL-002
+  Tags: ['@Liquidation']
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  When  the parties place the following orders with ticks:
+  And  the market data for the market "ETH/DEC20" should be:
+  And  the parties should have the following account balances:
+  Then  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/DEC20"
+  And  the market data for the market "ETH/DEC20" should be:
+  And  the parties should have the following account balances:
+  Then  the parties should have the following margin levels:
+  And  the markets are updated:
+  And  the network moves ahead "1" blocks
+  And  the following trades should be executed:
+  And  the insurance pool balance should be "0" for the market "ETH/DEC20"
+  Then  the order book should have the following volumes for market "ETH/DEC20":
+  When  the parties place the following orders with ticks:
+  Then  the order book should have the following volumes for market "ETH/DEC20":
+  And  the parties should have the following account balances:
+  Then  the network moves ahead "1" blocks
+  Then  the parties should have the following margin levels:
+  And  the market data for the market "ETH/DEC20" should be:
+  And  the insurance pool balance should be "3096390" for the market "ETH/DEC20"
+

@@ -1,0 +1,5 @@
+Scenario 3: The object instance is disabled and published
+  Given  the object-instance has following values:
+  And  the object-instance is published
+  Then  the index should not have indexed the object
+

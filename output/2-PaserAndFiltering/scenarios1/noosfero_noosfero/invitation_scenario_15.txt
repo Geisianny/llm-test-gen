@@ -1,0 +1,15 @@
+Scenario 15: noosfero user rejects to join community
+  Tags: ['@selenium']
+  Given  I invite email "santos@invalid.br" to join community "26 Bsslines"
+  And  there are no pending jobs
+  When  I am logged in as "josesantos"
+  And  I go to josesantos's control panel
+  And  I follow "Tasks"
+  And  I should see "josesilva invited you to join 26 Bsslines."
+  And  I choose "Reject"
+  And  I follow "Save tasks"
+  Then  I should not see "josesilva invited you to join 26 Bsslines."
+  And  I go to josesantos's control panel
+  And  I follow "Groups" within "#section-relationships"
+  Then  I should not see "26 Bsslines"
+

@@ -1,0 +1,10 @@
+Scenario 5: Excluded tax is not taken into account into promotion integrity check
+  Tags: ['@ui']
+  Given  the store has "VAT" tax rate of 20% for "Clothes" within the "US" zone
+  And  this product belongs to "Clothes" tax category
+  And  this promotion gives "50%" discount to every order
+  And  I added product "PHP T-Shirt" to the cart
+  When  I proceed selecting "Offline" payment method
+  And  I confirm my order
+  Then  I should see the thank you page
+

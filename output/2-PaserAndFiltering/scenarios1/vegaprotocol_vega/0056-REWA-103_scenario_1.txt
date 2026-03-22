@@ -1,0 +1,7 @@
+Scenario 1: 0056-REWA-103 No team scope default to everyone being eligible
+  Tags: ['@TeamStep']
+  Given  the parties submit the following recurring transfers:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  parties should have the following vesting account balances:
+

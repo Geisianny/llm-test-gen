@@ -1,0 +1,5 @@
+Scenario 4: access community by domain
+  Given  I go to the search communities page
+  When  I follow "Sample Community" within ".search-profile-item"
+  Then  the page title should be "Sample Community"
+

@@ -1,0 +1,7 @@
+Scenario 1: COGS from negative sales quantities
+  Given  10 units inventory of a part purchased at 10 USD each
+  When  8 units are sold
+  And  -2 units are sold
+  Then  COGS should be at 60 USD
+  And  the inventory should be at 40 USD
+

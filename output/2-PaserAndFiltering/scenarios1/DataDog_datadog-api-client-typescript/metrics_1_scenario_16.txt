@@ -1,0 +1,9 @@
+Scenario 16: Get a list of metrics with configured filter returns "Success" response
+  Tags: ['@replay-only', '@team:DataDog/metrics-experience']
+  Given  a valid "appKeyAuth" key in the system
+  And  new "ListTagConfigurations" request
+  And  request contains "filter[configured]" parameter with value true
+  When  the request is sent
+  Then  the response status is 200 Success
+  And  the response "data[0].type" is equal to "manage_tags"
+

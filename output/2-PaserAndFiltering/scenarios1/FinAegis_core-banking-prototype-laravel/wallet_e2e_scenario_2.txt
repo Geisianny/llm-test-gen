@@ -1,0 +1,7 @@
+Scenario 2: Daily wallet usage patterns
+  Given  I have an active wallet with multiple currencies
+  When  I perform typical daily operations:
+  Then  all operations should complete successfully
+  And  transaction history should be accurate
+  And  real-time balances should be updated
+

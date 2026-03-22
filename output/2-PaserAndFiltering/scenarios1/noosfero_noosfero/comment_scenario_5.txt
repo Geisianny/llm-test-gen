@@ -1,0 +1,5 @@
+Scenario 5: wrong comment doesn't increment comment counter
+  Tags: ['@selenium']
+  Given  I am on /booking/article-with-comment
+  And  I should see "2 comments"
+

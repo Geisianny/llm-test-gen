@@ -1,0 +1,4 @@
+Scenario 1: Save object normally
+  Given  the object-instance has following values:
+  Then  the index column "booleanTest" for object-instance "test1" should have integer value "1"
+

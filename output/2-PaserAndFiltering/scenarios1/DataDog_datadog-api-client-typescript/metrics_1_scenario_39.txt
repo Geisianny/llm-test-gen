@@ -1,0 +1,7 @@
+Scenario 39: Submit metrics returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/metrics-intake']
+  Given  new "SubmitMetrics" request
+  And  body with value {"series": [{"metric": "system.load.1", "points": [{"timestamp": 1475317847, "value": 0.7}], "resources": [{"name": "dummyhost", "type": "host"}]}]}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

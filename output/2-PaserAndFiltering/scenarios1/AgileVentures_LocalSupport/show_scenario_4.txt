@@ -1,0 +1,6 @@
+Scenario 4: User sees event's description on the map
+  Tags: ['@javascript', '@vcr', '@billy']
+  Given  I visit the events page
+  When  I click "Open Source Weekend"
+  Then  I should see an infowindow when I click on the event map markers:
+

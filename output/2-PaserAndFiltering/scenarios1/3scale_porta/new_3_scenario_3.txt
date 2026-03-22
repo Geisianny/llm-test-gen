@@ -1,0 +1,7 @@
+Scenario 3: Create an application plan
+  Given  they go to the product's new application plan admin page
+  When  the form is submitted with:
+  Then  the current page is the product's application plans admin page
+  And  they should see "Created application plan Premium"
+  And  the table has the following row:
+

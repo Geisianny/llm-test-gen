@@ -1,0 +1,26 @@
+Scenario 1: Cannot index other providers sections
+  Given  I am logged in as provider "foo.3scale.localhost" on its admin domain
+  When  I go to the CMS Sections page
+  Then  I should not see "lolsection"
+
+
+
+Scenario 2: Can index own sections
+  Given  I am logged in as provider "withsections.3scale.localhost" on its admin domain
+  When  I go to the CMS Sections page
+  Then  I should see "lolsection"
+
+
+
+Scenario 3: Root section always appears
+  Given  I am logged in as provider "foo.3scale.localhost" on its admin domain
+  When  I go to the CMS Sections page
+  Then  I should see "Root"
+
+
+
+Scenario 4: Update section
+  Given  I am logged in as provider "withsections.3scale.localhost" on its admin domain
+  When  I update "lolsection" section title to "waterfall"
+  Then  I should see "waterfall"
+

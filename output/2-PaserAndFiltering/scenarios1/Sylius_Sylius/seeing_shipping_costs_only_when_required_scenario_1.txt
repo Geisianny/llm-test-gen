@@ -1,0 +1,6 @@
+Scenario 1: Not seeing shipping cost if none of the order items require shipping
+  Tags: ['@api', '@ui']
+  Given  I added "Guards! Guards! - ebook" variant of product "Guards! Guards!" to the cart
+  When  I see the summary of my cart
+  Then  I should not see shipping total for my cart
+

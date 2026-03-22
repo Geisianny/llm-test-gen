@@ -1,0 +1,32 @@
+Feature: New account plan page
+Tags: ['@javascript']
+
+Background: 
+  Given  a provider is logged in
+  And  the provider has "account_plans" allowed
+
+Scenario 1: Navigation
+  Given  they go to the account plans admin page
+  When  they select toolbar action "Create account plan"
+  Then  the current page is the new account plan admin page
+
+Scenario 2: Create an account plan
+  Given  they go to the new account plan admin page
+  When  the form is submitted with:
+  Then  the current page is the account plans admin page
+  And  they should see "Created account plan Premium"
+  And  the table has the following row:
+
+Scenario 3: System name is optional
+  Given  they go to the new account plan admin page
+  When  the form is submitted with:
+  And  they should see "Created account plan Premium"
+
+Scenario 4: Create a account plan with billing enabled
+  Tags: ['@wip']
+
+Scenario 5: Form validation
+  Given  they go to the new account plan admin page
+  When  the form is submitted with:
+  Then  field "Name" has inline error "Can't be blank"
+

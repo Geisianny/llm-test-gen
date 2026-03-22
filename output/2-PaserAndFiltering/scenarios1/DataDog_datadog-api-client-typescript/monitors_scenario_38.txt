@@ -1,0 +1,7 @@
+Scenario 38: Validate an existing monitor returns "Item not found error" response
+  Tags: ['@skip', '@team:DataDog/monitor-app']
+  Given  new "ValidateExistingMonitor" request
+  And  request contains "monitor_id" parameter with value 0
+  When  the request is sent
+  Then  the response status is 404 Item not found error
+

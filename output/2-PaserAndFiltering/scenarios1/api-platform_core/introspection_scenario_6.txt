@@ -1,0 +1,9 @@
+Scenario 6: Introspect deprecated mutations
+  When  I send the following GraphQL request:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the GraphQL field "deleteDeprecatedResource" is deprecated for the reason "This resource is deprecated"
+  And  the GraphQL field "updateDeprecatedResource" is deprecated for the reason "This resource is deprecated"
+  And  the GraphQL field "createDeprecatedResource" is deprecated for the reason "This resource is deprecated"
+

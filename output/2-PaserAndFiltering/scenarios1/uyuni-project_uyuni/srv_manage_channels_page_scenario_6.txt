@@ -1,0 +1,10 @@
+Scenario 6: Fail when trying to use reserved labels for channels
+  Tags: ['@scc_credentials']
+  When  I follow the left menu "Software > Manage > Channels"
+  And  I follow "Create Channel"
+  And  I enter "test123" as "Channel Name"
+  And  I enter "opensuse-leap-15.6-pool-x86_64" as "Channel Label"
+  And  I enter "test123" as "Channel Summary"
+  And  I click on "Create Channel"
+  Then  I should see a "The channel label 'opensuse-leap-15.6-pool-x86_64' is reserved, please enter a different name" text
+

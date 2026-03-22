@@ -1,0 +1,5 @@
+Scenario 2: Adding a new group
+  When  I draft a new document collection called "May 2012 Update"
+  And  I add the group "Brand new group"
+  Then  I can see that the group "Brand new group" has been added
+

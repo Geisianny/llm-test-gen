@@ -1,0 +1,6 @@
+Scenario 1: Create email template
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  Given  the following email templates exist:
+  When  I update the email template for "subscription_created" with the locale "en":
+  Then  the email template for "subscription_created" with the locale "en" will have the template body is "The subscription email body here"
+

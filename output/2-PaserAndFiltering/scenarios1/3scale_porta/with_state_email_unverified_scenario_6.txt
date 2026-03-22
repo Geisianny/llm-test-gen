@@ -1,0 +1,11 @@
+Scenario 6: User verify his email when not logged in
+  Tags: ['@wip']
+  Given  user "alice" is active
+  When  I log in as "alice" on foo.3scale.localhost
+  And  I change my email to "newmail@3scale.localhost"
+  Then  "newmail@3scale.localhost" should receive an email to verify email address
+  When  I log out
+  And  I follow the link to verify email in the email to verify email address
+  Then  I should see the notice that the email is verified
+  And  user "alice" should be active
+

@@ -1,0 +1,7 @@
+Scenario 1: Add a new category shipping rule which is valid
+  Given  adding a shipping rule named "category"
+  And  the shipping rule is active
+  And  the shipping rule has a condition categories with category "Shoes"
+  And  I add the product "Shoe" to my cart
+  Then  the shipping rule should be valid for my cart with carrier "Post"
+

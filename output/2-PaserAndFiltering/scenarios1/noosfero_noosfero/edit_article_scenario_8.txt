@@ -1,0 +1,8 @@
+Scenario 8: display tag list field when creating event
+  Tags: ['@selenium']
+  Given  I am on joaosilva's control panel
+  And  I follow "New" within "#section-content"
+  And  I should see "Event" within ".article-types"
+  When  I follow "Event" within ".article-types"
+  Then  I should see "Tag list"
+

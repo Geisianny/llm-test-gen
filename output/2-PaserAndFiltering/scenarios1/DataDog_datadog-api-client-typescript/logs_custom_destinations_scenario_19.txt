@@ -1,0 +1,23 @@
+Scenario 19: Update a custom destination returns "OK" response
+  Tags: ['@team:DataDog/logs-backend', '@team:DataDog/logs-forwarding']
+  Given  new "UpdateLogsCustomDestination" request
+  And  there is a valid "custom_destination" in the system
+  And  request contains "custom_destination_id" parameter from "custom_destination.data.id"
+  And  body with value {"data": {"attributes": {"name": "Nginx logs (Updated)", "query": "source:nginx", "enabled":false, "forward_tags":false, "forward_tags_restriction_list_type":"BLOCK_LIST"}, "type": "custom_destination", "id": "{{ custom_destination.data.id }}"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.type" is equal to "custom_destination"
+  And  the response "data.id" is equal to "{{ custom_destination.data.id }}"
+  And  the response "data.attributes.name" is equal to "Nginx logs (Updated)"
+  And  the response "data.attributes.query" is equal to "{{ custom_destination.data.attributes.query }}"
+  And  the response "data.attributes.forwarder_destination.type" is equal to "{{ custom_destination.data.attributes.forwarder_destination.type }}"
+  And  the response "data.attributes.forwarder_destination.endpoint" is equal to "{{ custom_destination.data.attributes.forwarder_destination.endpoint }}"
+  And  the response "data.attributes.forwarder_destination.auth.type" is equal to "{{ custom_destination.data.attributes.forwarder_destination.auth.type }}"
+  And  the response "data.attributes.forwarder_destination.auth" does not have field "username"
+  And  the response "data.attributes.forwarder_destination.auth" does not have field "password"
+  And  the response "data.attributes.enabled" is false
+  And  the response "data.attributes.forward_tags" is false
+  And  the response "data.attributes.forward_tags_restriction_list" has length 1
+  And  the response "data.attributes.forward_tags_restriction_list" array contains value "host"
+  And  the response "data.attributes.forward_tags_restriction_list_type" is equal to "{{ custom_destination.data.attributes.forward_tags_restriction_list_type }}"
+

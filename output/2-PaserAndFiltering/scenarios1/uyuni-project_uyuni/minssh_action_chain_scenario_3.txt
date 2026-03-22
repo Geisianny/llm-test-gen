@@ -1,0 +1,5 @@
+Scenario 3: Pre-requisite: refresh package list and check newly installed packages on SSH minion
+  When  I refresh packages list via spacecmd on "ssh_minion"
+  And  I wait until refresh package list on "ssh_minion" is finished
+  Then  spacecmd should show packages "milkyway-dummy andromeda-dummy-1.0" installed on "ssh_minion"
+

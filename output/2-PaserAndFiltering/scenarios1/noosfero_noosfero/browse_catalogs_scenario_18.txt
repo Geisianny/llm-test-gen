@@ -1,0 +1,11 @@
+Scenario 18: display price composition when button is clicked
+  Tags: ['@selenium-fixme']
+  Given  the following product
+  And  the following input
+  And  I am on /catalog/artebonito
+  And  I reload and wait for the page
+  When  I click "#product-price-composition-button"
+  Then  the "#product-price-composition" should be visible
+  And  I should see "food" within "#product-price-composition"
+  And  I should see "10.88" within "#product-price-composition"
+

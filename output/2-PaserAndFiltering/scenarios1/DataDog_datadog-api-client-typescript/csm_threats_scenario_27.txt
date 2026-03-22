@@ -1,0 +1,6 @@
+Scenario 27: Get all Workload Protection agent rules returns "OK" response
+  Tags: ['@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  new "ListCSMThreatsAgentRules" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

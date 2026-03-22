@@ -1,0 +1,5 @@
+Scenario 4: With branding allowed add auth0
+  Given  the provider has "branding" switch allowed
+  When  I visit the "Auth0" authentication provider page
+  Then  I should be on the upgrade notice page for "iam_tools"
+

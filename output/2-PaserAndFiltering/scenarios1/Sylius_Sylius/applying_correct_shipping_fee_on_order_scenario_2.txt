@@ -1,0 +1,13 @@
+Scenario 2: Changing shipping fee after shipping method change
+  Tags: ['@api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  And  I addressed the cart
+  And  I chose "DHL" shipping method
+  When  I want to complete the shipping step
+  When  I decide to change shipping method
+  And  I change shipping method to "FedEx"
+  And  I complete the shipping step
+  And  I check the details of my cart
+  Then  my cart total should be "$130.00"
+  And  my cart shipping total should be "$30.00"
+

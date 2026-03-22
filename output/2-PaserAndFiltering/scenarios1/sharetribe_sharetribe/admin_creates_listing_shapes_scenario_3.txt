@@ -1,0 +1,9 @@
+Scenario 3: Admin user create new order type Offering services
+  When  I go to the order types admin page of community "test"
+  Then  I should see "Order types determine how the order process works in your site."
+  When  I select "Offering services" from "template"
+  Then  I should see "Create order type"
+  When  I fill in "Offering something nice" for "name_en"
+  When  I press "Create"
+  Then  I should see "Offering something nice"
+

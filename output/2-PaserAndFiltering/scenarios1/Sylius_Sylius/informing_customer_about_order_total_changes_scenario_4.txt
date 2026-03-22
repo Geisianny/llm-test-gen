@@ -1,0 +1,10 @@
+Scenario 4: Informing customer about order total change due to shipping method fee change
+  Tags: ['@api', '@ui']
+  Given  the store has "UPS" shipping method with "$20.00" fee
+  And  I added product "PHP T-Shirt" to the cart
+  When  I complete addressing step with email "guest@example.com" and "United States" based billing address
+  And  I proceed with "UPS" shipping method and "Offline" payment
+  And  the shipping fee for "UPS" shipping method has been changed to "$30.00"
+  And  I confirm my order
+  Then  my order should not be placed due to changed order total
+

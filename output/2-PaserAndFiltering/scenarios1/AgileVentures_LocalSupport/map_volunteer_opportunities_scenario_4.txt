@@ -1,0 +1,9 @@
+Scenario 4: Infowindow appears when mouse hovers over volunteer opportunity in table
+  Tags: ['@javascript', '@billy']
+  Given  the following organisations exist:
+  Given  the following volunteer opportunities exist:
+  And  I visit the volunteer opportunities page
+  And  cookies are approved
+  Then  I should see an infowindow when mouse enters volop in table:
+  Then  I should not see an infowindow when mouse leaves volop in table:
+

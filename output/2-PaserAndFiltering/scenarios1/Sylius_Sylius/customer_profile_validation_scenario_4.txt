@@ -1,0 +1,8 @@
+Scenario 4: Trying to change phone number to too long value
+  Tags: ['@api', '@ui']
+  When  I want to modify my profile
+  And  I specify the phone number as huge value
+  And  I try to save my changes
+  Then  I should be notified that the phone number is too long
+  And  my phone number should still be "123456789"
+

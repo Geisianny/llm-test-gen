@@ -1,0 +1,7 @@
+Scenario 5: Delete Org Connection returns "Bad Request" response
+  Tags: ['@skip-go', '@skip-java', '@skip-python', '@skip-ruby', '@skip-rust', '@skip-terraform-config', '@skip-typescript', '@skip-validation', '@team:DataDog/aaa-granular-access']
+  Given  new "DeleteOrgConnections" request
+  And  request contains "connection_id" parameter with value "malformed_id"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

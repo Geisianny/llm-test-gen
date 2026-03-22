@@ -1,0 +1,9 @@
+Scenario 13: List all AuthN Mappings returns "OK" response
+  Tags: ['@team:DataDog/team-aaa-identity']
+  Given  there is a valid "role" in the system
+  And  there is a valid "authn_mapping" in the system
+  And  new "ListAuthNMappings" request
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data[0].type" is equal to "authn_mappings"
+

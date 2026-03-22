@@ -1,0 +1,20 @@
+Feature: Customer Subscription Update Payment Method APP
+Description: In order to manage a customer's subscriptions payment method
+  As an APP user
+  I need to be able to update their payment method
+
+Background: 
+  Given  the following accounts exist:
+  And  the follow products exist:
+  And  the follow prices exist:
+  And  the following features exist:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "Price One" with:
+
+Scenario 1: Update payment method
+  When  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  And  the following payment details:
+  When  I update the subscription "Test Plan" for "customer.one@example.org" to use the Payment method "0444"
+  Then  the subscription "Test Plan" for "customer.one@example.org" will have the Payment Method "0444"
+

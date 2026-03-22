@@ -1,0 +1,5 @@
+Scenario: Multiple enterprises are listed for enterprise owner
+  Given there is an enterprise owner with multiple registered enterprises
+  And the feature flag for enterprise management is enabled
+  When the user selects the enterprise management option
+  Then the system displays a list of all registered enterprises

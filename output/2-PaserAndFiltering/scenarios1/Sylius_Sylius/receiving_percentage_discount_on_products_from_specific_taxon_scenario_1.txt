@@ -1,0 +1,7 @@
+Scenario 1: Receiving percentage discount on a single item from specific taxon
+  Tags: ['@api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  When  I check the details of my cart
+  Then  its price should be decreased by "$20.00"
+  And  my cart total should be "$80.00"
+

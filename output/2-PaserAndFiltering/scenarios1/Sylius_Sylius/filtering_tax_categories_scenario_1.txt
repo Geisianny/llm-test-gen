@@ -1,0 +1,6 @@
+Scenario 1: Filtering tax categories by name
+  Tags: ['@api', '@ui']
+  When  I search by "ood" name
+  Then  I should see 2 tax categories in the list
+  But  I should not see the tax category "Alcohol"
+

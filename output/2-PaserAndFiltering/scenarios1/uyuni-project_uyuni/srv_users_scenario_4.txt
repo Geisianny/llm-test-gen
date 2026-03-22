@@ -1,0 +1,4 @@
+Scenario 4: Login as the new user
+  Given  I am authorized as "user1" with password "user1"
+  Then  I should see a "user1" link
+

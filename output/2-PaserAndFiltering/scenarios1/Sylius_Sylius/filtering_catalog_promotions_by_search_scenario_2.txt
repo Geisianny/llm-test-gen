@@ -1,0 +1,7 @@
+Scenario 2: Filtering catalog promotions by partial name
+  Tags: ['@api', '@ui']
+  When  I search by "ter sale" name
+  Then  I should see a catalog promotion with name "Hunter sale"
+  And  I should see a catalog promotion with name "Winter sale"
+  But  I should not see a catalog promotion with name "Surprise sale"
+

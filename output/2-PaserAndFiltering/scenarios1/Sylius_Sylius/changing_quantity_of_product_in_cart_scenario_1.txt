@@ -1,0 +1,8 @@
+Scenario 1: Increasing quantity of an item in cart
+  Tags: ['@api', '@ui', '@javascript']
+  Given  I added product "T-Shirt banana" to the cart
+  When  I see the summary of my cart
+  And  I change product "T-Shirt banana" quantity to 2 in my cart
+  Then  I should see "T-Shirt banana" with quantity 2 in my cart
+  And  my cart items total should be "$25.08"
+

@@ -1,0 +1,6 @@
+Scenario 13: As a non logged-in user I can not create a contact with a too short first name
+  Given  I send a "POST" request to "/api/contacts" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+

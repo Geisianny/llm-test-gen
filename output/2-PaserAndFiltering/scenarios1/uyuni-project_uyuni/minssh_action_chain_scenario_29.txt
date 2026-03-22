@@ -1,0 +1,6 @@
+Scenario 29: Cleanup: remove packages and repository used in action chain for SSH minion
+  When  I remove package "andromeda-dummy" from this "ssh_minion" without error control
+  And  I remove package "virgo-dummy" from this "ssh_minion" without error control
+  And  I remove package "milkyway-dummy" from this "ssh_minion" without error control
+  And  I disable repository "test_repo_rpm_pool" on this "ssh_minion" without error control
+

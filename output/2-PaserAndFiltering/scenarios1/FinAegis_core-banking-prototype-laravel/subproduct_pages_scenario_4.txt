@@ -1,0 +1,8 @@
+Scenario 4: Access Treasury subproduct page as a visitor
+  When  I visit "/subproducts/treasury"
+  Then  the response status code should be 200
+  And  I should see "FinAegis Treasury"
+  And  I should see "Multi-bank cash management"
+  And  I should see "Coming Soon"
+  And  I should not see "Route [treasury.index] not defined"
+

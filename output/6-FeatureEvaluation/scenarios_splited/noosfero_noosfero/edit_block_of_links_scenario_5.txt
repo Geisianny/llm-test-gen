@@ -1,0 +1,6 @@
+Scenario: Cancel editing link block
+  Given there is a profile owner with a link block on their site
+  When the profile owner edits the link block with the title "Cancel Edit"
+  And enters the link "https://www.example.com/cancel"
+  And cancels the editing process
+  Then the system does not save the changes

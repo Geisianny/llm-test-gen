@@ -1,0 +1,12 @@
+Scenario 2: Add a fake base channel for x86_64
+  When  I follow the left menu "Software > Manage > Channels"
+  And  I follow "Create Channel"
+  And  I enter "Fake-Base-Channel-SUSE-like" as "Channel Name"
+  And  I enter "fake-base-channel-suse-like" as "Channel Label"
+  And  I select "None" from "Parent Channel"
+  And  I select "x86_64" from "Architecture:"
+  And  I enter "Base channel for testing" as "Channel Summary"
+  And  I enter "No more description for base channel." as "Channel Description"
+  And  I click on "Create Channel"
+  Then  I should see a "Channel Fake-Base-Channel-SUSE-like created." text
+

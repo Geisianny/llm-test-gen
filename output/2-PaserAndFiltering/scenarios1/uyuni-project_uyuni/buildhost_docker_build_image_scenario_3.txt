@@ -1,0 +1,8 @@
+Scenario 3: Create a simple real image profile without activation key
+  When  I follow the left menu "Images > Profiles"
+  And  I follow "Create"
+  And  I enter "suse_real_simple" as "label"
+  And  I select "galaxy-registry" from "imageStore"
+  And  I enter "Docker/serverhost" relative to profiles as "path"
+  And  I click on "create-btn"
+

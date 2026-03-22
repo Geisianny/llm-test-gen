@@ -1,0 +1,5 @@
+Scenario 3: See map when editing my volunteer opportunity
+  Tags: ['@javascript', '@billy']
+  Given  I visit the volunteer opportunities page
+  Then  the Do-it word in the legend should be a hyperlink to the Do-it website
+

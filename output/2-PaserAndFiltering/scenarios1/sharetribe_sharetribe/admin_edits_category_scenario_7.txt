@@ -1,0 +1,13 @@
+Scenario 7: Admin edits category order
+  Tags: ['@javascript']
+  And  I wait for 1 seconds
+  When  I move category "Goodies" down 1 step
+  Then  the category order should be following:
+  And  I wait for 1 seconds
+  When  I move category "Books" up 1 step
+  Then  the category order should be following:
+  Then  I should see "Successfully saved"
+  And  I wait for 1 seconds
+  When  I refresh the page
+  Then  the category order should be following:
+

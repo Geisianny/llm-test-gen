@@ -1,0 +1,6 @@
+Scenario: Successful unbundling document generation with automatic item key creation
+  Given there is a bundle product with component items that require automatic item key generation
+  And the sales manager has the necessary permissions
+  When the sales manager creates an unbundling document for the bundle product
+  Then the system generates the unbundling document with the component items and automatically creates item keys
+  And the document status is set to "Draft"

@@ -1,0 +1,4 @@
+Scenario 1: Pre-requisite: Enabling repositories for installing git-core
+  When  I add repository "SLE-Module-Basesystem15-SP6-Updates" with url "http://minima-mirror-ci-bv.mgr.suse.de/SUSE/Updates/SLE-Module-Basesystem/15-SP6/x86_64/update/" on "server" without error control
+  And  I add repository "SLE-Module-Basesystem15-SP6-Pool" with url "http://minima-mirror-ci-bv.mgr.suse.de/SUSE/Products/SLE-Module-Basesystem/15-SP6/x86_64/product/" on "server" without error control
+

@@ -1,0 +1,6 @@
+Scenario 2: User grants permission to a sushiswap to access one of their accounts
+  When  I navigate to the browser
+  And  I navigate to "https://app.sushi.com/swap"
+  Then  the connect modal should be displayed
+  And  I connect my active wallet to the dapp
+

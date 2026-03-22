@@ -1,0 +1,17 @@
+Scenario 11: Subscribe a minion to 1st and 2nd state channels
+  When  I am on the Systems overview page of this "sle_minion"
+  And  I follow "States" in the content area
+  And  I follow "Configuration Channels" in the content area
+  And  I click on "Search" in element "search-row"
+  Then  I should see a "My State Channel" text
+  And  I should see a "statechannel" text
+  And  I should see a "statechannel2" text
+  When  I check "statechannel-cbox"
+  And  I check "statechannel2-cbox"
+  And  I click on "Save Changes"
+  And  I wait until I see "Edit Channel Ranks" text
+  Then  I should see a "My State Channel (statechannel)" text
+  And  I should see a "My State Channel (statechannel2)" text
+  When  I click on "Confirm"
+  Then  I should see a "State assignments have been saved." text
+

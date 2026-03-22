@@ -1,0 +1,57 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: policy-groups_story_processado.feature
+Caminho relativo: alphagov_whitehall\policy-groups_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\alphagov_whitehall\policy-groups_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: policy-groups_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Create a new Policy Group
+   Steps: 8
+   - Given there is no existing Policy Group with the title "Climate Change Experts"
+   - When the editor creates a new Policy Group with the title "Climate Change Experts"
+   - And enters the summary "Experts on climate change policies"
+   - And enters the description "Detailed description of climate change experts"
+   - And enters the contact email "climatechange@example.com"
+   - And uploads an attachment "climatechange.pdf"
+   - Then the system creates the Policy Group
+   - And displays a confirmation message
+2. Associate multiple Policy Groups with a single policy
+   Steps: 5
+   - Given there is a policy with the title "New Environmental Policy"
+   - And there are two Policy Groups with titles "Climate Change Experts" and "Renewable Energy Advocates"
+   - When the editor associates the Policy Groups "Climate Change Experts" and "Renewable Energy Advocates" with the policy "New Environmental Policy"
+   - Then the system displays the metadata on the policy page
+   - And the metadata reads "Groups: Climate Change Experts, Renewable Energy Advocates"
+3. Display Policy Group metadata on policy page
+   Steps: 5
+   - Given there is a policy with the title "New Environmental Policy"
+   - And there is a Policy Group with the title "Climate Change Experts"
+   - When the editor associates the Policy Group "Climate Change Experts" with the policy "New Environmental Policy"
+   - Then the system displays the metadata on the policy page
+   - And the metadata reads "Groups: Climate Change Experts"
+4. View Policy Group page with contents list
+   Steps: 5
+   - Given there is a Policy Group with the title "Climate Change Experts"
+   - And the description contains headings "Summary", "Key Experts", and "Methodology"
+   - When the citizen views the Policy Group page
+   - Then the system displays the title "Climate Change Experts"
+   - And displays a contents list with anchor links to "Summary", "Key Experts", and "Methodology"
+5. Access Policy Group profile from policy page
+   Steps: 6
+   - Given there is a policy with the title "New Environmental Policy"
+   - And there is a Policy Group with the title "Climate Change Experts"
+   - And the Policy Group is associated with the policy "New Environmental Policy"
+   - When the citizen clicks on the link "Climate Change Experts" on the policy page
+   - Then the system navigates to the Policy Group page
+   - And displays the title "Climate Change Experts"

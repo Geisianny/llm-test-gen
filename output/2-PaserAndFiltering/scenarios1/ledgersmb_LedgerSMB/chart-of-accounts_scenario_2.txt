@@ -1,0 +1,16 @@
+Scenario 2: View the chart of accounts and change the description of an account heading
+  When  I navigate the menu and select the item at "General Journal > Chart of Accounts"
+  Then  I should see the Chart of Accounts screen
+  And  I expect the report to contain 78 rows
+  And  I expect the 'Description' report column to contain 'CURRENT ASSETS' for Account Number '1000'
+  When  I click Account Number "1000"
+  Then  I should see the Account screen
+  And  I expect the "Description" field to contain "CURRENT ASSETS"
+  When  I enter "Assets" into "Description"
+  And  I save the page
+  Then  I should see the Account screen
+  When  I navigate the menu and select the item at "General Journal > Chart of Accounts"
+  Then  I should see the Chart of Accounts screen
+  And  I expect the report to contain 78 rows
+  And  I expect the 'Description' report column to contain 'Assets' for Account Number '1000'
+

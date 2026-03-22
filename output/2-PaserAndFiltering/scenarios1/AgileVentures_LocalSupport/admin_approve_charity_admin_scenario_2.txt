@@ -1,0 +1,6 @@
+Scenario 2: As a superadmin deleting a user
+  Given  I am signed in as a superadmin
+  When  I delete "pending@myorg.com"
+  Then  I should see "You have deleted pending@myorg.com."
+  Then  user "pending@myorg.com" is deleted
+

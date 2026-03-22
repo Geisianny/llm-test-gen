@@ -1,0 +1,10 @@
+Scenario 24: Update datastore returns "Bad Request" response
+  Tags: ['@team:DataDog/app-builder-backend']
+  Given  new "UpdateDatastore" request
+  And  request contains "datastore_id" parameter with value "invalid-uuid"
+  And  body with value {"data": {"attributes": {}, "type": "datastores", "id": "invalid-uuid"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+  And  the response "errors" has length 1
+  And  the response "errors[0].title" is equal to "invalid path parameter"
+

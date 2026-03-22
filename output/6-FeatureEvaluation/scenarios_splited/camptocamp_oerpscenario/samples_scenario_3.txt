@@ -1,0 +1,5 @@
+Scenario: Validate an invoice
+  Given there is an existing invoice with the status "draft"
+  When the user validates the invoice
+  Then the system updates the invoice status to "open"
+  And the invoice is marked as validated

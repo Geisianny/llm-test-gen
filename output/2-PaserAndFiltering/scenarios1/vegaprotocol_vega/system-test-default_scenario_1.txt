@@ -1,0 +1,11 @@
+Scenario 1: 001 Create a new market and leave opening auction in the same way the system tests do
+  Tags: ['@SystemTestBase']
+  Given  the following network parameters are set:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/DEC19"
+  Then  the market data for the market "ETH/DEC19" should be:
+  And  the parties should have the following account balances:
+  And  the parties should have the following margin levels:
+

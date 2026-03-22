@@ -1,0 +1,5 @@
+Scenario 5: Use correct kernel image on the SLES minion
+  Tags: ['@susemanager']
+  When  I remove package "kernel-default-base" from this "sle_minion"
+  And  I install package "kernel-default" on this "sle_minion"
+

@@ -1,0 +1,7 @@
+Scenario 9: System changes should be reflected in systems, on ReportDB
+  Tags: ['@sle_minion']
+  Given  I have a property "City" with value "Arrakeen" on "sle_minion"
+  And  I know the current synced_date for "sle_minion"
+  When  I schedule a task to update ReportDB
+  Then  I should find the updated "City" property as "Arrakeen" on the "sle_minion", on ReportDB
+

@@ -1,0 +1,6 @@
+Scenario 2: Reordering currently featured documents
+  Given  the world location has a feature list with 2 featured documents
+  When  I visit the world location news page
+  And  I set the order of the featured documents to:
+  Then  the featured documents should be in the following order:
+

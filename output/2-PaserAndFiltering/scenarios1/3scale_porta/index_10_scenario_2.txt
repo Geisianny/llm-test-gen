@@ -1,0 +1,5 @@
+Scenario 2: Provider has one account plan only
+  Given  a buyer "Alice" of the provider
+  When  they go to the buyer accounts page
+  Then  the table does not have a column "Plan"
+

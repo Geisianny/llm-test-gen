@@ -1,0 +1,7 @@
+Scenario 3: Not receiving discount when buying less than required quantity
+  Tags: ['@ui', '@api']
+  Given  the promotion gives "$10.00" discount to every order with quantity at least 5
+  When  I add 2 products "PHP T-Shirt" to the cart
+  Then  my cart total should be "$200.00"
+  And  there should be no discount
+

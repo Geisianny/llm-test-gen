@@ -1,0 +1,5 @@
+Scenario 1: Creating a new draft consultation
+  Given  I am a writer
+  When  I draft a new "English" language consultation "Beard Length Review"
+  Then  I should see the consultation "Beard Length Review" in the list of draft documents
+

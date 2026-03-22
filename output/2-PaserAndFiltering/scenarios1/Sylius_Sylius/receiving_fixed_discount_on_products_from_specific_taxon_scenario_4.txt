@@ -1,0 +1,9 @@
+Scenario 4: Receiving fixed discount equal to the items total of my cart even if the discount is bigger than the items total
+  Tags: ['@api', '@ui']
+  Given  there is a promotion "Christmas Sale"
+  And  it gives "$30.00" off on every product classified as "Mugs"
+  And  I added 2 products "PHP Mug" to the cart
+  When  I check the details of my cart
+  Then  its price should be decreased by "$40.00"
+  And  my cart total should be "$0.00"
+

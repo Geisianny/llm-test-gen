@@ -1,0 +1,4 @@
+Scenario: Search listing by price range
+  Given there are listings with different prices
+  When the user searches for listings priced between "$100" and "$200"
+  Then the system displays listings priced between "$100" and "$200"

@@ -1,0 +1,11 @@
+Scenario 10: Sending email throws an error
+  Given  the email will fail when sent
+  When  item "Jane" is selected
+  And  select bulk action "Send email"
+  And  fill in "Subject" with "Error"
+  And  fill in "Body" with "This will fail"
+  And  press "Send"
+  And  confirm the dialog
+  Then  the bulk operation has failed for "Jane"
+  And  "jane@example.com" should receive no emails
+

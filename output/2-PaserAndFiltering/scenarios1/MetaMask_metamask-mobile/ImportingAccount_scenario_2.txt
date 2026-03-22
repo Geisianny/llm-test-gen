@@ -1,0 +1,17 @@
+Scenario Outline 2: Import an account using an invalid private key - Example 1
+  Given  I am on the wallet view
+  When  I tap on the Identicon
+  Then  the account list should be visible
+  When  I tap import account
+  Then  I am taken to the Import Account screen
+  When  I type 23423411x into the private key input field
+  And  I tap on the private key import button
+  Then  I should see an error We couldn't import that private key.
+  And  I close the import account screen
+  When  I tap on the Identicon
+  Then  the account list should not be visible
+
+  Examples:
+    | PRIVATEKEY | warning |
+    | 23423411x | We couldn't import that private key. |
+

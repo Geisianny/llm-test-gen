@@ -1,0 +1,9 @@
+Scenario 2: Deleting a locale in use
+  Tags: ['@api', '@ui']
+  Given  the store has a product "T-Shirt banana"
+  And  this product is named "Banana T-Shirt with Minions" in the "English (United States)" locale
+  And  this product is named "Koszulka Banan z Minionami" in the "Polish (Poland)" locale
+  When  I remove "Polish (Poland)" locale
+  Then  I should be informed that locale "Polish (Poland)" is in use and cannot be deleted
+  And  the "Polish (Poland)" locale should be still present in the system
+

@@ -1,0 +1,7 @@
+Scenario 3: Install yawik with invalid database connection
+  Given  I go to the install page
+  And  I fill in "db_conn" with "invalid"
+  And  I press "Install"
+  And  I wait for the ajax response
+  Then  I should see "Invalid connection string"
+

@@ -1,0 +1,12 @@
+Scenario 7: Changing the payment method to a different Offline payment method works correctly together with inventory
+  Tags: ['@api', '@no-ui']
+  Given  there is 1 unit of product "PHP T-Shirt" available in the inventory
+  And  this product is tracked by the inventory
+  And  I added product "PHP T-Shirt" to the cart
+  When  I complete addressing step with email "john@example.com" and "United States" based billing address
+  And  I proceed with selecting "Free" shipping method
+  And  I proceed with selecting "Cash on delivery" payment method
+  And  I confirm my order
+  And  I change payment method to "Offline" after checkout
+  Then  I should have chosen "Offline" payment method
+

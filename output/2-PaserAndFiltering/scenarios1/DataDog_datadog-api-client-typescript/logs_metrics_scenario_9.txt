@@ -1,0 +1,8 @@
+Scenario 9: Update a log-based metric returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-forwarding']
+  Given  new "UpdateLogsMetric" request
+  And  request contains "metric_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"compute": {"include_percentiles": true}, "filter": {"query": "service:web* AND @http.status_code:[200 TO 299]"}, "group_by": [{"path": "@http.status_code", "tag_name": "status_code"}]}, "type": "logs_metrics"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

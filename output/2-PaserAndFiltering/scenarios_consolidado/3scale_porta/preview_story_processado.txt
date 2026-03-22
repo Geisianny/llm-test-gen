@@ -1,0 +1,84 @@
+Scenario Outline 1: Navigation - Example 1
+  Given  the product has a Swagger 1.2 spec "Echo API"
+  When  they go to the product's ActiveDocs page
+  And  follow "Echo API"
+  Then  the current page is the spec's preview page from Product context
+
+  Examples:
+    | swagger version |
+    | Swagger 1.2 |
+    | Swagger 2 |
+    | OAS 3.0 |
+
+
+
+Scenario Outline 2: Hide the spec - Example 1
+  Given  the product has a Swagger 1.2 spec "Echo API"
+  And  the spec is published
+  When  they go to the spec's preview page from Product context
+  And  follow "Hide"
+  Then  they should see a toast alert with text "Spec Echo API is now hidden"
+  And  there should be a link to "Publish"
+
+  Examples:
+    | swagger version |
+    | Swagger 1.2 |
+    | Swagger 2 |
+    | OAS 3.0 |
+
+
+
+Scenario Outline 3: Publish the spec - Example 1
+  Given  the product has a Swagger 1.2 spec "Echo API"
+  And  the spec is not published
+  When  they go to the spec's preview page from Product context
+  And  follow "Publish"
+  Then  they should see a toast alert with text "Spec Echo API is now visible"
+  And  there should be a link to "Hide"
+
+  Examples:
+    | swagger version |
+    | Swagger 1.2 |
+    | Swagger 2 |
+    | OAS 3.0 |
+
+
+
+Scenario Outline 4: Delete the spec - Example 1
+  Given  the product has a Swagger 1.2 spec "Echo API"
+  When  they go to the spec's preview page from Product context
+  And  follow "Delete"
+  And  confirm the dialog
+  Then  the current page is the ActiveDocs page
+  And  they should not see "Echo API"
+
+  Examples:
+    | swagger version |
+    | Swagger 1.2 |
+    | Swagger 2 |
+    | OAS 3.0 |
+
+
+
+Scenario Outline 5: Autocomplete - Example 1
+  Given  the product has a Swagger 1.2 spec "Echo API"
+  When  they go to the spec's preview page from Product context
+  Then  the swagger autocomplete should work for "user_key" with "user_keys"
+
+  Examples:
+    | swagger version |
+    | Swagger 1.2 |
+    | Swagger 2 |
+
+
+
+Scenario Outline 6: Slashes generated curl command for header values - Example 1
+  Given  the product has a Swagger 1.2 spec "Echo API"
+  When  they go to the spec's preview page from Product context
+  Then  Swagger 1.2 should escape properly the curl string
+
+  Examples:
+    | swagger version |
+    | Swagger 1.2 |
+    | Swagger 2 |
+

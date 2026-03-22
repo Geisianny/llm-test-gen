@@ -1,0 +1,6 @@
+Scenario: Create a new product when there are no active price rules
+  Given there are no active price rules
+  And there is a category "Electronics"
+  When the user creates a new product "Smartphone" associated with the category "Electronics"
+  And configures the product for the country "USA"
+  Then the system considers the product valid

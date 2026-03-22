@@ -1,0 +1,6 @@
+Scenario 1: View the available exchange rate types
+  When  I navigate the menu and select the item at "System > Currency > Edit rate types"
+  Then  I should see the Edit rate types screen
+  And  I should see the title "Defined exchange rate types"
+  And  I expect the report to contain 1 row
+

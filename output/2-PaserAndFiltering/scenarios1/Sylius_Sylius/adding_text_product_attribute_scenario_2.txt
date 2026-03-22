@@ -1,0 +1,5 @@
+Scenario 2: Seeing disabled type field while adding text a product attribute
+  Tags: ['@no-api', '@ui']
+  When  I want to create a new text product attribute
+  Then  the type field should be disabled
+

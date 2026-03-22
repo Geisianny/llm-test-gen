@@ -1,0 +1,69 @@
+Scenario 2: _034502 check discount in Retail sales receipt 5+1
+  *  Create Retail sales receipt
+  *  Open a form to create Retail sales receipt
+  Given  I open hyperlink "e1cib/list/Document.RetailSalesReceipt"
+  And  I click the button named "FormCreate"
+  *  Filling in customers info
+  And  I click Select button of "Partner" field
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I click Select button of "Legal name" field
+  And  I activate "Description" field in "List" table
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I click Select button of "Partner term" field
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I click Select button of "Store" field
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  *  Filling in items table
+  And  I click "Add" button
+  And  I click choice button of "Item" attribute in "ItemList" table
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I activate "Item key" field in "ItemList" table
+  And  I click choice button of "Item key" attribute in "ItemList" table
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I input "100" text in "Quantity" field of "ItemList" table
+  And  I finish line editing in "ItemList" table
+  And  I click "Add" button
+  And  I click choice button of "Item" attribute in "ItemList" table
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I activate "Item key" field in "ItemList" table
+  And  I click choice button of "Item key" attribute in "ItemList" table
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I input "10" text in "Quantity" field of "ItemList" table
+  And  I finish line editing in "ItemList" table
+  *  Discount 5+1
+  And  in the table "ItemList" I click "% Offers" button
+  And  I go to line in "Offers" table
+  And  I activate "Is select" field in "Offers" table
+  And  I select current line in "Offers" table
+  And  in the table "Offers" I click "OK" button
+  And  "ItemList" table contains lines
+  And  the editing text of form attribute named "ItemListTotalOffersAmount" became equal to "8 870,00"
+  Then  the form attribute named "ItemListTotalNetAmount" became equal to "41 211,87"
+  Then  the form attribute named "ItemListTotalTaxAmount" became equal to "7 418,13"
+  And  the editing text of form attribute named "ItemListTotalTotalAmount" became equal to "48 630,00"
+  *  Filling in payment tab
+  And  I move to "Payments" tab
+  And  in the table "Payments" I click "Add" button
+  And  I click choice button of "Account" attribute in "Payments" table
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I activate "Amount" field in "Payments" table
+  And  I input "48 630,00" text in "Amount" field of "Payments" table
+  And  I finish line editing in "Payments" table
+  *  Post document
+  And  I click the button named "FormPost"
+  And  Delay 5
+  And  I delete "$$NumberRetailSalesReceipt034502$$" variable
+  And  I delete "$$RetailSalesReceipt034502$$" variable
+  And  I save the value of "Number" field as "$$NumberRetailSalesReceipt034502$$"
+  And  I save the window as "$$RetailSalesReceipt034502$$"
+  And  I click the button named "FormPostAndClose"
+

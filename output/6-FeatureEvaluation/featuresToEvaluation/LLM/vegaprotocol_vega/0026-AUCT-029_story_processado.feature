@@ -1,0 +1,37 @@
+Feature: 0026-AUCT-029_story_processado
+
+Scenario: Market in opening auction with overlapping orders
+    Given the market "BTC/ETH" is in opening auction
+    And there are overlapping orders on the book
+    When the network moves ahead "50" blocks
+    Then the trading mode should be "TRADING_MODE_OPENING_AUCTION" for the market "BTC/ETH"
+    When the network moves ahead "2" more blocks
+    Then the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+
+Scenario: Market in opening auction without overlapping orders
+    Given the market "BTC/ETH" is in opening auction
+    And there are no overlapping orders on the book
+    When the network moves ahead "50" blocks
+    Then the trading mode should be "TRADING_MODE_OPENING_AUCTION" for the market "BTC/ETH"
+    When the network moves ahead "2" more blocks
+    Then the trading mode should still be "TRADING_MODE_OPENING_AUCTION" for the market "BTC/ETH"
+
+Scenario: Market transition to continuous trading after minimum blocks
+    Given the market "BTC/ETH" is in opening auction
+    And there are overlapping orders on the book
+    When the network moves ahead "50" blocks
+    Then the trading mode should be "TRADING_MODE_OPENING_AUCTION" for the market "BTC/ETH"
+    When the network moves ahead "2" more blocks
+    Then the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+
+Scenario: Market remains in opening auction before minimum blocks
+    Given the market "BTC/ETH" is in opening auction
+    And there are overlapping orders on the book
+    When the network moves ahead "49" blocks
+    Then the trading mode should be "TRADING_MODE_OPENING_AUCTION" for the market "BTC/ETH"
+
+Scenario: Market remains in opening auction with no overlapping orders
+    Given the market "BTC/ETH" is in opening auction
+    And there are no overlapping orders on the book
+    When the network moves ahead "52" blocks
+    Then the trading mode should be "TRADING_MODE_OPENING_AUCTION" for the market "BTC/ETH"

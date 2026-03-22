@@ -1,0 +1,8 @@
+Scenario 1: Generating a product's variant without price
+  Tags: ['@ui']
+  When  I want to generate new variants for this product
+  And  I specify that the 1st variant is identified by "WYBOROWA_ORANGE" code
+  And  I try to generate it
+  Then  I should be notified that prices in all channels must be defined for the 1st variant
+  And  I should not see any variants in the list
+

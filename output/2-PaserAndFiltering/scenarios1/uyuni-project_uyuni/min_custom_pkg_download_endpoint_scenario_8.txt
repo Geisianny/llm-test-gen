@@ -1,0 +1,5 @@
+Scenario 8: Check the channel.repo file to see the custom RPM download point
+  Given  I am on the Systems overview page of this "sle_minion"
+  Then  the susemanager repo file should exist on the "sle_minion"
+  And  the repo file should contain the custom download endpoint on the "sle_minion"
+

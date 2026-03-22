@@ -1,0 +1,13 @@
+Scenario 21: Update a user returns "OK" response
+  Tags: ['@team:DataDog/team-aaa-identity']
+  Given  there is a valid "user" in the system
+  And  new "UpdateUser" request
+  And  request contains "user_id" parameter from "user.data.id"
+  And  body with value {"data": {"id": "{{ user.data.id }}", "type": "users", "attributes": {"name": "updated", "disabled": true}}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.attributes.email" has the same value as "user.data.attributes.email"
+  And  the response "data.attributes.title" has the same value as "user.data.attributes.title"
+  And  the response "data.attributes.name" is equal to "updated"
+  And  the response "data.attributes.disabled" is equal to true
+

@@ -1,0 +1,8 @@
+Scenario 1: Create deployment gate returns "Bad Request" response
+  Tags: ['@team:DataDog/ci-app-backend']
+  Given  operation "CreateDeploymentGate" enabled
+  And  new "CreateDeploymentGate" request
+  And  body with value {"data": {"attributes": {"env": "", "service":"test-service", "identifier": "my-gate"}, "type": "deployment_gate"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

@@ -1,0 +1,5 @@
+Scenario: Overpayment of an invoice
+  Given there is an invoice with a total amount of $100 in USD
+  And the invoice status is "open"
+  When the user makes a payment of $120 in USD
+  Then the residual amount is -$20

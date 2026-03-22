@@ -1,0 +1,15 @@
+Scenario Outline 30: Navigate to menu "<path>" and open screen "<screen>" - Example 30
+  When  I navigate the menu and select the item at "Order Entry > Combine > Purchase Orders"
+  Then  I should see the combine purchase order screen
+
+  Examples:
+    | path | screen |
+    | Order Entry > Combine > Purchase Orders | combine purchase order |
+    | Order Entry > Combine > Sales Orders | combine sales order |
+    | Order Entry > Generate > Purchase Orders | generate purchase order |
+    | Order Entry > Generate > Sales Orders | generate sales order |
+    | Order Entry > Purchase Order | Purchase order entry |
+    | Order Entry > Reports > Purchase Orders | Purchase order search |
+    | Order Entry > Reports > Sales Orders | Sales order search |
+    | Order Entry > Sales Order | Sales order entry |
+

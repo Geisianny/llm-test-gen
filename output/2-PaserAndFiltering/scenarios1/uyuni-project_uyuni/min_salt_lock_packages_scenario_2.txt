@@ -1,0 +1,5 @@
+Scenario 2: Pre-requisite: install packages needed for locking test
+  When  I install package "orion-dummy" on this "sle_minion"
+  And  I install package "milkyway-dummy" on this "sle_minion"
+  And  I remove package "hoag-dummy" from this "sle_minion" without error control
+

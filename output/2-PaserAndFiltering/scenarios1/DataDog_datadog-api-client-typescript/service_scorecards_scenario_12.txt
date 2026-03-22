@@ -1,0 +1,7 @@
+Scenario 12: List all rules returns "OK" response
+  Tags: ['@team:DataDog/service-catalog']
+  Given  operation "ListScorecardRules" enabled
+  And  new "ListScorecardRules" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

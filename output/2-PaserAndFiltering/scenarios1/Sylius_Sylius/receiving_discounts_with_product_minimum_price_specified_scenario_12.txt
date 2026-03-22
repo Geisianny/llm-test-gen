@@ -1,0 +1,18 @@
+Scenario 12: Distributing discount proportionally between different products when one has minimum price specified
+  Tags: ['@api', '@no-ui']
+  Given  it gives "$36.00" discount to every order
+  And  the store has a "Keyboard" configurable product
+  And  this product has "RGB Keyboard" variant priced at "$20.00"
+  And  the "RGB Keyboard" variant has minimum price of "$15.00" in the "United States" channel
+  And  the store has a product "Mouse" priced at "$30.00"
+  And  the store has a product "Cup" priced at "$10.00"
+  And  I added 2 products "T-Shirt" to the cart
+  And  I added 2 products "Keyboard" to the cart
+  And  I added product "Mouse" to the cart
+  And  I added product "Cup" to the cart
+  When  I check the details of my cart
+  And  the "T-Shirt" product should have unit prices discounted by "$5.00" and "$5.00"
+  And  the "Keyboard" product should have unit prices discounted by "$5.00" and "$5.00"
+  And  the "Mouse" product should have unit price discounted by "$12.00"
+  And  the "Cup" product should have unit price discounted by "$4.00"
+

@@ -1,0 +1,4 @@
+Scenario 6: Wait for running reposyncs to finish after adding custom channel for monitoring_server
+  When  I wait until the channel "sle15sp7_minion" has been synced
+  Then  the "sle15sp7_minion" reposync logs should not report errors
+

@@ -1,0 +1,9 @@
+Scenario 6: Sign in for an existing superadmin user after org search
+  Given  I visit the organisations index page
+  And  I fill in "Optional Search Text" with "search words" within the main body
+  And  I press "Submit"
+  And  I sign in as "superadmin@example.com" with password "pppppppp"
+  Then  I should be on the organisations search page
+  And  I should see a link or button "superadmin@example.com"
+  And  the search box should contain "search words"
+

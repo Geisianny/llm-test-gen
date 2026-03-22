@@ -1,0 +1,6 @@
+Scenario: Browser connection failure with timeout
+  Given a test is running with Karma Test Runner CLI
+  And a browser is configured to run the test with a timeout
+  When the browser fails to connect to Karma within the timeout
+  Then the system outputs an error message to stderr
+  And indicates that the browser timed out

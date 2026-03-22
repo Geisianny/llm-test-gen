@@ -1,0 +1,7 @@
+Scenario 1: Test order states
+  Then  the order state should be "new"
+  And  I should be able to apply transition "confirm" to my order
+  And  I should be able to apply transition "cancel" to my order
+  And  I should not be able to apply transition "complete" to my order
+  And  I should not be able to apply transition "create" to my order
+

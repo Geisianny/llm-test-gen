@@ -1,0 +1,18 @@
+Feature: Removing cart item from cart
+Description: In order to delete some unnecessary cart items
+    As a Visitor
+    I want to be able to remove cart item
+Tags: ['@shopping_cart']
+
+Background: 
+  Given  the store operates on a single channel in "United States"
+  And  the store has a product "T-Shirt banana" priced at "$12.54"
+
+Scenario 1: Removing cart item
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  Given  I added product "T-Shirt banana" to the cart
+  When  I see the summary of my cart
+  And  I remove product "T-Shirt banana" from the cart
+  Then  my cart should be empty
+  And  my cart's total should be "$0.00"
+

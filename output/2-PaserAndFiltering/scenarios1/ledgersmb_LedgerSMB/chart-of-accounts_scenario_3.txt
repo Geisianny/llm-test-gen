@@ -1,0 +1,16 @@
+Scenario 3: Create a new account based on an existing account
+  When  I navigate the menu and select the item at "General Journal > Chart of Accounts"
+  Then  I should see the Chart of Accounts screen
+  And  I expect the report to contain 78 rows
+  When  I click Account Number "1060"
+  Then  I should see the Account screen
+  When  I select the "Account" tab
+  And  I enter "TEST-1" into "Account Number"
+  And  I enter "New Account" into "Description"
+  And  I save the page as new
+  Then  I should see the Account screen
+  When  I navigate the menu and select the item at "General Journal > Chart of Accounts"
+  Then  I should see the Chart of Accounts screen
+  And  I expect the report to contain 79 rows
+  And  I expect the 'Description' report column to contain 'New Account' for Account Number 'TEST-1'
+

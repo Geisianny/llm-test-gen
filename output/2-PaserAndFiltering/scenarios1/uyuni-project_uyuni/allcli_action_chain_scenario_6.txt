@@ -1,0 +1,5 @@
+Scenario 6: Create a custom action chain for two systems
+  When  I create an action chain with label "two_systems_action_chain" via API
+  And  I follow the left menu "Schedule > Action Chains"
+  Then  I should see a "two_systems_action_chain" text
+

@@ -1,0 +1,8 @@
+Scenario 5: Scheduled regulatory reporting batch
+  Given  end-of-month reporting is scheduled
+  When  the batch reporting job executes
+  Then  CTR reports should be generated for large transactions
+  And  KYC compliance reports should be compiled
+  And  AML monitoring reports should be created
+  And  all reports should be stored securely
+

@@ -1,0 +1,6 @@
+Scenario 2: disable delivery
+  Tags: ['@selenium']
+  Given  I follow "Preferences" within "#section-shopping"
+  When  I uncheck "Enable shopping basket"
+  Then  I should not see "Deliveries or pickups"
+

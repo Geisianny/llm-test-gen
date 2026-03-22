@@ -1,0 +1,5 @@
+Scenario 1: Navigation
+  Given  they go to product "My API" applications page
+  When  they follow "Create an application"
+  Then  the current page is product "My API" new application page
+

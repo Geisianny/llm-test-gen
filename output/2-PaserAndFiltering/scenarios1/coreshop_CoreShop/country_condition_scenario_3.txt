@@ -1,0 +1,7 @@
+Scenario 3: Add a new country cart price rule which is invalid
+  Given  adding a cart price rule named "country"
+  And  the cart rule is active
+  And  the cart rule is not a voucher rule
+  And  the cart rule has a condition countries with country "Germany"
+  Then  the cart rule should be invalid for my cart
+

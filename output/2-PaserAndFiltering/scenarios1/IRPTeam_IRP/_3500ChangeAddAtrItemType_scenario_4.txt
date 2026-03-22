@@ -1,0 +1,47 @@
+Scenario 4: _350002 check the connection between the installation according to the additional attribute of the sign of influence on the price and Add atribute and property sets by Price key
+  *  Open Additional attribute sets for price key
+  Given  I open hyperlink "e1cib/list/Catalog.AddAttributeAndPropertySets"
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  *  Open item type Stockings
+  Given  I open hyperlink "e1cib/list/Catalog.ItemTypes"
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  "AvailableAttributes" table contains lines
+  *  Add a sign that Color Stockings will affect the price
+  When  in opened panel I select "Item types"
+  And  I activate "Attribute" field in "AvailableAttributes" table
+  And  I go to line in "AvailableAttributes" table
+  And  I activate "Affect pricing" field in "AvailableAttributes" table
+  And  I set "Affect pricing" checkbox in "AvailableAttributes" table
+  And  I finish line editing in "AvailableAttributes" table
+  And  I click "Save" button
+  *  Check the ligament with Additional attribute sets by price key
+  When  in opened panel I select "Additional attribute sets"
+  And  in the table "AttributesTree" I click "List" button
+  And  "AttributesTree" table contains lines
+  *  Remove the sign that Color Stockings will affect the price
+  When  in opened panel I select "Item types"
+  And  I activate "Attribute" field in "AvailableAttributes" table
+  And  I go to line in "AvailableAttributes" table
+  And  I activate "Affect pricing" field in "AvailableAttributes" table
+  And  I remove "Affect pricing" checkbox in "AvailableAttributes" table
+  And  I finish line editing in "AvailableAttributes" table
+  And  I click "Save" button
+  *  Check the ligament with Additional attribute sets by price key
+  When  in opened panel I select "Additional attribute sets"
+  And  "AttributesTree" table does not contain lines
+  *  Tick the price impact again
+  When  in opened panel I select "Item types"
+  And  I activate "Attribute" field in "AvailableAttributes" table
+  And  I go to line in "AvailableAttributes" table
+  And  I activate "Affect pricing" field in "AvailableAttributes" table
+  And  I set "Affect pricing" checkbox in "AvailableAttributes" table
+  And  I finish line editing in "AvailableAttributes" table
+  And  I click "Save" button
+  *  Check the ligament Additional attribute sets by price key
+  When  in opened panel I select "Additional attribute sets"
+  And  in the table "AttributesTree" I click "List" button
+  And  "AttributesTree" table contains lines
+  And  I close all client application windows
+

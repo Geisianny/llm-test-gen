@@ -1,0 +1,8 @@
+Scenario 2: Create a new cart and one product twice, cart should weigh 20kg
+  And  the site has a product "Shoe" priced at 10000
+  And  the product weighs 10kg
+  And  the product has the tax rule group "AT"
+  And  I add the product "Shoe" to my cart
+  And  I add the product "Shoe" to my cart
+  Then  the cart should weigh 20kg
+

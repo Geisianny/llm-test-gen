@@ -1,0 +1,6 @@
+Scenario 1: SALES SETTINGS
+  Tags: ['@multicompany_base_finance_sales_settings']
+  Given  I need a "sale.config.settings" with oid: scen.sale_settings
+  And  having:
+  Then  execute the setup
+

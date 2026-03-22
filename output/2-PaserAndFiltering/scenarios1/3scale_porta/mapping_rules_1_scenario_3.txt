@@ -1,0 +1,5 @@
+Scenario 3: New mapping rule form without proxy pro
+  Given  I have proxy_pro feature disabled
+  When  I go to the create mapping rule page for service "one"
+  Then  I should not see field "Redirect URL"
+

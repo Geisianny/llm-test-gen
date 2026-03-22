@@ -1,0 +1,5 @@
+Scenario 3: Incoming order at AMM best price and orderbook volume exists at FAIR PRICE
+  Tags: ['@VAMM']
+  When  the parties place the following orders:
+  Then  the following trades should be executed:
+

@@ -1,0 +1,7 @@
+Scenario 10: The configuration menu
+  When  I follow the left menu "Configuration"
+  Then  I should see a "Configuration Overview" text
+  And  I should see a "Overview" link in the left menu
+  And  I should see a "Channels" link in the left menu
+  And  I should see a "Files" link in the left menu
+

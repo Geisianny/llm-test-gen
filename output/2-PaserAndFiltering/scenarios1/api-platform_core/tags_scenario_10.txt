@@ -1,0 +1,6 @@
+Scenario 10: Update a Relation1
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "PUT" request to "/relation1s/1" with body:
+  Then  the response status code should be 200
+  And  "/relation1s,/relation1s/1,/relation2s/2,/relation2s/1" IRIs should be purged
+

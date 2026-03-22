@@ -1,0 +1,6 @@
+Scenario 3: Get a list of tests events returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/ci-app-backend']
+  Given  new "ListCIAppTestEvents" request
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

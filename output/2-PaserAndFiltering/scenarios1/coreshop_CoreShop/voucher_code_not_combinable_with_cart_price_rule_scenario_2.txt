@@ -1,0 +1,7 @@
+Scenario 2: Applying a voucher rule where the product price rule is not combinable
+  Given  I add this product to the cart
+  And  I apply the voucher code "NOT_COMBINABLE"
+  Then  I should be notified that the voucher has been applied
+  And  I should see "TShirt" with unit price "€100.00" in my cart
+  And  my cart's total should be "€50.00"
+

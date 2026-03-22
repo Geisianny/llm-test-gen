@@ -1,0 +1,14 @@
+Scenario 6: Send email in bulk
+  Given  "jane@example.com" should receive no emails
+  And  "bob@example.com" should receive no emails
+  When  item "Jane" is selected
+  And  item "Bob" is selected
+  And  select bulk action "Send email"
+  And  fill in "Subject" with "This is the subject"
+  And  fill in "Body" with "This is the body"
+  And  press "Send"
+  And  confirm the dialog
+  Then  they should see a toast alert with text "Successfully sent 2 emails"
+  Then  "jane@example.com" should receive 1 email
+  Then  "bob@example.com" should receive 1 email
+

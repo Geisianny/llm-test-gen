@@ -1,0 +1,34 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 19/01/2026 23:13:57
+Arquivo analisado: update_story_processado.feature
+Caminho relativo: 3scale_porta\update_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/Originais\3scale_porta\update_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: update_story_processado
+Descrição: Não possui
+Total de cenários: 2
+
+CENÁRIOS IDENTIFICADOS:
+1. Enable selected notifications
+   Steps: 6
+   - When they go to the notification preferences page
+   - Then I should see "Notification Preferences"
+   - When they check only the following notifications:
+   - And they press "Update Notification Preferences"
+   - Then they should see "Notification preferences successfully updated"
+   - And only the following notifications are checked:
+2. Disable all notifications
+   Steps: 6
+   - When they go to the notification preferences page
+   - Then I should see "Notification Preferences"
+   - When they disable all notifications
+   - And they press "Update Notification Preferences"
+   - Then they should see "Notification preferences successfully updated"
+   - And all notifications are unchecked

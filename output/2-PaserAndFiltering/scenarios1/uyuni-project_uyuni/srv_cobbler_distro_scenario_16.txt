@@ -1,0 +1,7 @@
+Scenario 16: Add a kernel option to the created profile
+  When  I follow the left menu "Systems > Autoinstallation > Profiles"
+  And  I follow "fedora_kickstart_profile"
+  And  I enter "kernel_option=a_value" as "kernel_options"
+  And  I click on "Update"
+  And  I wait until file "/srv/tftpboot/pxelinux.cfg/default" contains "kernel_option=a_value" on server
+

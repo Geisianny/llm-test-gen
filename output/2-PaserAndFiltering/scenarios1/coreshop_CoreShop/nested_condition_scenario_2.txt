@@ -1,0 +1,6 @@
+Scenario 2: Add a new nested product specific price rule with store and store which is invalid
+  Given  adding a product specific price rule to product "Shoe" named "store-discount"
+  And  the specific price rule is active
+  And  the specific price rule has a condition nested with operator "or" for store "US" and store "Asia"
+  Then  the specific price rule should be invalid for product "Shoe"
+

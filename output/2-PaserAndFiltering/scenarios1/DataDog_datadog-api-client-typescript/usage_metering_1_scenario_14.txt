@@ -1,0 +1,10 @@
+Scenario 14: Get hourly usage by product family returns "OK" response
+  Tags: ['@team:DataDog/revenue-query']
+  Given  new "GetHourlyUsage" request
+  And  request contains "filter[timestamp][start]" parameter with value "{{ timeISO('now - 3d') }}"
+  And  request contains "filter[product_families]" parameter with value "infra_hosts"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data[0].type" is equal to "usage_timeseries"
+  And  the response "data[0].attributes.region" is equal to "us"
+

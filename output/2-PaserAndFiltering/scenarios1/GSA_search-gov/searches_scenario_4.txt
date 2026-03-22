@@ -1,0 +1,16 @@
+Scenario 4: No results when searching with active RSS feeds
+  Given  the following BingV7 Affiliates exist:
+  And  affiliate "bar.gov" has the following RSS feeds:
+  And  feed "Photo Gallery" has the following news items:
+  When  I am on bar.gov's search page
+  And  I search for "item"
+  Then  I should see at least "2" web search results
+  When  I follow "Press" in the search navbar
+  Then  I should see "Sorry, no results found for 'item'. Try entering fewer or more general search terms."
+  When  I follow "Photo Gallery" in the search navbar
+  Then  I should see "item More news items for the feed"
+  When  I follow "Last day"
+  Then  I should see "Sorry, no results found for 'item'. Try entering fewer or more general search terms."
+  When  I follow "Clear"
+  Then  I should see at least "2" web search results
+

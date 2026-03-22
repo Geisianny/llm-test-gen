@@ -1,0 +1,33 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 19/01/2026 23:13:57
+Arquivo analisado: user_controller_donation_story_processado.feature
+Caminho relativo: parti-renaissance_espace-adherent\user_controller_donation_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/Originais\parti-renaissance_espace-adherent\user_controller_donation_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: user_controller_donation_story_processado
+Descrição: Não possui
+Total de cenários: 1
+
+CENÁRIOS IDENTIFICADOS:
+1. Be able to navigate in my donation page as an adherent with monthly donations
+   Steps: 13
+   - Given I am logged as "president-ad@renaissance-dev.fr"
+   - When I am on "/espace-adherent/mes-dons"
+   - Then I should see "Don mensuel"
+   - And I should see "Prochaine échéance du don mensuel de 100 €"
+   - When I follow "Mettre fin à mon don mensuel"
+   - Then I should be on "/don/mensuel/annuler"
+   - And I should see "Êtes-vous sûr(e) de vouloir arrêter votre don mensuel"
+   - When I press "Non"
+   - Then I should be on "/espace-adherent/mes-dons"
+   - When I follow "Mettre fin à mon don mensuel"
+   - When I press "Oui"
+   - Then I should be on "/espace-adherent/mes-dons"
+   - And I should see "La requête n'a pas abouti, veuillez réessayer s'il vous plait."

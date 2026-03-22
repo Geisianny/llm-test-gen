@@ -1,0 +1,5 @@
+Scenario 2: Admin adds checkbox field with invalid data
+  Tags: ['@javascript']
+  When  I add a new checkbox field Amenities with invalid data
+  Then  I should see 2 validation errors
+

@@ -1,0 +1,5 @@
+Scenario 6: Accounts sub menu structure with account plans disabled
+  When  the provider has "account_plans" denied
+  And  I go to the accounts admin page
+  Then  I should see menu items under "Accounts"
+

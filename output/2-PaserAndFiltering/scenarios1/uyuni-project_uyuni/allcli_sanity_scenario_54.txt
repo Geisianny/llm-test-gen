@@ -1,0 +1,7 @@
+Scenario 54: The Debian 12 Salt SSH minion is healthy
+  Tags: ['@debian12_ssh_minion']
+  Then  "debian12_ssh_minion" should have a FQDN
+  And  reverse resolution should work for "debian12_ssh_minion"
+  And  "debian12_ssh_minion" should communicate with the server using public interface
+  And  the clock from "debian12_ssh_minion" should be exact
+

@@ -1,0 +1,65 @@
+Scenario 4: 950310 check adding user in several Access group (role combination)
+  *  Add test user to the Run client AccessGroup
+  Given  I open hyperlink 'e1cib/list/Catalog.AccessGroups'
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I move to "Users" tab
+  And  in the table "Users" I click the button named "UsersAdd"
+  And  I click choice button of "User" attribute in "Users" table
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I finish line editing in "Users" table
+  And  I click "Save and close" button
+  *  Add test user to the Basic role AccessGroup
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I move to "Users" tab
+  And  in the table "Users" I click the button named "UsersAdd"
+  And  I click choice button of "User" attribute in "Users" table
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I finish line editing in "Users" table
+  And  I click "Save and close" button
+  *  Check role combination for user
+  Given  I open hyperlink 'e1cib/list/Catalog.Users'
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I move to "Roles" tab
+  And  "RoleList" table contains lines
+  Then  the number of "RoleList" table lines is "равно" 5
+  And  I close current window
+  *  Delete user from Run client access group and check roles combination update
+  Given  I open hyperlink 'e1cib/list/Catalog.AccessGroups'
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I move to "Users" tab
+  And  I go to line in "Users" table
+  And  in the table "Users" I click the button named "UsersContextMenuDelete"
+  And  I click "Save and close" button
+  Given  I open hyperlink 'e1cib/list/Catalog.Users'
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I move to "Roles" tab
+  And  "RoleList" table contains lines
+  Then  the number of "RoleList" table lines is "равно" 1
+  And  I close current window
+  *  Add user back to the Run client access group and check roles combination update
+  Given  I open hyperlink 'e1cib/list/Catalog.AccessGroups'
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I move to "Users" tab
+  And  in the table "Users" I click the button named "UsersAdd"
+  And  I click choice button of "User" attribute in "Users" table
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I finish line editing in "Users" table
+  And  I click "Save and close" button
+  Given  I open hyperlink 'e1cib/list/Catalog.Users'
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I move to "Roles" tab
+  And  "RoleList" table contains lines
+  Then  the number of "RoleList" table lines is "равно" 5
+  And  I close current window
+  And  I close TestClient session
+

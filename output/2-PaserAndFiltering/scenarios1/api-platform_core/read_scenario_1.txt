@@ -1,0 +1,7 @@
+Scenario 1: Get a resource
+  When  I send a "GET" request to "/users/116b83f8-6c32-48d8-8e28-c5c247532d3f"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+

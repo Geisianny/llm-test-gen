@@ -1,0 +1,8 @@
+Scenario 3: Not seeing free cost if the order items that require shipping are removed
+  Tags: ['@api', '@ui']
+  Given  I added "Guards! Guards! - book" variant of product "Guards! Guards!" to the cart
+  When  I added "Guards! Guards! - ebook" variant of product "Guards! Guards!" to the cart
+  And  I removed "Guards! Guards! - book" variant from the cart
+  Then  I see the summary of my cart
+  And  I should not see shipping total for my cart
+

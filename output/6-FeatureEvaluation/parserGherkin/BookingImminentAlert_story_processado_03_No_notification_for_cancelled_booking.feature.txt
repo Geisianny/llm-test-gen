@@ -1,0 +1,23 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 17/12/2025 23:40:59
+Arquivo analisado: BookingImminentAlert_story_processado_03_No_notification_for_cancelled_booking.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation\BookingImminentAlert_story_processado_03_No_notification_for_cancelled_booking.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: No notification for cancelled booking
+Descrição: Não possui
+Total de cenários: 1
+
+CENÁRIOS IDENTIFICADOS:
+1. No notification for cancelled booking
+   Steps: 4
+   - Given there is a booking that has been cancelled
+   - When the scheduled start time of the booking approaches
+   - Then the system does not send a notification to the asker
+   - And the system does not send a notification to the offerer

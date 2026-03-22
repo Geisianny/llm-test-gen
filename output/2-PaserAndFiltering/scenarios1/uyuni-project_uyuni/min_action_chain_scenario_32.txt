@@ -1,0 +1,6 @@
+Scenario 32: Cleanup: remove temporary files for testing action chains on Salt minion
+  When  I run "rm -f /tmp/action_chain.log" on "sle_minion" without error control
+  And  I run "rm -f /tmp/action_chain_done" on "sle_minion" without error control
+  And  I run "rm -f /etc/action-chain.cnf" on "sle_minion" without error control
+  And  I run "rm -f /tmp/action_chain_one_system_done" on "sle_minion" without error control
+

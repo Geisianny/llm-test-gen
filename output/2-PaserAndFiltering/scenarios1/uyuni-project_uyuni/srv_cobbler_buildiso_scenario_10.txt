@@ -1,0 +1,5 @@
+Scenario 10: Run Cobbler buildiso with selected profile in the Cobbler buildiso context
+  When  I run Cobbler buildiso for distro "buildisodistro" and profile "orchid"
+  And  I check Cobbler buildiso ISO "orchid" with xorriso
+  And  I cleanup xorriso temp files
+

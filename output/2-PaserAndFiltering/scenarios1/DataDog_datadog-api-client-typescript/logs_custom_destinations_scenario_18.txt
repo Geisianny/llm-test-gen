@@ -1,0 +1,8 @@
+Scenario 18: Update a custom destination returns "Not Found" response
+  Tags: ['@team:DataDog/logs-backend', '@team:DataDog/logs-forwarding']
+  Given  new "UpdateLogsCustomDestination" request
+  And  request contains "custom_destination_id" parameter with value "id-from-non-existing-custom-destination"
+  And  body with value {"data": {"attributes": {"enabled": false, "forward_tags": false, "forward_tags_restriction_list": ["datacenter", "host"], "forward_tags_restriction_list_type": "ALLOW_LIST", "forwarder_destination": {"auth": {"type": "basic", "username": "datadog-custom-destination-username", "password": "datadog-custom-destination-password"}, "endpoint": "https://example.com", "type": "http"}, "name": "Nginx logs", "query": "source:nginx"}, "type": "custom_destination", "id": "id-from-non-existing-custom-destination" }}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

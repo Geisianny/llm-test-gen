@@ -1,0 +1,9 @@
+Scenario 1: Admin user create new order type Selling
+  When  I go to the order types admin page of community "test"
+  Then  I should see "Order types determine how the order process works in your site."
+  When  I select "Selling products" from "template"
+  Then  I should see "Create order type"
+  When  I fill in "Selling something nice" for "name_en"
+  When  I press "Create"
+  Then  I should see "Selling something nice"
+

@@ -1,0 +1,9 @@
+Scenario 1: View partnership requirements
+  When  I visit "/financial-institutions/apply"
+  Then  I should see "Partner Institution Application"
+  And  I should see "Partnership Requirements"
+  And  I should see "Technical Requirements"
+  And  I should see "Juridical Requirements"
+  And  I should see "Financial Requirements"
+  And  I should see "Insurance Requirements"
+

@@ -1,0 +1,16 @@
+Feature: Search
+
+Scenario 1: Search restaurants with Typesense
+  Given  the fixtures files are loaded:
+  When  I send a "GET" request to "/api/search/shops_products?q=nodai"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 2: Search restaurants by product name with Typesense
+  Given  the fixtures files are loaded:
+  When  I send a "GET" request to "/api/search/shops_products?q=pizza"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+

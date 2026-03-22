@@ -1,0 +1,7 @@
+Scenario 3: As an logged in user, I can create a new referral with all informations
+  Given  I am logged with "michelle.dufour@example.ch" via OAuth client "JeMengage Mobile" with scope "jemarche_app"
+  And  I send a "POST" request to "/api/v3/referrals" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+

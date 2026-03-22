@@ -1,0 +1,11 @@
+Scenario 3: Validate the rouding computation on an invoice with 3 lines
+  Tags: ['@rounding', '@bug452854']
+  Given  I have recorded on the 11 oct 2009 an invoice (in_invoice) of 1144.0 CHF without tax called MySupplierInvoiceRounding
+  And  I add a line called MyFirstLine on the last created invoice of 91.73
+  And  I add a line called MySecondLine on the last created invoice of 63.00
+  And  I correct the total amount of the invoice according to changes
+  When  I press the validate button
+  Then  I should see the invoice MySupplierInvoiceRounding open
+  And  the total credit amount must be equal to the total debit amount
+  And  the total amount convert into company currency must be same amount than the credit line on the payable/receivable account
+

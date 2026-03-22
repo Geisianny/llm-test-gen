@@ -1,0 +1,6 @@
+Scenario 6: Adding a translation to an existing worldwide office
+  Given  an worldwide organisation in draft with a translation in French
+  When  I visit the "Offices" tab
+  And  I add a new translation with a title of "French Title"
+  Then  I should see the "Translated" subheading in the "Offices" tab with my new translation
+

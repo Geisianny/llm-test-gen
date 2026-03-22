@@ -1,0 +1,9 @@
+Scenario 10: Update a rum-based metric returns "Conflict" response
+  Tags: ['@team:DataDog/rum-backend']
+  Given  there is a valid "rum_metric" in the system
+  And  new "UpdateRumMetric" request
+  And  request contains "metric_id" parameter from "rum_metric.data.id"
+  And  body with value {"data": {"id": "conflicting.id", "type": "rum_metrics", "attributes": {"compute": {"include_percentiles": true}}}}
+  When  the request is sent
+  Then  the response status is 409 Conflict
+

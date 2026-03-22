@@ -1,0 +1,9 @@
+Scenario 22: Get an SLO's history returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/slo-app']
+  Given  new "GetSLOHistory" request
+  And  request contains "slo_id" parameter from "REPLACE.ME"
+  And  request contains "from_ts" parameter from "REPLACE.ME"
+  And  request contains "to_ts" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

@@ -1,0 +1,7 @@
+Scenario 1: Create a new powerpack returns "Bad Request" response
+  Tags: ['@team:DataDog/dashboards-backend']
+  Given  new "CreatePowerpack" request
+  And  body with value {"data": {"attributes": {"description": "Powerpack for ABC", "group_widget": {"definition": {"type": "group1", "layout_type": "ordered", "widgets": []}}, "name": "Sample Powerpack", "tags": ["tag:foo1"], "template_variables": [{"defaults": ["*"], "name": "test"}]}, "type": "powerpack"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

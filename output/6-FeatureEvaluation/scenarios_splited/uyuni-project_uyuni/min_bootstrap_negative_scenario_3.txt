@@ -1,0 +1,6 @@
+Scenario: Register a machine with non-existent name
+  Given there is an authorized user
+  When the user registers a new machine with a non-existent name "nonexistentminion"
+  And valid credentials
+  Then the system denies registration
+  And displays a message indicating that the machine name does not exist

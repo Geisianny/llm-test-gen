@@ -1,0 +1,18 @@
+Scenario 12: Add/Edit/Remove Routed Query
+  Given  the following BingV7 Affiliates exist:
+  And  I am logged in with email "john@agency.gov"
+  When  I go to the agency.gov's Manage Content page
+  And  I follow "Routed Queries" within the Admin Center content
+  And  I follow "Add Routed Query"
+  When  I fill in the following:
+  And  I add the following Routed Query Keywords:
+  And  I submit the form by pressing "Add"
+  Then  I should see "You have added query routing for the following search terms: 'free money', 'unclaimed money'"
+  When  I follow "Edit"
+  Then  the "Keyword or phrase 1" field should contain "free money"
+  When  I replace the Routed Query Keywords with:
+  And  I submit the form by pressing "Save"
+  Then  I should see "You have updated query routing for the following search term: 'moar money'"
+  And  I press "Remove" and confirm "Are you sure you wish to remove routing to https://www.usa.gov/unclaimed-money from this site?"
+  Then  I should see "You have removed query routing for the following search term: 'moar money'"
+

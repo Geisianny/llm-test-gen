@@ -1,0 +1,7 @@
+Scenario 2: Superadmin accepts new organisation
+  Tags: ['@vcr']
+  Given  I visit the proposed organisation show page for the proposed organisation that was proposed
+  And  I press "Accept"
+  Then  I should be on the show page for the organisation that was proposed
+  And  I should see "You have approved the following organisation"
+

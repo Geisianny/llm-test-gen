@@ -1,0 +1,10 @@
+Scenario 24: I define multiple links with security
+  Tags: ['@link_security']
+  When  I add "Accept" header equal to "application/ld+json"
+  And  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Authorization" header equal to "Basic ZHVuZ2xhczprZXZpbg=="
+  And  I send a "GET" request to "/secured_dummies/4/related/1"
+  Then  the response status code should be 200
+  And  the response should contain "id"
+  And  the JSON node "hydra:member[0].id" should be equal to 1
+

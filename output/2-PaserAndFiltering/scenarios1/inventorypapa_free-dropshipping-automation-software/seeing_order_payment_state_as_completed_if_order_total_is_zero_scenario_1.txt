@@ -1,0 +1,5 @@
+Scenario 1: Seeing payment state as paid on orders list
+  Tags: ['@ui']
+  When  I browse orders
+  Then  the order "#00000666" should have order payment state "Paid"
+

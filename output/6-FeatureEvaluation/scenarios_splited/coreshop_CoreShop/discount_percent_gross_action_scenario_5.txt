@@ -1,0 +1,6 @@
+Scenario: Remove voucher code from cart
+  Given there is an active voucher-type rule with a 10 percent discount
+  And the cart contains one item priced at 100.00
+  And the voucher code is applied
+  When the user removes the voucher code
+  Then the cart total is recalculated to 100.00

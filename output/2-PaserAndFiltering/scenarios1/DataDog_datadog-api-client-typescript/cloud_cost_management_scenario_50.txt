@@ -1,0 +1,8 @@
+Scenario 50: Update Cloud Cost Management AWS CUR config returns "Not Found" response
+  Tags: ['@team:DataDog/cloud-cost-management']
+  Given  new "UpdateCostAWSCURConfig" request
+  And  request contains "cloud_account_id" parameter with value 123456
+  And  body with value {"data": {"attributes": {"is_enabled": true}, "type": "aws_cur_config_patch_request"}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

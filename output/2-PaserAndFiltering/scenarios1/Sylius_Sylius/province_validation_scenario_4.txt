@@ -1,0 +1,8 @@
+Scenario 4: Trying to remove name from an existing province
+  Tags: ['@api', '@ui', '@javascript']
+  Given  this country has the "Northern Ireland" province with "GB-NIR" code
+  When  I want to edit this country
+  And  I remove "Northern Ireland" province name
+  Then  I should be notified that name of the province is required
+  And  the province should still be named "Northern Ireland" in this country
+

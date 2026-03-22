@@ -1,0 +1,9 @@
+Scenario 12: Get a single dataset by ID returns "OK" response
+  Tags: ['@skip-terraform-config', '@team:DataDog/aaa-granular-access']
+  Given  there is a valid "dataset" in the system
+  And  operation "GetDataset" enabled
+  And  new "GetDataset" request
+  And  request contains "dataset_id" parameter from "dataset.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+

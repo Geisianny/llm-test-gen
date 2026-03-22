@@ -1,0 +1,5 @@
+Scenario 11: Sign in for a non-existent user
+  Given  I sign in as "non-existent_user@example.com" with password "pppppppp"
+  Then  I should be on the sign in page
+  And  I should see "I'm sorry, you are not authorized to login to the system"
+

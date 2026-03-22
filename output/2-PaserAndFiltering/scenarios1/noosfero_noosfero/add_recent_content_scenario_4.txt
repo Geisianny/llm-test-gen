@@ -1,0 +1,8 @@
+Scenario 4: a user should see only titles if the block was configured for it
+  When  I follow "Edit" within ".block.recent-content-block"
+  And  I select "JSilva blog" from "Choose which blog should be displayed"
+  And  I select "Title only" from "Choose how the content should be displayed"
+  And  I fill in "Choose how many items will be displayed" with "3"
+  And  I press "Save"
+  Then  I should see "post #6" within ".block.recent-content-block"
+

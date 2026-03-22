@@ -1,0 +1,8 @@
+Scenario 3: Trying to change gender to wrong value
+  Tags: ['@api', '@no-ui']
+  When  I want to modify my profile
+  And  I specify the gender as a wrong value
+  And  I try to save my changes
+  Then  I should be notified that my gender is invalid
+  And  my gender should still be "m"
+

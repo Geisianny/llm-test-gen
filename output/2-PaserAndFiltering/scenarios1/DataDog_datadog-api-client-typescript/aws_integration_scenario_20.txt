@@ -1,0 +1,6 @@
+Scenario 20: List all AWS integrations returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/aws-integrations']
+  Given  new "ListAWSAccounts" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

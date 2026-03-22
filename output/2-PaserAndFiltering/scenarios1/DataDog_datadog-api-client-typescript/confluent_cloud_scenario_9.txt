@@ -1,0 +1,8 @@
+Scenario 9: Delete Confluent account returns "OK" response
+  Tags: ['@team:DataDog/saas-integrations']
+  Given  there is a valid "confluent_account" in the system
+  And  new "DeleteConfluentAccount" request
+  And  request contains "account_id" parameter from "confluent_account.data.id"
+  When  the request is sent
+  Then  the response status is 204 OK
+

@@ -1,0 +1,6 @@
+Scenario 2: Check the unread notification counter is correct
+  When  I follow the left menu "Home > Notification Messages"
+  And  I wait until I see "The server has collected the following notification messages." text
+  Then  I follow "Unread Messages"
+  And  the notification badge and the table should count the same amount of messages
+

@@ -1,0 +1,9 @@
+Scenario 5: Carrier filter should has to have priority over direction
+  Given  I add Authorization header
+  When  I add "Accept" header equal to "application/json"
+  And  I send a "GET" request to "/my/active_calls/realtime_filter?cr=2&direction=outbound"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the JSON should be equal to:
+

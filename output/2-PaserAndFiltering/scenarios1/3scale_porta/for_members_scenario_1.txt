@@ -1,0 +1,8 @@
+Scenario 1: Resending invitations
+  When  I navigate to the sent invitations page
+  Then  I should see buttons to resend the invitations
+  When  I resend the invitation to "bar@bar.it"
+  Then  invitation from "foo.3scale.localhost" should be resent to "bar@bar.it"
+  And  invitation from account "foo.3scale.localhost" should be resent to "bar@bar.it"
+  And  I should see the invitation for "bar@bar.it" on top of the list
+

@@ -1,0 +1,8 @@
+Scenario 3: Filtering tax rates in a end date range
+  Tags: ['@api', '@ui']
+  When  I browse tax rates
+  And  I filter tax rates by end date from "2023-01-02" up to "2023-01-31"
+  Then  I should not see a tax rate with name "2023 tax rate"
+  And  I should not see a tax rate with name "2022 tax rate"
+  But  I should see the tax rate "3 weeks tax rate" in the list
+

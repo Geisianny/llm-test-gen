@@ -1,0 +1,17 @@
+Scenario 13: Update a pipeline returns "OK" response
+  Tags: ['@team:DataDog/observability-pipelines']
+  Given  operation "UpdatePipeline" enabled
+  And  there is a valid "pipeline" in the system
+  And  new "UpdatePipeline" request
+  And  request contains "pipeline_id" parameter from "pipeline.data.id"
+  And  body with value {"data": {"attributes": {"config": {"destinations": [{"id": "updated-datadog-logs-destination-id", "inputs": ["filter-processor"], "type": "datadog_logs"}], "processors": [{"id": "filter-processor", "include": "service:my-service", "inputs": ["datadog-agent-source"], "type": "filter"}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Updated Pipeline Name"}, "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "type": "pipelines"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data" has field "id"
+  And  the response "data.type" is equal to "pipelines"
+  And  the response "data.attributes.name" is equal to "Updated Pipeline Name"
+  And  the response "data.attributes.config.sources" has length 1
+  And  the response "data.attributes.config.processors" has length 1
+  And  the response "data.attributes.config.destinations" has length 1
+  And  the response "data.attributes.config.destinations[0].id" is equal to "updated-datadog-logs-destination-id"
+

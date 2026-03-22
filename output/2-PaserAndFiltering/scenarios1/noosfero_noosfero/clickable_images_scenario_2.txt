@@ -1,0 +1,7 @@
+Scenario 2: not show link if image is not scaled
+  Tags: ['@selenium']
+  Given  the following article with image
+  When  I go to /booking/real
+  And  display ".zoomify-image"
+  Then  "Zoom in" should not be visible within "a#zoomify-image"
+

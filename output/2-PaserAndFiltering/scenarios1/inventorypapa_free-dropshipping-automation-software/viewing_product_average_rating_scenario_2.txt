@@ -1,0 +1,8 @@
+Scenario 2: Viewing product's average rating calculated only from accepted reviews
+  Tags: ['@ui', '@api']
+  Given  this product also has accepted reviews rated 5, 4 and 1
+  And  this product also has review rated 3 which is not accepted yet
+  And  this product also has review rated 1 which is rejected
+  When  I check this product's details
+  Then  I should see "3.38" as its average rating
+

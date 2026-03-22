@@ -1,0 +1,9 @@
+Scenario 1: Change exchange rate's ratio
+  Tags: ['@ui', '@api']
+  Given  the exchange rate of "US Dollar" to "British Pound" is 1.30
+  And  I am editing this exchange rate
+  When  I change ratio to 3.21
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  it should have a ratio of 3.21
+

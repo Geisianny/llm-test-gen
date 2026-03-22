@@ -1,0 +1,18 @@
+Scenario 3: Edit a portfolio item
+  Given  a provider "Hashrocket" belonging to "Olenska@chicka.net"
+  And  a portfolio item "Fire and Grace" belonging to the "Hashrocket" provider
+  When  I am on the homepage
+  And  I log in as "Olenska@chicka.net" with password "testtest"
+  And  I follow "navigation.company" translation
+  And  I follow "portfolio_item.manage" translation
+  And  I follow "Fire and Grace"
+  And  I follow "Edit this portfolio project"
+  And  I fill in "Name" with "Tim Stafford"
+  And  I fill in "portfolio_item_url" with "http://www.bluehighwayband.com"
+  And  I fill in "Description" with "Through the window of a train"
+  And  I select "2005" from "portfolio_item[year_completed]"
+  And  I press "Save"
+  Then  I should see the translation for "portfolio_item.saved_successfully"
+  And  I should see "Tim Stafford"
+  And  I should not see "Fire and Grace"
+

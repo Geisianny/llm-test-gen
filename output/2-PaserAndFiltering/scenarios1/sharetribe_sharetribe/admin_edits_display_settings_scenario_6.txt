@@ -1,0 +1,8 @@
+Scenario 6: Admin can show listing publish date
+  Tags: ['@javascript']
+  When  I uncheck "Show listing publishing date on the listing page"
+  And  I press submit
+  And  I wait for 1 seconds
+  Then  I go to the listing page
+  And  I should not see "Listing created"
+

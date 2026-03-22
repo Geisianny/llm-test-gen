@@ -1,0 +1,20 @@
+Scenario 3: _602701 check data history for catalog (Partners)
+  *  Data history settings
+  Given  I open hyperlink "e1cib/app/DataProcessor.DataHistory"
+  And  I go to line in "MetadataTree" table
+  And  I expand current line in "MetadataTree" table
+  And  I go to line in "MetadataTree" table
+  And  I set "Use" checkbox in "MetadataTree" table
+  And  I finish line editing in "MetadataTree" table
+  And  in the table "MetadataTree" I click "Save settings" button
+  And  in the table "MetadataTree" I click "Update data history" button
+  *  Check
+  Given  I open hyperlink "e1cib/list/Catalog.Partners"
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  Then  "Ferron BP (Partner)" window is opened
+  And  I click "Save" button
+  And  I click "Change history" button
+  And  "Versions" table contains lines
+  And  I close all client application windows
+

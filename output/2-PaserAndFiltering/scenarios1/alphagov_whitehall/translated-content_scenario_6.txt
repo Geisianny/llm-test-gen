@@ -1,0 +1,12 @@
+Scenario 6: Switching back to English from a foreign language
+  Given  I am a GDS editor
+  When  I create a foreign language only document
+  And  I return to the edit screen
+  Then  the foreign language only box should be checked
+  And  English should appear as an option on the list of languages
+  And  if I change the language to English
+  Then  the edition should return to being an English language only document
+  And  the foreign translation should be deleted
+  When  I return to the edit screen
+  Then  the foreign language only box should be unchecked
+

@@ -1,0 +1,9 @@
+Scenario 1: Get a resource containing a raw object
+  Tags: ['@createSchema']
+  When  I send a "GET" request to "/contain_non_resources/1"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be a superset of:
+  And  the JSON node "notAResource.@id" should exist
+

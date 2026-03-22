@@ -1,0 +1,7 @@
+Scenario 7: Create two Relation2
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/relation2s" with body:
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/relation2s" with body:
+  Then  the response status code should be 201
+

@@ -1,0 +1,7 @@
+Scenario 8: Combining match filters on properties of text type and a nested property of text type with new elasticsearch operations
+  When  I send a "GET" request to "/books?message%5B%5D=Good%20job&message%5B%5D=run&library.firstName=Caroline"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+

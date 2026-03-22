@@ -1,0 +1,8 @@
+Scenario 15: Editing an existing worldwide organisation page
+  Given  an worldwide organisation "Test Worldwide Organisation" with a "Personal information charter" page
+  When  I visit the pages tab for the worldwide organisation
+  Then  I should see the "Personal information charter" page on the list of pages with the details:
+  When  I click the "Edit" link for the "Personal information charter" page
+  And  I correctly fill out the worldwide organisation page fields for a "Personal information charter" with:
+  Then  I should see the "Personal information charter" page on the list of pages with the details:
+

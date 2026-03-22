@@ -1,0 +1,6 @@
+Scenario 4: copy style from image
+  Tags: ['@selenium-fixme']
+  Given  the following article with image
+  When  I go to /booking/with-style
+  Then  "zoomable-image" should be right aligned
+

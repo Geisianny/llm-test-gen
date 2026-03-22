@@ -1,0 +1,6 @@
+Scenario 1: Viewing a detailed page with product's select attribute in default locale
+  Tags: ['@api', '@ui']
+  When  I view product "T-Shirt banana"
+  Then  I should see the product attribute "T-Shirt material" with value "Banana skin" on the list
+  And  I should also see the product attribute "T-Shirt colour" with value "Yellow" on the list
+

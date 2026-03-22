@@ -1,0 +1,4 @@
+Scenario 8: Reboot after mgrpxy upgrade
+  Tags: ['@transactional_server']
+  When  I reboot the "proxy" minion through the web UI
+

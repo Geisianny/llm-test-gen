@@ -1,0 +1,4 @@
+Scenario 10: The registry with authentication is healthy
+  Tags: ['@auth_registry']
+  Then  it should be possible to reach the authenticated registry
+

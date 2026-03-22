@@ -1,0 +1,5 @@
+Scenario 3: Fails to create a new resource with the wrong JSON-LD @id
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "PUT" request to "/standard_puts/7" with body:
+  Then  the response status code should be 400
+

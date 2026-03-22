@@ -1,0 +1,8 @@
+Scenario 3: create a folder
+  Given  I follow "New content"
+  When  I follow "Folder"
+  And  I fill in "Title" with "My Folder"
+  And  I press "Save"
+  And  I go to joaosilva's cms
+  Then  I should see "My Folder"
+

@@ -1,0 +1,16 @@
+Feature: policy-groups_story_processado
+
+Scenario: 
+    Tags: ['@disable-sidekiq-test-mode']
+    Given  a policy group "Panel" exists
+    Then  I should be able to add attachments to the policy group "Panel"
+
+
+
+Scenario: Deleting a policy group
+    Given  I am a GDS editor
+    And  a policy group "Delete me" exists
+    When  I delete the policy group "Delete me"
+    Then  I should not see the policy group "Delete me"
+
+

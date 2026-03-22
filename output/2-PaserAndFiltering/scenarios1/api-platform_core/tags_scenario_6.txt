@@ -1,0 +1,7 @@
+Scenario 6: Purge item and the related collection on update
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "DELETE" request to "/relation_embedders/1"
+  Then  the response status code should be 204
+  And  the header "Cache-Tags" should not exist
+  And  "/relation_embedders,/relation_embedders/1,/related_dummies/1" IRIs should be purged
+

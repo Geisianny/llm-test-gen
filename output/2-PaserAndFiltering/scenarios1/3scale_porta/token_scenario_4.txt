@@ -1,0 +1,8 @@
+Scenario 4: Buyer can login when recaptcha is enabled
+  Tags: ['@recaptcha']
+  Given  the provider generated a sso token for the buyer
+  And  the provider has bot protection enabled
+  And  the client will be marked as a bot
+  When  the buyer authenticates by token
+  Then  the page should contain "Signed in successfully"
+

@@ -1,0 +1,9 @@
+Scenario 1: Placing an order after moving back from the checkout summary to the addressing step but without any address modification
+  Tags: ['@ui', '@no-api']
+  Given  I had product "PHP T-Shirt" in the cart
+  And  I was at the checkout summary step
+  When  I go back to addressing step of the checkout
+  And  I return to the checkout summary step
+  And  I confirm my order
+  Then  I should see the thank you page
+

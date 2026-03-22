@@ -1,0 +1,8 @@
+Scenario 1: Get subscription
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  When  I request via the API the subscription "Test Plan" for "customer.one@example.org"
+  Then  I will see the REST subscription has the plan "Test Plan"
+  Then  I will see the REST subscription has the schedule "month"
+

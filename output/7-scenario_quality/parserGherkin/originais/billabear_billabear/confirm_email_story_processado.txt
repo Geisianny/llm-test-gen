@@ -1,0 +1,28 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 19/01/2026 23:13:57
+Arquivo analisado: confirm_email_story_processado.feature
+Caminho relativo: billabear_billabear\confirm_email_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/Originais\billabear_billabear\confirm_email_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: confirm_email_story_processado
+Descrição: Não possui
+Total de cenários: 2
+
+CENÁRIOS IDENTIFICADOS:
+1. User confirms correct code
+   Steps: 3
+   - Given an unconfirmed user "ExistingUser" with the password "RealPassword" and the confirmation code "random-code" exists
+   - When I confirm the code "random-code"
+   - Then the user "ExistingUser" will be confirmed
+2. User confirms correct code
+   Steps: 3
+   - Given an unconfirmed user "ExistingUser" with the password "RealPassword" and the confirmation code "random-code" exists
+   - When I confirm the code "random-code-two"
+   - Then the user "ExistingUser" will not be confirmed

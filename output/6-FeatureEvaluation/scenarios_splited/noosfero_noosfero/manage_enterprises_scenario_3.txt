@@ -1,0 +1,5 @@
+Scenario: User without enterprises does not see enterprise management option
+  Given there is a user without registered enterprises
+  And the feature flag for enterprise management is enabled
+  When the user navigates to the main menu
+  Then the system does not display the enterprise management option

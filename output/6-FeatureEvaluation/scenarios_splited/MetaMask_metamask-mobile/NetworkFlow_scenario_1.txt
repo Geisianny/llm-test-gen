@@ -1,0 +1,6 @@
+Scenario: Add a custom network via popular network flow
+  Given the user is on the network settings page
+  And there is a list of popular networks available
+  When the user selects a popular network to add
+  Then the system adds the selected network
+  And displays a confirmation message

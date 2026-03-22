@@ -1,0 +1,7 @@
+Scenario 2: Sorting tracked product variants descending by name
+  Tags: ['@ui', '@no-api']
+  When  I sort the tracked variants descending by name
+  Then  I should see 2 tracked variants in the list
+  And  the first variant on the list should have name "RHCP T-Shirt"
+  And  the last variant on the list should have name "Iron Maiden T-Shirt"
+

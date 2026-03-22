@@ -1,0 +1,6 @@
+Scenario 2: Displaying themed shop homepage
+  Tags: ['@ui']
+  Given  channel "United States" uses "maverick/meerkat" theme
+  When  I visit this channel's homepage
+  Then  I should see a homepage from that theme
+

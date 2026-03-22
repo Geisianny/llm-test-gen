@@ -1,0 +1,7 @@
+Scenario 18: Get the schedule on-call user returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/on-call']
+  Given  new "GetScheduleOnCallUser" request
+  And  request contains "schedule_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

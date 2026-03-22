@@ -1,0 +1,7 @@
+Scenario 10: Test error handling for invalid addresses
+  Tags: ['@sample-feature', '@error-handling']
+  Given  I am on the Sample Feature screen
+  When  I enter the following invalid addresses:
+  Then  the "Add Pet Name" button should remain disabled for each invalid input
+  And  no error messages should crash the application
+

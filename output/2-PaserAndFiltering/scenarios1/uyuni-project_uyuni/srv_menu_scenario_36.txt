@@ -1,0 +1,5 @@
+Scenario 36: Sidebar link destination for Systems => Autoinstallation => Unprovisioned
+  When  I follow the left menu "Systems > Autoinstallation > Unprovisioned"
+  Then  I should see a "Unprovisioned Autoinstallation By IP" text
+  And  I should see a "No Ip Ranges Found" text
+

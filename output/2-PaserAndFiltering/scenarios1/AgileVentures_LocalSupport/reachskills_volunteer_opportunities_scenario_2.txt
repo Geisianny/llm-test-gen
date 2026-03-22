@@ -1,0 +1,7 @@
+Scenario 2: See a map of current reachskills and harrow volunteer opportunities
+  Given  the following organisations exist:
+  Given  the following users are registered:
+  Given  the following volunteer opportunities exist:
+  And  I visit the volunteer opportunities page
+  And  I should see 10 markers in the map
+

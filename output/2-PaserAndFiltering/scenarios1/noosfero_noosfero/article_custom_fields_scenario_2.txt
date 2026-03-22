@@ -1,0 +1,10 @@
+Scenario 2: Not add two custom fields with the same name
+  Tags: ['@selenium']
+  Given  I follow "Add new field"
+  And  I select "Text" from "custom-field-type"
+  And  I fill in "custom-field-name" with "New field"
+  When  I follow "Add new field"
+  And  I fill in "custom-field-name" with "New field"
+  And  I follow "Add new field"
+  Then  The page should contain only 1 "div.article-custom-field-wrapper"
+

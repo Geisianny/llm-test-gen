@@ -1,0 +1,6 @@
+Scenario: Attempt to decompose a non-existent asset basket
+  Given the system administrator is logged in
+  And there is no asset basket with the specified ID
+  When the administrator attempts to decompose the non-existent asset basket
+  Then the system denies the decomposition
+  And displays an error message indicating that the asset basket does not exist

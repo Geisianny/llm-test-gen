@@ -1,0 +1,7 @@
+Scenario 7: Delete Multiple Apps returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/app-builder-backend']
+  Given  new "DeleteApps" request
+  And  body with value {"data": [{"id": "aea2ed17-b45f-40d0-ba59-c86b7972c901", "type": "appDefinitions"}, {"id": "f69bb8be-6168-4fe7-a30d-370256b6504a", "type": "appDefinitions"}, {"id": "ab1ed73e-13ad-4426-b0df-a0ff8876a088", "type": "appDefinitions"}]}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

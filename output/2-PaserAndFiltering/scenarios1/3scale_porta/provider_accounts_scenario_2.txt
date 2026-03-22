@@ -1,0 +1,11 @@
+Scenario 2: Members per default cannot access accounts
+  Given  an active user "member" of account "foo.3scale.localhost"
+  And  user "member" does not belong to the admin group "partners" of provider "foo.3scale.localhost"
+  And  current domain is the admin domain of provider "foo.3scale.localhost"
+  Given  provider "foo.3scale.localhost" has "groups" switch allowed
+  Given  provider "foo.3scale.localhost" has "multiple_users" switch allowed
+  When  I log in as provider "member"
+  And  I go to the provider dashboard
+  And  there should not be a link to "ACCOUNTS"
+  Then  they should see an error when going to the following pages:
+

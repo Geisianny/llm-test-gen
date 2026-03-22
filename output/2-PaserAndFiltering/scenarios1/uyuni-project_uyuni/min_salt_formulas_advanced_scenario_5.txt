@@ -1,0 +1,32 @@
+Scenario 5: Fill in and verify non-default values in group formula
+  When  I follow the left menu "Systems > System Groups"
+  When  I follow "test-formula-group" in the content area
+  And  I follow "Formulas" in the content area
+  And  I follow first "Testform" in the content area
+  And  I click on "Expand All Sections"
+  And  I enter "text1" as "testing#str"
+  And  I enter "text2" as "testing#str_def"
+  And  I enter "text3" as "testing#str_or_null"
+  And  I enter "text4" as "testing#str_opt"
+  And  I enter "1" as "testing#num"
+  And  I enter "2" as "testing#num_def"
+  And  I enter "3" as "testing#num_or_null"
+  And  I enter "4" as "testing#num_opt"
+  And  I enter "pw1" as "testing#pw"
+  And  I enter "pw2" as "testing#pw_or_null"
+  And  I enter "pw3" as "testing#pw_opt"
+  And  I click on "Save Formula"
+  Then  I should see a "Formula saved" text
+  When  I wait for "1" seconds
+  Then  the pillar data for "testing:str" should be "text1" on "sle_minion"
+  And  the pillar data for "testing:str_def" should be "text2" on "sle_minion"
+  And  the pillar data for "testing:str_or_null" should be "text3" on "sle_minion"
+  And  the pillar data for "testing:str_opt" should be "text4" on "sle_minion"
+  And  the pillar data for "testing:num" should be "1" on "sle_minion"
+  And  the pillar data for "testing:num_def" should be "2" on "sle_minion"
+  And  the pillar data for "testing:num_or_null" should be "3" on "sle_minion"
+  And  the pillar data for "testing:num_opt" should be "4" on "sle_minion"
+  And  the pillar data for "testing:pw" should be "pw1" on "sle_minion"
+  And  the pillar data for "testing:pw_or_null" should be "pw2" on "sle_minion"
+  And  the pillar data for "testing:pw_opt" should be "pw3" on "sle_minion"
+

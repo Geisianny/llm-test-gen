@@ -1,0 +1,4 @@
+Scenario: Set custom headers for a single file
+  Given there is a test configuration with a file "test.js"
+  When the user sets a custom header "Content-Type" with value "application/javascript" for "test.js"
+  Then the system serves "test.js" with the header "Content-Type" and value "application/javascript"

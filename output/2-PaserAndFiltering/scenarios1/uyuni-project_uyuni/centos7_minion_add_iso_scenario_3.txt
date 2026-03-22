@@ -1,0 +1,10 @@
+Scenario 3: Add a child channel for CentOS 7 DVD repositories
+  When  I follow the left menu "Software > Manage > Channels"
+  And  I follow "Create Channel"
+  And  I enter "Custom Channel for CentOS 7 DVD" as "Channel Name"
+  And  I enter "centos-7-iso" as "Channel Label"
+  And  I select the parent channel for the "centos7_minion" from "Parent Channel"
+  And  I enter "Custom channel" as "Channel Summary"
+  And  I click on "Create Channel"
+  Then  I should see a "Channel Custom Channel for CentOS 7 DVD created" text
+

@@ -1,0 +1,10 @@
+Scenario 1: Deleting multiple tax categories at once
+  Tags: ['@ui', '@javascript']
+  When  I browse tax categories
+  And  I check the "Alcohol" tax category
+  And  I check also the "Food" tax category
+  And  I delete them
+  Then  I should be notified that they have been successfully deleted
+  And  I should see a single tax category in the list
+  And  I should see the tax category "Books" in the list
+

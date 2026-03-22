@@ -1,0 +1,11 @@
+Scenario 4: Removing a zone from a zone
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  Given  the store has a zone "America" with code "AM"
+  And  it has the zone named "North America"
+  And  it also has the zone named "South America"
+  When  I want to modify the zone named "America"
+  And  I remove the "North America" zone member
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this zone should have only the "South America" zone member
+

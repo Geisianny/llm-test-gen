@@ -1,0 +1,7 @@
+Scenario 9: Being unable to use a non-numeric string as a product position
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  Given  I am browsing products from "Soft Toys" taxon
+  When  I set the position of "Young pug" to "test"
+  And  I save my new configuration
+  Then  I should be notified that the position "test" is invalid
+

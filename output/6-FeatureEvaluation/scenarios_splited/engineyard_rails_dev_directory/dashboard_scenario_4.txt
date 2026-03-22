@@ -1,0 +1,5 @@
+Scenario: Provider with no open requests or endorsements views dashboard
+  Given there is a registered provider with no open requests or new endorsements
+  When the provider logs in
+  Then the dashboard displays a message indicating no open requests or new endorsements
+  And the provider's account overview is still accessible

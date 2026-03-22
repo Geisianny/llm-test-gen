@@ -1,0 +1,6 @@
+Scenario 3: Load or reload the mapping templates
+  Tags: ['@mapping_templates_prestashop']
+  Given  an instance with absolute id "base_external.prestashop" exists
+  Then  I reload the referential mapping templates (1 - Reload Referential Mapping Templates)
+  Then  I reload the referential mapping templates (1 - Reload Referential Mapping Templates)
+

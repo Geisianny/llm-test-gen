@@ -1,0 +1,70 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 19/01/2026 23:13:57
+Arquivo analisado: financial_institutions_application_story_processado.feature
+Caminho relativo: FinAegis_core-banking-prototype-laravel\financial_institutions_application_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/Originais\FinAegis_core-banking-prototype-laravel\financial_institutions_application_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: financial_institutions_application_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. View partnership requirements
+   Steps: 7
+   - When I visit "/financial-institutions/apply"
+   - Then I should see "Partner Institution Application"
+   - And I should see "Partnership Requirements"
+   - And I should see "Technical Requirements"
+   - And I should see "Juridical Requirements"
+   - And I should see "Financial Requirements"
+   - And I should see "Insurance Requirements"
+2. Submit application form with valid data
+   Steps: 13
+   - Given I am on "/financial-institutions/apply"
+   - When I fill in "institution_name" with "Test Bank Ltd"
+   - And I fill in "country" with "Germany"
+   - And I fill in "contact_name" with "John Doe"
+   - And I fill in "contact_email" with "john.doe@testbank.com"
+   - And I fill in "technical_capabilities" with "We have modern REST APIs with OAuth 2.0"
+   - And I fill in "regulatory_compliance" with "Fully licensed by BaFin with EU passporting"
+   - And I fill in "financial_strength" with "€500M AUM, A+ rating"
+   - And I fill in "insurance_coverage" with "Complete deposit insurance coverage"
+   - And I check "terms"
+   - And I press "Submit Application"
+   - Then I should see "Thank you for your application"
+   - And I should be on "/financial-institutions/apply"
+3. Submit application form without required fields
+   Steps: 4
+   - Given I am on "/financial-institutions/apply"
+   - When I press "Submit Application"
+   - Then I should see "This field is required"
+   - And I should be on "/financial-institutions/apply"
+4. Submit application without accepting terms
+   Steps: 12
+   - Given I am on "/financial-institutions/apply"
+   - When I fill in "institution_name" with "Test Bank Ltd"
+   - And I fill in "country" with "Germany"
+   - And I fill in "contact_name" with "John Doe"
+   - And I fill in "contact_email" with "john.doe@testbank.com"
+   - And I fill in "technical_capabilities" with "We have modern REST APIs"
+   - And I fill in "regulatory_compliance" with "Fully licensed"
+   - And I fill in "financial_strength" with "€500M AUM"
+   - And I fill in "insurance_coverage" with "Complete coverage"
+   - And I press "Submit Application"
+   - Then I should see "Please accept the terms"
+   - And I should be on "/financial-institutions/apply"
+5. Check all requirement sections are displayed
+   Steps: 6
+   - Given I am on "/financial-institutions/apply"
+   - Then I should see the following requirements:
+   - And I should see "Modern API infrastructure"
+   - And I should see "Valid banking license"
+   - And I should see "Minimum €100M in assets"
+   - And I should see "Deposit insurance scheme"

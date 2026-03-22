@@ -1,0 +1,6 @@
+Scenario 7: Visit monitoring endpoints on the minion
+  When  I visit "Prometheus" endpoint of this "sle_minion"
+  And  I visit "Prometheus node exporter" endpoint of this "sle_minion"
+  And  I visit "Prometheus apache exporter" endpoint of this "sle_minion"
+  And  I visit "Prometheus postgres exporter" endpoint of this "sle_minion"
+

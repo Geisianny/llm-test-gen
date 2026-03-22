@@ -1,0 +1,5 @@
+Scenario: Cancel editing customer details
+  Given there is a customer with existing details
+  When the provider edits the customer's details
+  And cancels the changes
+  Then the system does not update the customer's details

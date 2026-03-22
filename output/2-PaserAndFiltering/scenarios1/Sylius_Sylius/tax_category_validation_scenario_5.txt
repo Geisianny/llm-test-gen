@@ -1,0 +1,9 @@
+Scenario 5: Trying to remove name from existing tax category
+  Tags: ['@api', '@ui']
+  Given  the store has a tax category "Alcoholic Drinks" with a code "alcohol"
+  When  I want to modify this tax category
+  And  I remove its name
+  And  I try to save my changes
+  Then  I should be notified that name is required
+  And  this tax category should still be named "Alcoholic Drinks"
+

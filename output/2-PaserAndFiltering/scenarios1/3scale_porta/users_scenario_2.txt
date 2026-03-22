@@ -1,0 +1,9 @@
+Scenario 2: Edit an user with invalid data
+  And  current domain is the admin domain of provider "foo.3scale.localhost"
+  When  I log in as provider "foo.3scale.localhost"
+  And  I go to the provider users page
+  And  I follow "Edit" for user "alice"
+  And  I fill in "Email" with ""
+  And  I press "Update User"
+  Then  I should see "should look like an email address"
+

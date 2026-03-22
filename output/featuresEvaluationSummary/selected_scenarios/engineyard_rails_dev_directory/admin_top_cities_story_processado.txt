@@ -1,0 +1,6 @@
+Scenario: Add a new top city with invalid information
+  Given there is an admin logged in
+  When the admin adds "123" as a top city
+  And sets its state to "New York" and country to "USA"
+  Then the system does not add "123" to the top cities list
+  And displays a message indicating that the city name is invalid

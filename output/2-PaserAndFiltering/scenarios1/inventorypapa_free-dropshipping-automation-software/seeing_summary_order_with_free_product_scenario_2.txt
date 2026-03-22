@@ -1,0 +1,11 @@
+Scenario 2: Seeing order with both free and paid products
+  Tags: ['@ui', '@api']
+  Given  I have product "Greyjoy Coat" in the cart
+  And  I have product "Lannister Coat" in the cart
+  When  I specified the billing address as "Ankh Morpork", "Frost Alley", "90210", "United States" for "Jon Snow"
+  And  I proceed with "DHL" shipping method and "Offline" payment
+  Then  I should be on the checkout summary step
+  And  my order total should be "$104.50"
+  And  my order promotion total should be "-$5.00"
+  And  my tax total should be "$9.50"
+

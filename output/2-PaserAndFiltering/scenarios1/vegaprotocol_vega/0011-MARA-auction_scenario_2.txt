@@ -1,0 +1,5 @@
+Scenario 2: In Spot market, holding in holding account s correctly calculated for all order types in auction mode limit GTC (0011-MARA-029)
+  When  the parties place the following orders:
+  Then  "party5" should have holding account balance of "1" for asset "BTC"
+  And  "party1" should have holding account balance of "10" for asset "ETH"
+

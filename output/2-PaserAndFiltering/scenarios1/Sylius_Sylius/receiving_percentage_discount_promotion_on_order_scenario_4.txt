@@ -1,0 +1,9 @@
+Scenario 4: Receiving percentage discount is proportional to items values
+  Tags: ['@api', '@ui']
+  Given  the store has a product "Symfony T-Shirt" priced at "$100.00"
+  And  I added 11 products "PHP T-Shirt" to the cart
+  And  I added product "Symfony T-Shirt" to the cart
+  When  I check the details of my cart
+  Then  my cart total should be "$960.00"
+  And  my discount should be "-$240.00"
+

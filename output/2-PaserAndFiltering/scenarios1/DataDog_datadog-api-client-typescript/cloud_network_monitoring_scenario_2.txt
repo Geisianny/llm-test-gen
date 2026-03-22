@@ -1,0 +1,7 @@
+Scenario 2: Get all aggregated DNS traffic returns "Bad Request" response
+  Tags: ['@team:Datadog/networks']
+  Given  new "GetAggregatedDns" request
+  And  request contains "group_by" parameter with value "server_ungrouped,server_service"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

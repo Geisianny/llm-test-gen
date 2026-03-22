@@ -1,0 +1,7 @@
+Scenario 3: Create a webhooks integration returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:Datadog/collaboration-integrations']
+  Given  new "CreateWebhooksIntegration" request
+  And  body with value {"custom_headers": null, "encode_as": "json", "name": "WEBHOOK_NAME", "payload": null, "url": "https://example.com/webhook"}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

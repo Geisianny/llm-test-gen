@@ -1,0 +1,9 @@
+Scenario 9: Add a union of 2 groups to SSM - Red Hat-like
+  Tags: ['@rhlike_minion']
+  When  I follow the left menu "Systems > System Groups"
+  When  I check "sles" in the list
+  And  I check "rhlike" in the list
+  And  I click on "Work With Union"
+  And  I should see "sle_minion" as link
+  And  I should see "rhlike_minion" as link
+

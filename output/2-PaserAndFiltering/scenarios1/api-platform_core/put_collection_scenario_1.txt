@@ -1,0 +1,13 @@
+Scenario 1: Update embed collection
+  Tags: ['@createSchema', '@!mongodb']
+  And  I send a "POST" request to "/issue5584_employees" with body:
+  Then  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/issue5584_employees" with body:
+  Then  print last JSON response
+  Then  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/issue5584_businesses" with body:
+  Then  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "PUT" request to "/issue5584_businesses/1" with body:
+  And  the JSON node "businessEmployees[0].name" should contain 'One'
+  And  the JSON node "businessEmployees[1].name" should contain 'Two'
+

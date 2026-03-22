@@ -1,0 +1,26 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 19/01/2026 23:13:57
+Arquivo analisado: edit_block_of_links_story_processado.feature
+Caminho relativo: noosfero_noosfero\edit_block_of_links_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/Originais\noosfero_noosfero\edit_block_of_links_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: edit_block_of_links_story_processado
+Descrição: Não possui
+Total de cenários: 1
+
+CENÁRIOS IDENTIFICADOS:
+1. show the icon selector
+   Steps: 6
+   - Given I follow "Edit sideboxes"
+   - And I follow "Edit" within ".button-bar"
+   - When I follow "New link"
+   - Then the "css=div.icon-selector" should not be visible
+   - When I click "div.icon"
+   - Then the "css=div.icon-selector" should be visible

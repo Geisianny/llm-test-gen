@@ -1,0 +1,36 @@
+Scenario: Update organization name
+  Given there is a recruiter logged in
+  And the recruiter has an organization with the name "Old Name"
+  When the recruiter updates the organization name to "New Name"
+  Then the system saves the new organization name
+  And displays a confirmation message
+
+Scenario: Update organization location
+  Given there is a recruiter logged in
+  And the recruiter has an organization with the location "Old Location"
+  When the recruiter updates the organization location to "New Location"
+  Then the system saves the new organization location
+  And displays a confirmation message
+
+Scenario: Update organization logo
+  Given there is a recruiter logged in
+  And the recruiter has an organization with a logo "old_logo.png"
+  When the recruiter updates the organization logo to "new_logo.png"
+  Then the system saves the new organization logo
+  And displays a confirmation message
+
+Scenario: Update multiple organization details
+  Given there is a recruiter logged in
+  And the recruiter has an organization with the name "Old Name", location "Old Location", and logo "old_logo.png"
+  When the recruiter updates the organization name to "New Name"
+  And updates the organization location to "New Location"
+  And updates the organization logo to "new_logo.png"
+  Then the system saves the new organization details
+  And displays a confirmation message
+
+Scenario: Attempt to update organization with invalid data
+  Given there is a recruiter logged in
+  And the recruiter has an organization with the name "Valid Name"
+  When the recruiter updates the organization name to an empty string
+  Then the system displays an error message
+  And does not save the changes to the organization name

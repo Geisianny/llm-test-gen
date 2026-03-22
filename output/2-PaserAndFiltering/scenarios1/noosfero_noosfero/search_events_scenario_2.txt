@@ -1,0 +1,8 @@
+Scenario 2: show events of the month again after clicking on the day
+  Tags: ['@selenium']
+  Given  I am on /search/events?year=2018&month=10
+  And  I follow "8" within ".agenda-calendar"
+  And  I follow "October" within ".agenda-calendar"
+  Then  I should see "Different Conference"
+  And  should see "Another Conference"
+

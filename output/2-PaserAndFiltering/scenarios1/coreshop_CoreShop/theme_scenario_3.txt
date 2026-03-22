@@ -1,0 +1,7 @@
+Scenario 3: Multiple Stores with one active
+  Given  the site has a country "Germany" with currency "EUR"
+  And  the country "Germany" is active
+  And  the site has a store "Germany" with country "Germany" and currency "EUR"
+  And  the store "Germany" uses theme "germany"
+  Then  the current theme name should be "standard"
+

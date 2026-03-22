@@ -1,0 +1,7 @@
+Scenario 31: Cleanup: Delete the system group created for group recurring action tests
+  When  I follow the left menu "Systems > System Groups"
+  And  I follow "Recurring-Action-test-group"
+  And  I follow "Delete Group"
+  And  I click on "Confirm Deletion"
+  Then  I should see a "Your organization has no system groups." text
+

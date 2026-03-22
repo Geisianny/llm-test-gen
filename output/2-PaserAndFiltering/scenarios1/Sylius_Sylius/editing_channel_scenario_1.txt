@@ -1,0 +1,5 @@
+Scenario 1: Being unable to change the code of an existing channel
+  Tags: ['@api', '@ui']
+  When  I want to modify a channel "Web Channel"
+  Then  I should not be able to edit its code
+

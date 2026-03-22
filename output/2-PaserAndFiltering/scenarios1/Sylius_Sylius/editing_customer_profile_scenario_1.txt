@@ -1,0 +1,9 @@
+Scenario 1: Changing my first name and last name
+  Tags: ['@api', '@ui']
+  When  I want to modify my profile
+  And  I specify the first name as "Will"
+  And  I specify the last name as "Conway"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  my name should be "Will Conway"
+

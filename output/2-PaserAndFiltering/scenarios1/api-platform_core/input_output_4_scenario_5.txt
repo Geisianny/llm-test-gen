@@ -1,0 +1,11 @@
+Scenario 5: Create and update a DummyInputOutput
+  Tags: ['@createSchema']
+  When  I send a "POST" request to "/dummy_dto_input_outputs" with body:
+  Then  the response status code should be 201
+  And  the JSON should be a superset of:
+  When  I add "Accept" header equal to "application/ld+json"
+  And  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "PUT" request to "/dummy_dto_input_outputs/1" with body:
+  Then  the response status code should be 200
+  And  the JSON should be a superset of:
+

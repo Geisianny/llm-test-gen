@@ -1,0 +1,8 @@
+Scenario 6: Bank health monitoring and alerting
+  Given  continuous health monitoring is active
+  When  a bank's response time exceeds thresholds
+  Then  the bank should be marked as "degraded"
+  And  traffic should be reduced to that bank
+  And  operations team should be alerted
+  And  failover procedures should be prepared
+

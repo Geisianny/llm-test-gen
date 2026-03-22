@@ -1,0 +1,7 @@
+Feature: In order that a customer can visit the cart-summary page
+Description: The website needs to create a URL
+Tags: ['@domain', '@cart']
+
+Scenario 1: Create URL for cart-summary
+  Then  the generated url for route "coreshop_cart_summary" should be "/en/shop/cart"
+

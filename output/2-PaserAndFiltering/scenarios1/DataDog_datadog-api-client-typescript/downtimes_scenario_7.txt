@@ -1,0 +1,10 @@
+Scenario 7: Get a downtime returns "OK" response
+  Tags: ['@team:DataDog/monitor-app']
+  Given  there is a valid "downtime" in the system
+  And  new "GetDowntime" request
+  And  request contains "downtime_id" parameter from "downtime.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "id" has the same value as "downtime.id"
+  And  the response "message" has the same value as "downtime.message"
+

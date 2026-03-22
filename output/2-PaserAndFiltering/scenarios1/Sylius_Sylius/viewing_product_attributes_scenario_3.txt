@@ -1,0 +1,7 @@
+Scenario 3: Viewing a detailed page with product's textarea attribute
+  Tags: ['@api', '@ui']
+  Given  the store has a product "T-Shirt banana"
+  And  this product has a textarea attribute "T-Shirt details" with value "Banana is a very good material."
+  When  I check this product's details
+  Then  I should see the product attribute "T-Shirt details" with value "Banana is a very good material."
+

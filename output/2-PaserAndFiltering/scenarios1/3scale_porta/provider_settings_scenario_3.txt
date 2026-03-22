@@ -1,0 +1,13 @@
+Scenario 3: Members per default cannot access settings
+  Given  an active user "member" of account "foo.3scale.localhost"
+  And  user "member" does not belong to the admin group "settings" of provider "foo.3scale.localhost"
+  And  current domain is the admin domain of provider "foo.3scale.localhost"
+  When  I log in as provider "member"
+  And  I go to the provider dashboard
+  Then  there shouldn't be a link to "0 Accounts"
+  And  there shouldn't be a link to "Billing"
+  And  there shouldn't be a link to "Forum"
+  And  there shouldn't be a link to "0 Messages"
+  And  there shouldn't be a link to "Developer Portal"
+  And  they should see an error when going to the following pages:
+

@@ -1,0 +1,11 @@
+Scenario 20: Edit a monitor returns "OK" response
+  Tags: ['@team:DataDog/monitor-app']
+  Given  there is a valid "monitor" in the system
+  And  new "UpdateMonitor" request
+  And  request contains "monitor_id" parameter from "monitor.id"
+  And  body with value {"name": "{{ monitor.name }}-updated", "priority": null, "options": {"evaluation_delay": null, "new_group_delay": 600, "new_host_delay":null, "renotify_interval":null, "thresholds": {"critical":2, "warning": null}, "timeout_h": null}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "name" is equal to "{{ monitor.name }}-updated"
+  And  the response "priority" is equal to null
+

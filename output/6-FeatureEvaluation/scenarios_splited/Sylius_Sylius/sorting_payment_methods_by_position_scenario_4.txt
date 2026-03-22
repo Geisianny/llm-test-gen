@@ -1,0 +1,4 @@
+Scenario: Add new payment method to the beginning of the list
+  Given there are multiple payment methods with different positions
+  When the administrator adds a new payment method with a lower position than existing ones
+  Then the new payment method is displayed at the beginning of the list

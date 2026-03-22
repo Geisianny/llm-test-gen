@@ -1,0 +1,5 @@
+Scenario 4: As a visitor, I cannot edit an event
+  Given  I am not logged in as any user
+  And  I visit "Open Source Weekend" event
+  Then  I should not see "Edit"
+

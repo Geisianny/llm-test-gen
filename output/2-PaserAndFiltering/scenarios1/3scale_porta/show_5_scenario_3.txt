@@ -1,0 +1,7 @@
+Scenario 3: GitHub Navigation
+  Given  a developer portal github integration
+  When  they go to the developer portal users sso integrations page
+  And  they follow "GitHub"
+  Then  the current page is the developer portal sso integration page
+  And  should see "GitHub"
+

@@ -1,0 +1,6 @@
+Scenario 8: Meta Title and Description for disclaimer show page
+  Given  I am on the show page with the "disclaimer" permalink
+  And  I should have a page with a title tag set to: "Disclaimer | Harrow volunteering"
+  And  I should see "Ensure the information accurate"
+  And  it should have a Meta Description
+

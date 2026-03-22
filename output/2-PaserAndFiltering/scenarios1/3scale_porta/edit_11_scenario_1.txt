@@ -1,0 +1,8 @@
+Scenario 1: Navigation
+  Given  they go to the developer portal users sso integrations page
+  When  they follow "Red Hat Single Sign-On"
+  And  the current page is the developer portal sso integration page
+  And  should see "Red Hat Single Sign-On"
+  And  they follow "Edit"
+  Then  the current page is the developer portal edit rh sso integration page
+

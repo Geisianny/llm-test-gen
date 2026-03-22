@@ -1,0 +1,23 @@
+Scenario 7: Updating Settings
+  Tags: ['@javascript']
+  Given  I am logged in with email "affiliate_manager@fixtures.org"
+  When  I go to the usagov's Dashboard page
+  And  I follow "Settings"
+  Then  I should see a link to "Dashboard" in the active site main navigation
+  And  I should see a link to "Settings" in the active site sub navigation
+  And  I should see "Site Handle usagov"
+  And  I should see "Site Language English"
+  When  I fill in "Display Name" with "agency site"
+  And  I fill in "Homepage URL" with "http://new.usa.gov"
+  And  I submit the form by pressing "Save Settings"
+  Then  I should see "Your site settings have been updated"
+  And  the "Display Name" field should contain "agency site"
+  And  the "Homepage URL" field should contain "http://new.usa.gov"
+  When  I fill in "Display Name" with ""
+  And  I submit the form by pressing "Save Settings"
+  Then  I should see "Display name can't be blank"
+  When  I go to the gobiernousa's Dashboard page
+  And  I follow "Settings"
+  Then  I should see "Site Handle gobiernousa"
+  And  I should see "Site Language Spanish"
+

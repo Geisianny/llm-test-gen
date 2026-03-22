@@ -1,0 +1,8 @@
+Scenario 2: see default facets when searching
+  When  I go to the search products page
+  And  I fill in "search-input" with "wikis"
+  And  I press "Search"
+  Then  I should see "Related products" within "#facets-menu"
+  Then  I should see "City" within "#facets-menu"
+  Then  I should see "Qualifiers" within "#facets-menu"
+

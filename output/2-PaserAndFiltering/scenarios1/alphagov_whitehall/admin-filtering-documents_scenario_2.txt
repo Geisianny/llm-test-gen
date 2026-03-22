@@ -1,0 +1,11 @@
+Scenario 2: Viewing only publications written by me
+  Given  I am a writer
+  And  there is a user called "Janice"
+  And  "Janice" drafts a new publication "Janice's Publication"
+  And  I draft a new "English" language consultation "My Consultation"
+  And  I visit the list of draft documents
+  When  I filter by author "Janice"
+  And  I select the "Publications" edition filter
+  Then  I should see the publication "Janice's Publication"
+  And  I should not see the consultation "My Consultation"
+

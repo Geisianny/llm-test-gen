@@ -1,0 +1,8 @@
+Scenario 8: Delete a single service definition returns "Not Found" response
+  Tags: ['@team:DataDog/service-catalog']
+  Given  new "DeleteServiceDefinition" request
+  And  request contains "service_name" parameter with value "not-a-service"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+  And  the response "errors[0]" is equal to "Not Found"
+

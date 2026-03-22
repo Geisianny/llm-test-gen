@@ -1,0 +1,10 @@
+Scenario 5: Editing catalog promotion variant scope
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I want to modify a catalog promotion "Christmas sale"
+  And  I remove "PHP T-Shirt" variant from its scope
+  And  I add "Kotlin T-Shirt" variant to its scope
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this catalog promotion should be applied on "Kotlin T-Shirt" variant
+  And  this catalog promotion should not be applied on "PHP T-Shirt" variant
+

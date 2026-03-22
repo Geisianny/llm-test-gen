@@ -1,0 +1,69 @@
+Scenario 1: With free plan, no invoice is created
+  And  a buyer "broke" signed up to application plan "FreeAsInBeer"
+  Given  the time is 15th January 2009
+  When  buyer "broke" makes 5 service transaction with:
+  When  1 month passes
+  Then  the date should be 15th February 2009
+  When  I log in as "broke" on xyz.3scale.localhost
+  And  I navigate to invoices issued for me
+  Then  I should see 0 invoices
+
+
+
+Scenario 2: Variable only
+  Given  all the rolling updates features are off
+  And  pricing rules on plan "PureVariable":
+  And  a buyer "varnish"
+  And  the buyer is signed up to application plan "PureVariable" on 10th January 2009
+  And  buyer "varnish" makes 1 service transactions with:
+  And  I log in as "varnish" on xyz.3scale.localhost on 20th January 2009
+  And  the buyer changes to application plan "Variable"
+  When  time flies to 3rd February 2009
+  And  I navigate to invoice issued for me in "January, 2009"
+  Then  I should see line items
+  When  time flies to 3rd March 2009
+  And  I navigate to invoice issued for me in "February, 2009"
+  Then  I should see line items
+
+
+
+Scenario 3: Variable only instant bill enabled
+  Given  all the rolling updates features are on
+  And  pricing rules on plan "PureVariable":
+  And  a buyer "varnish"
+  And  the buyer is signed up to application plan "PureVariable" on 10th January 2009
+  And  buyer "varnish" makes 1 service transactions with:
+  And  I log in as "varnish" on xyz.3scale.localhost on 20th January 2009
+  And  the buyer changes to application plan "Variable"
+  When  time flies to 3rd February 2009
+  And  I navigate to invoice issued for me in "January, 2009"
+  Then  I should see line items
+  When  time flies to 3rd March 2009
+  And  I navigate to invoice issued for me in "February, 2009"
+  Then  I should see line items
+
+
+
+Scenario 4: Bill fixed fee in the beginning, variable in the end of the month
+  Given  the date is 31st December 2008
+  And  a buyer "tycoon" signed up to application plan "Variable"
+  Given  time flies to 14th January 2009
+  And  buyer "tycoon" makes 2 service transactions with:
+  When  time flies to 3rd February 2009
+  And  I log in as "tycoon" on xyz.3scale.localhost
+  And  I navigate to invoice issued for me in "January, 2009"
+  Then  I should see line items
+
+
+
+Scenario 5: Buyer is not billed monthly - no invoice is created
+  Given  the date is 31st December 2008
+  And  a buyer "tycoon" signed up to application plan "Variable"
+  And  buyer "tycoon" is not billed monthly
+  When  time flies to 14th January 2009
+  And  buyer "tycoon" makes 2 service transactions with:
+  And  time flies to 10th February 2009
+  And  I log in as "tycoon" on xyz.3scale.localhost
+  And  I navigate to invoices issued for me
+  Then  I should see 0 invoices
+

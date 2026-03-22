@@ -1,0 +1,58 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: sign_in_while_applying_story_processado.feature
+Caminho relativo: SFDigitalServices_sf-dahlia-web\sign_in_while_applying_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\SFDigitalServices_sf-dahlia-web\sign_in_while_applying_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: sign_in_while_applying_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Sign-in while filling out an application anonymously with valid credentials
+   Steps: 6
+   - Given there is a user with an existing account
+   - And the user is filling out an application anonymously
+   - When the user chooses to sign in with their account
+   - And enters valid email and password
+   - Then the system authenticates the user
+   - And associates the anonymous application with the user's account
+2. Sign-in while filling out an application anonymously with invalid credentials
+   Steps: 6
+   - Given there is a user with an existing account
+   - And the user is filling out an application anonymously
+   - When the user chooses to sign in with their account
+   - And enters invalid email or password
+   - Then the system denies access
+   - And displays a message indicating that the email or password is incorrect
+3. Continue application anonymously after attempting to sign in
+   Steps: 6
+   - Given there is a user with an existing account
+   - And the user is filling out an application anonymously
+   - When the user chooses to sign in with their account
+   - And enters invalid email or password
+   - And chooses to continue anonymously
+   - Then the system allows the user to continue filling out the application anonymously
+4. Reconcile conflicting data during sign-in
+   Steps: 6
+   - Given there is a user with an existing account with different date of birth than the anonymous application
+   - And the user is filling out an application anonymously for a senior-specific listing
+   - When the user chooses to sign in with their account
+   - And enters valid email and password
+   - Then the system prompts the user to reconcile the conflicting date of birth
+   - And provides options to use the account data or continue with the anonymous data
+5. Create a new account during application
+   Steps: 6
+   - Given there is no user with an existing account
+   - And the user is filling out an application anonymously
+   - When the user chooses to create a new account
+   - And enters valid account information
+   - Then the system creates a new account
+   - And associates the anonymous application with the new account

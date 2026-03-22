@@ -1,0 +1,12 @@
+Scenario Outline 1: Navigation from index - Example 1
+  Given  the product has a Swagger 1.2 spec "Echo API"
+  When  they go to the ActiveDocs page
+  And  select action "Edit" of "Echo API"
+  Then  the current page is spec "Echo API" edit page from Product context
+
+  Examples:
+    | swagger version |
+    | Swagger 1.2 |
+    | Swagger 2 |
+    | OAS 3.0 |
+

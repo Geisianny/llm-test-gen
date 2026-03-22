@@ -1,0 +1,6 @@
+Scenario 3: List all exchange rates
+  When  I send a GET request to "/api/v1/exchange-rates"
+  Then  the response status code should be 200
+  And  the response should have a "data" field
+  And  the response data should contain 4 exchange rates
+

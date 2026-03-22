@@ -1,0 +1,9 @@
+Scenario 5: Spread when AMM is traded in both directions
+  Tags: ['@VAMM']
+  Then  the parties amend the following AMM:
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the parties place the following orders:
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the parties place the following orders:
+  And  the market data for the market "ETH/MAR22" should be:
+

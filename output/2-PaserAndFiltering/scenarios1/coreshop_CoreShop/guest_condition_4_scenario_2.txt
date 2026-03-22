@@ -1,0 +1,4 @@
+Scenario 2: Add a new guest shipping rule for a cart without a customer which is valid
+  Given  I add the product "Shoe" to my cart
+  Then  the shipping rule should be valid for my cart with carrier "Post"
+

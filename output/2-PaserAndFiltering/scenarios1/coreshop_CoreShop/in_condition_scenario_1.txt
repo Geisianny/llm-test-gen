@@ -1,0 +1,4 @@
+Scenario 1: Create a new in condition and render it
+  Given  there is a in condition with field-name "XY" and values "1,2,5"
+  Then  the condition rendered for "mysql" should look like "`XY` IN ('1','2','5')"
+

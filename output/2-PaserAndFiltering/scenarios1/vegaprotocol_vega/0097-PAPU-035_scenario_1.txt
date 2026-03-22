@@ -1,0 +1,12 @@
+Scenario 1: PAP auction is started when market is in continuous trading with expiration 60s. If there is no uncrossing price at the expected expiration the auction is stopped and the orders are cancelled. (0097-PAPU-035)
+  When  the protocol automated purchase is defined as:
+  Then  the oracles broadcast data with block time signed with "0xCAFECAFE2":
+  And  the network moves ahead "30" blocks
+  Then  the automated purchase program for market "BTC/ETH" should have a snapshot balance of "200"
+  And  the trading mode should be "TRADING_MODE_PROTOCOL_AUTOMATED_PURCHASE_AUCTION" for the market "BTC/ETH"
+  Then  the starting auction time for market "BTC/ETH" is "1727136002000000000"
+  And  the ending auction time for market "BTC/ETH" is "1727136032000000000"
+  And  the network moves ahead "60" blocks
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  And  the buy back fees balance should be "5000" for the asset "BTC"
+

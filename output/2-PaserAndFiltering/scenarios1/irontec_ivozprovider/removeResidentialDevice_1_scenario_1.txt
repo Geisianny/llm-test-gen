@@ -1,0 +1,8 @@
+Scenario 1: Remove a residential device
+  Tags: ['@createSchema']
+  Given  I add Residential Company Authorization header
+  When  I add "Content-Type" header equal to "application/json"
+  And  I add "Accept" header equal to "application/json"
+  And  I send a "DELETE" request to "/residential_devices/1"
+  Then  the response status code should be 405
+

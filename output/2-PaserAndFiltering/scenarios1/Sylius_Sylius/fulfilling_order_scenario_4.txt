@@ -1,0 +1,5 @@
+Scenario 4: A paid, but not shipped order is not fulfilled
+  Tags: ['@api', '@ui']
+  When  I mark this order as paid
+  Then  its state should be "New"
+

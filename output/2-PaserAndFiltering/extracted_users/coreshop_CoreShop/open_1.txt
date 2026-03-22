@@ -1,0 +1,9 @@
+Feature: Test if I can open the Currencies Panel
+Tags: ['@ui', '@ui_pimcore', '@currency']
+
+Scenario 1: 
+  Given  I am a logged in admin
+  And  I open Pimcore
+  And  I open resource "coreshop.currency", "currency"
+  Then  currencies tab is open
+

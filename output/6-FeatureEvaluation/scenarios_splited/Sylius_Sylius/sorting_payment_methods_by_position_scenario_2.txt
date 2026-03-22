@@ -1,0 +1,4 @@
+Scenario: Sort payment methods in descending order
+  Given there are multiple payment methods with different positions
+  When the administrator chooses to sort payment methods in descending order
+  Then the payment methods are displayed in descending order by position

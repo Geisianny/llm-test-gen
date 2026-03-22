@@ -1,0 +1,8 @@
+Scenario 3: Applying correct taxes for multiple units of different products with order discount
+  Tags: ['@api', '@ui']
+  Given  I added 2 products "Symfony Mug" to the cart
+  And  I added product "PHP Mug" to the cart
+  When  I check the details of my cart
+  Then  my cart total should be "$162.73"
+  And  my cart taxes should be "$14.79"
+

@@ -1,0 +1,15 @@
+Scenario 11: Run a playbook using custom inventory
+  Given  I am on the Systems overview page of this "ssh_minion"
+  When  I follow "Ansible" in the content area
+  And  I follow "Playbooks" in the content area
+  And  I wait until I see "/srv/playbooks" text
+  And  I click on "/srv/playbooks"
+  And  I wait until I see "/srv/playbooks/orion_dummy/playbook_orion_dummy.yml" text
+  And  I click on "orion_dummy/playbook_orion_dummy.yml"
+  And  I wait until I see "Playbook Content" text
+  And  I select "/srv/playbooks/orion_dummy/hosts" from "inventory-path-select"
+  And  I click on "Schedule"
+  Then  I should see a "Playbook execution has been scheduled" text
+  And  I wait until event "Execute playbook 'playbook_orion_dummy.yml' scheduled" is completed
+  And  file "/tmp/file.txt" should exist on "ssh_minion"
+

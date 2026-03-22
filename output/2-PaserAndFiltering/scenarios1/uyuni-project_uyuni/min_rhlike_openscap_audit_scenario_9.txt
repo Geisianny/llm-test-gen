@@ -1,0 +1,5 @@
+Scenario 9: Cleanup: remove the OpenSCAP packages from the Red Hat-like minion
+  Tags: ['@skip_if_github_validation']
+  When  I remove OpenSCAP dependencies from "rhlike_minion"
+  And  I disable repository "Rocky-BaseOS" on this "rhlike_minion"
+

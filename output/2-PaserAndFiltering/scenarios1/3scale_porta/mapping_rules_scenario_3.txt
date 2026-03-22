@@ -1,0 +1,8 @@
+Scenario 3: Pagination when search results are multi-page
+  Tags: ['@search']
+  Given  a backend "ManyRules"
+  And  the backend has 30 mapping rules starting with pattern "/test"
+  When  they go to the mapping rules index page for backend "ManyRules"
+  And  search "/test" using the toolbar
+  Then  they should see 2 pages
+

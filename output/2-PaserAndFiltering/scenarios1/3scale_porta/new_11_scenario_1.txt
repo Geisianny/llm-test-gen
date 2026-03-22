@@ -1,0 +1,6 @@
+Scenario 1: Navigation via empty state action
+  Given  the current page is the provider dashboard
+  When  they follow "0 Accounts"
+  And  follow "Add your first account"
+  Then  the current page is the new provider account page
+

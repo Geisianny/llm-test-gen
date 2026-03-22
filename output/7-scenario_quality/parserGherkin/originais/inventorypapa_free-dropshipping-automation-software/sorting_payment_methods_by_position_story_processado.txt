@@ -1,0 +1,34 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 19/01/2026 23:13:57
+Arquivo analisado: sorting_payment_methods_by_position_story_processado.feature
+Caminho relativo: inventorypapa_free-dropshipping-automation-software\sorting_payment_methods_by_position_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/Originais\inventorypapa_free-dropshipping-automation-software\sorting_payment_methods_by_position_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: sorting_payment_methods_by_position_story_processado
+Descrição: Não possui
+Total de cenários: 3
+
+CENÁRIOS IDENTIFICADOS:
+1. Payment methods are sorted by position in ascending order by default
+   Steps: 4
+   - When I browse payment methods
+   - Then I should see 3 payment methods in the list
+   - And the first payment method on the list should have name "Paypal Express Checkout"
+   - And the last payment method on the list should have name "Cash on Delivery"
+2. Payment method added at no position is added as the last one
+   Steps: 3
+   - Given the store allows paying with "Credit Card"
+   - When I browse payment methods
+   - Then the last payment method on the list should have name "Credit Card"
+3. Payment method added at position 0 is added as the first one
+   Steps: 3
+   - Given the store also allows paying with "Credit Card" at position 0
+   - When I browse payment methods
+   - Then the first payment method on the list should have name "Credit Card"

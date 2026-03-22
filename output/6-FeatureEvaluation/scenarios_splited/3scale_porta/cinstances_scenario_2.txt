@@ -1,0 +1,6 @@
+Scenario: View customer details with pre-paid billing model
+  Given there is a customer with payment details
+  And the provider is using the pre-paid billing model
+  When the provider accesses the customer's profile
+  Then the system displays the customer's details
+  And does not display the customer's payment details

@@ -1,0 +1,22 @@
+Scenario 5: As offerer i can set the price of one of my listing availability day
+  Given  I am logged in as user "offerer@cocorico.rocks" with password "12345678"
+  When  I click on dashboard menu "Listings" of "offerer"
+  And  I follow "Edit"
+  And  I follow "Price & conditions"
+  And  I click on the element with css selector ".fc-day-number.fc-future"
+  And  I wait 2000 ms
+  And  I fill in the following:
+  And  I press button with css "#availability-form-container button[type=submit]"
+  And  I wait 2000 ms
+  Then  I should see "Saved"
+  Given  I am logged in as user "offerer@cocorico.rocks" with password "12345678"
+  When  I click on dashboard menu "Listings" of "offerer"
+  And  I follow "Edit"
+  And  I follow "Price & conditions"
+  And  I wait 1000 ms
+  When  I fill date range with the following:
+  And  I wait 1000 ms
+  Then  I should see "100" in the "#price-simulator-form strong.price" element
+  And  I should see "You will earn €95" in the "#price-simulator-form .price-info" element
+  And  I should see "Our fee €5 " in the "#price-simulator-form .price-info" element
+

@@ -1,0 +1,8 @@
+Scenario 4: Delete a rum-based metric returns "No Content" response
+  Tags: ['@team:DataDog/rum-backend']
+  Given  there is a valid "rum_metric" in the system
+  And  new "DeleteRumMetric" request
+  And  request contains "metric_id" parameter from "rum_metric.data.id"
+  When  the request is sent
+  Then  the response status is 204 No Content
+

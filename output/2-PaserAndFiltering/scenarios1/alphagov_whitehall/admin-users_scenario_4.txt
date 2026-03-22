@@ -1,0 +1,7 @@
+Scenario 4: Logged in users should be able to view but not edit their record
+  Given  I am a writer called "John Smith"
+  And  the organisation "Department of Beards" exists
+  When  I view my own user record
+  Then  I can see my user details
+  But  I cannot change my user details
+

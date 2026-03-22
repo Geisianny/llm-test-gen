@@ -1,0 +1,11 @@
+Feature: Load sample data feature
+Description: In order to have sample data in Sylius
+    As a Developer
+    I want to run a command that loads sample data
+Tags: ['@installer', '@cli']
+
+Scenario 1: Running install sample data command
+  When  I run Sylius Install Load Sample Data command
+  And  I confirm loading sample data
+  Then  the command should finish successfully
+

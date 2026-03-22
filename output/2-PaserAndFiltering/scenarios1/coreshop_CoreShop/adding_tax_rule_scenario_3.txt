@@ -1,0 +1,14 @@
+Scenario 3: Canadian PST/GST/HST VAT
+  Given  the site has a currency "Canadian Dollar" with iso "CAD"
+  And  the site has a country "Canada" with currency "CAD"
+  And  the country "Canada" is active
+  And  the country "Canada" is valid for store "Austria"
+  And  I am in country "Canada"
+  And  the site has a tax rate "GST" with "5%" rate
+  And  the site has a tax rate "PST-BC" with "7%" rate
+  And  the site has a tax rule group "CAD"
+  And  it has a tax rule for country "Canada" with tax rate "GST" and it combines all rules
+  And  it has a tax rule for country "Canada" with tax rate "PST-BC" and it combines all rules
+  And  I am in country "Canada"
+  Then  the tax rule group should add "120" to the price "1000"
+

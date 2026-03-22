@@ -1,0 +1,13 @@
+Scenario 4: Deleting a message
+  Given  a message sent from provider "foo.3scale.localhost" to buyer "bob" with subject "Wassup?" and body "Everything OK?"
+  When  I go to the dashboard
+  And  I follow "Messages 1"
+  And  follow "Delete message"
+  Then  I should not see a message from "foo.3scale.localhost" with subject "Wassup?"
+  And  the message from provider "foo.3scale.localhost" to buyer "bob" with subject "Wassup?" should be hidden
+  When  I follow "Trash"
+  Then  I should see a message from "foo.3scale.localhost" with subject "Wassup?"
+  When  I follow "Wassup?"
+  Then  I should see "Wassup?"
+  And  I should see "Everything OK?"
+

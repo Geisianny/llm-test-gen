@@ -1,0 +1,7 @@
+Scenario: Combine filter with keyword search
+  Given there are listings with title "Apple Watch" and "Samsung TV"
+  And the user is on the listings page
+  When the user selects "Electronics" from the "Category" filter
+  And enters "Apple" in the keyword search field
+  Then the system displays listings with "Category" as "Electronics" and title containing "Apple"
+  And the listings count is updated accordingly

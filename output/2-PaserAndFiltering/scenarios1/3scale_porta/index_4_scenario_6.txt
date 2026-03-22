@@ -1,0 +1,8 @@
+Scenario 6: Paid? column is shown when finance is enabled
+  When  the provider has "finance" denied
+  And  they go to product "My API" applications page
+  Then  the table does not have a column "Paid?"
+  When  the provider has "finance" allowed
+  And  they go to product "My API" applications page
+  Then  the table has a column "Paid?"
+

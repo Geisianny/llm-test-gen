@@ -1,0 +1,5 @@
+Scenario 4: Check the new bootstrapped openSUSE 15.6 ARM minion in System Overview page
+  When  I follow the left menu "Salt > Keys"
+  Then  I should see a "accepted" text
+  And  the Salt master can reach "opensuse156arm_minion"
+

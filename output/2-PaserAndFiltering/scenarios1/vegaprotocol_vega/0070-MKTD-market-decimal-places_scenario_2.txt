@@ -1,0 +1,11 @@
+Scenario 2: 002: Users engage in a USD market auction, (0070-MKTD-003, 0070-MKTD-008)
+  Tags: ['@Liquidation']
+  Given  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  And  the markets are updated:
+  When  the opening auction period ends for market "ETH/MAR22"
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/MAR22"
+  And  the parties should have the following account balances:
+  And  the following trades should be executed:
+

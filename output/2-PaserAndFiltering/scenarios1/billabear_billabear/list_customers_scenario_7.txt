@@ -1,0 +1,8 @@
+Scenario 7: Reference filter
+  When  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  the follow customers exist:
+  When  I use the site to list customers with parameter "reference" with value "One"
+  Then  I should see in the site response with only 1 result in the data set
+  Then  I should see in the site response the customer "customer.one@example.org"
+  Then  I should not see in the site response the customer "customer.two@example.org"
+

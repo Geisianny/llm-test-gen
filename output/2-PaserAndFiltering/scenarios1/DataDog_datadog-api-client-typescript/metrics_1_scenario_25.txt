@@ -1,0 +1,11 @@
+Scenario 25: List distinct metric volumes by metric name returns "Success" response
+  Tags: ['@skip-validation', '@team:DataDog/metrics-experience']
+  Given  a valid "appKeyAuth" key in the system
+  And  there is a valid "metric_static" in the system
+  And  new "ListVolumesByMetricName" request
+  And  request contains "metric_name" parameter with value "static_test_metric_donotdelete"
+  When  the request is sent
+  Then  the response status is 200 Success
+  And  the response "data.type" is equal to "metric_volumes"
+  And  the response "data.id" is equal to "static_test_metric_donotdelete"
+

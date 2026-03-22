@@ -1,0 +1,9 @@
+Scenario 11: Delete an SLO returns "OK" response
+  Tags: ['@team:DataDog/slo-app']
+  Given  there is a valid "slo" in the system
+  And  new "DeleteSLO" request
+  And  request contains "slo_id" parameter from "slo.data[0].id"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data[0]" has the same value as "slo.data[0].id"
+

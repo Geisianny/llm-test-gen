@@ -1,0 +1,10 @@
+Scenario 7: 007: Offsets are calculated in market units, (0070-MKTD-007)
+  Tags: ['@SLABug']
+  Given  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  When  the network moves ahead "2" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "USD/DEC19"
+  When  the parties place the following pegged orders:
+  Then  the pegged orders should have the following states:
+

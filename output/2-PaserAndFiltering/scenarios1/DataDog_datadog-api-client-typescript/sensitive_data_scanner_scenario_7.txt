@@ -1,0 +1,8 @@
+Scenario 7: Delete Scanning Group returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/sensitive-data-scanner']
+  Given  new "DeleteScanningGroup" request
+  And  request contains "group_id" parameter from "REPLACE.ME"
+  And  body with value {"meta": {"version": 0}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

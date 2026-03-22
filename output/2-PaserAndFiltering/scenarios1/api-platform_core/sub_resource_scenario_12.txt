@@ -1,0 +1,8 @@
+Scenario 12: The recipient of the person's greetings should be empty
+  Given  there is a person named "Alice" greeting with a "hello" message
+  When  I send a "GET" request to "/people/1/sent_greetings"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+

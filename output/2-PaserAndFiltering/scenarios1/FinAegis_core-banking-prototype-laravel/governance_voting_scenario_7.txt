@@ -1,0 +1,7 @@
+Scenario 7: Voting power calculation
+  Given  I hold tokens in multiple accounts
+  When  I check my voting power
+  Then  it should aggregate across all my accounts
+  And  include any delegated voting power
+  And  exclude any locked or frozen tokens
+

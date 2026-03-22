@@ -1,0 +1,9 @@
+Scenario 5: Create an application key for current user returns "Created" response
+  Tags: ['@team:DataDog/credentials-management']
+  Given  new "CreateCurrentUserApplicationKey" request
+  And  body with value {"data": {"type": "application_keys", "attributes": {"name": "{{ unique }}"}}}
+  When  the request is sent
+  Then  the response status is 201 Created
+  And  the response "data.type" is equal to "application_keys"
+  And  the response "data.attributes.name" is equal to "{{ unique }}"
+

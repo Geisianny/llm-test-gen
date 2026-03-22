@@ -1,0 +1,6 @@
+Scenario 20: not provide button to create new event if I haven't permission
+  Given  the following users
+  Given  I am logged in as "josesilva"
+  When  I am on /profile/fudencio/events/2020/12/1
+  Then  I should not see "New events" link
+

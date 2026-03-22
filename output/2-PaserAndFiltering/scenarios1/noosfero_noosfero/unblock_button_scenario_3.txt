@@ -1,0 +1,5 @@
+Scenario 3: a not blocked enterprise should not show "Unblock" button
+  Given  I am logged in as admin
+  When  I am on sample-enterprise's homepage
+  Then  I should not see "Unblock"
+

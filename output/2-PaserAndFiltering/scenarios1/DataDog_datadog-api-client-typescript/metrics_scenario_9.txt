@@ -1,0 +1,12 @@
+Scenario 9: Query timeseries points returns "OK" response
+  Tags: ['@team:DataDog/metrics-experience', '@team:DataDog/metrics-index', '@team:DataDog/metrics-intake', '@team:DataDog/timeseries-query']
+  Given  a valid "appKeyAuth" key in the system
+  And  new "QueryMetrics" request
+  And  request contains "from" parameter with value {{ timestamp("now - 1d") }}
+  And  request contains "to" parameter with value {{ timestamp("now") }}
+  And  request contains "query" parameter with value "system.cpu.idle{*}"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "status" is equal to "ok"
+  And  the response "query" is equal to "system.cpu.idle{*}"
+

@@ -1,0 +1,20 @@
+Scenario 14: Add/edit/remove domains
+  Given  the following BingV7 Affiliates exist:
+  And  I am logged in with email "john@agency.gov"
+  When  I go to the agency.gov's Manage Content page
+  And  I follow "Domains" within the Admin Center content
+  And  I follow "Add Domain"
+  Then  I should find "Leave off www to include all subdomains." in "form tooltip"
+  When  I fill in "Domain" with "usa.gov"
+  And  I submit the form by pressing "Add"
+  Then  I should see "You have added usa.gov to this site"
+  When  I go to the agency.gov's Manage Content page
+  Then  the "Discover and add the RSS feeds and social media accounts listed on the following page:" field should contain "http://usa.gov"
+  When  I follow "Domains" within the Admin Center content
+  And  I follow "Edit"
+  And  I fill in "Domain" with "gobiernousa.gov"
+  And  I submit the form by pressing "Save"
+  Then  I should see "You have updated gobiernousa.gov"
+  When  I press "Remove" and confirm "Are you sure you wish to remove gobiernousa.gov from this site?"
+  Then  I should see "You have removed gobiernousa.gov from this site"
+

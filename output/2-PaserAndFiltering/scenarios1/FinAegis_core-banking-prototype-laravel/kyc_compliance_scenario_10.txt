@@ -1,0 +1,7 @@
+Scenario 10: Data privacy and GDPR compliance
+  Given  I request my personal data export
+  When  the system processes my GDPR request
+  Then  all my data should be compiled
+  And  delivered in machine-readable format
+  And  the request should be completed within 30 days
+

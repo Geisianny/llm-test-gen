@@ -1,0 +1,4 @@
+Scenario: Locate a record using helpers
+  Given there is an existing partner with the name "Test Partner"
+  When the user searches for the partner using the helper "partner_name"
+  Then the system locates the partner successfully

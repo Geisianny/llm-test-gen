@@ -1,0 +1,4 @@
+Scenario: Browse tracked product variants with no items
+  Given there are no tracked product variants in the inventory
+  When the administrator accesses the inventory browser
+  Then the system displays a message indicating that there are no tracked product variants

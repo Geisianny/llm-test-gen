@@ -1,0 +1,9 @@
+Scenario 28: Get Custom Costs File returns "OK" response
+  Tags: ['@replay-only', '@team:DataDog/cloud-cost-management']
+  Given  new "GetCustomCostsFile" request
+  And  request contains "file_id" parameter with value "9d055d22-a838-4e9f-bc34-a4f9ab66280c"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.attributes.name" is equal to "data.json"
+  And  the response "data.attributes.content[0].ChargeDescription" is equal to "my_description"
+

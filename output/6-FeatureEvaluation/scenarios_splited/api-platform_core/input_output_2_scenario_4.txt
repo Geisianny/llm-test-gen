@@ -1,0 +1,6 @@
+Scenario: Missing content header for DTO
+  Given there is a registered user with the email "user@example.com"
+  When the client sends a password reset request with the email "user@example.com"
+  And omits the content header
+  Then the system returns a 415 status code
+  And includes an error message indicating unsupported media type

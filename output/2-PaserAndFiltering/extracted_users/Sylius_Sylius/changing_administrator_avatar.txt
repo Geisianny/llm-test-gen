@@ -1,0 +1,16 @@
+Feature: Changing an administrator's avatar
+Description: In order to always have an actual photo
+    As an Administrator
+    I want to be able to update an avatar of an existing administrator
+Tags: ['@managing_administrators']
+
+Background: 
+  Given  I am logged in as an administrator
+
+Scenario 1: Changing an avatar of an administrator
+  Tags: ['@api', '@ui']
+  Given  I have the "ford.jpg" image as my avatar
+  And  I am editing my details
+  When  I update the "troll.jpg" image as my avatar
+  Then  I should see the "troll.jpg" image as my avatar
+

@@ -1,0 +1,6 @@
+Scenario 32: List GCP scan options returns "OK" response
+  Tags: ['@team:DataDog/k9-agentless']
+  Given  new "ListGcpScanOptions" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

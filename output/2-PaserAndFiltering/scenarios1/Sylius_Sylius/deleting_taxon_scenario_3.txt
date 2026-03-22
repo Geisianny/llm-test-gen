@@ -1,0 +1,7 @@
+Scenario 3: Being unable to delete a menu taxon of a channel
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  Given  the store classifies its products as "T-Shirts" and "Caps"
+  And  channel "Web Store" has menu taxon "Caps"
+  When  I try to delete taxon named "Caps"
+  Then  I should be notified that I cannot delete a menu taxon of any channel
+

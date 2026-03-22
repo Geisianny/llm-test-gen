@@ -1,0 +1,13 @@
+Scenario 2: Patches left menu
+  When  I follow the left menu "Patches > Patch List > Relevant"
+  Then  I should see a "Patches Relevant to Your Systems" text
+  And  I should see a "Relevant" link in the left menu
+  And  I should see a "All" link in the left menu
+  And  I should see a "Advanced Search" link in the left menu
+  And  I should see a "Manage Patches" link in the left menu
+  And  I should see a "Clone Patches" link in the left menu
+  And  I should see a "Bugfix Patches" link
+  And  I should see a "Enhancement Patches" link
+  And  I should see a "Security Patches" link
+  And  I should see a Sign Out link
+

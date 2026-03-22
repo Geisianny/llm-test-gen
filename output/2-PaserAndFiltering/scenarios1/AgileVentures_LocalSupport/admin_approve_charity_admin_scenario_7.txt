@@ -1,0 +1,6 @@
+Scenario 7: As a superadmin attempting self-deletion
+  Given  I am signed in as a superadmin
+  When  I delete "superadmin@myorg.com"
+  Then  I should see "You may not destroy your own account!"
+  Then  user "superadmin@myorg.com" is not deleted
+

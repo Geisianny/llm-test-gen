@@ -1,0 +1,5 @@
+Scenario 2: Seeing disabled type field while adding a integer product attribute
+  Tags: ['@no-api', '@ui']
+  When  I want to create a new integer product attribute
+  Then  the type field should be disabled
+

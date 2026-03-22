@@ -1,0 +1,8 @@
+Scenario 2: Search for a non-existent Entity
+  When  I navigate the menu and select the item at "Contacts > Search"
+  Then  I should see the Contact Search screen
+  When  I enter "A non-existent name" into the "Name" field
+  And  I press "Search"
+  Then  I should see the Contact Search Report screen
+  And  I expect the report to contain 0 rows
+

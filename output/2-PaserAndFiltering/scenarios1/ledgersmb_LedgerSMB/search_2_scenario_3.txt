@@ -1,0 +1,10 @@
+Scenario 3: Search by date, specifying only end date
+  When  I navigate the menu and select the item at "Accounts Payable > Search"
+  Then  I should see the AP search screen
+  When  I enter "2025-01-01" into "To"
+  And  I press "Continue"
+  Then  I should see the Search AP Report screen
+  And  I expect the report to contain 2 rows
+  And  I expect the 'Date' report column to contain '2024-12-01' for Invoice 'INV100'
+  And  I expect the 'Date' report column to contain '2025-01-01' for Invoice 'INV101'
+

@@ -1,0 +1,5 @@
+Scenario: Search listing by location
+  Given there are listings available in different locations
+  When the user searches for listings in "Paris"
+  Then the system displays listings available in "Paris"
+  And the listings are relevant to the search location

@@ -1,0 +1,18 @@
+Scenario 2: Validate a confirmed sale order
+  Given  I have recorded on the 1 jan 2009 a sale order of 1000,0 CHF without tax called MySimpleSO
+  And  change the shipping policy to 'Shipping & Manual Invoice'
+  When  I press the confirm button
+  Then  I should see the sale order MySimpleSO manual in progress
+  And  the total amount = 1000,0
+  When  I press the create invoice button from SO
+  Then  I should see the sale order MySimpleSO in progress
+  And  I should have a related draft invoice created
+  Given  I take the related invoice
+  And  change the description for SORelatedAccountCheck and the date to 1 jan 2009
+  When  I press the validate button
+  Then  I should see the invoice SORelatedAccountCheck open
+  Given  I take the related invoice
+  Then  I should have a linked account move with 2 lines and a posted status
+  And  the associated credit account move line should use the account choosen in the invoice line and have the following values:
+  And  the associated debit account move line should use the account of the partner account payable property and have the following values:
+

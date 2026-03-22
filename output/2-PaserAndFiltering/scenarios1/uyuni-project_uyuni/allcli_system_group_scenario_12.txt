@@ -1,0 +1,13 @@
+Scenario 12: Delete a package from systems in the SSM
+  Tags: ['@skip_if_github_validation']
+  When  I follow the left menu "Systems > System Set Manager > Overview"
+  And  I follow "Packages"
+  And  I follow "Remove"
+  And  I wait until I see "andromeda-dummy-2.0-1.1" text, refreshing the page
+  And  I enter "virgo-dummy" as the filtered package name
+  And  I click on the filter button
+  And  I check "virgo-dummy-2.0-1.1" in the list
+  And  I click on "Remove Packages"
+  And  I click on "Confirm"
+  Then  I should see a "Package removals are being scheduled, it may take several minutes for this to complete." text
+

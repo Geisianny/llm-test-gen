@@ -1,0 +1,5 @@
+Scenario: Filter collection with numerical value and property converter
+  Given there is a collection of resources with numerical properties and a property converter
+  When the client requests the collection with a filter by numerical value "10" using the property converter
+  Then the system returns a JSON-LD response with the filtered collection
+  And the response includes the correct pagination metadata

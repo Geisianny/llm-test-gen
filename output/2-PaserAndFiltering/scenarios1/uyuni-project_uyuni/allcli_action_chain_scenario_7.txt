@@ -1,0 +1,24 @@
+Scenario 7: Add an action chain using system set manager for SSH minion and SLE minion
+  When  I follow the left menu "Systems > System List > All"
+  And  I check the "sle_minion" client
+  And  I check the "ssh_minion" client
+  And  I follow the left menu "Systems > System Set Manager > Overview"
+  And  I follow "Install" in the content area
+  And  I follow "Fake-RPM-SUSE-Channel" in the content area
+  And  I enter "andromeda-dummy" as the filtered package name
+  And  I click on the filter button
+  And  I check "andromeda-dummy" in the list
+  And  I click on "Install Packages"
+  Then  I should see "sle_minion" hostname
+  And  I should see "ssh_minion" hostname
+  When  I check radio button "schedule-by-action-chain"
+  And  I click on "Confirm"
+  Then  I should see a "Package installations are being scheduled" text
+  When  I follow the left menu "Systems > System Set Manager > Overview"
+  And  I follow "remote commands" in the content area
+  And  I enter as remote command this script in
+  And  I check radio button "schedule-by-action-chain"
+  And  I click on "Schedule"
+  Then  I should see "sle_minion" hostname
+  And  I should see "ssh_minion" hostname
+

@@ -1,0 +1,14 @@
+Scenario Outline 7: A user saves an address on mainnet and should not see that saved address on Goreli - Example 1
+  Given  I navigate to the main wallet view from Send screen
+  And  I tap on the navbar network title button
+  And  I tap on button with text "Goerli Test Network"
+  And  I tap on button with text "Got it"
+  Then  I should see the added network name "Goerli Test Network" in the top navigation bar
+  And  I tap on the Settings tab option
+  And  In settings I tap on "Contacts"
+  Then  I should not see "Birdis" appear in the contact list
+
+  Examples:
+    | ContactName |
+    | Birdis |
+

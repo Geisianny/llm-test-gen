@@ -1,0 +1,128 @@
+Feature: Pricing rules set
+
+Scenario 1: Delete pricing rule set fails if store then succeed if store is deleted
+  Given  the fixtures files are loaded:
+  And  the user "admin" is loaded:
+  And  the user "admin" has role "ROLE_ADMIN"
+  And  the user "admin" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "admin" sends a "DELETE" request to "/api/pricing_rule_sets/1"
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the JSON should match:
+  And  the user "admin" sends a "DELETE" request to "/api/stores/1"
+  And  the user "admin" sends a "DELETE" request to "/api/pricing_rule_sets/1"
+  Then  the response status code should be 204
+
+Scenario 2: Delete pricing rule set fails if restaurant then succeed if restaurant is deleted
+  Given  the fixtures files are loaded:
+  And  the user "admin" is loaded:
+  And  the user "admin" has role "ROLE_ADMIN"
+  And  the user "admin" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "admin" sends a "DELETE" request to "/api/pricing_rule_sets/1"
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the JSON should match:
+  And  the user "admin" sends a "DELETE" request to "/api/restaurants/7"
+  And  the user "admin" sends a "DELETE" request to "/api/pricing_rule_sets/1"
+  Then  the response status code should be 204
+
+Scenario 3: Get the applications of a pricing rule set
+  Given  the fixtures files are loaded:
+  And  the user "admin" is loaded:
+  And  the user "admin" has role "ROLE_ADMIN"
+  And  the user "admin" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "admin" sends a "GET" request to "/api/pricing_rule_sets/1/applications"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 4: Create pricing rule set with rules without names
+  Given  the fixtures files are loaded:
+  Given  the user "admin" is loaded:
+  And  the user "admin" has role "ROLE_ADMIN"
+  And  the user "admin" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "admin" sends a "POST" request to "/api/pricing_rule_sets" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 5: Create pricing rule set with rules containing names
+  Given  the fixtures files are loaded:
+  Given  the user "admin" is loaded:
+  And  the user "admin" has role "ROLE_ADMIN"
+  And  the user "admin" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "admin" sends a "POST" request to "/api/pricing_rule_sets" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 6: Create pricing rule set with mixed rules (some with names, some without)
+  Given  the fixtures files are loaded:
+  Given  the user "admin" is loaded:
+  And  the user "admin" has role "ROLE_ADMIN"
+  And  the user "admin" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "admin" sends a "POST" request to "/api/pricing_rule_sets" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 7: Create pricing rule set with empty name should not create ProductOption
+  Given  the fixtures files are loaded:
+  Given  the user "admin" is loaded:
+  And  the user "admin" has role "ROLE_ADMIN"
+  And  the user "admin" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "admin" sends a "POST" request to "/api/pricing_rule_sets" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 8: Remove a rule from a pricing rule set
+  Given  the fixtures files are loaded:
+  And  the user "admin" is loaded:
+  And  the user "admin" has role "ROLE_ADMIN"
+  And  the user "admin" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "admin" sends a "PUT" request to "/api/pricing_rule_sets/1" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 9: Add a rule to a pricing rule set
+  Given  the fixtures files are loaded:
+  And  the user "admin" is loaded:
+  And  the user "admin" has role "ROLE_ADMIN"
+  And  the user "admin" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "admin" sends a "PUT" request to "/api/pricing_rule_sets/1" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 10: Update pricing rule set should update the rules names
+  Given  the fixtures files are loaded:
+  And  the user "admin" is loaded:
+  And  the user "admin" has role "ROLE_ADMIN"
+  And  the user "admin" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "admin" sends a "PUT" request to "/api/pricing_rule_sets/1" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+

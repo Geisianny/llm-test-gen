@@ -1,0 +1,9 @@
+Scenario 5: Several invalid access code should not loose url
+  Given  the provider has site access code "foobar"
+  When  the current domain is foo.3scale.localhost
+  And  I go to the dashboard page
+  And  I enter "a wrongcode" as access code
+  And  I enter "a wrongcode" as access code
+  And  I enter "foobar" as access code
+  Then  I should not be in the access code page
+

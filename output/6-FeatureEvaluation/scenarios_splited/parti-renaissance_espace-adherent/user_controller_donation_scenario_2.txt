@@ -1,0 +1,5 @@
+Scenario: Display multiple active donations
+  Given there is a logged-in adherent with multiple active donations
+  When the adherent views their account profile
+  Then the system displays all active donations
+  And shows the respective upcoming due dates

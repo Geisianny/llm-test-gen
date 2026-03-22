@@ -1,0 +1,6 @@
+Scenario 5: Create dummy profiles in the Cobbler buildiso context
+  Given  distro "buildisodistro" exists
+  When  I create profile "orchid" for distro "buildisodistro"
+  And  I create profile "flame" for distro "buildisodistro"
+  And  I create profile "pearl" for distro "buildisodistro"
+

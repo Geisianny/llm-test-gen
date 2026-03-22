@@ -1,0 +1,6 @@
+Scenario: View chart of accounts
+  Given the user is logged into LedgerSMB
+  And the chart of accounts is populated with accounts and headings
+  When the user navigates to the chart of accounts page
+  Then the system displays the chart of accounts
+  And includes all accounts and headings with their respective details

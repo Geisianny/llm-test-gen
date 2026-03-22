@@ -1,0 +1,6 @@
+Scenario 2: Seeing payment status after it's paid
+  Tags: ['@ui', '@api']
+  Given  the order "#00000666" is already paid
+  When  I view the summary of my order "#00000666"
+  And  I should see its payment status as "Completed"
+

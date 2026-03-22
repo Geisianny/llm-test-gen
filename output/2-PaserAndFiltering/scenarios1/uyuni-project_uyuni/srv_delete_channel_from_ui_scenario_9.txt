@@ -1,0 +1,9 @@
+Scenario 9: Cleanup: remove cloned parent channel
+  When  I follow the left menu "Software > Manage > Channels"
+  And  I follow "Clone of Fake-Base-Channel-SUSE-like"
+  And  I follow "Delete Channel"
+  And  I check "unsubscribeSystems"
+  And  I click on "Delete Channel"
+  Then  I should see a "Clone of Fake-Base-Channel-SUSE-like" text
+  And  I should see a "has been deleted." text
+

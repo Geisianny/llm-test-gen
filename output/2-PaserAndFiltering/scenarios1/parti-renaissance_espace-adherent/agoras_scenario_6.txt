@@ -1,0 +1,5 @@
+Scenario 6: As a logged-in adherent I can not join an unpublished Agora
+  Given  I am logged with "luciole1989@spambox.fr" via OAuth client "JeMengage Mobile" with scope "jemarche_app"
+  When  I send a "POST" request to "/api/v3/agoras/c3d0fb57-1ce9-441a-9978-8445fc01fa5c/join"
+  Then  the response status code should be 404
+

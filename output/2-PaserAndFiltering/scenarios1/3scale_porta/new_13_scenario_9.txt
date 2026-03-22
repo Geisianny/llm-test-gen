@@ -1,0 +1,12 @@
+Scenario 9: Submit button should be disabled until form is filled
+  Given  they go to the admin portal new application page
+  And  the submit button is disabled
+  When  they select "Jane" from "Account"
+  And  the submit button is disabled
+  When  they select "My API" from "Product"
+  And  the submit button is disabled
+  And  select "Basic" from "Application plan"
+  And  the submit button is disabled
+  And  fill in "Name" with "Name"
+  Then  the submit button is enabled
+

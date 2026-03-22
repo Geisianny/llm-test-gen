@@ -1,0 +1,8 @@
+Scenario 3: Editing promotion exclusiveness
+  Tags: ['@ui']
+  Given  I want to modify a "Christmas sale" promotion
+  When  I make it exclusive
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  the "Christmas sale" promotion should be exclusive
+

@@ -1,0 +1,7 @@
+Scenario 20: List all available Agent versions returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "ListFleetAgentVersions" enabled
+  And  new "ListFleetAgentVersions" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

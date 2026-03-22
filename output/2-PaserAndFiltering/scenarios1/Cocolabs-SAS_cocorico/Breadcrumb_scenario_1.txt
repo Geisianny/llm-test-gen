@@ -1,0 +1,52 @@
+Scenario 1: Check main tabs breadcrumb as offerer
+  Given  I am logged in as user "offerer@cocorico.rocks" with password "12345678"
+  When  I click on dashboard menu "Messages" of "offerer"
+  Then  I should see "Home" in the "ul.breadcrumb" element
+  And  I should see "Offerer" in the "ul.breadcrumb" element
+  And  I should see "Messages" in the "ul.breadcrumb" element
+  When  I click on dashboard menu "Bookings" of "offerer"
+  And  I wait 500 ms for Jquery loading
+  Then  I should see "Home" in the "ul.breadcrumb" element
+  And  I should see "Offerer" in the "ul.breadcrumb" element
+  And  I should see "Bookings" in the "ul.breadcrumb" element
+  When  I click on dashboard menu "Listings" of "offerer"
+  And  I wait 500 ms for Jquery loading
+  Then  I should see "Home" in the "ul.breadcrumb" element
+  And  I should see "Offerer" in the "ul.breadcrumb" element
+  And  I should see "Listing" in the "ul.breadcrumb" element
+  When  I click on dashboard menu "Payments" of "offerer"
+  And  I wait 500 ms for Jquery loading
+  Then  I should see "Home" in the "ul.breadcrumb" element
+  And  I should see "Offerer" in the "ul.breadcrumb" element
+  And  I should see "Payments" in the "ul.breadcrumb" element
+  When  I click on dashboard menu "Comments" of "offerer"
+  And  I wait 500 ms for Jquery loading
+  Then  I should see "Home" in the "ul.breadcrumb" element
+  And  I should see "Offerer" in the "ul.breadcrumb" element
+  And  I should see "Comments" in the "ul.breadcrumb" element
+  And  I should see "Rating Received" in the "ul.breadcrumb" element
+  When  I click on the element with css selector ".form-radio span.jcf-unchecked"
+  And  I wait 500 ms for Jquery loading
+  Then  I should see "Home" in the "ul.breadcrumb" element
+  And  I should see "Offerer" in the "ul.breadcrumb" element
+  And  I should see "Comments" in the "ul.breadcrumb" element
+  And  I should see "Rating Made" in the "ul.breadcrumb" element
+  When  I click on dashboard menu "Profile" of "offerer"
+  And  I wait 500 ms for Jquery loading
+  Then  I should see "Home" in the "ul.breadcrumb" element
+  And  I should see "Offerer" in the "ul.breadcrumb" element
+  And  I should see "Profile" in the "ul.breadcrumb" element
+  And  I should see "About me" in the "ul.breadcrumb" element
+  When  I follow "Payment information"
+  And  I wait 500 ms for Jquery loading
+  Then  I should see "Home" in the "ul.breadcrumb" element
+  And  I should see "Offerer" in the "ul.breadcrumb" element
+  And  I should see "Profile" in the "ul.breadcrumb" element
+  And  I should see "Payment information" in the "ul.breadcrumb" element
+  When  I follow "Contact information"
+  And  I wait 500 ms for Jquery loading
+  Then  I should see "Home" in the "ul.breadcrumb" element
+  And  I should see "Offerer" in the "ul.breadcrumb" element
+  And  I should see "Profile" in the "ul.breadcrumb" element
+  And  I should see "Contact information" in the "ul.breadcrumb" element
+

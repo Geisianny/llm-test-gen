@@ -1,0 +1,7 @@
+Scenario 7: Get a notebook returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/notebooks']
+  Given  new "GetNotebook" request
+  And  request contains "notebook_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

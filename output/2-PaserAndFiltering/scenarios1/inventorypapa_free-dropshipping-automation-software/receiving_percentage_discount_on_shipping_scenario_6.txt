@@ -1,0 +1,9 @@
+Scenario 6: Still receiving free shipping after removing the product from the cart
+  Tags: ['@ui', '@api']
+  Given  the promotion gives free shipping to every order over "$70.00"
+  When  I add product "PHP Mug" to the cart
+  And  I add product "PHP T-Shirt" to the cart
+  And  I remove product "PHP Mug" from the cart
+  Then  my cart total should be "$100.00"
+  And  my cart shipping total should be "$0.00"
+

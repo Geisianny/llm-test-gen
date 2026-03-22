@@ -1,0 +1,18 @@
+Feature: Securing access to the administration panel after using the back button after logging out
+Description: In order to have administration panel secured
+    As an Administrator
+    I want to be unable to access to the administration panel by using the back button after logging out
+Tags: ['@admin_dashboard']
+
+Background: 
+  Given  the store operates on a single channel in "United States"
+  And  I am logged in as an administrator
+
+Scenario 1: Securing access to administration dashboard after using the back button after logging out
+  Tags: ['@no-api', '@ui']
+  When  I am on the administration dashboard
+  And  I log out
+  And  I go back one page in the browser
+  Then  I should not see the administration dashboard
+  And  I should be on the login page
+

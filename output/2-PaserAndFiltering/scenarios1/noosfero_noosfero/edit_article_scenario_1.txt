@@ -1,0 +1,10 @@
+Scenario 1: create a folder
+  Given  I am on joaosilva's control panel
+  And  I follow "New" within "#section-content"
+  When  I follow "Folder"
+  And  I fill in "Title" with "My Folder"
+  And  I follow "Save"
+  And  I go to joaosilva's control panel
+  And  I follow "Manage" within "#section-content"
+  Then  I should see "My Folder"
+

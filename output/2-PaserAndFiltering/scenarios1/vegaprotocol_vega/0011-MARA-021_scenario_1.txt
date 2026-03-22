@@ -1,0 +1,8 @@
+Scenario 1: In Spot Market, if an order is partially filled then the holding requirements are recalculated reflecting the reduced order size. (0011-MARA-021)
+  Given  the parties place the following orders:
+  And  "party5" should have general account balance of "94" for asset "BTC"
+  And  "party5" should have holding account balance of "5" for asset "BTC"
+  When  the parties place the following orders:
+  Then  the orders should have the following status:
+  And  "party5" should have holding account balance of "4" for asset "BTC"
+

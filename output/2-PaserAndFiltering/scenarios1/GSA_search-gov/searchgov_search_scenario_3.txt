@@ -1,0 +1,10 @@
+Scenario 3: News search
+  Given  affiliate "epa" has the following RSS feeds:
+  And  feed "Press" has the following news items:
+  And  the rss govbox is enabled for the site "epa"
+  When  I am on epa's search page
+  And  I search for "exciting"
+  Then  I should see "exciting news"
+  When  I am on epa's "Press" news search page
+  Then  I should see "Refine your search"
+

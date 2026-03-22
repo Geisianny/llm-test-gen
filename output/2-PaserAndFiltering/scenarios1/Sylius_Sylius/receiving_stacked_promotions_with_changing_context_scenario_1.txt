@@ -1,0 +1,8 @@
+Scenario 1: Receiving only the "Holiday promotion"
+  Tags: ['@api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  When  I check the details of my cart
+  Then  my cart total should be "$70.00"
+  And  my discount should be "-$60.00"
+  And  my cart shipping total should be "$10.00"
+

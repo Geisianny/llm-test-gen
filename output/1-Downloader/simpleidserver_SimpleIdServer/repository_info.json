@@ -1,0 +1,535 @@
+{
+  "repository_name": "SimpleIdServer",
+  "repository_owner": "simpleidserver",
+  "repository_url": "https://github.com/simpleidserver/SimpleIdServer",
+  "visibility": "public",
+  "is_private": false,
+  "total_feature_files": 87,
+  "downloaded_files": 87,
+  "download_date": "2025-11-26 00:49:31",
+  "feature_files": [
+    {
+      "name": "Credential.feature",
+      "original_path": "tests/SimpleIdServer.CredentialIssuer.Host.Acceptance.Tests/Features/Credential.feature",
+      "size": 2048,
+      "sha": "5aca787789c1e5d00fb3fcd367b36ece3c52efbb"
+    },
+    {
+      "name": "CredentialErrors.feature",
+      "original_path": "tests/SimpleIdServer.CredentialIssuer.Host.Acceptance.Tests/Features/CredentialErrors.feature",
+      "size": 10192,
+      "sha": "bf1f4922019b25f772047fde1caccb2ec4acd2a2"
+    },
+    {
+      "name": "CredentialIssuer.feature",
+      "original_path": "tests/SimpleIdServer.CredentialIssuer.Host.Acceptance.Tests/Features/CredentialIssuer.feature",
+      "size": 1266,
+      "sha": "618f7074bc1fe3d871fa8bd24a5eee82b404566c"
+    },
+    {
+      "name": "CredentialOffer.feature",
+      "original_path": "tests/SimpleIdServer.CredentialIssuer.Host.Acceptance.Tests/Features/CredentialOffer.feature",
+      "size": 738,
+      "sha": "3006fce51e2261f48a64cafe2b8f3d2defae8c50"
+    },
+    {
+      "name": "CredentialOfferErrors.feature",
+      "original_path": "tests/SimpleIdServer.CredentialIssuer.Host.Acceptance.Tests/Features/CredentialOfferErrors.feature",
+      "size": 3061,
+      "sha": "89f7ef7bd509af3ed5e1840441acdc1bbb2a83dd"
+    },
+    {
+      "name": "DeferredCredentialErrors.feature",
+      "original_path": "tests/SimpleIdServer.CredentialIssuer.Host.Acceptance.Tests/Features/DeferredCredentialErrors.feature",
+      "size": 1231,
+      "sha": "5611f48b0f75e9d0cc94eddcde4af9403e699dec"
+    },
+    {
+      "name": "EndRegister.feature",
+      "original_path": "tests/SimpleIdServer.FastFed.Host.Acceptance.Tests/Features/AppProvider/EndRegister.feature",
+      "size": 77,
+      "sha": "a44804ba6bd66e871edf863ad68f1311d05725b4"
+    },
+    {
+      "name": "EndRegisterErrors.feature",
+      "original_path": "tests/SimpleIdServer.FastFed.Host.Acceptance.Tests/Features/AppProvider/EndRegisterErrors.feature",
+      "size": 3354,
+      "sha": "28e37868c0ffea56f4c160f0b89cc3ae1646bc00"
+    },
+    {
+      "name": "ProviderMetadata.feature",
+      "original_path": "tests/SimpleIdServer.FastFed.Host.Acceptance.Tests/Features/AppProvider/ProviderMetadata.feature",
+      "size": 1392,
+      "sha": "f01662440771b1b4fca5c664f5ffd35bb40792b6"
+    },
+    {
+      "name": "Whitelist.feature",
+      "original_path": "tests/SimpleIdServer.FastFed.Host.Acceptance.Tests/Features/AppProvider/Whitelist.feature",
+      "size": 460,
+      "sha": "d30fa572ee4a185c127cfe849b56cfde9037db02"
+    },
+    {
+      "name": "WhitelistErrors.feature",
+      "original_path": "tests/SimpleIdServer.FastFed.Host.Acceptance.Tests/Features/AppProvider/WhitelistErrors.feature",
+      "size": 3349,
+      "sha": "eab670b4f0cbb529fab1c1581857b1425b4b191e"
+    },
+    {
+      "name": "StartHandshake.feature",
+      "original_path": "tests/SimpleIdServer.FastFed.Host.Acceptance.Tests/Features/IdentityProvider/StartHandshake.feature",
+      "size": 76,
+      "sha": "3d4aa817dcdd0cf82eff49b1c33d73bdb2c03c62"
+    },
+    {
+      "name": "StartHandshakeErrors.feature",
+      "original_path": "tests/SimpleIdServer.FastFed.Host.Acceptance.Tests/Features/IdentityProvider/StartHandshakeErrors.feature",
+      "size": 2074,
+      "sha": "e912361b18db1963eba8fe8fd2284e7e9348f52f"
+    },
+    {
+      "name": "AuthenticationClassReferencesErrors.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/AuthenticationClassReferencesErrors.feature",
+      "size": 2304,
+      "sha": "db054034ef468489065684d25c3bb7fa259ad3ad"
+    },
+    {
+      "name": "AuthorizationErrors.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/AuthorizationErrors.feature",
+      "size": 32736,
+      "sha": "f65df3f787ebe0be21b9e2b497d5b45e32dc3983"
+    },
+    {
+      "name": "BCAuthorize.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/BCAuthorize.feature",
+      "size": 2628,
+      "sha": "0774646b0339d08bafd79ee2c350e7d671f084ac"
+    },
+    {
+      "name": "BCAuthorizeErrors.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/BCAuthorizeErrors.feature",
+      "size": 14268,
+      "sha": "e9b1bd6e31b37fdb5c1938526ded1ba0a2447bad"
+    },
+    {
+      "name": "BCCallbackErrors.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/BCCallbackErrors.feature",
+      "size": 1636,
+      "sha": "78b9a18efd5484699140ba4cd08c94d59e989a56"
+    },
+    {
+      "name": "ClientAuthenticationErrors.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/ClientAuths/ClientAuthenticationErrors.feature",
+      "size": 3762,
+      "sha": "2bd76a5e5168236493e4cd9950519f912bc7c7aa"
+    },
+    {
+      "name": "ClientPkceAuthenticationErrors.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/ClientAuths/ClientPkceAuthenticationErrors.feature",
+      "size": 3469,
+      "sha": "d858db6c64ac25ff3c7405176e890192a0cf6b6f"
+    },
+    {
+      "name": "ClientPrivateKeyJwtAuthenticationErrors.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/ClientAuths/ClientPrivateKeyJwtAuthenticationErrors.feature",
+      "size": 5698,
+      "sha": "b306784b52e9b913a3a4ac07c3896418df869ebc"
+    },
+    {
+      "name": "ClientSecretJwtAuthenticationErrors.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/ClientAuths/ClientSecretJwtAuthenticationErrors.feature",
+      "size": 7002,
+      "sha": "a5cfabb97fc7a6a363cf132176b6649c4954cb26"
+    },
+    {
+      "name": "ClientSelfSignedTlsAuthenticationErrors.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/ClientAuths/ClientSelfSignedTlsAuthenticationErrors.feature",
+      "size": 1180,
+      "sha": "5b156f142d1121b25e56e71e0a9dab3d6e787af3"
+    },
+    {
+      "name": "ClientTlsAuthenticationErrors.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/ClientAuths/ClientTlsAuthenticationErrors.feature",
+      "size": 1154,
+      "sha": "59130e3914c1bee267ab6b940495635e045fa403"
+    },
+    {
+      "name": "HappyFlow.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/ClientAuths/HappyFlow.feature",
+      "size": 605,
+      "sha": "19bae07a73d6e1b6e6d8af8fd2ab7c6cfab3415a"
+    },
+    {
+      "name": "DPOPErrors.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/DPOPErrors.feature",
+      "size": 5556,
+      "sha": "95ff71c1b12efbb966b4f60bba94afbb94a9e3f6"
+    },
+    {
+      "name": "DeviceAuthorization.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/DeviceAuthorization.feature",
+      "size": 571,
+      "sha": "a79557c9d4ab3537cb9461c04f8e8606c0acf55e"
+    },
+    {
+      "name": "DeviceAuthorizationErrors.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/DeviceAuthorizationErrors.feature",
+      "size": 1128,
+      "sha": "450f0800b1a095616304b0324c12cb57d44acd51"
+    },
+    {
+      "name": "AutomaticRegistration.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/Federations/AutomaticRegistration.feature",
+      "size": 3836,
+      "sha": "0972a9a53e4b87c7c4013920fbf63cd9b7653f6d"
+    },
+    {
+      "name": "ExplicitRegistration.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/Federations/ExplicitRegistration.feature",
+      "size": 619,
+      "sha": "21fe059556627b10757ce4f190957e966e3e678c"
+    },
+    {
+      "name": "ExplicitRegistrationErrors.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/Federations/ExplicitRegistrationErrors.feature",
+      "size": 2988,
+      "sha": "97c7a52669dd892f60fab018dd6a055a699585d2"
+    },
+    {
+      "name": "FederationFetch.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/Federations/FederationFetch.feature",
+      "size": 373,
+      "sha": "b5edc6413b044d1398c05ad8d573fc16e276ea7e"
+    },
+    {
+      "name": "FederationFetchErrors.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/Federations/FederationFetchErrors.feature",
+      "size": 1046,
+      "sha": "59d3757f115f93025a310d1227508cc575ad704a"
+    },
+    {
+      "name": "FederationList.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/Federations/FederationList.feature",
+      "size": 278,
+      "sha": "0d961a7297e62cd48aa68463ba361e3d90a3aa5e"
+    },
+    {
+      "name": "OpenidFederation.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/Federations/OpenidFederation.feature",
+      "size": 437,
+      "sha": "27d3278a03c8bc03a73112ab6bf63c35db462a68"
+    },
+    {
+      "name": "GrantErrors.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/GrantErrors.feature",
+      "size": 3190,
+      "sha": "22d5c0f5b1c6133fa99127cab15a97a73185cad8"
+    },
+    {
+      "name": "AlternativeScenarios.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/GrantTypes/AlternativeScenarios.feature",
+      "size": 4993,
+      "sha": "7b0ad5c9d75d0dc3b1cca8f953ca755f4a82e423"
+    },
+    {
+      "name": "AuthorizationCodeGrantType.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/GrantTypes/AuthorizationCodeGrantType.feature",
+      "size": 10136,
+      "sha": "ab827062c5b5d9a93e1979bab2c9c6d6df4cb0c6"
+    },
+    {
+      "name": "AuthorizationCodeGrantTypeErrors.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/GrantTypes/AuthorizationCodeGrantTypeErrors.feature",
+      "size": 8650,
+      "sha": "480d24055726b13b2893f2e133d3faa1b322fdbe"
+    },
+    {
+      "name": "CIBAGrantTypeErrors.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/GrantTypes/CIBAGrantTypeErrors.feature",
+      "size": 5911,
+      "sha": "8ef0240f6ffc18ede20b6708f0a274f37d33474d"
+    },
+    {
+      "name": "ClientCredentialsGrantTypeErrors.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/GrantTypes/ClientCredentialsGrantTypeErrors.feature",
+      "size": 1080,
+      "sha": "01df193886d416172f27edc677c40a176a30b264"
+    },
+    {
+      "name": "DeviceAuthorizationGrantTypeErrors.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/GrantTypes/DeviceAuthorizationGrantTypeErrors.feature",
+      "size": 4187,
+      "sha": "68ba7839d03d7efdc3b5bfb6b975479e0645e25e"
+    },
+    {
+      "name": "HappyFlows.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/GrantTypes/HappyFlows.feature",
+      "size": 29430,
+      "sha": "3c83e756d50f46791fca346c7c07eef2c2535b06"
+    },
+    {
+      "name": "ImplicitGrantType.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/GrantTypes/ImplicitGrantType.feature",
+      "size": 5622,
+      "sha": "3da775702c0c6d227712639c6e29601efdb84b61"
+    },
+    {
+      "name": "PasswordGrantTypeErrors.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/GrantTypes/PasswordGrantTypeErrors.feature",
+      "size": 3834,
+      "sha": "50f1ffccb33b377e0abbadb6135aaa447f7b05b6"
+    },
+    {
+      "name": "PreAuthorizedCodeErrors.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/GrantTypes/PreAuthorizedCodeErrors.feature",
+      "size": 3193,
+      "sha": "df86714b9d517732d20cd51b73e8292b2c3fae0e"
+    },
+    {
+      "name": "RefreshTokenGrantType.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/GrantTypes/RefreshTokenGrantType.feature",
+      "size": 3711,
+      "sha": "32427792b092c79e326ab8af560f07b0ff31911a"
+    },
+    {
+      "name": "RefreshTokenGrantTypeErrors.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/GrantTypes/RefreshTokenGrantTypeErrors.feature",
+      "size": 5587,
+      "sha": "f24014f13d7682e8479973e10ae41f63c256bc52"
+    },
+    {
+      "name": "TokenExchangeGrantTypeErrors.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/GrantTypes/TokenExchangeGrantTypeErrors.feature",
+      "size": 4900,
+      "sha": "b46653b403a624dc428359815e929572fb25b86b"
+    },
+    {
+      "name": "TokenExchangePreAuthorizedCodeErrors.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/GrantTypes/TokenExchangePreAuthorizedCodeErrors.feature",
+      "size": 7990,
+      "sha": "c4ac8c87c866eaff36a3da89dcda5f77883f634d"
+    },
+    {
+      "name": "UMAGrantTypeErrors.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/GrantTypes/UMAGrantTypeErrors.feature",
+      "size": 15065,
+      "sha": "e97d998ebabf3662366e4516a23d47339d3b79a5"
+    },
+    {
+      "name": "Grants.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/Grants.feature",
+      "size": 19414,
+      "sha": "13ad9520d9bb3252e911cda2274525380044f9f3"
+    },
+    {
+      "name": "IdServerConfiguration.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/IdServerConfiguration.feature",
+      "size": 327,
+      "sha": "343fcdda49fa342047853f9b9900e602c4604b4e"
+    },
+    {
+      "name": "IdTokenSignatureAndOrEncryption.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/IdTokenSignatureAndOrEncryption.feature",
+      "size": 14049,
+      "sha": "7c4da3bbee989c6546af4042afd983b73e2fc854"
+    },
+    {
+      "name": "Introspect.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/Introspect.feature",
+      "size": 3884,
+      "sha": "1969fce2c51d14f3b9218c40cf7bbca683f77738"
+    },
+    {
+      "name": "IntrospectErrors.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/IntrospectErrors.feature",
+      "size": 384,
+      "sha": "db775bc3f0c2d7b3e289056362a8a9afc1789612"
+    },
+    {
+      "name": "Jwks.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/Jwks.feature",
+      "size": 231,
+      "sha": "9cde3cd999ce34a069a6e5df1f19c09438c648bc"
+    },
+    {
+      "name": "OAUTHConfiguration.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/OAUTHConfiguration.feature",
+      "size": 2002,
+      "sha": "baba2049a76cbf9bdcdee32d451dcd7d49238229"
+    },
+    {
+      "name": "OpenIdConfiguration.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/OpenIdConfiguration.feature",
+      "size": 544,
+      "sha": "0fc7e2b601b1082a5c0df80007e9f10f4f857526"
+    },
+    {
+      "name": "PushedAuthorizationRequestErrors.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/PushedAuthorizationRequestErrors.feature",
+      "size": 9860,
+      "sha": "841640ae1e64a5072a225d13f0ecd9d67fc8c8e7"
+    },
+    {
+      "name": "Register.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/Register.feature",
+      "size": 7345,
+      "sha": "c7bd57092d4dddde994ad228036fb1b5974032ca"
+    },
+    {
+      "name": "RegisterErrors.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/RegisterErrors.feature",
+      "size": 19129,
+      "sha": "f28fecc3f9347e4c54f21cbbc8fdd63bfe0b1875"
+    },
+    {
+      "name": "RequestObject.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/RequestObject.feature",
+      "size": 2812,
+      "sha": "5dbfb4237e69f9bddad580d86b9a5fa295d5eb84"
+    },
+    {
+      "name": "ResponseModes.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/ResponseModes.feature",
+      "size": 754,
+      "sha": "2536e6de2bfe2dec34ce4343cf79fd6d99122c06"
+    },
+    {
+      "name": "RevokeToken.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/RevokeToken.feature",
+      "size": 747,
+      "sha": "13bb34bff8151a09b222d0e0f194dc74e0063416"
+    },
+    {
+      "name": "RevokeTokenErrors.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/RevokeTokenErrors.feature",
+      "size": 782,
+      "sha": "34aeacbbe2cad573813af132dd25fd5481fbb391"
+    },
+    {
+      "name": "SubjectType.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/SubjectType.feature",
+      "size": 732,
+      "sha": "f0c05f8926e5b65c4997ab478ed996ffde91a8e7"
+    },
+    {
+      "name": "TokenErrors.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/TokenErrors.feature",
+      "size": 1660,
+      "sha": "5abce06fdc7b9df48eb381d746b7a7c6d906e873"
+    },
+    {
+      "name": "UMAPermissions.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/UMAPermissions.feature",
+      "size": 1350,
+      "sha": "5179dd734bb6cba0f98c1f816cc02dff4418b1c3"
+    },
+    {
+      "name": "UMAPermissionsErrors.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/UMAPermissionsErrors.feature",
+      "size": 3325,
+      "sha": "561a4e2481e5af8528729ff80259831d7acd84f5"
+    },
+    {
+      "name": "UMAResource.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/UMAResource.feature",
+      "size": 6626,
+      "sha": "4fddba235e784915f000e165a583cbbbcd64ac97"
+    },
+    {
+      "name": "UMAResourceErrors.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/UMAResourceErrors.feature",
+      "size": 7756,
+      "sha": "4e49200c357df8230a00dae023546badfe5a85cf"
+    },
+    {
+      "name": "UserInfo.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/UserInfo.feature",
+      "size": 9258,
+      "sha": "f1a8c140a8731b68b844ef09e03ccbc6f95c17da"
+    },
+    {
+      "name": "UserInfoErrors.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/UserInfoErrors.feature",
+      "size": 4436,
+      "sha": "1ad013aa09cf54a6ca4bc264cca4cc9054389265"
+    },
+    {
+      "name": "Users.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/Users.feature",
+      "size": 2428,
+      "sha": "acee20a109e2c271ee1d37fa8b4a77fcf054a552"
+    },
+    {
+      "name": "UsersErrors.feature",
+      "original_path": "tests/SimpleIdServer.IdServer.Host.Acceptance.Tests/Features/UsersErrors.feature",
+      "size": 4263,
+      "sha": "ae8bd6fa7deb5a85cf4a70e8280255de24f99876"
+    },
+    {
+      "name": "Bulk.feature",
+      "original_path": "tests/SimpleIdServer.Scim.Host.Acceptance.Tests/Features/Bulk.feature",
+      "size": 1571,
+      "sha": "d550e93592ec06c641664e47df3ea67acbaf6203"
+    },
+    {
+      "name": "BulkErrors.feature",
+      "original_path": "tests/SimpleIdServer.Scim.Host.Acceptance.Tests/Features/BulkErrors.feature",
+      "size": 3401,
+      "sha": "e9bd80018330500fa758f046d69331b70bff3d3e"
+    },
+    {
+      "name": "GroupErrors.feature",
+      "original_path": "tests/SimpleIdServer.Scim.Host.Acceptance.Tests/Features/GroupErrors.feature",
+      "size": 1404,
+      "sha": "2ee0fc068a421d58c06b080b6e8b74401fd74ccd"
+    },
+    {
+      "name": "Groups.feature",
+      "original_path": "tests/SimpleIdServer.Scim.Host.Acceptance.Tests/Features/Groups.feature",
+      "size": 85016,
+      "sha": "79bf985b2f46f8c98eb1e1932e19b7b61a49ffc3"
+    },
+    {
+      "name": "ResourceTypes.feature",
+      "original_path": "tests/SimpleIdServer.Scim.Host.Acceptance.Tests/Features/ResourceTypes.feature",
+      "size": 1731,
+      "sha": "b883a3b8bf5990e166dbc44b40871f8f2369bf3e"
+    },
+    {
+      "name": "Schemas.feature",
+      "original_path": "tests/SimpleIdServer.Scim.Host.Acceptance.Tests/Features/Schemas.feature",
+      "size": 820,
+      "sha": "efbe36d3704a33312860854e26ec6856fcc4eece"
+    },
+    {
+      "name": "ServiceProviderConfig.feature",
+      "original_path": "tests/SimpleIdServer.Scim.Host.Acceptance.Tests/Features/ServiceProviderConfig.feature",
+      "size": 604,
+      "sha": "fd8c75d07bbf98aa419ada76d65bfc4ca7c5bad5"
+    },
+    {
+      "name": "Users_1.feature",
+      "original_path": "tests/SimpleIdServer.Scim.Host.Acceptance.Tests/Features/Users.feature",
+      "size": 96276,
+      "sha": "9ac06c4a1ba0c52ea85c2f1593f8642d03d4bc50"
+    },
+    {
+      "name": "UsersErrors_1.feature",
+      "original_path": "tests/SimpleIdServer.Scim.Host.Acceptance.Tests/Features/UsersErrors.feature",
+      "size": 45921,
+      "sha": "05589261bdfddf719dc6545b0da671d4496a7395"
+    },
+    {
+      "name": "AuthorizationCallbackErrors.feature",
+      "original_path": "tests/SimpleIdServer.SelfIssuedIdServer.Host.Acceptance.Tests/Features/AuthorizationCallbackErrors.feature",
+      "size": 2501,
+      "sha": "84566f8d2125bf901479193e130c813ba2aee7b6"
+    },
+    {
+      "name": "AuthorizationErrors_1.feature",
+      "original_path": "tests/SimpleIdServer.SelfIssuedIdServer.Host.Acceptance.Tests/Features/AuthorizationErrors.feature",
+      "size": 3748,
+      "sha": "e44c8a9b6da526197f218df3fe371ea5698c92d5"
+    }
+  ],
+  "status": "success"
+}

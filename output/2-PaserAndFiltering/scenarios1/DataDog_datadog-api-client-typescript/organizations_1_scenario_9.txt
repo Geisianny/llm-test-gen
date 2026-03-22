@@ -1,0 +1,7 @@
+Scenario 9: Upload IdP metadata returns "Bad Request - caused by either malformed XML or invalid SAML IdP metadata" response
+  Tags: ['@skip-go', '@skip-java', '@skip-python', '@skip-ruby', '@skip-rust', '@skip-terraform-config', '@skip-typescript', '@skip-validation', '@team:DataDog/team-aaa-identity']
+  Given  new "UploadIdPMetadata" request
+  And  request contains "idp_file" parameter with value "fixtures/organizations/saml_configurations/invalid_idp_metadata.xml"
+  When  the request is sent
+  Then  the response status is 400 Bad Request - caused by either malformed XML or invalid SAML IdP metadata
+

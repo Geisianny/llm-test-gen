@@ -1,0 +1,6 @@
+Scenario 8: Delete a resource identified by a Ramsey\Uuid\Uuid
+  Tags: ['@!mongodb']
+  When  I send a "DELETE" request to "/ramsey_uuid_dummies/41B29566-144B-11E6-A148-3E1D05DEFE78"
+  Then  the response status code should be 204
+  And  the response should be empty
+

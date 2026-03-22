@@ -1,0 +1,7 @@
+Scenario 5: The Salt menu
+  When  I follow the left menu "Salt"
+  Then  I should see a "Keys" text
+  And  I should see a "Keys" link in the left menu
+  And  I should see a "Remote Commands" link in the left menu
+  And  I should see a "Formula Catalog" link in the left menu
+

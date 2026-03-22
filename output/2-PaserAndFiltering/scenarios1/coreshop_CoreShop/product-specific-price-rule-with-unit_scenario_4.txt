@@ -1,0 +1,9 @@
+Scenario 4: Add a price rule with a price of 80 of unit "Pieces" and getting unit "Carton" to the cart
+  Given  adding a product specific price rule to product "Shoe" named "discount"
+  And  the specific price rule is active
+  And  the specific price rule has a action price of 80 in currency "EUR"
+  And  the product "Shoe" should have the prices, price: "8000" and discount-price: "0" and retail-price: "8000" and discount: "0"
+  And  I add the product "Shoe" with unit "Carton" to my cart
+  Then  the cart total should be "200000" including tax
+  And  the cart total should be "200000" excluding tax
+

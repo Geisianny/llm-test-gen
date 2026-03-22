@@ -1,0 +1,11 @@
+Scenario 4: create new pickup
+  Tags: ['@selenium']
+  Given  I follow "Preferences" within "#section-shopping"
+  And  I check "Enable shopping basket"
+  And  I follow "New delivery or pickup"
+  And  I select "Pickup" from "Type"
+  And  I fill in "Name" with "Bar"
+  And  I fill in "Fixed cost" with "0.00"
+  When  I follow "Add"
+  Then  I should see "Bar"
+

@@ -1,0 +1,6 @@
+Scenario: Create a fake repository for RPM format
+  Given there is an authorized user
+  And the system has a child channel for RPM format
+  When the user creates a fake repository for the RPM child channel
+  Then the system creates the fake repository
+  And associates it with the RPM child channel

@@ -1,0 +1,9 @@
+Scenario 19: Update a user returns "Bad User ID in Request" response
+  Tags: ['@team:DataDog/team-aaa-identity']
+  Given  there is a valid "user" in the system
+  And  new "UpdateUser" request
+  And  request contains "user_id" parameter from "user.data.id"
+  And  body with value {"data": {"id": "00000000-mismatch-body-id-ffffffffffff", "type": "users", "attributes": {"name": "updated", "disabled": true}}}
+  When  the request is sent
+  Then  the response status is 422 Bad User ID in Request
+

@@ -1,0 +1,7 @@
+Scenario 1: Deleted exchange rate should disappear from the list
+  Tags: ['@ui', '@api']
+  Given  the exchange rate of "US Dollar" to "British Pound" is 1.2
+  When  I delete the exchange rate between "US Dollar" and "British Pound"
+  Then  I should be notified that it has been successfully deleted
+  And  this exchange rate should no longer be on the list
+

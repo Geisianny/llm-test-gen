@@ -1,0 +1,6 @@
+Scenario 4: Test UX components : ReParagraphStatus dynamic-icon
+  When  I go to "/test/ux-component/ReParagraphStatus/dynamicicon"
+  Then  I should see 1 "span.re-icon-error" element
+  When  I click the "button" selector
+  Then  I should see 1 "span.re-icon-warning" element
+

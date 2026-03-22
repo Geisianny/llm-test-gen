@@ -1,0 +1,9 @@
+Scenario 3: Trying to request contact with an invalid email address
+  Tags: ['@ui']
+  Given  this channel has contact email set as "contact@goodshop.com"
+  When  I want to request contact
+  And  I specify the email as "morningstar"
+  And  I specify the message as "Hi! I did not receive an item!"
+  And  I try to send it
+  Then  I should be notified that the email is invalid
+

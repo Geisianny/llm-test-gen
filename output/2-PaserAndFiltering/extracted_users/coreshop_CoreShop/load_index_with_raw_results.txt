@@ -1,0 +1,18 @@
+Feature: To get more performance out of the index, we can also load the raw result
+Description: without needing pimcore's data objects
+Tags: ['@domain', '@filter']
+
+Background: 
+  Given  the site operates on a store in "Austria"
+  And  the site has a index "myindex" for class "CoreShopProduct" with type "mysql"
+  And  the site has a filter "myfilter" for index "myindex"
+  And  the index has following fields:
+
+Scenario 1: Adding a simple product to the index
+  And  the site has a product "Shoe" priced at 100
+  And  the products ean is "123456"
+  And  the products sku is "654321"
+  And  the product is active
+  And  the product is published
+  Then  the raw result for the filter should look like:
+

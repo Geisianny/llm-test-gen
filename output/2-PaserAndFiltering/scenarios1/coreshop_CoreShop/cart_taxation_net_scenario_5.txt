@@ -1,0 +1,8 @@
+Scenario 5: Create a new cart, add a product and calculate subtotals
+  Given  I add the product "Shoes" to my cart
+  Given  I add the product "Shoes" to my cart
+  Given  I add the product "Shoes" to my cart
+  Given  I add the product "Shoes" to my cart
+  Given  I add the product "Shoes" to my cart
+  Then  the cart total tax should be "1000"
+

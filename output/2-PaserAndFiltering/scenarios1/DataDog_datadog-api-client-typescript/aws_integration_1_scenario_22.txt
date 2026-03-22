@@ -1,0 +1,7 @@
+Scenario 22: Get an AWS integration by config ID returns "Not Found" response
+  Tags: ['@team:DataDog/aws-integrations']
+  Given  new "GetAWSAccount" request
+  And  request contains "aws_account_config_id" parameter with value "448169a8-251c-4344-abee-1c4edef39f7a"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

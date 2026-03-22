@@ -1,0 +1,8 @@
+Scenario 2: drafting a document from a statistics announcement
+  Given  I am a GDS editor in the organisation "Department for Beards"
+  And  a statistics announcement called "Monthly Beard Stats" exists
+  When  I draft a document from the announcement
+  Then  the document fields are pre-filled based on the announcement
+  When  I save the draft statistics document
+  Then  the document becomes linked to the announcement
+

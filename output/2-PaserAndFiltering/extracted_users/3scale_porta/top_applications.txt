@@ -1,0 +1,27 @@
+Feature: Top applications stats
+Description: In order to know the usage of my service
+  As an admin of provider account
+  I want to see which applications are most popular
+Tags: ['@javascript']
+
+Background: 
+  Given  a provider is logged in
+  And  the provider uses backend v1 in his default service
+  And  the provider has "multiple_applications" visible
+  And  the default product of the provider has name "My API"
+  And  the following application plan:
+  And  a metric "foos" with friendly name "Number of Foos" of provider "foo.3scale.localhost"
+  And  a metric "bars" with friendly name "Number of Bars" of provider "foo.3scale.localhost"
+  And  a buyer "alice" signed up to provider "foo.3scale.localhost"
+  And  a buyer "bob" signed up to provider "foo.3scale.localhost"
+  And  the following applications:
+  And  all the rolling updates features are off
+
+Scenario 1: With transactions
+  And  buyer "alice" makes 2 service transactions with:
+  And  buyer "bob" makes 1 service transactions with:
+  And  I go to the provider stats apps page
+  Then  I should see a list of metrics:
+  When  I select today from the stats menu
+  Then  there should be a c3 chart with the following data:
+

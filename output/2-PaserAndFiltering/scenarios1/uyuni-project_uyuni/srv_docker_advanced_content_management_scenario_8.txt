@@ -1,0 +1,4 @@
+Scenario 8: Cleanup: delete no role user
+  Given  I am authorized for the "Admin" section
+  When  I delete user "norole"
+

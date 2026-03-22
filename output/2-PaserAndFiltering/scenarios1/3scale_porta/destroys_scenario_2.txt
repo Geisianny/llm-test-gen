@@ -1,0 +1,9 @@
+Scenario 2: Deleted application and users are found in trash
+  When  a buyer "Mc Hammer" signed up to account plan "Hammer Time"
+  And  the following application:
+  And  provider "foo.3scale.localhost" deleted existing buyer "Mc Hammer"
+  And  I go to the "apps" destroys page
+  Then  I should see "ESTOP" in the list of deleted "applications"
+  And  I go to the "users" destroys page
+  Then  I should see "Mc_Hammer" in the list of deleted "users"
+

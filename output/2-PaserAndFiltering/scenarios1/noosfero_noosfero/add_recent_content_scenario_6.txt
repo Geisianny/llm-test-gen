@@ -1,0 +1,8 @@
+Scenario 6: a user should see full content if the block was configured for it
+  When  I follow "Edit" within ".block.recent-content-block"
+  And  I select "JSilva blog" from "Choose which blog should be displayed"
+  And  I select "Full content" from "Choose how the content should be displayed"
+  And  I fill in "Choose how many items will be displayed" with "6"
+  And  I press "Save"
+  Then  I should see "Quinto post do joao silva" within ".block.recent-content-block"
+

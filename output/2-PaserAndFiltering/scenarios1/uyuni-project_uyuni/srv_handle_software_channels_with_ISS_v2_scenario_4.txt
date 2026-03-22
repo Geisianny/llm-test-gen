@@ -1,0 +1,10 @@
+Scenario 4: Check that this channel has patches
+  When  I follow the left menu "Software > Manage > Channels"
+  And  I follow "Clone of Fake-RPM-SUSE-Channel"
+  And  I follow "Patches" in the content area
+  And  I follow "List/Remove Patches"
+  Then  I should see a "CL-hoag-dummy-7890" link
+  And  I should see a "CL-virgo-dummy-3456" link
+  And  I should see a "CL-milkyway-dummy-2345" link
+  And  I should see a "CL-andromeda-dummy-6789" link
+

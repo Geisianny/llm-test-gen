@@ -1,0 +1,10 @@
+Scenario 4: Superadmin views a community he is not a member of
+  Tags: ['@javascript']
+  Given  there are following users:
+  When  I am logged in as "kassi_testperson1"
+  And  I move to community "test2"
+  And  "kassi_testperson1" is superadmin
+  And  I am on the home page
+  Then  I should not see "Join community"
+  And  I should see "Post a new listing"
+

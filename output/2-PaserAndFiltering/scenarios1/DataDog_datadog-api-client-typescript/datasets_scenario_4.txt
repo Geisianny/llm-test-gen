@@ -1,0 +1,8 @@
+Scenario 4: Delete a dataset returns "Bad Request" response
+  Tags: ['@skip-terraform-config', '@team:DataDog/aaa-granular-access']
+  Given  new "DeleteDataset" request
+  And  operation "DeleteDataset" enabled
+  And  request contains "dataset_id" parameter with value "malformed_id"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

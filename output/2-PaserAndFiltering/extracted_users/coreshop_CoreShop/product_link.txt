@@ -1,0 +1,12 @@
+Feature: In order that a customer can visit the product page
+Description: The website needs to create a URL
+Tags: ['@domain', '@product']
+
+Background: 
+  Given  the site operates on a store in "Austria"
+  Given  the site has a product "Shoe" priced at 100
+  Then  the product "Shoe" should be priced at "100"
+
+Scenario 1: Create URL for product
+  Then  the generated url for object should be "/en/shoe"
+

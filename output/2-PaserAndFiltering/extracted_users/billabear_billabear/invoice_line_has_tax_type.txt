@@ -1,0 +1,46 @@
+Feature: Invoices are tax type aware
+
+Background: 
+  Given  the following accounts exist:
+  And  there are the following tax types:
+  And  that the following countries exist:
+  And  the following country tax rules exist:
+  And  the follow products exist:
+  And  the follow prices exist:
+  And  the following features exist:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "Price One" with:
+  Given  a Subscription Plan exists for product "Product Two" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "Price One" with:
+  And  the follow customers exist:
+
+Scenario 1: 
+  Given  the following subscriptions exist:
+  And  stripe billing is disabled
+  And  that the tax settings for tax customers with tax number is true
+  When  the background task to reinvoice active subscriptions
+  Then  the subscription for "customer.four@example.org" will expire in a week
+  And  there the latest invoice for "customer.four@example.org" will have tax type for digital goods
+
+Scenario 2: 
+  Given  the following subscriptions exist:
+  And  stripe billing is disabled
+  And  that the tax settings for tax customers with tax number is true
+  When  the background task to reinvoice active subscriptions
+  Then  the subscription for "customer.four@example.org" will expire in a week
+  And  there the latest invoice for "customer.four@example.org" will have tax type for physical goods
+
+Scenario 3: Create without subscriptions and one off item
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  I want to invoice the customer "customer.four@example.org"
+  And  I want to invoice for a bespoke one-off fee for "Setup Costs" at 5000 in "USD" including tax for a digital goods
+  When  I finalise the invoice in APP
+  Then  there will be an unpaid invoice for "customer.four@example.org"
+  And  there the latest invoice for "customer.four@example.org" will have tax type for digital goods
+
+Scenario 4: Create without subscriptions and one off item
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  I want to invoice the customer "customer.four@example.org"
+  And  I want to invoice for a bespoke one-off fee for "Setup Costs" at 5000 in "USD" including tax for a physical goods
+  When  I finalise the invoice in APP
+  Then  there will be an unpaid invoice for "customer.four@example.org"
+  And  there the latest invoice for "customer.four@example.org" will have tax type for physical goods
+

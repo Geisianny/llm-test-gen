@@ -1,0 +1,39 @@
+Feature: Product > Integration > Backends > Edit
+Tags: ['@javascript']
+
+Background: 
+  Given  a provider is logged in
+  And  a product "My API"
+  And  the product uses the following backends:
+
+Scenario 1: Navigation
+  Given  the current page is the provider dashboard
+  When  they select "Products" from the context selector
+  And  follow "My API"
+  And  press "Integration" within the main menu
+  And  follow "Backends" within the main menu
+  And  follow "Edit config with Backend 1" to the edit backend usage page of "Backend 1" for product "My API"
+  Then  the current page is the edit backend usage page of "Backend 1" for product "My API"
+
+Scenario 2: Changing the public path
+  Given  they go to the edit backend usage page of "Backend 1" for product "My API"
+  When  the form is submitted with:
+  Then  they should see "Backend usage was updated"
+  And  should see the following table:
+
+Scenario 3: Can't use an invalid path
+  Given  they go to the edit backend usage page of "Backend 1" for product "My API"
+  When  the form is submitted with:
+  Then  field "Path" has inline error "must be a path separated by \"/\". E.g. \"\" or \"my/path\""
+
+Scenario 4: Can't use the same public path twice
+  Given  the product uses the following backends:
+  Given  they go to the edit backend usage page of "Backend 1" for product "My API"
+  When  the form is submitted with:
+  Then  field "Path" has inline error "This path is already taken. Specify a different path."
+
+Scenario 5: User changes their mind
+  Given  they go to the edit backend usage page of "Backend 1" for product "My API"
+  When  they follow "Cancel"
+  Then  the current page is the backends of the product
+

@@ -1,0 +1,13 @@
+Scenario 1: Reconcile a confirmed invoice using a bank statement
+  Tags: ['@bug491892']
+  Given  I have recorded on the 1 jan 2009 an invoice (in_invoice) of 1000,0 CHF without tax called MySupplierInvoiceBankStatement2
+  When  I press the validate button
+  Then  I should see the invoice MySupplierInvoiceBankStatement2 open
+  And  the residual amount = 1000,0
+  When  I create a new bank statement with a CHF account journal
+  And  import on the 10 jan 2009 the invoice called MySupplierInvoiceBankStatement2
+  And  confirm the statement and see it confirmed
+  Then  I should see the invoice MySupplierInvoiceBankStatement2 paid
+  And  the residual amount = 0,0
+  And  the invoice should appear as paid invoice (checkbox tic)
+

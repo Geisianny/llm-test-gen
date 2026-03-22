@@ -1,0 +1,51 @@
+Feature: Customer Subscription Update Price
+
+Background: 
+  Given  the following accounts exist:
+  And  there are the following tax types:
+  And  that the following countries exist:
+  And  the following country tax rules exist:
+  And  the follow products exist:
+  And  the follow prices exist:
+  And  the following features exist:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "Price One" with:
+
+Scenario 1: Update price
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  And  the following payment details:
+  When  I update via the api the subscription "Test Plan" for "customer.one@example.org" to use the 30000 in "USD" per "year" price
+  Then  the subscription "Test Plan" for "customer.one@example.org" will be for 30000 in "USD" per "year"
+
+Scenario 2: Update price
+  Given  I have authenticated to the API
+  And  stripe billing is disabled
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  And  the following payment details:
+  When  I update via the api the subscription "Test Plan" for "customer.one@example.org" to use the 30000 in "USD" per "year" price
+  Then  the subscription "Test Plan" for "customer.one@example.org" will be for 30000 in "USD" per "year"
+  And  the subscription "Test Plan" for "customer.one@example.org" will expire in a year
+  And  there will be an invoice for a partial amount of 30000 for "Test Plan" for "customer.one@example.org"
+
+Scenario 3: Update price
+  Given  I have authenticated to the API
+  And  stripe billing is disabled
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  And  the following payment details:
+  When  I update via the api the subscription "Test Plan" for "customer.one@example.org" to use the 30000 in "USD" per "year" price
+  Then  the subscription "Test Plan" for "customer.one@example.org" will be for 30000 in "USD" per "year"
+  And  the subscription "Test Plan" for "customer.one@example.org" will expire in a year
+  And  there will be an invoice for the amount of 30000 for "Test Plan" for "customer.one@example.org"
+
+Scenario 4: Update price - Stripe Billing
+  Given  I have authenticated to the API
+  And  stripe billing is disabled
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  And  the following payment details:
+  When  I update via the api the subscription "Test Plan" for "customer.one@example.org" to use the 30000 in "USD" per "year" price
+  Then  the subscription "Test Plan" for "customer.one@example.org" will be for 30000 in "USD" per "year"
+

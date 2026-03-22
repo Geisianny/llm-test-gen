@@ -1,0 +1,7 @@
+Scenario 5: Sample to create and rename a partner
+  Given  I have created a partner named "Demour SA" with the following addresses:
+  Then  I expect the partner credit to be 0
+  And  I expect the partner debit to be 0
+  When  I change the partner name to "Demour sa"
+  Then  the partner name to be "Demour sa"
+

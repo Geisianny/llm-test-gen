@@ -1,0 +1,8 @@
+Scenario 5: Run a remote command on the server to check if it shows up on Last Execution Times page
+  When  I follow the left menu "Admin > Task Engine Status > Last Execution Times"
+  And  I run "cobbler sync" on "server"
+  And  I refresh the page
+  Then  I should see a "Cobbler Sync:" text
+  And  I should see the correct timestamp for task "Cobbler Sync:"
+  And  I should see a "FINISHED" text
+

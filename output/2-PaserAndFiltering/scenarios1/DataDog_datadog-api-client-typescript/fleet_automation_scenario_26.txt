@@ -1,0 +1,8 @@
+Scenario 26: Trigger a schedule deployment returns "CREATED - Deployment successfully created and started." response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "TriggerFleetSchedule" enabled
+  And  new "TriggerFleetSchedule" request
+  And  request contains "id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 201 CREATED - Deployment successfully created and started.
+

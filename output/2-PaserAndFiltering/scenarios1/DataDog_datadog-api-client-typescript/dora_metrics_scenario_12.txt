@@ -1,0 +1,8 @@
+Scenario 12: Get a list of failure events returns "OK" response
+  Tags: ['@skip', '@team:DataDog/ci-app-backend']
+  Given  a valid "appKeyAuth" key in the system
+  And  new "ListDORAFailures" request
+  And  body with value {"data": {"attributes": {"from": "2025-03-23T00:00:00Z", "limit": 1, "to": "2025-03-24T00:00:00Z"}, "type": "dora_failures_list_request"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+

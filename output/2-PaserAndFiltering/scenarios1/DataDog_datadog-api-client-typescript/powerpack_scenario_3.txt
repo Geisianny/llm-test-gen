@@ -1,0 +1,8 @@
+Scenario 3: Delete a powerpack returns "OK" response
+  Tags: ['@team:DataDog/dashboards-backend']
+  Given  there is a valid "powerpack" in the system
+  And  new "DeletePowerpack" request
+  And  request contains "powerpack_id" parameter from "powerpack.data.id"
+  When  the request is sent
+  Then  the response status is 204 OK
+

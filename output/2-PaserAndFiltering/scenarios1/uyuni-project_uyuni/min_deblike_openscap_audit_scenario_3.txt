@@ -1,0 +1,9 @@
+Scenario 3: Install the OpenSCAP packages on the Debian-like minion
+  Tags: ['@skip_if_github_validation']
+  Given  I am on the Systems overview page of this "deblike_minion"
+  When  I refresh the metadata for "deblike_minion"
+  And  I install OpenSCAP dependencies on "deblike_minion"
+  And  I follow "Software" in the content area
+  And  I click on "Update Package List"
+  And  I wait until event "Package List Refresh" is completed
+

@@ -1,0 +1,7 @@
+Scenario 5: Synchronize the attribute sets, groups, attributes and options
+  Tags: ['@attributes_prestashop']
+  Given  an instance with absolute id "base_external.prestashop" exists
+  Then  I import the attribute sets (3 - Import Product Attribute Sets)
+  Then  I import the attribute groups (4 - Import Attribute Groups)
+  Then  I import the attributes (5 - Import Product Attributes)
+

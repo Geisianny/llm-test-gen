@@ -1,0 +1,59 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 19/01/2026 23:13:57
+Arquivo analisado: seeing_shipping_method_when_all_units_match_to_shipping_category_story_processado.feature
+Caminho relativo: Sylius_Sylius\seeing_shipping_method_when_all_units_match_to_shipping_category_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/Originais\Sylius_Sylius\seeing_shipping_method_when_all_units_match_to_shipping_category_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: seeing_shipping_method_when_all_units_match_to_shipping_category_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Seeing only shipping method which category is same as categories of all my units
+   Steps: 6
+   - Given I added product "Rocket T-Shirt" to the cart
+   - And I added product "Picasso T-Shirt" to the cart
+   - And I addressed the cart
+   - When I go to the shipping step
+   - Then I should see "Raven Post" shipping method
+   - And I should not see "Invisible Post" shipping method
+2. Seeing shipping method which category is same as category of my unit
+   Steps: 5
+   - Given I added product "Star Trek Ship" to the cart
+   - And I addressed the cart
+   - When I go to the shipping step
+   - Then I should see "Invisible Post" shipping method
+   - And I should not see "Raven Post" shipping method
+3. Seeing no shipping methods if my units matches to different shipping categories
+   Steps: 5
+   - Given I added product "Rocket T-Shirt" to the cart
+   - And I added product "Star Trek Ship" to the cart
+   - And I addressed the cart
+   - When I go to the shipping step
+   - Then there should be information about no available shipping methods
+4. Seeing no shipping methods if not all variants of my units has same shipping category
+   Steps: 7
+   - Given the "T-Shirt banana" product's "S" size belongs to "Standard" shipping category
+   - And the "T-Shirt banana" product's "M" size belongs to "Over-sized" shipping category
+   - And I added product "T-Shirt banana" with product option "Size" S to the cart
+   - And I added product "T-Shirt banana" with product option "Size" M to the cart
+   - And I addressed the cart
+   - When I go to the shipping step
+   - Then there should be information about no available shipping methods
+5. Seeing shipping methods if all variants of my units has same shipping category
+   Steps: 8
+   - Given the "T-Shirt banana" product's "M" size belongs to "Standard" shipping category
+   - And the "T-Shirt banana" product's "S" size belongs to "Standard" shipping category
+   - And I added product "T-Shirt banana" with product option "Size" S to the cart
+   - And I added product "T-Shirt banana" with product option "Size" M to the cart
+   - And I addressed the cart
+   - When I go to the shipping step
+   - Then I should see "Raven Post" shipping method
+   - And I should not see "Invisible Post" shipping method

@@ -1,0 +1,30 @@
+Feature: Audience > Accounts > Listing > Account
+Tags: ['@javascript']
+
+Background: 
+  Given  a provider is logged in
+  And  a buyer "Bob"
+  And  a product "My API"
+  And  the following application plans:
+
+Scenario 1: No applications, no widget
+  Given  the buyer has no applications
+  When  they go to the overview page of account "Bob"
+  Then  they should not be able to see the application widget
+
+Scenario 2: With 1 application only, the widget is visible
+  Given  the following applications:
+  When  they go to the overview page of account "Bob"
+  Then  they should see the following table within the application widget:
+  And  should not see "Create new key"
+
+Scenario 3: With multiple applications, the widget is hidden
+  Given  the following applications:
+  When  they go to the overview page of account "Bob"
+  Then  they should not be able to see the application widget
+
+Scenario 4: When plan requires approval, application is pending
+  Given  the following applications:
+  And  they go to the overview page of account "Bob"
+  Then  they should see the following table within the application widget:
+

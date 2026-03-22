@@ -1,0 +1,9 @@
+Scenario 3: Cancelling the payment
+  Tags: ['@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  And  I have proceeded selecting "PayPal" payment method
+  When  I confirm my order with paypal payment
+  And  I cancel my PayPal payment
+  Then  I should be notified that my payment has been cancelled
+  And  I should be able to pay again
+

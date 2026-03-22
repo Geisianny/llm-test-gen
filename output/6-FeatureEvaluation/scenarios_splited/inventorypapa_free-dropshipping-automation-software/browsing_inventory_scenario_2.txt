@@ -1,0 +1,6 @@
+Scenario: Filter tracked product variants
+  Given there are tracked product variants in the inventory
+  When the administrator accesses the inventory browser
+  And filters for monitored items only
+  Then the system displays a list of monitored tracked product variants
+  And shows the available stock quantity for each variant

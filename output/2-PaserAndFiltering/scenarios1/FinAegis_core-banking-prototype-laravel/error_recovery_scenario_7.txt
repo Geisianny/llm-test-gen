@@ -1,0 +1,6 @@
+Scenario 7: Data corruption detection and recovery
+  Given  transaction data is being processed
+  When  data corruption is detected via checksum
+  Then  the recovery process should:
+  And  maintain audit trail of recovery actions
+

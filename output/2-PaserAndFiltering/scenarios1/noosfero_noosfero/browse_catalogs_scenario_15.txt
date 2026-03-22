@@ -1,0 +1,11 @@
+Scenario 15: display qualifiers
+  Given  the following qualifiers
+  And  the following certifiers
+  And  the following products
+  And  I am on /catalog/artebonito
+  Then  I should see "Banana" within "li.product-link"
+  And  I should see "0.99" within "span.product-price"
+  And  I should see "qualifiers" within "li.product-qualifiers"
+  And  I should see "Organic" within "span.search-product-qualifier"
+  And  I should not see "price composition"
+

@@ -1,0 +1,7 @@
+Scenario 3: Cancel downtimes by scope returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/monitor-app']
+  Given  new "CancelDowntimesByScope" request
+  And  body with value {"scope": "host:myserver"}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

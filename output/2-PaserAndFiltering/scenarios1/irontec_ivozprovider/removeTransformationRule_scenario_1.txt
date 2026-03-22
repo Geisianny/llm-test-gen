@@ -1,0 +1,8 @@
+Scenario 1: Remove a transformation rule
+  Tags: ['@createSchema']
+  Given  I add Brand Authorization header
+  When  I add "Content-Type" header equal to "application/json"
+  And  I add "Accept" header equal to "application/json"
+  And  I send a "DELETE" request to "/transformation_rules/4"
+  Then  the response status code should be 204
+

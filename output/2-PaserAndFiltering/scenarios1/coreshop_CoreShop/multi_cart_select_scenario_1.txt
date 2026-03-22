@@ -1,0 +1,10 @@
+Scenario 1: I create multiple new carts and select between them
+  When  I create a new named cart "Project CoreShop"
+  When  I create a new named cart "Project Commerce"
+  When  I create a new named cart "Project Studio"
+  And  The cart named "Project Studio" should be selected
+  Then  I select named cart "Project CoreShop"
+  And  The cart named "Project CoreShop" should be selected
+  Then  I select named cart "Project Commerce"
+  And  The cart named "Project Commerce" should be selected
+

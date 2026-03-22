@@ -1,0 +1,4 @@
+Scenario 1: The default resolved shipping for my cart should be 20
+  Given  I add the product "Shoe" to my cart
+  Then  the cart shipping should be "2000" excluding tax
+

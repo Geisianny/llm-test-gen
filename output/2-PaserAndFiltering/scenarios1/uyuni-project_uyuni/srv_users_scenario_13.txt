@@ -1,0 +1,14 @@
+Scenario 13: Reactivate user
+  Tags: ['@uyuni']
+  When  I follow the left menu "Users > User List > Active"
+  And  I follow "Deactivated"
+  And  I follow "user1"
+  Then  I should see a "Reactivate User" link
+  When  I follow "Reactivate User"
+  Then  I should see a "This action will allow this user to access Uyuni. This user will retain all permissions, roles, and data that he or she had before being deactivated." text
+  When  I click on "Reactivate User"
+  Then  I should see a "Active Users" text
+  And  I should see a "user1" link
+  When  I follow "Deactivated"
+  Then  I should not see a "user1" link
+

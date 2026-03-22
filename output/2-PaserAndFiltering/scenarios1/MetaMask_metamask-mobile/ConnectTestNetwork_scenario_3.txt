@@ -1,0 +1,6 @@
+Scenario 3: Change to the Test Network Toggle to OFF while connected to Test network
+  Given  I tap on the navbar network title button
+  And  the Network List Modal is Displayed
+  When  I tap the Test Network toggle
+  Then  the Test Network toggle value should be "ON"
+

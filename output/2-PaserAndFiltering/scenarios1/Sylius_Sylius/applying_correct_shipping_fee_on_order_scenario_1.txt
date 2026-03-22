@@ -1,0 +1,9 @@
+Scenario 1: Adding proper shipping fee
+  Tags: ['@api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  And  I addressed the cart
+  And  I chose "DHL" shipping method
+  When  I check the details of my cart
+  Then  my cart total should be "$110.00"
+  And  my cart shipping total should be "$10.00"
+

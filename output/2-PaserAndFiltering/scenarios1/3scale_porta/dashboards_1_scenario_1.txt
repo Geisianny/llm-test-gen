@@ -1,0 +1,8 @@
+Scenario 1: Provider dashboard
+  Tags: ['@javascript']
+  And  the service of provider "foo.3scale.localhost" has traffic
+  When  I log in as provider "foo.3scale.localhost"
+  Then  I should be on the provider dashboard
+  And  I should see "Last 30 Days"
+  And  I should see a sparkline for "hits"
+

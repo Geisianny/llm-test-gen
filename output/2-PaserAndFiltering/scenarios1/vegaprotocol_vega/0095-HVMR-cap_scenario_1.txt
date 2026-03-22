@@ -1,0 +1,26 @@
+Scenario Outline 1: Fixed buyback, treasury and rebate factors. Rebate capped correctly where necessary. (0095-HVMR-029)(0095-HVMR-030)(0095-HVMR-031) - Example 1
+  Given  the following network parameters are set:
+  And  the volume rebate program tiers named "vrt":
+  And  the volume rebate program:
+  And  the network moves ahead "1" epochs
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  Given  the network moves ahead "1" epochs
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  Then  the following transfers should happen:
+
+  Examples:
+    | buyback | treasury | rebate factor | rebate amount |
+    | 0.001 | 0.001 | 0.001 | 50 |
+    | 0.001 | 0.001 | 0.002 | 100 |
+    | 0.001 | 0.001 | 0.003 | 100 |
+    | 0.002 | 0.000 | 0.001 | 50 |
+    | 0.002 | 0.000 | 0.002 | 100 |
+    | 0.002 | 0.000 | 0.003 | 100 |
+    | 0.000 | 0.002 | 0.001 | 50 |
+    | 0.000 | 0.002 | 0.002 | 100 |
+    | 0.000 | 0.002 | 0.003 | 100 |
+

@@ -1,0 +1,5 @@
+Scenario 4: Execute logging program with different log-level
+  Given  a configuration with:
+  When  I start Karma
+  Then  the file at sandbox/console.log contains:
+

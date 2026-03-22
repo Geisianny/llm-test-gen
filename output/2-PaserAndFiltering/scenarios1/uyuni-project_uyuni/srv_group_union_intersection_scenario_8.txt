@@ -1,0 +1,6 @@
+Scenario 8: Add the sles group to SSM
+  When  I follow the left menu "Systems > System Groups"
+  When  I click on "Use in SSM" in row "sles"
+  And  I should see a "Selected Systems List" text
+  And  I should see "sle_minion" as link
+

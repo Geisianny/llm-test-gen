@@ -1,0 +1,56 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: user_filters_listings_by_custom_fields_story_processado.feature
+Caminho relativo: sharetribe_sharetribe\user_filters_listings_by_custom_fields_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\sharetribe_sharetribe\user_filters_listings_by_custom_fields_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: user_filters_listings_by_custom_fields_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Filter listings by a single custom field
+   Steps: 5
+   - Given there are listings with custom field "Location" having values "New York" and "Los Angeles"
+   - And the user is on the listings page
+   - When the user selects "New York" from the "Location" filter
+   - Then the system displays listings with "Location" as "New York"
+   - And the listings count is updated accordingly
+2. Filter listings by multiple custom fields
+   Steps: 6
+   - Given there are listings with custom fields "Location" and "Category" having values "New York", "Los Angeles" and "Electronics", "Furniture"
+   - And the user is on the listings page
+   - When the user selects "New York" from the "Location" filter
+   - And selects "Electronics" from the "Category" filter
+   - Then the system displays listings with "Location" as "New York" and "Category" as "Electronics"
+   - And the listings count is updated accordingly
+3. Combine filter with keyword search
+   Steps: 6
+   - Given there are listings with title "Apple Watch" and "Samsung TV"
+   - And the user is on the listings page
+   - When the user selects "Electronics" from the "Category" filter
+   - And enters "Apple" in the keyword search field
+   - Then the system displays listings with "Category" as "Electronics" and title containing "Apple"
+   - And the listings count is updated accordingly
+4. Filter listings by category selection
+   Steps: 5
+   - Given there are listings under categories "Electronics" and "Furniture"
+   - And the user is on the listings page
+   - When the user selects the "Electronics" category
+   - Then the system displays listings under the "Electronics" category
+   - And the listings count is updated accordingly
+5. Reset filters
+   Steps: 6
+   - Given there are listings with custom fields "Location" and "Category" having values "New York", "Los Angeles" and "Electronics", "Furniture"
+   - And the user is on the listings page
+   - And has selected "New York" from the "Location" filter and "Electronics" from the "Category" filter
+   - When the user resets the filters
+   - Then the system displays all listings
+   - And the filter selections are cleared

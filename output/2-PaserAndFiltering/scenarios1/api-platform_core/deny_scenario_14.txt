@@ -1,0 +1,7 @@
+Scenario 14: A user can update an item they owns and transfer it
+  When  I add "Accept" header equal to "application/ld+json"
+  And  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Authorization" header equal to "Basic ZHVuZ2xhczprZXZpbg=="
+  And  I send a "PUT" request to "/secured_dummies/2" with body:
+  Then  the response status code should be 200
+

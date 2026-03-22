@@ -1,0 +1,7 @@
+Scenario 10: Create a case returns "Bad Request" response
+  Tags: ['@team:DataDog/case-management']
+  Given  new "CreateCase" request
+  And  body with value {"data": {"attributes": {"priority": "NOT_DEFINED", "title": "Security breach investigation", "type_id": "00000000-0000-0000-0000-000000000001"}, "relationships": {"assignee": {"data": {"id": "e555e290-ed65-49bd-ae18-8acbfcf18db7", "type": "userx"}}, "project": {"data": {"id": "e555e290-ed65-49bd-ae18-8acbfcf18db7", "type": "project"}}}, "type": "case"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

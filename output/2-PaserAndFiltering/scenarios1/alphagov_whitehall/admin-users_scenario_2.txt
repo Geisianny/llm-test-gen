@@ -1,0 +1,4 @@
+Scenario 2: Logged in editors should see their role
+  Given  I am an editor
+  Then  I should see that I am logged in as a "Departmental Editor"
+

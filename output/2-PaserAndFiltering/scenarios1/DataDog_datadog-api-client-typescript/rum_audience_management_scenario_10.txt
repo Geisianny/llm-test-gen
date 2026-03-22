@@ -1,0 +1,9 @@
+Scenario 10: Update connection returns "Connection updated successfully" response
+  Tags: ['@generated', '@skip', '@team:DataDog/audience-management-backend']
+  Given  operation "UpdateConnection" enabled
+  And  new "UpdateConnection" request
+  And  request contains "entity" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"fields_to_add": [{"description": "Net Promoter Score from customer surveys", "display_name": "NPS Score", "groups": ["Satisfaction", "Metrics"], "id": "nps_score", "source_name": "net_promoter_score", "type": "number"}], "fields_to_delete": ["old_revenue_field"], "fields_to_update": [{"field_id": "lifetime_value", "updated_display_name": "Customer Lifetime Value (`USD`)", "updated_groups": ["Financial", "Metrics"]}]}, "id": "crm-integration", "type": "connection_id"}}
+  When  the request is sent
+  Then  the response status is 200 Connection updated successfully
+

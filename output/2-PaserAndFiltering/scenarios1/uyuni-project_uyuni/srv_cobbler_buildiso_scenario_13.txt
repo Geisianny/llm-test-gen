@@ -1,0 +1,5 @@
+Scenario 13: Run Cobbler buildiso standalone with all profiles in the Cobbler buildiso context
+  When  I run Cobbler buildiso "standalone" for distro "buildisodistro"
+  And  I check Cobbler buildiso ISO "standalone" with xorriso
+  And  I cleanup xorriso temp files
+

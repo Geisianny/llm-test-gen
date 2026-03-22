@@ -1,0 +1,4 @@
+Scenario 1: Create a new cart and add a product and calculate totals
+  Given  I add the product "Shoes" with unit "Carton" in quantity 1.5 to my cart
+  Then  the cart total should be "3000" excluding tax
+

@@ -1,0 +1,11 @@
+Scenario 7: Non-persistent order results in no trades. Persistent order which results in an n-th trade breaching the trigger and causing auction - all previous n-1 trades get executed.
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties place the following orders:
+  And  the opening auction period ends for market "ETH/DEC21"
+  Then  the market data for the market "ETH/DEC21" should be:
+  When  the parties place the following orders with ticks:
+  Then  the market data for the market "ETH/DEC21" should be:
+  When  the parties place the following orders with ticks:
+  Then  the market data for the market "ETH/DEC21" should be:
+  And  the parties should have the following profit and loss:
+

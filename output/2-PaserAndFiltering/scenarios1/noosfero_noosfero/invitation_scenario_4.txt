@@ -1,0 +1,12 @@
+Scenario 4: back to friends after invite friends
+  Tags: ['@selenium']
+  Given  I am on /myprofile/josesilva/friends
+  And  I follow "Invite people"
+  And  I choose "Email"
+  And  I follow "Next"
+  And  I fill in "manual_import_addresses" with "misfits@devil.doll"
+  And  I follow "Personalize invitation mail"
+  And  I fill in "mail_template" with "Follow this link <url>"
+  When  I follow "Invite!"
+  Then  I should be on /profile/josesilva/friends
+

@@ -1,0 +1,8 @@
+Scenario 3: Get validation error creating new event with empty fields
+  Given  I am signed in as a superadmin
+  And  I visit the home page
+  And  I follow "New Event"
+  And  I press "Create Event"
+  Then  I should see "can't be blank"
+  Then  I should see "can't be blank"
+

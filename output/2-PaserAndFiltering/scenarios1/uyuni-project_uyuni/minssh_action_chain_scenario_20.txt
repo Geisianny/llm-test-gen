@@ -1,0 +1,4 @@
+Scenario 20: Verify that the action chain was executed successfully
+  When  I wait for "virgo-dummy" to be installed on "ssh_minion"
+  And  I wait at most 300 seconds until file "/tmp/action_chain_one_system_done" exists on "ssh_minion"
+

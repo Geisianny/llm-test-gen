@@ -1,0 +1,17 @@
+Scenario 1: 0090-VAMM-019: If a vAMM is cancelled with Abandon Position then it is closed immediately. All funds which were in the general account of the vAMM are returned to the user who created the vAMM and the remaining position and margin funds are moved to the network to close out as it would a regular defaulted position.
+  Tags: ['@VAMM']
+  When  the parties place the following orders:
+  Then  the following trades should be executed:
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/MAR22" should be:
+  When  the network moves ahead "1" blocks
+  Then  the parties should have the following profit and loss:
+  And  the market data for the market "ETH/MAR22" should be:
+  And  the following transfers should happen:
+  And  the parties should have the following account balances:
+  When  the parties cancel the following AMM:
+  Then  the AMM pool status should be:
+  And  the parties should have the following account balances:
+  And  the following transfers should happen:
+

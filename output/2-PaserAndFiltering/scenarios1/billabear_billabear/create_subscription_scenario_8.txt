@@ -1,0 +1,7 @@
+Scenario 8: Addon Added event
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  When  I create a subscription via the API for "customer.one@example.org" with the follow:
+  Then  there should be an add-on added event for "customer.one@example.org"
+

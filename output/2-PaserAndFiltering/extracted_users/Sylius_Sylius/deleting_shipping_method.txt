@@ -1,0 +1,18 @@
+Feature: Deleting a shipping method
+Description: In order to remove test, obsolete or incorrect shipping methods
+    As an Administrator
+    I want to be able to delete a shipping method
+Tags: ['@managing_shipping_methods']
+
+Background: 
+  Given  the store operates on a single channel in "United States"
+  And  the store allows shipping with "UPS Ground"
+  And  I am logged in as an administrator
+
+Scenario 1: Deleted shipping method should disappear from the registry
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I browse shipping methods
+  And  I delete shipping method "UPS Ground"
+  Then  I should be notified that it has been successfully deleted
+  And  this shipping method should no longer exist in the registry
+

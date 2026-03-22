@@ -1,0 +1,8 @@
+Scenario 3: Cancels a data deletion request returns "Precondition failed error" response
+  Tags: ['@replay-only', '@team:DataDog/supportability-engineering']
+  Given  operation "CancelDataDeletionRequest" enabled
+  And  new "CancelDataDeletionRequest" request
+  And  request contains "id" parameter with value "-1"
+  When  the request is sent
+  Then  the response status is 412 Precondition failed error
+

@@ -1,0 +1,6 @@
+Scenario 6: Deleting all alerts
+  Given  they go to the alerts page
+  When  they select toolbar action "Delete all"
+  And  confirm the dialog
+  Then  they should see "All clear"
+

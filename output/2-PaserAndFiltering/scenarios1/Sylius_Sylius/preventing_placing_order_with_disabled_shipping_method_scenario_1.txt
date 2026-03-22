@@ -1,0 +1,9 @@
+Scenario 1: Being prevented from placing an order with a shipping method that's disabled after completing the shipping method choice step
+  Tags: ['@api', '@ui']
+  Given  I added product "Ubi T-Shirt" to the cart
+  And  I addressed the cart
+  And  I chose "Raven Post" shipping method and "Offline" payment method
+  But  this shipping method has been disabled
+  When  I try to confirm my order
+  Then  I should not be able to confirm order because the "Raven Post" shipping method is not available
+

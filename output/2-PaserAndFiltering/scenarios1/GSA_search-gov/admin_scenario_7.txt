@@ -1,0 +1,6 @@
+Scenario 7: Visiting the SAYT Filters admin page as an admin
+  When  I go to the admin home page
+  And  I follow "Filters" within ".main"
+  Then  I should be on the sayt filters admin page
+  And  I should see the following breadcrumbs: Super Admin > Type Ahead Filters
+

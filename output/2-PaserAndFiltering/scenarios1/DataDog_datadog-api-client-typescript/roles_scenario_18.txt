@@ -1,0 +1,8 @@
+Scenario 18: Grant permission to a role returns "Not found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/aaa-core-access']
+  Given  new "AddPermissionToRole" request
+  And  request contains "role_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"type": "permissions"}}
+  When  the request is sent
+  Then  the response status is 404 Not found
+

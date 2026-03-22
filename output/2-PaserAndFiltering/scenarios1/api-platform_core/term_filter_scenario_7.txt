@@ -1,0 +1,8 @@
+Scenario 7: Term filter on a nested property of date type
+  When  I send a "GET" request to "/users?tweets.date=2018-02-02%2014%3A14%3A14"
+  Then  the response should be in JSON
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+

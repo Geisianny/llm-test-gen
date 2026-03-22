@@ -1,0 +1,8 @@
+Scenario 2: Referrer incurs fees during continuous trading (0029-FEES-023)(0029-FEES-025)
+  Given  the parties place the following orders:
+  When  the network moves ahead "2" epochs
+  Then  the referral set stats for code "referral-code-1" at epoch "2" should have a running volume of 2000:
+  Given  the parties place the following orders:
+  When  the following trades should be executed:
+  Then  the following transfers should happen:
+

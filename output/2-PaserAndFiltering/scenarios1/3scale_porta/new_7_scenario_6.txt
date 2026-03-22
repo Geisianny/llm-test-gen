@@ -1,0 +1,11 @@
+Scenario 6: Create an application with a required extra field
+  Given  the provider has the following fields defined for applications:
+  When  they go to buyer "Jane" new application page
+  And  there is a required field "Banana"
+  And  the form is filled with:
+  Then  the submit button is disabled
+  But  they fill in "Banana" with "Yes, please."
+  And  press "Create application"
+  Then  they should see a toast alert with text "Application was successfully created"
+  And  the current page is application "New App" admin page
+

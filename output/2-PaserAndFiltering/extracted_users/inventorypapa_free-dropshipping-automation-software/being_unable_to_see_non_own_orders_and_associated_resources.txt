@@ -1,0 +1,39 @@
+Feature: Being unable to see non-own orders and associated resources
+Description: In order to customers follow only their orders
+    As a Store Owner
+    I want not to be able to see non-own orders and associated resources by customer
+Tags: ['@customer_account']
+
+Background: 
+  Given  the store operates on a single channel in "United States"
+  And  the store has a "PHP T-Shirt" product
+  And  the store ships everywhere for free
+  And  the store allows paying with "Cash on Delivery"
+  And  I am a logged in customer
+  And  there is a customer "john@example.com" that placed order with "PHP T-Shirt" product to "United States" based billing address with "Free" shipping method and "Cash on Delivery" payment method
+
+Scenario 1: Being unable to see non-own order
+  Tags: ['@api']
+  When  I try to see the order placed by a customer "john@example.com"
+  Then  I should not be able to see that order
+
+Scenario 2: Being unable to see non-own order item
+  Tags: ['@api']
+  When  I try to see one of the items from the order placed by a customer "john@example.com"
+  Then  I should not be able to see that item
+
+Scenario 3: Being unable to see non-own order item unit
+  Tags: ['@api']
+  When  I try to see one of the units from the order placed by a customer "john@example.com"
+  Then  I should not be able to see that unit
+
+Scenario 4: Being unable to see non-own shipment
+  Tags: ['@api']
+  When  I try to see the shipment of the order placed by a customer "john@example.com"
+  Then  I should not be able to see that shipment
+
+Scenario 5: Being unable to see non-own payment
+  Tags: ['@api']
+  When  I try to see the payment of the order placed by a customer "john@example.com"
+  Then  I should not be able to see that payment
+

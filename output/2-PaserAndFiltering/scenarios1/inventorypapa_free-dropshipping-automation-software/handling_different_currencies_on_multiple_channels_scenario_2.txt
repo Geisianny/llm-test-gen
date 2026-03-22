@@ -1,0 +1,6 @@
+Scenario 2: Browsing channels using their default currencies
+  Tags: ['@ui']
+  When  I browse the "Web" channel
+  And  I start browsing the "Mobile" channel
+  Then  I should shop using the "USD" currency
+

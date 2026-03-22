@@ -1,0 +1,28 @@
+Scenario 8: User creates a new listing with custom dropdown fields
+  Tags: ['@javascript']
+  Given  I am logged in
+  And  there is a custom dropdown field "House type" in community "test" in category "Spaces" with options:
+  And  there is a custom dropdown field "Balcony type" in community "test" in category "Spaces" with options:
+  And  there is a custom dropdown field "Service type" in community "test" in category "Services" with options:
+  And  I am on the home page
+  When  I follow "new-listing-link"
+  And  I select "Spaces" from listing type menu
+  And  I select "Selling" from listing type menu
+  Then  I should see "House type"
+  And  I should see "Balcony type"
+  And  I should not see "Service type"
+  When  I fill in "listing_title" with "My house"
+  And  I press "Post listing"
+  Then  I should see 2 validation errors
+  When  custom field "Balcony type" is not required
+  And  I am on the home page
+  And  I follow "new-listing-link"
+  And  I select "Spaces" from listing type menu
+  And  I select "Selling" from listing type menu
+  And  I fill in "listing_title" with "My house"
+  And  I press "Post listing"
+  Then  I should see 1 validation errors
+  When  I select "Big house" from dropdown "House type"
+  And  I press "Post listing"
+  Then  I should see "House type: Big house"
+

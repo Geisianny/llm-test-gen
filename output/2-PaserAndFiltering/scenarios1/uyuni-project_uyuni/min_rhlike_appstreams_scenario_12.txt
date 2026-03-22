@@ -1,0 +1,13 @@
+Scenario 12: Cleanup: remove modular package
+  Given  I am on the Systems overview page of this "rhlike_minion"
+  And  I follow "Software" in the content area
+  And  I follow "Packages"
+  And  I follow "List / Remove"
+  And  I enter "scorpio-dummy" as the filtered package name
+  And  I click on the filter button
+  And  I check "scorpio-dummy-2.1" in the list
+  And  I click on "Remove Packages"
+  And  I click on "Confirm"
+  Then  I should see a "1 package removal has been scheduled" text
+  When  I wait until event "Package Removal scheduled" is completed
+

@@ -1,0 +1,8 @@
+Scenario 5: Editing promotions channels
+  Tags: ['@ui']
+  Given  I want to modify a "Christmas sale" promotion
+  When  I make it applicable for the "United States" channel
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  the "Christmas sale" promotion should be applicable for the "United States" channel
+

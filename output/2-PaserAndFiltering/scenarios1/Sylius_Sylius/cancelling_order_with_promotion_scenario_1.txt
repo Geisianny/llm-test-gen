@@ -1,0 +1,9 @@
+Scenario 1: Cancelling order when the applied promotion is no longer valid
+  Tags: ['@api', '@ui']
+  Given  the promotion was disabled for the channel "Web"
+  When  I view the summary of the order "#00000001"
+  And  I cancel this order
+  Then  this order should have state "Cancelled"
+  And  the order's total should still be "$350.00"
+  And  the order's promotion total should still be "-$50.00"
+

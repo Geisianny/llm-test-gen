@@ -1,0 +1,10 @@
+Scenario 3: Browse people by query
+  Given  I go to /search/people
+  When  I fill in "Silva" for "search-input"
+  And  I follow "search-button"
+  Then  I should see "Joao Silva"
+  And  I should see "Pedro Silva"
+  And  I should not see "Paulo Neto"
+  And  I should not see "Community Silva"
+  And  I should not see "Community Neto"
+

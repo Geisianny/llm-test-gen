@@ -1,0 +1,7 @@
+Scenario 3: Seeing disabled slug fields when editing a product
+  Tags: ['@ui']
+  Given  the store has a product named "Pug Pugginton Plushie" in "English (United States)" locale and "Pluszak Mops Mopsiński" in "Polish (Poland)" locale
+  When  I want to modify this product
+  Then  the slug field in "English (United States)" should not be editable
+  And  the slug field in "Polish (Poland)" also should not be editable
+

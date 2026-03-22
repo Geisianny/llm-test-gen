@@ -1,0 +1,6 @@
+Scenario: Create a fake repository for AppStream format
+  Given there is an authorized user
+  And the system has a child channel for AppStream format
+  When the user creates a fake repository for the AppStream child channel
+  Then the system creates the fake repository
+  And associates it with the AppStream child channel

@@ -1,0 +1,4 @@
+Scenario 2: Reboot after clean up
+  Tags: ['@transactional_server']
+  When  I reboot the "proxy" host through SSH, waiting until it comes back
+

@@ -1,0 +1,49 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: logs_custom_destinations_story_processado.feature
+Caminho relativo: DataDog_datadog-api-client-typescript\logs_custom_destinations_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\DataDog_datadog-api-client-typescript\logs_custom_destinations_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: logs_custom_destinations_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Create a new custom destination
+   Steps: 5
+   - Given the user has the necessary permissions to create custom destinations
+   - When the user creates a new custom destination with the name "My HTTP Destination" and type "HTTP"
+   - And configures the destination with the URL "https://example.com/logs"
+   - Then the system creates the custom destination successfully
+   - And lists the new custom destination in the custom destinations page
+2. List existing custom destinations
+   Steps: 4
+   - Given there are existing custom destinations configured in the system
+   - When the user navigates to the custom destinations page
+   - Then the system displays a list of existing custom destinations
+   - And includes the name and type of each custom destination
+3. Retrieve a specific custom destination
+   Steps: 4
+   - Given there is a custom destination with the name "My HTTP Destination"
+   - When the user retrieves the custom destination "My HTTP Destination"
+   - Then the system displays the details of the custom destination
+   - And includes the name, type, and configuration of the custom destination
+4. Update an existing custom destination
+   Steps: 4
+   - Given there is a custom destination with the name "My HTTP Destination" and URL "https://example.com/logs"
+   - When the user updates the custom destination "My HTTP Destination" with the new URL "https://example.com/new-logs"
+   - Then the system updates the custom destination successfully
+   - And reflects the changes in the custom destinations page
+5. Delete a custom destination
+   Steps: 4
+   - Given there is a custom destination with the name "My HTTP Destination"
+   - When the user deletes the custom destination "My HTTP Destination"
+   - Then the system deletes the custom destination successfully
+   - And removes the custom destination from the custom destinations page

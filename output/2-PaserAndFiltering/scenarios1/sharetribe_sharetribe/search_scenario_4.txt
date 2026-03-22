@@ -1,0 +1,9 @@
+Scenario 4: Finding by partial word
+  Tags: ['@javascript']
+  When  I fill in "q" with "wond"
+  And  I press "search-button"
+  Then  I should see "old sofa for sale"
+  When  I fill in "q" with "ofa"
+  And  I press "search-button"
+  Then  I should see "old sofa for sale"
+

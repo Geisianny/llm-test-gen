@@ -1,0 +1,45 @@
+Scenario 1: Public sections can be visited without being logged in
+  Given  the current domain is "foo.3scale.localhost"
+  When  I request the url "/docs/first"
+  Then  I should see "First"
+
+
+
+Scenario 2: Mark a section as Access Restricted
+  Tags: ['@javascript']
+  Given  current domain is the admin domain of provider "foo.3scale.localhost"
+  And  I am logged in as provider "foo.3scale.localhost" on its admin domain
+  When  I go to the cms page
+  And  I follow "Docs"
+  And  I uncheck "Public"
+  And  I press "Update"
+  Then  the "Public" checkbox should not be checked
+  And  the section "Docs" of provider "foo.3scale.localhost" should be access restricted
+
+
+
+Scenario 3: Access restricted sections are access denied for not logged in users
+  Tags: ['@allow-rescue']
+  Given  the current domain is "foo.3scale.localhost"
+  And  the section "Docs" of provider "foo.3scale.localhost" is access restricted
+  When  I request the url "/docs/first"
+  Then  I should see "Not found"
+
+
+
+Scenario 4: Access restricted sections are access denied to not-allowed users
+  Tags: ['@allow-rescue']
+  Given  the section "Docs" of provider "foo.3scale.localhost" is access restricted
+  And  I am logged in as "alice" on foo.3scale.localhost
+  When  I request the url "/docs/first"
+  Then  I should see "Not found"
+
+
+
+Scenario 5: Access restricted sections are access granted to allowed users
+  Given  the section "Docs" of provider "foo.3scale.localhost" is access restricted
+  And  the buyer "alice" has access to the section "Docs" of provider "foo.3scale.localhost"
+  Given  I am logged in as "alice" on foo.3scale.localhost
+  When  I request the url "/docs/first"
+  Then  I should see "First"
+

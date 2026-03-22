@@ -1,0 +1,48 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: search-batches_story_processado.feature
+Caminho relativo: ledgersmb_LedgerSMB\search-batches_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\ledgersmb_LedgerSMB\search-batches_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: search-batches_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Search for voucher batches by transaction type
+   Steps: 4
+   - Given there are existing voucher batches with different transaction types
+   - When the user searches for voucher batches by transaction type "Sales"
+   - Then the system displays a list of voucher batches with transaction type "Sales"
+   - And the list includes batch number, date, description, and values
+2. Search for voucher batches by description
+   Steps: 4
+   - Given there are existing voucher batches with different descriptions
+   - When the user searches for voucher batches with description "January Sales"
+   - Then the system displays a list of voucher batches with description containing "January Sales"
+   - And the list includes batch number, date, description, and values
+3. Search for voucher batches by approval status
+   Steps: 4
+   - Given there are existing voucher batches with different approval statuses
+   - When the user searches for voucher batches with approval status "Approved"
+   - Then the system displays a list of voucher batches with approval status "Approved"
+   - And the list includes batch number, date, description, and values
+4. Search for voucher batches with multiple parameters
+   Steps: 4
+   - Given there are existing voucher batches with different transaction types and approval statuses
+   - When the user searches for voucher batches with transaction type "Sales" and approval status "Approved"
+   - Then the system displays a list of voucher batches with transaction type "Sales" and approval status "Approved"
+   - And the list includes batch number, date, description, and values
+5. Search for voucher batches with no matching results
+   Steps: 4
+   - Given there are existing voucher batches with different transaction types
+   - When the user searches for voucher batches with transaction type "Invalid Type"
+   - Then the system displays a message indicating no voucher batches were found
+   - And the list is empty

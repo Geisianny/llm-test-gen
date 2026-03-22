@@ -1,0 +1,5 @@
+Scenario 10: Remove a package and update package list
+  When  I remove package "virgo-dummy" from this "rhlike_minion" without error control
+  And  I refresh packages list via spacecmd on "rhlike_minion"
+  And  I wait until refresh package list on "rhlike_minion" is finished
+

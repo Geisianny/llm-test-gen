@@ -1,0 +1,8 @@
+Scenario 5: Payment methods are always sorted in the default locale
+  Tags: ['@api', '@ui']
+  Given  I change my locale to "Polish (Poland)"
+  And  I am browsing payment methods
+  When  I start sorting payment methods by name
+  Then  I should see 3 payment methods in the list
+  And  the first payment method on the list should have name "Bank transfer"
+

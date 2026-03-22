@@ -1,0 +1,6 @@
+Scenario: Attempt to add a duplicate top city
+  Given there is an admin logged in
+  And the city "New York" already exists in the top cities list
+  When the admin adds "New York" as a top city
+  Then the system does not add "New York" again
+  And displays a message indicating that the city already exists

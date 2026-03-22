@@ -1,0 +1,8 @@
+Scenario 3: Delete a RUM retention filter returns "No Content" response
+  Tags: ['@replay-only', '@team:DataDog/rum-backend']
+  Given  new "DeleteRetentionFilter" request
+  And  request contains "app_id" parameter with value "a33671aa-24fd-4dcd-ba4b-5bbdbafe7690"
+  And  request contains "rf_id" parameter with value "fe34ee09-14cf-4976-9362-08044c0dea80"
+  When  the request is sent
+  Then  the response status is 204 No Content
+

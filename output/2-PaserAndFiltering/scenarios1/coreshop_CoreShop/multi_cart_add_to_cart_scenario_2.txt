@@ -1,0 +1,10 @@
+Scenario 2: I create multiple new carts and add items
+  When  I create a new named cart "Project XY"
+  And  I add this product to the cart
+  And  there should be one item in my cart
+  When  I create a new named cart "Project Studio"
+  And  I add this product to the cart
+  Then  there should be one item in my cart
+  And  Cart with name "Project XY" should have total of "€100.00"
+  And  Cart with name "Project Studio" should have total of "€100.00"
+

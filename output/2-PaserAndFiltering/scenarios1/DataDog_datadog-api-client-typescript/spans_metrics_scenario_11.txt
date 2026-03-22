@@ -1,0 +1,10 @@
+Scenario 11: Update a span-based metric returns "OK" response
+  Tags: ['@team:DataDog/apm']
+  Given  there is a valid "spans_metric" in the system
+  And  new "UpdateSpansMetric" request
+  And  request contains "metric_id" parameter from "spans_metric.data.id"
+  And  body with value {"data": {"attributes": {"compute": {"include_percentiles": false}, "filter": {"query": "{{ spans_metric.data.attributes.filter.query }}-updated"}, "group_by": [{"path": "resource_name", "tag_name": "resource_name"}]}, "type": "spans_metrics"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.attributes.filter.query" is equal to "{{ spans_metric.data.attributes.filter.query }}-updated"
+

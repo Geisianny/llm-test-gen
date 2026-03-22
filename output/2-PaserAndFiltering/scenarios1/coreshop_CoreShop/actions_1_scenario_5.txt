@@ -1,0 +1,11 @@
+Scenario 5: Add a price rule with a retail price of 80 for all products
+  Given  adding a product price rule named "discount"
+  And  the price rule is active
+  And  the price rule has a action price of 80 in currency "EUR"
+  Then  the price rule should be valid for product "Shoe"
+  Then  the price rule should be valid for product "Shoe 2"
+  Then  the price rule should be valid for product "Jacket"
+  And  the product "Shoe" should have the prices, price: "8000" and retail-price: "8000" and discount: "0"
+  And  the product "Shoe 2" should have the prices, price: "8000" and retail-price: "8000" and discount: "0"
+  And  the product "Jacket" should have the prices, price: "8000" and retail-price: "8000" and discount: "0"
+

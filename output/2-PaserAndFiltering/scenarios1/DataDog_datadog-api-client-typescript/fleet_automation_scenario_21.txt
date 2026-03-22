@@ -1,0 +1,7 @@
+Scenario 21: List all deployments returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "ListFleetDeployments" enabled
+  And  new "ListFleetDeployments" request
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

@@ -1,0 +1,7 @@
+Scenario 3: Get aggregated order book from external exchanges
+  Given  the external exchange "binance" has order book for "BTC/EUR":
+  And  the external exchange "kraken" has order book for "BTC/EUR":
+  When  I request "GET /api/external-exchange/orderbook/BTC/EUR?depth=3"
+  Then  the response status should be 200
+  And  the aggregated order book should contain:
+

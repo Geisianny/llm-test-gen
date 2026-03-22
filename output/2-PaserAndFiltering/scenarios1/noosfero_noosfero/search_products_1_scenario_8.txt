@@ -1,0 +1,14 @@
+Scenario 8: remember facet filter when searching new query
+  Given  the following enterprises
+  And  the following categories as facets
+  And  the following product_categories
+  And  the following products
+  When  I go to the search products page
+  And  I fill in "search-input" with "Network"
+  And  I press "Search"
+  And  I follow "Software Livre" within "#facets-menu"
+  And  I fill in "search-input" with "Other"
+  And  I press "Search"
+  Then  I should see "Other open" within "#search-results"
+  And  I should not see "Other closed"
+

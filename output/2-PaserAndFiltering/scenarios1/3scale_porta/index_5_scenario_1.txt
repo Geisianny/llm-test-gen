@@ -1,0 +1,7 @@
+Scenario 1: Sorting services
+  Tags: ['@search']
+  Given  a service "First"
+  And  a service "Last"
+  When  an admin is reviewing services index page
+  Then  they can filter the table by "Name"
+

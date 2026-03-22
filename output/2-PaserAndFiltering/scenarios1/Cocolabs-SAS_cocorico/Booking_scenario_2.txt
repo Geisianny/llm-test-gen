@@ -1,0 +1,13 @@
+Scenario 2: As asker i can cancel a booking request not already accepted by offerer
+  Given  I make this new booking request:
+  When  I follow "Cancel"
+  And  I wait 3000 ms
+  Then  I should see "0" in the ".modal-body [data-id=booking-total]" element
+  When  I fill in "booking_message" with "Finally i have to cancel my booking request"
+  And  I check hidden "I accept the terms of use"
+  And  I click on the element with css selector "#booking-edit-submit"
+  And  I wait 3000 ms
+  Then  I should see "SUCCESS!"
+  And  I should receive the "booking_canceled_by_asker_offerer" mail on "offerer@cocorico.rocks"
+  And  He should receive the "booking_canceled_by_asker_asker" mail on "asker@cocorico.rocks"
+

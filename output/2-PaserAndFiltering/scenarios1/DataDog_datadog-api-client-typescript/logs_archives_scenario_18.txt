@@ -1,0 +1,8 @@
+Scenario 18: Revoke role from an archive returns "Not found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-forwarding']
+  Given  new "RemoveRoleFromArchive" request
+  And  request contains "archive_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"id": "3653d3c6-0c75-11ea-ad28-fb5701eabc7d", "type": "roles"}}
+  When  the request is sent
+  Then  the response status is 404 Not found
+

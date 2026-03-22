@@ -1,0 +1,4 @@
+Scenario 1: Create a like both condition and render it
+  Given  there is a like condition with field-name "XY" and pattern "both" and value "blub"
+  Then  the condition rendered for "mysql" should look like "`XY` LIKE '%blub%'"
+

@@ -1,0 +1,16 @@
+Scenario 1: Sending a message
+  Given  buyer "bob" has no messages
+  When  I go to the dashboard
+  And  I follow "Messages"
+  And  I follow "Compose"
+  Then  I should see "foo.3scale.localhost"
+  When  I fill in "Subject" with "Hello there"
+  And  I fill in "Body" with "Just wanted to say hi"
+  And  I press "Send"
+  Then  a message should be sent from buyer "bob" to provider "foo.3scale.localhost" with subject "Hello there" and body "Just wanted to say hi"
+  When  I follow "Sent Messages"
+  Then  I should see message to "foo.3scale.localhost" with subject "Hello there"
+  When  I follow "Hello there"
+  Then  I should see "Hello there"
+  And  I should see "Just wanted to say hi"
+

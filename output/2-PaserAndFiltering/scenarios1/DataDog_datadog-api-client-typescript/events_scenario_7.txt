@@ -1,0 +1,8 @@
+Scenario 7: Post an event returns "OK" response
+  Tags: ['@team:DataDog/monitors-evaluation']
+  Given  new "CreateEvent" request
+  And  body with value {"title": "{{ unique }}", "text": "A text message.", "tags": ["test:{{ unique_alnum }}"]}
+  When  the request is sent
+  Then  the response status is 202 OK
+  And  the response "event.text" is equal to "A text message."
+

@@ -1,0 +1,5 @@
+Scenario: Search for voucher batches by transaction type
+  Given there are existing voucher batches with different transaction types
+  When the user searches for voucher batches by transaction type "Sales"
+  Then the system displays a list of voucher batches with transaction type "Sales"
+  And the list includes batch number, date, description, and values

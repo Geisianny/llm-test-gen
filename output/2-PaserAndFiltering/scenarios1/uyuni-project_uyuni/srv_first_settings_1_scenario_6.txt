@@ -1,0 +1,12 @@
+Scenario 6: Grant testing user administrative priviledges
+  When  I follow the left menu "Users > User List > Active"
+  And  I follow "testing"
+  And  I check "role_org_admin"
+  And  I check "role_system_group_admin"
+  And  I check "role_channel_admin"
+  And  I check "role_activation_key_admin"
+  And  I check "role_config_admin"
+  And  I click on "Update"
+  Then  I should see a "User information updated" text
+  And  I should see a "testing" text
+

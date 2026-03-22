@@ -1,0 +1,8 @@
+Scenario 3: changing the view mode from not in fullscreen to fullscreen
+  Tags: ['@selenium']
+  Given  I go to /joaosilva/sample-article
+  And  I follow "article-options"
+  And  I follow "Full screen"
+  And  I follow "article-options"
+  Then  I should see "Exit full screen"
+

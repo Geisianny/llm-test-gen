@@ -1,0 +1,6 @@
+Scenario 1: Having the only country preselected on addressing form
+  Tags: ['@ui', '@no-api']
+  When  I add product "PHP T-Shirt" to the cart
+  And  I am at the checkout addressing step
+  Then  I should have "United States" selected as country
+

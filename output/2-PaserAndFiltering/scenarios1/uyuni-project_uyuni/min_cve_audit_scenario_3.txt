@@ -1,0 +1,8 @@
+Scenario 3: Schedule channel data refresh
+  When  I follow the left menu "Admin > Task Schedules"
+  And  I follow "cve-server-channels-default"
+  And  I follow "cve-server-channels-bunch"
+  And  I click on "Single Run Schedule"
+  Then  I should see a "bunch was scheduled" text
+  And  I wait until the table contains "FINISHED" or "SKIPPED" followed by "FINISHED" in its first rows
+

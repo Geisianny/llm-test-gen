@@ -1,0 +1,12 @@
+Scenario 1: Versioning
+  Tags: ['@wip']
+  When  fill the template draft with "My content"
+  And  save it as version at 13:00:00
+  And  save it as version at 14:00:00
+  And  I press "Publish" at 15:00:00
+  And  I press "Publish" at 16:00:00
+  And  I follow "Versions of this page"
+  Then  I should see following table:
+  When  I follow "Show 2012-12-24 16:00:00 UTC"
+  Then  I should see "Version of Page"
+

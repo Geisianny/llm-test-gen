@@ -1,0 +1,15 @@
+Scenario 1: Adding a new product with associations
+  Tags: ['@no-api', '@ui', '@mink:chromedriver']
+  When  I want to create a new simple product
+  And  I specify its code as "lg_g3"
+  And  I name it "LG G3" in "English (United States)" locale
+  And  I set its slug to "lg-g3"
+  And  I set its price to "$400.00" for "United States" channel
+  And  I associate as "Accessories" the "LG headphones" and "LG earphones" products
+  And  I associate as "Alternatives" the "LG G4" and "LG G5" products
+  And  I add it
+  Then  I should be notified that it has been successfully created
+  And  this product should have an association "Accessories" with products "LG headphones" and "LG earphones"
+  And  this product should also have an association "Alternatives" with products "LG G4" and "LG G5"
+  And  the product "LG G3" should appear in the store
+

@@ -1,0 +1,20 @@
+Scenario 2: Billing variable cost on plan change after multiple billing cycles without reaching the threshold
+  Given  the following application plans:
+  And  pricing rules on plan "PureVariable":
+  And  pricing rules on plan "PureVariable101":
+  Given  the buyer is signed up to plan "PureVariable101" on 20th Mar 2017
+  And  the buyer makes a service transactions with:
+  When  time flies to 3rd Apr 2017
+  Then  the buyer should have 0 invoices
+  Given  the buyer makes a service transactions with:
+  When  time flies to 3rd May 2017
+  Then  the buyer should have 0 invoices
+  Given  the buyer makes a service transactions with:
+  When  time flies to 4th May 2017
+  And  the buyer changes to application plan "PureVariable"
+  When  time flies to 7th May 2017
+  Then  the buyer should have following line items for "May, 2017" in the 1st invoice:
+  And  the buyer makes a service transactions with:
+  When  time flies to 3rd Jun 2017
+  Then  the buyer should have following line items for "June, 2017" in the 1st invoice:
+

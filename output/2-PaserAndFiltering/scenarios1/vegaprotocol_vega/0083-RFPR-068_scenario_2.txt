@@ -1,0 +1,8 @@
+Scenario 2: (0083-RFPR-068) Setting min epoch to 0 means rewards straight away
+  Tags: ['@TeamStep']
+  And  the following network parameters are set:
+  Given  the parties submit the following recurring transfers:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  parties should have the following vesting account balances:
+

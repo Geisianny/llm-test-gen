@@ -1,0 +1,13 @@
+Scenario 17: Get team on-call users returns "OK" response
+  Tags: ['@team:DataDog/on-call']
+  Given  new "GetTeamOnCallUsers" request
+  And  there is a valid "user" in the system
+  And  there is a valid "dd_team" in the system
+  And  there is a valid "schedule" in the system
+  And  there is a valid "escalation_policy" in the system
+  And  there are valid "routing_rules" in the system
+  And  request contains "team_id" parameter from "routing_rules.data.id"
+  And  request contains "include" parameter with value "responders,escalations.responders"
+  When  the request is sent
+  Then  the response status is 200 OK
+

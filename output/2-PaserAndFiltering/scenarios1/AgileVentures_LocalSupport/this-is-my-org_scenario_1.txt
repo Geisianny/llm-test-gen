@@ -1,0 +1,9 @@
+Scenario 1: Signed in User
+  Tags: ['@vcr']
+  Given  I am signed in as a non-superadmin
+  And  I click "This is my organisation" on the "Helpful Folk" page and stay there
+  Then  I should see "You have requested admin status for Helpful Folk"
+  And  I should not see a link or button "This is my organisation"
+  And  "admin@helpfolk.com"'s request for "Helpful Folk" should be persisted
+  And  an email should be sent to "superadmin@localsupport.org" as notification of the request for admin status of "Helpful Folk"
+

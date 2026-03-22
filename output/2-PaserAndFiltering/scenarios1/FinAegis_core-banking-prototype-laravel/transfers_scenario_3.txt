@@ -1,0 +1,8 @@
+Scenario 3: Cross-currency transfer
+  Given  I have an account with balance 1000.00 USD
+  And  the following exchange rates exist:
+  When  I transfer 100.00 USD to EUR account "b1234567-1234-1234-1234-123456789012"
+  Then  the transfer should be successful
+  And  my account balance should be 900.00 USD
+  And  account "b1234567-1234-1234-1234-123456789012" should have balance 85.00 EUR
+

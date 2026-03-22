@@ -1,0 +1,8 @@
+Scenario 6: Delete a RUM application returns "No Content" response
+  Tags: ['@skip-validation', '@team:DataDog/rum-backend']
+  Given  there is a valid "rum_application" in the system
+  And  new "DeleteRUMApplication" request
+  And  request contains "id" parameter from "rum_application.data.id"
+  When  the request is sent
+  Then  the response status is 204 No Content
+

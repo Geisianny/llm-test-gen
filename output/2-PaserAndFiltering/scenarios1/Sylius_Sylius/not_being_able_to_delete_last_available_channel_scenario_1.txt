@@ -1,0 +1,6 @@
+Scenario 1: Preventing from deleting only channel
+  Tags: ['@api', '@', '@ui']
+  When  I delete channel "Web Store"
+  Then  I should be notified that it cannot be deleted
+  And  this channel should still be in the registry
+

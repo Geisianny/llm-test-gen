@@ -1,0 +1,7 @@
+Scenario 1: Create Scanning Group returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/sensitive-data-scanner']
+  Given  new "CreateScanningGroup" request
+  And  body with value {"data": {"attributes": {"filter": {}, "product_list": ["logs"], "samplings": [{"product": "logs", "rate": 100.0}]}, "relationships": {"configuration": {"data": {"type": "sensitive_data_scanner_configuration"}}, "rules": {"data": [{"type": "sensitive_data_scanner_rule"}]}}, "type": "sensitive_data_scanner_group"}, "meta": {"version": 0}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

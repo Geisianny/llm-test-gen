@@ -1,0 +1,7 @@
+Scenario 2: ending a government
+  Given  there is a current government
+  And  two cabinet ministers "Alice" and "Ben"
+  And  I am a GDS admin
+  When  I close the current government
+  Then  there should be no active ministerial role appointments
+

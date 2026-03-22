@@ -1,0 +1,11 @@
+Scenario 3: Not Signed in User Who Fails Signin Once
+  Tags: ['@javascript', '@billy']
+  Given  I click "This is my organisation" on the "Helpful Folk" page and stay there
+  When  I sign in as "admin@helpfolk.com" with password "mypassword1235" with javascript
+  Then  I should be on the sign in page
+  When  I sign in as "admin@helpfolk.com" with password "mypassword1234"
+  Then  I should see "You have requested admin status for Helpful Folk"
+  And  I should not see a link or button "This is my organisation"
+  And  "admin@helpfolk.com"'s request for "Helpful Folk" should be persisted
+  And  an email should be sent to "superadmin@localsupport.org" as notification of the request for admin status of "Helpful Folk"
+

@@ -1,0 +1,7 @@
+Scenario 2: Make public price
+  When  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  the follow products exist:
+  And  the follow prices exist:
+  When  I use the APP to make a price from "Product One" for 30000 per "year" public
+  Then  the price for "Product One" with the amount 30000 should be public
+

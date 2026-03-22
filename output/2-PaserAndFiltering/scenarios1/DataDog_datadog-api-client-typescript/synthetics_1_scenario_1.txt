@@ -1,0 +1,6 @@
+Scenario 1: Get the on-demand concurrency cap returns "OK" response
+  Tags: ['@team:DataDog/synthetics-managing']
+  Given  new "GetOnDemandConcurrencyCap" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

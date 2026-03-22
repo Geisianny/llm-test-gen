@@ -1,0 +1,6 @@
+Scenario: Successful login with valid credentials
+  Given there is a registered user with a valid email and password
+  When the user logs in with the valid email
+  And enters the correct password
+  Then the system grants access to Yawik
+  And displays the user's dashboard

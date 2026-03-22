@@ -1,0 +1,4 @@
+Scenario 3: Affiliate admin should be on the admin home page upon successful login
+  When  I log in with email "affiliate_admin@fixtures.org"
+  Then  I should be on the admin home page
+

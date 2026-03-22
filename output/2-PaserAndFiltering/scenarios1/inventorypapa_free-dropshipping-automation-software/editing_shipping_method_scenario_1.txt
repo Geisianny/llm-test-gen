@@ -1,0 +1,8 @@
+Scenario 1: Trying to change shipping method code
+  Tags: ['@todo']
+  Given  I want to modify a shipping method "UPS Carrier"
+  When  I change its code to "UPS"
+  And  I save my changes
+  Then  I should be notified that code cannot be changed
+  And  shipping method "UPS Carrier" should still have code "UPS_CARRIER"
+

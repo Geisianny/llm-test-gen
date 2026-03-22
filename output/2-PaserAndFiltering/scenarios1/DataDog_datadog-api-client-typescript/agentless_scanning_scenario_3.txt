@@ -1,0 +1,7 @@
+Scenario 3: Create AWS scan options returns "Agentless scan options enabled successfully." response
+  Tags: ['@skip', '@team:DataDog/k9-agentless']
+  Given  new "CreateAwsScanOptions" request
+  And  body with value {"data": {"id": "000000000003", "type": "aws_scan_options", "attributes": {"lambda": true, "sensitive_data": false, "vuln_containers_os": true, "vuln_host_os": true}}}
+  When  the request is sent
+  Then  the response status is 201 Created
+

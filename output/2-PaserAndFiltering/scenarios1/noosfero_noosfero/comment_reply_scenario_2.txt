@@ -1,0 +1,9 @@
+Scenario 2: show error messages when make a blank comment reply
+  Tags: ['@selenium-fixme']
+  Given  I am logged in as "booking"
+  And  I go to /booking/article-to-comment
+  And  I follow "Reply" within ".comments-action-bar"
+  When  I press "Post comment" within ".comment-balloon"
+  Then  I should see "Title can't be blank" within "div.comment_reply"
+  And  I should see "Body can't be blank" within "div.comment_reply"
+

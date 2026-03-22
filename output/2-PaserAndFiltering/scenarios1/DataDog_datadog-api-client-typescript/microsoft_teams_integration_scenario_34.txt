@@ -1,0 +1,8 @@
+Scenario 34: Get all workflow webhook handles returns "OK" response
+  Tags: ['@team:DataDog/chat-integrations']
+  Given  there is a valid "workflows_webhook_handle" in the system
+  And  new "ListWorkflowsWebhookHandles" request
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data[0].type" is equal to "workflows-webhook-handle"
+

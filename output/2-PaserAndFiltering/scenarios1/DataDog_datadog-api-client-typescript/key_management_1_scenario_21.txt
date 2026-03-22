@@ -1,0 +1,7 @@
+Scenario 21: Get API key returns "Not Found" response
+  Tags: ['@team:DataDog/credentials-management']
+  Given  new "GetAPIKey" request
+  And  request contains "api_key_id" parameter with value "invalidId"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

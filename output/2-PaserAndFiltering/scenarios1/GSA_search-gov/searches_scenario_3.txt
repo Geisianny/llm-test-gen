@@ -1,0 +1,8 @@
+Scenario 3: Searching a domain with Bing results that match a specific news item
+  Given  the following BingV7 Affiliates exist:
+  And  affiliate "bar.gov" has the following RSS feeds:
+  And  feed "Press" has the following news items:
+  When  I am on bar.gov's search page
+  And  I search for "Hillary Rodham Clinton first lady"
+  Then  I should see "Clinton RSS Test"
+

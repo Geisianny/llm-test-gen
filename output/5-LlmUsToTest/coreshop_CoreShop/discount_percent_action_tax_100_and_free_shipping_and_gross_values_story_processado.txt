@@ -1,0 +1,37 @@
+Scenario: Apply 100% discount voucher to cart with taxable products
+  Given there is a cart with taxable products worth $100
+  And the cart has a tax rate of 20%
+  And there is a voucher with a 100% discount
+  When the user applies the voucher to the cart
+  Then the cart total is $0
+  And the shipping cost is $0
+
+Scenario: Apply 100% discount voucher to cart with non-taxable products
+  Given there is a cart with non-taxable products worth $100
+  And there is a voucher with a 100% discount
+  When the user applies the voucher to the cart
+  Then the cart total is $0
+  And the shipping cost is $0
+
+Scenario: Apply 100% discount voucher to cart with mixed taxable and non-taxable products
+  Given there is a cart with taxable products worth $80 and non-taxable products worth $20
+  And the cart has a tax rate of 20%
+  And there is a voucher with a 100% discount
+  When the user applies the voucher to the cart
+  Then the cart total is $0
+  And the shipping cost is $0
+
+Scenario: Attempt to apply 100% discount voucher to an empty cart
+  Given there is an empty cart
+  And there is a voucher with a 100% discount
+  When the user applies the voucher to the cart
+  Then the system displays a message indicating that the cart is empty
+  And the voucher is not applied
+
+Scenario: Apply 100% discount voucher to cart with shipping cost
+  Given there is a cart with products worth $100
+  And the shipping cost is $10
+  And there is a voucher with a 100% discount
+  When the user applies the voucher to the cart
+  Then the cart total is $0
+  And the shipping cost is $0

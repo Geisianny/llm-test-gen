@@ -1,0 +1,5 @@
+Scenario 4: Republish the "Ministers" page
+  Given  a published publication "Ministers" exists
+  When  I request a republish of the "Ministers" page
+  Then  I can see the "Ministers" page has been scheduled for republishing
+

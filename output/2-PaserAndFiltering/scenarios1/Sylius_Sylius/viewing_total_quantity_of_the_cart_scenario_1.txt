@@ -1,0 +1,5 @@
+Scenario 1: Viewing a total quantity for 1 product with quantity equals 1
+  Tags: ['@no-api', '@ui', '@javascript']
+  When  I add product "PHP T-Shirt" to the cart
+  Then  I should see cart total quantity is 1
+

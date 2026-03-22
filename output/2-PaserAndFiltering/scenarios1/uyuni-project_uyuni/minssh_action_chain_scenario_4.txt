@@ -1,0 +1,7 @@
+Scenario 4: Pre-requisite: wait until downgrade is finished on SSH minion
+  Given  I am on the Systems overview page of this "ssh_minion"
+  When  I follow "Software" in the content area
+  And  I follow "List / Remove" in the content area
+  And  I enter "andromeda-dummy" as the filtered package name
+  And  I click on the filter button until page does contain "andromeda-dummy-1.0" text
+

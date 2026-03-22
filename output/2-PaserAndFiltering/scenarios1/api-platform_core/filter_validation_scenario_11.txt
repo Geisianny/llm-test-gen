@@ -1,0 +1,7 @@
+Scenario 11: Test filter bounds: min length
+  When  I am on "/filter_validators?required=foo&required-allow-empty&min-length-3=123"
+  Then  the response status code should be 200
+  When  I am on "/filter_validators?required=foo&required-allow-empty&min-length-3=12"
+  Then  the response status code should be 422
+  And  the JSON node "detail" should be equal to 'min-length-3: This value is too short. It should have 3 characters or more.'
+

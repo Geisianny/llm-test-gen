@@ -1,0 +1,16 @@
+Scenario 1: As a user with active mandate I can declare my revenue
+  Given  I am logged with "gisele-berthoux@caramail.com" via OAuth client "VOX" with scope "jemarche_app read:profile"
+  When  I send a "GET" request to "/api/v3/adherents/b4219d47-3138-5efd-9762-2ef9f9495084/elect"
+  Then  the response status code should be 200
+  And  the JSON should be equal to:
+  When  I send a "POST" request to "/api/v3/profile/elect-declaration" with body:
+  Then  the response status code should be 201
+  When  I send a "GET" request to "/api/v3/adherents/b4219d47-3138-5efd-9762-2ef9f9495084/elect"
+  Then  the response status code should be 200
+  And  the JSON should be equal to:
+  When  I send a "POST" request to "/api/v3/profile/elect-payment" with body:
+  Then  the response status code should be 201
+  When  I send a "GET" request to "/api/v3/adherents/b4219d47-3138-5efd-9762-2ef9f9495084/elect"
+  Then  the response status code should be 200
+  And  the JSON should be equal to:
+

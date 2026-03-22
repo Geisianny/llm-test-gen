@@ -1,0 +1,7 @@
+Scenario 3: Properly rounded taxes for order with multiple products without discount
+  Tags: ['@ui']
+  When  I add 2 products "PHP T-Shirt" to the cart
+  And  I add product "Symfony Mug" to the cart
+  Then  my cart total should be "$75.15"
+  And  my cart taxes should be "$9.20"
+

@@ -1,0 +1,6 @@
+Scenario: Attempt to create an asset basket with invalid assets
+  Given the system administrator is logged in
+  And there are existing assets in the system
+  When the administrator creates a new asset basket with invalid assets
+  Then the system denies the creation of the asset basket
+  And displays an error message indicating the invalid assets

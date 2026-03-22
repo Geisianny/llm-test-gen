@@ -1,0 +1,8 @@
+Scenario 24: Get the details of a case returns "Bad Request" response
+  Tags: ['@skip', '@team:DataDog/case-management']
+  Given  new "GetCase" request
+  And  there is a valid "case" in the system
+  And  request contains "case_id" parameter from "case.id"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

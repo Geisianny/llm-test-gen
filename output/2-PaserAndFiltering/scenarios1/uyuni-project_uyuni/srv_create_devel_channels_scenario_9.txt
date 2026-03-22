@@ -1,0 +1,4 @@
+Scenario 9: Create custom repositories inside the RH-like custom channel
+  Tags: ['@rhlike_minion']
+  When  I prepare the development repositories of "rhlike_minion" as part of "devel-rh-like-channel" channel
+

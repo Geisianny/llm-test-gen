@@ -1,0 +1,11 @@
+Scenario 2: Adding a new administrator and log in with its credentials
+  Tags: ['@api', '@ui']
+  When  I want to create a new administrator
+  And  I specify its email as "l.skywalker@gmail.com"
+  And  I specify its name as "Luke"
+  And  I specify its password as "lightsaber"
+  And  I specify its locale as "English (United States)"
+  And  I enable it
+  And  I add it
+  Then  I should be able to log in as "l.skywalker@gmail.com" authenticated by "lightsaber" password
+

@@ -1,0 +1,7 @@
+Scenario 9: Viewing a detailed page with product's datetime attribute
+  Tags: ['@ui']
+  Given  the store has a product "T-shirt banana"
+  And  this product has non-translatable datetime attribute "T-shirt date of production" with date "12 December 2015 12:34"
+  When  I check this product's details
+  Then  I should see the product attribute "T-shirt date of production" with date "Dec 12, 2015 12:34:00 PM"
+

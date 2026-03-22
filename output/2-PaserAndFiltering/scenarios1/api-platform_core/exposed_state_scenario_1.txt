@@ -1,0 +1,7 @@
+Scenario 1: Create a resource with truncable value should return the correct object state
+  Tags: ['@!mongodb', '@createSchema']
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/truncated_dummies" with body:
+  Then  the response status code should be 201
+  And  the JSON should be equal to:
+

@@ -1,0 +1,14 @@
+Scenario 7: repeat order
+  Tags: ['@selenium-fixme']
+  Given  "moes-tavern" has the following delivery methods
+  And  the following purchase from "homer" on "moes-tavern" that is "ordered"
+  And  I am on moes-tavern's products page
+  And  I follow "Add to basket"
+  And  I follow "Add to basket"
+  And  I follow "Show basket"
+  And  I follow "Hide basket"
+  When  I follow "checkout"
+  Then  I should see "Shopping checkout"
+  And  I should see "Duff"
+  And  I should see "French fries"
+

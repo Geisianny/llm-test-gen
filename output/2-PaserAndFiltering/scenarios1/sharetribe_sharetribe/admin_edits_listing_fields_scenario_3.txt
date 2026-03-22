@@ -1,0 +1,5 @@
+Scenario 3: Admin changes categories
+  Tags: ['@javascript']
+  When  I change custom field "House type" categories
+  Then  correct categories should be stored
+

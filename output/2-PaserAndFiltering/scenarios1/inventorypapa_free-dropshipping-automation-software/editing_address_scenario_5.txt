@@ -1,0 +1,9 @@
+Scenario 5: Changing province to for country with no provinces defined
+  Tags: ['@ui', '@javascript', '@api']
+  Given  I am editing the address of "Lucifer Morningstar"
+  When  I specify "New York" as my province
+  And  I save my changed address
+  Then  I should be notified that the address has been successfully updated
+  And  I should still have a single address in my address book
+  And  it should contain "New York"
+

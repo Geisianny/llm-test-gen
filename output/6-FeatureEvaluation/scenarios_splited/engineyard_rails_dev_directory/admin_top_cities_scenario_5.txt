@@ -1,0 +1,5 @@
+Scenario: Verify that the new top city is displayed in the featured cities section
+  Given there is an admin logged in
+  And the city "Chicago" is added as a top city with state "Illinois" and country "USA"
+  When the admin views the featured cities section
+  Then the system displays "Chicago" in the featured cities section

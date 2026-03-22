@@ -1,0 +1,5 @@
+Scenario 2: Clearing cart after logging out
+  Tags: ['@api']
+  When  I log out
+  Then  I don't have access to see the summary of my previous cart
+

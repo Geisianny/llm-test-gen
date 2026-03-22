@@ -1,0 +1,6 @@
+Scenario 39: Sidebar link destination for Systems => Autoinstallation => File Preservation
+  When  I follow the left menu "Systems > Autoinstallation > File Preservation"
+  Then  I should see a "File Preservation" text
+  And  I should see a "Reference Guide" link
+  And  I should see a "Create File Preservation List" link
+

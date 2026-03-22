@@ -1,0 +1,9 @@
+Scenario 38: Unarchive case returns "OK" response
+  Tags: ['@team:DataDog/case-management']
+  Given  new "UnarchiveCase" request
+  And  there is a valid "case" in the system
+  And  request contains "case_id" parameter from "case.id"
+  And  body with value {"data": {"type": "case"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+

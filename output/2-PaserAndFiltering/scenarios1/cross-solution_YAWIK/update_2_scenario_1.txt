@@ -1,0 +1,8 @@
+Scenario 1: Updating Name
+  When  I click edit on name form
+  And  I wait for the ajax response
+  And  I fill in "Organization Name" with "Some Organization"
+  And  I press "Save"
+  And  I wait for the ajax response
+  Then  I should see "Some Organization"
+

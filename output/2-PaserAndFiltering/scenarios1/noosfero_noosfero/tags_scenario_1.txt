@@ -1,0 +1,7 @@
+Scenario 1: viewing tag cloud
+  When  I go to /tag
+  Then  I should see "environment"
+  And  I should see "whales"
+  And  I should see "forest"
+  And  I should see "amazon"
+

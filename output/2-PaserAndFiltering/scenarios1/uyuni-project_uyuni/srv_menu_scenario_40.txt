@@ -1,0 +1,9 @@
+Scenario 40: Sidebar link destination for Systems => Autoinstallation => Autoinstallation Snippets
+  When  I follow the left menu "Systems > Autoinstallation > Autoinstallation Snippets"
+  Then  I should see a "Autoinstallation Snippets" text
+  And  I should see a "No autoinstallation snippets found." text
+  And  I should see a "Create Snippet" link
+  And  I should see a "Default Snippets" link in the content area
+  And  I should see a "Custom Snippets" link in the content area
+  And  I should see a "All Snippets" link in the content area
+

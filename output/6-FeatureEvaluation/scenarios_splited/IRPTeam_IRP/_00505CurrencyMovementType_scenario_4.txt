@@ -1,0 +1,6 @@
+Scenario: Delete an existing currency movement type
+  Given there is an administrator logged into the system
+  And there is an existing currency movement type with the name "TRY Partner Terms"
+  When the administrator deletes the currency movement type with the name "TRY Partner Terms"
+  Then the system removes the currency movement type
+  And displays a confirmation message indicating successful deletion

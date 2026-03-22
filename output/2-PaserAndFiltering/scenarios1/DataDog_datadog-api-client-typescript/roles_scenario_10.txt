@@ -1,0 +1,11 @@
+Scenario 10: Create role with a permission returns "OK" response
+  Tags: ['@team:DataDog/aaa-core-access']
+  Given  new "CreateRole" request
+  And  there is a valid "permission" in the system
+  And  body with value {"data": {"type": "roles", "attributes": {"name": "{{ unique }}"}, "relationships": {"permissions": {"data": [{"id": "{{ permission.id }}", "type": "{{ permission.type }}"}]}}}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.attributes.name" is equal to "{{ unique }}"
+  And  the response "data.type" is equal to "roles"
+  And  the response "data.relationships.permissions.data" has item with field "id" with value "{{ permission.id }}"
+

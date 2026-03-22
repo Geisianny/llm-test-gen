@@ -1,0 +1,7 @@
+Scenario 34: Get one application key owned by current user returns "Not Found" response
+  Tags: ['@team:DataDog/credentials-management']
+  Given  new "GetCurrentUserApplicationKey" request
+  And  request contains "app_key_id" parameter with value "incorrectId"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

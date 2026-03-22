@@ -1,0 +1,8 @@
+Scenario 5: Get active metrics list returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/metrics-experience', '@team:DataDog/metrics-index', '@team:DataDog/metrics-intake', '@team:DataDog/timeseries-query']
+  Given  a valid "appKeyAuth" key in the system
+  And  new "ListActiveMetrics" request
+  And  request contains "from" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 200 OK
+

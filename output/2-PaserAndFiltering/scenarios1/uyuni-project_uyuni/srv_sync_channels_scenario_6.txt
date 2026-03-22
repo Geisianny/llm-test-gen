@@ -1,0 +1,6 @@
+Scenario 6: List products with filter
+  When  I execute mgr-sync "list products --expand --filter x86_64"
+  Then  I should get "[ ] SUSE Linux Enterprise Server 15 SP4 x86_64"
+  And  I shouldn't get "ppc64"
+  And  I shouldn't get "s390x"
+

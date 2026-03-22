@@ -1,0 +1,7 @@
+Scenario 16: Adding an exclusive catalog promotion to existing exclusive catalog promotion with higher priority
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  Given  there is an exclusive catalog promotion "Spring sale" with priority 120 that reduces price by "50%" and applies on "Kotlin T-Shirt" variant
+  When  I create an exclusive "PHP stuff promotion" catalog promotion with 90 priority that applies on "T-Shirt" product and reduces price by "75%" in "United States" channel
+  Then  the visitor should see that the "PHP T-Shirt" variant is discounted from "$20.00" to "$5.00" with "PHP stuff promotion" promotion
+  And  the visitor should see that the "Kotlin T-Shirt" variant is discounted from "$40.00" to "$20.00" with "Spring sale" promotion
+

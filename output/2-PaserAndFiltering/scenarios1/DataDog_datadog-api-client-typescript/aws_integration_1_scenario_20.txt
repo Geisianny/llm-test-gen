@@ -1,0 +1,8 @@
+Scenario 20: Get an AWS integration by config ID returns "AWS Account object" response
+  Tags: ['@team:DataDog/aws-integrations']
+  Given  there is a valid "aws_account_v2" in the system
+  And  new "GetAWSAccount" request
+  And  request contains "aws_account_config_id" parameter from "aws_account_v2.data.id"
+  When  the request is sent
+  Then  the response status is 200 AWS Account object
+

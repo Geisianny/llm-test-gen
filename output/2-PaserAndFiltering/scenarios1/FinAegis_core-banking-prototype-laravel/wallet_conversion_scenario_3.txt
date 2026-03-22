@@ -1,0 +1,9 @@
+Scenario 3: Large conversion with slippage protection
+  Given  I want to convert 50000.00 USD to EUR
+  And  I set maximum slippage to 0.5%
+  When  I initiate the large conversion
+  Then  the system should check for market impact
+  And  execute the conversion in chunks if needed
+  And  abort if slippage exceeds my limit
+  And  provide detailed execution report
+

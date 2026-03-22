@@ -1,0 +1,12 @@
+Scenario 5: Add a fake base channel for i586
+  When  I follow the left menu "Software > Manage > Channels"
+  And  I follow "Create Channel"
+  And  I enter "Fake-Base-Channel-i586" as "Channel Name"
+  And  I enter "fake-base-channel-i586" as "Channel Label"
+  And  I select "None" from "Parent Channel"
+  And  I select "IA-32" from "Architecture:"
+  And  I enter "Fake-Base-Channel-i586 channel for testing" as "Channel Summary"
+  And  I enter "No more description for base channel." as "Channel Description"
+  And  I click on "Create Channel"
+  Then  I should see a "Channel Fake-Base-Channel-i586 created." text
+

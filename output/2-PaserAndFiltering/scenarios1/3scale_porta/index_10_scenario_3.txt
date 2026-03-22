@@ -1,0 +1,8 @@
+Scenario 3: Provider has "multiple_applications" denied
+  Given  a buyer "Pepe" of the provider
+  And  the default product of the provider has name "The API"
+  And  the following application plan:
+  And  the provider has "multiple_applications" denied
+  When  they go to the buyer accounts page
+  Then  the table don't have a column "Apps"
+

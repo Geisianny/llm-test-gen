@@ -1,0 +1,24 @@
+Scenario Outline 27: Navigate to menu "<path>" and open screen "<screen>" - Example 27
+  Tags: ['@wip']
+  When  I navigate the menu and select the item at "Goods & Services > Enter Inventory"
+  Then  I should see the Enter Inventory screen
+
+  Examples:
+    | path | screen |
+    | Goods & Services > Enter Inventory | Enter Inventory |
+    | Goods & Services > Import > Goods |  |
+    | Goods & Services > Import > Services |  |
+    | Goods & Services > Import > Overhead |  |
+    | Goods & Services > Import > Inventory |  |
+    | Goods & Services > Reports |  |
+    | Goods & Services > Reports > Inventory & COGS |  |
+    | Goods & Services > Reports > Inventory Activity |  |
+    | Goods & Services > Search | search for goods & services |
+    | Goods & Services > Search Groups |  |
+    | Goods & Services > Search Pricegroups |  |
+    | Goods & Services > Stock Assembly |  |
+    | Goods & Services > Translations |  |
+    | Goods & Services > Translations > Description |  |
+    | Goods & Services > Translations > Partsgroup |  |
+    | HR > Employees > Add Employee |  |
+

@@ -1,0 +1,8 @@
+Scenario 8: Check that Hardware Refresh button works on a SLE minion with new module.run syntax
+  Given  I am on the Systems overview page of this "sle_minion"
+  And  I follow "Hardware"
+  And  I click on "Schedule Hardware Refresh"
+  Then  I should see a "You have successfully scheduled a hardware profile refresh" text
+  When  I wait until event "Hardware List Refresh scheduled" is completed
+  And  I wait until there is no Salt job calling the module "hardware.profileupdate" on "sle_minion"
+

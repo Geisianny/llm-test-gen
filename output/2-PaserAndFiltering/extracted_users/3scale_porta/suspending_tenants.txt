@@ -1,0 +1,18 @@
+Feature: Suspending tenants
+Description: As a master
+  I to want to suspend tenants so that users can't access admin portals
+Tags: ['@javascript']
+
+Background: 
+  Given  a provider is logged in
+  And  the provider is suspended
+
+Scenario 1: Show Access Denied page on-premises
+  Tags: ['@onpremises']
+  When  I go to the provider login page
+  Then  I see the support email of the provider
+
+Scenario 2: Show "Account suspended" page in SaaS
+  When  I go to the provider login page
+  Then  I should see "Please open a support case"
+

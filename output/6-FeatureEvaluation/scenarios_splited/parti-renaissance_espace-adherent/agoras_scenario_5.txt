@@ -1,0 +1,6 @@
+Scenario: Manager can remove a user from an Agora
+  Given there is an authenticated user with OAuth token and manager role
+  And there is an Agora with existing members
+  And there is a user who is a member of the Agora
+  When the manager requests to remove the user from the Agora
+  Then the system removes the user from the Agora's members

@@ -1,0 +1,8 @@
+Scenario 11: Get details of an incident service returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:Datadog/incident-app']
+  Given  operation "GetIncidentService" enabled
+  And  new "GetIncidentService" request
+  And  request contains "service_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

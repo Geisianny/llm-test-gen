@@ -1,0 +1,9 @@
+Scenario 2: Decreasing inventory when order was cancelled
+  Tags: ['@ui']
+  Given  the order "#00000023" was cancelled
+  And  I want to modify the "Wyborowa Vodka Exquisite" product variant
+  When  I change its quantity of inventory to 2
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this variant should have a 2 item currently in stock
+

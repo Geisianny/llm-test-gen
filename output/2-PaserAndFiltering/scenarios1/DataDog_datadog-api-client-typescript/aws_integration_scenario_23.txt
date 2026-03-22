@@ -1,0 +1,7 @@
+Scenario 23: Set an AWS tag filter returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/aws-integrations']
+  Given  new "CreateAWSTagFilter" request
+  And  body with value {"account_id": "123456789012", "namespace": "elb", "tag_filter_str": "prod*"}
+  When  the request is sent
+  Then  the response status is 200 OK
+

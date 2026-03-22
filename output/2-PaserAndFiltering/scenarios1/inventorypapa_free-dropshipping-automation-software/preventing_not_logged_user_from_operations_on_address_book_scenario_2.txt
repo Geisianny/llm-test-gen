@@ -1,0 +1,5 @@
+Scenario 2: Trying to view address as a Visitor
+  Tags: ['@api']
+  When  I try to view details of address belongs to "John Doe"
+  Then  I should not see any details of address
+

@@ -1,0 +1,6 @@
+Scenario 2: Add Usage Limit
+  When  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  the follow customers exist:
+  When  I add customer usage limit to "customer.one@example.org":
+  Then  there should not be a limit to warn at -1 for "customer.one@example.org"
+

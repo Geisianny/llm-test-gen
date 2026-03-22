@@ -1,0 +1,9 @@
+Feature: admin_promoting_site_story_processado
+
+Scenario: Outline 1: Be aware of site identity on all pages - Example 1
+    Given  I visit the home page
+    Then  I should see "Harrow Community Network"
+    And  I should see the site branding
+
+
+

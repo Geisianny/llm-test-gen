@@ -1,0 +1,8 @@
+Scenario 8: User sees the header with USWDS banner
+  Tags: ['@javascript']
+  When  I go to the login page
+  Then  I should see "An official website of the United States government"
+  And  I should not see "Official websites use .gov"
+  When  I press "Here’s how you know"
+  Then  I should see "Official websites use .gov"
+

@@ -1,0 +1,10 @@
+Scenario 3: Signing in on the welcome back page when my account DOB disqualifies me and continuing anonymously
+  Given  I go to the first page of the "Senior Test Listing" application
+  When  I answer "Yes" to the community screening question
+  And  I hit the Next button "1" time
+  And  I fill out the Name page as "Alice Walker" with birth date "1/1/1900"
+  And  I sign in as "Alice Walker" with my email pre-filled
+  Then  I should see a form notice that says "Everyone in your household must be a Senior"
+  When  I choose to reconcile my application details by continuing without an account
+  Then  I should be on the "Contact" page of the application
+

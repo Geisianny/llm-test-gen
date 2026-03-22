@@ -1,0 +1,6 @@
+Scenario 6: Wait for service
+  Tags: ['@skip_if_github_validation']
+  When  I wait until "node" exporter service is active on "rhlike_minion"
+  And  I wait until "apache" exporter service is active on "rhlike_minion"
+  And  I wait until "postgres" exporter service is active on "rhlike_minion"
+

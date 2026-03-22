@@ -1,0 +1,109 @@
+Scenario 1: Disable 'Suspend Application' notification
+  And  provider "foo.3scale.localhost" has "multiple_applications" visible
+  And  provider "foo.3scale.localhost" has email template "cinstance_messenger_suspended"
+  When  a buyer "bob" signed up to provider "foo.3scale.localhost"
+  And  I am logged in as provider "foo.3scale.localhost" on its admin domain
+  And  the following application:
+  And  they go to application "other" admin page
+  Then  they should see "Live" within the application details
+  When  I follow "Suspend"
+  And  confirm the dialog
+  Then  they should see "Suspended" within the application details
+  And  I act as "bob"
+  Then  I should receive no email with subject "Application has been suspended"
+
+
+
+Scenario 2: Disable 'Waiting list confirmation' notification
+  And  provider "foo.3scale.localhost" requires accounts to be approved
+  And  provider "foo.3scale.localhost" has "multiple_applications" visible
+  And  provider "foo.3scale.localhost" has email template "account_confirmed"
+  When  the current domain is foo.3scale.localhost
+  And  I go to the sign up page
+  And  I fill in the signup fields as "Kirill"
+  Then  I should see the registration succeeded
+  When  I follow the activation link in an email sent to "Kirill@3scale.localhost"
+  Then  I should see "once your account is approved"
+  When  I act as "Kirill"
+  Then  I should receive no email with subject "Waiting list confirmation"
+
+
+
+Scenario 3: Disable 'Waiting list confirmation' notification with truthy condition
+  And  provider "foo.3scale.localhost" requires accounts to be approved
+  And  provider "foo.3scale.localhost" has "multiple_applications" visible
+  And  provider "foo.3scale.localhost" has email template "account_confirmed"
+  When  the current domain is foo.3scale.localhost
+  And  I go to the sign up page
+  And  I fill in the signup fields as "Kirill"
+  Then  I should see the registration succeeded
+  When  I follow the activation link in an email sent to "Kirill@3scale.localhost"
+  Then  I should see "once your account is approved"
+  When  I act as "Kirill"
+  Then  I should receive no email with subject "Waiting list confirmation"
+
+
+
+Scenario 4: Disable 'Waiting list confirmation' notification with falsy condition
+  And  provider "foo.3scale.localhost" requires accounts to be approved
+  And  provider "foo.3scale.localhost" has "multiple_applications" visible
+  And  provider "foo.3scale.localhost" has email template "account_confirmed"
+  When  the current domain is foo.3scale.localhost
+  And  I go to the sign up page
+  And  I fill in the signup fields as "Kirill"
+  Then  I should see the registration succeeded
+  When  I follow the activation link in an email sent to "Kirill@3scale.localhost"
+  Then  I should see "once your account is approved"
+  When  I act as "Kirill"
+  Then  I should receive 1 email with subject "Waiting list confirmation"
+
+
+
+Scenario 5: Custom email subject with truthy condition
+  And  provider "foo.3scale.localhost" requires accounts to be approved
+  And  provider "foo.3scale.localhost" has "multiple_applications" visible
+  And  provider "foo.3scale.localhost" has email template "account_confirmed"
+  When  the current domain is foo.3scale.localhost
+  And  I go to the sign up page
+  And  I fill in the signup fields as "Kirill"
+  Then  I should see the registration succeeded
+  When  I follow the activation link in an email sent to "Kirill@3scale.localhost"
+  Then  I should see "once your account is approved"
+  When  I act as "Kirill"
+  Then  I should receive no email with subject "Waiting list confirmation"
+  And  I should receive no email with subject "Other custom subject"
+  Then  I should receive 1 email with subject "Your account has been confirmed"
+
+
+
+Scenario 6: Custom email subject with falsy condition
+  And  provider "foo.3scale.localhost" requires accounts to be approved
+  And  provider "foo.3scale.localhost" has "multiple_applications" visible
+  And  provider "foo.3scale.localhost" has email template "account_confirmed"
+  When  the current domain is foo.3scale.localhost
+  And  I go to the sign up page
+  And  I fill in the signup fields as "Kirill"
+  Then  I should see the registration succeeded
+  When  I follow the activation link in an email sent to "Kirill@3scale.localhost"
+  Then  I should see "once your account is approved"
+  When  I act as "Kirill"
+  Then  I should receive no email with subject "Waiting list confirmation"
+  And  I should receive no email with subject "Your account has been confirmed"
+  Then  I should receive 1 email with subject "Other custom subject"
+
+
+
+Scenario 7: Do not disable 'Waiting list confirmation' notification due to falsy condition but still change the subject
+  And  provider "foo.3scale.localhost" requires accounts to be approved
+  And  provider "foo.3scale.localhost" has "multiple_applications" visible
+  And  provider "foo.3scale.localhost" has email template "account_confirmed"
+  When  the current domain is foo.3scale.localhost
+  And  I go to the sign up page
+  And  I fill in the signup fields as "Kirill"
+  Then  I should see the registration succeeded
+  When  I follow the activation link in an email sent to "Kirill@3scale.localhost"
+  Then  I should see "once your account is approved"
+  When  I act as "Kirill"
+  Then  I should receive no email with subject "Waiting list confirmation"
+  And  I should receive 1 email with subject "Your account has been confirmed"
+

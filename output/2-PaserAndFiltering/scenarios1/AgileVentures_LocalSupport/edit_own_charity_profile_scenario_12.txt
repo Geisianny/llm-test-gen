@@ -1,0 +1,17 @@
+Scenario Outline 12: Edit page has scroll box for selecting categories - Example 1
+  Given  I am signed in as a charity worker related to "Friendly"
+  And  I visit the edit page for the organisation named "Friendly"
+  Then  I should see the category named Animal welfare as the 1st category in What you do
+
+  Examples:
+    | heading | category_name | nth |
+    | What you do | Animal welfare | 1st |
+    | What you do | Child welfare | 2nd |
+    | What you do | Feed the hungry | 3rd |
+    | Who you help | Accommodation | 1st |
+    | Who you help | General | 2nd |
+    | Who you help | Health | 3rd |
+    | How you help | Education | 1st |
+    | How you help | Give them things | 2nd |
+    | How you help | Teach them things | 3rd |
+

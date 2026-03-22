@@ -1,0 +1,9 @@
+Scenario 5: Create a new role by cloning an existing role returns "Conflict" response
+  Tags: ['@team:DataDog/aaa-core-access']
+  Given  there is a valid "role" in the system
+  And  new "CloneRole" request
+  And  request contains "role_id" parameter from "role.data.id"
+  And  body with value {"data": {"attributes": {"name": "{{ role.data.attributes.name }}"}, "type": "roles"}}
+  When  the request is sent
+  Then  the response status is 409 Conflict
+

@@ -1,0 +1,8 @@
+Scenario 7: Get a failure event returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/ci-app-backend']
+  Given  a valid "appKeyAuth" key in the system
+  And  new "GetDORAFailure" request
+  And  request contains "failure_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

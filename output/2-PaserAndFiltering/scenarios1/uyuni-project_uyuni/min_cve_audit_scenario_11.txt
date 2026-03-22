@@ -1,0 +1,4 @@
+Scenario 11: Cleanup: remove installed packages
+  When  I disable repository "test_repo_rpm_pool" on this "sle_minion" without error control
+  And  I remove package "milkyway-dummy" from this "sle_minion" without error control
+

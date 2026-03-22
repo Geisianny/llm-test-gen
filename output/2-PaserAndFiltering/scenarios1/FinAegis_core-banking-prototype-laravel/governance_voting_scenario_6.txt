@@ -1,0 +1,7 @@
+Scenario 6: Emergency governance override
+  Given  a critical security issue is detected
+  When  an emergency proposal is created
+  Then  it should have a shortened voting period
+  And  require higher approval threshold
+  And  allow admin override if consensus cannot be reached
+

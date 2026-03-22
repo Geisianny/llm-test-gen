@@ -1,0 +1,9 @@
+Scenario 4: Trying to add a new payment method without specifying its name
+  Tags: ['@api', '@ui']
+  When  I want to create a new payment method with "Offline" gateway factory
+  And  I specify its code as "PEC"
+  But  I do not name it
+  And  I add it
+  Then  I should be notified that I have to specify payment method name
+  And  the payment method with code "PEC" should not be added
+

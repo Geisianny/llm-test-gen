@@ -1,0 +1,9 @@
+Scenario 29: Revoke permission returns "Bad Request" response
+  Tags: ['@skip-validation', '@team:DataDog/aaa-core-access']
+  Given  there is a valid "role" in the system
+  And  new "RemovePermissionFromRole" request
+  And  request contains "role_id" parameter from "role.data.id"
+  And  body with value {"data": {"id": "11111111-dead-beef-dead-ffffffffffff", "type": "bad_permission_type"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

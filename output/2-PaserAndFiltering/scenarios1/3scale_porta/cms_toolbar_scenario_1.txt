@@ -1,0 +1,6 @@
+Scenario 1: A buyer logs in
+  Given  a buyer "Cake"
+  When  the buyer logs in
+  And  go to the homepage
+  Then  there should not be a CMS toolbar
+

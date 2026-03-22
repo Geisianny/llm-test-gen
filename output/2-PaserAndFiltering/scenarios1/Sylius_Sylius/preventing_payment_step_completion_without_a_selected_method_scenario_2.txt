@@ -1,0 +1,11 @@
+Scenario 2: Preventing payment step completion if there are no available methods
+  Tags: ['@no-api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  And  I am at the checkout addressing step
+  When  I specify the email as "jon.snow@example.com"
+  And  I specify the billing address as "Ankh Morpork", "Frost Alley", "90210", "United States" for "Jon Snow"
+  And  I complete the addressing step
+  And  I proceed with selecting "Free" shipping method
+  Then  I should not be able to complete the payment step
+  And  there should be information about no payment methods available for my order
+

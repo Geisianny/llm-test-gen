@@ -1,0 +1,11 @@
+Scenario 15: view all media button if there are too many uploads
+  Tags: ['@selenium-fixme']
+  Given  the following galleries
+  And  the following files
+  When  I go to /myprofile/joaosilva/cms/new?type=TextArticle
+  And  I follow "Show/Hide"
+  And  I should not see "View all"
+  And  I attach the file "public/503.jpg" to "file"
+  Then  I should see "View all" link
+  And  I should see div with title "503" within ".images"
+

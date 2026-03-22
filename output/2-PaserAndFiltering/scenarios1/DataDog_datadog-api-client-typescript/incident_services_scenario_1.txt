@@ -1,0 +1,8 @@
+Scenario 1: Create a new incident service returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:Datadog/incident-app']
+  Given  operation "CreateIncidentService" enabled
+  And  new "CreateIncidentService" request
+  And  body with value {"data": {"attributes": {"name": "an example service name"}, "type": "services"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

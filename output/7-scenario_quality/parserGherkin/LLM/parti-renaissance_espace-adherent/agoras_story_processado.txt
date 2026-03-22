@@ -1,0 +1,53 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: agoras_story_processado.feature
+Caminho relativo: parti-renaissance_espace-adherent\agoras_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\parti-renaissance_espace-adherent\agoras_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: agoras_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Unauthenticated user cannot access Agoras API
+   Steps: 4
+   - Given there is an unauthenticated user
+   - When the user attempts to access the Agoras API
+   - Then the system denies access
+   - And displays an error message indicating authentication is required
+2. Authenticated user can retrieve list of Agoras
+   Steps: 5
+   - Given there is an authenticated user with OAuth token
+   - And there are existing Agoras in the system
+   - When the user queries the Agoras API
+   - Then the system returns a list of Agoras
+   - And the list includes the Agoras' details
+3. User can join an Agora
+   Steps: 5
+   - Given there is an authenticated user with OAuth token
+   - And there is an Agora with available membership slots
+   - When the user requests to join the Agora
+   - Then the system adds the user to the Agora's members
+   - And displays a confirmation message
+4. User cannot join an Agora beyond its member limit
+   Steps: 5
+   - Given there is an authenticated user with OAuth token
+   - And there is an Agora with a maximum membership limit reached
+   - When the user requests to join the Agora
+   - Then the system denies the request
+   - And displays an error message indicating the Agora is full
+5. Manager can remove a user from an Agora
+   Steps: 6
+   - Given there is an authenticated user with OAuth token and manager role
+   - And there is an Agora with existing members
+   - And there is a user who is a member of the Agora
+   - When the manager requests to remove the user from the Agora
+   - Then the system removes the user from the Agora's members
+   - And displays a confirmation message

@@ -1,0 +1,5 @@
+Scenario: Create a new basket asset
+  Given there is a bank customer with an active account
+  When the customer creates a new basket asset with a valid composition
+  Then the system creates the basket asset
+  And displays a confirmation message

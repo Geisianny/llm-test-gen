@@ -1,0 +1,8 @@
+Scenario 7: Stablecoins CTA button works for authenticated users
+  Tags: ['@authenticated']
+  Given  I am logged in as a user
+  When  I visit "/subproducts/stablecoins"
+  And  I click on "Get Started with EURS"
+  Then  I should be on "/dashboard"
+  And  the response status code should be 200
+

@@ -1,0 +1,4 @@
+Scenario: Site name is displayed on the homepage
+  Given the user is on the homepage
+  Then the site name "Harrow Community Network" is displayed prominently
+  And the site's visual identity is visible

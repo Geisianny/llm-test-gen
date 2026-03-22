@@ -1,0 +1,26 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 19/01/2026 23:13:57
+Arquivo analisado: generate_for_payment_story_processado.feature
+Caminho relativo: billabear_billabear\generate_for_payment_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/Originais\billabear_billabear\generate_for_payment_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: generate_for_payment_story_processado
+Descrição: Não possui
+Total de cenários: 1
+
+CENÁRIOS IDENTIFICADOS:
+1. Get customer info
+   Steps: 6
+   - When I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+   - And the follow customers exist:
+   - And the following subscriptions exist:
+   - And there is a payments for:
+   - When I generate a receipt for the payment for "customer.one@example.org" for 3500
+   - Then then there will be a receipt for "customer.one@example.org" for 3500

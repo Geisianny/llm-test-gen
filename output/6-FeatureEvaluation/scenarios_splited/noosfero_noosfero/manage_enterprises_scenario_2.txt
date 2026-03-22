@@ -1,0 +1,6 @@
+Scenario: Enterprise owner accesses enterprise dashboard
+  Given there is an enterprise owner with registered enterprises
+  And the feature flag for enterprise management is enabled
+  When the user selects the enterprise management option
+  Then the system displays a list of registered enterprises
+  And the user can access the dashboard of each enterprise

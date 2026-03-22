@@ -1,0 +1,10 @@
+Scenario 7: An uncleared journal line does not block clearing the line later
+  can be included in another reconciliation with both reconciliations
+  ending in 'approved' status, as long as the journal line is not
+  marked as 'cleared' in the second reconciliation.
+  Given  an uncleared journal line on 2000-01-01
+  And  two reconciliations ending on 2000-02-01
+  When  the journal line is cleared in the first reconciliation
+  And  the second reconciliation is submitted
+  Then  the first reconciliation can also be submitted
+

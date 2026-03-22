@@ -1,0 +1,10 @@
+Scenario 2: Check if Distribution Channel Mapping page exists
+  When  I follow the left menu "Software > Distribution Channel Mapping"
+  Then  I should see a "Distribution Channel Mapping" text
+  And  I should see a "Channel List" link in the left menu
+  And  I should see a "Package Search" link in the left menu
+  And  I should see a "Manage" link in the left menu
+  And  I should see a "Distribution Channel Mapping" link in the left menu
+  And  I should see a "Create Distribution Channel Mapping" link
+  And  I should see a "No distribution channel mappings currently exist." text in the content area
+

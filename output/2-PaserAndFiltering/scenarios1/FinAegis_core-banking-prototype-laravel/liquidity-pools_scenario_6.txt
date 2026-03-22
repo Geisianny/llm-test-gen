@@ -1,0 +1,8 @@
+Scenario 6: Remove liquidity proportionally
+  Given  a liquidity pool exists for "BTC/EUR" with reserves:
+  And  I am logged in as "alice@example.com"
+  And  I have "50%" of the pool shares
+  When  I remove "25%" of my liquidity
+  Then  I should receive:
+  And  the pool reserves should be:
+

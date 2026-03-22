@@ -1,0 +1,9 @@
+Scenario 3: Retrieve billable call by exact callId
+  Given  I add Authorization header
+  When  I add "Accept" header equal to "application/json"
+  And  I send a "GET" request to "billable_calls?callid[exact]=017cc7c8-eb38-4bbd-9318-524a274f7000"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json; charset=utf-8"
+  And  the JSON should be like:
+

@@ -1,0 +1,8 @@
+Scenario 2: Setting an address as default
+  Tags: ['@ui', '@api']
+  When  I browse my address book
+  And  I set the address of "Lucifer Morningstar" as default
+  Then  I should be notified that the address has been set as default
+  And  I should have 2 addresses in my address book
+  And  address "Lucifer Morningstar", "Seaside Fwy", "90802", "Los Angeles", "United States", "Arkansas" should be set as my default address
+

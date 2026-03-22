@@ -1,0 +1,11 @@
+Scenario 9: Cleanup: Delete profile of the minion and disable new module.run syntax
+  Given  I am on the Systems overview page of this "sle_minion"
+  And  I remove "custom_modulerun.conf" from salt minion config directory on "sle_minion"
+  And  I remove "custom_grains.conf" from salt minion config directory on "sle_minion"
+  When  I follow "Delete System"
+  Then  I should see a "Confirm System Profile Deletion" text
+  When  I click on "Delete Profile"
+  And  I wait until I see "has been deleted" text
+  And  I wait until Salt client is inactive on "sle_minion"
+  Then  "sle_minion" should not be registered
+

@@ -1,0 +1,18 @@
+Scenario Outline 2: Adding a network via the custom network flow - Example 1
+  Given  the network screen is displayed
+  And  I tap on the Add Network button
+  Then  "POPULAR" tab is displayed on networks screen
+  And  "CUSTOM NETWORKS" tab is displayed on networks screen
+  When  I tap on the "CUSTOM NETWORKS" tab
+  And  I type "Gnosis" into Network name field
+  And  I type "https://xdai-rpc.gateway.pokt.network" into the RPC url field
+  And  I type "100" into the Chain ID field
+  And  I type "Gnosis" into the Network symbol field
+  And  I tap on the Add button to add Custom Network
+  Then  "Gnosis" should be displayed in network educational modal
+  And  I should see the added network name "Gnosis" in the top navigation bar
+
+  Examples:
+    | Network | rpcUrl | ChainID | Symbol |
+    | Gnosis | https://xdai-rpc.gateway.pokt.network | 100 | xDAI |
+

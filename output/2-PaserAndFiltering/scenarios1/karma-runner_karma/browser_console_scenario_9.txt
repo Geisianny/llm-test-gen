@@ -1,0 +1,12 @@
+Scenario 9: Execute logging program with singleRun
+  Given  a configuration with:
+  When  I start a server in background
+  And  I wait until server output contains:
+  And  I run Karma
+  Then  it passes with like:
+  Then  it passes with like:
+  Then  it passes with like:
+  Then  it passes with like:
+  Then  it passes with like:
+  Then  it passes with like:
+

@@ -1,0 +1,7 @@
+Scenario 2: should exclude non-matching results
+  Tags: ['@javascript']
+  When  I fill in "q" with "chair"
+  And  I press "search-button"
+  Then  I should not see "old sofa for sale"
+  And  I should see "Sorry, no listings could be found for your search criteria"
+

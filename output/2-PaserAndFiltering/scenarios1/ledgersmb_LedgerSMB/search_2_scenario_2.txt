@@ -1,0 +1,12 @@
+Scenario 2: Search by date, specifying only start date
+  When  I navigate the menu and select the item at "Accounts Payable > Search"
+  Then  I should see the AP search screen
+  When  I enter "2025-03-31" into "From"
+  And  I press "Continue"
+  Then  I should see the Search AP Report screen
+  And  I expect the report to contain 2 rows
+  And  I expect the 'Date' report column to contain '2025-03-31' for Invoice 'INV102'
+  And  I expect the 'Vendor' report column to contain 'Vendor A' for Invoice 'INV102'
+  And  I expect the 'Date' report column to contain '2025-04-01' for Invoice 'INV103'
+  And  I expect the 'Vendor' report column to contain 'Vendor B' for Invoice 'INV103'
+

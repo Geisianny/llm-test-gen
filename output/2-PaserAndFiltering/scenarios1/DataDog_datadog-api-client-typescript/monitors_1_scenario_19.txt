@@ -1,0 +1,7 @@
+Scenario 19: Get a monitor configuration policy returns "Not Found" response
+  Tags: ['@team:DataDog/monitor-app']
+  Given  new "GetMonitorConfigPolicy" request
+  And  request contains "policy_id" parameter with value "12340000-0000-0000-0000-000000000000"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

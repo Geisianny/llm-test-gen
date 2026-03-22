@@ -1,0 +1,4 @@
+Scenario 1: CREATE DATABASE
+  Tags: ['@multicompany_base_finance_create_db']
+  Given  I create database "7XA" with admin password "admin"
+

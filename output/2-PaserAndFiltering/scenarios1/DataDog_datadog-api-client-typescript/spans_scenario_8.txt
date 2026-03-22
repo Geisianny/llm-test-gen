@@ -1,0 +1,8 @@
+Scenario 8: Search spans returns "OK" response
+  Tags: ['@replay-only', '@team:DataDog/apm']
+  Given  new "ListSpans" request
+  And  body with value {"data": {"attributes": {"filter": {"from": "now-15m", "query": "*", "to": "now"}, "options": {"timezone": "GMT"}, "page": {"limit": 25}, "sort": "timestamp"}, "type": "search_request"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data[0].type" is equal to "spans"
+

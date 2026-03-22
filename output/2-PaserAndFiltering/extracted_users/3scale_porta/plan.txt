@@ -1,0 +1,19 @@
+Feature: Dev Portal Buyer Account Plan
+Description: As a buyer
+  I want to manage the plan I've signed up to
+
+Background: 
+  Given  a provider
+  And  the provider has "account_plans" visible
+  And  a buyer "Jane"
+  And  the buyer logs in
+
+Scenario 1: Plans tab is hidden with a single account plan
+  When  they go to settings
+  Then  there shouldn't be a link to "Plans"
+
+Scenario 2: Plans tab is hidden with multiple account plans but not published
+  Given  the following account plans:
+  When  they go to settings
+  Then  there shouldn't be a link to "Plans"
+

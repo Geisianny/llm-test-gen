@@ -1,0 +1,8 @@
+Scenario 1: Adding a new customer
+  Tags: ['@api', '@ui']
+  When  I want to create a new customer
+  And  I specify their email as "l.skywalker@gmail.com"
+  And  I add them
+  Then  I should be notified that it has been successfully created
+  And  the customer "l.skywalker@gmail.com" should appear in the store
+

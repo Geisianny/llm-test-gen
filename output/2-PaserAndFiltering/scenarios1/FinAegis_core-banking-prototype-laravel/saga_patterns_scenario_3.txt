@@ -1,0 +1,6 @@
+Scenario 3: Nested saga with partial compensation
+  Given  multiple accounts exist with various balances
+  When  I execute a bulk transfer saga with nested workflows:
+  Then  the saga compensation should occur:
+  And  parent saga should handle child workflow failures gracefully
+

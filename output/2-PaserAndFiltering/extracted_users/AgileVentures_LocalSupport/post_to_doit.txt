@@ -1,0 +1,26 @@
+Feature: Post to doit
+Description: As an organisation superadmin
+  So that I can provide wider visibility for volunteer ops
+  I want to post to doit
+
+Background: 
+  Given  the following organisations exist:
+  And  the following users are registered:
+  And  that the volunteer_ops_create flag is enabled
+  And  cookies are approved
+
+Scenario 1: Cannot post to doit with an arbitrary string for the start/end dates
+  Given  I am signed in as a superadmin
+  And  I submit a volunteer op with an arbitrary string
+  Then  I should see "Advertise start date is invalid" and "Advertise end date is invalid"
+
+Scenario 2: Cannot post to doit with an end date before the start date
+  Given  I am signed in as a superadmin
+  And  I submit a volunteer op with an end date before the start date
+  Then  I should see "Advertise end date is invalid"
+
+Scenario 3: Should post to doit with valid dates
+  Given  I am signed in as a superadmin
+  And  I submit a volunteer op with valid dates
+  Then  I should not see "Advertise start date is invalid" and "Advertise end date is invalid"
+

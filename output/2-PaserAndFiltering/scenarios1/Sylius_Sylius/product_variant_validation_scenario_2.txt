@@ -1,0 +1,8 @@
+Scenario 2: Trying to add product variant translation in unexisting locale
+  Tags: ['@api', '@no-ui']
+  When  I want to create a new variant of this product
+  And  I specify its code as "lemon"
+  And  I name it "Citron" in "French (France)"
+  And  I try to save my changes
+  Then  I should be notified that the locale is not available
+

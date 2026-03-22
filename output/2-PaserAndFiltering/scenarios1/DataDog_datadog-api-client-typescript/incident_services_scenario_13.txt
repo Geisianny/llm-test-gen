@@ -1,0 +1,9 @@
+Scenario 13: Update an existing incident service returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:Datadog/incident-app']
+  Given  operation "UpdateIncidentService" enabled
+  And  new "UpdateIncidentService" request
+  And  request contains "service_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"name": "an example service name"}, "id": "00000000-0000-0000-0000-000000000000", "type": "services"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

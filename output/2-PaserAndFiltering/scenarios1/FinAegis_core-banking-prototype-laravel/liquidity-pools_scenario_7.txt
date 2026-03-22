@@ -1,0 +1,9 @@
+Scenario 7: Distribute and claim rewards
+  Given  a liquidity pool exists for "BTC/EUR"
+  And  the following providers have shares:
+  When  "1000" "EUR" rewards are distributed to the pool
+  Then  the pending rewards should be:
+  When  "alice@example.com" claims rewards from the pool
+  Then  "alice@example.com" should receive "600" "EUR"
+  And  "alice@example.com" should have no pending rewards
+

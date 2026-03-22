@@ -1,0 +1,10 @@
+Scenario 8: Missing translation are sorted as last when sorting by name descending
+  Tags: ['@api', '@ui', '@no-postgres']
+  When  I change my locale to "Polish"
+  And  I browse products
+  And  the products are already sorted ascending by name
+  And  I sort the products descending by name
+  Then  I should see 3 products in the list
+  And  the first product on the list should have name "Ekstremalny Mops"
+  And  the last product on the list shouldn't have a name
+

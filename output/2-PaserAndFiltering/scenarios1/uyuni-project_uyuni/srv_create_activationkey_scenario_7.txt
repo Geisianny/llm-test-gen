@@ -1,0 +1,5 @@
+Scenario 7: Create an activation key for the proxy
+  Tags: ['@proxy']
+  When  I create an activation key with id "PROXY-KEY-x86_64", description "Proxy Key x86_64", limit of 1
+  Then  I should get the new activation key "1-PROXY-KEY-x86_64"
+

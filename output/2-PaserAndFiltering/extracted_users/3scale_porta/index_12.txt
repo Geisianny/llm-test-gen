@@ -1,0 +1,158 @@
+Feature: Audience > Accounts > Listing > Account > Service subscriptions
+Description: As a provider, I want to see a list with a buyer's service subscriptions that is searchable and
+  filterable.
+
+  The following actions will be available:
+  - Approve a pending subscription
+  - Remove an existing subscription
+  - Change the plan of an existing subscription
+  - Subscribe to other unsubscribed services
+Tags: ['@javascript']
+
+Background: 
+  Given  a provider is logged in
+  And  a buyer "Alice"
+  And  the default service of the provider has name "My API"
+  And  the provider has "service_plans" visible
+  And  a product "Banana API"
+  And  another product "Coconut API"
+
+Scenario 1: Navigation
+  Given  the current page is the provider dashboard
+  When  they select "Audience" from the context selector
+  And  they follow "Listing" within the main menu's section Accounts
+  And  they follow "Alice"
+  And  they follow "0 Service Subscriptions"
+  Then  the current page is the buyer's service subscriptions page
+  And  they should see "Service subscriptions of Alice"
+
+Scenario 2: Empty view
+  Given  the provider has no service subscriptions
+  When  they go to the buyer's service subscriptions page
+  Then  they should see an empty state
+
+Scenario 3: Empty search
+  Given  the buyer is subscribed to product "Banana API"
+  When  they go to the buyer's service subscriptions page
+  And  the table is filtered with:
+  Then  they should see an empty search state
+
+Scenario 4: Filter subscriptions by product
+  Given  the buyer is subscribed to product "Banana API"
+  And  the buyer is subscribed to product "Coconut API"
+  When  they go to the buyer's service subscriptions page
+  And  the table should contain the following:
+  When  the table is filtered with:
+  And  the table should contain the following:
+
+Scenario 5: Filter subscriptions by service plan
+  Given  the following service plans:
+  And  the following buyers with service subscriptions signed up to the provider:
+  When  they go to the buyer's service subscriptions page
+  And  the table is filtered with:
+  Then  the table should contain the following:
+
+Scenario 6: Filter subscriptions by state
+  Given  the buyer is subscribed to product "Banana API"
+  And  the buyer is subscribed to product "Coconut API"
+  When  they go to the buyer's service subscriptions page
+  And  the table is filtered with:
+  Then  they should see an empty search state
+  When  the table is filtered with:
+  Then  the table should contain the following:
+
+Scenario 7: Filter paid subscriptions
+  Given  the following service plans:
+  And  the following buyers with service subscriptions signed up to the provider:
+  When  they go to the buyer's service subscriptions page
+  And  the table is filtered with:
+  Then  the table should contain the following:
+
+Scenario 8: Order by plan name
+  Tags: ['@wip']
+  Given  the following service plans:
+  And  the following buyers with service subscriptions signed up to the provider:
+  When  they go to the buyer's service subscriptions page
+  Then  they should see the following table:
+  And  the table is sorted by "Plan"
+  Then  they should see the following table:
+
+Scenario 9: Ordering and filtering by service
+  Given  the following service plans:
+  And  the following buyers with service subscriptions signed up to the provider:
+  When  they go to the buyer's service subscriptions page
+  Then  they should see the following table:
+  When  the table is filtered with:
+  And  the table is sorted by "State"
+  Then  they should see the following table:
+
+Scenario 10: Create a new subscription
+  Given  the buyer is subscribed to product "Banana API"
+  And  the following service plans:
+  And  they go to the buyer's service subscriptions page
+  And  the table should contain the following:
+  When  they follow "Subscribe to Coconut API"
+  And  there is a select "Plan" with options:
+  And  the modal is submitted with:
+  Then  they should see a toast alert with text "Service contract created successfully"
+  And  the table should contain the following:
+
+Scenario 11: Change an existing subscription
+  Given  the buyer is subscribed to product "Banana API"
+  And  the following service plans:
+  And  they go to the buyer's service subscriptions page
+  And  the table should contain the following:
+  When  they follow "Change Banana API subscription"
+  And  there is a select "Plan" with options:
+  And  the modal is submitted with:
+  Then  they should see a toast alert with text "Plan of the contract was changed"
+  And  the table should contain the following:
+
+Scenario 12: Approve a subscription
+  Given  the buyer is subscribed to product "Banana API"
+  But  the subscription is pending
+  And  they go to the buyer's service subscriptions page
+  And  the table should contain the following:
+  When  they follow "Approve subscription to Banana API"
+  Then  they should see a toast alert with text "Service contract was approved"
+  And  the table should contain the following:
+
+Scenario 13: Can't approve a subscription
+  Tags: ['@wip']
+  Given  the buyer is subscribed to product "Banana API"
+  But  the subscription is pending
+  And  they go to the buyer's service subscriptions page
+  And  the table should contain the following:
+  When  they follow "Approve subscription to Banana API"
+  Then  they should see a toast alert with text "Cannot approve service contract"
+  And  the table should contain the following:
+
+Scenario 14: Unsubscribe from a service
+  Given  the buyer is subscribed to product "Banana API"
+  And  they go to the buyer's service subscriptions page
+  And  the table should contain the following:
+  When  they follow "Unsubscribe from Banana API"
+  And  confirm the dialog
+  Then  they should see a toast alert with text "Successfully unsubscribed from the service"
+  And  they should see an empty search state
+
+Scenario 15: Can't delete the a subscription if there is an application
+  Given  the following application plan:
+  Given  the following application:
+  And  the buyer is subscribed to product "Banana API"
+  And  they go to the buyer's service subscriptions page
+  When  they follow "Unsubscribe from Banana API"
+  And  confirm the dialog
+  Then  they should see a toast alert with text "Cannot unsubscribe from the service"
+  And  the table should contain the following:
+
+Scenario Outline 16: Ordering - Example 1
+  When  they go to the buyer's service subscriptions page
+  And  the table is sorted by "State"
+  Then  the table should be sorted by "State"
+
+  Examples:
+    | order by |
+    | State |
+    | Created On |
+

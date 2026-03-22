@@ -1,0 +1,7 @@
+Scenario 1: Clearing cart
+  Tags: ['@api', '@ui', '@javascript']
+  Given  I added product "T-Shirt banana" to the cart
+  When  I check the details of my cart
+  And  I clear my cart
+  Then  my cart should be cleared
+

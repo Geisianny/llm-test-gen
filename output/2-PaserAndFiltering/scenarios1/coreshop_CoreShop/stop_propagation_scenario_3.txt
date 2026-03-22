@@ -1,0 +1,7 @@
+Scenario 3: Let only the 20% rule apply
+  Given  the price rule "discount 20" has priority "5"
+  And  the price rule "discount 20" is stop propagation
+  And  the product "Shoe" should have the prices, price: "8000" and retail-price: "10000" and discount: "2000"
+  And  the product "Shoe 2" should have the prices, price: "12000" and retail-price: "15000" and discount: "3000"
+  And  the product "Jacket" should have the prices, price: "32000" and retail-price: "40000" and discount: "8000"
+

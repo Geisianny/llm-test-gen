@@ -1,0 +1,5 @@
+Scenario 1: try to signup with existent email in other provider
+  When  the current domain is foo2.3scale.localhost
+  And  I signup with the email "bar@example.org"
+  Then  I should see the registration succeeded
+

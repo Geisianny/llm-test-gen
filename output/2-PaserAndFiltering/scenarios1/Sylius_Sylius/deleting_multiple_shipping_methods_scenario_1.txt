@@ -1,0 +1,10 @@
+Scenario 1: Deleting multiple shipping methods at once
+  Tags: ['@no-api', '@ui', '@mink:chromedriver']
+  When  I browse shipping methods
+  And  I check the "UPS" shipping method
+  And  I check also the "FedEx" shipping method
+  And  I delete them
+  Then  I should be notified that they have been successfully deleted
+  And  I should see a single shipping method in the list
+  And  I should see the shipping method "DHL" in the list
+

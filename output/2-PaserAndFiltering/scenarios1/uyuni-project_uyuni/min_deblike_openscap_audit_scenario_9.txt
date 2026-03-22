@@ -1,0 +1,4 @@
+Scenario 9: Cleanup: remove the OpenSCAP packages from the Debian-like minion
+  Tags: ['@skip_if_github_validation']
+  When  I remove OpenSCAP dependencies from "deblike_minion"
+

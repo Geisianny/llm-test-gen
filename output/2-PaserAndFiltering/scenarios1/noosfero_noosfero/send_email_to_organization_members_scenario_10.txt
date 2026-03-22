@@ -1,0 +1,9 @@
+Scenario 10: Redirect back to profile members page after send mail
+  Given  I am logged in as "jose"
+  When  I go to Sample Community's members page
+  And  I follow "Send e-mail to members"
+  And  I fill in "Subject" with "Hello, member!"
+  And  I fill in "Body" with "We have some news"
+  When  I press "Send"
+  Then  I should be on Sample Community's members page
+

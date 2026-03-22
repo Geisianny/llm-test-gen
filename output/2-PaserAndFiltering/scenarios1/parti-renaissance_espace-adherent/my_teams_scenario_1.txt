@@ -1,0 +1,5 @@
+Scenario 1: As a referent I cannot create my team if no scope
+  Given  I am logged with "referent-75-77@en-marche-dev.fr" via OAuth client "JeMengage Web" with scope "jemengage_admin"
+  When  I send a "POST" request to "/api/v3/my_teams"
+  Then  the response status code should be 403
+

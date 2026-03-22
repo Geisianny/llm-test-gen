@@ -1,0 +1,45 @@
+Feature: Multitenanted liquid
+Description: In order to have multi tenant working
+  as a Provider
+  I want my liquids to be protected
+
+Background: 
+  Given  a provider "liquid.3scale.localhost"
+  And  a provider "another-liquid.3scale.localhost"
+
+Scenario 1: Liquid layouts are multitenant
+  Given  the template "main_layout" of provider "liquid.3scale.localhost" is
+  And  the template "main_layout" of provider "another-liquid.3scale.localhost" is
+  Given  the current domain is liquid.3scale.localhost
+  When  I go to the homepage
+  Then  I should see "ONE liquid provider"
+  Given  the current domain is another-liquid.3scale.localhost
+  When  I go to the homepage
+  Then  I should see "ANOTHER liquid provider"
+
+Scenario 2: Liquid partial inclusions are multitenant
+  Given  the partial "partial" of provider "liquid.3scale.localhost" is
+  And  the partial "partial" of provider "another-liquid.3scale.localhost" is
+  Given  the template "main_layout" of provider "liquid.3scale.localhost" is
+  And  the template "main_layout" of provider "another-liquid.3scale.localhost" is
+  Given  the current domain is liquid.3scale.localhost
+  When  I go to the homepage
+  Then  I should see "partial ONE"
+  Given  the current domain is another-liquid.3scale.localhost
+  When  I go to the homepage
+  Then  I should see "partial ANOTHER"
+
+Scenario 3: Liquid partial nested inclusions are multitenant
+  Given  the partial "partial" of provider "liquid.3scale.localhost" is
+  And  the partial "partial" of provider "another-liquid.3scale.localhost" is
+  Given  the partial "included" of provider "liquid.3scale.localhost" is
+  And  the partial "included" of provider "another-liquid.3scale.localhost" is
+  Given  the template "main_layout" of provider "liquid.3scale.localhost" is
+  And  the template "main_layout" of provider "another-liquid.3scale.localhost" is
+  Given  the current domain is liquid.3scale.localhost
+  When  I go to the homepage
+  Then  I should see "included ONE"
+  Given  the current domain is another-liquid.3scale.localhost
+  When  I go to the homepage
+  Then  I should see "included ANOTHER"
+

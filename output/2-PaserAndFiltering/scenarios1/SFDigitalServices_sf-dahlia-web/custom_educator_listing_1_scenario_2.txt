@@ -1,0 +1,9 @@
+Scenario 2: Answering "No" to the "Do you work at San Francisco Unified School District?" question
+  Given  I go to the welcome page of the "Custom Educator 1 Test Listing" application
+  And  I select "English" as my language
+  Then  the application page title should be "Do you work at San Francisco Unified School District?"
+  When  I answer "No" to the custom educator screening question
+  When  I hit the Next button "1" times
+  Then  I should see a form notice that says "You must work at SF Unified School District to apply."
+  And  I should not be able to hit the Next button
+

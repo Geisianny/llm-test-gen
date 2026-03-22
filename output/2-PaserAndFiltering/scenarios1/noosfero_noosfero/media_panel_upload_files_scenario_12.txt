@@ -1,0 +1,17 @@
+Scenario 12: update selected folder content when upload file to same folder
+  Tags: ['@selenium-fixme']
+  Given  the following galleries
+  And  the following files
+  When  I go to /myprofile/joaosilva/cms/new?type=TextArticle
+  And  I follow "Show/Hide"
+  And  I select "joaosilva/Gallery" from "parent_id" within "#published-media"
+  And  I select "joaosilva/Gallery" from "parent_id" within "#media-upload-form"
+  And  I attach the file "public/503.jpg" to "file"
+  Then  I should see div with title "other-pic" within ".items"
+  And  I should see div with title "503" within ".items"
+  When  I select "joaosilva/other-gallery" from "parent_id" within "#media-upload-form"
+  And  I attach the file "public/robots.txt" to "file"
+  Then  I should see div with title "other-pic" within ".items"
+  And  I should see div with title "503" within ".items"
+  And  I should not see "robots" within ".items"
+

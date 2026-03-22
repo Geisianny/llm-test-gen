@@ -1,0 +1,5 @@
+Scenario 1: Create Payment, run notify and capture
+  Given  There is a payment provider "Bankwire" using factory "concurrency"
+  And  I create a payment for my order with payment provider "Bankwire"
+  Then  I simulate the concurrent requests for notify and capture for the latest order payment
+

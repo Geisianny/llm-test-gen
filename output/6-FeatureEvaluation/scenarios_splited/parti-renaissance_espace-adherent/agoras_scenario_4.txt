@@ -1,0 +1,6 @@
+Scenario: User cannot join an Agora beyond its member limit
+  Given there is an authenticated user with OAuth token
+  And there is an Agora with a maximum membership limit reached
+  When the user requests to join the Agora
+  Then the system denies the request
+  And displays an error message indicating the Agora is full

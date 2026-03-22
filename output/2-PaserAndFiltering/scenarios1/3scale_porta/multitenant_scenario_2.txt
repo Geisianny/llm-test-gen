@@ -1,0 +1,12 @@
+Scenario 2: Liquid partial inclusions are multitenant
+  Given  the partial "partial" of provider "liquid.3scale.localhost" is
+  And  the partial "partial" of provider "another-liquid.3scale.localhost" is
+  Given  the template "main_layout" of provider "liquid.3scale.localhost" is
+  And  the template "main_layout" of provider "another-liquid.3scale.localhost" is
+  Given  the current domain is liquid.3scale.localhost
+  When  I go to the homepage
+  Then  I should see "partial ONE"
+  Given  the current domain is another-liquid.3scale.localhost
+  When  I go to the homepage
+  Then  I should see "partial ANOTHER"
+

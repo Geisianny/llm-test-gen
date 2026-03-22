@@ -1,0 +1,6 @@
+Scenario 5: No English option on 'foreign language only' list
+  Given  I am a GDS editor
+  When  I start creating a document where the locale can be changed
+  Then  I should see a "Foreign language only" checkbox
+  And  English should not appear on the list of language choices
+

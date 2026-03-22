@@ -1,0 +1,6 @@
+Scenario 5: As a correspondent I cannot add a new member in my team with invalid data (no user and not correspondent features)
+  Given  I am logged with "je-mengage-user-1@en-marche-dev.fr" via OAuth client "JeMengage Web" with scope "jemengage_admin"
+  When  I send a "POST" request to "/api/v3/my_team_members?scope=correspondent" with body:
+  Then  the response status code should be 400
+  And  the JSON should be equal to:
+

@@ -1,0 +1,9 @@
+Scenario 3: Seeing only archived promotions
+  Tags: ['@api', '@ui']
+  Given  the promotion "Christmas sale" is archived
+  When  I browse promotions
+  And  I filter archival promotions
+  Then  I should see a single promotion in the list
+  And  I should see the promotion "Christmas sale" in the list
+  And  I should not see the promotion "New Year sale" in the list
+

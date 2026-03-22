@@ -1,0 +1,8 @@
+Scenario 11: Update an API returns "API not found error" response
+  Tags: ['@generated', '@skip', '@team:DataDog/api-management']
+  Given  operation "UpdateOpenAPI" enabled
+  And  new "UpdateOpenAPI" request
+  And  request contains "id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 API not found error
+

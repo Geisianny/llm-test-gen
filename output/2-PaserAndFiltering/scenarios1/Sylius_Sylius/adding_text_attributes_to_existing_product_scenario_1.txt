@@ -1,0 +1,9 @@
+Scenario 1: Adding a text attribute to an existing product
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I want to modify the "44 Magnum" product
+  And  I add the "Overall length" attribute to it
+  And  I set the "Overall length" attribute value to "30.5 cm" in "English (United States)" locale
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  attribute "Overall length" of product "44 Magnum" should be "30.5 cm"
+

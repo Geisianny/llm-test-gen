@@ -1,0 +1,6 @@
+Scenario 1: Adding a traffic commissioner role
+  Given  the organisation "Department for Transport" exists
+  And  a person called "Terence Traffic"
+  When  I add a new "Traffic commissioner" role named "Traffic Commissioner for Scotland" to the "Department for Transport"
+  Then  I should be able to appoint "Terence Traffic" to the new role
+

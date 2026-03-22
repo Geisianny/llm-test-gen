@@ -1,0 +1,8 @@
+Scenario 5: Toggling daily snapshot email
+  Given  I am logged in with email "affiliate_manager@fixtures.org"
+  When  I go to the usagov's Dashboard page
+  And  I follow "Send me today's snapshot as a daily email"
+  Then  I should see "You have enabled the daily snapshot setting for usagov."
+  When  I follow "Stop sending me today's snapshot as a daily email"
+  Then  I should see "You have disabled the daily snapshot setting for usagov."
+

@@ -1,0 +1,8 @@
+Scenario 19: Update a RUM application returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/rum-backend']
+  Given  new "UpdateRUMApplication" request
+  And  request contains "id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"name": "updated_name_for_my_existing_rum_application", "product_analytics_retention_state": "MAX", "rum_event_processing_state": "ALL", "type": "browser"}, "id": "abcd1234-0000-0000-abcd-1234abcd5678", "type": "rum_application_update"}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

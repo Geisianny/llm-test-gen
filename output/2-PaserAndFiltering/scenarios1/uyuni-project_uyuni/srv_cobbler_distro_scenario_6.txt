@@ -1,0 +1,5 @@
+Scenario 6: Check cobbler created distro and profile
+  When  I follow the left menu "Systems > Autoinstallation > Profiles"
+  Then  I should see a "testprofile" text
+  And  I should see a "testdistro" text
+

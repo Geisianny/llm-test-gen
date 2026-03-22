@@ -1,0 +1,6 @@
+Scenario 1: Viewing items of my cart
+  Tags: ['@api']
+  When  I add 5 of them to my cart
+  And  I check items in my cart
+  Then  my cart should have quantity of 5 items of product "T-shirt banana"
+

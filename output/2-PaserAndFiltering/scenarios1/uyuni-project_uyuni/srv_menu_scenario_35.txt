@@ -1,0 +1,6 @@
+Scenario 35: Sidebar link destination for Systems => Autoinstallation => Profiles
+  When  I follow the left menu "Systems > Autoinstallation > Profiles"
+  Then  I should see a "Autoinstallation Profiles" text
+  And  I should see a "Create Kickstart Profile" link
+  And  I should see a "Upload Kickstart/AutoYaST File" link
+

@@ -1,0 +1,7 @@
+Scenario 9: Use a filter of a nested collection
+  Tags: ['@createSchema']
+  Given  there is a DummyCar entity with related colors
+  When  I send the following GraphQL request:
+  Then  the JSON node "data.dummyCar.colors.edges" should have 1 element
+  And  the JSON node "data.dummyCar.colors.edges[0].node.prop" should be equal to "blue"
+

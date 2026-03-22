@@ -1,0 +1,10 @@
+Scenario 1: Deleting multiple products at once
+  Tags: ['@ui', '@javascript']
+  When  I browse products
+  And  I check the "Audi RS5 model" product
+  And  I check also the "Audi RS6 model" product
+  And  I delete them
+  Then  I should be notified that they have been successfully deleted
+  And  I should see a single product in the list
+  And  I should see the product "Audi RS7 model" in the list
+

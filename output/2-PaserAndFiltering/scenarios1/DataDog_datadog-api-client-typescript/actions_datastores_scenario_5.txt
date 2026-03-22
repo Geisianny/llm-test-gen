@@ -1,0 +1,10 @@
+Scenario 5: Bulk write datastore items returns "Not Found" response
+  Tags: ['@team:DataDog/app-builder-backend']
+  Given  new "BulkWriteDatastoreItems" request
+  And  request contains "datastore_id" parameter with value "70b87c26-886f-497a-bd9d-09f53bc9b40c"
+  And  body with value {"data": {"attributes": {"values": [{"id": "cust_3141", "name": "Johnathan"}, {"id": "cust_3142", "name": "Mary"}]}, "type": "items"}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+  And  the response "errors" has length 1
+  And  the response "errors[0].title" is equal to "datastore not found"
+

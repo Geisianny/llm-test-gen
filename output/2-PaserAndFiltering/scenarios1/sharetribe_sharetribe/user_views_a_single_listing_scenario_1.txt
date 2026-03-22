@@ -1,0 +1,9 @@
+Scenario 1: User views a listing that he is allowed to see
+  Tags: ['@only_without_asi']
+  And  I am on the home page
+  When  I follow "Massage"
+  Then  I should see "Massage"
+  When  I am logged in as "kassi_testperson1"
+  And  I am on the home page
+  And  I follow "Massage"
+

@@ -1,0 +1,4 @@
+Scenario 6: trying to view a tag not used
+  When  I go to /tag/shark
+  Then  I should see /Tagged with shark/
+

@@ -1,0 +1,8 @@
+Scenario 1: Access Exchange subproduct page as a visitor
+  When  I visit "/subproducts/exchange"
+  Then  the response status code should be 200
+  And  I should see "FinAegis Exchange"
+  And  I should see "Professional trading platform"
+  And  I should see "Now Live"
+  And  I should not see "Route [exchange.index] not defined"
+

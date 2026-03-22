@@ -1,0 +1,8 @@
+Scenario 15: Update Cloudflare account returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "UpdateCloudflareAccount" request
+  And  request contains "account_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"api_key": "a94a8fe5ccb19ba61c4c0873d391e987982fbbd3", "email": "test-email@example.com", "resources": ["web", "dns", "lb", "worker"], "zones": ["zone_id_1", "zone_id_2"]}, "type": "cloudflare-accounts"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

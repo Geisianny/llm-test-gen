@@ -1,0 +1,7 @@
+Scenario 1: Loading ActiveDocs 1.0
+  Given  the product has a Swagger 1.2 spec "Echo"
+  And  the provider has cms page "/version-10" with:
+  And  the cms page "/version-10" has main layout
+  When  they visit "/version-10"
+  Then  they should see "Echo"
+

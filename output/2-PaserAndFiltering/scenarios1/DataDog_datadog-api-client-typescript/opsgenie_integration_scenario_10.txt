@@ -1,0 +1,10 @@
+Scenario 10: Get a single service object returns "OK" response
+  Tags: ['@team:Datadog/collaboration-integrations']
+  Given  there is a valid "opsgenie_service" in the system
+  And  new "GetOpsgenieService" request
+  And  request contains "integration_service_id" parameter from "opsgenie_service.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.attributes.name" has the same value as "opsgenie_service.data.attributes.name"
+  And  the response "data.attributes.region" is equal to "us"
+

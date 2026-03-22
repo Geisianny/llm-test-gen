@@ -1,0 +1,17 @@
+Scenario 3: Subscribe the minion to the SLES 15 SP5 channel and enable client tools in the Salt migration context
+  Tags: ['@susemanager']
+  Given  I am on the Systems overview page of this "salt_migration_minion"
+  When  I follow "Software" in the content area
+  And  I follow "Software Channels" in the content area
+  And  I wait until I do not see "Loading..." text
+  And  I check radio button "SLE-Product-SLES15-SP5-Pool for x86_64"
+  And  I wait until I see "SLE-Module-Basesystem15-SP5-Pool for x86_64" text
+  And  I check "ManagerTools-SLE15-Pool for x86_64 SP5"
+  And  I check "ManagerTools-SLE15-Updates for x86_64 SP5"
+  And  I click on "Next"
+  Then  I should see a "Confirm Software Channel Change" text
+  When  I click on "Confirm"
+  Then  I should see a "Changing the channels has been scheduled." text
+  When  I follow "scheduled" in the content area
+  And  I wait until I see "1 system successfully completed this action." text, refreshing the page
+

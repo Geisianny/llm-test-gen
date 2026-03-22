@@ -1,0 +1,7 @@
+Scenario 3: Checking cart's total after removing one item
+  Tags: ['@ui', '@api']
+  Given  the store has a product "T-shirt strawberry" priced at "$17.22"
+  And  I added product "T-shirt strawberry" to the cart
+  When  I remove product "T-shirt banana" from the cart
+  Then  my cart's total should be "$17.22"
+

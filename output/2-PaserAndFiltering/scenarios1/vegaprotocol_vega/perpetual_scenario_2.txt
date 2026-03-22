@@ -1,0 +1,13 @@
+Scenario 2: 002 Create a new perp market and leave opening auction, then terminate the market through governance
+  Tags: ['@Perpetual']
+  Given  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/DEC19"
+  Then  the market data for the market "ETH/DEC19" should be:
+  And  the parties should have the following account balances:
+  And  the parties should have the following margin levels:
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  When  the market states are updated through governance:
+  Then  the market state should be "STATE_CLOSED" for the market "ETH/DEC19"
+

@@ -1,0 +1,8 @@
+Scenario 1: Simple transfer saga with successful completion
+  Given  account "A" has balance of 1000.00 USD
+  And  account "B" has balance of 500.00 USD
+  When  I initiate a transfer saga of 200.00 USD from "A" to "B"
+  Then  the saga should execute in sequence:
+  And  saga state should be persisted at each step
+  And  event store should contain all saga events
+

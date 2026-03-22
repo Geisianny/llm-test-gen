@@ -1,0 +1,6 @@
+Scenario: Attempt to create product with empty name
+  Given there is an authenticated APP user
+  When the user creates a product with an empty name
+  And specifies a rate of "9.99"
+  Then the system prevents the creation of the product
+  And displays an error message indicating that the name is required

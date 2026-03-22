@@ -1,0 +1,8 @@
+Scenario 37: Update Azure scan options returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/k9-agentless']
+  Given  new "UpdateAzureScanOptions" request
+  And  request contains "subscription_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"id": "12345678-90ab-cdef-1234-567890abcdef", "type": "azure_scan_options"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+

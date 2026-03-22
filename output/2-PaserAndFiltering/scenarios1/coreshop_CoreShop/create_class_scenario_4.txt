@@ -1,0 +1,8 @@
+Scenario 4: Create a new pimcore class with a brick field
+  Given  there is a pimcore class "BrickTest"
+  And  the definition has a brick field "attributes"
+  And  there is a pimcore brick "Attribute"
+  And  the definition has a input field "name"
+  And  the definition has a input field "val"
+  And  the definition is allowed for behat-class "BrickTest" in field "attributes"
+

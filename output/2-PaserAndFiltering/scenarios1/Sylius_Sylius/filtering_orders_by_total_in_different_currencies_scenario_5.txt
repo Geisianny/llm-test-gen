@@ -1,0 +1,9 @@
+Scenario 5: Filtering orders by total in given range but with no currency provided
+  Tags: ['@api', '@ui']
+  When  I specify filter total being greater than 150
+  And  I specify filter total being less than 200
+  And  I filter
+  Then  I should see 2 orders in the list
+  And  I should see an order with "#00000003" number
+  And  I should see an order with "#00000005" number
+

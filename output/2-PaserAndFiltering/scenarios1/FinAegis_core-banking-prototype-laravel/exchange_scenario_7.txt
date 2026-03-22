@@ -1,0 +1,8 @@
+Scenario 7: Fee calculation based on volume
+  Given  I am logged in as "alice@example.com"
+  And  my 30-day trading volume is "0" "EUR"
+  When  I place a market buy order for "0.1" "BTC" for "EUR"
+  And  the order is filled at "50000" "EUR"
+  Then  I should be charged a taker fee of "0.2%" which is "10" "EUR"
+  And  my total cost should be "5010" "EUR"
+

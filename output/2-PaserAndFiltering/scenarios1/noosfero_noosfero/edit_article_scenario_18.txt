@@ -1,0 +1,18 @@
+Scenario 18: add a translation to an article
+  Tags: ['@selenium']
+  Given  I am on joaosilva's sitemap
+  And  I follow "Save the whales"
+  And  the following languages "en es" are available on environment
+  Then  I should not see "Add translation"
+  Then  I follow "article-options"
+  And  I follow "Edit"
+  And  I select "English" from "Language"
+  Then  I follow "Save"
+  Then  I follow "article-options"
+  And  I follow "Add translation"
+  And  I fill in "Title" with "Mi neuvo artículo"
+  And  I select "Español" from "Language"
+  When  I follow "Save"
+  Then  I should be on /joaosilva/mi-neuvo-articulo
+  And  I should see "Translations"
+

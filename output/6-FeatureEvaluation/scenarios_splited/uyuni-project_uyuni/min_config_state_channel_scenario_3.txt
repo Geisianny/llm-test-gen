@@ -1,0 +1,6 @@
+Scenario: Apply a state channel to a system
+  Given there is an existing state channel named "Test Channel" with a valid configuration
+  And there is a registered system named "Test System" associated with the state channel "Test Channel"
+  When the user applies the state channel "Test Channel" to the system "Test System"
+  Then the system applies the configuration from the state channel "Test Channel"
+  And the system "Test System" reports a successful configuration application

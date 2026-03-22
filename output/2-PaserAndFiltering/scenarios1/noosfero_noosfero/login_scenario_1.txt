@@ -1,0 +1,12 @@
+Scenario 1: login from portal homepage
+  Tags: ['@selenium']
+  Given  feature "allow_change_of_redirection_after_login" is disabled on environment
+  And  I am not logged in
+  And  I go to the homepage
+  And  I follow "Login"
+  And  I wait 0.5 second for popin animation
+  And  I fill in the following:
+  When  I follow "Log in"
+  Then  I should be on the homepage
+  And  I should be logged in as "joaosilva"
+

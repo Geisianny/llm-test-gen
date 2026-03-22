@@ -1,0 +1,6 @@
+Scenario 3: User changes notification email
+  Tags: ['@javascript']
+  Then  I should not be able to remove notifications from "sharetribe2@example.com"
+  When  I set notifications for email "sharetribe@example.com"
+  Then  I should be able to remove notifications from "sharetribe2@example.com"
+

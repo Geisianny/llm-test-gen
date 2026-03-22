@@ -1,0 +1,8 @@
+Scenario 1: I can alert offerer and asker that a booking is going to start
+  Given  An asker make this new booking request:
+  And  An offerer accept my booking request:
+  When  I run "cocorico:bookings:alertImminent" command
+  Then  I should see "1 booking(s) imminent alerted" on console
+  And  He should receive the "booking_imminent_offerer" mail on "offerer@cocorico.rocks"
+  And  He should receive the "booking_imminent_asker" mail on "asker@cocorico.rocks"
+

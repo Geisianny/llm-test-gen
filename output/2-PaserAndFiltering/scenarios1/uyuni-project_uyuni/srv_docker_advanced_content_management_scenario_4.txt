@@ -1,0 +1,4 @@
+Scenario 4: Create a user without rights nor roles
+  Given  I am authorized for the "Admin" section
+  When  I create a user with name "norole" and password "norole" with roles ""
+

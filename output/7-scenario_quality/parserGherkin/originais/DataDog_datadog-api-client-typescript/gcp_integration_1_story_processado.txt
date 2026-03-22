@@ -1,0 +1,176 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 19/01/2026 23:13:57
+Arquivo analisado: gcp_integration_1_story_processado.feature
+Caminho relativo: DataDog_datadog-api-client-typescript\gcp_integration_1_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/Originais\DataDog_datadog-api-client-typescript\gcp_integration_1_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: gcp_integration_1_story_processado
+Descrição: Não possui
+Total de cenários: 22
+
+CENÁRIOS IDENTIFICADOS:
+1. Create a Datadog GCP principal returns "Conflict" response
+   Steps: 3
+   - Given new "MakeGCPSTSDelegate" request
+   - When the request is sent
+   - Then the response status is 409 Conflict
+2. Create a Datadog GCP principal returns "OK" response
+   Steps: 4
+   - Given new "MakeGCPSTSDelegate" request
+   - When the request is sent
+   - Then the response status is 200 OK
+   - And the response "data.type" is equal to "gcp_sts_delegate"
+3. Create a Datadog GCP principal with empty body returns "OK" response
+   Steps: 5
+   - Given new "MakeGCPSTSDelegate" request
+   - And body with value {}
+   - When the request is sent
+   - Then the response status is 200 OK
+   - And the response "data.type" is equal to "gcp_sts_delegate"
+4. Create a new entry for your service account returns "Bad Request" response
+   Steps: 4
+   - Given new "CreateGCPSTSAccount" request
+   - And body with value {"data": {"attributes": {"account_tags": [], "client_email": "datadog-service-account@test-project.iam.gserviceaccount.com", "cloud_run_revision_filters": ["$KEY:$VALUE"], "host_filters": ["$KEY:$VALUE"], "is_per_project_quota_enabled": true, "is_resource_change_collection_enabled": true, "is_security_command_center_enabled": true, "metric_namespace_configs": [{"disabled": true, "id": "aiplatform"}, {"filters": ["snapshot.*", "!*_by_region"], "id": "pubsub"}], "monitored_resource_configs": [{"filters": ["$KEY:$VALUE"], "type": "gce_instance"}]}, "type": "gcp_service_account"}}
+   - When the request is sent
+   - Then the response status is 400 Bad Request
+5. Create a new entry for your service account returns "Conflict" response
+   Steps: 4
+   - Given new "CreateGCPSTSAccount" request
+   - And body with value {"data": {"attributes": {"account_tags": [], "client_email": "datadog-service-account@test-project.iam.gserviceaccount.com", "cloud_run_revision_filters": ["$KEY:$VALUE"], "host_filters": ["$KEY:$VALUE"], "is_per_project_quota_enabled": true, "is_resource_change_collection_enabled": true, "is_security_command_center_enabled": true, "metric_namespace_configs": [{"disabled": true, "id": "aiplatform"}, {"filters": ["snapshot.*", "!*_by_region"], "id": "pubsub"}], "monitored_resource_configs": [{"filters": ["$KEY:$VALUE"], "type": "gce_instance"}]}, "type": "gcp_service_account"}}
+   - When the request is sent
+   - Then the response status is 409 Conflict
+6. Create a new entry for your service account returns "OK" response
+   Steps: 6
+   - Given new "CreateGCPSTSAccount" request
+   - And body with value {"data": {"attributes": {"client_email": "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
+   - When the request is sent
+   - Then the response status is 201 OK
+   - And the response "data.type" is equal to "gcp_service_account"
+   - And the response "data.attributes.client_email" is equal to "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com"
+7. Create a new entry for your service account with account_tags returns "OK" response
+   Steps: 7
+   - Given new "CreateGCPSTSAccount" request
+   - And body with value {"data": {"attributes": {"account_tags": ["lorem", "ipsum"], "client_email": "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
+   - When the request is sent
+   - Then the response status is 201 OK
+   - And the response "data.type" is equal to "gcp_service_account"
+   - And the response "data.attributes.client_email" is equal to "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com"
+   - And the response "data.attributes.account_tags" is equal to ["lorem", "ipsum"]
+8. Create a new entry for your service account with cloud run revision filters enabled returns "OK" response
+   Steps: 7
+   - Given new "CreateGCPSTSAccount" request
+   - And body with value {"data": {"attributes": {"cloud_run_revision_filters": ["meh:bleh"], "client_email": "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
+   - When the request is sent
+   - Then the response status is 201 OK
+   - And the response "data.type" is equal to "gcp_service_account"
+   - And the response "data.attributes.client_email" is equal to "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com"
+   - And the response "data.attributes.cloud_run_revision_filters" is equal to ["meh:bleh"]
+9. Create a new entry for your service account with cspm enabled returns "OK" response
+   Steps: 7
+   - Given new "CreateGCPSTSAccount" request
+   - And body with value {"data": {"attributes": {"is_cspm_enabled": true, "resource_collection_enabled": true, "client_email": "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
+   - When the request is sent
+   - Then the response status is 201 OK
+   - And the response "data.type" is equal to "gcp_service_account"
+   - And the response "data.attributes.client_email" is equal to "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com"
+   - And the response "data.attributes.is_cspm_enabled" is equal to true
+10. Create a new entry for your service account with resource collection enabled disabled and cspm enabled returns "Bad Request" response
+   Steps: 4
+   - Given new "CreateGCPSTSAccount" request
+   - And body with value {"data": {"attributes": {"resource_collection_enabled": false, "is_cspm_enabled": true, "client_email": "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
+   - When the request is sent
+   - Then the response status is 400 Bad Request
+11. Create a new entry for your service account with resource collection enabled returns "OK" response
+   Steps: 7
+   - Given new "CreateGCPSTSAccount" request
+   - And body with value {"data": {"attributes": {"resource_collection_enabled": true, "client_email": "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
+   - When the request is sent
+   - Then the response status is 201 OK
+   - And the response "data.type" is equal to "gcp_service_account"
+   - And the response "data.attributes.client_email" is equal to "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com"
+   - And the response "data.attributes.resource_collection_enabled" is equal to true
+12. Create a new entry for your service account with security command center enabled returns "OK" response
+   Steps: 8
+   - Given new "CreateGCPSTSAccount" request
+   - And body with value {"data": {"attributes": {"is_security_command_center_enabled": true, "is_resource_change_collection_enabled": true, "client_email": "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
+   - When the request is sent
+   - Then the response status is 201 OK
+   - And the response "data.type" is equal to "gcp_service_account"
+   - And the response "data.attributes.client_email" is equal to "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com"
+   - And the response "data.attributes.is_security_command_center_enabled" is equal to true
+   - And the response "data.attributes.is_resource_change_collection_enabled" is equal to true
+13. Delete an STS enabled GCP Account returns "Bad Request" response
+   Steps: 4
+   - Given new "DeleteGCPSTSAccount" request
+   - And request contains "account_id" parameter from "REPLACE.ME"
+   - When the request is sent
+   - Then the response status is 400 Bad Request
+14. Delete an STS enabled GCP Account returns "No Content" response
+   Steps: 4
+   - Given new "DeleteGCPSTSAccount" request
+   - And request contains "account_id" parameter from "REPLACE.ME"
+   - When the request is sent
+   - Then the response status is 204 No Content
+15. List all GCP STS-enabled service accounts returns "Not Found" response
+   Steps: 3
+   - Given new "ListGCPSTSAccounts" request
+   - When the request is sent
+   - Then the response status is 404 Not Found
+16. List all GCP STS-enabled service accounts returns "OK" response
+   Steps: 5
+   - Given there is a valid "gcp_sts_account" in the system
+   - And new "ListGCPSTSAccounts" request
+   - When the request is sent
+   - Then the response status is 200 OK
+   - And the response "data" has item with field "type" with value "gcp_service_account"
+17. List delegate account returns "OK" response
+   Steps: 4
+   - Given new "GetGCPSTSDelegate" request
+   - When the request is sent
+   - Then the response status is 200 OK
+   - And the response "data.type" is equal to "gcp_sts_delegate"
+18. Update STS Service Account returns "Bad Request" response
+   Steps: 5
+   - Given new "UpdateGCPSTSAccount" request
+   - And request contains "account_id" parameter from "REPLACE.ME"
+   - And body with value {"data": {"attributes": {"account_tags": [], "client_email": "datadog-service-account@test-project.iam.gserviceaccount.com", "cloud_run_revision_filters": ["$KEY:$VALUE"], "host_filters": ["$KEY:$VALUE"], "is_per_project_quota_enabled": true, "is_resource_change_collection_enabled": true, "is_security_command_center_enabled": true, "metric_namespace_configs": [{"disabled": true, "id": "aiplatform"}, {"filters": ["snapshot.*", "!*_by_region"], "id": "pubsub"}], "monitored_resource_configs": [{"filters": ["$KEY:$VALUE"], "type": "gce_instance"}]}, "id": "d291291f-12c2-22g4-j290-123456678897", "type": "gcp_service_account"}}
+   - When the request is sent
+   - Then the response status is 400 Bad Request
+19. Update STS Service Account returns "Not Found" response
+   Steps: 5
+   - Given new "UpdateGCPSTSAccount" request
+   - And request contains "account_id" parameter from "REPLACE.ME"
+   - And body with value {"data": {"attributes": {"account_tags": [], "client_email": "datadog-service-account@test-project.iam.gserviceaccount.com", "cloud_run_revision_filters": ["$KEY:$VALUE"], "host_filters": ["$KEY:$VALUE"], "is_per_project_quota_enabled": true, "is_resource_change_collection_enabled": true, "is_security_command_center_enabled": true, "metric_namespace_configs": [{"disabled": true, "id": "aiplatform"}, {"filters": ["snapshot.*", "!*_by_region"], "id": "pubsub"}], "monitored_resource_configs": [{"filters": ["$KEY:$VALUE"], "type": "gce_instance"}]}, "id": "d291291f-12c2-22g4-j290-123456678897", "type": "gcp_service_account"}}
+   - When the request is sent
+   - Then the response status is 404 Not Found
+20. Update STS Service Account returns "OK" response
+   Steps: 6
+   - Given there is a valid "gcp_sts_account" in the system
+   - And new "UpdateGCPSTSAccount" request
+   - And request contains "account_id" parameter from "gcp_sts_account.data.id"
+   - And body with value {"data": {"attributes": {"client_email": "Test-{{ unique_hash }}@example.com", "host_filters": ["foo:bar"]}, "id": "{{ gcp_sts_account.data.id }}", "type": "gcp_service_account"}}
+   - When the request is sent
+   - Then the response status is 201 OK
+21. Update STS Service Account returns "OK" response with cloud run revision filters
+   Steps: 6
+   - Given there is a valid "gcp_sts_account" in the system
+   - And new "UpdateGCPSTSAccount" request
+   - And request contains "account_id" parameter from "gcp_sts_account.data.id"
+   - And body with value {"data": {"attributes": {"client_email": "Test-{{ unique_hash }}@example.com", "cloud_run_revision_filters": ["merp:derp"]}, "id": "{{ gcp_sts_account.data.id }}", "type": "gcp_service_account"}}
+   - When the request is sent
+   - Then the response status is 201 OK
+22. Update STS Service Account returns "OK" response with enable resource collection turned on
+   Steps: 6
+   - Given there is a valid "gcp_sts_account" in the system
+   - And new "UpdateGCPSTSAccount" request
+   - And request contains "account_id" parameter from "gcp_sts_account.data.id"
+   - And body with value {"data": {"attributes": {"client_email": "Test-{{ unique_hash }}@example.com", "resource_collection_enabled": true}, "id": "{{ gcp_sts_account.data.id }}", "type": "gcp_service_account"}}
+   - When the request is sent
+   - Then the response status is 201 OK

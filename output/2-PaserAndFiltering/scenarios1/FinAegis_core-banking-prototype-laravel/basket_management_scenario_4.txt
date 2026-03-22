@@ -1,0 +1,8 @@
+Scenario 4: Dynamic basket rebalancing
+  Tags: ['@wip']
+  Given  I have a dynamic basket "DYNAMIC" with the following components:
+  When  the basket needs rebalancing
+  And  I trigger a rebalance
+  Then  the basket should be rebalanced within the weight limits
+  And  a rebalancing event should be recorded
+

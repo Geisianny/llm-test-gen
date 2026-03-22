@@ -1,0 +1,7 @@
+Scenario 1: Filtering coupons by code
+  Tags: ['@api', '@ui']
+  Given  I am browsing coupons of this promotion
+  When  I filter by code containing "X"
+  Then  I should see a single promotion coupon in the list
+  And  I should see the promotion coupon "X" in the list
+

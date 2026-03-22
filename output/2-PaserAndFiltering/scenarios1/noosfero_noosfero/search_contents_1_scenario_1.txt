@@ -1,0 +1,10 @@
+Scenario 1: search articles by category
+  Given  the following category
+  And  the following articles
+  When  I go to the search articles page
+  And  I fill in "search-input" with "Software"
+  And  I press "Search"
+  Then  I should see "using noosfero" within "#search-results"
+  And  I should not see "bees and butterflies"
+  And  I should not see "whales and dolphins"
+

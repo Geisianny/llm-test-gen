@@ -1,0 +1,8 @@
+Scenario 1: Audience widget
+  And  I go to the provider dashboard
+  Then  I should see "AUDIENCE" within the audience dashboard widget
+  And  I should see the link "0 ACCOUNTS" within the audience dashboard widget
+  And  I should see the link "PORTAL" within the audience dashboard widget
+  And  I should see the link "0 DRAFTS" within the audience dashboard widget
+  And  I should see the link "0 MESSAGES" within the audience dashboard widget
+

@@ -1,0 +1,33 @@
+Scenario: View all payments for a user with existing subscriptions
+  Given there is an authenticated user with existing subscriptions
+  And the user has multiple payments linked to their subscriptions
+  When the user requests to view all payments
+  Then the system displays a list of all payments linked to their subscriptions
+  And the list includes customer, product, price, and applied tax rule information for each payment
+
+Scenario: View payments for a user with no subscriptions
+  Given there is an authenticated user with no subscriptions
+  When the user requests to view all payments
+  Then the system displays an empty list of payments
+  And displays a message indicating that there are no payments associated with their account
+
+Scenario: View payments for a user with subscriptions but no payments
+  Given there is an authenticated user with existing subscriptions
+  And the user has no payments linked to their subscriptions
+  When the user requests to view all payments
+  Then the system displays an empty list of payments
+  And displays a message indicating that there are no payments associated with their subscriptions
+
+Scenario: Generate receipt for an existing payment
+  Given there is an authenticated user with existing subscriptions
+  And the user has a payment linked to their subscription
+  When the user requests to generate a receipt for the payment
+  Then the system generates a receipt for the payment
+  And the receipt is consistent with the data returned by the API
+
+Scenario: Attempt to generate receipt for a non-existent payment
+  Given there is an authenticated user with existing subscriptions
+  And the user has no payment with a specific ID
+  When the user requests to generate a receipt for the non-existent payment
+  Then the system displays an error message indicating that the payment does not exist
+  And does not generate a receipt

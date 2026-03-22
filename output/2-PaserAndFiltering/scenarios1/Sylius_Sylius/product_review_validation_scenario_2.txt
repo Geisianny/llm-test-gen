@@ -1,0 +1,8 @@
+Scenario 2: Trying to remove comment from an existing product review
+  Tags: ['@api', '@ui']
+  When  I want to modify the "Awesome" product review
+  And  I remove its comment
+  And  I try to save my changes
+  Then  I should be notified that comment is required
+  And  this product review should still have a comment "Nice product"
+

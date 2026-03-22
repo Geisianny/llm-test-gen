@@ -1,0 +1,6 @@
+Scenario: Full payment of an invoice in the same currency
+  Given there is an invoice with a total amount of $100 in USD
+  And the invoice status is "open"
+  When the user makes a payment of $100 in USD
+  Then the invoice status is updated to "paid"
+  And the residual amount is $0

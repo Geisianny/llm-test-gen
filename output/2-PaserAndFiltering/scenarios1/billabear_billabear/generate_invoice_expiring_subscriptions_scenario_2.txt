@@ -1,0 +1,8 @@
+Scenario 2: 
+  Given  the following subscriptions exist:
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  Then  the subscription for "customer.four@example.org" will expire in a week
+  And  there the latest invoice for "customer.four@example.org" will not be marked as paid
+  And  there is a payment attempt for "customer.four@example.org" will exist
+

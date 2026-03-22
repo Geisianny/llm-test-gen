@@ -1,0 +1,18 @@
+Scenario 1: As offerer i can make unavailable some of my listing availabilities days
+  Given  I am logged in as user "offerer@cocorico.rocks" with password "12345678"
+  When  I click on dashboard menu "Listings" of "offerer"
+  And  I follow "Edit"
+  And  I follow "Calendar"
+  When  I fill date range with the following:
+  And  I check hidden "Monday"
+  And  I check hidden "Tuesday"
+  And  I check hidden "Wednesday"
+  And  I check hidden "Thursday"
+  And  I check hidden "Friday"
+  And  I check hidden "Saturday"
+  And  I select hidden "listing_availabilities_status_status" with value "Unavailable"
+  And  I press button with css ".form-area [type=submit]"
+  And  I wait 500 ms for Jquery loading
+  Then  I should be on the "dashboard listing edit availabilities status" page which "listing title" equal to "Listing One"
+  And  I should see "Update successful"
+

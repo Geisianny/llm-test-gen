@@ -1,0 +1,5 @@
+Scenario 9: Cleanup: remove the custom RPM download point
+  When  I delete the package download endpoint pillar file from the server
+  And  I install a salt pillar top file for "disable_local_repos_off, salt_bundle_config" with target "*" on the server
+  And  I refresh the pillar data
+

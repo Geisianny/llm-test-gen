@@ -1,0 +1,39 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 19/01/2026 23:13:57
+Arquivo analisado: _00505CurrencyMovementType_story_processado.feature
+Caminho relativo: IRPTeam_IRP\_00505CurrencyMovementType_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/Originais\IRPTeam_IRP\_00505CurrencyMovementType_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: _00505CurrencyMovementType_story_processado
+Descrição: Não possui
+Total de cenários: 1
+
+CENÁRIOS IDENTIFICADOS:
+1. _005017 creation Movement Type for Partner term currencies
+   Steps: 19
+   - When set True value to the constant
+   - * Preparation
+   - When Create catalog Currencies objects
+   - When Create catalog IntegrationSettings objects
+   - * Opening charts of characteristic types - Currency movement
+   - Given I open hyperlink "e1cib/list/ChartOfCharacteristicTypes.CurrencyMovementType"
+   - * Create currency for Partner terms - TRY
+   - And I click the button named "FormCreate"
+   - And I input "TRY" text in the field named "Description_en"
+   - And I click Select button of "Currency" field
+   - And I go to line in "List" table
+   - And I select current line in "List" table
+   - And I click Select button of "Source" field
+   - And I go to line in "List" table
+   - And I select current line in "List" table
+   - And I select "Partner term" exact value from "Type" drop-down list
+   - And I click "Save and close" button
+   - * Check data save
+   - And "List" table contains lines

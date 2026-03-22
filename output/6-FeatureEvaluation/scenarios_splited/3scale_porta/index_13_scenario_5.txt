@@ -1,0 +1,4 @@
+Scenario: Filter customer service subscriptions by multiple criteria
+  Given there are customer service subscriptions with different attributes for a provider
+  When the provider filters subscriptions by service "API Service" and plan "Premium"
+  Then the system displays a list of customer service subscriptions for "API Service" with "Premium" plan

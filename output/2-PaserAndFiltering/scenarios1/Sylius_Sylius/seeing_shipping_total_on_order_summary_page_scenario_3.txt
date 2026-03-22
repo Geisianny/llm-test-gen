@@ -1,0 +1,10 @@
+Scenario 3: Not seeing the shipping total on order summary if none of the order items require shipping
+  Tags: ['@api', '@ui']
+  Given  I have "Guards! Guards! - ebook" variant of this product in the cart
+  And  I am at the checkout addressing step
+  When  I specify the email as "jon.snow@example.com"
+  And  I define the billing address as "Ankh Morpork", "Frost Alley", "90210", "United States" for "Jon Snow"
+  And  I choose "Offline" payment method
+  Then  I should be on the checkout summary step
+  And  I should not see shipping total
+

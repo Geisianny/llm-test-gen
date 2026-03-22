@@ -1,0 +1,14 @@
+Scenario 1: 
+  Given  the following subscriptions exist:
+  And  that the following countries exist:
+  And  the following country tax rules exist:
+  And  the following states exist:
+  And  the following state tax rules exist:
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  Then  there the latest invoice for "customer.seven@example.org" will have tax country of "US"
+  And  there the latest invoice for "customer.seven@example.org" will have tax state of "Texas"
+  Then  there the latest invoice for "customer.seven@example.org" will have tax rate of "9"
+  And  there the latest invoice for "customer.eight@example.org" will have tax state of "Quebec"
+  Then  there the latest invoice for "customer.eight@example.org" will have tax rate of "14.975"
+

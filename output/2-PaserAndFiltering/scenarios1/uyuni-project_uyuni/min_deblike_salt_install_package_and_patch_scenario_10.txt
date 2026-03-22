@@ -1,0 +1,4 @@
+Scenario 10: Cleanup: remove andromeda-dummy package from Debian-like minion
+  When  I remove package "andromeda-dummy" from this "deblike_minion"
+  And  I run "apt update" on "deblike_minion" with logging
+

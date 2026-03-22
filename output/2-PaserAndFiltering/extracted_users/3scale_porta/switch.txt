@@ -1,0 +1,30 @@
+Feature: Services switch
+Description: To have different provider plans
+  As a member or admin
+  I want to see correct links depending on my multiple service switch activation
+Tags: ['@javascript']
+
+Background: 
+  Given  a provider is logged in
+  And  the provider has "multiple_applications" visible
+  Given  the default product of provider "master" has name "Master API"
+  Given  the following application plan:
+  And  service discovery is not enabled
+
+Scenario 1: In denied state, I should see link to upgrade warning
+  Tags: ['@wip']
+  Given  I am on the provider dashboard
+  And  I follow "Create Product"
+  Then  I should be on the upgrade notice page for "multiple_services"
+
+Scenario 2: In allowed state (hidden and visible), I should have the functionality enabled
+  Given  the provider has "multiple_services" switch allowed
+  And  I am on the provider dashboard
+  And  I follow "Create Product"
+  Then  I should be on the new service page
+
+Scenario 3: In allowed state (hidden and visible), I should be able to access the page by url
+  Given  the provider has "multiple_services" switch allowed
+  And  I go to the new service page
+  Then  I should see "New Product"
+

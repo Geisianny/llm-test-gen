@@ -1,0 +1,3 @@
+Scenario 9: Cleanup: Make sure no job is left running on buildhost
+  When  I wait until no Salt job is running on "build_host"
+

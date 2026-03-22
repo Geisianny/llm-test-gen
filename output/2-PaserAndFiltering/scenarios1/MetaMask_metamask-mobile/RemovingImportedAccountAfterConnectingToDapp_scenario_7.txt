@@ -1,0 +1,17 @@
+Scenario Outline 7: From the connect accounts modal, a user import an account via private key - Example 1
+  When  I trigger the connect modal
+  Then  the connect modal should be displayed
+  When  I tap on button with text "Connect multiple accounts"
+  And  I tap import account
+  And  I type cbfd798afcfd1fd8ecc48cbecb6dc7e876543395640b758a90e11d986e758ad1 into the private key input field
+  And  I tap on the private key import button
+  Then  The account is imported
+  When  I tap on Select all button
+  And  I connect multiple accounts to a dapp
+  Then  I should be connected to the dapp
+  And  I set "Account 2" as my primary account
+
+  Examples:
+    | PRIVATEKEY |
+    | cbfd798afcfd1fd8ecc48cbecb6dc7e876543395640b758a90e11d986e758ad1 |
+

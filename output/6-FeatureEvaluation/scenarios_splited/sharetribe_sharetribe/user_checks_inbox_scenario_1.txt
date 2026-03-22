@@ -1,0 +1,6 @@
+Scenario: User views received messages in inbox
+  Given there is a user with received messages
+  And the user is logged in
+  When the user navigates to the inbox
+  Then the system displays a list of received messages
+  And the list includes the sender and message subject

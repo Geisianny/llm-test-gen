@@ -1,0 +1,14 @@
+Scenario 3: 0090-VAMM-026: If the trade cannot execute with the slippage as configured in the request then the transaction is rejected and no changes to the vAMM are made.
+  Tags: ['@VAMM']
+  When  the parties place the following orders:
+  Then  the following trades should be executed:
+  When  the network moves ahead "1" blocks
+  Then  the market data for the market "ETH/MAR22" should be:
+  And  the parties should have the following profit and loss:
+  And  the AMM pool status should be:
+  When  the parties amend the following AMM:
+  Then  the AMM pool status should be:
+  And  the parties should have the following account balances:
+  When  the parties cancel the following AMM:
+  Then  the AMM pool status should be:
+

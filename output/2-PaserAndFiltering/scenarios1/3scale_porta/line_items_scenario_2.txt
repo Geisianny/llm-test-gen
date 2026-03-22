@@ -1,0 +1,7 @@
+Scenario 2: Deleting an item
+  Given  the table should contain the following within the line items card:
+  When  they press "Delete"
+  And  wait a moment
+  Then  they should not see "Bananas"
+  And  the total cost should be "EUR 0.00"
+

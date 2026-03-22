@@ -1,0 +1,7 @@
+Scenario 4: Admin edits dropdown option order
+  Tags: ['@javascript']
+  When  I move option "No balcony" for "Balcony type" down 1 step
+  Then  the option order for "Balcony type" should be following:
+  When  I move option "Backyard" for "Balcony type" up 2 steps
+  Then  the option order for "Balcony type" should be following:
+

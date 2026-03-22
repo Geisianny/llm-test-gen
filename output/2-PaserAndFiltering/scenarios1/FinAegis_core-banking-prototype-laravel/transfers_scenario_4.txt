@@ -1,0 +1,6 @@
+Scenario 4: Bulk transfer processing
+  Given  I have an account with balance 5000.00 USD
+  When  I submit the following bulk transfers:
+  Then  all transfers should be successful
+  And  my account balance should be 4400.00 USD
+

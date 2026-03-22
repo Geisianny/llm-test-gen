@@ -1,0 +1,8 @@
+Scenario 4: Delete an exchange rate
+  When  I navigate the menu and select the item at "System > Currency > Edit rates"
+  Then  I should see the Edit rates screen
+  And  I expect the report to contain 2 rows
+  When  I click "[delete]" for the row with Valid From "2020-01-01"
+  Then  I should see the Edit rates screen
+  And  I expect the report to contain 1 row
+

@@ -1,0 +1,8 @@
+Scenario 4: I can not log in with disabled user
+  Given  I am on the home page
+  And  I follow "Login"
+  When  I fill in the following:
+  And  I press "Login"
+  Then  I should be on the "login" page
+  And  I should see "ERROR! User account is disabled."
+

@@ -1,0 +1,3 @@
+Scenario: Attempt to remove a non-existent service
+  Given there is no service with the name "Non Existent Service"
+  When the administrator removes the service "Non Existent Service"

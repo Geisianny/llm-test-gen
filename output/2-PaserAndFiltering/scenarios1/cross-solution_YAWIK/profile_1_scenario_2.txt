@@ -1,0 +1,5 @@
+Scenario 2: Profile only visible when active jobs available
+  Given  organization "Profile Active Job" have jobs:
+  And  I want to see list organization profiles
+  Then  I should see "Profile Active Job"
+

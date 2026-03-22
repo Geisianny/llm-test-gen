@@ -1,0 +1,17 @@
+Scenario Outline 4: Parties rewards vest at the correct rate and adhere to the minimum quantum transfer (0085-RVST-009)(0085-RVST-010) - Example 1
+  Given  the following network parameters are set:
+  Given  the parties submit the following recurring transfers:
+  And  the network moves ahead "1" blocks
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  "trader1" should have vesting account balance of "10000" for asset "USD.1.10"
+  When  the network moves ahead "1" epochs
+  Then  "trader1" should have vested account balance of "1000" for asset "USD.1.10"
+
+  Examples:
+    | base rate | minimum transfer | vested amount |
+    | 0.1 | 1 | "1000" |
+    | 0.1 | 200 | "2000" |
+    | 0.1 | 2000 | "10000" |
+    | 1.0 | 1 | "10000" |
+

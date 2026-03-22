@@ -1,0 +1,5 @@
+Scenario: Browse tracked product variants with pagination
+  Given there are multiple pages of tracked product variants in the inventory
+  When the administrator accesses the inventory browser
+  Then the system displays a list of tracked product variants with pagination
+  And shows the available stock quantity for each variant on the first page

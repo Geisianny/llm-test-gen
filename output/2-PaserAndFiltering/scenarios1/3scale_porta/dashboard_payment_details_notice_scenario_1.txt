@@ -1,0 +1,13 @@
+Scenario 1: On free plan
+  Given  the following application plan:
+  And  there is no user with username "bob"
+  When  the current domain is foo.3scale.localhost
+  And  I go to the sign up page for the "Basic" plan
+  And  I fill in all required signup fields as "bob"
+  And  I press "Sign up"
+  When  user "bob" activates himself
+  And  buyer "bob" is approved
+  And  I log in as "bob" on foo.3scale.localhost
+  And  I go to the dashboard
+  Then  I should not see "Payment details required"
+

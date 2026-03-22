@@ -1,0 +1,4 @@
+Scenario 3: Custom normalization operation with shorthand configuration
+  When  I send a "POST" request to "/short_custom/denormalization"
+  Then  the JSON should be equal to:
+

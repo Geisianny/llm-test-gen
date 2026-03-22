@@ -1,0 +1,17 @@
+Scenario Outline 14: Successfully add and remove an organisation's categories - Example 1
+  Tags: ['@vcr']
+  Given  I am signed in as a charity worker related to "Friendly"
+  And  I visit the edit page for the organisation named "Friendly"
+  Then  I uncheck the category "Health"
+  And  I check the category "Child welfare"
+  And  I press "Update Organisation"
+  Then  I should not see "Health" within "org-categories"
+  And  I should see "Child welfare" within "org-categories"
+
+  Examples:
+    | category1 | action1 | visibility1 | category2 | action2 | visibility2 |
+    | Health | uncheck | not see | Child welfare | check | see |
+    | Animal welfare | check | see | Education | uncheck | not see |
+    | Health | uncheck | not see | Education | uncheck | not see |
+    | General | check | see | Give them things | check | see |
+

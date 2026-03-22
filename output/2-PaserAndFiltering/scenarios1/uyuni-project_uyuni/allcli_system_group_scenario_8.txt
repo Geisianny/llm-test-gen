@@ -1,0 +1,9 @@
+Scenario 8: Add the SLE minion to the group and to SSM
+  When  I follow the left menu "Systems > System Groups"
+  And  I follow "new-systems-group"
+  And  I follow "Target Systems"
+  And  I check the "sle_minion" client
+  And  I click on "Add Systems"
+  Then  I should see a "1 systems were added to new-systems-group server group." text
+  When  I click on "Add Selected to SSM"
+

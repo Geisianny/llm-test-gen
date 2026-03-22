@@ -1,0 +1,7 @@
+Scenario 1: Inability to edit not my addresses
+  Tags: ['@api', '@ui']
+  Given  there is a customer "John Doe" identified by an email "doe@example.com" and a password "banana"
+  And  this customer has an address "John Doe", "Banana Street", "90232", "New York", "United States", "Kansas" in their address book
+  When  I try to edit the address of "John Doe"
+  Then  I should be unable to edit their address
+

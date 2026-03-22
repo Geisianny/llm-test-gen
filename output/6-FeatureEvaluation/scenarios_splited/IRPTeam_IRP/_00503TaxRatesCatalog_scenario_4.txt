@@ -1,0 +1,6 @@
+Scenario: Update an existing tax rate
+  Given there is an administrator logged in
+  And there is a tax rate with the code "VAT" and rate "20"
+  When the administrator updates the tax rate "VAT" with a new rate "25"
+  Then the system saves the updated tax rate
+  And displays a confirmation message

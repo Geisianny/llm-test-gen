@@ -1,0 +1,4 @@
+Scenario 5: Get an error when provided page number is too large
+  When  I send a "GET" request to "/dummies?page[page]=9223372036854775807"
+  Then  the response status code should be 400
+

@@ -1,0 +1,9 @@
+Scenario 19: Removing a translation to an existing worldwide organisation with pages
+  Given  an worldwide organisation "Test Worldwide Organisation" with a "Personal information charter" page and a translation in French
+  When  I visit the "Pages" tab
+  And  I add a new page translation with a body of "French Body"
+  When  I remove the French translation from the main document
+  Then  I should see the main document translation is gone
+  And  I visit the "Pages" tab
+  Then  I should see that the translated page with body "French Body" is gone
+

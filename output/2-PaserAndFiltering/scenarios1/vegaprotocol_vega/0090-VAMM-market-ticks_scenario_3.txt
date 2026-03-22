@@ -1,0 +1,8 @@
+Scenario 3: Reference price is AMM not at market-tick and pegged offset is 0
+  Tags: ['@VAMM']
+  When  the parties cancel the following AMM:
+  When  the parties place the following pegged iceberg orders:
+  Then  the parties submit the following AMM:
+  And  the network moves ahead "1" blocks
+  Then  the order book should have the following volumes for market "ETH/MAR22":
+

@@ -1,0 +1,4 @@
+Scenario 1: Create a Docker user with image administrators rights
+  Given  I am authorized for the "Admin" section
+  When  I create a user with name "docker" and password "docker" with roles "image_admin"
+

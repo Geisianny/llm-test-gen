@@ -1,0 +1,9 @@
+Scenario 2: Admin can change the name display type to full name (First Last)
+  Tags: ['@javascript']
+  Given  community "test" has name display type "first_name_with_initial"
+  When  I choose "community_name_display_type_full_name"
+  And  I press submit
+  And  I wait for 1 seconds
+  Then  I go to the homepage
+  And  I should see my name displayed as "Kassi Testperson1"
+

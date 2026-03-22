@@ -1,0 +1,5 @@
+Scenario 1: view page in Pt as Pt guest
+  Given  my browser prefers Portuguese
+  When  I go to /manuel/meu-artigo
+  Then  the site should be in Portuguese
+

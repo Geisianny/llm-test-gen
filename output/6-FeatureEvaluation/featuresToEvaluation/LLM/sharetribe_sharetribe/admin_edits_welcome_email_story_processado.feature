@@ -1,0 +1,40 @@
+Feature: admin_edits_welcome_email_story_processado
+
+Scenario: Edit welcome email content with valid input
+    Given there is an admin logged into the system
+    And the welcome email content is currently "Default welcome email content"
+    When the admin edits the welcome email content to "New welcome email content"
+    And saves the changes
+    Then the system updates the welcome email content to "New welcome email content"
+    And displays a confirmation message
+
+Scenario: Preview welcome email content
+    Given there is an admin logged into the system
+    And the welcome email content is currently "Current welcome email content"
+    When the admin previews the welcome email content
+    Then the system displays the welcome email content as "Current welcome email content"
+    And the admin can see the preview of the email
+
+Scenario: Send test welcome email
+    Given there is an admin logged into the system
+    And the welcome email content is currently "Current welcome email content"
+    And the admin's email address is "admin@example.com"
+    When the admin sends a test welcome email
+    Then the system sends a test email to "admin@example.com"
+    And the email contains the content "Current welcome email content"
+
+Scenario: Edit welcome email sender address with valid input
+    Given there is an admin logged into the system
+    And the welcome email sender address is currently "default@example.com"
+    When the admin edits the welcome email sender address to "new@example.com"
+    And saves the changes
+    Then the system updates the welcome email sender address to "new@example.com"
+    And displays a confirmation message
+
+Scenario: Attempt to save welcome email content with invalid input
+    Given there is an admin logged into the system
+    And the welcome email content is currently "Current welcome email content"
+    When the admin edits the welcome email content to a value exceeding the maximum allowed characters
+    And attempts to save the changes
+    Then the system displays an error message indicating that the input is invalid
+    And the welcome email content remains "Current welcome email content"

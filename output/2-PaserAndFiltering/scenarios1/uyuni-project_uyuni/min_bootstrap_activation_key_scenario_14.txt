@@ -1,0 +1,6 @@
+Scenario 14: Cleanup: remove the key configuration channel
+  When  I follow the left menu "Configuration > Channels"
+  And  I follow "Key Channel"
+  And  I follow "Delete Channel"
+  And  I click on "Delete Config Channel"
+

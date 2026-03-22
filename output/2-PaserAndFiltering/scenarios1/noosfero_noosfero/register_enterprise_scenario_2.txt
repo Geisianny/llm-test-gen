@@ -1,0 +1,6 @@
+Scenario 2: approval method is admin
+  Given  organization_approval_method is "admin" on environment
+  And  I follow "Groups" within "#section-relationships"
+  When  I follow "Register a new enterprise"
+  Then  I should not see "Region"
+

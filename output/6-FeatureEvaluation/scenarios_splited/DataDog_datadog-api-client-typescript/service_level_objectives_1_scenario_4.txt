@@ -1,0 +1,5 @@
+Scenario: Delete an existing SLO report
+  Given there is an existing SLO report with ID "12345"
+  When the user deletes the SLO report with ID "12345" via the API
+  Then the system returns a success response
+  And the SLO report is removed from the system

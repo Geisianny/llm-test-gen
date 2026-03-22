@@ -1,0 +1,49 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: Message_story_processado.feature
+Caminho relativo: Cocolabs-SAS_cocorico\Message_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\Cocolabs-SAS_cocorico\Message_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: Message_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Send a message to an offerer
+   Steps: 5
+   - Given there is a user "asker@example.com" who wants to send a message
+   - And there is an offerer "offerer@example.com" with a listed item
+   - When the user "asker@example.com" sends a message to "offerer@example.com"
+   - Then the system records the message
+   - And the offerer "offerer@example.com" receives the message
+2. Consult received messages
+   Steps: 4
+   - Given there is an offerer "offerer@example.com" with received messages
+   - When the offerer "offerer@example.com" consults their messages
+   - Then the system displays a list of received messages
+   - And the list includes the sender's information and the message content
+3. Reply to a received message
+   Steps: 4
+   - Given there is an offerer "offerer@example.com" with a received message from "asker@example.com"
+   - When the offerer "offerer@example.com" replies to the message
+   - Then the system records the reply
+   - And the asker "asker@example.com" receives the reply
+4. Consult sent messages
+   Steps: 4
+   - Given there is a user "asker@example.com" who has sent messages
+   - When the user "asker@example.com" consults their sent messages
+   - Then the system displays a list of sent messages
+   - And the list includes the recipient's information and the message content
+5. Attempt to send a message to a non-existent user
+   Steps: 4
+   - Given there is no user with the email "nonexistent@example.com"
+   - When a user sends a message to "nonexistent@example.com"
+   - Then the system denies sending the message
+   - And displays a message indicating that the recipient does not exist

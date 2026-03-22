@@ -1,0 +1,9 @@
+Scenario 48: Update a tag configuration returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/metrics-experience']
+  Given  a valid "appKeyAuth" key in the system
+  And  new "UpdateTagConfiguration" request
+  And  request contains "metric_name" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"group_by": ["app", "datacenter"], "include_percentiles": false}, "id": "http.endpoint.request", "type": "manage_tags"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

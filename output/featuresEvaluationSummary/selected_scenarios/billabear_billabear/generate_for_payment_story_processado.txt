@@ -1,0 +1,6 @@
+Scenario: Generate receipt for an existing payment
+  Given there is an authenticated user with existing subscriptions
+  And the user has a payment linked to their subscription
+  When the user requests to generate a receipt for the payment
+  Then the system generates a receipt for the payment
+  And the receipt is consistent with the data returned by the API

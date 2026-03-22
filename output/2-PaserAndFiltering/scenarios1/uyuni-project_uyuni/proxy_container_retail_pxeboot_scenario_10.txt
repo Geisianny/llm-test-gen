@@ -1,0 +1,6 @@
+Scenario 10: PXE boot the PXE boot minion
+  Tags: ['@uyuni']
+  When  I reboot the Retail terminal "pxeboot_minion" through the interface "ens4"
+  And  I wait at most 180 seconds until Salt master sees "pxeboot_minion" as "unaccepted"
+  And  I accept "pxeboot_minion" key in the Salt master
+

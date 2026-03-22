@@ -1,0 +1,5 @@
+Scenario: COGS posting with sales entered before purchase
+  Given sales are recorded before the corresponding purchase invoice
+  When the purchase invoice is posted
+  Then the system automatically posts the COGS
+  And the accounting records reflect the correct COGS

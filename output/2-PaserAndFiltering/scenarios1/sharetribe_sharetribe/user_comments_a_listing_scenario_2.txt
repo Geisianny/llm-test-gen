@@ -1,0 +1,19 @@
+Scenario 2: Deleting a comment successfully
+  Tags: ['@javascript']
+  Given  there are following users:
+  And  there is a listing with title "Massage" from "kassi_testperson1" with category "Services" and with listing shape "Requesting"
+  And  listing comments are in use in community "test"
+  And  I am logged in as "kassi_testperson2"
+  When  I follow "Massage"
+  And  I fill in "comment_content" with "Test comment"
+  And  I press "Send comment"
+  And  I should see "Test comment" within "#comments"
+  And  I should see "1" within "#comment_count"
+  And  I should see "delete" within "#comments"
+  And  the system processes jobs
+  And  I will confirm all following confirmation dialogs in this page if I am running PhantomJS
+  And  I follow "delete"
+  When  I confirm alert popup
+  And  I should not see "Test comment" within "#comments"
+  And  I should see "0" within "#comment_count"
+

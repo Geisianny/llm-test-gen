@@ -1,0 +1,7 @@
+Scenario 4: cancel comment reply
+  Tags: ['@selenium-fixme']
+  Given  I am on /booking/article-to-comment
+  And  I follow "Reply" within ".comments-action-bar"
+  When  I follow "Cancel" within ".comment-balloon"
+  Then  I should not see "Enter your comment" within "div.comment_reply.closed"
+

@@ -1,0 +1,10 @@
+Scenario 2: Proper shipping fee and tax after addressing
+  Tags: ['@api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  And  I addressed the cart to "Germany"
+  And  I chose "DHL-World" shipping method
+  When  I check the details of my cart
+  Then  my cart total should be "$122.00"
+  And  my cart taxes should be "$2.00"
+  And  my cart shipping total should be "$22.00"
+

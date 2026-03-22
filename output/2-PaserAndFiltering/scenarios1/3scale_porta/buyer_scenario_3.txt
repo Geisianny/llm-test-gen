@@ -1,0 +1,9 @@
+Scenario 3: On paid plan, I WANT to get just 1 email: report about upcoming transaction
+  Given  the time is 27th May 2009
+  And  a buyer "rich" signed up to application plan "PaidAsInLunch"
+  And  buyer "rich" has a valid credit card
+  And  I act as "rich"
+  And  no emails have been sent
+  When  the time flies to 3rd June 2009
+  Then  I should receive an email with subject "Monthly statement"
+

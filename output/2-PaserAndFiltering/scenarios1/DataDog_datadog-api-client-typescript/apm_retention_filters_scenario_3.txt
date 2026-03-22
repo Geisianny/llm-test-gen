@@ -1,0 +1,7 @@
+Scenario 3: Create a retention filter returns "Conflict" response
+  Tags: ['@generated', '@skip', '@team:DataDog/apm-trace-intake']
+  Given  new "CreateApmRetentionFilter" request
+  And  body with value {"data": {"attributes": {"enabled": true, "filter": {"query": "@http.status_code:200 service:my-service"}, "filter_type": "spans-sampling-processor", "name": "my retention filter", "rate": 1.0, "trace_rate": 1.0}, "type": "apm_retention_filter"}}
+  When  the request is sent
+  Then  the response status is 409 Conflict
+

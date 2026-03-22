@@ -1,0 +1,8 @@
+Scenario 3: Retrieve unpaginated billable call csv list
+  Given  I add Authorization header
+  When  I add "Accept" header equal to "text/csv"
+  And  I send a "GET" request to "billable_calls?_pagination=false"
+  Then  the response status code should be 200
+  And  the header "Content-Type" should be equal to "text/csv; charset=utf-8"
+  And  the streamed response should be equal to:
+

@@ -1,0 +1,5 @@
+Scenario 8: The systems should match between the UI and the ReportDB
+  When  I follow the left menu "Systems > System List > All"
+  And  I make a list of the existing systems
+  Then  I should find the systems from the UI in the ReportDB
+

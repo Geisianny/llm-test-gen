@@ -1,0 +1,5 @@
+Scenario 4: When plan requires approval, application is pending
+  Given  the following applications:
+  And  they go to the overview page of account "Bob"
+  Then  they should see the following table within the application widget:
+

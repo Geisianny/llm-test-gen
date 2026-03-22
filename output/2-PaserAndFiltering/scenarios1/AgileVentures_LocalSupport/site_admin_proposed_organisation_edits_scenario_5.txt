@@ -1,0 +1,7 @@
+Scenario 5: Super admin can see unpublished fields in proposed edit
+  Given  the following users are registered:
+  And  the following proposed edits exist:
+  And  I am signed in as an superadmin
+  And  I visit the most recently created proposed edit for "Friendly"
+  Then  the following proposed edits should be displayed on the page:
+

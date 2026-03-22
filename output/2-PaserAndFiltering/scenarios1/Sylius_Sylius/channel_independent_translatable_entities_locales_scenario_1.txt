@@ -1,0 +1,8 @@
+Scenario 1: Using all locales to translate an entity
+  Tags: ['@no-api', '@ui']
+  Given  the store has locale "German (Germany)"
+  When  I want to create a new translatable entity
+  Then  I should be able to translate it in "English (United States)"
+  And  I should be able to translate it in "German (Germany)"
+  But  I should not be able to translate it in "Polish (Poland)"
+

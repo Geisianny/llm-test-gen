@@ -1,0 +1,9 @@
+Scenario 45: Tag Configuration Cardinality Estimator returns "Success" response
+  Tags: ['@replay-only', '@team:DataDog/metrics-experience']
+  Given  new "EstimateMetricsOutputSeries" request
+  And  request contains "metric_name" parameter with value "system.cpu.idle"
+  And  request contains "filter[groups]" parameter with value "app,host"
+  And  request contains "filter[num_aggregations]" parameter with value 4
+  When  the request is sent
+  Then  the response status is 200 Success
+

@@ -1,0 +1,6 @@
+Scenario 3: Searching products by multiple taxons when one of them doesn't have any products
+  Tags: ['@api', '@no-ui']
+  When  I browse products from "T-Shirts" and "Sad" taxons
+  Then  I should see the product "T-Shirt Banana"
+  And  I should not see the product "Plastic Tomato"
+

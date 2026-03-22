@@ -1,0 +1,6 @@
+Scenario: Add a new top city with missing information
+  Given there is an admin logged in
+  When the admin adds "Los Angeles" as a top city
+  And sets its state to "California" but leaves the country blank
+  Then the system does not add "Los Angeles" to the top cities list
+  And displays a message indicating that the country is required

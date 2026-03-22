@@ -1,0 +1,8 @@
+Scenario 4: Amend to invalid tif is rejected (0004-AMND-034)
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "BTC/ETH"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  Then  the parties place the following orders:
+  Then  the parties amend the following orders:
+

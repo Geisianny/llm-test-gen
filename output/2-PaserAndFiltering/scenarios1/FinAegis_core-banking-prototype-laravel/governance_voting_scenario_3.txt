@@ -1,0 +1,8 @@
+Scenario 3: Proposal passes with majority support
+  Given  a proposal to add "ETH" asset with 60% support
+  And  the voting period is ending
+  When  the voting period closes
+  Then  the proposal should be marked as "passed"
+  And  the configuration should be automatically updated
+  And  the "ETH" asset should be added to the system
+

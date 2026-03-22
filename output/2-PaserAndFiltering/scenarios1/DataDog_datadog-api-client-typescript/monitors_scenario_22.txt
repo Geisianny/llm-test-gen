@@ -1,0 +1,7 @@
+Scenario 22: Get a monitor's details returns "Monitor Not Found error" response
+  Tags: ['@team:DataDog/monitor-app']
+  Given  new "GetMonitor" request
+  And  request contains "monitor_id" parameter with value 12345
+  When  the request is sent
+  Then  the response status is 404 Monitor Not Found error
+

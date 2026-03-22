@@ -1,0 +1,7 @@
+Scenario 7: List results for hostname
+  When  I follow the left menu "Systems > Advanced Search"
+  And  I enter "sle_minion" hostname on the search field
+  And  I select "Hostname" from "Field to Search"
+  And  I click on the search button
+  Then  I should see "sle_minion" hostname as first search result
+

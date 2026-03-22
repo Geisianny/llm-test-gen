@@ -1,0 +1,8 @@
+Scenario 5: Sorting shipping methods ascending by name from chosen locale translation
+  Tags: ['@ui', '@api']
+  When  I change my locale to "Polish (Poland)"
+  And  I browse shipping methods
+  And  I sort the shipping methods ascending by name
+  Then  I should see 3 shipping methods in the list
+  And  the first shipping method on the list should have name "Łódź Podwodna Morskich Jednorożców"
+

@@ -1,0 +1,7 @@
+Scenario 3: Loading new Swagger v2 template with new cdn_asset tag
+  Given  the product has a Swagger 2 spec "Echo"
+  And  the provider has cms page "/version-22" with:
+  And  the cms page "/version-22" has main layout
+  When  they visit "/version-22"
+  Then  they should see "A sample echo API"
+

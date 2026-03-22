@@ -1,0 +1,5 @@
+Scenario 4: No error when unknown option and argument are passed in
+  Given  a configuration with:
+  When  I execute Karma with arguments: "start sandbox/karma.conf.js unknown-argument --unknown-option"
+  Then  it passes with:
+

@@ -1,0 +1,7 @@
+Scenario 43: The Rocky 8 Salt minion is healthy
+  Tags: ['@rocky8_minion']
+  Then  "rocky8_minion" should have a FQDN
+  And  reverse resolution should work for "rocky8_minion"
+  And  "rocky8_minion" should communicate with the server using public interface
+  And  the clock from "rocky8_minion" should be exact
+

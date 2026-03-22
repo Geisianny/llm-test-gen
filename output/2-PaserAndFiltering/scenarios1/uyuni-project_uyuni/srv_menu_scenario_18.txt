@@ -1,0 +1,7 @@
+Scenario 18: The Hub configuration submenu of the admin menu
+  When  I follow the left menu "Admin > Hub Configuration"
+  Then  I should see a "Peripherals Configuration" text
+  And  I should see a "Peripherals Configuration" link in the left menu
+  And  I should see a "Hub Details" link in the left menu
+  And  I should see a "Access Tokens" link in the left menu
+

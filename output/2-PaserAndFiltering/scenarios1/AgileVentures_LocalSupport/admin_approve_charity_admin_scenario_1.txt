@@ -1,0 +1,7 @@
+Scenario 1: As a superadmin approving a pending users request
+  Tags: ['@vcr']
+  Given  I am signed in as a superadmin
+  When  I approve "pending@myorg.com"
+  Then  I should see "You have approved pending@myorg.com."
+  Then  "pending@myorg.com" is an organisation admin of "My Organisation"
+

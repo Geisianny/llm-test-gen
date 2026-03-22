@@ -1,0 +1,8 @@
+Scenario 15: Cleanup: remove the auto installation profile
+  When  I follow the left menu "Systems > Autoinstallation > Profiles"
+  And  I follow "15-sp4-cobbler"
+  And  I follow "Delete Autoinstallation"
+  And  I click on "Delete Autoinstallation"
+  And  I wait until I do not see "15-sp4-cobbler" text
+  And  I wait up to 5 minutes to see "TASK COMPLETE" in the last lines of "var/log/cobbler/cobbler.log" on "server"
+

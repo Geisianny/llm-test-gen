@@ -1,0 +1,23 @@
+Feature: Displaying themed channel website
+Description: In order to easily distinguish stores
+    As an Visitor
+    I want to see a different user interface on each one
+Tags: ['@theming']
+
+Background: 
+  Given  the store operates on a single channel in "United States"
+  And  the store has "maverick/meerkat" theme
+  And  this theme changes homepage template contents to "Onions and bananas"
+
+Scenario 1: Displaying default shop homepage
+  Tags: ['@no-api', '@ui']
+  Given  channel "United States" does not use any theme
+  When  I visit this channel's homepage
+  Then  I should not see a homepage from "maverick/meerkat" theme
+
+Scenario 2: Displaying themed shop homepage
+  Tags: ['@no-api', '@ui']
+  Given  channel "United States" uses "maverick/meerkat" theme
+  When  I visit this channel's homepage
+  Then  I should see a homepage from that theme
+

@@ -1,0 +1,9 @@
+Scenario 3: vAMM can't amended from having a lower and upper bound to just lower or upper bound when the vAMM holds a long position.
+  Tags: ['@VAMM']
+  Then  the parties place the following orders:
+  When  the parties amend the following AMM:
+  And  the AMM pool status should be:
+  When  the network moves ahead "1" blocks
+  Then  the parties amend the following AMM:
+  And  the AMM pool status should be:
+

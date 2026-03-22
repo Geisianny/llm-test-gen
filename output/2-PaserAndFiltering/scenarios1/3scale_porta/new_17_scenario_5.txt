@@ -1,0 +1,5 @@
+Scenario 5: Account plan changed event is visible normally
+  Given  master admin is logged in
+  When  they go to the new webhook page
+  Then  there is a field "Account Plan changed"
+

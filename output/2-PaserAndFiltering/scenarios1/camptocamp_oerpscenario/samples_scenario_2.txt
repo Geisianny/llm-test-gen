@@ -1,0 +1,8 @@
+Scenario 2: Sample using the memorizer
+  Given  I am still in the same features and not the same scenario
+  When  I call the @partner variable I should not retrieve the partner
+  Given  I take the first found partner to set @partner variable
+  And  I store it into the memorizer as automatedtest in order to retrieve it in another scenario
+  When  I call back the memorizer to retieve the automatedtest variable
+  Then  I should have the same partner as contained into @partner variable
+

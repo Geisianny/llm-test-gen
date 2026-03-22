@@ -1,0 +1,48 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: scopes_story_processado.feature
+Caminho relativo: parti-renaissance_espace-adherent\scopes_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\parti-renaissance_espace-adherent\scopes_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: scopes_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Request scopes with valid OAuth token
+   Steps: 4
+   - Given the user is authenticated via OAuth with a valid token
+   - When the user requests their assigned scopes via the API
+   - Then the system returns the user's scopes
+   - And includes the main roles and delegated roles with details
+2. Request scopes without OAuth token
+   Steps: 4
+   - Given the user is not authenticated via OAuth
+   - When the user requests their assigned scopes via the API
+   - Then the system returns an error response
+   - And indicates that authentication is required
+3. Request scopes with invalid OAuth token
+   Steps: 4
+   - Given the user is authenticated via OAuth with an invalid token
+   - When the requests their assigned scopes via the API
+   - Then the system returns an error response
+   - And indicates that the token is invalid or expired
+4. Request scopes with valid OAuth token and multiple roles
+   Steps: 4
+   - Given the user is authenticated via OAuth with a valid token and has multiple roles
+   - When the user requests their assigned scopes via the API
+   - Then the system returns the user's scopes
+   - And includes the main roles and delegated roles with complete details
+5. Request scopes with valid OAuth token but no assigned scopes
+   Steps: 4
+   - Given the user is authenticated via OAuth with a valid token but has no assigned scopes
+   - When the user requests their assigned scopes via the API
+   - Then the system returns an empty list of scopes
+   - And indicates that no scopes are assigned to the user

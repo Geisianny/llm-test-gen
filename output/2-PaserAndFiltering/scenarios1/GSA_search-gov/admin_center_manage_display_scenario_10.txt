@@ -1,0 +1,9 @@
+Scenario 10: Display sub navigation links when "Use Redesigned Results Page" is true
+  Given  the following BingV7 Affiliates exist:
+  And  I am logged in with email "john@agency.gov"
+  When  I go to the agency.gov's Visual Design page
+  Then  I should see "Visual design (new)"
+  And  I should not see a link to "Legacy Font & Colors" in the active site sub navigation
+  And  I should not see a link to "Legacy Image Assets" in the active site sub navigation
+  And  I should not see a link to "Legacy Header & Footer" in the active site sub navigation
+

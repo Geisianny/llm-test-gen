@@ -1,0 +1,7 @@
+Scenario 34: Validate a monitor returns "Invalid JSON" response
+  Tags: ['@team:DataDog/monitor-app']
+  Given  new "ValidateMonitor" request
+  And  body with value {"type": "log alert", "query": "query"}
+  When  the request is sent
+  Then  the response status is 400 Invalid JSON
+

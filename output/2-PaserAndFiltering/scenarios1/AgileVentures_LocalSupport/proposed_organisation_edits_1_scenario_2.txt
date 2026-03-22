@@ -1,0 +1,10 @@
+Scenario 2: Propose edits to another organisation as a regular user
+  Given  that I am logged in as any user
+  And  I visit "Elders Association" organisation propose edit page
+  When  I fill in "proposed_organisation_edit_description" with "Care for the elderly" within the main body
+  And  I fill in "proposed_organisation_edit_postcode" with "HA1" within the main body
+  And  I press "Propose this edit"
+  Then  I should see "Edit is pending admin approval."
+  And  I should see "Care for the elderly" within "proposed_organisation_description" field
+  And  I should see "HA1" within "proposed_organisation_postcode" field
+

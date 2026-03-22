@@ -1,0 +1,6 @@
+Scenario 12: Admin sets a currency
+  Given  the provider has "finance" allowed
+  When  they are reviewing the charging and gateway billing settings
+  Then  they can set a different currency to be charged
+  And  buyers will receive new invoices with that currency
+

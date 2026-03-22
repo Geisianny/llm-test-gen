@@ -1,0 +1,10 @@
+Scenario 3: Filter by "Statement Date To"
+  When  I navigate the menu and select the item at "Cash & Banking > Reports > Reconciliation"
+  Then  I should see the Search Reconciliation Reports screen
+  When  I enter "2018-02-01" into "Statement Date To"
+  And  I press "Search"
+  Then  I should see the Reconciliation Search Report screen
+  And  I should see these headings:
+  And  I expect the report to contain 3 rows
+  And  I expect the 'Account' report column to contain '1060 Checking Account' for Statement Date '2018-02-01'
+

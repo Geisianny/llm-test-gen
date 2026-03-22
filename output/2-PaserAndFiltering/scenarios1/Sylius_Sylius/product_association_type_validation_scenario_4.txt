@@ -1,0 +1,7 @@
+Scenario 4: Trying to add product association type translation in unexisting locale
+  Tags: ['@api', '@no-ui']
+  When  I want to modify the "Cross sell" product association type
+  And  I name it "Vente croisée" in "French (France)"
+  And  I save my changes
+  Then  I should be notified that the locale is not available
+

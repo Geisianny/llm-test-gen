@@ -1,0 +1,14 @@
+Scenario 26: Run an action chain via API on SSH minion
+  And  I want to operate on this "ssh_minion"
+  When  I create an action chain with label "minssh_multiple_scripts" via API
+  And  I add the script "echo -n 1 >> /tmp/action_chain.log" to the action chain via API
+  And  I add the script "echo -n 2 >> /tmp/action_chain.log" to the action chain via API
+  And  I add the script "echo -n 3 >> /tmp/action_chain.log" to the action chain via API
+  And  I add the script "touch /tmp/action_chain_done" to the action chain via API
+  Then  I should be able to see all these actions in the action chain via API
+  When  I schedule the action chain via API
+  Then  I wait until there are no more action chains listed via API
+  When  I wait until file "/tmp/action_chain_done" exists on "ssh_minion"
+  Then  file "/tmp/action_chain.log" should contain "123" on "ssh_minion"
+  When  I wait until there are no more scheduled actions listed via API
+

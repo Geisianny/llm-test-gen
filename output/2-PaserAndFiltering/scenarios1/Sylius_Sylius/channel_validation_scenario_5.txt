@@ -1,0 +1,9 @@
+Scenario 5: Trying to add a new channel with too long color
+  Tags: ['@api', '@ui']
+  When  I want to create a new channel
+  And  I specify its code as "MOBILE"
+  And  I specify its color as a too long string
+  And  I try to add it
+  Then  I should be notified that color is too long
+  And  channel with code "MOBILE" should not be added
+

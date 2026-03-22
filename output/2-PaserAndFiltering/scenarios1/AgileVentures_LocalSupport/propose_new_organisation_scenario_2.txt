@@ -1,0 +1,7 @@
+Scenario 2: Get validation error proposing new charity
+  Tags: ['@vcr']
+  Given  I click "Add Organisation"
+  Then  I should be on the new proposed organisation page
+  And  I press "Create Proposed organisation"
+  Then  I should see "Name can't be blank"
+

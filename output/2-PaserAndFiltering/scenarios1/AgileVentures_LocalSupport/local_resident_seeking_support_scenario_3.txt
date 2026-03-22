@@ -1,0 +1,7 @@
+Scenario 3: Find friendly no search results message
+  Given  I visit the organisations index page
+  When  I search for "non-existent results"
+  Then  I should see the no results message
+  Given  I visit the home page
+  Then  I should not see the no results message
+

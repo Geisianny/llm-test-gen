@@ -1,0 +1,7 @@
+Scenario 15: Send a deployment event returns "OK" response
+  Tags: ['@replay-only', '@team:DataDog/ci-app-backend']
+  Given  new "CreateDORADeployment" request
+  And  body with value {"data": {"attributes": {"finished_at": 1693491984000000000, "git": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_url": "https://github.com/organization/example-repository"}, "service": "shopist", "started_at": 1693491974000000000, "version": "v1.12.07"}}}
+  When  the request is sent
+  Then  the response status is 200 OK
+

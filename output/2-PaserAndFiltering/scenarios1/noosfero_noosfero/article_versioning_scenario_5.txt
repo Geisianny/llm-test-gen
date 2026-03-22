@@ -1,0 +1,5 @@
+Scenario 5: try to access versions of unexistent article
+  Tags: ['@selenium']
+  Given  I go to /joaosilva/unexistent-article/versions
+  Then  I should see "There is no such page:"
+

@@ -1,0 +1,9 @@
+Scenario 3: _9802 create document SI based on Sales order
+  When  create SalesOrder023001
+  *  Check filling in SI
+  And  I select current line in "ListTable" table
+  And  I click "Sales invoice" button
+  And  I click "Ok" button
+  And  "ItemList" table became equal
+  And  I close all client application windows
+

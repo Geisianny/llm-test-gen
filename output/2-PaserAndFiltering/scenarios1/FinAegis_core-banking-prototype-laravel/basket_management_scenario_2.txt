@@ -1,0 +1,11 @@
+Scenario 2: Decomposing a basket into components
+  Tags: ['@wip']
+  Given  I have a basket "GCU" with the following components:
+  And  I have an account with balance 1000.00 GCU
+  When  I decompose 100 of basket "GCU"
+  Then  I should have 35.00 USD in my account
+  And  I should have 30.00 EUR in my account
+  And  I should have 25.00 GBP in my account
+  And  I should have 10.00 CHF in my account
+  And  my GCU balance should be 900.00
+

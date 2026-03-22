@@ -1,0 +1,6 @@
+Scenario 4: Pre-requisite: check via API that the system is unsubscribed from old channels
+  Tags: ['@susemanager']
+  When  I refresh the metadata for "sle_minion"
+  Then  channel "SLE-Product-SLES15-SP4-Pool for x86_64" should be enabled on "sle_minion"
+  And  channel "SLE15-SP4-Installer-Updates for x86_64" should be disabled on "sle_minion"
+

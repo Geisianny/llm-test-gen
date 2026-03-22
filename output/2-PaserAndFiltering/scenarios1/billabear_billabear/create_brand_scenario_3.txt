@@ -1,0 +1,6 @@
+Scenario 3: Create brands - Code already exists
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  the follow brands exist:
+  When  I create a new brand
+  Then  there should not be a brand with the name "Example Created"
+

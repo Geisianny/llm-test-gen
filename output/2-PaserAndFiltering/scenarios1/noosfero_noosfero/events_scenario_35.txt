@@ -1,0 +1,6 @@
+Scenario 35: highlight the selected day when a day is selected
+  Tags: ['@selenium']
+  Given  I am on /profile/josesilva/events/2009/10
+  And  I follow "22"
+  Then  "22" should be visible within ".calendar-day.selected"
+

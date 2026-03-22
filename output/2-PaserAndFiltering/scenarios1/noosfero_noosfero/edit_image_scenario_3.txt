@@ -1,0 +1,5 @@
+Scenario 3: display tag list field when editing file
+  Given  the following files
+  When  I go to edit "rails" by morgoth
+  Then  I should see "Tag list"
+

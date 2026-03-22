@@ -1,0 +1,8 @@
+Scenario 2: Create a rum-based metric returns "Conflict" response
+  Tags: ['@team:DataDog/rum-backend']
+  Given  there is a valid "rum_metric" in the system
+  And  new "CreateRumMetric" request
+  And  body with value {"data": {"id": "{{ rum_metric.data.id }}", "type": "rum_metrics", "attributes": {"compute": {"aggregation_type": "count"}, "event_type": "action"}}}
+  When  the request is sent
+  Then  the response status is 409 Conflict
+

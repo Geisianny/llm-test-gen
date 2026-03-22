@@ -1,0 +1,7 @@
+Scenario 3: 0068-MATC-064: If there is no match the order will be cancelled. (0068-MATC-063: Incoming LIMIT orders will be matched against the opposite side of the book)
+  When  the parties place the following orders:
+  Then  the orders should have the following status:
+  When  the network moves ahead "1" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  And  the market data for the market "BTC/ETH" should be:
+

@@ -1,0 +1,18 @@
+Scenario 4: Opening auction end is delayed for no apparent reason
+  Tags: ['@AuctionDelay']
+  Given  the parties deposit on asset's general account the following amount:
+  And  the network moves ahead "12" blocks
+  When  the parties submit the following liquidity provision:
+  And  the network moves ahead "1" blocks
+  Then  the market data for the market "ETH/DEC23" should be:
+  When  the network moves ahead "4" blocks
+  Then  the parties place the following orders:
+  And  the network moves ahead "7" blocks
+  Then  the market data for the market "ETH/DEC23" should be:
+  When  the parties place the following orders:
+  Then  the network moves ahead "1" blocks
+  And  the market data for the market "ETH/DEC23" should be:
+  When  the parties place the following orders:
+  Then  the network moves ahead "1" blocks
+  And  the market data for the market "ETH/DEC23" should be:
+

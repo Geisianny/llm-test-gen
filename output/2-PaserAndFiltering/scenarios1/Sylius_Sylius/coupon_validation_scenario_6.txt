@@ -1,0 +1,12 @@
+Scenario 6: Trying to add a new coupon for a non-coupon based promotion
+  Tags: ['@api', '@no-ui']
+  Given  there is a promotion "Flash sale"
+  When  I want to create a new coupon for this promotion
+  And  I specify its code as "FAST-50"
+  And  I limit its usage to 50 times
+  And  I limit its per customer usage to 1 time
+  And  I make it valid until "26.03.2017"
+  And  I try to add it
+  Then  I should be notified that only coupon based promotions can have coupons
+  And  there should be 0 coupons related to this promotion
+

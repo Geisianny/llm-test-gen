@@ -1,0 +1,7 @@
+Scenario 6: Viewing a detailed page with product's checkbox non-translatable attribute
+  Tags: ['@ui']
+  Given  the store has a product "T-shirt banana"
+  And  this product has non-translatable "checkbox" attribute "T-shirt with cotton" set to "Yes"
+  When  I check this product's details
+  Then  I should see the product attribute "T-shirt with cotton" with value "Yes"
+

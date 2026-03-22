@@ -1,0 +1,8 @@
+Scenario 1: the environment administrator unblocks a blocked enterprise
+  Tags: ['@selenium']
+  Given  I am logged in as admin
+  And  enterprise "Sample Enterprise" is blocked
+  And  I am on sample-enterprise's homepage
+  When  I follow "Unblock"
+  Then  I should not see "Unblock"
+

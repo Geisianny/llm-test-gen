@@ -1,0 +1,6 @@
+Scenario 2: See opportunities open in new window when clicked
+  Given  the following organisations exist:
+  Given  the following volunteer opportunities exist:
+  Given  I visit the embedded map page
+  Then  I should open opportunity in a new windows when clicked from the infowindow:
+

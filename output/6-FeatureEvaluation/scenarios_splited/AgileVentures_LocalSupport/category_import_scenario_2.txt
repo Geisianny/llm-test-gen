@@ -1,0 +1,6 @@
+Scenario: Associate imported categories with existing organisations
+  Given there is a Site Super Admin user logged in
+  And there are existing organisations in the system
+  And there is a CSV file containing valid categories
+  When the Super Admin imports the CSV file
+  Then the system allows associating the imported categories with the existing organisations

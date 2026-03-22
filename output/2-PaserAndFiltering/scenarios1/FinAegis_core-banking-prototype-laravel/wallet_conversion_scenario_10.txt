@@ -1,0 +1,8 @@
+Scenario 10: Cross-border conversion compliance
+  Given  I convert large amounts between certain currencies
+  When  conversion amounts exceed reporting thresholds
+  Then  compliance checks should be triggered
+  And  additional verification may be required
+  And  regulatory reports should be filed automatically
+  And  conversion may be delayed pending verification
+

@@ -1,0 +1,6 @@
+Scenario 3: Set monthly invoice
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  the invoice number generation set to monthly
+  When  I update the invoice generation to end of month
+  Then  the invoice generation should be set to end of month
+

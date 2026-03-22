@@ -1,0 +1,8 @@
+Scenario 1: Filtering orders by product
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I browse orders
+  And  I filter by product "Galaxy T-Shirt"
+  Then  I should see 2 orders in the list
+  And  I should see an order with "#0000001" number
+  And  I should see an order with "#0000003" number
+

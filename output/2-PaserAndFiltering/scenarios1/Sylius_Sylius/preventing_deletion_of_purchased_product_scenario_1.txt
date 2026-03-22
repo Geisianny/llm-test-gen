@@ -1,0 +1,6 @@
+Scenario 1: Purchased product cannot be deleted
+  Tags: ['@api', '@ui']
+  When  I try to delete the "Toyota GT86 model" product
+  Then  I should be notified that this product is in use and cannot be deleted
+  And  this product should still exist in the product catalog
+

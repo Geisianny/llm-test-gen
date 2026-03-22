@@ -1,0 +1,9 @@
+Scenario 6: Target systems for stable packages should not be empty
+  When  I follow the left menu "Software > Channel List > All"
+  And  I follow "Show All Child Channels"
+  And  I follow "Fake-RPM-SUSE-Channel"
+  And  I follow "Packages" in the content area
+  And  I follow "rute-dummy-2.0-1.2.x86_64"
+  And  I follow "Target Systems"
+  And  I refresh page until I see "sle_minion" hostname as text
+

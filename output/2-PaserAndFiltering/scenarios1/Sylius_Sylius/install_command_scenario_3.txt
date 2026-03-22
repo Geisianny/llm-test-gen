@@ -1,0 +1,5 @@
+Scenario 3: Trying to register administrator account with an incorrect email
+  Given  I do not provide a correct email
+  When  I run Sylius CLI installer
+  Then  I should see output "This value is not a valid email address."
+

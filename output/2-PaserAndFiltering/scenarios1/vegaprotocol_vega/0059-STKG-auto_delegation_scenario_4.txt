@@ -1,0 +1,15 @@
+Scenario 4: A party qualifies to auto delegation by delegating all of their associated tokens however by manually undelegation they exit auto delegation mode (0059-STKG-013, STKG-0014, 0059-STKG-021)
+  When  the parties submit the following delegations:
+  When  the network moves ahead "7" blocks"
+  Then  the parties submit the following undelegations:
+  When  the network moves ahead "7" blocks
+  Then  the parties should have the following delegation balances for epoch 3:
+  Then  the parties deposit on staking account the following amount:
+  Then  the parties submit the following delegations:
+  When  the network moves ahead "7" blocks
+  When  the network moves ahead "7" blocks
+  Then  the parties should have the following delegation balances for epoch 5:
+  Then  the parties deposit on staking account the following amount:
+  When  the network moves ahead "7" blocks
+  Then  the parties should have the following delegation balances for epoch 6:
+

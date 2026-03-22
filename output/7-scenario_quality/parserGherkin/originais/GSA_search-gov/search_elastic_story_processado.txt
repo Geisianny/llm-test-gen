@@ -1,0 +1,23 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 19/01/2026 23:13:57
+Arquivo analisado: search_elastic_story_processado.feature
+Caminho relativo: GSA_search-gov\search_elastic_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/Originais\GSA_search-gov\search_elastic_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: search_elastic_story_processado
+Descrição: Não possui
+Total de cenários: 1
+
+CENÁRIOS IDENTIFICADOS:
+1. Search on an affiliate using the SearchElastic search engine
+   Steps: 3
+   - When I am on nasa's search page
+   - And I search for "hubble" in the redesigned search page
+   - Then I should see "NASA Extends Hubble Operations Contract"

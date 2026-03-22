@@ -1,0 +1,11 @@
+Scenario 1: Filtering payments in state "New"
+  Tags: ['@api', '@ui']
+  When  I browse payments
+  And  I choose "new" as a payment state
+  And  I filter
+  Then  I should see "3" payments in the list
+  And  I should see the payment of the "#00000001" order
+  And  I should see also the payment of the "#00000005" order
+  And  I should see also the payment of the "#00000006" order
+  But  I should not see the payment of the "#00000002" order
+

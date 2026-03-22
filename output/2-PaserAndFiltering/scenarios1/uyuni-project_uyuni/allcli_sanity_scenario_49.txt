@@ -1,0 +1,7 @@
+Scenario 49: The Ubuntu 22.04 minion is healthy
+  Tags: ['@ubuntu2204_minion']
+  Then  "ubuntu2204_minion" should have a FQDN
+  And  reverse resolution should work for "ubuntu2204_minion"
+  And  "ubuntu2204_minion" should communicate with the server using public interface
+  And  the clock from "ubuntu2204_minion" should be exact
+

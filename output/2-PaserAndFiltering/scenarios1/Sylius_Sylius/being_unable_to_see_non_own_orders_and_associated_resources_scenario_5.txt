@@ -1,0 +1,5 @@
+Scenario 5: Being unable to see non-own payment
+  Tags: ['@api', '@no-ui']
+  When  I try to see the payment of the order placed by a customer "john@example.com"
+  Then  I should not be able to see that payment
+

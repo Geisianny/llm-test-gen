@@ -1,0 +1,44 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 19/01/2026 23:13:57
+Arquivo analisado: login_story_processado.feature
+Caminho relativo: cross-solution_YAWIK\login_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/Originais\cross-solution_YAWIK\login_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: login_story_processado
+Descrição: Não possui
+Total de cenários: 4
+
+CENÁRIOS IDENTIFICADOS:
+1. Sign in with username
+   Steps: 5
+   - When I want to log in
+   - And I specify the username as "test@example.com"
+   - And I specify the password as "test"
+   - And I log in
+   - Then I should see "Welcome to YAWIK!"
+2. Sign in with bad credentials
+   Steps: 5
+   - When I want to log in
+   - And I specify the username as "test@example.com"
+   - And I specify the password as "false"
+   - And I log in
+   - Then I should see "Authentication failed."
+3. Sign in with unregistered username
+   Steps: 5
+   - When I want to log in
+   - And I specify the username as "foo"
+   - And I specify the password as "bar"
+   - And I log in
+   - Then I should see "Authentication failed."
+4. Sign out
+   Steps: 3
+   - Given I am logged in as "test@example.com" identified by "test"
+   - When I press logout link
+   - Then I should see "Welcome to YAWIK"

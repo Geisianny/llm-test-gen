@@ -1,0 +1,17 @@
+Scenario 4: Admin bans and unbans a user
+  Given  there is a listing with title "Sledgehammer" from "kassi_testperson1" with category "Items" and with listing shape "Requesting"
+  When  I am on the home page
+  Then  I should see "Sledgehammer"
+  Given  I am on the manage users admin2 page
+  When  I ban user in admin2 "john doe"
+  Then  I should see "john doe"
+  And  "kassi_testperson1" should be banned from this community
+  Given  I am on the home page
+  Then  I should not see "Sledgehammer"
+  Given  I am on the manage users admin2 page
+  When  I unban user in admin2 "john doe"
+  Then  I should see "john doe"
+  And  "kassi_testperson1" should not be banned from this community
+  Given  I am on the home page
+  Then  I should not see "Sledgehammer"
+

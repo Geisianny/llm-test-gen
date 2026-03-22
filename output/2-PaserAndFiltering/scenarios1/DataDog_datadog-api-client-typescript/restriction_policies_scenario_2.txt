@@ -1,0 +1,7 @@
+Scenario 2: Delete a restriction policy returns "No Content" response
+  Tags: ['@team:DataDog/aaa-granular-access']
+  Given  new "DeleteRestrictionPolicy" request
+  And  request contains "resource_id" parameter with value "dashboard:test-delete"
+  When  the request is sent
+  Then  the response status is 204 No Content
+

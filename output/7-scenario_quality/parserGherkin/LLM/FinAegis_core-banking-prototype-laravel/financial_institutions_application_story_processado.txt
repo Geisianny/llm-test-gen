@@ -1,0 +1,53 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: financial_institutions_application_story_processado.feature
+Caminho relativo: FinAegis_core-banking-prototype-laravel\financial_institutions_application_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\FinAegis_core-banking-prototype-laravel\financial_institutions_application_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: financial_institutions_application_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Successful partnership application submission
+   Steps: 5
+   - Given there is a financial institution registered with FinAegis
+   - When the financial institution submits a partnership application
+   - And provides the required partnership details
+   - Then the system accepts the partnership application
+   - And sends a confirmation notification to the financial institution
+2. Partnership application submission with missing details
+   Steps: 5
+   - Given there is a financial institution registered with FinAegis
+   - When the financial institution submits a partnership application
+   - And omits required partnership details
+   - Then the system rejects the partnership application
+   - And displays an error message indicating the missing details
+3. Unregistered financial institution attempts to submit partnership application
+   Steps: 5
+   - Given there is no financial institution registered with FinAegis with the identifier "FI123"
+   - When the unregistered financial institution submits a partnership application
+   - And provides the required partnership details
+   - Then the system rejects the partnership application
+   - And displays an error message indicating that the institution is not registered
+4. Duplicate partnership application submission
+   Steps: 5
+   - Given there is a financial institution registered with FinAegis
+   - And the financial institution has already submitted a partnership application
+   - When the financial institution submits another partnership application
+   - Then the system rejects the duplicate partnership application
+   - And displays an error message indicating that an application is already pending
+5. Partnership application submission with invalid data
+   Steps: 5
+   - Given there is a financial institution registered with FinAegis
+   - When the financial institution submits a partnership application
+   - And provides invalid partnership details
+   - Then the system rejects the partnership application
+   - And displays an error message indicating the invalid data fields

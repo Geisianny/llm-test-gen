@@ -1,0 +1,9 @@
+Scenario 12: Changing app plan throws an error
+  Given  the application will return an error when changing its plan
+  And  item "Bob's App" is selected
+  When  they select bulk action "Change application plan"
+  And  the modal is submitted with:
+  And  confirm the dialog
+  Then  the bulk operation has failed for "Bob's App"
+  And  the table has the following row:
+

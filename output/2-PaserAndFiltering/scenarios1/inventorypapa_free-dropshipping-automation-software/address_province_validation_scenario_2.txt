@@ -1,0 +1,8 @@
+Scenario 2: The selected province stays after validation error
+  Tags: ['@ui', '@javascript', '@api']
+  Given  I am editing the address of "Fletcher Ren"
+  When  I remove the street
+  And  I save my changed address
+  Then  I should still be on the "Fletcher Ren" address edit page
+  And  I should still have "Victoria" as my chosen province
+

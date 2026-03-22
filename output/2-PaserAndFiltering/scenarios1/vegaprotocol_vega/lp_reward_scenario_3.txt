@@ -1,0 +1,7 @@
+Scenario 3: Party funds reward pool with lp received fees dispatch metric and scoping teams
+  Given  the parties submit the following recurring transfers:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  the following transfers should happen:
+  Then  parties should have the following vesting account balances:
+

@@ -1,0 +1,7 @@
+Scenario 3: Enable "Container Build Host" system type
+  Given  I am on the Systems overview page of this "build_host"
+  When  I follow "Properties" in the content area
+  And  I check "Container Build Host"
+  And  I check "OS Image Build Host"
+  And  I click on "Update Properties"
+

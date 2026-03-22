@@ -1,0 +1,4 @@
+Scenario: Unwithdraw a document that is not withdrawn
+  Given there is a published document with title "Published Document"
+  When the Managing Editor attempts to unwithdraw the document
+  Then the system displays an error message indicating that the document is not withdrawn

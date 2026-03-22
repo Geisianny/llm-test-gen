@@ -1,0 +1,6 @@
+Scenario 21: Get all application keys returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/credentials-management']
+  Given  new "ListApplicationKeys" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

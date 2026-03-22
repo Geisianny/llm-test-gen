@@ -1,0 +1,5 @@
+Scenario 1: Navigation via the products widget
+  Given  they go to the provider dashboard
+  When  they select action "Applications" of "My API" within the products widget
+  Then  the current page is product "My API" applications page
+

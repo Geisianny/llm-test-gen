@@ -1,0 +1,5 @@
+Scenario 5: Republish the "Find a British embassy, high commission or consulate" page
+  Given  a published publication "Find a British embassy, high commission or consulate" exists
+  When  I request a republish of the "Find a British embassy, high commission or consulate" page
+  Then  I can see the "Find a British embassy, high commission or consulate" page has been scheduled for republishing
+

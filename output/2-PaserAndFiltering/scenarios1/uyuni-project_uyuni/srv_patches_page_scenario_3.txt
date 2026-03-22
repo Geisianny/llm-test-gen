@@ -1,0 +1,20 @@
+Scenario 3: Create new bugfix patch with bnc URL
+  When  I follow the left menu "Patches > Manage Patches"
+  And  I follow "Create Patch"
+  When  I enter "Test Patch" as "synopsis"
+  And  I enter "Test Advisory" as "advisoryName"
+  And  I enter "Test Product" as "product"
+  And  I enter "test@test.org" as "errataFrom"
+  And  I enter "Test Topic" as "topic"
+  And  I enter "Test Description" as "description"
+  And  I enter "Test Solution" as "solution"
+  And  I enter "620212" as "buglistId"
+  And  I enter "Test Summary" as "buglistSummary"
+  And  I enter "https://bugzilla.opensuse.org/show_bug.cgi?id=620212" as "buglistUrl"
+  And  I enter "test,keywords" as "keywords"
+  And  I enter "Test Reference" as "refersTo"
+  And  I enter "Test Note" as "notes"
+  And  I check test channel
+  And  I click on "Create Patch"
+  Then  I should see a "Patch: Test Advisory-1" text
+

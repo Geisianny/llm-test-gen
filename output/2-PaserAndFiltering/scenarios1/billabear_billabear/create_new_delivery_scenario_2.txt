@@ -1,0 +1,5 @@
+Scenario 2: 
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  When  I create a delivery method for "customer.one@example.org" with the following settings:
+  Then  there should be an invoice delivery for "customer.one@example.org" for type "Webhook"
+

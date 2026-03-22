@@ -1,0 +1,7 @@
+Scenario 3: Activated user logs in
+  Given  a pending user "alice" of account "foo.3scale.localhost"
+  And  user "alice" activates herself
+  When  I try to log in as provider "alice"
+  Then  they should see "Hello alice"
+  And  the current page is the provider onboarding wizard page
+

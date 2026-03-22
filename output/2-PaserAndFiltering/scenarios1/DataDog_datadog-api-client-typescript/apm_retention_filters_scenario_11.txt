@@ -1,0 +1,7 @@
+Scenario 11: Re-order retention filters returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/apm-trace-intake']
+  Given  new "ReorderApmRetentionFilters" request
+  And  body with value {"data": [{"id": "7RBOb7dLSYWI01yc3pIH8w", "type": "apm_retention_filter"}]}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

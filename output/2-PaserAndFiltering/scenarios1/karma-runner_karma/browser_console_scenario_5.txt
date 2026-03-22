@@ -1,0 +1,5 @@
+Scenario 5: Execute logging program when logging browser
+  Given  a configuration with:
+  When  I start Karma
+  Then  the file at sandbox/console.log contains:
+

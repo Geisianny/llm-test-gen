@@ -1,0 +1,8 @@
+Scenario 8: CONFIGURE MAIN PARTNER AND COMPANY
+  Given  I need a "res.company" with oid: base.main_company
+  And  having:
+  Given  the company has the "logo.png" logo
+  And  the company currency is "CHF" with a rate of "1.00"
+  Given  I need a "res.partner" with oid: base.main_partner
+  And  having:
+

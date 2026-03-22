@@ -1,0 +1,12 @@
+Scenario 5: Being unable to pay for my order if no methods are available
+  Tags: ['@todo-api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  When  I complete addressing step with email "john@example.com" and "United States" based billing address
+  And  I proceed with selecting "Free" shipping method
+  And  I proceed with selecting "Cash on delivery" payment method
+  And  I confirm my order
+  And  the payment method "Cash on delivery" gets disabled
+  And  the payment method "Offline" gets disabled
+  And  I want to pay for my order
+  Then  I should not be able to pay
+

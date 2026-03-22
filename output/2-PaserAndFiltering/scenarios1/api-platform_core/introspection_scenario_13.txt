@@ -1,0 +1,10 @@
+Scenario 13: Retrieve a type name through a GraphQL query
+  Given  there are 4 dummy objects with relatedDummy
+  When  I send the following GraphQL request:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the JSON node "data.dummy.name" should be equal to "Dummy #3"
+  And  the JSON node "data.dummy.relatedDummy.name" should be equal to "RelatedDummy #3"
+  And  the JSON node "data.dummy.relatedDummy.__typename" should be equal to "RelatedDummy"
+

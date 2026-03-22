@@ -1,0 +1,9 @@
+Scenario 3: Display with full mode for sub-communities
+  Given  "moe" is a sub organization of "springfield"
+  When  I go to springfield's homepage
+  And  I follow "View all" within ".related-organizations-block"
+  Then  I should see "Springfield's sub-communities"
+  And  I follow "Full" within ".search-customize-options"
+  Then  I should see "Moe description" within ".related-organizations-description"
+  And  I should see "Kansas, Texas" within ".related-organizations-region-name"
+

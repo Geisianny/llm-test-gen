@@ -1,0 +1,8 @@
+Scenario 12: Test filter pattern
+  When  I am on "/filter_validators?required=foo&required-allow-empty&pattern=pattern"
+  When  I am on "/filter_validators?required=foo&required-allow-empty&pattern=nrettap"
+  Then  the response status code should be 200
+  When  I am on "/filter_validators?required=foo&required-allow-empty&pattern=not-pattern"
+  Then  the response status code should be 422
+  And  the JSON node "detail" should be equal to 'pattern: This value is not valid.'
+

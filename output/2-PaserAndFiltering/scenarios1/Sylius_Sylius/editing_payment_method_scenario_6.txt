@@ -1,0 +1,5 @@
+Scenario 6: Being unable to change usePayum field of an existing payment method
+  Tags: ['@todo-api', '@ui']
+  When  I want to modify the "Offline" payment method
+  Then  I should not be able to edit its usePayum field
+

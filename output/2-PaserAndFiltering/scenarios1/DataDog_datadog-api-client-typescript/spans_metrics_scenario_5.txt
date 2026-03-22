@@ -1,0 +1,8 @@
+Scenario 5: Delete a span-based metric returns "OK" response
+  Tags: ['@team:DataDog/apm']
+  Given  there is a valid "spans_metric" in the system
+  And  new "DeleteSpansMetric" request
+  And  request contains "metric_id" parameter from "spans_metric.data.id"
+  When  the request is sent
+  Then  the response status is 204 OK
+

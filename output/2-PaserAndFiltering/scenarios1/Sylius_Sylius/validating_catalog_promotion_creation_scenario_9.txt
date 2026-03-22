@@ -1,0 +1,14 @@
+Scenario 9: Trying to create a catalog promotion with not configured percentage discount action
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I want to create a new catalog promotion
+  And  I specify its code as "winter_sale"
+  And  I name it "Winter sale"
+  And  I make it available in channel "United States"
+  And  I specify its label as "Winter -50%" in "English (United States)"
+  And  I describe it as "This promotion gives a 50% discount on all products" in "English (United States)"
+  And  I add scope that applies on variants "PHP T-Shirt" variant and "Kotlin T-Shirt" variant
+  And  I add percentage discount action without amount configured
+  And  I try to add it
+  Then  I should be notified that the percentage amount should be a number and cannot be empty
+  And  there should be an empty list of catalog promotions
+

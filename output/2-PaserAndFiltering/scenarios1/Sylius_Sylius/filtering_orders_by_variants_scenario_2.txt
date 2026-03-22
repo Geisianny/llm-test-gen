@@ -1,0 +1,8 @@
+Scenario 2: Filtering orders by multiple variants of the same product
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I browse orders
+  And  I filter by variants "Nebula Top" and "Neutron Sleeveless"
+  Then  I should see 2 orders in the list
+  And  I should see an order with "#0000001" number
+  And  I should see an order with "#0000002" number
+

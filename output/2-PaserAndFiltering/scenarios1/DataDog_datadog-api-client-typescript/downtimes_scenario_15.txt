@@ -1,0 +1,10 @@
+Scenario 15: Schedule a downtime until date
+  Tags: ['@team:DataDog/monitor-app']
+  Given  new "CreateDowntime" request
+  And  body from file "downtime_recurrence_payload_until_date.json"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "message" is equal to "{{ unique }}"
+  And  the response "recurrence.period" is equal to 1
+  And  the response "recurrence.until_date" is equal to {{ timestamp("now + 21d") }}
+

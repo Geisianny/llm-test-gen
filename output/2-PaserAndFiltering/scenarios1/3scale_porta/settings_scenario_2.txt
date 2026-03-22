@@ -1,0 +1,5 @@
+Scenario 2: Integration Settings options (Rolling updates ON)
+  And  I go to the settings page for service "API" of provider "foo.3scale.localhost"
+  Then  they should be able to choose one of the following within deployment options:
+  And  they should be able to choose one of the following within authentication methods:
+

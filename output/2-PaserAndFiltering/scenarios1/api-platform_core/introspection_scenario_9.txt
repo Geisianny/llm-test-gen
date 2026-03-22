@@ -1,0 +1,13 @@
+Scenario 9: Retrieve the Relay's node field
+  When  I send the following GraphQL request:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the JSON node "data.__schema.queryType.fields[0].name" should be equal to "node"
+  And  the JSON node "data.__schema.queryType.fields[0].type.name" should be equal to "Node"
+  And  the JSON node "data.__schema.queryType.fields[0].type.kind" should be equal to "INTERFACE"
+  And  the JSON node "data.__schema.queryType.fields[0].args[0].name" should be equal to "id"
+  And  the JSON node "data.__schema.queryType.fields[0].args[0].type.kind" should be equal to "NON_NULL"
+  And  the JSON node "data.__schema.queryType.fields[0].args[0].type.ofType.name" should be equal to "ID"
+  And  the JSON node "data.__schema.queryType.fields[0].args[0].type.ofType.kind" should be equal to "SCALAR"
+

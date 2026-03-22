@@ -1,0 +1,6 @@
+Scenario 2: As a logged-in user I can resend a validation for email change
+  Given  I am logged with "michelle.dufour@example.ch" via OAuth client "JeMengage Mobile" with scopes "read:profile write:profile"
+  When  I send a "POST" request to "/api/v3/profile/email/send-validation"
+  Then  the response status code should be 200
+  And  the JSON should be equal to:
+

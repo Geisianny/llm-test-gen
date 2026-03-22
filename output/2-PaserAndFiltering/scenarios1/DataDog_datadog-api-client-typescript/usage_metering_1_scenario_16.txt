@@ -1,0 +1,8 @@
+Scenario 16: Get hourly usage for Lambda traced invocations returns "Bad Request" response
+  Tags: ['@team:DataDog/revenue-query']
+  Given  new "GetUsageLambdaTracedInvocations" request
+  And  request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
+  And  request contains "end_hr" parameter with value "{{ timeISO('now - 5d') }}"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

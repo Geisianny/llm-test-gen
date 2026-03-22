@@ -1,0 +1,11 @@
+Scenario 3: 
+  Given  the following subscriptions exist:
+  And  stripe billing is enabled
+  When  the background task to reinvoice active subscriptions
+  Then  the subscription for "customer.one@example.org" will expire in a week
+  And  the subscription for "customer.two@example.org" will expire today
+  And  the subscription for "customer.three@example.org" will expire today
+  But  the subscription for "customer.four@example.org" will expire today
+  And  the subscription for "customer.five@example.org" will expire today
+  And  the subscription for "customer.six@example.org" will expire today
+

@@ -1,0 +1,6 @@
+Scenario 3: Filtering payment requests by state "New"
+  Tags: ['@api', '@ui']
+  When  I browse payment requests of an order "#00000001"
+  And  I filter by the "new" state
+  Then  there should be 4 payment requests on the list
+

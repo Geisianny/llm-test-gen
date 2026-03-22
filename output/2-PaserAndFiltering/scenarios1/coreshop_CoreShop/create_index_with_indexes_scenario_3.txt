@@ -1,0 +1,6 @@
+Scenario 3: Create a new index and add a localized index to the table
+  Given  the site has a index "myindex" for class "CoreShopProduct" with type "mysql"
+  And  the index has following fields:
+  And  the index has an localized index for columns "internalName"
+  Then  the index should have an localized index for "internalName"
+

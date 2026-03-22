@@ -1,0 +1,8 @@
+Scenario 9: Update the tags for a device returns "Not Found" response
+  Tags: ['@replay-only', '@team:DataDog/network-device-monitoring']
+  Given  new "UpdateDeviceUserTags" request
+  And  request contains "device_id" parameter with value "unknown_device_id"
+  And  body with value {"data": {"attributes": {"tags": ["tag:test", "tag:testbis"]}, "id": "unknown_device_id", "type":"tags"}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

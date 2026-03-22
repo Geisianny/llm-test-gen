@@ -1,0 +1,6 @@
+Scenario 1: Success
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  there are cancellation requests:
+  When  I view the cancellation requests list
+  Then  I will see a cancellation request for "customer.one@example.org" in state "started"
+

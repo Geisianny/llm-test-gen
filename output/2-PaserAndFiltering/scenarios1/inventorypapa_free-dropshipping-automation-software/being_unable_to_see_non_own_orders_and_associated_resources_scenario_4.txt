@@ -1,0 +1,5 @@
+Scenario 4: Being unable to see non-own shipment
+  Tags: ['@api']
+  When  I try to see the shipment of the order placed by a customer "john@example.com"
+  Then  I should not be able to see that shipment
+

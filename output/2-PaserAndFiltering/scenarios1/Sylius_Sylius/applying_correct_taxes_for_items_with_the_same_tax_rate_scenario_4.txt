@@ -1,0 +1,9 @@
+Scenario 4: Proper taxes after removing one of the item
+  Tags: ['@api', '@ui']
+  Given  I added 3 products "PHP T-Shirt" to the cart
+  And  I added 2 products "Symfony Hat" to the cart
+  And  I removed product "PHP T-Shirt" from the cart
+  When  I check the details of my cart
+  Then  my cart total should be "$73.80"
+  And  my cart taxes should be "$13.80"
+

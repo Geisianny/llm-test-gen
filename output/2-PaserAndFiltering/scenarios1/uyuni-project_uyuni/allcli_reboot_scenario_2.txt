@@ -1,0 +1,9 @@
+Scenario 2: Reboot the SSH-managed SLES minion
+  Tags: ['@ssh_minion']
+  Given  I am on the Systems overview page of this "ssh_minion"
+  When  I follow first "Schedule System Reboot"
+  Then  I should see a "System Reboot Confirmation" text
+  And  I should see a "Reboot system" button
+  When  I click on "Reboot system"
+  Then  I wait and check that "ssh_minion" has rebooted
+

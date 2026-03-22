@@ -1,0 +1,8 @@
+Scenario 7: enterprise admin can see link to delete enterprise
+  Given  the following enterprise
+  And  "Joao Silva" is admin of "Sample Enterprise"
+  And  I am logged in as "joaosilva"
+  And  I am on sample-enterprise's control panel
+  And  I follow "Informations" within "#section-profile"
+  Then  I should see "Delete profile"
+

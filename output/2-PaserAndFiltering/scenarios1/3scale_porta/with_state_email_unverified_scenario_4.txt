@@ -1,0 +1,9 @@
+Scenario 4: Email_unverified user receives verify email everytime he edits his details
+  Tags: ['@wip']
+  Given  user "alice" is email unverified
+  When  I log in as "alice" on foo.3scale.localhost
+  And  I navigate to my personal details page
+  When  I change my name without changing the email
+  And  I commit the changes to my personal details
+  Then  user "alice" should receive an email to verify email address
+

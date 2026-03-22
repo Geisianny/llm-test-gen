@@ -1,0 +1,24 @@
+Scenario 4: Volume on the book outside liquidity price range, network unable to dispose position (0012-POSR-027)
+  Given  the liquidity sla params named "sla-params":
+  When  the markets are updated:
+  Given  the initial insurance pool balance is "10000" for all the markets
+  And  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  When  the parties place the following orders:
+  When  the parties place the following orders:
+  And  the opening auction period ends for market "ETH/MAR22"
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the parties should have the following profit and loss:
+  And  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+  Given  the parties amend the following orders:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the mark price should be "190" for the market "ETH/MAR22"
+  And  the parties should have the following profit and loss:
+  Given  the market data for the market "ETH/MAR22" should be:
+  When  the network moves ahead "1" blocks
+  Then  the parties should have the following profit and loss:
+

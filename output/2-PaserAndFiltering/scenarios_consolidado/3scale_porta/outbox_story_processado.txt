@@ -1,0 +1,14 @@
+Scenario 1: Navigation from Audience
+  When  they press "Dashboard"
+  And  follow "Audience"
+  And  press "Messages"
+  And  follow "Sent messages"
+  Then  the current page is the provider sent messages page
+
+
+
+Scenario 2: Navigation from Dashboard
+  When  they follow "0 Messages"
+  And  follow "Sent messages"
+  Then  the current page is the provider sent messages page
+

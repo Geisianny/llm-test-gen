@@ -1,0 +1,11 @@
+Scenario 13: Cleanup: disable AppStream module
+  Given  I am on the Systems overview page of this "rhlike_minion"
+  And  I follow "Software" in the content area
+  And  I follow "AppStreams"
+  And  I uncheck "scorpio:2.1-cbox"
+  And  I click on "Apply Changes (1)"
+  Then  I should see a "Changes Summary" text
+  When  I click on "Confirm"
+  Then  I should see a "Updating the selection of AppStream modules has been scheduled." text
+  And  I wait until event "Change AppStreams (disable: [scorpio:2.1] ) scheduled by admin" is completed
+

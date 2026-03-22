@@ -1,0 +1,9 @@
+Scenario 2: Successful sign in
+  Tags: ['@no-api', '@ui', '@javascript']
+  Given  I added product "PHP T-Shirt" to the cart
+  And  I am at the checkout addressing step
+  When  I specify the email as "francis@underwood.com"
+  And  I specify the password as "whitehouse"
+  And  I sign in
+  Then  the login form should no longer be accessible
+

@@ -1,0 +1,6 @@
+Scenario: Duplicate partnership application submission
+  Given there is a financial institution registered with FinAegis
+  And the financial institution has already submitted a partnership application
+  When the financial institution submits another partnership application
+  Then the system rejects the duplicate partnership application
+  And displays an error message indicating that an application is already pending

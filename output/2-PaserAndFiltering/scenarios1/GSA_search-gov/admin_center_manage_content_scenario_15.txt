@@ -1,0 +1,16 @@
+Scenario 15: View i14y drawers
+  Given  the following BingV7 Affiliates exist:
+  And  the following "i14y drawers" exist for the affiliate agency.gov:
+  And  the following documents exist for the "blog_posts" drawer:
+  And  I am logged in with email "john@agency.gov"
+  When  I go to the agency.gov's Manage Content page
+  And  I follow "i14y Drawers" within the Admin Center content
+  Then  I should see the following table rows:
+  When  I follow "Show" within the first table body row
+  Then  I should see the secret token for the "blog_posts" drawer
+  When  I fill in "query" with "more"
+  And  I press "Search"
+  Then  I should see "document 2"
+  And  I should see "12/31/2015"
+  And  I should not see "document 1"
+

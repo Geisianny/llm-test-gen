@@ -1,0 +1,5 @@
+Scenario 6: redirect to upload files if choose UploadedFile
+  Given  I follow "New content"
+  When  I follow "Uploaded file"
+  Then  I should be on /myprofile/joaosilva/cms/upload_files
+

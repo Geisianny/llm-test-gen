@@ -1,0 +1,9 @@
+Scenario 3: Sorting customer groups by code in ascending order
+  Tags: ['@api', '@ui']
+  When  I browse customer groups
+  And  I sort them by the code in ascending order
+  Then  there should be 3 customer groups in the list
+  And  the 1st customer group on the list should have code "aaa" and name "Wholesale"
+  And  the 2nd customer group on the list should have code "bbb" and name "Retail"
+  And  the 3rd customer group on the list should have code "ccc" and name "Online sale"
+

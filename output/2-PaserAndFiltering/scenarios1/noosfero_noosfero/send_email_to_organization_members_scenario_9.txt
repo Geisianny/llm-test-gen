@@ -1,0 +1,5 @@
+Scenario 9: Not show button "Send e-Mail to members" if user has no right permission
+  Given  I am logged in as "manoel"
+  When  I go to Sample Community's members page
+  Then  I should not see "Send e-mail to members"
+

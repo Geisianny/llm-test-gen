@@ -1,0 +1,8 @@
+Scenario 1: Check the resulting bounds
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/USDT-PERP"
+  Then  the market data for the market "ETH/USDT-PERP" should be:
+

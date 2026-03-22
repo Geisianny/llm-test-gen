@@ -1,0 +1,13 @@
+Scenario 5: Adding one too many items
+  Given  a provider "Hashrocket" belonging to "Olenska@chicka.net"
+  And  a portfolio item "Fire and Grace" belonging to the "Hashrocket" provider
+  And  a portfolio item "Corn Flakes" belonging to the "Hashrocket" provider
+  And  a portfolio item "Sounds True" belonging to the "Hashrocket" provider
+  When  I am on the homepage
+  And  I log in as "Olenska@chicka.net" with password "testtest"
+  And  I follow "navigation.company" translation
+  And  I follow "portfolio_item.manage" translation
+  And  I follow "Add a new project to your portfolio"
+  Then  I should see the translation for "portfolio_item.validations.too_many"
+  And  I should not see "Add a new portfolio item for Hashrocket"
+

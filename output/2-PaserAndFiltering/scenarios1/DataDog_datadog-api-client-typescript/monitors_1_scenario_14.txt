@@ -1,0 +1,8 @@
+Scenario 14: Delete a monitor user template returns "Not Found" response
+  Tags: ['@team:DataDog/monitor-app']
+  Given  new "DeleteMonitorUserTemplate" request
+  And  operation "DeleteMonitorUserTemplate" enabled
+  And  request contains "template_id" parameter with value "00000000-0000-1234-0000-000000000000"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

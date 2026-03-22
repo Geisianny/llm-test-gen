@@ -1,0 +1,9 @@
+Scenario 5: Seeing shipping methods when all of my variants fit the shipping category
+  Tags: ['@api', '@ui']
+  Given  I added product "T-Shirt banana" with product option "Size" S to the cart
+  And  I added product "T-Shirt banana" with product option "Size" M to the cart
+  And  I addressed the cart
+  When  I go to the shipping step
+  Then  I should be on the checkout shipping step
+  And  I should see "Invisible Post" shipping method
+

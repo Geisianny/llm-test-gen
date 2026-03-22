@@ -1,0 +1,8 @@
+Scenario 10: Delete an application key returns "No Content" response
+  Tags: ['@team:DataDog/credentials-management']
+  Given  there is a valid "application_key" in the system
+  And  new "DeleteApplicationKey" request
+  And  request contains "app_key_id" parameter from "application_key.data.id"
+  When  the request is sent
+  Then  the response status is 204 No Content
+

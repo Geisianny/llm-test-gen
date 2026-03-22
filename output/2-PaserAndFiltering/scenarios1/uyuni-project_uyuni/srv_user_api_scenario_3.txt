@@ -1,0 +1,6 @@
+Scenario 3: Create user
+  When  I make sure "testuser" is not present
+  And  I call user.create() with login "testuser"
+  And  I call user.list_users()
+  Then  I should get at least user "testuser"
+

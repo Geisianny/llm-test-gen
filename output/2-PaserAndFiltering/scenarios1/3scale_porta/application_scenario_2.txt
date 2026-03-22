@@ -1,0 +1,10 @@
+Scenario 2: Developer's Current Utilization section has data
+  Given  the following application plan:
+  And  an usage limit on plan "Limited" for metric "hits" with period hour and value 100
+  And  the buyer changes to application plan "Limited"
+  And  the buyer makes 2 service transactions with:
+  And  the backend responds to a utilization request for application "Test App" with:
+  When  they go to application "Test App" admin page
+  Then  they should see "Overview of the current state of this application's limits"
+  And  they should see the following table within the current utilization card:
+

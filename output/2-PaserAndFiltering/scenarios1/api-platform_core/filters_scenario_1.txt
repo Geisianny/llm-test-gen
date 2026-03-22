@@ -1,0 +1,8 @@
+Scenario 1: Retrieve a collection filtered using the boolean filter
+  Tags: ['@createSchema']
+  Given  there is 1 dummy object with dummyBoolean true
+  And  there is 1 dummy object with dummyBoolean false
+  When  I send the following GraphQL request:
+  Then  the JSON node "data.dummies.edges" should have 1 element
+  And  the JSON node "data.dummies.edges[0].node.dummyBoolean" should be false
+

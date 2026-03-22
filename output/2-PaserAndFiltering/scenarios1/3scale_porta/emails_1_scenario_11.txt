@@ -1,0 +1,8 @@
+Scenario 11: Multiple products have custom support emails
+  Given  a product "Bananas"
+  And  a product "Oranges"
+  And  product "Bananas" has support email set to "help@bananas.org"
+  And  product "Oranges" has support email set to "support@oranges.com"
+  And  they go to the emails settings page
+  Then  they should see the following custom support emails:
+

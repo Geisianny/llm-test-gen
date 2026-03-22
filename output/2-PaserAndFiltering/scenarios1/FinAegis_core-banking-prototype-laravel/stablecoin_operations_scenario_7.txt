@@ -1,0 +1,5 @@
+Scenario 7: Stablecoin system health monitoring
+  Given  the stablecoin system is operational
+  When  I check the system health metrics
+  Then  I should see:
+

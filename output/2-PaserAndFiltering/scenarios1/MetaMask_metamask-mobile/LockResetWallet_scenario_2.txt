@@ -1,0 +1,8 @@
+Scenario Outline 2: Skip onboarding - Example 1
+  Given  the app displayed the splash animation
+  And  I unlock wallet with 123123123
+
+  Examples:
+    | password |
+    | 123123123 |
+

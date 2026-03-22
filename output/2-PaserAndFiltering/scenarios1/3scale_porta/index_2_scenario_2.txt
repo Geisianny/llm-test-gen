@@ -1,0 +1,6 @@
+Scenario 2: Navigation from context
+  When  they select "Products" from the context selector
+  And  follow "My API"
+  And  follow "ActiveDocs" within the main menu
+  Then  the current page is the product's ActiveDocs page
+

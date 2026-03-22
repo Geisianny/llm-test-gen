@@ -1,0 +1,7 @@
+Scenario 2: Searching for a product by name
+  Tags: ['@api', '@ui']
+  When  I search for products with "Mac" name
+  Then  I should see 2 products in the list
+  And  I should see a product with name "MacBook Air"
+  And  I should see a product with name "MacBook Pro"
+

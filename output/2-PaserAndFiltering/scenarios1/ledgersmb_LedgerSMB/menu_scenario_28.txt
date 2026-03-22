@@ -1,0 +1,8 @@
+Scenario Outline 28: Navigate to menu "<path>" and open screen "<screen>" - Example 28
+  When  I navigate the menu and select the item at "HR > Employees > Search"
+  Then  I should see the Employee Search screen
+
+  Examples:
+    | path | screen |
+    | HR > Employees > Search | Employee Search |
+

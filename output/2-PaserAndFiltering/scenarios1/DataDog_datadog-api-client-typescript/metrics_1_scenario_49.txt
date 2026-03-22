@@ -1,0 +1,12 @@
+Scenario 49: Update a tag configuration returns "OK" response
+  Tags: ['@replay-only', '@skip-validation', '@team:DataDog/metrics-experience']
+  Given  a valid "appKeyAuth" key in the system
+  And  there is a valid "metric" in the system
+  And  there is a valid "metric_tag_configuration" in the system
+  And  new "UpdateTagConfiguration" request
+  And  request contains "metric_name" parameter from "metric_tag_configuration.data.id"
+  And  body with value {"data": {"type": "manage_tags", "id": "{{ metric_tag_configuration.data.id }}", "attributes": {"tags": ["app"]}}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.attributes.tags[0]" is equal to "app"
+

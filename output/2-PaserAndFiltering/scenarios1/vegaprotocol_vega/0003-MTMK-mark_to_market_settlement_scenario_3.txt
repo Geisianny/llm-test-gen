@@ -1,0 +1,18 @@
+Scenario 3: If the mark price hasn’t changed, A party with no change in open position size has no transfers in or out of their margin account, A party with no change in open volume (0003-MTMK-010, 0003-MTMK-011, 0003-MTMK-012)
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the settlement account should have a balance of "0" for the market "ETH/DEC19"
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following account balances:
+  And  the settlement account should have a balance of "0" for the market "ETH/DEC19"
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following account balances:
+  And  the cumulated balance for all accounts should be worth "330000"
+  And  the settlement account should have a balance of "0" for the market "ETH/DEC19"
+

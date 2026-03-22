@@ -1,0 +1,7 @@
+Scenario: Edit and re-withdraw a document after unwithdrawal
+  Given there is a withdrawn document with title "Example Document"
+  When the Managing Editor unwithdraws the document
+  And edits the document with new banners
+  And withdraws the document again
+  Then the document status changes to "Withdrawn"
+  And the document is not publicly accessible

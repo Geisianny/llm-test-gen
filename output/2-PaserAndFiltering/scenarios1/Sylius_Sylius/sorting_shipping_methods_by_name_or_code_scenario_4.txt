@@ -1,0 +1,8 @@
+Scenario 4: Changing the order of sorting shipping methods by their names
+  Tags: ['@api', '@ui']
+  Given  I am browsing shipping methods
+  When  the shipping methods are already sorted ascending by name
+  And  I switch the way shipping methods are sorted descending by name
+  Then  I should see 3 shipping methods in the list
+  And  the first shipping method on the list should have name "Pug Blimp"
+

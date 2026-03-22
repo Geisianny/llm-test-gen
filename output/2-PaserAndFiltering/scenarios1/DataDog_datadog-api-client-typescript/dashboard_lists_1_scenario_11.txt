@@ -1,0 +1,7 @@
+Scenario 11: Get items of a Dashboard List returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/dashboards-backend']
+  Given  new "GetDashboardListItems" request
+  And  request contains "dashboard_list_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

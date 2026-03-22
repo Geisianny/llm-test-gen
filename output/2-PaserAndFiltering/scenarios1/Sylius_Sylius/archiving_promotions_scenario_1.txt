@@ -1,0 +1,7 @@
+Scenario 1: Archiving a promotion
+  Tags: ['@api', '@ui']
+  When  I browse promotions
+  And  I archive the "Christmas sale" promotion
+  Then  I should see a single promotion in the list
+  And  I should see the promotion "New Year sale" in the list
+

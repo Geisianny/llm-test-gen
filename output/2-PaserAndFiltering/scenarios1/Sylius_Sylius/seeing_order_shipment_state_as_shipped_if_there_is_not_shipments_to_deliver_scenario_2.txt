@@ -1,0 +1,6 @@
+Scenario 2: Seeing shipping state as shipped on order's summary
+  Tags: ['@api', '@ui']
+  When  I view the summary of the order "#00000666"
+  Then  it should have order's shipping state "Shipped"
+  And  I should not see information about shipments
+

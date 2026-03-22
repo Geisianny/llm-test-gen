@@ -1,0 +1,7 @@
+Scenario 2: Find a bereavement counsellor
+  Given  I visit the organisations index page
+  When  I search for "Bereavement Counselling"
+  And  the index should contain:
+  Then  the index should not contain:
+  Then  I should not see the no results message
+

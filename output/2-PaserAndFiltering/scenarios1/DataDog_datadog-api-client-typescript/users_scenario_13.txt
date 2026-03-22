@@ -1,0 +1,8 @@
+Scenario 13: Update a user returns "User updated" response
+  Tags: ['@generated', '@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "UpdateUser" request
+  And  request contains "user_handle" parameter from "REPLACE.ME"
+  And  body with value {"access_role": "ro", "disabled": false, "email": "test@datadoghq.com", "handle": "test@datadoghq.com", "name": "test user"}
+  When  the request is sent
+  Then  the response status is 200 User updated
+

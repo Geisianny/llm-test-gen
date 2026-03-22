@@ -1,0 +1,24 @@
+Scenario 7: Add/edit/remove best bets texts
+  Given  the following BingV7 Affiliates exist:
+  And  I am logged in with email "john@agency.gov"
+  When  I go to the agency.gov's Manage Content page
+  And  I follow "Best Bets: Text" within the Admin Center content
+  And  I follow "Add Best Bets: Text"
+  When  I fill in the following:
+  And  I add the following best bets keywords:
+  And  I check "Match Keywords Only?"
+  And  I submit the form by pressing "Add"
+  Then  I should see "You have added Notes for Week Ending June 21, 2013 to this site"
+  And  I should see "Status: Active"
+  And  I should see "Match Keywords Only"
+  And  I should see the following best bets keywords:
+  When  I follow "Edit"
+  And  I fill in the following:
+  And  I uncheck "Match Keywords Only?"
+  And  I submit the form by pressing "Save"
+  Then  I should see "You have updated Release for Week Ending June 21, 2013"
+  And  I should not see "Match Keywords Only"
+  And  I should not see "rails"
+  When  I press "Remove" and confirm "Are you sure you wish to remove Release for Week Ending June 21, 2013 from this site?"
+  Then  I should see "You have removed Release for Week Ending June 21, 2013 from this site"
+

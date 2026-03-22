@@ -1,0 +1,61 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 19/01/2026 23:13:57
+Arquivo analisado: search-batches_story_processado.feature
+Caminho relativo: ledgersmb_LedgerSMB\search-batches_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/Originais\ledgersmb_LedgerSMB\search-batches_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: search-batches_story_processado
+Descrição: Não possui
+Total de cenários: 4
+
+CENÁRIOS IDENTIFICADOS:
+1. Search for all unapproved batches
+   Steps: 11
+   - When I navigate the menu and select the item at "Transaction Approval > Batches"
+   - Then I should see the Search Batches screen
+   - When I press "Search"
+   - Then I should see the Batch Search Report screen
+   - And I should see these headings:
+   - And I expect the report to contain 3 rows
+   - And I expect the 'Type' report column to contain 'ap' for Batch Number 'B-1001'
+   - And I expect the 'Date' report column to contain '2018-01-01' for Batch Number 'B-1001'
+   - And I expect the 'Description' report column to contain 'Batch-1' for Batch Number 'B-1001'
+   - And I expect the 'AR/AP/GL Amount' report column to contain '0.00' for Batch Number 'B-1001'
+   - And I expect the 'Payment Amount' report column to contain '0.00' for Batch Number 'B-1001'
+2. Search for batches, filtering by batch type
+   Steps: 8
+   - When I navigate the menu and select the item at "Transaction Approval > Batches"
+   - Then I should see the Search Batches screen
+   - When I select "payment" from the drop down "Transaction Type"
+   - And I press "Search"
+   - Then I should see the Batch Search Report screen
+   - And I should see these headings:
+   - And I expect the report to contain 1 row
+   - And I expect the 'Description' report column to contain 'Batch-3' for Batch Number 'B-1003'
+3. Search for batches, filtering by description
+   Steps: 8
+   - When I navigate the menu and select the item at "Transaction Approval > Batches"
+   - Then I should see the Search Batches screen
+   - When I enter "ABC" into "Description"
+   - And I press "Search"
+   - Then I should see the Batch Search Report screen
+   - And I should see these headings:
+   - And I expect the report to contain 1 row
+   - And I expect the 'Description' report column to contain 'Batch-ABC-2' for Batch Number 'B-1002'
+4. Search for all approved batches
+   Steps: 8
+   - When I navigate the menu and select the item at "Transaction Approval > Batches"
+   - Then I should see the Search Batches screen
+   - When I select "Approved"
+   - And I press "Search"
+   - Then I should see the Batch Search Report screen
+   - And I should see these headings:
+   - And I expect the report to contain 1 row
+   - And I expect the 'Description' report column to contain 'Batch-4' for Batch Number 'B-1004'

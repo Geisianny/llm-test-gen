@@ -1,0 +1,10 @@
+Scenario 10: display product with discount
+  Given  the following products
+  And  I am on /catalog/artebonito
+  Then  I should see "Semterrinha" within "li.product-link"
+  And  I should see "99.99" within "span.product-discount"
+  And  I should see "87.65" within "span.product-price"
+  And  I should not see "description"
+  And  I should not see "qualifiers"
+  And  I should not see "price composition"
+

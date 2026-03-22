@@ -1,0 +1,6 @@
+Scenario 7: Meta Title and Description for contact show page
+  Given  I am on the show page with the "contact" permalink
+  And  I should have a page with a title tag set to: "Contact Info | Harrow volunteering"
+  And  I should see "Contact us to get involved"
+  And  it should have a Meta Description
+

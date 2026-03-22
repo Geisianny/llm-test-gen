@@ -1,0 +1,6 @@
+Scenario: Delete a special number without authentication
+  Given there is no authenticated user
+  And there is a special number with ID "123"
+  When an unauthenticated user sends a DELETE request to the special number API with ID "123"
+  Then the system returns an HTTP 401 status code
+  And displays a message indicating that authentication is required

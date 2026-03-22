@@ -1,0 +1,4 @@
+Scenario 2: Download PDF from the invoice detail
+  When  they go to the invoice "2011-01-00000001" dev portal page
+  Then  there should be a secure link to download the PDF
+

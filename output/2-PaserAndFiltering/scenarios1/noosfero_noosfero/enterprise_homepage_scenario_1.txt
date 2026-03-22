@@ -1,0 +1,5 @@
+Scenario 1: display profile info
+  When  I go to /mayhem/homepage
+  Then  I should see "queen@workerbees.org"
+  And  I should see "(288) 555-0153"
+

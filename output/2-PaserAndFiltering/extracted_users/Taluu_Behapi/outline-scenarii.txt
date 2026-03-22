@@ -1,0 +1,25 @@
+Feature: Do some more tests on outline scenarii
+Tags: ['@http', '@rest', '@api']
+
+Background: Test with background
+  When  I send a "GET" request to "/204"
+
+Scenario 1: Test valid scenario + @debug + dumper with body
+  Tags: ['@debug']
+  When  I create a "GET" request to "/400/Bad Request"
+  And  I set the following body:
+  And  I send the request
+  Then  the status code should be 400
+  And  the response should be a valid json response
+  And  in the json, "[0].foo" should be equal to "bar"
+
+Scenario Outline 2: Test dumper from outline - Example 1
+  When  I send a "GET" request to "/200/OK"
+  Then  the status code should be 200
+  And  the response should be a valid json response
+
+  Examples:
+    | status | message |
+    | 200 | OK |
+    | 400 | Bad Request |
+

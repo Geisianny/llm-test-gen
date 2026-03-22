@@ -1,0 +1,5 @@
+Scenario: Display help message for init command
+  Given the user is using the Karma CLI
+  When the user executes the command "karma init --help"
+  Then the system displays a detailed help message for the init command
+  And includes information on available options and usage

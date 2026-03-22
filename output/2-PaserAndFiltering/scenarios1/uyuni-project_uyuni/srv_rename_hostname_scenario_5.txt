@@ -1,0 +1,4 @@
+Scenario 5: Apply high state on the SUSE Minion to populate new server CA
+  Tags: ['@sle_minion']
+  When  I apply highstate on "sle_minion"
+

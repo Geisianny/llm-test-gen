@@ -1,0 +1,8 @@
+Scenario 21: Searching with spelling suggestions
+  Tags: ['@javascript', '@a11y']
+  Given  the following BingV7 Affiliates exist:
+  When  I am on agency.gov's search page
+  And  I search for "qeury" in the redesigned search page
+  Then  I should see "Showing results for query"
+  And  I should see "Search instead for qeury"
+

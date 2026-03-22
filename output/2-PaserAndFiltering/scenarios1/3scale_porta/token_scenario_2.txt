@@ -1,0 +1,6 @@
+Scenario 2: Buyer can't login with an expired token
+  Given  the provider generated a sso token for the buyer, valid for 10 minutes
+  And  15 minutes pass
+  When  the buyer authenticates by token
+  Then  the page should contain "Token Expired"
+

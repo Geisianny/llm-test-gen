@@ -1,0 +1,20 @@
+Scenario Outline 11: Successfully mark a field of a charity as public or private - Example 1
+  Tags: ['@vcr']
+  Given  I am signed in as a charity worker related to "Friendly"
+  And  I visit the edit page for the organisation named "Friendly"
+  And  the phone for "Friendly" has been marked hidden
+  And  I check "organisation_publish_phone"
+  And  I press "Update Organisation"
+  Then  I should be on the show page for the organisation named "Friendly"
+  And  I should see "020800000"
+  And  I should see "Telephone"
+
+  Examples:
+    | field | field_checkbox | field_contents | field_label | check_state | visibility |
+    | phone | organisation_publish_phone | 020800000 | Telephone | check | see |
+    | address | organisation_publish_address | 34 pinner road | Address | check | see |
+    | email | organisation_publish_email | superadmin@friendly.org | Email | check | see |
+    | phone | organisation_publish_phone | 020800000 | Telephone | uncheck | not see |
+    | address | organisation_publish_address | 34 pinner road | Address | uncheck | not see |
+    | email | organisation_publish_email | superadmin@friendly.org | Email | uncheck | not see |
+

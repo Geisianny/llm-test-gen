@@ -1,0 +1,8 @@
+Scenario 5: Not send e-mail to members if body is blank
+  Tags: ['@selenium']
+  Given  I am logged in as admin
+  And  I go to /admin/users/send_mail
+  And  I fill in "Subject" with "Hello, user!"
+  When  I follow "Send"
+  Then  I should be on /admin/users/send_mail
+

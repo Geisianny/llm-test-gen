@@ -1,0 +1,14 @@
+Scenario 10: Searchers see Spanish Medline Govbox
+  Tags: ['@javascript']
+  Given  the following BingV7 Affiliates exist:
+  And  the following Medline Topics exist:
+  When  I am on spanish-nih's search page
+  And  I fill in "query" with "hippopotomonstrosesquippedaliophobia"
+  And  I press "Buscar" within the search box
+  Then  I should not see "Hippopotomonstrosesquippedaliophobia and Other Irrational Fears"
+  Given  the following Medline Topics exist:
+  When  I am on spanish-nih's search page
+  And  I fill in "query" with "hippopotomonstrosesquippedaliophobia"
+  And  I press "Buscar" within the search box
+  Then  I should see "Hippopotomonstrosesquippedaliophobia y otros miedos irracionales" within the med topic govbox
+

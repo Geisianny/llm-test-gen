@@ -1,0 +1,6 @@
+Scenario 15: Apply highstate to override changed content on Debian-like minion
+  Tags: ['@deblike_minion']
+  When  I store "COLOR=blue" into file "/etc/s-mgr/config" on "deblike_minion"
+  And  I apply highstate on "deblike_minion"
+  Then  file "/etc/s-mgr/config" should contain "COLOR=white" on "deblike_minion"
+

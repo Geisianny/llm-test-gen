@@ -1,0 +1,6 @@
+Scenario: Unauthorized user cannot edit charity details
+  Given there is a charity with a description "Charity description"
+  And a user is not associated with the charity
+  When the user attempts to edit the charity's description
+  Then the system denies access to editing the charity's details
+  And the charity's public page remains unchanged

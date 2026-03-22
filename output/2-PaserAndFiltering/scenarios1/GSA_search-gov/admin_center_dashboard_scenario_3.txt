@@ -1,0 +1,7 @@
+Scenario 3: Viewing a site after logging in
+  Given  I am logged in with email "affiliate_manager@fixtures.org"
+  When  I go to the usagov's Dashboard page
+  Then  I should see "USA.gov" in the site header
+  And  I should see a link to "Dashboard" in the active site main navigation
+  And  I should see a link to "Site Overview" in the active site sub navigation
+

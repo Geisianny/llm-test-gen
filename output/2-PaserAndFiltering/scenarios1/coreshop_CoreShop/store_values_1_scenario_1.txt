@@ -1,0 +1,13 @@
+Scenario 1: Change Prices
+  Given  I remember the product Version
+  And  the products price is 1000 for store "Austria"
+  And  the products price is 2000 for store "Germany"
+  Then  the product should be priced at "1000"
+  Then  I am in store "Germany"
+  And  the product should be priced at "2000"
+  Then  I restore the remembered product Version
+  Then  I am in store "Austria"
+  And  the product should be priced at "100"
+  Then  I am in store "Germany"
+  And  the product should be priced at "200"
+

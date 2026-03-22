@@ -1,0 +1,12 @@
+Scenario 17: Trying to add a new product with a text attribute without specifying its value in default locale
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I want to create a new configurable product
+  And  I specify its code as "X-18-MUG"
+  And  I name it "PHP Mug" in "English (United States)" locale
+  And  I add the "Mug material" attribute
+  And  I set its "Mug material" attribute to "Drewno" in "Polish (Poland)" locale
+  But  I do not set its "Mug material" attribute in "English (United States)" locale
+  And  I add it
+  Then  I should be notified that I have to define the "Mug material" attribute in "English (United States)" locale
+  And  product with code "X-18-MUG" should not be added
+

@@ -1,0 +1,6 @@
+Scenario: Add status to comment in community context
+  Given the user is an administrator of a community
+  And the community has a comment section
+  When the user adds a status to a comment
+  Then the comment is updated with the selected status
+  And the status is visible to other community members

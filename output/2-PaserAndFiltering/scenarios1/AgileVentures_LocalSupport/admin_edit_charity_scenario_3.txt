@@ -1,0 +1,6 @@
+Scenario 3: Non-superadmin sees no permission error when visiting the edit form for charity
+  Given  I am signed in as a non-superadmin
+  And  I visit the edit page for the organisation named "Friendly"
+  Then  I should be on the show page for the organisation named "Friendly"
+  And  I should see permission denied
+

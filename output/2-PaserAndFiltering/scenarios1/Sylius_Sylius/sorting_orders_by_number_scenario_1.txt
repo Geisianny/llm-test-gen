@@ -1,0 +1,6 @@
+Scenario 1: Orders are sorted by descending numbers by default
+  Tags: ['@api', '@ui']
+  When  I browse orders
+  Then  I should see an order with "#000000001" number
+  But  the first order should have number "#000000003"
+

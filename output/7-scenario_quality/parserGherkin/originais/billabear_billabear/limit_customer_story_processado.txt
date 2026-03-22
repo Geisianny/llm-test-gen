@@ -1,0 +1,33 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 19/01/2026 23:13:57
+Arquivo analisado: limit_customer_story_processado.feature
+Caminho relativo: billabear_billabear\limit_customer_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/Originais\billabear_billabear\limit_customer_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: limit_customer_story_processado
+Descrição: Não possui
+Total de cenários: 2
+
+CENÁRIOS IDENTIFICADOS:
+1. Get customer info
+   Steps: 5
+   - Given I have authenticated to the API
+   - And the follow customers exist:
+   - And the following subscriptions exist:
+   - When I request the limits for customer "customer.one@example.org"
+   - Then I should see that "Feature Two" is limited to 25
+2. Disabled
+   Steps: 6
+   - Given I have authenticated to the API
+   - And the follow customers exist:
+   - And the following subscriptions exist:
+   - And customer "customer.one@example.org" is disabled
+   - When I request the limits for customer "customer.one@example.org"
+   - Then I should see an empty limits API response

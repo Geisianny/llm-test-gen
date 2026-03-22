@@ -1,0 +1,5 @@
+Scenario 2: Unpublishing a document and redirecting
+  Given  a published document "Published by accident" exists
+  When  I unpublish the document and ask for a redirect to "https://www.test.gov.uk/example"
+  Then  the unpublishing should redirect to "https://www.test.gov.uk/example"
+

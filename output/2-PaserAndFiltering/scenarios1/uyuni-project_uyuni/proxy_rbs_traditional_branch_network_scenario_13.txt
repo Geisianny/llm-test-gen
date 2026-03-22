@@ -1,0 +1,6 @@
+Scenario 13: Configure PXE itself on the branch server
+  When  I follow "Formulas" in the content area
+  And  I follow first "Pxe" in the content area
+  And  I click on "Save Formula"
+  Then  I should see a "Formula saved" text
+

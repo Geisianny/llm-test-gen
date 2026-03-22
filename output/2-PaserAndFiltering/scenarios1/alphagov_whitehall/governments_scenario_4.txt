@@ -1,0 +1,7 @@
+Scenario 4: changing government after an election
+  Given  there is a current government
+  And  I am a GDS admin
+  When  I close the current government
+  And  I create a government called "Robo-alien Overlords"
+  Then  the current government should be "Robo-alien Overlords"
+

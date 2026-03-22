@@ -1,0 +1,8 @@
+Scenario 3: Access Stablecoins subproduct page as a visitor
+  When  I visit "/subproducts/stablecoins"
+  Then  the response status code should be 200
+  And  I should see "FinAegis Stablecoins"
+  And  I should see "EUR-pegged digital currency"
+  And  I should see "Now Live"
+  And  I should not see "Route [stablecoins.index] not defined"
+

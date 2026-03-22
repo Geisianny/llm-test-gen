@@ -1,0 +1,37 @@
+Feature: Addresses
+
+Scenario 1: Not authorized to list addresses
+  Given  the fixtures files are loaded:
+  And  the user "bob" is loaded:
+  And  the user "bob" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "GET" request to "/api/addresses"
+  Then  the response status code should be 403
+
+Scenario 2: Not authorized to retrieve address
+  Given  the fixtures files are loaded:
+  And  the user "bob" is loaded:
+  And  the user "bob" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "GET" request to "/api/addresses/1"
+  Then  the response status code should be 403
+
+Scenario 3: Ability to PATCH an address as admin
+  Given  the fixtures files are loaded:
+  And  the user "bob" is loaded:
+  And  the user "bob" has role "ROLE_ADMIN"
+  And  the user "bob" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "PATCH" request to "/api/addresses/1" with body:
+  Then  the response status code should be 200
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "GET" request to "/api/addresses/1"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  Then  print last JSON response
+  And  the JSON should match:
+

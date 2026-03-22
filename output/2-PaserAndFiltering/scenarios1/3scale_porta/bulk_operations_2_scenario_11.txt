@@ -1,0 +1,9 @@
+Scenario 11: Changing state throws an error
+  Given  the application will return an error when suspended
+  When  item "Bob's App" is selected
+  And  select bulk action "Change state"
+  And  the modal is submitted with:
+  And  confirm the dialog
+  Then  the bulk operation has failed for "Bob's App"
+  And  the table has the following row:
+

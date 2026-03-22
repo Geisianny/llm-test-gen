@@ -1,0 +1,6 @@
+Scenario 2: Cannot navigate to disabled parent taxon
+  Tags: ['@ui']
+  Given  the "Clothes" taxon is disabled
+  When  I try to browse products from taxon "T-Shirts"
+  Then  I should not be able to navigate to parent taxon
+

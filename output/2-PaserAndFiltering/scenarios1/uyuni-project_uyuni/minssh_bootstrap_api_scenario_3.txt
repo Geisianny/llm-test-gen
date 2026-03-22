@@ -1,0 +1,4 @@
+Scenario 3: Block direct access from server to sshminion to test proxy as jumphost
+  Tags: ['@proxy']
+  Given  I block connections from "server" on "ssh_minion"
+

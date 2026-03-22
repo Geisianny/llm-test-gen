@@ -1,0 +1,7 @@
+Scenario 3: Delete a address
+  When  I want to add a address information
+  And  my new Address is "Elon", "Twitter X", country "Austria", "1160", "Wien", "Brunnengasse", "46", "+45 5336445"
+  And  I save my address
+  Then  I open my addresses
+  And  I want to delete my address with street "Brunnengasse"
+

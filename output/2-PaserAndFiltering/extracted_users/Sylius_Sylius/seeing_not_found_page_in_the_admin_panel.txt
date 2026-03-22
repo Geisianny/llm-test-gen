@@ -1,0 +1,17 @@
+Feature: Seeing not found page in the admin panel
+Description: In order to provide a better user experience
+    As an administrator
+    I want to see a not found page dedicated to the admin panel
+Tags: ['@admin_error_page']
+
+Background: 
+  Given  the store operates on a channel named "Real Madrid"
+  And  the store has a product "Kroos T-Shirt"
+  And  the store has a product "Bellingham T-Shirt"
+  And  I am logged in as an administrator
+
+Scenario 1: Seeing not found page when the product does not exist in the admin panel
+  Tags: ['@no-api', '@ui']
+  When  I try to reach nonexistent product
+  Then  I should see the not found page with the link to the dashboard
+

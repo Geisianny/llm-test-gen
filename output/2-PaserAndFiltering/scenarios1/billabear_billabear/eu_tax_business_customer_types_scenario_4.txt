@@ -1,0 +1,7 @@
+Scenario 4: Physicial Goods for a Business with a tax number - Zero tax - EU tax rules disabled
+  Given  the following subscriptions exist:
+  And  that the tax settings for eu business tax rules is false
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  And  there the latest invoice for "customer.one@example.org" will not have a zero tax rate
+

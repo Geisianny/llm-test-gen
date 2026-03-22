@@ -1,0 +1,6 @@
+Scenario 5: Get all case types returns "OK" response
+  Tags: ['@team:DataDog/case-management']
+  Given  new "GetAllCaseTypes" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

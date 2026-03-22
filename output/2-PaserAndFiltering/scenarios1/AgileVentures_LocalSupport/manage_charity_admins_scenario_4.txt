@@ -1,0 +1,4 @@
+Scenario 4: Adding non-existent user as charity superadmin invites said user
+  Given  I am signed in as a superadmin
+  And  I add "blah" as a superadmin for "Friendly" charity
+

@@ -1,0 +1,5 @@
+Scenario 1: Required filter should not throw an error if set
+  Tags: ['@createSchema']
+  When  I am on "/filter_validators?required=foo&required-allow-empty=&arrayRequired[foo]="
+  Then  the response status code should be 200
+

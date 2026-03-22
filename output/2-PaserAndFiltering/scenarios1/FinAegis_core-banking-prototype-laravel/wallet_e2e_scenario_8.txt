@@ -1,0 +1,7 @@
+Scenario 8: Wallet spending analytics
+  Given  I have 3 months of transaction history
+  When  I access spending analytics
+  Then  I should see:
+  And  insights should be actionable
+  And  data should be accurately categorized
+

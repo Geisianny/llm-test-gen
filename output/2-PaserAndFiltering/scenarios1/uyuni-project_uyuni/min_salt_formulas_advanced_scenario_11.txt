@@ -1,0 +1,7 @@
+Scenario 11: Cleanup: remove formula from minion
+  When  I follow "Formulas" in the content area
+  And  I uncheck the "testform" formula
+  And  I click on "Save"
+  And  I wait until I see "Formula saved." text
+  Then  the "testform" formula should be unchecked
+

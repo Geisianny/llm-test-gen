@@ -1,0 +1,21 @@
+Scenario 2: Search for reconciliation report and delete it,
+  Given  reconciliation reports with these properties:
+  When  I navigate the menu and select the item at "Cash & Banking > Reports > Reconciliation"
+  Then  I should see the Search Reconciliation Reports screen
+  When  I press "Search"
+  Then  I should see the Reconciliation Search Report screen
+  And  I expect the report to contain 1 row
+  And  I expect the 'Account' report column to contain '1060 Checking Account' for Statement Date '2018-01-01'
+  And  I expect the 'Statement Balance' report column to contain '101.00' for Statement Date '2018-01-01'
+  And  I expect the 'Approved' report column to contain '' for Statement Date '2018-01-01'
+  And  I expect the 'Submitted' report column to contain '' for Statement Date '2018-01-01'
+  And  I expect the 'Entered By' report column to contain '$$the user' for Statement Date '2018-01-01'
+  And  I expect the 'Approved By' report column to contain '' for Statement Date '2018-01-01'
+  When  I click the "2018-01-01" link
+  Then  I should see the Reconciliation Report screen
+  When  I press "Delete"
+  Then  I should see the Search Reconciliation Reports screen
+  When  I press "Search"
+  Then  I should see the Reconciliation Search Report screen
+  And  I expect the report to contain 0 rows
+

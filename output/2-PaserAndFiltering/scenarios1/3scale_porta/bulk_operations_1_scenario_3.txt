@@ -1,0 +1,6 @@
+Scenario 3: Select all items in the table
+  When  they select all items in the table
+  Then  they should be able to see the bulk operations
+  When  they unselect all items in the table
+  Then  they should not be able to see the bulk operations
+

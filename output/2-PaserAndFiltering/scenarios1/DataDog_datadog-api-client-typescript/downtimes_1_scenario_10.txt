@@ -1,0 +1,7 @@
+Scenario 10: Get all downtimes returns "OK" response
+  Tags: ['@replay-only', '@team:DataDog/monitor-app']
+  Given  new "ListDowntimes" request
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data" has item with field "id" with value "1dcb33f8-b23a-11ed-ae77-da7ad0900002"
+

@@ -1,0 +1,9 @@
+Scenario 18: Get deployment gate returns "OK" response
+  Tags: ['@team:DataDog/ci-app-backend']
+  Given  there is a valid "deployment_gate" in the system
+  And  operation "GetDeploymentGate" enabled
+  And  new "GetDeploymentGate" request
+  And  request contains "id" parameter from "deployment_gate.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+

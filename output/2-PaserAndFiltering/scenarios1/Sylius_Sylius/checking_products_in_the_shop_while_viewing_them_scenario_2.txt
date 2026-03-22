@@ -1,0 +1,6 @@
+Scenario 2: Accessing product show page in shop from the product show page where product is available in one channel
+  Tags: ['@no-api', '@ui']
+  When  I access the "Bugatti" product
+  And  I show this product in this channel
+  Then  I should see this product in the "Europe" channel in the shop
+

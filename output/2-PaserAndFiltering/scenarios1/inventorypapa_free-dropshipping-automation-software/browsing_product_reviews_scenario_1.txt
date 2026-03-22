@@ -1,0 +1,7 @@
+Scenario 1: Browsing all product reviews in store
+  Tags: ['@ui', '@api']
+  When  I want to browse product reviews
+  Then  I should see 2 reviews in the list
+  And  I should see the product review "Awesome" in the list
+  And  I should also see the product review "Bad" in the list
+

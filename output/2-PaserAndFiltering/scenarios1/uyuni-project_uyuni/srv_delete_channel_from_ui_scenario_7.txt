@@ -1,0 +1,10 @@
+Scenario 7: Try delete channel with child
+  When  I follow the left menu "Software > Manage > Channels"
+  And  I follow "Clone of Fake-Base-Channel-SUSE-like"
+  And  I follow "Delete Channel"
+  And  I check "unsubscribeSystems"
+  And  I click on "Delete Channel"
+  Then  I should see a "Clone of Fake-Base-Channel-SUSE-like" text
+  And  I should see a "channel has child channels associated" text
+  And  I should see a "must delete those channels first before deleting the parent." text
+

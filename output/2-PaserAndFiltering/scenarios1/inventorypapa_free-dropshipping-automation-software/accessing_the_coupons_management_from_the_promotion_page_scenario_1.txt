@@ -1,0 +1,6 @@
+Scenario 1: Being able to manage promotion's coupons
+  Tags: ['@ui']
+  When  I modify a "Christmas sale" promotion
+  And  I want to manage this promotion coupons
+  Then  I should be on this promotion's coupons management page
+

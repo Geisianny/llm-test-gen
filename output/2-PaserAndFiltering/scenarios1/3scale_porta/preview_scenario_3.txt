@@ -1,0 +1,14 @@
+Scenario Outline 3: Publish the spec - Example 1
+  Given  the product has a Swagger 1.2 spec "Echo API"
+  And  the spec is not published
+  When  they go to the spec's preview page from Product context
+  And  follow "Publish"
+  Then  they should see a toast alert with text "Spec Echo API is now visible"
+  And  there should be a link to "Hide"
+
+  Examples:
+    | swagger version |
+    | Swagger 1.2 |
+    | Swagger 2 |
+    | OAS 3.0 |
+

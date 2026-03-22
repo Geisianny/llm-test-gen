@@ -1,0 +1,6 @@
+Scenario 6: As a referent I cannot add a new member in my team, if the user is already in my team
+  Given  I am logged with "referent@en-marche-dev.fr" via OAuth client "JeMengage Web" with scope "jemengage_admin"
+  When  I send a "POST" request to "/api/v3/my_team_members?scope=president_departmental_assembly" with body:
+  Then  the response status code should be 400
+  And  the JSON should be equal to:
+

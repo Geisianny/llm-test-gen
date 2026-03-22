@@ -1,0 +1,8 @@
+Scenario 12: Update a resource with a Ramsey\Uuid\Uuid non-id field
+  Tags: ['@!mongodb']
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "PUT" request to "/ramsey_uuid_dummies/41b29566-144b-11e6-a148-3e1d05defe78" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+

@@ -1,0 +1,6 @@
+Scenario 3: Unsetting a channel theme
+  Tags: ['@ui', '@no-api']
+  Given  channel "United States" uses "maverick/meerkat" theme
+  When  I unset theme on that channel
+  Then  that channel should not use any theme
+

@@ -1,0 +1,7 @@
+Scenario 1: Proper taxes for untaxed product
+  Tags: ['@api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  When  I check the details of my cart
+  Then  my cart total should be "$100.00"
+  And  there should be no taxes charged
+

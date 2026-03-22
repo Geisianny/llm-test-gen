@@ -1,0 +1,34 @@
+Scenario 1: AMM holds a long position, there should be no more buy orders created, when submitting a sell order at a lower price, a panic seemingly can occur.
+  Tags: ['@VAMM']
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the parties place the following orders:
+  Then  the following trades should be executed:
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/MAR22" should be:
+  When  the network moves ahead "1" blocks
+  Then  the parties should have the following profit and loss:
+  And  the market data for the market "ETH/MAR22" should be:
+  And  the following transfers should happen:
+  When  the parties place the following orders:
+  Then  the following trades should be executed:
+  When  the network moves ahead "1" blocks
+  Then  the parties should have the following profit and loss:
+  When  the parties place the following orders:
+  Then  the following trades should be executed:
+  When  the network moves ahead "1" blocks
+  Then  the parties should have the following profit and loss:
+  When  the parties cancel the following AMM:
+  Then  the AMM pool status should be:
+  And  the parties submit the following AMM:
+  Then  the AMM pool status should be:
+  And  set the following AMM sub account aliases:
+  And  the following transfers should happen:
+  Then  the parties should have the following profit and loss:
+  When  the parties place the following orders:
+  Then  the following trades should be executed:
+  When  the network moves ahead "1" blocks
+  Then  the parties should have the following profit and loss:
+  When  the network moves ahead "1" blocks
+  Then  the parties place the following orders:
+

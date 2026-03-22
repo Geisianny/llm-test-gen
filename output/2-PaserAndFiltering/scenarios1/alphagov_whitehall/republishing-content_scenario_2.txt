@@ -1,0 +1,5 @@
+Scenario 2: Republish the "How government works" page
+  Given  a published publication "How government works" exists
+  When  I request a republish of the "How government works" page
+  Then  I can see the "How government works" page has been scheduled for republishing
+

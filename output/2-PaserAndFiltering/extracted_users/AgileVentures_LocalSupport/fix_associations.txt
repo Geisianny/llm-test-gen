@@ -1,0 +1,37 @@
+Feature: Fix Associations
+Description: As a site owner
+  So that my invitations can stop breaking
+  I want to associate all invited-not-accepted users with their orgs
+
+Background: 
+  Given  the following users are registered:
+  Given  the following organisations exist:
+  And  the invitation instructions mail template exists
+  And  "whitespace" has a whitespace at the end of the email address
+  And  the superadmin invited a user for "normal"
+  And  the superadmin invited a user for "upcased"
+  And  the superadmin invited a user for "whitespace"
+  And  associations are destroyed for:
+
+Scenario 1: Broken invites as seen on the orphans page
+  Tags: ['@vcr']
+  Given  cookies are approved
+  Given  I am signed in as a superadmin
+  And  I visit the invite users to become admin of organisations page
+  Then  I should not see "normal"
+  Then  I should see "upcased"
+  Then  I should see "whitespace"
+
+Scenario 2: migration
+  Given  I run the fix invitations rake task
+  Given  cookies are approved
+  Given  I am signed in as a superadmin
+  And  I visit the invite users to become admin of organisations page
+  Then  I should not see "normal"
+  Then  I should not see "upcased"
+  Then  I should not see "whitespace"
+  And  I visit the invited users page
+  Then  I should see "normal"
+  Then  I should see "upcased"
+  Then  I should see "whitespace"
+

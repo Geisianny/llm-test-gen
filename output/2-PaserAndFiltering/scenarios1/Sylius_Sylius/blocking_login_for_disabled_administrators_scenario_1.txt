@@ -1,0 +1,9 @@
+Scenario 1: Sign in with email and password
+  Tags: ['@api', '@ui']
+  Given  this administrator account is disabled
+  And  I want to log in
+  When  I specify the username as "admin@example.com"
+  And  I specify the password as "sylius"
+  And  I log in
+  Then  I should not be logged in
+

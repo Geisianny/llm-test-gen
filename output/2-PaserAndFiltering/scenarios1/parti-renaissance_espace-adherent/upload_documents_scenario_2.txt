@@ -1,0 +1,5 @@
+Scenario 2: As an authenticated user I cannot upload a document for invalid type
+  Given  I am logged with "referent@en-marche-dev.fr" via OAuth client "JeMengage Web" with scope "jemengage_admin"
+  When  I send a "POST" request to "/api/v3/upload/invalid?scope=president_departmental_assembly" with parameters:
+  Then  the response status code should be 403
+

@@ -1,0 +1,5 @@
+Scenario 4: Being unable to change code of catalog promotion
+  Tags: ['@api', '@ui']
+  When  I want to modify a catalog promotion "Christmas sale"
+  Then  I should not be able to edit its code
+

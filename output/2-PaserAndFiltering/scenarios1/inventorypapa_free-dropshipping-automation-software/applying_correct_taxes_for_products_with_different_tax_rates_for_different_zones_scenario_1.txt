@@ -1,0 +1,6 @@
+Scenario 1: Displaying correct tax before specifying shipping address
+  Tags: ['@ui']
+  When  I add product "PHP T-Shirt" to the cart
+  Then  my cart total should be "$100.00"
+  And  there should be no taxes charged
+

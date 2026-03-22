@@ -1,0 +1,61 @@
+Scenario 1: Hidden and not editable extra fields should not be editable
+  Tags: ['@javascript']
+  Given  I log in as "bob" on foo.3scale.localhost
+  When  I go to the account edit page
+  Then  I should see the fields:
+  But  I should not see the fields:
+
+
+
+Scenario 2: Update an account with extra fields
+  Given  I log in as "bob" on foo.3scale.localhost
+  When  I go to the account edit page
+  And  the form is submitted with:
+  Then  I should see error "can't be blank" for extra field "Required field"
+  But  I should not see errors for extra field "False field"
+  When  I fill in "Required field" with "1 Horse Power"
+  And  I press "Update"
+  Then  I should see "The account information was updated"
+
+
+
+Scenario 3: Read-only extra fields are ignored on update
+  Given  I log in as "bob" on foo.3scale.localhost
+  And  provider "foo.3scale.localhost" has the field "non_editable" for accounts as editable
+  Then  I go to the account edit page
+  And  provider "foo.3scale.localhost" has the field "non_editable" for accounts as read only
+  And  the form is submitted with:
+  Then  I should see "The account information was updated"
+  Then  I should not see "Non editable"
+
+
+
+Scenario 4: Viewing account with extra fields
+  Given  buyer "bob" has extra fields:
+  And  I log in as "bob" on foo.3scale.localhost
+  When  I go to the account page
+  Then  I should see "False field"
+  And  I should see "Required field"
+  And  I should see "Choices field"
+  And  I should see "Non editable"
+  But  I should not see "Hidden field"
+
+
+
+Scenario 5: Extra fields are sorted by position
+  Given  I log in as "bob" on foo.3scale.localhost
+  And  provider "foo.3scale.localhost" has the field "required_field" for "Account" in the position 20
+  When  I go to the account edit page
+  Then  I should see the fields in order:
+
+
+
+Scenario 6: Country field works correctly
+  Given  provider "foo.3scale.localhost" has the following fields defined for accounts:
+  And  I log in as "bob" on foo.3scale.localhost
+  When  I go to the account edit page
+  And  I select "Spain" from "Country"
+  And  I press "Update"
+  Then  I should see "The account information was updated"
+  And  I should see "Spain" in the "country" field in the list
+

@@ -1,0 +1,8 @@
+Scenario 7: Edit a dataset returns "Bad Request" response
+  Tags: ['@skip-go', '@skip-java', '@skip-python', '@skip-ruby', '@skip-rust', '@skip-terraform-config', '@skip-typescript', '@skip-validation', '@team:DataDog/aaa-granular-access']
+  Given  new "UpdateDataset" request
+  And  operation "UpdateDataset" enabled
+  And  request contains "dataset_id" parameter with value "malformed_id"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

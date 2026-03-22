@@ -1,0 +1,8 @@
+Scenario 6: Get a list of spans returns "Unprocessable Entity." response
+  Tags: ['@team:DataDog/apm']
+  Given  new "ListSpansGet" request
+  And  request contains "filter[from]" parameter with value "now"
+  And  request contains "filter[to]" parameter with value "now-1m"
+  When  the request is sent
+  Then  the response status is 422 Unprocessable Entity.
+

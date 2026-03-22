@@ -1,0 +1,13 @@
+Scenario 4: As offerer i can reply to a new message
+  Given  A user send me the message "Hello, can i rent your listing?" about my listing "Listing One"
+  When  I am logged in as user "offerer@cocorico.rocks" with password "12345678"
+  And  I click on dashboard menu "Messages" of "offerer"
+  Then  I should be on the "dashboard message" page
+  And  I should see "1 result" in the "span.result-counter" element
+  When  I follow "Reply"
+  And  I fill in the following:
+  And  I press "Send"
+  Then  I should be on the page which route name is "dashboard_message_thread_view"
+  When  I wait 2000 ms
+  Then  I should see "Yes! Of course" in the "div.posts-holder div.post-content" element
+

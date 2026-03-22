@@ -1,0 +1,6 @@
+Scenario 2: Get a list of Audit Logs events returns "OK" response
+  Tags: ['@team:DataDog/logs-app']
+  Given  new "ListAuditLogs" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

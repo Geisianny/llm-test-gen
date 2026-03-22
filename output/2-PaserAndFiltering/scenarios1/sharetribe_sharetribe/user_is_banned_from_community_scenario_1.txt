@@ -1,0 +1,5 @@
+Scenario 1: Banned user can't join the marketplace
+  Tags: ['@javascript']
+  When  I go to the home page
+  Then  I should see a message that I have been banned
+

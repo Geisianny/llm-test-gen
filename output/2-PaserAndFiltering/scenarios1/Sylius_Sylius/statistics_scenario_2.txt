@@ -1,0 +1,13 @@
+Scenario 2: Seeing statistics for the previous year
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  Given  it is "first day of January last year" now
+  And  3 new customers have fulfilled 2 orders placed for total of "$2,000.00"
+  And  it is "first day of February this year" now
+  And  4 more new customers have paid 5 orders placed for total of "$5,000.37"
+  And  2 more new customers have paid 2 orders placed for total of "$5,000.37"
+  When  I view statistics for "United States" channel and previous year split by month
+  Then  I should see 3 new customers
+  And  I should see 2 paid orders
+  And  there should be total sales of "$2,000.00"
+  And  the average order value should be "$1,000.00"
+

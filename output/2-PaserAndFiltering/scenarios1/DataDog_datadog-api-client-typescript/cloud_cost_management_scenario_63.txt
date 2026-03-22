@@ -1,0 +1,7 @@
+Scenario 63: Validate query returns "OK" response
+  Tags: ['@replay-only', '@team:DataDog/cloud-cost-management']
+  Given  new "ValidateQuery" request
+  And  body with value {"data": {"attributes": {"Query": "example:query AND test:true"}, "type": "validate_query"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+

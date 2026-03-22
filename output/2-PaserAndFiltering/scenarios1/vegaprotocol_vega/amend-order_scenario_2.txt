@@ -1,0 +1,14 @@
+Scenario 2: Reduce size with delta success and not loosing position in order book (0004-AMND-003, 0004-AMND-057)
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the parties place the following orders:
+  Then  the parties amend the following orders:
+  And  the orders should have the following states:
+  When  the parties place the following orders:
+  Then  the following trades should be executed:
+  And  the orders should have the following states:
+  When  the parties amend the following orders:
+  Then  the orders should have the following states:
+

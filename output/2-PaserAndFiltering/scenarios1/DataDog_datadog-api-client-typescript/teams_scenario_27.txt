@@ -1,0 +1,8 @@
+Scenario 27: Get team sync configurations returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/aaa-omg']
+  Given  operation "GetTeamSync" enabled
+  And  new "GetTeamSync" request
+  And  request contains "filter[source]" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 200 OK
+

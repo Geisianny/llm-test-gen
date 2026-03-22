@@ -1,0 +1,7 @@
+Scenario 8: Manage multiple pet names
+  Tags: ['@sample-feature', '@petnames', '@multiple-entries', '@e2e-automated']
+  Given  I am on the Sample Feature screen
+  When  I create the following pet names:
+  Then  I should see all 3 pet names in the list
+  And  the list should display the following:
+

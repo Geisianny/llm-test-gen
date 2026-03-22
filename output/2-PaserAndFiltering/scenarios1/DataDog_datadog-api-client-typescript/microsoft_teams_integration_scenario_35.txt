@@ -1,0 +1,12 @@
+Scenario 35: Get api handle information returns "OK" response
+  Tags: ['@integration-only', '@team:DataDog/chat-integrations']
+  Given  there is a valid "tenant_based_handle" in the system
+  And  new "GetTenantBasedHandle" request
+  And  request contains "handle_id" parameter from "tenant_based_handle.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.attributes.name" has the same value as "tenant_based_handle.data.attributes.name"
+  And  the response "data.attributes.channel_id" has the same value as "tenant_based_handle.data.attributes.channel_id"
+  And  the response "data.attributes.team_id" has the same value as "tenant_based_handle.data.attributes.team_id"
+  And  the response "data.attributes.tenant_id" has the same value as "tenant_based_handle.data.attributes.tenant_id"
+

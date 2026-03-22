@@ -1,0 +1,5 @@
+Scenario 3: Query string is visible after search
+  Given  I fill in "Search Text" with "search words" within the main body
+  And  I press "Search"
+  Then  the search box should contain "search words"
+

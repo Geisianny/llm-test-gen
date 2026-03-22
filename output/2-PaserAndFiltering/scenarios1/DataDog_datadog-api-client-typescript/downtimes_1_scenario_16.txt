@@ -1,0 +1,10 @@
+Scenario 16: Update a downtime returns "OK" response
+  Tags: ['@team:DataDog/monitor-app']
+  Given  there is a valid "downtime_v2" in the system
+  And  new "UpdateDowntime" request
+  And  request contains "downtime_id" parameter from "downtime_v2.data.id"
+  And  body with value {"data": {"attributes": {"message": "light speed"}, "id": "{{ downtime_v2.data.id }}", "type": "downtime"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.attributes.message" is equal to "light speed"
+

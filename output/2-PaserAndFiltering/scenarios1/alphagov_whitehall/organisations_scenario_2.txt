@@ -1,0 +1,6 @@
+Scenario 2: Adding a translation to an Organisation
+  Given  I have the "GDS Admin" permission
+  When  I add a new organisation called "Ministry of Jazz"
+  And  I add a translation for an organisation called "Ministry of Jazz"
+  Then  I should be able to see the translation for "Ministry of Jazz" in the list of translations
+

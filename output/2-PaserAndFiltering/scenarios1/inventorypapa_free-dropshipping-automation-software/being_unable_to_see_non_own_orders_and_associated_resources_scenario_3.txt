@@ -1,0 +1,5 @@
+Scenario 3: Being unable to see non-own order item unit
+  Tags: ['@api']
+  When  I try to see one of the units from the order placed by a customer "john@example.com"
+  Then  I should not be able to see that unit
+

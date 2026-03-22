@@ -1,0 +1,7 @@
+Scenario 16: Get all AWS tag filters returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/aws-integrations']
+  Given  new "ListAWSTagFilters" request
+  And  request contains "account_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 200 OK
+

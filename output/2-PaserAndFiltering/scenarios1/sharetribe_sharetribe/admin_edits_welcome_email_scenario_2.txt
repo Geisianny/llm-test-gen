@@ -1,0 +1,16 @@
+Scenario 2: Admin user can change sender email
+  Tags: ['@javascript']
+  Given  I am logged in as "kassi_testperson1"
+  When  I go to the admin view of community "test"
+  And  I follow the first "Emails"
+  And  I fill in "name" with "Not Kassi Tester"
+  And  I fill in "email" with "not_kassi_testperson1@example.com"
+  And  I press "Send verification email"
+  Then  I should see "Sender address: Not Kassi Tester <not_kassi_testperson1@example.com>"
+  And  I should see "Verified - in use"
+  When  I follow "change sender email"
+  And  I fill in "name" with "Another Kassi Tester"
+  And  I fill in "email" with "another_kassi_testperson1@example.com"
+  And  I press "Send verification email"
+  Then  I should see "Sender address: Another Kassi Tester <another_kassi_testperson1@example.com>"
+

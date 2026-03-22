@@ -1,0 +1,8 @@
+Scenario 2: Being unable to place an order with product that is out of stock
+  Tags: ['@api', '@ui']
+  Given  I added 5 products "Iron Maiden T-Shirt" to the cart
+  And  I proceeded through the checkout process
+  And  other customer has bought 2 "Iron Maiden T-Shirt" products by this time
+  When  I confirm my order
+  And  I should be notified that product "Iron Maiden T-Shirt" does not have sufficient stock
+

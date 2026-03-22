@@ -1,0 +1,11 @@
+Scenario 15: link to tags on search results
+  Given  the following tags
+  When  I go to the search articles page
+  And  I fill in "search-input" with "bees"
+  And  I follow "Search" within ".search-form"
+  Then  I should see "Tags" within ".search-article-tags"
+  And  I should see "Hymenoptera" within ".search-article-tags"
+  And  I should see "Lepidoptera" within ".search-article-tags"
+  When  I follow "Hymenoptera"
+  Then  I should be on Hymenoptera's tag page
+

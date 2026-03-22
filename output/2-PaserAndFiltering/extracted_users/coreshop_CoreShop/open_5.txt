@@ -1,0 +1,9 @@
+Feature: Test if I can open the Tax Rule Groups Panel
+Tags: ['@ui', '@ui_pimcore', '@tax_rule']
+
+Scenario 1: 
+  Given  I am a logged in admin
+  And  I open Pimcore
+  And  I open resource "coreshop.taxation", "tax_rule_group"
+  Then  tax-rule-groups tab is open
+

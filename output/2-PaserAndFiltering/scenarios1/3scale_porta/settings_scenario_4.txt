@@ -1,0 +1,6 @@
+Scenario 4: Production and Staging URL are not grayed out when self-managed APIcast
+  And  I go to the settings page for service "API" of provider "foo.3scale.localhost"
+  When  I click on the label "APIcast self-managed"
+  Then  field "Staging Public Base URL" is not readonly
+  And  field "Production Public Base URL" is not readonly
+

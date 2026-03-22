@@ -1,0 +1,10 @@
+Scenario 2: Delete the account from the chart of accounts
+  Given  a gl account with these properties:
+  When  I navigate the menu and select the item at "General Journal > Chart of Accounts"
+  Then  I should see the Chart of Accounts screen
+  And  I expect the report to contain 79 rows
+  And  I expect the 'Description' report column to contain 'New Account' for Account Number 'T0001'
+  When  I click "[Delete]" for the row with Account Number "T0001"
+  Then  I should see the Chart of Accounts screen
+  And  I expect the report to contain 78 rows
+

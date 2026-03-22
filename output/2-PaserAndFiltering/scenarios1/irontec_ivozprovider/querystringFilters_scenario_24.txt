@@ -1,0 +1,9 @@
+Scenario 24: Retrieve billable call by startTime after
+  Given  I add Authorization header
+  When  I add "Accept" header equal to "application/json"
+  And  I send a "GET" request to "billable_calls?startTime[after]=2019-01-01 09:00:01&_itemsPerPage=2"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json; charset=utf-8"
+  And  the JSON should be like:
+

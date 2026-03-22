@@ -1,0 +1,8 @@
+Scenario 3: Sorting customers by descending email
+  Tags: ['@api', '@ui']
+  When  I want to see all customers in store
+  And  I sort customers by descending email
+  Then  I should see 3 customers on the list
+  And  the first customer should be "l.abhorsen@example.com"
+  And  the last customer should be "f.baggins@shire.me"
+

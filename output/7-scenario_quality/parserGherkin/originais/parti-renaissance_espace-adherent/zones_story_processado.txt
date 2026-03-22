@@ -1,0 +1,42 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 19/01/2026 23:13:57
+Arquivo analisado: zones_story_processado.feature
+Caminho relativo: parti-renaissance_espace-adherent\zones_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/Originais\parti-renaissance_espace-adherent\zones_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: zones_story_processado
+Descrição: Não possui
+Total de cenários: 3
+
+CENÁRIOS IDENTIFICADOS:
+1. As a non logged-in user I can filter zones by exact types and partial name
+   Steps: 8
+   - When I send a "GET" request to "/api/zones" with parameters:
+   - Then the response status code should be 200
+   - And the response should be in JSON
+   - And the JSON should be equal to:
+   - When I send a "GET" request to "/api/zones" with parameters:
+   - Then the response status code should be 200
+   - And the response should be in JSON
+   - And the JSON should be equal to:
+2. As a logged-in user I can filter zones by space and partial name with page limit
+   Steps: 5
+   - Given I am logged with "referent@en-marche-dev.fr" via OAuth client "JeMengage Web"
+   - When I send a "GET" request to "/api/v3/zone/autocomplete" with parameters:
+   - Then the response status code should be 200
+   - And the response should be in JSON
+   - And the JSON should be equal to:
+3. As a logged-in user I can filter zones by space and partial name with page limit
+   Steps: 5
+   - Given I am logged with "referent@en-marche-dev.fr" via OAuth client "JeMengage Web"
+   - When I send a "GET" request to "/api/v3/zone/autocomplete" with parameters:
+   - Then the response status code should be 200
+   - And the response should be in JSON
+   - And the JSON should be equal to:

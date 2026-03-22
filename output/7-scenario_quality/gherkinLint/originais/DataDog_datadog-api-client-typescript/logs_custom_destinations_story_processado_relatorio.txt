@@ -1,0 +1,1027 @@
+RELATÓRIO INDIVIDUAL - ANÁLISE GHERKIN-LINT
+============================================================
+Data da análise: 19/01/2026 23:14:17
+Arquivo analisado: output/6-FeatureEvaluation/featuresToEvaluation/Originais\DataDog_datadog-api-client-typescript\logs_custom_destinations_story_processado.feature
+Comando executado: node 6-FeatureEvaluation/gherkin-lint/dist/main.js -c 6-FeatureEvaluation/gherkin-lint/.gherkin-lintrc output/6-FeatureEvaluation/featuresToEvaluation/Originais\DataDog_datadog-api-client-typescript\logs_custom_destinations_story_processado.feature
+
+Status: ENCONTRADOS 336 PROBLEMAS
+
+PROBLEMAS ENCONTRADOS:
+----------------------------------------
+1. [0;4mD:\Meus Documentos\Documents\teste\output\6-FeatureEvaluation\featuresToEvaluation\Originais\DataDog_datadog-api-client-typescript\logs_custom_destinations_story_processado.feature[24m
+
+2. [38;5;243m3  [0m    Element Scenario too long: actual 19, expected 15                              [38;5;243mscenario-size[0m
+
+3. [38;5;243m5  [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+4. [38;5;243m6  [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+5. [38;5;243m6  [0m    Step name is too long. Length of 476 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+
+6. [38;5;243m7  [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+7. [38;5;243m8  [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+8. [38;5;243m9  [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+9. [38;5;243m10 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+10. [38;5;243m11 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+11. [38;5;243m12 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+12. [38;5;243m13 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+13. [38;5;243m13 [0m    Step name is too long. Length of 76 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+14. [38;5;243m14 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+15. [38;5;243m14 [0m    Step name is too long. Length of 95 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+16. [38;5;243m15 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+17. [38;5;243m15 [0m    Step name is too long. Length of 82 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+18. [38;5;243m16 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+19. [38;5;243m16 [0m    Step name is too long. Length of 88 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+20. [38;5;243m17 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+21. [38;5;243m17 [0m    Step name is too long. Length of 88 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+22. [38;5;243m18 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+23. [38;5;243m19 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+24. [38;5;243m20 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+25. [38;5;243m20 [0m    Step name is too long. Length of 73 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+26. [38;5;243m21 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+27. [38;5;243m21 [0m    Step name is too long. Length of 94 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+28. [38;5;243m22 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+29. [38;5;243m22 [0m    Step name is too long. Length of 88 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+30. [38;5;243m23 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+31. [38;5;243m23 [0m    Step name is too long. Length of 90 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+32. [38;5;243m25 [0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+33. [38;5;243m26 [0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+34. [38;5;243m27 [0m    Element Scenario too long: actual 19, expected 15                              [38;5;243mscenario-size[0m
+
+35. [38;5;243m29 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+36. [38;5;243m30 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+37. [38;5;243m30 [0m    Step name is too long. Length of 454 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+
+38. [38;5;243m31 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+39. [38;5;243m32 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+40. [38;5;243m33 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+41. [38;5;243m34 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+42. [38;5;243m35 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+43. [38;5;243m36 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+44. [38;5;243m37 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+45. [38;5;243m37 [0m    Step name is too long. Length of 76 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+46. [38;5;243m38 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+47. [38;5;243m38 [0m    Step name is too long. Length of 95 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+48. [38;5;243m39 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+49. [38;5;243m39 [0m    Step name is too long. Length of 90 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+50. [38;5;243m40 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+51. [38;5;243m40 [0m    Step name is too long. Length of 108 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+
+52. [38;5;243m41 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+53. [38;5;243m41 [0m    Step name is too long. Length of 92 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+54. [38;5;243m42 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+55. [38;5;243m43 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+56. [38;5;243m44 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+57. [38;5;243m44 [0m    Step name is too long. Length of 73 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+58. [38;5;243m45 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+59. [38;5;243m45 [0m    Step name is too long. Length of 94 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+60. [38;5;243m46 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+61. [38;5;243m46 [0m    Step name is too long. Length of 88 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+62. [38;5;243m47 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+63. [38;5;243m47 [0m    Step name is too long. Length of 90 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+64. [38;5;243m49 [0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+65. [38;5;243m50 [0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+66. [38;5;243m51 [0m    Element Scenario too long: actual 20, expected 15                              [38;5;243mscenario-size[0m
+
+67. [38;5;243m53 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+68. [38;5;243m54 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+69. [38;5;243m54 [0m    Step name is too long. Length of 617 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+
+70. [38;5;243m55 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+71. [38;5;243m56 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+72. [38;5;243m57 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+73. [38;5;243m58 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+74. [38;5;243m59 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+75. [38;5;243m60 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+76. [38;5;243m61 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+77. [38;5;243m61 [0m    Step name is too long. Length of 90 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+78. [38;5;243m62 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+79. [38;5;243m62 [0m    Step name is too long. Length of 113 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+
+80. [38;5;243m63 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+81. [38;5;243m63 [0m    Step name is too long. Length of 113 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+
+82. [38;5;243m64 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+83. [38;5;243m64 [0m    Step name is too long. Length of 145 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+
+84. [38;5;243m65 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+85. [38;5;243m65 [0m    Step name is too long. Length of 127 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+
+86. [38;5;243m66 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+87. [38;5;243m66 [0m    Step name is too long. Length of 93 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+88. [38;5;243m67 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+89. [38;5;243m68 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+90. [38;5;243m69 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+91. [38;5;243m69 [0m    Step name is too long. Length of 73 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+92. [38;5;243m70 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+93. [38;5;243m70 [0m    Step name is too long. Length of 94 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+94. [38;5;243m71 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+95. [38;5;243m71 [0m    Step name is too long. Length of 88 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+96. [38;5;243m72 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+97. [38;5;243m72 [0m    Step name is too long. Length of 90 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+98. [38;5;243m74 [0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+99. [38;5;243m75 [0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+100. [38;5;243m76 [0m    Element Scenario too long: actual 17, expected 15                              [38;5;243mscenario-size[0m
+
+101. [38;5;243m78 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+102. [38;5;243m79 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+103. [38;5;243m79 [0m    Step name is too long. Length of 388 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+
+104. [38;5;243m80 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+105. [38;5;243m81 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+106. [38;5;243m82 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+107. [38;5;243m83 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+108. [38;5;243m84 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+109. [38;5;243m85 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+110. [38;5;243m86 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+111. [38;5;243m86 [0m    Step name is too long. Length of 82 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+112. [38;5;243m87 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+113. [38;5;243m87 [0m    Step name is too long. Length of 95 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+114. [38;5;243m88 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+115. [38;5;243m88 [0m    Step name is too long. Length of 87 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+116. [38;5;243m89 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+117. [38;5;243m90 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+118. [38;5;243m91 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+119. [38;5;243m91 [0m    Step name is too long. Length of 73 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+120. [38;5;243m92 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+121. [38;5;243m92 [0m    Step name is too long. Length of 94 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+122. [38;5;243m93 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+123. [38;5;243m93 [0m    Step name is too long. Length of 88 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+124. [38;5;243m94 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+125. [38;5;243m94 [0m    Step name is too long. Length of 90 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+126. [38;5;243m96 [0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+127. [38;5;243m97 [0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+128. [38;5;243m100[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+129. [38;5;243m101[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+130. [38;5;243m101[0m    Step name is too long. Length of 94 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+131. [38;5;243m102[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+132. [38;5;243m103[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+133. [38;5;243m105[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+134. [38;5;243m106[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+135. [38;5;243m109[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+136. [38;5;243m110[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+137. [38;5;243m110[0m    Step name is too long. Length of 474 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+
+138. [38;5;243m111[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+139. [38;5;243m112[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+140. [38;5;243m114[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+141. [38;5;243m115[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+142. [38;5;243m118[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+143. [38;5;243m119[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+144. [38;5;243m119[0m    Step name is too long. Length of 474 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+
+145. [38;5;243m120[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+146. [38;5;243m121[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+147. [38;5;243m123[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+148. [38;5;243m124[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+149. [38;5;243m125[0m    Element Scenario too long: actual 20, expected 15                              [38;5;243mscenario-size[0m
+
+150. [38;5;243m127[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+151. [38;5;243m128[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+152. [38;5;243m128[0m    Step name is too long. Length of 480 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+
+153. [38;5;243m129[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+154. [38;5;243m130[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+155. [38;5;243m131[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+156. [38;5;243m132[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+157. [38;5;243m133[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+158. [38;5;243m134[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+159. [38;5;243m135[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+160. [38;5;243m135[0m    Step name is too long. Length of 85 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+161. [38;5;243m136[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+162. [38;5;243m136[0m    Step name is too long. Length of 95 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+163. [38;5;243m137[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+164. [38;5;243m137[0m    Step name is too long. Length of 88 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+165. [38;5;243m138[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+166. [38;5;243m138[0m    Step name is too long. Length of 92 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+167. [38;5;243m139[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+168. [38;5;243m139[0m    Step name is too long. Length of 88 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+169. [38;5;243m140[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+170. [38;5;243m140[0m    Step name is too long. Length of 88 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+171. [38;5;243m141[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+172. [38;5;243m142[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+173. [38;5;243m143[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+174. [38;5;243m143[0m    Step name is too long. Length of 73 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+175. [38;5;243m144[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+176. [38;5;243m144[0m    Step name is too long. Length of 94 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+177. [38;5;243m145[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+178. [38;5;243m145[0m    Step name is too long. Length of 88 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+179. [38;5;243m146[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+180. [38;5;243m146[0m    Step name is too long. Length of 90 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+181. [38;5;243m148[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+182. [38;5;243m149[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+183. [38;5;243m152[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+184. [38;5;243m153[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+185. [38;5;243m154[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+186. [38;5;243m155[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+187. [38;5;243m157[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+188. [38;5;243m158[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+189. [38;5;243m161[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+190. [38;5;243m162[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+191. [38;5;243m162[0m    Step name is too long. Length of 78 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+192. [38;5;243m163[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+193. [38;5;243m164[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+194. [38;5;243m166[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+195. [38;5;243m167[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+196. [38;5;243m170[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+197. [38;5;243m171[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+198. [38;5;243m172[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+199. [38;5;243m172[0m    Step name is too long. Length of 84 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+200. [38;5;243m173[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+201. [38;5;243m174[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+202. [38;5;243m176[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+203. [38;5;243m177[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+204. [38;5;243m180[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+205. [38;5;243m181[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+206. [38;5;243m182[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+207. [38;5;243m183[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+208. [38;5;243m185[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+209. [38;5;243m186[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+210. [38;5;243m189[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+211. [38;5;243m190[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+212. [38;5;243m190[0m    Step name is too long. Length of 78 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+213. [38;5;243m191[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+214. [38;5;243m192[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+215. [38;5;243m194[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+216. [38;5;243m195[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+217. [38;5;243m196[0m    Element Scenario too long: actual 19, expected 15                              [38;5;243mscenario-size[0m
+
+218. [38;5;243m198[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+219. [38;5;243m199[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+220. [38;5;243m200[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+221. [38;5;243m200[0m    Step name is too long. Length of 84 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+222. [38;5;243m201[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+223. [38;5;243m202[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+224. [38;5;243m203[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+225. [38;5;243m204[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+226. [38;5;243m205[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+227. [38;5;243m205[0m    Step name is too long. Length of 95 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+228. [38;5;243m206[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+229. [38;5;243m206[0m    Step name is too long. Length of 97 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+230. [38;5;243m207[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+231. [38;5;243m207[0m    Step name is too long. Length of 139 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+
+232. [38;5;243m208[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+233. [38;5;243m208[0m    Step name is too long. Length of 147 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+
+234. [38;5;243m209[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+235. [38;5;243m209[0m    Step name is too long. Length of 149 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+
+236. [38;5;243m210[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+237. [38;5;243m210[0m    Step name is too long. Length of 88 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+238. [38;5;243m211[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+239. [38;5;243m211[0m    Step name is too long. Length of 88 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+240. [38;5;243m212[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+241. [38;5;243m213[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+242. [38;5;243m214[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+243. [38;5;243m214[0m    Step name is too long. Length of 73 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+244. [38;5;243m215[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+245. [38;5;243m215[0m    Step name is too long. Length of 88 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+246. [38;5;243m216[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+247. [38;5;243m216[0m    Step name is too long. Length of 155 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+
+248. [38;5;243m218[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+249. [38;5;243m219[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+250. [38;5;243m222[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+251. [38;5;243m223[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+252. [38;5;243m224[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+253. [38;5;243m225[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+254. [38;5;243m226[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+255. [38;5;243m226[0m    Step name is too long. Length of 78 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+256. [38;5;243m227[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+257. [38;5;243m227[0m    Step name is too long. Length of 90 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+258. [38;5;243m228[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+259. [38;5;243m228[0m    Step name is too long. Length of 116 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+
+260. [38;5;243m229[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+261. [38;5;243m229[0m    Step name is too long. Length of 118 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+
+262. [38;5;243m230[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+263. [38;5;243m230[0m    Step name is too long. Length of 160 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+
+264. [38;5;243m231[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+265. [38;5;243m231[0m    Step name is too long. Length of 168 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+
+266. [38;5;243m232[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+267. [38;5;243m232[0m    Step name is too long. Length of 170 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+
+268. [38;5;243m233[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+269. [38;5;243m233[0m    Step name is too long. Length of 77 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+270. [38;5;243m234[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+271. [38;5;243m234[0m    Step name is too long. Length of 82 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+272. [38;5;243m235[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+273. [38;5;243m235[0m    Step name is too long. Length of 176 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+
+274. [38;5;243m237[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+275. [38;5;243m238[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+276. [38;5;243m241[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+277. [38;5;243m242[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+278. [38;5;243m243[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+279. [38;5;243m243[0m    Step name is too long. Length of 84 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+280. [38;5;243m244[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+281. [38;5;243m244[0m    Step name is too long. Length of 186 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+
+282. [38;5;243m245[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+283. [38;5;243m246[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+284. [38;5;243m248[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+285. [38;5;243m249[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+286. [38;5;243m252[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+287. [38;5;243m253[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+288. [38;5;243m254[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+289. [38;5;243m254[0m    Step name is too long. Length of 476 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+
+290. [38;5;243m255[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+291. [38;5;243m256[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+292. [38;5;243m258[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+293. [38;5;243m259[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+294. [38;5;243m262[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+295. [38;5;243m263[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+296. [38;5;243m263[0m    Step name is too long. Length of 103 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+
+297. [38;5;243m264[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+298. [38;5;243m264[0m    Step name is too long. Length of 526 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+
+299. [38;5;243m265[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+300. [38;5;243m266[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+301. [38;5;243m268[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+302. [38;5;243m269[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+303. [38;5;243m270[0m    Element Scenario too long: actual 20, expected 15                              [38;5;243mscenario-size[0m
+
+304. [38;5;243m272[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+305. [38;5;243m273[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+306. [38;5;243m274[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+307. [38;5;243m274[0m    Step name is too long. Length of 84 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+308. [38;5;243m275[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+309. [38;5;243m275[0m    Step name is too long. Length of 261 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+
+310. [38;5;243m276[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+311. [38;5;243m277[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+312. [38;5;243m278[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+313. [38;5;243m279[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+314. [38;5;243m280[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+315. [38;5;243m281[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+316. [38;5;243m281[0m    Step name is too long. Length of 97 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+317. [38;5;243m282[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+318. [38;5;243m282[0m    Step name is too long. Length of 139 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+
+319. [38;5;243m283[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+320. [38;5;243m283[0m    Step name is too long. Length of 147 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+
+321. [38;5;243m284[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+322. [38;5;243m284[0m    Step name is too long. Length of 149 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+
+323. [38;5;243m285[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+324. [38;5;243m285[0m    Step name is too long. Length of 88 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+325. [38;5;243m286[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+326. [38;5;243m286[0m    Step name is too long. Length of 88 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+327. [38;5;243m287[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+328. [38;5;243m288[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+329. [38;5;243m289[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+330. [38;5;243m289[0m    Step name is too long. Length of 73 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+331. [38;5;243m290[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+332. [38;5;243m290[0m    Step name is too long. Length of 88 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+
+333. [38;5;243m291[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+
+334. [38;5;243m291[0m    Step name is too long. Length of 155 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+
+335. [38;5;243m293[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+336. [38;5;243m294[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+AVISOS/INFORMAÇÕES ADICIONAIS:
+----------------------------------------
+[0;4mD:\Meus Documentos\Documents\teste\output\6-FeatureEvaluation\featuresToEvaluation\Originais\DataDog_datadog-api-client-typescript\logs_custom_destinations_story_processado.feature[24m
+  [38;5;243m3  [0m    Element Scenario too long: actual 19, expected 15                              [38;5;243mscenario-size[0m
+  [38;5;243m5  [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m6  [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m6  [0m    Step name is too long. Length of 476 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+  [38;5;243m7  [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m8  [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m9  [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m10 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m11 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m12 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m13 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m13 [0m    Step name is too long. Length of 76 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m14 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m14 [0m    Step name is too long. Length of 95 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m15 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m15 [0m    Step name is too long. Length of 82 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m16 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m16 [0m    Step name is too long. Length of 88 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m17 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m17 [0m    Step name is too long. Length of 88 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m18 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m19 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m20 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m20 [0m    Step name is too long. Length of 73 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m21 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m21 [0m    Step name is too long. Length of 94 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m22 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m22 [0m    Step name is too long. Length of 88 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m23 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m23 [0m    Step name is too long. Length of 90 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m25 [0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m26 [0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m27 [0m    Element Scenario too long: actual 19, expected 15                              [38;5;243mscenario-size[0m
+  [38;5;243m29 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m30 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m30 [0m    Step name is too long. Length of 454 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+  [38;5;243m31 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m32 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m33 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m34 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m35 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m36 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m37 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m37 [0m    Step name is too long. Length of 76 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m38 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m38 [0m    Step name is too long. Length of 95 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m39 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m39 [0m    Step name is too long. Length of 90 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m40 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m40 [0m    Step name is too long. Length of 108 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+  [38;5;243m41 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m41 [0m    Step name is too long. Length of 92 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m42 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m43 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m44 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m44 [0m    Step name is too long. Length of 73 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m45 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m45 [0m    Step name is too long. Length of 94 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m46 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m46 [0m    Step name is too long. Length of 88 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m47 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m47 [0m    Step name is too long. Length of 90 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m49 [0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m50 [0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m51 [0m    Element Scenario too long: actual 20, expected 15                              [38;5;243mscenario-size[0m
+  [38;5;243m53 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m54 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m54 [0m    Step name is too long. Length of 617 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+  [38;5;243m55 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m56 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m57 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m58 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m59 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m60 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m61 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m61 [0m    Step name is too long. Length of 90 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m62 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m62 [0m    Step name is too long. Length of 113 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+  [38;5;243m63 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m63 [0m    Step name is too long. Length of 113 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+  [38;5;243m64 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m64 [0m    Step name is too long. Length of 145 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+  [38;5;243m65 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m65 [0m    Step name is too long. Length of 127 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+  [38;5;243m66 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m66 [0m    Step name is too long. Length of 93 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m67 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m68 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m69 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m69 [0m    Step name is too long. Length of 73 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m70 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m70 [0m    Step name is too long. Length of 94 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m71 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m71 [0m    Step name is too long. Length of 88 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m72 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m72 [0m    Step name is too long. Length of 90 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m74 [0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m75 [0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m76 [0m    Element Scenario too long: actual 17, expected 15                              [38;5;243mscenario-size[0m
+  [38;5;243m78 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m79 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m79 [0m    Step name is too long. Length of 388 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+  [38;5;243m80 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m81 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m82 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m83 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m84 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m85 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m86 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m86 [0m    Step name is too long. Length of 82 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m87 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m87 [0m    Step name is too long. Length of 95 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m88 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m88 [0m    Step name is too long. Length of 87 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m89 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m90 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m91 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m91 [0m    Step name is too long. Length of 73 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m92 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m92 [0m    Step name is too long. Length of 94 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m93 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m93 [0m    Step name is too long. Length of 88 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m94 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m94 [0m    Step name is too long. Length of 90 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m96 [0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m97 [0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m100[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m101[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m101[0m    Step name is too long. Length of 94 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m102[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m103[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m105[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m106[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m109[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m110[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m110[0m    Step name is too long. Length of 474 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+  [38;5;243m111[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m112[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m114[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m115[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m118[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m119[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m119[0m    Step name is too long. Length of 474 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+  [38;5;243m120[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m121[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m123[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m124[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m125[0m    Element Scenario too long: actual 20, expected 15                              [38;5;243mscenario-size[0m
+  [38;5;243m127[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m128[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m128[0m    Step name is too long. Length of 480 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+  [38;5;243m129[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m130[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m131[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m132[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m133[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m134[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m135[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m135[0m    Step name is too long. Length of 85 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m136[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m136[0m    Step name is too long. Length of 95 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m137[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m137[0m    Step name is too long. Length of 88 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m138[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m138[0m    Step name is too long. Length of 92 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m139[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m139[0m    Step name is too long. Length of 88 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m140[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m140[0m    Step name is too long. Length of 88 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m141[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m142[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m143[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m143[0m    Step name is too long. Length of 73 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m144[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m144[0m    Step name is too long. Length of 94 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m145[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m145[0m    Step name is too long. Length of 88 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m146[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m146[0m    Step name is too long. Length of 90 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m148[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m149[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m152[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m153[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m154[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m155[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m157[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m158[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m161[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m162[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m162[0m    Step name is too long. Length of 78 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m163[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m164[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m166[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m167[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m170[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m171[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m172[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m172[0m    Step name is too long. Length of 84 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m173[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m174[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m176[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m177[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m180[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m181[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m182[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m183[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m185[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m186[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m189[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m190[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m190[0m    Step name is too long. Length of 78 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m191[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m192[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m194[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m195[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m196[0m    Element Scenario too long: actual 19, expected 15                              [38;5;243mscenario-size[0m
+  [38;5;243m198[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m199[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m200[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m200[0m    Step name is too long. Length of 84 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m201[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m202[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m203[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m204[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m205[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m205[0m    Step name is too long. Length of 95 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m206[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m206[0m    Step name is too long. Length of 97 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m207[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m207[0m    Step name is too long. Length of 139 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+  [38;5;243m208[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m208[0m    Step name is too long. Length of 147 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+  [38;5;243m209[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m209[0m    Step name is too long. Length of 149 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+  [38;5;243m210[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m210[0m    Step name is too long. Length of 88 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m211[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m211[0m    Step name is too long. Length of 88 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m212[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m213[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m214[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m214[0m    Step name is too long. Length of 73 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m215[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m215[0m    Step name is too long. Length of 88 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m216[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m216[0m    Step name is too long. Length of 155 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+  [38;5;243m218[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m219[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m222[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m223[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m224[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m225[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m226[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m226[0m    Step name is too long. Length of 78 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m227[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m227[0m    Step name is too long. Length of 90 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m228[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m228[0m    Step name is too long. Length of 116 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+  [38;5;243m229[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m229[0m    Step name is too long. Length of 118 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+  [38;5;243m230[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m230[0m    Step name is too long. Length of 160 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+  [38;5;243m231[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m231[0m    Step name is too long. Length of 168 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+  [38;5;243m232[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m232[0m    Step name is too long. Length of 170 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+  [38;5;243m233[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m233[0m    Step name is too long. Length of 77 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m234[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m234[0m    Step name is too long. Length of 82 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m235[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m235[0m    Step name is too long. Length of 176 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+  [38;5;243m237[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m238[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m241[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m242[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m243[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m243[0m    Step name is too long. Length of 84 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m244[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m244[0m    Step name is too long. Length of 186 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+  [38;5;243m245[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m246[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m248[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m249[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m252[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m253[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m254[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m254[0m    Step name is too long. Length of 476 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+  [38;5;243m255[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m256[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m258[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m259[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m262[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m263[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m263[0m    Step name is too long. Length of 103 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+  [38;5;243m264[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m264[0m    Step name is too long. Length of 526 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+  [38;5;243m265[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m266[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m268[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m269[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m270[0m    Element Scenario too long: actual 20, expected 15                              [38;5;243mscenario-size[0m
+  [38;5;243m272[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m273[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m274[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m274[0m    Step name is too long. Length of 84 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m275[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m275[0m    Step name is too long. Length of 261 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+  [38;5;243m276[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m277[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m278[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m279[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m280[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m281[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m281[0m    Step name is too long. Length of 97 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m282[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m282[0m    Step name is too long. Length of 139 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+  [38;5;243m283[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m283[0m    Step name is too long. Length of 147 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+  [38;5;243m284[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m284[0m    Step name is too long. Length of 149 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+  [38;5;243m285[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m285[0m    Step name is too long. Length of 88 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m286[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m286[0m    Step name is too long. Length of 88 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m287[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m288[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m289[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m289[0m    Step name is too long. Length of 73 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m290[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m290[0m    Step name is too long. Length of 88 is longer than the maximum allowed: 70     [38;5;243mname-length[0m
+  [38;5;243m291[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4       [38;5;243mindentation[0m
+  [38;5;243m291[0m    Step name is too long. Length of 155 is longer than the maximum allowed: 70    [38;5;243mname-length[0m
+  [38;5;243m293[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m294[0m    Multiple empty lines are not allowed                                           [38;5;243mno-multiple-empty-lines[0m
+
+
+
+
+RESUMO DOS PROBLEMAS POR TIPO:
+----------------------------------------
+  other: 336 ocorrência(s)

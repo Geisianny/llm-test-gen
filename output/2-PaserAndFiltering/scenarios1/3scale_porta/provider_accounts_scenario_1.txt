@@ -1,0 +1,11 @@
+Scenario 1: Provider admin can access accounts
+  Given  current domain is the admin domain of provider "foo.3scale.localhost"
+  And  provider "foo.3scale.localhost" has "groups" switch allowed
+  And  provider "foo.3scale.localhost" has "multiple_users" switch allowed
+  When  I log in as provider "foo.3scale.localhost"
+  When  I go to the provider dashboard
+  Then  I should see the link "1 ACCOUNT" within the audience dashboard widget
+  When  I follow "1 Account"
+  Then  I should see "Accounts" within the main menu
+  And  they should be able to go to the following pages:
+

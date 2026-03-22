@@ -1,0 +1,6 @@
+Scenario 2: Create a repository
+  When  I create a repo with label "foobar" and url
+  And  I associate repo "foobar" with channel "foobar"
+  Then  channel "foobar" should have attribute "last_modified" that is a date
+  And  channel "foobar" should not have attribute "yumrepo_last_sync"
+

@@ -1,0 +1,6 @@
+Scenario 2: Increasing quantity of an item in cart beyond the threshold
+  Tags: ['@ui', '@api']
+  Given  I see the summary of my cart
+  When  I change product "T-shirt banana" quantity to 20000 in my cart
+  Then  I should see "T-shirt banana" with quantity 9999 in my cart
+

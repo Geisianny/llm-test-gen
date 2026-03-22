@@ -1,0 +1,63 @@
+Feature: Editing a select product attribute
+Description: In order to change select product attributes applied to products
+    As an Administrator
+    I want to be able to edit a select product attribute
+Tags: ['@managing_product_attributes']
+
+Background: 
+  Given  the store is available in "English (United States)"
+  And  the store has a select product attribute "T-Shirt material" with values "Banana skin" and "Cotton"
+  And  I am logged in as an administrator
+
+Scenario 1: Editing a select product attribute name
+  Tags: ['@api', '@ui']
+  When  I want to edit this product attribute
+  And  I change its name to "T-Shirt material" in "English (United States)"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  the select attribute "T-Shirt material" should appear in the store
+
+Scenario 2: Editing a select product attribute value
+  Tags: ['@api', '@ui']
+  When  I want to edit this product attribute
+  And  I change its value "Banana skin" to "Orange skin"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this product attribute should have value "Orange skin"
+
+Scenario 3: Adding a new value to an existing select product attribute
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I want to edit this product attribute
+  And  I add value "Orange skin" in "English (United States)"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this product attribute should have value "Orange skin"
+
+Scenario 4: Deleting a value from an existing select product attribute
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I want to edit this product attribute
+  And  I delete value "Banana skin"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this product attribute should not have value "Banana skin"
+
+Scenario 5: Deleting a value from an existing select product attribute while it's in use
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  Given  the store has a product "PHP T-Shirt"
+  And  this product has a select attribute "T-Shirt material" with value "Banana skin"
+  When  I want to edit this product attribute
+  And  I delete value "Banana skin"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this product attribute should not have value "Banana skin"
+
+Scenario 6: Being unable to change code of an existing product attribute
+  Tags: ['@api', '@ui']
+  When  I want to edit this product attribute
+  Then  I should not be able to edit its code
+
+Scenario 7: Being unable to change type of an existing product attribute
+  Tags: ['@api', '@ui']
+  When  I want to edit this product attribute
+  Then  I should not be able to edit its type
+

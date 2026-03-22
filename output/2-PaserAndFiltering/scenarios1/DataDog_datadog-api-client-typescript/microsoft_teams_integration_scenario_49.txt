@@ -1,0 +1,10 @@
+Scenario 49: Update api handle returns "OK" response
+  Tags: ['@integration-only', '@team:DataDog/chat-integrations']
+  Given  there is a valid "tenant_based_handle" in the system
+  And  new "UpdateTenantBasedHandle" request
+  And  request contains "handle_id" parameter from "tenant_based_handle.data.id"
+  And  body with value {"data": {"attributes": {"name": "{{tenant_based_handle.data.attributes.name}}--updated"}, "type": "tenant-based-handle"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.attributes.name" is equal to "{{tenant_based_handle.data.attributes.name}}--updated"
+

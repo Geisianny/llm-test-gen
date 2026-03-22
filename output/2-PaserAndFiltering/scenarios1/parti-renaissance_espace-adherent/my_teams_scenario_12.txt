@@ -1,0 +1,5 @@
+Scenario 12: As a referent I cannot delete a member of not my team
+  Given  I am logged with "referent-75-77@en-marche-dev.fr" via OAuth client "JeMengage Web" with scope "jemengage_admin"
+  When  I send a "DELETE" request to "/api/v3/my_team_members/d11d6ddd-dfba-4972-97b2-4c0bdf289559?scope=president_departmental_assembly"
+  Then  the response status code should be 403
+

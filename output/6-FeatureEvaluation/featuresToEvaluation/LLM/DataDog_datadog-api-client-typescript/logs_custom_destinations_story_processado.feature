@@ -1,0 +1,32 @@
+Feature: logs_custom_destinations_story_processado
+
+Scenario: Create a new custom destination
+    Given the user has the necessary permissions to create custom destinations
+    When the user creates a new custom destination with the name "My HTTP Destination" and type "HTTP"
+    And configures the destination with the URL "https://example.com/logs"
+    Then the system creates the custom destination successfully
+    And lists the new custom destination in the custom destinations page
+
+Scenario: List existing custom destinations
+    Given there are existing custom destinations configured in the system
+    When the user navigates to the custom destinations page
+    Then the system displays a list of existing custom destinations
+    And includes the name and type of each custom destination
+
+Scenario: Retrieve a specific custom destination
+    Given there is a custom destination with the name "My HTTP Destination"
+    When the user retrieves the custom destination "My HTTP Destination"
+    Then the system displays the details of the custom destination
+    And includes the name, type, and configuration of the custom destination
+
+Scenario: Update an existing custom destination
+    Given there is a custom destination with the name "My HTTP Destination" and URL "https://example.com/logs"
+    When the user updates the custom destination "My HTTP Destination" with the new URL "https://example.com/new-logs"
+    Then the system updates the custom destination successfully
+    And reflects the changes in the custom destinations page
+
+Scenario: Delete a custom destination
+    Given there is a custom destination with the name "My HTTP Destination"
+    When the user deletes the custom destination "My HTTP Destination"
+    Then the system deletes the custom destination successfully
+    And removes the custom destination from the custom destinations page

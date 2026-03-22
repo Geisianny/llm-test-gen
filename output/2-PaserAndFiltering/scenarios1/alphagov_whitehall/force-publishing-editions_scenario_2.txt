@@ -1,0 +1,6 @@
+Scenario 2: Retrospective second-pair of eyes
+  Given  I draft a new publication "Ban Beards"
+  And  I force publish the publication "Ban Beards"
+  When  another editor retrospectively approves the "Ban Beards" publication
+  Then  the "Ban Beards" publication should not be flagged as force-published any more
+

@@ -1,0 +1,23 @@
+Scenario 24: Cleanup: roll back action chain effects on SSH minion
+  Given  I am on the Systems overview page of this "ssh_minion"
+  When  I run "rm /tmp/action_chain_done" on "ssh_minion" without error control
+  And  I enable repository "test_repo_rpm_pool" on this "ssh_minion"
+  And  I remove package "andromeda-dummy" from this "ssh_minion" without error control
+  And  I remove package "virgo-dummy" from this "ssh_minion" without error control
+  And  I install package "milkyway-dummy" on this "ssh_minion" without error control
+  And  I install old package "andromeda-dummy-1.0" on this "ssh_minion"
+  And  I follow "Software" in the content area
+  And  I click on "Update Package List"
+  And  I follow "Events" in the content area
+  And  I wait until I do not see "Package List Refresh scheduled" text, refreshing the page
+  And  I follow "Software" in the content area
+  And  I follow "List / Remove" in the content area
+  And  I enter "andromeda-dummy" as the filtered package name
+  And  I click on the filter button until page does contain "andromeda-dummy-1.0" text
+  When  I follow the left menu "Admin > Task Schedules"
+  And  I follow "errata-cache-default"
+  And  I follow "errata-cache-bunch"
+  And  I click on "Single Run Schedule"
+  Then  I should see a "bunch was scheduled" text
+  And  I wait until the table contains "FINISHED" or "SKIPPED" followed by "FINISHED" in its first rows
+

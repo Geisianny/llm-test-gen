@@ -1,0 +1,7 @@
+Scenario 5: Check profile switch
+  Given  I am logged in as user "offerer@cocorico.rocks" with password "12345678"
+  When  I click on dashboard menu "Messages" of "offerer"
+  Then  I should be on the "dashboard message" page
+  And  I wait 500 ms for Jquery loading
+  And  I click on the element with css selector ".form-switchers label"
+

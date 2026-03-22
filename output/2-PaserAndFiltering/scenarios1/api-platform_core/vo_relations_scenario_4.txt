@@ -1,0 +1,6 @@
+Scenario 4: Update Value object with writable and non writable property
+  When  I add "Content-Type" header equal to "application/merge-patch+json"
+  And  I send a "PATCH" request to "/vo_dummy_inspections/1" with body:
+  Then  the response status code should be 200
+  And  the JSON should be equal to:
+

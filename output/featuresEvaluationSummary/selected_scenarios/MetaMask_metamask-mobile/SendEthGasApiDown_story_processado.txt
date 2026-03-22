@@ -1,0 +1,7 @@
+Scenario: Cancel Send ETH transaction when Gas API is down
+  Given the Gas API is unavailable
+  And the user has a valid ETH balance
+  And the user has initiated an ETH send transaction
+  When the user cancels the transaction
+  Then the system cancels the transaction successfully
+  And the user's ETH balance remains unchanged

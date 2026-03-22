@@ -1,0 +1,14 @@
+Scenario 7: filter products by facet
+  Given  the following enterprises
+  And  the following categories as facets
+  And  the following product_categories
+  And  the following products
+  When  I go to the search products page
+  And  I fill in "search-input" with "Network"
+  And  I press "Search"
+  And  I follow "Software Livre" within "#facets-menu"
+  Then  I should see "Noosfero Network" within "#search-results"
+  And  I should not see "Facebook Network"
+  When  I follow "remove facet" within ".facet-selected"
+  Then  I should see "Facebook Network"
+

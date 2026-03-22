@@ -1,0 +1,5 @@
+Scenario 4: be redirected if user goes to login page and is logged
+  Given  I am logged in as "joaosilva"
+  And  I go to login page
+  Then  I should be on joaosilva's control panel
+

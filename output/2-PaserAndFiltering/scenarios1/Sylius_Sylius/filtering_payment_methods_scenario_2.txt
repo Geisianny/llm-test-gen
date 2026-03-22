@@ -1,0 +1,6 @@
+Scenario 2: Filtering payment methods by code
+  Tags: ['@api', '@ui']
+  When  I search by "xyz" code
+  Then  I should see 2 payment methods in the list
+  And  I should not see the payment method "Offline"
+

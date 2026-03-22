@@ -1,0 +1,8 @@
+Scenario 13: The schedule menu
+  When  I follow the left menu "Schedule"
+  Then  I should see a "Pending Actions" text
+  And  I should see a "Pending Actions" link in the left menu
+  And  I should see a "Failed Actions" link in the left menu
+  And  I should see a "Archived Actions" link in the left menu
+  And  I should see a "Action Chains" link in the left menu
+

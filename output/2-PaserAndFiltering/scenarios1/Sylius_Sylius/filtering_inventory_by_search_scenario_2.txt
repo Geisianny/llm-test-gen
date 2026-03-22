@@ -1,0 +1,6 @@
+Scenario 2: Filtering tracked product variants by name
+  Tags: ['@ui', '@no-api']
+  When  I filter tracked variants with name containing "RHCP"
+  Then  I should see only one tracked variant in the list
+  And  I should see that the "RHCP T-Shirt" variant has 25 quantity on hand
+

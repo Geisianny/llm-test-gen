@@ -1,0 +1,5 @@
+Scenario 8: As a logged-in user with correct rights, but no audience type, I can not get audiences
+  Given  I am logged with "deputy@en-marche-dev.fr" via OAuth client "JeMengage Web"
+  When  I send a "GET" request to "/api/v3/audiences"
+  Then  the response status code should be 403
+

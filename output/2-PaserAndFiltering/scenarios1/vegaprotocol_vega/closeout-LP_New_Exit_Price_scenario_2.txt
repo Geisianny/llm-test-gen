@@ -1,0 +1,19 @@
+Scenario 2: 002 Replicate a scenario from Lewis, linear slippage factor = 1e0, quadratic slippage factor = 1e2
+  Tags: ['@SLABug', '@Liquidation']
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  When  the parties place the following orders with ticks:
+  Then  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/DEC21"
+  And  the parties should have the following account balances:
+  And  the following trades should be executed:
+  And  the market data for the market "ETH/DEC21" should be:
+  Then  the order book should have the following volumes for market "ETH/DEC21":
+  When  the parties place the following orders with ticks:
+  And  the parties should have the following account balances:
+  And  the market data for the market "ETH/DEC21" should be:
+  And  the parties should have the following account balances:
+  Then  the parties should have the following margin levels:
+  And  the market data for the market "ETH/DEC21" should be:
+  And  the insurance pool balance should be "3100294" for the market "ETH/DEC21"
+

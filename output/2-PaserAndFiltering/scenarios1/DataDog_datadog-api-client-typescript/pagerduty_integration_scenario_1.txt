@@ -1,0 +1,7 @@
+Scenario 1: Create a new service object returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "CreatePagerDutyIntegrationService" request
+  And  body with value {"service_key": "", "service_name": ""}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

@@ -1,0 +1,11 @@
+Scenario 4: Create auto installation distribution
+  When  I follow the left menu "Systems > Autoinstallation > Distributions"
+  And  I follow "Create Distribution"
+  And  I enter "SLE-15-SP4-TFTP" as "label"
+  And  I enter "/srv/www/distributions/SLE-15-SP4-TFTP/" as "basepath"
+  And  I select "SLE-Product-SLES15-SP4-Pool for x86_64" from "channelid"
+  And  I select "SUSE Linux Enterprise 15" from "installtype"
+  And  I click on "Create Autoinstallable Distribution"
+  Then  I should see a "Autoinstallable Distributions" text
+  And  I should see a "SLE-15-SP4-TFTP" link
+

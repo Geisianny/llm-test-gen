@@ -1,0 +1,6 @@
+Scenario 2: I should not see trigger by default
+  Tags: ['@selenium']
+  Given  feature "show_balloon_with_profile_links_when_clicked" is enabled on environment
+  And  I go to /search/people
+  Then  I should not see "Friends"
+

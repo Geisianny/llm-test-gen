@@ -1,0 +1,601 @@
+arquivo,repositorio,cenario_numero,nome_cenario,cenario,US,caminho_completo,métrica de coesão,métrica de cobertura,OBS
+activation_story_processado.txt,3scale_porta,cenário 5,Multiple activation attempts with same token,"Scenario: Multiple activation attempts with same token 
+  Given there is a registered user with an unactivated account
+  And the user has received an activation token via email
+  When the user activates their account using the received token
+  And attempts to activate their account again using the same token
+  Then the system denies the second activation attempt
+  And displays a message indicating that the account is already activated",In order to allow only users with valid emails to sign in They have to activate themselves first,3scale_porta\activation_story_processado.txt,1,1,
+cinstances_story_processado.txt,3scale_porta,cenário 4,Edit customer details,"Scenario: Edit customer details
+  Given there is a customer with existing details
+  When the provider edits the customer's details
+  And saves the changes
+  Then the system updates the customer's details
+  And displays a confirmation message",In order to manage my clients As a provider I want to see and edit details about them,3scale_porta\cinstances_story_processado.txt,1,1,
+index_13_story_processado.txt,3scale_porta,cenário 3,Filter customer service subscriptions by status,"Scenario: Filter customer service subscriptions by status
+  Given there are customer service subscriptions with different statuses for a provider
+  When the provider filters subscriptions by status ""Active""
+  Then the system displays a list of customer service subscriptions with ""Active"" status
+  And the list includes the plan, billing type, value, and service for each subscription","As a provider, I want to see a list of my customers' service subscriptions that is searchable and filterable",3scale_porta\index_13_story_processado.txt,1,1,
+update_story_processado.txt,3scale_porta,cenário 3,Cancel update notification preferences,"Scenario: Cancel update notification preferences
+  Given the provider user is on the notification preferences page
+  And there are notification types available for selection
+  When the provider user makes changes to the notification preferences
+  And cancels the update
+  Then the system does not update the notification preferences
+  And redirects the provider user to the previous page",As a provider user I'd like to update the notification preferences page correctly,3scale_porta\update_story_processado.txt,1,1,
+admin_promoting_site_story_processado.txt,AgileVentures_LocalSupport,cenário 1,Site name is displayed on the homepage,"Scenario: Site name is displayed on the homepage
+  Given the user is on the homepage
+  Then the site name ""Harrow Community Network"" is displayed prominently
+  And the site's visual identity is visible",As a site superadministrator So that people recognize our brand I want to have the site name displayed prominently Tracker story ID: https://www.pivotaltracker.com/story/show/50372317,AgileVentures_LocalSupport\admin_promoting_site_story_processado.txt,1,1,
+category_import_story_processado.txt,AgileVentures_LocalSupport,cenário 1,Import categories from a valid CSV file,"Scenario: Import categories from a valid CSV file
+  Given there is a Site Super Admin user logged in
+  And there is a CSV file containing valid categories
+  When the Super Admin imports the CSV file
+  Then the system imports the categories successfully
+  And the categories are added to the system",As a Site Super Admin So that Organisations can be categorized in accordance with governmental designations I want to import external lists of Categories and associate them with Organisations,AgileVentures_LocalSupport\category_import_story_processado.txt,1,1,
+edit_donation_info_story_processado.txt,AgileVentures_LocalSupport,cenário 5,Charity worker cancels updating donation link,"Scenario: Charity worker cancels updating donation link
+  Given there is a charity worker with an organization
+  And the organization's donation link is currently ""https://old-donation-link.com""
+  When the charity worker cancels updating the donation link
+  Then the system does not change the donation link
+  And the organization's donation link remains ""https://old-donation-link.com""",As a charity worker So that I can attract funding I want to encourage local people to donate (charity worker can update a link to where they accept donations) Tracker story: https://www.pivotaltracker.com/s/projects/742821/stories/45405077,AgileVentures_LocalSupport\edit_donation_info_story_processado.txt,1,1,
+edit_own_charity_profile_story_processado.txt,AgileVentures_LocalSupport,cenário 5,External failure does not prevent charity details update,"Scenario: External failure does not prevent charity details update
+  Given there is a charity with contact details ""Old email""
+  And a charity worker is associated with the charity
+  And an external service is unavailable
+  When the charity worker edits the charity contact details to ""New email""
+  Then the charity's contact details are updated to ""New email""
+  And the change is reflected on the charity's public page
+  And the system does not prevent the update due to the external failure",As a charity worker So that I can increase my charity's visibility I want to edit my charity's web page (description and contact details) Tracker story ID: https://www.pivotaltracker.com/story/show/45671099,AgileVentures_LocalSupport\edit_own_charity_profile_story_processado.txt,1,1,
+policy-groups_story_processado.txt,alphagov_whitehall,cenário 2,Associate multiple Policy Groups with a single policy,"Scenario: Associate multiple Policy Groups with a single policy
+  Given there is a policy with the title ""New Environmental Policy""
+  And there are two Policy Groups with titles ""Climate Change Experts"" and ""Renewable Energy Advocates""
+  When the editor associates the Policy Groups ""Climate Change Experts"" and ""Renewable Energy Advocates"" with the policy ""New Environmental Policy""
+  Then the system displays the metadata on the policy page
+  And the metadata reads ""Groups: Climate Change Experts, Renewable Energy Advocates""","As a citizen: I want to be able to follow a link from policy documents to the profile of any groups who are influencing the policy So I can see how outside experts and stakeholders are involved in making the policy Done means: - It is possible to create 'Policy groups' and associate them to policies - multiple policy groups can be associated to a single policy - doing so results in a line of metadata on the policy page, below the one for a policy team, which reads ""Groups: [Title of group as a link]"" with the +others JavaScript behaviour for multiple items. - An group page comprises: - Title - Summary - Description (markdown field) - Contact email - Attachments (placed inline using markdown) - consistent with the policy teams design, the H2s are pulled out into a contents list as anchor links",alphagov_whitehall\policy-groups_story_processado.txt,1,1,
+review_reminder_story_processado.txt,alphagov_whitehall,cenário 2,Edit the review date for an existing document,"Scenario: Edit the review date for an existing document
+  Given there is a document with a review date ""2024-03-15""
+  When the editor updates the review date to ""2024-06-15""
+  Then the system displays the review date ""2024-06-15"" on the edition summary page
+  And the document has a configured reminder for ""2024-06-15""",In order to allow publishers to maintain content An editor Should be able to set and edit a review date for a document,alphagov_whitehall\review_reminder_story_processado.txt,1,1,
+topical_events_story_processado.txt,alphagov_whitehall,cenário 3,Update a published topical event,"Scenario: Update a published topical event
+  Given there is an editor logged in
+  And there is a published topical event with the title ""New Event""
+  When the editor updates the summary of the topical event ""New Event""
+  And saves the changes
+  Then the system updates the event details
+  And displays a confirmation message",As an editor I want to be able to create and publish topical events So that I can communicate about them,alphagov_whitehall\topical_events_story_processado.txt,1,1,
+unwithdrawing-withdrawn-documents_story_processado.txt,alphagov_whitehall,cenário 2,Unwithdraw a non-existent document,"Scenario: Unwithdraw a non-existent document
+  Given there is no document with title ""Non Existent Document""
+  When the Managing Editor attempts to unwithdraw the document
+  Then the system displays an error message indicating that the document does not exist",As a Managing Editor I can unwithdraw withdrawn documents So that I can adjust them with banners or annotations and withdraw them again,alphagov_whitehall\unwithdrawing-withdrawn-documents_story_processado.txt,1,1,
+absolute_url_story_processado.txt,api-platform_core,cenário 4,Client navigates through absolute URLs,"Scenario: Client navigates through absolute URLs
+  Given there is a published resource with an absolute URL ""https://example.com/resources/123""
+  When the client navigates to the URL ""https://example.com/resources/123""
+  Then the system returns the resource with the identifier ""123""
+  And the response contains the expected data",In order to add detail to IRIs Include the absolute url,api-platform_core\absolute_url_story_processado.txt,1,0.9,Não possui casos de erro
+collection_attributes_story_processado.txt,api-platform_core,cenário 1,Retrieve a simple entity with a collection attribute,"Scenario: Retrieve a simple entity with a collection attribute 
+  Given there is an entity with a collection attribute
+  When the client requests the entity data via the JSON API
+  Then the system returns a valid JSON API response
+  And the response contains the entity's collection attribute",In order to use the JSON API hypermedia format As a client software developer I need to be able to retrieve valid JSON API responses for collection attributes on entities.,api-platform_core\collection_attributes_story_processado.txt,1,1,
+input_output_2_story_processado.txt,api-platform_core,cenário 3,Invalid JSON payload for password reset,"Scenario: Invalid JSON payload for password reset
+  Given there is a registered user with the email ""user@example.com""
+  When the client sends a password reset request with the email ""user@example.com""
+  And includes an invalid JSON payload
+  Then the system returns a 400 status code
+  And includes an error message indicating invalid JSON",In order to use the API As a client software developer I need to be able to use DTOs on my resources as Input or Output objects.,api-platform_core\input_output_2_story_processado.txt,1,1,
+numeric_filter_story_processado.txt,api-platform_core,cenário 4,Filter collection with numerical value and property converter,"Scenario: Filter collection with numerical value and property converter
+  Given there is a collection of resources with numerical properties and a property converter
+  When the client requests the collection with a filter by numerical value ""10"" using the property converter
+  Then the system returns a JSON-LD response with the filtered collection
+  And the response includes the correct pagination metadata",In order to retrieve ordered large collections of resources As a client software developer I need to retrieve collections with numerical value,api-platform_core\numeric_filter_story_processado.txt,1,1,
+confirm_email_story_processado.txt,billabear_billabear,cenário 1,Confirm account with valid verification code,"Scenario: Confirm account with expired verification code
+  Given there is a user who has registered with a valid email ""user@example.com""
+  And the system has sent a verification code to ""user@example.com"" that has expired
+  When the user enters the expired verification code
+  Then the system does not confirm the user's account
+  And the user's account status remains unconfirmed
+  And the system displays a message indicating that the verification code has expired",In order to use the system with my personal configuration As a user I need to be able to confirm I gave a valid email during sign up,billabear_billabear\confirm_email_story_processado.txt,1,1,
+create_product_1_story_processado.txt,billabear_billabear,cenário 5,Create product with valid name and no rate or rate type,"Scenario: Create product with valid name and no rate or rate type
+  Given there is an authenticated APP user
+  When the user creates a product with the name ""Test Product""
+  Then the system creates the product successfully
+  And displays the product details with no rate or rate type specified",In order to bill for products As an APP user I need to be create a product,billabear_billabear\create_product_1_story_processado.txt,1,1,
+generate_for_payment_story_processado.txt,billabear_billabear,cenário 4,Generate receipt for an existing payment,"Scenario: Generate receipt for an existing payment
+  Given there is an authenticated user with existing subscriptions
+  And the user has a payment linked to their subscription
+  When the user requests to generate a receipt for the payment
+  Then the system generates a receipt for the payment
+  And the receipt is consistent with the data returned by the API",In order to manage a payments As an APP user I need to be see all the payments,billabear_billabear\generate_for_payment_story_processado.txt,1,1,
+limit_customer_story_processado.txt,billabear_billabear,cenário 4,Retrieve subscription limits for a customer without subscriptions,"Scenario: Retrieve subscription limits for a customer without subscriptions
+  Given there is an authenticated user
+  And there is an active customer without any subscriptions
+  When the user queries the customer's usage limits
+  Then the system returns an empty list of limits",In order to manage a customer's subscriptions As an APP user I need to be see customer's Subscription,billabear_billabear\limit_customer_story_processado.txt,1,1,
+account_bank_statement_story_processado.txt,camptocamp_oerpscenario,cenário 1,Register a new invoice,"Scenario: Register a new invoice
+  Given there is an existing customer with a valid account
+  When the user creates a new invoice for the customer
+  And enters a valid invoice amount
+  Then the system registers the invoice successfully
+  And displays the invoice status as ""open""",In order to test the invoicing process and modules I want to see if the basic bank statement features works,camptocamp_oerpscenario\account_bank_statement_story_processado.txt,1,1,
+pay_invoice_story_processado.txt,camptocamp_oerpscenario,cenário 3,Full payment of an invoice in a different currency,"Scenario: Full payment of an invoice in a different currency
+  Given there is an invoice with a total amount of €100 in EUR
+  And the invoice status is ""open""
+  When the user makes a payment of $110 in USD, equivalent to €100
+  Then the invoice status is updated to ""paid""
+  And the residual amount is €0",In order to test the pay invoice wizard I want to see if the wizard take care of complex cases,camptocamp_oerpscenario\pay_invoice_story_processado.txt,1,1,
+sale_story_processado.txt,camptocamp_oerpscenario,cenário 5,Validate accounting entries for a sales order,"Scenario: Validate accounting entries for a sales order
+  Given there is a sales order that has been confirmed and invoiced
+  And the invoice has been paid
+  When the administrator checks the accounting entries for the sales order
+  Then the system displays the correct accounting entries for the transaction
+  And the accounting entries are properly balanced and recorded",In order to test the sale process and modules As an administator I want to see if the sales features and workflow work well,camptocamp_oerpscenario\sale_story_processado.txt,1,1,
+samples_story_processado.txt,camptocamp_oerpscenario,cenário 3,Validate an invoice,"Scenario: Validate an invoice
+  Given there is an existing invoice with the status ""draft""
+  When the user validates the invoice
+  Then the system updates the invoice status to ""open""
+  And the invoice is marked as validated",In order to show you how to work with OERPScenario I want to illustrate the basics behaviors,camptocamp_oerpscenario\samples_story_processado.txt,1,1,
+Breadcrumb_story_processado.txt,Cocolabs-SAS_cocorico,cenário 2,Verify breadcrumbs for a direct child page,"Scenario: Verify breadcrumbs for a direct child page
+  Given the user is on the homepage
+  When the user navigates to ""Offerer""
+  Then the breadcrumbs display ""Home > Offerer""",As a user I want to check my breadcrumbs,Cocolabs-SAS_cocorico\Breadcrumb_story_processado.txt,1,1,
+ListingSearch_story_processado.txt,Cocolabs-SAS_cocorico,cenário 3,Search listing by features,"Scenario: Search listing by features
+  Given there are listings with different features such as ""Wi-Fi"" and ""Pool""
+  When the user searches for listings with the feature ""Wi-Fi""
+  Then the system displays listings that have ""Wi-Fi""
+  And the listings match the selected feature",As a user i want to find listing so that i can rent it,Cocolabs-SAS_cocorico\ListingSearch_story_processado.txt,1,1,
+Message_story_processado.txt,Cocolabs-SAS_cocorico,cenário 4,Consult sent messages,"Scenario: Consult sent messages
+  Given there is a user ""asker@example.com"" who has sent messages
+  When the user ""asker@example.com"" consults their sent messages
+  Then the system displays a list of sent messages
+  And the list includes the recipient's information and the message content","As a user i want to send, consult and reply to a message",Cocolabs-SAS_cocorico\Message_story_processado.txt,1,1,
+Review_story_processado.txt,Cocolabs-SAS_cocorico,cenário 5,User adds a review with invalid rating,"Scenario: User adds a review with invalid rating
+  Given there are two registered users ""asker1"" and ""offerer1""
+  And ""asker1"" has made a transaction with ""offerer1""
+  When ""asker1"" tries to rate ""offerer1"" with 6 stars
+  Then the system displays an error message
+  And informs ""asker1"" that the rating is invalid",As a user i want to show and add rates and reviews,Cocolabs-SAS_cocorico\Review_story_processado.txt,1,1,
+country_condition_2_story_processado.txt,coreshop_CoreShop,cenário 5,Create a new product when there are no active price rules,"Scenario: Create a new product when there are no active price rules
+  Given there are no active price rules
+  And there is a category ""Electronics""
+  When the user creates a new product ""Smartphone"" associated with the category ""Electronics""
+  And configures the product for the country ""USA""
+  Then the system considers the product valid
+  And displays a message indicating that no price rules are applied",In order to extend my catalog The catalog has a price-rule for a country I want to create a new product,coreshop_CoreShop\country_condition_2_story_processado.txt,1,1,
+discount_percent_action_tax_100_and_free_shipping_and_gross_values_story_processado.txt,coreshop_CoreShop,cenário 4,Attempt to apply 100% discount voucher to an empty cart,"Scenario: Attempt to apply 100% discount voucher to an empty cart
+  Given there is an empty cart
+  And there is a voucher with a 100% discount
+  When the user applies the voucher to the cart
+  Then the system displays a message indicating that the cart is empty
+  And the voucher is not applied","In order to give the customer discounts based on the cart, we add a new rule with a 100% discount",coreshop_CoreShop\discount_percent_action_tax_100_and_free_shipping_and_gross_values_story_processado.txt,1,1,
+discount_percent_gross_action_story_processado.txt,coreshop_CoreShop,cenário 4,Apply voucher code on an empty cart,"Scenario: Apply voucher code on an empty cart
+  Given there is an active voucher-type rule with a 10 percent discount
+  And the cart is empty
+  When the user applies the voucher code
+  Then the system displays a message indicating that the cart is empty
+  And the cart total remains 0.00","In order to give the customer discounts based on the cart, we add a new rule",coreshop_CoreShop\discount_percent_gross_action_story_processado.txt,1,1,
+not_discountable_discount_amount_action_story_processado.txt,coreshop_CoreShop,cenário 1,Apply non-discountable rule to cart,"Scenario: Apply non-discountable rule to cart
+  Given there is a product with a price of $100
+  And a non-discountable price rule is applied to the product
+  When the customer adds the product to the cart
+  Then the cart total remains $100","In order to give the customer discounts based on the cart, we add a new rule",coreshop_CoreShop\not_discountable_discount_amount_action_story_processado.txt,1,1,
+apply_story_processado.txt,cross-solution_YAWIK,cenário 2,Apply for a non-existent job,"Scenario: Apply for a non-existent job
+  Given there is no job opening with the title ""Non Existent Job""
+  When the user applies for the job ""Non Existent Job""
+  And provides valid application information
+  Then the system denies the job application
+  And displays a message indicating that the job is not available",In order to start working As a user I should be able to apply a job,cross-solution_YAWIK\apply_story_processado.txt,1,1,
+insert_story_processado.txt,cross-solution_YAWIK,cenário 2,Create organization with duplicate name,"Scenario: Create organization with duplicate name
+  Given there is an admin user logged in
+  And there is an existing organization with the name ""Existing Organization""
+  When the admin creates a new organization with the name ""Existing Organization""
+  And provides a valid description ""This is a duplicate organization""
+  Then the system denies the creation
+  And displays an error message indicating the organization name already exists",In order to post a job As an admin I should able to add new organization,cross-solution_YAWIK\insert_story_processado.txt,1,1,
+login_story_processado.txt,cross-solution_YAWIK,cenário 4,Login with invalid email format,"Scenario: Login with invalid email format
+  Given there is a registered user with a valid email and password
+  When the user logs in with an invalid email format ""invalidEmail""
+  And enters the correct password
+  Then the system denies access
+  And displays a message indicating that the email format is invalid",In order to apply job As a Visitor I want to be able to log in to Yawik,cross-solution_YAWIK\login_story_processado.txt,1,1,
+update_2_story_processado.txt,cross-solution_YAWIK,cenário 4,Update multiple organization details,"Scenario: Update multiple organization details
+  Given there is a recruiter logged in
+  And the recruiter has an organization with the name ""Old Name"", location ""Old Location"", and logo ""old_logo.png""
+  When the recruiter updates the organization name to ""New Name""
+  And updates the organization location to ""New Location""
+  And updates the organization logo to ""new_logo.png""
+  Then the system saves the new organization details
+  And displays a confirmation message",In order to post a job As a recruiter I should able to update my organization,cross-solution_YAWIK\update_2_story_processado.txt,1,1,
+dora_metrics_story_processado.txt,DataDog_datadog-api-client-typescript,cenário 2,Unsuccessful DORA metrics request with invalid appKeyAuth,"Scenario: Unsuccessful DORA metrics request with invalid appKeyAuth
+  Given the user has an invalid appKeyAuth
+  When the user requests DORA metrics
+  Then the system denies the request
+  And displays an error message indicating invalid credentials","Search, send, or delete events for DORA Metrics to measure and improve your software delivery performance. See the [DORA Metrics page](https://docs.datadoghq.com/dora_metrics/) for more information. **Note**: DORA Metrics are not available in the US1-FED site.",DataDog_datadog-api-client-typescript\dora_metrics_story_processado.txt,1,1,
+gcp_integration_1_story_processado.txt,DataDog_datadog-api-client-typescript,cenário 1,Create a new STS service account,"Scenario: Create a new STS service account
+  Given the Datadog API is available
+  And there are no existing STS service accounts with the name ""new-sts-account""
+  When the user creates a new STS service account with the name ""new-sts-account""
+  And configures the filters ""filter1, filter2""
+  And enables CSPM and Security Command Center
+  Then the system creates the STS service account successfully
+  And returns the details of the newly created STS service account",Configure your Datadog-Google Cloud Platform (GCP) integration directly through the Datadog API. Read more about the [Datadog-Google Cloud Platform integration](https://docs.datadoghq.com/integrations/google_cloud _platform).,DataDog_datadog-api-client-typescript\gcp_integration_1_story_processado.txt,1,1,
+logs_custom_destinations_story_processado.txt,DataDog_datadog-api-client-typescript,cenário 3,Retrieve a specific custom destination,"Scenario: Retrieve a specific custom destination
+  Given there is a custom destination with the name ""My HTTP Destination""
+  When the user retrieves the custom destination ""My HTTP Destination""
+  Then the system displays the details of the custom destination
+  And includes the name, type, and configuration of the custom destination",Custom Destinations forward all the logs ingested to an external destination.  **Note**: Log forwarding is not available for the Government (US1-FED) site. Contact your account representative for more information. See the [Custom Destinations Page](https://app.datadoghq.com/logs/pipelines/log-forwarding/custom- destinations) for a list of the custom destinations currently configured in web UI.,DataDog_datadog-api-client-typescript\logs_custom_destinations_story_processado.txt,1,1,
+service_level_objectives_1_story_processado.txt,DataDog_datadog-api-client-typescript,cenário 1,Create a new SLO report,"Scenario: Create a new SLO report
+  Given the user has valid Datadog API credentials
+  And the SLO report details are valid
+  When the user creates a new SLO report via the API
+  Then the system returns a success response
+  And the SLO report is stored in the system","[Service Level Objectives](https://docs.datadoghq.com/monitors/service_lev el_objectives/#configuration) (SLOs) are a key part of the site reliability engineering toolkit. SLOs provide a framework for defining clear targets around application performance, which ultimately help teams provide a consistent customer experience, balance feature development with platform stability, and improve communication with internal and external users.",DataDog_datadog-api-client-typescript\service_level_objectives_1_story_processado.txt,1,1,
+admin_services_story_processado.txt,engineyard_rails_dev_directory,cenário 2,Remove an existing service,"Scenario: Remove an existing service
+  Given there is a service with the name ""Existing Service""
+  When the administrator removes the service ""Existing Service""
+  Then the system no longer lists the service ""Existing Service""",As an Engine Yard administrator I want to be able to add and remove services So that I can adapt the system to new tech types as they are required without modifying code,engineyard_rails_dev_directory\admin_services_story_processado.txt,1,1,
+admin_top_cities_story_processado.txt,engineyard_rails_dev_directory,cenário 4,Add a new top city with invalid information,"Scenario: Add a new top city with invalid information
+  Given there is an admin logged in
+  When the admin adds ""123"" as a top city
+  And sets its state to ""New York"" and country to ""USA""
+  Then the system does not add ""123"" to the top cities list
+  And displays a message indicating that the city name is invalid",In order to choose what top cities appear in the top cities section As an admin I want to be able to add top cities,engineyard_rails_dev_directory\admin_top_cities_story_processado.txt,1,1,
+dashboard_story_processado.txt,engineyard_rails_dev_directory,cenário 1,Provider views account overview on dashboard after login,"Scenario: Provider views account overview on dashboard after login
+  Given there is a registered provider with the company ""ABC Solutions""
+  And the provider has 5 open requests and 2 new endorsements
+  When the provider logs in
+  Then the dashboard displays the provider's account overview
+  And includes the number of open requests and new endorsements",As a Provider I want to see my account overview on the dashboard So that when I login I can see information that is important to me without digging for it,engineyard_rails_dev_directory\dashboard_story_processado.txt,1,1,
+pages_story_processado.txt,engineyard_rails_dev_directory,cenário 5,Attempt to add a new page with missing required fields,"Scenario: Attempt to add a new page with missing required fields
+  Given there is an Engine Yard administrator logged in
+  When the administrator adds a new page with missing title
+  Then the system displays an error message
+  And indicates that the title is required",As an Engine Yard administrator I want to add pages So that I can add static content to the site,engineyard_rails_dev_directory\pages_story_processado.txt,1,1,
+basket_management_story_processado.txt,FinAegis_core-banking-prototype-laravel,cenário 5,Attempt to create a basket asset with invalid composition,"Scenario: Attempt to create a basket asset with invalid composition
+  Given there is a bank customer with an active account
+  When the customer creates a new basket asset with an invalid composition
+  Then the system denies the creation of the basket asset
+  And displays an error message indicating the invalid composition",In order to diversify my holdings As a bank customer I need to be able to create and manage basket assets,FinAegis_core-banking-prototype-laravel\basket_management_story_processado.txt,1,1,
+batch_processing_story_processado.txt,FinAegis_core-banking-prototype-laravel,cenário 5,Rebalance an existing asset basket,"Scenario: Rebalance an existing asset basket
+  Given the system administrator is logged in
+  And there is an existing asset basket with assets
+  When the administrator rebalances the asset basket
+  Then the system rebalances the asset basket
+  And displays a confirmation message indicating the new composition",In order to efficiently handle bulk operations As a system administrator I need to execute batch operations with proper error handling and compensation,FinAegis_core-banking-prototype-laravel\batch_processing_story_processado.txt,1,1,
+financial_institutions_application_story_processado.txt,FinAegis_core-banking-prototype-laravel,cenário 5,Partnership application submission with invalid data,"Scenario: Partnership application submission with invalid data
+  Given there is a financial institution registered with FinAegis
+  When the financial institution submits a partnership application
+  And provides invalid partnership details
+  Then the system rejects the partnership application
+  And displays an error message indicating the invalid data fields",In order to partner with FinAegis As a financial institution I need to be able to submit a partnership application,FinAegis_core-banking-prototype-laravel\financial_institutions_application_story_processado.txt,1,1,
+governance_voting_story_processado.txt,FinAegis_core-banking-prototype-laravel,cenário 2,Vote on an existing proposal with sufficient voting power,"Scenario: Vote on an existing proposal with sufficient voting power
+  Given there is a stakeholder with tokens staked and a proposal exists
+  When the stakeholder votes on the existing proposal
+  Then the system records the vote
+  And updates the proposal's voting results",In order to participate in platform governance As a stakeholder I need to be able to create and vote on proposals,FinAegis_core-banking-prototype-laravel\governance_voting_story_processado.txt,1,1,
+admin_center_clicks_and_queries_story_processado.txt,GSA_search-gov,cenário 3,View clicked URLs from a specific query,"Scenario: View clicked URLs from a specific query
+  Given there is a search query with associated clicked URLs in the system
+  When the site administrator selects a search query to analyze
+  Then the system displays the clicked URLs that resulted from the query
+  And the list includes the number of clicks for each URL","In order to see the correlation between user queries and clicked URLs As a site customer I want to see top clicked URLs, the queries that led to them, and the clicked URLs that came from those queries",GSA_search-gov\admin_center_clicks_and_queries_story_processado.txt,1,1,
+bulk_affiliate_styles_upload_story_processado.txt,GSA_search-gov,cenário 1,Upload a valid file within the size limit,"Scenario: Upload a valid file within the size limit
+  Given there is an admin user logged in
+  And a valid file containing affiliate site styles with a size of 3 MB
+  When the admin uploads the file
+  Then the system processes the file
+  And displays a confirmation message                                                          ",In order to give affiliates the ability to submit a file of URLs for indexing As an admin I want to upload a file containing Affiliate Styles,GSA_search-gov\bulk_affiliate_styles_upload_story_processado.txt,1,1,
+odie_url_source_update_story_processado.txt,GSA_search-gov,cenário 2,Update document source for an invalid affiliate,"Scenario: Update document source for an invalid affiliate
+  Given there is no affiliate with the identifier ""invalid_affiliate""
+  When the admin requests to update the document source to ""manual"" for the affiliate ""invalid_affiliate""
+  And confirms the update operation
+  Then the system displays an error message indicating the affiliate does not exist
+  And does not queue a job to update the document source",In order to meet customer needs As an admin I want to update the source of all of a specific affiliate's indexed documents from rss to manual,GSA_search-gov\odie_url_source_update_story_processado.txt,1,1,
+search_elastic_story_processado.txt,GSA_search-gov,cenário 5,Search with multiple terms,"Scenario: Search with multiple terms
+  Given the site visitor is on a site using the SearchElastic search engine
+  And the Elasticsearch index contains relevant results for the terms ""space exploration""
+  When the site visitor performs a search for ""space exploration""
+  Then the system displays a list of relevant search results
+  And the results are relevant to both ""space"" and ""exploration"" terms",In order to get results directly form elasticsearch As a site visitor to a site using the SearchElastic search engine I want to be able to search an site using the SearchElastic search engine,GSA_search-gov\search_elastic_story_processado.txt,1,1,
+browsing_inventory_story_processado.txt,inventorypapa_free-dropshipping-automation-software,cenário 4,Browse tracked product variants with pagination,"Scenario: Browse tracked product variants with pagination
+  Given there are multiple pages of tracked product variants in the inventory
+  When the administrator accesses the inventory browser
+  Then the system displays a list of tracked product variants with pagination
+  And shows the available stock quantity for each variant on the first page",In order to see all tracked product variants As an Administrator I want to be able to browse tracked product variants,inventorypapa_free-dropshipping-automation-software\browsing_inventory_story_processado.txt,1,1,
+product_review_validation_1_story_processado.txt,inventorypapa_free-dropshipping-automation-software,cenário 3,Add product review with both title and comment,"Scenario: Add product review with both title and comment
+  Given the Administrator is managing product reviews
+  And there is a product review with a title and a comment
+  When the Administrator attempts to add the product review
+  Then the system allows the addition of the review
+  And displays a message confirming successful addition",In order to avoid making mistakes while submitting a new product review As a Visitor I want to be prevented from submitting invalid review,inventorypapa_free-dropshipping-automation-software\product_review_validation_1_story_processado.txt,1,1,
+seeing_orders_statistics_on_customer_details_page_story_processado.txt,inventorypapa_free-dropshipping-automation-software,cenário 4,View customer order statistics with different fulfillment statuses,"Scenario: View customer order statistics with different fulfillment statuses
+  Given there is a customer with orders having different fulfillment statuses
+  When the administrator views the customer's details page
+  Then the system displays order statistics segmented by fulfillment status
+  And the total value of orders for each fulfillment status","In order to know how many orders a customer has placed, and what's their total value As an Administrator I want to be able to see orders statistics of customer on their details page",inventorypapa_free-dropshipping-automation-software\seeing_orders_statistics_on_customer_details_page_story_processado.txt,1,1,
+sorting_payment_methods_by_position_story_processado.txt,inventorypapa_free-dropshipping-automation-software,cenário 3,Add new payment method to the end of the list,"Scenario: Add new payment method to the end of the list
+  Given there are multiple payment methods with different positions
+  When the administrator adds a new payment method with a higher position than existing ones
+  Then the new payment method is displayed at the end of the list",In order to change the order by which payment methods are displayed As an Administrator I want to sort payment methods by their positions,inventorypapa_free-dropshipping-automation-software\sorting_payment_methods_by_position_story_processado.txt,1,1,
+getExternalCallFilterBlackList_story_processado.txt,irontec_ivozprovider,cenário 4,Retrieve a non-existent external call filter blacklist by ID,"Scenario: Retrieve a non-existent external call filter blacklist by ID
+  Given there is a client admin with a valid authentication token
+  And there is no existing external call filter blacklist with ID ""456""
+  When the client admin sends a GET request to retrieve the blacklist with ID ""456""
+  Then the system returns an error response
+  And the response status code is 404",In order to manage external call filter black lists As a client admin I need to be able to retrieve them through the API.,irontec_ivozprovider\getExternalCallFilterBlackList_story_processado.txt,1,1,
+postHuntGroupMember_story_processado.txt,irontec_ivozprovider,cenário 4,Create a new hunt group member with invalid priority value,"Scenario: Create a new hunt group member with invalid priority value
+  Given there is a hunt group with id ""123""
+  And there is a user with id ""456""
+  When the client admin sends a POST request to create a new hunt group member
+  And sets the hunt group id to ""123""
+  And sets the user id to ""456""
+  And sets the priority to ""invalid""
+  Then the system returns an error response
+  And displays a message indicating that the priority is invalid",In order to manage hunt groups rel users As a client admin I need to be able to create them through the API.,irontec_ivozprovider\postHuntGroupMember_story_processado.txt,1,1,
+removeDomains_2_story_processado.txt,irontec_ivozprovider,cenário 1,Attempt to delete a domain via API as super admin,"Scenario: Attempt to delete a domain via API as super admin
+  Given there is a super admin with API access
+  And there is an existing domain ""example.com""
+  When the super admin sends a DELETE request to the domain ""example.com"" via API
+  Then the system returns an HTTP 405 status code
+  And the domain ""example.com"" remains unchanged",In order to manage domains as a super admin I should not be able to delete them through the API.,irontec_ivozprovider\removeDomains_2_story_processado.txt,1,1,
+removeSpecialNumber_1_story_processado.txt,irontec_ivozprovider,cenário 4,Delete a special number with insufficient permissions,"Scenario: Delete a special number with insufficient permissions
+  Given there is a user with insufficient permissions
+  And there is a special number with ID ""123""
+  When the user sends a DELETE request to the special number API with ID ""123""
+  Then the system returns an HTTP 403 status code
+  And displays a message indicating that the user lacks the necessary permissions",In order to manage special numbers as a super admin I need to be able to delete them through the API.,irontec_ivozprovider\removeSpecialNumber_1_story_processado.txt,1,1,
+_00503TaxRatesCatalog_story_processado.txt,IRPTeam_IRP,cenário 3,Create a tax rate with invalid rate value,"Scenario: Create a tax rate with invalid rate value
+  Given there is an administrator logged in
+  And the tax rates catalog is empty
+  When the administrator creates a new tax rate with the code ""VAT"" and rate ""abc""
+  Then the system denies the creation
+  And displays an error message indicating that the tax rate value is invalid",As an owner I want to fill out information on the company To further use it when reflecting in the program of business processes,IRPTeam_IRP\_00503TaxRatesCatalog_story_processado.txt,1,1,
+_00505CurrencyMovementType_story_processado.txt,IRPTeam_IRP,cenário 5,Attempt to delete a non-existent currency movement type,"Scenario: Attempt to delete a non-existent currency movement type
+  Given there is an administrator logged into the system
+  And there is no existing currency movement type with the name ""Non Existent""
+  When the administrator attempts to delete the currency movement type with the name ""Non Existent""
+  Then the system prevents the deletion
+  And displays an error message indicating that the currency movement type does not exist",As an owner I want to fill out information on the company To further use it when reflecting in the program of business processes,IRPTeam_IRP\_00505CurrencyMovementType_story_processado.txt,1,1,
+_00509PaymentTermsCatalog_story_processado.txt,IRPTeam_IRP,cenário 5,Delete a payment term,"Scenario: Delete a payment term
+  Given there is an administrator logged into the system
+  And there is a payment term named ""Term to Delete"" in the catalog
+  When the administrator deletes the payment term ""Term to Delete""
+  Then the system removes the payment term from the catalog
+  And displays a confirmation message",As an owner I want to fill out information on the company To further use it when reflecting in the program of business processes,IRPTeam_IRP\_00509PaymentTermsCatalog_story_processado.txt,1,1,
+_0296Unbundling_story_processado.txt,IRPTeam_IRP,cenário 5,Unbundling document approval and inventory update,"Scenario: Unbundling document approval and inventory update
+  Given there is an unbundling document in ""Draft"" status
+  And the sales manager has the necessary permissions
+  When the sales manager approves the unbundling document
+  Then the system updates the inventory levels for the component items across different warehouse profiles
+  And the document status is set to ""Approved""","As a sales manager I want to create Unbundling For sale of products from a Bundle separately Variables: import ""Variables.feature""",IRPTeam_IRP\_0296Unbundling_story_processado.txt,1,1,
+cli_story_processado.txt,karma-runner_karma,cenário 4,Start Karma server successfully,"Scenario: Start Karma server successfully
+  Given the user has a valid Karma configuration
+  When the user executes the command ""karma start""
+  Then the system starts the Karma server
+  And displays a message confirming the server is running",In order to use Karma As a person who wants to write great tests I want command line interface to provide help and useful errors.,karma-runner_karma\cli_story_processado.txt,1,1,
+headers_story_processado.txt,karma-runner_karma,cenário 1,Set custom headers for a single file,"Scenario: Set custom headers for a single file
+  Given there is a test configuration with a file ""test.js""
+  When the user sets a custom header ""Content-Type"" with value ""application/javascript"" for ""test.js""
+  Then the system serves ""test.js"" with the header ""Content-Type"" and value ""application/javascript""",In order to use Karma As a person who wants to write great tests I want to Karma to send custom headers on files sent.,karma-runner_karma\headers_story_processado.txt,1,1,
+launcher-error_story_processado.txt,karma-runner_karma,cenário 4,Successful browser connection,"Scenario: Successful browser connection
+  Given a test is running with Karma Test Runner CLI
+  And a browser is configured to run the test
+  When the browser successfully connects to Karma
+  Then the system does not output an error message to stderr
+  And the test execution proceeds",In order to use Karma As a person who wants to write great tests I want Karma to output stderr if a browser fails to connect.,karma-runner_karma\launcher-error_story_processado.txt,1,1,
+tag_story_processado.txt,karma-runner_karma,cenário 4,Verify JavaScript version tag is ignored in non-Firefox browsers,"Scenario: Verify JavaScript version tag is ignored in non-Firefox browsers
+  Given the user is using the Karma Test Runner CLI
+  And the browser is Safari
+  When the user adds a JavaScript version tag
+  Then the system ignores the JavaScript version tag
+  And the test is executed as if the tag was not added",In order to use Karma As a person who wants to write great tests I want to add a JavaScript version tag in Firefox only.,karma-runner_karma\tag_story_processado.txt,1,1,
+chart-of-accounts_story_processado.txt,ledgersmb_LedgerSMB,cenário 2,Modify account properties,"Scenario: Modify account properties
+  Given the user is logged into LedgerSMB
+  And there is an existing account with specific properties
+  When the user edits the account properties
+  And changes the account description to ""New Account Description""
+  Then the system updates the account properties
+  And displays the updated account description ""New Account Description""",As a LedgerSMB user I want to be able to view the chart of accounts and change the properties of an account and a heading. I want to be able to use an existing account as the basis for creating a new account.,ledgersmb_LedgerSMB\chart-of-accounts_story_processado.txt,1,1,
+in-arrears-purchase_story_processado.txt,ledgersmb_LedgerSMB,cenário 4,COGS posting with sales entered before purchase,"Scenario: COGS posting with sales entered before purchase
+  Given sales are recorded before the corresponding purchase invoice
+  When the purchase invoice is posted
+  Then the system automatically posts the COGS
+  And the accounting records reflect the correct COGS",In case inventory is sold short - which can both happen when the true sequence is to sell before buy *or* when transactions are entered out-of-order during periodic bookkeeping - COGS should be posted as soon as the price of the goods is known. That condition is met the moment the purchase invoice is posted.,ledgersmb_LedgerSMB\in-arrears-purchase_story_processado.txt,1,1,
+login_story_processado.txt,ledgersmb_LedgerSMB,cenário 5,Accessing setup page,"Scenario: Accessing setup page
+  Given the system is not configured
+  When the user accesses the setup page
+  Then the system displays the setup page
+  And allows the user to configure the system","In order to assess the further quality of the software, we want to assess the availability and correct operation of the functionality of logging in, both as an admin and as a user.",ledgersmb_LedgerSMB\login_story_processado.txt,1,1,
+search-batches_story_processado.txt,ledgersmb_LedgerSMB,cenário 2,Search for voucher batches by description,"Scenario: Search for voucher batches by description
+  Given there are existing voucher batches with different descriptions
+  When the user searches for voucher batches with description ""January Sales""
+  Then the system displays a list of voucher batches with description containing ""January Sales""
+  And the list includes batch number, date, description, and values
+","As a LedgerSMB user I want to be able to search for previously created voucher batches according to parameters which I specify, with the results presented as a list.",ledgersmb_LedgerSMB\search-batches_story_processado.txt,1,1,
+ColdStartToOnboardingScreenIOS_story_processado.txt,MetaMask_metamask-mobile,cenário 3,Wallet setup screen is displayed after cold start,"Scenario: Wallet setup screen is displayed after cold start
+  Given the app is not installed on the device
+  When the user installs the app for the first time
+  Then the wallet setup screen is displayed
+  And the user can interact with the screen",This feature measures the cold start of the app when: The user installs the app for the very first time,MetaMask_metamask-mobile\ColdStartToOnboardingScreenIOS_story_processado.txt,1,1,
+NetworkFlow_story_processado.txt,MetaMask_metamask-mobile,cenário 5,Attempt to add a duplicate custom network,"Scenario: Attempt to add a duplicate custom network
+  Given the user is on the network settings page
+  And there is a custom network ""Custom Network"" already added
+  When the user chooses to add a custom network
+  And enters the network details: name ""Custom Network"", RPC URL ""https://customnetwork.com"", Chain ID ""123"", and symbol ""CN""
+  Then the system denies adding the custom network
+  And displays an error message indicating that the network already exists",User should be able to add a custom network via the popular network flow User should also have the ability to a add custom network via the custom network flow.,MetaMask_metamask-mobile\NetworkFlow_story_processado.txt,1,1,
+RequestTokenFlow_story_processado.txt,MetaMask_metamask-mobile,cenário 1,Request native token successfully,"Scenario: Request native token successfully
+  Given the user has a configured network with native token ""ETH""
+  When the user requests the native token ""ETH""
+  Then the system generates a payment link for ""ETH""
+  And displays a QR code for ""ETH""",This feature goes through the request token flow,MetaMask_metamask-mobile\RequestTokenFlow_story_processado.txt,1,1,
+SendEthGasApiDown_story_processado.txt,MetaMask_metamask-mobile,cenário 5,Cancel Send ETH transaction when Gas API is down,"Scenario: Cancel Send ETH transaction when Gas API is down
+  Given the Gas API is unavailable
+  And the user has a valid ETH balance
+  And the user has initiated an ETH send transaction
+  When the user cancels the transaction
+  Then the system cancels the transaction successfully
+  And the user's ETH balance remains unchanged",A user should be able to send ETH when the Gas API is down.,MetaMask_metamask-mobile\SendEthGasApiDown_story_processado.txt,1,1,
+edit_block_of_links_story_processado.txt,noosfero_noosfero,cenário 1,Edit link block with valid link and icon,"Scenario: Edit link block with valid link and icon
+  Given there is a profile owner with a link block on their site
+  When the profile owner edits the link block with the title ""Social Media""
+  And enters the link ""https://www.example.com/socialmedia""
+  And selects the icon ""facebook""
+  Then the system saves the changes
+  And displays the updated link block with the selected icon",As a profile owner I want to edit a block of links,noosfero_noosfero\edit_block_of_links_story_processado.txt,1,1,
+forum_story_processado.txt,noosfero_noosfero,cenário 3,Forum creation with invalid input,"Scenario: Forum creation with invalid input
+  Given there is a Noosfero user with a personal profile
+  When the user creates a new forum with invalid input
+  Then the system denies the creation of the forum
+  And displays a message indicating the input is invalid",As a noosfero user I want to have one or mutiple forums,noosfero_noosfero\forum_story_processado.txt,1,1,
+manage_enterprises_story_processado.txt,noosfero_noosfero,cenário 1,Enterprise owner views enterprise management option,"Scenario: Enterprise owner views enterprise management option
+  Given there is an enterprise owner with registered enterprises
+  And the feature flag for enterprise management is enabled
+  When the user navigates to the main menu
+  Then the system displays the enterprise management option",As a enterprise owner I want to manage my enterprises,noosfero_noosfero\manage_enterprises_story_processado.txt,1,1,
+status_story_processado.txt,noosfero_noosfero,cenário 3,Configure new status in community settings,"Scenario: Configure new status in community settings
+  Given the user is an administrator of a community
+  And the community has a status configuration section
+  When the user configures a new status
+  Then the new status is available for use in the community's comment section
+  And the status is listed in the community's status configuration",As a user I want to add status for comments,noosfero_noosfero\status_story_processado.txt,1,1,
+agoras_story_processado.txt,parti-renaissance_espace-adherent,cenário 1,Unauthenticated user cannot access Agoras API,"Scenario: Unauthenticated user cannot access Agoras API
+  Given there is an unauthenticated user
+  When the user attempts to access the Agoras API
+  Then the system denies access
+  And displays an error message indicating authentication is required",In order to see and join Agoras I should be able to access API of Agoras,parti-renaissance_espace-adherent\agoras_story_processado.txt,1,1,
+scopes_story_processado.txt,parti-renaissance_espace-adherent,cenário 3,Request scopes with invalid OAuth token,"Scenario: Request scopes with invalid OAuth token
+  Given the user is authenticated via OAuth with an invalid token
+  When the requests their assigned scopes via the API
+  Then the system returns an error response
+  And indicates that the token is invalid or expired",In order to get scopes of an adherent I should be able to request them via the API,parti-renaissance_espace-adherent\scopes_story_processado.txt,1,1,
+user_controller_donation_story_processado.txt,parti-renaissance_espace-adherent,cenário 3,No donations to display,"Scenario: No donations to display
+  Given there is a logged-in adherent with no active donations
+  When the adherent views their account profile
+  Then the system displays a message indicating no donations",In order to see donation as a user I should be able to see my donation in my account profile,parti-renaissance_espace-adherent\user_controller_donation_story_processado.txt,1,1,
+zones_story_processado.txt,parti-renaissance_espace-adherent,cenário 5,Autocomplete zones for authenticated user outside assigned area,"Scenario: Autocomplete zones for authenticated user outside assigned area
+  Given there is an authenticated user with scope to manage ""city"" zones
+  And there are ""city"" zones outside the user's assigned area
+  When the user requests autocomplete suggestions for ""city"" zones with ""new"" via the API
+  Then the system does not return ""city"" zones outside the user's assigned area
+  And the response is successful",In order to see zones As a non logged-in user I should be able to access API zones,parti-renaissance_espace-adherent\zones_story_processado.txt,1,1,
+custom_educator_listing_1_story_processado.txt,SFDigitalServices_sf-dahlia-web,cenário 4,Access Custom Educator Listing application form,"Scenario: Access Custom Educator Listing application form
+  Given there is a Custom Educator Listing available
+  And the user is on the listing page
+  When the user applies to the listing
+  And answers ""yes"" to the screening question about employment with the San Francisco Unified School District
+  And provides a valid job classification code
+  Then the system displays the full application form",As a web user I should be able to apply to Custom Educator Listing 1,SFDigitalServices_sf-dahlia-web\custom_educator_listing_1_story_processado.txt,1,1,
+custom_educator_listing_2_story_processado.txt,SFDigitalServices_sf-dahlia-web,cenário 1,Successful application with valid job classification code,"Scenario: Successful application with valid job classification code
+  Given there is a web user applying to Custom Educator Listing 2
+  And the user has employment with the San Francisco Unified School District
+  And has a valid job classification code ""12345""
+  When the user submits the application form with the job classification code ""12345""
+  Then the system accepts the application
+  And displays a confirmation message",As a web user I should be able to apply to Custom Educator Listing 2,SFDigitalServices_sf-dahlia-web\custom_educator_listing_2_story_processado.txt,1,1,
+nrhp_story_processado.txt,SFDigitalServices_sf-dahlia-web,cenário 4,Upload supporting documents for NRHP claim,"Scenario: Upload supporting documents for NRHP claim
+  Given there is an applicant who has claimed ""Live in the Neighborhood"" with a valid address
+  When the applicant uploads supporting documents for the NRHP claim
+  Then the system accepts the uploaded documents
+  And displays a confirmation that the NRHP claim has been successfully submitted","As a web user I should be able to claim ""Live in the Neighborhood"" while filling out a short form application In order to increase my chances of getting an affordable housing unit",SFDigitalServices_sf-dahlia-web\nrhp_story_processado.txt,1,1,
+sign_in_while_applying_story_processado.txt,SFDigitalServices_sf-dahlia-web,cenário 3,Continue application anonymously after attempting to sign in,"Scenario: Continue application anonymously after attempting to sign in
+  Given there is a user with an existing account
+  And the user is filling out an application anonymously
+  When the user chooses to sign in with their account
+  And enters invalid email or password
+  And chooses to continue anonymously
+  Then the system allows the user to continue filling out the application anonymously",As a web user with an account I should be able to sign-in while filling out an application anonymously In order to associate my application with my account and reconcile any previous applications,SFDigitalServices_sf-dahlia-web\sign_in_while_applying_story_processado.txt,1,1,
+admin_edits_welcome_email_story_processado.txt,sharetribe_sharetribe,cenário 1,Edit welcome email content with valid input,"Scenario: Edit welcome email content with valid input
+  Given there is an admin logged into the system
+  And the welcome email content is currently ""Default welcome email content""
+  When the admin edits the welcome email content to ""New welcome email content""
+  And saves the changes
+  Then the system updates the welcome email content to ""New welcome email content""
+  And displays a confirmation message",In order to have custom welcome email content tailored specifically for my community As an admin I want to be able to edit the welcome email content,sharetribe_sharetribe\admin_edits_welcome_email_story_processado.txt,1,1,
+search_story_processado.txt,sharetribe_sharetribe,cenário 4,Apply custom numeric field filter,"Scenario: Apply custom numeric field filter
+  Given there are listings with a custom numeric field ""year""
+  When the user types a keyword ""vintage"" in the search box
+  And hits enter
+  And sets the custom numeric field ""year"" filter to 1990 to 2000
+  Then the system displays listings containing ""vintage"" with ""year"" between 1990 and 2000",In order to find needed contents As a user I want to search listings by typing a keyword to search box and hitting enter,sharetribe_sharetribe\search_story_processado.txt,1,1,
+user_checks_inbox_story_processado.txt,sharetribe_sharetribe,cenário 5,User navigates between received and sent messages,"Scenario: User navigates between received and sent messages
+  Given there is a user with both received and sent messages
+  And the user is logged in
+  And the user is in the inbox viewing received messages
+  When the user navigates to the sent messages tab
+  Then the system displays the list of sent messages
+  And the user can switch back to received messages",In order to view my received and sent messages As a user I want to be able to go to my inbox and view my messages,sharetribe_sharetribe\user_checks_inbox_story_processado.txt,1,1,
+user_filters_listings_by_custom_fields_story_processado.txt,sharetribe_sharetribe,cenário 4,Filter listings by category selection,"Scenario: Filter listings by category selection
+  Given there are listings under categories ""Electronics"" and ""Furniture""
+  And the user is on the listings page
+  When the user selects the ""Electronics"" category
+  Then the system displays listings under the ""Electronics"" category
+  And the listings count is updated accordingly",In order to view only listings that match certain marketplace specific condition As a user I want to be able to easily select which listings are shown,sharetribe_sharetribe\user_filters_listings_by_custom_fields_story_processado.txt,1,1,
+choosing_province_for_country_story_processado.txt,Sylius_Sylius,cenário 2,Fill shipping address with country without provinces,"Scenario: Fill shipping address with country without provinces
+  Given the user is on the checkout page
+  And the user has selected a country without provinces ""Singapore""
+  When the user fills the shipping address form with valid details
+  Then the system validates the shipping address
+  And does not prompt for province selection",In order to address an order properly As a Visitor I want to be able to fill addressing details choosing country with provinces,Sylius_Sylius\choosing_province_for_country_story_processado.txt,1,1,
+returning_from_addressing_step_to_shop_homepage_story_processado.txt,Sylius_Sylius,cenário 3,Visitor can navigate back to checkout,"Scenario: Visitor can navigate back to checkout
+  Given there is a visitor with items in the cart
+  And the visitor is at the checkout addressing step
+  When the visitor clicks on the link to return to the shop homepage
+  And the visitor navigates back to checkout
+  Then the visitor is returned to the checkout addressing step",In order to return to shopping after checkout started As a Visitor I want to be able to go back to shop homepage from checkout addressing step,Sylius_Sylius\returning_from_addressing_step_to_shop_homepage_story_processado.txt,1,1,
+seeing_shipping_method_when_all_units_match_to_shipping_category_story_processado.txt,Sylius_Sylius,cenário 1,Choose shipping method for items with single shipping category,"Scenario: Choose shipping method for items with single shipping category
+  Given there are items in the cart with shipping category ""Standard""
+  When the user views available shipping methods
+  Then the system displays shipping methods associated with ""Standard"" category
+  And the user can select one of the displayed shipping methods",In order to select correct shipping method for my order As a Customer I want to be able to choose only shipping methods that match shipping category of all my items,Sylius_Sylius\seeing_shipping_method_when_all_units_match_to_shipping_category_story_processado.txt,1,1,
+sorting_payment_methods_by_position_story_processado.txt,Sylius_Sylius,cenário 3,Add new payment method to the end of the list,"Scenario: Add new payment method to the end of the list
+  Given there are multiple payment methods with different positions
+  When the administrator adds a new payment method with a higher position than existing ones
+  Then the new payment method is displayed at the end of the list",In order to change the order by which payment methods are displayed As an Administrator I want to sort payment methods by their positions,Sylius_Sylius\sorting_payment_methods_by_position_story_processado.txt,1,1,
+min_bootstrap_negative_story_processado.txt,uyuni-project_uyuni,cenário 2,Register a machine that is already registered,"
+Scenario: Register a machine that is already registered
+  Given there is an authorized user
+  And there is a registered machine with the name ""minion1""
+  When the user registers a new machine with the name ""minion1"" and valid credentials
+  Then the system denies registration
+  And displays a message indicating that the machine is already registered",In order to register only valid minions As an authorized user I want to avoid registration with invalid input parameters,uyuni-project_uyuni\min_bootstrap_negative_story_processado.txt,1,1,
+min_config_state_channel_story_processado.txt,uyuni-project_uyuni,cenário 1,Create a new state channel,"Scenario: Create a new state channel
+  Given there are no existing state channels with the name ""Test Channel""
+  When the user creates a new state channel named ""Test Channel""
+  Then the system creates the state channel ""Test Channel""
+  And the state channel ""Test Channel"" is listed in the available state channels",In order to configure systems through Salt I want to be able to use the state channels,uyuni-project_uyuni\min_config_state_channel_story_processado.txt,1,1,
+proxy_story_processado.txt,uyuni-project_uyuni,cenário 1,Register containerized proxy with valid details,"Scenario: Register containerized proxy with valid details
+  Given the system administrator is logged in
+  And the containerized proxy is not already registered
+  When the administrator registers the containerized proxy with valid details
+  Then the system registers the containerized proxy successfully
+  And the proxy is recognized by the server",In order to use Karma As a person who wants to write great tests I want to Karma to proxy requests.,uyuni-project_uyuni\proxy_story_processado.txt,1,1,
+srv_create_fake_repositories_story_processado.txt,uyuni-project_uyuni,cenário 4,Create a fake repository for multiple child channels,"Scenario: Create a fake repository for multiple child channels
+  Given there is an authorized user
+  And the system has multiple child channels
+  When the user creates a fake repository for each child channel
+  Then the system creates a fake repository for each child channel
+  And associates each repository with its respective child channel",In order to distribute software to the clients As an authorized user I want to create a fake repository per fake child channel,uyuni-project_uyuni\srv_create_fake_repositories_story_processado.txt,1,1,
+0026-AUCT-029_story_processado.txt,vegaprotocol_vega,cenário 1,Market in opening auction with overlapping orders,"Scenario: Market in opening auction with overlapping orders
+  Given the market ""BTC/ETH"" is in opening auction
+  And there are overlapping orders on the book
+  When the network moves ahead ""50"" blocks
+  Then the trading mode should be ""TRADING_MODE_OPENING_AUCTION"" for the market ""BTC/ETH""
+  When the network moves ahead ""2"" more blocks
+  Then the trading mode should be ""TRADING_MODE_CONTINUOUS"" for the market ""BTC/ETH""","run from the close of voting on the market proposal (assumed to pass successfully) until: the enactment time assuming there are orders crossing on the book, there is no need for the supplied liquidity to exceed a threshold to exit an auction: (0026-AUCT-029) And  the parties place the following orders: When  the network moves ahead ""50"" blocks Then  the trading mode should be ""TRADING_MODE_OPENING_AUCTION"" for the market ""BTC/ETH"" When  the network moves ahead ""52"" blocks Then  the trading mode should be ""TRADING_MODE_CONTINUOUS"" for the market ""BTC/ETH""",vegaprotocol_vega\0026-AUCT-029_story_processado.txt,1,1,
+0032-PRIM-025_story_processado.txt,vegaprotocol_vega,cenário 4,Market data is updated after auction termination,"Scenario: Market data is updated after auction termination
+  Given the market ""BTC/ETH"" is in auction mode
+  When the network moves ahead ""1"" blocks
+  Then the market data for the market ""BTC/ETH"" should be updated with the new mark price ""1050""
+  And other relevant market data fields are updated accordingly","auction terminates with a trade from order that originally triggered the auction. (0032-PRIM-025) And  the market data for the market ""BTC/ETH"" should be: Given  the parties place the following orders: When  the network moves ahead ""1"" blocks Then  the trading mode should be ""TRADING_MODE_MONITORING_AUCTION"" for the market ""BTC/ETH"" And  the orders should have the following states: When  the network moves ahead ""1"" blocks Then  the trading mode should be ""TRADING_MODE_CONTINUOUS"" for the market ""BTC/ETH"" And  the mark price should be ""1050"" for the market ""BTC/ETH"" And  the orders should have the following states: And  the market data for the market ""BTC/ETH"" should be:",vegaprotocol_vega\0032-PRIM-025_story_processado.txt,1,1,
+0068-MATC-073_story_processado.txt,vegaprotocol_vega,cenário 5,Post-only limit GFN order is placed on the book,"Scenario: Post-only limit GFN order is placed on the book
+  Given there are no existing orders on the book that cross
+  When a user places a LIMIT GFN order with post-only flag set to TRUE
+  Then the order is placed fully on the book
+  And the order status is ""Active""",Incoming LIMIT: POST-ONLY TRUE orders will be placed fully on the book if no orders currently cross. (0068-MATC-073) And  the parties place the following orders: Then  the orders should have the following status:,vegaprotocol_vega\0068-MATC-073_story_processado.txt,1,1,
+trading_fees_spot_story_processado.txt,vegaprotocol_vega,cenário 1,Order placement with sufficient balance,"Scenario: Order placement with sufficient balance
+  Given there is a user with sufficient balance in their general account
+  When the user places an order on a spot market
+  Then the system reserves the required assets in the holding account
+  And the order is accepted","the order can not be placed. When trade happens, holding asset is released:",vegaprotocol_vega\trading_fees_spot_story_processado.txt,1,1,

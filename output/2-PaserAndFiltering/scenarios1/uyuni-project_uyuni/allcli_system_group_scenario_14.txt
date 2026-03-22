@@ -1,0 +1,11 @@
+Scenario 14: Add the Red Hat-like minion to the group in a different way
+  Tags: ['@rhlike_minion']
+  When  I follow the left menu "Systems > System Groups"
+  Then  I should see a "System Groups" text
+  When  I follow "new-systems-group"
+  And  I follow "Target Systems"
+  Then  I should see a "The following are systems that may be added to this group." text
+  When  I check the "rhlike_minion" client
+  And  I click on "Add Systems"
+  Then  I should see a "1 systems were added to new-systems-group server group" text
+

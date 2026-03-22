@@ -1,0 +1,8 @@
+Scenario 5: Admin can show listing publish date
+  Tags: ['@javascript']
+  When  I check "Show listing publishing date on the listing page"
+  And  I press submit
+  And  I wait for 1 seconds
+  Then  I go to the listing page
+  And  I should see "Listing created"
+

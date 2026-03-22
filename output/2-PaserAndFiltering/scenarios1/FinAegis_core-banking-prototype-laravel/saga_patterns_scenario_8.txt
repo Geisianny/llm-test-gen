@@ -1,0 +1,6 @@
+Scenario 8: Saga with dynamic compensation strategies
+  Given  different compensation strategies are available
+  When  a saga fails requiring compensation
+  Then  the appropriate strategy should be selected:
+  And  strategy selection should be logged
+

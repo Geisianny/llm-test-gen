@@ -1,0 +1,17 @@
+Scenario 2: Import lattes informations
+  Tags: ['@selenium']
+  And  I check "Lattes Curriculum Plugin"
+  And  I follow "Save changes"
+  And  I go to /admin/features/manage_fields
+  Given  I follow "Person's fields"
+  And  I check "person_fields_lattes_url_active"
+  And  I check "person_fields_lattes_url_signup"
+  And  I follow "Save changes"
+  Given  I am on admin_user's control panel
+  And  the field lattes_url is public for all users
+  When  I follow "Informations" within "#section-profile"
+  And  I fill in "Lattes URL" with "http://lattes.cnpq.br/2864976228727880"
+  And  I follow "Save"
+  And  I go to /profile/admin_user#lattes_tab
+  Then  I should see "Lattes"
+

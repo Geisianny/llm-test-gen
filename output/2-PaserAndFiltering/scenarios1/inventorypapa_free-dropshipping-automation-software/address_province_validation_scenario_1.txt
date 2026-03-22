@@ -1,0 +1,8 @@
+Scenario 1: The province name stays after validation error
+  Tags: ['@ui', '@javascript', '@api']
+  Given  I am editing the address of "Lucifer Morningstar"
+  When  I remove the street
+  And  I save my changed address
+  Then  I should still be on the "Lucifer Morningstar" address edit page
+  And  I should still have "Arkansas" as my specified province
+

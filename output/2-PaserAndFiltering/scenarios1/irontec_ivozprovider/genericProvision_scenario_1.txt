@@ -1,0 +1,6 @@
+Scenario 1: Get generic provision
+  Tags: ['@createSchema']
+  When  I go to "/y000000000052.cfg"
+  Then  the response status code should be 200
+  And  the response should be equal to:
+

@@ -1,0 +1,4 @@
+Scenario 5: non logged in user should not see new event link
+  Given  I visit the home page
+  Then  I should not see "New Event"
+

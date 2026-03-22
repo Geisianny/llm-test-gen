@@ -1,0 +1,6 @@
+Scenario 4: Adding a translation for contact details
+  Given  I am a GDS editor
+  And  the organisation "Wales Office" is translated into Welsh and has a contact "Wales Office, Cardiff"
+  When  I add a welsh translation "Cysylltwch â ni" to the "Wales Office, Cardiff" contact
+  Then  I should see on the admin organisation contacts page that "Wales Office, Cardiff" has a welsh translation "Cysylltwch â ni"
+

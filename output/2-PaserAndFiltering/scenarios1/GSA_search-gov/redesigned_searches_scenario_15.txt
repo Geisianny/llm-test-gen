@@ -1,0 +1,10 @@
+Scenario 15: Search with tabs and one related site on menu
+  Tags: ['@javascript', '@a11y']
+  Given  the following BingV7 Affiliates exist:
+  And  affiliate "bar.gov" has the following document collections:
+  And  the following Connections exist for the affiliate "bar.gov":
+  When  I am on bar.gov's redesigned search page
+  Then  I should see "Everything"
+  And  I should see "Topics"
+  And  I should see "Other Site"
+

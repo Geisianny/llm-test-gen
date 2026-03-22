@@ -1,0 +1,7 @@
+Scenario 6: Cascading service failure containment
+  Given  service A depends on service B and C
+  When  service B fails completely
+  Then  the system should:
+  And  prevent cascade failure to other services
+  And  provide clear service status to users
+

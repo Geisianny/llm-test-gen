@@ -1,0 +1,11 @@
+Scenario 1: 0083-RFPR-061 adding parties to non-closed team works as expected.
+  Tags: ['@Closed']
+  Given  the parties submit the following recurring transfers:
+  When  the parties apply the following referral codes:
+  Then  the team "team2" has the following members:
+  When  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  "referee1" should have vesting account balance of "5714" for asset "USD-1-10"
+  And  "referee2" should have vesting account balance of "2142" for asset "USD-1-10"
+  And  "referee3" should have vesting account balance of "2142" for asset "USD-1-10"
+

@@ -1,0 +1,22 @@
+Scenario Outline 2: Attempting to reallocate rewards after a party hits the cap and carrying over unallocated rewards (0057-TRAN-072)(0057-TRAN-073) - Example 1
+  Given  the network moves ahead "1" epochs
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  Given  the current epoch is "1"
+  And  the parties submit the following recurring transfers:
+  When  the network moves ahead "1" epochs
+  Then  parties should have the following vesting account balances:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  Given  the current epoch is "2"
+  When  the network moves ahead "1" epochs
+  Then  parties should have the following vesting account balances:
+
+  Examples:
+    | cap_reward_fee_multiple | epoch1_party1_rewards | epoch1_party2_rewards | epoch2_party1_rewards | epoch2_party2_rewards |
+    | 1 | 0 | 1000 | 9500 | 9500 |
+    | 5 | 0 | 5000 | 7500 | 7500 |
+    | 10 | 0 | 9990 | 5005 | 5005 |
+

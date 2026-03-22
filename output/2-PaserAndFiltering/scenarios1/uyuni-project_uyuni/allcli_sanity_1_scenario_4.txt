@@ -1,0 +1,7 @@
+Scenario 4: The build host is healthy
+  Tags: ['@build_host']
+  Then  "build_host" should have a FQDN
+  And  reverse resolution should work for "build_host"
+  And  "build_host" should communicate with the server using public interface
+  And  the clock from "build_host" should be exact
+

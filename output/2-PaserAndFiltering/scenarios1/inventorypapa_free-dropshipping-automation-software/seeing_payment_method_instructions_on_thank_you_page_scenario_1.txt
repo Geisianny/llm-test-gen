@@ -1,0 +1,9 @@
+Scenario 1: Being informed about payment instructions on thank you page
+  Tags: ['@ui']
+  Given  I am a logged in customer
+  And  I have product "PHP T-Shirt" in the cart
+  When  I proceed selecting "Offline" payment method
+  And  I confirm my order
+  Then  I should see the thank you page
+  And  I should be informed with "Offline" payment method instructions
+

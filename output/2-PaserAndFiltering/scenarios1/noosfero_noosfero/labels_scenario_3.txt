@@ -1,0 +1,10 @@
+Scenario 3: save label for comment
+  Tags: ['@selenium']
+  Given  the following labels
+  And  I am logged in as "joaosilva"
+  And  I go to article "Article to comment"
+  And  I fill in "Leave your comment" with "Hey ho, let's go!"
+  Then  I select "Addition" from "comment_label_id"
+  And  I press "Send"
+  Then  I should see "Addition" within ".comment-classification-options"
+

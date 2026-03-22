@@ -1,0 +1,8 @@
+Scenario 1: Update price
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  And  the following payment details:
+  When  I update via the api the subscription "Test Plan" for "customer.one@example.org" to use the 30000 in "USD" per "year" price
+  Then  the subscription "Test Plan" for "customer.one@example.org" will be for 30000 in "USD" per "year"
+

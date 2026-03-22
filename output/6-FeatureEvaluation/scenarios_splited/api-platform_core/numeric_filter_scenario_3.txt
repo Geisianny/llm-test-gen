@@ -1,0 +1,6 @@
+Scenario: Filter collection with non-numerical input
+  Given there is a collection of resources with numerical properties
+  When the client requests the collection with a non-numerical filter value "abc"
+  Then the system returns a JSON-LD response with the original collection
+  And the response includes the correct pagination metadata
+  And the system maintains a 200 status return

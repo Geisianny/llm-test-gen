@@ -1,0 +1,8 @@
+Scenario 18: Update an existing Action Connection returns "Bad Request" response
+  Tags: ['@team:DataDog/workflow-automation-dev']
+  Given  new "UpdateActionConnection" request
+  And  request contains "connection_id" parameter with value "cb460d51-3c88-4e87-adac-d47131d0423d"
+  And  body with value {"data":{"type":"action_connection","attributes":{"name":"Cassette Connection","integration":{"type":"AWS","credentials":{"type":"AWSAssumeRole","role":"MyRoleUpdated","account_id":"1"}}}}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

@@ -1,0 +1,12 @@
+Scenario 1: Tag page_section works for simple cms
+  Given  a liquid template "main_layout" of provider "foo.3scale.localhost" with content
+  When  I go to the homepage
+  Then  I should see "simple cms tag page_section home"
+
+
+
+Scenario 2: Tag page_section works for browser cms
+  Given  a liquid template "main_layout" of provider "foo.3scale.localhost" with content
+  When  I go to the homepage
+  Then  I should see "bcms tag page_section content"
+

@@ -1,0 +1,8 @@
+Scenario 5: Delete a notebook returns "OK" response
+  Tags: ['@team:DataDog/notebooks']
+  Given  new "DeleteNotebook" request
+  And  there is a valid "notebook" in the system
+  And  request contains "notebook_id" parameter from "notebook.data.id"
+  When  the request is sent
+  Then  the response status is 204 OK
+

@@ -1,0 +1,14 @@
+Scenario 4: revert to a specific version generates a new version
+  Tags: ['@selenium']
+  Given  I go to article "Edited Article"
+  And  I follow "article-options"
+  When  I follow "All versions"
+  Then  I should not see "Version 3" within "#article-versions"
+  And  I follow "Version 1"
+  And  I follow "Revert to this version"
+  And  I follow "Save"
+  Then  I should see "Sample Article" within ".title"
+  And  I follow "article-options"
+  When  I follow "All versions"
+  Then  I should see "Version 3" within "#article-versions"
+

@@ -1,0 +1,5 @@
+Scenario 2: Seeing a disabled code field while editing a product association type
+  Tags: ['@api', '@ui']
+  When  I want to modify the "Cross sell" product association type
+  Then  I should not be able to edit its code
+

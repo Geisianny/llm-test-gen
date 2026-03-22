@@ -1,0 +1,7 @@
+Scenario 2: Get a specific Org Config value returns "Not Found" response
+  Tags: ['@team:DataDog/team-aaa-identity']
+  Given  new "GetOrgConfig" request
+  And  request contains "org_config_name" parameter with value "i_dont_exist"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

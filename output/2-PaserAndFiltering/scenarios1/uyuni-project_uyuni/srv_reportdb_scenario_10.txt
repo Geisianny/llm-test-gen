@@ -1,0 +1,4 @@
+Scenario 10: Cleanup: delete read-only user
+  When  I delete the read-only user for the ReportDB
+  Then  I shouldn't see the read-only user listed on the ReportDB user accounts
+

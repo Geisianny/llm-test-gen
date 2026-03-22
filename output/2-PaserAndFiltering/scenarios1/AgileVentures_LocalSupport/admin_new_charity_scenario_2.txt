@@ -1,0 +1,6 @@
+Scenario 2: Successfully create charity while being signed-in as superadmin
+  Tags: ['@vcr']
+  Given  I am signed in as a superadmin
+  And  I have created a new organisation
+  Then  I should see "Organisation was successfully created."
+

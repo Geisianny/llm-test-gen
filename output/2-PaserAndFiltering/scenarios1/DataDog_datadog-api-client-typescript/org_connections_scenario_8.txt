@@ -1,0 +1,6 @@
+Scenario 8: List Org Connections returns "OK" response
+  Tags: ['@team:DataDog/aaa-granular-access']
+  Given  new "ListOrgConnections" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

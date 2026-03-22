@@ -1,0 +1,9 @@
+Scenario 30: Cleanup: Delete the minion Highstate Recurring Action
+  When  I am on the "Recurring Actions" page of this "sle_minion"
+  Then  I should see a "schedule_name_minion" text
+  When  I click the "schedule_name_minion" item delete button
+  And  I wait until I see "Delete Recurring Action Schedule" text
+  And  I click on the red confirmation button
+  Then  I wait until I see "Schedule 'schedule_name_minion' has been deleted." text
+  And  I should see a "No schedules created. Use Create to add a schedule" text
+

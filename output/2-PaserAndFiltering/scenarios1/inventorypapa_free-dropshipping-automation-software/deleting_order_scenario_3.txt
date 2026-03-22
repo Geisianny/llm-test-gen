@@ -1,0 +1,5 @@
+Scenario 3: Shipments of a deleted order should disappear from the registry
+  Tags: ['@domain']
+  When  I delete the order "#00000022"
+  Then  there should be no shipments with "Free" shipping method in the registry
+

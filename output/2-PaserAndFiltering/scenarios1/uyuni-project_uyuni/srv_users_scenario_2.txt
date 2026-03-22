@@ -1,0 +1,11 @@
+Scenario 2: Display active users page
+  When  I follow the left menu "Users > User List > Active"
+  Then  I should see a "Active Users" text
+  And  I should see a "Create User" link
+  And  I should see a "User List" link in the left menu
+  And  I should see a "Active" link in the left menu
+  And  I should see a "Deactivated" link in the left menu
+  And  I should see a "All" link in the left menu
+  And  I should see a "admin" link in the table first column
+  And  I should see a "Download CSV" link
+

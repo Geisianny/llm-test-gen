@@ -1,0 +1,12 @@
+Scenario 9: Adding multiple images and removing a single image of a configurable product
+  Tags: ['@no-api', '@ui', '@mink:chromedriver']
+  Given  the store has a "Lamborghini Gallardo Model" configurable product
+  When  I want to modify this product
+  And  I attach the "lamborghini.jpg" image with "thumbnail" type
+  And  I attach the "lamborghini.jpg" image with "main" type
+  And  I remove the first image
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this product should have an image with "main" type
+  But  it should not have any images with "thumbnail" type
+

@@ -1,0 +1,4 @@
+Scenario 15: Cleanup: activation key was successfully removed
+  When  I follow the left menu "Systems > Activation Keys"
+  Then  I should not see a "My Activation Key created via Salt" text
+

@@ -1,0 +1,6 @@
+Scenario 1: Displaying tracked product variants sorted by name in ascending order by default
+  Tags: ['@ui', '@no-api']
+  Then  I should see 2 tracked variants in the list
+  And  the first variant on the list should have name "Iron Maiden T-Shirt"
+  And  the last variant on the list should have name "RHCP T-Shirt"
+

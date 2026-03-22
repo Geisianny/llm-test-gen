@@ -1,0 +1,7 @@
+Scenario 12: Delete a single kind returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/service-catalog']
+  Given  new "DeleteCatalogKind" request
+  And  request contains "kind_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 204 OK
+

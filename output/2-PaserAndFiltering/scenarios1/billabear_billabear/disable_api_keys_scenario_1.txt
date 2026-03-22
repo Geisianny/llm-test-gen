@@ -1,0 +1,6 @@
+Scenario 1: View API Key
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  the follow api keys exist:
+  When  I disable the api key "Key One"
+  Then  then the api key "Key One" is not active
+

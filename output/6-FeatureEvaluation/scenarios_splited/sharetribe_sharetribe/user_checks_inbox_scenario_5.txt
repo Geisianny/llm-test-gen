@@ -1,0 +1,6 @@
+Scenario: User navigates between received and sent messages
+  Given there is a user with both received and sent messages
+  And the user is logged in
+  And the user is in the inbox viewing received messages
+  When the user navigates to the sent messages tab
+  Then the system displays the list of sent messages

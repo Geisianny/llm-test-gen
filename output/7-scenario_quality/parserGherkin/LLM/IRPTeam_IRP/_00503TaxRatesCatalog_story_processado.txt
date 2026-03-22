@@ -1,0 +1,54 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: _00503TaxRatesCatalog_story_processado.feature
+Caminho relativo: IRPTeam_IRP\_00503TaxRatesCatalog_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\IRPTeam_IRP\_00503TaxRatesCatalog_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: _00503TaxRatesCatalog_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Create a new tax rate with valid information
+   Steps: 6
+   - Given there is an administrator logged in
+   - And the tax rates catalog is empty
+   - When the administrator creates a new tax rate with the code "VAT" and rate "20"
+   - And adds a multilingual description for the tax rate "VAT" in English as "Value Added Tax"
+   - Then the system saves the new tax rate
+   - And displays a confirmation message
+2. Attempt to create a tax rate with duplicate code
+   Steps: 5
+   - Given there is an administrator logged in
+   - And there is a tax rate with the code "VAT" and rate "20"
+   - When the administrator creates a new tax rate with the code "VAT" and rate "15"
+   - Then the system denies the creation
+   - And displays an error message indicating that the tax rate code already exists
+3. Create a tax rate with invalid rate value
+   Steps: 5
+   - Given there is an administrator logged in
+   - And the tax rates catalog is empty
+   - When the administrator creates a new tax rate with the code "VAT" and rate "abc"
+   - Then the system denies the creation
+   - And displays an error message indicating that the tax rate value is invalid
+4. Update an existing tax rate
+   Steps: 5
+   - Given there is an administrator logged in
+   - And there is a tax rate with the code "VAT" and rate "20"
+   - When the administrator updates the tax rate "VAT" with a new rate "25"
+   - Then the system saves the updated tax rate
+   - And displays a confirmation message
+5. Delete a tax rate
+   Steps: 5
+   - Given there is an administrator logged in
+   - And there is a tax rate with the code "VAT" and rate "20"
+   - When the administrator deletes the tax rate "VAT"
+   - Then the system removes the tax rate
+   - And displays a confirmation message indicating that the tax rate has been deleted

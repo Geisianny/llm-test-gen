@@ -1,0 +1,17 @@
+Scenario 3: Invite employee
+  When  I click edit on name form
+  And  I wait for the ajax response
+  And  I fill in "Organization Name" with "Some Organization"
+  And  I press "Save"
+  And  I wait for the ajax response
+  And  I click edit on employees form
+  And  I wait for the ajax response
+  And  I fill in "Via email address" with "test.invite@example.com"
+  And  I press "Invite"
+  And  I wait for the ajax response
+  And  I wait for 5 seconds
+  Then  I should see "test.invite@example.com"
+  And  an email should be sent to "test.invite@example.com"
+  And  an email should be sent from "email@example.com"
+  And  sent email should be contain "Test Recruiter invited you"
+

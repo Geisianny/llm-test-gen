@@ -1,0 +1,7 @@
+Scenario 4: I can not register with an invalid email
+  Given  I am on the home page
+  And  I follow "Register"
+  When  I fill in the following:
+  And  I press "Register"
+  And  I should see "This value should be a valid email."
+

@@ -1,0 +1,9 @@
+Scenario 3: Adding and removing text attributes on product update page
+  Tags: ['@ui', '@javascript']
+  When  I want to modify the "44 Magnum" product
+  And  I set its "Overall length" attribute to "30.5 cm" in "English (United States)"
+  And  I remove its "Overall length" attribute
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  product "44 Magnum" should not have a "Overall length" attribute
+

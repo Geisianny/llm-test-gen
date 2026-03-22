@@ -1,0 +1,6 @@
+Scenario 4: Pre-requisite: refresh package list and check old packages installed on SLE minion
+  When  I refresh packages list via spacecmd on "sle_minion"
+  And  I wait until refresh package list on "sle_minion" is finished
+  Then  spacecmd should show packages "virgo-dummy-1.0" installed on "sle_minion"
+  And  I wait until package "andromeda-dummy-2.0-1.1" is removed from "sle_minion" via spacecmd
+

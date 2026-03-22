@@ -1,0 +1,8 @@
+Scenario 3: Create a new incident service returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:Datadog/incident-app']
+  Given  operation "CreateIncidentService" enabled
+  And  new "CreateIncidentService" request
+  And  body with value {"data": {"attributes": {"name": "an example service name"}, "type": "services"}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

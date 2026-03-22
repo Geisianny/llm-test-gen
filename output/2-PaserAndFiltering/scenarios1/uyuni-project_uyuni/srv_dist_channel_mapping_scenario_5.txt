@@ -1,0 +1,12 @@
+Scenario 5: Create new map for amd64 Ubuntu clients with test base channel
+  Tags: ['@deblike_minion']
+  When  I follow the left menu "Software > Distribution Channel Mapping"
+  And  I follow "Create Distribution Channel Mapping"
+  Then  I should see a "Create Distribution Channel Map" text
+  When  I enter "Ubuntu 24.04" as "os"
+  And  I enter "24.04" as "release"
+  And  I select "AMD64 Debian" from "architecture"
+  And  I select "Fake-Base-Channel-Debian-like" from "channel_label"
+  And  I click on "Create Mapping"
+  Then  I should see a "Ubuntu 24.04" link in the content area
+

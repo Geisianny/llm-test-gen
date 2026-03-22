@@ -1,0 +1,33 @@
+Scenario: Charity worker updates donation link successfully
+  Given there is a charity worker with an organization
+  And the organization's donation link is currently "https://old-donation-link.com"
+  When the charity worker updates the donation link to "https://new-donation-link.com"
+  Then the system saves the new donation link
+  And displays a confirmation message that the donation link has been updated
+
+Scenario: Charity worker updates donation link with invalid URL
+  Given there is a charity worker with an organization
+  And the organization's donation link is currently "https://old-donation-link.com"
+  When the charity worker updates the donation link to "invalid-url"
+  Then the system does not save the new donation link
+  And displays an error message indicating that the URL is invalid
+
+Scenario: Charity worker updates donation link to an empty URL
+  Given there is a charity worker with an organization
+  And the organization's donation link is currently "https://old-donation-link.com"
+  When the charity worker updates the donation link to ""
+  Then the system does not save the new donation link
+  And displays an error message indicating that the donation link cannot be empty
+
+Scenario: Charity worker views updated donation link on public page
+  Given there is a charity worker with an organization
+  And the organization's donation link has been updated to "https://new-donation-link.com"
+  When a user views the organization's public page
+  Then the system displays the new donation link "https://new-donation-link.com"
+
+Scenario: Charity worker cancels updating donation link
+  Given there is a charity worker with an organization
+  And the organization's donation link is currently "https://old-donation-link.com"
+  When the charity worker cancels updating the donation link
+  Then the system does not change the donation link
+  And the organization's donation link remains "https://old-donation-link.com"

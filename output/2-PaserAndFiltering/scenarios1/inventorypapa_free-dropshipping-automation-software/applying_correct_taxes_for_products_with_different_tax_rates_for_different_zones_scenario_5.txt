@@ -1,0 +1,8 @@
+Scenario 5: Displaying correct taxes for multiple products from different zones after specifying billing address
+  Tags: ['@ui']
+  Given  I have product "PHP T-Shirt" in the cart
+  And  I have 2 products "Symfony Mug" in the cart
+  When  I proceed selecting "Germany" as billing country
+  Then  my cart total should be "$223.00"
+  And  my cart taxes should be "$23.00"
+

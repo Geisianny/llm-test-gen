@@ -1,0 +1,12 @@
+Scenario 6: some required fields
+  Given  organization_approval_method is "admin" on environment
+  And  I follow "Groups" within "#section-relationships"
+  And  the following states
+  And  the following enterprise fields are required fields
+  And  I follow "Register a new enterprise"
+  And  I fill in the following:
+  When  I follow "Next"
+  Then  I should see "Foundation year can't be blank"
+  Then  I should see "Contact person can't be blank"
+  Then  I should see "Contact email can't be blank"
+

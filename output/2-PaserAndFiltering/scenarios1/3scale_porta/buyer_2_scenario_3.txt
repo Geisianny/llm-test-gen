@@ -1,0 +1,8 @@
+Scenario 3: Subscribe with legal terms
+  Given  provider "foo.3scale.localhost" has service subscription legal terms:
+  And  the following service plan:
+  When  I go to the service subscription page
+  Then  I should see "Magna Charta"
+  And  I press "Subscribe"
+  Then  I should see "You have successfully subscribed to a service"
+

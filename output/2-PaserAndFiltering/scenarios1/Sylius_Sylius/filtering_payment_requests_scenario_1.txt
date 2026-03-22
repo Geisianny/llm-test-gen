@@ -1,0 +1,7 @@
+Scenario 1: Filtering payment requests by action
+  Tags: ['@api', '@ui']
+  When  I browse payment requests of an order "#00000001"
+  And  I filter by the "capture" action
+  Then  there should be 1 payment request on the list
+  And  it should be the payment request with action "capture"
+

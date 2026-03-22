@@ -1,0 +1,8 @@
+Scenario 3: Viewing price block without channel enable
+  Tags: ['@ui']
+  Given  this product is unavailable in "United States" channel
+  When  I access "Iron shield" product page
+  Then  I should see product name "Iron shield"
+  And  I should see the product in neither channel
+  And  I should not see price for channel "United States"
+

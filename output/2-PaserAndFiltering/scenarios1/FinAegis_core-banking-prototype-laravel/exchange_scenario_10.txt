@@ -1,0 +1,6 @@
+Scenario 10: Insufficient balance
+  Given  I am logged in as "alice@example.com"
+  And  my "EUR" balance is "100.00"
+  When  I try to place a buy order for "1.0" "BTC" at "50000" "EUR"
+  Then  I should get an error "Insufficient EUR balance"
+

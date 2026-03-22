@@ -1,0 +1,8 @@
+Scenario 17: Managing attachments for a worldwide organisation page
+  Given  an worldwide organisation "Test Worldwide Organisation" with a "Personal information charter" page
+  When  I visit the pages tab for the worldwide organisation
+  And  I click the "Edit" link for the "Personal information charter" page
+  And  I click the Attachments tab
+  And  I upload a file attachment with the title "Beard Length Statistics 2014" and the file "dft_statistical_data_set_sample.csv"
+  Then  The "Beard Length Statistics 2014" attachment should have uploaded successfully
+

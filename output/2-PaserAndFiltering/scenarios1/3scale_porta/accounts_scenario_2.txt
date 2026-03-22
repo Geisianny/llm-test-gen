@@ -1,0 +1,9 @@
+Scenario 2: Non-admins cannot edit account details
+  Tags: ['@security', '@javascript']
+  Given  an user "bob" of account "foo.3scale.localhost"
+  And  the user "bob" is activated
+  And  current domain is the admin domain of provider "foo.3scale.localhost"
+  When  I log in as provider "bob"
+  And  I go to the provider account page
+  Then  I should see "Access denied"
+

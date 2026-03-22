@@ -1,0 +1,6 @@
+Scenario 2: Add a new customer payment-provider-rule which is inactive
+  Given  adding a payment-provider-rule named "customer"
+  And  the payment-provider-rule is inactive
+  And  the payment-provider-rule has a condition customers with customer "some-customer@something.com"
+  Then  the payment-provider-rule should be invalid for my cart with payment provider "Bankwire"
+

@@ -1,0 +1,5 @@
+Scenario 2: Pre-requisite: refresh package list on Debian-like minion
+  When  I refresh packages list via spacecmd on "deblike_minion"
+  And  I wait until refresh package list on "deblike_minion" is finished
+  Then  spacecmd should show packages "virgo-dummy-1.0" installed on "deblike_minion"
+

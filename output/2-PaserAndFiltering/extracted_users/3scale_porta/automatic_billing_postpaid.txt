@@ -1,0 +1,83 @@
+Feature: Automatic billing with plan changes on POSTPAID
+Description: As a provider I want to differentiate costs added by the automatic
+  billing job and my manually created invoices
+Tags: ['@stats']
+
+Background: 
+  Given  a provider on 1st January 2017
+  And  the default product of the provider has name "My API"
+  And  the provider is charging its buyers in postpaid mode
+  And  the provider has "finance" visible
+  Given  the provider service allows to change application plan directly
+  And  the provider has one buyer
+  And  the following application plans:
+
+Scenario 1: Monthly fee on application plan upgrading the same day
+  Given  all the rolling updates features are off
+  And  the date is 1st January 2017
+  And  the buyer is signed up to plan "Paid"
+  Then  the buyer changes to application plan "Expensive"
+  When  time flies to 3rd February 2017
+  Then  the buyer should have following line items for "January, 2017" invoice:
+
+Scenario 2: Monthly fee on application plan downgrading the same day
+  Given  all the rolling updates features are off
+  And  the date is 1st January 2017
+  And  the buyer is signed up to plan "Expensive"
+  Then  the buyer changes to application plan "Paid"
+  When  time flies to 3rd February 2017
+  Then  the buyer should have following line items for "January, 2017" invoice:
+
+Scenario 3: Monthly fee on application plan downgrading in the middle of the same day
+  Given  all the rolling updates features are off
+  And  the date is 1st January 2017
+  And  the buyer is signed up to plan "Expensive"
+  And  the date is 1st January 2017 12:00
+  Then  the buyer changes to application plan "Paid"
+  When  time flies to 3rd February 2017
+  Then  the buyer should have following line items for "January, 2017" invoice:
+
+Scenario 4: Monthly fee on application plan downgrading on different day
+  Given  all the rolling updates features are off
+  And  the date is 1st January 2017 UTC
+  And  the buyer is signed up to plan "Expensive"
+  And  time flies to 2nd January 2017
+  Then  the buyer changes to application plan "Paid"
+  When  time flies to 3rd February 2017
+  Then  the buyer should have following line items for "January, 2017" invoice:
+  And  there is only one invoice for "January, 2017"
+
+Scenario 5: Monthly fee on several application plan upgrades in the middle of the month
+  Given  all the rolling updates features are off
+  And  the following application plans:
+  And  the date is 1st January 2017
+  And  the buyer is signed up to plan "Paid"
+  And  time flies to 2nd January 2017
+  Then  the buyer changes to application plan "Expensive"
+  And  time flies to 3rd January 2017
+  Then  the buyer changes to application plan "ExpensiveAsHell"
+  When  time flies to 3rd February 2017
+  Then  the buyer should have following line items for "January, 2017" invoice:
+  And  there is only one invoice for "January, 2017"
+
+Scenario 6: Monthly fee on application plan creating a new invoice manually, upgrading on different day
+  Given  all the rolling updates features are off
+  And  the date is 1st January 2017
+  And  the buyer is signed up to plan "Paid"
+  And  time flies to 2nd January 2017
+  Then  I create a new invoice from the API for this buyer for January, 2017 with:
+  Then  the buyer changes to application plan "Expensive"
+  When  time flies to 3rd February 2017
+  Then  the buyer should have following line items for "January, 2017" in the 1st invoice:
+  Then  the buyer should have following line items for "January, 2017" in the 2nd invoice:
+
+Scenario 7: Monthly fee on application plan upgrading the same day and a manual invoice was created
+  Given  all the rolling updates features are off
+  And  the date is 1st January 2017 UTC
+  And  the buyer is signed up to plan "Paid"
+  Then  I create a new invoice from the API for this buyer for January, 2017 with:
+  Then  the buyer changes to application plan "Expensive"
+  When  time flies to 3rd February 2017
+  Then  the buyer should have following line items for "January, 2017" in the 1st invoice:
+  Then  the buyer should have following line items for "January, 2017" in the 2nd invoice:
+

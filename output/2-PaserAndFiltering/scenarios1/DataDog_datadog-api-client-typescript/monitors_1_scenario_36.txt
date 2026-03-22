@@ -1,0 +1,8 @@
+Scenario 36: Validate a monitor user template returns "Bad Request" response
+  Tags: ['@skip-validation', '@team:DataDog/monitor-app']
+  Given  new "ValidateMonitorUserTemplate" request
+  And  operation "ValidateMonitorUserTemplate" enabled
+  And  body with value {"data": {"attributes": {"description": "A description.", "monitor_definition": {}, "tags": ["integration:Azure"], "template_variables": [{"available_values": ["value1", "value2"], "defaults": ["defaultValue"], "name": "regionName", "tag_key": "datacenter"}], "title": "Postgres DB {{ unique_lower }}"}, "type": "monitor-user-template"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

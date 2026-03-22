@@ -1,0 +1,6 @@
+Scenario 1: Changing a payment method of an order
+  Tags: ['@api', '@ui']
+  When  I want to browse order details for this order
+  And  I change my payment method to "Bank Transfer"
+  Then  I should have "Bank Transfer" payment method on my order
+

@@ -1,0 +1,10 @@
+Scenario: Create a new hunt group member with valid parameters
+  Given there is a hunt group with id "123"
+  And there is a user with id "456"
+  When the client admin sends a POST request to create a new hunt group member
+  And sets the hunt group id to "123"
+  And sets the user id to "456"
+  And sets the timeout time to "30"
+  And sets the priority to "1"
+  Then the system creates a new hunt group member
+  And returns a successful response with the created member details

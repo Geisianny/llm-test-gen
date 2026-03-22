@@ -1,0 +1,7 @@
+Scenario 1: Buyer sees free transaction in list
+  Given  there is a listing with title "Massage" from "kassi_testperson1" with category "Services" and with listing shape "Requesting"
+  Given  there is a message "Love Birds" from "kassi_testperson2" about that listing
+  Given  I am logged in as "kassi_testperson2"
+  When  I go to the messages page
+  Then  I should see "Love Birds"
+

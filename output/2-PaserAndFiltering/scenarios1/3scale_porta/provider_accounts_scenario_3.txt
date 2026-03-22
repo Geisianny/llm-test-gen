@@ -1,0 +1,10 @@
+Scenario 3: Members of partners group can access accounts
+  Given  an active user "member" of account "foo.3scale.localhost"
+  And  user "member" has access to the admin section "partners"
+  And  current domain is the admin domain of provider "foo.3scale.localhost"
+  And  provider "foo.3scale.localhost" has "multiple_users" switch allowed
+  When  I log in as provider "member"
+  And  I go to the provider dashboard
+  Then  I should see the link "1 ACCOUNT" within the audience dashboard widget
+  And  they should be able to go to the following pages:
+

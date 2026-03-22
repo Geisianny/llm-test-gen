@@ -1,0 +1,8 @@
+Scenario 3: Resend fax must fail if type is In
+  Tags: ['@createSchema']
+  Given  I add User Authorization header
+  When  I add "Content-Type" header equal to "application/json"
+  And  I add "Accept" header equal to "application/json"
+  And  I send a "POST" request to "/faxes_in_outs/1/resend" with body:
+  Then  the response status code should be 400
+

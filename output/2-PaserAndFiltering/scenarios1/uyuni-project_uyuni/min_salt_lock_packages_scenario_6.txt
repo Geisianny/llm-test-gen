@@ -1,0 +1,11 @@
+Scenario 6: Schedule a package lock
+  Given  I am on the Systems overview page of this "sle_minion"
+  When  I follow "Software" in the content area
+  And  I follow "Lock / Unlock"
+  And  I enter "hoag-dummy-1.1-1.1" as the filtered package name
+  And  I click on the filter button
+  And  I check row with "hoag-dummy-1.1-1.1" and arch of "sle_minion"
+  And  I click on "Lock"
+  Then  I should see a "Packages has been requested for being locked." text
+  And  package "hoag-dummy-1.1-1.1" is reported as pending to be locked
+

@@ -1,0 +1,8 @@
+Scenario 13: Get all datasets returns "OK" response
+  Tags: ['@skip-terraform-config', '@team:DataDog/aaa-granular-access']
+  Given  there is a valid "dataset" in the system
+  And  operation "GetAllDatasets" enabled
+  And  new "GetAllDatasets" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

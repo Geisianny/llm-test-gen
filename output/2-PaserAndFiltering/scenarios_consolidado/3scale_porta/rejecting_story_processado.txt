@@ -1,0 +1,21 @@
+Scenario 1: Rejecting a single buyer account
+  Given  a pending buyer "bob" signed up to provider "foo.3scale.localhost"
+  When  I go to the buyer account page for "bob"
+  And  I press "Reject"
+  Then  they should see a toast alert with text "Developer account was rejected"
+  And  buyer "bob" should be rejected
+
+
+
+Scenario 2: Reject button is not shown for already rejected accounts
+  Given  a rejected buyer "bob" signed up to provider "foo.3scale.localhost"
+  When  I go to the buyer account page for "bob"
+  Then  I should not see button to reject buyer "bob"
+
+
+
+Scenario 3: Reject button is not shown for approved accounts
+  Given  an approved buyer "bob" signed up to provider "foo.3scale.localhost"
+  When  I go to the buyer account page for "bob"
+  Then  I should not see button to reject buyer "bob"
+

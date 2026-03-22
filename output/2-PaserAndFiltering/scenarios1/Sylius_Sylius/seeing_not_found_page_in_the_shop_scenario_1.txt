@@ -1,0 +1,5 @@
+Scenario 1: Seeing not found page when the product does not exist in the shop
+  Tags: ['@no-api', '@ui']
+  When  I try to reach nonexistent product
+  Then  I should see the not found page
+

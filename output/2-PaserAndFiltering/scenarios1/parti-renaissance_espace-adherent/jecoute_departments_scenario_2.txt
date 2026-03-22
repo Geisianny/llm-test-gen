@@ -1,0 +1,15 @@
+Scenario 2: As an authenticated user I can get the informations of a single department for a given postal code
+  Given  I am logged with "michelle.dufour@example.ch" via OAuth client "J'écoute" with scope "jemarche_app"
+  When  I send a "GET" request to "/api/jecoute/departments/06600"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+  When  I send a "GET" request to "/api/jecoute/departments/59640"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+  When  I send a "GET" request to "/api/jecoute/departments/77700"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+

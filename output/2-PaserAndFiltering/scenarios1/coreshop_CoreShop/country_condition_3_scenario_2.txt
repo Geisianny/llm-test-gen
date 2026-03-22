@@ -1,0 +1,7 @@
+Scenario 2: Add a new country product specific price rule which is invalid
+  Given  the site has a country "Germany" with currency "EUR"
+  Given  adding a product specific price rule to product "Shoe" named "country-discount"
+  And  the specific price rule is active
+  And  the specific price rule has a condition countries with country "Germany"
+  Then  the specific price rule should be invalid for product "Shoe"
+

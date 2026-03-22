@@ -1,0 +1,7 @@
+Scenario 1: User adds a new email (and confirms it)
+  Tags: ['@javascript']
+  When  I add a new email "sharetribe1-2@example.com"
+  Then  I should have unconfirmed email "sharetribe1-2@example.com"
+  When  I confirm email address "sharetribe1-2@example.com"
+  Then  I should have confirmed email "sharetribe1-2@example.com"
+

@@ -1,0 +1,50 @@
+Feature: Handle business tax reverse in europe.
+
+Background: 
+  Given  the following accounts exist:
+  And  the follow brands exist:
+  And  there are the following tax types:
+  And  that the following countries exist:
+  And  the following country tax rules exist:
+  And  the follow products exist:
+  And  the follow prices exist:
+  And  the following features exist:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "Price One" with:
+  Given  a Subscription Plan exists for product "Product Two" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "Price One" with:
+  And  the follow customers exist:
+
+Scenario 1: Digital Goods for a Business with a tax number - Zero tax
+  Given  the following subscriptions exist:
+  And  stripe billing is disabled
+  And  that the tax settings for eu business tax rules is true
+  When  the background task to reinvoice active subscriptions
+  And  there the latest invoice for "customer.one@example.org" will have a zero tax rate
+
+Scenario 2: Physical Goods for a Business with tax number - Reverse tax
+  Given  the following subscriptions exist:
+  And  stripe billing is disabled
+  And  that the tax settings for eu business tax rules is true
+  When  the background task to reinvoice active subscriptions
+  And  there the latest invoice for "customer.one@example.org" will have a reverse charge
+
+Scenario 3: Digital Goods for a Business with tax number - Reverse tax - non-eu customer
+  Given  the following subscriptions exist:
+  And  stripe billing is disabled
+  And  that the tax settings for eu business tax rules is true
+  When  the background task to reinvoice active subscriptions
+  And  there the latest invoice for "customer.seven@example.org" will not have a reverse charge
+
+Scenario 4: Physicial Goods for a Business with a tax number - Zero tax - EU tax rules disabled
+  Given  the following subscriptions exist:
+  And  that the tax settings for eu business tax rules is false
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  And  there the latest invoice for "customer.one@example.org" will not have a zero tax rate
+
+Scenario 5: Digital Goods for a Business with tax number - Reverse tax - EU tax rules disabled
+  Given  the following subscriptions exist:
+  And  that the tax settings for eu business tax rules is false
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  And  there the latest invoice for "customer.seven@example.org" will not have a reverse charge
+

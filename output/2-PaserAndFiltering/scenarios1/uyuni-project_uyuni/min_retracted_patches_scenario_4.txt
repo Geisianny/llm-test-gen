@@ -1,0 +1,12 @@
+Scenario 4: Retracted package should not be available for upgrade
+  When  I install old package "rute-dummy=2.0-1.2" on this "sle_minion"
+  And  I refresh packages list via spacecmd on "sle_minion"
+  And  I wait until refresh package list on "sle_minion" is finished
+  And  I am on the "Software" page of this "sle_minion"
+  And  I follow "Packages"
+  And  I follow "Upgrade"
+  Then  I should not see a "rute-dummy-2.1-1.1" text
+  When  I remove package "rute-dummy" from this "sle_minion"
+  And  I refresh packages list via spacecmd on "sle_minion"
+  And  I wait until package "rute-dummy" is removed from "sle_minion" via spacecmd
+

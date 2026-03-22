@@ -1,0 +1,5 @@
+Scenario: Charity worker views updated donation link on public page
+  Given there is a charity worker with an organization
+  And the organization's donation link has been updated to "https://new-donation-link.com"
+  When a user views the organization's public page
+  Then the system displays the new donation link "https://new-donation-link.com"

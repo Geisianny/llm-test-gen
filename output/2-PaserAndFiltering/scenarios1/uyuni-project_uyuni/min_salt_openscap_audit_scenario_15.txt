@@ -1,0 +1,4 @@
+Scenario 15: Cleanup: Disable required repositories
+  Tags: ['@Uyuni']
+  When  I disable repository "os_pool_repo" on this "sle_minion" without error control
+

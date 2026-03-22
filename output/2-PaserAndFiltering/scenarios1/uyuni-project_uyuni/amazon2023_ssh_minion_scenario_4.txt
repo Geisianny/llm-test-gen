@@ -1,0 +1,7 @@
+Scenario 4: Check connection from Amazon 2023 Salt SSH minion to proxy
+  Tags: ['@proxy']
+  Given  I am on the Systems overview page of this "amazon2023_ssh_minion"
+  When  I follow "Details" in the content area
+  And  I follow "Connection" in the content area
+  Then  I should see "proxy" short hostname
+

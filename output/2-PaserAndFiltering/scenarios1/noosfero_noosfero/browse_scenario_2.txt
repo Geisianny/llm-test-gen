@@ -1,0 +1,17 @@
+Scenario 2: People browse menu should add logged information
+  Tags: ['@selenium-fixme']
+  Given  I am logged in as "joaosilva"
+  And  I should not see "More recent"
+  And  I should not see "More active"
+  And  I should not see "More popular"
+  And  I should not see "Invite friends"
+  And  I should not see "My friends"
+  And  I go to /search/people
+  And  display "#submenu-people-trigger"
+  When  I follow "submenu-people-trigger"
+  Then  I should see "More recent"
+  And  I should see "More active"
+  And  I should see "More popular"
+  And  I should see "Invite friends"
+  And  I should see "My friends"
+

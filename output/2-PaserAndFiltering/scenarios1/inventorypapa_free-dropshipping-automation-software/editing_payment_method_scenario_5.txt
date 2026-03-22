@@ -1,0 +1,5 @@
+Scenario 5: Seeing disabled gateway factory field while editing payment method
+  Tags: ['@ui']
+  When  I want to modify the "Offline" payment method
+  Then  the factory name field should be disabled
+

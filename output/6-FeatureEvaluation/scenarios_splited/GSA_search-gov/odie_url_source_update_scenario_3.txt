@@ -1,0 +1,7 @@
+Scenario: Cancel update document source operation
+  Given there is an affiliate with the identifier "valid_affiliate"
+  And the affiliate has indexed documents with source "rss"
+  When the admin requests to update the document source to "manual" for the affiliate "valid_affiliate"
+  And cancels the update operation
+  Then the system does not queue a job to update the document source
+  And displays a message confirming the update is cancelled

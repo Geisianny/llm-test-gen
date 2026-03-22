@@ -1,0 +1,11 @@
+Scenario 1: Not receiving discount on shipping after removing last item from cart
+  Tags: ['@ui']
+  Given  the store has "DHL" shipping method with "$10.00" fee
+  And  the promotion gives "100%" discount on shipping to every order
+  And  I have product "PHP T-Shirt" in the cart
+  When  I proceed selecting "DHL" shipping method
+  And  I remove product "PHP T-Shirt" from the cart
+  Then  cart should be empty with no value
+  And  there should be no shipping fee
+  And  there should be no discount
+

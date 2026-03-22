@@ -1,0 +1,7 @@
+Scenario 2: Minting fails with insufficient collateral
+  Given  I have 100.00 USD as collateral
+  When  I try to mint 200.00 FGUSDC stablecoins
+  Then  the minting should fail with error "Insufficient collateral"
+  And  I should have 0.00 FGUSDC in my account
+  And  my collateral should remain unlocked
+

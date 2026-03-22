@@ -1,0 +1,8 @@
+Scenario 1: Filtering customer groups
+  Tags: ['@api', '@ui']
+  When  I browse customer groups
+  And  I search for them with "sale" name
+  Then  there should be 2 customer groups in the list
+  And  the 1st customer group on the list should have code "sale" and name "Online sale"
+  And  the 2nd customer group on the list should have code "whole" and name "Wholesale"
+

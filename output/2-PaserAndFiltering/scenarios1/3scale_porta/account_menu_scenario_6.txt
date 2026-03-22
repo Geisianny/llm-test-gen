@@ -1,0 +1,5 @@
+Scenario 6: Account menu when master is not billing
+  Given  master is not billing tenants
+  When  I go to the provider account page
+  Then  I should not see "3scale Invoices"
+

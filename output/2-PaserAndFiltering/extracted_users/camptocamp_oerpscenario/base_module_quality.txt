@@ -1,0 +1,13 @@
+Feature: Run quality tests provided by the editor
+Description: In order to run the quality tests provided by base_module_quality
+  I want to install the module and run the following tests
+Tags: ['@quality']
+
+Scenario 1: Install base_module_quality and run the tests
+  Given  I want to run the quality tests provided by base_module_quality on installed module
+  When  I install the base_module_quality
+  And  run the quality check on every installed module
+  Then  I should have a report on every module
+  And  all module, except base, should have a final score greater than 70.0 percent
+  And  above is a detailed summary of the results
+

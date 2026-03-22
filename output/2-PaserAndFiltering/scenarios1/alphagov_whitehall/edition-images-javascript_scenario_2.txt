@@ -1,0 +1,8 @@
+Scenario 2: Uploading a file with a duplicated filename
+  Tags: ['@javascript']
+  When  a draft document with images exists
+  And  I visit the images tab of the document with images
+  And  I upload a 960x960 image
+  And  I upload a 960x960 image
+  Then  I should get 1 error message
+

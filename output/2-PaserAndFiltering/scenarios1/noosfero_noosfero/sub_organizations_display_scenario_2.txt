@@ -1,0 +1,8 @@
+Scenario 2: Display with compact mode
+  Given  "moe" is a sub organization of "springfield"
+  And  "school" is a sub organization of "springfield"
+  When  I go to springfield's homepage
+  And  I follow "View all" within ".related-organizations-block"
+  Then  I should see "Springfield's sub-communities"
+  And  I should see "Springfield's sub-enterprises"
+

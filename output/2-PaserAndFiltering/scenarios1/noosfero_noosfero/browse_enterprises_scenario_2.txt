@@ -1,0 +1,6 @@
+Scenario 2: show profile links button
+  Given  I am on /search/enterprises
+  Then  I should see "Profile links" within "a.enterprise-trigger"
+  And  I should not see "Members"
+  And  I should not see "Agenda"
+

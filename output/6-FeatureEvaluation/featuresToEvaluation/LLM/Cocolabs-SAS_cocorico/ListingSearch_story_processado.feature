@@ -1,0 +1,31 @@
+Feature: ListingSearch_story_processado
+
+Scenario: Search listing by location
+    Given there are listings available in different locations
+    When the user searches for listings in "Paris"
+    Then the system displays listings available in "Paris"
+    And the listings are relevant to the search location
+
+Scenario: Search listing by category
+    Given there are listings categorized as "Apartments" and "Houses"
+    When the user searches for listings categorized as "Apartments"
+    Then the system displays listings categorized as "Apartments"
+    And the listings match the selected category
+
+Scenario: Search listing by features
+    Given there are listings with different features such as "Wi-Fi" and "Pool"
+    When the user searches for listings with the feature "Wi-Fi"
+    Then the system displays listings that have "Wi-Fi"
+    And the listings match the selected feature
+
+Scenario: Search listing by date
+    Given there are listings available on different dates
+    When the user searches for listings available on "2024-03-15"
+    Then the system displays listings available on "2024-03-15"
+    And the listings match the selected date
+
+Scenario: Search listing by price range
+    Given there are listings with different prices
+    When the user searches for listings priced between "$100" and "$200"
+    Then the system displays listings priced between "$100" and "$200"
+    And the listings match the selected price range

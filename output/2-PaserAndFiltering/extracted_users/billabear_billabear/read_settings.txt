@@ -1,0 +1,14 @@
+Feature: Update system Settings
+Description: In order to keep the system settings correct
+  As an APP user
+  I need to be able to update the system settings
+
+Background: 
+  Given  the following accounts exist:
+
+Scenario 1: Create email template
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  the system settings are:
+  When  I fetch the system settings
+  Then  I will see system settings for system url will be "https://webhook.example.org"
+

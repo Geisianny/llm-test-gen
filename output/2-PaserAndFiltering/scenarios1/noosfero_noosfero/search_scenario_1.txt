@@ -1,0 +1,16 @@
+Scenario 1: show empty results in all enabled assets
+  Tags: ['@selenium']
+  Given  I go to the search page
+  And  I fill in "search-input" with "Anything"
+  And  I follow "Search" within ".search-form"
+  Then  I should see "People" within ".search-results-people"
+  And  I should see "None" within ".search-results-people"
+  And  I should see "Communities" within ".search-results-communities"
+  And  I should see "None" within ".search-results-communities"
+  And  I should see "Enterprises" within ".search-results-enterprises"
+  And  I should see "None" within ".search-results-enterprises"
+  And  I should see "Contents" within ".search-results-articles"
+  And  I should see "None" within ".search-results-articles"
+  And  I should see "Events" within ".search-results-events"
+  And  I should see "None" within ".search-results-events"
+

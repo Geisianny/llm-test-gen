@@ -1,0 +1,5 @@
+Scenario 6: Republish the "Help and services around the world" page
+  Given  a published publication "Help and services around the world" exists
+  When  I request a republish of the "Help and services around the world" page
+  Then  I can see the "Help and services around the world" page has been scheduled for republishing
+

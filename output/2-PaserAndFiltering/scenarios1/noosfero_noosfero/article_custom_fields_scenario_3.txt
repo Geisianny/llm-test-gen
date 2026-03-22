@@ -1,0 +1,7 @@
+Scenario 3: Not add custom field with blank name
+  Tags: ['@selenium']
+  Given  I follow "Add new field"
+  And  I select "Text" from "custom-field-type"
+  And  I fill in "custom-field-name" with ""
+  Then  The page should contain only 0 "div.article-custom-field-wrapper"
+

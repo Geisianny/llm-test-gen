@@ -1,0 +1,7 @@
+Scenario 1: Seeing order locale on the order summary page
+  Tags: ['@api', '@ui']
+  Given  I added product "Stark T-Shirt" to the cart
+  When  I proceed through checkout process
+  Then  I should be on the checkout summary step
+  And  my order's locale should be "English (United States)"
+

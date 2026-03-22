@@ -1,0 +1,8 @@
+Scenario 5: a user should see titles and abstract if the block was configured for it
+  When  I follow "Edit" within ".block.recent-content-block"
+  And  I select "JSilva blog" from "Choose which blog should be displayed"
+  And  I select "Title and abstract" from "Choose how the content should be displayed"
+  And  I fill in "Choose how many items will be displayed" with "6"
+  And  I press "Save"
+  Then  I should see "Resumo 5" within ".block.recent-content-block"
+

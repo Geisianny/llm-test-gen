@@ -1,0 +1,6 @@
+Scenario 4: List Org Configs returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "ListOrgConfigs" request
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

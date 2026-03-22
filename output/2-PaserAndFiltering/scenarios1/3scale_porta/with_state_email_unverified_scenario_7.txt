@@ -1,0 +1,8 @@
+Scenario 7: User restart email verification process
+  Tags: ['@wip']
+  Given  user "alice" is email unverified
+  When  I log in as "alice" on foo.3scale.localhost
+  And  I navigate to my personal details page
+  And  I resend the email verification
+  Then  user "alice" should receive an email to verify email address
+

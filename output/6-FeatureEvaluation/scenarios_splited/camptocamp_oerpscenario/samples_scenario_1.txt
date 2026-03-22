@@ -1,0 +1,5 @@
+Scenario: Create a new partner
+  Given there is no existing partner with the name "Test Partner"
+  When the user creates a new partner with the name "Test Partner"
+  Then the system creates the partner successfully
+  And the partner is visible in the partner list

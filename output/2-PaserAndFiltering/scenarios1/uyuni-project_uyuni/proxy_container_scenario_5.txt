@@ -1,0 +1,4 @@
+Scenario 5: Generate containerized proxy configuration
+  When  I generate the configuration "/tmp/proxy_container_config.tar.gz" of containerized proxy on the server
+  And  I copy the configuration "/tmp/proxy_container_config.tar.gz" of containerized proxy from the server to the proxy
+

@@ -1,0 +1,6 @@
+Scenario 5: As a logged-in adherent I can not join an Agora I am already member of
+  Given  I am logged with "luciole1989@spambox.fr" via OAuth client "JeMengage Mobile" with scope "jemarche_app"
+  When  I send a "POST" request to "/api/v3/agoras/82ad6422-cb82-4c04-b478-bfb421c740e0/join"
+  Then  the response status code should be 400
+  And  the JSON should be equal to:
+

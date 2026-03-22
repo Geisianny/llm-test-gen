@@ -1,0 +1,9 @@
+Scenario 2: Enabling a product variant
+  Tags: ['@ui']
+  Given  the "Wyborowa Vodka Exquisite" product variant is disabled
+  And  I want to modify the "Wyborowa Vodka Exquisite" product variant
+  When  I enable it
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this variant should be enabled
+

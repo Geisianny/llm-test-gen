@@ -1,0 +1,22 @@
+Scenario 3: Minion grains are displayed correctly on the details page
+  Tags: ['@sle_minion']
+  Given  I am on the Systems overview page of this "sle_minion"
+  Then  the hostname for "sle_minion" should be correct
+  And  the kernel for "sle_minion" should be correct
+  And  the OS version for "sle_minion" should be correct
+  And  the IPv4 address for "sle_minion" should be correct
+  And  the IPv6 address for "sle_minion" should be correct
+  And  the system ID for "sle_minion" should be correct
+  And  the system name for "sle_minion" should be correct
+  And  the uptime for "sle_minion" should be correct
+  And  I should see a "UUID" text
+  And  I should see a "Virtualization" text
+  And  I should see a "Installed Products" text
+  And  I should see a "Checked In" text
+  And  I should see a "Registered" text
+  And  I should see a "Contact Method" text
+  And  I should see a "Auto Patch Update" text
+  And  I should see a "Maintenance Schedule" text
+  And  I should see a "Description" text
+  And  I should see a "Location" text
+

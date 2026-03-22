@@ -1,0 +1,5 @@
+Scenario 2: Being unable to verify with invalid token
+  Tags: ['@ui', '@api']
+  When  I try to verify using "twinklelittlestar" token
+  Then  I should be notified that the verification token is invalid
+

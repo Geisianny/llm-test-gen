@@ -1,0 +1,6 @@
+Scenario 18: Get pipeline order returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/event-platform-experience']
+  Given  new "GetLogsPipelineOrder" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

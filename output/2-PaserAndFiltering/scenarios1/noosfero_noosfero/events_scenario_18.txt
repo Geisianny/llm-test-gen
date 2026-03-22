@@ -1,0 +1,5 @@
+Scenario 18: provide button to create new event
+  Given  I am logged in as "josesilva"
+  When  I am on /profile/josesilva/events/2020/12/1
+  Then  I should see "New event" link
+

@@ -1,0 +1,6 @@
+Scenario 2: Adding a chief scientist
+  Given  the organisation "Foreign Office" exists
+  And  a person called "Susan Scientist"
+  When  I add a new "Chief scientific advisor" role named "Chief Scientific Advisor to the FCO" to the "Foreign Office"
+  Then  I should be able to appoint "Susan Scientist" to the new role
+

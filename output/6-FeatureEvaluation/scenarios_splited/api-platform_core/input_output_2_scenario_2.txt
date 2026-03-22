@@ -1,0 +1,6 @@
+Scenario: Password reset with non-existent user
+  Given there is no registered user with the email "nonexistent@example.com"
+  When the client sends a password reset request with the email "nonexistent@example.com"
+  And includes a valid JSON payload
+  Then the system returns a 404 status code
+  And includes a problem+json formatted response

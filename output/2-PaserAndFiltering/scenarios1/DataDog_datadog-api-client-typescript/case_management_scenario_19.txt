@@ -1,0 +1,9 @@
+Scenario 19: Delete custom attribute from case returns "Not Found" response
+  Tags: ['@team:DataDog/case-management']
+  Given  new "DeleteCaseCustomAttribute" request
+  And  there is a valid "case" in the system
+  And  request contains "case_id" parameter from "case.id"
+  And  request contains "custom_attribute_key" parameter with value "invalid_key"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

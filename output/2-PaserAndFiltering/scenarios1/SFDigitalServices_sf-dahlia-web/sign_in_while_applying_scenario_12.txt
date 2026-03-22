@@ -1,0 +1,9 @@
+Scenario 12: Signing in to save and finish later with an already submitted application
+  Given  I go to the first page of the "Test Listing" application
+  When  I fill out the Name page as "Alice Walker"
+  And  I sign in as "Alice Walker" with my email pre-filled
+  Then  I should be on the "My Applications" page
+  And  I should see a modal that says "You have already submitted an application to this listing."
+  And  I close the modal
+  And  I sign out
+

@@ -1,0 +1,15 @@
+Scenario 4: Exclusion of an invoice from the payment list
+  Tags: ['@devel']
+  Given  an unpaid AP transaction with these values:
+  When  I navigate the menu and select the item at "Cash & Banking > Payment"
+  Then  I should see the Single Payment Vendor Selection screen
+  When  I enter "Vendor A" into "Vendor Name"
+  And  I press "Continue"
+  Then  I should see the Single Payment Entry screen
+  And  I expect the open items table to contain 2 rows
+  When  I edit the open item for invoice INV100 with these values:
+  When  I enter "2017-02-02" into "Date"
+  And  I update the form
+  Then  I expect the open items table to contain 1 row
+  And  I expect the open item for invoice INV101 to show:
+

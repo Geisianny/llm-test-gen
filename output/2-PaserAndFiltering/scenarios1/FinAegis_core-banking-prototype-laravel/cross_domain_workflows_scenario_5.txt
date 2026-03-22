@@ -1,0 +1,7 @@
+Scenario 5: Compliance-triggered account freeze
+  Given  suspicious activity is detected
+  When  compliance initiates emergency freeze
+  Then  the workflow should cascade:
+  And  ensure coordinated freeze across all systems
+  And  maintain audit trail across domains
+

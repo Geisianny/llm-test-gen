@@ -1,0 +1,9 @@
+Feature: search_elastic_story_processado
+
+Scenario: Search on an affiliate using the SearchElastic search engine
+    Tags: ['@javascript']
+    When  I am on nasa's search page
+    And  I search for "hubble" in the redesigned search page
+    Then  I should see "NASA Extends Hubble Operations Contract"
+
+

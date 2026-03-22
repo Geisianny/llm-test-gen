@@ -1,0 +1,8 @@
+Scenario 1: Minting stablecoins with sufficient collateral
+  Given  I have 300.00 USD as collateral
+  When  I mint 200.00 FGUSDC stablecoins
+  Then  the minting should be successful
+  And  I should have 200.00 FGUSDC in my account
+  And  my collateral should be locked at 300.00 USD
+  And  my collateral ratio should be 150%
+

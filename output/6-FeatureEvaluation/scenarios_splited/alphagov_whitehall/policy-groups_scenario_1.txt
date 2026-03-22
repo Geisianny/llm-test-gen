@@ -1,0 +1,9 @@
+Scenario: Create a new Policy Group
+  Given there is no existing Policy Group with the title "Climate Change Experts"
+  When the editor creates a new Policy Group with the title "Climate Change Experts"
+  And enters the summary "Experts on climate change policies"
+  And enters the description "Detailed description of climate change experts"
+  And enters the contact email "climatechange@example.com"
+  And uploads an attachment "climatechange.pdf"
+  Then the system creates the Policy Group
+  And displays a confirmation message

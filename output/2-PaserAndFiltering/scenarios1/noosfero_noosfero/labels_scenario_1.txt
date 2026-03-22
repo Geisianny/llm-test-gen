@@ -1,0 +1,6 @@
+Scenario 1: dont display labels if admin did not configure status
+  Tags: ['@selenium']
+  Given  I am logged in as "joaosilva"
+  And  I am on article "Article to comment"
+  Then  I should not see "Label" within "#page-comment-form"
+

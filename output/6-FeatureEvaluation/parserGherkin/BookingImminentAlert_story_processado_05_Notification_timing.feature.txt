@@ -1,0 +1,24 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 17/12/2025 23:40:59
+Arquivo analisado: BookingImminentAlert_story_processado_05_Notification_timing.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation\BookingImminentAlert_story_processado_05_Notification_timing.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: Notification timing
+Descrição: Não possui
+Total de cenários: 1
+
+CENÁRIOS IDENTIFICADOS:
+1. Notification timing
+   Steps: 5
+   - Given there is a booking scheduled to start at a specific time
+   - And the system is configured to send notifications a certain time before the start
+   - When the notification time is reached
+   - Then the system sends a notification to the asker and the offerer
+   - And the notification is sent the configured amount of time before the booking starts

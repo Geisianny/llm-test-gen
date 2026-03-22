@@ -1,0 +1,4 @@
+Scenario 4: Reboot the SLE Micro 5.4 minion through SSH
+  When  I reboot the "slemicro54_minion" host through SSH, waiting until it comes back
+  Then  service "venv-salt-minion" is active on "slemicro54_minion"
+

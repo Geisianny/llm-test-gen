@@ -1,0 +1,8 @@
+Scenario 15: Get deployment gate returns "Bad Request" response
+  Tags: ['@team:DataDog/ci-app-backend']
+  Given  operation "GetDeploymentGate" enabled
+  And  new "GetDeploymentGate" request
+  And  request contains "id" parameter with value "invalid-gate-id"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

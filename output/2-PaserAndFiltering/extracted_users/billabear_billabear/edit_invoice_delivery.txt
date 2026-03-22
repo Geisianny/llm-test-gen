@@ -1,0 +1,12 @@
+Feature: 
+
+Background: 
+  Given  the following accounts exist:
+  And  the follow customers exist:
+
+Scenario 1: 
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  the following invoice delivery setups exist:
+  When  I edit the delivery methods for "customer.one@example.org" for "Webhook" with:
+  Then  there should be an invoice delivery for "customer.one@example.org" for type "Webhook" and url "https://example.com"
+

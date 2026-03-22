@@ -1,0 +1,7 @@
+Scenario 6: Messages link shows correct count of messages when the size exceeds the limit
+  And  a buyer "john" signed up to provider "foo.3scale.localhost"
+  And  110 messages sent from buyer "john" to the provider with subject "any" and body "any"
+  And  the provider reads all messages
+  And  I go to the provider dashboard
+  And  I should see the link "100+ MESSAGES" within the audience dashboard widget
+

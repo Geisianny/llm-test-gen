@@ -1,0 +1,7 @@
+Scenario 3: Get a resource in XML
+  When  I add "Accept" header equal to "application/xml"
+  And  I send a "GET" request to "/overridden_operation_dummies/1"
+  Then  the response status code should be 200
+  And  the header "Content-Type" should be equal to "application/xml; charset=utf-8"
+  And  the response should be equal to
+

@@ -1,0 +1,6 @@
+Scenario 7: product name links to product page
+  Given  the following products
+  And  I am on /catalog/artebonito
+  When  I follow "Produto1" within "li.product-link"
+  Then  I should be taken to "Produto1" product page
+

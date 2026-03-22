@@ -1,0 +1,8 @@
+Scenario 4: Add resource to Confluent account returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "CreateConfluentResource" request
+  And  request contains "account_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"enable_custom_metrics": false, "resource_type": "kafka", "tags": ["myTag", "myTag2:myValue"]}, "id": "resource-id-123", "type": "confluent-cloud-resources"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

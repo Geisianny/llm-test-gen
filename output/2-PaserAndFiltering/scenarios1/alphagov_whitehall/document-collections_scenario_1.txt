@@ -1,0 +1,6 @@
+Scenario 1: Deleting a group
+  Given  a document collection "May 2012 Update" exists
+  And  the document collection "May 2012 Update" has a group with the heading "Temporary group"
+  When  I delete the group "Temporary group"
+  Then  I can see that the group "Temporary group" has been deleted
+

@@ -1,0 +1,7 @@
+Scenario 4: Check permissions for log services returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/aws-integrations']
+  Given  new "CheckAWSLogsServicesAsync" request
+  And  body with value {"account_id": "1234567", "services": ["s3", "elb", "elbv2", "cloudfront", "redshift", "lambda"]}
+  When  the request is sent
+  Then  the response status is 200 OK
+

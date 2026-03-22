@@ -1,0 +1,6 @@
+Scenario: Unregistered financial institution attempts to submit partnership application
+  Given there is no financial institution registered with FinAegis with the identifier "FI123"
+  When the unregistered financial institution submits a partnership application
+  And provides the required partnership details
+  Then the system rejects the partnership application
+  And displays an error message indicating that the institution is not registered

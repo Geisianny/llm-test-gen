@@ -1,0 +1,6 @@
+Scenario 2: Edit of invoice id succeeds but id is not unique
+  And  I follow "Edit"
+  And  I fill in "ID" with "2011-02-00000001"
+  And  I press "Update Invoice"
+  Then  I should see "This invoice id is already in use"
+

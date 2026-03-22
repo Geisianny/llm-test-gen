@@ -1,0 +1,4 @@
+Scenario: Post-only limit GFN order is placed on the book
+  Given there are no existing orders on the book that cross
+  When a user places a LIMIT GFN order with post-only flag set to TRUE
+  Then the order is placed fully on the book

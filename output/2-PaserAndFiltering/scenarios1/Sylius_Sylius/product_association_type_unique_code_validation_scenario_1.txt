@@ -1,0 +1,9 @@
+Scenario 1: Trying to add a new product association type with a taken code
+  Tags: ['@api', '@ui']
+  When  I want to create a new product association type
+  And  I specify its code as "cross_sell"
+  And  I name it "Cross sell" in "English (United States)"
+  And  I try to add it
+  Then  I should be notified that product association type with this code already exists
+  And  there should still be only one product association type with a code "cross_sell"
+

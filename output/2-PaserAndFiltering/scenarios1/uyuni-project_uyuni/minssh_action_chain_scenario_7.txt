@@ -1,0 +1,12 @@
+Scenario 7: Add a patch installation to the action chain on SSH minion
+  Given  I am on the Systems overview page of this "ssh_minion"
+  When  I follow "Software" in the content area
+  And  I follow "Patches" in the content area
+  And  I enter "andromeda" as the filtered synopsis
+  And  I click on the filter button
+  And  I check "andromeda-dummy-6789" in the list
+  And  I click on "Apply Patches"
+  And  I check radio button "schedule-by-action-chain"
+  And  I click on "Confirm"
+  Then  I should see a "Action has been successfully added to the Action Chain" text
+

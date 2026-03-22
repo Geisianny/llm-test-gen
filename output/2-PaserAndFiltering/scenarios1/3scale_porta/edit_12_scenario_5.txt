@@ -1,0 +1,5 @@
+Scenario 5: Delete a backend API not used by any product
+  Given  a backend
+  When  an admin tries to delete the backend api from its edit page
+  Then  it is possible to delete the backend
+

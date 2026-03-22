@@ -1,0 +1,16 @@
+Scenario 4: create multiple blogs
+  Given  I go to joaosilva's control panel
+  And  I follow "New" within "#section-content"
+  And  I follow "Blog"
+  And  I fill in "Title" with "Blog One"
+  And  I fill in "Address" with "blog-one"
+  And  I press "Save"
+  Then  I go to joaosilva's control panel
+  And  I follow "New" within "#section-content"
+  And  I follow "Blog"
+  And  I fill in "Title" with "Blog Two"
+  And  I fill in "Address" with "blog-two"
+  And  I press "Save"
+  Then  I should not see "error"
+  And  I should be on /joaosilva/blog-two
+

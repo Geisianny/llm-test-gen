@@ -1,0 +1,9 @@
+Scenario 3: Members of plans group can access plans
+  Given  an active user "member" of account "foo.3scale.localhost"
+  And  user "member" has access to the admin section "plans"
+  When  I log in as provider "member"
+  And  they go to the provider dashboard
+  Then  should see "Zoo API" within the apis dashboard widget
+  And  should see "Zoo Backend" within the apis dashboard widget
+  And  they should be able to go to the following pages:
+

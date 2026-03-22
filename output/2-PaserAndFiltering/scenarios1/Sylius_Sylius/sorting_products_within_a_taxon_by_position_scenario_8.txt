@@ -1,0 +1,8 @@
+Scenario 8: Product with position 0 is set as the first one
+  Tags: ['@api', '@ui', '@mink:chromedriver', '@failing']
+  When  I am browsing products from "Soft Toys" taxon
+  And  I set the position of "Young pug" to 0
+  And  I save my new configuration
+  And  I go to the 1st page of products from "Soft Toys" taxon
+  Then  the first product on the list within this taxon should have name "Young pug"
+

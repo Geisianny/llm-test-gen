@@ -1,0 +1,16 @@
+Scenario 6: Filtering best bets texts
+  Given  the following BingV7 Affiliates exist:
+  When  the following Boosted Content entries exist for the affiliate "agency.gov"
+  And  I am logged in with email "john@agency.gov"
+  When  I go to the agency.gov's Manage Content page
+  And  I follow "Best Bets: Text" within the Admin Center content
+  And  I fill in "query" with "lean"
+  And  I press "Search"
+  Then  I should see the following table rows:
+  And  I should see "Showing matches for 'lean'"
+  And  I fill in "query" with "lksdjflskdjf"
+  And  I press "Search"
+  Then  I should see "No Best Bets found matching 'lksdjflskdjf'"
+  When  I follow "Reset"
+  Then  I should be on the agency.gov's Best Bets Texts page
+

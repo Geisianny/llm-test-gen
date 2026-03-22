@@ -1,0 +1,9 @@
+Scenario 6: 006: User checks prices after opening auction, (0070-MKTD-005)
+  Tags: ['@SLABug']
+  Given  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  When  the network moves ahead "2" blocks
+  Then  the mark price should be "100000" for the market "USD/DEC20"
+  And  the mark price should be "1000" for the market "USD/DEC19"
+

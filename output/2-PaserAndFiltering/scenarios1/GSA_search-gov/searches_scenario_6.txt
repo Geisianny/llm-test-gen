@@ -1,0 +1,9 @@
+Scenario 6: Searching on a site with media RSS
+  Given  the following BingV7 Affiliates exist:
+  And  affiliate "bar.gov" has the following RSS feeds:
+  And  feed "Photos" has the following news items:
+  When  I am on bar.gov's "Photos" news search page
+  And  I search for "photo"
+  Then  I should see 2 image results
+  And  I should see "Powered by Search.gov"
+

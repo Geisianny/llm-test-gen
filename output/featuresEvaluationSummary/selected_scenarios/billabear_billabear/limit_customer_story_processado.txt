@@ -1,0 +1,5 @@
+Scenario: Retrieve subscription limits for a customer without subscriptions
+  Given there is an authenticated user
+  And there is an active customer without any subscriptions
+  When the user queries the customer's usage limits
+  Then the system returns an empty list of limits

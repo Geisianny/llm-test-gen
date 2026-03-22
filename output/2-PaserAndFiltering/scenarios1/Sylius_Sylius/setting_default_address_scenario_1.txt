@@ -1,0 +1,6 @@
+Scenario 1: Having no address marked as default at first
+  Tags: ['@api', '@ui']
+  When  I browse my address book
+  Then  I should have 2 addresses in my address book
+  And  I should not have a default address
+

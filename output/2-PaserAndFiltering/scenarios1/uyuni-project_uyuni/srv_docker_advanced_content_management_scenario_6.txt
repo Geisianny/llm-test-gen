@@ -1,0 +1,9 @@
+Scenario 6: Cleanup: remove Docker profile
+  Tags: ['@scc_credentials']
+  Given  I am authorized as "docker" with password "docker"
+  When  I follow the left menu "Images > Profiles"
+  And  I check the row with the "suse_docker_admin" text
+  And  I click on "Delete"
+  And  I click on the red confirmation button
+  And  I should see a "Image profile has been deleted." text
+

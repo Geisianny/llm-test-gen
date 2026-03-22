@@ -1,0 +1,12 @@
+Scenario 1: create liquidity provisions
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties place the following orders:
+  And  the parties submit the following liquidity provision:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  When  the parties place the following orders with ticks:
+  Then  the parties submit the following liquidity provision:
+  Then  the liquidity provisions should have the following states:
+  When  the network moves ahead "3" blocks
+  Then  the liquidity provisions should have the following states:
+

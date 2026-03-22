@@ -1,0 +1,7 @@
+Scenario 12: Get a list of metrics returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/metrics-experience']
+  Given  a valid "appKeyAuth" key in the system
+  And  new "ListTagConfigurations" request
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

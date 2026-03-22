@@ -1,0 +1,8 @@
+Scenario 27: Update an SLO returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/slo-app']
+  Given  new "UpdateSLO" request
+  And  request contains "slo_id" parameter from "REPLACE.ME"
+  And  body with value {"description": null, "groups": ["env:prod", "role:mysql"], "monitor_ids": [], "monitor_tags": [], "name": "Custom Metric SLO", "query": {"denominator": "sum:my.custom.metric{*}.as_count()", "numerator": "sum:my.custom.metric{type:good}.as_count()"}, "sli_specification": {"time_slice": {"comparator": "<", "query": {"formulas": [{"formula": "query2/query1"}], "queries": [{"data_source": "metrics", "name": "query1", "query": "sum:trace.servlet.request.hits{*} by {env}.as_count()"}, {"data_source": "metrics", "name": "query1", "query": "sum:trace.servlet.request.errors{*} by {env}.as_count()"}]}, "threshold": 5}}, "tags": ["env:prod", "app:core"], "target_threshold": 99.9, "thresholds": [{"target": 95, "timeframe": "7d"}, {"target": 95, "timeframe": "30d", "warning": 97}], "timeframe": "30d", "type": "metric", "warning_threshold": 99.95}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

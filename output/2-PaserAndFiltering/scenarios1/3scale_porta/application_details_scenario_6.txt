@@ -1,0 +1,7 @@
+Scenario 6: Extra fields are listed alongside the application details
+  Given  the provider has the following fields defined for applications:
+  And  the application has the following extra fields:
+  When  they go to the application's admin page
+  Then  they should see the following details within the application details:
+  But  should not see "User extra read only" within the application details
+

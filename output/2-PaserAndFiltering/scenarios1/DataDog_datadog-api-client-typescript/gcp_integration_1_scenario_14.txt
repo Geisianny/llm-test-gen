@@ -1,0 +1,7 @@
+Scenario 14: Delete an STS enabled GCP Account returns "No Content" response
+  Tags: ['@generated', '@skip', '@team:DataDog/gcp-integrations']
+  Given  new "DeleteGCPSTSAccount" request
+  And  request contains "account_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 204 No Content
+

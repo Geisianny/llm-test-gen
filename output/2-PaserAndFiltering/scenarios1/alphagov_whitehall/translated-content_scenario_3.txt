@@ -1,0 +1,6 @@
+Scenario 3: Deleting a translation for draft translatable document
+  Given  I am a GDS editor
+  And  I have drafted a translatable document "Military officer exchange" with a french translation with the title "Échange officier de l'armée"
+  When  I delete "Military officer exchange"'s french translation
+  Then  I should see on the admin edition page that "Military officer exchange"'s french translation "Échange officier de l'armée" has been deleted
+

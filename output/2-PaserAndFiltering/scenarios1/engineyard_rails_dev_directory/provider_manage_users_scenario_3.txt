@@ -1,0 +1,13 @@
+Scenario 3: Deleting a user on a provider
+  Given  a provider "Kooky" belonging to "paul@joy.com"
+  And  a user "Billow" belonging to the "Kooky" provider
+  And  I am on the homepage
+  When  I log in as "paul@joy.com" with password "testtest"
+  And  I follow "navigation.users" translation
+  Then  I should see "billow"
+  When  I follow "billow"
+  And  I follow "user.edit" translation
+  Then  I should see "company_profile.users.edit_description" translation
+  And  I press "user.delete" translation
+  Then  I should see "company_profile.users.manage_headline" translation
+

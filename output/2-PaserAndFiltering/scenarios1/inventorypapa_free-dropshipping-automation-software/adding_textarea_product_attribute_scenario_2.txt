@@ -1,0 +1,5 @@
+Scenario 2: Seeing disabled type field while adding a textarea product attribute
+  Tags: ['@ui']
+  When  I want to create a new textarea product attribute
+  Then  the type field should be disabled
+

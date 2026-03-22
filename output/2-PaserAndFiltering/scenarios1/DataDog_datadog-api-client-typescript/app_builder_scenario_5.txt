@@ -1,0 +1,7 @@
+Scenario 5: Delete App returns "Not Found" response
+  Tags: ['@skip-typescript', '@team:DataDog/app-builder-backend']
+  Given  new "DeleteApp" request
+  And  request contains "app_id" parameter with value "7addb29b-f935-472c-ae79-d1963979a23e"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

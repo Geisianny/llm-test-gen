@@ -1,0 +1,10 @@
+Scenario 3: 003 Increase size success and loosing position in order book
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the parties place the following orders:
+  And  the parties amend the following orders:
+  And  the parties place the following orders:
+  Then  the following trades should be executed:
+

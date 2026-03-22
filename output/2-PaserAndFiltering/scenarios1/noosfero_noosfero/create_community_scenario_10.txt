@@ -1,0 +1,10 @@
+Scenario 10: new community is not listed after rejection
+  Tags: ['@selenium']
+  Given  I am logged in as admin
+  And  feature "admin_must_approve_new_communities" is enabled on environment
+  Given  "admin_user" creates the community "Community for approval"
+  And  I reject community "Community for approval"
+  And  I go to admin_user's control panel
+  And  I follow "Groups" within "#section-relationships"
+  Then  I should not see "Community for approval"
+

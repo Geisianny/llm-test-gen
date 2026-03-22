@@ -1,0 +1,9 @@
+Scenario 3: Filtering payments in state "Processing"
+  Tags: ['@ui', '@api']
+  When  I browse payments
+  And  I choose "Processing" as a payment state
+  And  I filter
+  Then  I should see a single payment in the list
+  And  I should see the payment of the "#00000003" order
+  But  I should not see the payment of the "#00000004" order
+

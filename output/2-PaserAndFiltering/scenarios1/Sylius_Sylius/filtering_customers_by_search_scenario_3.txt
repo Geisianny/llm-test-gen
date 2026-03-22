@@ -1,0 +1,7 @@
+Scenario 3: Filtering customers by lastname
+  Tags: ['@api', '@ui']
+  When  I want to see all customers in store
+  And  I search by "Bespoke" last name
+  Then  I should see a single customer on the list
+  And  I should see the customer "g.bespoke@example.com" on the list
+

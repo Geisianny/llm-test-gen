@@ -1,0 +1,13 @@
+Scenario 10: show and link last topics on forum search results
+  Given  the following forums
+  And  the following articles
+  And  the following rss feeds
+  When  I search contents for "Games"
+  Then  I should see "Last topics" within ".search-forum-items"
+  And  I should see "Syndicate"
+  And  I should see "The Witcher 2"
+  And  I should see "Mass Effect 3"
+  And  I should not see "Diablo 3"
+  When  I follow "The Witcher 2"
+  Then  I should be on article "The Witcher 2"
+

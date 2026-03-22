@@ -1,0 +1,7 @@
+Scenario 2: Place a market sell order
+  Given  I am logged in as "alice@example.com"
+  When  I place a market sell order for "1.0" "ETH" for "EUR"
+  Then  the order should be placed successfully
+  And  my "ETH" balance should be reduced by "1.0"
+  And  my locked "ETH" balance should be "1.0"
+

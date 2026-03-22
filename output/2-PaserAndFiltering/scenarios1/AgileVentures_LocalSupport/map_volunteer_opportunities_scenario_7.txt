@@ -1,0 +1,12 @@
+Scenario Outline 7: See a list of do-it volunteer ops with same coordiantes in same maker popup - Example 1
+  Given  the following doit volunteer opportunities exist:
+  Given  I visit the volunteer opportunities page
+  And  cookies are approved
+  Then  I should see 1 markers in the map
+  And  the map should show the opportunity titled Eldery care
+
+  Examples:
+    | title |
+    | Eldery care |
+    | Office Support |
+

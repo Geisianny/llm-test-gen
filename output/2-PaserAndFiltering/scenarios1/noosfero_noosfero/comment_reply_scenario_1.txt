@@ -1,0 +1,4 @@
+Scenario 1: not show any reply form by default
+  When  I go to /booking/article-to-comment
+  Then  I should not see "Leave your comment"
+

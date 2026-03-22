@@ -1,0 +1,3 @@
+Scenario 1: Download the iso of Rocky 8 DVD and mount it on the server
+  When  I mount as "rocky-8-iso" the ISO from "http://mirror.chpc.utah.edu/pub/rocky/8/isos/x86_64/Rocky-x86_64-dvd.iso" in the server, validating its checksum
+

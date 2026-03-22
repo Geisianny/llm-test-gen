@@ -1,0 +1,4 @@
+Scenario 1: Check Harrow Postcode
+  Given  I run the import organisation service
+  Then  there should be 50 organisations stored
+

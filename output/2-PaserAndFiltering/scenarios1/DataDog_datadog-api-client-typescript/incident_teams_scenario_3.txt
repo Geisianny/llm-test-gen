@@ -1,0 +1,8 @@
+Scenario 3: Create a new incident team returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:Datadog/incident-app']
+  Given  operation "CreateIncidentTeam" enabled
+  And  new "CreateIncidentTeam" request
+  And  body with value {"data": {"attributes": {"name": "team name"}, "type": "teams"}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

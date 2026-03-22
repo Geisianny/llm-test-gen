@@ -1,0 +1,15 @@
+Scenario 11: Cleanup: select the channels of the openSUSE minion as before
+  Tags: ['@uyuni']
+  When  I follow "Software" in the content area
+  And  I follow "Software Channels" in the content area
+  And  I wait until I do not see "Loading..." text
+  And  I check radio button "openSUSE Tumbleweed (x86_64)"
+  And  I check "Uyuni Client Tools for openSUSE Tumbleweed (x86_64) (Development)"
+  And  I check "Fake-RPM-SUSE-Channel"
+  And  I click on "Next"
+  Then  I should see a "Confirm Software Channel Change" text
+  When  I click on "Confirm"
+  Then  I should see a "Changing the channels has been scheduled." text
+  When  I follow "scheduled" in the content area
+  And  I wait until I see "1 system successfully completed this action." text, refreshing the page
+

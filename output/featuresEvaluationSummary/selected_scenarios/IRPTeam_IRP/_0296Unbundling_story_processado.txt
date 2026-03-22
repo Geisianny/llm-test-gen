@@ -1,0 +1,6 @@
+Scenario: Unbundling document approval and inventory update
+  Given there is an unbundling document in "Draft" status
+  And the sales manager has the necessary permissions
+  When the sales manager approves the unbundling document
+  Then the system updates the inventory levels for the component items across different warehouse profiles
+  And the document status is set to "Approved"

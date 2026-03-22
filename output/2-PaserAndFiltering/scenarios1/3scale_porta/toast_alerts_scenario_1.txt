@@ -1,0 +1,5 @@
+Scenario 1: Timeout
+  When  a toast alert is displayed with text "Notice for you."
+  But  after 8 seconds
+  Then  they should not see any toast alerts
+

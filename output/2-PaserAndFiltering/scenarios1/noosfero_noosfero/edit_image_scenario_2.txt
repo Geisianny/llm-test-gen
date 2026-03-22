@@ -1,0 +1,5 @@
+Scenario 2: dont offer to edit external link if no image
+  Given  the following files
+  When  I go to edit "test_another" by morgoth
+  Then  I should not see "External link"
+

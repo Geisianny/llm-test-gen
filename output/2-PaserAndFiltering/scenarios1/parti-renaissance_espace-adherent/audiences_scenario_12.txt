@@ -1,0 +1,7 @@
+Scenario 12: As a logged-in deputy I can get a candidate audience with some parameters
+  Given  I am logged with "deputy@en-marche-dev.fr" via OAuth client "JeMengage Web"
+  When  I send a "GET" request to "/api/v3/audiences/bd298079-f763-4c7a-9a8a-a243d01d0e31?scope=deputy"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+

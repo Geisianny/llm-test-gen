@@ -1,0 +1,6 @@
+Scenario 2: There's one sso hidden integration
+  Given  the provider has an sso integration for the admin portal
+  But  the sso integration is hidden
+  When  they go to the users sso integrations page
+  Then  they should see "To disable password-based authentication, make sure you have a published SSO integration that was tested within the last hour. Then, sign in using SSO."
+

@@ -1,0 +1,5 @@
+Scenario 2: Setting a theme on a channel
+  Tags: ['@ui']
+  When  I set "United States" channel theme to "maverick/meerkat"
+  Then  that channel should use that theme
+

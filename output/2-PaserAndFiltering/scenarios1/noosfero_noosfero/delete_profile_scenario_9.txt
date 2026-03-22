@@ -1,0 +1,8 @@
+Scenario 9: enterprise regular member tries to delete the enterprise
+  Given  the following enterprise
+  And  "Maria Silva" is a member of "Sample Enterprise"
+  And  "Joao Silva" is a member of "Sample Enterprise"
+  And  I am logged in as "joaosilva"
+  And  I go to /myprofile/sample-enterprise/profile_editor/destroy_profile
+  Then  I should see "Access denied"
+

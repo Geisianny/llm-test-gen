@@ -1,0 +1,11 @@
+Scenario 3: CONFIGURE PARTNER AND COMPANY
+  Tags: ['@multicompany_base_finance_init_CH_company']
+  Given  I need a "res.company" with oid: scen.CH_company
+  And  having:
+  Given  I need a "res.partner" with oid: scen.CH_partner
+  And  having:
+  Given  I need a "res.company" with oid: scen.CH_company
+  And  having:
+  Given  the company has the "central_optics.png" logo
+  And  the company currency is "CHF" with a rate of "1.00"
+

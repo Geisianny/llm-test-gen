@@ -1,0 +1,4 @@
+Scenario 6: Apply high state on the SUSE SSH Minion to populate new server CA
+  Tags: ['@ssh_minion']
+  When  I apply highstate on "ssh_minion"
+

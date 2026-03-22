@@ -1,0 +1,7 @@
+Scenario 4: Country filter
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  When  I use the API to list customers with parameter "country" with value "UK"
+  Then  I should see in the API response the customer "customer.two@example.org"
+  Then  I should not see in the API response the customer "customer.one@example.org"
+

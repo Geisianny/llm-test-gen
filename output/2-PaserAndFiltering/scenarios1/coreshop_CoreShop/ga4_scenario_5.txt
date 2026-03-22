@@ -1,0 +1,4 @@
+Scenario 5: Track Checkout Step
+  Given  I add the product "T-Shirt" to my cart
+  Then  tracking checkout step for my cart with tracker "google-analytics-4" should generate:
+

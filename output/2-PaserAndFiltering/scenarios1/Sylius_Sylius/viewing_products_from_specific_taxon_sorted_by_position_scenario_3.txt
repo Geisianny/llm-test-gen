@@ -1,0 +1,6 @@
+Scenario 3: Seeing sorted product on list from a child taxon
+  Tags: ['@api', '@ui']
+  When  I browse products from taxon "Soft Toys"
+  Then  I should see 3 products in the list
+  And  they should have order like "Small pug", "Young pug" and "Old pug"
+

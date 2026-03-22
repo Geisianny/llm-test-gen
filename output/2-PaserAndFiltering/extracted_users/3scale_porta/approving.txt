@@ -1,0 +1,29 @@
+Feature: Approving buyer account
+Description: In order to allow my new buyers to use the site when they seem allright
+  As a provider
+  I want to approve them
+Tags: ['@javascript']
+
+Background: 
+  Given  a provider is logged in
+  And  the provider has "multiple_applications" visible
+  And  the provider requires cinstances to be approved before use
+  And  the provider requires accounts to be approved
+
+Scenario 1: Approving a single buyer account
+  Given  a pending buyer "bob" signed up to provider "foo.3scale.localhost"
+  When  I go to the buyer account page for "bob"
+  And  I press "Approve"
+  Then  I should see "Developer account was approved"
+  And  buyer "bob" should be approved
+
+Scenario 2: Approve button is not shown for already approved accounts
+  Given  an approved buyer "bob" signed up to provider "foo.3scale.localhost"
+  When  I go to the buyer account page for "bob"
+  Then  I should not see button to approve buyer "bob"
+
+Scenario 3: Approve button is not shown for rejected accounts
+  Given  a rejected buyer "bob" signed up to provider "foo.3scale.localhost"
+  When  I go to the buyer account page for "bob"
+  Then  I should not see button to approve buyer "bob"
+

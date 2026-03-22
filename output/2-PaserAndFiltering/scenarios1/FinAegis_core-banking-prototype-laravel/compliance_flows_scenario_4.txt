@@ -1,0 +1,6 @@
+Scenario 4: Suspicious Activity Report (SAR) workflow
+  Given  suspicious activity is detected
+  When  compliance officer reviews the case:
+  Then  the SAR process should:
+  And  not notify the customer about SAR filing
+

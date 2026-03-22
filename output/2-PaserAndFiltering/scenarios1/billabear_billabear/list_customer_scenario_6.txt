@@ -1,0 +1,8 @@
+Scenario 6: Pagination limited to one
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  And  I use the API to list customers with parameter "limit" with value "1"
+  When  I use the API to list customers with the last_key from the last response
+  Then  I should see in the API response with only 1 result in the data set
+  And  the I should not see in the API response there are more results
+

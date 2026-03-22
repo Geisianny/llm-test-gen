@@ -1,0 +1,10 @@
+Scenario 8: Check CL-hoag-dummy-7890 patches
+  When  I follow the left menu "Patches > Patch List > All"
+  And  I enter "dummy" as the filtered synopsis
+  And  I click on the filter button
+  And  I select "500" from "1154021400_PAGE_SIZE_LABEL"
+  And  I follow "CL-hoag-dummy-7890"
+  Then  I should see a "CL-hoag-dummy-7890 - Security Advisory" text
+  And  I should see a "mcalmer" text
+  And  I should see a "https://bugzilla.opensuse.org/show_bug.cgi?id=704608" link
+

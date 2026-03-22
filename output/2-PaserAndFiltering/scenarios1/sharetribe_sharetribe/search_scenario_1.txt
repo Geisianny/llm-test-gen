@@ -1,0 +1,6 @@
+Scenario 1: basic search
+  Tags: ['@javascript']
+  When  I fill in "q" with "sofa"
+  And  I press "search-button"
+  Then  I should see "old sofa for sale"
+

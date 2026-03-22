@@ -1,0 +1,6 @@
+Scenario 4: Search flaky tests returns "OK" response with filtered query
+  Tags: ['@replay-only', '@skip', '@skip-validation', '@team:DataDog/ci-app-backend', '@with-pagination']
+  Given  body with value {"data": {"attributes": {"filter": {"query": "flaky_test_state:active @git.repository.id_v2:\"github.com/datadog/cart-tracking\""}, "page": {"limit": 10}, "sort": "-last_flaked"}, "type": "search_flaky_tests_request"}}
+  When  the request with pagination is sent
+  Then  the response status is 200 OK
+

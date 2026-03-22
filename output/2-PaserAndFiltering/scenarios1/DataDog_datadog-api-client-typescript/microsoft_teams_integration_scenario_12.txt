@@ -1,0 +1,8 @@
+Scenario 12: Create workflow webhook handle returns "CREATED" response
+  Tags: ['@team:DataDog/chat-integrations']
+  Given  new "CreateWorkflowsWebhookHandle" request
+  And  body with value {"data": {"attributes": {"name": "{{unique}}", "url": "https://example.logic.azure.com/workflows/123"}, "type": "workflows-webhook-handle"}}
+  When  the request is sent
+  Then  the response status is 201 CREATED
+  And  the response "data.attributes.name" is equal to "{{unique}}"
+

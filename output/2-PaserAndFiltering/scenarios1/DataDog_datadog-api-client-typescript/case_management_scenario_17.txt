@@ -1,0 +1,10 @@
+Scenario 17: Delete case comment returns "No Content" response
+  Tags: ['@skip', '@team:DataDog/case-management']
+  Given  new "DeleteCaseComment" request
+  And  there is a valid "case" in the system
+  And  there is a valid "comment" in the system
+  And  request contains "case_id" parameter from "case.id"
+  And  request contains "cell_id" parameter from "comment.id"
+  When  the request is sent
+  Then  the response status is 204 No Content
+

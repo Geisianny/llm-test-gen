@@ -1,0 +1,9 @@
+Scenario 14: Search logs returns "OK" response with pagination
+  Tags: ['@replay-only', '@skip-validation', '@team:DataDog/logs-app', '@with-pagination']
+  Given  a valid "appKeyAuth" key in the system
+  And  new "ListLogs" request
+  And  body with value {"filter": {"from": "now-15m", "indexes": ["main"], "to": "now"}, "options": {"timezone": "GMT"}, "page": {"limit": 2}, "sort": "timestamp"}
+  When  the request with pagination is sent
+  Then  the response status is 200 OK
+  And  the response has 3 items
+

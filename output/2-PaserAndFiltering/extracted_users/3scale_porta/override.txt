@@ -1,0 +1,105 @@
+Feature: Render liquid templates from database
+Description: In order to customize the builtin pages
+  as a Provider
+  I want to edit the templates via CMS and see the results
+
+Background: 
+  Given  a provider "foo.3scale.localhost" with default plans
+  And  provider "foo.3scale.localhost" has all the templates setup
+  And  provider "foo.3scale.localhost" has "multiple_users" switch visible
+  And  the default product of the provider has name "My API"
+
+Scenario 1: Signup
+  When  the current domain is "foo.3scale.localhost"
+  And  I go to the signup page
+  Then  I should see "Sign up"
+  When  builtin page "signup/show" of provider "foo.3scale.localhost" has content "EDITED Signup"
+  And  I go to the signup page
+  Then  I should see "EDITED Signup"
+
+Scenario 2: New Application
+  Given  provider "foo.3scale.localhost" has "multiple_applications" visible
+  And  the following service plan:
+  And  a buyer "john" signed up to service plan "Gold"
+  When  I log in as "john" on foo.3scale.localhost
+  And  I go to the dev portal new application page
+  Then  I should see "New Application"
+  When  builtin page "applications/new" of provider "foo.3scale.localhost" has content "EDITED app page"
+  And  I go to the dev portal new application page
+  Then  I should see "EDITED app page"
+
+Scenario 3: Login page
+  When  the current domain is foo.3scale.localhost
+  And  I go to the login page
+  Then  I should see "Username or Email"
+  When  builtin page "login/new" of provider "foo.3scale.localhost" has content "EDITED PAGE"
+  And  I go to the login page
+  Then  I should see "EDITED PAGE"
+  And  I should not see "Username or Email"
+
+Scenario Outline 4: Override pages - Example 1
+  Tags: ['@search']
+  Given  provider "foo.3scale.localhost" has "account_plans" visible
+  And  provider "foo.3scale.localhost" has "finance" switch visible
+  And  provider "foo.3scale.localhost" is charging its buyers with braintree
+  And  the following account plan:
+  And  the following application plan:
+  And  a buyer "bob" signed up to application plan "Pro"
+  And  provider "foo.3scale.localhost" has "multiple_services" visible
+  And  provider "foo.3scale.localhost" has "service_plans" visible
+  When  I log in as "bob" on foo.3scale.localhost
+  And  I go to the services list for buyers page
+  Then  I should see "Description Plan"
+  When  builtin page "services/index" of provider "foo.3scale.localhost" has content "EDITED services/index"
+  And  I go to the services list for buyers page
+  Then  I should see "EDITED services/index"
+
+  Examples:
+    | system_name | path | original_content |
+    | services/index | services list for buyers | Description Plan |
+    | user/show | personal details | Username |
+    | messages/inbox/index | inbox | Inbox |
+    | messages/inbox/show | inbox show |  |
+    | messages/outbox/index | outbox | Sent Messages |
+    | messages/outbox/show | outbox show |  |
+    | messages/outbox/new | compose | Compose |
+    | messages/trash/index | trash | Trash |
+    | messages/trash/show | trash show |  |
+    | account/show | account | Account Details |
+    | account/edit | account edit | Account Details |
+    | invitations/index | sent invitations | Invitations |
+    | invitations/new | new invitation | Invitation |
+    | account_plans/index | account plans | You are currently on plan |
+    | accounts/payment_gateways/show | credit card details | Entering Credit Card |
+    | stats/index | buyer stats | Graphs |
+    | search/index | search | Search |
+    | dashboards/show | dashboard | Credentials |
+
+Scenario Outline 5: Override public pages - Example 1
+  Given  a buyer "bob" signed up to provider "foo.3scale.localhost"
+  And  I log in as "bob" on foo.3scale.localhost
+  When  I go to the account page
+  Then  I should see markup matching 'li.active > a:contains("Settings")'
+  When  builtin partial "submenu" of provider "foo.3scale.localhost" has content "PARTIAL submenu EDITED"
+  And  I go to the account page
+  Then  I should see "PARTIAL submenu EDITED"
+  And  I should not see markup matching 'li.active > a:contains("Settings")'
+
+  Examples:
+    | system_name | page | original |
+    | submenu | account | li.active > a:contains("Settings") |
+    | users_menu | users | ul.nav.nav-tabs |
+
+Scenario Outline 6: As logged out user - Example 1
+  When  the current domain is foo.3scale.localhost
+  When  I go to the forgot password page
+  Then  I should see "Forgot password"
+  And  builtin page "password/new" of provider "foo.3scale.localhost" has content "EDITED password/new"
+  And  I go to the forgot password page
+  Then  I should see "EDITED password/new"
+
+  Examples:
+    | system_name | path | original |
+    | password/new | forgot password | Forgot password |
+    | login/new | login | Sign in |
+

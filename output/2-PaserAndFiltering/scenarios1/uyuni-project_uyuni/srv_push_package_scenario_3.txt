@@ -1,0 +1,5 @@
+Scenario 3: Push a package with unset vendor through the SLES minion
+  When  I copy unset package file on "sle_minion"
+  And  I push package "/root/subscription-tools-1.0-0.noarch.rpm" into "fake-base-channel-suse-like" channel through "sle_minion"
+  Then  I should see package "subscription-tools-1.0-0.noarch" in channel "Fake-Base-Channel-SUSE-like"
+

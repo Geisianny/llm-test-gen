@@ -1,0 +1,10 @@
+Scenario 1: Retrieve Entrypoint context
+  When  I send a "GET" request to "/contexts/Entrypoint"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON node "@context.@vocab" should be equal to "http://example.com/docs.jsonld#"
+  And  the JSON node "@context.hydra" should be equal to "http://www.w3.org/ns/hydra/core#"
+  And  the JSON node "@context.dummy.@id" should be equal to "Entrypoint/dummy"
+  And  the JSON node "@context.dummy.@type" should be equal to "@id"
+

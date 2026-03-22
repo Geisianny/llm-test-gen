@@ -1,0 +1,6 @@
+Scenario: Import categories with duplicate names
+  Given there is a Site Super Admin user logged in
+  And there is a CSV file containing categories with names that already exist in the system
+  When the Super Admin imports the CSV file
+  Then the system displays a message indicating that duplicate categories exist
+  And the duplicate categories are not added to the system

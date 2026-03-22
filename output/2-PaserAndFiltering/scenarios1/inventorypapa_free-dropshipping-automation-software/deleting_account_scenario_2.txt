@@ -1,0 +1,5 @@
+Scenario 2: A customer with no user cannot be deleted
+  Tags: ['@ui']
+  Given  the account of "theodore@example.com" was deleted
+  Then  I should not be able to delete it again
+

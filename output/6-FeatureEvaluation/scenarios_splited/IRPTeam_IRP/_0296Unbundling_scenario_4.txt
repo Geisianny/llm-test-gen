@@ -1,0 +1,6 @@
+Scenario: Unbundling document creation with pre-defined specifications
+  Given there is a bundle product with pre-defined specifications for unbundling
+  And the sales manager has the necessary permissions
+  When the sales manager creates an unbundling document for the bundle product using the pre-defined specifications
+  Then the system generates the unbundling document with the component items and applies the pre-defined specifications
+  And the document status is set to "Draft"

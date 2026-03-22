@@ -1,0 +1,6 @@
+Scenario 5: Extra fields validation
+  When  they go to the dev portal new application page
+  And  the form is submitted with:
+  Then  field "Engine" has inline error "can't be blank"
+  But  field "Color" has no inline error
+

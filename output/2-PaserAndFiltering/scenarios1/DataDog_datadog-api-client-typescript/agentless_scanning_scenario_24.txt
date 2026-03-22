@@ -1,0 +1,7 @@
+Scenario 24: Get Azure scan options returns "Not Found" response
+  Tags: ['@team:DataDog/k9-agentless']
+  Given  new "GetAzureScanOptions" request
+  And  request contains "subscription_id" parameter with value "00000000-0000-0000-0000-000000000000"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

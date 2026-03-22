@@ -1,0 +1,9 @@
+Scenario 5: ReButton (icon + loader) should handle icon and loader together
+  When  I go to "/test/ux-component/ReButton/iconloader"
+  Then  I should see 1 "button" elements
+  And  I should see 1 ".re-icon.re-icon-unlock" elements
+  And  the '.re-icon-unlock' element should not be visible
+  And  I should see 1 ".re-icon.re-icon-loading" elements
+  And  the '.re-icon-unlock' element should not be visible
+  And  I should not see "Simple button"
+

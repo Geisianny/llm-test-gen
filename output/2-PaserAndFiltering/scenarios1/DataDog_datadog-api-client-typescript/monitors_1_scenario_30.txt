@@ -1,0 +1,10 @@
+Scenario 30: Update a monitor notification rule returns "OK" response
+  Tags: ['@team:DataDog/monitor-app']
+  Given  there is a valid "monitor_notification_rule" in the system
+  And  new "UpdateMonitorNotificationRule" request
+  And  request contains "rule_id" parameter from "monitor_notification_rule.data.id"
+  And  body with value {"data": {"attributes": {"filter": {"tags": ["test:{{ unique_lower }}", "host:abc"]}, "name": "updated rule", "recipients": ["slack-test-channel"]}, "id": "{{ monitor_notification_rule.data.id }}", "type": "monitor-notification-rule"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.attributes.name" is equal to "updated rule"
+

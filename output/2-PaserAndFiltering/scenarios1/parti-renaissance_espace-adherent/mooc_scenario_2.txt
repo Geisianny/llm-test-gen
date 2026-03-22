@@ -1,0 +1,6 @@
+Scenario 2: As a non logged-in user I can get MOOC configuration
+  When  I am on "/api/mooc/faire-de-sa-fourchette-un-acte-politique"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+

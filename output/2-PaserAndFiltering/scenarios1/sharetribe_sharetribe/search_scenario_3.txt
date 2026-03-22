@@ -1,0 +1,6 @@
+Scenario 3: Finding by description
+  Tags: ['@javascript']
+  When  I fill in "q" with "pink"
+  And  I press "search-button"
+  Then  I should see "old sofa for sale"
+

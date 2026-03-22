@@ -1,0 +1,7 @@
+Scenario 1: I should be able to GET a collection of objects with network paths
+  Tags: ['@createSchema']
+  Given  there are 1 networkPathDummy objects with a related networkPathRelationDummy
+  And  I add "Accept" header equal to "application/hal+json"
+  And  I send a "GET" request to "/network_path_dummies"
+  And  the JSON should be equal to:
+

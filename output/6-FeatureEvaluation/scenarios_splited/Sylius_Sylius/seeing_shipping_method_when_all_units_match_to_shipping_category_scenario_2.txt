@@ -1,0 +1,5 @@
+Scenario: No shipping methods available for mixed shipping categories
+  Given there are items in the cart with shipping categories "Standard" and "Over-sized"
+  When the user views available shipping methods
+  Then the system displays a message indicating no shipping methods are available
+  And the user cannot select any shipping method

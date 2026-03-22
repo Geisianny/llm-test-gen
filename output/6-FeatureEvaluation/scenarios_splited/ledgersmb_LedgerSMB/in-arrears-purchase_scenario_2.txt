@@ -1,0 +1,6 @@
+Scenario: No COGS posting without inventory sold short
+  Given there are no sales recorded without associated costs
+  And a purchase invoice is available with the cost of goods
+  When the purchase invoice is posted
+  Then the system does not post COGS
+  And the accounting records remain unchanged regarding COGS

@@ -1,0 +1,29 @@
+Scenario 1: set up 2 parties with balance
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties place the following orders:
+  Then  "party2" should have holding account balance of "5" for asset "BTC"
+  Then  "party1" should have holding account balance of "1000000" for asset "ETH"
+  When  the opening auction period ends for market "BTC/ETH"
+  And  the following trades should be executed:
+  And  "party1" should have general account balance of "1" for asset "BTC"
+  And  "party2" should have general account balance of "0" for asset "BTC"
+  And  "party2" should have holding account balance of "4" for asset "BTC"
+  And  "party1" should have general account balance of "999000000" for asset "ETH"
+  And  "party2" should have holding account balance of "950000" for asset "ETH"
+  And  "party2" should have general account balance of "1000050000" for asset "ETH"
+  And  the mark price should be "1000000" for the market "BTC/ETH"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  And  the parties place the following orders:
+  Then  "party1" should have general account balance of "3" for asset "BTC"
+  And  "party1" should have general account balance of "996986000" for asset "ETH"
+  And  "party2" should have holding account balance of "2" for asset "BTC"
+  And  "party2" should have general account balance of "1002060000" for asset "ETH"
+  And  the parties place the following orders:
+  Then  "party1" should have general account balance of "2" for asset "BTC"
+  And  "party1" should have general account balance of "997929350" for asset "ETH"
+  And  "party1" should have holding account balance of "0" for asset "ETH"
+  And  "party2" should have general account balance of "1" for asset "BTC"
+  And  "party2" should have general account balance of "1002064750" for asset "ETH"
+  And  "party2" should have holding account balance of "0" for asset "ETH"
+  And  "party2" should have holding account balance of "2" for asset "BTC"
+

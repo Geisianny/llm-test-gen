@@ -1,0 +1,12 @@
+Scenario Outline 5: Get a collection of objects with identifiers from a multiple resources class with multiple collections and an item operation - Example 1
+  When  I send a "GET" request to "/spoons"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+  Examples:
+    | uri |
+    | /spoons |
+    | /cuillers |
+

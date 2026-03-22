@@ -1,0 +1,9 @@
+Scenario 21: Reordering home page offices for a worldwide organisation
+  Tags: ['@javascript']
+  Given  An worldwide organisation "Test Worldwide Organisation" with home page offices "Home page office 1" and "Home page office 2"
+  When  I visit the reorder offices page
+  Then  I should see that the list of offices are ordered "Home page office 1" then "Home page office 2"
+  When  I reorder the offices
+  And  I visit the reorder offices page
+  Then  I should see that the list of offices are ordered "Home page office 2" then "Home page office 1"
+

@@ -1,0 +1,8 @@
+Scenario 1: Adding a text attribute to an existing product
+  Tags: ['@ui', '@javascript']
+  When  I want to modify the "44 Magnum" product
+  And  I set its "Overall length" attribute to "30.5 cm" in "English (United States)"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  attribute "Overall length" of product "44 Magnum" should be "30.5 cm"
+

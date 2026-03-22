@@ -1,0 +1,30 @@
+Scenario 1: Provider admin can access plans
+  Given  an admin "admin" of the provider
+  When  I log in as provider "admin"
+  And  they go to the provider dashboard
+  Then  should see "Zoo API" within the apis dashboard widget
+  And  should see "Zoo Backend" within the apis dashboard widget
+  And  they should be able to go to the following pages:
+
+
+
+Scenario 2: Members per default cannot access plans
+  Given  an active user "member" of account "foo.3scale.localhost"
+  And  user "member" does not belong to the admin group "plans" of provider "foo.3scale.localhost"
+  When  I log in as provider "member"
+  And  they go to the provider dashboard
+  Then  should not see "Zoo API" within the apis dashboard widget
+  And  should not see "Zoo Backend" within the apis dashboard widget
+  And  they should see an error when going to the following pages:
+
+
+
+Scenario 3: Members of plans group can access plans
+  Given  an active user "member" of account "foo.3scale.localhost"
+  And  user "member" has access to the admin section "plans"
+  When  I log in as provider "member"
+  And  they go to the provider dashboard
+  Then  should see "Zoo API" within the apis dashboard widget
+  And  should see "Zoo Backend" within the apis dashboard widget
+  And  they should be able to go to the following pages:
+

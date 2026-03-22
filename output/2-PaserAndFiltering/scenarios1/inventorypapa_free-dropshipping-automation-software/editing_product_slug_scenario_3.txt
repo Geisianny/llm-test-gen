@@ -1,0 +1,6 @@
+Scenario 3: Seeing disabled slug field when editing a product
+  Tags: ['@ui']
+  Given  the store has a product "Mansion of Madness"
+  When  I want to modify this product
+  Then  the slug field should not be editable
+

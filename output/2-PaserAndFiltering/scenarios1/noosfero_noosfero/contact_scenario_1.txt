@@ -1,0 +1,6 @@
+Scenario 1: without states
+  Tags: ['@selenium']
+  Given  I am on sample-community's homepage
+  When  I follow "Send an e-mail"
+  Then  I should not see "City and state"
+

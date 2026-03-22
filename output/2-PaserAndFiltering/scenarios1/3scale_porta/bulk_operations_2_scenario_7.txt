@@ -1,0 +1,10 @@
+Scenario 7: Change application plan in bulk
+  Given  the table has the following rows:
+  And  item "Bob's App" is selected
+  And  item "Jane's Lite App" is selected
+  When  they select bulk action "Change application plan"
+  And  the modal is submitted with:
+  And  confirm the dialog
+  Then  they should see a toast alert with text "Successfully changed the plan of 2 applications"
+  And  the table has the following rows:
+

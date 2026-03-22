@@ -1,0 +1,17 @@
+Scenario 7: Assign a child channel to the system
+  Tags: ['@uyuni']
+  When  I follow "Software" in the content area
+  And  I follow "Software Channels" in the content area
+  And  I wait until I do not see "Loading..." text
+  Then  radio button "openSUSE Tumbleweed (x86_64)" should be checked
+  When  I wait until I do not see "Loading..." text
+  And  I check "Uyuni Client Tools for openSUSE Tumbleweed (x86_64)" by label
+  Then  I should see "Uyuni Client Tools for openSUSE Tumbleweed (x86_64)" as checked
+  When  I click on "Next"
+  Then  I should see a "Confirm Software Channel Change" text
+  When  I click on "Confirm"
+  Then  I should see a "Changing the channels has been scheduled." text
+  When  I follow "scheduled" in the content area
+  And  I wait until I see "1 system successfully completed this action." text, refreshing the page
+  Then  channel "Uyuni Client Tools for openSUSE Tumbleweed (x86_64)" should be enabled on "sle_minion"
+

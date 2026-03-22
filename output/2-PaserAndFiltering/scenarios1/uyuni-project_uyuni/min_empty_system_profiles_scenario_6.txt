@@ -1,0 +1,5 @@
+Scenario 6: Check the empty minion profiles visible via API
+  When  I call system.list_empty_system_profiles()
+  Then  "empty-profile" should be present in the result
+  And  "empty-profile-hostname" should be present in the result
+

@@ -1,0 +1,6 @@
+Scenario 1: Execute with missing browser
+  Given  a configuration with:
+  When  I start Karma
+  Then  it fails with like:
+  And  it fails with like:
+

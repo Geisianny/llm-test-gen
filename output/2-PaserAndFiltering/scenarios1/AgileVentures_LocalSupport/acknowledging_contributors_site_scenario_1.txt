@@ -1,0 +1,10 @@
+Scenario Outline 1: Display acknowledgements - Example 1
+  Given  I visit the home page
+  Then  I should see the "Agile Ventures" image linked to contributors
+
+  Examples:
+    | page |
+    | home |
+    | organisations index |
+    | new organisation |
+

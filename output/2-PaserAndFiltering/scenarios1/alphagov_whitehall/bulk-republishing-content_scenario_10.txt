@@ -1,0 +1,5 @@
+Scenario 10: Republish editionable content types
+  Given  Case Studies exist
+  When  I select all of type "CaseStudy" for republishing
+  Then  I can see all of type "CaseStudy" have been queued for republishing
+

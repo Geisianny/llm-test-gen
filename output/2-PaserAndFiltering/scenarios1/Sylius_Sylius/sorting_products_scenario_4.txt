@@ -1,0 +1,9 @@
+Scenario 4: Changing the names sorting order
+  Tags: ['@api', '@ui']
+  Given  I am browsing products
+  When  the products are already sorted ascending by name
+  And  I switch the way products are sorted descending by name
+  Then  I should see 3 products in the list
+  And  I should see a product with name "Berserk Pug"
+  But  the first product on the list should have name "Xtreme Pug"
+

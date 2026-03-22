@@ -1,0 +1,5 @@
+Scenario 12: FINANCIAL JOURNALS CREATION
+  Tags: ['@multicompany_base_finance_petty_cash_journal_settings']
+  Given  there is a journal with name "Cash" and company "MA SOCIETE FR"
+  And  having:
+

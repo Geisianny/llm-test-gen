@@ -1,0 +1,8 @@
+Scenario 10: Delete the x86_64 activation key with packages
+  Tags: ['@scc_credentials']
+  When  I follow the left menu "Systems > Activation Keys"
+  And  I follow "SUSE Test PKG Key x86_64" in the content area
+  And  I follow "Delete Key"
+  And  I click on "Delete Activation Key"
+  Then  I should see a "Activation key SUSE Test PKG Key x86_64 has been deleted." text
+

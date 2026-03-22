@@ -1,0 +1,6 @@
+Scenario 38: Sidebar link destination for Systems => Autoinstallation => Distributions
+  When  I follow the left menu "Systems > Autoinstallation > Distributions"
+  Then  I should see a "Autoinstallable Distributions" text
+  And  I should see a "No autoinstallable distributions available." text
+  And  I should see a "Create Distribution" link
+

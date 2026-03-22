@@ -1,0 +1,9 @@
+Scenario 2: Create a Value Attribute Group
+  Given  the site has a attribute group "Size"
+  And  the site has a value attribute "S" in attribute group
+  And  the site has a value attribute "M" in attribute group
+  And  the site has a value attribute "L" in attribute group
+  And  the site has a value attribute "XL" in attribute group
+  And  the site has a value attribute "XXL" in attribute group
+  Then  the attribute group "Size" should have 5 attributes
+

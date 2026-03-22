@@ -1,0 +1,8 @@
+Scenario 11: Delete a custom destination returns "OK" response
+  Tags: ['@team:DataDog/logs-backend', '@team:DataDog/logs-forwarding']
+  Given  new "DeleteLogsCustomDestination" request
+  And  there is a valid "custom_destination" in the system
+  And  request contains "custom_destination_id" parameter from "custom_destination.data.id"
+  When  the request is sent
+  Then  the response status is 204 OK
+

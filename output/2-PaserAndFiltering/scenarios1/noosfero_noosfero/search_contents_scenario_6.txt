@@ -1,0 +1,7 @@
+Scenario 6: simple search for gallery
+  Given  the following galleries
+  When  I search contents for "Landscape"
+  Then  I should see "Landscape Photos" within ".main-content"
+  And  I should not see "People Photos"
+  When  I follow "Landscape Photos"
+

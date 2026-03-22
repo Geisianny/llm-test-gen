@@ -1,0 +1,8 @@
+Scenario 2: Create a dashboard list returns "OK" response
+  Tags: ['@team:DataDog/dashboards-backend']
+  Given  new "CreateDashboardList" request
+  And  body with value {"name": "{{ unique }}"}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "name" is equal to "{{ unique }}"
+

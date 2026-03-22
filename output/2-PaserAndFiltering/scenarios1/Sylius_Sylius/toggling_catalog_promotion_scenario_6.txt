@@ -1,0 +1,7 @@
+Scenario 6: Enabling catalog promotion outside its operating time ended yesterday
+  Tags: ['@api', '@ui']
+  Given  the catalog promotion "Christmas sale" ended "yesterday"
+  When  I enable "Christmas sale" catalog promotion
+  Then  this catalog promotion should still be inactive
+  And  "PHP T-Shirt" variant should not be discounted
+

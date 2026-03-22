@@ -1,0 +1,6 @@
+Scenario 16: Cleanup: delete test distro in the Cobbler buildiso context
+  Given  I am authorized as "testing" with password "testing"
+  And  I remove distro "buildisodistro"
+  And  I follow the left menu "Systems > Autoinstallation > Profiles"
+  Then  I should not see a "buildisodistro" text
+

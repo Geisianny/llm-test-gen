@@ -1,0 +1,5 @@
+Scenario 2: Create a state channel with contents via API
+  When  I create state channel "statechannel2" containing "touch /root/foobar:\n  cmd.run:\n    - creates: /root/foobar" via API
+  And  I call configchannel.get_file_revision() with file "/init.sls", revision "1" and channel "statechannel2" via API
+  Then  I should get file contents "touch /root/foobar:\n  cmd.run:\n    - creates: /root/foobar"
+

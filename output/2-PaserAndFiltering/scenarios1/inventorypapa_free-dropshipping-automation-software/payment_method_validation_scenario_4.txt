@@ -1,0 +1,8 @@
+Scenario 4: Trying to remove name from an existing payment method
+  Tags: ['@ui']
+  Given  I want to modify the "Offline" payment method
+  When  I remove its name from "English (United States)" translation
+  And  I try to save my changes
+  Then  I should be notified that name is required
+  And  this payment method should still be named "Offline"
+

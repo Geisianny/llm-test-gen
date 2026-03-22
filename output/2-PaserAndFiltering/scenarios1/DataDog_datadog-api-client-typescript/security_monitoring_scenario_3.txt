@@ -1,0 +1,9 @@
+Scenario 3: Add a security signal to an incident returns "OK" response
+  Tags: ['@replay-only', '@team:DataDog/k9-cloud-security-platform']
+  Given  new "AddSecurityMonitoringSignalToIncident" request
+  And  request contains "signal_id" parameter with value "AQAAAYDiB_Ol8PbzFAAAAABBWURpQl9PbEFBQU0yeXhGTG9ZV2JnQUE"
+  And  body with value {"incident_id": 2609}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "status" is equal to "done"
+

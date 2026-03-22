@@ -1,0 +1,6 @@
+Scenario 15: Get a list of entities returns "OK" response with pagination
+  Tags: ['@generated', '@skip', '@team:DataDog/service-catalog', '@with-pagination']
+  Given  new "ListCatalogEntity" request
+  When  the request with pagination is sent
+  Then  the response status is 200 OK
+

@@ -1,0 +1,6 @@
+Scenario 22: List Confluent accounts returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "ListConfluentAccount" request
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

@@ -1,0 +1,7 @@
+Scenario 4: Remove imported account
+  When  I navigate to the wallet
+  And  I tap on the Identicon
+  Then  the account list should be visible
+  When  I long press to remove "Account 2"
+  And  I dismiss the account list
+

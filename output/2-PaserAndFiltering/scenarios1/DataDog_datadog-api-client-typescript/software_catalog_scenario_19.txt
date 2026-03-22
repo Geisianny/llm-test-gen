@@ -1,0 +1,6 @@
+Scenario 19: Get a list of entity relations returns "OK" response
+  Tags: ['@replay-only', '@team:DataDog/service-catalog']
+  Given  new "ListCatalogRelation" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

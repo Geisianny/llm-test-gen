@@ -1,0 +1,12 @@
+Scenario 9: Ordering and filtering by service
+  Given  the following service plan:
+  Given  a buyer "First"
+  And  a buyer "Second"
+  And  buyer "First" is subscribed to plan "Service Plan"
+  And  buyer "Second" is subscribed to plan "Service Plan"
+  And  buyer "First" plan "Service Plan" contract gets suspended
+  When  they go to the provider service subscriptions page
+  When  the table is filtered with:
+  And  the table is sorted by "State"
+  And  the table should contain the following:
+

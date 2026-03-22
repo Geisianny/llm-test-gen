@@ -1,0 +1,5 @@
+Scenario 1: List available products
+  Tags: ['@susemanager']
+  When  I execute mgr-sync "list products" with user "admin" and password "admin"
+  Then  I should get "[ ] SUSE Linux Enterprise Desktop 15 SP3 x86_64"
+

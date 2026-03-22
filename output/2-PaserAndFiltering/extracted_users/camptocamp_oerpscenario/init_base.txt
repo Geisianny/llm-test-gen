@@ -1,0 +1,31 @@
+Feature: Param the new database
+Description: In order to have a coherent installation
+  I autmated the manual steps.
+Tags: ['@init_base']
+
+Scenario 1: install modules
+  Given  I update the module list
+  Given  I install the required modules with dependencies:
+  Then  my modules should have been installed and models reloaded
+  Given  I give all groups right access to admin user
+  And  we select admin user
+  And  we activate the extended view on the users
+
+Scenario 2: install lang
+  Given  I install the following language :
+  Then  the language should be available
+
+Scenario 3: Config lang_locals
+  Given  I have install "fr_FR" language
+  And  I set "fr_FR" language to swiss formatting
+  Then  "fr_FR" language date format should have changed
+
+Scenario 4: Configure main partner and company
+  Given  I should have a company
+  Given  the company has the "logo.png" logo
+  And  his rml header set to "rml_header.txt"
+  Then  I set the company with the following data :
+  And  the main company currency is "EUR" with a rate of "1.00"
+  And  I set the company main partner with the following data :
+  And  I set the main address with the following data :
+

@@ -1,0 +1,16 @@
+Scenario 11: Apply a patch to systems in the SSM
+  When  I follow the left menu "Systems > System Set Manager > Overview"
+  And  I follow first "Patches"
+  When  I enter "andromeda-dummy" as the filtered synopsis
+  And  I click on the filter button
+  When  I wait until I see "andromeda-dummy-6789" text, refreshing the page
+  Then  I should see a "andromeda-dummy-6789" link
+  When  I follow "andromeda-dummy-6789"
+  And  I follow first "Affected Systems"
+  And  I check the "sle_minion" client
+  And  I click on "Apply Patches"
+  And  I click on "Confirm"
+  Then  I should see a "Patch andromeda-dummy-6789 has been scheduled for 1 system" text
+  And  I am on the Systems overview page of this "sle_minion"
+  And  I wait until event "Patch Update: andromeda-dummy-6789 - Test update for andromeda-dummy scheduled by admin" is completed
+

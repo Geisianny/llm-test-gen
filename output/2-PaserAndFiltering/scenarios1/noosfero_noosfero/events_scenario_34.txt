@@ -1,0 +1,4 @@
+Scenario 34: highlight the selected day when page is openened directly
+  Given  I am on /profile/josesilva/events/2018/10/24
+  Then  "24" should be visible within ".calendar-day.selected"
+

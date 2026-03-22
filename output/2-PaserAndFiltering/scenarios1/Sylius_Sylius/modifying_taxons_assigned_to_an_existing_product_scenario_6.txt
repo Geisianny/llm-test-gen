@@ -1,0 +1,6 @@
+Scenario 6: Being unable duplicate a product taxon by getting it from another product
+  Tags: ['@api', '@no-ui']
+  Given  the product "Shirt" belongs to taxon "Clothes"
+  When  I try to assign the product taxon of product "T-Shirt" and taxon "Clothes" to the product "Shirt"
+  Then  I should be notified that product taxons cannot be duplicated
+

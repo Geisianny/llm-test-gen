@@ -1,0 +1,5 @@
+Scenario 1: Edit an existing backend API
+  Given  an admin is at a backend api edit page
+  Then  they will be able to edit the name, description and base url
+  But  field "System name" is disabled
+

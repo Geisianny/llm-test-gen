@@ -1,0 +1,7 @@
+Scenario 8: Get a given APM retention filter returns "Not Found" response
+  Tags: ['@team:DataDog/apm-trace-intake']
+  Given  new "GetApmRetentionFilter" request
+  And  request contains "filter_id" parameter with value "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

@@ -1,0 +1,7 @@
+Scenario 1: Impersonating a customer
+  Tags: ['@no-api', '@ui']
+  When  I view details of the customer "remnant@london.uk"
+  And  I impersonate them
+  And  I visit the store
+  Then  I should be logged in as "Tanith Low"
+

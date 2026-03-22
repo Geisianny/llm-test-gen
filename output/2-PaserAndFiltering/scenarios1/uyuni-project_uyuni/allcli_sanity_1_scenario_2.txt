@@ -1,0 +1,7 @@
+Scenario 2: The proxy is healthy
+  Tags: ['@proxy']
+  Then  "proxy" should have a FQDN
+  And  reverse resolution should work for "proxy"
+  And  "proxy" should communicate with the server using public interface
+  And  the clock from "proxy" should be exact
+

@@ -1,0 +1,12 @@
+Scenario 7: Show contents browse menu
+  Tags: ['@selenium-fixme']
+  Given  I should not see "Most commented"
+  And  I should not see "More viewed"
+  And  I should not see "More recent"
+  And  I go to /search/contents
+  And  display "#submenu-contents-trigger"
+  When  I follow "submenu-contents-trigger"
+  Then  I should see "Most commented"
+  And  I should see "More viewed"
+  And  I should see "More recent"
+

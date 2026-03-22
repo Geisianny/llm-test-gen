@@ -1,0 +1,5 @@
+Scenario 1: Seeing my basic data while login
+  Tags: ['@api']
+  When  I log in with the email "car@better.com"
+  Then  I should see who I am
+

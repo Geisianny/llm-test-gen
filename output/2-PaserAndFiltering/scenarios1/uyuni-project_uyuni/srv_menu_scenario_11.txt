@@ -1,0 +1,6 @@
+Scenario 11: The files menu under the configuration menu
+  When  I follow the left menu "Configuration > Files"
+  Then  I should see a "Centrally-Managed Configuration Files" text
+  And  I should see a "Centrally Managed" link in the left menu
+  And  I should see a "Locally Managed" link in the left menu
+

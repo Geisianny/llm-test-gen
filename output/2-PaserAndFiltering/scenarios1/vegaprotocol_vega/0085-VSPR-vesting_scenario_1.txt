@@ -1,0 +1,10 @@
+Scenario 1: Parties rewards from different markets (using the same settlement asset) are transferred into the same vesting account (0085-RVST-004)(0085-RVST-005)
+  Given  the parties submit the following recurring transfers:
+  And  the network moves ahead "1" blocks
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  "trader1" should have vesting account balance of "20000" for asset "USD.1.10"
+  When  the network moves ahead "1" epochs
+  Then  "trader1" should have vesting account balance of "18000" for asset "USD.1.10"
+  And  "trader1" should have vested account balance of "2000" for asset "USD.1.10"
+

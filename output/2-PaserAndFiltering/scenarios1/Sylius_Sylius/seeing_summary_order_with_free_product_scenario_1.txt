@@ -1,0 +1,12 @@
+Scenario 1: Seeing Free order
+  Tags: ['@api', '@ui']
+  Given  I added product "Greyjoy Coat" to the cart
+  And  I am at the checkout addressing step
+  When  I specify the email as "jon.snow@example.com"
+  And  I define the billing address as "Ankh Morpork", "Frost Alley", "90210", "United States" for "Jon Snow"
+  And  I proceed with "DHL" shipping method
+  Then  I should be on the checkout summary step
+  And  my order total should be "$0.00"
+  And  there should be no discount applied
+  And  there should be no taxes charged
+

@@ -1,0 +1,8 @@
+Scenario 1: Trying to add a new province with a taken code
+  Tags: ['@api', '@ui', '@javascript']
+  When  I want to add a new country
+  And  I choose "Gibraltar"
+  And  I add the "Scotland" province with "GB-NIR" code
+  And  I try to add it
+  Then  I should be notified that province code must be unique
+

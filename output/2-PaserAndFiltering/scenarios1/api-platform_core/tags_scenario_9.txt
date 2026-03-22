@@ -1,0 +1,6 @@
+Scenario 9: Create a Relation1
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/relation1s" with body:
+  Then  the response status code should be 201
+  And  "/relation1s,/relation2s/1" IRIs should be purged
+

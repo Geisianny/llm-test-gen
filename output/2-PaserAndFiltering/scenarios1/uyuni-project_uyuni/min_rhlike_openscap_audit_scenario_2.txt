@@ -1,0 +1,5 @@
+Scenario 2: Enable repositories for openSCAP on the Red Hat-like minion
+  Tags: ['@skip_if_github_validation']
+  When  I enable the repositories "Rocky-BaseOS Rocky-AppStream" on this "rhlike_minion"
+  And  I refresh the metadata for "rhlike_minion"
+

@@ -1,0 +1,6 @@
+Scenario 4: The order with cart state has not been canceled
+  Tags: ['@cli']
+  When  I run cancel unpaid orders command
+  Then  only the order with number "#00000025" should be canceled
+  And  I should be informed that unpaid orders have been canceled
+

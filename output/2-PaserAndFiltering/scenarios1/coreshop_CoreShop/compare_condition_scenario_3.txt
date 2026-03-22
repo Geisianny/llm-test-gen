@@ -1,0 +1,4 @@
+Scenario 3: Create a new compare not equal condition and render it
+  Given  there is a compare condition with field-name "XY" operator "!=" and value "blub"
+  Then  the condition rendered for "mysql" should look like "`XY` != 'blub'"
+

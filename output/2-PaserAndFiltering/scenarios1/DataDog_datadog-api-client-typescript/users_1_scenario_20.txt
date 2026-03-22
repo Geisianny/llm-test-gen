@@ -1,0 +1,8 @@
+Scenario 20: Update a user returns "Not found" response
+  Tags: ['@team:DataDog/team-aaa-identity']
+  Given  new "UpdateUser" request
+  And  request contains "user_id" parameter with value "00000000-dead-beef-dead-ffffffffffff"
+  And  body with value {"data": {"id": "00000000-dead-beef-dead-ffffffffffff", "type": "users", "attributes": {"name": "updated", "disabled": true}}}
+  When  the request is sent
+  Then  the response status is 404 Not found
+

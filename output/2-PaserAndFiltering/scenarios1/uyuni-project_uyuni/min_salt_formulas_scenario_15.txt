@@ -1,0 +1,6 @@
+Scenario 15: Check the pillar data after disabling the formula
+  When  I refresh the pillar data
+  Then  the pillar data for "formulas" should be empty on "sle_minion"
+  And  the pillar data for "timezone" should be empty on "sle_minion"
+  And  the pillar data for "keyboard_and_language" should be empty on "sle_minion"
+

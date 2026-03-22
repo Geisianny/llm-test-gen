@@ -1,0 +1,11 @@
+Scenario 5: Buyer is not billed monthly - no invoice is created
+  Given  the date is 31st December 2008
+  And  a buyer "tycoon" signed up to application plan "Variable"
+  And  buyer "tycoon" is not billed monthly
+  When  time flies to 14th January 2009
+  And  buyer "tycoon" makes 2 service transactions with:
+  And  time flies to 10th February 2009
+  And  I log in as "tycoon" on xyz.3scale.localhost
+  And  I navigate to invoices issued for me
+  Then  I should see 0 invoices
+

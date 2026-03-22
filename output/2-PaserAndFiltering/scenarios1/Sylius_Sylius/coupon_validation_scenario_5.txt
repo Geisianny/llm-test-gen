@@ -1,0 +1,11 @@
+Scenario 5: Trying to add a new coupon with non-existing promotion
+  Tags: ['@api', '@no-ui']
+  When  I want to create a new coupon for a non-existing promotion
+  And  I specify its code as "RANDOM"
+  And  I limit its usage to 30 times
+  And  I limit its per customer usage to 3 times
+  And  I make it valid until "26.03.2017"
+  And  I try to add it
+  Then  I should be notified that promotion is required
+  And  there should be no coupon with code "RANDOM"
+

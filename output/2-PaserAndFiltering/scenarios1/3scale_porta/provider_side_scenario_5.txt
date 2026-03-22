@@ -1,0 +1,9 @@
+Scenario 5: Default metric when creating a backend after product
+  Given  a service "My API" of the provider
+  And  a backend
+  And  the backend is used by the product
+  When  I go to the overview page of product "My API"
+  And  I follow "Analytics"
+  And  I follow "Traffic"
+  Then  I should see "Hits (hits)"
+

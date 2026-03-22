@@ -1,0 +1,5 @@
+Scenario 1: Showing the current currency
+  Tags: ['@api', '@ui']
+  When  I browse that channel
+  Then  I should shop using the "EUR" currency
+

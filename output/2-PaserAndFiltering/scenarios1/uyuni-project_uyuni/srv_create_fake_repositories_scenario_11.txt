@@ -1,0 +1,11 @@
+Scenario 11: Add the repository to the i586 channel
+  When  I follow the left menu "Software > Manage > Channels"
+  And  I follow "Fake-Child-Channel-i586"
+  And  I enter "file:///etc/pki/rpm-gpg/uyuni-tools-gpg-pubkey-0d20833e.key" as "GPG key URL"
+  And  I click on "Update Channel"
+  Then  I should see a "Channel Fake-Child-Channel-i586 updated" text
+  When  I follow "Repositories" in the content area
+  And  I select the "fake-i586-repo" repo
+  And  I click on "Save Repositories"
+  Then  I should see a "Fake-Child-Channel-i586 repository information was successfully updated" text
+

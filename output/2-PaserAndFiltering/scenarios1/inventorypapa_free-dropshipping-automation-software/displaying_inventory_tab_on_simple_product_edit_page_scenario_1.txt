@@ -1,0 +1,5 @@
+Scenario 1: Seeing inventory on simple product edit page
+  Tags: ['@ui']
+  When  I want to modify the "PHP Mug" product
+  Then  I should see inventory of this product
+

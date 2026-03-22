@@ -1,0 +1,22 @@
+Scenario 1: FINANCIAL JOURNALS CREATION
+  Tags: ['@base_finance_journals']
+  Given  I need a "account.journal" with oid: scen.eur_journal
+  And  having:
+  Given  I need a "account.journal" with oid: scen.usd_journal
+  And  having:
+  Given  I need a "account.journal" with oid: scen.gbp_journal
+  And  having:
+  Given  I need a "account.journal" with oid: scen.sales_journal
+  And  having:
+  Given  I need a "account.journal" with oid: scen.ref_sales_journal
+  And  having:
+  Given  I need a "account.journal" with oid: scen.purchases_journal
+  And  having:
+  Given  I need a "account.journal" with oid: scen.ref_purchases_journal
+  And  having:
+  Given  I need a "account.journal" with oid: scen.misc_journal
+  And  having:
+  Given  I need a "account.journal" with oid: scen.misc_journal
+  And  having:
+  Given  I allow cancelling entries on all journals
+

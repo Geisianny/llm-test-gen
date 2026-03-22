@@ -1,0 +1,6 @@
+Scenario 9: Login procedure with ampersand
+  Given  an existing company named "setup&.test"
+  When  I navigate to the setup login page
+  And  I log into the company using the super-user credentials
+  Then  I should see my setup.pl credentials
+

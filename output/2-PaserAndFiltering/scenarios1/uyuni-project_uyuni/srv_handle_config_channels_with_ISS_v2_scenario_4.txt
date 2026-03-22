@@ -1,0 +1,11 @@
+Scenario 4: Add a configuration file to the test configuration channel
+  When  I follow the left menu "Configuration > Channels"
+  And  I follow "Test Config Channel"
+  And  I follow "Create Configuration File or Directory"
+  And  I enter "/etc/s-mgr/config" as "cffPath"
+  And  I enter "COLOR=white" in the editor
+  And  I click on "Create Configuration File"
+  Then  I should see a "Revision 1 of /etc/s-mgr/config from channel Test Config Channel" text
+  And  file "/srv/susemanager/salt/manager_org_1/testconfigchannel/init.sls" should exist on server
+  And  file "/srv/susemanager/salt/manager_org_1/testconfigchannel/etc/s-mgr/config" should exist on server
+

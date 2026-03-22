@@ -1,0 +1,4 @@
+Scenario 5: See search form on show page
+  Given  I visit the show page for the service named "Office Support"
+  Then  I should see a search form
+

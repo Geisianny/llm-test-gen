@@ -1,0 +1,9 @@
+Scenario 3: not display in a not selected language
+  Given  I go to edit LinkListBlock of joaosilva
+  And  I fill in "Custom title for this block" with "Block not displayed"
+  And  I select "English" from "Show for"
+  And  I press "Save"
+  And  my browser prefers Portuguese
+  When  I go to joaosilva's homepage
+  Then  I should not see "Block displayed"
+

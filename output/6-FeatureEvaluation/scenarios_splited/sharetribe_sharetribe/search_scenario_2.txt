@@ -1,0 +1,5 @@
+Scenario: Search listings with partial keyword matching
+  Given there are listings with titles "Smartphone" and "Electronic Accessories"
+  When the user types a keyword "phone" in the search box
+  And hits enter
+  Then the system displays listings containing "Smartphone" in the results

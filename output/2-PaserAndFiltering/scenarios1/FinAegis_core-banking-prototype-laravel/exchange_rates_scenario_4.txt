@@ -1,0 +1,5 @@
+Scenario 4: Exchange rate not found
+  When  I send a GET request to "/api/v1/exchange-rates/USD/JPY"
+  Then  the response status code should be 404
+  And  the response should contain:
+

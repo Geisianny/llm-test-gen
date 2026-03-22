@@ -1,0 +1,10 @@
+Scenario 5: Creating a child taxon with a custom slug
+  Tags: ['@api', '@ui']
+  Given  the store has "Medieval weapons" taxonomy
+  When  I want to create a new taxon for "Medieval weapons"
+  And  I specify its code as "SIEGE_ENGINES"
+  And  I name it "Siege engines" in "English (United States)"
+  And  I set its slug to "medieval-weapons/siege" in "English (United States)"
+  And  I add it
+  Then  this taxon slug should be "medieval-weapons/siege"
+

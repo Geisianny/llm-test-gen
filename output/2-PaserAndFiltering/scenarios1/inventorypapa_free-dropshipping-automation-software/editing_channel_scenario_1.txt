@@ -1,0 +1,8 @@
+Scenario 1: Trying to change channel code
+  Tags: ['@todo']
+  Given  I want to modify a channel "Web Channel"
+  When  I change its code to "MOBILE"
+  And  I save my changes
+  Then  I should be notified that code cannot be changed
+  And  channel "Web Channel" should still have code "MOBILE"
+

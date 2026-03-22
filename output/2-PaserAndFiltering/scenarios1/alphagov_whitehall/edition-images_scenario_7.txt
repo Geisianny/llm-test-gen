@@ -1,0 +1,6 @@
+Scenario 7: No file uploaded
+  And  I start drafting a new publication "Standard Beard Lengths"
+  When  I visit the images tab of the document "Standard Beard Lengths"
+  And  I click upload without attaching a file
+  Then  I should get the error message "No images selected. Choose a valid JPEG, PNG, SVG or GIF."
+

@@ -1,0 +1,14 @@
+Scenario 8: Install a package on the SSH minion
+  Given  I am on the Systems overview page of this "ssh_minion"
+  When  I follow "Software" in the content area
+  And  I follow "Packages"
+  And  I follow "Install"
+  And  I enter "andromeda" as the filtered package name
+  And  I click on the filter button
+  And  I check "andromeda-dummy-2.0-1.1" in the list
+  And  I click on "Install Packages"
+  And  I click on "Confirm"
+  Then  I should see a "1 package install has been scheduled" text
+  When  I wait for "andromeda-dummy-2.0-1.1" to be installed on "ssh_minion"
+  Then  vendor change should be enabled for package actions on "ssh_minion"
+

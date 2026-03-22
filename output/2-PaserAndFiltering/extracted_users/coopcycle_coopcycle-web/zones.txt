@@ -1,0 +1,66 @@
+Feature: Zones
+
+Scenario 1: Not authorized to list zones without admin role
+  Given  the fixtures files are loaded:
+  And  the user "bob" is loaded:
+  And  the user "bob" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "GET" request to "/api/zones"
+  Then  the response status code should be 403
+
+Scenario 2: Not authorized to retrieve zone without admin role
+  Given  the fixtures files are loaded:
+  And  the user "bob" is loaded:
+  And  the user "bob" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "bob" sends a "GET" request to "/api/zones/1"
+  Then  the response status code should be 403
+
+Scenario 3: List zones as admin
+  Given  the fixtures files are loaded:
+  And  the user "admin" is loaded:
+  And  the user "admin" has role "ROLE_ADMIN"
+  And  the user "admin" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "admin" sends a "GET" request to "/api/zones"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 4: Retrieve specific zone as admin
+  Given  the fixtures files are loaded:
+  And  the user "admin" is loaded:
+  And  the user "admin" has role "ROLE_ADMIN"
+  And  the user "admin" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "admin" sends a "GET" request to "/api/zones/1"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 5: List zones with pagination
+  Given  the fixtures files are loaded:
+  And  the user "admin" is loaded:
+  And  the user "admin" has role "ROLE_ADMIN"
+  And  the user "admin" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "admin" sends a "GET" request to "/api/zones?itemsPerPage=2"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should match:
+
+Scenario 6: Retrieve non-existent zone returns 404
+  Given  the fixtures files are loaded:
+  And  the user "admin" is loaded:
+  And  the user "admin" has role "ROLE_ADMIN"
+  And  the user "admin" is authenticated
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  the user "admin" sends a "GET" request to "/api/zones/999"
+  Then  the response status code should be 404
+

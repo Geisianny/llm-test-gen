@@ -1,0 +1,10 @@
+Scenario 19: Unsubscribe SSH minion and delete configuration files
+  Tags: ['@ssh_minion']
+  When  I follow the left menu "Configuration > Channels"
+  And  I follow "Mixed Channel"
+  And  I follow "Systems" in the content area
+  And  I check the "ssh_minion" client
+  And  I click on "Unsubscribe systems"
+  Then  I should see a "Successfully unsubscribed 1 system(s)." text
+  And  I destroy "/etc/s-mgr" directory on "ssh_minion"
+

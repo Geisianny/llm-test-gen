@@ -1,0 +1,8 @@
+Scenario 5: Display checkbox when custom field is a boolean
+  Tags: ['@selenium']
+  Given  I follow "Add new field"
+  And  I select "Boolean" from "custom-field-type"
+  And  I fill in "custom-field-name" with "New field"
+  When  I follow "Add new field"
+  Then  The page should contain only 1 "#article-custom-fields .custom-field-input input[type=checkbox]"
+

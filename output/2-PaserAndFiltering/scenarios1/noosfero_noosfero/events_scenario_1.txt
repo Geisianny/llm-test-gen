@@ -1,0 +1,5 @@
+Scenario 1: go to next month
+  Given  I am on /profile/josesilva/events/2009/10
+  When  I follow "November"
+  Then  I should see "November 2009" within ".current-month"
+

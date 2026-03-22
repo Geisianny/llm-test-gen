@@ -1,0 +1,5 @@
+Scenario 6: Seeing disabled type field while editing a product attribute
+  Tags: ['@ui']
+  When  I want to edit this product attribute
+  Then  the type field should be disabled
+

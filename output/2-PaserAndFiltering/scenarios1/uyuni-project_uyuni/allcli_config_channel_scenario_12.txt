@@ -1,0 +1,5 @@
+Scenario 12: Check that file has been created on SSH minion
+  Tags: ['@ssh_minion']
+  When  I wait until file "/etc/s-mgr/config" exists on "ssh_minion"
+  Then  file "/etc/s-mgr/config" should contain "COLOR=white" on "ssh_minion"
+

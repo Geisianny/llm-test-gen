@@ -1,0 +1,4 @@
+Scenario: Delegate voting power to another stakeholder
+  Given there is a stakeholder with tokens staked
+  When the stakeholder delegates voting power to another stakeholder
+  Then the system updates the voting power of the delegate

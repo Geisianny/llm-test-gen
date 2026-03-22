@@ -1,0 +1,7 @@
+Scenario 2: Trying to add a new payment method translation in unexisting language
+  Tags: ['@api', '@no-ui']
+  When  I want to modify the "Bank transfer" payment method
+  And  I name it "Bank transfer" in "French (France)"
+  And  I try to save my changes
+  Then  I should be notified that the locale is not available
+

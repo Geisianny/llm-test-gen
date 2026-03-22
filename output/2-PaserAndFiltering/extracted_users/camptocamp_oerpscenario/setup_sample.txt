@@ -1,0 +1,66 @@
+Feature: Param the new database
+Description: In order to have a coherent installation
+  As an administrator autmated the manual installation steps.
+Tags: ['@customer_init']
+
+Scenario 1: CREATE DATABASE
+  Tags: ['@customer_db']
+  Given  I create database "openerp_test_customer" with admin password "admin"
+
+Scenario 2: INSTALL MODULES
+  Tags: ['@customer_addons']
+  Given  I update the module list
+  Given  I install the required modules with dependencies:
+  Then  my modules should have been installed and models reloaded
+
+Scenario 3: USER RIGHTS SETTINGS
+  Given  we select users below:
+  Then  we assign all groups to the users
+  Given  I need a "res.users" with oid: scen.fr_main_user
+  And  having:
+  And  we assign to user the groups bellow
+
+Scenario 4: LANGUAGE INSTALL
+  Given  I install the following languages:
+  Then  the language should be available
+
+Scenario 5: LANGUAGE SETTINGS
+  Given  I need a "res.lang" with code: en_US
+  And  having:
+  Given  I need a "res.lang" with code: fr_FR
+  And  having:
+  Given  I need a "res.lang" with code: de_DE
+  And  having:
+  Given  I need a "res.lang" with code: it_IT
+  And  having:
+
+Scenario 6: CREATION OF FISCAL YEAR 2013
+  Given  I need a "account.fiscalyear" with oid: scenario.fy2013
+  And  having:
+  And  I create monthly periods on the fiscal year with reference "scenario.fy2013"
+  Then  I find a "account.fiscalyear" with oid: scenario.fy2012
+
+Scenario 7: GENERATE ACCOUNT CHART
+  Given  I have the module account installed
+  And  no account set
+  And  I want to generate account chart from chart template named "Plan comptable STERCHI" with "0" digits
+  When  I generate the chart
+  Then  accounts should be available
+
+Scenario 8: CONFIGURE MAIN PARTNER AND COMPANY
+  Given  I need a "res.company" with oid: base.main_company
+  And  having:
+  Given  the company has the "logo.png" logo
+  And  the company currency is "CHF" with a rate of "1.00"
+  Given  I need a "res.partner" with oid: base.main_partner
+  And  having:
+
+Scenario 9: SETUP WEBKIT
+  Given  I need a "res.company" with oid: base.main_company
+  And  I set the webkit path to "/srv/openerp/webkit_library/wkhtmltopdf-amd64"
+
+Scenario 10: CONFIGURE BANQUE ACCOUNT:
+  Tags: ['@customer_bank_account']
+  Given  I need a "res.partner.bank" with oid: scen.main_bank
+  And  having:
+

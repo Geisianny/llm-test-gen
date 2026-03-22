@@ -1,0 +1,9 @@
+Scenario Outline 3: Validate invalid and valid wallet address <Case> - Example 1
+  When  I enter address "0xB8B4EE5B1b693971eB60bDa15211570df2dB221L" in the sender's input box
+  Then  I should see a warning message "Recipient address is invalid."
+
+  Examples:
+    | Case | contractAddress | Warning |
+    | Invalid address | 0xB8B4EE5B1b693971eB60bDa15211570df2dB221L | Recipient address is invalid. |
+    | Valid address | 0xdac17f958d2ee523a2206206994597c13d831ec7 | This address is a token contract address. If you send tokens to this address, you will lose them. |
+

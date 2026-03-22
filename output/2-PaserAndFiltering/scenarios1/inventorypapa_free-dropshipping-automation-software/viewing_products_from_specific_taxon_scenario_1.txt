@@ -1,0 +1,6 @@
+Scenario 1: Viewing products from a specific taxon
+  Tags: ['@ui', '@api']
+  When  I browse products from taxon "T-Shirts"
+  Then  I should see the product "T-Shirt Banana"
+  And  I should not see the product "Plastic Tomato"
+

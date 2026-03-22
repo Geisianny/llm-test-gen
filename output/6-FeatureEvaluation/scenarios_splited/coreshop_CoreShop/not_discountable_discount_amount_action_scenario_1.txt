@@ -1,0 +1,5 @@
+Scenario: Apply non-discountable rule to cart
+  Given there is a product with a price of $100
+  And a non-discountable price rule is applied to the product
+  When the customer adds the product to the cart
+  Then the cart total remains $100

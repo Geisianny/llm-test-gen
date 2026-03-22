@@ -1,0 +1,12 @@
+Scenario 3: Create a new pet name
+  Tags: ['@sample-feature', '@petnames', '@create', '@e2e-automated']
+  Given  I am on the Sample Feature screen
+  And  I am connected to "Ethereum Mainnet" network
+  And  I can see the Pet Names section
+  When  I enter "0x086473d15475Cf20722F5cA7D8d4adfa39Dc6E05" in the Address field
+  And  I enter "Alice" in the Name field
+  And  I tap on the "Add Pet Name" button
+  Then  I should see "Alice" in the pet names list
+  And  the list should show "Alice" with truncated address "0x08647...c6E05"
+  And  the pet name should be associated with the current network
+

@@ -1,0 +1,8 @@
+Scenario 1: Getting verified after clicking the link in the verification message
+  Tags: ['@ui', '@api']
+  Given  a verification email has already been sent to "valkyrie@cain.com"
+  When  I try to verify my account using the link from this email
+  Then  I should be notified that the verification was successful
+  And  I should be able to log in as "valkyrie@cain.com" with "sylius" password
+  And  my account should be verified
+

@@ -1,0 +1,6 @@
+Scenario 5: Create Customer Locations
+  Given  we create under "Partner Locations" the stock location "All Customers Locations" with
+  And  I affect the company "My Company" to the location "All Customers Locations"
+  Given  we move the stock location "Customers" under "All Customers Locations" and update it with
+  And  I affect the company "My Company" to the location "Customers"
+

@@ -1,0 +1,15 @@
+Scenario 6: edit delivery
+  Tags: ['@selenium']
+  Given  I follow "Preferences" within "#section-shopping"
+  And  I check "Enable shopping basket"
+  And  I follow "New delivery or pickup"
+  And  I fill in "Name" with "Bike"
+  When  I follow "Add"
+  Then  I should see "Bike"
+  When  I fix button onclick argument
+  And  I follow "Edit"
+  And  I fill in "Name" with "Car"
+  When  I follow "Save"
+  Then  I should not see "Bike"
+  Then  I should see "Car"
+

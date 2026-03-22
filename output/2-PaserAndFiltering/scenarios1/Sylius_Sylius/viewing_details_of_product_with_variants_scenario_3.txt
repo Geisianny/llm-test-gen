@@ -1,0 +1,5 @@
+Scenario 3: Viewing options
+  Tags: ['@api', '@ui']
+  When  I access the "Iron Shield" product
+  Then  I should see option "Shield size"
+

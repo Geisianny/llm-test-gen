@@ -1,0 +1,15 @@
+Scenario 3: Create a new user
+  When  I follow the left menu "Users > User List > Active"
+  And  I follow "Create User"
+  And  I enter "user1" as "login"
+  And  I enter "user1" as "desiredpassword"
+  And  I enter "user1" as "desiredpasswordConfirm"
+  And  I select "Mr." from "prefix"
+  And  I enter "Test" as "firstNames"
+  And  I enter "User" as "lastName"
+  And  I enter "galaxy-noise@localhost" as "email"
+  And  I click on "Create Login"
+  Then  I should see a "Account user1 created, login information sent to galaxy-noise@localhost" text
+  And  I should see a "user1" link
+  And  I should see a "normal user" text
+

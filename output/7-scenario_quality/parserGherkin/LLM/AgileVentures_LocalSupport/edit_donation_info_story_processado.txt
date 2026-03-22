@@ -1,0 +1,52 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: edit_donation_info_story_processado.feature
+Caminho relativo: AgileVentures_LocalSupport\edit_donation_info_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\AgileVentures_LocalSupport\edit_donation_info_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: edit_donation_info_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Charity worker updates donation link successfully
+   Steps: 5
+   - Given there is a charity worker with an organization
+   - And the organization's donation link is currently "https://old-donation-link.com"
+   - When the charity worker updates the donation link to "https://new-donation-link.com"
+   - Then the system saves the new donation link
+   - And displays a confirmation message that the donation link has been updated
+2. Charity worker updates donation link with invalid URL
+   Steps: 5
+   - Given there is a charity worker with an organization
+   - And the organization's donation link is currently "https://old-donation-link.com"
+   - When the charity worker updates the donation link to "invalid-url"
+   - Then the system does not save the new donation link
+   - And displays an error message indicating that the URL is invalid
+3. Charity worker updates donation link to an empty URL
+   Steps: 5
+   - Given there is a charity worker with an organization
+   - And the organization's donation link is currently "https://old-donation-link.com"
+   - When the charity worker updates the donation link to ""
+   - Then the system does not save the new donation link
+   - And displays an error message indicating that the donation link cannot be empty
+4. Charity worker views updated donation link on public page
+   Steps: 4
+   - Given there is a charity worker with an organization
+   - And the organization's donation link has been updated to "https://new-donation-link.com"
+   - When a user views the organization's public page
+   - Then the system displays the new donation link "https://new-donation-link.com"
+5. Charity worker cancels updating donation link
+   Steps: 5
+   - Given there is a charity worker with an organization
+   - And the organization's donation link is currently "https://old-donation-link.com"
+   - When the charity worker cancels updating the donation link
+   - Then the system does not change the donation link
+   - And the organization's donation link remains "https://old-donation-link.com"

@@ -1,0 +1,5 @@
+Scenario 1: Navigation from Dashboard widget
+  Given  the current page is the provider dashboard
+  When  they follow "Create Backend" within the apis dashboard widget
+  Then  the current page is the admin portal new backend api page
+

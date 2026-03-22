@@ -1,0 +1,15 @@
+Scenario 34: Sidebar link destination for Systems => Autoinstallation
+  When  I follow the left menu "Systems > Autoinstallation > Overview"
+  Then  I should see a "Autoinstallation Overview" text
+  And  I should see a "Profiles" link in the left menu
+  And  I should see a "Unprovisioned" link in the left menu
+  And  I should see a "GPG and SSL Keys" link in the left menu
+  And  I should see a "Distributions" link in the left menu
+  And  I should see a "File Preservation" link in the left menu
+  And  I should see a "Autoinstallation Snippets" link in the left menu
+  And  I should see a "Create Kickstart Profile" link
+  And  I should see a "Upload Kickstart/AutoYaST File" link
+  And  I should see a "View a List of Autoinstallation Profiles" link
+  And  I should see a "Create a New Kickstart Profile" link
+  And  I should see a "Upload a New Kickstart/AutoYaST File" link
+

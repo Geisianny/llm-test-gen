@@ -1,0 +1,6 @@
+Scenario 3: Variable cost on the first day of the month of a new contract
+  Given  the buyer is signed up to plan "VariableOnly" on 1st January 2019
+  And  the buyer makes a service transactions with:
+  When  time flies to 3rd February 2019
+  Then  the buyer should have following line items for "January, 2019" invoice:
+

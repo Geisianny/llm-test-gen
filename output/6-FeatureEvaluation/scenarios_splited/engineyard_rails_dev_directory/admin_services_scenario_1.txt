@@ -1,0 +1,6 @@
+Scenario: Add a new service
+  Given there is no service with the name "New Service"
+  When the administrator adds a new service with the name "New Service"
+  And provides a valid description for the service
+  Then the system lists the service "New Service"
+  And the service is enabled by default

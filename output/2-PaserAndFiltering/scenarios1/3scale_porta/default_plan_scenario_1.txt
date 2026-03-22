@@ -1,0 +1,6 @@
+Scenario 1: Set a default application plan
+  When  they select "Pro" from "Default plan"
+  And  press "Change plan"
+  Then  they should see "The default plan has been changed"
+  And  "Pro" is the option selected in "Default plan"
+

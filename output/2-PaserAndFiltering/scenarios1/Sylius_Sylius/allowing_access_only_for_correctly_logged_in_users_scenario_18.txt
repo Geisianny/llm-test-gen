@@ -1,0 +1,12 @@
+Scenario 18: Denying access to complete the customer cart by the visitor
+  Tags: ['@api', '@no-ui']
+  Given  the customer logged in
+  And  the customer has product "Stark T-Shirt" in the cart
+  And  the customer has specified address as "Ankh Morpork", "Frost Alley", "90210", "United States" for "Jon Snow"
+  And  the customer has completed the addressing step
+  And  the customer proceeds with "UPS" shipping method
+  And  the customer proceeds with "Offline" payment method
+  And  the customer logged out
+  When  the customer tries to check the details of their cart
+  Then  the visitor has no access to confirm the customer order
+

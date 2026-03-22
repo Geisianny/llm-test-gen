@@ -1,0 +1,7 @@
+Scenario 6: Group was correctly created
+  Given  I am authorized for the "Admin" section
+  When  I follow the left menu "Systems > System Groups"
+  When  I follow "minions_group"
+  Then  I should see a "minions_group" text
+  And  I should see a "System Group Status" text
+

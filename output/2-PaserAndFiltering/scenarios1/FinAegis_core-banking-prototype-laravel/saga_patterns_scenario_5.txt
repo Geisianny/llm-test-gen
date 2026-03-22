@@ -1,0 +1,7 @@
+Scenario 5: Parallel saga execution with ordering constraints
+  Given  I need to execute multiple parallel operations
+  When  I initiate a complex saga with dependencies:
+  Then  operations should execute respecting constraints
+  And  parallel operations should complete before dependent ones
+  And  compensation should respect reverse dependency order
+

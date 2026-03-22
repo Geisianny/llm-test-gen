@@ -1,0 +1,6 @@
+Scenario 9: dont list events for non-selected day
+  Given  I am on /profile/josesilva/events/2009/10
+  And  the following events
+  When  I am on /profile/josesilva/events/2009/10/20
+  Then  I should see "WikiSym 2009"
+

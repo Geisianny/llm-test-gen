@@ -1,0 +1,7 @@
+Scenario 8: Accepted invitations cannot be resent
+  Given  an invitation sent to "accepted@lolcats.com" to join account "lol cats" was accepted
+  And  an invitation sent to "pending@lolcats.com" to join account "lol cats"
+  When  I navigate to the page of the invitations of the partner "lol cats"
+  Then  I should be able to resend the invitation to "pending@lolcats.com"
+  But  I should not be able to resend the invitation to "accepted@lolcats.com"
+

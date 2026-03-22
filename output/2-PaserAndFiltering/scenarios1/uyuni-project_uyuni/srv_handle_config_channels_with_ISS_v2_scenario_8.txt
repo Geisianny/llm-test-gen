@@ -1,0 +1,6 @@
+Scenario 8: Check that the config channel was imported
+  When  I follow the left menu "Configuration > Channels"
+  Then  I should see a "Test Config Channel" link
+  And  file "/srv/susemanager/salt/manager_org_1/testconfigchannel/init.sls" should exist on server
+  And  file "/srv/susemanager/salt/manager_org_1/testconfigchannel/etc/s-mgr/config" should exist on server
+

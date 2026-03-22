@@ -1,0 +1,5 @@
+Scenario 11: Managing office information
+  Given  an worldwide organisation "Test Worldwide Organisation"
+  When  I add an worldwide organisation "Test office" office for the home page with address, phone number, and some services
+  Then  I should be able to remove all services from the worldwide organisation "Test office" office
+

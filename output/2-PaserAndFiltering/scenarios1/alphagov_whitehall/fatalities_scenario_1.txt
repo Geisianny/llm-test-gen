@@ -1,0 +1,4 @@
+Scenario 1: Editor adds field of operation
+  When  I create a new field of operation called "New Field" with description "Description"
+  Then  I am able to associate fatality notices with "New Field"
+

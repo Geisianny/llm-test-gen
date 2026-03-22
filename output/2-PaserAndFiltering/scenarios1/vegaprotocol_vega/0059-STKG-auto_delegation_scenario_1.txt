@@ -1,0 +1,7 @@
+Scenario 1: A party enters auto delegation mode by nominating all of its associated stake (0059-STKG-019)
+  When  the parties submit the following delegations:
+  Then  the network moves ahead "7" blocks
+  And  the parties deposit on staking account the following amount:
+  When  the network moves ahead "7" blocks
+  Then  the parties should have the following delegation balances for epoch 3:
+

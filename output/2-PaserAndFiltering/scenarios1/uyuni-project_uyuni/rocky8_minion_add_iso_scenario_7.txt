@@ -1,0 +1,9 @@
+Scenario 7: Add both repositories to the custom channel for Rocky 8 DVD
+  When  I follow the left menu "Software > Manage > Channels"
+  And  I follow "Custom Channel for Rocky 8 DVD"
+  And  I follow "Repositories" in the content area
+  And  I select the "rocky-8-iso-appstream" repo
+  And  I select the "rocky-8-iso-baseos" repo
+  And  I click on "Save Repositories"
+  Then  I should see a "repository information was successfully updated" text
+

@@ -1,0 +1,5 @@
+Scenario 2: Admin adds custom field with invalid data
+  Tags: ['@javascript']
+  When  I add a new custom field "House type" with invalid data
+  Then  I should see 3 validation errors
+

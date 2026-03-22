@@ -1,0 +1,10 @@
+Scenario 9: Check CM-virgo-dummy-3456 patches
+  When  I follow the left menu "Patches > Patch List > All"
+  And  I enter "dummy" as the filtered synopsis
+  And  I click on the filter button
+  And  I select "500" from "1154021400_PAGE_SIZE_LABEL"
+  And  I follow "CL-virgo-dummy-3456"
+  Then  I should see a "CL-virgo-dummy-3456 - Bug Fix Advisory" text
+  And  I should see a "mcalmer" text
+  And  I should see a "CVE-1999-9998" link
+

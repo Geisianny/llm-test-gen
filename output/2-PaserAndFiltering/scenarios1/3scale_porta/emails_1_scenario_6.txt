@@ -1,0 +1,10 @@
+Scenario 6: Remove a custom support email of a product
+  Given  a product "Bananas"
+  And  product "Bananas" has support email set to "help@bananas.org"
+  And  they go to the emails settings page
+  When  they press "Remove support email for Bananas"
+  And  confirm the dialog
+  And  1 second pass
+  Then  they should see a toast alert with text "Custom support email removed from product"
+  And  the product's support email should be "support@api.test"
+

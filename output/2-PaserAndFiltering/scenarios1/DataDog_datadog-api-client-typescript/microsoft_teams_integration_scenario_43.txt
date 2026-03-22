@@ -1,0 +1,8 @@
+Scenario 43: Get workflow webhook handle information returns "OK" response
+  Tags: ['@team:DataDog/chat-integrations']
+  Given  there is a valid "workflows_webhook_handle" in the system
+  And  new "GetWorkflowsWebhookHandle" request
+  And  request contains "handle_id" parameter from "workflows_webhook_handle.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+

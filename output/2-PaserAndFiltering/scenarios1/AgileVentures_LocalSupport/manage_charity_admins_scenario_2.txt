@@ -1,0 +1,5 @@
+Scenario 2: No superadmin message displayed when charity has no superadmins
+  Given  I am signed in as a superadmin
+  And  I visit the edit page for the organisation named "Friendly Clone"
+  Then  I should see the no charity superadmins message
+

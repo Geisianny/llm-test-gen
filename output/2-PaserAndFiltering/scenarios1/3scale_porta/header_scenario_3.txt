@@ -1,0 +1,6 @@
+Scenario 3: Show and hide global navigation
+  Given  the sidebar navigation is not collapsible
+  And  a provider is logged in
+  When  they go to the accounts admin page
+  Then  the sidebar navigation is collapsible
+

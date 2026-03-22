@@ -1,0 +1,10 @@
+Scenario 4: Change plan. Provider sees the invoice the day after. (POSTPAID)
+  Tags: ['@javascript']
+  Given  the buyer is signed up to application plan "CheapPlan" on 1st May 2009
+  And  buyer "stallman" makes 1 service transactions with:
+  When  I log in as "stallman" on foo.3scale.localhost on 15th May 2009
+  And  the buyer changes to application plan "ExpensivePlan"
+  And  current domain is the admin domain of provider "foo.3scale.localhost" on 16th May 2009
+  And  I log in as provider "foo.3scale.localhost"
+  Then  I should have an invoice of "1.0 EUR"
+

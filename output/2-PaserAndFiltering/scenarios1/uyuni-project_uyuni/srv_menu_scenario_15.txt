@@ -1,0 +1,12 @@
+Scenario 15: The admin menu
+  When  I follow the left menu "Admin"
+  Then  I should see a "Setup Wizard" text
+  And  I should see a "Setup Wizard" link in the left menu
+  And  I should see a "Organizations" link in the left menu
+  And  I should see a "Users" link in the left menu
+  And  I should see a "Manager Configuration" link in the left menu
+  And  I should see a "Hub Configuration" link in the left menu
+  And  I should see a "Task Schedules" link in the left menu
+  And  I should see a "Task Engine Status" link in the left menu
+  And  I should see a "Show Tomcat Logs" link in the left menu
+

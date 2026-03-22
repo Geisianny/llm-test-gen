@@ -1,0 +1,5 @@
+Scenario 2: Seeing payment state as paid on order's summary
+  Tags: ['@api', '@no-ui']
+  When  I view the summary of the last order
+  Then  I should be informed that there are no payments
+

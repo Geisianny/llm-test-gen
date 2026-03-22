@@ -1,0 +1,6 @@
+Scenario 1: Sample Create a partner and test some basic stuffs
+  Given  I want to show you how to use OERPScenario
+  When  I create a partner named automatedtest
+  Then  I should be able to find it by his id
+  And  the name should be automatedtest
+

@@ -1,0 +1,49 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: unwithdrawing-withdrawn-documents_story_processado.feature
+Caminho relativo: alphagov_whitehall\unwithdrawing-withdrawn-documents_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\alphagov_whitehall\unwithdrawing-withdrawn-documents_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: unwithdrawing-withdrawn-documents_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Unwithdraw a withdrawn document
+   Steps: 4
+   - Given there is a withdrawn document with title "Example Document"
+   - When the Managing Editor unwithdraws the document
+   - Then the document status changes to "Draft"
+   - And the document is available for editing
+2. Unwithdraw a non-existent document
+   Steps: 3
+   - Given there is no document with title "Non Existent Document"
+   - When the Managing Editor attempts to unwithdraw the document
+   - Then the system displays an error message indicating that the document does not exist
+3. Unwithdraw a document that is not withdrawn
+   Steps: 3
+   - Given there is a published document with title "Published Document"
+   - When the Managing Editor attempts to unwithdraw the document
+   - Then the system displays an error message indicating that the document is not withdrawn
+4. Edit and re-withdraw a document after unwithdrawal
+   Steps: 6
+   - Given there is a withdrawn document with title "Example Document"
+   - When the Managing Editor unwithdraws the document
+   - And edits the document with new banners
+   - And withdraws the document again
+   - Then the document status changes to "Withdrawn"
+   - And the document is not publicly accessible
+5. Unwithdraw a document with annotations
+   Steps: 5
+   - Given there is a withdrawn document with title "Example Document"
+   - When the Managing Editor unwithdraws the document
+   - And adds annotations to the document
+   - Then the document contains the added annotations
+   - And the document status remains "Draft"

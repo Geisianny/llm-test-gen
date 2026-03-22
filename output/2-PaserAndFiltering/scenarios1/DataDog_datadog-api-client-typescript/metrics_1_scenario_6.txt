@@ -1,0 +1,10 @@
+Scenario 6: Create a tag configuration returns "Created" response
+  Tags: ['@replay-only', '@skip-validation', '@team:DataDog/metrics-experience']
+  Given  a valid "appKeyAuth" key in the system
+  And  new "CreateTagConfiguration" request
+  And  there is a valid "metric" in the system
+  And  request contains "metric_name" parameter with value "{{ unique_alnum }}"
+  And  body with value {"data": {"type": "manage_tags", "id": "{{ unique_alnum }}", "attributes": {"tags": ["app","datacenter"], "metric_type": "gauge"}}}
+  When  the request is sent
+  Then  the response status is 201 Created
+

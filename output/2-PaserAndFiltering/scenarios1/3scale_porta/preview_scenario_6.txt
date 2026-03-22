@@ -1,0 +1,10 @@
+Scenario Outline 6: Slashes generated curl command for header values - Example 1
+  Given  the product has a Swagger 1.2 spec "Echo API"
+  When  they go to the spec's preview page from Product context
+  Then  Swagger 1.2 should escape properly the curl string
+
+  Examples:
+    | swagger version |
+    | Swagger 1.2 |
+    | Swagger 2 |
+

@@ -1,0 +1,7 @@
+Scenario 2: List buyer account's invoices
+  Given  the following invoices:
+  When  they go to buyer "Bob" overview page
+  And  follow "2 Invoices"
+  Then  the table should contain the following:
+  And  the table does not have a column "Account"
+

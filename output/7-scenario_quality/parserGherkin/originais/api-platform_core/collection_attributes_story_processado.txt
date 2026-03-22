@@ -1,0 +1,29 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 19/01/2026 23:13:57
+Arquivo analisado: collection_attributes_story_processado.feature
+Caminho relativo: api-platform_core\collection_attributes_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/Originais\api-platform_core\collection_attributes_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: collection_attributes_story_processado
+Descrição: Não possui
+Total de cenários: 1
+
+CENÁRIOS IDENTIFICADOS:
+1. Correctly serialize a collection
+   Steps: 9
+   - Given there is a CircularReference
+   - When I send a "GET" request to "/circular_references/1"
+   - Then the response status code should be 200
+   - And the response should be in JSON
+   - And the JSON should be valid according to the JSON API schema
+   - And the JSON node "data.id" should be equal to "/circular_references/1"
+   - And the JSON node "data.relationships.parent.data.id" should be equal to "/circular_references/1"
+   - And the JSON node "data.relationships.children.data[0].id" should match "#/circular_references/(1|2)#"
+   - And the JSON node "data.relationships.children.data[1].id" should match "#/circular_references/(1|2)#"

@@ -1,0 +1,6 @@
+Scenario: Register a machine with valid parameters
+  Given there is an authorized user
+  And there is no registered machine with the name "minion1"
+  When the user registers a new machine with the name "minion1" and valid credentials
+  Then the system registers the machine successfully
+  And displays a message confirming successful registration

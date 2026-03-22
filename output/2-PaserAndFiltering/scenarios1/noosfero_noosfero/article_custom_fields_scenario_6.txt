@@ -1,0 +1,11 @@
+Scenario 6: Add two fields different different types
+  Tags: ['@selenium']
+  Given  I follow "Add new field"
+  When  I select "Boolean" from "custom-field-type"
+  And  I fill in "custom-field-name" with "New boolean field"
+  And  I follow "Add new field"
+  And  I select "Text" from "custom-field-type"
+  And  I fill in "custom-field-name" with "New text field"
+  And  I follow "Add new field"
+  Then  The page should contain only 2 "#article-custom-fields .article-custom-field-wrapper"
+

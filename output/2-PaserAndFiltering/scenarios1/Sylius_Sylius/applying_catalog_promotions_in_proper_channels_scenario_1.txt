@@ -1,0 +1,7 @@
+Scenario 1: Applying catalog promotion
+  Tags: ['@api', '@ui']
+  When  I change my current channel to "Web-US"
+  And  I view product "T-Shirt"
+  Then  I should see the product price "$14.00"
+  And  I should see the product original price "$20.00"
+

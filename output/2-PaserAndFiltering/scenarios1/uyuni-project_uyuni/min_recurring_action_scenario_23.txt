@@ -1,0 +1,25 @@
+Scenario 23: Create an admin org Recurring Action
+  When  I follow the left menu "Admin > Organizations"
+  And  I follow "SUSE Test" in the content area
+  And  I follow "Recurring Actions" in the content area
+  Then  I should see a "No schedules created. Use Create to add a schedule" text
+  When  I click on "Create"
+  And  I wait until I see "Schedule Name" text
+  And  I select "Custom state" from "actionTypeDescription"
+  And  I wait until I see "Configure states to execute" text
+  And  I enter "schedule_name" as "scheduleName"
+  And  I check radio button "schedule-daily"
+  And  I enter 1 minutes from now as "time-daily_time"
+  And  I click on the "disabled" toggler
+  And  I check "Hardware Profile Update-cbox"
+  And  I click on "Save Changes"
+  And  I wait until I see "Edit State Ranks" text
+  And  I click on "Confirm"
+  And  I click on "Create Schedule"
+  Then  I wait until I see "Schedule successfully created" text
+  And  I should see a "schedule_name" text
+  And  I should see a "Organization" text
+  When  I am on the "Events" page of this "sle_minion"
+  And  I follow "History"
+  Then  I wait until I see the event "Apply recurring states [hardware.profileupdate] scheduled" completed during last minute, refreshing the page
+

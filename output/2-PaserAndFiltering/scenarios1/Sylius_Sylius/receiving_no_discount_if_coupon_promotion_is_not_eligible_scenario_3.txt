@@ -1,0 +1,9 @@
+Scenario 3: Receiving no discount if promotion for the applied coupon has already expired
+  Tags: ['@api', '@ui']
+  Given  this promotion has already expired
+  And  I added 2 products "PHP T-Shirt" to the cart
+  And  I applied the coupon with code "SANTA2016"
+  When  I check the details of my cart
+  Then  my cart total should be "$200.00"
+  And  there should be no discount applied
+

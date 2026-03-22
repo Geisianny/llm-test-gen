@@ -1,0 +1,9 @@
+Scenario 4: Check arbitrage opportunities
+  Tags: ['@auth']
+  Given  I am logged in as "trader@example.com"
+  And  the internal exchange has order book for "BTC/EUR":
+  And  the external exchange "binance" returns ticker for "BTC/EUR":
+  When  I request "GET /api/external-exchange/arbitrage/BTC/EUR"
+  Then  the response status should be 200
+  And  the response should contain arbitrage opportunity:
+

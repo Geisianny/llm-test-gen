@@ -1,0 +1,9 @@
+Scenario 1: Trying to add a new product association type without specifying its code
+  Tags: ['@api', '@ui']
+  When  I want to create a new product association type
+  And  I name it "Up sell" in "English (United States)"
+  But  I do not specify its code
+  And  I try to add it
+  Then  I should be notified that code is required
+  And  the product association type with name "Up sell" should not be added
+

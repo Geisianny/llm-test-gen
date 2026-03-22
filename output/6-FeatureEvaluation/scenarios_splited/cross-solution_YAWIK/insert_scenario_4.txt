@@ -1,0 +1,6 @@
+Scenario: Create organization with missing description
+  Given there is an admin user logged in
+  When the admin creates a new organization with the name "Organization Without Description"
+  And does not provide a description
+  Then the system creates the organization successfully
+  And displays a confirmation message

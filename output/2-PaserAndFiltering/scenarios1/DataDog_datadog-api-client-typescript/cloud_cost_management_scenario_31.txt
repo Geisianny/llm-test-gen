@@ -1,0 +1,9 @@
+Scenario 31: Get Google Cloud Usage Cost config returns "OK" response
+  Tags: ['@replay-only', '@team:DataDog/cloud-cost-management']
+  Given  new "GetCostGCPUsageCostConfig" request
+  And  request contains "cloud_account_id" parameter with value 123456
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.type" is equal to "gcp_uc_config"
+  And  the response "data.attributes.account_id" is equal to "123456_ABCDEF_123ABC"
+

@@ -1,0 +1,12 @@
+Scenario 6: reply a comment
+  Tags: ['@selenium-fixme']
+  Given  I go to /booking/another-article
+  And  I follow "Reply" within ".comments-action-bar"
+  And  I fill in "Name" within "comment-balloon" with "Joey"
+  And  I fill in "e-mail" within "comment-balloon" with "joey@ramones.com"
+  And  I fill in "Title" within "comment-balloon" with "Hey ho, let's go!"
+  And  I fill in "Enter your comment" within "comment-balloon" with "Hey ho, let's go!"
+  When  I press "Post comment" within ".comment-balloon"
+  Then  I should see "Hey ho, let's go" within "ul.comment-replies"
+  And  there should be 1 "comment-replies" within "article-comment"
+

@@ -1,0 +1,14 @@
+Scenario 3: Create team connections returns "Created" response
+  Tags: ['@skip', '@team:DataDog/aaa-omg']
+  Given  operation "CreateTeamConnections" enabled
+  And  new "CreateTeamConnections" request
+  And  there is a valid "dd_team" in the system
+  And  body with value {"data": [{"type": "team_connection", "attributes": {"source": "github", "managed_by": "datadog"}, "relationships": {"team": {"data": {"id": "{{ dd_team.data.id }}", "type": "team"}}, "connected_team": {"data": {"id": "@MyGitHubAccount/my-team-name", "type": "github_team"}}}}]}
+  When  the request is sent
+  Then  the response status is 201 Created
+  And  the response "data.data[0].attributes.source" is equal to "github"
+  And  the response "data.data[0].attributes.managed_by" is equal to "datadog"
+  And  the response "data.data[0].relationships.team.data.id" is equal to "{{ dd_team.data.id }}"
+  And  the response "data.data[0].relationships.connected_team.data.id" is equal to "@MyGitHubAccount/my-team-name"
+  And  the response "data.data[0].type" is equal to "team_connection"
+

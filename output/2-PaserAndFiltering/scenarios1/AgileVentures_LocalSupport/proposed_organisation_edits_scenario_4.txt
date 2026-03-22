@@ -1,0 +1,12 @@
+Scenario 4: Propose an edit with no website or donation info initially
+  Given  I visit the home page
+  And  I sign in as "registered_user-2@example.com" with password "pppppppp"
+  And  I visit the show page for the organisation named "No website"
+  And  I click "Propose an edit"
+  When  I propose the following edit:
+  And  I press "Propose this edit"
+  And  "No website" should have the following proposed edits by user "registered_user-2@example.com":
+  Then  I should be on the show organisation proposed edit page for the organisation named "No website"
+  And  an email should be sent to "superadmin@harrowcn.org.uk" as notification of the proposed edit to "No website"
+  And  the following proposed edits should be displayed on the page:
+

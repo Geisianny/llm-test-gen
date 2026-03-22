@@ -1,0 +1,5 @@
+Scenario: Request scopes with valid OAuth token and multiple roles
+  Given the user is authenticated via OAuth with a valid token and has multiple roles
+  When the user requests their assigned scopes via the API
+  Then the system returns the user's scopes
+  And includes the main roles and delegated roles with complete details

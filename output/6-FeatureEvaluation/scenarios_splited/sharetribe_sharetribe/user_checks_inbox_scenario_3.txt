@@ -1,0 +1,7 @@
+Scenario: User views message details
+  Given there is a user with received messages
+  And the user is logged in
+  And the user is in the inbox
+  When the user selects a message to view
+  Then the system displays the message details
+  And the details include the message content and timestamp

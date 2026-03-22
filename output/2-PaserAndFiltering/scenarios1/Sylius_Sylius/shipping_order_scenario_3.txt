@@ -1,0 +1,6 @@
+Scenario 3: Checking the shipment state of a completed order
+  Tags: ['@api', '@ui']
+  Given  this order has already been shipped
+  When  I browse orders
+  Then  this order should have order shipping state "Shipped"
+

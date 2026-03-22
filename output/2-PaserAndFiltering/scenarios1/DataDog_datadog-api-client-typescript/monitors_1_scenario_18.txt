@@ -1,0 +1,9 @@
+Scenario 18: Edit a monitor configuration policy returns "Unprocessable Entity" response
+  Tags: ['@team:DataDog/monitor-app']
+  Given  there is a valid "monitor_configuration_policy" in the system
+  And  new "UpdateMonitorConfigPolicy" request
+  And  request contains "policy_id" parameter from "monitor_configuration_policy.data.id"
+  And  body with value {"data": {"attributes": {"policy": {"tag_key": "{{ unique_lower_alnum }}", "tag_key_required": false, "valid_tag_values": ["prod", "staging"]}, "policy_type": "tag"}, "id": "00000000-0000-1234-0000-000000000000", "type": "monitor-config-policy"}}
+  When  the request is sent
+  Then  the response status is 422 Unprocessable Entity
+

@@ -1,0 +1,35 @@
+Scenario: Add a new top city with valid information
+  Given there is an admin logged in
+  And the city "New York" does not exist in the top cities list
+  When the admin adds "New York" as a top city
+  And sets its state to "New York" and country to "USA"
+  Then the system includes "New York" in the top cities list
+  And displays "New York" with its state and country
+
+Scenario: Attempt to add a duplicate top city
+  Given there is an admin logged in
+  And the city "New York" already exists in the top cities list
+  When the admin adds "New York" as a top city
+  Then the system does not add "New York" again
+  And displays a message indicating that the city already exists
+
+Scenario: Add a new top city with missing information
+  Given there is an admin logged in
+  When the admin adds "Los Angeles" as a top city
+  And sets its state to "California" but leaves the country blank
+  Then the system does not add "Los Angeles" to the top cities list
+  And displays a message indicating that the country is required
+
+Scenario: Add a new top city with invalid information
+  Given there is an admin logged in
+  When the admin adds "123" as a top city
+  And sets its state to "New York" and country to "USA"
+  Then the system does not add "123" to the top cities list
+  And displays a message indicating that the city name is invalid
+
+Scenario: Verify that the new top city is displayed in the featured cities section
+  Given there is an admin logged in
+  And the city "Chicago" is added as a top city with state "Illinois" and country "USA"
+  When the admin views the featured cities section
+  Then the system displays "Chicago" in the featured cities section
+  And shows its state as "Illinois" and country as "USA"

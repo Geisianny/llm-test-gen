@@ -1,0 +1,15 @@
+Scenario 14: Add an unprovisioned range to the created profile
+  When  I follow the left menu "Systems > Autoinstallation > Profiles"
+  And  I follow "fedora_kickstart_profile"
+  And  I follow "Unprovisioned Autoinstallation"
+  And  I enter "10" as "octet1a"
+  And  I enter "10" as "octet1b"
+  And  I enter "0" as "octet1c"
+  And  I enter "100" as "octet1d"
+  And  I enter "10" as "octet2a"
+  And  I enter "10" as "octet2b"
+  And  I enter "0" as "octet2c"
+  And  I enter "200" as "octet2d"
+  And  I click on "Add IP Range"
+  Then  I should see a "Successfully added IP Range" text
+

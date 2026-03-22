@@ -1,0 +1,38 @@
+Scenario 2: case 2 using lognomal risk model (0015-INSR-003, 0010-MARG-009, 0010-MARG-010, 0010-MARG-011)
+  Given  the log normal risk model named "lognormal-risk-model-fish":
+  And  the price monitoring named "price-monitoring-1":
+  And  the margin calculator named "margin-calculator-1":
+  And  the markets:
+  And  the following network parameters are set:
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders with ticks:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the mark price should be "100" for the market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following account balances:
+  Then  the parties should have the following margin levels:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following account balances:
+  Then  the parties should have the following margin levels:
+  And  the order book should have the following volumes for market "ETH/DEC19":
+  And  the mark price should be "100" for the market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following account balances:
+  Then  the parties should have the following margin levels:
+  And  the mark price should be "110" for the market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  When  the parties place the following orders with ticks:
+  And  the mark price should be "119" for the market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the order book should have the following volumes for market "ETH/DEC19":
+  Then  the parties should have the following account balances:
+  Then  the parties should have the following margin levels:
+  Then  the parties should have the following profit and loss:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following account balances:
+  Then  the parties should have the following margin levels:
+

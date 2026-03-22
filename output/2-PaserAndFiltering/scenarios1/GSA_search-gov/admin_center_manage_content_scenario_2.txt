@@ -1,0 +1,11 @@
+Scenario 2: View best bets graphics
+  Given  the following BingV7 Affiliates exist:
+  And  the following featured collections exist for the affiliate "agency.gov":
+  And  I am logged in with email "john@agency.gov"
+  When  I go to the agency.gov's Manage Content page
+  And  I follow "Best Bets: Graphics" within the Admin Center content
+  Then  I should see the following table rows:
+  And  I should see a link to "Tornado Warning" with url for "http://agency.gov/tornado-warning"
+  And  I should see "Published between 09/01/2013 and 09/30/2013"
+  And  I should see "Status: Inactive"
+

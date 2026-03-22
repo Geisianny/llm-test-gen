@@ -1,0 +1,12 @@
+Scenario Outline 4: Navigate to menu "<path>" and open screen "<screen>" - Example 4
+  Tags: ['@wip']
+  When  I navigate the menu and select the item at "Accounts Payable > Vouchers > AP Voucher"
+  Then  I should see the  screen
+
+  Examples:
+    | path | screen |
+    | Accounts Payable > Vouchers > AP Voucher |  |
+    | Accounts Payable > Vouchers > Import AP Batch |  |
+    | Accounts Payable > Vouchers > Invoice Vouchers |  |
+    | Accounts Receivable > Add Return | AR returns |
+

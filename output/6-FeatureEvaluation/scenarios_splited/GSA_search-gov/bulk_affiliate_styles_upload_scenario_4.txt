@@ -1,0 +1,6 @@
+Scenario: Receive email notification after file processing
+  Given there is an admin user logged in
+  And a valid file containing affiliate site styles with a size of 3 MB
+  When the admin uploads the file
+  And the system processes the file
+  Then the admin receives an email notification with the processing results

@@ -1,0 +1,9 @@
+Scenario 10: Invited user email is out of date
+  Given  cookies are approved
+  And  I am signed in as a superadmin
+  And  I visit the invite users to become admin of organisations page
+  Then  I should not see "Yet Another Org"
+  When  I edit the charity email of "Yet Another Org" to be "other_email@charity.com"
+  And  I visit the invite users to become admin of organisations page
+  Then  I should see "Yet Another Org"
+

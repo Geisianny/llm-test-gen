@@ -1,0 +1,8 @@
+Scenario 6: Cross-custodian transaction reversal
+  Given  a transaction involved multiple custodian banks
+  And  funds were distributed across Paysera and Deutsche Bank
+  When  the transaction is reversed
+  Then  reversals should be coordinated across all custodians
+  And  compensation should occur in all involved banks
+  And  the reversal should only complete when all banks confirm
+

@@ -1,0 +1,9 @@
+Scenario 2: check all active enterprise fields
+  Tags: ['@selenium']
+  Given  I follow "Enterprise's fields"
+  And  I check "enterprise_active"
+  And  I follow "Save changes"
+  When  I go to paper-street's control panel
+  And  I follow "Informations" within "#section-profile"
+  Then  I should see "Historic and current context"
+

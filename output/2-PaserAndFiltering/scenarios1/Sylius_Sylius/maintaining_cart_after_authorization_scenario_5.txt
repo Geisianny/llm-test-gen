@@ -1,0 +1,8 @@
+Scenario 5: Having cart maintained after registration
+  Tags: ['@api', '@ui', '@javascript']
+  When  I add product "Stark T-Shirt" to the cart
+  And  I register with email "eddard@stak.com" and password "handOfTheKing"
+  And  I see the summary of my cart
+  Then  there should be one item in my cart
+  And  this item should have name "Stark T-Shirt"
+

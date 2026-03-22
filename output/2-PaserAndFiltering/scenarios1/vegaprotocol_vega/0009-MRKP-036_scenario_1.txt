@@ -1,0 +1,29 @@
+Scenario 1: 001 check mark price using median with traded mark price and book mark price, 0009-MRKP-036, 0009-MRKP-037
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties place the following orders:
+  When  the network moves ahead "2" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+  Then  the market data for the market "ETH/FEB24" should be:
+  And  the parties place the following orders:
+  When  the network moves ahead "5" blocks
+  Then  the mark price should be "15910" for the market "ETH/FEB23"
+  Then  the mark price should be "15910" for the market "ETH/FEB24"
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the mark price should be "15910" for the market "ETH/FEB23"
+  Then  the mark price should be "15910" for the market "ETH/FEB24"
+  Then  the market data for the market "ETH/FEB23" should be:
+  Then  the market data for the market "ETH/FEB24" should be:
+  And  the parties place the following orders:
+  Then  the market data for the market "ETH/FEB23" should be:
+  When  the network moves ahead "6" blocks
+  Then  the mark price should be "15910" for the market "ETH/FEB23"
+  Then  the mark price should be "15910" for the market "ETH/FEB24"
+  Then  the market data for the market "ETH/FEB23" should be:
+  Then  the market data for the market "ETH/FEB24" should be:
+  When  the network moves ahead "1" blocks
+  Then  the mark price should be "16003" for the market "ETH/FEB23"
+  Then  the mark price should be "16003" for the market "ETH/FEB24"
+  Then  the market data for the market "ETH/FEB23" should be:
+  Then  the market data for the market "ETH/FEB24" should be:
+

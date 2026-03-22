@@ -1,0 +1,8 @@
+Scenario 3: Add a new stores payment-provider-rule which is invalid
+  Given  the site has a country "Germany" with currency "EUR"
+  And  the site has a store "Germany" with country "Germany" and currency "EUR"
+  And  adding a payment-provider-rule named "stores"
+  And  the payment-provider-rule is active
+  And  the payment-provider-rule has a condition stores with store "Germany"
+  Then  the payment-provider-rule should be invalid for my cart with payment provider "Bankwire"
+

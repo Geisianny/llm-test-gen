@@ -1,0 +1,10 @@
+Scenario 4: Change the schedule of task sandbox-cleanup-default back to daily
+  When  I follow the left menu "Admin > Task Schedules"
+  And  I follow "sandbox-cleanup-default"
+  And  I check radio button "daily"
+  And  I click on "Update Schedule"
+  Then  I should see a "Schedule sandbox-cleanup-default has been updated." text
+  When  I follow the left menu "Admin > Task Schedules"
+  And  I follow "sandbox-cleanup-default"
+  Then  radio button "daily" should be checked
+

@@ -1,0 +1,6 @@
+Scenario 2: Dns link works if enabled
+  Given  provider "foo.3scale.localhost" has "branding" switch allowed
+  And  I go to the dns settings page
+  And  I follow "Change account subdomain"
+  Then  I should see "This operation can't be completed automatically"
+

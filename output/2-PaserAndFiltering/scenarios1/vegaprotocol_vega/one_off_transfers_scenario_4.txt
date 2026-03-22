@@ -1,0 +1,5 @@
+Scenario 4: transfer to self succeeds
+  Given  the parties submit the following one off transfers:
+  Given  time is updated to "2021-08-26T00:00:05Z"
+  Then  "f0b40ebdc5b92cf2cf82ff5d0c3f94085d23d5ec2d37d0b929e177c6d4d37e4c" should have general account balance of "9995000" for asset "VEGA"
+

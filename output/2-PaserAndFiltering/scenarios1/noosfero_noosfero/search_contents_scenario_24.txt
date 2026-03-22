@@ -1,0 +1,6 @@
+Scenario 24: find enterprises without exact query
+  When  I go to the search articles page
+  And  I fill in "search-input" with "bees and"
+  And  I follow "Search" within ".search-form"
+  Then  I should see "bees and butterflies" within "#search-results"
+

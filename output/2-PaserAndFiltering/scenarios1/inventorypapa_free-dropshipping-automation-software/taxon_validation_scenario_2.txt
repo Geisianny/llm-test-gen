@@ -1,0 +1,8 @@
+Scenario 2: Trying to add a taxon without specifying its name
+  Tags: ['@ui']
+  Given  I want to create a new taxon
+  When  I specify its code as "t-shirts"
+  And  I do not specify its name
+  And  I try to add it
+  Then  I should be notified that name is required
+

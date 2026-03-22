@@ -1,0 +1,8 @@
+Scenario 3: Org-superadmins can create a volunteer opportunity with all fields
+  Tags: ['@vcr', '@javascript']
+  Given  I am signed in as a charity worker related to "Friendly"
+  And  I submit a volunteer op with address on the org page
+  Then  I should see "should be active"
+  Then  I should see "knowledge"
+  Then  I should see "street 3"
+

@@ -1,0 +1,10 @@
+Scenario 2: Viewing item in cart after switching channels
+  Tags: ['@ui']
+  Given  I changed my current channel to "Poland"
+  And  I added product "Onion" to the cart
+  When  I change my current channel to "France"
+  And  I change back my current channel to "Poland"
+  And  I see the summary of my cart
+  Then  there should be one item in my cart
+  And  this item should have name "Onion"
+

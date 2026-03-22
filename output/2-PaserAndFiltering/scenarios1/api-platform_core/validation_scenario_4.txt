@@ -1,0 +1,11 @@
+Scenario 4: Create a resource with serializedName property
+  Tags: ['@createSchema']
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "dummy_validation_serialized_name" with body:
+  Then  the response status code should be 422
+  And  the response should be in JSON
+  And  the JSON node "violations[0].message" should be equal to "This value should not be null."
+  And  the JSON node "violations[0].propertyPath" should be equal to "test"
+  And  the JSON node "detail" should be equal to "test: This value should not be null."
+  And  the header "Content-Type" should be equal to "application/problem+json; charset=utf-8"
+

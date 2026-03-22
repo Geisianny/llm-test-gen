@@ -1,0 +1,7 @@
+Scenario 1: Completing a payment from payments index
+  Tags: ['@ui', '@api']
+  When  I browse payments
+  And  I complete the payment of order "#00000001"
+  Then  I should be notified that the payment has been completed
+  And  I should see the payment of order "#00000001" as "Completed"
+

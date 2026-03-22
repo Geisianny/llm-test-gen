@@ -1,0 +1,8 @@
+Scenario 1: Accessing product show page in shop from the product edit page where product is available in more than one channel
+  Tags: ['@ui']
+  Given  this product is available in the "Europe" channel
+  And  I am browsing products
+  When  I want to modify this product
+  And  I choose to show this product in the "Europe" channel
+  Then  I should see this product in the "Europe" channel in the shop
+

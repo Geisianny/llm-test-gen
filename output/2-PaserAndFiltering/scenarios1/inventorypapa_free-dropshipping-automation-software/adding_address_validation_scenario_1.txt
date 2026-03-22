@@ -1,0 +1,8 @@
+Scenario 1: Seeing validation errors when adding an empty address
+  Tags: ['@ui', '@api']
+  When  I want to add a new address to my address book
+  And  I leave every field empty
+  And  I add it
+  Then  I should still be on the address addition page
+  And  I should be notified about 6 errors
+

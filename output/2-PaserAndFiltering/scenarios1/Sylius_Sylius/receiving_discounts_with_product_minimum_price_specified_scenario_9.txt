@@ -1,0 +1,9 @@
+Scenario 9: Distributing discount evenly between different products when one has minimum price specified
+  Tags: ['@api', '@no-ui']
+  Given  it gives "$25.00" discount to every order
+  And  I added product "T-Shirt" to the cart
+  And  I added 3 products "PHP Mug" to the cart
+  When  I check the details of my cart
+  And  the "T-Shirt" product should have unit price discounted by "$5.00"
+  And  the "PHP Mug" product should have unit prices discounted by "$6.67", "$6.67" and "$6.66"
+

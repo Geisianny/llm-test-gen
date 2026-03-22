@@ -1,0 +1,13 @@
+Scenario Outline 5: organization signup fields are displayed on creation - Example 1
+  Given  the following community fields are signup fields
+  And  I follow "Groups" within "#section-relationships"
+  When  I follow "Create a new community"
+  Then  I should see "Display name"
+  Then  I should see "Contact email"
+  Then  I should see "Location"
+
+  Examples:
+    | organization | creation_button |
+    | community | "Create a new community" |
+    | enterprise | "Register a new enterprise" |
+

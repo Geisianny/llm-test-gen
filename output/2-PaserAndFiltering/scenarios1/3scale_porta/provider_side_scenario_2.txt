@@ -1,0 +1,5 @@
+Scenario 2: Usage stats
+  And  I follow "API"
+  And  I follow "Analytics"
+  Then  I should see "Traffic"
+

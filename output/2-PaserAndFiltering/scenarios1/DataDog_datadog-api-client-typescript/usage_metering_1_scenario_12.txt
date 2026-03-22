@@ -1,0 +1,8 @@
+Scenario 12: Get historical cost across your account returns "OK" response
+  Tags: ['@replay-only', '@team:DataDog/revenue-query']
+  Given  new "GetHistoricalCostByOrg" request
+  And  request contains "start_month" parameter with value "{{ timeISO('now - 2M') }}"
+  And  request contains "view" parameter with value "sub-org"
+  When  the request is sent
+  Then  the response status is 200 OK
+

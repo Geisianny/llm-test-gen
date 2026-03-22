@@ -1,0 +1,7 @@
+Scenario 10: Send pipeline event returns "Payload Too Large" response
+  Tags: ['@generated', '@skip', '@team:DataDog/ci-app-backend']
+  Given  new "CreateCIAppPipelineEvent" request
+  And  body with value {"data": {"attributes": {"resource": "Details TBD"}, "type": "cipipeline_resource_request"}}
+  When  the request is sent
+  Then  the response status is 413 Payload Too Large
+

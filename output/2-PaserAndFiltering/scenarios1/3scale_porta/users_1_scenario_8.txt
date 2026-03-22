@@ -1,0 +1,6 @@
+Scenario 8: Suspend an user
+  When  I go to the buyer user page for "bob"
+  And  I press the button to suspend the user
+  Then  I should see "User was suspended"
+  And  user "bob" should be suspended
+

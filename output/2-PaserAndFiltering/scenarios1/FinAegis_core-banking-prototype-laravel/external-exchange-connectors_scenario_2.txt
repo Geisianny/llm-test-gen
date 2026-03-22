@@ -1,0 +1,7 @@
+Scenario 2: Get aggregated ticker data from external exchanges
+  Given  the external exchange "binance" returns ticker for "BTC/EUR":
+  And  the external exchange "kraken" returns ticker for "BTC/EUR":
+  When  I request "GET /api/external-exchange/ticker/BTC/EUR"
+  Then  the response status should be 200
+  And  the response should contain:
+

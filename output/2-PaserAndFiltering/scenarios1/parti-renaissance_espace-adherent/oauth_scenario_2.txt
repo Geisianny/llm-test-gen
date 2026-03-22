@@ -1,0 +1,13 @@
+Scenario 2: Retrieve authorization code on redirect URI after login
+  Given  I send a "GET" request to "/oauth/v2/auth" with parameters:
+  Then  I should be redirected to "/connexion"
+  When  I fill in the following:
+  And  I press "Me connecter"
+  Then  I should be on "/oauth/v2/auth"
+  And  the response status code should be 200
+  And  I should see "Je me connecte à Coalition App avec mon compte En Marche."
+  Given  I stop following redirections
+  Then  I press "Accepter"
+  Then  the response status code should be 302
+  And  the header "Location" should match "#^http://client-oauth.docker:8000/client/receive_authcode\?code=.+$#"
+

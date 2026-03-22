@@ -1,0 +1,8 @@
+Scenario 7: Create a schedule returns "CREATED" response
+  Tags: ['@generated', '@skip', '@team:DataDog/fleet-automation']
+  Given  operation "CreateFleetSchedule" enabled
+  And  new "CreateFleetSchedule" request
+  And  body with value {"data": {"attributes": {"name": "Weekly Production Agent Updates", "query": "env:prod AND service:web", "rule": {"days_of_week": ["Mon", "Wed", "Fri"], "maintenance_window_duration": 1200, "start_maintenance_window": "02:00", "timezone": "America/New_York"}, "status": "active", "version_to_latest": 0}, "type": "schedule"}}
+  When  the request is sent
+  Then  the response status is 201 CREATED
+

@@ -1,0 +1,7 @@
+Scenario 2: New account onboarding mega-workflow
+  Given  a new user registers for an account
+  When  the onboarding workflow spans multiple domains
+  Then  the coordination should include:
+  And  each domain should maintain its boundaries
+  And  rollback should work across all domains if needed
+

@@ -1,0 +1,5 @@
+Scenario 1: Execute a test excluding a file
+  Given  a configuration with:
+  When  I start Karma
+  Then  it passes with:
+

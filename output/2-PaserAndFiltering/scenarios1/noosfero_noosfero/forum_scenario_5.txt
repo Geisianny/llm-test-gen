@@ -1,0 +1,8 @@
+Scenario 5: configure forum when viewing it
+  Tags: ['@selenium']
+  Given  the following forums
+  And  I go to /joaosilva/forum-one
+  And  I follow "article-options"
+  When  I follow "Configure forum"
+  Then  I should be on edit "Forum One" by joaosilva
+

@@ -1,0 +1,5 @@
+Scenario 7: Log out of Uyuni
+  Given  I am authorized
+  When  I sign out
+  Then  I should not be authorized
+

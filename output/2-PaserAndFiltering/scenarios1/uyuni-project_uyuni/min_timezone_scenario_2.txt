@@ -1,0 +1,13 @@
+Scenario 2: Create a new user in a timezone different than server's timezone
+  When  I follow the left menu "Users > User List > Active"
+  And  I follow "Create User"
+  And  I enter "MalaysianUser" as "login"
+  And  I enter "MalaysianUser" as "desiredpassword"
+  And  I enter "MalaysianUser" as "desiredpasswordConfirm"
+  And  I select "Mr." from "prefix"
+  And  I enter "Test" as "firstNames"
+  And  I enter "User" as "lastName"
+  And  I enter "galaxy-noise@localhost" as "email"
+  And  I select "(GMT+0800) Malaysia" from "timezone"
+  And  I click on "Create Login"
+

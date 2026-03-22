@@ -1,0 +1,4 @@
+Scenario 2: Check the branch network
+  Then  the "dhcp_dns" host should be present on private network
+  And  name resolution should work on private network
+

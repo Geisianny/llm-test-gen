@@ -1,0 +1,8 @@
+Scenario 1: When a non iceberg order sitting on the book is amended such that it trades with with an iceberg order,
+  And  the parties place the following orders:
+  When  the parties place the following iceberg orders:
+  When  the parties amend the following orders:
+  Then  the orders should have the following states:
+  Then  the iceberg orders should have the following states:
+  Then  the order book should have the following volumes for market "BTC/ETH":
+

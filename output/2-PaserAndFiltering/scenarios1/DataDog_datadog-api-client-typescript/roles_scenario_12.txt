@@ -1,0 +1,8 @@
+Scenario 12: Delete role returns "OK" response
+  Tags: ['@team:DataDog/aaa-core-access']
+  Given  there is a valid "role" in the system
+  And  new "DeleteRole" request
+  And  request contains "role_id" parameter from "role.data.id"
+  When  the request is sent
+  Then  the response status is 204 OK
+

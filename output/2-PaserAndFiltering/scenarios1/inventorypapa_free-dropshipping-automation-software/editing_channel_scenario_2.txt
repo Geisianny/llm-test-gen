@@ -1,0 +1,5 @@
+Scenario 2: Seeing disabled code field when editing channel
+  Tags: ['@ui']
+  When  I want to modify a channel "Web Channel"
+  Then  the code field should be disabled
+

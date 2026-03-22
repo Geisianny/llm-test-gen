@@ -1,0 +1,8 @@
+Scenario 5: Pre-requisite: Sync PTF repository
+  When  I follow the left menu "Software > Manage > Channels"
+  And  I follow "Custom Channel for SLES15SP4 PTFs"
+  And  I follow "Repositories" in the content area
+  And  I follow "Sync"
+  Then  I should see a "Repository sync is running" text
+  When  I wait until the channel "sles15sp4-ptfs" has been synced
+

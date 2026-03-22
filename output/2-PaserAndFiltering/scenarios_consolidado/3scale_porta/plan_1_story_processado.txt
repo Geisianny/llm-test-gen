@@ -1,0 +1,22 @@
+Scenario 1: Current Plan can always be customized
+  When  they go to the application's admin page
+  Then  they should see "Convert to a Custom Plan"
+
+
+
+Scenario 2: Customize the plan
+  Given  they go to the application's admin page
+  And  they should see "Application Plan: Free"
+  When  they follow "Convert to a Custom Plan"
+  Then  they should see "Custom Application Plan"
+  But  should not see "Application Plan: Free"
+
+
+
+Scenario 3: Remove customization of the plan
+  Given  the application uses a custom plan
+  And  they go to the application's admin page
+  And  they should see "Custom Application Plan"
+  When  they press "Remove customization"
+  Then  should not see "Custom Application Plan"
+

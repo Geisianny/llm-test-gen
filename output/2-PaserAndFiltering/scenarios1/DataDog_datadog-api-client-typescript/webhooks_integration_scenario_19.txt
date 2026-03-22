@@ -1,0 +1,8 @@
+Scenario 19: Update a webhook returns "Item Not Found" response
+  Tags: ['@generated', '@skip', '@team:Datadog/collaboration-integrations']
+  Given  new "UpdateWebhooksIntegration" request
+  And  request contains "webhook_name" parameter from "REPLACE.ME"
+  And  body with value {"encode_as": "json", "name": "WEBHOOK_NAME", "payload": null, "url": "https://example.com/webhook"}
+  When  the request is sent
+  Then  the response status is 404 Item Not Found
+

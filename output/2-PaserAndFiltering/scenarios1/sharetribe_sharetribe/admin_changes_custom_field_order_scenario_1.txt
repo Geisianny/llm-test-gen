@@ -1,0 +1,5 @@
+Scenario 1: Admin edits dropdown options
+  When  I move custom field "Balcony type" up
+  And  I refresh the page
+  Then  I should see "Balcony type" before "House type"
+

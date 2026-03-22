@@ -1,0 +1,9 @@
+Scenario 35: Get a tag pipeline ruleset returns "OK" response
+  Tags: ['@replay-only', '@team:DataDog/cloud-cost-management']
+  Given  new "GetTagPipelinesRuleset" request
+  And  request contains "ruleset_id" parameter with value "a1e9de9b-b88e-41c6-a0cd-cc0ebd7092de"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.type" is equal to "ruleset"
+  And  the response "data.attributes.name" is equal to "EVP Cost Tags"
+

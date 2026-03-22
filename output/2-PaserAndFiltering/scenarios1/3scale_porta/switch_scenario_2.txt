@@ -1,0 +1,6 @@
+Scenario 2: In allowed state (hidden and visible), I should have the functionality enabled
+  Given  the provider has "multiple_services" switch allowed
+  And  I am on the provider dashboard
+  And  I follow "Create Product"
+  Then  I should be on the new service page
+

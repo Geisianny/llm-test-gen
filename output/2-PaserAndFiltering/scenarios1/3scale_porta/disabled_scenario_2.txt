@@ -1,0 +1,5 @@
+Scenario 2: I want to click the signup link
+  When  I go to the dashboard
+  Then  I should not see "Sign up"
+  And  I should not see link to the sign up page
+

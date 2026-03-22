@@ -1,0 +1,7 @@
+Scenario 2: A party dissociates VEGA token leading to undelegation proportionally to their current delegation (0059-STKG-012, 0059-STKG-018)
+  When  the parties submit the following delegations:
+  When  the network moves ahead "7" blocks
+  Given  the parties withdraw from staking account the following amount:
+  When  the network moves ahead "7" blocks
+  Then  the parties should have the following delegation balances for epoch 3:
+

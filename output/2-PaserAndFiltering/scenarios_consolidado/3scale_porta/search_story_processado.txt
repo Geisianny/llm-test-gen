@@ -1,0 +1,25 @@
+Scenario 1: No pages match the search
+  Given  I log in as "bob"
+  When  I fill in "q" with "poiuyt"
+  And  I press "Search"
+  Then  I should see "0 documents matched"
+
+
+
+Scenario 2: A Page matches. Shows only accessible pages
+  Given  I log in as "bob"
+  When  I fill in "q" with "title"
+  And  I press "Search"
+  Then  I should see "title foo"
+  Then  I should not see "title bar"
+  Then  I should see "1 documents matched"
+
+
+
+Scenario 3: Show highlight word in pages
+  Given  I log in as "bob"
+  When  I fill in "q" with "title"
+  And  I press "Search"
+  Then  I should see highlighted "title" in "term"
+  And  I should see highlighted "title" in "definition"
+

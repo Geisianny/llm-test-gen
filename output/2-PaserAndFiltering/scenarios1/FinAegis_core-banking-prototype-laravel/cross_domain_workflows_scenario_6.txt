@@ -1,0 +1,7 @@
+Scenario 6: Cross-asset arbitrage workflow
+  Given  price discrepancies exist between assets
+  When  arbitrage opportunity is detected
+  Then  the workflow should coordinate:
+  And  ensure exactly-once execution
+  And  handle partial failures gracefully
+

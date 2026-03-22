@@ -1,0 +1,5 @@
+Scenario 18: Check that a different user cannot see the action chain for SSH minion
+  Given  I am authorized as "testing" with password "testing"
+  When  I follow the left menu "Schedule > Action Chains"
+  Then  I should not see a "minssh_action_chain" link
+

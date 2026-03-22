@@ -1,0 +1,13 @@
+Scenario 6: Remove the package from the bootstrapped terminal
+  Given  I am on the Systems page
+  When  I follow "pxeboot" terminal
+  And  I follow "Software" in the content area
+  And  I follow "List / Remove"
+  And  I enter "virgo" as the filtered package name
+  And  I click on the filter button
+  And  I check "virgo-dummy-2.0-1.1" in the list
+  And  I click on "Remove Packages"
+  And  I click on "Confirm"
+  Then  I should see a "1 package removal has been scheduled" text
+  When  I wait until event "Package Removal scheduled by admin" is completed
+

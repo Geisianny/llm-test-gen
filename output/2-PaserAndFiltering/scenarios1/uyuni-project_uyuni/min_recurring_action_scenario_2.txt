@@ -1,0 +1,12 @@
+Scenario 2: Create an IP forwarding config state channel
+  When  I follow the left menu "Configuration > Channels"
+  And  I follow "Create State Channel"
+  And  I wait until I see "New Config State Channel" text
+  And  I enter "My State Channel for Recurring Actions" as "cofName"
+  And  I enter "statechannel-recurring" as "cofLabel"
+  And  I enter "This is a state channel to be used in recurring actions" as "cofDescription"
+  And  I enter "enable_ip_forwarding:\n  cmd.run:\n    - name: echo 1 > /proc/sys/net/ipv4/conf/all/forwarding" in the editor
+  And  I click on "Create Config State Channel"
+  Then  I wait until I see "Channel Properties" text
+  And  I wait until I see "My State Channel for Recurring Actions" text
+

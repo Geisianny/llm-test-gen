@@ -1,0 +1,9 @@
+Scenario 34: Update a monitor user template to a new version returns "Not Found" response
+  Tags: ['@team:DataDog/monitor-app']
+  Given  new "UpdateMonitorUserTemplate" request
+  And  operation "UpdateMonitorUserTemplate" enabled
+  And  request contains "template_id" parameter with value "00000000-0000-1234-0000-000000000000"
+  And  body with value {"data": {"attributes": {"description": "A description.", "monitor_definition": {"message": "A msg.", "name": "A name {{ unique_lower }}", "query": "avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100", "type": "query alert"}, "tags": ["integration:Azure"], "template_variables": [{"available_values": ["value1", "value2"], "defaults": ["defaultValue"], "name": "regionName", "tag_key": "datacenter"}], "title": "Postgres DB {{ unique_lower }}"}, "id": "00000000-0000-1234-0000-000000000000", "type": "monitor-user-template"}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

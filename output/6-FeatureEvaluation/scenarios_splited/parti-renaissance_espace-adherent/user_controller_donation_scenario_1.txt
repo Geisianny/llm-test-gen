@@ -1,0 +1,5 @@
+Scenario: View donation details in account profile
+  Given there is a logged-in adherent with an active donation
+  When the adherent views their account profile
+  Then the system displays the donation details
+  And shows the upcoming due date

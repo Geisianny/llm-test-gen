@@ -1,0 +1,23 @@
+Feature: Signup with defined fields
+Description: In order to have an awesome signup
+  As a new account
+  I want to sign up with defined fields
+
+Background: 
+  Given  a provider "foo.3scale.localhost" with default plans
+  Given  provider "foo.3scale.localhost" has the following fields defined for accounts:
+  Given  provider "foo.3scale.localhost" has the following fields defined for users:
+  Given  the current domain is foo.3scale.localhost
+
+Scenario 1: Required fields on signup
+  When  I go to the sign up page
+  Then  fields are required:
+  And  fields are required:
+  And  I should not see the fields:
+  When  I press "Sign up"
+  Then  I should see error in fields:
+  And  I should see error in fields:
+  When  I fill in the following:
+  And  I press "Sign up"
+  Then  I should see the registration succeeded
+

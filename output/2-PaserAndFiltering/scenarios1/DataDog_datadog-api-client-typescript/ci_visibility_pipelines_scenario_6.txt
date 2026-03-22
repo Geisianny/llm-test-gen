@@ -1,0 +1,8 @@
+Scenario 6: Search pipelines events returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/ci-app-backend']
+  Given  a valid "appKeyAuth" key in the system
+  And  new "SearchCIAppPipelineEvents" request
+  And  body with value {"filter": {"from": "now-15m", "query": "@ci.provider.name:github AND @ci.status:error", "to": "now"}, "options": {"timezone": "GMT"}, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==", "limit": 25}, "sort": "timestamp"}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

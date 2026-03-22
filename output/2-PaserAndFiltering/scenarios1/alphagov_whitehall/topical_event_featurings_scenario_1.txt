@@ -1,0 +1,5 @@
+Scenario 1: Creating a non-GOV.UK link
+  When  I visit the topical event featuring index page
+  And  I create a new a non-GOV.UK link with the title "Featured link"
+  Then  I can see the non-GOV.UK link with the title "Featured link"
+

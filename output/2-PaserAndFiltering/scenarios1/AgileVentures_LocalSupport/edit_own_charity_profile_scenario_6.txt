@@ -1,0 +1,4 @@
+Scenario 6: Redirected to sign-in when not signed-in and edit donation url
+  Given  I visit the edit page for the organisation named "Friendly"
+  Then  I should be on the sign in page
+

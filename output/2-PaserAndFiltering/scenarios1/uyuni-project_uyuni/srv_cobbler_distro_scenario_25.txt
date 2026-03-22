@@ -1,0 +1,5 @@
+Scenario 25: Check for errors in Cobbler monitoring
+  Tags: ['@flaky']
+  When  I wait for "5" seconds
+  Then  the local logs for Cobbler should not contain errors
+

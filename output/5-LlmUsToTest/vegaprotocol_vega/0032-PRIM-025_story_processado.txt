@@ -1,0 +1,32 @@
+Scenario: Auction is triggered due to order outside price limits
+  Given the market "BTC/ETH" is in continuous trading mode
+  And the current price is "1000"
+  When a party places an order outside the price limits for the market "BTC/ETH"
+  Then the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "BTC/ETH"
+  And the order should be in a pending state
+
+Scenario: Auction terminates and market returns to continuous trading mode
+  Given the market "BTC/ETH" is in auction mode
+  When the network moves ahead "1" blocks
+  Then the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  And the mark price should be determined by the executed trades
+
+Scenario: Order that triggered auction is executed when market returns to continuous trading
+  Given the market "BTC/ETH" is in auction mode due to an order outside price limits
+  When the network moves ahead "1" blocks
+  Then the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  And the order that triggered the auction is executed
+  And the mark price should be "1050" for the market "BTC/ETH"
+
+Scenario: Market data is updated after auction termination
+  Given the market "BTC/ETH" is in auction mode
+  When the network moves ahead "1" blocks
+  Then the market data for the market "BTC/ETH" should be updated with the new mark price "1050"
+  And other relevant market data fields are updated accordingly
+
+Scenario: Multiple orders are handled correctly during auction and continuous trading
+  Given the parties place multiple orders for the market "BTC/ETH"
+  When the network moves ahead "1" blocks
+  Then the orders should have the following states: executed, partially executed, or cancelled
+  And the mark price should be "1050" for the market "BTC/ETH"
+  And the market data for the market "BTC/ETH" should be updated accordingly

@@ -1,0 +1,5 @@
+Scenario 1: Being unable to change code of an existing product
+  Tags: ['@api', '@ui']
+  When  I want to modify the "Dice Brewing" product
+  Then  I should not be able to edit its code
+

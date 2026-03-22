@@ -1,0 +1,7 @@
+Scenario 4: Search for dogs in the Animal Welfare category
+  Given  I select the "Animal Welfare" category from What They Do
+  And  I search for "dogs"
+  Then  I should see "I love dogs"
+  And  I should not see "I love cats"
+  And  I should not see "I hate animals"
+

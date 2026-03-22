@@ -1,0 +1,6 @@
+Scenario: Delete a topical event
+  Given there is an editor logged in
+  And there is a created topical event with the title "New Event"
+  When the editor deletes the topical event "New Event"
+  Then the system removes the event from the administrative interface
+  And displays a confirmation message

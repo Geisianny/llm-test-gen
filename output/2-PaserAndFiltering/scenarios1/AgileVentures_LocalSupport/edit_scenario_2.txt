@@ -1,0 +1,7 @@
+Scenario 2: As a logged in user, I can edit an event
+  Given  that I am logged in as any user
+  Then  I visit the edit page for the event titled "Lazy Weekend"
+  When  I edit the details for "Lazy Weekend"
+  Then  I should see "Event has been succesfully updated"
+  And  I should see "Lazier Weekend"
+

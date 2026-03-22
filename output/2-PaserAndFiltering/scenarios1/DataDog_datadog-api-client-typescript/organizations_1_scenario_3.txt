@@ -1,0 +1,7 @@
+Scenario 3: Get a specific Org Config value returns "OK" response
+  Tags: ['@team:DataDog/team-aaa-identity']
+  Given  new "GetOrgConfig" request
+  And  request contains "org_config_name" parameter with value "custom_roles"
+  When  the request is sent
+  Then  the response status is 200 OK
+

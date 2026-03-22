@@ -1,0 +1,46 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 19/01/2026 23:13:57
+Arquivo analisado: insert_story_processado.feature
+Caminho relativo: cross-solution_YAWIK\insert_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/Originais\cross-solution_YAWIK\insert_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: insert_story_processado
+Descrição: Não possui
+Total de cenários: 2
+
+CENÁRIOS IDENTIFICADOS:
+1. Create organization when main organization not exists
+   Steps: 5
+   - Given I don't have "test@recruiter.com" user
+   - When I am logged in as a recruiter
+   - And I go to create new organization page
+   - Then I should see "Sorry, you may not create organizations."
+   - And I should see "Before you are able to create organizations, you have to create your main organization first."
+2. Create organization successfully
+   Steps: 19
+   - Given I am logged in as a recruiter with "Cross Solution" as organization
+   - And I go to create new organization page
+   - And I click edit on name form
+   - And I wait for the ajax response
+   - And I fill in "Organization Name" with "Some Organization"
+   - And I save "organization name" form
+   - And I wait for the ajax response
+   - Then I should see "Some Organization"
+   - When I click edit on location form
+   - And I fill in the following:
+   - And I scroll "#form-organizationLogo" into view
+   - And I save "organization location" form
+   - And I wait for the ajax response
+   - Then I should see "Some Street"
+   - And I should see "12345"
+   - And I should see "54321"
+   - And I should see "Some City"
+   - And I should see "123123"
+   - And I should see "321321"

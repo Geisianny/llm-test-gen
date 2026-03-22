@@ -1,0 +1,9 @@
+Scenario 6: Install a patch on the Debian-like minion
+  When  I follow "Software" in the content area
+  And  I follow "Patches" in the content area
+  When  I check "3456-1" in the list
+  And  I click on "Apply Patches"
+  And  I click on "Confirm"
+  Then  I should see a "1 patch update has been scheduled for" text
+  And  I wait for "virgo-dummy-2.0" to be installed on "deblike_minion"
+

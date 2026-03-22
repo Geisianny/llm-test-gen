@@ -1,0 +1,23 @@
+Scenario 1: S001 - Set MTM settlement interval at 5s (the default behaviour), based on first scenario in mark_to_market_settlement_neg_pdp
+  Given  the following network parameters are set:
+  And  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  And  the market data for the market "ETH/DEC19" should be:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the settlement account should have a balance of "0" for the market "ETH/DEC19"
+  When  the parties place the following orders:
+  Then  the parties should have the following account balances:
+  And  the settlement account should have a balance of "0" for the market "ETH/DEC19"
+  When  the parties place the following orders:
+  Then  the parties should have the following account balances:
+  When  the parties place the following orders:
+  Then  the parties should have the following account balances:
+  When  the network moves ahead "6" blocks
+  Then  the parties should have the following account balances:
+  And  the following transfers should happen:
+  And  the cumulated balance for all accounts should be worth "330000000"
+  And  the settlement account should have a balance of "0" for the market "ETH/DEC19"
+

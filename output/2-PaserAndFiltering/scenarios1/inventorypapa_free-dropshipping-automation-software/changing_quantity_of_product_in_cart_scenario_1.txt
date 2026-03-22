@@ -1,0 +1,6 @@
+Scenario 1: Increasing quantity of an item in cart
+  Tags: ['@ui', '@api']
+  Given  I see the summary of my cart
+  When  I change product "T-shirt banana" quantity to 2 in my cart
+  Then  I should see "T-shirt banana" with quantity 2 in my cart
+

@@ -1,0 +1,19 @@
+Scenario 5: Search for product
+  Tags: ['@search']
+  Given  5 minutes pass
+  And  another product "Another product"
+  And  5 minutes pass
+  And  18 products and 0 backend apis
+  And  product "API" has name set to "Old"
+  When  they go to the admin portal new application page
+  And  they select "Jane" from "Account"
+  And  they toggle the menu on select "Product"
+  And  they press "View all products"
+  Then  they should see "Select a product"
+  When  they search "another" using the toolbar
+  Then  the search input should be filled with "another"
+  And  they should see following table:
+  When  they clear the search filter
+  And  they look at the 5th page
+  And  they should see following table:
+

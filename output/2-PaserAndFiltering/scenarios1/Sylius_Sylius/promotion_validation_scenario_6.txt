@@ -1,0 +1,9 @@
+Scenario 6: Trying to remove name from existing promotion
+  Tags: ['@api', '@ui']
+  Given  there is a promotion "Christmas sale"
+  When  I want to modify this promotion
+  And  I remove its name
+  And  I try to save my changes
+  Then  I should be notified that name is required
+  And  this promotion should still be named "Christmas sale"
+

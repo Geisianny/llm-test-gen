@@ -1,0 +1,15 @@
+Scenario Outline 5: Override public pages - Example 1
+  Given  a buyer "bob" signed up to provider "foo.3scale.localhost"
+  And  I log in as "bob" on foo.3scale.localhost
+  When  I go to the account page
+  Then  I should see markup matching 'li.active > a:contains("Settings")'
+  When  builtin partial "submenu" of provider "foo.3scale.localhost" has content "PARTIAL submenu EDITED"
+  And  I go to the account page
+  Then  I should see "PARTIAL submenu EDITED"
+  And  I should not see markup matching 'li.active > a:contains("Settings")'
+
+  Examples:
+    | system_name | page | original |
+    | submenu | account | li.active > a:contains("Settings") |
+    | users_menu | users | ul.nav.nav-tabs |
+

@@ -1,0 +1,10 @@
+Scenario 8: Send a scalar having the bad type
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/dummies" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/problem+json; charset=utf-8"
+  And  the JSON node "@context" should be equal to "/contexts/Error"
+  And  the JSON node "@type" should be equal to "hydra:Error"
+  And  the JSON node "detail" should be equal to 'The type of the "name" attribute must be "string", "integer" given.'
+

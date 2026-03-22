@@ -1,0 +1,10 @@
+Scenario 1: Seeing the shipping fee per shipment on selecting method in a channel's base currency
+  Tags: ['@api', '@ui']
+  Given  I changed my current channel to "Web-US"
+  And  I added product "PHP T-Shirt" to the cart
+  And  I addressed the cart to "United States"
+  When  I want to complete the shipping step
+  Then  I should be on the checkout shipping step
+  And  I should see shipping method "UPS" with fee "$15.00"
+  And  I should see shipping method "FedEx" with fee "$10.00"
+

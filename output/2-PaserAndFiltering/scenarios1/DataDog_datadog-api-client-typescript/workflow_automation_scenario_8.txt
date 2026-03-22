@@ -1,0 +1,8 @@
+Scenario 8: Execute a workflow returns "Bad Request" response
+  Tags: ['@replay-only', '@team:DataDog/workflow-automation-dev']
+  Given  new "CreateWorkflowInstance" request
+  And  request contains "workflow_id" parameter with value "malformed"
+  And  body with value { "meta": { "payload": { "input": "value" } } }
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

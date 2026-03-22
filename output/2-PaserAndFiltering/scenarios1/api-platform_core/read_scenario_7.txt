@@ -1,0 +1,4 @@
+Scenario 7: Get a not found exception with new elasticsearch operations
+  When  I send a "GET" request to "/libraries/12345678-abcd-1234-abcdefgh"
+  Then  the response status code should be 404
+

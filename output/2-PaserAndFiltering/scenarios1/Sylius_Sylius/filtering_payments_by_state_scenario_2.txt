@@ -1,0 +1,9 @@
+Scenario 2: Filtering payments in state "Completed"
+  Tags: ['@api', '@ui']
+  When  I browse payments
+  And  I choose "completed" as a payment state
+  And  I filter
+  Then  I should see a single payment in the list
+  And  I should see the payment of the "#00000002" order
+  But  I should not see the payment of the "#00000003" order
+

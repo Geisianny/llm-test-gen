@@ -1,0 +1,4 @@
+Scenario 3: Creating a Payment Provider Rule with a fixed price plus and additional percent
+  Given  the payment-provider-rule has a action additional-percent of 10%
+  Then  payment for my cart with payment provider "Bankwire" should be priced at "11000"
+

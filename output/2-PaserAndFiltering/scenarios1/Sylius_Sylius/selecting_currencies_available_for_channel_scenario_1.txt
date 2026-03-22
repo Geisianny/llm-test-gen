@@ -1,0 +1,14 @@
+Scenario 1: Adding a new channel with currencies
+  Tags: ['@api', '@ui']
+  When  I want to create a new channel
+  And  I specify its code as MOBILE
+  And  I choose "Euro" as the base currency
+  And  I name it "Mobile store"
+  And  I allow for paying in "Euro"
+  And  I make it available in "English (United States)"
+  And  I choose "English (United States)" as a default locale
+  And  I select the "Order items based" as tax calculation strategy
+  And  I add it
+  Then  I should be notified that it has been successfully created
+  And  paying in Euro should be possible for the "Mobile store" channel
+

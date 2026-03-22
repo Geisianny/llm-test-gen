@@ -1,0 +1,9 @@
+Scenario 5: Disable metadata check for the fake AppStream repository
+  Tags: ['@rhlike_minion']
+  When  I follow the left menu "Software > Manage > Repositories"
+  And  I follow "fake-appstream-repo"
+  And  I uncheck "metadataSigned"
+  And  I click on "Update Repository"
+  Then  I should see a "Repository updated successfully" text
+  And  I should see "metadataSigned" as unchecked
+

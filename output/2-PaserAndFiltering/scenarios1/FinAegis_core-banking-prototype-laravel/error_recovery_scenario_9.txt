@@ -1,0 +1,7 @@
+Scenario 9: Resource exhaustion prevention
+  Given  system resources are being monitored
+  When  memory usage approaches 90%
+  Then  the system should:
+  And  preserve critical operations
+  And  prevent out-of-memory crashes
+

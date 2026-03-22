@@ -1,0 +1,8 @@
+Scenario 5: In Spot market, holding in holding account s correctly calculated for all order types in auction mode pegged GTC (0011-MARA-032)
+  Given  the following network parameters are set:
+  When  the parties place the following orders:
+  Then  "party5" should have holding account balance of "1" for asset "BTC"
+  And  "party1" should have holding account balance of "10" for asset "ETH"
+  When  the parties place the following pegged orders:
+  And  the orders should have the following status:
+

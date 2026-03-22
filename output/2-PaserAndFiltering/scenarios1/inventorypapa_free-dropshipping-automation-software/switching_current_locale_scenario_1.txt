@@ -1,0 +1,5 @@
+Scenario 1: Showing the current locale
+  Tags: ['@ui']
+  When  I browse that channel
+  Then  I should shop using the "English (United States)" locale
+

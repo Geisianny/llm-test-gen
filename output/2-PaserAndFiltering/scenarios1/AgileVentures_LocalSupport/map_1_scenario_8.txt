@@ -1,0 +1,5 @@
+Scenario 8: If the Google Maps API key is set that will appear in the right location
+  Given  the Google Maps API key is set
+  When  I visit the home page
+  Then  the google map key should be appended to the gmap js script
+

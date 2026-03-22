@@ -1,0 +1,7 @@
+Scenario 16: Schedule a downtime with invalid type hours
+  Tags: ['@team:DataDog/monitor-app']
+  Given  new "CreateDowntime" request
+  And  body from file "downtime_recurrence_payload_invalid_type_hours.json"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

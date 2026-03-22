@@ -1,0 +1,5 @@
+Scenario 3: Should post to doit with valid dates
+  Given  I am signed in as a superadmin
+  And  I submit a volunteer op with valid dates
+  Then  I should not see "Advertise start date is invalid" and "Advertise end date is invalid"
+

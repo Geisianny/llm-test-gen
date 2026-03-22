@@ -1,0 +1,10 @@
+Scenario 7: Distributing fixed order discount promotion
+  Tags: ['@api', '@no-ui']
+  Given  the promotion gives "$20.00" discount to every order with quantity at least 2
+  And  I added product "T-Shirt" to the cart
+  And  I added product "PHP Mug" to the cart
+  When  I check the details of my cart
+  Then  product "T-Shirt" price should be decreased by "$5.00"
+  And  product "PHP Mug" price should be decreased by "$15.00"
+  And  my cart total should be "$50.00"
+

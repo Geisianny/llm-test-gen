@@ -1,0 +1,4 @@
+Scenario 3: Cleanup: remove state channels via API
+  Then  I delete channel "statechannel1" via API without error control
+  And  I delete channel "statechannel2" via API without error control
+

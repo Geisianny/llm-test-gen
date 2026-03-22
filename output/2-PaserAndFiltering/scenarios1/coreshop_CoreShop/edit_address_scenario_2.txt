@@ -1,0 +1,6 @@
+Scenario 2: Add a address
+  When  I want to add a address information
+  And  my new Address is "Elon", "Twitter X", country "Austria", "1234", "Wien", "Herbststrasse", "16", "+45 5336445"
+  And  I save my address
+  Then  the customer "elon@musk.com" address is country "Austria", "1234", "Wien", "Herbststrasse", "16"
+

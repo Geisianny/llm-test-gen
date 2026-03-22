@@ -1,0 +1,5 @@
+Scenario: Import categories from an empty CSV file
+  Given there is a Site Super Admin user logged in
+  And there is an empty CSV file
+  When the Super Admin imports the CSV file
+  Then the system displays a message indicating that the file is empty

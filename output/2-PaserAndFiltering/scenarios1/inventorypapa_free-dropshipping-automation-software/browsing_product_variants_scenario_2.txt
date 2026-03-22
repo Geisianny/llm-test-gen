@@ -1,0 +1,5 @@
+Scenario 2: Being informed that product variant is not tracked
+  Tags: ['@ui']
+  When  I want to view all variants of this product
+  Then  I should see that the "Wyborowa Vodka Exquisite" variant is not tracked
+

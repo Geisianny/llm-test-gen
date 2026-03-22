@@ -1,0 +1,8 @@
+Scenario 3: Create a Datadog GCP principal with empty body returns "OK" response
+  Tags: ['@team:DataDog/gcp-integrations']
+  Given  new "MakeGCPSTSDelegate" request
+  And  body with value {}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.type" is equal to "gcp_sts_delegate"
+

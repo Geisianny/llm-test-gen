@@ -1,0 +1,10 @@
+Scenario Outline 6: Navigate to menu "<path>" and open screen "<screen>" - Example 6
+  Tags: ['@wip']
+  When  I navigate the menu and select the item at "Accounts Receivable > Import Batch"
+  Then  I should see the Batch import screen
+
+  Examples:
+    | path | screen |
+    | Accounts Receivable > Import Batch | Batch import |
+    | Accounts Receivable > Reports > AR Aging |  |
+

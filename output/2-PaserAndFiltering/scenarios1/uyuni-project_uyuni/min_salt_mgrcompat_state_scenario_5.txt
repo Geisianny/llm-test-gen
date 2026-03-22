@@ -1,0 +1,13 @@
+Scenario 5: Enable new module.run syntax on the minion and perform registration
+  Given  I store "use_superseded: [module.run]" into file "custom_modulerun.conf" in salt minion config directory on "sle_minion"
+  When  I follow the left menu "Systems > Bootstrapping"
+  Then  I should see a "Bootstrap Minions" text
+  When  I enter the hostname of "sle_minion" as "hostname"
+  And  I enter "22" as "port"
+  And  I enter "root" as "user"
+  And  I enter "linux" as "password"
+  And  I select the hostname of "proxy" from "proxies" if present
+  And  I click on "Bootstrap"
+  And  I wait until I see "Bootstrap process initiated." text
+  And  I wait until onboarding is completed for "sle_minion"
+

@@ -1,0 +1,6 @@
+Scenario 12: As a logged-in Agora Manager I can see the members of an Agora
+  Given  I am logged with "michelle.dufour@example.ch" via OAuth client "JeMengage Web" with scope "jemengage_admin"
+  When  I send a "GET" request to "/api/v3/adherents?scope=agora_president&agora_uuids[]=82ad6422-cb82-4c04-b478-bfb421c740e0"
+  Then  the response status code should be 200
+  And  the JSON should be a superset of:
+

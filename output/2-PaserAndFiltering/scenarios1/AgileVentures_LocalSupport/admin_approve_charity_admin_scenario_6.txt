@@ -1,0 +1,6 @@
+Scenario 6: as a non-superadmin attempting to see deleted users
+  Given  I am signed in as an non-superadmin
+  And  I visit the deleted users page
+  Then  I should be on the home page
+  And  I should see "You must be signed in as a superadmin to perform this action!"
+

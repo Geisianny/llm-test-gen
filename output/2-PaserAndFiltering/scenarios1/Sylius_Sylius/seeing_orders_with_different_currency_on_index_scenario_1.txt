@@ -1,0 +1,9 @@
+Scenario 1: List of orders from only one channel
+  Tags: ['@api', '@ui']
+  Given  I changed my current channel to "United States"
+  And  I added product "Angel T-Shirt" to the cart
+  And  I addressed the cart
+  And  I proceed with "Free" shipping method and "Offline" payment
+  When  I confirm my order
+  Then  the administrator should see the order with total "$20.00" in order list
+

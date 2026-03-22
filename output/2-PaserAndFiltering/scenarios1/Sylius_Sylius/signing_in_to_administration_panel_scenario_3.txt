@@ -1,0 +1,9 @@
+Scenario 3: Sign in using customer account
+  Tags: ['@api', '@ui']
+  When  I want to log in
+  And  I specify the username as "ted@example.com"
+  And  I specify the password as "bear"
+  And  I log in
+  Then  I should be notified about bad credentials
+  And  I should not be logged in
+

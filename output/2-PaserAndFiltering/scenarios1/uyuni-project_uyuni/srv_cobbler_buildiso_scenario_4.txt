@@ -1,0 +1,4 @@
+Scenario 4: Create a dummy distro in the Cobbler buildiso context
+  Given  cobblerd is running
+  When  I create distro "buildisodistro"
+

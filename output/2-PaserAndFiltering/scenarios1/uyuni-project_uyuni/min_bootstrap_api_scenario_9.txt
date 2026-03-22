@@ -1,0 +1,16 @@
+Scenario 9: API bootstrap: subscribe to base channel
+  Tags: ['@uyuni']
+  Given  I am on the Systems overview page of this "sle_minion"
+  When  I follow "Software" in the content area
+  And  I follow "Software Channels" in the content area
+  And  I wait until I do not see "Loading..." text
+  And  I check radio button "openSUSE Tumbleweed (x86_64)"
+  And  I wait until I do not see "Loading..." text
+  And  I check "Uyuni Client Tools for openSUSE Tumbleweed (x86_64) (Development)"
+  And  I check "Fake-RPM-SUSE-Channel"
+  And  I click on "Next"
+  Then  I should see a "Confirm Software Channel Change" text
+  When  I click on "Confirm"
+  Then  I should see a "Changing the channels has been scheduled." text
+  And  I wait until event "Subscribe channels scheduled" is completed
+

@@ -1,0 +1,6 @@
+Scenario 16: Reposync handles wrong encoding on RPM attributes
+  When  I follow the left menu "Software > Channel List"
+  And  I follow "Test-Channel-x86_64"
+  And  I follow "Packages" in the content area
+  And  I wait until I see "blackhole-dummy" text, refreshing the page
+

@@ -1,0 +1,5 @@
+Scenario 1: Test UX components : ReIcon static
+  When  I go to "/test/ux-component/ReIcon/static"
+  Then  I should see 1 ".re-icon.re-icon-unlock" elements
+  And  I should see 1 "[href='#re-icon-unlock']" elements
+

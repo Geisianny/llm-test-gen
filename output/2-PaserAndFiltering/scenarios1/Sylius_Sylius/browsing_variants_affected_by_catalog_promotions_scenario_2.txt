@@ -1,0 +1,7 @@
+Scenario 2: Browsing product variants affected by a catalog promotion applied on products
+  Tags: ['@api', '@ui']
+  Given  there is a catalog promotion "T-Shirt promotion" that reduces price by "20%" and applies on "T-Shirt" product
+  When  I browse variants affected by catalog promotion "T-Shirt promotion"
+  Then  there should be 2 product variants on the list
+  And  it should be "PHP T-Shirt" and "Sylius T-Shirt" product variants
+

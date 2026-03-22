@@ -1,0 +1,6 @@
+Scenario 1: Renaming a catalog promotion
+  Tags: ['@api', '@ui']
+  When  I rename the "Christmas sale" catalog promotion to "Black Friday"
+  Then  I should be notified that it has been successfully edited
+  And  this catalog promotion name should be "Black Friday"
+

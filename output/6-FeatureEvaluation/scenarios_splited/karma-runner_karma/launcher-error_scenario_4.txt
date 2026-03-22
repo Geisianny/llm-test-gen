@@ -1,0 +1,6 @@
+Scenario: Successful browser connection
+  Given a test is running with Karma Test Runner CLI
+  And a browser is configured to run the test
+  When the browser successfully connects to Karma
+  Then the system does not output an error message to stderr
+  And the test execution proceeds

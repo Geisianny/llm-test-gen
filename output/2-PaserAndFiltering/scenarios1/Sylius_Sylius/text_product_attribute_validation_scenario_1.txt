@@ -1,0 +1,8 @@
+Scenario 1: Trying to add product attribute translation in unexisting locale
+  Tags: ['@api', '@no-ui']
+  When  I want to create a new text product attribute
+  And  I specify its code as "t_shirt_with_cotton"
+  And  I name it "Marque de jeans en coton" in "French (France)"
+  And  I save my changes
+  Then  I should be notified that the locale is not available
+

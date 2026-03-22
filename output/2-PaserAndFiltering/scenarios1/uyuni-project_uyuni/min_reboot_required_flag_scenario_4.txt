@@ -1,0 +1,10 @@
+Scenario 4: Trigger reboot required indication for Debian-like distributions
+  Tags: ['@deblike_minion']
+  Given  I am on the Systems overview page of this "deblike_minion"
+  When  I follow "Remote Command"
+  And  I enter "#!/bin/sh\ntouch /var/run/reboot-required" as "script_body" text area
+  And  I click on "Schedule"
+  Then  I should see a "Remote Command has been scheduled" text
+  When  I follow "Overview"
+  And  I wait until I see "The system requires a reboot" text, refreshing the page
+

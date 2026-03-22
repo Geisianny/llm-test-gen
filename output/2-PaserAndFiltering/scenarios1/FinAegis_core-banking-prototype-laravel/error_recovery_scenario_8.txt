@@ -1,0 +1,6 @@
+Scenario 8: Network partition recovery
+  Given  a distributed system with multiple nodes
+  When  a network partition occurs
+  Then  each partition should:
+  And  maintain eventual consistency
+

@@ -1,0 +1,12 @@
+Scenario 17: save and continue when creating a new article
+  Given  I am on joaosilva's control panel
+  And  I follow "New" within "#section-content"
+  And  I should see "Text article"
+  And  I follow "Text article"
+  And  I fill in "Title" with "My new article"
+  And  I fill in "Text" with "text for the new article"
+  And  I follow "Save and continue"
+  Then  I should be on "My new article" edit page
+  And  the "Title" field should contain "My new article"
+  And  the "Text" field should contain "text for the new article"
+

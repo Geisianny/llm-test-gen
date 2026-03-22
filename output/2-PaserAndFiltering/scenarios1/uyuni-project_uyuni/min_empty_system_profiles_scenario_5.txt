@@ -1,0 +1,5 @@
+Scenario 5: Check the empty profiles has the hostname set
+  And  I follow the left menu "System > System List > Unprovisioned Systems"
+  And  I follow "empty-profile-hostname"
+  Then  I wait until I see "min-retail.mgr.suse.de" text, refreshing the page
+

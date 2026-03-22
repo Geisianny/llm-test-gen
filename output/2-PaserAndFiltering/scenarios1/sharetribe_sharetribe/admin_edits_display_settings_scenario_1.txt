@@ -1,0 +1,9 @@
+Scenario 1: Admin can change the default listing view to list
+  Tags: ['@javascript']
+  Given  community "test" has default browse view "grid"
+  When  I choose "List"
+  And  I press submit
+  And  I wait for 1 seconds
+  Then  I go to the homepage
+  And  I should see the browse view selected as "List"
+

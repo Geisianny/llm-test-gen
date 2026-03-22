@@ -1,0 +1,6 @@
+Scenario 1: As a logged-in user with correct rights I can get a phoning campaign charter, if I have not yet accepted it
+  Given  I am logged with "kiroule.p@blabla.tld" via OAuth client "JeMengage Mobile" with scope "jemarche_app"
+  And  I send a "GET" request to "/api/v3/profile/charter/phoning_campaign"
+  Then  the response status code should be 200
+  And  the JSON should be equal to:
+

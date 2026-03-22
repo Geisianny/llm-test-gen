@@ -1,0 +1,7 @@
+Scenario 6: Delete Org Connection returns "Not Found" response
+  Tags: ['@team:DataDog/aaa-granular-access']
+  Given  new "DeleteOrgConnections" request
+  And  request contains "connection_id" parameter with value "00000000-0000-0000-0000-000000000000"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

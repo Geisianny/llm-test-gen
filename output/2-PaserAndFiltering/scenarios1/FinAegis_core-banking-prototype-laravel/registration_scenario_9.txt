@@ -1,0 +1,8 @@
+Scenario 9: Skipping onboarding
+  Given  I have just registered
+  And  I see the welcome modal
+  When  I click "Skip for Now"
+  Then  the modal should close
+  And  I should see the dashboard
+  And  I should not see the welcome modal again on refresh
+

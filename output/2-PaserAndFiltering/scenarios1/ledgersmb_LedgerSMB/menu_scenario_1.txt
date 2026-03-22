@@ -1,0 +1,10 @@
+Scenario Outline 1: Navigate to menu "<path>" and open screen "<screen>" - Example 1
+  When  I navigate the menu and select the item at "Accounts Payable > Add Transaction"
+  Then  I should see the AP transaction entry screen
+
+  Examples:
+    | path | screen |
+    | Accounts Payable > Add Transaction | AP transaction entry |
+    | Accounts Payable > Debit Invoice | AP debit invoice entry |
+    | Accounts Payable > Debit Note | AP note entry |
+

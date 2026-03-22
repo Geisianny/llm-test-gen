@@ -1,0 +1,7 @@
+Scenario 7: Logging out from my admin account logs me off the user I'm impersonating
+  Tags: ['@no-api', '@ui']
+  Given  I am impersonating the customer "remnant@london.uk"
+  When  I log out from my admin account
+  And  I visit the store
+  Then  I should not be logged in as "Tanith Low"
+

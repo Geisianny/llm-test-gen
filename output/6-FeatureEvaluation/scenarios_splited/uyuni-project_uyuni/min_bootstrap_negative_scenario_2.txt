@@ -1,0 +1,6 @@
+Scenario: Register a machine that is already registered
+  Given there is an authorized user
+  And there is a registered machine with the name "minion1"
+  When the user registers a new machine with the name "minion1" and valid credentials
+  Then the system denies registration
+  And displays a message indicating that the machine is already registered

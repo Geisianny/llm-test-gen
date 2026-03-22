@@ -1,0 +1,60 @@
+Feature: JSON-LD non-resource handling
+Description: In order to use non-resource types
+  As a developer
+  I should be able to serialize types not mapped to an API resource.
+
+Background: 
+  Given  I add "Accept" header equal to "application/ld+json"
+  And  I add "Content-Type" header equal to "application/ld+json"
+
+Scenario 1: Get a resource containing a raw object
+  Tags: ['@createSchema']
+  When  I send a "GET" request to "/contain_non_resources/1"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be a superset of:
+  And  the JSON node "notAResource.@id" should exist
+
+Scenario 2: Get a resource containing a raw object with selected properties
+  Tags: ['@createSchema']
+  Given  there are 1 dummy objects with relatedDummy and its thirdLevel
+  When  I send a "GET" request to "/contain_non_resources/1?properties[]=id&properties[nested][notAResource][]=foo&properties[notAResource][]=bar"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be a superset of:
+
+Scenario 3: Create a resource that has a non-resource relation.
+  Tags: ['@!mongodb', '@createSchema']
+  When  I send a "POST" request to "/non_relation_resources" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be a superset of:
+
+Scenario 4: Create a resource that contains a stdClass object.
+  Tags: ['@!mongodb', '@createSchema']
+  When  I send a "POST" request to "/plain_object_dummies" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be a superset of:
+
+Scenario 5: Get a generated id
+  Tags: ['@php8']
+  When  I send a "GET" request to "/genids/1"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON node "totalPrice.@id" should not exist
+
+Scenario 6: Get a resource using entityClass with a DateTime attribute
+  Tags: ['@!mongodb', '@createSchema']
+  Given  there is a resource using entityClass with a DateTime attribute
+  When  I send a "GET" request to "/EntityClassWithDateTime/1"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON node "start" should exist
+

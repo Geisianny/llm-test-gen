@@ -1,0 +1,7 @@
+Scenario 34: Get a budget returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/cloud-cost-management']
+  Given  new "GetBudget" request
+  And  request contains "budget_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 200 OK
+

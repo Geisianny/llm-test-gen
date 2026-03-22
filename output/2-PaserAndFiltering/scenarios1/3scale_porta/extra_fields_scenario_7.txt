@@ -1,0 +1,7 @@
+Scenario 7: Edit an application with extra fields
+  Given  the following application:
+  And  the application has the following extra fields:
+  When  they go to the application's dev portal edit page
+  Then  the form is submitted with:
+  Then  they should see the flash message "Application was successfully updated"
+

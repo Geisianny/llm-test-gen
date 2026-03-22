@@ -1,0 +1,7 @@
+Scenario 1: Displaying login form if the customer has an account
+  Tags: ['@ui', '@no-api', '@javascript']
+  Given  I have product "PHP T-Shirt" in the cart
+  And  I am at the checkout addressing step
+  When  I specify the email as "francis@underwood.com"
+  Then  I should be able to log in
+

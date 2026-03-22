@@ -1,0 +1,21 @@
+Scenario 13: When a searcher on a Spanish site clicks on an RSS Feed and the query is blank
+  Given  the following BingV7 Affiliates exist:
+  And  affiliate "es.bar.gov" has the following RSS feeds:
+  And  feed "Press" has the following news items:
+  And  feed "es_agency_channel_id" has the following news items:
+  When  I am on es.bar.gov's search page
+  And  I follow "Press" in the search navbar
+  Then  I should see the browser page titled "Press - Spanish bar site resultados de la búsqueda"
+  Then  I should see "2 resultados"
+  And  I should see exactly "2" web search results
+  And  I should see "Noticia uno"
+  And  I should see "Noticia dos"
+  When  I am on es.bar.gov's search page
+  And  I fill in "query" with "noticia uno"
+  And  I press "Buscar" within the search box
+  And  I follow "Videos" in the search navbar
+  And  I fill in "query" with ""
+  And  I press "Buscar" within the search box
+  Then  I should see the browser page titled "Spanish Videos - Spanish bar site resultados de la búsqueda"
+  And  I should see "Noticia video uno"
+

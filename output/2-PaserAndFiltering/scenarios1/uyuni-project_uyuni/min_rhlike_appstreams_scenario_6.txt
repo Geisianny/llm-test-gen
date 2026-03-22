@@ -1,0 +1,6 @@
+Scenario 6: Verify that modular packages do not appear as upgrade options when AppStreams are disabled
+  And  I am on the "Software" page of this "rhlike_minion"
+  And  I follow "Packages"
+  And  I follow "Upgrade"
+  Then  I should not see a "scorpio-dummy-2" text
+

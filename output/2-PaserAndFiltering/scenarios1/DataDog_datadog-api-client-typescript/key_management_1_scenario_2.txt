@@ -1,0 +1,9 @@
+Scenario 2: Create an API key returns "Created" response
+  Tags: ['@team:DataDog/credentials-management']
+  Given  new "CreateAPIKey" request
+  And  body with value {"data": {"type": "api_keys", "attributes": {"name": "{{ unique }}"}}}
+  When  the request is sent
+  Then  the response status is 201 Created
+  And  the response "data.type" is equal to "api_keys"
+  And  the response "data.attributes.name" is equal to "{{ unique }}"
+

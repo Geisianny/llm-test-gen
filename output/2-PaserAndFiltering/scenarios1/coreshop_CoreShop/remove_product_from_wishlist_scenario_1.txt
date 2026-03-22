@@ -1,0 +1,5 @@
+Scenario 1: Removing wishlist item
+  When  I see the summary of my wishlist
+  And  I remove product "TShirt" from the wishlist
+  Then  my wishlist should be empty
+

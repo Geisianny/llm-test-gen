@@ -1,0 +1,8 @@
+Scenario 7: Create Failure - stripe billing
+  Given  I have authenticated to the API
+  And  stripe billing is disabled
+  And  the follow customers exist:
+  When  I create a subscription with code and currency via the API for "customer.one@example.org" with the follow:
+  Then  there should not be a subscription for the user "customer.one@example.org"
+  And  the response should be that payment is needed
+

@@ -1,0 +1,8 @@
+Scenario 7: Circuit breaker activation
+  Given  a bank is experiencing multiple failures
+  When  the failure rate exceeds 25% over 5 minutes
+  Then  the circuit breaker should activate
+  And  all traffic to that bank should be stopped
+  And  alternative banks should handle the load
+  And  the bank should be automatically retested
+

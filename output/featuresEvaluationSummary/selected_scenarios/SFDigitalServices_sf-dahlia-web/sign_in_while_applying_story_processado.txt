@@ -1,0 +1,7 @@
+Scenario: Continue application anonymously after attempting to sign in
+  Given there is a user with an existing account
+  And the user is filling out an application anonymously
+  When the user chooses to sign in with their account
+  And enters invalid email or password
+  And chooses to continue anonymously
+  Then the system allows the user to continue filling out the application anonymously

@@ -1,0 +1,8 @@
+Scenario 4: Delete a case type returns "NotContent" response
+  Tags: ['@team:DataDog/case-management']
+  Given  new "DeleteCaseType" request
+  And  there is a valid "case_type" in the system
+  And  request contains "case_type_id" parameter from "case_type.id"
+  When  the request is sent
+  Then  the response status is 204 OK
+

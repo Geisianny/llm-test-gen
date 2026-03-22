@@ -1,0 +1,8 @@
+Scenario 1: Trying to add a new customer without an email
+  Tags: ['@api', '@ui']
+  When  I want to create a new customer
+  And  I specify their first name as "Luke"
+  And  I specify their last name as "Skywalker"
+  And  I try to add them
+  Then  I should be notified that email is required
+

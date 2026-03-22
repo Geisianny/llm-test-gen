@@ -1,0 +1,9 @@
+Scenario Outline 4: Top navbar links to Volunteers are hidden when feature is disabled - Example 1
+  Given  that the volunteer_ops_list flag is disabled
+  And  I visit the home page
+  Then  the navbar should not have a link to Volunteers
+
+  Examples:
+    | link |
+    | Volunteers |
+

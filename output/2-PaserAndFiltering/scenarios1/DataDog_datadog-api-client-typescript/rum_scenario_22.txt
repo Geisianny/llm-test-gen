@@ -1,0 +1,15 @@
+Scenario 22: Update a RUM application with Product Scales returns "OK" response
+  Tags: ['@skip-validation', '@team:DataDog/rum-backend']
+  Given  there is a valid "rum_application" in the system
+  And  new "UpdateRUMApplication" request
+  And  request contains "id" parameter from "rum_application.data.id"
+  And  body with value {"data": {"attributes": {"name": "updated_rum_with_product_scales", "rum_event_processing_state": "ALL", "product_analytics_retention_state": "MAX"}, "id": "{{ rum_application.data.id }}", "type": "rum_application_update"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.type" is equal to "rum_application"
+  And  the response "data.attributes.name" is equal to "updated_rum_with_product_scales"
+  And  the response "data.attributes.product_scales.rum_event_processing_scale.state" is equal to "ALL"
+  And  the response "data.attributes.product_scales.product_analytics_retention_scale.state" is equal to "MAX"
+  And  the response "data.attributes.product_scales.rum_event_processing_scale" has field "last_modified_at"
+  And  the response "data.attributes.product_scales.product_analytics_retention_scale" has field "last_modified_at"
+

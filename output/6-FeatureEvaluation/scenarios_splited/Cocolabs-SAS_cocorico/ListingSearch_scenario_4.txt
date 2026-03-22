@@ -1,0 +1,5 @@
+Scenario: Search listing by date
+  Given there are listings available on different dates
+  When the user searches for listings available on "2024-03-15"
+  Then the system displays listings available on "2024-03-15"
+  And the listings match the selected date

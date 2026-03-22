@@ -1,0 +1,7 @@
+Scenario 24: events that are allowed to the user should be displayed and listed in the calendar
+  Given  the following events
+  And  I am logged in as "josesilva"
+  When  I am on /profile/josesilva/events/2009/10/25
+  Then  I should see "Private event" within "#agenda-items"
+  And  I should see "25" link
+

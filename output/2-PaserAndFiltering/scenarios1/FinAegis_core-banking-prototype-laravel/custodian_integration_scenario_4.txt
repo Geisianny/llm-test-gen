@@ -1,0 +1,8 @@
+Scenario 4: Custodian webhook processing
+  Given  a webhook endpoint is configured for Paysera
+  When  Paysera sends a transaction confirmation webhook
+  Then  the system should verify the webhook signature
+  And  update the transaction status accordingly
+  And  trigger any dependent workflows
+  And  acknowledge receipt to Paysera
+

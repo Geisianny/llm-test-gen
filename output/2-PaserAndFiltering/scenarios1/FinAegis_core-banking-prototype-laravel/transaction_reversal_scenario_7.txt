@@ -1,0 +1,8 @@
+Scenario 7: Reversal impact analysis
+  Given  a transaction has dependent operations
+  When  I analyze reversal impact for "txn_complex"
+  Then  the system should identify all dependent transactions
+  And  show potential cascade effects
+  And  provide reversal recommendations
+  And  estimate the total impact scope
+

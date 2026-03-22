@@ -1,0 +1,5 @@
+Scenario: Search for voucher batches with multiple parameters
+  Given there are existing voucher batches with different transaction types and approval statuses
+  When the user searches for voucher batches with transaction type "Sales" and approval status "Approved"
+  Then the system displays a list of voucher batches with transaction type "Sales" and approval status "Approved"
+  And the list includes batch number, date, description, and values

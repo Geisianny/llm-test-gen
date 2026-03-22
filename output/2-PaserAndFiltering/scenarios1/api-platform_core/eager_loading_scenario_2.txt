@@ -1,0 +1,6 @@
+Scenario 2: Eager loading for the search filter
+  Given  there is a dummy object with a fourth level relation
+  When  I send a "GET" request to "/dummies?relatedDummy.thirdLevel.level=3"
+  Then  the response status code should be 200
+  And  the DQL should be equal to:
+

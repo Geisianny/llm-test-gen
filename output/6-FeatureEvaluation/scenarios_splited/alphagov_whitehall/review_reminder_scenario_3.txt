@@ -1,0 +1,5 @@
+Scenario: Remove the review date for a document
+  Given there is a document with a review date "2024-03-15"
+  When the editor removes the review date
+  Then the system does not display a review date on the edition summary page
+  And the document does not have a configured reminder

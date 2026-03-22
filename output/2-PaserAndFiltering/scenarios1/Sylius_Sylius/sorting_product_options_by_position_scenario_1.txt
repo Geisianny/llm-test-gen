@@ -1,0 +1,7 @@
+Scenario 1: Product options are sorted by position in ascending order by default
+  Tags: ['@api', '@ui']
+  When  I browse product options
+  Then  I should see 3 product options in the list
+  And  the first product option in the list should have name "Mug size"
+  And  the last product option in the list should have name "Mug color"
+

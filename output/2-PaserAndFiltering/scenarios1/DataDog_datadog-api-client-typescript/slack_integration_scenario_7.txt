@@ -1,0 +1,7 @@
+Scenario 7: Get all channels in a Slack integration returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/chat-integrations']
+  Given  new "GetSlackIntegrationChannels" request
+  And  request contains "account_name" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

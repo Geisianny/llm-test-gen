@@ -1,0 +1,9 @@
+Scenario 8: Deploy the file to all systems
+  When  I follow the left menu "Configuration > Channels"
+  And  I follow "Mixed Channel"
+  And  I follow "Deploy all configuration files to all subscribed systems"
+  Then  I should see a "/etc/s-mgr/config" link
+  When  I click on "Deploy Files to Selected Systems"
+  Then  I should see a "revision-deploys are being scheduled," text
+  And  I should see a "0 revision-deploys overridden." text
+

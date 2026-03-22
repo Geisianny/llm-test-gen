@@ -1,0 +1,6 @@
+Scenario 20: show date of last update from another author
+  Given  the following users
+  And  the article "whales and dolphins" is updated by "Susan Glaspell"
+  When  I search contents for "whales"
+  Then  I should see "by Susan Glaspell at" within ".search-article-author-changes"
+

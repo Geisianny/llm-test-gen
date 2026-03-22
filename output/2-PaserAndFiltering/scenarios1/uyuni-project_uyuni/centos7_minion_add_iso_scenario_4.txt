@@ -1,0 +1,9 @@
+Scenario 4: Add the CentOS 7 DVD repositories
+  When  I follow the left menu "Software > Manage > Repositories"
+  And  I follow "Create Repository"
+  And  I enter "centos-7-iso" as "label"
+  And  I enter "file:///srv/www/htdocs/pub/centos-7-iso" as "url"
+  And  I uncheck "metadataSigned"
+  And  I click on "Create Repository"
+  Then  I should see a "Repository created successfully" text
+

@@ -1,0 +1,7 @@
+Scenario 4: Create a WAF exclusion filter returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/asm-backend']
+  Given  new "CreateApplicationSecurityWafExclusionFilter" request
+  And  body with value {"data": {"attributes": {"description": "Exclude false positives on a path", "enabled": true, "ip_list": ["198.51.100.72"], "on_match": "monitor", "parameters": ["list.search.query"], "path_glob": "/accounts/*", "rules_target": [{"rule_id": "dog-913-009", "tags": {"category": "attack_attempt", "type": "lfi"}}], "scope": [{"env": "www", "service": "prod"}]}, "type": "exclusion_filter"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

@@ -1,0 +1,6 @@
+Scenario 2: Shows error message when super admin tries to upgrade a site admin
+  Given  I am signed in as a superadmin
+  And  I visit the registered users page
+  When  I click on "Upgrade" for the user "registered-user-1@example.com"
+  Then  I should see "User already site admin!"
+

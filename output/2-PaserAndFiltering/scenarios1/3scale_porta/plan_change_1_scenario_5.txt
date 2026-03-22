@@ -1,0 +1,16 @@
+Scenario 5: Change on trial causes no billing
+  Given  plan "PaidAsInLunch" has a trial period of 15 days
+  And  pricing rules on plan "PaidAsInLunch":
+  And  pricing rules on plan "PaidAsInDiplomat":
+  When  the time is 30 April 2009
+  And  the buyer is signed up to application plan "PaidAsInLunch" on 30th April 2009
+  And  buyer "stallman" makes 1 service transaction with:
+  And  I log in as "stallman" on foo.3scale.localhost on 10th May 2009
+  And  the buyer changes to application plan "PaidAsInDiplomat"
+  And  buyer "stallman" makes 1 service transaction with:
+  And  time flies to 16th May 2009
+  And  buyer "stallman" makes 1 service transaction with:
+  And  time flies to 10st June 2009
+  And  I navigate to invoice issued for me in "May, 2009"
+  Then  I should see line items
+

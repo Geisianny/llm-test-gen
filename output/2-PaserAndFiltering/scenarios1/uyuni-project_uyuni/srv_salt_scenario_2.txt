@@ -1,0 +1,5 @@
+Scenario 2: salt-master and salt-api are listening
+  Then  salt-api should be listening on local port 9080
+  And  salt-master should be listening on public port 4505
+  And  salt-master should be listening on public port 4506
+

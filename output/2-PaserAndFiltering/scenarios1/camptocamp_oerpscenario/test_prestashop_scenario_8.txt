@@ -1,0 +1,6 @@
+Scenario 8: Import the sales oders from Prestashop
+  Tags: ['@sale_import_prestashop']
+  When  an instance with absolute id "base_external.prestashop" exists
+  And  a shop with name "Main Website Store" exists
+  Then  I import the products sale orders (Import Orders)
+

@@ -1,0 +1,38 @@
+Scenario 1: Public sections are public even when there is another restricted one with same path that iss restricted
+  Given  the current domain is "two.3scale.localhost"
+  When  I request the url "/first"
+  Then  I should see "First of two"
+
+
+
+Scenario 2: Restricted sections are restricted even when there is another one public with same path that is public
+  Tags: ['@allow-rescue']
+  Given  the current domain is "one.3scale.localhost"
+  When  I request the url "/first"
+  Then  I should see "Not found"
+
+
+
+Scenario 3: sections are accessible to permitted buyers even when another provider has a restricted section with same path
+  Given  I am logged in as "one_buyer" on two.3scale.localhost
+  When  I request the url "/first"
+  Then  I should see "First of two"
+
+
+
+Scenario 4: sections are restricted to buyers even when another provider has a public section with same path
+  Tags: ['@allow-rescue']
+  Given  I am logged in as "one_buyer" on one.3scale.localhost
+  When  I request the url "/first"
+  Then  I should see "Not found"
+
+
+
+Scenario 5: Each one sees its contents
+  Given  I am logged in as "one_buyer" on two.3scale.localhost
+  When  I request the url "/ducks"
+  Then  I should see "Duck of two"
+  Given  I am logged in as "one_buyer" on one.3scale.localhost
+  When  I request the url "/ducks"
+  Then  I should see "Duck of one"
+

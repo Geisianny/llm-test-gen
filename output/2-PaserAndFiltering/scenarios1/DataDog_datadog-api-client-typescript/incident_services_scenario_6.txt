@@ -1,0 +1,9 @@
+Scenario 6: Delete an existing incident service returns "OK" response
+  Tags: ['@team:Datadog/incident-app']
+  Given  there is a valid "service" in the system
+  And  operation "DeleteIncidentService" enabled
+  And  new "DeleteIncidentService" request
+  And  request contains "service_id" parameter from "service.data.id"
+  When  the request is sent
+  Then  the response status is 204 OK
+

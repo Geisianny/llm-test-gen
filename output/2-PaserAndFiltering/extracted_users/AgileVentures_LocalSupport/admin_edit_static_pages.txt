@@ -1,0 +1,68 @@
+Feature: I want to be able to edit static pages
+Description: As a site superadmin
+  So that I can update my website
+  I want to be able to edit static pages via markdown
+  Tracker story ID: https://www.pivotaltracker.com/story/show/52536437
+
+Background: organisations have been added to database
+  Given  the following pages exist:
+  And  the following users are registered:
+  And  cookies are approved
+  And  a static page named "Contact Info" with permalink "contact" and markdown content:
+
+Scenario 1: Super Admin can edit
+  Given  I am signed in as a superadmin
+  And  I visit the home page
+  When  I follow "About Us"
+  Then  I should see a link with text "Edit"
+  And  I follow "Edit"
+  Then  I should be on the edit page for "about"
+
+Scenario 2: Non-superadmin cannot edit
+  Given  I am signed in as a non-superadmin
+  And  I visit the home page
+  When  I follow "About Us"
+  Then  I should not see a link with text "Edit"
+
+Scenario 3: Super Admin can see pages index
+  Given  I am signed in as a superadmin
+  And  I visit the home page
+  When  I follow "About Us"
+  And  I follow "Pages"
+  Then  the URL should contain "pages"
+
+Scenario 4: Pages index is sorted by default
+  Given  I am signed in as a superadmin
+  And  I visit the home page
+  When  I follow "About Us"
+  And  I follow "Pages"
+  Then  I should see "Bob" page before "Wow"
+
+Scenario 5: Non-superadmin cannot see pages index
+  Given  I am signed in as a non-superadmin
+  And  I visit "/pages"
+  Then  I should see "You must be signed in as a superadmin to perform this action!"
+  And  I should be on the home page
+
+Scenario 6: Static pages are editable
+  Given  I am signed in as a superadmin
+  And  I am on the edit page with the "about" permalink
+  And  I fill in "page_name" with "new name" within the main body
+  And  I fill in "page_permalink" with "new_link" within the main body
+  And  I fill in "page_content" with "xyz789" within the main body
+  And  I press "Update Page"
+  And  the URL should contain "new_link"
+  And  I should see "xyz789"
+
+Scenario 7: Basic markdown syntax works
+  Given  I visit the home page
+  When  I follow "Contact"
+  Then  I should see "significant" < emphasized >
+  And  I should see "important" < stronged >
+  And  I should see "Numbered list" < number listed >
+  And  I should see "Bullet list" < bullet listed >
+  And  I should see "This is an h3 header" < tagged > with "h3"
+  And  I should see "link to relishapp" < linked > to "http://relishapp.com"
+  And  I should see "www.relishapp.com" < linked > to "http://www.relishapp.com"
+  And  I should see "message" < emphasized >
+

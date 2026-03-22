@@ -1,0 +1,7 @@
+Scenario 17: List workflow instances returns "OK" response
+  Tags: ['@replay-only', '@team:DataDog/workflow-automation-dev']
+  Given  new "ListWorkflowInstances" request
+  And  request contains "workflow_id" parameter with value "ccf73164-1998-4785-a7a3-8d06c7e5f558"
+  When  the request is sent
+  Then  the response status is 200 OK
+

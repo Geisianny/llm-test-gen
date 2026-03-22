@@ -1,0 +1,4 @@
+Scenario 11: not see link to invite members to enterprise in manage members
+  Given  I am on Beatles For Sale's members management
+  Then  I should not see "Invite people to join" link
+

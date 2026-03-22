@@ -1,0 +1,6 @@
+Scenario 8: No other minion is affected by the formula
+  Tags: ['@ssh_minion']
+  Then  the pillar data for "formulas" should be empty on "ssh_minion"
+  And  the pillar data for "timezone" should be empty on "ssh_minion"
+  And  the pillar data for "keyboard_and_language" should be empty on "ssh_minion"
+

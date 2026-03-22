@@ -1,0 +1,5 @@
+Scenario 4: Being prevented from assigning an empty taxon to a product
+  Tags: ['@api', '@no-ui']
+  When  I try to assign an empty taxon to the "T-Shirt" product
+  Then  I should be notified that specifying a taxon is required
+

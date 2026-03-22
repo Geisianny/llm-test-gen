@@ -1,0 +1,10 @@
+Scenario 2: Filtering orders by an another shipping method
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I browse orders
+  And  I choose "Free" as a shipping method filter
+  And  I filter
+  Then  I should see 2 orders in the list
+  And  I should see an order with "#000001337" number
+  And  I should see an order with "#000000042" number
+  But  I should not see an order with "#000001338" number
+

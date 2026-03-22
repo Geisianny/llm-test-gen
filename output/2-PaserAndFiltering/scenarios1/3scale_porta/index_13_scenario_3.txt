@@ -1,0 +1,7 @@
+Scenario 3: Empty search
+  Given  a buyer "Mouse"
+  And  the buyer is subscribed to product "Elephant Taming"
+  When  they go to the provider service subscriptions page
+  And  the table is filtered with:
+  Then  they should see an empty search state
+

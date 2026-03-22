@@ -1,0 +1,7 @@
+Scenario 1: Receiving a discount on an order if it's nth order placed
+  Tags: ['@ui']
+  Given  I have already placed 4 orders choosing "PHP T-Shirt" product, "Free" shipping method to "United States" with "Cash on Delivery" payment
+  When  I add product "PHP T-Shirt" to the cart
+  Then  my cart total should be "$80.00"
+  And  my discount should be "-$20.00"
+

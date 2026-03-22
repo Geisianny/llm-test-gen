@@ -1,0 +1,7 @@
+Scenario 1: Aggregate spans returns "Bad Request" response
+  Tags: ['@skip', '@team:DataDog/apm']
+  Given  new "AggregateSpans" request
+  And  body with value {"compute": [{"aggregation": "pc90", "interval": "5m", "metric": "@duration", "type": "total"}], "filter": {"from": "now-15m", "query": "service:web* AND @http.status_code:[200 TO 299]", "to": "now"}, "group_by": [{"facet": "host", "histogram": {"interval": 10, "max": 100, "min": 50}, "limit": 10, "sort": {"aggregation": "count", "order": "asc"}, "total": false}], "options": {"timezone": "GMT"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

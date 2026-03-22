@@ -1,0 +1,28 @@
+Feature: Invited Users Page
+Description: As the site owner
+  So that I manage the invitation process
+  I want a page that shows me who I have already invited
+
+Background: 
+  Given  the following organisations exist:
+  And  the following users are registered:
+  And  the invitation instructions mail template exists
+  And  the superadmin invited a user for "Invited Organisation"
+  And  cookies are approved
+  And  I am signed in as a superadmin
+  And  I visit the invited users page
+
+Scenario 1: Page shows only invited users
+  Tags: ['@vcr']
+  Then  I should see "invited@user.org"
+  And  I should not see "regular@user.org"
+
+Scenario 2: Super Admin can see the preview email
+  Then  I should see the preview email
+
+Scenario 3: Invitations can be resent
+  Tags: ['@javascript', '@billy']
+  Given  I check the box for "Invited Organisation"
+  When  I click id "invite_users"
+  Then  I should see "Invited!" in the response field for "Invited Organisation"
+

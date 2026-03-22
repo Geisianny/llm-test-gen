@@ -1,0 +1,5 @@
+Scenario 1: Preventing from adding more items to the cart than it's available in stock
+  Tags: ['@api', '@ui', '@javascript']
+  When  I add 6 products "T-Shirt Mononoke" to the cart
+  Then  I should be notified that this product does not have sufficient stock
+

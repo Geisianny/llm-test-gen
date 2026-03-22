@@ -1,0 +1,6 @@
+Scenario 13: Create email pdf invoice delivery
+  Given  the follow brands exist:
+  And  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  When  I create a customer via the app with the following info
+  Then  there should be an invoice delivery for "customer@example.org" for type "Email" and format "pdf"
+

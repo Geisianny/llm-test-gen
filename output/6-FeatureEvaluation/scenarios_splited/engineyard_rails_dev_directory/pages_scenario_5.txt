@@ -1,0 +1,4 @@
+Scenario: Attempt to add a new page with missing required fields
+  Given there is an Engine Yard administrator logged in
+  When the administrator adds a new page with missing title
+  Then the system displays an error message

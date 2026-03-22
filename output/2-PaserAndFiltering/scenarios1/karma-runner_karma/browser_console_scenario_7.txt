@@ -1,0 +1,5 @@
+Scenario 7: Execute logging path when a folder does not exist
+  Given  a configuration with:
+  When  I start Karma
+  Then  the file at sandbox/nested/folder/console.log contains:
+

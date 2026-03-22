@@ -1,0 +1,5 @@
+Scenario 5: Trying to archive a shipping method
+  Tags: ['@api', '@no-ui']
+  When  I try to archive the "UPS Carrier" shipping method
+  Then  I should be notified that my access has been denied
+

@@ -1,0 +1,11 @@
+Scenario 3: Adding a new shipping method with flat rate per unit
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I want to create a new shipping method
+  And  I specify its code as "FED_EX_CARRIER"
+  And  I name it "FedEx Carrier" in "English (United States)"
+  And  I define it for the zone named "United States"
+  And  I choose "Flat rate per unit" calculator
+  And  I specify its amount as 20 for "Web-US" channel
+  And  I add it
+  Then  the "FedEx Carrier" shipping method should be successfully created
+

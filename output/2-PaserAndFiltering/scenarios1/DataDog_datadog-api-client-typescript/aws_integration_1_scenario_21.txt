@@ -1,0 +1,7 @@
+Scenario 21: Get an AWS integration by config ID returns "Bad Request" response
+  Tags: ['@team:DataDog/aws-integrations']
+  Given  new "GetAWSAccount" request
+  And  request contains "aws_account_config_id" parameter with value "not-a-uuid"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

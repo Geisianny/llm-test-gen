@@ -1,0 +1,7 @@
+Scenario 3: Sign in with unregistered username
+  When  I want to log in
+  And  I specify the username as "foo"
+  And  I specify the password as "bar"
+  And  I log in
+  Then  I should see "Authentication failed."
+

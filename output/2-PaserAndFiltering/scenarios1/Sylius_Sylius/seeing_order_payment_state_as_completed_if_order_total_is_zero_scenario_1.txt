@@ -1,0 +1,5 @@
+Scenario 1: Seeing payment state as paid on orders list
+  Tags: ['@api', '@ui']
+  When  I browse orders
+  Then  the last order should have order payment state "Paid"
+

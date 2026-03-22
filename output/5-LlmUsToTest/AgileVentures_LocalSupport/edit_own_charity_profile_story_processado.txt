@@ -1,0 +1,36 @@
+Scenario: Charity worker edits charity description
+  Given there is a charity with a description "Old description"
+  And a charity worker is associated with the charity
+  When the charity worker edits the charity description to "New description"
+  Then the charity's description is updated to "New description"
+  And the change is reflected on the charity's public page
+
+Scenario: Unauthorized user cannot edit charity details
+  Given there is a charity with a description "Charity description"
+  And a user is not associated with the charity
+  When the user attempts to edit the charity's description
+  Then the system denies access to editing the charity's details
+  And the charity's public page remains unchanged
+
+Scenario: Charity worker edits charity contact details
+  Given there is a charity with contact details "Old phone number"
+  And a charity worker is associated with the charity
+  When the charity worker edits the charity contact details to "New phone number"
+  Then the charity's contact details are updated to "New phone number"
+  And the change is reflected on the charity's public page
+
+Scenario: System accepts protocol-less URLs for charity website
+  Given there is a charity with a website URL "example.com"
+  And a charity worker is associated with the charity
+  When the charity worker edits the charity website URL to "newexample.com"
+  Then the charity's website URL is updated to "newexample.com"
+  And the change is reflected on the charity's public page
+
+Scenario: External failure does not prevent charity details update
+  Given there is a charity with contact details "Old email"
+  And a charity worker is associated with the charity
+  And an external service is unavailable
+  When the charity worker edits the charity contact details to "New email"
+  Then the charity's contact details are updated to "New email"
+  And the change is reflected on the charity's public page
+  And the system does not prevent the update due to the external failure

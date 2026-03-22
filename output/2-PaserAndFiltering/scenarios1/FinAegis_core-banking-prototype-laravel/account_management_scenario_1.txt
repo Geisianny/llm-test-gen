@@ -1,0 +1,7 @@
+Scenario 1: Creating a new account
+  When  I send a POST request to "/api/accounts"
+  Then  the response status code should be 201
+  And  the response should have a "uuid" field
+  And  the response should have a "balance" field
+  And  the response "balance" field should equal "0"
+

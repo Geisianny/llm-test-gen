@@ -1,0 +1,6 @@
+Scenario 2: can't see profile if domain is different
+  Given  I am logged in as "joaosilva"
+  And  I am on joaosilva's profile
+  And  I go to sample-community's homepage
+  Then  I should not see "Sample Community" within any "h1"
+

@@ -1,0 +1,8 @@
+Scenario 3: Providers see their provider key on the account details page
+  Tags: ['@javascript']
+  And  current domain is the admin domain of provider "foo.3scale.localhost"
+  When  I log in as provider "foo.3scale.localhost"
+  And  I go to the provider account page
+  Then  I should see "API Key"
+  Then  I should see the provider key of provider "foo.3scale.localhost"
+

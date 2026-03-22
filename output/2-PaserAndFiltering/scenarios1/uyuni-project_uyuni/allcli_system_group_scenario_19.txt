@@ -1,0 +1,13 @@
+Scenario 19: Apply the highstate to the group
+  Tags: ['@rhlike_minion']
+  When  I follow the left menu "Systems > System Groups"
+  Then  I should see a "System Groups" text
+  When  I follow "new-systems-group"
+  And  I follow "States"
+  And  I click on "Apply Highstate"
+  Then  I should see a "Applying the highstate has been scheduled." text
+  When  I follow "scheduled"
+  Then  I should see a "Apply states (highstate)" text
+  And  I should see a "Action Details" text
+  And  I wait until I see "2 systems successfully completed this action." text, refreshing the page
+

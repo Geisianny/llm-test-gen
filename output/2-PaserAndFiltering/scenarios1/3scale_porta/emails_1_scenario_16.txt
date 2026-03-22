@@ -1,0 +1,7 @@
+Scenario 16: Finance support email shows only when provider has finance switch on
+  Given  they go to the emails settings page
+  Then  there is a field "Finance support email"
+  But  the provider has "finance" switch denied
+  When  they go to the emails settings page
+  Then  there is no field "Finance support email"
+

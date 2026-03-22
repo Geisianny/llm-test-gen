@@ -1,0 +1,6 @@
+Scenario 1: Accessing to product edit page from simple product show page
+  Tags: ['@no-api', '@ui']
+  When  I access the "Iron sword" product
+  And  I go to edit page
+  Then  I should be on "Iron sword" product edit page
+

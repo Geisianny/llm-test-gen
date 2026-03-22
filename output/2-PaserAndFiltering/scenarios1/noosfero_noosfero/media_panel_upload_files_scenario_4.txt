@@ -1,0 +1,8 @@
+Scenario 4: upload multiple files
+  Tags: ['@selenium-fixme']
+  When  I follow "Show/Hide"
+  And  I attach the file "public/images/rails.png" to "file"
+  And  I attach the file "public/503.jpg" to "file"
+  Then  I should see "rails.png" within "#file-1"
+  And  I should see "503.jpg" within "#file-2"
+

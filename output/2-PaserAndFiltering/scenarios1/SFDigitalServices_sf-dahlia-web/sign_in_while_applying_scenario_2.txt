@@ -1,0 +1,23 @@
+Scenario 2: Signing in on the welcome back page when my account DOB disqualifies me and creating a new account
+  Given  I go to the first page of the "Senior Test Listing" application
+  When  I answer "No" to the community screening question
+  Then  I should see a form notice that says "Everyone in your household must be a Senior"
+  When  I wait "1" seconds
+  And  I answer "Yes" to the community screening question
+  And  I hit the Next button "1" time
+  And  I fill out the Name page as "Alice Walker" with birth date "1/1/1900"
+  And  I sign in as "Alice Walker" with my email pre-filled
+  Then  I should see a form notice that says "Everyone in your household must be a Senior"
+  When  I choose to reconcile my application details by creating a new account
+  Then  I should be signed out
+  And  I should see a form alert that says "Create a new account with a different email address and you won't lose any of the information you've entered so far"
+  When  I create an account for "Octavia Butler"
+  And  I continue my saved draft for the Senior Test Listing
+  And  I sign in as "Octavia Butler"
+  When  I wait "1" seconds
+  And  I answer "Yes" to the community screening question
+  And  I hit the Next button "1" time
+  Then  I should be on the "Name" page of the application
+  And  I should see the account info for "Octavia Butler" filled in on the Name page
+  And  I sign out without saving
+

@@ -1,0 +1,20 @@
+Scenario 8: Test Prometheus formula on monitoring server
+  Given  I am on the Systems overview page of this "monitoring_server"
+  When  I follow "Formulas" in the content area
+  And  I check the "prometheus" formula
+  And  I click on "Save"
+  Then  I wait until I see "Formula saved" text
+  When  I follow "Prometheus" in the content area
+  And  I click on "Expand All Sections"
+  And  I enter "admin" as "Username"
+  And  I enter "admin" as "Password"
+  And  I check the blackbox exporter
+  And  I click on "Save Formula"
+  Then  I should see a "Formula saved" text
+  When  I follow "States" in the content area
+  And  I click on "Apply Highstate"
+  Then  I should see a "Applying the highstate has been scheduled." text
+  And  I wait until event "Apply highstate scheduled by admin" is completed
+  When  I wait until "prometheus" service is active on "monitoring_server"
+  And  I visit "Prometheus" endpoint of this "monitoring_server"
+

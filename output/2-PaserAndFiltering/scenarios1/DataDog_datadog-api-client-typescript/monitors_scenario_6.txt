@@ -1,0 +1,10 @@
+Scenario 6: Create a ci-pipelines formula and functions monitor returns "OK" response
+  Tags: ['@team:DataDog/monitor-app']
+  Given  new "CreateMonitor" request
+  And  body with value {"name": "{{ unique }}","type": "ci-pipelines alert","query": "formula(\"query1 / query2 * 100\").last(\"15m\") >= 0.8","message": "some message Notify: @hipchat-channel","tags": ["test:{{ unique_lower_alnum }}", "env:ci"],"priority": 3,"options": {"thresholds": {"critical": 0.8},"variables": [{"data_source": "ci_pipelines","name": "query1","search": {"query": "@ci.status:error"},"indexes": ["*"],"compute": {"aggregation": "count"},"group_by": []},{"data_source": "ci_pipelines","name": "query2","search": {"query": ""},"indexes": ["*"],"compute": {"aggregation": "count"},"group_by": []}]}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "name" is equal to "{{ unique }}"
+  And  the response "type" is equal to "ci-pipelines alert"
+  And  the response "query" is equal to "formula(\"query1 / query2 * 100\").last(\"15m\") >= 0.8"
+

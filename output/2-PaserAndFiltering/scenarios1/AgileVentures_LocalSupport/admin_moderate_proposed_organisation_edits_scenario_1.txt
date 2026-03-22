@@ -1,0 +1,6 @@
+Scenario 1: Nonsuperadmins do not see pending proposed edits link
+  Tags: ['@vcr']
+  Given  I am signed in as an non-superadmin
+  And  I visit the home page
+  Then  I should not see the pending proposed edits link
+

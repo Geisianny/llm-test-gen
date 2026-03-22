@@ -1,0 +1,36 @@
+Scenario 5: 004 Create a new perp market and run through funding periods with: no oracle data -> no payment, 1 oracle observation & no trading -> payment based internal TWAP=auction uncrossing price, multiple internal and external observations => funding payment calculated as expected.
+  Tags: ['@Perpetual']
+  Given  the following network parameters are set:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/DEC19"
+  Then  system unix time is "1575072002"
+  And  the market data for the market "ETH/DEC19" should be:
+  And  the following funding period events should be emitted:
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  And  the following funding period events should be emitted:
+  Then  the transfers of following types should NOT happen:
+  When  the network moves ahead "4" blocks
+  And  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  Then  system unix time is "1575072006"
+  And  the following funding period events should be emitted:
+  And  the following transfers should happen:
+  When  the network moves ahead "2" blocks
+  Then  the mark price should be "976" for the market "ETH/DEC19"
+  And  the parties place the following orders with ticks:
+  Then  the market data for the market "ETH/DEC19" should be:
+  And  system unix time is "1575072008"
+  When  the network moves ahead "4" blocks
+  And  the parties place the following orders with ticks:
+  And  the following trades should be executed:
+  Then  the market data for the market "ETH/DEC19" should be:
+  And  system unix time is "1575072012"
+  When  the network moves ahead "1" blocks
+  And  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  Then  system unix time is "1575072013"
+  Then  debug funding period events
+  And  the following funding period events should be emitted:
+  And  the following funding payment events should be emitted:
+  And  the following transfers should happen:
+

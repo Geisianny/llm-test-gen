@@ -1,0 +1,4 @@
+Scenario 2: display rate button inside communities ratings block
+  Given  I am on mycommunity's homepage
+  Then  I should see "Rate Community" within ".make-report-block"
+

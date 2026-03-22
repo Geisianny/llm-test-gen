@@ -1,0 +1,7 @@
+Scenario 8: Get a list of all incident teams returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:Datadog/incident-app']
+  Given  operation "ListIncidentTeams" enabled
+  And  new "ListIncidentTeams" request
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

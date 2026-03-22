@@ -1,0 +1,9 @@
+Scenario 4: Add a new country shipping rule which is valid for a different country
+  Given  adding a shipping rule named "amount"
+  And  the shipping rule is active
+  And  the site has a country "Germany" with currency "EUR"
+  And  the customer "some-customer@something.com" has an address with country "Germany", "47200", "Anytown", "Anystreet", "9"
+  And  the cart ships to customer "some-customer@something.com" address with postcode "47200"
+  And  the shipping rule has a condition countries with country "Germany"
+  Then  the shipping rule should be valid for my cart with carrier "Post"
+

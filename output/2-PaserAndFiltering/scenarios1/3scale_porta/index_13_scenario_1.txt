@@ -1,0 +1,6 @@
+Scenario 1: Navigation
+  Given  the current page is the provider dashboard
+  When  they select "Audience" from the context selector
+  And  they follow "Subscriptions" within the main menu's section Accounts
+  Then  the current page is the provider service subscriptions page
+

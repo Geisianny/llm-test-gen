@@ -1,0 +1,5 @@
+Scenario 2: Create a new pimcore class with a input field
+  Given  there is a pimcore class "Setting"
+  And  the definition has a input field "name"
+  Then  the definition should have a field named "name"
+

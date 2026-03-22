@@ -1,0 +1,5 @@
+Scenario 5: Searching products with non existing taxon
+  Tags: ['@api', '@no-ui']
+  When  I browse products from non existing taxon
+  Then  I should see empty list of products
+

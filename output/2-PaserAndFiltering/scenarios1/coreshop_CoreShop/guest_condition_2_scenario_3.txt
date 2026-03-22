@@ -1,0 +1,4 @@
+Scenario 3: Add a new guest product price rule for a customer which is invalid
+  Given  I am customer "some-customer@something.com"
+  Then  the price rule "guest" for product "Shoe" should be invalid
+

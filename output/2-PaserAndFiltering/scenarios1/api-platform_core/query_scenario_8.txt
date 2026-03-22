@@ -1,0 +1,10 @@
+Scenario 8: Retrieve an item with an iterable null field
+  Tags: ['@createSchema']
+  Given  there are 2 dummy with null JSON objects
+  When  I send the following GraphQL request:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the JSON node "data.withJsonDummy.id" should be equal to "/with_json_dummies/2"
+  And  the JSON node "data.withJsonDummy.json" should be null
+

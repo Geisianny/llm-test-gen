@@ -1,0 +1,7 @@
+Scenario 14: Test filter multipleOf
+  When  I am on "/filter_validators?required=foo&required-allow-empty&multiple-of=4"
+  Then  the response status code should be 200
+  When  I am on "/filter_validators?required=foo&required-allow-empty&multiple-of=3"
+  Then  the response status code should be 422
+  And  the JSON node "detail" should be equal to 'multiple-of: This value should be a multiple of 2.'
+

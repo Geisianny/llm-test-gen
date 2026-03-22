@@ -1,0 +1,9 @@
+Scenario 9: Editing catalog promotion action to be a fixed discount
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I want to modify a catalog promotion "Christmas sale"
+  When  I remove its last action
+  And  I add action that gives "$10.00" of fixed discount in the "United States" channel
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this catalog promotion should have "$10.00" of fixed discount in the "United States" channel
+

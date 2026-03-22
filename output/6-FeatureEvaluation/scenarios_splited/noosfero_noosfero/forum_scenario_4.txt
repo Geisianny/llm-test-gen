@@ -1,0 +1,5 @@
+Scenario: Delete a forum
+  Given there is a Noosfero user with a personal profile and an existing forum
+  When the user deletes the existing forum
+  Then the system deletes the forum successfully
+  And the forum is no longer visible on the user's profile

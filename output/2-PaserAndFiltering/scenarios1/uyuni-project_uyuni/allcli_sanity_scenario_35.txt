@@ -1,0 +1,7 @@
+Scenario 35: The CentOS 7 Salt minion is healthy
+  Tags: ['@centos7_minion']
+  Then  "centos7_minion" should have a FQDN
+  And  reverse resolution should work for "centos7_minion"
+  And  "centos7_minion" should communicate with the server using public interface
+  And  the clock from "centos7_minion" should be exact
+

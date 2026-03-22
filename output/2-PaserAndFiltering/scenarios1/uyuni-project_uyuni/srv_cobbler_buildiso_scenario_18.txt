@@ -1,0 +1,4 @@
+Scenario 18: Check for errors in Cobbler monitoring
+  Tags: ['@flaky']
+  Then  the local logs for Cobbler should not contain errors
+

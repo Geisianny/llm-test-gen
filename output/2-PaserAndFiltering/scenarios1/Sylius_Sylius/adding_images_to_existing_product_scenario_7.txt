@@ -1,0 +1,9 @@
+Scenario 7: Adding an image to an existing product without providing its type
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  Given  the store has a product "Lamborghini Gallardo Model"
+  When  I want to modify this product
+  And  I attach the "lamborghini.jpg" image to this product
+  And  I save my changes to the images
+  Then  I should be notified that it has been successfully uploaded
+  And  this product should have only one image
+

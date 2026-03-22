@@ -1,0 +1,7 @@
+Scenario 3: The toolbar was previously hidden
+  Given  the CMS toolbar has been previously hidden
+  When  they visit the developer portal in CMS mode
+  Then  the cms toolbar shouldn't be visible
+  But  they press "Toggle toolbar"
+  And  the cms toolbar should be visible
+

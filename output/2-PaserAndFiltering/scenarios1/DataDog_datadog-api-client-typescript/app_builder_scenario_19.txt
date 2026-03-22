@@ -1,0 +1,7 @@
+Scenario 19: Unpublish App returns "Bad Request" response
+  Tags: ['@skip', '@team:DataDog/app-builder-backend']
+  Given  new "UnpublishApp" request
+  And  request contains "app_id" parameter with value "invalid-uuid"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

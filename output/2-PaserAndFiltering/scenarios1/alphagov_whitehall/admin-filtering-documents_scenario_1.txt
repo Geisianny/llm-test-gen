@@ -1,0 +1,9 @@
+Scenario 1: Viewing only documents written by me
+  Given  I am a writer
+  And  I draft a new publication "My Publication"
+  And  a draft publication "Another Publication" exists
+  And  I visit the list of draft documents
+  When  I filter by author "Me"
+  Then  I should see the publication "My Publication"
+  And  I should not see the publication "Another Publication"
+

@@ -1,0 +1,6 @@
+Scenario 8: Adding a social media account to a worldwide organisation
+  Given  a social media service "Facebook" exists
+  When  I draft a new worldwide organisation "Test Worldwide Organisation" assigned to world location "United Kingdom"
+  And  I edit the worldwide organisation "Test Worldwide Organisation" adding the social media service of "Facebook" with title "Our Facebook page" at URL "https://www.social.gov.uk"
+  Then  I should see the "Our Facebook page" social media site has been assigned to the worldwide organisation "Test Worldwide Organisation"
+

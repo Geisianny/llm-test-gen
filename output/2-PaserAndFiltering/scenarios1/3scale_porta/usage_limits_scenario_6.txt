@@ -1,0 +1,9 @@
+Scenario 6: Limits panel
+  Given  an usage limit on plan "Basic" for metric "hits" with period hour and value 800
+  And  I go to plan "Basic" admin edit page
+  Then  I should not see hourly usage limit for metric "hits"
+  When  I follow "Limits (1)"
+  Then  I should see hourly usage limit for metric "hits" on application plan "Basic"
+  When  I follow "Close" that belongs to metric "Hits" usage limits
+  Then  I should not see hourly usage limit for metric "hits" on application plan "Basic"
+

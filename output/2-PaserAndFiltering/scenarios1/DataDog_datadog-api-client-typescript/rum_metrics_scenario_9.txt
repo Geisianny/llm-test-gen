@@ -1,0 +1,9 @@
+Scenario 9: Update a rum-based metric returns "Bad Request" response
+  Tags: ['@team:DataDog/rum-backend']
+  Given  there is a valid "rum_metric" in the system
+  And  new "UpdateRumMetric" request
+  And  request contains "metric_id" parameter from "rum_metric.data.id"
+  And  body with value {"data": {"id": "rum.sessions.webui.count", "type": "unknown_metrics", "attributes": {"compute": {"include_percentiles": true}}}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

@@ -1,0 +1,6 @@
+Scenario 1: Add a new currency payment-provider-rule which is valid
+  Given  adding a payment-provider-rule named "currencies"
+  And  the payment-provider-rule is active
+  And  the payment-provider-rule has a condition currencies with currency "EUR"
+  Then  the payment-provider-rule should be valid for my cart with payment provider "Bankwire"
+

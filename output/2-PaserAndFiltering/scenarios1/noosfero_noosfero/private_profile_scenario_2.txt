@@ -1,0 +1,8 @@
+Scenario 2: adding a friend with private profile
+  Given  I am logged in as "joao"
+  When  I go to shygirl's homepage
+  Then  I should see "friends only"
+  And  I follow "Add friend"
+  When  I go to shygirl's homepage
+  Then  I should not see "Add friend"
+

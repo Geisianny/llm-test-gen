@@ -1,0 +1,7 @@
+Scenario 1: Navigation from Audience
+  When  they press "Dashboard"
+  And  they follow "Audience"
+  And  they press "Messages"
+  And  they follow "Inbox"
+  Then  the current page is the provider inbox page
+

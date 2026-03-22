@@ -1,0 +1,53 @@
+Scenario 1: Navigation
+  Given  they go to the provider dashboard
+  When  they follow "1 Account" within the audience dashboard widget
+  And  follow "Pepe"
+  And  follow "Edit"
+  Then  the current page is the buyer account edit page for "Pepe"
+
+
+
+Scenario 2: Editing an account
+  Given  they go to the buyer account edit page for "Pepe"
+  When  the form is submitted with:
+  Then  should see a toast alert with text "Account successfully updated"
+  And  the current page is the buyer account page for "Pepito"
+
+
+
+Scenario 3: Deleting an account
+  Given  a buyer "Deleteme" of the provider
+  When  they go to the buyer account edit page for "Deleteme"
+  And  follow "Delete"
+  And  confirm the dialog
+  Then  the current page is the buyer accounts page
+  And  they should see a toast alert with text "The account was successfully deleted"
+  And  should see the following table:
+
+
+
+Scenario 4: Provider should see all fields defined for account
+  And  the provider has the following fields defined for accounts:
+  And  buyer "Pepe" has extra fields:
+  And  buyer "Pepe" has telephone number "666"
+  And  VAT rate of buyer "Pepe" is 9%
+  And  VAT code of buyer "Pepe" is 9
+  And  they go to the buyer account "Pepe" edit page
+  Then  they should see the fields:
+  When  they press "Update Account"
+  Then  they should not see error in fields:
+
+
+
+Scenario 5: Edit fields with choices
+  Given  the provider has the following fields defined for accounts:
+  And  the provider has the following buyers:
+  And  buyer "Alice" has extra fields:
+  When  they go to the buyer account "Alice" edit page
+  And  "Spain" is the option selected in "Country"
+  And  "option1" is the option selected in "Fields with choices"
+  And  they select "United States of America" from "Country"
+  And  they select "option2" from "Fields with choices"
+  And  they press "Update Account"
+  And  the inverted table has the following rows within the account details card:
+

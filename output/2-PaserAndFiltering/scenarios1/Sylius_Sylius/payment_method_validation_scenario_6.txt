@@ -1,0 +1,8 @@
+Scenario 6: Trying to add a new payment method without gateway name
+  Tags: ['@api', '@no-ui']
+  When  I want to create a new payment method without gateway name
+  And  I name it "Payment method without gateway name" in "English (United States)"
+  And  I specify its code as "PMWGN"
+  And  I try to add it
+  Then  I should be notified that I have to specify gateway name
+

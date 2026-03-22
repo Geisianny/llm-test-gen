@@ -1,0 +1,24 @@
+Feature: Accessing Destroys
+Description: I want to be find deleted stuff in trash
+Tags: ['@audit', '@javascript']
+
+Background: 
+  Given  a provider is logged in
+  And  the default product of the provider has name "My API"
+  And  the following application plan:
+  And  the following account plan:
+
+Scenario 1: Deleted account is found in trash
+  When  provider "foo.3scale.localhost" has deleted the buyer "Nicolas Von Kline Wurst"
+  And  I go to the "accounts" destroys page
+  Then  I should see "Nicolas Von Kline Wurst" in the list of deleted "accounts"
+
+Scenario 2: Deleted application and users are found in trash
+  When  a buyer "Mc Hammer" signed up to account plan "Hammer Time"
+  And  the following application:
+  And  provider "foo.3scale.localhost" deleted existing buyer "Mc Hammer"
+  And  I go to the "apps" destroys page
+  Then  I should see "ESTOP" in the list of deleted "applications"
+  And  I go to the "users" destroys page
+  Then  I should see "Mc_Hammer" in the list of deleted "users"
+

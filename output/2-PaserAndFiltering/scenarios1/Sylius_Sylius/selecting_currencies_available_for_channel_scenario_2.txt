@@ -1,0 +1,10 @@
+Scenario 2: Adding currencies to an existing channel
+  Tags: ['@api', '@ui']
+  Given  the store operates on a channel named "Web store"
+  When  I want to modify this channel
+  And  I allow for paying in "Euro"
+  And  I choose "English (United States)" as a default locale
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  paying in Euro should be possible for the "Web store" channel
+

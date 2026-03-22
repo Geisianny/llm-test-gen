@@ -1,0 +1,12 @@
+Scenario 4: Check packages in test channel
+  When  I follow the left menu "Software > Channel List > All"
+  And  I follow "Show All Child Channels"
+  And  I follow "Fake-RPM-SUSE-Channel"
+  And  I follow "Packages"
+  Then  I should see package "andromeda-dummy-2.0-1.1.noarch"
+  And  I should see package "hoag-dummy-1.1-1.1.i586"
+  And  I should see package "hoag-dummy-1.1-1.1.x86_64"
+  And  I should see package "milkyway-dummy-2.0-1.1.i586"
+  And  I should see package "milkyway-dummy-2.0-1.1.x86_64"
+  And  I should see package "virgo-dummy-2.0-1.1.noarch"
+

@@ -1,0 +1,8 @@
+Scenario 1: Pre-requisite: install old packages on SLES minion
+  When  I apply highstate on "sle_minion"
+  And  I enable repository "test_repo_rpm_pool" on this "sle_minion"
+  And  I refresh the metadata for "sle_minion"
+  And  I install old package "milkyway-dummy-1.0" on this "sle_minion" without error control
+  And  I install old package "virgo-dummy-1.0" on this "sle_minion" without error control
+  And  I install old package "andromeda-dummy-1.0" on this "sle_minion" without error control
+

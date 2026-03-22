@@ -1,0 +1,8 @@
+Scenario 1: New user KYC submission
+  Given  I am a new user "newuser@example.com"
+  And  I am not KYC verified
+  When  I submit my KYC documents:
+  Then  my KYC status should be "pending"
+  And  compliance team should be notified
+  And  I should receive submission confirmation
+

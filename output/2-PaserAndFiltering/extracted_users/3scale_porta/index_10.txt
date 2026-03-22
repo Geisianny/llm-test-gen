@@ -1,0 +1,33 @@
+Feature: Audience > Accounts
+Tags: ['@javascript']
+
+Background: 
+  Given  a provider is logged in
+
+Scenario 1: Empty state
+  Given  the provider has no buyers
+  When  they go to the buyer accounts page
+  Then  they should see an empty state
+  And  should see "Add your first account"
+
+Scenario 2: Provider has one account plan only
+  Given  a buyer "Alice" of the provider
+  When  they go to the buyer accounts page
+  Then  the table does not have a column "Plan"
+
+Scenario 3: Provider has "multiple_applications" denied
+  Given  a buyer "Pepe" of the provider
+  And  the default product of the provider has name "The API"
+  And  the following application plan:
+  And  the provider has "multiple_applications" denied
+  When  they go to the buyer accounts page
+  Then  the table don't have a column "Apps"
+
+Scenario 4: Provider has "multiple_applications" visible
+  Given  a buyer "Pepe" of the provider
+  And  the default product of the provider has name "The API"
+  And  the following application plan:
+  And  the provider has "multiple_applications" visible
+  When  they go to the buyer accounts page
+  Then  should see following table:
+

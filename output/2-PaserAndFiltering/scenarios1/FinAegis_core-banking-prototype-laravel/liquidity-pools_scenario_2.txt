@@ -1,0 +1,8 @@
+Scenario 2: Add initial liquidity to empty pool
+  Given  a liquidity pool exists for "BTC/EUR"
+  And  I am logged in as "alice@example.com"
+  When  I add liquidity to the "BTC/EUR" pool:
+  Then  the pool reserves should be:
+  And  I should have pool shares worth "219.089023"
+  And  my balances should be:
+

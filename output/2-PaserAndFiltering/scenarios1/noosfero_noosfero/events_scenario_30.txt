@@ -1,0 +1,6 @@
+Scenario 30: go to event page
+  Given  the following events
+  Given  I am on /profile/josesilva/events/2009/10
+  When  I follow "Oktoberfest"
+  Then  I should see "Oktoberfest"
+

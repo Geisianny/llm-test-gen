@@ -1,0 +1,8 @@
+Scenario 4: Changing a simple product price
+  Tags: ['@ui']
+  Given  I want to modify the "Dice Brewing" product
+  When  I change its price to $15.00 for "United States" channel
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  it should be priced at $15.00 for channel "United States"
+

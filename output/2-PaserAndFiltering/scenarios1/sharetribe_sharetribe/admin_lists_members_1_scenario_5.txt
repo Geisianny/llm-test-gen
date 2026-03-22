@@ -1,0 +1,10 @@
+Scenario 5: Admin promotes user to admin
+  Given  I will confirm all following confirmation dialogs in this page if I am running PhantomJS
+  Then  I should see "manager Admin"
+  Then  I should see "john doe Admin"
+  Then  I should see "jane doe (Puckett)"
+  When  I promote "jane doe" to admin2
+  Then  I should see "jane doe (Puckett) Admin"
+  When  I refresh the page
+  Then  I should see "jane doe (Puckett) Admin"
+

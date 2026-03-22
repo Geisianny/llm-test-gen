@@ -1,0 +1,11 @@
+Scenario 8: Check package file list page
+  When  I follow the left menu "Software > Channel List > All"
+  And  I follow "Show All Child Channels"
+  And  I follow "Fake-RPM-SUSE-Channel"
+  And  I follow "Packages"
+  And  I follow "andromeda-dummy-2.0-1.1.noarch"
+  And  I follow "File List"
+  Then  I should see a "This package contains the following files." text
+  And  I should see a "/usr/share/doc/packages/andromeda-dummy/COPYING" text
+  And  I should see a "sha256: 32b1062f7da84967e7019d01ab805935caa7ab7321a7ced0e30ebe75e5df1670" text
+

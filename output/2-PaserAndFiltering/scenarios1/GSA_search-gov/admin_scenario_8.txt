@@ -1,0 +1,11 @@
+Scenario 8: Viewing Boosted Content (both affiliate and Search.USA.gov)
+  Given  the following Affiliates exist:
+  And  the following Boosted Content entries exist for the affiliate "bar.gov"
+  When  I go to the admin home page
+  And  I follow "Best Bets: Text"
+  Then  I should see the following breadcrumbs: Super Admin > Best Bets: Text
+  And  I should see "Bar Emergency Page"
+  And  I should not see "Our Emergency Page"
+  When  I follow "Show"
+  Then  I should see "safety"
+

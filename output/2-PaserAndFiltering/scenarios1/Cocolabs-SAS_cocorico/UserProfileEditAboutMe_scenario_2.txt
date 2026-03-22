@@ -1,0 +1,12 @@
+Scenario 2: As a offerer i can set my profile picture and description
+  Given  I am logged in as user "offerer@cocorico.rocks" with password "12345678"
+  When  I click on dashboard menu "Profile" of "offerer"
+  And  I wait 500 ms for Jquery loading
+  And  I attach the file "images/profile.png" to "user_image_new"
+  And  I wait 2000 ms
+  And  I fill in the following:
+  And  I press "Update"
+  Then  I should be on the "user dashboard profile edit about me" page
+  And  I wait 3000 ms
+  And  I should see "SUCCESS! Your profile has been modified successfully" in the "div.flashes div.alert" element
+

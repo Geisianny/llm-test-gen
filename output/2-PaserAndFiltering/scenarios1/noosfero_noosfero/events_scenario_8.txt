@@ -1,0 +1,6 @@
+Scenario 8: list events for specific day
+  Given  I am on /profile/josesilva/events/2009/10
+  And  the following events
+  When  I am on /profile/josesilva/events/2009/10/25
+  Then  I should see "WikiSym 2009"
+

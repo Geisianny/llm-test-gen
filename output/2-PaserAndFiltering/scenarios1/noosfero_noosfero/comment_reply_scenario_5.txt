@@ -1,0 +1,9 @@
+Scenario 5: not render same reply form twice
+  Tags: ['@selenium-fixme']
+  Given  I am on /booking/article-to-comment
+  And  I follow "Reply" within ".comments-action-bar"
+  And  I follow "Cancel" within ".comment-balloon"
+  When  I follow "Reply" within ".comments-action-bar"
+  Then  there should be 1 "comment_form" within "comment_reply"
+  And  I should see "Enter your comment" within "div.comment_reply.opened"
+

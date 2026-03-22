@@ -1,0 +1,7 @@
+Scenario 30: Get Custom Costs file returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/cloud-cost-management']
+  Given  new "GetCustomCostsFile" request
+  And  request contains "file_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 200 OK
+

@@ -1,0 +1,6 @@
+Scenario 5: List Org Configs returns "OK" response
+  Tags: ['@team:DataDog/team-aaa-identity']
+  Given  new "ListOrgConfigs" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

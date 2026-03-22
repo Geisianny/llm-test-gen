@@ -1,0 +1,9 @@
+Scenario 1: setting up multiple markets with pap program from the same account. The first market with the volume snapshot is earmarking as much as it can and the second market earmarks whatever is left although the second one's auction starts before the first one. (0097-PAPU-027)
+  When  the protocol automated purchase is defined as:
+  Then  the oracles broadcast data with block time signed with "0xCAFECAFE2":
+  And  the network moves ahead "30" blocks
+  Then  the automated purchase program for market "BTC/ETH" should have a snapshot balance of "1000"
+  And  the trading mode should be "TRADING_MODE_PROTOCOL_AUTOMATED_PURCHASE_AUCTION" for the market "BTC/ETH"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH2"
+  And  the order book should have the following volumes for market "BTC/ETH":
+

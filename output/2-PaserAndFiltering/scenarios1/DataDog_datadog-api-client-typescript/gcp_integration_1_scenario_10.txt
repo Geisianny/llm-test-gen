@@ -1,0 +1,7 @@
+Scenario 10: Create a new entry for your service account with resource collection enabled disabled and cspm enabled returns "Bad Request" response
+  Tags: ['@team:DataDog/gcp-integrations']
+  Given  new "CreateGCPSTSAccount" request
+  And  body with value {"data": {"attributes": {"resource_collection_enabled": false, "is_cspm_enabled": true, "client_email": "Test-{{ unique_hash }}@test-project.iam.gserviceaccount.com", "host_filters": []}, "type": "gcp_service_account"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

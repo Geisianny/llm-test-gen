@@ -1,0 +1,10 @@
+Scenario 28: Cleanup: delete all profiles with key
+  Tags: ['@scc_credentials']
+  When  I follow the left menu "Images > Profiles"
+  And  I check "suse_key" in the list
+  And  I check "suse_real_key" in the list
+  And  I click on "Delete"
+  And  I should see a "Are you sure you want to delete selected profiles?" text
+  And  I click on the red confirmation button
+  And  I wait until I see "Image profiles have been deleted" text
+

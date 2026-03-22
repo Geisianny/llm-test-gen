@@ -1,0 +1,5 @@
+Scenario 6: Download package, user with a valid token that cant be used until tomorrow for the org
+  Given  I have a not yet usable valid token for organization "1"
+  When  I try to download "virgo-dummy-2.0-1.1.noarch.rpm" from channel "fake-rpm-suse-channel"
+  Then  the download should get a 403 response
+

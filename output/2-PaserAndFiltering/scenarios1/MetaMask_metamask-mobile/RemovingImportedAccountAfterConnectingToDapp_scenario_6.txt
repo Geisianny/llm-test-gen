@@ -1,0 +1,8 @@
+Scenario 6: User switches back to sushiswap and verifies that account 1 is still connected
+  When  I dismiss the connected accounts modal
+  And  I tap on the tab button
+  And  I tap on browser tab with text "app.sushi.com"
+  Then  I should be connected to the dapp
+  And  "Account 2" is not displayed
+  And  "Account 1" is visible
+

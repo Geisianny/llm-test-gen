@@ -1,0 +1,4 @@
+Scenario 6: Prepare Oracle 9 Salt SSH minion firewall for monitoring
+  Tags: ['@monitoring_server']
+  When  I enable firewall ports for monitoring on this "oracle9_ssh_minion"
+

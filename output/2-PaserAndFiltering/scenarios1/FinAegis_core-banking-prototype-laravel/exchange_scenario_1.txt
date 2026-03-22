@@ -1,0 +1,8 @@
+Scenario 1: Place a limit buy order
+  Given  I am logged in as "alice@example.com"
+  When  I place a limit buy order for "0.1" "BTC" at "48000" "EUR"
+  Then  the order should be placed successfully
+  And  the order should have status "open"
+  And  my "EUR" balance should be reduced by "4800.00"
+  And  my locked "EUR" balance should be "4800.00"
+

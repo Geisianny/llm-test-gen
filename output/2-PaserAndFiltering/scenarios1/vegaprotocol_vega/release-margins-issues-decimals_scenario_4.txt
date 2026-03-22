@@ -1,0 +1,20 @@
+Scenario 4: a party place a new order in the system, party is closing position via closeout of other parties
+  Tags: ['@MarginRelease', '@NoPerp']
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  Then  the parties place the following orders:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the mark price should be "1000" for the market "ETH/DEC19"
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following margin levels:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following profit and loss:
+  And  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  And  the network moves ahead "1" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the parties should have the following account balances:
+  And  the parties should have the following profit and loss:
+

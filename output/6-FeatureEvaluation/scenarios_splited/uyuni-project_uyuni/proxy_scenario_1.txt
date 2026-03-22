@@ -1,0 +1,6 @@
+Scenario: Register containerized proxy with valid details
+  Given the system administrator is logged in
+  And the containerized proxy is not already registered
+  When the administrator registers the containerized proxy with valid details
+  Then the system registers the containerized proxy successfully
+  And the proxy is recognized by the server

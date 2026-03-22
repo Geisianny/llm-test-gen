@@ -1,0 +1,6 @@
+Scenario 2: Payment method added at no position is added as the last one
+  Tags: ['@api', '@ui']
+  Given  the store allows paying with "Credit Card"
+  When  I browse payment methods
+  Then  the last payment method on the list should have name "Credit Card"
+

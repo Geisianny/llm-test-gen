@@ -1,0 +1,8 @@
+Scenario 1: Admin can change social share buttons property
+  Tags: ['@javascript']
+  When  I choose "community_enable_social_share_buttons_true"
+  And  I press submit
+  And  I wait for 1 seconds
+  And  I refresh the page
+  Then  the "community_enable_social_share_buttons_true" checkbox should be checked
+

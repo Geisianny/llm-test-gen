@@ -1,0 +1,9 @@
+Scenario 2: Preventing from changing shipping method after checkout
+  Tags: ['@api', '@no-ui']
+  Given  I added product "Sig Sauer P226" to the cart
+  And  I addressed the cart
+  And  I chose "Free" shipping method and "Cash on Delivery" payment method
+  And  I confirmed my order
+  When  I try to change shipping method to "UPS"
+  Then  I should be informed that cart is no longer available
+

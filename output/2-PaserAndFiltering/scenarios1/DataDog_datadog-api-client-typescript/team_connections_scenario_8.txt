@@ -1,0 +1,7 @@
+Scenario 8: List team connections returns "OK" response
+  Tags: ['@skip', '@team:DataDog/aaa-omg']
+  Given  operation "ListTeamConnections" enabled
+  And  new "ListTeamConnections" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

@@ -1,0 +1,5 @@
+Scenario 9: Republish non-editionable content types
+  Given  Contacts exist
+  When  I select all of type "Contact" for republishing
+  Then  I can see all of type "Contact" have been queued for republishing
+

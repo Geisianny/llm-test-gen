@@ -1,0 +1,11 @@
+Scenario 1: Buyer buyes listing
+  Given  there is a listing with title "car spare parts" from "kassi_testperson1" with category "Items" and with listing shape "Selling For Profit"
+  And  the price of that listing is 100.00 EUR
+  And  I go to the listing page
+  When  I press "Buy For Money"
+  When  I fill in "message" with "Hallo Sally"
+  And  I pay with stripe
+  Then  I should see "Payment authorized"
+  And  I should see "Total: €100"
+  And  I should see "Hallo Sally"
+

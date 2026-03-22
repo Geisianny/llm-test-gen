@@ -1,0 +1,5 @@
+Scenario 1: Finance support email not defined
+  Given  the provider has finance support email set to ""
+  When  they go to the emails settings page
+  Then  the provider's finance support email should be "support@api.test"
+

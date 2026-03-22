@@ -1,0 +1,7 @@
+Scenario 7: The Debian-like minion is healthy
+  Tags: ['@deblike_minion']
+  Then  "deblike_minion" should have a FQDN
+  And  reverse resolution should work for "deblike_minion"
+  And  "deblike_minion" should communicate with the server using public interface
+  And  the clock from "deblike_minion" should be exact
+

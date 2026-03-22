@@ -1,0 +1,9 @@
+Scenario 1: Updating the cart on checkout
+  Tags: ['@no-api', '@ui']
+  Given  I added product "T-Shirt banana" to the cart
+  And  I changed product "T-Shirt banana" quantity to 2 in my cart
+  When  I check the details of my cart
+  And  I proceed to the checkout
+  Then  I should be on the checkout addressing page
+  And  the quantity of "T-Shirt banana" should be 2
+

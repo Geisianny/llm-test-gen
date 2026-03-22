@@ -1,0 +1,5 @@
+Scenario 2: Create a new pimcore brick with a input field
+  Given  there is a pimcore brick "Attributes"
+  And  the definition has a input field "name"
+  Then  the definition should have a field named "name"
+

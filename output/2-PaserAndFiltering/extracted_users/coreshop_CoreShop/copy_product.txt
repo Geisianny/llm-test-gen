@@ -1,0 +1,11 @@
+Feature: Adding a new Product and copy it
+Tags: ['@domain', '@product']
+
+Background: 
+  Given  the site operates on a store in "Austria"
+  Given  the site has a product "Shoe" priced at 100
+
+Scenario 1: Copy the product
+  Given  I copy the product
+  Then  the product and the copied-object should have it's own price
+

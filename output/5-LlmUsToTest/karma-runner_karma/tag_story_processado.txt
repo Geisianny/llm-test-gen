@@ -1,0 +1,36 @@
+Scenario: Add JavaScript version tag in Firefox
+  Given the user is using the Karma Test Runner CLI
+  And the browser is Firefox
+  When the user adds a JavaScript version tag
+  Then the system includes the JavaScript version tag in the test configuration
+  And the test is executed with the JavaScript version tag
+
+Scenario: Add JavaScript version tag in non-Firefox browser
+  Given the user is using the Karma Test Runner CLI
+  And the browser is Chrome
+  When the user adds a JavaScript version tag
+  Then the system does not include the JavaScript version tag in the test configuration
+  And the test is executed without the JavaScript version tag
+
+Scenario: Manage multiple JavaScript version tags in Firefox
+  Given the user is using the Karma Test Runner CLI
+  And the browser is Firefox
+  And there are existing JavaScript version tags
+  When the user adds a new JavaScript version tag
+  Then the system includes all JavaScript version tags in the test configuration
+  And the test is executed with the JavaScript version tags
+
+Scenario: Verify JavaScript version tag is ignored in non-Firefox browsers
+  Given the user is using the Karma Test Runner CLI
+  And the browser is Safari
+  When the user adds a JavaScript version tag
+  Then the system ignores the JavaScript version tag
+  And the test is executed as if the tag was not added
+
+Scenario: Validate test execution with and without JavaScript version tag
+  Given the user is using the Karma Test Runner CLI
+  And there is a test that requires a JavaScript version tag
+  When the user runs the test in Firefox with the JavaScript version tag
+  Then the test is executed successfully
+  And when the user runs the test in Chrome without the JavaScript version tag
+  Then the test is skipped or fails as expected

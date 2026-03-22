@@ -1,0 +1,6 @@
+Scenario: Send a message to an offerer
+  Given there is a user "asker@example.com" who wants to send a message
+  And there is an offerer "offerer@example.com" with a listed item
+  When the user "asker@example.com" sends a message to "offerer@example.com"
+  Then the system records the message
+  And the offerer "offerer@example.com" receives the message

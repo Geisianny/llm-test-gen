@@ -1,0 +1,5 @@
+Scenario 3: display both sub types on sub-organizations page
+  When  I go to springfield's "children" page from "SubOrganizationsPluginProfileController" of "SubOrganizations" plugin
+  Then  I should see "Moe"
+  And  I should see "Duff"
+

@@ -1,0 +1,8 @@
+Scenario 22: Update On-Call escalation policy returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/on-call']
+  Given  new "UpdateOnCallEscalationPolicy" request
+  And  request contains "policy_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"name": "Escalation Policy 1", "resolve_page_on_policy_end": false, "retries": 2, "steps": [{"assignment": "default", "escalate_after_seconds": 3600, "id": "00000000-aba1-0000-0000-000000000000", "targets": [{"id": "00000000-aba1-0000-0000-000000000000", "type": "users"}, {"id": "00000000-aba2-0000-0000-000000000000", "type": "schedules"}]}]}, "id": "a3000000-0000-0000-0000-000000000000", "relationships": {"teams": {"data": [{"id": "00000000-da3a-0000-0000-000000000000", "type": "teams"}]}}, "type": "policies"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

@@ -1,0 +1,8 @@
+Scenario Outline 6: Create Password - Example 1
+  And  I type Metapass12345!@ in confirm password field
+  And  I tap "Create Password"
+
+  Examples:
+    | SRP | password |
+    | fold media south add since false relax immense pause cloth just raven | Metapass12345!@ |
+

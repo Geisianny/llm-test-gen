@@ -1,0 +1,6 @@
+Scenario 1: Deleted shipping category should disappear from the registry
+  Tags: ['@api', '@ui']
+  When  I delete shipping category "Standard"
+  Then  I should be notified that it has been successfully deleted
+  Then  this shipping category should no longer exist in the registry
+

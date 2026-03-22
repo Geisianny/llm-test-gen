@@ -1,0 +1,9 @@
+Scenario 17: Update a custom variable returns "OK" response
+  Tags: ['@skip-terraform-config', '@team:Datadog/collaboration-integrations']
+  Given  there is a valid "webhook_custom_variable" in the system
+  And  new "UpdateWebhooksIntegrationCustomVariable" request
+  And  request contains "custom_variable_name" parameter from "webhook_custom_variable.name"
+  And  body with value {"value": "variable-updated"}
+  When  the request is sent
+  Then  the response status is 200 OK
+

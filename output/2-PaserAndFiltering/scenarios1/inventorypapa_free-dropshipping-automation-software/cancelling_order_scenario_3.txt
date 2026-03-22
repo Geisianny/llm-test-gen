@@ -1,0 +1,6 @@
+Scenario 3: Checking order payment state of a cancelled order
+  Tags: ['@ui', '@api']
+  Given  this order was cancelled
+  When  I browse orders
+  Then  this order should have order payment state "Cancelled"
+

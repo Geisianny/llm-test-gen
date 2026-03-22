@@ -1,0 +1,5 @@
+Scenario 1: User page requires login
+  Given  user is not logged in
+  When  they go to the provider users page
+  Then  the current page is the provider login page
+

@@ -1,0 +1,5 @@
+Scenario 1: Registering administrator account
+  Given  I provide full administrator data
+  When  I run Sylius CLI installer
+  Then  I should see output "Administrator account successfully registered."
+

@@ -1,0 +1,6 @@
+Scenario 6: Buyer sends an empty form
+  Tags: ['@javascript']
+  Given  they go to the personal details page
+  When  they don't provide any personal details
+  Then  they should not be able to edit their personal details
+

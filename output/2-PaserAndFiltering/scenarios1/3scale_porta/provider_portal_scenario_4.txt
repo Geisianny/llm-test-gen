@@ -1,0 +1,6 @@
+Scenario 4: Members of portal group can not access portal groups area
+  Given  an active user "member" of account "foo.3scale.localhost"
+  And  user "member" has access to the admin section "portal"
+  When  I log in as provider "member"
+  Then  they should see an error when going to the groups page
+

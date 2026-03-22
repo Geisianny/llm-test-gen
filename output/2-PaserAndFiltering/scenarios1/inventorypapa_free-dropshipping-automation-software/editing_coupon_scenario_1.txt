@@ -1,0 +1,8 @@
+Scenario 1: Changing coupon expires date
+  Tags: ['@ui']
+  Given  I want to modify the "SANTA2016" coupon for this promotion
+  When  I change expires date to "21.05.2019"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this coupon should be valid until "21.05.2019"
+

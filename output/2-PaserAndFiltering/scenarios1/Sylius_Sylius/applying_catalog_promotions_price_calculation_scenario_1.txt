@@ -1,0 +1,6 @@
+Scenario 1: Discounted price is round
+  Tags: ['@api', '@ui']
+  When  I view product "Orange Juice"
+  Then  I should see the product price "$17.00"
+  And  I should see the product original price "$20.00"
+

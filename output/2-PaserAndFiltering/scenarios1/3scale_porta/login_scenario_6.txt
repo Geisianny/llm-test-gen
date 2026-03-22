@@ -1,0 +1,6 @@
+Scenario 6: Captcha is enabled
+  Tags: ['@recaptcha']
+  Given  the provider has bot protection enabled for its buyers
+  When  the buyer wants to log in
+  Then  the captcha is present
+

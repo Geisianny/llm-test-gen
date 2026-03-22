@@ -1,0 +1,48 @@
+Scenario 10: Parametrize DNS on the Retail branch server
+  When  I follow "Formulas" in the content area
+  And  I follow first "Bind" in the content area
+  And  I click on "Expand All Sections"
+  And  I check include forwarders box
+  And  I press "Add Item" in config options section
+  And  I enter "empty-zones-enable" in first option field
+  And  I enter "no" in first value field
+  And  I enter "example.org" in first configured zone name field
+  And  I press "Add Item" in configured zones section
+  And  I enter the local zone name in second configured zone name field
+  And  I enter "example.org" in first available zone name field
+  And  I enter "master/db.example.org" in file name field of example.org zone
+  And  I enter "proxy" in SOA name server field of example.org zone
+  And  I enter "admin@example.org." in SOA contact field of example.org zone
+  And  I press "Add Item" in A section of example.org zone
+  And  I enter "proxy" in first A name field of example.org zone
+  And  I enter the local IP address of "proxy" in first A address field of example.org zone
+  And  I press "Add Item" in A section of example.org zone
+  And  I enter "sle15sp6terminal" in second A name field of example.org zone
+  And  I enter the local IP address of "sle15sp6_terminal" in second A address field of example.org zone
+  And  I press "Add Item" in A section of example.org zone
+  And  I enter "sle15sp7terminal" in third A name field of example.org zone
+  And  I enter the local IP address of "sle15sp7_terminal" in third A address field of example.org zone
+  And  I press "Add Item" in NS section of example.org zone
+  And  I enter "proxy.example.org." in first NS field of example.org zone
+  And  I press "Add Item" in CNAME section of example.org zone
+  And  I enter "ftp" in first CNAME alias field of example.org zone
+  And  I enter "proxy" in first CNAME name field of example.org zone
+  And  I press "Add Item" in CNAME section of example.org zone
+  And  I enter "tftp" in second CNAME alias field of example.org zone
+  And  I enter "proxy" in second CNAME name field of example.org zone
+  And  I press "Add Item" in CNAME section of example.org zone
+  And  I enter "salt" in third CNAME alias field of example.org zone
+  And  I enter "proxy" in third CNAME name field of example.org zone
+  And  I press "Add Item" in available zones section
+  And  I enter the local zone name in second available zone name field
+  And  I enter the local file name in file name field of zone with local name
+  And  I enter "proxy.example.org." in SOA name server field of zone with local name
+  And  I enter "admin@example.org." in SOA contact field of zone with local name
+  And  I press "Add Item" in NS section of zone with local name
+  And  I enter "proxy.example.org." in first NS field of zone with local name
+  And  I enter the local network in generate reverse network field of zone with local name
+  And  I press "Add Item" in for zones section of zone with local name
+  And  I enter "example.org" in first for zones field of zone with local name
+  And  I click on "Save Formula"
+  Then  I should see a "Formula saved" text
+

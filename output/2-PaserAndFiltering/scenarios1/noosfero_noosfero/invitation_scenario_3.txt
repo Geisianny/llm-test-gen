@@ -1,0 +1,5 @@
+Scenario 3: go to invitation screen when follow link to invite friends
+  Given  I am on /myprofile/josesilva/friends
+  When  I follow "Invite people"
+  Then  I am on /profile/josesilva/invite/friends
+

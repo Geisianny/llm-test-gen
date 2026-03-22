@@ -1,0 +1,5 @@
+Scenario 3: As a logged-in user I can post a report
+  When  I am logged as "jacques.picard@en-marche.fr"
+  And  I send a "POST" request to "/api/report/comites/515a56c0-bde8-56ef-b90c-4745b1c93818" with body:
+  Then  the response status code should be 201
+

@@ -1,0 +1,6 @@
+Scenario: Validate test execution with and without JavaScript version tag
+  Given the user is using the Karma Test Runner CLI
+  And there is a test that requires a JavaScript version tag
+  When the user runs the test in Firefox with the JavaScript version tag
+  Then the test is executed successfully
+  And when the user runs the test in Chrome without the JavaScript version tag

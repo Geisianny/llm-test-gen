@@ -1,0 +1,400 @@
+RELATÓRIO INDIVIDUAL - ANÁLISE GHERKIN-LINT
+============================================================
+Data da análise: 19/01/2026 23:14:25
+Arquivo analisado: output/6-FeatureEvaluation/featuresToEvaluation/Originais\ledgersmb_LedgerSMB\chart-of-accounts_story_processado.feature
+Comando executado: node 6-FeatureEvaluation/gherkin-lint/dist/main.js -c 6-FeatureEvaluation/gherkin-lint/.gherkin-lintrc output/6-FeatureEvaluation/featuresToEvaluation/Originais\ledgersmb_LedgerSMB\chart-of-accounts_story_processado.feature
+
+Status: ENCONTRADOS 127 PROBLEMAS
+
+PROBLEMAS ENCONTRADOS:
+----------------------------------------
+1. [0;4mD:\Meus Documentos\Documents\teste\output\6-FeatureEvaluation\featuresToEvaluation\Originais\ledgersmb_LedgerSMB\chart-of-accounts_story_processado.feature[24m
+
+2. [38;5;243m3  [0m    Element Scenario too long: actual 44, expected 15                                                                                               [38;5;243mscenario-size[0m
+
+3. [38;5;243m4  [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+4. [38;5;243m5  [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+5. [38;5;243m6  [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+6. [38;5;243m6  [0m    Step name is too long. Length of 80 is longer than the maximum allowed: 70                                                                      [38;5;243mname-length[0m
+
+7. [38;5;243m7  [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+8. [38;5;243m8  [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+9. [38;5;243m9  [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+10. [38;5;243m9  [0m    Step name is too long. Length of 111 is longer than the maximum allowed: 70                                                                     [38;5;243mname-length[0m
+
+11. [38;5;243m10 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+12. [38;5;243m10 [0m    Step "When I click Account Number "1205"" should not appear after step using keyword then                                                       [38;5;243mkeywords-in-logical-order[0m
+
+13. [38;5;243m11 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+14. [38;5;243m12 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+15. [38;5;243m12 [0m    Step name is too long. Length of 77 is longer than the maximum allowed: 70                                                                      [38;5;243mname-length[0m
+
+16. [38;5;243m13 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+17. [38;5;243m14 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+18. [38;5;243m15 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+19. [38;5;243m16 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+20. [38;5;243m17 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+21. [38;5;243m17 [0m    Step "When I enter "Chairs" into "Description"" should not appear after step using keyword then                                                 [38;5;243mkeywords-in-logical-order[0m
+
+22. [38;5;243m18 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+23. [38;5;243m19 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+24. [38;5;243m20 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+25. [38;5;243m21 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+26. [38;5;243m22 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+27. [38;5;243m23 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+28. [38;5;243m24 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+29. [38;5;243m25 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+30. [38;5;243m26 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+31. [38;5;243m27 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+32. [38;5;243m28 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+33. [38;5;243m29 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+34. [38;5;243m30 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+35. [38;5;243m31 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+36. [38;5;243m32 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+37. [38;5;243m33 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+38. [38;5;243m34 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+39. [38;5;243m34 [0m    Step "When I select "Custom Summary" from the drop down "Summary account for"" should not appear after step using keyword then                  [38;5;243mkeywords-in-logical-order[0m
+
+40. [38;5;243m35 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+41. [38;5;243m36 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+42. [38;5;243m37 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+43. [38;5;243m38 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+44. [38;5;243m39 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+45. [38;5;243m39 [0m    Step "Then I expect to see 0 selected checkboxes in "Custom Flags"" should use And instead of Then                                              [38;5;243muse-and[0m
+
+46. [38;5;243m40 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+47. [38;5;243m41 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+48. [38;5;243m41 [0m    Step "When I select "Inventory" from the drop down "Summary account for"" should not appear after step using keyword then                       [38;5;243mkeywords-in-logical-order[0m
+
+49. [38;5;243m42 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+50. [38;5;243m43 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+51. [38;5;243m44 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+52. [38;5;243m44 [0m    Step "When I navigate the menu and select the item at "General Journal > Chart of Accounts"" should not appear after step using keyword then    [38;5;243mkeywords-in-logical-order[0m
+
+53. [38;5;243m44 [0m    Step name is too long. Length of 80 is longer than the maximum allowed: 70                                                                      [38;5;243mname-length[0m
+
+54. [38;5;243m45 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+55. [38;5;243m46 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+56. [38;5;243m47 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+57. [38;5;243m47 [0m    Step name is too long. Length of 86 is longer than the maximum allowed: 70                                                                      [38;5;243mname-length[0m
+
+58. [38;5;243m49 [0m    Multiple empty lines are not allowed                                                                                                            [38;5;243mno-multiple-empty-lines[0m
+
+59. [38;5;243m50 [0m    Multiple empty lines are not allowed                                                                                                            [38;5;243mno-multiple-empty-lines[0m
+
+60. [38;5;243m51 [0m    Scenario name is too long. Length of 75 is longer than the maximum allowed: 70                                                                  [38;5;243mname-length[0m
+
+61. [38;5;243m52 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+62. [38;5;243m52 [0m    Step name is too long. Length of 80 is longer than the maximum allowed: 70                                                                      [38;5;243mname-length[0m
+
+63. [38;5;243m53 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+64. [38;5;243m54 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+65. [38;5;243m55 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+66. [38;5;243m55 [0m    Step name is too long. Length of 94 is longer than the maximum allowed: 70                                                                      [38;5;243mname-length[0m
+
+67. [38;5;243m56 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+68. [38;5;243m56 [0m    Step "When I click Account Number "1000"" should not appear after step using keyword then                                                       [38;5;243mkeywords-in-logical-order[0m
+
+69. [38;5;243m57 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+70. [38;5;243m58 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+71. [38;5;243m59 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+72. [38;5;243m59 [0m    Step "When I enter "Assets" into "Description"" should not appear after step using keyword then                                                 [38;5;243mkeywords-in-logical-order[0m
+
+73. [38;5;243m60 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+74. [38;5;243m61 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+75. [38;5;243m62 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+76. [38;5;243m62 [0m    Step "When I navigate the menu and select the item at "General Journal > Chart of Accounts"" should not appear after step using keyword then    [38;5;243mkeywords-in-logical-order[0m
+
+77. [38;5;243m62 [0m    Step name is too long. Length of 80 is longer than the maximum allowed: 70                                                                      [38;5;243mname-length[0m
+
+78. [38;5;243m63 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+79. [38;5;243m64 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+80. [38;5;243m65 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+81. [38;5;243m65 [0m    Step name is too long. Length of 86 is longer than the maximum allowed: 70                                                                      [38;5;243mname-length[0m
+
+82. [38;5;243m67 [0m    Multiple empty lines are not allowed                                                                                                            [38;5;243mno-multiple-empty-lines[0m
+
+83. [38;5;243m68 [0m    Multiple empty lines are not allowed                                                                                                            [38;5;243mno-multiple-empty-lines[0m
+
+84. [38;5;243m70 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+85. [38;5;243m70 [0m    Step name is too long. Length of 80 is longer than the maximum allowed: 70                                                                      [38;5;243mname-length[0m
+
+86. [38;5;243m71 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+87. [38;5;243m72 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+88. [38;5;243m73 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+89. [38;5;243m73 [0m    Step "When I click Account Number "1060"" should not appear after step using keyword then                                                       [38;5;243mkeywords-in-logical-order[0m
+
+90. [38;5;243m74 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+91. [38;5;243m75 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+92. [38;5;243m75 [0m    Step "When I select the "Account" tab" should not appear after step using keyword then                                                          [38;5;243mkeywords-in-logical-order[0m
+
+93. [38;5;243m76 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+94. [38;5;243m77 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+95. [38;5;243m78 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+96. [38;5;243m79 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+97. [38;5;243m80 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+98. [38;5;243m80 [0m    Step "When I navigate the menu and select the item at "General Journal > Chart of Accounts"" should not appear after step using keyword then    [38;5;243mkeywords-in-logical-order[0m
+
+99. [38;5;243m80 [0m    Step name is too long. Length of 80 is longer than the maximum allowed: 70                                                                      [38;5;243mname-length[0m
+
+100. [38;5;243m81 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+101. [38;5;243m82 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+102. [38;5;243m83 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+103. [38;5;243m83 [0m    Step name is too long. Length of 93 is longer than the maximum allowed: 70                                                                      [38;5;243mname-length[0m
+
+104. [38;5;243m85 [0m    Multiple empty lines are not allowed                                                                                                            [38;5;243mno-multiple-empty-lines[0m
+
+105. [38;5;243m86 [0m    Multiple empty lines are not allowed                                                                                                            [38;5;243mno-multiple-empty-lines[0m
+
+106. [38;5;243m88 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+107. [38;5;243m88 [0m    Step name is too long. Length of 80 is longer than the maximum allowed: 70                                                                      [38;5;243mname-length[0m
+
+108. [38;5;243m89 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+109. [38;5;243m90 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+110. [38;5;243m91 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+111. [38;5;243m91 [0m    Step "When I click Account Number "1000"" should not appear after step using keyword then                                                       [38;5;243mkeywords-in-logical-order[0m
+
+112. [38;5;243m92 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+113. [38;5;243m93 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+114. [38;5;243m93 [0m    Step "When I select the "Heading" tab" should not appear after step using keyword then                                                          [38;5;243mkeywords-in-logical-order[0m
+
+115. [38;5;243m94 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+116. [38;5;243m95 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+117. [38;5;243m96 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+118. [38;5;243m97 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+119. [38;5;243m98 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+120. [38;5;243m98 [0m    Step "When I navigate the menu and select the item at "General Journal > Chart of Accounts"" should not appear after step using keyword then    [38;5;243mkeywords-in-logical-order[0m
+
+121. [38;5;243m98 [0m    Step name is too long. Length of 80 is longer than the maximum allowed: 70                                                                      [38;5;243mname-length[0m
+
+122. [38;5;243m99 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+123. [38;5;243m100[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+124. [38;5;243m101[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+
+125. [38;5;243m101[0m    Step name is too long. Length of 93 is longer than the maximum allowed: 70                                                                      [38;5;243mname-length[0m
+
+126. [38;5;243m103[0m    Multiple empty lines are not allowed                                                                                                            [38;5;243mno-multiple-empty-lines[0m
+
+127. [38;5;243m104[0m    Multiple empty lines are not allowed                                                                                                            [38;5;243mno-multiple-empty-lines[0m
+
+AVISOS/INFORMAÇÕES ADICIONAIS:
+----------------------------------------
+[0;4mD:\Meus Documentos\Documents\teste\output\6-FeatureEvaluation\featuresToEvaluation\Originais\ledgersmb_LedgerSMB\chart-of-accounts_story_processado.feature[24m
+  [38;5;243m3  [0m    Element Scenario too long: actual 44, expected 15                                                                                               [38;5;243mscenario-size[0m
+  [38;5;243m4  [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m5  [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m6  [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m6  [0m    Step name is too long. Length of 80 is longer than the maximum allowed: 70                                                                      [38;5;243mname-length[0m
+  [38;5;243m7  [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m8  [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m9  [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m9  [0m    Step name is too long. Length of 111 is longer than the maximum allowed: 70                                                                     [38;5;243mname-length[0m
+  [38;5;243m10 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m10 [0m    Step "When I click Account Number "1205"" should not appear after step using keyword then                                                       [38;5;243mkeywords-in-logical-order[0m
+  [38;5;243m11 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m12 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m12 [0m    Step name is too long. Length of 77 is longer than the maximum allowed: 70                                                                      [38;5;243mname-length[0m
+  [38;5;243m13 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m14 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m15 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m16 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m17 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m17 [0m    Step "When I enter "Chairs" into "Description"" should not appear after step using keyword then                                                 [38;5;243mkeywords-in-logical-order[0m
+  [38;5;243m18 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m19 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m20 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m21 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m22 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m23 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m24 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m25 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m26 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m27 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m28 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m29 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m30 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m31 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m32 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m33 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m34 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m34 [0m    Step "When I select "Custom Summary" from the drop down "Summary account for"" should not appear after step using keyword then                  [38;5;243mkeywords-in-logical-order[0m
+  [38;5;243m35 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m36 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m37 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m38 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m39 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m39 [0m    Step "Then I expect to see 0 selected checkboxes in "Custom Flags"" should use And instead of Then                                              [38;5;243muse-and[0m
+  [38;5;243m40 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m41 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m41 [0m    Step "When I select "Inventory" from the drop down "Summary account for"" should not appear after step using keyword then                       [38;5;243mkeywords-in-logical-order[0m
+  [38;5;243m42 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m43 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m44 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m44 [0m    Step "When I navigate the menu and select the item at "General Journal > Chart of Accounts"" should not appear after step using keyword then    [38;5;243mkeywords-in-logical-order[0m
+  [38;5;243m44 [0m    Step name is too long. Length of 80 is longer than the maximum allowed: 70                                                                      [38;5;243mname-length[0m
+  [38;5;243m45 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m46 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m47 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m47 [0m    Step name is too long. Length of 86 is longer than the maximum allowed: 70                                                                      [38;5;243mname-length[0m
+  [38;5;243m49 [0m    Multiple empty lines are not allowed                                                                                                            [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m50 [0m    Multiple empty lines are not allowed                                                                                                            [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m51 [0m    Scenario name is too long. Length of 75 is longer than the maximum allowed: 70                                                                  [38;5;243mname-length[0m
+  [38;5;243m52 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m52 [0m    Step name is too long. Length of 80 is longer than the maximum allowed: 70                                                                      [38;5;243mname-length[0m
+  [38;5;243m53 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m54 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m55 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m55 [0m    Step name is too long. Length of 94 is longer than the maximum allowed: 70                                                                      [38;5;243mname-length[0m
+  [38;5;243m56 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m56 [0m    Step "When I click Account Number "1000"" should not appear after step using keyword then                                                       [38;5;243mkeywords-in-logical-order[0m
+  [38;5;243m57 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m58 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m59 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m59 [0m    Step "When I enter "Assets" into "Description"" should not appear after step using keyword then                                                 [38;5;243mkeywords-in-logical-order[0m
+  [38;5;243m60 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m61 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m62 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m62 [0m    Step "When I navigate the menu and select the item at "General Journal > Chart of Accounts"" should not appear after step using keyword then    [38;5;243mkeywords-in-logical-order[0m
+  [38;5;243m62 [0m    Step name is too long. Length of 80 is longer than the maximum allowed: 70                                                                      [38;5;243mname-length[0m
+  [38;5;243m63 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m64 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m65 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m65 [0m    Step name is too long. Length of 86 is longer than the maximum allowed: 70                                                                      [38;5;243mname-length[0m
+  [38;5;243m67 [0m    Multiple empty lines are not allowed                                                                                                            [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m68 [0m    Multiple empty lines are not allowed                                                                                                            [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m70 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m70 [0m    Step name is too long. Length of 80 is longer than the maximum allowed: 70                                                                      [38;5;243mname-length[0m
+  [38;5;243m71 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m72 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m73 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m73 [0m    Step "When I click Account Number "1060"" should not appear after step using keyword then                                                       [38;5;243mkeywords-in-logical-order[0m
+  [38;5;243m74 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m75 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m75 [0m    Step "When I select the "Account" tab" should not appear after step using keyword then                                                          [38;5;243mkeywords-in-logical-order[0m
+  [38;5;243m76 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m77 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m78 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m79 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m80 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m80 [0m    Step "When I navigate the menu and select the item at "General Journal > Chart of Accounts"" should not appear after step using keyword then    [38;5;243mkeywords-in-logical-order[0m
+  [38;5;243m80 [0m    Step name is too long. Length of 80 is longer than the maximum allowed: 70                                                                      [38;5;243mname-length[0m
+  [38;5;243m81 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m82 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m83 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m83 [0m    Step name is too long. Length of 93 is longer than the maximum allowed: 70                                                                      [38;5;243mname-length[0m
+  [38;5;243m85 [0m    Multiple empty lines are not allowed                                                                                                            [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m86 [0m    Multiple empty lines are not allowed                                                                                                            [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m88 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m88 [0m    Step name is too long. Length of 80 is longer than the maximum allowed: 70                                                                      [38;5;243mname-length[0m
+  [38;5;243m89 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m90 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m91 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m91 [0m    Step "When I click Account Number "1000"" should not appear after step using keyword then                                                       [38;5;243mkeywords-in-logical-order[0m
+  [38;5;243m92 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m93 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m93 [0m    Step "When I select the "Heading" tab" should not appear after step using keyword then                                                          [38;5;243mkeywords-in-logical-order[0m
+  [38;5;243m94 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m95 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m96 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m97 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m98 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m98 [0m    Step "When I navigate the menu and select the item at "General Journal > Chart of Accounts"" should not appear after step using keyword then    [38;5;243mkeywords-in-logical-order[0m
+  [38;5;243m98 [0m    Step name is too long. Length of 80 is longer than the maximum allowed: 70                                                                      [38;5;243mname-length[0m
+  [38;5;243m99 [0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m100[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m101[0m    Wrong indentation for "Step", expected indentation level of 2, but got 4                                                                        [38;5;243mindentation[0m
+  [38;5;243m101[0m    Step name is too long. Length of 93 is longer than the maximum allowed: 70                                                                      [38;5;243mname-length[0m
+  [38;5;243m103[0m    Multiple empty lines are not allowed                                                                                                            [38;5;243mno-multiple-empty-lines[0m
+  [38;5;243m104[0m    Multiple empty lines are not allowed                                                                                                            [38;5;243mno-multiple-empty-lines[0m
+
+
+
+
+RESUMO DOS PROBLEMAS POR TIPO:
+----------------------------------------
+  other: 127 ocorrência(s)

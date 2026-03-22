@@ -1,0 +1,6 @@
+Scenario 3: Empty view
+  Given  the product has no specs
+  When  they go to the product's ActiveDocs page
+  Then  they should not see "There are unattached ActiveDocs"
+  Then  there should be a link to "Create your first spec"
+

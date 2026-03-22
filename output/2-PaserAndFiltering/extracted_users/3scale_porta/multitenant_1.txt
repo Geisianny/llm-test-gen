@@ -1,0 +1,45 @@
+Feature: Sign Up of enterprise buyers
+Description: In order to use multiple Providers
+  As a buyer
+  I want to sign up in different domains with the same name and email
+
+Background: 
+  Given  a provider "foo.3scale.localhost"
+  And  provider "foo.3scale.localhost" has "multiple_applications" visible
+  And  the following account plan:
+  And  a default service of provider "foo.3scale.localhost" has name "api"
+  And  the following service plan:
+  And  the following application plan:
+  Given  a provider "foo2.3scale.localhost"
+  And  the following account plan:
+  And  a default service of provider "foo2.3scale.localhost" has name "api2"
+  And  the following service plan:
+  And  the following application plan:
+  Given  an approved buyer "bar" signed up to provider "foo.3scale.localhost"
+
+Scenario 1: try to signup with existent email in other provider
+  When  the current domain is foo2.3scale.localhost
+  And  I signup with the email "bar@example.org"
+  Then  I should see the registration succeeded
+
+Scenario 2: try to signup with existent email in other provider
+  When  the current domain is foo2.3scale.localhost
+  And  I go to the sign up page
+  And  I fill in the following:
+  And  I press "Sign up"
+  And  I should see the registration succeeded
+
+Scenario 3: try to signup with existent username in same provider
+  Tags: ['@wip']
+  When  the current domain is foo.3scale.localhost
+  And  I go to the sign up page
+  And  I fill in the following:
+  Then  I should see error in fields:
+
+Scenario 4: try to signup with existent mail in same provider
+  Tags: ['@wip']
+  When  the current domain is foo.3scale.localhost
+  And  I go to the sign up page
+  And  I fill in the following:
+  Then  I should see error in fields:
+

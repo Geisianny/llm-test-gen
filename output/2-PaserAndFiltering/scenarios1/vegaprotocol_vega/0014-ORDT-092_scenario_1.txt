@@ -1,0 +1,7 @@
+Scenario 1: For an iceberg order, the orders are refreshed immediately after producing a trade.
+            and is pushed to the back of the queue (0014-ORDT-092)
+  When  the parties place the following iceberg orders:
+  And  the parties place the following orders:
+  And  the parties place the following orders:
+  Then  the iceberg orders should have the following states:
+

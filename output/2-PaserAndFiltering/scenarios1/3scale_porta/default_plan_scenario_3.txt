@@ -1,0 +1,6 @@
+Scenario 3: Set a hidden application plan as default
+  When  they select "Secret" from "Default plan"
+  And  press "Change plan"
+  Then  they should see "The default plan has been changed"
+  And  "Secret" is the option selected in "Default plan"
+

@@ -1,0 +1,6 @@
+Scenario 1: Party cannot enter a pegged order when in isolated margin mode (0019-MCAL-049)
+  Given  the parties submit update margin mode:
+  When  the parties place the following pegged orders:
+  Then  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+

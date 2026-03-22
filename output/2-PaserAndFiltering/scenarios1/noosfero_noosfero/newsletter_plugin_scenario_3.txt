@@ -1,0 +1,10 @@
+Scenario 3: redirect to newsletter visualization after save and visualize
+  Tags: ['@selenium']
+  Given  "NewsletterPlugin" plugin is enabled
+  When  I go to the environment control panel
+  And  I follow "Plugins"
+  And  I follow "Configuration"
+  When  I follow "Save and visualize"
+  Then  I should see "cancel your subscription here"
+  And  I should not see "Newsletter settings"
+

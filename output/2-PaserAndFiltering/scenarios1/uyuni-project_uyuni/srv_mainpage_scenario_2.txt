@@ -1,0 +1,5 @@
+Scenario 2: Access the Login page
+  Given  I am not authorized
+  When  I go to the home page
+  Then  I should see a "Sign In" text
+

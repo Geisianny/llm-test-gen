@@ -1,0 +1,6 @@
+Scenario 6: Admin filters transaction by paid status
+  When  I click ".status-select-button"
+  And  I click ".status-select-line[data-status=paid]"
+  And  I click ".search-button"
+  Then  I should see 0 transaction with status "Free transaction"
+

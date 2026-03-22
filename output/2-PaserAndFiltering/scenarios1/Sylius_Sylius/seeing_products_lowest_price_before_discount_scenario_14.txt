@@ -1,0 +1,9 @@
+Scenario 14: Not seeing the lowest price information on a product that has a discount but showing it is disabled on the channel
+  Tags: ['@api', '@ui']
+  Given  the lowest price of discounted products prior to the current discount is disabled on this channel
+  And  the store has a product "Wyborowa Vodka" priced at "$37.00"
+  And  this product's price changed to "$21.00" and original price changed to "$37.00"
+  And  this product's price changed to "$30.00"
+  When  I check this product's details
+  Then  I should not see information about its lowest price
+

@@ -1,0 +1,53 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: launcher-error_story_processado.feature
+Caminho relativo: karma-runner_karma\launcher-error_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\karma-runner_karma\launcher-error_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: launcher-error_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Browser fails to connect during test execution
+   Steps: 5
+   - Given a test is running with Karma Test Runner CLI
+   - And a browser is configured to run the test
+   - When the browser fails to connect to Karma
+   - Then the system outputs an error message to stderr
+   - And indicates that the browser failed to capture
+2. Multiple browsers, one fails to connect
+   Steps: 5
+   - Given a test is running with Karma Test Runner CLI
+   - And multiple browsers are configured to run the test
+   - When one of the browsers fails to connect to Karma
+   - Then the system outputs an error message to stderr
+   - And indicates which browser failed to capture
+3. Browser connection failure with timeout
+   Steps: 5
+   - Given a test is running with Karma Test Runner CLI
+   - And a browser is configured to run the test with a timeout
+   - When the browser fails to connect to Karma within the timeout
+   - Then the system outputs an error message to stderr
+   - And indicates that the browser timed out
+4. Successful browser connection
+   Steps: 5
+   - Given a test is running with Karma Test Runner CLI
+   - And a browser is configured to run the test
+   - When the browser successfully connects to Karma
+   - Then the system does not output an error message to stderr
+   - And the test execution proceeds
+5. No browsers configured
+   Steps: 5
+   - Given a test is running with Karma Test Runner CLI
+   - And no browsers are configured to run the test
+   - When the test is executed
+   - Then the system outputs an error message to stderr
+   - And indicates that no browsers are configured to capture

@@ -1,0 +1,4 @@
+Scenario 1: Viewing latest products
+  When  I check latest products
+  Then  I should see 3 products in the list
+

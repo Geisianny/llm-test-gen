@@ -1,0 +1,15 @@
+Scenario 10: Cleanup: remove virgo-dummy and andromeda-dummy packages from Red Hat-like minion
+  When  I follow "Software" in the content area
+  And  I follow "List / Remove"
+  And  I enter "andromeda" as the filtered package name
+  And  I click on the filter button
+  And  I check "andromeda-dummy" in the list
+  And  I enter "virgo-dummy" as the filtered package name
+  And  I click on the filter button
+  And  I check "virgo-dummy" in the list
+  And  I click on "Remove Packages"
+  And  I click on "Confirm"
+  Then  I should see a "2 package removals have been scheduled" text
+  And  I wait until event "Package Removal scheduled" is completed
+  And  I disable repository "test_repo_rpm_pool" on this "rhlike_minion"
+

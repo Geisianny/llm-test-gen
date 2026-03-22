@@ -1,0 +1,9 @@
+Scenario 30: Get all application keys returns "OK" response
+  Tags: ['@team:DataDog/credentials-management']
+  Given  there is a valid "application_key" in the system
+  And  new "ListApplicationKeys" request
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data[0].type" is equal to "application_keys"
+  And  the response "data[0].attributes" has field "last_used_at"
+

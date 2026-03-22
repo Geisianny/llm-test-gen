@@ -1,0 +1,18 @@
+Feature: Portal Subscription Cancel APi
+
+Background: 
+  Given  the following accounts exist:
+  And  the follow products exist:
+  And  the follow prices exist:
+  And  the following features exist:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "Price One" with:
+  Given  a Subscription Plan exists for product "Product Two" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price 4500 in "USD" with:
+
+Scenario 1: Cancel subscription
+  Given  the follow customers exist:
+  And  the following subscriptions exist:
+  And  there is a manage customer session for "customer.one@example.org" that expires in "+5 minutes"
+  When  I cancel via the portal the subscription "Test Plan" for "customer.one@example.org"
+  Then  the subscription "Test Plan" for "customer.one@example.org" will be pending cancel
+  And  there should be a churn event for "customer.one@example.org"
+

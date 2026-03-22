@@ -1,0 +1,5 @@
+Scenario 3: Increasing and decreasing cart quantity
+  Given  I see the summary of my cart
+  When  I change "TShirt" quantity to 5
+  When  I change "TShirt" quantity to 1
+

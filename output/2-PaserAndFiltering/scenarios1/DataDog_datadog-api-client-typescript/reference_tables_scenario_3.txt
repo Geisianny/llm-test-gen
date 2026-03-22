@@ -1,0 +1,7 @@
+Scenario 3: Create reference table upload returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/redapl-experiences']
+  Given  new "CreateReferenceTableUpload" request
+  And  body with value {"data": {"attributes": {"headers": ["product_id", "product_name", "price"], "part_count": 3, "part_size": 10000000, "table_name": "my_products_table"}, "type": "upload"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

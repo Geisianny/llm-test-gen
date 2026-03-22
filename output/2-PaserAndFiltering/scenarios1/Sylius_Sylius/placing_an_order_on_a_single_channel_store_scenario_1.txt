@@ -1,0 +1,8 @@
+Scenario 1: Placing an order in a channels base currency
+  Tags: ['@api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  And  I addressed the cart
+  When  I proceed with "Free" shipping method and "Offline" payment
+  And  I confirm my order
+  Then  the administrator should see that order placed by "customer@example.com" has "USD" currency
+

@@ -1,0 +1,7 @@
+Scenario 2: Seeing exclusive catalog promotion's details
+  Tags: ['@api', '@ui']
+  Given  "Winter sale" catalog promotion is exclusive
+  When  I view details of the catalog promotion "Winter sale"
+  Then  its name should be "Winter sale"
+  And  it should be exclusive
+

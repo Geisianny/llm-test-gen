@@ -1,0 +1,11 @@
+Scenario 2: Add a new gift rule with a free product and I remove the product
+  Given  adding a cart price rule named "gift"
+  And  the cart rule is active
+  And  the cart rule is a voucher rule with code "FreeProduct123"
+  And  the cart rule has a action gift-product with product "Jacket"
+  And  the cart rule has a condition products with product "Shoe"
+  And  I add the product "Shoe" to my cart
+  And  I apply the voucher code "FreeProduct123" to my cart
+  And  I remove the product "Shoe" from my cart
+  Then  the product "Jacket" should not be in my cart
+

@@ -1,0 +1,8 @@
+Scenario 5: Finance permission for providers does not show if finance switch is denied
+  Given  the default set of permissions is created
+  Given  the provider has "groups" switch allowed
+  And  the provider has "finance" switch denied
+  Given  current domain is the admin domain of provider "foo.3scale.localhost"
+  When  I go to the new CMS groups page
+  Then  finance should not show in the permissions list
+

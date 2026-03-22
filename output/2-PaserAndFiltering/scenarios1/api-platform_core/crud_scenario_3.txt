@@ -1,0 +1,6 @@
+Scenario 3: Create a resource with empty body
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/dummies"
+  Then  the response status code should be 400
+  And  the JSON node "detail" should be equal to "Syntax error"
+

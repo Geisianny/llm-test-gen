@@ -1,0 +1,9 @@
+Scenario Outline 25: Navigate to menu "<path>" and open screen "<screen>" - Example 25
+  Tags: ['@wip']
+  When  I navigate the menu and select the item at "Goods & Services > Add Pricegroup"
+  Then  I should see the  screen
+
+  Examples:
+    | path | screen |
+    | Goods & Services > Add Pricegroup |  |
+

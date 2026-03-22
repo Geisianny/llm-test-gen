@@ -1,0 +1,8 @@
+Scenario 1: Changing the lowest price for discounted products checking period
+  Tags: ['@api', '@ui']
+  When  I want to modify a channel "EU"
+  And  I specify 30 days as the lowest price for discounted products checking period
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  its lowest price for discounted products checking period should be set to 30 days
+

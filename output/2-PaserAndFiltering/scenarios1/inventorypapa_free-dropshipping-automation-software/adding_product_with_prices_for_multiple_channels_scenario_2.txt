@@ -1,0 +1,10 @@
+Scenario 2: Configure prices for each channel while adding a new simple product
+  Tags: ['@ui']
+  When  I want to create a new simple product
+  And  I specify its code as "BOARD_DICE_BREWING"
+  And  I name it "Dice Brewing" in "English (United States)"
+  And  I make it available in channel "Web-US"
+  And  I set its slug to "dice-brewing"
+  And  I add it
+  Then  I should be notified that price must be defined for every channel
+

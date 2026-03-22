@@ -1,0 +1,5 @@
+Scenario: List existing custom destinations
+  Given there are existing custom destinations configured in the system
+  When the user navigates to the custom destinations page
+  Then the system displays a list of existing custom destinations
+  And includes the name and type of each custom destination

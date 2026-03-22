@@ -1,0 +1,17 @@
+Scenario 3: Create a rum-based metric returns "Created" response
+  Tags: ['@team:DataDog/rum-backend']
+  Given  new "CreateRumMetric" request
+  And  body with value {"data": {"attributes": {"compute": {"aggregation_type": "distribution", "include_percentiles": true, "path": "@duration"}, "event_type": "session", "filter": {"query": "@service:web-ui"}, "group_by": [{"path": "@browser.name", "tag_name": "browser_name"}], "uniqueness": {"when": "match"}}, "id": "{{ unique_lower_alnum }}", "type": "rum_metrics"}}
+  When  the request is sent
+  Then  the response status is 201 Created
+  And  the response "data.id" is equal to "{{ unique_lower_alnum }}"
+  And  the response "data.type" is equal to "rum_metrics"
+  And  the response "data.attributes.event_type" is equal to "session"
+  And  the response "data.attributes.compute.aggregation_type" is equal to "distribution"
+  And  the response "data.attributes.compute.include_percentiles" is equal to true
+  And  the response "data.attributes.compute.path" is equal to "@duration"
+  And  the response "data.attributes.filter.query" is equal to "@service:web-ui"
+  And  the response "data.attributes.group_by[0].path" is equal to "@browser.name"
+  And  the response "data.attributes.group_by[0].tag_name" is equal to "browser_name"
+  And  the response "data.attributes.uniqueness.when" is equal to "match"
+

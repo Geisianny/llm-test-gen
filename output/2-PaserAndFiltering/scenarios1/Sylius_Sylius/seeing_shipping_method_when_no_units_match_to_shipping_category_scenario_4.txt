@@ -1,0 +1,9 @@
+Scenario 4: Seeing no shipping methods when any of my variants is excluded from the shipping category
+  Tags: ['@api', '@ui']
+  Given  the "T-Shirt banana" product's "S" size belongs to "Over-sized" shipping category
+  And  I added product "T-Shirt banana" with product option "Size" S to the cart
+  And  I added product "T-Shirt banana" with product option "Size" M to the cart
+  And  I addressed the cart
+  When  I go to the shipping step
+  Then  there should be information about no available shipping methods
+

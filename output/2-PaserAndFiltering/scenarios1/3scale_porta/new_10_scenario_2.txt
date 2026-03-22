@@ -1,0 +1,6 @@
+Scenario 2: Navigation when there is an integration
+  Given  a red hat single sign-on integration
+  And  they go to the users sso integrations page
+  Then  they should not see "Add a SSO integration"
+  And  there should be a link to "Create a new SSO integration"
+

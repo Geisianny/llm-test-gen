@@ -1,0 +1,5 @@
+Scenario: Request native token successfully
+  Given the user has a configured network with native token "ETH"
+  When the user requests the native token "ETH"
+  Then the system generates a payment link for "ETH"
+  And displays a QR code for "ETH"

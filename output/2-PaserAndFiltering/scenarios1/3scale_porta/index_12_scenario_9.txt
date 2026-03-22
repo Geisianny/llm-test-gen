@@ -1,0 +1,9 @@
+Scenario 9: Ordering and filtering by service
+  Given  the following service plans:
+  And  the following buyers with service subscriptions signed up to the provider:
+  When  they go to the buyer's service subscriptions page
+  Then  they should see the following table:
+  When  the table is filtered with:
+  And  the table is sorted by "State"
+  Then  they should see the following table:
+

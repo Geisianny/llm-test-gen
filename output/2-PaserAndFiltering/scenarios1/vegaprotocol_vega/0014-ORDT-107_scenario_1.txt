@@ -1,0 +1,7 @@
+Scenario 1: A passive iceberg order (the only order at a particular price level) when crossed with another order that comes in which
+            Atomic trades are produced (0014-ORDT-107)
+  When  the parties place the following iceberg orders:
+  And  the parties place the following orders:
+  Then  the orders should have the following states:
+  Then  the order book should have the following volumes for market "BTC/ETH":
+

@@ -1,0 +1,6 @@
+Scenario: Browser fails to connect during test execution
+  Given a test is running with Karma Test Runner CLI
+  And a browser is configured to run the test
+  When the browser fails to connect to Karma
+  Then the system outputs an error message to stderr
+  And indicates that the browser failed to capture

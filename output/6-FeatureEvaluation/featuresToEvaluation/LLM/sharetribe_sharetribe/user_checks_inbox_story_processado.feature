@@ -1,0 +1,38 @@
+Feature: user_checks_inbox_story_processado
+
+Scenario: User views received messages in inbox
+    Given there is a user with received messages
+    And the user is logged in
+    When the user navigates to the inbox
+    Then the system displays a list of received messages
+    And the list includes the sender and message subject
+
+Scenario: User views sent messages in inbox
+    Given there is a user with sent messages
+    And the user is logged in
+    When the user navigates to the sent messages tab
+    Then the system displays a list of sent messages
+    And the list includes the recipient and message subject
+
+Scenario: User views message details
+    Given there is a user with received messages
+    And the user is logged in
+    And the user is in the inbox
+    When the user selects a message to view
+    Then the system displays the message details
+    And the details include the message content and timestamp
+
+Scenario: User has no messages in inbox
+    Given there is a user with no received or sent messages
+    And the user is logged in
+    When the user navigates to the inbox
+    Then the system displays a message indicating no messages
+    And the user is prompted to start a new conversation
+
+Scenario: User navigates between received and sent messages
+    Given there is a user with both received and sent messages
+    And the user is logged in
+    And the user is in the inbox viewing received messages
+    When the user navigates to the sent messages tab
+    Then the system displays the list of sent messages
+    And the user can switch back to received messages

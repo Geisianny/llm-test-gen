@@ -1,0 +1,10 @@
+Scenario 4: Slugs don't get updated while changing product's names
+  Tags: ['@ui', '@javascript']
+  Given  the store has a product named "Pug Pugginton Plushie" in "English (United States)" locale and "Pluszak Mops Mopsiński" in "Polish (Poland)" locale
+  When  I want to modify this product
+  And  I rename it to "Pug Pugston the Third Plushie" in "English (United States)"
+  And  I rename it to "Pluszak Mops Mopsak Trzeci" in "Polish (Poland)"
+  And  I save my changes
+  Then  this product should still have slug "pug-pugginton-plushie" in "English (United States)"
+  And  this product should still have slug "pluszak-mops-mopsinski" in "Polish (Poland)"
+

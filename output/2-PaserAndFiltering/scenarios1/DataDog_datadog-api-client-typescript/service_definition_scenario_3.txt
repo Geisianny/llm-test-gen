@@ -1,0 +1,7 @@
+Scenario 3: Create or update service definition returns "Conflict" response
+  Tags: ['@generated', '@skip', '@team:DataDog/service-catalog']
+  Given  new "CreateOrUpdateServiceDefinitions" request
+  And  body with value {"application": "my-app", "ci-pipeline-fingerprints": ["j88xdEy0J5lc", "eZ7LMljCk8vo"], "contacts": [{"contact": "https://teams.microsoft.com/myteam", "name": "My team channel", "type": "slack"}], "dd-service": "my-service", "description": "My service description", "extensions": {"myorg/extension": "extensionValue"}, "integrations": {"opsgenie": {"region": "US", "service-url": "https://my-org.opsgenie.com/service/123e4567-e89b-12d3-a456-426614174000"}, "pagerduty": {"service-url": "https://my-org.pagerduty.com/service-directory/PMyService"}}, "languages": ["dotnet", "go", "java", "js", "php", "python", "ruby", "c++"], "lifecycle": "sandbox", "links": [{"name": "Runbook", "provider": "Github", "type": "runbook", "url": "https://my-runbook"}], "schema-version": "v2.2", "tags": ["my:tag", "service:tag"], "team": "my-team", "tier": "High", "type": "web"}
+  When  the request is sent
+  Then  the response status is 409 Conflict
+

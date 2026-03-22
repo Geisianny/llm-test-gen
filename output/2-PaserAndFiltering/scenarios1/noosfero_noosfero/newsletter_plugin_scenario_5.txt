@@ -1,0 +1,12 @@
+Scenario 5: search community and select blog for newsletter
+  Tags: ['@selenium']
+  Given  the following communities
+  And  the following blogs
+  And  "NewsletterPlugin" plugin is enabled
+  When  I go to the environment control panel
+  And  I follow "Plugins"
+  And  I follow "Configuration"
+  And  I type in "Sample Community" into autocomplete list "search-profiles" and I choose "Sample Blog in Sample Community"
+  And  I follow "Save"
+  Then  I should see "Sample Blog in Sample Community"
+

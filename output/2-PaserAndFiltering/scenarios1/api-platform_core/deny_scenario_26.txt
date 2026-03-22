@@ -1,0 +1,8 @@
+Scenario 26: I define a custom name of the security object
+  Tags: ['@link_security']
+  When  I add "Accept" header equal to "application/ld+json"
+  And  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Authorization" header equal to "Basic ZHVuZ2xhczprZXZpbg=="
+  And  I send a "GET" request to "/secured_dummies/5/with_name"
+  Then  the response status code should be 403
+

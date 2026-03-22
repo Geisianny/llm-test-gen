@@ -1,0 +1,38 @@
+Feature: Dev portal services
+Description: As a buyer I want to subscribe to a provider products.
+  I also want to review and change the plans I am subscribed to.
+
+Background: Background name
+  Given  a provider
+  And  the provider has "multiple_services" visible
+  And  the provider has "service_plans" allowed
+  And  a product "dcc-rpg-wiki" with no service plans
+  And  a buyer "Jane Goodman"
+  And  the buyer logs in
+
+Scenario 1: Can't subscribe to a product with no public or default plans
+  Given  the buyer is not subscribed to product "dcc-rpg-wiki"
+  And  the following service plan:
+  When  they go to the the services list for buyers
+  Then  there shouldn't be a link to "Subscribe to dcc-rpg-wiki"
+
+Scenario 2: Subscribe to a product with a hidden, default plan
+  Given  the buyer is not subscribed to product "dcc-rpg-wiki"
+  And  the following service plan:
+  When  they go to the the services list for buyers
+  And  follow "Subscribe to dcc-rpg-wiki"
+  Then  the buyer should be subscribed to product "dcc-rpg-wiki"
+
+Scenario 3: Subscribe to a product with a public plan
+  Given  the buyer is not subscribed to product "dcc-rpg-wiki"
+  And  the following service plan:
+  When  they go to the the services list for buyers
+  And  follow "Subscribe to dcc-rpg-wiki"
+  Then  the buyer should be subscribed to product "dcc-rpg-wiki"
+
+Scenario 4: Services page is hidden
+  Tags: ['@wip']
+
+Scenario 5: User can't manage service contracts
+  Tags: ['@wip']
+

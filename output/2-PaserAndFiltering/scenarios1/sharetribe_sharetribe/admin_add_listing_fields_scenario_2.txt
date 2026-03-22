@@ -1,0 +1,10 @@
+Scenario 2: Admin adds Dropdown custom field without options
+  Tags: ['@javascript']
+  When  I follow "+ Add a listing field"
+  And  I select "Dropdown" from "field_type"
+  And  I fill in "custom_field[name_attributes][en]" with "House type"
+  And  I fill in "custom_field[name_attributes][fi]" with "Talon tyyppi"
+  And  I toggle category "Spaces"
+  And  I press "Add the listing field"
+  Then  I should see 1 validation errors in admin2
+

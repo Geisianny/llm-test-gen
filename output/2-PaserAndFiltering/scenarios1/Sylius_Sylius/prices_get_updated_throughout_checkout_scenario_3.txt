@@ -1,0 +1,7 @@
+Scenario 3: Prices get updated on readdressing
+  Tags: ['@no-api', '@ui']
+  Given  I specified the billing address as "Ankh Morpork", "Frost Alley", "90210", "United States" for "Jon Snow"
+  When  the exchange rate of "US Dollar" to "British Pound" is 3.0
+  And  I decide to change my address
+  Then  the subtotal of "The Pug Mug" item should be "£30.00"
+

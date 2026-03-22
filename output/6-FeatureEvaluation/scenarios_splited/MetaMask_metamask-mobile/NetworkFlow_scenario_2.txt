@@ -1,0 +1,6 @@
+Scenario: Add a custom network via custom network flow
+  Given the user is on the network settings page
+  When the user chooses to add a custom network
+  And enters the network details: name "Custom Network", RPC URL "https://customnetwork.com", Chain ID "123", and symbol "CN"
+  Then the system adds the custom network
+  And displays a confirmation message

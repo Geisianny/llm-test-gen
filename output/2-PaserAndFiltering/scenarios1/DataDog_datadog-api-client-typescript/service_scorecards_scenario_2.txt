@@ -1,0 +1,10 @@
+Scenario 2: Create a new rule returns "Created" response
+  Tags: ['@team:DataDog/service-catalog']
+  Given  operation "CreateScorecardRule" enabled
+  And  new "CreateScorecardRule" request
+  And  body with value {"data": {"attributes": {"enabled": true, "name": "{{unique}}", "scorecard_name": "Observability Best Practices"}, "type": "rule"}}
+  When  the request is sent
+  Then  the response status is 201 Created
+  And  the response "data.attributes.scorecard_name" is equal to "Observability Best Practices"
+  And  the response "data.relationships.scorecard.data" has field "id"
+

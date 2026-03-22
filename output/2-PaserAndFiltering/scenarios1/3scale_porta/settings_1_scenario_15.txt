@@ -1,0 +1,5 @@
+Scenario 15: Provider using a deprecated payment gateway
+  Given  the provider is charging its buyers with a deprecated payment gateway
+  When  they are reviewing the charging and gateway billing settings
+  Then  they should be warned about the payment gateway being deprecated
+

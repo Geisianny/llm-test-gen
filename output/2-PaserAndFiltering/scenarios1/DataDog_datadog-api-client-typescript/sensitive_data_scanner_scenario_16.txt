@@ -1,0 +1,9 @@
+Scenario 16: Reorder Groups returns "Bad Request" response
+  Tags: ['@team:DataDog/sensitive-data-scanner']
+  Given  a valid "configuration" in the system
+  And  there is a valid "scanning_group" in the system
+  And  new "ReorderScanningGroups" request
+  And  body with value {"data": {"relationships": {"groups": {"data": [{"type": "sensitive_data_scanner_group", "id": "{{ unique }}"}]}}, "type": "sensitive_data_scanner_configuration", "id": "{{ configuration.data.id }}"}, "meta": {}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

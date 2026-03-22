@@ -1,0 +1,7 @@
+Scenario 15: Unregister an App Key returns "Bad request" response
+  Tags: ['@team:DataDog/workflow-automation-dev']
+  Given  new "UnregisterAppKey" request
+  And  request contains "app_key_id" parameter with value "not_valid_app_key_id"
+  When  the request is sent
+  Then  the response status is 400 Bad request
+

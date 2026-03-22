@@ -1,0 +1,7 @@
+Scenario 9: Unsuspend an user
+  And  user "bob" is suspended
+  When  I go to the buyer user page for "bob"
+  And  I press the button to unsuspend the user
+  Then  I should see "User was unsuspended"
+  And  user "bob" should be active
+

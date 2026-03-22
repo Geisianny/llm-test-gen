@@ -1,0 +1,7 @@
+Scenario 4: Delete a span-based metric returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/apm']
+  Given  new "DeleteSpansMetric" request
+  And  request contains "metric_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

@@ -1,0 +1,16 @@
+Scenario 7: A user updates their email to a non-gov address
+  Tags: ['@wip', '@javascript']
+  Given  I am logged in with email "affiliate_admin@fixtures.org"
+  And  I am on the edit account page
+  And  I fill in "Email" with "random@random.com"
+  And  I press "Save"
+  Then  I should see "Account updated!"
+  And  "random@random.com" should receive an email
+  When  I go to the new site page
+  Then  I should see "Your email address has not been verified."
+  And  I should be on the user account page
+  When  I visit the email verification page using the email verification token for "random@random.com"
+  Then  I should see "Thank you for verifying your email."
+  And  I should see "Because you don't have a .gov or .mil email address, your account is pending approval."
+  And  I should be on the user account page
+

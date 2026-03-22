@@ -1,0 +1,5 @@
+Scenario 1: Custom normalization operation
+  Tags: ['@createSchema']
+  When  I send a "POST" request to "/custom/denormalization"
+  Then  the JSON should be equal to:
+

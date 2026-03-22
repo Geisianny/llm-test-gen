@@ -1,0 +1,7 @@
+Scenario 5: Create or update kinds returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/service-catalog']
+  Given  new "UpsertCatalogKind" request
+  And  body with value {"kind": "my-job"}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

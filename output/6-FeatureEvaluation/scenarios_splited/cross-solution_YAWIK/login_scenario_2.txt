@@ -1,0 +1,6 @@
+Scenario: Login with incorrect password
+  Given there is a registered user with a valid email and password
+  When the user logs in with the valid email
+  And enters an incorrect password
+  Then the system denies access
+  And displays a message indicating that the email or password is incorrect

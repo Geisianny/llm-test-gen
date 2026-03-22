@@ -1,0 +1,9 @@
+Scenario 3: Seeing shipping percentage discount promotion usage unchanged after order placement
+  Tags: ['@api', '@ui']
+  Given  the promotion gives "100%" discount on shipping to every order
+  And  there is a customer "john.doe@gmail.com" that placed an order "#00000022"
+  And  the customer bought a single "PHP Mug"
+  And  the customer chose "Free" shipping method to "United States" with "Cash on Delivery" payment
+  When  I browse promotions
+  Then  the promotion "Christmas promotion" should not be used
+

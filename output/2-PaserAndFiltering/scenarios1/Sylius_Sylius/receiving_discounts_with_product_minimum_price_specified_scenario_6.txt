@@ -1,0 +1,9 @@
+Scenario 6: Receiving discount when buying more than required quantity
+  Tags: ['@api', '@ui']
+  Given  there is a promotion "T-Shirts promotion"
+  And  the promotion gives "$50.00" discount to every order with quantity at least 2
+  And  I added 2 products "T-Shirt" to the cart
+  When  I check the details of my cart
+  Then  my cart total should be "$90.00"
+  And  my discount should be "-$10.00"
+

@@ -1,0 +1,6 @@
+Scenario 7: Admin searches transactions by title
+  When  I fill in "q" with "Moving help"
+  And  I click ".search-button"
+  Then  I should see 1 transaction with status "Free transaction"
+  And  I should see "Moving help"
+

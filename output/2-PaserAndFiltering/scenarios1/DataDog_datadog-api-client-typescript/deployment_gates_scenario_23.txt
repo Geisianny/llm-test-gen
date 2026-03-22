@@ -1,0 +1,9 @@
+Scenario 23: Update deployment gate returns "Bad Request" response
+  Tags: ['@team:DataDog/ci-app-backend']
+  Given  operation "UpdateDeploymentGate" enabled
+  And  new "UpdateDeploymentGate" request
+  And  request contains "id" parameter with value "invalid-gate-id"
+  And  body with value {"data": {"attributes": {"dry_run":true}, "id": "invalid-gate-id", "type": "deployment_gate"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

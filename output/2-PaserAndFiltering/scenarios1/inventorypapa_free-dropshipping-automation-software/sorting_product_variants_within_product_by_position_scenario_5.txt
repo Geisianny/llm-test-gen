@@ -1,0 +1,7 @@
+Scenario 5: Setting product variant as the first one in the list
+  Tags: ['@ui', '@javascript']
+  When  I view all variants of the product "Opel Insignia"
+  And  I set the position of "Opel Insignia Sedan" to 0
+  And  I save my new configuration
+  And  the first variant in the list should have name "Opel Insignia Sedan"
+

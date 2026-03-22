@@ -1,0 +1,6 @@
+Scenario 1: Browsing payments and their states
+  Tags: ['@ui', '@api']
+  When  I browse payments
+  Then  I should see a single payment in the list
+  And  the payment of the "#00000001" order should be "New" for "amba@fatima.org"
+

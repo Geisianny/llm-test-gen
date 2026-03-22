@@ -1,0 +1,6 @@
+Scenario 21: Preview catalog entities returns "Accepted" response
+  Tags: ['@generated', '@skip', '@team:DataDog/service-catalog']
+  Given  new "PreviewCatalogEntities" request
+  When  the request is sent
+  Then  the response status is 202 Accepted
+

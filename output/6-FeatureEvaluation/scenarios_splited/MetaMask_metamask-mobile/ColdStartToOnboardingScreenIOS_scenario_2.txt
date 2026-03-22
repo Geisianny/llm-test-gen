@@ -1,0 +1,6 @@
+Scenario: Cold start time exceeds the threshold
+  Given the app is not installed on the device
+  When the user installs the app for the first time
+  And the app's cold start time is measured
+  Then the cold start time exceeds 700 milliseconds
+  And the system logs the performance issue

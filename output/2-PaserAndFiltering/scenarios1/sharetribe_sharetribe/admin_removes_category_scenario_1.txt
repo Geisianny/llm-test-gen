@@ -1,0 +1,6 @@
+Scenario 1: Admin removes a subcategory
+  Tags: ['@javascript']
+  Given  I am on the categories admin page
+  When  I remove category "Tools"
+  Then  the category "Tools" should be removed
+

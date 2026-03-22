@@ -1,0 +1,5 @@
+Scenario: Automatic redirection to login page from root
+  Given the user is on the application root page
+  When the user accesses the root page
+  Then the system redirects to the login page
+  And displays the login form

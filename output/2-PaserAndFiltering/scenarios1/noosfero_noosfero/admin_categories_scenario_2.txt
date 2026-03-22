@@ -1,0 +1,8 @@
+Scenario 2: admin user could create a category
+  Tags: ['@selenium']
+  Given  I go to /admin/categories/new
+  And  I fill in "Name" with "Category 1"
+  When  I follow "Save"
+  Then  I should see "General categories"
+  And  I should see "Category 1"
+

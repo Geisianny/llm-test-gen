@@ -1,0 +1,12 @@
+Scenario 3: Adding a new simple product with duplicated code among product variants
+  Tags: ['@ui']
+  Given  the store has a product "7 Wonders"
+  And  this product has "7 Wonders: Cities" variant priced at "$30" identified by "AWESOME_GAME"
+  And  I want to create a new simple product
+  When  I specify its code as "AWESOME_GAME"
+  And  I name it "Dice Brewing" in "English (United States)"
+  And  I set its price to "$10.00" for "Web" channel
+  And  I try to add it
+  Then  I should be notified that simple product code has to be unique
+  And  product with name "Dice Brewing" should not be added
+

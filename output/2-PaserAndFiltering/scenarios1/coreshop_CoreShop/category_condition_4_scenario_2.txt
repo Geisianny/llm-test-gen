@@ -1,0 +1,7 @@
+Scenario 2: Add a new category shipping rule which is inactive
+  Given  adding a shipping rule named "category"
+  And  the shipping rule is inactive
+  And  the shipping rule has a condition categories with category "Shoes"
+  And  I add the product "Shoe" to my cart
+  Then  the shipping rule should be invalid for my cart with carrier "Post"
+

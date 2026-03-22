@@ -1,0 +1,12 @@
+Scenario 16: Get all users of a role returns "OK" response
+  Tags: ['@team:DataDog/aaa-core-access']
+  Given  there is a valid "role" in the system
+  And  there is a valid "user" in the system
+  And  the "user" has the "role"
+  And  new "ListRoleUsers" request
+  And  request contains "role_id" parameter from "role.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "meta.page.total_count" is equal to 1
+  And  the response "data" has item with field "id" with value "{{ user.data.id }}"
+

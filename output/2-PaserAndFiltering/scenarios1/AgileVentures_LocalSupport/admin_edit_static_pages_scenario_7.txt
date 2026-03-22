@@ -1,0 +1,12 @@
+Scenario 7: Basic markdown syntax works
+  Given  I visit the home page
+  When  I follow "Contact"
+  Then  I should see "significant" < emphasized >
+  And  I should see "important" < stronged >
+  And  I should see "Numbered list" < number listed >
+  And  I should see "Bullet list" < bullet listed >
+  And  I should see "This is an h3 header" < tagged > with "h3"
+  And  I should see "link to relishapp" < linked > to "http://relishapp.com"
+  And  I should see "www.relishapp.com" < linked > to "http://www.relishapp.com"
+  And  I should see "message" < emphasized >
+

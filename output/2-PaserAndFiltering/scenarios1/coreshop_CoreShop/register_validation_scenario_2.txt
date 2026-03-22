@@ -1,0 +1,19 @@
+Scenario 2: Trying to register a new account without specifying first name
+  When  I want to register a new account
+  And  I specify the last name as "Gates"
+  And  I specify the email as "bill@gates.com"
+  And  I confirm this email
+  And  I specify the password as "gates"
+  And  I confirm this password
+  And  I specify the address first name as "Bill"
+  And  I specify the address last name as "Gates"
+  And  I specify the address street as "Gates-Street"
+  And  I specify the address number as "2"
+  And  I specify the address country as country "Austria"
+  And  I specify the address post code as "5020"
+  And  I specify the address city as "Salzburg"
+  And  I accept the terms of service
+  And  I register this account
+  Then  I should be notified that the firstname is required
+  And  I should not be logged in
+

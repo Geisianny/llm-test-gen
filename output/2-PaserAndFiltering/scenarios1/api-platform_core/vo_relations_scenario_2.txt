@@ -1,0 +1,6 @@
+Scenario 2: Create Value object with IRI and nullable parameter
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/vo_dummy_inspections" with body:
+  Then  the response status code should be 201
+  And  the JSON should be valid according to this schema:
+

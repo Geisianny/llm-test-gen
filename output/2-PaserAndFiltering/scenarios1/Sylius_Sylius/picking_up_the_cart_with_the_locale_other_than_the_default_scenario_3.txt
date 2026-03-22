@@ -1,0 +1,6 @@
+Scenario 3: Picking up the cart with non valid locale
+  Tags: ['@api', '@no-ui']
+  When  I pick up cart using wrong locale
+  And  I check the details of my cart
+  Then  my cart's locale should be "French (France)"
+

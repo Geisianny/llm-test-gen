@@ -1,0 +1,7 @@
+Scenario 2: Install a test formula package on the server
+  When  I install "form.yml" to custom formula metadata directory "testform"
+  And  I install "metadata.yml" to custom formula metadata directory "testform"
+  When  I follow the left menu "Salt > Formula Catalog"
+  And  I enter "testform" as the filtered formula name
+  Then  I should see a "testform" text
+

@@ -1,0 +1,6 @@
+Scenario 1: Unpaid
+  Given  the following invoices exist:
+  When  I go to the invoice paylink for invoice "BB-304303"
+  Then  I should see the total amount
+  And  I should see the stripe frontend
+

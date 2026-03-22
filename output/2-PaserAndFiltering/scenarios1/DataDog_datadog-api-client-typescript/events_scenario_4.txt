@@ -1,0 +1,8 @@
+Scenario 4: Get an event returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/monitors-evaluation']
+  Given  a valid "appKeyAuth" key in the system
+  And  new "GetEvent" request
+  And  request contains "event_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 200 OK
+

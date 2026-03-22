@@ -1,0 +1,11 @@
+Scenario 2: Create an SLO correction returns "OK" response
+  Tags: ['@team:DataDog/slo-app']
+  Given  there is a valid "slo" in the system
+  And  new "CreateSLOCorrection" request
+  And  body with value {"data": {"attributes": {"category": "Scheduled Maintenance", "description": "{{ unique }}", "end": {{ timestamp("now + 1h") }}, "slo_id": "{{ slo.data[0].id }}", "start": {{ timestamp("now") }}, "timezone": "UTC"}, "type": "correction"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.type" is equal to "correction"
+  And  the response "data.attributes.category" is equal to "Scheduled Maintenance"
+  And  the response "data.attributes.slo_id" has the same value as "slo.data[0].id"
+

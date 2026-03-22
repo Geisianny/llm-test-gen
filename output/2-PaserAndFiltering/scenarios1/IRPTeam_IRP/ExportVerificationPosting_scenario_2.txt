@@ -1,0 +1,62 @@
+Scenario 2: create a test SO for VerificationPosting by package
+  *  Open form to create Sales Order
+  Given  I open hyperlink "e1cib/list/Document.SalesOrder"
+  And  I click the button named "FormCreate"
+  *  Filling in the details of the document
+  And  I click Select button of "Company" field
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I click Select button of "Partner" field
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I click Select button of "Legal name" field
+  And  I activate "Description" field in "List" table
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I click Select button of "Partner term" field
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I click Select button of "Store" field
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  *  Select order status
+  And  I select "Approved" exact value from "Status" drop-down list
+  *  Filling in item tab
+  And  in the table "ItemList" I click the button named "ItemListAdd"
+  And  I click choice button of "Item" attribute in "ItemList" table
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I activate "Item key" field in "ItemList" table
+  And  I click choice button of "Item key" attribute in "ItemList" table
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I input "15,000" text in "Quantity" field of "ItemList" table
+  And  I select "Stock" exact value from "Procurement method" drop-down list in "ItemList" table
+  And  I finish line editing in "ItemList" table
+  And  in the table "ItemList" I click the button named "ItemListAdd"
+  And  I click choice button of "Item" attribute in "ItemList" table
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I activate "Item key" field in "ItemList" table
+  And  I click choice button of "Item key" attribute in "ItemList" table
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I click choice button of "Unit" attribute in "ItemList" table
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I input "2,000" text in "Quantity" field of "ItemList" table
+  And  I select "Stock" exact value from "Procurement method" drop-down list in "ItemList" table
+  And  I finish line editing in "ItemList" table
+  And  in the table "ItemList" I click the button named "ItemListAdd"
+  And  I click choice button of "Item" attribute in "ItemList" table
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I activate "Item key" field in "ItemList" table
+  And  I click choice button of "Item key" attribute in "ItemList" table
+  And  I go to line in "List" table
+  And  I select current line in "List" table
+  And  I input "50,000" text in "Quantity" field of "ItemList" table
+  And  I select "Stock" exact value from "Procurement method" drop-down list in "ItemList" table
+  And  I finish line editing in "ItemList" table
+  And  I click the button named "FormPost"
+

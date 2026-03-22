@@ -1,0 +1,8 @@
+Scenario 2: Changing the currency of my cart
+  Tags: ['@ui', '@no-api']
+  Given  I have added 2 products "The Pug Mug" to the cart
+  When  I switch to the "EUR" currency
+  Then  the grand total value in base currency should be "$14.00"
+  And  I should see "The Pug Mug" with unit price "€6.82" in my cart
+  But  the grand total value should be "€13.63"
+

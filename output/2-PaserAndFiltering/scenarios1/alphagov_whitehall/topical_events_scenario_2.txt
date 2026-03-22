@@ -1,0 +1,4 @@
+Scenario 2: Archiving a new topical event
+  When  I create a new topical event "An Event" with summary "A topical event", description "About this topical event" and it ends today
+  Then  I should see the topical event "An Event" in the admin interface
+

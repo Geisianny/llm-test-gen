@@ -1,0 +1,7 @@
+Scenario 1: Message can't be sent without subject
+  Given  they go to the outbox compose page
+  And  fill in "Body" with "Subject is empty"
+  And  press "Send"
+  Then  should see "Compose"
+  And  the current page is the outbox compose page
+

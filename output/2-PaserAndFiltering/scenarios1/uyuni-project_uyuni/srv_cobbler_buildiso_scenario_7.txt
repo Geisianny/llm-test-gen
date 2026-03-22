@@ -1,0 +1,5 @@
+Scenario 7: Create dummy system in the Cobbler buildiso context
+  Given  profile "orchid" exists
+  When  I create system "testsystem" for profile "orchid"
+  And  I add the Cobbler parameter "name-servers" with value "9.9.9.9" to item "system" with name "testsystem"
+

@@ -1,0 +1,10 @@
+Scenario 2: Skipping payment checkout step
+  Tags: ['@no-api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  And  I addressed the cart
+  When  I want to complete the shipping step
+  And  I have selected "Free" shipping method
+  And  I complete the shipping step
+  And  I try to open checkout complete page
+  Then  I should be on the checkout payment step
+

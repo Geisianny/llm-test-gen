@@ -1,0 +1,14 @@
+Scenario 4: _005233 сheck the required fields
+  And  I close all client application windows
+  *  Open catalog form
+  Given  I open hyperlink "e1cib/list/Catalog.ChequeBonds"
+  *  Check required fields
+  And  I click the button named "FormCreate"
+  And  I click "Save" button
+  Then  I wait that in user messages the "\"Cheque No\" is a required field" substring will appear in 5 seconds
+  Then  I wait that in user messages the "\"Type\" is a required field" substring will appear in 5 seconds
+  Then  I wait that in user messages the "\"Due date\" is a required field" substring will appear in 5 seconds
+  Then  I wait that in user messages the "\"Currency\" is a required field" substring will appear in 5 seconds
+  Then  I wait that in user messages the "\"Amount\" is a required field" substring will appear in 5 seconds
+  And  I close all client application windows
+

@@ -1,0 +1,10 @@
+Scenario 25: View the admin org recurring actions details
+  When  I follow the left menu "Admin > Organizations"
+  And  I follow "SUSE Test" in the content area
+  And  I follow "Recurring Actions" in the content area
+  Then  I should see a "schedule_name" text
+  When  I click the "schedule_name" item details button
+  Then  I should see a "Every 3rd of the month at 15:00" text
+  When  I click on "Back"
+  Then  I should see a "Schedules" text
+

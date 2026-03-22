@@ -1,0 +1,8 @@
+Scenario 25: Get team memberships returns "Represents a user's association to a team" response
+  Tags: ['@team:DataDog/aaa-omg']
+  Given  new "GetTeamMemberships" request
+  And  there is a valid "dd_team" in the system
+  And  request contains "team_id" parameter from "dd_team.data.id"
+  When  the request is sent
+  Then  the response status is 200 Represents a user's association to a team
+

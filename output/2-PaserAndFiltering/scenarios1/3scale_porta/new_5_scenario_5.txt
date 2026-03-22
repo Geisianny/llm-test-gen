@@ -1,0 +1,5 @@
+Scenario 5: Form validation
+  Given  they go to the product's new service plan admin page
+  When  the form is submitted with:
+  Then  field "Name" has inline error "Can't be blank"
+

@@ -1,0 +1,11 @@
+Scenario 1: Show Access Denied page on-premises
+  Tags: ['@onpremises']
+  When  I go to the provider login page
+  Then  I see the support email of the provider
+
+
+
+Scenario 2: Show "Account suspended" page in SaaS
+  When  I go to the provider login page
+  Then  I should see "Please open a support case"
+

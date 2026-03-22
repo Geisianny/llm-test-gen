@@ -1,0 +1,7 @@
+Scenario 5: Wallet backup and recovery
+  Given  I want to ensure wallet recovery options
+  When  I set up wallet backup:
+  And  I simulate wallet recovery scenarios:
+  Then  all recovery methods should work correctly
+  And  recovered wallet should match original state
+

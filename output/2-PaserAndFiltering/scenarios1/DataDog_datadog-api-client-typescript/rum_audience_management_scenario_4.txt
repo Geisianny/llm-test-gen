@@ -1,0 +1,8 @@
+Scenario 4: Get mapping returns "Successful response with entity mapping configuration" response
+  Tags: ['@generated', '@skip', '@team:DataDog/audience-management-backend']
+  Given  operation "GetMapping" enabled
+  And  new "GetMapping" request
+  And  request contains "entity" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 200 Successful response with entity mapping configuration
+

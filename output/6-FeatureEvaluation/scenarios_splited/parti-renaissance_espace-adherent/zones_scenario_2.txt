@@ -1,0 +1,5 @@
+Scenario: Filter zones by type via API
+  Given there are zones of different types
+  When the non-logged-in user requests zones of type "country" via the API
+  Then the system returns a list of zones of type "country"
+  And the response is successful

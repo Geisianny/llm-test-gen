@@ -1,0 +1,7 @@
+Scenario 7: Delete the key
+  When  I follow the left menu "Systems > Custom System Info"
+  And  I follow "key-label"
+  And  I follow "Delete Key"
+  And  I click on "Delete Key"
+  Then  I should not see a "key-label" text
+

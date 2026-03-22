@@ -1,0 +1,11 @@
+Scenario 3: Filter with search field
+  Given  the site has a index "myindex" for class "CoreShopProduct" with type "mysql"
+  And  the index has following fields:
+  And  the site has a filter "myfilter_search" for index "myindex"
+  And  the filter has a condition with label "Search" and type "search" on field "internalName"
+  And  the filter gets added to category "Coats"
+  And  I generate index "myindex" for products
+  When  I switch to category "Coats" on main menu
+  And  I type in search field "coat"
+  Then  I should see 2 products in the category list
+

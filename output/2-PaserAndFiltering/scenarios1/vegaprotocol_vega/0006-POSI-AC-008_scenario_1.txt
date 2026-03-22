@@ -1,0 +1,28 @@
+Scenario 1: Open long position, trades occur closing the long position and opening a short position (0006-POSI-008)
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the settlement account should have a balance of "0" for the market "ETH/DEC19"
+  And  the market data for the market "ETH/DEC19" should be:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  Then  the order book should have the following volumes for market "ETH/DEC19":
+  And  the settlement account should have a balance of "0" for the market "ETH/DEC19"
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following account balances:
+  And  the markets are updated:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  Then  the following transfers should happen:
+  And  the cumulated balance for all accounts should be worth "10330000"
+  And  the settlement account should have a balance of "0" for the market "ETH/DEC19"
+  Then  the parties should have the following profit and loss:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following profit and loss:
+  And  the market data for the market "ETH/DEC19" should be:
+

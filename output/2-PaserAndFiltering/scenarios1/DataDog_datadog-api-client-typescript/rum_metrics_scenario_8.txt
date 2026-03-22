@@ -1,0 +1,6 @@
+Scenario 8: Get all rum-based metrics returns "OK" response
+  Tags: ['@team:DataDog/rum-backend']
+  Given  new "ListRumMetrics" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

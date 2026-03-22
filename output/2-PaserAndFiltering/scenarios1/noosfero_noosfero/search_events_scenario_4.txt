@@ -1,0 +1,10 @@
+Scenario 4: paginate events of the day correctly
+  Tags: ['@selenium']
+  Given  the following events
+  And  I am on /search/events?year=2018&month=10
+  And  follow "15" within ".agenda-calendar"
+  And  The page should contain only 20 "#agenda-items .event-date"
+  When  I follow "Next" within ".xhr-links"
+  Then  The page should contain only 1 "#agenda-items .event-date"
+  And  I should see "October 2018" within "#agenda"
+

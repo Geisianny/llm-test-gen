@@ -1,0 +1,5 @@
+Scenario: Post-only limit order does not cross existing orders
+  Given there are existing orders on the book that do not cross
+  When a user places a LIMIT order with post-only flag set to TRUE
+  Then the order is placed fully on the book
+  And the order status is "Active"

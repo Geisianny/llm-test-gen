@@ -1,0 +1,9 @@
+Scenario Outline 24: Navigate to menu "<path>" and open screen "<screen>" - Example 24
+  When  I navigate the menu and select the item at "Goods & Services > Add Overhead"
+  Then  I should see the overhead entry screen
+
+  Examples:
+    | path | screen |
+    | Goods & Services > Add Overhead | overhead entry |
+    | Goods & Services > Add Part | part entry |
+

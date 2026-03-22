@@ -1,0 +1,10 @@
+Scenario 6: Delete the value
+  When  I follow the left menu "Systems > Custom System Info"
+  And  I follow "key-label"
+  And  I follow this "sle_minion" link
+  And  I follow "Custom Info"
+  And  I follow "key-value-edited"
+  And  I follow "Delete Value"
+  And  I click on "Remove Value"
+  Then  I should see a "No custom information defined for this system." text
+

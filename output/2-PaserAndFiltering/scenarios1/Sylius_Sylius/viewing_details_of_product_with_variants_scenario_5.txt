@@ -1,0 +1,7 @@
+Scenario 5: Viewing variants' details
+  Tags: ['@no-api', '@ui']
+  When  I access the "Iron Shield" product
+  Then  I should see 2 variants
+  And  I should see "Iron Shield - very big" variant with code "123456789-xl", priced "$25.00" and current stock 5 and in "United States" channel
+  And  I should see "Iron Shield - very small" variant with code "123456789-xs", priced "$15.00" and current stock 12 and in "United States" channel
+

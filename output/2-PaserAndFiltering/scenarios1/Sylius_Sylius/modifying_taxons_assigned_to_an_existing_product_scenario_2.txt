@@ -1,0 +1,8 @@
+Scenario 2: Adding taxons to product
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I want to modify the "Shirt" product
+  And  I add "Clothes" taxon to the "Shirt" product
+  And  I save my changes
+  Then  the product "Shirt" should have the "Clothes" taxon
+  And  the product "Shirt" should not have the "T-Shirts" taxon
+

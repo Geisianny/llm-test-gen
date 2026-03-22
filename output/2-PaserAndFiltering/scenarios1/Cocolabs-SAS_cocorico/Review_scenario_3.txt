@@ -1,0 +1,11 @@
+Scenario 3: As user i can't add a rating without filling required fields
+  Given  I am logged in as user "offerer@cocorico.rocks" with password "12345678"
+  When  I click on dashboard menu "Comments" of "offerer"
+  Then  I should be on the "dashboard reviews received" page
+  And  I wait 500 ms for Jquery loading
+  And  I should see "You must make notation for booking" in the "div.area" element
+  When  I follow "Add your rating"
+  And  I press "Publish this comment"
+  And  I wait 2000 ms
+  Then  I should see "An error has occurred." in the "div.flashes div.alert" element
+

@@ -1,0 +1,4 @@
+Scenario 1: Create a custom software channel
+  When  I create the following channels:
+  Then  "foobar" should get listed with a call of listSoftwareChannels
+

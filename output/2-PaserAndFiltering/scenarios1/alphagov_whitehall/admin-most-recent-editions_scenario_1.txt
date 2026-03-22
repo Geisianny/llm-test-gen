@@ -1,0 +1,6 @@
+Scenario 1: Viewing an old edition I am prompted to view the most recent one
+  Given  a published document "Road accidents" exists
+  When  someone else creates a new edition of the published document "Road accidents"
+  And  I view the old edition of document "Road accidents"
+  Then  I can click through to the most recent version of document "Road accidents"
+

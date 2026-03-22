@@ -1,0 +1,10 @@
+Scenario 2: Filtering orders by an another channel
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I browse orders
+  And  I choose "Web-US" as a channel filter
+  And  I filter
+  Then  I should see a single order in the list
+  And  I should see an order with "#00000003" number
+  But  I should not see an order with "#00000001" number
+  And  I should not see an order with "#00000002" number
+

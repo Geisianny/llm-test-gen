@@ -1,0 +1,10 @@
+Scenario 9: Being unable to change options of an existing product
+  Tags: ['@api', '@ui']
+  Given  the store has a "Marvel's T-Shirt" configurable product
+  And  the store has a product option "T-Shirt size" with a code "t_shirt_size"
+  And  this product has this product option
+  And  the store has also a product option "T-Shirt color"
+  And  the product "Marvel's T-Shirt" has "Iron Man T-Shirt" variant priced at "$40.00"
+  When  I want to modify the "Marvel's T-Shirt" product
+  Then  I should not be able to edit its options
+

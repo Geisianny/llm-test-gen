@@ -1,0 +1,8 @@
+Scenario 5: Each one sees its contents
+  Given  I am logged in as "one_buyer" on two.3scale.localhost
+  When  I request the url "/ducks"
+  Then  I should see "Duck of two"
+  Given  I am logged in as "one_buyer" on one.3scale.localhost
+  When  I request the url "/ducks"
+  Then  I should see "Duck of one"
+

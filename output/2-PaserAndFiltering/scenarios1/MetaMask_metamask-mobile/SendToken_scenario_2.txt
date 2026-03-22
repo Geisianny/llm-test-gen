@@ -1,0 +1,15 @@
+Scenario Outline 2: Import ChainLink Token - Example 1
+  Given  I tap on the navbar network title button
+  When  I select "Sepolia Test Network" network option
+  And  "Sepolia Test Network" should be displayed in network educational modal
+  Then  I see "Sepolia Test Network" visible in the top navigation bar
+  When  I tap Import Tokens
+  And  I type 0x779877A7B0D9E8603169DdbD7836e478b4624789 into token Address field
+  Then  The Token Symbol is displayed
+  When  I tap on the Import button
+  Then  I should see "Imported Token" toast message
+
+  Examples:
+    | NETWORK | TOKEN_ADDRESS |
+    | Sepolia Test Network | 0x779877A7B0D9E8603169DdbD7836e478b4624789 |
+

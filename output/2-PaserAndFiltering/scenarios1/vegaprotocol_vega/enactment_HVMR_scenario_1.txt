@@ -1,0 +1,17 @@
+Scenario Outline 1: No program currently active, new program enacted, rebate factors applied from the start of the next epoch. - Example 1
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  Given  the volume rebate program tiers named "vrt":
+  And  the volume rebate program:
+  Given  the network moves ahead "1" epochs
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  And  the following transfers should happen:
+
+  Examples:
+    | market |
+    | BTC/USD-0-1 |
+    | MXN-0-1/USD-0-1 |
+

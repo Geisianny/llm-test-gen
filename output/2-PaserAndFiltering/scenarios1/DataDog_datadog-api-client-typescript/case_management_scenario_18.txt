@@ -1,0 +1,9 @@
+Scenario 18: Delete case comment returns "Not Found" response
+  Tags: ['@team:DataDog/case-management']
+  Given  new "DeleteCaseComment" request
+  And  there is a valid "case" in the system
+  And  request contains "case_id" parameter from "case.id"
+  And  request contains "cell_id" parameter with value "23fca2aa-4967-4936-bdd7-9157d9e456d7"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

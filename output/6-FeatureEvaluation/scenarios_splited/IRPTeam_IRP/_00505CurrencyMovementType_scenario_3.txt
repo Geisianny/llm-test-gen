@@ -1,0 +1,7 @@
+Scenario: Update an existing currency movement type
+  Given there is an administrator logged into the system
+  And there is an existing currency movement type with the name "TRY Partner Terms"
+  When the administrator updates the currency movement type with the name "TRY Partner Terms"
+  And changes its linked exchange rate source to "Bloomberg"
+  Then the system saves the updated currency movement type
+  And displays a confirmation message indicating successful update

@@ -1,0 +1,5 @@
+Scenario 4: Update section
+  Given  I am logged in as provider "withsections.3scale.localhost" on its admin domain
+  When  I update "lolsection" section title to "waterfall"
+  Then  I should see "waterfall"
+

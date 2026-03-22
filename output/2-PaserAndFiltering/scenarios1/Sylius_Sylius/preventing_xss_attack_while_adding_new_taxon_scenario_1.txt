@@ -1,0 +1,5 @@
+Scenario 1: Preventing a potential XSS attack while adding new taxon
+  Tags: ['@no-api', '@ui', '@mink:chromedriver']
+  When  I want to create a new taxon
+  Then  I should be able to change its parent taxon to "Category"
+

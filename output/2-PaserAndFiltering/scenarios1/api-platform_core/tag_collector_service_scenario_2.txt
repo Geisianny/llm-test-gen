@@ -1,0 +1,5 @@
+Scenario 2: TagCollector can identify $object (IRI is overridden with custom logic)
+  When  I send a "GET" request to "/relation_embedders/1"
+  Then  the response status code should be 200
+  And  the header "Cache-Tags" should be equal to "/RE/1#anotherRelated,/RE/1#related,/RE/1"
+

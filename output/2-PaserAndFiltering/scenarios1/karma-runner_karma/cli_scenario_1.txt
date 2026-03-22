@@ -1,0 +1,4 @@
+Scenario 1: Top-level CLI help
+  When  I execute Karma with arguments: "--help"
+  Then  the stdout is exactly:
+

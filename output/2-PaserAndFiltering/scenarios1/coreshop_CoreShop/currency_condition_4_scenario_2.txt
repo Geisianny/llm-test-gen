@@ -1,0 +1,6 @@
+Scenario 2: Add a new currency shipping rule which is inactive
+  Given  adding a shipping rule named "currencies"
+  And  the shipping rule is inactive
+  And  the shipping rule has a condition currencies with currency "EUR"
+  Then  the shipping rule should be invalid for my cart with carrier "Post"
+

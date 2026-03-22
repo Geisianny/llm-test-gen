@@ -1,0 +1,26 @@
+Scenario 1: A typical path of a cash settled futures market nearing expiry when market is trading in continuous session (0002-STTL-011)
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the mark price should be "1000" for the market "ETH/DEC19"
+  And  the market state should be "STATE_ACTIVE" for the market "ETH/DEC19"
+  And  the insurance pool balance should be "1000" for the market "ETH/DEC19"
+  And  the parties should have the following account balances:
+  And  the parties should have the following account balances:
+  Then  the parties should have the following profit and loss:
+  When  the oracles broadcast data signed with "0xCAFECAFE":
+  And  time is updated to "2020-01-01T01:01:01Z"
+  Then  the market state should be "STATE_TRADING_TERMINATED" for the market "ETH/DEC19"
+  And  the parties should have the following account balances:
+  Then  the parties should have the following profit and loss:
+  When  the oracles broadcast data signed with "0xCAFECAFE":
+  Then  time is updated to "2020-01-01T01:01:02Z"
+  And  the parties should have the following account balances:
+  And  the parties should have the following account balances:
+  And  the parties should have the following profit and loss:
+  And  the network moves ahead "2" blocks
+  And  the insurance pool balance should be "0" for the market "ETH/DEC19"
+  And  the global insurance pool balance should be "1000" for the asset "ETH"
+

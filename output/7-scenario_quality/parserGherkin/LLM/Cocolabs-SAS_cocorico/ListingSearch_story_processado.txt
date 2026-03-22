@@ -1,0 +1,48 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: ListingSearch_story_processado.feature
+Caminho relativo: Cocolabs-SAS_cocorico\ListingSearch_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\Cocolabs-SAS_cocorico\ListingSearch_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: ListingSearch_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Search listing by location
+   Steps: 4
+   - Given there are listings available in different locations
+   - When the user searches for listings in "Paris"
+   - Then the system displays listings available in "Paris"
+   - And the listings are relevant to the search location
+2. Search listing by category
+   Steps: 4
+   - Given there are listings categorized as "Apartments" and "Houses"
+   - When the user searches for listings categorized as "Apartments"
+   - Then the system displays listings categorized as "Apartments"
+   - And the listings match the selected category
+3. Search listing by features
+   Steps: 4
+   - Given there are listings with different features such as "Wi-Fi" and "Pool"
+   - When the user searches for listings with the feature "Wi-Fi"
+   - Then the system displays listings that have "Wi-Fi"
+   - And the listings match the selected feature
+4. Search listing by date
+   Steps: 4
+   - Given there are listings available on different dates
+   - When the user searches for listings available on "2024-03-15"
+   - Then the system displays listings available on "2024-03-15"
+   - And the listings match the selected date
+5. Search listing by price range
+   Steps: 4
+   - Given there are listings with different prices
+   - When the user searches for listings priced between "$100" and "$200"
+   - Then the system displays listings priced between "$100" and "$200"
+   - And the listings match the selected price range

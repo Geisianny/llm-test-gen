@@ -1,0 +1,6 @@
+Scenario: Use stored variables across scenarios
+  Given there is an existing partner with the name "Test Partner"
+  And the partner's ID is stored as a variable "partner_id"
+  When the user creates a new invoice for the partner with ID "partner_id"
+  Then the system creates the invoice successfully
+  And the invoice is associated with the partner "Test Partner"

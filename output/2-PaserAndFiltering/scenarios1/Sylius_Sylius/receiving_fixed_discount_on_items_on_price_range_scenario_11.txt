@@ -1,0 +1,10 @@
+Scenario 11: Receiving fixed discount only on items that fit price range criteria
+  Tags: ['@api', '@ui']
+  Given  the promotion gives "$10.00" off on every product priced between "$30.00" and "$150.00"
+  And  I added product "PHP T-Shirt" to the cart
+  And  I added product "PHP Mug" to the cart
+  When  I check the details of my cart
+  Then  product "PHP T-Shirt" price should be decreased by "$10.00"
+  And  product "PHP Mug" price should not be decreased
+  And  my cart total should be "$110.00"
+

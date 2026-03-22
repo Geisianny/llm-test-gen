@@ -1,0 +1,7 @@
+Scenario 11: Check via API the new channels are enabled on the SLES minion
+  Tags: ['@sle_minion', '@susemanager']
+  When  I refresh the metadata for "sle_minion"
+  Then  "2" channels should be enabled on "sle_minion"
+  And  channel "Fake-Base-Channel-SUSE-like" should be enabled on "sle_minion"
+  And  channel "Fake-Child-Channel-SUSE-like" should be enabled on "sle_minion"
+

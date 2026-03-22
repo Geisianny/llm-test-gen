@@ -1,0 +1,9 @@
+Scenario 4: Top users (single application mode)
+  Given  the provider has "multiple_applications" denied
+  And  the following application plan:
+  And  a buyer "bob" signed up to application plan "Default"
+  And  I follow "API"
+  And  I follow "Analytics"
+  And  I follow "Top Applications"
+  Then  I should see "Top Applications" in a header
+

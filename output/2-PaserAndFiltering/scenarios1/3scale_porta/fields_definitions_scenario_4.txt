@@ -1,0 +1,10 @@
+Scenario 4: Show all buyer fields being a provider
+  Given  provider "foo.3scale.localhost" has the following fields defined for accounts:
+  And  a buyer "randomdude" signed up to provider "foo.3scale.localhost"
+  And  buyer "randomdude" has extra fields:
+  And  account "randomdude" has telephone number "666"
+  And  VAT rate of buyer "randomdude" is 9%
+  And  VAT code of buyer "randomdude" is 9
+  When  I go to the buyer account page for "randomdude"
+  Then  I should see the fields in order:
+

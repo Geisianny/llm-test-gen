@@ -1,0 +1,6 @@
+Scenario 4: view page in Pt as En guest with redirection disabled
+  Given  manuel disabled translation redirection in his profile
+  And  my browser prefers English
+  When  I go to /manuel/meu-artigo
+  Then  the site should be in Portuguese
+

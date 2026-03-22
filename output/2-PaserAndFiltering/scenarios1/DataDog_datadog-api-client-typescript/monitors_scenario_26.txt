@@ -1,0 +1,7 @@
+Scenario 26: Get all monitors returns "Bad Request" response
+  Tags: ['@team:DataDog/monitor-app']
+  Given  new "ListMonitors" request
+  And  request contains "group_states" parameter with value "notagroupstate"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

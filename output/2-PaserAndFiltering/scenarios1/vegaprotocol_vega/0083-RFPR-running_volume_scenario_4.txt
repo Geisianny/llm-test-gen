@@ -1,0 +1,11 @@
+Scenario Outline 4: Referral set member has an epoch taker volume greater than the cap (0083-RFPR-034) - Example 1
+  Given  the following network parameters are set:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  the referral set stats for code "referral-code-1" at epoch "1" should have a running volume of 1000:
+
+  Examples:
+    | party |
+    | referrer1 |
+    | referee1 |
+

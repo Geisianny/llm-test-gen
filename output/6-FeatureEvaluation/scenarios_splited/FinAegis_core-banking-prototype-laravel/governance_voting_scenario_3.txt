@@ -1,0 +1,5 @@
+Scenario: Vote on an existing proposal without sufficient voting power
+  Given there is a stakeholder without tokens staked and a proposal exists
+  When the stakeholder votes on the existing proposal
+  Then the system denies the vote
+  And displays a message indicating insufficient voting power

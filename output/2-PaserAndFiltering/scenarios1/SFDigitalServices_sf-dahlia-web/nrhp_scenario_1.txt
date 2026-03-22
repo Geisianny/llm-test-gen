@@ -1,0 +1,15 @@
+Scenario 1: Using an address outside the NRHP area, I should not see the preference option
+  Given  I go to the first page of the "Test Listing" application
+  When  I fill out the Name page as "Jeremy Doe"
+  And  I fill out the Contact page with an address, non-NRHP match, and WorkInSF
+  And  I confirm my address
+  And  I don't indicate an alternate contact
+  And  I indicate I will live alone
+  And  I indicate living in public housing
+  And  I indicate no ADA priority
+  And  I indicate having vouchers
+  And  I fill out my income as "50000"
+  And  I continue past the Lottery Preferences intro
+  And  I opt out of "Assisted Housing" preference
+  Then  I should be on the "Live or Work in San Francisco Preference" preference page
+

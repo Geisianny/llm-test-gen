@@ -1,0 +1,6 @@
+Scenario 19: Download the Workload Protection policy returns "OK" response
+  Tags: ['@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  new "DownloadCSMThreatsPolicy" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

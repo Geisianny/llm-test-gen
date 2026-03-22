@@ -1,0 +1,12 @@
+Scenario Outline 4: Add a new invalid specification - Example 1
+  When  the ActiveDocs form is submitted with:
+  Then  the current page is the ActiveDocs page
+  And  field "API JSON Spec" has inline error "is missing required properties"
+
+  Examples:
+    | swagger version | error |
+    | invalid Swagger 1.2 | is missing required properties |
+    | invalid Swagger 2 | is missing required properties |
+    | invalid OAS 3.0 | is missing required properties |
+    | invalid OAS 3.1 | is missing required properties |
+

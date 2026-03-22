@@ -1,0 +1,7 @@
+Scenario 2: Accessing the order payment page
+  Tags: ['@todo']
+  Given  I am viewing my order history
+  And  I am logged in as "john@example.com"
+  When  I retry payment on my order #000001
+  Then  I should be redirected to PayPal Checkout Express page
+

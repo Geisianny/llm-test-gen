@@ -1,0 +1,7 @@
+Scenario 4: A cleared journal line is not included in a reconciliation
+  being created with an end date after the journal line's date as
+  soon as the reconciliation is marked 'approved'.
+  Given  a cleared journal line on 2000-01-01
+  When  I create a reconciliation ending on 2000-02-01
+  Then  the journal line is not in the reconciliation
+

@@ -1,0 +1,8 @@
+Scenario 12: Delete resource from Confluent account returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "DeleteConfluentResource" request
+  And  request contains "account_id" parameter from "REPLACE.ME"
+  And  request contains "resource_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 204 OK
+

@@ -1,0 +1,10 @@
+Scenario Outline 16: Navigate to menu "<path>" and open screen "<screen>" - Example 16
+  When  I navigate the menu and select the item at "Fixed Assets > Asset Classes > Add Class"
+  Then  I should see the asset class edit screen
+
+  Examples:
+    | path | screen |
+    | Fixed Assets > Asset Classes > Add Class | asset class edit |
+    | Fixed Assets > Asset Classes > List Classes | asset class search |
+    | Fixed Assets > Assets > Add Assets | asset edit |
+

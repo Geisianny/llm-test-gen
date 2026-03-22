@@ -1,0 +1,10 @@
+Scenario 1: Liquid layouts are multitenant
+  Given  the template "main_layout" of provider "liquid.3scale.localhost" is
+  And  the template "main_layout" of provider "another-liquid.3scale.localhost" is
+  Given  the current domain is liquid.3scale.localhost
+  When  I go to the homepage
+  Then  I should see "ONE liquid provider"
+  Given  the current domain is another-liquid.3scale.localhost
+  When  I go to the homepage
+  Then  I should see "ANOTHER liquid provider"
+

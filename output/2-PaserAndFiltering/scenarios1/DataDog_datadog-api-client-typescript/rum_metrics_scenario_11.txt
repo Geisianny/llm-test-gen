@@ -1,0 +1,9 @@
+Scenario 11: Update a rum-based metric returns "Not Found" response
+  Tags: ['@team:DataDog/rum-backend']
+  Given  there is a valid "rum_metric" in the system
+  And  new "UpdateRumMetric" request
+  And  request contains "metric_id" parameter with value "8fc991bf-967e-4652-8a5b-0711a985abe3"
+  And  body with value {"data": {"id": "8fc991bf-967e-4652-8a5b-0711a985abe3", "type": "rum_metrics", "attributes": {"compute": {"include_percentiles": true}}}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

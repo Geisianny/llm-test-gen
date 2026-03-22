@@ -1,0 +1,8 @@
+Scenario 2: Extra fields are sorted by position
+  Given  provider "foo.3scale.localhost" has the field "wheels" for "Cinstance" in the position 20
+  And  the following application:
+  And  the application has the following extra fields:
+  When  they go to the application's dev portal page
+  Then  they should see the fields in order:
+  But  should not see the fields:
+

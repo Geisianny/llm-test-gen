@@ -1,0 +1,9 @@
+Scenario 2: see category facets when searching
+  Given  the following categories as facets
+  And  the following category
+  And  the following community
+  When  I go to the search communities page
+  And  I fill in "search-input" with "Linux"
+  And  I press "Search"
+  Then  I should see "Temáticas" within "#facets-menu"
+

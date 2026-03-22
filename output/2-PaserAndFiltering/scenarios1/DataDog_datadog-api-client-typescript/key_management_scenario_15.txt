@@ -1,0 +1,8 @@
+Scenario 15: Edit an application key returns "Conflict" response
+  Tags: ['@generated', '@skip', '@team:DataDog/credentials-management']
+  Given  new "UpdateApplicationKey" request
+  And  request contains "key" parameter from "REPLACE.ME"
+  And  body with value {"name": "example user"}
+  When  the request is sent
+  Then  the response status is 409 Conflict
+

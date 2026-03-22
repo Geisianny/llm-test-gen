@@ -1,0 +1,8 @@
+Scenario 7: Get all custom attributes config of case type returns "OK" response
+  Tags: ['@team:DataDog/case-management']
+  Given  new "GetAllCustomAttributeConfigsByCaseType" request
+  And  there is a valid "case_type" in the system
+  And  request contains "case_type_id" parameter from "case_type.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+

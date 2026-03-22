@@ -1,0 +1,10 @@
+Scenario Outline 8: superadmin cannot accept proposed organisations without a proper email - Example 1
+  Tags: ['@vcr']
+  Given  I try to accept a proposed organisation called "Unfriendly" with email "xyt"
+  Then  I should see an error flash: "No invitation email was sent because the email associated with Unfriendly, xyt, seems invalid"
+
+  Examples:
+    | email | message |
+    | xyt | No invitation email was sent because the email associated with Unfriendly, xyt, seems invalid |
+    |  | No invitation email was sent because no email is associated with the organisation |
+

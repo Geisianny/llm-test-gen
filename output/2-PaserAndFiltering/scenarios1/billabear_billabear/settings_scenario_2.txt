@@ -1,0 +1,5 @@
+Scenario 2: User not logged in
+  Given  I am not logged in
+  When  I visit the settings page
+  Then  I will be on the login page
+

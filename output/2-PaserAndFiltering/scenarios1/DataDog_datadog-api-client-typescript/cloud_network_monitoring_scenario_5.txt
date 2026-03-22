@@ -1,0 +1,6 @@
+Scenario 5: Get all aggregated connections returns "OK" response
+  Tags: ['@generated', '@skip', '@team:Datadog/networks']
+  Given  new "GetAggregatedConnections" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

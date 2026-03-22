@@ -1,0 +1,7 @@
+Scenario 9: Days
+  Tags: ['@wip']
+  Given  a buyer "kitty_one" signed up to application plan "Basic"
+  When  I log in as "lol.3scale.localhost"
+  And  I go to the provider days stats page
+  Then  I should see "Stats: Days of week"
+

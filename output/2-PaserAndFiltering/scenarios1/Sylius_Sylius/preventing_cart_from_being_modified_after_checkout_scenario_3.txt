@@ -1,0 +1,9 @@
+Scenario 3: Preventing from adding product after checkout
+  Tags: ['@api', '@no-ui']
+  Given  I added product "Sig Sauer P226" to the cart
+  And  I addressed the cart
+  And  I chose "Free" shipping method and "Cash on Delivery" payment method
+  And  I confirmed my order
+  When  I try to add product "AK-47" to the cart
+  Then  I should be informed that I cannot change the cart items after the checkout is completed
+

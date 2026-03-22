@@ -1,0 +1,9 @@
+Scenario 5: Accessing to complete the cart by the visitor
+  Tags: ['@api', '@ui']
+  Given  the visitor added product "Stark T-Shirt" to the cart
+  And  the visitor addressed the cart with email "guest@example.com"
+  And  the visitor chose "UPS" shipping method
+  And  the visitor chose "Offline" payment method
+  When  the visitor confirm his order
+  Then  the visitor should see the thank you page
+

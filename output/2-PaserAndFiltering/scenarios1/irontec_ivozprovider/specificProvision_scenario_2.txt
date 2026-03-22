@@ -1,0 +1,5 @@
+Scenario 2: Specific provision without subpath
+  When  I go to "https://ivozprovider:1443/0011223344bb"
+  Then  the response status code should be 200
+  And  the response should be equal to:
+

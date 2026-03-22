@@ -1,0 +1,9 @@
+Scenario 22: Extend configuration channel and deploy files via API for Salt minion
+  Tags: ['@sle_minion']
+  When  I store "COLOR=green" into file "/etc/s-mgr/config" on "sle_minion"
+  And  I add file "/etc/s-mgr/other" containing "NAME=Dante" to channel "mixedchannel"
+  And  I deploy all systems registered to channel "mixedchannel"
+  And  I wait until file "/etc/s-mgr/other" exists on "sle_minion"
+  Then  file "/etc/s-mgr/config" should contain "COLOR=white" on "sle_minion"
+  And  file "/etc/s-mgr/other" should contain "NAME=Dante" on "sle_minion"
+

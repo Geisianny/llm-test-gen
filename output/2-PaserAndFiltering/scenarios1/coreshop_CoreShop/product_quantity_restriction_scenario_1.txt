@@ -1,0 +1,5 @@
+Scenario 1: Create a product with a minimum quantity to order
+  Given  the product "Shoe" has a minimum order quantity of "100"
+  And  I add the product "Shoe" to my cart from add-to-cart-form
+  Then  there should be a violation message in my add-to-cart-form with message "You need to order at least 100 units of Shoe."
+

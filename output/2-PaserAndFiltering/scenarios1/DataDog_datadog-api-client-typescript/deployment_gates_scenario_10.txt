@@ -1,0 +1,9 @@
+Scenario 10: Delete deployment gate returns "No Content" response
+  Tags: ['@team:DataDog/ci-app-backend']
+  Given  there is a valid "deployment_gate" in the system
+  And  operation "DeleteDeploymentGate" enabled
+  And  new "DeleteDeploymentGate" request
+  And  request contains "id" parameter from "deployment_gate.data.id"
+  When  the request is sent
+  Then  the response status is 204 No Content
+

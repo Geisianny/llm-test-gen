@@ -1,0 +1,4 @@
+Scenario: Client submits information using absolute URL
+  Given there is a published resource with an absolute URL "https://example.com/resources/123"
+  When the client submits information to the URL "https://example.com/resources/123"
+  Then the system processes the submitted information

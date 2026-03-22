@@ -1,0 +1,8 @@
+Scenario 2: Being unable to finalize order's payment when one item has become tracked after the purchase
+  Tags: ['@api', '@ui']
+  Given  I am viewing the summary of the order "#00000001"
+  And  the "PHP T-Shirt" product's inventory has become tracked with 6 items
+  When  I mark this order as paid
+  Then  I should be notified that the order's payment could not be finalized due to insufficient stock
+  And  it should have payment state "New"
+

@@ -1,0 +1,8 @@
+Scenario 4: Delete a failure event returns "Bad Request" response
+  Tags: ['@skip', '@team:DataDog/ci-app-backend']
+  Given  new "DeleteDORAFailure" request
+  And  a valid "appKeyAuth" key in the system
+  And  request contains "failure_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

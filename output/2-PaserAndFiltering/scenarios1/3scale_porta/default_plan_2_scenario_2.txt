@@ -1,0 +1,7 @@
+Scenario 2: Unset the default account plan
+  Given  "Free" is the option selected in "Default plan"
+  When  they select "No plan selected" from "Default plan"
+  And  press "Change plan"
+  Then  they should see "The default plan has been changed"
+  And  "No plan selected" is the option selected in "Default plan"
+

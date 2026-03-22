@@ -1,0 +1,32 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 19/01/2026 23:13:57
+Arquivo analisado: product_review_validation_1_story_processado.feature
+Caminho relativo: inventorypapa_free-dropshipping-automation-software\product_review_validation_1_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/Originais\inventorypapa_free-dropshipping-automation-software\product_review_validation_1_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: product_review_validation_1_story_processado
+Descrição: Não possui
+Total de cenários: 2
+
+CENÁRIOS IDENTIFICADOS:
+1. Trying to remove title from an existing product review
+   Steps: 5
+   - When I want to modify the "Awesome" product review
+   - And I remove its title
+   - And I try to save my changes
+   - Then I should be notified that title is required
+   - And this product review should still be titled "Awesome"
+2. Trying to remove comment from an existing product review
+   Steps: 5
+   - When I want to modify the "Awesome" product review
+   - And I remove its comment
+   - And I try to save my changes
+   - Then I should be notified that comment is required
+   - And this product review should still have a comment "Nice product"

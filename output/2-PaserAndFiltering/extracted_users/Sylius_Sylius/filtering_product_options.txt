@@ -1,0 +1,27 @@
+Feature: Filtering product options
+Description: In order to quickly find specific product options
+    As an Administrator
+    I want to filter product options by name and code
+Tags: ['@managing_product_options']
+
+Background: 
+  Given  the store has a product option "T-Shirt size" with a code "t_shirt_size_abc"
+  And  the store has a product option "T-Shirt color" with a code "t_shirt_color_xyz"
+  And  the store has a product option "Jeans size" with a code "jeans_size_xyz"
+  And  I am logged in as an administrator
+  And  I am browsing product options
+
+Scenario 1: Filtering product options by name
+  Tags: ['@api', '@ui']
+  When  I search for product options with "T-Shirt" name
+  Then  I should see 2 product options in the list
+  And  the product option "T-Shirt size" should be in the registry
+  And  the product option "T-Shirt color" should be in the registry
+
+Scenario 2: Filtering product options by code
+  Tags: ['@api', '@ui']
+  When  I search for product options with "xyz" code
+  Then  I should see 2 product options in the list
+  And  the product option "T-Shirt color" should be in the registry
+  And  the product option "Jeans size" should be in the registry
+

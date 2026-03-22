@@ -1,0 +1,16 @@
+Scenario 2: Migrate this minion to SL Micro 6.1
+  Given  I am on the Systems overview page of this "slemicro55_minion"
+  When  I follow "Software" in the content area
+  And  I follow "Product Migration" in the content area
+  And  I wait until I see "Target Products:" text, refreshing the page
+  And  I wait until I see "SUSE Linux Micro 6.1 x86_64" text
+  When  I choose "SUSE Linux Micro 6.1 x86_64" radio button
+  And  I click on "Select Channels"
+  When  I select the channel "Custom Channel for slmicro61_minion"
+  And  I select the channel "ManagerTools-SL-Micro-6.1 for x86_64"
+  And  I check "allowVendorChange"
+  And  I click on "Schedule Migration"
+  Then  I should see a "Product Migration - Confirm" text
+  When  I click on "Confirm"
+  Then  I should see a "This system is scheduled to be migrated to" text
+

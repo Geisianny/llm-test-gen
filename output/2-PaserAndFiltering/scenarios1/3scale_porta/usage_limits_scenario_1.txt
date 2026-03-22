@@ -1,0 +1,10 @@
+Scenario 1: Create a limit
+  When  I go to plan "Basic" admin edit page
+  And  I follow "Limits (0)" for metric "hits" on application plan "Basic"
+  And  I follow "New usage limit"
+  And  I select "hour" from "Period"
+  And  I fill in "Max. value" with "1000"
+  And  I press "Create usage limit"
+  Then  I should see a usage limit of 1000 for metric "hits" on application plan "Basic" per "1 hour"
+  Then  plan "Basic" should have a usage limit of 1000 for metric "hits" per "hour"
+

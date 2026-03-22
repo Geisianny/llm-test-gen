@@ -1,0 +1,7 @@
+Scenario 3: Seeing applied catalog promotion on the product after changing the options multiple times
+  Tags: ['@no-api', '@ui', '@javascript']
+  When  I view product "T-Shirt"
+  And  I select its "Size" as "L"
+  And  I select its "Size" as "S"
+  Then  I should see this product is discounted from "$20.00" to "$10.00" with "Winter sale" promotion
+

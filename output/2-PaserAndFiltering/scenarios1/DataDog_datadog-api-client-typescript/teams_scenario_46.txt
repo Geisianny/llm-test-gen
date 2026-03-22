@@ -1,0 +1,9 @@
+Scenario 46: Update a user's membership attributes on a team returns "Represents a user's association to a team" response
+  Tags: ['@generated', '@skip', '@team:DataDog/aaa-omg']
+  Given  new "UpdateTeamMembership" request
+  And  request contains "team_id" parameter from "REPLACE.ME"
+  And  request contains "user_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"role": "admin"}, "type": "team_memberships"}}
+  When  the request is sent
+  Then  the response status is 200 Represents a user's association to a team
+

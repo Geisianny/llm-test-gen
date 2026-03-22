@@ -1,0 +1,5 @@
+Scenario 5: Display message when display full block are empty
+  Given  I follow "View all" within ".block.related-organizations-block"
+  Then  I should see "There are no sub-communities yet."
+  And  I should see "There are no sub-enterprises yet."
+

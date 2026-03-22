@@ -1,0 +1,8 @@
+Scenario 8: Update a specific Org Config returns "OK" response
+  Tags: ['@team:DataDog/team-aaa-identity']
+  Given  new "UpdateOrgConfig" request
+  And  request contains "org_config_name" parameter with value "monitor_timezone"
+  And  body with value {"data": {"attributes": {"value": "UTC"}, "type": "org_configs"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+

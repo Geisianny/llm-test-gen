@@ -1,0 +1,7 @@
+Scenario: Cancel update notification preferences
+  Given the provider user is on the notification preferences page
+  And there are notification types available for selection
+  When the provider user makes changes to the notification preferences
+  And cancels the update
+  Then the system does not update the notification preferences
+  And redirects the provider user to the previous page

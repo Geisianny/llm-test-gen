@@ -1,0 +1,259 @@
+Feature: GraphQL query support
+
+Scenario 1: Execute a basic GraphQL query
+  Tags: ['@createSchema']
+  Given  there are 2 dummy objects with relatedDummy
+  When  I send the following GraphQL request:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the JSON node "data.dummy.id" should be equal to "/dummies/1"
+  And  the JSON node "data.dummy.name" should be equal to "Dummy #1"
+  And  the JSON node "data.dummy.name_converted" should be equal to "Converted 1"
+
+Scenario 2: Retrieve an item with different relations to the same resource
+  Tags: ['@createSchema']
+  Given  there are 2 multiRelationsDummy objects having each 1 manyToOneRelation, 2 manyToManyRelations, 3 oneToManyRelations and 4 embeddedRelations
+  When  I send the following GraphQL request:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the JSON node "data.multiRelationsDummy.id" should be equal to "/multi_relations_dummies/2"
+  And  the JSON node "data.multiRelationsDummy.name" should be equal to "Dummy #2"
+  And  the JSON node "data.multiRelationsDummy.manyToOneRelation.id" should not be null
+  And  the JSON node "data.multiRelationsDummy.manyToOneRelation.name" should be equal to "RelatedManyToOneDummy #2"
+  And  the JSON node "data.multiRelationsDummy.manyToManyRelations.edges" should have 2 element
+  And  the JSON node "data.multiRelationsDummy.manyToManyRelations.edges[1].node.id" should not be null
+  And  the JSON node "data.multiRelationsDummy.manyToManyRelations.edges[0].node.name" should match "#RelatedManyToManyDummy(1|2)2#"
+  And  the JSON node "data.multiRelationsDummy.manyToManyRelations.edges[1].node.name" should match "#RelatedManyToManyDummy(1|2)2#"
+  And  the JSON node "data.multiRelationsDummy.oneToManyRelations.edges" should have 3 element
+  And  the JSON node "data.multiRelationsDummy.oneToManyRelations.edges[1].node.id" should not be null
+  And  the JSON node "data.multiRelationsDummy.oneToManyRelations.edges[0].node.name" should match "#RelatedOneToManyDummy(1|3)2#"
+  And  the JSON node "data.multiRelationsDummy.oneToManyRelations.edges[2].node.name" should match "#RelatedOneToManyDummy(1|3)2#"
+
+Scenario 3: Retrieve embedded collections
+  Tags: ['@createSchema']
+  Given  there are 2 multiRelationsDummy objects having each 1 manyToOneRelation, 2 manyToManyRelations, 3 oneToManyRelations and 4 embeddedRelations
+  When  I send the following GraphQL request:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the JSON node "errors" should not exist
+  And  the JSON node "data.multiRelationsDummy.id" should be equal to "/multi_relations_dummies/2"
+  And  the JSON node "data.multiRelationsDummy.name" should be equal to "Dummy #2"
+  And  the JSON node "data.multiRelationsDummy.manyToOneRelation.id" should not be null
+  And  the JSON node "data.multiRelationsDummy.manyToOneRelation.name" should be equal to "RelatedManyToOneDummy #2"
+  And  the JSON node "data.multiRelationsDummy.manyToOneResolveRelation.id" should not be null
+  And  the JSON node "data.multiRelationsDummy.manyToOneResolveRelation.name" should be equal to "RelatedManyToOneResolveDummy #2"
+  And  the JSON node "data.multiRelationsDummy.manyToManyRelations.edges" should have 2 element
+  And  the JSON node "data.multiRelationsDummy.manyToManyRelations.edges[1].node.id" should not be null
+  And  the JSON node "data.multiRelationsDummy.manyToManyRelations.edges[0].node.name" should match "#RelatedManyToManyDummy(1|2)2#"
+  And  the JSON node "data.multiRelationsDummy.manyToManyRelations.edges[1].node.name" should match "#RelatedManyToManyDummy(1|2)2#"
+  And  the JSON node "data.multiRelationsDummy.oneToManyRelations.edges" should have 3 element
+  And  the JSON node "data.multiRelationsDummy.oneToManyRelations.edges[1].node.id" should not be null
+  And  the JSON node "data.multiRelationsDummy.oneToManyRelations.edges[0].node.name" should match "#RelatedOneToManyDummy(1|3)2#"
+  And  the JSON node "data.multiRelationsDummy.oneToManyRelations.edges[2].node.name" should match "#RelatedOneToManyDummy(1|3)2#"
+  And  the JSON node "data.multiRelationsDummy.nestedCollection[0].name" should be equal to "NestedDummy1"
+  And  the JSON node "data.multiRelationsDummy.nestedCollection[1].name" should be equal to "NestedDummy2"
+  And  the JSON node "data.multiRelationsDummy.nestedCollection[2].name" should be equal to "NestedDummy3"
+  And  the JSON node "data.multiRelationsDummy.nestedCollection[3].name" should be equal to "NestedDummy4"
+  And  the JSON node "data.multiRelationsDummy.nestedPaginatedCollection.edges" should have 4 element
+  And  the JSON node "data.multiRelationsDummy.nestedPaginatedCollection.edges[0].node.name" should be equal to "NestedPaginatedDummy1"
+  And  the JSON node "data.multiRelationsDummy.nestedPaginatedCollection.edges[1].node.name" should be equal to "NestedPaginatedDummy2"
+  And  the JSON node "data.multiRelationsDummy.nestedPaginatedCollection.edges[2].node.name" should be equal to "NestedPaginatedDummy3"
+  And  the JSON node "data.multiRelationsDummy.nestedPaginatedCollection.edges[3].node.name" should be equal to "NestedPaginatedDummy4"
+
+Scenario 4: Retrieve an item with different relations (all unset)
+  Tags: ['@createSchema']
+  Given  there are 2 multiRelationsDummy objects having each 0 manyToOneRelation, 0 manyToManyRelations, 0 oneToManyRelations and 0 embeddedRelations
+  When  I send the following GraphQL request:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the JSON node "errors" should not exist
+  And  the JSON node "data.multiRelationsDummy.id" should be equal to "/multi_relations_dummies/2"
+  And  the JSON node "data.multiRelationsDummy.name" should be equal to "Dummy #2"
+  And  the JSON node "data.multiRelationsDummy.manyToOneRelation" should be null
+  And  the JSON node "data.multiRelationsDummy.manyToOneResolveRelation" should be null
+  And  the JSON node "data.multiRelationsDummy.manyToManyRelations.edges" should have 0 element
+  And  the JSON node "data.multiRelationsDummy.oneToManyRelations.edges" should have 0 element
+  And  the JSON node "data.multiRelationsDummy.nestedCollection" should have 0 element
+  And  the JSON node "data.multiRelationsDummy.nestedPaginatedCollection.edges" should have 0 element
+
+Scenario 5: Retrieve an item with child relation to the same resource
+  Tags: ['@createSchema', '@!mongodb']
+  Given  there are tree dummies
+  When  I send the following GraphQL request:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the JSON node "errors" should not exist
+  And  the JSON node "data.treeDummies.edges[0].node.id" should be equal to "/tree_dummies/1"
+  And  the JSON node "data.treeDummies.edges[0].node.children.totalCount" should be equal to "1"
+  And  the JSON node "data.treeDummies.edges[1].node.id" should be equal to "/tree_dummies/2"
+  And  the JSON node "data.treeDummies.edges[1].node.children.totalCount" should be equal to "0"
+
+Scenario 6: Retrieve a Relay Node
+  Tags: ['@createSchema']
+  Given  there are 2 dummy objects with relatedDummy
+  When  I send the following GraphQL request:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the JSON node "data.node.id" should be equal to "/dummies/1"
+  And  the JSON node "data.node.name" should be equal to "Dummy #1"
+
+Scenario 7: Retrieve an item with an iterable field
+  Tags: ['@createSchema']
+  Given  there are 2 dummy objects with relatedDummy
+  Given  there are 2 dummy objects with JSON and array data
+  When  I send the following GraphQL request:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the JSON node "data.dummy.id" should be equal to "/dummies/3"
+  And  the JSON node "data.dummy.name" should be equal to "Dummy #1"
+  And  the JSON node "data.dummy.jsonData.foo" should have 2 elements
+  And  the JSON node "data.dummy.jsonData.bar" should be equal to 5
+  And  the JSON node "data.dummy.arrayData[2]" should be equal to baz
+
+Scenario 8: Retrieve an item with an iterable null field
+  Tags: ['@createSchema']
+  Given  there are 2 dummy with null JSON objects
+  When  I send the following GraphQL request:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the JSON node "data.withJsonDummy.id" should be equal to "/with_json_dummies/2"
+  And  the JSON node "data.withJsonDummy.json" should be null
+
+Scenario 9: Retrieve an item through a GraphQL query with variables
+  Tags: ['@createSchema']
+  Given  there are 2 dummy objects with relatedDummy
+  When  I have the following GraphQL request:
+  And  I send the GraphQL request with variables:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the JSON node "data.dummyItem.id" should be equal to "/dummies/2"
+  And  the JSON node "data.dummyItem.name" should be equal to "Dummy #2"
+  And  the JSON node "data.dummyItem.relatedDummy.id" should be equal to "/related_dummies/2"
+  And  the JSON node "data.dummyItem.relatedDummy.name" should be equal to "RelatedDummy #2"
+
+Scenario 10: Run a specific operation through a GraphQL query
+  When  I have the following GraphQL request:
+  And  I send the GraphQL request with operationName "DummyWithId2"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the JSON node "data.dummyItem.id" should be equal to "/dummies/2"
+  And  the JSON node "data.dummyItem.name" should be equal to "Dummy #2"
+  And  I send the GraphQL request with operationName "DummyWithId1"
+  And  the JSON node "data.dummyItem.name" should be equal to "Dummy #1"
+
+Scenario 11: Use serialization groups
+  Given  there are 1 dummy group objects
+  When  I send the following GraphQL request:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the JSON node "data.dummyGroup.foo" should be equal to "Foo #1"
+
+Scenario 12: Query a serialized name
+  Given  there is a DummyCar entity with related colors
+  When  I send the following GraphQL request:
+  Then  the JSON node "data.dummyCar.carBrand" should be equal to "DummyBrand"
+
+Scenario 13: Fetch only the internal id
+  When  I send the following GraphQL request:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the JSON node "data.dummy._id" should be equal to "1"
+
+Scenario 14: Retrieve an nonexistent item through a GraphQL query
+  When  I send the following GraphQL request:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the JSON node "data.dummy" should be null
+
+Scenario 15: Retrieve an nonexistent IRI through a GraphQL query
+  When  I send the following GraphQL request:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the GraphQL debug message should be equal to 'No route matches "/foo/1".'
+  And  the JSON should be valid according to this schema:
+
+Scenario 16: Use outputClass instead of resource class through a GraphQL query
+  Given  there are 2 dummyDtoNoInput objects
+  When  I send the following GraphQL request:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the JSON should be equal to:
+
+Scenario 17: Disable outputClass leads to an empty response through a GraphQL query
+  Tags: ['@createSchema']
+  Given  there are 2 dummyDtoNoOutput objects
+  When  I send the following GraphQL request:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the JSON should be equal to:
+
+Scenario 18: Custom not retrieved item query
+  When  I send the following GraphQL request:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the JSON should be equal to:
+
+Scenario 19: Custom item query with read and serialize set to false
+  When  I send the following GraphQL request:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the JSON should be equal to:
+
+Scenario 20: Custom item query
+  Given  there are 2 dummyCustomQuery objects
+  When  I send the following GraphQL request:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the JSON should be equal to:
+
+Scenario 21: Custom item query with custom arguments
+  Given  there are 2 dummyCustomQuery objects
+  When  I send the following GraphQL request:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the JSON should be equal to:
+
+Scenario 22: Retrieve an item with different serialization groups for item_query and collection_query
+  Tags: ['@createSchema']
+  Given  there are 1 dummy with different GraphQL serialization groups objects
+  When  I send the following GraphQL request:
+  Then  the response status code should be 200
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the JSON node "data.dummyDifferentGraphQlSerializationGroup.name" should be equal to "Name #1"
+  And  the JSON node "data.dummyDifferentGraphQlSerializationGroup.title" should be equal to "Title #1"
+
+Scenario 23: Call security after resolver
+  When  I send the following GraphQL request:
+  Then  the response status code should be 200
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the JSON node "data.getSecurityAfterResolver.name" should be equal to "test"
+
+Scenario 24: Call security after resolver with 403 error (ensure /2 does not match securityAfterResolver)
+  When  I send the following GraphQL request:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json"
+  And  the JSON node "errors[0].extensions.status" should be equal to 403
+  And  the JSON node "errors[0].message" should be equal to "Access Denied."
+  And  the JSON node "data.getSecurityAfterResolver.name" should not exist
+

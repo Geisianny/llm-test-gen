@@ -1,0 +1,39 @@
+Scenario: Sign-in while filling out an application anonymously with valid credentials
+  Given there is a user with an existing account
+  And the user is filling out an application anonymously
+  When the user chooses to sign in with their account
+  And enters valid email and password
+  Then the system authenticates the user
+  And associates the anonymous application with the user's account
+
+Scenario: Sign-in while filling out an application anonymously with invalid credentials
+  Given there is a user with an existing account
+  And the user is filling out an application anonymously
+  When the user chooses to sign in with their account
+  And enters invalid email or password
+  Then the system denies access
+  And displays a message indicating that the email or password is incorrect
+
+Scenario: Continue application anonymously after attempting to sign in
+  Given there is a user with an existing account
+  And the user is filling out an application anonymously
+  When the user chooses to sign in with their account
+  And enters invalid email or password
+  And chooses to continue anonymously
+  Then the system allows the user to continue filling out the application anonymously
+
+Scenario: Reconcile conflicting data during sign-in
+  Given there is a user with an existing account with different date of birth than the anonymous application
+  And the user is filling out an application anonymously for a senior-specific listing
+  When the user chooses to sign in with their account
+  And enters valid email and password
+  Then the system prompts the user to reconcile the conflicting date of birth
+  And provides options to use the account data or continue with the anonymous data
+
+Scenario: Create a new account during application
+  Given there is no user with an existing account
+  And the user is filling out an application anonymously
+  When the user chooses to create a new account
+  And enters valid account information
+  Then the system creates a new account
+  And associates the anonymous application with the new account

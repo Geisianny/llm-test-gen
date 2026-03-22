@@ -1,0 +1,13 @@
+Scenario 4: Try to cancel an invoice with a partial reconciliation done
+  Tags: ['@reconciliation', '@bug524521']
+  Given  I have recorded on the 1 jan 2009 an invoice (in_invoice) of 1000,0 CHF without tax called MySupplierInvoicePartialCancel
+  When  I press the validate button
+  Then  I should see the invoice MySupplierInvoicePartialCancel open
+  And  the residual amount = 1000,0
+  When  I call the Pay invoice wizard
+  And  I partially pay 200.0 CHF.- on the 10 jan 2009
+  Then  I should see a residual amount of 800.0 CHF.-
+  When  I press the cancel button it should raise a warning
+  And  because the invoice is partially reconciled the payments lines should be kept
+  And  I should see the invoice MySupplierInvoice open
+

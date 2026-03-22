@@ -1,0 +1,5 @@
+Scenario: Unwithdraw a withdrawn document
+  Given there is a withdrawn document with title "Example Document"
+  When the Managing Editor unwithdraws the document
+  Then the document status changes to "Draft"
+  And the document is available for editing

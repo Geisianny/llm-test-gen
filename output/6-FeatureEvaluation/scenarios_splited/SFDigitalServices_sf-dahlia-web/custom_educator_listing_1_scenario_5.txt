@@ -1,0 +1,6 @@
+Scenario: Cancel application to Custom Educator Listing
+  Given there is a Custom Educator Listing available
+  And the user is on the listing page
+  And has started the application process
+  When the user cancels the application
+  Then the system returns the user to the listing page

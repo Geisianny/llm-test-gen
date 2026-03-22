@@ -1,0 +1,36 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 19/01/2026 23:13:57
+Arquivo analisado: in-arrears-purchase_story_processado.feature
+Caminho relativo: ledgersmb_LedgerSMB\in-arrears-purchase_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/Originais\ledgersmb_LedgerSMB\in-arrears-purchase_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: in-arrears-purchase_story_processado
+Descrição: Não possui
+Total de cenários: 3
+
+CENÁRIOS IDENTIFICADOS:
+1. COGS posting when purchasing parts in arrears (still short)
+   Steps: 4
+   - Given 10 units sold
+   - When 5 units are purchased at 10 USD each
+   - Then the inventory should be at 0 USD
+   - And COGS should be at 50 USD
+2. COGS posting when purchasing parts in arrears (exact match)
+   Steps: 4
+   - Given 10 units sold
+   - When 10 units are purchased at 10 USD each
+   - Then the inventory should be at 0 USD
+   - And COGS should be at 100 USD
+3. COGS posting when purchasing parts in arrears (partly into inventory)
+   Steps: 4
+   - Given 10 units sold
+   - When 20 units are purchased at 10 USD each
+   - Then the inventory should be at 100 USD
+   - And COGS should be at 100 USD

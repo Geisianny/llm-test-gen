@@ -1,0 +1,6 @@
+Scenario: Add JavaScript version tag in non-Firefox browser
+  Given the user is using the Karma Test Runner CLI
+  And the browser is Chrome
+  When the user adds a JavaScript version tag
+  Then the system does not include the JavaScript version tag in the test configuration
+  And the test is executed without the JavaScript version tag

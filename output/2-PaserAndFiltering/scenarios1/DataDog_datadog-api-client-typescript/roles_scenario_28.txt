@@ -1,0 +1,11 @@
+Scenario 28: Remove a user from a role returns "OK" response
+  Tags: ['@team:DataDog/aaa-core-access']
+  Given  there is a valid "role" in the system
+  And  there is a valid "user" in the system
+  And  the "user" has the "role"
+  And  new "RemoveUserFromRole" request
+  And  request contains "role_id" parameter from "role.data.id"
+  And  body with value {"data": {"id": "{{ user.data.id}}", "type": "{{ user.data.type }}"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+

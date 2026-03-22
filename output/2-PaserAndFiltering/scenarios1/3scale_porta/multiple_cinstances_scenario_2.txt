@@ -1,0 +1,5 @@
+Scenario 2: Attempt to sign up with Invalid details
+  When  I go to the sign up page
+  And  the form is submitted with:
+  And  I should see error "is too short (minimum is 3 characters)" for field "Username"
+

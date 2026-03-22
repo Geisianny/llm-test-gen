@@ -1,0 +1,14 @@
+Scenario 1: In auction GTC/GTT All MARKET orders are rejected. For product spot: (0068-MATC-079)
+  And  the parties place the following orders:
+  Then  the orders should have the following status:
+  And  the parties place the following orders:
+  And  the opening auction period ends for market "BTC/ETH"
+  When  the network moves ahead "1" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  And  the mark price should be "1000" for the market "BTC/ETH"
+  And  the market data for the market "BTC/ETH" should be:
+  And  the parties place the following orders:
+  Then  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "BTC/ETH"
+  And  the parties place the following orders:
+  Then  the orders should have the following status:
+

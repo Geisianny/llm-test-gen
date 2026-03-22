@@ -1,0 +1,5 @@
+Scenario 21: Create a custom action chain for the SSH minion
+  When  I create an action chain with label "minssh_action_chain_to_delete" via API
+  And  I follow the left menu "Schedule > Action Chains"
+  Then  I should see a "minssh_action_chain_to_delete" text
+

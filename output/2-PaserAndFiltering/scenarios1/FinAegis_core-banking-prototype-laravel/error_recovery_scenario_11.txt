@@ -1,0 +1,6 @@
+Scenario 11: API rate limit recovery
+  Given  external API has rate limits
+  When  rate limit is exceeded
+  Then  the client should:
+  And  maintain request priority ordering
+

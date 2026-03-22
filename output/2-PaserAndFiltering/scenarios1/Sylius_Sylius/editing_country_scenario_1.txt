@@ -1,0 +1,9 @@
+Scenario 1: Disabling country
+  Tags: ['@api', '@ui']
+  Given  the store has country "United States"
+  When  I want to edit this country
+  And  I disable it
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this country should be disabled
+

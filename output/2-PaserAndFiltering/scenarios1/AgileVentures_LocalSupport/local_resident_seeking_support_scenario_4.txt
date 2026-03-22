@@ -1,0 +1,5 @@
+Scenario 4: See a list of current organisations
+  Given  I visit the organisations index page
+  And  cookies are approved
+  Then  the index should contain:
+

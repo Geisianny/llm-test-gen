@@ -1,0 +1,11 @@
+Scenario 5: Registration with password mismatch
+  Given  I am on the registration page
+  When  I fill in "Name" with "Jane Doe"
+  And  I fill in "Email" with "jane@example.com"
+  And  I fill in "Password" with "Password123!"
+  And  I fill in "Confirm Password" with "DifferentPassword123!"
+  And  I check "I agree to the Terms of Service"
+  And  I press "Register"
+  Then  I should see "The password field confirmation does not match"
+  And  I should remain on the registration page
+

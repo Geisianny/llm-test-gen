@@ -1,0 +1,11 @@
+Scenario 5: Install non-modular package
+  When  I install package "scorpio-dummy-1.0-12.1" on this "rhlike_minion"
+  And  I refresh packages list via spacecmd on "rhlike_minion"
+  And  I wait until refresh package list on "rhlike_minion" is finished
+  And  I follow the left menu "Admin > Task Schedules"
+  And  I follow "errata-cache-default"
+  And  I follow "errata-cache-bunch"
+  And  I click on "Single Run Schedule"
+  Then  I should see a "bunch was scheduled" text
+  And  I wait until the table contains "FINISHED" or "SKIPPED" followed by "FINISHED" in its first rows
+

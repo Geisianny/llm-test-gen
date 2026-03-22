@@ -1,0 +1,6 @@
+Scenario 12: List Cloudflare accounts returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/saas-integrations']
+  Given  new "ListCloudflareAccounts" request
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

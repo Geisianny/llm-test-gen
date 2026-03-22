@@ -1,0 +1,21 @@
+Feature: Org owner can delete volunteer opportunities
+Description: As an org owner
+  So that I can ensure filled volunteer vacancies are not on the system
+  I would like to be able to delete volunteer opportunities
+
+Background: 
+  Given  the following organisations exist:
+  And  the following users are registered:
+  And  the following volunteer opportunities exist:
+
+Scenario 1: 
+  Given  I am signed in as a charity worker related to "Cats Are Us"
+  And  I visit the show page for the volunteer_op titled "Litter Box Scooper"
+  And  I click "Delete"
+  Then  I should see "Deleted Litter Box Scooper" in the flash
+
+Scenario 2: 
+  Given  I am signed in as a charity worker related to "Dogs Rule"
+  And  I visit the show page for the volunteer_op titled "Litter Box Scooper 2"
+  Then  I should not see a link or button "Delete"
+

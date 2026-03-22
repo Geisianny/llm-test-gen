@@ -1,0 +1,9 @@
+Scenario 10: Seeing the lowest price information on a product that had a discount, the price was changed below previous discount while a less attractive discount was added and a less attractive discount was added
+  Tags: ['@api', '@ui']
+  Given  the store has a product "Wyborowa Vodka" priced at "$37.00"
+  And  this product's price changed to "$20.00" and original price changed to "$37.00"
+  And  this product's price changed to "$21.00" and original price changed to "$19.00"
+  And  this product's price changed to "$33.00" and original price changed to "$37.00"
+  When  I check this product's details
+  Then  I should see "$20.00" as its lowest price before the discount
+

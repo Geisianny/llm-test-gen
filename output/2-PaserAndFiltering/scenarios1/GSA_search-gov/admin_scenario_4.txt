@@ -1,0 +1,14 @@
+Scenario 4: Editing an affiliate as an admin
+  Tags: ['@javascript']
+  Given  the following Affiliates exist:
+  When  I go to the admin sites page
+  When  I follow "Edit" within the first scaffold row
+  Then  I should see "Settings (Show)"
+  And  I should see "Enable/disable Settings (Show)"
+  And  I should see "Display Settings (Show)"
+  And  I should see "Analytics-Tracking Code (Show)"
+  When  I follow "Show" within the first subsection row
+  And  I fill in "Display name" with "New Name"
+  And  I press "Update"
+  Then  I should see "New Name"
+

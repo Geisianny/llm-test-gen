@@ -1,0 +1,10 @@
+Scenario 3: Trying to add a new exchange rate with same target currency as source
+  Tags: ['@ui', '@api']
+  Given  I want to add a new exchange rate
+  When  I specify its ratio as 1.23
+  And  I choose "US Dollar" as the source currency
+  And  I choose "US Dollar" as the target currency
+  And  I try to add it
+  Then  I should be notified that source and target currencies must differ
+  And  the exchange rate between "US Dollar" and "US Dollar" should not be added
+

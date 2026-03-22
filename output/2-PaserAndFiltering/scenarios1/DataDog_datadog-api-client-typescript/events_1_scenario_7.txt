@@ -1,0 +1,7 @@
+Scenario 7: Get an event returns "OK" response
+  Tags: ['@skip', '@team:DataDog/event-management']
+  Given  new "GetEvent" request
+  And  request contains "event_id" parameter with value "AZeF-nTCAABzkAgGXzYPtgAA"
+  When  the request is sent
+  Then  the response status is 200 OK
+

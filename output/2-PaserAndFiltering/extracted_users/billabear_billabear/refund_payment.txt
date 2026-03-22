@@ -1,0 +1,20 @@
+Feature: Payment List Read APP
+Description: In order to manage a payments
+  As an APP user
+  I need to be see all the payments
+
+Background: 
+  Given  the follow products exist:
+  And  the follow prices exist:
+  And  the following features exist:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "Price One" with:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "Price One" with:
+
+Scenario 1: Get customer info
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  And  there is a payments for:
+  When  I refund 3500 the payment for "customer.one@example.org" for 3500 via API
+  Then  there will be a refund for "customer.one@example.org" of 3500
+

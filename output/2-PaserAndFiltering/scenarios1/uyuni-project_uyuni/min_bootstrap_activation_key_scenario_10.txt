@@ -1,0 +1,5 @@
+Scenario 10: Verify that minion bootstrapped with base channel
+  Tags: ['@susemanager']
+  Given  I am on the Systems page
+  Then  I should see a "SLE-Product-SLES15-SP4-Pool for x86_64" text
+

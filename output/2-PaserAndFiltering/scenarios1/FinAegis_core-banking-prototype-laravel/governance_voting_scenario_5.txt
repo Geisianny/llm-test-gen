@@ -1,0 +1,8 @@
+Scenario 5: Feature toggle governance
+  Given  a proposal exists to enable "advanced_derivatives"
+  And  I have sufficient voting power
+  When  I vote to enable the feature
+  And  the proposal reaches majority approval
+  Then  the feature should be automatically enabled
+  And  the system should log the governance action
+

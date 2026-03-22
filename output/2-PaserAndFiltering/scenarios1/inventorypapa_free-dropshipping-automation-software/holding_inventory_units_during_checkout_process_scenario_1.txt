@@ -1,0 +1,8 @@
+Scenario 1: Holding inventory units
+  Tags: ['@ui']
+  Given  the customer bought 3 "Iron Maiden T-Shirt" products
+  And  the customer chose "Free" shipping method to "United States" with "offline" payment
+  When  I view variants of the product "Iron Maiden T-Shirt"
+  Then  3 units of this product should be on hold
+  And  5 units of this product should be on hand
+

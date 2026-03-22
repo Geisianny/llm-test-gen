@@ -1,0 +1,7 @@
+Scenario 3: try to signup with existent username in same provider
+  Tags: ['@wip']
+  When  the current domain is foo.3scale.localhost
+  And  I go to the sign up page
+  And  I fill in the following:
+  Then  I should see error in fields:
+

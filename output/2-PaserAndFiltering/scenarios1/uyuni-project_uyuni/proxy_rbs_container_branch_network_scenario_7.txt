@@ -1,0 +1,10 @@
+Scenario 7: Parametrize the Saltboot Group formula
+  When  I follow the left menu "Systems > System Groups"
+  And  I follow "example" in the content area
+  And  I follow "Formulas" in the content area
+  And  I follow first "Saltboot Group" in the content area
+  And  I enter "proxy.example.org" as "Image download server"
+  And  I check containerized proxy box
+  And  I click on "Save Formula"
+  Then  I should see a "Formula saved" text
+

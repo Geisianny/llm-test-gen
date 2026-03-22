@@ -1,0 +1,6 @@
+Scenario 45: List budgets returns "OK" response
+  Tags: ['@team:DataDog/cloud-cost-management']
+  Given  new "ListBudgets" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

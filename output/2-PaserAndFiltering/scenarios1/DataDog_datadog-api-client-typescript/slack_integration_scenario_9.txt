@@ -1,0 +1,7 @@
+Scenario 9: Get all channels in a Slack integration returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/chat-integrations']
+  Given  new "GetSlackIntegrationChannels" request
+  And  request contains "account_name" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 200 OK
+

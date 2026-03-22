@@ -1,0 +1,6 @@
+Scenario 1: Make new accounts require approval from admin
+  Given  they go to account plan "Free" admin edit page
+  When  the form is submitted with:
+  Then  the current page is the account plans admin page
+  And  new accounts with account plan "Free" will be pending for approval
+

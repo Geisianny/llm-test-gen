@@ -1,0 +1,20 @@
+Scenario 9: Mix package locks and unlock events part 2
+  Given  I am on the Systems overview page of this "sle_minion"
+  And  I follow "Software" in the content area
+  And  I follow "Lock / Unlock"
+  When  I click on "Select All"
+  And  I click on "Unlock"
+  Then  I should see a "Packages has been requested for being unlocked." text
+  And  only packages "hoag-dummy-1.1-1.1, orion-dummy-1.1-1.1" are reported as pending to be unlocked
+  When  I wait until event "Lock packages scheduled" is completed
+  Then  "hoag-dummy-1.1-1.1" is unlocked on "sle_minion"
+  And  "orion-dummy-1.1-1.1" is unlocked on "sle_minion"
+  When  I follow "Software" in the content area
+  And  I follow "Lock / Unlock"
+  And  I enter "hoag-dummy-1.1-1.1" as the filtered package name
+  And  I click on the filter button
+  Then  package "hoag-dummy-1.1-1.1" is reported as unlocked
+  And  I enter "orion-dummy-1.1-1.1" as the filtered package name
+  And  I click on the filter button
+  And  package "orion-dummy-1.1-1.1" is reported as unlocked
+

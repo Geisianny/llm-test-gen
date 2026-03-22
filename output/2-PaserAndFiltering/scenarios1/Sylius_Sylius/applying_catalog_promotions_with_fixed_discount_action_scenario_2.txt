@@ -1,0 +1,5 @@
+Scenario 2: Applying simple catalog promotion on another variant
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I view "Java T-Shirt" variant of the "T-Shirt" product
+  Then  I should see this variant is discounted from "$30.00" to "$20.00" with "Winter sale" promotion
+

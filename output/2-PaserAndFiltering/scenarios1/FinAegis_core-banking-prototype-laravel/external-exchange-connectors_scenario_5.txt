@@ -1,0 +1,6 @@
+Scenario 5: External exchange connector fails gracefully
+  Given  the external exchange "binance" is unavailable
+  When  I request "GET /api/external-exchange/ticker/BTC/EUR"
+  Then  the response status should be 200
+  And  the response should only contain data from "kraken"
+

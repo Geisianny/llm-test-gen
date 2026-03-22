@@ -1,0 +1,8 @@
+Scenario 2: Subscription with approval
+  Given  the following service plan:
+  When  I go to the service subscription page
+  And  I select "Platinum" from "Plan"
+  And  press "Subscribe"
+  Then  I should see "You have successfully subscribed to a service"
+  And  I should see "Platinum (pending)"
+

@@ -1,0 +1,5 @@
+Scenario 2: Preventing a potential XSS attack while choosing main taxon for a new product
+  Tags: ['@no-api', '@ui', '@mink:chromedriver']
+  When  I want to create a new simple product
+  Then  I should be able to choose main taxon "No XSS"
+

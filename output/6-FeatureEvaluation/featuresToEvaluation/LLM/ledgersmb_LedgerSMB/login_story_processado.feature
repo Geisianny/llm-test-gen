@@ -1,0 +1,34 @@
+Feature: login_story_processado
+
+Scenario: Admin successful login
+    Given there is an admin user with the username "admin" and password "password123"
+    When the admin logs in with the username "admin"
+    And enters the correct password "password123"
+    Then the system grants access to the admin dashboard
+    And displays a message confirming successful login
+
+Scenario: User successful login
+    Given there is a user with the username "user1" and password "password123"
+    When the user logs in with the username "user1"
+    And enters the correct password "password123"
+    Then the system grants access to the user dashboard
+    And displays a message confirming successful login
+
+Scenario: Login with incorrect credentials
+    Given there is a user with the username "user1" and password "password123"
+    When the user logs in with the username "user1"
+    And enters the incorrect password "wrongPassword"
+    Then the system denies access
+    And displays a message indicating that the username or password is incorrect
+
+Scenario: Automatic redirection to login page from root
+    Given the user is on the application root page
+    When the user accesses the root page
+    Then the system redirects to the login page
+    And displays the login form
+
+Scenario: Accessing setup page
+    Given the system is not configured
+    When the user accesses the setup page
+    Then the system displays the setup page
+    And allows the user to configure the system

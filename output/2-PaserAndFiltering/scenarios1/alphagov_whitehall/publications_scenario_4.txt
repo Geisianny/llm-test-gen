@@ -1,0 +1,9 @@
+Scenario 4: Publishing an edition I created but did not submit
+  Tags: ['@not-quite-as-fake-search']
+  Given  I am an editor
+  And  there is a user called "Beardy"
+  And  I draft a new publication "Britain's Hairiest Ministers"
+  When  "Beardy" submits the publication "Britain's Hairiest Ministers"
+  And  I publish the publication "Britain's Hairiest Ministers"
+  Then  I should see the publication "Britain's Hairiest Ministers" in the list of published documents
+

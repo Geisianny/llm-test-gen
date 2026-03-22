@@ -1,0 +1,36 @@
+Feature: Country validation
+Description: In order to avoid making mistakes when managing countries
+    As an Administrator
+    I want to be prevented from adding a new country with invalid code
+Tags: ['@managing_countries']
+
+Background: 
+  Given  the store operates in "Norway"
+  And  I am logged in as an administrator
+
+Scenario 1: Trying to add a new country with used code
+  Tags: ['@api', '@ui']
+  When  I want to add a new country
+  Then  I should not be able to choose "Norway"
+
+Scenario 2: Trying to add a new country with invalid code
+  Tags: ['@api', '@no-ui']
+  When  I want to add a new country
+  And  I specify the country code as "NJ"
+  And  I try to save my changes
+  Then  I should be notified that the country code is invalid
+
+Scenario 3: Trying to add a new country with alpha-3 code
+  Tags: ['@api', '@no-ui']
+  When  I want to add a new country
+  And  I specify the country code as "USA"
+  And  I try to save my changes
+  Then  I should be notified that the country code is invalid
+
+Scenario 4: Trying to add a new country with no code
+  Tags: ['@api', '@no-ui']
+  When  I want to add a new country
+  And  I do not specify the country code
+  And  I try to save my changes
+  Then  I should be notified that the country code is required
+

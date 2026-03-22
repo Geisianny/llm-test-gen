@@ -1,0 +1,8 @@
+Scenario 2: Add Items to a Dashboard List returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/dashboards-backend']
+  Given  new "CreateDashboardListItems" request
+  And  request contains "dashboard_list_id" parameter from "REPLACE.ME"
+  And  body with value {"dashboards": [{"id": "q5j-nti-fv6", "type": "host_timeboard"}]}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

@@ -1,0 +1,23 @@
+Scenario Outline 3: I change user preferences to the <selection> language - Example 3
+  Tags: ['@wip']
+  When  I navigate the menu and select the item at "Preferences"
+  And  I select the "Preferences" tab
+  And  I select "Arabic - Egypt" from the drop down "Language"
+  And  I save the page
+  And  I select the "Preferences" tab
+  Then  I expect "العربية - مصر" to be selected for "اللغة"
+
+  Examples:
+    | selection | translation | language | preferences |
+    | Arabic - Egypt | العربية - مصر | اللغة | Preferences |
+    | Bulgarian | български | Език | Свойства |
+    | Chinese - China | 中文 - 中国 | 语言 | 个人设定 |
+    | Chinese - Taiwan | 中文 - 台灣 | 語言 | 個人設定 |
+    | Czech | čeština | Jazyk | Nastavení |
+    | Greek | Ελληνικά | Γλώσσα | Επιλογές |
+    | Lithuanian | lietuvių | Kalba | Nuostatos |
+    | Polish | polski | Język | Preferencje |
+    | Russian | русский | Язык | Настройки |
+    | Turkish | Türkçe | Dil | Tercihler |
+    | Ukrainian | українська | Мова | Параметри |
+

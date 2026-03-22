@@ -1,0 +1,13 @@
+Scenario 3: Update openSUSE Tumbleweed key with synced base product
+  Tags: ['@uyuni']
+  When  I follow the left menu "Systems > Activation Keys"
+  And  I follow "SUSE Test Key x86_64" in the content area
+  And  I wait until I do not see "Loading..." text
+  And  I select the parent channel for the "sle_minion" from "selectedBaseChannel"
+  And  I wait until I do not see "Loading..." text
+  And  I check "Uyuni Client Tools for openSUSE Tumbleweed (x86_64) (Development)"
+  And  I check "Fake-RPM-SUSE-Channel"
+  And  I wait until "Fake-RPM-SUSE-Channel" has been checked
+  And  I click on "Update Activation Key"
+  Then  I should see a "Activation key SUSE Test Key x86_64 has been modified" text
+

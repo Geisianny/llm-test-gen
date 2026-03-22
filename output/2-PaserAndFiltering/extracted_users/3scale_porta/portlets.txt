@@ -1,0 +1,21 @@
+Feature: CMS Portlets
+Description: As a provider
+  I want to manage CMS data objects
+Tags: ['@javascript']
+
+Background: 
+  Given  a provider is logged in
+  And  I go to the CMS page
+
+Scenario 1: Portlet
+  When  I follow "New Portlet" from the CMS "New Page" dropdown
+  When  I follow "External RSS Feed"
+  When  I fill in the following:
+  And  I press "Create External RSS Feed"
+  Then  I should see "Template created"
+  When  I fill in the following:
+  And  I press "Save"
+  Then  I should see "Template saved"
+  When  I press "Publish"
+  Then  I should see "Template saved and published"
+

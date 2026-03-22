@@ -1,0 +1,14 @@
+Scenario 5: Cancelled orders affect per customer usage limit
+  Tags: ['@api', '@ui']
+  Given  this coupon is set as non reusable after cancelling the order in which it has been used
+  And  this coupon can be used once per customer
+  And  I placed an order "#00000022"
+  And  I bought a single "PHP T-Shirt" using "SANTA2016" coupon
+  And  I chose "Free" shipping method to "United States" with "Cash on Delivery" payment
+  But  I cancelled this order
+  And  I added product "PHP T-Shirt" to the cart
+  And  I applied the coupon with code "SANTA2016"
+  When  I check the details of my cart
+  Then  my cart total should be "$100.00"
+  And  there should be no discount applied
+

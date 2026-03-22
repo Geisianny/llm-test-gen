@@ -1,0 +1,9 @@
+Scenario 1: CONFIGURE MAIN PARTNER AND COMPANY
+  Tags: ['@multicompany_base_finance_init_holding_company']
+  Given  I need a "res.company" with oid: scen.holding_company
+  And  having:
+  Given  the company has the "c2c_logo.png" logo
+  And  the company currency is "CHF" with a rate of "1.00"
+  Given  I need a "res.partner" with oid: scen.holding_partner
+  And  having:
+

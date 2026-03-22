@@ -1,0 +1,6 @@
+Scenario 11: All values stay as default if not changed
+  Given  I press "Submit"
+  Then  the default all value should be selected from What They Do
+  Then  the default all value should be selected from Who They Help
+  Then  the default all value should be selected from How They Help
+

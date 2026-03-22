@@ -1,0 +1,7 @@
+Scenario 3: Access the API Documentation
+  Tags: ['@uyuni']
+  Given  I am not authorized
+  When  I go to the home page
+  And  I follow "API Documentation"
+  Then  I should see a "API Overview" text
+

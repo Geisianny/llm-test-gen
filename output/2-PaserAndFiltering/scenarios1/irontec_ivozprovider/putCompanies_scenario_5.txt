@@ -1,0 +1,11 @@
+Scenario 5: Update a company with null media relay set
+  Tags: ['@createSchema']
+  Given  I add Brand Authorization header
+  When  I add "Content-Type" header equal to "application/json"
+  And  I add "Accept" header equal to "application/json"
+  And  I send a "PUT" request to "/companies/1" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/problem+json; charset=utf-8"
+  And  the JSON should be like:
+

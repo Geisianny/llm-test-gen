@@ -1,0 +1,9 @@
+Scenario 11: 
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  When  I fetch the subscription list from the stripe interopt layer for start of current period less than "+15 days"
+  Then  I will see 1 results in the stripe interopt list
+  Then  I will not see a subscription in the stripe interopt list for "Test Plan"
+  But  I will see a subscription in the stripe interopt list for "Test Two"
+

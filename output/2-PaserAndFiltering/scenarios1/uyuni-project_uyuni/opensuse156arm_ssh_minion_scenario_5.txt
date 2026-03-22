@@ -1,0 +1,7 @@
+Scenario 5: Check registration on proxy of openSUSE 15.6 ARM SSH minion
+  Tags: ['@proxy']
+  Given  I am on the Systems overview page of this "proxy"
+  When  I follow "Details" in the content area
+  And  I follow "Proxy" in the content area
+  Then  I should see "opensuse156arm_ssh_minion" hostname
+

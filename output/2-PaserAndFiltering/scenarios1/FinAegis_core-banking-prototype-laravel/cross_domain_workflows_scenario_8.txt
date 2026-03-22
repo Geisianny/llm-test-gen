@@ -1,0 +1,7 @@
+Scenario 8: Emergency market halt workflow
+  Given  extreme market volatility is detected
+  When  emergency halt is triggered
+  Then  all domains should coordinate:
+  And  ensure coordinated halt across all systems
+  And  prepare for coordinated resumption
+

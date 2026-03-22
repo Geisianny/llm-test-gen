@@ -1,0 +1,4 @@
+Scenario 8: Apply high state on the Debian-like Minion to populate new server CA
+  Tags: ['@deblike_minion']
+  When  I apply highstate on "deblike_minion"
+

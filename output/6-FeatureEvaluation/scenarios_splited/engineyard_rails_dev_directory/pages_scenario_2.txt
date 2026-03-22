@@ -1,0 +1,7 @@
+Scenario: Edit an existing page
+  Given there is an existing page with title "About Us" and URL "/about-us"
+  And there is an Engine Yard administrator logged in
+  When the administrator edits the page with title "About Us"
+  And changes the content to "This is the updated about us page"
+  Then the system updates the page
+  And displays a confirmation message

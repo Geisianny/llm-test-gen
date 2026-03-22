@@ -1,0 +1,6 @@
+Scenario: Create a new asset basket successfully
+  Given the system administrator is logged in
+  And there are existing assets in the system
+  When the administrator creates a new asset basket with valid assets
+  Then the system creates the asset basket
+  And displays a confirmation message

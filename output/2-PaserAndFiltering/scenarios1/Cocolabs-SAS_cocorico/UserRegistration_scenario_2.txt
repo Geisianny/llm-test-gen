@@ -1,0 +1,8 @@
+Scenario 2: I can not register with different passwords
+  Given  I am on the home page
+  And  I follow "Register"
+  When  I fill in the following:
+  And  I press "Register"
+  Then  I should be on the "register" page
+  And  I should see "The entered passwords don't match"
+

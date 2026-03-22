@@ -1,0 +1,11 @@
+Scenario 1: Specifying main taxon for configurable product
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I want to create a new configurable product
+  And  I specify its code as "WHISKEY_GENTLEMEN"
+  And  I choose main taxon "Sad"
+  And  I name it "Gentleman Jack" in "English (United States)" locale
+  And  I set its slug to "whiskey/gentleman-jack" in "English (United States)" locale
+  And  I add it
+  Then  I should be notified that it has been successfully created
+  And  main taxon of product "Gentleman Jack" should be "Sad"
+

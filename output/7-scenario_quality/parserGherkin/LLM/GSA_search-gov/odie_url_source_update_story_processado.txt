@@ -1,0 +1,58 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: odie_url_source_update_story_processado.feature
+Caminho relativo: GSA_search-gov\odie_url_source_update_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\GSA_search-gov\odie_url_source_update_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: odie_url_source_update_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Update document source for a valid affiliate
+   Steps: 6
+   - Given there is an affiliate with the identifier "valid_affiliate"
+   - And the affiliate has indexed documents with source "rss"
+   - When the admin requests to update the document source to "manual" for the affiliate "valid_affiliate"
+   - And confirms the update operation
+   - Then the system queues a job to update the document source
+   - And displays a message confirming the update is in progress
+2. Update document source for an invalid affiliate
+   Steps: 5
+   - Given there is no affiliate with the identifier "invalid_affiliate"
+   - When the admin requests to update the document source to "manual" for the affiliate "invalid_affiliate"
+   - And confirms the update operation
+   - Then the system displays an error message indicating the affiliate does not exist
+   - And does not queue a job to update the document source
+3. Cancel update document source operation
+   Steps: 6
+   - Given there is an affiliate with the identifier "valid_affiliate"
+   - And the affiliate has indexed documents with source "rss"
+   - When the admin requests to update the document source to "manual" for the affiliate "valid_affiliate"
+   - And cancels the update operation
+   - Then the system does not queue a job to update the document source
+   - And displays a message confirming the update is cancelled
+4. Update document source job execution
+   Steps: 7
+   - Given there is an affiliate with the identifier "valid_affiliate"
+   - And the affiliate has indexed documents with source "rss"
+   - And the admin has requested to update the document source to "manual" for the affiliate "valid_affiliate"
+   - And confirmed the update operation
+   - When the queued job to update the document source is executed
+   - Then the system updates the document source to "manual" for the affiliate "valid_affiliate"
+   - And displays a message confirming the update is successful
+5. Update document source with invalid new source
+   Steps: 6
+   - Given there is an affiliate with the identifier "valid_affiliate"
+   - And the affiliate has indexed documents with source "rss"
+   - When the admin requests to update the document source to "invalid_source" for the affiliate "valid_affiliate"
+   - And confirms the update operation
+   - Then the system displays an error message indicating the new source is invalid
+   - And does not queue a job to update the document source

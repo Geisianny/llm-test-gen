@@ -1,0 +1,7 @@
+Scenario 6: Create a pipeline with Array Processor Length Operation returns "OK" response
+  Tags: ['@team:DataDog/event-platform-experience']
+  Given  new "CreateLogsPipeline" request
+  And  body with value {"filter": {"query": "source:python"}, "name": "testPipelineArrayLength", "processors": [{"type": "array-processor", "is_enabled": true, "name": "count_tags", "operation": {"type": "length", "source": "tags", "target": "tagCount"}}], "tags": []}
+  When  the request is sent
+  Then  the response status is 200 OK
+

@@ -1,0 +1,5 @@
+Scenario: Retrieve an existing SLO report
+  Given there is an existing SLO report with ID "12345"
+  When the user queries the SLO report with ID "12345" via the API
+  Then the system returns the SLO report details
+  And the report details match the stored data

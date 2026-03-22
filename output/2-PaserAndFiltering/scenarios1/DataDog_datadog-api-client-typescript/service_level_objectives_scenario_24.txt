@@ -1,0 +1,6 @@
+Scenario 24: Search for SLOs returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/slo-app']
+  Given  new "SearchSLO" request
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

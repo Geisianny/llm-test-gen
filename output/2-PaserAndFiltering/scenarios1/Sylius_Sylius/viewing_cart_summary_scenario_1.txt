@@ -1,0 +1,5 @@
+Scenario 1: Viewing information about empty cart
+  Tags: ['@api', '@ui']
+  When  I see the summary of my cart
+  Then  my cart should be empty
+

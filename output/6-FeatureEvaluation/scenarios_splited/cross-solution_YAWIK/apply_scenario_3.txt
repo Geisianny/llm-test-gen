@@ -1,0 +1,7 @@
+Scenario: Apply for a job with missing information
+  Given there is a job opening with the title "Software Engineer"
+  And the user has a valid profile with personal information
+  When the user applies for the job "Software Engineer"
+  And provides incomplete application information
+  Then the system denies the job application
+  And displays a message indicating the required fields

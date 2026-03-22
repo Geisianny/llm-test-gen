@@ -1,0 +1,7 @@
+Scenario: User adds a review for another user
+  Given there are two registered users "asker1" and "offerer1"
+  And "asker1" has made a transaction with "offerer1"
+  When "asker1" adds a review for "offerer1"
+  And rates "offerer1" with 5 stars
+  Then the review is visible on "offerer1"'s profile
+  And "offerer1"'s rating is updated to reflect the new review

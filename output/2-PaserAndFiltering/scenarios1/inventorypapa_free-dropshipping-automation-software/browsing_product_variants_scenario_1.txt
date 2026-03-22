@@ -1,0 +1,5 @@
+Scenario 1: Browsing product variants in store
+  Tags: ['@ui']
+  When  I want to view all variants of this product
+  Then  I should see 1 variant in the list
+

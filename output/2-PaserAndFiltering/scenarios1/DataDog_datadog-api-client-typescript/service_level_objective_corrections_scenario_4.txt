@@ -1,0 +1,10 @@
+Scenario 4: Create an SLO correction with rrule returns "OK" response
+  Tags: ['@team:DataDog/slo-app']
+  Given  there is a valid "slo" in the system
+  And  new "CreateSLOCorrection" request
+  And  body with value {"data": {"attributes": {"category": "Scheduled Maintenance", "description": "{{ unique }}", "slo_id": "{{ slo.data[0].id }}", "start": {{ timestamp("now") }}, "duration": 3600, "rrule": "FREQ=DAILY;INTERVAL=10;COUNT=5", "timezone": "UTC"}, "type": "correction"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.type" is equal to "correction"
+  And  the response "data.attributes.rrule" is equal to "FREQ=DAILY;INTERVAL=10;COUNT=5"
+

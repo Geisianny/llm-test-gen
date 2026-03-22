@@ -1,0 +1,7 @@
+Scenario: Create organization with duplicate name
+  Given there is an admin user logged in
+  And there is an existing organization with the name "Existing Organization"
+  When the admin creates a new organization with the name "Existing Organization"
+  And provides a valid description "This is a duplicate organization"
+  Then the system denies the creation
+  And displays an error message indicating the organization name already exists

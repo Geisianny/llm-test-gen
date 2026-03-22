@@ -1,0 +1,6 @@
+Scenario 12: Get a Relation3
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "GET" request to "/relation3s"
+  Then  the response status code should be 200
+  And  the header "Cache-Tags" should be equal to "/relation2s/1,/relation2s/2,/relation3s/1,/relation3s"
+

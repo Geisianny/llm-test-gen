@@ -1,0 +1,4 @@
+Scenario 1: Plans tab is hidden with a single account plan
+  When  they go to settings
+  Then  there shouldn't be a link to "Plans"
+

@@ -1,0 +1,7 @@
+Scenario 1: Create a custom variable returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:Datadog/collaboration-integrations']
+  Given  new "CreateWebhooksIntegrationCustomVariable" request
+  And  body with value {"is_secret": true, "name": "CUSTOM_VARIABLE_NAME", "value": "CUSTOM_VARIABLE_VALUE"}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

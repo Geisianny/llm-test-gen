@@ -1,0 +1,4 @@
+Scenario 9: Completion command help
+  When  I execute Karma with arguments: "completion --help"
+  Then  the stdout is exactly:
+

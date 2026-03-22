@@ -1,0 +1,49 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: numeric_filter_story_processado.feature
+Caminho relativo: api-platform_core\numeric_filter_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\api-platform_core\numeric_filter_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: numeric_filter_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Filter collection by single numerical value
+   Steps: 4
+   - Given there is a collection of resources with numerical properties
+   - When the client requests the collection with a filter by numerical value "10"
+   - Then the system returns a JSON-LD response with the filtered collection
+   - And the response includes the correct pagination metadata
+2. Filter collection by multiple numerical values
+   Steps: 4
+   - Given there is a collection of resources with numerical properties
+   - When the client requests the collection with multiple filters by numerical values ["10", "20"]
+   - Then the system returns a JSON-LD response with the filtered collection
+   - And the response includes the correct pagination metadata
+3. Filter collection with non-numerical input
+   Steps: 5
+   - Given there is a collection of resources with numerical properties
+   - When the client requests the collection with a non-numerical filter value "abc"
+   - Then the system returns a JSON-LD response with the original collection
+   - And the response includes the correct pagination metadata
+   - And the system maintains a 200 status return
+4. Filter collection with numerical value and property converter
+   Steps: 4
+   - Given there is a collection of resources with numerical properties and a property converter
+   - When the client requests the collection with a filter by numerical value "10" using the property converter
+   - Then the system returns a JSON-LD response with the filtered collection
+   - And the response includes the correct pagination metadata
+5. Filter collection with multiple numerical values and property converter
+   Steps: 4
+   - Given there is a collection of resources with numerical properties and a property converter
+   - When the client requests the collection with multiple filters by numerical values ["10", "20"] using the property converter
+   - Then the system returns a JSON-LD response with the filtered collection
+   - And the response includes the correct pagination metadata

@@ -1,0 +1,16 @@
+Scenario 1: lognormal risk model in 4 markets with different risk parameters , 0010-MARG-012, 0010-MARG-013, 0010-MARG-014
+  Tags: ['@SLABug']
+  Given  the average block duration is "1"
+  And  the parties submit the following liquidity provision:
+  When  the parties place the following orders:
+  And  the parties place the following orders:
+  When  the network moves ahead "2" blocks
+  Then  the market data for the market "ETH/MAR21" should be:
+  And  the market data for the market "ETH/MAR22" should be:
+  And  the market data for the market "ETH/MAR24" should be:
+  And  the market data for the market "ETH/MAR24" should be:
+  Then  the order book should have the following volumes for market "ETH/MAR21":
+  Then  the order book should have the following volumes for market "ETH/MAR22":
+  Then  the order book should have the following volumes for market "ETH/MAR23":
+  Then  the order book should have the following volumes for market "ETH/MAR24":
+

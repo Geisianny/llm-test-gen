@@ -1,0 +1,5 @@
+Scenario 1: Seeing no statistics if a customer has not placed any orders
+  Tags: ['@ui']
+  When  I view details of the customer "b.baggins@shire.me"
+  Then  I should see the customer has not placed any orders yet
+

@@ -1,0 +1,5 @@
+Scenario: View customer order statistics with orders across different sales channels
+  Given there is a customer with orders placed across multiple sales channels
+  When the administrator views the customer's details page
+  Then the system displays order statistics segmented by sales channel
+  And the total value of orders for each sales channel

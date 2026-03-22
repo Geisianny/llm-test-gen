@@ -1,0 +1,12 @@
+Scenario 2: Seeing promotion coupon usage decreased to 1 after second order cancellation
+  Tags: ['@ui']
+  Given  there is a customer "john.doe@gmail.com" that placed an order "#00000022"
+  And  the customer bought a single "PHP T-Shirt" using "SANTA2016" coupon
+  And  the customer chose "Free" shipping method to "United States" with "Cash on Delivery" payment
+  Given  there is a customer "andrew.cole@gmail.com" that placed an order "#00000023"
+  And  the customer bought a single "PHP T-Shirt" using "SANTA2016" coupon
+  And  the customer chose "Free" shipping method to "United States" with "Cash on Delivery" payment
+  And  the customer cancelled this order
+  When  I browse all coupons of "Christmas sale" promotion
+  Then  "SANTA2016" coupon should be used 1 time
+

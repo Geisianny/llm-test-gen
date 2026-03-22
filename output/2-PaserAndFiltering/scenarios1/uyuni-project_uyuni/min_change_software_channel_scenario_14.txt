@@ -1,0 +1,21 @@
+Scenario 14: Cleanup: subscribe the system back to previous channels
+  Tags: ['@uyuni']
+  When  I follow "Software" in the content area
+  And  I follow "Software Channels" in the content area
+  And  I wait until I do not see "Loading..." text
+  Then  radio button "openSUSE Tumbleweed (x86_64)" should be checked
+  And  I wait until I do not see "Loading..." text
+  And  I wait until I see "Uyuni Client Tools for openSUSE Tumbleweed (x86_64)" text
+  And  I uncheck "Uyuni Client Tools for openSUSE Tumbleweed (x86_64)" by label
+  Then  I should see "Uyuni Client Tools for openSUSE Tumbleweed (x86_64)" as unchecked
+  When  I check "Uyuni Client Tools for openSUSE Tumbleweed (x86_64) (Development)" by label
+  Then  I should see "Uyuni Client Tools for openSUSE Tumbleweed (x86_64) (Development)" as checked
+  When  I check "Fake-RPM-SUSE-Channel"
+  And  I click on "Next"
+  Then  I should see a "Confirm Software Channel Change" text
+  When  I click on "Confirm"
+  And  I wait until I see "Changing the channels has been scheduled." text
+  And  I follow "scheduled" in the content area
+  And  I wait until I see "1 system successfully completed this action." text, refreshing the page
+  Then  channel "Uyuni Client Tools for openSUSE Tumbleweed (x86_64)" should be disabled on "sle_minion"
+

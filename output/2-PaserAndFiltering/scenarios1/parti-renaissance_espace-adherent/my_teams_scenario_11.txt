@@ -1,0 +1,5 @@
+Scenario 11: As a referent I can delete a member of my team
+  Given  I am logged with "referent@en-marche-dev.fr" via OAuth client "JeMengage Web" with scope "jemengage_admin"
+  When  I send a "DELETE" request to "/api/v3/my_team_members/d11d6ddd-dfba-4972-97b2-4c0bdf289559?scope=president_departmental_assembly"
+  Then  the response status code should be 204
+

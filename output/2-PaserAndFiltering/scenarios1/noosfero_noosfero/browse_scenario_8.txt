@@ -1,0 +1,9 @@
+Scenario 8: Browse contents by query
+  Given  the following articles
+  When  I go to /search/contents
+  And  I fill in "bees" for "search-input"
+  And  I follow "search-button"
+  Then  I should see "Bees can fly"
+  And  I should see "Bees and ants are insects"
+  And  I should not see "Ants are small"
+

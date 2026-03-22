@@ -1,0 +1,8 @@
+Scenario 5: Enable content staging for Debian-like minion
+  When  I follow the left menu "Admin > Organizations"
+  And  I follow first "SUSE Test"
+  And  I follow first "Configuration"
+  And  I check "staging_content_enabled"
+  And  I click on "Update Organization"
+  Then  I should see a "was successfully updated." text
+

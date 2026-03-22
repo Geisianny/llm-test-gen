@@ -1,0 +1,17 @@
+Scenario 3: User tries to register with expired invite
+  Tags: ['@javascript']
+  Given  there are following users:
+  And  community "test" requires invite to join
+  And  I am not logged in
+  And  I am on the signup page
+  And  there is an invitation for community "test" with code "GH1JX8" with 0 usages left
+  When  I fill in "Invitation code" with "gh1jx8"
+  And  I fill in "First name" with "Testmanno"
+  And  I fill in "Last name" with "Namez"
+  And  I fill in "person_password1" with "test"
+  And  I fill in "Confirm password" with "test"
+  And  I fill in "Email address" with random email
+  And  I check "person_terms"
+  And  I press "Create account"
+  Then  I should see "The invitation code is not valid."
+

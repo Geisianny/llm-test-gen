@@ -1,0 +1,7 @@
+Scenario 4: Update IP Allowlist returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/aaa-core-access']
+  Given  new "UpdateIPAllowlist" request
+  And  body with value {"data": {"attributes": {"entries": [{"data": {"attributes": {}, "type": "ip_allowlist_entry"}}]}, "type": "ip_allowlist"}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

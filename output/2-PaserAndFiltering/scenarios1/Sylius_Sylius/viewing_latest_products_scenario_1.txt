@@ -1,0 +1,5 @@
+Scenario 1: Viewing latest products
+  Tags: ['@api', '@ui']
+  When  I check latest products
+  Then  I should see 4 products in the list
+

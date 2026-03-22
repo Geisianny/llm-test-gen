@@ -1,0 +1,8 @@
+Scenario 2: Invalid access code
+  Given  the provider has site access code "foobar"
+  When  the current domain is foo.3scale.localhost
+  And  I go to the homepage
+  And  I fill in "Access code" with "random"
+  And  I press "Enter"
+  Then  I should see "Access code"
+

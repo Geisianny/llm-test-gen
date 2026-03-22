@@ -1,0 +1,14 @@
+Scenario 2: Admin user can edit about page
+  Tags: ['@javascript']
+  Given  I am logged in as "kassi_testperson1"
+  And  I am on the about page
+  Then  I should not have editor open
+  When  I follow "Edit page"
+  Then  I should have editor open
+  When  I send keys "This is a new line to about text" to editor
+  And  I click save on the editor
+  Then  I should not have editor open
+  Then  I should see "This is a new line to about text"
+  When  I refresh the page
+  Then  I should see "This is a new line to about text"
+

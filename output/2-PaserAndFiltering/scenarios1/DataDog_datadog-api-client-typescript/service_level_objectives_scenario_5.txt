@@ -1,0 +1,7 @@
+Scenario 5: Check if SLOs can be safely deleted returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/slo-app']
+  Given  new "CheckCanDeleteSLO" request
+  And  request contains "ids" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 200 OK
+

@@ -1,0 +1,7 @@
+Scenario 12: Get table returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/redapl-experiences']
+  Given  new "GetTable" request
+  And  request contains "id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 200 OK
+

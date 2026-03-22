@@ -1,0 +1,6 @@
+Scenario: Claim NRHP with eligible household members
+  Given there is an applicant with household members having valid addresses within the NRHP area
+  When the applicant fills out the short form application
+  And selects eligible household members residing within the NRHP area
+  Then the system allows the applicant to claim "Live in the Neighborhood" for the selected household members
+  And displays a field to upload supporting documents for the selected household members

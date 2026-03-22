@@ -1,0 +1,11 @@
+Scenario 4: Being unable to set disabled locale as a default one for a channel
+  Tags: ['@ui']
+  Given  the store has locale "Polish (Poland)"
+  And  the store operates on a channel named "Web"
+  And  this channel allows to shop using the "English (United States)" locale
+  And  this channel uses the "English (United States)" locale as default
+  And  I am modifying a channel "Web"
+  When  I choose "Polish (Poland)" as a default locale
+  And  I try to save my changes
+  Then  I should be notified that the default locale has to be enabled
+

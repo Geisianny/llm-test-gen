@@ -1,0 +1,5 @@
+Scenario 2: Preparing Git pillar configuration for Salt master
+  When  I setup a git_pillar environment on the Salt master
+  And  I wait until Salt master can reach "sle_minion"
+  Then  file "/etc/salt/master.d/zz-testing-gitpillar.conf" should exist on server
+

@@ -1,0 +1,6 @@
+Scenario 3: Viewing detailed guide publishing history
+  Given  I am an editor in the organisation "Department of Examples"
+  Given  a published detailed guide "Ban Beards" exists
+  When  I publish a new edition of the detailed guide "Ban Beards" with a change note "Exempted Santa Claus"
+  And  I publish a new edition of the detailed guide "Ban Beards" with a change note "Exempted Gimli son of Gloin"
+

@@ -1,0 +1,17 @@
+Scenario 6: Visiting edit my account profile page as an affiliate user
+  Tags: ['@javascript']
+  Given  I am logged in with email "affiliate_admin@fixtures.org"
+  When  I go to the user account page
+  And  I follow "Edit"
+  Then  I should see the browser page titled "Edit My Account"
+  And  I should see "Edit My Account"
+  When  I fill in the following:
+  And  I press "Save"
+  And  I should see "Organization name can't be blank"
+  And  I should see "First name can't be blank"
+  And  I should see "Last name can't be blank"
+  When  I fill in the following:
+  And  I press "Save"
+  Then  I should see "Account updated!"
+  And  I should see "affiliate_admin@fixtures.org"
+

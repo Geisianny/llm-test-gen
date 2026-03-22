@@ -1,0 +1,5 @@
+Scenario 17: Delete image via API calls without key
+  When  I delete the image "suse_simple" with version "Latest_simple" via API calls
+  Then  the image "suse_simple" with version "Latest_simple" doesn't exist via API calls
+  When  I wait until no Salt job is running on "build_host"
+

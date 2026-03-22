@@ -1,0 +1,7 @@
+Scenario 1: A batch consisting of two limit order placements p1-buy1 and pl-buy2 where the party has enough balance to place
+  Then  the party "party1" starts a batch instruction
+  Then  the party "party1" adds the following orders to a batch:
+  Then  the party "party1" submits their batch instruction with error "party does not have sufficient balance to cover the trade and fees"
+  When  the network moves ahead "1" blocks
+  Then  the orders should have the following states:
+

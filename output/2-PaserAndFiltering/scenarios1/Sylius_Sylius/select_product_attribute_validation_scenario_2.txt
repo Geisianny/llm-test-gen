@@ -1,0 +1,14 @@
+Scenario 2: Trying to add a new select product attribute with wrong min entries value
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I want to create a new select product attribute
+  And  I name it "Mug material" in "English (United States)"
+  And  I specify its code as "mug_material"
+  And  I add value "Banana Skin" in "English (United States)"
+  And  I also add value "Orange Skin" in "English (United States)"
+  And  I check multiple option
+  And  I specify its min entries value as 4
+  And  I specify its max entries value as 6
+  And  I try to add it
+  Then  I should be notified that min entries value must be lower or equal to the number of added choices
+  And  the attribute with code "mug_material" should not appear in the store
+

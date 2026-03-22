@@ -1,0 +1,10 @@
+Scenario 3: Successfully apply code - subscription currency
+  Given  I have authenticated to the API
+  And  the system settings for main currency is "USD"
+  And  the follow customers exist:
+  And  the following vouchers exist:
+  And  the following subscriptions exist:
+  When  I apply the voucher code "code_one" to customer "customer.one@example.org"
+  Then  I should be told there is a validation error with the code
+  Then  there should not be a record of "Voucher Two" being applied to "customer.one@example.org"
+

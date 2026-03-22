@@ -1,0 +1,8 @@
+Scenario 1: I proceed to the checkout
+  Given  I am at the address checkout step
+  Then  I should be on the address checkout step
+  And  I use the last address as invoice address
+  And  I submit the address step
+  Then  I should be on the shipping checkout step
+  And  I should not see carrier "DHL"
+

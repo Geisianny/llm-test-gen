@@ -1,0 +1,8 @@
+Scenario 13: Schedule a downtime returns "OK" response
+  Tags: ['@team:DataDog/monitor-app']
+  Given  new "CreateDowntime" request
+  And  body with value { "data": { "attributes": { "message": "dark forest", "monitor_identifier": { "monitor_tags": ["cat:hat"] }, "scope": "test:{{ unique_lower_alnum }}", "schedule": {"start": null } }, "type": "downtime" } }
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.attributes.message" is equal to "dark forest"
+

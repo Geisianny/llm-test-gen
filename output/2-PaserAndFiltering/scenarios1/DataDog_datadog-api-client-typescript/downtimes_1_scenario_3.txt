@@ -1,0 +1,7 @@
+Scenario 3: Get a downtime returns "Bad Request" response
+  Tags: ['@skip-validation', '@team:DataDog/monitor-app']
+  Given  new "GetDowntime" request
+  And  request contains "downtime_id" parameter with value "INVALID_UUID_LENGTH"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

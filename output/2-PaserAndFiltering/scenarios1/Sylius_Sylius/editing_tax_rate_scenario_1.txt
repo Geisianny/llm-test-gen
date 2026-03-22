@@ -1,0 +1,5 @@
+Scenario 1: Inability of changing the code of an existing tax rate
+  Tags: ['@api', '@ui']
+  When  I want to modify a tax rate "United States Sales Tax"
+  Then  I should not be able to edit its code
+

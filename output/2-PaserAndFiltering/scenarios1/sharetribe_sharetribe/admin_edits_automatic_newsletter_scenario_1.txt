@@ -1,0 +1,7 @@
+Scenario 1: Admin user can not edit transaction auto-completion
+  When  I go to the admin2 configure transactions community "test"
+  And  I fill in "community_automatic_confirmation_after_days" with "99"
+  Then  I press submit
+  And  I wait for 1 seconds
+  And  I should see "Please enter a value less than or equal to 85"
+

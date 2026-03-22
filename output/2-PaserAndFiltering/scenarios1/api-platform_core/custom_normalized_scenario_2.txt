@@ -1,0 +1,12 @@
+Scenario 2: Create a resource with a custom normalized dummy
+  Tags: ['@createSchema']
+  When  I add "Content-Type" header equal to "application/json"
+  When  I add "Accept" header equal to "application/json"
+  And  I send a "POST" request to "/related_normalized_dummies" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json; charset=utf-8"
+  And  the header "Content-Location" should be equal to "/related_normalized_dummies/1.json"
+  And  the header "Location" should be equal to "/related_normalized_dummies/1"
+  And  the JSON should be equal to:
+

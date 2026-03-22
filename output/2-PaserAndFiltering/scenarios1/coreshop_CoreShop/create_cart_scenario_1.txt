@@ -1,0 +1,4 @@
+Scenario 1: Create a new cart and add a product
+  Given  I add the product "T-Shirt" to my cart
+  Then  there should be one product in my cart
+

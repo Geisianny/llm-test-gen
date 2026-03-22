@@ -1,0 +1,8 @@
+Scenario 9: Reversal with compensation tracking
+  Given  a failed transfer left accounts in inconsistent state
+  When  the reversal workflow executes compensation
+  Then  each compensation step should be tracked
+  And  rollback should occur if compensation fails
+  And  the system should maintain transaction integrity
+  And  provide detailed compensation reports
+

@@ -1,0 +1,11 @@
+Scenario 2: Changing address
+  Tags: ['@api', '@no-ui']
+  Given  the visitor has product "T-Shirt banana" in the cart
+  And  the visitor has specified the email as "jon.snow@example.com"
+  And  the visitor has specified address as "Los Angeles", "Frost Alley", "90210", "United States" for "Jon Snow"
+  And  the visitor has completed the addressing step
+  When  the visitor changes the billing address to "Los Angeles", "Avenue", "90210", "United States" for "Jon Snow"
+  And  the visitor completes the addressing step
+  Then  the visitor should has "Los Angeles", "Avenue", "90210", "United States", "Jon Snow" specified as billing address
+  Then  the visitor should has "Los Angeles", "Avenue", "90210", "United States", "Jon Snow" specified as shipping address
+

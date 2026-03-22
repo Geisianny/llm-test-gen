@@ -1,0 +1,6 @@
+Scenario: Create a new payment term with a custom name
+  Given there is an administrator logged into the system
+  And the payment terms catalog is empty
+  When the administrator creates a new payment term named "Custom Term"
+  Then the system saves the new payment term
+  And displays a confirmation message

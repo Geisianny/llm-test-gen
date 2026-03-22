@@ -1,0 +1,10 @@
+Scenario 2: Creating an account for existing customer
+  Tags: ['@api', '@ui']
+  Given  the store has customer "Frodo Baggins" with email "f.baggins@example.com"
+  When  I want to edit this customer
+  And  I specify their password as "killSauron"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  the customer "f.baggins@example.com" should appear in the store
+  And  the customer "f.baggins@example.com" should have an account created
+

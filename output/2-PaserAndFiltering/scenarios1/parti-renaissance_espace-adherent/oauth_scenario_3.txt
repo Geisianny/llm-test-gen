@@ -1,0 +1,10 @@
+Scenario 3: Password authentication
+  When  I send a "POST" request to "/oauth/v2/token" with parameters:
+  Then  the response should be in JSON
+  And  the response status code should be 400
+  And  the JSON should be equal to:
+  When  I send a "POST" request to "/oauth/v2/token" with parameters:
+  Then  the response should be in JSON
+  And  the response status code should be 200
+  And  the JSON should be equal to:
+

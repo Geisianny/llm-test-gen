@@ -1,0 +1,11 @@
+Scenario 2: Update Plan - Read
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  And  the following payment details:
+  When  I go to update the subscription plan for "Test Plan" for "customer.one@example.org"
+  Then  I will see the plan "Even Better Test Plan" with the price 5500 in "USD"
+  Then  I will see the plan "Better Test Plan" with the price 4500 in "USD"
+  Then  I will see the plan "Even Better Test Plan" with the price 55000 in "USD"
+  Then  I will not see the plan "Better Test Plan" with the price 4000 in "EUR"
+

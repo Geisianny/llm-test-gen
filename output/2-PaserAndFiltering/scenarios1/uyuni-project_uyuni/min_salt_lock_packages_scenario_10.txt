@@ -1,0 +1,4 @@
+Scenario 10: Cleanup: remove packages after testing locks
+  Then  I remove package "orion-dummy" from this "sle_minion"
+  And  I remove package "milkyway-dummy" from this "sle_minion"
+

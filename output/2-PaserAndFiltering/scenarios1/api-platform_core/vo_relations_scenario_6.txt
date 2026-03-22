@@ -1,0 +1,8 @@
+Scenario 6: Create Value object without default param
+  Tags: ['@createSchema']
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/vo_dummy_cars" with body:
+  Then  the response status code should be 201
+  And  the JSON should be equal to:
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+

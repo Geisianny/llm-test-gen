@@ -1,0 +1,6 @@
+Scenario: Apply voucher code with invalid code
+  Given there is an active voucher-type rule with a 10 percent discount
+  And the cart contains one item priced at 100.00
+  When the user applies an invalid voucher code
+  Then the cart total remains 100.00
+  And the system displays a message indicating that the voucher code is invalid

@@ -1,0 +1,7 @@
+Scenario 5: Reordering Whip roles
+  Given  there are multiple Whip roles
+  When  I visit the Cabinet ministers order page
+  And  I click the reorder link in the "#whips" tab
+  And  I set the order of the roles to:
+  Then  the roles in the "#whips" tab should be in the following order:
+

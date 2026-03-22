@@ -1,0 +1,4 @@
+Scenario 4: Create a new not-match condition and render it
+  Given  there is a not-match condition with field-name "XY" and value "blub"
+  Then  the condition rendered for "mysql" should look like "`XY` <> 'blub'"
+

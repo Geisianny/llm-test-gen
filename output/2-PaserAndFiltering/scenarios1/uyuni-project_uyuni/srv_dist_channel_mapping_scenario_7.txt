@@ -1,0 +1,14 @@
+Scenario 7: Update map for x86_64 SUSE clients using test-x86_64 channel
+  Tags: ['@scc_credentials', '@susemanager']
+  When  I follow the left menu "Software > Distribution Channel Mapping"
+  Then  I should see the text "SUSE Linux Enterprise Server 15 SP 4" in the Operating System field
+  And  I should see the text "x86_64" in the Architecture field
+  And  I should see the text "sle-product-sles15-sp4-pool-x86_64" in the Channel Label field
+  When  I follow "SUSE Linux Enterprise Server 15 SP 4"
+  Then  I should see a "Update Distribution Channel Map" text
+  When  I enter "SUSE Linux Enterprise Server 15 SP 4 modified" as "os"
+  And  I select "SLE-Product-SLES15-SP4-Pool for x86_64" from "channel_label"
+  And  I click on "Update Mapping"
+  Then  I should see the text "SUSE Linux Enterprise Server 15 SP 4 modified" in the Operating System field
+  And  I should see the text "sle-product-sles15-sp4-pool-x86_64" in the Channel Label field
+

@@ -1,0 +1,8 @@
+Scenario 10: last topic update by unautenticated user should not link
+  Tags: ['@selenium']
+  Given  the following forums
+  And  the following articles
+  And  the following comments
+  When  I go to /joaosilva/forum
+  Then  I should not see "Joao" linking to "#"
+

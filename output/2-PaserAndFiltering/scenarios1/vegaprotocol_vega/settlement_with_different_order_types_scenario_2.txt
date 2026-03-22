@@ -1,0 +1,27 @@
+Scenario 2: S002 - Test that market settlement cashflows only depend on parties positions and is independent of what order types (GTC, IOC, IOK) there are on the book. (0024-OSTA-009)
+  Given  the following network parameters are set:
+  And  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  And  the market data for the market "ETH/DEC19" should be:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the settlement account should have a balance of "0" for the market "ETH/DEC19"
+  When  the parties place the following orders:
+  Then  the parties should have the following account balances:
+  And  the settlement account should have a balance of "0" for the market "ETH/DEC19"
+  When  the parties place the following orders:
+  When  the parties place the following orders:
+  When  the network moves ahead "6" blocks
+  When  the parties place the following orders:
+  When  the parties place the following orders:
+  And  the parties place the following orders:
+  Then  the market data for the market "ETH/DEC19" should be:
+  When  the network moves ahead "6" blocks
+  Then  the market data for the market "ETH/DEC19" should be:
+  And  the following transfers should happen:
+  And  the cumulated balance for all accounts should be worth "330000000"
+  And  the settlement account should have a balance of "0" for the market "ETH/DEC19"
+  And  the accumulated liquidity fees should be "0" for the market "ETH/DEC19"
+

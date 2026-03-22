@@ -1,0 +1,7 @@
+Scenario 5: An admin can create another secured resource
+  When  I add "Accept" header equal to "application/ld+json"
+  And  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Authorization" header equal to "Basic YWRtaW46a2l0dGVu"
+  And  I send a "POST" request to "/legacy_secured_dummies" with body:
+  Then  the response status code should be 201
+

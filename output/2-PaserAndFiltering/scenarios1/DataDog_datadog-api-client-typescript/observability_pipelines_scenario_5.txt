@@ -1,0 +1,8 @@
+Scenario 5: Delete a pipeline returns "Not Found" response
+  Tags: ['@team:DataDog/observability-pipelines']
+  Given  operation "DeletePipeline" enabled
+  And  new "DeletePipeline" request
+  And  request contains "pipeline_id" parameter with value "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

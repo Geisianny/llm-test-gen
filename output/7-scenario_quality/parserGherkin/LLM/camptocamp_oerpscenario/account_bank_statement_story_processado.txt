@@ -1,0 +1,52 @@
+RELATÓRIO INDIVIDUAL DE ANÁLISE GHERKIN
+==================================================
+Data da análise: 16/01/2026 21:47:07
+Arquivo analisado: account_bank_statement_story_processado.feature
+Caminho relativo: camptocamp_oerpscenario\account_bank_statement_story_processado.feature
+Caminho completo: output/6-FeatureEvaluation/featuresToEvaluation/LLM\camptocamp_oerpscenario\account_bank_statement_story_processado.feature
+
+Status: VÁLIDO
+
+O arquivo está sintaticamente correto!
+
+INFORMAÇÕES DA FEATURE:
+------------------------------
+Nome: account_bank_statement_story_processado
+Descrição: Não possui
+Total de cenários: 5
+
+CENÁRIOS IDENTIFICADOS:
+1. Register a new invoice
+   Steps: 5
+   - Given there is an existing customer with a valid account
+   - When the user creates a new invoice for the customer
+   - And enters a valid invoice amount
+   - Then the system registers the invoice successfully
+   - And displays the invoice status as "open"
+2. Create a new bank statement
+   Steps: 5
+   - Given the system has no existing bank statements
+   - When the user creates a new bank statement
+   - And enters a valid statement date and balance
+   - Then the system creates the bank statement successfully
+   - And displays the statement status as "draft"
+3. Import bank statement lines
+   Steps: 5
+   - Given there is an existing bank statement in draft status
+   - When the user imports bank statement lines from a valid file
+   - And the file contains valid transaction data
+   - Then the system imports the statement lines successfully
+   - And displays the updated statement balance
+4. Reconcile an invoice with a bank statement
+   Steps: 5
+   - Given there is an open invoice and a corresponding bank statement line
+   - When the user reconciles the invoice with the bank statement line
+   - Then the system reconciles the invoice successfully
+   - And displays the invoice status as "paid"
+   - And updates the bank statement balance
+5. Attempt to reconcile an already reconciled invoice
+   Steps: 4
+   - Given there is an invoice that has already been reconciled
+   - When the user attempts to reconcile the invoice again with a bank statement line
+   - Then the system prevents the reconciliation
+   - And displays an alert indicating that the invoice is already reconciled

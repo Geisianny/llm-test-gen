@@ -1,0 +1,31 @@
+Scenario 1: Check order margin during continuous
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties place the following orders:
+  When  the network moves ahead "3" blocks
+  And  the market data for the market "ETH/FEB23" should be:
+  And  the parties should have the following margin levels:
+  And  the parties submit update margin mode:
+  And  the parties should have the following margin levels:
+  When  the parties amend the following orders:
+  And  the parties should have the following margin levels:
+  When  the parties amend the following orders:
+  And  the parties should have the following margin levels:
+  When  the parties amend the following orders:
+  And  the parties should have the following margin levels:
+  When  the parties amend the following orders:
+  And  the parties should have the following margin levels:
+  And  the parties place the following orders:
+  And  the parties should have the following margin levels:
+  When  the network moves ahead "1" blocks
+  When  the parties amend the following orders:
+  And  the parties should have the following margin levels:
+  And  the parties place the following orders:
+  And  the parties should have the following margin levels:
+  And  the parties place the following orders:
+  And  the parties should have the following margin levels:
+  And  the parties place the following orders:
+  And  the parties should have the following margin levels:
+  And  the parties place the following orders:
+  And  the parties should have the following margin levels:
+  And  the market data for the market "ETH/FEB23" should be:
+

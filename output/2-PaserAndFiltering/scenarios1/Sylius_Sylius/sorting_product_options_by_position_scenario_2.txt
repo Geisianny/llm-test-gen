@@ -1,0 +1,6 @@
+Scenario 2: Product option added at no position is added as the last one
+  Tags: ['@api', '@ui']
+  Given  the store has a product option "Mug shape"
+  When  I browse product options
+  Then  the last product option in the list should have name "Mug shape"
+

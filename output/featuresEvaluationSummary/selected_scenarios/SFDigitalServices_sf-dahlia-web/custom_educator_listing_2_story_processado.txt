@@ -1,0 +1,7 @@
+Scenario: Successful application with valid job classification code
+  Given there is a web user applying to Custom Educator Listing 2
+  And the user has employment with the San Francisco Unified School District
+  And has a valid job classification code "12345"
+  When the user submits the application form with the job classification code "12345"
+  Then the system accepts the application
+  And displays a confirmation message

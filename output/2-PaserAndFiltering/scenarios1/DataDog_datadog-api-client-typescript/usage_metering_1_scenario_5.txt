@@ -1,0 +1,6 @@
+Scenario 5: Get billing dimension mapping for usage endpoints returns "Bad Request" response
+  Tags: ['@team:DataDog/revenue-query']
+  Given  new "GetBillingDimensionMapping" request
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+

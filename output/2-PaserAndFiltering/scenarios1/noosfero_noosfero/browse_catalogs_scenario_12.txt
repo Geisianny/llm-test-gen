@@ -1,0 +1,9 @@
+Scenario 12: display description when button is clicked
+  Tags: ['@selenium-fixme']
+  Given  the following products
+  And  I am on /catalog/artebonito
+  And  I reload and wait for the page
+  When  I follow "product-description-button"
+  Then  I should see "A small description" within "#product-description"
+  And  "A small description for a product that doesn't exist" should not be visible within "product-description"
+

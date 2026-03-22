@@ -1,0 +1,8 @@
+Scenario 17: Cleanup: configure the CSV separator char to comma
+  Given  I am authorized as "testing" with password "testing"
+  When  I follow the left menu "Home > My Preferences"
+  And  I choose ","
+  And  I click on "Save Preferences"
+  Then  I should see a "Preferences modified" text
+  And  radio button "radio-comma" should be checked
+

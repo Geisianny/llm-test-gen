@@ -1,0 +1,6 @@
+Scenario 4: Not applying catalog promotion if it's not eligible
+  Tags: ['@api', '@ui']
+  When  I view product "Mug"
+  Then  I should see the product price "$5.00"
+  And  I should see this product has no catalog promotion applied
+

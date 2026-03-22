@@ -1,0 +1,8 @@
+Scenario 2: a not logged in user can log in by members block's button
+  Given  the following communities
+  And  the following blocks
+  And  I am not logged in
+  When  I go to sample-community's homepage
+  And  I follow "Join this community" within ".members-block"
+  Then  I should see "Username / Email"
+

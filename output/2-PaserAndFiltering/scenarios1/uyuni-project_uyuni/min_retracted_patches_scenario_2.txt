@@ -1,0 +1,14 @@
+Scenario 2: Installed retracted package should show icon in the system packages list
+  When  I install package "rute-dummy=2.1-1.1" on this "sle_minion"
+  And  I refresh packages list via spacecmd on "sle_minion"
+  And  I wait until refresh package list on "sle_minion" is finished
+  And  I am on the "Software" page of this "sle_minion"
+  And  I follow "Packages"
+  And  I follow "List / Remove"
+  And  I enter "rute-dummy" as the filtered package name
+  And  I click on the filter button until page does contain "rute-dummy" text
+  Then  the table row for "rute-dummy-2.1-1.1" should contain "retracted" icon
+  When  I remove package "rute-dummy" from this "sle_minion"
+  And  I refresh packages list via spacecmd on "sle_minion"
+  And  I wait until package "rute-dummy" is removed from "sle_minion" via spacecmd
+

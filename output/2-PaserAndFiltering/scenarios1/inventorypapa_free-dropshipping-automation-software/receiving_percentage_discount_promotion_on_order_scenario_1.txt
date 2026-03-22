@@ -1,0 +1,6 @@
+Scenario 1: Receiving percentage discount for my cart
+  Tags: ['@ui', '@api']
+  When  I add product "PHP T-Shirt" to the cart
+  Then  my cart total should be "$80.00"
+  And  my discount should be "-$20.00"
+

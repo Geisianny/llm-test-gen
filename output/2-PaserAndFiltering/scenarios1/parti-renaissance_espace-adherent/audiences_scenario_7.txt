@@ -1,0 +1,5 @@
+Scenario 7: As a logged-in user with correct rights I can delete an audience
+  Given  I am logged with "deputy@en-marche-dev.fr" via OAuth client "JeMengage Web"
+  When  I send a "DELETE" request to "/api/v3/audiences/f7ac8140-0a5b-4832-a5f4-47e661dc130c?scope=deputy"
+  Then  the response status code should be 204
+

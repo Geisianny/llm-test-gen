@@ -1,0 +1,8 @@
+Scenario 4: Successfully edit title and job location
+  Given  I go to edit job draft with title "Test Job Draft"
+  When  I fill in "Job title" with "Edited Test Job Draft"
+  And  I fill job location search with "Berlin" and choose "10117 Berlin"
+  When  I save "job title and location" form
+  And  I wait for the ajax response
+  Then  I should see "Edited Test Job Draft"
+

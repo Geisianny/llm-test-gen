@@ -1,0 +1,132 @@
+Feature: Subscription List
+
+Background: 
+  Given  the following accounts exist:
+  And  the follow products exist:
+  And  the follow prices exist:
+  And  the following features exist:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "Price One" with:
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "Price One" with:
+
+Scenario 1: 
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  When  I fetch the subscription list from the stripe interopt layer
+  Then  I will see a subscription in the stripe interopt list for "Test Plan"
+
+Scenario 2: 
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  When  I fetch the subscription list from the stripe interopt layer for customer "customer.two@example.org"
+  Then  I will see a subscription in the stripe interopt list for "Test Plan"
+  But  I will not see a subscription in the stripe interopt list for "Test Two"
+
+Scenario 3: 
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  When  I fetch the subscription list from the stripe interopt layer for price 3000 "USD" "month"
+  Then  I will see 2 results in the stripe interopt list
+
+Scenario 4: 
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  When  I fetch the subscription list from the stripe interopt layer for price 3000 "USD" "month"
+  Then  I will see 2 results in the stripe interopt list
+
+Scenario 5: 
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  When  I fetch the subscription list from the stripe interopt layer for created at "-3 days"
+  Then  I will see 2 results in the stripe interopt list
+
+Scenario 6: 
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  When  I fetch the subscription list from the stripe interopt layer for created at greater than "-25 hours"
+  Then  I will see 1 results in the stripe interopt list
+
+Scenario 7: 
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  When  I fetch the subscription list from the stripe interopt layer for created at less than "-25 hours"
+  Then  I will see 2 results in the stripe interopt list
+
+Scenario 8: 
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  When  I fetch the subscription list from the stripe interopt layer for end of current period "+15 days"
+  Then  I will see 2 results in the stripe interopt list
+  Then  I will see a subscription in the stripe interopt list for "Test Plan"
+  But  I will not see a subscription in the stripe interopt list for "Test Two"
+
+Scenario 9: 
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  When  I fetch the subscription list from the stripe interopt layer for end of current period less than "+15 days"
+  Then  I will see 1 results in the stripe interopt list
+  Then  I will not see a subscription in the stripe interopt list for "Test Plan"
+  But  I will see a subscription in the stripe interopt list for "Test Two"
+
+Scenario 10: 
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  When  I fetch the subscription list from the stripe interopt layer for start of current period "+15 days"
+  Then  I will see 2 results in the stripe interopt list
+  Then  I will see a subscription in the stripe interopt list for "Test Plan"
+  But  I will not see a subscription in the stripe interopt list for "Test Two"
+
+Scenario 11: 
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  When  I fetch the subscription list from the stripe interopt layer for start of current period less than "+15 days"
+  Then  I will see 1 results in the stripe interopt list
+  Then  I will not see a subscription in the stripe interopt list for "Test Plan"
+  But  I will see a subscription in the stripe interopt list for "Test Two"
+
+Scenario 12: 
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  When  I fetch the subscription list from the stripe interopt layer for collection type "send_invoice"
+  Then  I will see 1 results in the stripe interopt list
+  Then  I will see a subscription in the stripe interopt list for "Test Plan"
+  And  I will not see a subscription in the stripe interopt list for "Test Two"
+
+Scenario 13: 
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  When  I fetch the subscription list from the stripe interopt layer for collection type "charge_automatically"
+  Then  I will see 2 results in the stripe interopt list
+  Then  I will see a subscription in the stripe interopt list for "Test Plan"
+  But  I will see a subscription in the stripe interopt list for "Test Two"
+
+Scenario 14: 
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  When  I fetch the subscription list from the stripe interopt layer for active subscriptions
+  Then  I will see 2 results in the stripe interopt list
+  Then  I will see a subscription in the stripe interopt list for "Test Plan"
+  But  I will not see a subscription in the stripe interopt list for "Test Two"
+
+Scenario 15: 
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  When  I fetch the subscription list from the stripe interopt layer for cancelled subscriptions
+  Then  I will see 1 results in the stripe interopt list
+  Then  I will not see a subscription in the stripe interopt list for "Test Plan"
+  But  I will see a subscription in the stripe interopt list for "Test Two"
+

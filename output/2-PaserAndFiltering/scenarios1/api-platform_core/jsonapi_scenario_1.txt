@@ -1,0 +1,9 @@
+Scenario 1: Retrieve the API entrypoint
+  Tags: ['@createSchema']
+  When  I send a "GET" request to "/"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/vnd.api+json; charset=utf-8"
+  And  the JSON node "links.self" should be equal to "http://example.com/"
+  And  the JSON node "links.dummy" should be equal to "http://example.com/dummies"
+
