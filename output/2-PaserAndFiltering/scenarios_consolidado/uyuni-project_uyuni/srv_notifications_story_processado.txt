@@ -1,0 +1,29 @@
+Scenario 1: Log in as org admin user
+  Given  I am authorized
+
+
+
+Scenario 2: Check the unread notification counter is correct
+  When  I follow the left menu "Home > Notification Messages"
+  And  I wait until I see "The server has collected the following notification messages." text
+  Then  I follow "Unread Messages"
+  And  the notification badge and the table should count the same amount of messages
+
+
+
+Scenario 3: Delete notification-messages
+  When  I follow the left menu "Home > Notification Messages"
+  And  I wait until I see "The server has collected the following notification messages." text
+  Then  I follow "All Messages"
+  Then  I check the first notification message
+  And  I delete it via the "Delete" button
+
+
+
+Scenario 4: Flag a notification-message as read
+  When  I follow the left menu "Home > Notification Messages"
+  And  I wait until I see "The server has collected the following notification messages." text
+  Then  I follow "All Messages"
+  Then  I check the first notification message
+  And  I mark as read it via the "Mark as Read" button
+

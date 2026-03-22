@@ -1,0 +1,31 @@
+Scenario 1: 0090-VAMM-037: With an existing book consisting solely of vAMM orders on one side, pegged orders referencing best bid/best ask remain deployed on the side with the vAMM orders. Pegged orders referencing the empty side of the book are parked.
+  Tags: ['@VAMM']
+  When  the parties place the following pegged iceberg orders:
+  Then  the order book should have the following volumes for market "ETH/MAR22":
+  When  the network moves ahead "1" blocks
+  Then  the order book should have the following volumes for market "ETH/MAR22":
+  When  the parties cancel the following orders:
+  Then  the order book should have the following volumes for market "ETH/MAR22":
+  When  the network moves ahead "1" blocks
+  Then  the order book should have the following volumes for market "ETH/MAR22":
+  When  the parties amend the following AMM:
+  Then  the AMM pool status should be:
+  When  the network moves ahead "1" blocks
+  Then  the order book should have the following volumes for market "ETH/MAR22":
+
+
+
+Scenario 2: 0090-VAMM-037: Cancelling an AMM with pegged orders hanging off its quotes causes them to be re-pegged
+  Tags: ['@VAMM']
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the parties place the following pegged orders:
+  Then  the order book should have the following volumes for market "ETH/MAR22":
+  When  the network moves ahead "1" blocks
+  When  the parties cancel the following AMM:
+  Then  the market data for the market "ETH/MAR22" should be:
+  Then  the order book should have the following volumes for market "ETH/MAR22":
+  When  the network moves ahead "1" blocks
+  When  the parties submit the following AMM:
+  Then  the market data for the market "ETH/MAR22" should be:
+  Then  the order book should have the following volumes for market "ETH/MAR22":
+

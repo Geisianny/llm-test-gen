@@ -1,0 +1,10 @@
+Scenario 1: discussion article should save content body
+  Tags: ['@selenium']
+  Given  I am on joaosilva's control panel
+  And  I follow "New" within "#section-content"
+  When  I follow "Comments Discussion"
+  And  I fill in "Title" with "My discussion"
+  And  I fill in tinyMCE "article_body" with "My discussion body!!!"
+  And  I follow "Save"
+  Then  I should see "My discussion body!!!"
+

@@ -1,0 +1,26 @@
+Feature: manage categories
+Description: As an environment administrator
+  I want to manage categories
+
+Background: 
+  Given  the following categories
+  And  the following categories
+  And  I am logged in as admin
+  And  I am on the administration categories panel
+
+Scenario 1: load only top level categories
+  Tags: ['@selenium']
+  Then  I should see "Products"
+  And  I should see "Services"
+  And  I should not see "Beans"
+  And  I should not see "Development"
+
+Scenario 2: load subcategories only after following parent
+  Tags: ['@selenium']
+  Then  I should not see "Beans"
+  And  I should not see "Potatoes"
+  When  I click "#show-hide-button1"
+  And  I wait 0.5 seconds for Services show animation to finish
+  Then  I should see "Beans"
+  And  I should see "Potatoes"
+

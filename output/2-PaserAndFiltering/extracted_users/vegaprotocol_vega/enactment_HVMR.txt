@@ -1,0 +1,70 @@
+Feature: Volume rebate program - program enactment
+Description: Volume rebate program rewards parties who comprise above a specified
+  fraction of the maker volume on the network in a window with an
+  extra rebate factor.
+
+  Tests check on program enactment party benefit factors are updated
+  correctly and applied in the next epoch.
+
+Background: 
+  Given  the average block duration is "1"
+  And  the following network parameters are set:
+  And  the following assets are registered:
+  Given  the parties deposit on asset's general account the following amount:
+  And  the markets:
+  And  the spot markets:
+  And  the parties place the following orders:
+  And  the parties place the following orders:
+  And  the parties place the following orders:
+  And  the parties place the following orders:
+  When  the network moves ahead "2" blocks
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/USD-0-1"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "MXN-0-1/USD-0-1"
+  Given  the parties deposit on asset's general account the following amount:
+
+Scenario Outline 1: No program currently active, new program enacted, rebate factors applied from the start of the next epoch. - Example 1
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  Given  the volume rebate program tiers named "vrt":
+  And  the volume rebate program:
+  Given  the network moves ahead "1" epochs
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  And  the following transfers should happen:
+
+  Examples:
+    | market |
+    | BTC/USD-0-1 |
+    | MXN-0-1/USD-0-1 |
+
+Scenario Outline 2: Program currently active, program update enacted, rebate factors applied from the start of the next epoch. - Example 1
+  Given  the volume rebate program tiers named "vrt":
+  And  the volume rebate program:
+  And  the network moves ahead "1" epochs
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  Given  the network moves ahead "1" epochs
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  And  the following transfers should happen:
+  Given  the volume rebate program tiers named "vrt":
+  And  the volume rebate program:
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  And  the following transfers should happen:
+  Given  the network moves ahead "1" epochs
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  And  the following transfers should happen:
+
+  Examples:
+    | market |
+    | BTC/USD-0-1 |
+    | MXN-0-1/USD-0-1 |
+

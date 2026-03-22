@@ -1,0 +1,26 @@
+Scenario 1: Seeing order locale on the order summary page
+  Tags: ['@api', '@ui']
+  Given  I added product "Stark T-Shirt" to the cart
+  When  I proceed through checkout process
+  Then  I should be on the checkout summary step
+  And  my order's locale should be "English (United States)"
+
+
+
+Scenario 2: Seeing order locale on the order summary page after change channel locale
+  Tags: ['@no-api', '@ui']
+  Given  I added product "Stark T-Shirt" to the cart
+  When  I proceed through checkout process in the "French (France)" locale
+  Then  I should be on the checkout summary step
+  And  my order's locale should be "French (France)"
+
+
+
+Scenario 3: Seeing order locale on the order summary page after change channel locale
+  Tags: ['@api', '@no-ui']
+  Given  I pick up cart in the "French (France)" locale
+  And  I have product "Stark T-Shirt" in the cart
+  When  I proceed through checkout process
+  Then  I should be on the checkout summary step
+  And  my order's locale should be "French (France)"
+

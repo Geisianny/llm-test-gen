@@ -1,0 +1,13 @@
+Scenario 1: 0053-PERP-029,  0053-PERP-030 Funding rate modified by perpetual parameters
+  Tags: ['@Perpetual', '@funding-rate']
+  Given  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  time is updated to "2020-10-16T00:05:00Z"
+  When  the parties place the following orders:
+  Then  time is updated to "2020-10-16T00:10:00Z"
+  And  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  And  the mark price should be "990" for the market "ETH/DEC19"
+  Then  the product data for the market "ETH/DEC19" should be:
+  And  the markets are updated:
+  Then  time is updated to "2020-10-16T00:10:01Z"
+  Then  the product data for the market "ETH/DEC19" should be:
+

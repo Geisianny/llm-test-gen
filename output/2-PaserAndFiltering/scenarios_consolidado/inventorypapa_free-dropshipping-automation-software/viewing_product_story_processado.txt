@@ -1,0 +1,6 @@
+Scenario 1: Viewing a detailed page with product's name
+  Tags: ['@ui', '@api']
+  When  I check this product's details
+  Then  I should see the product name "T-shirt banana"
+  And  I should see the product description "You must have this beautiful T-shirt"
+

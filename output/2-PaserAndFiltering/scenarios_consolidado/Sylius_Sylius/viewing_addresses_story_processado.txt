@@ -1,0 +1,14 @@
+Scenario 1: Viewing all addresses
+  Tags: ['@api', '@ui']
+  When  I browse my address book
+  Then  I should have a single address in my address book
+
+
+
+Scenario 2: Inability to view the addresses of other customers in address book
+  Tags: ['@api', '@ui']
+  When  I browse my address book
+  Then  I should have a single address in my address book
+  And  this address should be assigned to "Lucifer Morningstar"
+  And  I should not see the address assigned to "John Doe"
+

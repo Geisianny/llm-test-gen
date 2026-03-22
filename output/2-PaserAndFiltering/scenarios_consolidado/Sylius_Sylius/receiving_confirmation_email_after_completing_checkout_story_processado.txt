@@ -1,0 +1,17 @@
+Scenario 1: Receiving confirmation email after finalizing checkout
+  Tags: ['@api', '@ui', '@email']
+  Given  I added product "Sig Sauer P226" to the cart
+  When  I complete addressing step with email "john@example.com" and "United States" based billing address
+  And  I proceed with "Free" shipping method and "Offline" payment
+  And  I confirm my order
+  Then  an email with the summary of order placed by "john@example.com" should be sent to him
+
+
+
+Scenario 2: Receiving confirmation email after finalizing checkout in different locale than the default one
+  Tags: ['@api', '@ui', '@email']
+  Given  I added product "Sig Sauer P226" to the cart
+  And  I have proceeded through checkout process in the "Polish (Poland)" locale with email "john@example.com"
+  When  I confirm my order
+  Then  an email with the summary of order placed by "john@example.com" should be sent to him in "Polish (Poland)" locale
+

@@ -1,0 +1,20 @@
+Feature: I would like to open links to the events.
+
+Scenario 1: When I view a calendar event that has a URL set, I can click the title and reach the page that I would like to see.
+  Given  we add the calendar "gancio.antroposofiachile.net.ics"
+  When  we look at 2024-06-01
+  And  we click on the event "El Significado Espiritual "
+  Then  the link "🔗 El Significado " opens "https://gancio.antroposofiachile.net/event/el-significado-espiritual-de-las-envolturas-embrionarias-a-la-luz-de-la-antroposofia"
+
+Scenario Outline 2: I want links to events to open as configured, e.g. in a new tab. - Example 1
+  Given  we add the calendar "gancio.antroposofiachile.net.ics"
+  And  we set the "target" parameter to "_top"
+  When  we look at 2024-06-01
+  And  we click on the event "El Significado Espiritual "
+  Then  the link "🔗 El Significado " targets "_top"
+
+  Examples:
+    | target |
+    | _top |
+    | _blank |
+

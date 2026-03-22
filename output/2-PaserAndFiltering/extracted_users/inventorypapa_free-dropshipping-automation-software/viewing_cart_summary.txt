@@ -1,0 +1,14 @@
+Feature: Viewing a cart summary
+Description: In order to see details about my order
+    As a Visitor
+    I want to be able to see my cart summary
+Tags: ['@shopping_cart']
+
+Background: 
+  Given  the store operates on a single channel in "United States"
+
+Scenario 1: Viewing information about empty cart
+  Tags: ['@ui', '@api']
+  When  I see the summary of my cart
+  Then  my cart should be empty
+

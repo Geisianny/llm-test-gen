@@ -1,0 +1,9 @@
+Scenario 1: Seeing order items
+  Tags: ['@ui']
+  When  I view the summary of the order "#00000666"
+  Then  it should have 2 items
+  And  the product named "Angel T-Shirt" should be in the items list
+  And  the product named "Angel Mug" should be in the items list
+  And  the order's items total should be "$58.00"
+  And  the order's total should be "$58.00"
+

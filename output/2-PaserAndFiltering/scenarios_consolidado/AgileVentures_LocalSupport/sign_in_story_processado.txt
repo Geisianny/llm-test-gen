@@ -1,0 +1,116 @@
+Scenario 1: Sign in for an existing non-superadmin user unassociated with any organisation
+  Tags: ['@vcr']
+  Given  I sign in as "normal_user@example.com" with password "pppppppp"
+  Then  I should see a link or button "normal_user@example.com"
+
+
+
+Scenario 2: Sign in with wrong password for an existing non-superadmin user unassociated with any organisation
+  Given  I sign in as "normal_user@example.com" with password "12345"
+  Then  I should be on the sign in page
+  And  I should see "I'm sorry, you are not authorized to login to the system."
+
+
+
+Scenario 3: Sign in for an existing non-superadmin user associated with an organisation
+  Given  I sign in as "charity_owner@example.com" with password "pppppppp"
+  Then  I should be on the show page for the organisation named "Friendly"
+  And  I should see a link or button "charity_owner@example.com"
+
+
+
+Scenario 4: Sign in with wrong password for an existing non-superadmin user associated with an organisation
+  Given  I sign in as "charity_owner@example.com" with password "12345"
+  Then  I should be on the sign in page
+  And  I should see "I'm sorry, you are not authorized to login to the system."
+
+
+
+Scenario 5: Sign in for an existing superadmin user
+  Given  I sign in as "superadmin@example.com" with password "pppppppp"
+  Then  I should be on the home page
+  And  I should see a link or button "superadmin@example.com"
+
+
+
+Scenario 6: Sign in for an existing superadmin user after org search
+  Given  I visit the organisations index page
+  And  I fill in "Optional Search Text" with "search words" within the main body
+  And  I press "Submit"
+  And  I sign in as "superadmin@example.com" with password "pppppppp"
+  Then  I should be on the organisations search page
+  And  I should see a link or button "superadmin@example.com"
+  And  the search box should contain "search words"
+
+
+
+Scenario 7: Sign in for an existing superadmin user after vol op search
+  Given  I visit the volunteer opportunities page
+  And  I fill in "q" with "search words" within the main body
+  And  I press "Search"
+  And  I sign in as "superadmin@example.com" with password "pppppppp"
+  Then  I should be on the volunteer opportunities search page
+  And  I should see a link or button "superadmin@example.com"
+  And  the search box should contain "search words"
+
+
+
+Scenario 8: Sign in for an existing superadmin user after visit vol op page
+  Given  I visit the show page for the volunteer_op titled "Office Support"
+  And  I sign in as "superadmin@example.com" with password "pppppppp"
+  Then  I should be on the show page for the volunteer_op titled "Office Support"
+  And  I should see a link or button "superadmin@example.com"
+
+
+
+Scenario 9: Sign in for an existing superadmin after visit new event page
+  Given  I visit the new event page
+  And  I sign in as "superadmin@example.com" with password "pppppppp" on the legacy sign in page
+  Then  I should be on the new event page
+  And  I should see a link or button "superadmin@example.com"
+
+
+
+Scenario 10: Sign in with wrong password for an existing superadmin user
+  Given  I sign in as "superadmin@example.com" with password "12345"
+  Then  I should be on the sign in page
+  And  I should see "I'm sorry, you are not authorized to login to the system."
+
+
+
+Scenario 11: Sign in for a non-existent user
+  Given  I sign in as "non-existent_user@example.com" with password "pppppppp"
+  Then  I should be on the sign in page
+  And  I should see "I'm sorry, you are not authorized to login to the system"
+
+
+
+Scenario 12: Check that login/register toggle works
+  Tags: ['@javascript', '@billy']
+  Given  I click "Login"
+  Then  the "loginForm" should be visible
+  And  the "registerForm" should be not visible
+  And  I should see "New organisation? Sign up"
+  Given  I click "toggle_link"
+  Then  the "loginForm" should be not visible
+  And  the "registerForm" should be visible
+  And  I should see "Already a member? Log in"
+  Given  I click "toggle_link"
+  Then  the "loginForm" should be visible
+  And  the "registerForm" should be not visible
+  And  I should see "New organisation? Sign up"
+
+
+
+Scenario 13: Check class of flash notice  - error
+  Given  I sign in as "superadmin@example.com" with password "12345"
+  Then  I should be on the sign in page
+  And  the "flash_alert" should be "alert-danger"
+
+
+
+Scenario 14: Check class of flash notice  - success
+  Given  I sign in as "superadmin@example.com" with password "pppppppp"
+  Then  I should be on the home page
+  And  the "flash_notice" should be "alert-success"
+

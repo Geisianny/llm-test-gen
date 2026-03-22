@@ -1,0 +1,39 @@
+Feature: CASE-1: Trader submits long order that will trade - new formula & high exit price
+
+Background: 
+  Given  the following assets are registered:
+  And  the markets:
+  And  the following network parameters are set:
+  And  the parties deposit on asset's general account the following amount:
+  And  the following network parameters are set:
+  When  the parties submit the following liquidity provision:
+  Then  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the mark price should be "10300000" for the market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the parties place the following orders with ticks:
+  And  the parties place the following orders with ticks:
+
+Scenario 1: 
+  And  "party1" should have one account per asset
+  When  the parties place the following orders with ticks:
+  And  "party1" should have general account balance of "99611199999980" for asset "ETH"
+  And  the following trades should be executed:
+  Then  the following transfers should happen:
+  Then  the parties should have the following account balances:
+  And  the parties should have the following margin levels:
+  And  the parties should have the following profit and loss:
+  Then  the parties cancel the following orders:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following account balances:
+  And  the parties should have the following margin levels:
+  And  the parties should have the following profit and loss:
+  When  the parties place the following orders with ticks:
+  And  the following transfers should happen:
+  Then  the parties should have the following account balances:
+  And  the parties should have the following margin levels:
+  And  the parties should have the following profit and loss:
+  When  the parties place the following orders with ticks:
+  And  the parties should have the following margin levels:
+  And  the parties should have the following profit and loss:
+

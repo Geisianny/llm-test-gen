@@ -1,0 +1,21 @@
+Scenario 1: Validate the model ir.property into the DB
+  Tags: ['@properties']
+  Given  I check the integrity of ir.property named property_product_pricelist
+  Then  I check the value of ir.property and it should not start with a space
+
+
+
+Scenario 2: Validate the partner creation
+  Tags: ['@partner']
+  Given  I want to create a partner named automatedtest with default receivable account
+  Then  I get a receivable account
+  And  I should get a partner id
+
+
+
+Scenario 3: Create a partner using DSL
+  Given  I need a "res.partner" with name: Fournisseur Device and oid: scenario.main_device_supplier
+  And  having:
+  Given  I need a "res.partner.address" with name: Pro living and oid: scenario.main_device_supplier_add
+  And  having:
+

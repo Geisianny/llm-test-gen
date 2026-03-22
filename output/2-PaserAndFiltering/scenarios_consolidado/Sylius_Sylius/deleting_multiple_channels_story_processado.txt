@@ -1,0 +1,10 @@
+Scenario 1: Deleting multiple channels at once
+  Tags: ['@no-api', '@ui', '@mink:chromedriver']
+  When  I browse channels
+  And  I check the "PL Store" channel
+  And  I check also the "DE Store" channel
+  And  I delete them
+  Then  I should be notified that they have been successfully deleted
+  And  I should see a single channel in the list
+  And  I should see the channel "US Store" in the list
+

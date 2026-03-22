@@ -1,0 +1,61 @@
+Scenario 1: Successfully placing an order
+  Tags: ['@api', '@ui']
+  Given  this payment method is not using Payum
+  And  I added product "PHP T-Shirt" to the cart
+  When  I complete addressing step with email "john@example.com" and "United States" based billing address
+  And  I proceed with "Free" shipping method
+  And  I choose "Offline" payment method
+  And  I confirm my order
+  Then  I should see the thank you page
+
+
+
+Scenario 2: Using Payum successfully placing an order
+  Tags: ['@api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  When  I complete addressing step with email "john@example.com" and "United States" based billing address
+  And  I proceed with "Free" shipping method
+  And  I choose "Offline" payment method
+  And  I confirm my order
+  Then  I should see the thank you page
+
+
+
+Scenario 3: Successfully placing an order using custom locale
+  Tags: ['@no-api', '@ui']
+  Given  this payment method is not using Payum
+  And  I added product "PHP T-Shirt" to the cart
+  When  I proceed through checkout process in the "French (France)" locale with email "john@example.com"
+  And  I confirm my order
+  Then  I should see the thank you page in "French (France)"
+
+
+
+Scenario 4: Using Payum successfully placing an order using custom locale
+  Tags: ['@no-api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  When  I proceed through checkout process in the "French (France)" locale with email "john@example.com"
+  And  I confirm my order
+  Then  I should see the thank you page in "French (France)"
+
+
+
+Scenario 5: Successfully placing an order using custom locale
+  Tags: ['@api', '@no-ui']
+  Given  this payment method is not using Payum
+  When  I pick up cart in the "French (France)" locale
+  And  I add product "PHP T-Shirt" to the cart
+  And  I proceed through checkout process
+  And  I confirm my order
+  Then  my order's locale should be "French (France)"
+
+
+
+Scenario 6: Using Payum successfully placing an order using custom locale
+  Tags: ['@api', '@no-ui']
+  Given  I pick up cart in the "French (France)" locale
+  When  I add product "PHP T-Shirt" to the cart
+  And  I proceed through checkout process
+  And  I confirm my order
+  Then  my order's locale should be "French (France)"
+

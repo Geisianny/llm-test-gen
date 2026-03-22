@@ -1,0 +1,27 @@
+Feature: Regression test for issue 630
+
+Background: 
+  Given  the markets:
+  And  the following network parameters are set:
+
+Scenario 1: Trader is being closed out.
+  Tags: ['@Liquidation']
+  Given  the parties deposit on asset's general account the following amount:
+  Then  the parties place the following orders:
+  When  the parties place the following orders:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the mark price should be "100" for the market "ETH/DEC19"
+  When  the parties place the following orders "1" blocks apart:
+  And  the cumulated balance for all accounts should be worth "16340000"
+  Then  the parties should have the following margin levels:
+  When  the parties place the following orders "1" blocks apart:
+  Then  the parties should have the following account balances:
+  When  the parties place the following orders:
+  And  the network moves ahead "1" blocks
+  Then  the insurance pool balance should be "0" for the market "ETH/DEC19"
+  And  debug trades
+  And  the following trades should be executed:
+  And  the cumulated balance for all accounts should be worth "16340000"
+

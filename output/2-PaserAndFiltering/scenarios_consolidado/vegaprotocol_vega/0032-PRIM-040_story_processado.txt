@@ -1,0 +1,15 @@
+Scenario 1: 0032-PRIM-040
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties place the following orders:
+  When  the network moves ahead "2" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+  When  the network moves ahead "1" blocks
+  And  the parties place the following orders:
+  Then  the market data for the market "ETH/FEB23" should be:
+  When  the network moves ahead "2" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+  And  the parties place the following orders:
+  Then  the market data for the market "ETH/FEB23" should be:
+  When  the network moves ahead "4" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+

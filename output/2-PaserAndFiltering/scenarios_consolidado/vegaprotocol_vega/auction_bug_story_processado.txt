@@ -1,0 +1,17 @@
+Scenario 1: 
+  Given  the average block duration is "1"
+  And  the following network parameters are set:
+  And  the following assets are registered:
+  Given  the price monitoring named "pm":
+  And  the composite price oracles from "0xCAFECAFE1":
+  And  the markets:
+  Given  the parties deposit on asset's general account the following amount:
+  Given  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/USDT"
+  And  the market data for the market "ETH/USDT" should be:
+  Then  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  Given  the network moves ahead "1" blocks
+  And  the market data for the market "ETH/USDT" should be:
+  Given  the network moves ahead "5" blocks
+  And  the market data for the market "ETH/USDT" should be:
+

@@ -1,0 +1,42 @@
+Scenario 1: Changing my preferred locale
+  Tags: ['@ui']
+  Given  I am editing my details
+  When  I set my locale to "Spanish (Mexico)"
+  Then  I should be viewing the administration panel in "Spanish (Mexico)"
+
+
+
+Scenario 2: Changing my preferred language to a locale that does not exist in the store
+  Tags: ['@ui']
+  Given  the locale "French (France)" does not exist in the store
+  And  I am editing my details
+  When  I set my locale to "French (France)"
+  Then  I should be viewing the administration panel in "French (France)"
+
+
+
+Scenario 3: Changing panel's locale doesn't change shop's locale
+  Tags: ['@ui']
+  Given  I am editing my details
+  When  I set my locale to "Spanish (Mexico)"
+  And  I browse that channel
+  Then  I should still shop using the "English (United States)" locale
+
+
+
+Scenario 4: Changing shop's locale has doesn't affect admin panel's locale
+  Tags: ['@ui']
+  Given  I switched the shop's locale to "Spanish (Mexico)"
+  When  I open administration dashboard
+  Then  I should still be viewing the administration panel in "English (United States)"
+
+
+
+Scenario 5: Locales are saved per each admin's preference
+  Tags: ['@ui']
+  Given  I am using "Spanish (Mexico)" locale for my panel
+  And  there is an administrator "admin@example.com" identified by "sylius"
+  And  this administrator is using "French (France)" locale
+  When  this administrator logs in using "sylius" password
+  Then  they should be viewing the administration panel in "French (France)"
+

@@ -1,0 +1,8 @@
+Feature: Related items
+
+Scenario 1: Get related items
+  Tags: ['@auth']
+  Given  "archive"
+  When  we get "/archive/original/related"
+  Then  we get list with 1 items
+

@@ -1,0 +1,21 @@
+Scenario 1: a party is added to the system. A general account is created for each asset
+  Given  the parties deposit on asset's general account the following amount:
+  Then  "party1" should have one account per asset
+  And  "party1" should have one margin account per market
+
+
+
+Scenario 2: a party deposit collateral onto Vega. The general account for this asset increase
+  Given  the parties deposit on asset's general account the following amount:
+  Then  "party1" should have one account per asset
+  When  the parties deposit on asset's general account the following amount:
+  Then  "party1" should have general account balance of "300" for asset "VUSD"
+
+
+
+Scenario 3: a party withdraw collateral onto Vega. The general account for this asset decrease
+  Given  the parties deposit on asset's general account the following amount:
+  Then  "party1" should have one account per asset
+  When  the parties withdraw the following assets:
+  Then  "party1" should have general account balance of "30" for asset "VUSD"
+

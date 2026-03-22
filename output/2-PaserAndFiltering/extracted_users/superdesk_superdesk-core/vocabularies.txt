@@ -1,0 +1,135 @@
+Feature: Vocabularies
+
+Scenario 1: List category vocabulary
+  Tags: ['@auth']
+  Given  the "vocabularies"
+  When  we get "/vocabularies/categories"
+  Then  we get existing resource
+
+Scenario 2: Add vocabulary with invalid identifer
+  Tags: ['@auth']
+  Given  empty "vocabularies"
+  When  we post to "vocabularies"
+  Then  we get response code 400
+
+Scenario 3: List default preferred categories vocabulary
+  Tags: ['@auth']
+  Given  the "vocabularies"
+  When  we get "/vocabularies/default_categories"
+  Then  we get existing resource
+
+Scenario 4: List newsvalue vocabulary
+  Tags: ['@auth']
+  Given  the "vocabularies"
+  When  we get "/vocabularies/newsvalue"
+  Then  we get existing resource
+
+Scenario 5: List vocabularies
+  Tags: ['@auth']
+  Given  the "vocabularies"
+  When  we get "/vocabularies"
+  Then  we get existing resource
+
+Scenario 6: Fetch all when type is not specified and fetch based on type when specified
+  Tags: ['@auth', '@vocabulary']
+  When  we get "/vocabularies"
+  Then  we get existing resource
+  When  we get "/vocabularies?where={"type":"manageable"}"
+  Then  we get existing resource
+  And  there is no "locators" in response
+
+Scenario 7: User receives notification when a vocabulary is updated
+  Tags: ['@auth', '@notification', '@vocabulary']
+  When  we get "/vocabularies/categories"
+  Then  we get response code 200
+  When  we patch "/vocabularies/categories"
+  Then  we get updated response
+  And  we get notifications
+
+Scenario 8: Vocabulary update fails if unique field is defined and non-unique value given
+  Tags: ['@auth', '@vocabulary']
+  When  we get "/vocabularies/categories"
+  Then  we get response code 200
+  When  we patch "/vocabularies/categories"
+  Then  we get error 400
+
+Scenario 9: Vocabulary update fails if unique field is defined and no value given
+  Tags: ['@auth', '@vocabulary']
+  When  we get "/vocabularies/categories"
+  Then  we get response code 200
+  When  we patch "/vocabularies/categories"
+  Then  we get error 400
+
+Scenario 10: Vocabulary update succeeds if unique field is defined
+  Tags: ['@auth', '@vocabulary']
+  When  we get "/vocabularies/categories"
+  Then  we get response code 200
+  When  we patch "/vocabularies/categories"
+  Then  we get updated response
+
+Scenario 11: Vocabulary update succeeds if no unique field is defined with non-unique value
+  Tags: ['@auth', '@vocabulary']
+  When  we get "/vocabularies/genre"
+  Then  we get response code 200
+  When  we patch "/vocabularies/genre"
+  Then  we get updated response
+
+Scenario 12: Cast crop image width/height to int
+  Tags: ['@auth']
+  Given  "vocabularies"
+  When  we get "/vocabularies"
+  Then  we get list with 1 items
+  When  we get "/vocabularies/crop_sizes"
+  Then  we get existing resource
+
+Scenario 13: Create new vocabulary
+  Tags: ['@auth', '@notification']
+  When  we post to "vocabularies"
+  Then  we get new resource
+  And  we get notifications
+
+Scenario 14: Create new custom field with system field id
+  Tags: ['@auth']
+  When  we post to "vocabularies"
+  Then  we get error 400
+
+Scenario 15: Create and remove vocabularies
+  Tags: ['@auth']
+  Given  the "vocabularies"
+  When  we delete "/vocabularies/categories"
+  Then  we get error 400
+  When  we delete "/vocabularies/text1"
+  Then  we get response code 204
+  When  we get "/vocabularies/text1"
+  Then  we get error 404
+
+Scenario 16: Create vocabularies with missing name and qcode
+  Tags: ['@auth']
+  When  we post to "vocabularies"
+  Then  we get error 400
+  When  we post to "vocabularies"
+  Then  we get error 400
+  When  we post to "vocabularies"
+  Then  we get response code 201
+  When  we post to "vocabularies"
+  Then  we get response code 201
+  When  we patch "/vocabularies/bar"
+  Then  we get error 400
+
+Scenario 17: Validate linked vocabularies
+  Tags: ['@auth']
+  When  we post to "vocabularies"
+  Then  we get OK response
+  When  we patch "/vocabularies/bar"
+  Then  we get error 400
+  When  we patch "/vocabularies/foo"
+  Then  we get OK response
+  When  we patch "/vocabularies/bar"
+  Then  we get OK response
+
+Scenario 18: Create new vocabulary with a label
+  Tags: ['@auth', '@notification']
+  When  we post to "vocabularies"
+  Then  we get new resource
+  And  we get notifications
+

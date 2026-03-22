@@ -1,0 +1,20 @@
+Scenario 1: Placing an order in a channels base currency
+  Tags: ['@api', '@todo-ui']
+  Given  I changed my current channel to "United States"
+  And  I added product "PHP T-Shirt" to the cart
+  And  I addressed the cart
+  When  I proceed with "Free" shipping method and "Offline" payment
+  And  I confirm my order
+  Then  the administrator should see that order placed by "customer@example.com" has "USD" currency
+
+
+
+Scenario 2: Placing an order on a different channel with same currency
+  Tags: ['@api', '@todo-ui']
+  Given  I changed my current channel to "Colombia"
+  And  I added product "PHP T-Shirt" to the cart
+  And  I addressed the cart
+  When  I proceed with "Free" shipping method and "Offline" payment
+  And  I confirm my order
+  Then  the administrator should see that order placed by "customer@example.com" has "COP" currency
+

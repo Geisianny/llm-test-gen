@@ -1,0 +1,61 @@
+Scenario 1: Trying to add a new customer without an email
+  Tags: ['@api', '@ui']
+  When  I want to create a new customer
+  And  I specify their first name as "Luke"
+  And  I specify their last name as "Skywalker"
+  And  I try to add them
+  Then  I should be notified that email is required
+
+
+
+Scenario 2: Trying to specify too short first name for an existing customer
+  Tags: ['@api', '@ui']
+  Given  the store has customer "l.skywalker@gmail.com"
+  When  I want to edit this customer
+  And  I specify their first name as "L"
+  And  I try to save my changes
+  Then  I should be notified that first name should be at least 2 characters long
+  And  the customer "l.skywalker@gmail.com" should still have an empty first name
+
+
+
+Scenario 3: Trying to specify too short last name for an existing customer
+  Tags: ['@api', '@ui']
+  Given  the store has customer "l.skywalker@gmail.com" with first name "Luke"
+  When  I want to edit this customer
+  And  I specify their last name as "S"
+  And  I try to save my changes
+  Then  I should be notified that last name should be at least 2 characters long
+  And  the customer "l.skywalker@gmail.com" should still have an empty last name
+
+
+
+Scenario 4: Trying to remove email from an existing customer
+  Tags: ['@api', '@ui']
+  Given  the store has customer "l.skywalker@gmail.com"
+  When  I want to edit this customer
+  And  I remove its email
+  And  I try to save my changes
+  Then  I should be notified that email is required
+  And  the customer "l.skywalker@gmail.com" should still have this email
+
+
+
+Scenario 5: Trying to create customer with wrong email format
+  Tags: ['@api', '@ui']
+  When  I want to create a new customer
+  And  I specify their email as "wrongemail"
+  And  I try to add them
+  Then  I should be notified that email is not valid
+  And  the customer with email "wrongemail" should not appear in the store
+
+
+
+Scenario 6: Trying to create customer with wrong email format in strict mode
+  Tags: ['@api', '@ui']
+  When  I want to create a new customer
+  And  I specify their email as "wrongemail@example..com"
+  And  I try to add them
+  Then  I should be notified that email is not valid
+  And  the customer with email "wrongemail@example..com" should not appear in the store
+

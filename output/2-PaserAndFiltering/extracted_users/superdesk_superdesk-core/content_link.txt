@@ -1,0 +1,52 @@
+Feature: Link content
+
+Scenario 1: Unlink an update of an unpublished story
+  Tags: ['@auth', '@test']
+  Given  "desks"
+  And  "archive"
+  When  we rewrite "123"
+  When  we get "/archive/#REWRITE_ID#"
+  Then  we get existing resource
+  When  we get "/archive/123"
+  Then  we get existing resource
+  When  we delete link "archive/#REWRITE_ID#/rewrite"
+  Then  we get response code 204
+  When  we get "/archive/#REWRITE_ID#"
+  Then  we get "rewrite_of" not populated
+  And  we get "anpa_take_key" not populated
+  And  we get "rewrite_sequence" not populated
+  When  we get "/archive/123"
+  Then  we get "rewritten_by" not populated
+
+Scenario 2: Unlink an update of a published story
+  Tags: ['@auth']
+  Given  "desks"
+  And  "validators"
+  And  "archive"
+  When  we publish "123" with "publish" type and "published" state
+  Then  we get OK response
+  When  we rewrite "123"
+  When  we get "/archive/#REWRITE_ID#"
+  Then  we get existing resource
+  When  we get "/archive/123"
+  Then  we get existing resource
+  When  we delete link "archive/#REWRITE_ID#/rewrite"
+  Then  we get response code 204
+  When  we get "/archive/#REWRITE_ID#"
+  Then  we get "rewrite_of" not populated
+  And  we get "anpa_take_key" not populated
+  And  we get "rewrite_sequence" not populated
+  When  we get "/archive/123"
+  Then  we get "rewritten_by" not populated
+  When  we get "/published/123"
+  Then  we get "rewritten_by" not populated
+
+Scenario 3: Unlink ignores item in a normal package
+  Tags: ['@auth']
+  Given  empty "archive"
+  And  "desks"
+  When  we post to "archive" with success
+  When  we post to "archive" with success
+  When  we delete link "archive/456/rewrite"
+  Then  we get error 400
+

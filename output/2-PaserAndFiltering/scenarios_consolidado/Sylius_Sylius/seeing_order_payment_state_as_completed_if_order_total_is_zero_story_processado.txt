@@ -1,0 +1,20 @@
+Scenario 1: Seeing payment state as paid on orders list
+  Tags: ['@api', '@ui']
+  When  I browse orders
+  Then  the last order should have order payment state "Paid"
+
+
+
+Scenario 2: Seeing payment state as paid on order's summary
+  Tags: ['@api', '@no-ui']
+  When  I view the summary of the last order
+  Then  I should be informed that there are no payments
+
+
+
+Scenario 3: Seeing payment state as paid on order's summary
+  Tags: ['@no-api', '@ui']
+  When  I view the summary of the last order
+  Then  I should be informed that there are no payments
+  And  I should not be able to refund this payment
+

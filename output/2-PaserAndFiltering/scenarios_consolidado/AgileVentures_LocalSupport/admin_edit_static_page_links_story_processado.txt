@@ -1,0 +1,20 @@
+Scenario 1: Having all pages show automatically
+  And  I visit the home page
+  Then  I should see "About HCN"
+  And  I should not see "Contact Info"
+
+
+
+Scenario 2: Super Admin can unlink and then link page, using its edit page
+  Given  I am signed in as a superadmin
+  And  I visit "pages/about/edit"
+  And  I uncheck "Show a public link to this page"
+  And  I press "Update Page"
+  And  I visit the home page
+  Then  the "about" link is not in the footer
+  And  I visit "pages/about/edit"
+  And  I check "Show a public link to this page"
+  And  I press "Update Page"
+  And  I visit the home page
+  Then  the "about" link is in the footer
+

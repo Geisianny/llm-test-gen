@@ -1,0 +1,24 @@
+Scenario 1: Get all processes returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/container-experiences']
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 2: Get all processes returns "OK" response
+  Tags: ['@team:DataDog/container-experiences']
+  Given  request contains "search" parameter with value "process-agent"
+  And  request contains "tags" parameter with value "testing:true"
+  And  request contains "page[limit]" parameter with value 2
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 3: Get all processes returns "OK" response with pagination
+  Tags: ['@replay-only', '@skip-validation', '@team:DataDog/container-experiences', '@with-pagination']
+  Given  request contains "page[limit]" parameter with value 2
+  When  the request with pagination is sent
+  Then  the response status is 200 OK
+  And  the response has 3 items
+

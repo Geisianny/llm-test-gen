@@ -1,0 +1,71 @@
+Feature: Test magin under isolated margin mode
+
+Background: 
+  Given  the following network parameters are set:
+  And  the liquidity monitoring parameters:
+  And  the simple risk model named "simple-risk-model":
+  And  the markets:
+
+Scenario 1: Check margin update when switch between margin modes (0019-MCAL-031, 0019-MCAL-032)
+  Tags: ['@SLABug']
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties place the following orders:
+  And  the parties place the following orders:
+  When  the network moves ahead "2" blocks
+  Then  the mark price should be "15900" for the market "ETH/FEB23"
+  And  the order book should have the following volumes for market "ETH/FEB23":
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  And  the parties submit update margin mode:
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  And  the network moves ahead "1" blocks
+  And  the parties submit update margin mode:
+  Then  the parties should have the following account balances:
+  And  the network moves ahead "2" blocks
+  And  the parties should have the following margin levels:
+  And  the parties submit update margin mode:
+  Then  the parties should have the following account balances:
+  And  the network moves ahead "2" blocks
+  And  the parties should have the following margin levels:
+  And  the parties submit update margin mode:
+  Then  the parties should have the following account balances:
+  And  the network moves ahead "2" blocks
+  And  the parties should have the following margin levels:
+  And  the parties submit update margin mode:
+  And  the network moves ahead "1" blocks
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  And  the parties submit update margin mode:
+  And  the network moves ahead "1" blocks
+  Then  the parties should have the following account balances:
+  And  the parties place the following orders:
+  Then  the parties should have the following account balances:
+  And  the network moves ahead "1" blocks
+  Then  the parties should have the following account balances:
+  And  the parties place the following orders:
+  Then  the parties should have the following account balances:
+  When  the parties amend the following orders:
+  Then  the parties should have the following account balances:
+  And  the parties place the following orders:
+  Then  the parties should have the following account balances:
+  Then  the order book should have the following volumes for market "ETH/FEB23":
+  And  the parties submit update margin mode:
+  And  the network moves ahead "1" blocks
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  And  the parties submit update margin mode:
+  And  the network moves ahead "1" blocks
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  And  the parties place the following orders:
+  Then  the parties should have the following account balances:
+  And  the parties place the following orders:
+  Then  the parties should have the following account balances:
+  And  the parties place the following orders:
+  And  the network moves ahead "1" blocks
+  Then  the parties should have the following account balances:
+  And  the parties place the following orders:
+  And  the network moves ahead "1" blocks
+  Then  the parties should have the following account balances:
+

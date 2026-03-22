@@ -1,0 +1,6 @@
+Scenario 1: Picking up the shopping cart on the web store and resuming it using API
+  Tags: ['@hybrid', '@javascript']
+  When  I add "Apple's Polishing Cloth" to the cart on the web store
+  And  I check items in my cart using API
+  Then  there should be one item named "Apple's Polishing Cloth" in my cart
+

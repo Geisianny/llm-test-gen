@@ -1,0 +1,53 @@
+Scenario 1: Disabling catalog promotion
+  Tags: ['@api', '@ui']
+  When  I disable "Christmas sale" catalog promotion
+  Then  this catalog promotion should be inactive
+  And  "PHP T-Shirt" variant should not be discounted
+
+
+
+Scenario 2: Disabling catalog promotion during its operating time
+  Tags: ['@api', '@ui']
+  Given  the catalog promotion "Christmas sale" operates between "yesterday" and "tomorrow"
+  When  I disable "Christmas sale" catalog promotion
+  Then  this catalog promotion should be inactive
+  And  "PHP T-Shirt" variant should not be discounted
+
+
+
+Scenario 3: Enabling catalog promotion
+  Tags: ['@api', '@ui']
+  Given  this catalog promotion is disabled
+  When  I enable "Christmas sale" catalog promotion
+  Then  this catalog promotion should be active
+  And  "PHP T-Shirt" variant should be discounted
+
+
+
+Scenario 4: Enabling catalog promotion during its operating time
+  Tags: ['@api', '@ui']
+  Given  the catalog promotion "Christmas sale" operates between "yesterday" and "tomorrow"
+  And  this catalog promotion is disabled
+  When  I enable "Christmas sale" catalog promotion
+  Then  this catalog promotion should be active
+  And  "PHP T-Shirt" variant should be discounted
+
+
+
+Scenario 5: Enabling catalog promotion outside its operating time starts tomorrow
+  Tags: ['@api', '@ui']
+  Given  the catalog promotion "Christmas sale" starts at "tomorrow"
+  And  this catalog promotion is disabled
+  When  I enable "Christmas sale" catalog promotion
+  Then  this catalog promotion should still be inactive
+  And  "PHP T-Shirt" variant should not be discounted
+
+
+
+Scenario 6: Enabling catalog promotion outside its operating time ended yesterday
+  Tags: ['@api', '@ui']
+  Given  the catalog promotion "Christmas sale" ended "yesterday"
+  When  I enable "Christmas sale" catalog promotion
+  Then  this catalog promotion should still be inactive
+  And  "PHP T-Shirt" variant should not be discounted
+

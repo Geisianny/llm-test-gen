@@ -1,0 +1,63 @@
+Scenario 1: Add a new category payment-provider-rule which is valid
+  Given  adding a payment-provider-rule named "category"
+  And  the payment-provider-rule is active
+  And  the payment-provider-rule has a condition categories with category "Shoes"
+  And  I add the product "Shoe" to my cart
+  Then  the payment-provider-rule should be valid for my cart with payment provider "Bankwire"
+
+
+
+Scenario 2: Add a new category payment-provider-rule which is inactive
+  Given  adding a payment-provider-rule named "category"
+  And  the payment-provider-rule is inactive
+  And  the payment-provider-rule has a condition categories with category "Shoes"
+  And  I add the product "Shoe" to my cart
+  Then  the payment-provider-rule should be invalid for my cart with payment provider "Bankwire"
+
+
+
+Scenario 3: Add a new category payment-provider-rule which is invalid
+  Given  adding a payment-provider-rule named "category"
+  And  the payment-provider-rule is active
+  And  the payment-provider-rule has a condition categories with category "Shoes"
+  And  I add the product "Jacket" to my cart
+  Then  the payment-provider-rule should be invalid for my cart with payment provider "Bankwire"
+
+
+
+Scenario 4: Add a new category payment-provider-rule with two products which is valid
+  Given  adding a payment-provider-rule named "category"
+  And  the payment-provider-rule is active
+  And  the payment-provider-rule has a condition categories with categories "Coats", "Shoes"
+  And  I add the product "Jacket" to my cart
+  And  I add the product "Shoe" to my cart
+  Then  the payment-provider-rule should be valid for my cart with payment provider "Bankwire"
+
+
+
+Scenario 5: Add a new category payment-provider-rule with two products which is valid
+  Given  adding a payment-provider-rule named "category"
+  And  the payment-provider-rule is active
+  And  the payment-provider-rule has a condition categories with category "Coats"
+  And  I add the product "Jacket" to my cart
+  And  I add the product "Shoe" to my cart
+  Then  the payment-provider-rule should be valid for my cart with payment provider "Bankwire"
+
+
+
+Scenario 6: Add a new category payment-provider-rule which includes all subcategory and is invalid
+  Given  adding a payment-provider-rule named "category"
+  And  the payment-provider-rule is active
+  And  the payment-provider-rule has a condition categories with category "Shoes"
+  And  I add the product "Sneaker" to my cart
+  Then  the payment-provider-rule should be invalid for my cart with payment provider "Bankwire"
+
+
+
+Scenario 7: Add a new category payment-provider-rule which includes all subcategory and is valid
+  Given  adding a payment-provider-rule named "category"
+  And  the payment-provider-rule is active
+  And  the payment-provider-rule has a condition categories with category "Shoes" and it is recursive
+  And  I add the product "Sneaker" to my cart
+  Then  the payment-provider-rule should be valid for my cart with payment provider "Bankwire"
+

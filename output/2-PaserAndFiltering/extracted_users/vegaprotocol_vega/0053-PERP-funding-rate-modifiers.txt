@@ -1,0 +1,31 @@
+Feature: Test internal and external twap calculation
+
+Background: 
+  Given  time is updated to "2020-10-16T00:00:00Z"
+  And  the perpetual oracles from "0xCAFECAFE1":
+  And  the perpetual oracles from "0xCAFECAFE1":
+  And  the liquidity sla params named "SLA":
+  And  the price monitoring named "my-price-monitoring":
+  And  the log normal risk model named "my-log-normal-risk-model":
+  And  the markets:
+  And  the following network parameters are set:
+  And  the average block duration is "1"
+  When  the parties deposit on asset's general account the following amount:
+  Then  the parties submit the following liquidity provision:
+  And  the parties place the following orders:
+  And  the market data for the market "ETH/DEC19" should be:
+  And  the opening auction period ends for market "ETH/DEC19"
+
+Scenario 1: 0053-PERP-029,  0053-PERP-030 Funding rate modified by perpetual parameters
+  Tags: ['@Perpetual', '@funding-rate']
+  Given  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  time is updated to "2020-10-16T00:05:00Z"
+  When  the parties place the following orders:
+  Then  time is updated to "2020-10-16T00:10:00Z"
+  And  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  And  the mark price should be "990" for the market "ETH/DEC19"
+  Then  the product data for the market "ETH/DEC19" should be:
+  And  the markets are updated:
+  Then  time is updated to "2020-10-16T00:10:01Z"
+  Then  the product data for the market "ETH/DEC19" should be:
+

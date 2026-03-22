@@ -1,0 +1,65 @@
+Feature: 
+Description: As a logged-in user
+    I should be able to access my informations
+Tags: ['@api', '@renaissance']
+
+Scenario 1: As a non logged-in user I cannot get my information
+  When  I send a "GET" request to "/api/me"
+  Then  the response status code should be 401
+
+Scenario 2: As a logged-in user I can get my informations with additional informations based on granted scope
+  Given  I am logged with "carl999@example.fr" via OAuth client "JeMengage Mobile" with scope "jemarche_app"
+  When  I send a "GET" request to "/api/me"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+  When  I am logged with "jacques.picard@en-marche.fr" via OAuth client "JeMengage Mobile" with scope "jemarche_app"
+  And  I send a "GET" request to "/api/me"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+Scenario 3: As a logged-in device I can get my information with additional information based on granted scope
+  Given  I am logged with device "dd4SOCS-4UlCtO-gZiQGDA" via OAuth client "JeMengage Mobile" with scope "jemarche_app"
+  When  I send a "GET" request to "/api/me"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+Scenario 4: As a non logged-in user I can not create my password if not correct user uuid
+  When  I send a "POST" request to "/api/profile/mot-de-passe/113bd28f-8ab7-57c9-efc8-2106c8be9690/1364d60349e31e06ec62598c7c82b7ca7acba7d0" with body:
+  Then  the response status code should be 404
+
+Scenario 5: As a non logged-in user I can not create my password if not correct token
+  When  I send a "POST" request to "/api/profile/mot-de-passe/513bd28f-8ab7-57c9-efc8-2106c8be9690/2364d60349e31e06ec62598c7c82b7ca7acba7d0" with body:
+  Then  the response status code should be 404
+
+Scenario 6: As a non logged-in user I can not create my password if no password
+  When  I send a "POST" request to "/api/profile/mot-de-passe/513bd28f-8ab7-57c9-efc8-2106c8be9690/c997dd323ef4b53b3d31881fa495bddb3d0c3b55" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+Scenario 7: As a non logged-in user I can not create my password if it's short
+  When  I send a "POST" request to "/api/profile/mot-de-passe/513bd28f-8ab7-57c9-efc8-2106c8be9690/c997dd323ef4b53b3d31881fa495bddb3d0c3b55" with body:
+  Then  the response should be in JSON
+  And  the JSON should be equal to:
+
+Scenario 8: As a non logged-in user I can create my password
+  When  I send a "POST" request to "/api/profile/mot-de-passe/513bd28f-8ab7-57c9-efc8-2106c8be9690/c997dd323ef4b53b3d31881fa495bddb3d0c3b55" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+Scenario 9: As a non logged-in user I can create my password and logged-in with access token
+  When  I send a "POST" request to "/api/profile/mot-de-passe/94173303-dea2-4d97-bc15-86e785d85a0d/b17bcc506c47008faa2e5aa59f20ac1e70ea0911?client_id=1931b955-560b-41b2-9eb9-c232157f1471" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+Scenario 10: As a non logged-in user I can create my password but i can't logged-in with access token when client uuid is wrong
+  When  I send a "POST" request to "/api/profile/mot-de-passe/94173303-dea2-4d97-bc15-86e785d85a0d/b17bcc506c47008faa2e5aa59f20ac1e70ea0911?client_id=1931b955-560b-41b2-9eb9-c232157f1472" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+

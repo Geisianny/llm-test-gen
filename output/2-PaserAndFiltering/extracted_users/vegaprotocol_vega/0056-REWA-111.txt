@@ -1,0 +1,34 @@
+Feature: Relative return rewards
+
+Background: 
+  Given  the following network parameters are set:
+  Given  the fees configuration named "fees-config-1":
+  And  the price monitoring named "price-monitoring":
+  And  the simple risk model named "simple-risk-model-1":
+  And  the markets:
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties deposit on staking account the following amount:
+  Given  time is updated to "2023-09-23T00:00:00Z"
+  Given  the average block duration is "1"
+  Then  the network moves ahead "1" epochs
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the parties place the following orders:
+
+Scenario 1: If an eligible party has zero net returns, their relative returns reward metric should be zero(0056-REWA-111)
+  Given  the parties submit the following recurring transfers:
+  Then  the network moves ahead "1" epochs
+  Given  time is updated to "2023-09-23T00:00:30Z"
+  Then  the parties place the following orders:
+  Then  the parties place the following orders:
+  Then  the network moves ahead "1" epochs
+  And  "a3c024b4e23230c89884a54a813b1ecb4cb0f827a38641c66eeca466da6b2ddf" should have general account balance of "1000000" for asset "VEGA"
+
+Scenario 2: If a `window_length>1` is specified in the recurring transfer, if an eligible party has zero net returns in all epochs, their relative return metric should be zero(0056-REWA-114)
+  Given  the parties submit the following recurring transfers:
+  Then  the network moves ahead "1" epochs
+  Given  time is updated to "2023-09-23T00:00:30Z"
+  Then  the parties place the following orders:
+  Then  the network moves ahead "1" epochs
+  And  "a3c024b4e23230c89884a54a813b1ecb4cb0f827a38641c66eeca466da6b2ddf" should have general account balance of "1000000" for asset "VEGA"
+

@@ -1,0 +1,67 @@
+Feature: Test changing market.liquidity.providersFeeCalculationTimeStep;
+
+Background: 
+  Given  the margin calculator named "margin-calculator-1":
+  Given  the log normal risk model named "log-normal-risk-model":
+  And  the following network parameters are set:
+  Given  the liquidity monitoring parameters:
+  And  the following assets are registered:
+  And  the fees configuration named "fees-config-1":
+  And  the price monitoring named "price-monitoring":
+  And  the liquidity sla params named "SLA-1":
+  And  the markets:
+  Given  the average block duration is "1"
+
+Scenario 1: 001: lp1 and lp2 on the market ETH/MAR22, 0044-LIME-062
+  Tags: ['@Now']
+  Given  the parties deposit on asset's general account the following amount:
+  And  the network moves ahead "1" blocks
+  And  the parties submit the following liquidity provision:
+  Then  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/MAR22"
+  And  the following trades should be executed:
+  When  the network moves ahead "4" blocks
+  And  the market data for the market "ETH/MAR22" should be:
+  Then  the network moves ahead "1" epochs
+  Then  the following network parameters are set:
+  And  the parties place the following orders:
+  Then  the network moves ahead "4" blocks
+  And  the parties place the following orders:
+  Then  the network moves ahead "8" blocks
+  Then  the following transfers should happen:
+  Then  the parties place the following orders:
+  Then  the network moves ahead "1" epochs
+  And  the following transfers should happen:
+  Then  the parties place the following orders:
+  Then  the network moves ahead "4" blocks
+  Then  the parties place the following orders:
+  Then  the network moves ahead "7" blocks
+  And  the following transfers should happen:
+
+Scenario 2: 001b: lp1 and lp2 on the market ETH/MAR22, 0044-LIME-062 with ELS fee share fraction set to 0.5
+  Tags: ['@Now']
+  Given  the parties deposit on asset's general account the following amount:
+  And  the following network parameters are set:
+  And  the network moves ahead "1" blocks
+  And  the parties submit the following liquidity provision:
+  Then  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/MAR22"
+  And  the following trades should be executed:
+  When  the network moves ahead "4" blocks
+  And  the market data for the market "ETH/MAR22" should be:
+  Then  the network moves ahead "1" epochs
+  Then  the following network parameters are set:
+  And  the parties place the following orders:
+  Then  the network moves ahead "4" blocks
+  And  the parties place the following orders:
+  Then  the network moves ahead "8" blocks
+  Then  the following transfers should happen:
+  Then  the parties place the following orders:
+  Then  the network moves ahead "1" epochs
+  And  the following transfers should happen:
+  Then  the parties place the following orders:
+  Then  the network moves ahead "4" blocks
+  Then  the parties place the following orders:
+  Then  the network moves ahead "7" blocks
+  And  the following transfers should happen:
+

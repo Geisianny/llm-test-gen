@@ -1,0 +1,22 @@
+Scenario 1: For an iceberg order that's submitted when the market is in auction, iceberg orders trade according to their behaviour if
+            in the uncrossing) (0014-ORDT-093)
+  When  the parties place the following iceberg orders:
+  And  the parties place the following orders:
+  And  the opening auction period ends for market "BTC/ETH"
+  When  the network moves ahead "1" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  And  the orders should have the following status:
+  And  the following trades should be executed:
+
+
+
+Scenario 2: For an iceberg order that's submitted when the market is in auction, iceberg orders trade according to their behaviour if
+            in the uncrossing) (0014-ORDT-093)
+  When  the parties place the following iceberg orders:
+  And  the parties place the following orders:
+  And  the opening auction period ends for market "BTC/ETH"
+  When  the network moves ahead "1" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  And  the orders should have the following status:
+  And  the following trades should be executed:
+

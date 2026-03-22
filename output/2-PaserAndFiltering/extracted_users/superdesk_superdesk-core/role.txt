@@ -1,0 +1,139 @@
+Feature: Role Resource
+
+Scenario 1: List empty user roles
+  Tags: ['@auth']
+  Given  empty "roles"
+  When  we get "/roles"
+  Then  we get list with 0 items
+
+Scenario 2: Set privileges to a given role
+  Tags: ['@auth']
+  Given  "roles"
+  When  we patch given
+  And  we get given
+  Then  we get "privileges"
+
+Scenario 3: Revoke privileges from a given role
+  Tags: ['@auth', '@notification']
+  Given  "roles"
+  When  we patch given
+  Then  we get updated response
+  Then  we get notifications
+
+Scenario 4: Check permissions on read with role
+  Tags: ['@auth']
+  Given  "roles"
+  And  we have "Administrator" role
+  When  we get "/ingest"
+  Then  we get response code 200
+
+Scenario 5: Check permissions on read with role and permissions
+  Tags: ['@auth']
+  Given  "roles"
+  And  we have "Editor" role
+  When  we get "/ingest"
+  Then  we get response code 200
+
+Scenario 6: User has always permissions to read himself
+  Tags: ['@auth']
+  Given  "roles"
+  And  we have "Subscriber" role
+  And  we have "user" as type of user
+  When  we get user profile
+  Then  we get response code 200
+
+Scenario 7: Users without permissions can't read from restricted resources
+  Tags: ['@auth']
+  Given  we have "user" as type of user
+  When  we get "/ingest"
+  Then  we get response code 403
+
+Scenario 8: All users can read non-restricted resources
+  Tags: ['@auth']
+  Given  we have "user" as type of user
+  When  we get "/roles"
+  Then  we get response code 200
+
+Scenario 9: Users cannot write to users and roles
+  Tags: ['@auth']
+  Given  we have "user" as type of user
+  When  we post to "/roles"
+  Then  we get response code 403
+
+Scenario 10: Administrators can write to users and roles
+  Tags: ['@auth']
+  Given  we have "administrator" as type of user
+  When  we post to "/roles"
+  Then  we get response code 201
+
+Scenario 11: Users can write to resources if they have permission
+  Tags: ['@auth']
+  Given  "roles"
+  And  we have "Pool Subs" role
+  And  we have "user" as type of user
+  When  we post to "/desks"
+  Then  we get response code 201
+
+Scenario 12: Users cannot write to resources if they don't have permission
+  Tags: ['@auth']
+  Given  "roles"
+  And  we have "Producers" role
+  And  we have "user" as type of user
+  When  we post to "/desks"
+  Then  we get response code 403
+
+Scenario 13: Role names are unique case insensitive
+  Tags: ['@auth']
+  Given  "roles"
+  When  we post to "/roles"
+  Then  we get response code 400
+
+Scenario 14: Can not delete default role
+  Tags: ['@auth']
+  Given  "roles"
+  When  we delete "/roles/#roles._id#"
+  Then  we get response code 403
+
+Scenario 15: Only one default
+  Tags: ['@auth']
+  Given  "roles"
+  When  we post to "/roles"
+  When  we get "/roles/#roles._id#"
+  Then  we get existing resource
+
+Scenario 16: Cannot delete a role that has users in it
+  Tags: ['@auth']
+  Given  "roles"
+  Given  "users"
+  When  we delete "/roles/#roles._id#"
+  Then  we get response code 403
+
+Scenario 17: Change user role
+  Tags: ['@auth', '@notification']
+  Given  "roles"
+  Given  "users"
+  When  we post to "/roles"
+  And  we patch "/users/foo"
+  Then  we get updated response
+  Then  we get notifications
+
+Scenario 18: Privilege notification on update of a role privileges
+  Tags: ['@auth', '@notification']
+  Given  "roles"
+  And  "users"
+  When  we patch "roles/#roles._id#"
+  Then  we get updated response
+  When  we get "activity"
+  Then  we get list with 3 items
+  Then  we get notifications
+  When  we patch "roles/#roles._id#"
+  Then  we get updated response
+  When  we get "activity"
+  Then  we get list with 4 items
+
+Scenario 19: Set author/editor role
+  Tags: ['@auth']
+  Given  empty "roles"
+  When  we post to "/roles"
+  Then  we get new resource
+

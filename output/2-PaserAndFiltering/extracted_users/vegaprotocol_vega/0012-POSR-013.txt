@@ -1,0 +1,38 @@
+Feature: 0012-POSR-013 Gradual release of position.
+
+Background: 
+  Given  the oracle spec for settlement data filtering data from "0xCAFECAFE1" named "ethDec21Oracle":
+  And  the oracle spec for trading termination filtering data from "0xCAFECAFE1" named "ethDec21Oracle":
+  And  the markets:
+  And  the following network parameters are set:
+
+Scenario 1: 0012-POSR-013 based on verified-positions-resolution-1.feature
+  Tags: ['@LiquidationAC']
+  Given  the parties deposit on asset's general account the following amount:
+  Then  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the mark price should be "150" for the market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  When  the parties place the following orders with ticks:
+  When  the parties place the following orders with ticks:
+  And  the network moves ahead "1" blocks
+  Then  the parties should have the following account balances:
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following profit and loss:
+  When  the parties place the following orders with ticks:
+  And  the network moves ahead "10" blocks
+  Then  the following trades should be executed:
+  Then  the parties should have the following profit and loss:
+  When  the parties place the following orders with ticks:
+  And  the network moves ahead "10" blocks
+  Then  the following trades should be executed:
+  Then  the parties should have the following profit and loss:
+  When  the parties place the following orders with ticks:
+  And  the network moves ahead "10" blocks
+  Then  the following trades should be executed:
+  Then  the parties should have the following profit and loss:
+  When  the parties place the following orders with ticks:
+  And  the network moves ahead "10" blocks
+  Then  the following trades should be executed:
+  Then  the parties should have the following profit and loss:
+

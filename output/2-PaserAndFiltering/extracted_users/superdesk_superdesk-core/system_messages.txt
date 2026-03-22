@@ -1,0 +1,39 @@
+Feature: System Messages
+
+Scenario 1: List of empty system message
+  Tags: ['@auth']
+  Given  empty "system_messages"
+  When  we get "/system_messages"
+  Then  we get list with 0 items
+
+Scenario 2: Create a new system message
+  Tags: ['@auth', '@notification']
+  Given  empty "system_messages"
+  When  we post to "system_messages"
+  Then  we get new resource
+  When  we get "/system_messages"
+  Then  we get list with 1 items
+
+Scenario 3: Create a new system message with empty fields should give required error
+  Tags: ['@auth']
+  Given  empty "system_messages"
+  When  we post to "system_messages"
+  Then  we get error 400
+
+Scenario 4: Update a system message
+  Tags: ['@auth', '@notification']
+  Given  empty "system_messages"
+  When  we post to "system_messages"
+  Then  we get new resource
+  When  we get "/system_messages"
+  Then  we get list with 1 items
+  When  we patch "/system_messages/#system_messages._id#"
+  Then  we get updated response
+
+Scenario 5: Delete a system message
+  Tags: ['@auth', '@notification']
+  When  we post to "system_messages"
+  Then  we get OK response
+  When  we delete "/system_messages/#system_messages._id#"
+  Then  we get OK response
+

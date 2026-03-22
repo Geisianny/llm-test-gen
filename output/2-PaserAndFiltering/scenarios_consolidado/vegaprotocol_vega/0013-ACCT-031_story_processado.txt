@@ -1,0 +1,17 @@
+Scenario 1: Each party should only have two holding accounts per market:
+
+  Background:
+  Given  the following network parameters are set:
+  Given  the following assets are registered:
+  Given  the fees configuration named "fees-config-1":
+  Given  the log normal risk model named "lognormal-risk-model-1":
+  And  the price monitoring named "price-monitoring-1":
+  And  the spot markets:
+  Given  the parties deposit on asset's general account the following amount:
+  And  the average block duration is "1"
+  And  "party1" should have only the following accounts:
+  And  "party2" should have only the following accounts:
+  And  the parties place the following orders:
+  And  "party1" should have only the following accounts:
+  And  "party2" should have only the following accounts:
+

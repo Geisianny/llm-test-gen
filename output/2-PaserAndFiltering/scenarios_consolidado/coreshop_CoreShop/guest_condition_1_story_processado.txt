@@ -1,0 +1,18 @@
+Scenario 1: Add a new guest payment-provider-rule for a guest customer which is valid
+  Given  I am guest "some-guest@something.com"
+  And  I add the product "Shoe" to my cart
+  Then  the payment-provider-rule should be valid for my cart with payment provider "Bankwire"
+
+
+
+Scenario 2: Add a new guest payment-provider-rule for a cart without a customer which is valid
+  Given  I add the product "Shoe" to my cart
+  Then  the payment-provider-rule should be valid for my cart with payment provider "Bankwire"
+
+
+
+Scenario 3: Add a new guest payment-provider-rule for a customer which is invalid
+  Given  I am customer "some-customer@something.com"
+  And  I add the product "Shoe" to my cart
+  Then  the payment-provider-rule should be invalid for my cart with payment provider "Bankwire"
+

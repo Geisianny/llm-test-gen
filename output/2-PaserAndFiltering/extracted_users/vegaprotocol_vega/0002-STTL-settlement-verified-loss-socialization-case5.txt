@@ -1,0 +1,27 @@
+Feature: Test loss socialization case 5
+
+Background: 
+  Given  the markets:
+  And  the following network parameters are set:
+
+Scenario 1: Case 5: multiple traders have insufficient MTM & multiple traders socialise the losses (insurance pool fully covers the losses) (0002-STTL-008)
+  Description: Description: case 5 from https://docs.google.com/spreadsheets/d/1CIPH0aQmIKj6YeFW9ApP_l-jwB4OcsNQ/edit#gid=1555964910
+  Given  the initial insurance pool balance is "3000" for all the markets
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the mark price should be "100" for the market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  When  the parties place the following orders with ticks:
+  When  the parties place the following orders with ticks:
+  When  the parties place the following orders with ticks:
+  Then  the parties cancel the following orders:
+  When  the parties place the following orders with ticks:
+  Then  the parties cancel the following orders:
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the insurance pool balance should be "3000" for the market "ETH/DEC19"
+  Then  the parties should have the following profit and loss:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following profit and loss:
+  And  the insurance pool balance should be "0" for the market "ETH/DEC19"
+

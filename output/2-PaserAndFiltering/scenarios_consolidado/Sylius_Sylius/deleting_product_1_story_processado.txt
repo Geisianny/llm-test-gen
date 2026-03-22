@@ -1,0 +1,5 @@
+Scenario 1: Deleted product variants disappear from the product catalog
+  Tags: ['@domain']
+  When  I delete the "Toyota GT86 model" product
+  Then  there should be no variants of this product in the product catalog
+

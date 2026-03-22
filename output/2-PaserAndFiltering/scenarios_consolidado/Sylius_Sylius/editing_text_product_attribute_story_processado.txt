@@ -1,0 +1,22 @@
+Scenario 1: Editing product attribute name
+  Tags: ['@api', '@ui']
+  When  I want to edit this product attribute
+  And  I change its name to "T-Shirt material" in "English (United States)"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  the text attribute "T-Shirt material" should appear in the store
+
+
+
+Scenario 2: Being unable to change code of an existing product attribute
+  Tags: ['@api', '@ui']
+  When  I want to edit this product attribute
+  Then  I should not be able to edit its code
+
+
+
+Scenario 3: Being unable to change type of an existing product attribute
+  Tags: ['@api', '@ui']
+  When  I want to edit this product attribute
+  Then  I should not be able to edit its type
+

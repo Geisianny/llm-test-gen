@@ -1,0 +1,14 @@
+Scenario 1: Having cart deleted after 4 days of idleness
+  Tags: ['@domain']
+  Given  a customer "john.doe@gmail.com" added something to cart
+  And  he abandoned the cart 4 days ago
+  Then  this cart should be automatically deleted
+
+
+
+Scenario 2: Having idle cart in registry if expiration time has not been reached
+  Tags: ['@domain']
+  Given  a customer "john.doe@gmail.com" added something to cart
+  And  he abandoned the cart 1 day ago
+  Then  this cart should not be deleted
+

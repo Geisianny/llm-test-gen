@@ -1,0 +1,15 @@
+Feature: Usage Metrics
+
+Scenario 1: Track item activity
+  Tags: ['@auth', '@notification']
+  Given  "users"
+  And  "archive"
+  When  we patch "archive/abcd"
+  Then  we get OK response
+  When  we reset notifications
+  And  we post to "/usage-metrics"
+  Then  we get new resource
+  When  we get "archive/abcd"
+  Then  we get existing resource
+  And  we get 0 notifications
+

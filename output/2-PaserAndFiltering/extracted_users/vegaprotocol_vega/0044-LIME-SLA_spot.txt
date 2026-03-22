@@ -1,0 +1,74 @@
+Feature: Test LP mechanics when there are multiple liquidity providers;
+
+Background: 
+  Given  the log normal risk model named "log-normal-risk-model":
+  And  the following assets are registered:
+  And  the fees configuration named "fees-config-1":
+  And  the price monitoring named "price-monitoring":
+  And  the liquidity sla params named "SLA":
+  And  the liquidity monitoring parameters:
+  And  the following network parameters are set:
+  Given  the liquidity monitoring parameters:
+  And  the spot markets:
+  Given  the average block duration is "2"
+
+Scenario 1: An LP with orders inside valid range during auction isn't penalised (0044-LIME-116)
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  When  the network moves ahead "2" blocks
+  Then  the parties place the following orders:
+  Then  the opening auction period ends for market "BTC/ETH"
+  And  the following trades should be executed:
+  And  the market data for the market "BTC/ETH" should be:
+  When  the parties place the following orders:
+  Then  the market data for the market "BTC/ETH" should be:
+  When  the network moves ahead "2" blocks
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "BTC/ETH"
+  Then  the market data for the market "BTC/ETH" should be:
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "BTC/ETH"
+  Then  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "BTC/ETH"
+  Then  the parties should have the following account balances:
+  When  the network moves ahead "1" epochs
+  Then  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "BTC/ETH"
+  Then  the parties should have the following account balances:
+
+Scenario 2: An LP with bid orders outside valid range during auction is penalised (0044-LIME-117)
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  When  the network moves ahead "2" blocks
+  Then  the parties place the following orders:
+  Then  the opening auction period ends for market "BTC/ETH"
+  And  the following trades should be executed:
+  And  the market data for the market "BTC/ETH" should be:
+  When  the parties place the following orders:
+  Then  the market data for the market "BTC/ETH" should be:
+  When  the network moves ahead "2" blocks
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "BTC/ETH"
+  Then  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "BTC/ETH"
+  Then  the parties should have the following account balances:
+  When  the network moves ahead "2" epochs
+  Then  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "BTC/ETH"
+  Then  the parties should have the following account balances:
+
+Scenario 3: An LP with ask orders outside valid range during auction is penalised (0044-LIME-118)
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  When  the network moves ahead "2" blocks
+  Then  the parties place the following orders:
+  Then  the opening auction period ends for market "BTC/ETH"
+  And  the following trades should be executed:
+  And  the market data for the market "BTC/ETH" should be:
+  When  the parties place the following orders:
+  Then  the market data for the market "BTC/ETH" should be:
+  Then  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "BTC/ETH"
+  Then  the parties should have the following account balances:
+  When  the network moves ahead "2" epochs
+  Then  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "BTC/ETH"
+  Then  the parties should have the following account balances:
+

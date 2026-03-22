@@ -1,0 +1,25 @@
+Feature: Set up a market with an opening auction manipulate price to low level with low collateral, move price to higher level, manipulator orders should get cancelled
+
+Background: 
+  Given  the markets:
+  And  the parties deposit on asset's general account the following amount:
+  And  the following network parameters are set:
+
+Scenario 1: 
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following margin levels:
+  And  the orders should have the following states:
+  And  the market data for the market "ETH/DEC19" should be:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following margin levels:
+  Then  the market data for the market "ETH/DEC19" should be:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following margin levels:
+  When  the network moves ahead "5" blocks
+  Then  the parties should have the following margin levels:
+  And  the orders should have the following states:
+  When  the network moves ahead "11" blocks
+  Then  the market data for the market "ETH/DEC19" should be:
+  Then  debug orders
+  And  the orders should have the following states:
+

@@ -1,0 +1,23 @@
+Scenario 1: Add a new customer payment-provider-rule which is valid
+  Given  adding a payment-provider-rule named "customer"
+  And  the payment-provider-rule is active
+  And  the payment-provider-rule has a condition customers with customer "some-customer@something.com"
+  Then  the payment-provider-rule should be valid for my cart with payment provider "Bankwire"
+
+
+
+Scenario 2: Add a new customer payment-provider-rule which is inactive
+  Given  adding a payment-provider-rule named "customer"
+  And  the payment-provider-rule is inactive
+  And  the payment-provider-rule has a condition customers with customer "some-customer@something.com"
+  Then  the payment-provider-rule should be invalid for my cart with payment provider "Bankwire"
+
+
+
+Scenario 3: Add a new customer payment-provider-rule which is invalid
+  Given  the site has a customer "some-other-customer@something.com"
+  And  adding a payment-provider-rule named "customer"
+  And  the payment-provider-rule is active
+  And  the payment-provider-rule has a condition customers with customer "some-other-customer@something.com"
+  Then  the payment-provider-rule should be invalid for my cart with payment provider "Bankwire"
+

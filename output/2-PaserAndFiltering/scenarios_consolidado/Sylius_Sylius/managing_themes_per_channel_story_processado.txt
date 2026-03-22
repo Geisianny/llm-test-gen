@@ -1,0 +1,20 @@
+Scenario 1: None of the themes are used by default
+  Tags: ['@ui', '@no-api']
+  When  I create a new channel "Poland"
+  Then  that channel should not use any theme
+
+
+
+Scenario 2: Setting a theme on a channel
+  Tags: ['@ui', '@no-api']
+  When  I set "United States" channel theme to "maverick/meerkat"
+  Then  that channel should use that theme
+
+
+
+Scenario 3: Unsetting a channel theme
+  Tags: ['@ui', '@no-api']
+  Given  channel "United States" uses "maverick/meerkat" theme
+  When  I unset theme on that channel
+  Then  that channel should not use any theme
+

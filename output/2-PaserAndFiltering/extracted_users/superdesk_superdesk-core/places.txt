@@ -1,0 +1,15 @@
+Feature: Places
+
+Scenario 1: Places autocomplete
+  Tags: ['@auth']
+  When  we get "/places_autocomplete?name=koberice&lang=cs"
+  Then  we get list with 3 items
+
+Scenario 2: Places autocomplete feature filter setting
+  Tags: ['@auth']
+  Given  config update
+  When  we get "/places_autocomplete?name=koberice&lang=cs"
+  Then  we get list with 6 items
+  When  we get "/places_autocomplete?name=koberice&lang=cs&featureClass=P"
+  Then  we get list with 3 items
+

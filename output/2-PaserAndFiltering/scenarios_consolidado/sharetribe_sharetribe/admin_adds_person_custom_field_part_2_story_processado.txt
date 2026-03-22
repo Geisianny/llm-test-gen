@@ -1,0 +1,19 @@
+Scenario 1: Admin adds checkbox field
+  Tags: ['@javascript']
+  When  I add a new person checkbox field Amenities
+  Then  I should see that there is a custom field "Amenities"
+
+
+
+Scenario 2: Admin adds checkbox field with invalid data
+  Tags: ['@javascript']
+  When  I add a new person checkbox field Amenities with invalid data
+  Then  I should see 1 validation errors
+
+
+
+Scenario 3: Admin adds date field
+  Tags: ['@javascript']
+  When  I add a new person date field "Begin date"
+  Then  I should see that there is a custom field "Begin date"
+

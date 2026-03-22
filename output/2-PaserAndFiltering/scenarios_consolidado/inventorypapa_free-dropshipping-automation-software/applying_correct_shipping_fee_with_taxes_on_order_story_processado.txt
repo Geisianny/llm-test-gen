@@ -1,0 +1,20 @@
+Scenario 1: Proper shipping fee and tax
+  Tags: ['@ui']
+  Given  I have product "PHP T-Shirt" in the cart
+  When  I proceed selecting "DHL" shipping method
+  And  I choose "Offline" payment method
+  Then  my cart total should be "$112.30"
+  And  my cart taxes should be "$2.30"
+  And  my cart shipping total should be "$12.30"
+
+
+
+Scenario 2: Proper shipping fee and tax after addressing
+  Tags: ['@ui']
+  Given  I have product "PHP T-Shirt" in the cart
+  When  I proceed selecting "Germany" as billing country with "DHL-World" method
+  And  I choose "Offline" payment method
+  Then  my cart total should be "$122.00"
+  And  my cart taxes should be "$2.00"
+  And  my cart shipping total should be "$22.00"
+

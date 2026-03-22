@@ -1,0 +1,6 @@
+Scenario 1: Accessing shipment's order from the shipments index
+  Tags: ['@ui']
+  When  I browse shipments
+  And  I move to the details of first shipment's order
+  Then  I should see order page with details of order "00000001"
+

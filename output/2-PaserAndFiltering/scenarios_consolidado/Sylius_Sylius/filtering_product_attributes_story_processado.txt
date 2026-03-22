@@ -1,0 +1,54 @@
+Scenario 1: Filtering product attributes by code
+  Tags: ['@api', '@ui']
+  When  I search by "xyz" code
+  Then  I should see 2 product attributes in the list
+  And  I should see the product attribute "T-Shirt with cotton" in the list
+  And  I should also see the product attribute "Book pages" in the list
+
+
+
+Scenario 2: Filtering product attributes by name
+  Tags: ['@api', '@ui']
+  When  I search by "T-Shirt" name
+  Then  I should see 2 product attributes in the list
+  And  I should see the product attribute "T-Shirt brand" in the list
+  And  I should also see the product attribute "T-Shirt with cotton" in the list
+
+
+
+Scenario 3: Filtering product attributes by type
+  Tags: ['@api', '@ui']
+  When  I choose "checkbox" in the type filter
+  And  I filter
+  Then  I should see a single product attribute in the list
+  And  I should see the product attribute "T-Shirt with cotton" in the list
+
+
+
+Scenario 4: Filtering product attributes by multiple types
+  Tags: ['@api', '@ui']
+  When  I choose "text" and "integer" in the type filter
+  And  I filter
+  Then  I should see 2 product attributes in the list
+  And  I should see the product attribute "T-Shirt brand" in the list
+  And  I should also see the product attribute "Book pages" in the list
+
+
+
+Scenario 5: Filtering translatable product attributes
+  Tags: ['@api', '@ui']
+  When  I choose "Yes" in the translatable filter
+  And  I filter
+  Then  I should see 2 product attributes in the list
+  And  I should see the product attribute "T-Shirt brand" in the list
+  And  I should see the product attribute "Book pages" in the list
+
+
+
+Scenario 6: Filtering non-translatable product attributes
+  Tags: ['@api', '@ui']
+  When  I choose "No" in the translatable filter
+  And  I filter
+  Then  I should see a single product attribute in the list
+  And  I should see the product attribute "T-Shirt with cotton" in the list
+

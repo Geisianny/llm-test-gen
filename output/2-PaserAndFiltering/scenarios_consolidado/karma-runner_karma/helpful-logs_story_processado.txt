@@ -1,0 +1,5 @@
+Scenario 1: Karma fails to determine a file type from the file extension
+  Given  a configuration with:
+  When  I start Karma
+  Then  the stdout matches RegExp:
+

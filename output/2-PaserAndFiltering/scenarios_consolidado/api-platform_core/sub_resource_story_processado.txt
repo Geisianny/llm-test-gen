@@ -1,0 +1,187 @@
+Scenario 1: Get sub-resource one to one relation
+  Tags: ['@createSchema']
+  Given  there is an answer "42" to the question "What's the answer to the Ultimate Question of Life, the Universe and Everything?"
+  When  I send a "GET" request to "/questions/1/answer"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 2: Get a non existent sub-resource
+  Tags: ['@createSchema']
+  Given  there is an answer "42" to the question "What's the answer to the Ultimate Question of Life, the Universe and Everything?"
+  When  I send a "GET" request to "/questions/999999/answer"
+  Then  the response status code should be 404
+  And  the response should be in JSON
+
+
+
+Scenario 3: Get recursive sub-resource one to many relation
+  Tags: ['@createSchema']
+  Given  there is an answer "42" to the question "What's the answer to the Ultimate Question of Life, the Universe and Everything?"
+  When  I send a "GET" request to "/questions/1/answer/related_questions"
+  And  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 4: Get the sub-resource relation collection
+  Tags: ['@createSchema']
+  Given  there is a dummy object with a fourth level relation
+  When  I send a "GET" request to "/dummies/1/related_dummies"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario 5: Get filtered embedded relation sub-resource collection
+  Tags: ['@createSchema']
+  Given  there is a dummy object with a fourth level relation
+  When  I send a "GET" request to "/dummies/1/related_dummies?name=Hello"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario 6: Get the sub-resource relation item
+  Tags: ['@createSchema']
+  Given  there is a dummy object with a fourth level relation
+  When  I send a "GET" request to "/dummies/1/related_dummies/2"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario 7: Create a dummy with a relation that is a sub-resource
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/dummies" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+
+
+
+Scenario 8: Get the embedded relation sub-resource item at the third level
+  When  I send a "GET" request to "/dummies/1/related_dummies/1/third_level"
+  And  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario 9: Get the embedded relation sub-resource item at the fourth level
+  When  I send a "GET" request to "/dummies/1/related_dummies/1/third_level/fourth_level"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario 10: Get offers sub-resource from aggregate offers sub-resource
+  Tags: ['@createSchema']
+  Given  I have a product with offers
+  When  I send a "GET" request to "/dummy_products/2/offers/1/offers"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario 11: Get offers sub-resource from aggregate offers sub-resource
+  When  I send a "GET" request to "/dummy_aggregate_offers/1/offers"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario 12: The recipient of the person's greetings should be empty
+  Given  there is a person named "Alice" greeting with a "hello" message
+  When  I send a "GET" request to "/people/1/sent_greetings"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario 13: Recursive resource
+  When  I send a "GET" request to "/dummy_products/2"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario 14: The OneToOne sub-resource should be accessible from owned side
+  Tags: ['@createSchema']
+  Given  there is a RelatedOwnedDummy object with OneToOne relation
+  When  I send a "GET" request to "/related_owned_dummies/1/owning_dummy"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario 15: The OneToOne sub-resource should be accessible from owning side
+  Tags: ['@createSchema']
+  Given  there is a RelatedOwningDummy object with OneToOne relation
+  When  I send a "GET" request to "/related_owning_dummies/1/owned_dummy"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario 16: I can POST on a subresource using CreateProvider with parent_uri_template
+  Tags: ['@!mongodb', '@createSchema']
+  Given  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/subresource_categories/1/subresource_bikes" with body:
+  Then  the response status code should be 404
+  Given  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/subresource_categories_with_create_provider/1/subresource_bikes" with body:
+  Then  the response status code should be 201
+
+
+
+Scenario Outline 17: The generated crud should allow us to interact with the subresources - Example 1
+  Tags: ['@!mongodb', '@createSchema']
+  Given  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/subresource_organizations" with body:
+  Then  the response status code should be 201
+  Given  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/subresource_organizations/invalid/subresource_employees" with body:
+  Then  the response status code should be 404
+  Given  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/subresource_organizations/1/subresource_employees" with body:
+  Then  the response status code should be 201
+  And  I send a "GET" request to "/subresource_organizations/1/subresource_employees/1"
+  Then  the response status code should be 200
+  And  I send a "GET" request to "/subresource_organizations/1/subresource_employees"
+  Then  the response status code should be 200
+  Given  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "PUT" request to "/subresource_organizations/1/subresource_employees/1" with body:
+  Then  the response status code should be 200
+  Given  I send a "DELETE" request to "/subresource_organizations/1/subresource_employees/1"
+  Then  the response status code should be 204
+
+  Examples:
+    | invalid_uri | collection_uri | item_uri |
+    | /subresource_organizations/invalid/subresource_employees | /subresource_organizations/1/subresource_employees | /subresource_organizations/1/subresource_employees/1 |
+    | /subresource_organizations/invalid/subresource_factories | /subresource_organizations/1/subresource_factories | /subresource_organizations/1/subresource_factories/1 |
+

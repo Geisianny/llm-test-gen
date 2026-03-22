@@ -1,0 +1,47 @@
+Feature: Export
+
+Scenario 1: Export a story with validate option OFF
+  Tags: ['@auth']
+  Given  the "validators"
+  And  "desks"
+  When  we post to "/archive" with success
+  Then  we get OK response
+  When  we post to "/export"
+  Then  we get response code 201
+  Then  we get new resource
+  When  we get "#export.url#"
+  Then  we get response code 200
+  And  we get "Content-Disposition" header with "attachment; filename="export.zip"" type
+  And  we get "Content-Type" header with "application/zip" type
+
+Scenario 2: Export a story with validate option OFF
+  Tags: ['@auth']
+  Given  the "validators"
+  And  "desks"
+  When  we post to "/archive" with success
+  Then  we get OK response
+  When  we post to "/export"
+  Then  we get response code 201
+  Then  we get new resource
+  When  we get "#export.url#"
+  Then  we get response code 200
+  And  we get "Content-Disposition" header with "attachment; filename="export.zip"" type
+  And  we get "Content-Type" header with "application/zip" type
+
+Scenario 3: Fail to export an invalid story with validate option ON
+  Tags: ['@auth']
+  Given  the "validators"
+  And  "desks"
+  And  "archive"
+  When  we post to "/export"
+  Then  we get response code 201
+  Then  we get new resource
+
+Scenario 4: Inline export
+  Tags: ['@auth']
+  Given  "desks"
+  When  we post to "/archive" with success
+  Then  we get OK response
+  When  we post to "/export"
+  Then  we get response code 201
+

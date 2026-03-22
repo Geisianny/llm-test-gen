@@ -1,0 +1,6 @@
+Scenario 1: Browsing customers in store
+  Tags: ['@api', '@ui']
+  When  I want to see all customers in store
+  Then  I should see 3 customers on the list
+  And  I should see the customer "mr.banana@example.com" in the list
+

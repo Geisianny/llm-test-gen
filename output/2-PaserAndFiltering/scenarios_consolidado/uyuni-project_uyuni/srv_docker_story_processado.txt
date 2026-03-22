@@ -1,0 +1,16 @@
+Scenario 1: Create a Docker user with image administrators rights
+  Given  I am authorized for the "Admin" section
+  When  I create a user with name "docker" and password "docker" with roles "image_admin"
+
+
+
+Scenario 2: Create an image store without credentials
+  Tags: ['@no_auth_registry']
+  When  I follow the left menu "Images > Stores"
+  And  I follow "Create"
+  And  I enter "galaxy-registry" as "label"
+  And  I enter the URI of the registry as "uri"
+  And  I click on "create-btn"
+  Then  I wait until table row contains a "galaxy-registry" text
+  And  I should see a "Items 1 - 1 of 1" text
+

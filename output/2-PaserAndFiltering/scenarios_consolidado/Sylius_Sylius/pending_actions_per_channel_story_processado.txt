@@ -1,0 +1,35 @@
+Scenario 1: Seeing channel related pending actions
+  Tags: ['@no-api', '@ui']
+  When  I open administration dashboard
+  Then  I should see 2 orders to process in the pending actions
+  And  I should see 2 shipments to ship in the pending actions
+  And  I should see 2 pending payments in the pending actions
+
+
+
+Scenario 2: Seeing channel related pending actions in different channel
+  Tags: ['@no-api', '@ui', '@mink:chromedriver']
+  When  I open administration dashboard
+  And  I choose "Canada" channel
+  Then  I should see 1 order to process in the pending actions
+  And  I should see 1 shipment to ship in the pending actions
+  And  I should see 1 pending payment in the pending actions
+
+
+
+Scenario 3: Seeing product reviews to approve in pending actions
+  Tags: ['@no-api', '@ui']
+  Given  this product also has accepted reviews rated 5, 4 and 1
+  And  this product also has review rated 3 which is not accepted yet
+  When  I open administration dashboard
+  Then  I should see 1 product review to approve in the pending actions
+
+
+
+Scenario 4: Seeing product variants out of stock in pending actions
+  Tags: ['@no-api', '@ui']
+  Given  the store has a product "Symfony T-Shirt"
+  And  the product "Symfony T-Shirt" is out of stock
+  When  I open administration dashboard
+  Then  I should see 1 product variant out of stock in the pending actions
+

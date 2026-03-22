@@ -1,0 +1,55 @@
+Feature: Content Correction
+
+Scenario 1: Sending correction succeeds when item not in publish queue
+  Tags: ['@auth']
+  When  we post to "/products" with success
+  When  we post to "/subscribers" with "sub1" and success
+  Given  "desks"
+  And  "archive"
+  When  we publish "#archive._id#" with "publish" type and "published" state
+  Then  we get OK response
+  When  we get "/published"
+  Then  we get list with 1 items
+  When  we get "/publish_queue"
+  Then  we get list with 1 items
+  Given  empty "publish_queue"
+  When  we publish "#archive._id#" with "correct" type and "corrected" state
+  Then  we get OK response
+  When  we get "/published"
+  Then  we get list with 2 items
+  When  we get "/publish_queue"
+  Then  we get list with 1 items
+
+Scenario 2: Correcting a story should not auto-correct its associated photo unless modified
+  Tags: ['@auth']
+  When  we post to "/products" with success
+  When  we post to "/subscribers" with "sub1" and success
+  Given  "desks"
+  And  "archive"
+  When  we publish "tag:example.com,0000:newsml_PHOTO1" with "publish" type and "published" state
+  Then  we get OK response
+  When  we publish "tag:example.com,0000:newsml_STORY1" with "publish" type and "published" state
+  Then  we get OK response
+  When  we publish "tag:example.com,0000:newsml_STORY1" with "correct" type and "corrected" state
+  Then  we get OK response
+  When  we get "/published"
+  Then  we get list with 3 items
+
+Scenario 3: Publish new article with both published and corrected associated items
+  Tags: ['@auth']
+  When  we post to "/products" with success
+  When  we post to "/subscribers" with "sub-mixed" and success
+  Given  "desks"
+  And  "archive"
+  When  we publish "tag:example.com,2025:newsml_PUBLISHED_ARTICLE" with "publish" type and "published" state
+  Then  we get OK response
+  When  we publish "tag:example.com,2025:newsml_CORRECTABLE_ARTICLE" with "publish" type and "published" state
+  Then  we get OK response
+  When  we publish "tag:example.com,2025:newsml_CORRECTABLE_ARTICLE" with "correct" type and "corrected" state
+  Then  we get OK response
+  When  we post to "/archive" with "tag:example.com,2025:newsml_MAIN_ARTICLE" and success
+  When  we publish "tag:example.com,2025:newsml_MAIN_ARTICLE" with "publish" type and "published" state
+  Then  we get OK response
+  When  we get "/published"
+  Then  we get list with 4 items
+

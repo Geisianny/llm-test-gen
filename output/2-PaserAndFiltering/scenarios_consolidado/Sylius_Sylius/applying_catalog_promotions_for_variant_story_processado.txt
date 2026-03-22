@@ -1,0 +1,23 @@
+Scenario 1: Applying simple catalog promotions
+  Tags: ['@api', '@ui']
+  When  I view product "T-Shirt"
+  Then  I should see the product price "$14.00"
+  And  I should see the product original price "$20.00"
+
+
+
+Scenario 2: Applying multiple catalog promotions
+  Tags: ['@api', '@ui']
+  Given  there is a catalog promotion "Christmas sale" that reduces price by "10%" and applies on "PHP T-Shirt" variant
+  When  I view product "T-Shirt"
+  Then  I should see the product price "$12.60"
+  And  I should see the product original price "$20.00"
+
+
+
+Scenario 3: Not applying catalog promotion if it's not eligible
+  Tags: ['@api', '@ui']
+  When  I view product "Mug"
+  Then  I should see the product price "$5.00"
+  And  I should see this product has no catalog promotion applied
+

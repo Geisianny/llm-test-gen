@@ -1,0 +1,30 @@
+Scenario 1: Seeing applied catalog promotion on the product with default option
+  Tags: ['@no-api', '@ui']
+  When  I view product "T-Shirt"
+  Then  I should see this product is discounted from "$20.00" to "$10.00" with "Winter sale" promotion
+
+
+
+Scenario 2: Seeing applied catalog promotion on the product with non default option
+  Tags: ['@no-api', '@ui', '@javascript']
+  When  I view product "T-Shirt"
+  And  I select its "Size" as "L"
+  Then  I should see this product is discounted from "$50.00" to "$37.50" with "Surprise sale" promotion
+
+
+
+Scenario 3: Seeing applied catalog promotion on the product after changing the options multiple times
+  Tags: ['@no-api', '@ui', '@javascript']
+  When  I view product "T-Shirt"
+  And  I select its "Size" as "L"
+  And  I select its "Size" as "S"
+  Then  I should see this product is discounted from "$20.00" to "$10.00" with "Winter sale" promotion
+
+
+
+Scenario 4: Seeing no applied catalog promotion on the product option without applied catalog promotion
+  Tags: ['@no-api', '@ui', '@javascript']
+  When  I view product "T-Shirt"
+  And  I select its "Size" as "M"
+  Then  I should see this product is not discounted
+

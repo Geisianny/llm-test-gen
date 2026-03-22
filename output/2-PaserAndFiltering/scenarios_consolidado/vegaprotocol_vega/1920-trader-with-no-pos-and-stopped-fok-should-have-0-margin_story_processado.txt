@@ -1,0 +1,11 @@
+Scenario 1: a party place a new order in the system, margin are calculated, then the order is stopped, the margin is released
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties place the following orders:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the mark price should be "1000" for the market "ETH/DEC19"
+  When  the parties place the following orders:
+  Then  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+

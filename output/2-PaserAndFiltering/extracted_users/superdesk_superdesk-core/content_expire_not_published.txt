@@ -1,0 +1,83 @@
+Feature: Content Expiry Not Published Items
+
+Background: Setup data required to test not published items
+  Given  "desks"
+  When  we post to "/archive" with success
+  Then  we get OK response
+  And  we get existing resource
+
+Scenario 1: Item on a desk and not part of any package is expired .
+  Tags: ['@auth', '@notification']
+  When  we get "/archive_history?where=item_id==%22123%22"
+  Then  we get list with 1 items
+  When  we expire items
+  And  we get "archive/123"
+  Then  we get error 404
+  When  we get "archive/123?versions=all"
+  Then  we get error 404
+  When  we get "/archive_history?where=item_id==%22123%22"
+  Then  we get list with 0 items
+  And  we get notifications
+
+Scenario 2: Item on a desk is spiked and expired.
+  Tags: ['@auth']
+  When  we spike "123"
+  Then  we get OK response
+  When  we expire items
+  And  we get "archive/123"
+  Then  we get error 404
+  When  we get "archive/123?versions=all"
+  Then  we get error 404
+
+Scenario 3: Item in a package is expired.
+  Tags: ['@auth']
+  When  we post to "/archive" with "package" and success
+  And  we get "archive"
+  Then  we get list with 2 items
+  When  we expire items
+  And  we get "archive"
+  Then  we get list with 2 items
+  When  we post to "/archive" with "package2" and success
+  When  we expire items
+  And  we get "archive"
+  Then  we get list with 3 items
+  When  we expire items
+  And  we get "archive"
+  Then  we get list with 0 items
+
+Scenario 4: Personal content is spiked and expired.
+  Tags: ['@auth']
+  When  we post to "archive" with success
+  And  we get "archive"
+  Then  we get list with 2 items
+  When  we spike "456"
+  Then  we get OK response
+  When  we expire items
+  And  we get "archive/456"
+  Then  we get error 404
+  When  we get "archive/456?versions=all"
+  Then  we get error 404
+
+Scenario 5: Personal content is expired but not spiked.
+  Tags: ['@auth']
+  When  we post to "archive" with success
+  And  we get "archive"
+  Then  we get list with 2 items
+  When  we expire items
+  And  we get "archive/456"
+  Then  we get OK response
+  When  we get "archive/456?versions=all"
+  Then  we get OK response
+
+Scenario 6: Content linked in planning does not expire.
+  Tags: ['@auth']
+  Given  "assignments"
+  When  we post to "archive" with success
+  And  we get "archive"
+  Then  we get list with 2 items
+  When  we expire items
+  And  we get "archive/456"
+  Then  we get OK response
+  When  we get "archive/456?versions=all"
+  Then  we get OK response
+

@@ -1,0 +1,20 @@
+Scenario 1: Order cannot be placed once the market is expired
+  Tags: ['@STest']
+  Given  the parties deposit on asset's general account the following amount:
+  And  the following network parameters are set:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the mark price should be "1000" for the market "ETH/DEC19"
+  And  the parties should have the following account balances:
+  When  time is updated to "2019-12-31T23:59:57Z"
+  And  the parties place the following orders with ticks:
+  Then  the parties should have the following account balances:
+  When  time is updated to "2020-01-01T01:01:01Z"
+  Then  the market state should be "STATE_TRADING_TERMINATED" for the market "ETH/DEC19"
+  When  the oracles broadcast data signed with "0xCAFECAFE":
+  And  time is updated to "2020-01-01T01:01:02Z"
+  Then  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+

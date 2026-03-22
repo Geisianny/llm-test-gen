@@ -1,0 +1,14 @@
+Scenario 1: 
+  Tags: ['@ui', '@api']
+  Given  I added product "Star Trek Table Linen" to the cart
+  When  I see the summary of my cart
+  Then  my cart shipping total should be "$5.00"
+
+
+
+Scenario 2: 
+  Tags: ['@ui', '@api']
+  Given  I have product "T-shirt banana" in the cart
+  When  I see the summary of my cart
+  Then  my cart shipping total should be "$0.00"
+

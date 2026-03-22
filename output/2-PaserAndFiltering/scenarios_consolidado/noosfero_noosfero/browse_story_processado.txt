@@ -1,0 +1,110 @@
+Scenario 1: Show people browse menu
+  Tags: ['@selenium']
+  Given  I should not see "More recent"
+  And  I should not see "More active"
+  And  I should not see "More popular"
+  And  I go to /search/people
+  Then  I should see "More recent"
+  And  I should see "More active"
+  And  I should see "More popular"
+
+
+
+Scenario 2: People browse menu should add logged information
+  Tags: ['@selenium-fixme']
+  Given  I am logged in as "joaosilva"
+  And  I should not see "More recent"
+  And  I should not see "More active"
+  And  I should not see "More popular"
+  And  I should not see "Invite friends"
+  And  I should not see "My friends"
+  And  I go to /search/people
+  And  display "#submenu-people-trigger"
+  When  I follow "submenu-people-trigger"
+  Then  I should see "More recent"
+  And  I should see "More active"
+  And  I should see "More popular"
+  And  I should see "Invite friends"
+  And  I should see "My friends"
+
+
+
+Scenario 3: Browse people by query
+  Given  I go to /search/people
+  When  I fill in "Silva" for "search-input"
+  And  I follow "search-button"
+  Then  I should see "Joao Silva"
+  And  I should see "Pedro Silva"
+  And  I should not see "Paulo Neto"
+  And  I should not see "Community Silva"
+  And  I should not see "Community Neto"
+
+
+
+Scenario 4: Communities browse menu should add logged information
+  Tags: ['@selenium-fixme']
+  Given  I am logged in as "joaosilva"
+  When  I go to /joaosilva
+  Then  I should not see "More recent"
+  And  I should not see "More active"
+  And  I should not see "More popular"
+  And  I should not see "My communities"
+  And  I should not see "New community"
+  And  I go to /search/communities
+  And  display "#submenu-communities-trigger"
+  When  I follow "submenu-communities-trigger"
+  Then  I should see "More recent"
+  And  I should see "More active"
+  And  I should see "More popular"
+  And  I should see "My communities"
+  And  I should see "New community"
+
+
+
+Scenario 5: Show communities browse menu
+  Tags: ['@selenium']
+  Given  I should not see "More recent"
+  And  I should not see "More active"
+  And  I should not see "More popular"
+  And  I go to /search/communities
+  Then  I should see "More recent"
+  And  I should see "More active"
+  And  I should see "More popular"
+
+
+
+Scenario 6: Browse communities by query
+  When  I go to /search/communities
+  And  I fill in "Neto" for "search-input"
+  And  I follow "search-button"
+  Then  I should see "Community Neto"
+  And  I should not see "Joao Silva"
+  And  I should not see "Pedro Silva"
+  And  I should not see "Paulo Neto"
+  And  I should not see "Community Silva"
+
+
+
+Scenario 7: Show contents browse menu
+  Tags: ['@selenium-fixme']
+  Given  I should not see "Most commented"
+  And  I should not see "More viewed"
+  And  I should not see "More recent"
+  And  I go to /search/contents
+  And  display "#submenu-contents-trigger"
+  When  I follow "submenu-contents-trigger"
+  Then  I should see "Most commented"
+  And  I should see "More viewed"
+  And  I should see "More recent"
+
+
+
+Scenario 8: Browse contents by query
+  Given  the following articles
+  When  I go to /search/contents
+  And  I fill in "bees" for "search-input"
+  And  I follow "search-button"
+  Then  I should see "Bees can fly"
+  And  I should see "Bees and ants are insects"
+  And  I should not see "Ants are small"
+

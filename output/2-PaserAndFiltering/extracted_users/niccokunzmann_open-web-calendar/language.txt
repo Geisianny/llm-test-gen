@@ -1,0 +1,27 @@
+Feature: The calendar is translated into different languages. We want to
+Description: Be able to choose languages.
+
+Scenario Outline 1: I would like to use the configuration page in different languages. - Example 1
+  Given  we configure the languages
+  Then  we cannot see the text "calendrier"
+  When  we click on a link containing "Français"
+  Then  we can see the text "calendrier"
+
+  Examples:
+    | word | language |
+    | calendrier | Français |
+    | Kalender | Deutsch |
+    | calendario | Español |
+
+Scenario Outline 2: When I set the language parameter, the calendar changes its language. - Example 1
+  Given  we add the calendar "event-with-html-markup"
+  And  we set the "language" parameter to "en"
+  When  we look at 2024-04-14
+  Then  we can see the text "MONTH"
+
+  Examples:
+    | word | language |
+    | MONTH | en |
+    | MONAT | de |
+    | ДЕНЬ | ru |
+

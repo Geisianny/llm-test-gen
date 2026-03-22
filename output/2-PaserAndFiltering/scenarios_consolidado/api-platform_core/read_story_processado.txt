@@ -1,0 +1,82 @@
+Scenario 1: Get a resource
+  When  I send a "GET" request to "/users/116b83f8-6c32-48d8-8e28-c5c247532d3f"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario 2: Get a not found exception
+  When  I send a "GET" request to "/users/12345678-abcd-1234-abcdefgh"
+  Then  the response status code should be 404
+
+
+
+Scenario 3: Get the first page of a collection
+  When  I send a "GET" request to "/tweets"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario 4: Get a page of a collection
+  When  I send a "GET" request to "/tweets?page=3"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario 5: Get the last page of a collection
+  When  I send a "GET" request to "/tweets?page=7"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario 6: Get a resource with new elasticsearch operations
+  When  I send a "GET" request to "/libraries/116b83f8-6c32-48d8-8e28-c5c247532d3f"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario 7: Get a not found exception with new elasticsearch operations
+  When  I send a "GET" request to "/libraries/12345678-abcd-1234-abcdefgh"
+  Then  the response status code should be 404
+
+
+
+Scenario 8: Get the first page of a collection with new elasticsearch operations
+  When  I send a "GET" request to "/books"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario 9: Get a page of a collection with new elasticsearch operations
+  When  I send a "GET" request to "/books?page=3"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario 10: Get the last page of a collection with new elasticsearch operations
+  When  I send a "GET" request to "/books?page=7"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+

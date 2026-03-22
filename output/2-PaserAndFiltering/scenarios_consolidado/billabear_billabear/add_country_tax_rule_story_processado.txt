@@ -1,0 +1,47 @@
+Scenario 1: Successfully create tax type
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  that the following countries exist:
+  And  there are the following tax types:
+  When  I create a country tax rule with the following data:
+  Then  there should be a tax rule for "United States" for "Digital Goods" tax type with the tax rate 15
+
+
+
+Scenario 2: Fails to create when overlapping valid times
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  that the following countries exist:
+  And  there are the following tax types:
+  And  the following country tax rules exist:
+  When  I create a country tax rule with the following data:
+  Then  there should be an error for "validFrom"
+
+
+
+Scenario 3: Fails to create when overlapping valid times
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  that the following countries exist:
+  And  there are the following tax types:
+  And  the following country tax rules exist:
+  When  I create a country tax rule with the following data:
+  Then  there should be an error for "validUntil"
+
+
+
+Scenario 4: Successfully create tax type and sets valid until on rule with no valid until
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  that the following countries exist:
+  And  there are the following tax types:
+  And  the following country tax rules exist:
+  When  I create a country tax rule with the following data:
+  Then  there should be a tax rule for "United States" for "Digital Goods" tax type with the tax rate 17.5 that is valid until "-3 days"
+
+
+
+Scenario 5: Successfully create tax type and sets but does not set valid until on rule with no valid until
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  that the following countries exist:
+  And  there are the following tax types:
+  And  the following country tax rules exist:
+  When  I create a country tax rule with the following data:
+  Then  there should be a tax rule for "United States" for "Digital Goods" tax type with the tax rate 17.5 that is open ended
+

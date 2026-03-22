@@ -1,0 +1,37 @@
+Scenario 1: Retrieve Entrypoint context
+  When  I send a "GET" request to "/contexts/Entrypoint"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON node "@context.@vocab" should be equal to "http://example.com/docs.jsonld#"
+  And  the JSON node "@context.hydra" should be equal to "http://www.w3.org/ns/hydra/core#"
+  And  the JSON node "@context.dummy.@id" should be equal to "Entrypoint/dummy"
+  And  the JSON node "@context.dummy.@type" should be equal to "@id"
+
+
+
+Scenario 2: Retrieve Dummy context
+  When  I send a "GET" request to "/contexts/Dummy"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be a superset of:
+
+
+
+Scenario 3: Retrieve context of an object with an embed relation
+  When  I send a "GET" request to "/contexts/RelationEmbedder"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario 4: Retrieve Dummy with extended jsonld context
+  When  I send a "GET" request to "/contexts/JsonldContextDummy"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+

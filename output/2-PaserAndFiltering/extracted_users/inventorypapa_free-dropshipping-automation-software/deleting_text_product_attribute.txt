@@ -1,0 +1,16 @@
+Feature: Deleting a text product attribute
+Description: In order to remove test, obsolete or incorrect text product attribute
+    As an Administrator
+    I want to be able to delete a text product attribute
+Tags: ['@managing_product_attributes']
+
+Background: 
+  Given  I am logged in as an administrator
+
+Scenario 1: Deleting a text product attribute from the registry
+  Tags: ['@ui']
+  Given  the store has a text product attribute "T-shirt cotton brand"
+  When  I delete this product attribute
+  Then  I should be notified that it has been successfully deleted
+  And  this product attribute should no longer exist in the registry
+

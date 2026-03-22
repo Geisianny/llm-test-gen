@@ -1,0 +1,21 @@
+Scenario 1: Trying to add new address as a Visitor
+  Tags: ['@api', '@no-ui']
+  When  I want to add a new address to my address book
+  And  I specify the address as "Lucifer Morningstar", "Seaside Fwy", "90802", "Los Angeles", "United States", "Arkansas"
+  And  I try to add it
+  Then  I should not be able to add it
+
+
+
+Scenario 2: Trying to view address as a Visitor
+  Tags: ['@api', '@no-ui']
+  When  I try to view details of address belongs to "John Doe"
+  Then  I should not see any details of address
+
+
+
+Scenario 3: Trying to delete address as a Visitor
+  Tags: ['@api', '@no-ui']
+  When  I try to delete address belongs to "John Doe"
+  Then  I should not be able to delete it
+

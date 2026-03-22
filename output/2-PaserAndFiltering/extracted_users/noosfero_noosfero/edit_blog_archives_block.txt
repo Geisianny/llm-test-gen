@@ -1,0 +1,23 @@
+Feature: edit_blog_archives_block
+Description: As a blog owner
+  I want to edit a Blog Archive Block
+
+Scenario 1: not offer to select blog when I have once blog
+  Given  I am on the homepage
+  And  the following users
+  And  "joaosilva" has no articles
+  And  the following blogs
+  And  the following blocks
+  And  I am logged in as "joaosilva"
+  When  I go to edit BlogArchivesBlock of joaosilva
+  Then  I should not see "Choose a blog:"
+
+Scenario 2: offer to select blog when I have multiple blogs
+  Given  I am on the homepage
+  And  the following users
+  And  the following blogs
+  And  the following blocks
+  And  I am logged in as "joaosilva"
+  When  I go to edit BlogArchivesBlock of joaosilva
+  Then  I should see "Choose a blog:"
+

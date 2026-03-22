@@ -1,0 +1,43 @@
+Scenario 1: mpdf
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  When  I set the pdf generator to:
+  Then  the pdf generator should be "mpdf"
+  And  the pdf generator tmp dir should be "/tmp/dir"
+
+
+
+Scenario 2: mpdf - error
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  When  I set the pdf generator to:
+  Then  there should be an error for "tmp_dir"
+
+
+
+Scenario 3: docraptor - error
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  When  I set the pdf generator to:
+  Then  there should be an error for "api_key"
+
+
+
+Scenario 4: docraptor - Success
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  When  I set the pdf generator to:
+  Then  the pdf generator should be "docraptor"
+  And  the pdf generator api key should be "api-test"
+
+
+
+Scenario 5: wkhtmltopdf - error
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  When  I set the pdf generator to:
+  Then  there should be an error for "bin"
+
+
+
+Scenario 6: wkhtmltopdf - success
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  When  I set the pdf generator to:
+  Then  the pdf generator should be "wkhtmltopdf"
+  And  the pdf generator bin should be "/usr/bin/wkhtmltopdf"
+

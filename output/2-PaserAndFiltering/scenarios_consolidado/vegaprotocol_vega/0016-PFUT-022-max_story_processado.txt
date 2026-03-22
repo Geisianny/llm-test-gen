@@ -1,0 +1,37 @@
+Scenario 1: 0016-PFUT-022: Same as the settlement at price 0 test, only with a settlement at max price.
+  Tags: ['@NoPerp', '@Capped', '@CSettle', '@CappedBug']
+  Given  the initial insurance pool balance is "10000" for all the markets
+  And  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  When  the parties place the following orders:
+  And  the network moves ahead "2" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC21"
+  And  the market state should be "STATE_ACTIVE" for the market "ETH/DEC21"
+  And  the mark price should be "1000" for the market "ETH/DEC21"
+  And  the parties should have the following account balances:
+  And  the parties should have the following margin levels:
+  When  the parties place the following orders:
+  And  the network moves ahead "2" blocks
+  Then  the mark price should be "1100" for the market "ETH/DEC21"
+  And  the parties should have the following account balances:
+  When  the parties submit update margin mode:
+  When  the parties place the following orders:
+  And  the following trades should be executed:
+  And  the network moves ahead "2" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC21"
+  Then  the mark price should be "1499" for the market "ETH/DEC21"
+  And  the parties should have the following account balances:
+  And  the parties should have the following margin levels:
+  When  the parties place the following orders:
+  And  the network moves ahead "2" blocks
+  Then  the parties should have the following account balances:
+  And  the following transfers should happen:
+  When  the oracles broadcast data signed with "0xCAFECAFE1":
+  And  the network moves ahead "2" blocks
+  Then  the market state should be "STATE_TRADING_TERMINATED" for the market "ETH/DEC21"
+  When  the oracles broadcast data signed with "0xCAFECAFE1":
+  And  the network moves ahead "2" blocks
+  Then  the last market state should be "STATE_SETTLED" for the market "ETH/DEC21"
+  And  the following transfers should happen:
+  And  the parties should have the following account balances:
+

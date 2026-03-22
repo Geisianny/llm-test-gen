@@ -1,0 +1,61 @@
+Scenario 1: Modifying a customer's billing address
+  Tags: ['@ui']
+  When  I view the summary of the order "#00000001"
+  And  I want to modify a customer's billing address of this order
+  And  I specify their new billing address as "Los Angeles", "Seaside Fwy", "90802", "United States" for "Lucifer Morningstar"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this order bill should be shipped to "Lucifer Morningstar", "Seaside Fwy", "90802", "Los Angeles", "United States"
+
+
+
+Scenario 2: Modifying a customer's billing address when a product's price has been changed
+  Tags: ['@ui']
+  Given  the product "Suit" changed its price to "$300.00"
+  When  I view the summary of the order "#00000001"
+  And  I want to modify a customer's billing address of this order
+  And  I specify their new billing address as "Los Angeles", "Seaside Fwy", "90802", "United States" for "Lucifer Morningstar"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this order bill should be shipped to "Lucifer Morningstar", "Seaside Fwy", "90802", "Los Angeles", "United States"
+  And  the order's total should still be "$400.00"
+
+
+
+Scenario 3: Modifying a customer's billing address when a channel has been disabled
+  Tags: ['@ui']
+  Given  the channel "Web" has been disabled
+  When  I view the summary of the order "#00000001"
+  And  I want to modify a customer's billing address of this order
+  And  I specify their new billing address as "Los Angeles", "Seaside Fwy", "90802", "United States" for "Lucifer Morningstar"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this order bill should be shipped to "Lucifer Morningstar", "Seaside Fwy", "90802", "Los Angeles", "United States"
+  And  the order's total should still be "$400.00"
+
+
+
+Scenario 4: Modifying a customer's billing address when the currency has been disabled
+  Tags: ['@ui']
+  Given  the currency "USD" has been disabled
+  When  I view the summary of the order "#00000001"
+  And  I want to modify a customer's billing address of this order
+  And  I specify their new billing address as "Los Angeles", "Seaside Fwy", "90802", "United States" for "Lucifer Morningstar"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this order bill should be shipped to "Lucifer Morningstar", "Seaside Fwy", "90802", "Los Angeles", "United States"
+  And  the order's total should still be "$400.00"
+
+
+
+Scenario 5: Modifying a customer's billing address when the product is out of stock
+  Tags: ['@ui']
+  Given  the product "Suit" is out of stock
+  When  I view the summary of the order "#00000001"
+  And  I want to modify a customer's billing address of this order
+  And  I specify their new billing address as "Los Angeles", "Seaside Fwy", "90802", "United States" for "Lucifer Morningstar"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this order bill should be shipped to "Lucifer Morningstar", "Seaside Fwy", "90802", "Los Angeles", "United States"
+  And  the order's total should still be "$400.00"
+

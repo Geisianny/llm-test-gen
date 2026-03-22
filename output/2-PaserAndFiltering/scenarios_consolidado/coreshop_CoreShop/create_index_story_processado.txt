@@ -1,0 +1,12 @@
+Scenario 1: Create a new index
+  Given  the site has a index "myindex" for class "CoreShopProduct" with type "mysql"
+  Then  there should be a index "myindex"
+
+
+
+Scenario 2: Create a new index and add fields
+  Given  the site has a index "myindex" for class "CoreShopProduct" with type "mysql"
+  And  the index has following fields:
+  Then  the index should have columns "ean, sku"
+  And  the index should have localized columns "internalName"
+

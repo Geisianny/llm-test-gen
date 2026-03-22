@@ -1,0 +1,52 @@
+Scenario 1: Accessing to product edit page from simple product show page
+  Tags: ['@no-api', '@ui']
+  When  I access the "Iron sword" product
+  And  I go to edit page
+  Then  I should be on "Iron sword" product edit page
+
+
+
+Scenario 2: Accessing to product edit page from configurable product show page
+  Tags: ['@no-api', '@ui']
+  When  I access the "Iron shield" product
+  And  I go to edit page
+  Then  I should be on "Iron shield" product edit page
+
+
+
+Scenario 3: Accessing to variant edit page from product show page
+  Tags: ['@no-api', '@ui']
+  When  I access the "Iron shield" product
+  And  I go to edit page of "Iron shield - very big" variant
+  Then  I should be on "Iron shield - very big" variant edit page
+
+
+
+Scenario 4: Accessing to product show page from simple product edit page
+  Tags: ['@no-api', '@ui']
+  When  I want to modify the "Iron sword" product
+  And  I go to show page
+  Then  I should be on "Iron sword" product show page
+
+
+
+Scenario 5: Accessing to product show page from configurable product edit page
+  Tags: ['@no-api', '@ui']
+  When  I want to modify the "Iron shield" product
+  And  I go to show page
+  Then  I should be on "Iron shield" product show page
+
+
+
+Scenario 6: Not being able to access product show page from simple product create page
+  Tags: ['@no-api', '@ui']
+  When  I want to create a new simple product
+  Then  I should not be able to open the product show page
+
+
+
+Scenario 7: Not being able to access product show page from configurable product create page
+  Tags: ['@no-api', '@ui']
+  When  I want to create a new configurable product
+  Then  I should not be able to open the product show page
+

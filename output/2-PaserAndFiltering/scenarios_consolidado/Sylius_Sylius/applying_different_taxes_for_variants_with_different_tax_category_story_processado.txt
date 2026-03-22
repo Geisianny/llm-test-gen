@@ -1,0 +1,8 @@
+Scenario 1: Proper taxes for different taxed variants
+  Tags: ['@api', '@ui']
+  Given  I added "Medium Mug" variant of product "PHP Mug" to the cart
+  And  I added "Large Mug" variant of product "PHP Mug" to the cart
+  When  I check the details of my cart
+  Then  my cart total should be "$154.20"
+  And  my cart taxes should be "$14.20"
+

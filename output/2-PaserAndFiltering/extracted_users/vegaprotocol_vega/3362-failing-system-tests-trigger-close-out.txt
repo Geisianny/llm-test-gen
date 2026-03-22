@@ -1,0 +1,45 @@
+Feature: Replicate failing system tests after changes to price monitoring (not triggering with FOK orders, auction duration)
+
+Background: 
+  Given  time is updated to "2020-10-16T00:00:00Z"
+  And  the price monitoring named "my-price-monitoring":
+  And  the log normal risk model named "my-log-normal-risk-model":
+  And  the markets:
+  And  the following network parameters are set:
+  And  the trading mode should be "TRADING_MODE_OPENING_AUCTION" for the market "ETH/DEC20"
+
+Scenario 1: Replicate test called test_TriggerWithMarketOrder
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties place the following orders:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the mark price should be "0" for the market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_OPENING_AUCTION" for the market "ETH/DEC20"
+  When  the opening auction period ends for market "ETH/DEC20"
+  Then  the mark price should be "100000" for the market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  When  the parties place the following orders with ticks:
+  Then  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/DEC20"
+  And  the mark price should be "100000" for the market "ETH/DEC20"
+  When  the parties place the following orders with ticks:
+  Then  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/DEC20"
+  And  the mark price should be "100000" for the market "ETH/DEC20"
+  When  time is updated to "2020-10-16T00:00:09Z"
+  Then  the market data for the market "ETH/DEC20" should be:
+  When  time is updated to "2020-10-16T00:00:18Z"
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  And  the mark price should be "107100" for the market "ETH/DEC20"
+  When  the parties place the following orders with ticks:
+  Then  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/DEC20"
+  And  the mark price should be "107100" for the market "ETH/DEC20"
+  When  the parties place the following orders with ticks:
+  And  the parties place the following pegged orders:
+  And  the parties place the following orders with ticks:
+  And  the parties place the following pegged orders:
+  Then  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/DEC20"
+  And  the mark price should be "107100" for the market "ETH/DEC20"
+  When  time is updated to "2020-10-16T00:00:25Z"
+  When  time is updated to "2020-10-16T00:00:33Z"
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  And  the mark price should be "106000" for the market "ETH/DEC20"
+

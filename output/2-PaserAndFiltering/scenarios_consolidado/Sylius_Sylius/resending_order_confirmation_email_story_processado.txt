@@ -1,0 +1,36 @@
+Scenario 1: Resending a confirmation email for an order
+  Tags: ['@api', '@ui', '@email']
+  When  I view the summary of the order "#00000666"
+  And  I resend the order confirmation email
+  Then  I should be notified that the order confirmation email has been successfully resent to the customer
+  And  an email with the confirmation of the order "#00000666" should be sent to "lucy@teamlucifer.com"
+
+
+
+Scenario 2: Resending a confirmation email for an order in different locale than the default one
+  Tags: ['@api', '@ui', '@email']
+  Given  the order "#00000666" has been placed in "Polish (Poland)" locale
+  When  I view the summary of the order "#00000666"
+  And  I resend the order confirmation email
+  Then  I should be notified that the order confirmation email has been successfully resent to the customer
+  And  an email with the confirmation of the order "#00000666" should be sent to "lucy@teamlucifer.com" in "Polish (Poland)" locale
+
+
+
+Scenario 3: Resending a confirmation email for an order after it has been fulfilled
+  Tags: ['@api', '@ui', '@email']
+  When  I view the summary of the order "#00000666"
+  And  I ship this order
+  And  I resend the order confirmation email
+  Then  I should be notified that the order confirmation email has been successfully resent to the customer
+  And  an email with the confirmation of the order "#00000666" should be sent to "lucy@teamlucifer.com"
+
+
+
+Scenario 4: Not being able to resend a confirmation email for an order with wrong state
+  Tags: ['@api', '@ui', '@email']
+  When  I view the summary of the order "#00000666"
+  And  I cancel this order
+  Then  I should not be able to resend the order confirmation email
+  And  an email with the confirmation of the order "#00000666" should not be sent to "lucy@teamlucifer.com"
+

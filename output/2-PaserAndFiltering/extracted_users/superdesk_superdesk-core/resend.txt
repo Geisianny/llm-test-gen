@@ -1,0 +1,166 @@
+Feature: Resend
+
+Scenario 1: Resend an unpublished story fails
+  Tags: ['@auth']
+  Given  "desks"
+  And  "archive"
+  When  we post to "/archive/#archive._id#/resend"
+  Then  we get error 400
+
+Scenario 2: Resend a previous version of a published story fails
+  Tags: ['@auth']
+  Given  the "validators"
+  And  "desks"
+  And  "archive"
+  When  we post to "/products" with success
+  And  we post to "/subscribers" with success
+  And  we publish "#archive._id#" with "publish" type and "published" state
+  Then  we get OK response
+  When  we enqueue published
+  When  we post to "/archive/#archive._id#/resend"
+  Then  we get error 400
+
+Scenario 3: Resend a published version of a corrected story fails
+  Tags: ['@auth']
+  Given  the "validators"
+  And  "desks"
+  And  "archive"
+  When  we post to "/products" with success
+  And  we post to "/subscribers" with success
+  And  we publish "#archive._id#" with "publish" type and "published" state
+  Then  we get OK response
+  When  we enqueue published
+  When  we publish "#archive._id#" with "correct" type and "corrected" state
+  Then  we get OK response
+  When  we enqueue published
+  When  we post to "/archive/#archive._id#/resend"
+  Then  we get error 400
+
+Scenario 4: Resend a updated story fails
+  Tags: ['@auth']
+  Given  the "validators"
+  And  "desks"
+  And  "archive"
+  When  we post to "/products" with success
+  And  we post to "/subscribers" with success
+  And  we publish "#archive._id#" with "publish" type and "published" state
+  Then  we get OK response
+  When  we enqueue published
+  When  we rewrite "123"
+  When  we get "/published"
+  Then  we get existing resource
+  When  we get "/archive/123"
+  Then  we get existing resource
+  When  we post to "/archive/#archive._id#/resend"
+  Then  we get error 400
+
+Scenario 5: Resend a published story
+  Tags: ['@auth', '@vocabulary']
+  Given  the "validators"
+  And  "desks"
+  And  "archive"
+  And  "products"
+  And  "subscribers"
+  When  we publish "#archive._id#" with "publish" type and "published" state
+  Then  we get OK response
+  When  we enqueue published
+  When  we get "/publish_queue"
+  Then  we get list with 1 items
+  When  we post to "/subscribers"
+  When  we post to "/archive/#archive._id#/resend"
+  Then  we get OK response
+  When  we get "/publish_queue"
+  Then  we get list with 2 items
+
+Scenario 6: Resend a published text story to a digital subscriber
+  Tags: ['@auth', '@vocabulary']
+  Given  the "validators"
+  And  "desks"
+  And  "archive"
+  And  "products"
+  And  "subscribers"
+  When  we publish "#archive._id#" with "publish" type and "published" state
+  Then  we get OK response
+  When  we enqueue published
+  When  we get "/publish_queue"
+  Then  we get list with 1 items
+  When  we post to "/subscribers"
+  When  we post to "/archive/#archive._id#/resend"
+  Then  we get OK response
+  When  we get "/publish_queue"
+  Then  we get list with 2 items
+  When  we post to "/archive/#archive._id#/resend"
+  Then  we get OK response
+  When  we get "/publish_queue"
+  Then  we get list with 3 items
+
+Scenario 7: Resend a published targeted text story to a digital subscriber
+  Tags: ['@auth', '@vocabulary']
+  Given  the "validators"
+  And  "desks"
+  And  "archive"
+  And  "products"
+  And  "subscribers"
+  When  we publish "#archive._id#" with "publish" type and "published" state
+  Then  we get OK response
+  When  we enqueue published
+  When  we get "/publish_queue"
+  Then  we get list with 1 items
+  When  we post to "/subscribers"
+  When  we post to "/archive/#archive._id#/resend"
+  Then  we get OK response
+  When  we get "/publish_queue"
+  Then  we get list with 2 items
+  When  we post to "/archive/#archive._id#/resend"
+  Then  we get OK response
+  When  we get "/publish_queue"
+  Then  we get list with 3 items
+
+Scenario 8: Resend a published text story to a subscriber using different product types.
+  Tags: ['@auth', '@vocabulary']
+  Given  the "validators"
+  And  "desks"
+  And  "archive"
+  And  "products"
+  And  "subscribers"
+  When  we publish "#archive._id#" with "publish" type and "published" state
+  Then  we get OK response
+  When  we enqueue published
+  When  we get "/publish_queue"
+  Then  we get list with 1 items
+  When  we post to "/subscribers" with "sub2" and success
+  When  we post to "/archive/#archive._id#/resend"
+  Then  we get OK response
+  When  we get "/publish_queue"
+  Then  we get list with 3 items
+  When  we post to "/subscribers" with "sub3" and success
+  When  we post to "/archive/#archive._id#/resend"
+  When  we get "/publish_queue"
+  Then  we get list with 4 items
+  And  we assert the content api item "123" is published to subscriber "#sub2#"
+  And  we assert the content api item "123" is published to subscriber "#sub3#"
+  And  we assert the content api item "123" is not published to subscriber "1826418ecc7602033e9252a1"
+
+Scenario 9: Resend a published text story to a digital or all subscriber type
+  Tags: ['@auth', '@vocabulary']
+  Given  the "validators"
+  And  "desks"
+  And  "archive"
+  And  "products"
+  And  "subscribers"
+  When  we publish "#archive._id#" with "publish" type and "published" state
+  Then  we get OK response
+  When  we enqueue published
+  When  we get "/publish_queue"
+  Then  we get list with 1 items
+  When  we post to "/subscribers" with "digital" and success
+  When  we post to "/archive/#archive._id#/resend"
+  Then  we get OK response
+  When  we get "/publish_queue"
+  Then  we get list with 2 items
+  When  we post to "/subscribers" with "all" and success
+  When  we post to "/archive/#archive._id#/resend"
+  Then  we get OK response
+  When  we get "/publish_queue"
+  Then  we get list with 3 items
+

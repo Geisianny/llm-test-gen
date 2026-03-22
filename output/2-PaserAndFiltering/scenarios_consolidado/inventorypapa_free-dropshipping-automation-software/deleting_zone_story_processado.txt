@@ -1,0 +1,14 @@
+Scenario 1: Deleted zone should disappear from the registry
+  Tags: ['@ui', '@api']
+  When  I delete zone named "North America"
+  Then  I should be notified that it has been successfully deleted
+  And  the zone named "North America" should no longer exist in the registry
+
+
+
+Scenario 2: Deleting zone with associated tax rates should not be possible
+  Tags: ['@ui', '@api']
+  When  I delete zone named "South America"
+  Then  I should be notified that this zone cannot be deleted
+  And  I should still see the zone named "South America" in the list
+

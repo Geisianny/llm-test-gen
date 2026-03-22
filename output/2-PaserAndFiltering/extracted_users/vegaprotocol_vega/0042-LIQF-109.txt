@@ -1,0 +1,64 @@
+Feature: Test vAMM implied commitment is working as expected
+
+Background: 
+  Given  the average block duration is "1"
+  And  the margin calculator named "margin-calculator-1":
+  And  the log normal risk model named "log-normal-risk-model":
+  And  the liquidity monitoring parameters:
+  And  the following network parameters are set:
+  And  the following assets are registered:
+  And  the fees configuration named "fees-config-1":
+  And  the liquidity sla params named "SLA-22":
+  And  the markets:
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/MAR22"
+  Then  the following trades should be executed:
+  Then  the network moves ahead "1" epochs
+  And  the current epoch is "1"
+
+Scenario 1: 0042-LIQF-109: A vAMM which was active on the market with an average of `10000` liquidity units (`price * volume`) provided for half the epoch, and then `0` for the second half of the epoch (as the price was out of the vAMM's configured range), and where the `market.liquidity.stakeToCcyVolume` value is `100`, will have an implied commitment of `50`.
+  Tags: ['@VAMM']
+  Then  the parties submit the following AMM:
+  Then  the AMM pool status should be:
+  And  set the following AMM sub account aliases:
+  And  the parties place the following orders:
+  Then  the network moves ahead "1" epochs
+  And  the liquidity provider fee shares for the market "ETH/MAR22" should be:
+
+Scenario 2: 0042-LIQF-109
+  Then  the parties submit the following AMM:
+  Then  the AMM pool status should be:
+  And  set the following AMM sub account aliases:
+  And  the parties place the following orders:
+  Then  the network moves ahead "5" blocks
+  When  the parties amend the following AMM:
+  Then  the AMM pool status should be:
+  Then  the network moves ahead "7" blocks
+  And  the liquidity provider fee shares for the market "ETH/MAR22" should be:
+
+Scenario 3: 0042-LIQF-109
+  Tags: ['@VAMM']
+  Then  the parties submit the following AMM:
+  Then  the AMM pool status should be:
+  And  set the following AMM sub account aliases:
+  And  the parties place the following orders:
+  Then  the network moves ahead "5" blocks
+  When  the parties amend the following AMM:
+  Then  the AMM pool status should be:
+  Then  the network moves ahead "7" blocks
+  And  the liquidity provider fee shares for the market "ETH/MAR22" should be:
+
+Scenario 4: 0042-LIQF-111:A vAMM which was active on the market with an average of `10000` liquidity units (`price * volume`) provided for half the epoch, and then `5000` for the second half of the epoch (as the price was out of the vAMM's configured range), and where the `market.liquidity.stakeToCcyVolume` value is `100`, will have an implied commitment of `75`.
+  Tags: ['@VAMM']
+  Then  the parties submit the following AMM:
+  Then  the AMM pool status should be:
+  And  set the following AMM sub account aliases:
+  And  the parties place the following orders:
+  Then  the network moves ahead "5" blocks
+  When  the parties amend the following AMM:
+  Then  the AMM pool status should be:
+  Then  the network moves ahead "7" blocks
+  And  the liquidity provider fee shares for the market "ETH/MAR22" should be:
+

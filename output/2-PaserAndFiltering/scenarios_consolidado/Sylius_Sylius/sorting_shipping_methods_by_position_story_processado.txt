@@ -1,0 +1,23 @@
+Scenario 1: Shipping methods are sorted by position in ascending order by default
+  Tags: ['@api', '@ui']
+  When  I am browsing shipping methods
+  Then  I should see 3 shipping methods in the list
+  And  the first shipping method on the list should have name "Narwhal Submarine"
+  And  the last shipping method on the list should have name "Aardvark Stagecoach"
+
+
+
+Scenario 2: Shipping method added at no position is added as the last one
+  Tags: ['@api', '@ui']
+  Given  the store also allows shipping with "Yellow Submarine"
+  When  I want to browse shipping methods
+  Then  the last shipping method on the list should have name "Yellow Submarine"
+
+
+
+Scenario 3: Shipping method added at position 0 is added as the first one
+  Tags: ['@api', '@ui']
+  Given  the store also allows shipping with "Yellow Submarine" at position 0
+  When  I want to browse shipping methods
+  Then  the first shipping method on the list should have name "Yellow Submarine"
+

@@ -1,0 +1,27 @@
+Feature: Spot Markets
+
+Scenario 1: For a "buy" order to be considered valid during an auction, the party must have a sufficient amount of the quote_asset
+  Description: to cover the order size, as well as any potential fees that may be incurred due to the order trading
+            in the auction (0080-SPOT-018).
+
+  Background:
+  Given  the following network parameters are set:
+  And  the average block duration is "1"
+  Given  the fees configuration named "fees-config-1":
+  And  the simple risk model named "my-simple-risk-model":
+  And  the fees configuration named "my-fees-config":
+  And  the price monitoring named "price-monitoring":
+  And  the spot markets:
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties place the following orders:
+  Then  the opening auction period ends for market "BTC/ETH"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  And  the mark price should be "100" for the market "BTC/ETH"
+  When  the network moves ahead "1" blocks
+  And  the parties place the following orders:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "BTC/ETH"
+  And  the parties place the following orders:
+  And  the parties place the following orders:
+

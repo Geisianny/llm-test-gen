@@ -1,0 +1,8 @@
+Scenario 1: Seeing shipping methods sorted
+  Tags: ['@api', '@ui']
+  Given  I added product "Targaryen T-Shirt" to the cart
+  And  I addressed the cart
+  When  I go to the shipping step
+  Then  I should have "Narwhal Submarine" shipping method available as the first choice
+  And  I should have "Aardvark Stagecoach" shipping method available as the last choice
+

@@ -1,0 +1,6 @@
+Feature: Client Config
+
+Scenario 1: Read client config
+  When  we get "client_config"
+  Then  we get existing resource
+

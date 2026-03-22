@@ -1,0 +1,5 @@
+Scenario 1: Fetch a collection of outputs with an entityClass as state option
+  Tags: ['@!mongodb']
+  When  I send a "GET" request to "/output_and_entity_classes"
+  And  the JSON node "hydra:member[0].@type" should be equal to "OutputAndEntityClassEntity"
+

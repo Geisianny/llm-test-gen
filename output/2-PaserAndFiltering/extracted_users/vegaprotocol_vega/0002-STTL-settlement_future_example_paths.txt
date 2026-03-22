@@ -1,0 +1,104 @@
+Feature: Test settlement future example paths (0002-STTL-011), (0002-STTL-012), (0002-STTL-013)
+
+Background: 
+  Given  time is updated to "2019-11-30T00:00:00Z"
+  And  the average block duration is "1"
+  And  the oracle spec for settlement data filtering data from "0xCAFECAFE" named "ethDec20Oracle":
+  And  the oracle spec for trading termination filtering data from "0xCAFECAFE" named "ethDec20Oracle":
+  And  the settlement data decimals for the oracle named "ethDec20Oracle" is given in "0" decimal places
+  And  the following network parameters are set:
+  And  the markets:
+  And  the initial insurance pool balance is "1000" for all the markets
+
+Scenario 1: A typical path of a cash settled futures market nearing expiry when market is trading in continuous session (0002-STTL-011)
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the mark price should be "1000" for the market "ETH/DEC19"
+  And  the market state should be "STATE_ACTIVE" for the market "ETH/DEC19"
+  And  the insurance pool balance should be "1000" for the market "ETH/DEC19"
+  And  the parties should have the following account balances:
+  And  the parties should have the following account balances:
+  Then  the parties should have the following profit and loss:
+  When  the oracles broadcast data signed with "0xCAFECAFE":
+  And  time is updated to "2020-01-01T01:01:01Z"
+  Then  the market state should be "STATE_TRADING_TERMINATED" for the market "ETH/DEC19"
+  And  the parties should have the following account balances:
+  Then  the parties should have the following profit and loss:
+  When  the oracles broadcast data signed with "0xCAFECAFE":
+  Then  time is updated to "2020-01-01T01:01:02Z"
+  And  the parties should have the following account balances:
+  And  the parties should have the following account balances:
+  And  the parties should have the following profit and loss:
+  And  the network moves ahead "2" blocks
+  And  the insurance pool balance should be "0" for the market "ETH/DEC19"
+  And  the global insurance pool balance should be "1000" for the asset "ETH"
+
+Scenario 2: A less typical path of such a futures market nearing expiry when market is suspended (0002-STTL-012)
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the mark price should be "1000" for the market "ETH/DEC19"
+  And  the insurance pool balance should be "1000" for the market "ETH/DEC19"
+  And  the market state should be "STATE_ACTIVE" for the market "ETH/DEC19"
+  When  the parties place the following orders with ticks:
+  And  the mark price should be "1000" for the market "ETH/DEC19"
+  Then  the parties should have the following profit and loss:
+  And  the parties should have the following account balances:
+  And  then the network moves ahead "10" blocks
+  When  the parties place the following orders with ticks:
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/DEC19"
+  And  the market state should be "STATE_SUSPENDED" for the market "ETH/DEC19"
+  And  the parties should have the following account balances:
+  And  the parties should have the following account balances:
+  Then  the parties should have the following profit and loss:
+  When  the oracles broadcast data signed with "0xCAFECAFE":
+  And  time is updated to "2020-01-01T01:01:01Z"
+  Then  the market state should be "STATE_TRADING_TERMINATED" for the market "ETH/DEC19"
+  And  the parties should have the following account balances:
+  Then  the parties should have the following profit and loss:
+  When  the oracles broadcast data signed with "0xCAFECAFE":
+  Then  time is updated to "2020-01-01T01:01:02Z"
+  And  the parties should have the following account balances:
+  And  the parties should have the following account balances:
+  And  the parties should have the following profit and loss:
+  Then  the network moves ahead "2" blocks
+  And  the insurance pool balance should be "0" for the market "ETH/DEC19"
+  And  the global insurance pool balance should be "942" for the asset "ETH"
+
+Scenario 3: Settlement data to cash settled future is submitted before trading is terminated (0002-STTL-013)
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the mark price should be "1000" for the market "ETH/DEC19"
+  And  the market state should be "STATE_ACTIVE" for the market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the insurance pool balance should be "1000" for the market "ETH/DEC19"
+  And  the parties should have the following account balances:
+  And  the parties should have the following account balances:
+  Then  the parties should have the following profit and loss:
+  When  the oracles broadcast data signed with "0xCAFECAFE":
+  Then  time is updated to "2020-01-01T01:01:02Z"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  When  the parties place the following orders:
+  And  the following trades should be executed:
+  When  the oracles broadcast data signed with "0xCAFECAFE":
+  Then  time is updated to "2020-01-01T01:01:02Z"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  When  the parties place the following orders:
+  And  the following trades should be executed:
+  When  the oracles broadcast data signed with "0xCAFECAFE":
+  And  time is updated to "2020-01-01T01:01:01Z"
+  And  the parties should have the following account balances:
+  Then  the parties should have the following profit and loss:
+  And  the parties should have the following account balances:
+  And  the network moves ahead "2" blocks
+  And  the insurance pool balance should be "0" for the market "ETH/DEC19"
+  And  the global insurance pool balance should be "1000" for the asset "ETH"
+

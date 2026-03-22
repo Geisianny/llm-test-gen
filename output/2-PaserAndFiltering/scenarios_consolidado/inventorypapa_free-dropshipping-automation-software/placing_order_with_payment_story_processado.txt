@@ -1,0 +1,12 @@
+Scenario 1: Checking payment state of a placed order
+  Tags: ['@ui']
+  When  I view the summary of the order "#00000666"
+  Then  it should have payment state "New"
+
+
+
+Scenario 2: Checking order payment state of a placed order
+  Tags: ['@ui']
+  When  I browse orders
+  Then  the order "#00000666" should have order payment state "Awaiting payment"
+

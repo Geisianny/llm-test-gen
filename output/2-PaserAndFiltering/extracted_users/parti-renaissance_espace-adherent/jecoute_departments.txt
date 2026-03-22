@@ -1,0 +1,32 @@
+Feature: 
+Description: In order to be localized on JeMarche mobile app
+    With a valid oauth token
+    I should be able to access a department informations
+Tags: ['@api', '@renaissance']
+
+Scenario 1: As a non authenticated user I cannot get the informations of a single department for a given postal code
+  When  I send a "GET" request to "/api/jecoute/departments/06600"
+  Then  the response status code should be 401
+
+Scenario 2: As an authenticated user I can get the informations of a single department for a given postal code
+  Given  I am logged with "michelle.dufour@example.ch" via OAuth client "J'écoute" with scope "jemarche_app"
+  When  I send a "GET" request to "/api/jecoute/departments/06600"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+  When  I send a "GET" request to "/api/jecoute/departments/59640"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+  When  I send a "GET" request to "/api/jecoute/departments/77700"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+Scenario 3: As an authenticated user I should get a 404 for an unknown postal code
+  Given  I am logged with "michelle.dufour@example.ch" via OAuth client "J'écoute" with scope "jemarche_app"
+  When  I send a "GET" request to "/api/jecoute/departments/unknown_code"
+  Then  the response status code should be 404
+  When  I send a "GET" request to "/api/jecoute/departments/99999"
+  Then  the response status code should be 404
+

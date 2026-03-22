@@ -1,0 +1,39 @@
+Scenario 1: In Spot market, holding in holding account s correctly calculated for all order types in auction mode limit GTT (0011-MARA-028)
+  When  the parties place the following orders:
+  Then  "party5" should have holding account balance of "1" for asset "BTC"
+  And  "party1" should have holding account balance of "10" for asset "ETH"
+
+
+
+Scenario 2: In Spot market, holding in holding account s correctly calculated for all order types in auction mode limit GTC (0011-MARA-029)
+  When  the parties place the following orders:
+  Then  "party5" should have holding account balance of "1" for asset "BTC"
+  And  "party1" should have holding account balance of "10" for asset "ETH"
+
+
+
+Scenario 3: In Spot market, holding in holding account s correctly calculated for all order types in auction mode limit GFA (0011-MARA-030)
+  When  the parties place the following orders:
+  Then  "party5" should have holding account balance of "1" for asset "BTC"
+  And  "party1" should have holding account balance of "10" for asset "ETH"
+
+
+
+Scenario 4: In Spot market, holding in holding account s correctly calculated for all order types in auction mode pegged GTT (0011-MARA-031)
+  Given  the following network parameters are set:
+  When  the parties place the following orders:
+  When  the parties place the following pegged orders:
+  Then  "party5" should have holding account balance of "1" for asset "BTC"
+  And  "party1" should have holding account balance of "10" for asset "ETH"
+  And  the orders should have the following status:
+
+
+
+Scenario 5: In Spot market, holding in holding account s correctly calculated for all order types in auction mode pegged GTC (0011-MARA-032)
+  Given  the following network parameters are set:
+  When  the parties place the following orders:
+  Then  "party5" should have holding account balance of "1" for asset "BTC"
+  And  "party1" should have holding account balance of "10" for asset "ETH"
+  When  the parties place the following pegged orders:
+  And  the orders should have the following status:
+

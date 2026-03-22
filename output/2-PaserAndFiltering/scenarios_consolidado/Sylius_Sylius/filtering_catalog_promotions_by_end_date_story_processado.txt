@@ -1,0 +1,28 @@
+Scenario 1: Filtering catalog promotions from end date
+  Tags: ['@api', '@ui']
+  When  I browse catalog promotions
+  And  I filter by end date from "2022-05-01"
+  Then  I should see a catalog promotion with name "Surprise sale"
+  And  I should see a catalog promotion with name "Spring sale"
+  But  I should not see a catalog promotion with name "Winter sale"
+
+
+
+Scenario 2: Filtering catalog promotions up to end date
+  Tags: ['@api', '@ui']
+  When  I browse catalog promotions
+  And  I filter by end date up to "2022-05-01"
+  Then  I should see a catalog promotion with name "Spring sale"
+  And  I should see a catalog promotion with name "Winter sale"
+  But  I should not see a catalog promotion with name "Surprise sale"
+
+
+
+Scenario 3: Filtering catalog promotions in an end date range
+  Tags: ['@api', '@ui']
+  When  I browse catalog promotions
+  And  I filter by end date from "2022-04-02" up to "2022-05-03"
+  Then  I should see a catalog promotion with name "Spring sale"
+  But  I should not see a catalog promotion with name "Surprise sale"
+  And  I should not see a catalog promotion with name "Winter sale"
+

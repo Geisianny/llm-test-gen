@@ -1,0 +1,127 @@
+Scenario 1: Get collection ordered in ascending order on an integer property and on which order filter has been enabled in whitelist mode
+  Tags: ['@createSchema']
+  Given  there are 30 dummy objects
+  When  I send a "GET" request to "/dummies?order[id]=asc"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+
+
+Scenario 2: Get collection ordered in descending order on an integer property and on which order filter has been enabled in whitelist mode
+  When  I send a "GET" request to "/dummies?order[id]=desc"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+
+
+Scenario 3: Get collection ordered in ascending order on a string property and on which order filter has been enabled in whitelist mode
+  When  I send a "GET" request to "/dummies?order[name]=asc"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+
+
+Scenario 4: Get collection ordered in descending order on a string property and on which order filter has been enabled in whitelist mode
+  When  I send a "GET" request to "/dummies?order[name]=desc"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+
+
+Scenario 5: Get collection ordered collection on several property keep the order
+  Given  there are 30 dummy objects
+  When  I send a "GET" request to "/dummies?order[name]=desc&order[id]=desc"
+  Then  the response status code should be 200
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+
+
+Scenario 6: Get collection ordered in ascending order on an association and on which order filter has been enabled in whitelist mode
+  Given  there are 30 dummy objects with relatedDummy
+  When  I send a "GET" request to "/dummies?order[relatedDummy]=asc"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+
+
+Scenario 7: Get collection ordered in ascending order on an embedded and on which order filter has been enabled in whitelist mode
+  Given  there are 30 dummy objects with embeddedDummy
+  When  I send a "GET" request to "/embedded_dummies?order[embeddedDummy]=asc"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+
+
+Scenario 8: Get collection ordered by default configured order on a embedded string property and on which order filter has been enabled in whitelist mode with default descending order
+  When  I send a "GET" request to "/embedded_dummies?order[embeddedDummy.dummyName]"
+  Then  the response status code should be 422
+
+
+
+Scenario 9: Get collection ordered by a non valid properties and on which order filter has been enabled in whitelist mode
+  When  I send a "GET" request to "/dummies?order[alias]=asc"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+  When  I send a "GET" request to "/dummies?order[alias]=desc"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+  When  I send a "GET" request to "/dummies?order[unknown]=asc"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+  When  I send a "GET" request to "/dummies?order[unknown]=desc"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+
+
+Scenario 10: Get collection ordered in descending order on a related property
+  Tags: ['@createSchema']
+  Given  there are 2 dummy objects with relatedDummy
+  When  I send a "GET" request to "/dummies?order[relatedDummy.name]=desc"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+
+
+Scenario 11: Get collection filtered using a name converter
+  Tags: ['@createSchema']
+  Given  there are 3 convertedInteger objects
+  When  I send a "GET" request to "/converted_integers?order[name_converted]=desc"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+
+
+Scenario 12: Get collection filtered using a name converter
+  Tags: ['@createSchema']
+  Given  there are 3 convertedInteger objects
+  When  I send a "GET" request to "/converted_integers?order[]=desc"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+

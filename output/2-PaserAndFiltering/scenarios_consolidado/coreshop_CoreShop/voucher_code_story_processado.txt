@@ -1,0 +1,19 @@
+Scenario 1: Applying an voucher cart rule with fixed discount to the cart
+  Given  the cart rule has a action discount with 20 in currency "EUR" off applied on total
+  When  I add this product to the cart
+  And  I apply the voucher code "EASTER"
+  Then  I should be notified that the voucher has been applied
+  And  I should see "TShirt" with unit price "€100.00" in my cart
+  And  my cart's total should be "€80.00"
+
+
+
+Scenario 2: Applying an invalid voucher cart rule
+  Given  the cart rule has a action discount with 20 in currency "EUR" off applied on total
+  And  the cart rule has a condition amount with value "200" to "400"
+  When  I add this product to the cart
+  And  I apply the voucher code "EASTER"
+  Then  I should be notified that the voucher is invalid
+  And  I should see "TShirt" with unit price "€100.00" in my cart
+  And  my cart's total should be "€100.00"
+

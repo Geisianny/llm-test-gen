@@ -1,0 +1,15 @@
+Scenario 1: Add a new customer product specific price rule which is valid
+  Given  adding a product specific price rule to product "Shoe" named "customer-discount"
+  And  the specific price rule is active
+  And  the specific price rule has a condition customers with customer "some-customer@something.com"
+  Then  the specific price rule should be valid for product "Shoe"
+
+
+
+Scenario 2: Add a new customer product specific price rule which is invalid
+  Given  the site has a customer "some-other-customer@something.com"
+  Given  adding a product specific price rule to product "Shoe" named "customer-discount"
+  And  the specific price rule is active
+  And  the specific price rule has a condition customers with customer "some-other-customer@something.com"
+  Then  the specific price rule should be invalid for product "Shoe"
+

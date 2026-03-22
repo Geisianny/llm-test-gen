@@ -1,0 +1,30 @@
+Scenario 1: Get a resource containing a raw object
+  When  I send a "GET" request to "/contain_non_resources/1?include=nested"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/vnd.api+json; charset=utf-8"
+  And  the JSON should be valid according to the JSON API schema
+  And  the JSON should be a superset of:
+
+
+
+Scenario 2: Create a resource that has a non-resource relation.
+  Tags: ['@!mongodb', '@createSchema']
+  When  I send a "POST" request to "/non_relation_resources" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/vnd.api+json; charset=utf-8"
+  And  the JSON should be valid according to the JSON API schema
+  And  the JSON should be a superset of:
+
+
+
+Scenario 3: Create a resource that contains a stdClass object.
+  Tags: ['@!mongodb', '@createSchema']
+  When  I send a "POST" request to "/plain_object_dummies" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/vnd.api+json; charset=utf-8"
+  And  the JSON should be valid according to the JSON API schema
+  And  the JSON should be a superset of:
+

@@ -1,0 +1,44 @@
+Feature: remove administrator role
+Description: As an organization administrator
+  I want to remove my administrator role
+  In order to stop administrating the organization
+
+Background: 
+  Given  the following users
+  And  the following community
+  And  "Joao Silva" is admin of "Nice people"
+  And  I am logged in as "joaosilva"
+
+Scenario 1: the last administrator removes his administrator role and must choose the new administrator
+  Given  "Maria Souza" is a member of "Nice people"
+  And  I am on Nice people's members management
+  And  I follow "Edit" within "tr[title='Joao Silva']"
+  And  I uncheck "Profile Administrator"
+  When  I press "Save changes"
+  Then  I should see "Since you are the last administrator, you must choose"
+
+Scenario 2: the last administrator and member removes his administrator role and the next member to join becomes the new administrator
+  Given  I am on Nice people's members management
+  And  I follow "Edit"
+  And  I uncheck "Profile Administrator"
+  And  I uncheck "Profile Member"
+  When  I press "Save changes"
+  Then  I should see "Since you are the last administrator, you must choose at least one member to administer this community."
+  And  I press "Save"
+  And  I am logged in as "mariasouza"
+  When  I go to Nice people's join page
+  Then  "Maria Souza" should be admin of "Nice people"
+
+Scenario 3: the last administrator and member removes his administrator role and the next member to join becomes the new administrator even if the organization is closed.
+  Given  the community "Nice people" is closed
+  And  I am on Nice people's members management
+  And  I follow "Edit"
+  And  I uncheck "Profile Administrator"
+  And  I uncheck "Profile Member"
+  When  I press "Save changes"
+  Then  I should see "Since you are the last administrator, you must choose at least one member to administer this community."
+  And  I press "Save"
+  And  I am logged in as "mariasouza"
+  When  I go to Nice people's join page
+  Then  "Maria Souza" should be admin of "Nice people"
+

@@ -1,0 +1,38 @@
+Scenario 1: I can log in with correct username and password and enabled account
+  Given  I am on the home page
+  And  I follow "Login"
+  When  I fill in the following:
+  And  I press "Login"
+  Then  I should be on the "home" page
+  When  I click on dashboard menu of "offerer"
+  Then  I should see "Logout"
+
+
+
+Scenario 2: I can not log in with wrong username and password
+  Given  I am on the home page
+  And  I follow "Login"
+  When  I fill in the following:
+  And  I press "Login"
+  Then  I should be on the "login" page
+  And  I should see "Bad credentials"
+
+
+
+Scenario 3: I can not log in without username and password
+  Given  I am on the home page
+  And  I follow "Login"
+  When  I press "Login"
+  Then  I should be on the "login" page
+  And  I should see "This value is required."
+
+
+
+Scenario 4: I can not log in with disabled user
+  Given  I am on the home page
+  And  I follow "Login"
+  When  I fill in the following:
+  And  I press "Login"
+  Then  I should be on the "login" page
+  And  I should see "ERROR! User account is disabled."
+

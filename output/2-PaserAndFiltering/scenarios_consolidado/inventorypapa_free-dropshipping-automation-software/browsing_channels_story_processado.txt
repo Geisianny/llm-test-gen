@@ -1,0 +1,6 @@
+Scenario 1: Browsing defined channels
+  Tags: ['@ui', '@api']
+  When  I want to browse channels
+  Then  I should see 2 channels in the list
+  And  the channel "Web Channel" should be in the registry
+

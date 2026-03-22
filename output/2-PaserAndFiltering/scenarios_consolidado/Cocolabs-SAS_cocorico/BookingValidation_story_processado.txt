@@ -1,0 +1,8 @@
+Scenario 1: I can validate payed bookings started for some time so that offerer and asker can rate each others
+  Given  An asker make this new booking request:
+  And  An offerer accept my booking request:
+  When  I run "cocorico:bookings:validate" command
+  Then  I should see "1 booking(s) validated" on console
+  And  He should receive the "reminder_to_rate_asker_offerer" mail on "offerer@cocorico.rocks"
+  And  He should receive the "reminder_to_rate_offerer_asker" mail on "asker@cocorico.rocks"
+

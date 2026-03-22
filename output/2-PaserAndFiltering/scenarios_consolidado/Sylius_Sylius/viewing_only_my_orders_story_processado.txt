@@ -1,0 +1,18 @@
+Scenario 1: Viewing orders
+  Tags: ['@api', '@ui']
+  Given  I am a logged in customer
+  And  I placed an order "#00000666"
+  And  I bought a single "Angel T-Shirt"
+  And  I addressed it to "Lucifer Morningstar", "Seaside Fwy", "90802" "Los Angeles" in the "United States" with identical billing address
+  And  I chose "Free" shipping method with "Cash on Delivery" payment
+  When  I browse my orders
+  Then  I should see a single order in the list
+  And  this order should have "#00000666" number
+
+
+
+Scenario 2: Unauthenticated user cannot view orders
+  Tags: ['@api', '@ui']
+  When  I try to browse my orders
+  Then  I should be denied an access to order list
+

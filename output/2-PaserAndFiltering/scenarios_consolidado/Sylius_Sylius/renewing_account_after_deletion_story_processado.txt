@@ -1,0 +1,11 @@
+Scenario 1: Registering again after my account deletion
+  Tags: ['@api', '@ui']
+  When  I want to again register a new account
+  And  I specify the first name as "Ted"
+  And  I specify the last name as "Shovel"
+  And  I specify the email as "ted@example.com"
+  And  I specify the password as "ted1"
+  And  I confirm this password
+  And  I register this account
+  Then  I should be notified that new account has been successfully created
+

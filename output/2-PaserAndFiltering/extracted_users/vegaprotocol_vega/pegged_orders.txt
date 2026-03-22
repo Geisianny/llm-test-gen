@@ -1,0 +1,99 @@
+Feature: Pegged orders do not cross
+Description: Aiming for full coverage of edge-cases, check the following for both
+  derivative and spot markets:
+
+  - Market decimals > asset decimals
+  - Market decimals < asset decimals
+
+  - For each of the above
+  - tick size cannot be expressed in asset decimals
+  - tick size can just be expressed in asset decimals
+  - tick size can be expressed in asset decimals
+
+  - For each of the above
+  - offset cannot be expressed in asset decimals
+  - offset can just be expressed in asset decimals
+  - offset can be expressed in asset decimals
+
+Background: 
+  Given  the average block duration is "1"
+  And  the following assets are registered:
+  And  the following network parameters are set:
+  And  the parties deposit on asset's general account the following amount:
+
+Scenario Outline 1: Derivative markets - market decimals > asset decimals - Example 1
+  Given  the markets:
+  Given  the parties place the following pegged orders:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "ETH.1.10/DEC21"
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH.1.10/DEC21"
+
+  Examples:
+    | bo | tick size | offset | error |
+    | 1010 | 1 | 1 | invalid offset - pegged mid will cross |
+    | 1010 | 1 | 10 |  |
+    | 1010 | 1 | 100 |  |
+    | 1010 | 10 | 1 | OrderError: price not in tick size |
+    | 1010 | 10 | 10 |  |
+    | 1010 | 10 | 100 |  |
+    | 1100 | 100 | 1 | OrderError: price not in tick size |
+    | 1100 | 100 | 10 | OrderError: price not in tick size |
+    | 1100 | 100 | 100 |  |
+
+Scenario Outline 2: Derivative markets - market decimals < asset decimals - Example 1
+  Given  the markets:
+  Given  the parties place the following pegged orders:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "ETH.1.10/DEC21"
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH.1.10/DEC21"
+
+  Examples:
+    | bo | tick size | offset | error |
+    | 1001 | 1 | 1 |  |
+    | 1001 | 1 | 10 |  |
+    | 1001 | 1 | 100 |  |
+    | 1010 | 10 | 1 | OrderError: price not in tick size |
+    | 1010 | 10 | 10 |  |
+    | 1010 | 10 | 100 |  |
+    | 1100 | 100 | 1 | OrderError: price not in tick size |
+    | 1100 | 100 | 10 | OrderError: price not in tick size |
+    | 1100 | 100 | 100 |  |
+
+Scenario Outline 3: Spot market - market decimals > asset decimals - Example 1
+  Given  the spot markets:
+  Given  the parties place the following pegged orders:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "BTC/ETH"
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+
+  Examples:
+    | bo | tick size | offset | error |
+    | 1010 | 1 | 1 | invalid offset - pegged mid will cross |
+    | 1010 | 1 | 10 |  |
+    | 1010 | 1 | 100 |  |
+    | 1010 | 10 | 1 | OrderError: price not in tick size |
+    | 1010 | 10 | 10 |  |
+    | 1010 | 10 | 100 |  |
+    | 1100 | 100 | 1 | OrderError: price not in tick size |
+    | 1100 | 100 | 10 | OrderError: price not in tick size |
+    | 1100 | 100 | 100 |  |
+
+Scenario Outline 4: Spot market - market decimals < asset decimals - Example 1
+  Given  the spot markets:
+  Given  the parties place the following pegged orders:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "BTC/ETH"
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+
+  Examples:
+    | bo | tick size | offset | error |
+    | 1001 | 1 | 1 |  |
+    | 1001 | 1 | 10 |  |
+    | 1001 | 1 | 100 |  |
+    | 1010 | 10 | 1 | OrderError: price not in tick size |
+    | 1010 | 10 | 10 |  |
+    | 1010 | 10 | 100 |  |
+    | 1100 | 100 | 1 | OrderError: price not in tick size |
+    | 1100 | 100 | 10 | OrderError: price not in tick size |
+    | 1100 | 100 | 100 |  |
+

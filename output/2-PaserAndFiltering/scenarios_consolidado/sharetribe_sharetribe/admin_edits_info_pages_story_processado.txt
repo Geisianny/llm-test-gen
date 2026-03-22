@@ -1,0 +1,56 @@
+Scenario 1: Normal user can not edit about page
+  Tags: ['@javascript']
+  Given  I am logged in as "kassi_testperson2"
+  And  I am on the about page
+  Then  I should not see "Edit page"
+
+
+
+Scenario 2: Admin user can edit about page
+  Tags: ['@javascript']
+  Given  I am logged in as "kassi_testperson1"
+  And  I am on the about page
+  Then  I should not have editor open
+  When  I follow "Edit page"
+  Then  I should have editor open
+  When  I send keys "This is a new line to about text" to editor
+  And  I click save on the editor
+  Then  I should not have editor open
+  Then  I should see "This is a new line to about text"
+  When  I refresh the page
+  Then  I should see "This is a new line to about text"
+
+
+
+Scenario 3: Admin user can edit terms page
+  Tags: ['@javascript']
+  Given  I am logged in as "kassi_testperson1"
+  And  I am on the terms page
+  Then  I should not have editor open
+  When  I go to the terms page
+  And  I follow "Edit page"
+  Then  I should have editor open
+  When  I send keys "This is a new line to terms text" to editor
+  And  I click save on the editor
+  Then  I should not have editor open
+  Then  I should see "This is a new line to terms text"
+  When  I refresh the page
+  Then  I should see "This is a new line to terms text"
+
+
+
+Scenario 4: Admin user can edit privacy policy page
+  Tags: ['@javascript']
+  Given  I am logged in as "kassi_testperson1"
+  And  I am on the privacy policy page
+  Then  I should not have editor open
+  When  I go to the privacy policy page
+  And  I follow "Edit page"
+  Then  I should have editor open
+  When  I send keys "This is a new line to privacy policy text" to editor
+  And  I click save on the editor
+  Then  I should not have editor open
+  Then  I should see "This is a new line to privacy policy text"
+  When  I refresh the page
+  Then  I should see "This is a new line to privacy policy text"
+

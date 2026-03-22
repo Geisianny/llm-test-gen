@@ -1,0 +1,14 @@
+Scenario 1: I create a new cart
+  When  I create a new named cart "Project XY"
+  Then  I should be notified that the cart was created
+
+
+
+Scenario 2: I create multiple new carts
+  When  I create a new named cart "Project XY"
+  When  I create a new named cart "Project ZU"
+  When  I create a new named cart "Project YI"
+  When  I create a new named cart "Project Studio"
+  Then  I should be notified that the cart was created
+  And  The cart named "Project Studio" should be selected
+

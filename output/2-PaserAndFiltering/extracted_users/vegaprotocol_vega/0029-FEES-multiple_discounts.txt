@@ -1,0 +1,70 @@
+Feature: Discounts from multiple sources
+
+Background: 
+  Given  time is updated to "2023-01-01T00:00:00Z"
+  And  the average block duration is "1"
+  And  the margin calculator named "margin-calculator-1":
+  And  the log normal risk model named "log-normal-risk-model":
+  And  the price monitoring named "price-monitoring":
+  Given  the following network parameters are set:
+  Given  the referral benefit tiers "rbt":
+  And  the referral staking tiers "rst":
+  And  the referral program:
+  And  the volume discount program tiers named "vdt":
+  And  the volume discount program:
+  And  the network moves ahead "1" epochs
+  And  the following assets are registered:
+  And  the markets:
+  And  the liquidity monitoring parameters:
+  When  the markets are updated:
+  Given  the parties deposit on asset's general account the following amount:
+  Given  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/USD.1.1"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/USD.1.1"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/USD.1.2"
+  Given  the parties create the following referral codes:
+  And  the parties apply the following referral codes:
+  And  the team "team1" has the following members:
+
+Scenario 1: When in continuous trading, fees discounted correctly when party has non-zero referral and volume discount factors (0029-FEES-032)
+  Given  the parties place the following orders:
+  When  the network moves ahead "2" epochs
+  Then  the referral set stats for code "referral-code-1" at epoch "2" should have a running volume of 2000:
+  And  the party "referee1" has the following taker notional "2000"
+  And  the party "referee1" has the following discount infra factor "0.11"
+  And  the party "referee1" has the following discount liquidity factor "0.12"
+  And  the party "referee1" has the following discount maker factor "0.13"
+  Given  the parties place the following orders:
+  When  the following trades should be executed:
+  Then  the following transfers should happen:
+  Given  the network moves ahead "1" epochs
+  Then  the referral set stats for code "referral-code-1" at epoch "3" should have a running volume of 12000:
+  And  the party "referee1" has the following taker notional "12000"
+  And  the party "referee1" has the following discount infra factor "0.11"
+  And  the party "referee1" has the following discount liquidity factor "0.12"
+  And  the party "referee1" has the following discount maker factor "0.13"
+  Given  the parties place the following orders:
+  When  the following trades should be executed:
+  Then  the following transfers should happen:
+
+Scenario 2: When exiting an auction, fees discounted correctly when party has non-zero referral and volume discount factors (0029-FEES-033)
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/USD.1.2" should be:
+  When  the network moves ahead "2" epochs
+  Then  the referral set stats for code "referral-code-1" at epoch "2" should have a running volume of 2000:
+  And  the party "referee1" has the following taker notional "2000"
+  And  the party "referee1" has the following discount infra factor "0.11"
+  And  the party "referee1" has the following discount liquidity factor "0.12"
+  And  the party "referee1" has the following discount maker factor "0.13"
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/USD.1.2" should be:
+  And  the network moves ahead "1" epochs
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/USD.1.2"
+  When  the parties place the following orders:
+  And  the network moves ahead "1" epochs
+  Then  debug trades
+  Then  the following trades should be executed:
+  And  the following transfers should happen:
+

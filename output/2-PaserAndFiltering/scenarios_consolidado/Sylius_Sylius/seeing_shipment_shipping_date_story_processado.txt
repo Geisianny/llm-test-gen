@@ -1,0 +1,6 @@
+Scenario 1: Seeing shipped at date
+  Tags: ['@api', '@ui']
+  When  I view the summary of the order "#00000777"
+  And  I ship this order
+  Then  I should see the shipping date as "20-02-2020 10:30:05"
+

@@ -1,0 +1,16 @@
+Scenario 1: Receiving fixed discount in proper currency for channel
+  Tags: ['@ui']
+  When  I change my current channel to "Web-US"
+  And  I add product "PHP T-Shirt" to the cart
+  Then  my cart total should be "$90.00"
+  And  my discount should be "-$10.00"
+
+
+
+Scenario 2: Receiving fixed discount in proper currency after channel change
+  Tags: ['@ui']
+  When  I change my current channel to "Web-GB"
+  And  I add product "PHP T-Shirt" to the cart
+  Then  my cart total should be "£68.00"
+  And  my discount should be "-£12.00"
+

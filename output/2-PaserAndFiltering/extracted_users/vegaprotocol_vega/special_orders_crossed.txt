@@ -1,0 +1,15 @@
+Feature: Issue: re submit special order would cross
+
+Background: 
+  Given  the average block duration is "1"
+  And  the following assets are registered:
+  And  the following network parameters are set:
+  Given  the markets:
+  And  the parties deposit on asset's general account the following amount:
+
+Scenario 1: 
+  Given  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/DEC21"
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC21"
+

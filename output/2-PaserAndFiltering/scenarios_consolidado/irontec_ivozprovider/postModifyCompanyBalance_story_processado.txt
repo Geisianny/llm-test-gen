@@ -1,0 +1,24 @@
+Scenario 1: Increment a company balance
+  Tags: ['@createSchema']
+  Given  I add Brand Authorization header
+  When  I add "Content-Type" header equal to "application/x-www-form-urlencoded"
+  And  I add "Accept" header equal to "application/json"
+  When  I send a "POST" request to "/companies/1/modify_balance" with parameters:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json; charset=utf-8"
+  And  the JSON should be like:
+
+
+
+Scenario 2: Decrement a company balance
+  Tags: ['@createSchema']
+  Given  I add Brand Authorization header
+  When  I add "Content-Type" header equal to "application/x-www-form-urlencoded"
+  And  I add "Accept" header equal to "application/json"
+  When  I send a "POST" request to "/companies/1/modify_balance" with parameters:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json; charset=utf-8"
+  And  the JSON should be like:
+

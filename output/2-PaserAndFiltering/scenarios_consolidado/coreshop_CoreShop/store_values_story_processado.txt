@@ -1,0 +1,9 @@
+Scenario 1: Change Prices
+  Given  I recycle the product
+  Then  the recycled product does not exist anymore
+  Given  I restore the recycled product
+  Then  I am in store "Austria"
+  And  the product should be priced at "100"
+  Then  I am in store "Germany"
+  And  the product should be priced at "200"
+

@@ -1,0 +1,111 @@
+Scenario 1: Network considers volume outside price-monitoring bounds as avaliable to dispose against when calculating max consumption (0012-POSR-019)(0012-POSR-020)(0012-POSR-025)(0012-POSR-029)
+  Given  the liquidity sla params named "sla-params":
+  When  the markets are updated:
+  Given  the initial insurance pool balance is "10000" for all the markets
+  And  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  When  the parties place the following orders:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  And  the opening auction period ends for market "ETH/MAR23"
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the parties should have the following profit and loss:
+  And  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+  Given  the parties amend the following orders:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the mark price should be "190" for the market "ETH/MAR23"
+  And  the parties should have the following profit and loss:
+  Given  the market data for the market "ETH/MAR23" should be:
+  When  the network moves ahead "1" blocks
+  And  the parties should have the following profit and loss:
+
+
+
+Scenario 2: Network does not consider volume outside liquidity range as avaliable to dispose against when calculating max consumption (0012-POSR-019)(0012-POSR-021)(0012-POSR-025)
+  Tags: ['@me']
+  Given  the liquidity sla params named "sla-params":
+  When  the markets are updated:
+  Given  the initial insurance pool balance is "10000" for all the markets
+  And  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  When  the parties place the following orders:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  And  the opening auction period ends for market "ETH/MAR23"
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the parties should have the following profit and loss:
+  And  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+  Given  the parties amend the following orders:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the mark price should be "190" for the market "ETH/MAR23"
+  And  the parties should have the following profit and loss:
+  Given  the market data for the market "ETH/MAR23" should be:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  And  the parties should have the following profit and loss:
+
+
+
+Scenario 3: Volume on the book within liquidity price range but outside price monitoring bounds, network able to dispose position (0012-POSR-026)(0012-POSR-030)
+  Given  the liquidity sla params named "sla-params":
+  When  the markets are updated:
+  Given  the initial insurance pool balance is "10000" for all the markets
+  And  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  When  the parties place the following orders:
+  When  the parties place the following orders:
+  And  the opening auction period ends for market "ETH/MAR22"
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the parties should have the following profit and loss:
+  And  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+  And  the market data for the market "ETH/MAR22" should be:
+  And  the parties should have the following profit and loss:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the mark price should be "190" for the market "ETH/MAR22"
+  And  the market data for the market "ETH/MAR22" should be:
+  And  the parties should have the following profit and loss:
+  When  the network moves ahead "1" blocks
+  And  the following trades should be executed:
+  And  the parties should have the following profit and loss:
+  When  the network moves ahead "3" blocks
+  And  the parties should have the following profit and loss:
+  Then  the order book should have the following volumes for market "ETH/MAR22":
+
+
+
+Scenario 4: Volume on the book outside liquidity price range, network unable to dispose position (0012-POSR-027)
+  Given  the liquidity sla params named "sla-params":
+  When  the markets are updated:
+  Given  the initial insurance pool balance is "10000" for all the markets
+  And  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  When  the parties place the following orders:
+  When  the parties place the following orders:
+  And  the opening auction period ends for market "ETH/MAR22"
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the parties should have the following profit and loss:
+  And  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+  Given  the parties amend the following orders:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the mark price should be "190" for the market "ETH/MAR22"
+  And  the parties should have the following profit and loss:
+  Given  the market data for the market "ETH/MAR22" should be:
+  When  the network moves ahead "1" blocks
+  Then  the parties should have the following profit and loss:
+

@@ -1,0 +1,9 @@
+Scenario 1: Processing order with valid prices after catalog promotion becomes ineligibly
+  Tags: ['@api', '@ui']
+  Given  I have "PHP T-Shirt" variant of this product in the cart
+  And  the "Winter sale" catalog promotion is no longer available
+  And  I addressed the cart
+  When  I proceed through checkout process
+  Then  I should be on the checkout summary step
+  And  I should see product "T-Shirt" with unit price "$20.00"
+

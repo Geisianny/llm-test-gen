@@ -1,0 +1,6 @@
+Scenario 1: Deleted tax rate should disappear from the registry
+  Tags: ['@api', '@ui']
+  When  I delete tax rate "United States Sales Tax"
+  Then  I should be notified that it has been successfully deleted
+  Then  this tax rate should no longer exist in the registry
+

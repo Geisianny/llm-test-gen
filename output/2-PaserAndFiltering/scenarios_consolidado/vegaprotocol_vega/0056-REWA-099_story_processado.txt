@@ -1,0 +1,25 @@
+Scenario 1: 0056-REWA-099 scope individuals is paid out to all eligible parties (in team only), 0056-REWA-201
+  Tags: ['@TeamStep']
+  Given  the parties submit the following recurring transfers:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  parties should have the following vesting account balances:
+
+
+
+Scenario 2: 0056-REWA-211 if an `eligible keys` list is specified in the recurring transfer, only parties included in the list and meeting other eligibility criteria should receive a score (if they meet the criteria for one)
+  Tags: ['@TeamStep']
+  Given  the parties submit the following recurring transfers:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  parties should have the following vesting account balances:
+
+
+
+Scenario 3: 0056-REWA-098 scope individuals is paid out to all eligible parties (not in team only)
+  Tags: ['@TeamStep']
+  Given  the parties submit the following recurring transfers:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  parties should have the following vesting account balances:
+

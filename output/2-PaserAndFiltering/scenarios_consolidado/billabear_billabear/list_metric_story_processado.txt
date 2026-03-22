@@ -1,0 +1,8 @@
+Scenario 1: List metric
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  the follow metrics exist:
+  When  I go to the metric list page in the app
+  Then  I will see 2 items in the list
+  And  I will see a metric with the name "Test One"
+  And  I will see a metric with the name "Test Two"
+

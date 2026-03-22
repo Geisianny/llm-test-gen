@@ -1,0 +1,36 @@
+Feature: Default Comments
+
+Scenario 1: Create comment
+  Tags: ['@auth']
+  Given  empty "comments"
+  When  we post to "/comments" with success
+  And  we get "/comments"
+  Then  we get list with 1 items
+
+Scenario 2: Create comments
+  Tags: ['@auth']
+  Given  empty "comments"
+  When  we post to "/comments" with success
+  When  we post to "/comments" with success
+  And  we get "/comments?embedded={"user":1}"
+  Then  we get list with 2 items
+
+Scenario 3: Create comment (Fail) - wrong user supplied
+  Tags: ['@auth']
+  Given  empty "comments"
+  When  we post to "users" with success
+  When  we post to "/comments"
+  Then  we get error 403
+
+Scenario 4: Create comment with one user mention
+  Tags: ['@auth', '@notification']
+  Given  empty "comments"
+  When  we post to "/users"
+  Then  we get new resource
+  When  we mention user in comment for "/comments"
+  And  we get "/comments"
+  Then  we get list with 1 items
+  When  we get "/users/test_user"
+  Then  we get "_id"
+  And  we get notifications
+

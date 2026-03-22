@@ -1,0 +1,8 @@
+Scenario 1: Delete Usage Limit
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  the follow customers exist:
+  And  there should be a usage limits for "customer.one@example.org":
+  When  I delete the usage limit for 1000 for "customer.one@example.org"
+  Then  there should be a limit to warn at 3000 for "customer.one@example.org"
+  Then  there should not be a limit to warn at 1000 for "customer.one@example.org"
+

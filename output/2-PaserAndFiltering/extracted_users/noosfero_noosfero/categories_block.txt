@@ -1,0 +1,28 @@
+Feature: categories_block
+Description: As an admin
+  I want to manage the categories block
+
+Background: 
+  Given  I am on the homepage
+  And  the following categories
+  And  the following regions
+  And  the following blocks
+  And  I am logged in as admin
+  And  I go to /admin/environment_design
+
+Scenario 1: List just general categories
+  Tags: ['@selenium']
+  Given  display ".button-bar"
+  And  I follow "Edit" within ".blocks .categories-block"
+  And  I check "General category"
+  When  I follow "Save"
+  Then  I should see "Wood"
+
+Scenario 2: List just regions
+  Tags: ['@selenium']
+  Given  display ".button-bar"
+  And  I follow "Edit" within ".blocks .categories-block"
+  And  I check "Region"
+  When  I follow "Save"
+  Then  I should see "Bahia"
+

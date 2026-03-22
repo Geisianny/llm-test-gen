@@ -1,0 +1,17 @@
+Feature: Locators API
+
+Scenario 1: Find Cities across all countries
+  Tags: ['@auth']
+  When  we get "/cities/"
+  Then  we get list with +1 items
+
+Scenario 2: Find Cities in Australia
+  Tags: ['@auth']
+  When  we get "/country/AU"
+  Then  we get list with +1 items
+
+Scenario 3: Find Cities in NSW, Australia
+  Tags: ['@auth']
+  When  we get "/country/AU/state/NSW"
+  Then  we get list with +1 items
+

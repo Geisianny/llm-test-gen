@@ -1,0 +1,73 @@
+Scenario 1: Execute logging program with defaults
+  Given  a configuration with:
+  When  I start Karma
+  Then  it passes with like:
+  Then  it passes with like:
+  Then  it passes with like:
+  Then  it passes with like:
+  Then  it passes with like:
+  Then  it passes with like:
+
+
+
+Scenario 2: Execute logging program
+  Given  a configuration with:
+  When  I start Karma
+  Then  the file at sandbox/console.log contains:
+
+
+
+Scenario 3: Execute logging program with different format
+  Given  a configuration with:
+  When  I start Karma
+  Then  the file at sandbox/console.log contains:
+
+
+
+Scenario 4: Execute logging program with different log-level
+  Given  a configuration with:
+  When  I start Karma
+  Then  the file at sandbox/console.log contains:
+
+
+
+Scenario 5: Execute logging program when logging browser
+  Given  a configuration with:
+  When  I start Karma
+  Then  the file at sandbox/console.log contains:
+
+
+
+Scenario 6: Execute logging program and disabling terminal
+  Given  a configuration with:
+  When  I start Karma
+  Then  it passes with:
+
+
+
+Scenario 7: Execute logging path when a folder does not exist
+  Given  a configuration with:
+  When  I start Karma
+  Then  the file at sandbox/nested/folder/console.log contains:
+
+
+
+Scenario 8: Execute logging program and disabling terminal
+  Given  a configuration with:
+  When  I start Karma
+  Then  it passes with:
+
+
+
+Scenario 9: Execute logging program with singleRun
+  Given  a configuration with:
+  When  I start a server in background
+  And  I wait until server output contains:
+  And  I run Karma
+  Then  it passes with like:
+  Then  it passes with like:
+  Then  it passes with like:
+  Then  it passes with like:
+  Then  it passes with like:
+  Then  it passes with like:
+

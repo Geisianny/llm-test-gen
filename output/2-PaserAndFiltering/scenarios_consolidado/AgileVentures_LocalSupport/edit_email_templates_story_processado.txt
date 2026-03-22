@@ -1,0 +1,14 @@
+Scenario 1: Super Admin can enter edit email template page for invitation instructions
+  And  I visit the invite users to become admin of organisations page
+  And  I click "Edit template"
+  Then  I should be on the edit page for the MailTemplate named "Invitation instructions"
+
+
+
+Scenario 2: Super Admin can edit email template of invitation instructions
+  And  I visit the edit page for the MailTemplate named "Invitation instructions"
+  And  I fill in "Message" with "Test message" within the main body
+  And  I press "Update template"
+  Then  I should be on the invite users to become admin of organisations page
+  And  I should see "Test message" within "preview_email"
+

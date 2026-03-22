@@ -1,0 +1,32 @@
+Scenario 1: Getting a hint when looking for product variants
+  Tags: ['@api']
+  When  I look for a variant with "i" in descriptor within the "Snake" product
+  Then  I should see 1 product variant on the list
+  And  I should see the product variant named "Bimini" on the list
+
+
+
+Scenario 2: Getting a hint when looking for product variants
+  Tags: ['@api']
+  When  I look for a variant with "bo" in descriptor within the "Snake" product
+  Then  I should see 2 product variants on the list
+  And  I should see the product variants named "Ouroboros" and "Boomslang" on the list
+
+
+
+Scenario 3: Getting a hint when looking for product variants
+  Tags: ['@api']
+  Given  the product "Snake" also has a "Python" variant with code "TIMOR"
+  When  I look for a variant with "ti" in descriptor within the "Snake" product
+  Then  I should see 1 product variant on the list
+  And  I should see the product variant named "Python" on the list
+
+
+
+Scenario 4: Getting a hint when looking for product variants
+  Tags: ['@api']
+  Given  the product "Snake" also has a nameless variant with code "CERBERUS"
+  When  I look for a variant with "cer" in descriptor within the "Snake" product
+  Then  I should see 1 product variant on the list
+  And  I should see the product variant labeled "Snake (CERBERUS)" on the list
+

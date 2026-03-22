@@ -1,0 +1,81 @@
+Feature: search
+Description: As a noosfero user
+  I want to search
+  In order to find stuff
+
+Scenario 1: show empty results in all enabled assets
+  Tags: ['@selenium']
+  Given  I go to the search page
+  And  I fill in "search-input" with "Anything"
+  And  I follow "Search" within ".search-form"
+  Then  I should see "People" within ".search-results-people"
+  And  I should see "None" within ".search-results-people"
+  And  I should see "Communities" within ".search-results-communities"
+  And  I should see "None" within ".search-results-communities"
+  And  I should see "Enterprises" within ".search-results-enterprises"
+  And  I should see "None" within ".search-results-enterprises"
+  And  I should see "Contents" within ".search-results-articles"
+  And  I should see "None" within ".search-results-articles"
+  And  I should see "Events" within ".search-results-events"
+  And  I should see "None" within ".search-results-events"
+
+Scenario 2: simple search for person
+  Tags: ['@selenium']
+  Given  the following users
+  When  I go to the search people page
+  And  I fill in "search-input" with "Silva"
+  And  I follow "Search" within ".search-form"
+  And  I wait for 1 seconds
+  Then  I should see "Joao Silva" within "#search-results"
+  And  I should not see "Jose Araujo"
+
+Scenario 3: show link to see all results
+  Tags: ['@selenium']
+  Given  the following users
+  When  I go to the search page
+  And  I should see "see all (9)"
+  When  I follow "see all (9)"
+  Then  I should be on the search people page
+
+Scenario 4: simple search for community
+  Tags: ['@selenium']
+  Given  the following communities
+  And  I go to the search communities page
+  And  I fill in "search-input" with "fancy"
+  And  I follow "Search" within ".search-form"
+  And  I wait for 1 seconds
+  Then  I should see "Fancy community" within "#search-results"
+  And  I should not see "Boring community"
+
+Scenario 5: simple search for enterprise
+  Tags: ['@selenium']
+  Given  the following enterprises
+  And  I go to the search enterprises page
+  And  I fill in "search-input" with "shoes"
+  And  I follow "Search" within ".search-form"
+  And  I wait for 1 seconds
+  Then  I should see "Shoes shop" within "#search-results"
+  And  I should not see "Fruits shop"
+
+Scenario 6: simple search for content
+  Tags: ['@selenium']
+  Given  the following users
+  And  the following articles
+  When  I go to the search articles page
+  And  I fill in "search-input" with "whales"
+  And  I follow "Search" within ".search-form"
+  And  I wait for 1 seconds
+  Then  I should see "whales and dolphins" within "#search-results"
+  And  I should not see "bees and butterflies"
+
+Scenario 7: search different types of entities with the same query
+  Tags: ['@selenium']
+  Given  the following enterprises
+  And  the following communities
+  When  I go to the search page
+  And  I fill in "search-input" with "noosfero"
+  And  I follow "Search" within ".search-form"
+  And  I wait for 1 seconds
+  Then  I should see "Colivre - Noosfero dev." within "#search-results"
+  And  I should see "Noosfero users" within "div.search-results-communities"
+

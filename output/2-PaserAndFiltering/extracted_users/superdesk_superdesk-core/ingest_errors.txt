@@ -1,0 +1,17 @@
+Feature: Ingest Errors
+
+Scenario 1: Get list of all errors
+  Tags: ['@auth']
+  When  we get "/io_errors"
+  Then  we get list with 1 items
+
+Scenario 2: Get list of all errors for reuters
+  Tags: ['@auth']
+  When  we get "/io_errors?source_type=reuters_http"
+  Then  we get list with 1 items
+
+Scenario 3: Get list of all errors for email
+  Tags: ['@auth']
+  When  we get "/io_errors?source_type=email"
+  Then  we get list with 1 items
+

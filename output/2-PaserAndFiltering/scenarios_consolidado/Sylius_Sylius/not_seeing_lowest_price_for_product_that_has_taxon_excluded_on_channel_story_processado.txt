@@ -1,0 +1,30 @@
+Scenario 1: Not seeing the lowest price for a product that has a taxon excluded on the channel
+  Tags: ['@api', '@ui']
+  Given  the "Vegetables" taxon is excluded from showing the lowest price of discounted products in the "United States" channel
+  When  I view product "Broccoli"
+  Then  I should not see information about its lowest price
+
+
+
+Scenario 2: Not seeing the lowest price for a product that has parent taxon excluded on the channel
+  Tags: ['@api', '@ui']
+  Given  the "Groceries" taxon is excluded from showing the lowest price of discounted products in the "United States" channel
+  When  I view product "Broccoli"
+  Then  I should not see information about its lowest price
+
+
+
+Scenario 3: Not seeing the lowest price for a product that has root taxon excluded on the channel
+  Tags: ['@api', '@ui']
+  Given  the "Category" taxon is excluded from showing the lowest price of discounted products in the "United States" channel
+  When  I view product "Broccoli"
+  Then  I should not see information about its lowest price
+
+
+
+Scenario 4: Not seeing the lowest price for a product that has only one taxon excluded on the channel
+  Tags: ['@api', '@ui']
+  Given  the "Vegetables" taxon is excluded from showing the lowest price of discounted products in the "United States" channel
+  When  I view product "Cauliflower"
+  Then  I should not see information about its lowest price
+

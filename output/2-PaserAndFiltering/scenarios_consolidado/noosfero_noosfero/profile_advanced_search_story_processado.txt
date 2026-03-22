@@ -1,0 +1,22 @@
+Scenario 1: filters should be hidden by default in the profile page
+  Tags: ['@selenium']
+  Given  I follow "Blocks" within "#section-design"
+  And  I move the cursor over ".profile-search-block"
+  And  I follow "Edit" within ".profile-search-block"
+  And  I check "Enable advanced search"
+  And  I follow "Save"
+  When  I go to /joaosilva
+  Then  The page should not contain ".profile-search-block .facet"
+
+
+
+Scenario 2: filters should be collapsed by default in the profile search page
+  Tags: ['@selenium']
+  Given  I follow "Blocks" within "#section-design"
+  And  I move the cursor over ".profile-search-block"
+  And  I follow "Edit" within ".profile-search-block"
+  And  I check "Enable advanced search"
+  And  I follow "Save"
+  When  I go to /profile/joaosilva/search
+  Then  The page should contain ".profile-search-block .facet"
+

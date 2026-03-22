@@ -1,0 +1,24 @@
+Feature: Team Rewards
+
+Background: 
+  Given  time is updated to "2023-01-01T00:00:00Z"
+  And  the average block duration is "1"
+  And  the following network parameters are set:
+  And  the following assets are registered:
+  And  the markets:
+  Given  the parties deposit on asset's general account the following amount:
+  Given  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  And  the opening auction period ends for market "ETH/USD-1-10"
+  When  the network moves ahead "1" blocks
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/USD-1-10"
+  Given  the following teams with referees are created:
+
+Scenario 1: 001 0056-REWA-108 If a team member has a zero reward metric, they should receive no share of the rewards allocated to the team
+  Tags: ['@TeamStep']
+  Given  the parties submit the following recurring transfers:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  parties should have the following vesting account balances:
+

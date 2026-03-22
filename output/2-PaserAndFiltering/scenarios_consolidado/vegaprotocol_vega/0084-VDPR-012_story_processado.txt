@@ -1,0 +1,52 @@
+Scenario 1: 001: Check that the volume discount factor is updated after each epoch
+  Tags: ['@Now']
+  Given  the markets:
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  Then  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/MAR24"
+  And  the following trades should be executed:
+  And  the market data for the market "ETH/MAR24" should be:
+  And  the party "party3" has the following discount infra factor "0"
+  Then  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  And  the party "party3" has the following discount infra factor "0.005"
+  And  the party "party3" has the following discount liquidity factor "0.006"
+  And  the party "party3" has the following discount maker factor "0.007"
+  Then  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  And  the party "party3" has the following discount infra factor "0.01"
+  And  the party "party3" has the following discount liquidity factor "0.012"
+  And  the party "party3" has the following discount maker factor "0.014"
+  And  the following network parameters are set:
+  Then  the parties place the following orders:
+  And  the following trades should be executed:
+  And  the following network parameters are set:
+  Then  the parties place the following orders:
+  And  the following trades should be executed:
+
+
+
+Scenario 2: when trade_value_for_fee_purposes>0, then total fee should be liquidity_fee_after_referral_discount+ treasury_fee + buyback_fee when fee_factor[maker] = 0, fee_factor[infrastructure] = 0 (0083-RFPR-054)
+  Tags: ['@Now']
+  Given  the markets:
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  Then  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/MAR24"
+  And  the following trades should be executed:
+  And  the market data for the market "ETH/MAR24" should be:
+  And  the party "party3" has the following discount infra factor "0"
+  Then  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  And  the party "party3" has the following discount infra factor "0.005"
+  And  the party "party3" has the following discount liquidity factor "0.006"
+  And  the party "party3" has the following discount maker factor "0.007"
+  Then  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  And  the party "party3" has the following discount infra factor "0.01"
+  And  the party "party3" has the following discount liquidity factor "0.012"
+  And  the party "party3" has the following discount maker factor "0.014"
+  Then  the parties place the following orders:
+  And  the following trades should be executed:
+

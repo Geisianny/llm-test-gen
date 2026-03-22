@@ -1,0 +1,41 @@
+Feature: Rewards for liquidity fees recieved
+
+Background: 
+  Given  time is updated to "2023-01-01T00:00:00Z"
+  And  the average block duration is "1"
+  And  the following network parameters are set:
+  And  the following assets are registered:
+  And  the markets:
+  Given  the parties deposit on asset's general account the following amount:
+  Given  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  And  the opening auction period ends for market "ETH/USD-1-10"
+  When  the network moves ahead "1" blocks
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/USD-1-10"
+  Given  the parties create the following referral codes:
+  And  the parties apply the following referral codes:
+  And  the team "team1" has the following members:
+
+Scenario 1: Party funds reward pool with lp received fees and dispatch metric scoping individuals
+  Given  the parties submit the following recurring transfers:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  the following transfers should happen:
+  Then  parties should have the following vesting account balances:
+
+Scenario 2: Given the following dispatch metrics, if an `eligible keys` list is specified in the recurring transfer, only parties included in the list and meeting other eligibility criteria should receive a score 0056-REWA-213
+  Given  the parties submit the following recurring transfers:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  the following transfers should happen:
+  Then  parties should have the following vesting account balances:
+  Then  "a3c024b4e23230c89884a54a813b1ecb4cb0f827a38641c66eeca466da6b2ddf" should have general account balance of "10000000" for asset "USD-1-10"
+
+Scenario 3: Party funds reward pool with lp received fees dispatch metric and scoping teams
+  Given  the parties submit the following recurring transfers:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  the following transfers should happen:
+  Then  parties should have the following vesting account balances:
+

@@ -1,0 +1,56 @@
+Feature: Filter Condition
+
+Scenario 1: Add a new filter condition
+  Tags: ['@auth', '@vocabulary']
+  Given  empty "filter_conditions"
+  When  we post to "/filter_conditions" with success
+  And  we get "/filter_conditions"
+  Then  we get list with 1 items
+
+Scenario 2: Add second filter condition with same name fails
+  Tags: ['@auth', '@vocabulary']
+  Given  empty "filter_conditions"
+  When  we post to "/filter_conditions" with success
+  And  we get "/filter_conditions"
+  Then  we get list with 1 items
+  When  we post to "/filter_conditions"
+  Then  we get error 400
+
+Scenario 3: Add a new filter condition with identical values fails
+  Tags: ['@auth', '@vocabulary']
+  Given  empty "filter_conditions"
+  When  we post to "/filter_conditions" with success
+  And  we get "/filter_conditions"
+  Then  we get list with 1 items
+  When  we post to "/filter_conditions"
+  Then  we get error 400
+
+Scenario 4: Add a new filter condition with invalid field fails
+  Tags: ['@auth', '@vocabulary']
+  Given  empty "filter_conditions"
+  When  we post to "/filter_conditions"
+  Then  we get error 400
+
+Scenario 5: Edit filter condition
+  Tags: ['@auth', '@vocabulary']
+  Given  empty "filter_conditions"
+  When  we post to "/filter_conditions" with success
+  And  we get "/filter_conditions"
+  When  we patch "/filter_conditions/#filter_conditions._id#"
+  Then  we get error 200
+
+Scenario 6: Delete a referenced filter condition fails
+  Tags: ['@auth', '@vocabulary']
+  Given  "filter_conditions"
+  When  we post to "/filter_conditions" with success
+  Then  we get latest
+  Given  empty "content_filters"
+  When  we post to "/content_filters" with success
+  When  we delete "/filter_conditions/#filter_conditions._id#"
+  Then  we get error 400
+
+Scenario 7: Get filter condition params
+  Tags: ['@auth']
+  When  we get "filter_conditions/parameters"
+  Then  we get list with 20+ items
+

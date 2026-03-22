@@ -1,0 +1,59 @@
+Scenario 1: Products are sorted by ascending codes by default
+  Tags: ['@ui', '@api']
+  Given  I am browsing products
+  Then  I should see 3 products in the list
+  And  I should see a product with code "L_PUG"
+  But  the first product on the list should have code "B_PUG"
+
+
+
+Scenario 2: Changing the codes sorting order
+  Tags: ['@ui', '@api']
+  Given  I am browsing products
+  When  I switch the way products are sorted descending by code
+  Then  I should see 3 products in the list
+  And  I should see a product with code "B_PUG"
+  But  the first product on the list should have code "X_PUG"
+
+
+
+Scenario 3: Products can be sorted by their names
+  Tags: ['@ui', '@api']
+  Given  I am browsing products
+  When  I start sorting products by name
+  Then  I should see 3 products in the list
+  And  I should see a product with name "Xtreme Pug"
+  But  the first product on the list should have name "Berserk Pug"
+
+
+
+Scenario 4: Changing the names sorting order
+  Tags: ['@ui', '@api']
+  Given  I am browsing products
+  When  the products are already sorted ascending by name
+  And  I switch the way products are sorted descending by name
+  Then  I should see 3 products in the list
+  And  I should see a product with name "Berserk Pug"
+  But  the first product on the list should have name "Xtreme Pug"
+
+
+
+Scenario 5: Sort products ascending by name from chosen locale translations
+  Tags: ['@ui', '@api']
+  When  I change my locale to "Polish (Poland)"
+  And  I browse products
+  And  I sort the products ascending by name
+  Then  I should see 3 products in the list
+  And  the first product on the list should have name "Ekstremalny Mops"
+
+
+
+Scenario 6: Sort products descending by name from chosen locale translations
+  Tags: ['@ui', '@api']
+  When  I change my locale to "Polish (Poland)"
+  And  I browse products
+  And  the products are already sorted ascending by name
+  And  I sort the products descending by name
+  Then  I should see 3 products in the list
+  And  the first product on the list should have name "Szałowy Mops"
+

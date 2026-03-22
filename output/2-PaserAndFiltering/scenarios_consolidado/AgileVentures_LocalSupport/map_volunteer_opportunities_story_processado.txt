@@ -1,0 +1,92 @@
+Scenario 1: Imported "reachskills" volunteer ops with nil coords are assigned default coords
+  Given  reachskills opportunities are imported with nil coordinates
+  Then  there should be zero nil coordinates
+  And  1 default Harrow coordinates should be assigned
+
+
+
+Scenario 2: See map when editing my volunteer opportunity
+  Tags: ['@javascript', '@billy']
+  Given  the following organisations exist:
+  Given  the following users are registered:
+  Given  the following volunteer opportunities exist:
+  And  I am signed in as a charity worker related to "Cats Are Us"
+  And  I visit the edit page for the volunteer_op titled "Litter Box Scooper"
+  Then  the map should show the opportunity titled Litter Box Scooper
+
+
+
+Scenario 3: See map when editing my volunteer opportunity
+  Tags: ['@javascript', '@billy']
+  Given  I visit the volunteer opportunities page
+  Then  the Do-it word in the legend should be a hyperlink to the Do-it website
+
+
+
+Scenario 4: Infowindow appears when mouse hovers over volunteer opportunity in table
+  Tags: ['@javascript', '@billy']
+  Given  the following organisations exist:
+  Given  the following volunteer opportunities exist:
+  And  I visit the volunteer opportunities page
+  And  cookies are approved
+  Then  I should see an infowindow when mouse enters volop in table:
+  Then  I should not see an infowindow when mouse leaves volop in table:
+
+
+
+Scenario 5: Infowindow continues to work when mouse hovers over volunteer opportunity without long and lat values in table
+  Tags: ['@javascript', '@billy']
+  Given  the following organisations exist:
+  Given  the following volunteer opportunities exist:
+  And  I visit the volunteer opportunities page
+  And  cookies are approved
+  Then  I shouldn't see an infowindow when mouse enters volop without long and lat in table:
+  And  I should see an infowindow when mouse enters volop with long and lat in table:
+
+
+
+Scenario Outline 6: See a list of local volunteer ops with same coordiantes in same maker popup - Example 1
+  Given  the following organisations exist:
+  Given  the following volunteer opportunities exist:
+  Given  I visit the volunteer opportunities page
+  And  cookies are approved
+  Then  I should see 1 markers in the map
+  And  the map should show the opportunity titled Animal care
+
+  Examples:
+    | title |
+    | Animal care |
+    | Office Support |
+
+
+
+Scenario Outline 7: See a list of do-it volunteer ops with same coordiantes in same maker popup - Example 1
+  Given  the following doit volunteer opportunities exist:
+  Given  I visit the volunteer opportunities page
+  And  cookies are approved
+  Then  I should see 1 markers in the map
+  And  the map should show the opportunity titled Eldery care
+
+  Examples:
+    | title |
+    | Eldery care |
+    | Office Support |
+
+
+
+Scenario Outline 8: See a list of do-it and local volunteer ops with same coordiantes in same maker popup - Example 1
+  Given  the following organisations exist:
+  Given  the following volunteer opportunities exist:
+  Given  the following doit volunteer opportunities exist:
+  Given  I visit the volunteer opportunities page
+  And  cookies are approved
+  Then  I should see 1 markers in the map
+  And  the map should show the opportunity titled Eldery care
+
+  Examples:
+    | title |
+    | Eldery care |
+    | Office Tasks |
+    | Animal care |
+    | Office Support |
+

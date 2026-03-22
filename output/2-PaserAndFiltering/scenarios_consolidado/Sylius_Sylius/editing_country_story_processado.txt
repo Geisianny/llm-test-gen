@@ -1,0 +1,28 @@
+Scenario 1: Disabling country
+  Tags: ['@api', '@ui']
+  Given  the store has country "United States"
+  When  I want to edit this country
+  And  I disable it
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this country should be disabled
+
+
+
+Scenario 2: Enabling country
+  Tags: ['@api', '@ui']
+  Given  the store has disabled country "United States"
+  When  I want to edit this country
+  And  I enable it
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this country should be enabled
+
+
+
+Scenario 3: Seeing disabled code field while editing country
+  Tags: ['@api', '@ui']
+  Given  the store has country "United States"
+  When  I want to edit this country
+  Then  I should not be able to edit its code
+

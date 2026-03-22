@@ -1,0 +1,17 @@
+Scenario 1: Selecting one of available shipping method
+  Tags: ['@api', '@ui']
+  Given  I added product "Targaryen T-Shirt" to the cart
+  And  I addressed the cart
+  When  I go to the shipping step
+  And  I select "Raven Post" shipping method
+  And  I complete the shipping step
+  Then  I should be on the checkout payment step
+
+
+
+Scenario 2: Selecting shipping method before addressing the order
+  Tags: ['@api', '@no-ui']
+  Given  I added product "Targaryen T-Shirt" to the cart
+  When  I select "Raven Post" shipping method
+  Then  I should be notified that the order should be addressed first
+

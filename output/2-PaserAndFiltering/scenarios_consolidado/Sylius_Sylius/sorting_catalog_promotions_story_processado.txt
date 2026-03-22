@@ -1,0 +1,87 @@
+Scenario 1: Catalog promotions are sorted by ascending code by default
+  Tags: ['@api', '@ui']
+  When  I browse catalog promotions
+  Then  I should see 3 catalog promotions on the list
+  And  the first catalog promotion should have code "a"
+
+
+
+Scenario 2: Changing the code sorting order to descending
+  Tags: ['@api', '@ui']
+  When  I browse catalog promotions
+  And  I sort catalog promotions by descending code
+  Then  I should see 3 catalog promotions on the list
+  And  the first catalog promotion should have code "not-b"
+
+
+
+Scenario 3: Sorting catalog promotions by name in ascending order
+  Tags: ['@api', '@ui']
+  When  I browse catalog promotions
+  And  I sort catalog promotions by ascending name
+  Then  I should see 3 catalog promotions on the list
+  And  the first catalog promotion should have code "a"
+
+
+
+Scenario 4: Sorting catalog promotion by name in descending order
+  Tags: ['@api', '@ui']
+  When  I browse catalog promotions
+  And  I sort catalog promotions by descending name
+  Then  I should see 3 catalog promotions on the list
+  And  the first catalog promotion should have code "c"
+
+
+
+Scenario 5: Sorting catalog promotion by start date in ascending order
+  Tags: ['@api', '@ui', '@no-postgres']
+  When  I browse catalog promotions
+  And  I sort catalog promotions by ascending "start date"
+  Then  I should see 3 catalog promotions on the list
+  And  the first catalog promotion should have code "not-b"
+
+
+
+Scenario 6: Sorting catalog promotion by start date in descending order
+  Tags: ['@api', '@ui', '@no-postgres']
+  When  I browse catalog promotions
+  And  I sort catalog promotions by descending "start date"
+  Then  I should see 3 catalog promotions on the list
+  And  the first catalog promotion should have code "a"
+
+
+
+Scenario 7: Sorting catalog promotion by end date in ascending order
+  Tags: ['@api', '@ui', '@no-postgres']
+  When  I browse catalog promotions
+  And  I sort catalog promotions by ascending "end date"
+  Then  I should see 3 catalog promotions on the list
+  And  the first catalog promotion should have code "a"
+
+
+
+Scenario 8: Sorting catalog promotion by end date in descending order
+  Tags: ['@api', '@ui', '@no-postgres']
+  When  I browse catalog promotions
+  And  I sort catalog promotions by descending "end date"
+  Then  I should see 3 catalog promotions on the list
+  And  the first catalog promotion should have code "c"
+
+
+
+Scenario 9: Sorting catalog promotion by priority in ascending order
+  Tags: ['@api', '@ui']
+  When  I browse catalog promotions
+  And  I sort catalog promotions by ascending priority
+  Then  I should see 3 catalog promotions on the list
+  And  the first catalog promotion should have code "not-b"
+
+
+
+Scenario 10: Sorting catalog promotion by priority in descending order
+  Tags: ['@api', '@ui']
+  When  I browse catalog promotions
+  And  I sort catalog promotions by descending priority
+  Then  I should see 3 catalog promotions on the list
+  And  the first catalog promotion should have code "c"
+

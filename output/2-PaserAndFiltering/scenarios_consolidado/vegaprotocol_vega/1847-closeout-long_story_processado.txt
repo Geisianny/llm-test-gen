@@ -1,0 +1,13 @@
+Scenario 1: https://drive.google.com/file/d/1bYWbNJvG7E-tcqsK26JMu2uGwaqXqm0L/view
+  Given  the parties deposit on asset's general account the following amount:
+  Then  the parties place the following orders:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  When  the parties place the following orders "1" blocks apart:
+  And  the network moves ahead "1" blocks
+  And  the mark price should be "100" for the market "ETH/DEC19"
+  Then  the parties should have the following account balances:
+  And  the insurance pool balance should be "0" for the market "ETH/DEC19"
+  Then  the parties should have the following profit and loss:
+

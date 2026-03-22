@@ -1,0 +1,61 @@
+Scenario 1: Posting an XML resource with a string value
+  Tags: ['@createSchema']
+  When  I send a "POST" request to "/resource_with_strings" with body:
+  Then  the response status code should be 201
+  And  the response should be in XML
+  And  the header "Content-Type" should be equal to "application/xml; charset=utf-8"
+
+
+
+Scenario 2: Posting an XML resource with a collection with only one element
+  When  I send a "POST" request to "/dummy_properties" with body:
+  Then  the response status code should be 201
+  And  the response should be in XML
+  And  the header "Content-Type" should be equal to "application/xml; charset=utf-8"
+
+
+
+Scenario Outline 3: Posting an XML resource with a boolean value - Example 1
+  When  I send a "POST" request to "/resource_with_booleans" with body:
+  Then  the response status code should be 201
+  And  the response should be in XML
+  And  the header "Content-Type" should be equal to "application/xml; charset=utf-8"
+
+  Examples:
+    | value |
+    | true |
+    | false |
+    | 1 |
+    | 0 |
+
+
+
+Scenario Outline 4: Posting an XML resource with an integer value - Example 1
+  When  I send a "POST" request to "/resource_with_integers" with body:
+  Then  the response status code should be 201
+  And  the response should be in XML
+  And  the header "Content-Type" should be equal to "application/xml; charset=utf-8"
+
+  Examples:
+    | value |
+    | 42 |
+    | -6 |
+    | 1 |
+    | 0 |
+
+
+
+Scenario Outline 5: Posting an XML resource with a float value - Example 1
+  Tags: ['@!mysql']
+  When  I send a "POST" request to "/resource_with_floats" with body:
+  Then  the response status code should be 201
+  And  the response should be in XML
+  And  the header "Content-Type" should be equal to "application/xml; charset=utf-8"
+
+  Examples:
+    | value |
+    | 3.14 |
+    | NaN |
+    | INF |
+    | -INF |
+

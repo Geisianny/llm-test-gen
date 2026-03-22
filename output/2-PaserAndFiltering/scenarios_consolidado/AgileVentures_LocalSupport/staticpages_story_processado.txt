@@ -1,0 +1,27 @@
+Scenario Outline 1: the about us page is accessible on all pages - Example 1
+  Tags: ['@vcr']
+  Given  I visit the home page
+  When  I follow "About Us"
+  Then  I should see "abc123"
+
+  Examples:
+    | page |
+    | home page |
+    | organisations index page |
+    | new organisation page |
+    | show page for the organisation named "Friendly Charity" |
+
+
+
+Scenario Outline 2: the contact page is accessible on all pages - Example 1
+  Given  I visit the home page
+  When  I follow "Contact"
+  Then  I should see "def456"
+
+  Examples:
+    | page |
+    | home page |
+    | organisations index page |
+    | new organisation page |
+    | show page for the organisation named "Friendly Charity" |
+

@@ -1,0 +1,13 @@
+Scenario 1: Seeing price block with lowest price before the discount
+  Tags: ['@no-api', '@ui']
+  Given  this product's price changed to "$21.00" and original price changed to "$37.00"
+  When  I access the "Bizon Z056" product
+  Then  I should see "$42.00" as its lowest price before the discount in "United States" channel
+
+
+
+Scenario 2: Seeing price block without lowest price before the discount
+  Tags: ['@no-api', '@ui']
+  When  I access the "Bizon Z056" product
+  Then  I should not see the lowest price before the discount in "United States" channel
+

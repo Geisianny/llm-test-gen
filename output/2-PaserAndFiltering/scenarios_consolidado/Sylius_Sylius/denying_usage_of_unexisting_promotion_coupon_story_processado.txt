@@ -1,0 +1,8 @@
+Scenario 1: Receiving no discount from nonexistent coupon
+  Tags: ['@api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  And  I applied the coupon with code "SANTA2011"
+  When  I check the details of my cart
+  Then  my cart total should be "$100.00"
+  And  there should be no discount applied
+

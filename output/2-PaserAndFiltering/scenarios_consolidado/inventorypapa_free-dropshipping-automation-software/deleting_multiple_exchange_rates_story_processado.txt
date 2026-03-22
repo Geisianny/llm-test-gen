@@ -1,0 +1,10 @@
+Scenario 1: Deleting multiple exchange rates at once
+  Tags: ['@ui', '@javascript']
+  When  I browse exchange rates
+  And  I check the exchange rate between "Euro" and "British Pound"
+  And  I check the exchange rate between "British Pound" and "Polish Zloty"
+  And  I delete them
+  Then  I should be notified that they have been successfully deleted
+  And  I should see a single exchange rate in the list
+  And  I should see the exchange rate between "Polish Zloty" and "Euro" in the list
+

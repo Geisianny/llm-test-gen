@@ -1,0 +1,14 @@
+Scenario 1: Create a new cart and add a product
+  Given  I add the product "T-Shirt" with unit "Pieces" to my cart
+  Then  there should be one product in my cart
+  And  the first item in my cart should have unit "Pieces"
+
+
+
+Scenario 2: Create a new cart and add a product with different unities
+  Given  I add the product "T-Shirt" with unit "Pieces" to my cart
+  And  I add the product "T-Shirt" with unit "Carton" to my cart
+  Then  there should be two products in my cart
+  And  the first item in my cart should have unit "Pieces"
+  And  the second item in my cart should have unit "Carton"
+

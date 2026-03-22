@@ -1,0 +1,258 @@
+Feature: User Resource
+
+Scenario 1: Create a user
+  Tags: ['@auth', '@dbauth']
+  Given  empty "users"
+  When  we create a new user
+  Then  we get new resource
+  And  we get no "password"
+  And  we get activation email
+
+Scenario 2: Create a user with @bwh.harvard.edu
+  Tags: ['@auth', '@dbauth']
+  Given  empty "users"
+  When  we create a new user
+  Then  we get new resource
+  And  we get no "password"
+  And  we get activation email
+
+Scenario 3: Create a user with biography, facebook, twitter and instagram
+  Tags: ['@auth', '@dbauth']
+  Given  empty "users"
+  When  we create a new user
+  Then  we get new resource
+
+Scenario 4: Test twitter validation
+  Tags: ['@auth']
+  Given  empty "users"
+  When  we post to "/users"
+  Then  we get error 400
+
+Scenario 5: Test email validation
+  Tags: ['@auth']
+  Given  empty "users"
+  When  we post to "/users"
+  Then  we get error 400
+
+Scenario 6: Test unique validation
+  Tags: ['@auth']
+  Given  "users"
+  When  we post to "/users"
+  Then  we get error 400
+
+Scenario 7: Test phone validation
+  Tags: ['@auth', '@dbauth']
+  Given  empty "users"
+  When  we post to "/users"
+  Then  we get response code 201
+
+Scenario 8: List users
+  Tags: ['@auth']
+  Given  "users"
+  When  we get "/users"
+  Then  we get list with 3 items
+
+Scenario 9: Fetch single user
+  Tags: ['@auth']
+  Given  "users"
+  When  we get "/users/foo"
+  Then  we get existing resource
+  And  we get no "password"
+
+Scenario 10: Delete user
+  Tags: ['@auth']
+  Given  "users"
+  When  we switch user
+  And  we delete "/users/foo"
+  Then  we get response code 204
+
+Scenario 11: Update user
+  Tags: ['@auth', '@dbauth']
+  Given  "users"
+  When  we patch "/users/foo"
+  Then  the field "display_name" value is "Testing"
+
+Scenario 12: Update user first name
+  Tags: ['@auth', '@dbauth']
+  Given  "users"
+  When  we patch "/users/foo"
+  Then  the field "display_name" value is "Testing last"
+
+Scenario 13: Update user last name
+  Tags: ['@auth', '@dbauth']
+  Given  "users"
+  When  we patch "/users/foo"
+  Then  the field "display_name" value is "first Testing"
+
+Scenario 14: Update user type
+  Tags: ['@auth', '@notification']
+  Given  "users"
+  When  we patch "/users/foo"
+  Then  we get updated response
+  Then  we get notifications
+
+Scenario 15: Update user privilege
+  Tags: ['@auth', '@notification']
+  Given  "users"
+  When  we patch "/users/foo"
+  Then  we get updated response
+  Then  we get notifications
+
+Scenario 16: Change user status - inactivated
+  Tags: ['@auth', '@notification']
+  Given  "users"
+  When  we change user status to "enabled but inactive" using "/users/foo"
+  Then  we get updated response
+  Then  we get notifications
+  When  we change user status to "enabled and active" using "/users/foo"
+  Then  we get updated response
+
+Scenario 17: Change user status - disabled
+  Tags: ['@auth', '@notification']
+  Given  "users"
+  When  we patch "/users/foo"
+  Then  we get updated response
+  Then  we get notifications
+  When  we change user status to "enabled and active" using "/users/foo"
+  Then  we get updated response
+
+Scenario 18: User workspace
+  Tags: ['@auth']
+  Given  "users"
+  When  we get "/users/foo"
+  Then  we get existing resource
+
+Scenario 19: Create a user with default role
+  Tags: ['@auth']
+  Given  "roles"
+  When  we post to "/users"
+  Then  we get new resource
+
+Scenario 20: Create a user with no default role
+  Tags: ['@auth']
+  Given  "roles"
+  When  we post to "/users"
+  Then  we get new resource
+
+Scenario 21: A logged-in user can't delete themselves from the system
+  Tags: ['@auth']
+  Given  we login as user "foo" with password "barword" and user type "user"
+  When  we delete "/users/#user._id#"
+  Then  we get error 403
+
+Scenario 22: A logged-in user can't change role
+  Tags: ['@auth']
+  Given  "roles"
+  And  we login as user "foo" with password "barword" and user type "user"
+  When  we get "/users/foo"
+  Then  we get existing resource
+  When  we patch "/users/#CONTEXT_USER_ID#"
+  Then  we get error 400
+
+Scenario 23: Clear sessions of a logged-in user
+  Tags: ['@auth']
+  Given  "users"
+  When  we get "/users/#users._id#"
+  Then  we get existing resource
+  When  we login as user "foobar" with password "barbar" and user type "user"
+  When  we switch user
+  And  we delete all sessions "/users/#users._id#/sessions"
+  Then  we get response code 204
+  When  we get "/users/#users._id#"
+  Then  we get existing resource
+
+Scenario 24: User gets invisible stages
+  Tags: ['@auth']
+  Given  empty "users"
+  Given  empty "desks"
+  Given  empty "stages"
+  When  we post to "users"
+  Given  "desks"
+  When  we post to "desks"
+  And  we post to "/stages"
+  When  we post to "/stages"
+  Then  we get 2 invisible stages for user
+
+Scenario 25: Assign a default desk to user
+  Tags: ['@auth']
+  Given  "users"
+  And  "desks"
+  When  we patch "/users/#users._id#"
+  Then  we get existing resource
+
+Scenario 26: Fetch user from LDAP
+  Tags: ['@ldapauth', '@auth']
+  Given  "users"
+  When  we get "/users/#users._id#"
+  Then  we get existing resource
+
+Scenario 27: Sign Off property is set to first 3 characters of username while creating a User
+  Tags: ['@auth']
+  Given  "users"
+  When  we get "/users/#users._id#"
+  Then  we get existing resource
+
+Scenario 28: Sign Off property is set to first letter of First Name and Last Name while creating a User
+  Tags: ['@dbauth', '@auth']
+  Given  "users"
+  When  we get "/users/#users._id#"
+  Then  we get existing resource
+
+Scenario 29: Update to Sign Off succeeds when the default value is modified
+  Tags: ['@dbauth', '@auth']
+  Given  "users"
+  When  we get "/users/#users._id#"
+  Then  we get existing resource
+  When  we patch "/users/#users._id#"
+  When  we get "/users/#users._id#"
+  Then  we get existing resource
+
+Scenario 30: Delete a user removes content in draft state and releases user lock
+  Tags: ['@auth', '@notification']
+  Given  we login as user "foo" with password "barword" and user type "admin"
+  And  "archive"
+  When  we get "/users/foo"
+  Then  we get existing resource
+  When  we patch "/users/foo"
+  Then  we get OK response
+  When  we post to "/desks"
+  Then  we get OK response
+  When  we post to "archive"
+  Then  we get OK response
+  When  we post to "/archive/item1/lock"
+  Then  we get new resource
+  When  we switch user
+  And  we delete "/users/foo"
+  Then  we get response code 204
+  When  we get "/archive/item1"
+  Then  we get existing resource
+  When  we get "/archive/item2"
+  Then  we get response code 404
+
+Scenario 31: We can search api using $regex query
+  Tags: ['@auth']
+  Given  "users"
+  When  we get "users/?where={"$or":[{"username":{"$regex":"fo","$options":"i"}}]}"
+  Then  we get list with 1 items
+
+Scenario 32: Test email correction
+  Tags: ['@auth']
+  Given  empty "users"
+  When  we post to "/users"
+  Then  we get new resource
+
+Scenario 33: Test username pattern config
+  Tags: ['@auth']
+  Given  config update
+  When  we post to "users"
+  Then  we get error 400
+  Given  config update
+  When  we post to "users"
+  Then  we get new resource
+
+Scenario 34: Restrict queries using $where
+  Tags: ['@auth']
+  Given  "users"
+  When  we get "users?where={"username": "test", "$where": "this.password[0] == '$'"}"
+  Then  we get error 400
+

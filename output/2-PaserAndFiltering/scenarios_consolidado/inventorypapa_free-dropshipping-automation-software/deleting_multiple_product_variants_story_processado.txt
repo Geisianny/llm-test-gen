@@ -1,0 +1,10 @@
+Scenario 1: Deleting multiple product variants at once
+  Tags: ['@ui', '@javascript']
+  When  I browse variants of this product
+  And  I check the "Small PHP Mug" product variant
+  And  I check also the "Medium PHP Mug" product variant
+  And  I delete them
+  Then  I should be notified that they have been successfully deleted
+  And  I should see a single product variant in the list
+  And  I should see the product variant "Big PHP Mug" in the list
+

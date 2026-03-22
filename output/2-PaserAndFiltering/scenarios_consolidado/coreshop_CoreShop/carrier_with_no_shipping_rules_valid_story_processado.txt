@@ -1,0 +1,14 @@
+Scenario 1: Carrier with not shipping rule should be valid
+  Given  I add the product "Shoe" to my cart
+  And  the carrier "Post" should be valid for my cart
+
+
+
+Scenario 2: Carrier with one shipping rule should be valid
+  Given  adding a shipping rule named "product"
+  And  the shipping rule is active
+  And  the shipping rule has a condition products with product "Shoe"
+  And  the shipping rule belongs to carrier "Post"
+  And  I add the product "Shoe" to my cart
+  And  the carrier "Post" should be valid for my cart
+

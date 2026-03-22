@@ -1,0 +1,64 @@
+Feature: stop orders
+
+Background: 
+  Given  time is updated to "2020-10-16T00:00:00Z"
+  And  the price monitoring named "my-price-monitoring":
+  And  the simple risk model named "my-simple-risk-model":
+  And  the markets:
+  And  the following network parameters are set:
+
+Scenario 1: A stop order placed either prior to or during an auction will not execute during an auction, nor will it participate in the uncrossing. (0014-ORDT-065)
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  And  the mark price should be "100" for the market "ETH/DEC20"
+  And  time is updated to "2020-10-16T00:10:00Z"
+  When  the parties place the following orders:
+  And  the mark price should be "100" for the market "ETH/DEC20"
+  When  the parties place the following orders:
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/DEC20"
+  And  the mark price should be "100" for the market "ETH/DEC20"
+  When  the parties place the following orders:
+  Then  the stop orders should have the following states
+  When  the parties place the following orders:
+  And  time is updated to "2020-10-16T00:15:00Z"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  And  the mark price should be "105" for the market "ETH/DEC20"
+  Then  the stop orders should have the following states
+  When  the parties place the following orders:
+  And  then the network moves ahead "5" blocks
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  And  the mark price should be "102" for the market "ETH/DEC20"
+  Then  the stop orders should have the following states
+  When  the parties place the following orders:
+  And  then the network moves ahead "10" blocks
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  And  the mark price should be "95" for the market "ETH/DEC20"
+  Then  the stop orders should have the following states
+
+Scenario 2: A stop order placed either prior to or during an auction, where the uncrossing price is within the triggering range, will immediately execute following uncrossing. (0014-ORDT-066)
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  And  the mark price should be "100" for the market "ETH/DEC20"
+  And  time is updated to "2020-10-16T00:10:00Z"
+  When  the parties place the following orders:
+  And  the mark price should be "100" for the market "ETH/DEC20"
+  When  the parties place the following orders:
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/DEC20"
+  And  the mark price should be "100" for the market "ETH/DEC20"
+  When  the parties place the following orders:
+  Then  the stop orders should have the following states
+  When  the parties place the following orders:
+  And  time is updated to "2020-10-16T00:15:00Z"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  And  the mark price should be "92" for the market "ETH/DEC20"
+  Then  the stop orders should have the following states
+  Then  the orders should have the following states:
+

@@ -1,0 +1,18 @@
+Scenario 1: install modules
+  Given  I update the module list
+  Given  I install the required modules with dependencies:
+  Then  my modules should have been installed and models reloaded
+  Given  I give all groups right access to admin user
+
+
+
+Scenario 2: Initialize Sales settings
+  Given  a cash journal in EUR exists
+  And  a cash journal in GBP exists
+  And  a cash journal in USD exists
+  And  a cash journal in CHF exists
+  Given  a valid sale pricelist in EUR exists
+  And  a valid sale pricelist in USD exists
+  And  a valid sale pricelist in GBP exists
+  And  a valid sale pricelist in CHF exists
+

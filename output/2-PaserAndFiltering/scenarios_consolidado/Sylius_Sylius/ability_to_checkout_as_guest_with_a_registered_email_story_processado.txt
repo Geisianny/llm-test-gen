@@ -1,0 +1,22 @@
+Scenario 1: Successfully placing an order
+  Tags: ['@api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  When  I complete addressing step with email "john@example.com" and "United States" based billing address
+  And  I select "Free" shipping method
+  And  I complete the shipping step
+  And  I choose "Offline" payment method
+  And  I confirm my order
+  Then  I should see the thank you page
+
+
+
+Scenario 2: Placing an order using email with mixed case
+  Tags: ['@api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  When  I complete addressing step with email "JOhn@example.COM" and "United States" based billing address
+  And  I select "Free" shipping method
+  And  I complete the shipping step
+  And  I choose "Offline" payment method
+  And  I confirm my order
+  Then  I should see the thank you page
+

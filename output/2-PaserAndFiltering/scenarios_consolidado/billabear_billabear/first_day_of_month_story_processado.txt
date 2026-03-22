@@ -1,0 +1,11 @@
+Scenario 1: Send emails
+  Given  the follow customers exist:
+  And  the following payment details:
+  And  the following customers have cards that will expire this month:
+  And  the following subscriptions exist:
+  When  the background task for sending first card expiry warning
+  Then  the workflow for expired card will exist for "customer.one@example.org"
+  And  the workflow for expired card will not exist for "customer.two@example.org"
+  And  the workflow for expired card will not exist for "customer.three@example.org"
+  Then  the workflow for expired card for "customer.one@example.org" will be that an email had been sent
+

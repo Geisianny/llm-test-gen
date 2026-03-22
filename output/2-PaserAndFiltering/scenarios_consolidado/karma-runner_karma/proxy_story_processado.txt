@@ -1,0 +1,19 @@
+Scenario 1: Simple file proxy
+  Given  a configuration with:
+  When  I start Karma
+  Then  it passes with:
+
+
+
+Scenario 2: Added by a framework
+  Given  a configuration with:
+  When  I start Karma
+  Then  it passes with:
+
+
+
+Scenario 3: URLRoot
+  Given  a configuration with:
+  When  I start Karma
+  Then  it passes with:
+

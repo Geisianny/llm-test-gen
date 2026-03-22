@@ -1,0 +1,6 @@
+Scenario 1: Deleted tax category should disappear from the registry
+  Tags: ['@ui', '@api']
+  When  I delete tax category "Alcohol"
+  Then  I should be notified that it has been successfully deleted
+  And  this tax category should no longer exist in the registry
+

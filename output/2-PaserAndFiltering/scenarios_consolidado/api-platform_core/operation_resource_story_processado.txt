@@ -1,0 +1,29 @@
+Scenario 1: Create an operation resource
+  Tags: ['@php8', '@createSchema', '@!mongodb']
+  When  I add "Content-Type" header equal to "application/json"
+  And  I send a "POST" request to "/operation_resources" with body:
+  Then  the response status code should be 201
+
+
+
+Scenario 2: Patch an operation resource
+  Tags: ['@php8', '@!mongodb']
+  When  I add "Content-Type" header equal to "application/merge-patch+json"
+  And  I send a "PATCH" request to "/operation_resources/1" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario 3: Update an operation resource
+  Tags: ['@php8', '@!mongodb']
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "PUT" request to "/operation_resources/1" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the header "Content-Location" should be equal to "/operation_resources/1.jsonld"
+  And  the JSON should be equal to:
+

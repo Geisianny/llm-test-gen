@@ -1,0 +1,29 @@
+Feature: Ensure the markets expire if they cannot leave opening auction within the configured period
+
+Background: 
+  Given  the following assets are registered:
+  And  the simple risk model named "my-simple-risk-model":
+  And  the fees configuration named "my-fees-config":
+  And  the following network parameters are set:
+  And  the markets:
+
+Scenario 1: Covers 0043-MKTL-010
+  Tags: ['@Expires']
+  Given  the parties deposit on asset's general account the following amount:
+  And  the initial insurance pool balance is "10000" for all the markets
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  Then  the market data for the market "ETH/DEC20" should be:
+  And  the insurance pool balance should be "10000" for the market "ETH/DEC20"
+  And  the parties should have the following account balances:
+  When  the network moves ahead "50" blocks
+  Then  the trading mode should be "TRADING_MODE_OPENING_AUCTION" for the market "ETH/DEC20"
+  And  the insurance pool balance should be "10000" for the market "ETH/DEC20"
+  And  the market state should be "STATE_PENDING" for the market "ETH/DEC20"
+  When  the network moves ahead "51" blocks
+  Then  the last market state should be "STATE_CANCELLED" for the market "ETH/DEC20"
+  And  the insurance pool balance should be "0" for the market "ETH/DEC20"
+  And  the global insurance pool balance should be "10000" for the asset "ETH"
+  And  the parties should have the following account balances:
+

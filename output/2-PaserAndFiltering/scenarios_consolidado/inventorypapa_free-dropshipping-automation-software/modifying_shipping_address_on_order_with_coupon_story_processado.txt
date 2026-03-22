@@ -1,0 +1,12 @@
+Scenario 1: Modifying a customer's shipping address when the applied coupon is no longer valid
+  Tags: ['@ui']
+  Given  the coupon "HOLIDAY" was used up to its usage limit
+  When  I view the summary of the order "#00000001"
+  And  I want to modify a customer's shipping address of this order
+  And  I specify their shipping address as "Los Angeles", "Seaside Fwy", "90802", "United States" for "Lucifer Morningstar"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this order should be shipped to "Lucifer Morningstar", "Seaside Fwy", "90802", "Los Angeles", "United States"
+  And  the order's total should still be "$350.00"
+  And  the order's promotion total should still be "-$50.00"
+

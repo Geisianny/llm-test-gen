@@ -1,0 +1,9 @@
+Scenario 1: Trying to add promotion with taken code
+  Tags: ['@api', '@ui']
+  When  I want to create a new promotion
+  And  I specify its code as "NO_VAT"
+  And  I name it "No VAT promotion"
+  And  I try to add it
+  Then  I should be notified that promotion with this code already exists
+  And  there should still be only one promotion with code "NO_VAT"
+

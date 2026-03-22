@@ -1,0 +1,21 @@
+Scenario 1: Showing the current locale
+  Tags: ['@api', '@ui']
+  When  I browse that channel
+  Then  I should shop using the "English (United States)" locale
+
+
+
+Scenario 2: Showing available locales
+  Tags: ['@api', '@ui']
+  When  I browse that channel
+  Then  I should be able to shop using the "Polish (Poland)" locale
+
+
+
+Scenario 3: Switching the current locale
+  Tags: ['@api', '@ui']
+  When  I browse that channel
+  And  I switch to the "Polish (Poland)" locale
+  Then  I should shop using the "Polish (Poland)" locale
+  And  I should be able to shop using the "English (United States)" locale
+

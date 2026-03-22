@@ -1,0 +1,18 @@
+Scenario 1: Add a new product catalog price rule which is valid
+  Given  adding a product price rule named "product-discount"
+  And  the price rule is active
+  And  the price rule has a condition products with product "Shoe" which includes variants
+  Then  the price rule should be valid for product "Shoe Variant"
+  And  the price rule should be invalid for product "Shoe 2 Variant"
+  And  the price rule should be invalid for product "Jacket Variant"
+
+
+
+Scenario 2: Add a new product catalog price rule which is valid for two products
+  Given  adding a product price rule named "product-discount"
+  And  the price rule is active
+  And  the price rule has a condition products with product "Shoe" and product "Jacket" which includes variants
+  Then  the price rule should be valid for product "Shoe Variant"
+  And  the price rule should be valid for product "Jacket Variant"
+  And  the price rule should be invalid for product "Shoe 2 Variant"
+

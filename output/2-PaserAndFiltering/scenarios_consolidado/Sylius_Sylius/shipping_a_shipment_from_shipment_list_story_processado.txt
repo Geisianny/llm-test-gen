@@ -1,0 +1,35 @@
+Scenario 1: Shipping a shipment from shipments index
+  Tags: ['@api', '@ui', '@email']
+  When  I browse shipments
+  And  I ship the shipment of order "#00000001"
+  Then  I should be notified that the shipment has been successfully shipped
+  And  an email with the "UPS" shipment's confirmation for the "#00000001" order should be sent to "donald@duck.com"
+  And  I should see the shipment of order "#00000001" as "Shipped"
+
+
+
+Scenario 2: Shipping a shipment with tracking code from shipments index
+  Tags: ['@api', '@ui', '@email']
+  When  I browse shipments
+  And  I ship the shipment of order "#00000001" with "AWDDXS-SAAQQ-SEFFX-CCDSE" tracking code
+  Then  I should be notified that the shipment has been successfully shipped
+  And  an email with the shipment's confirmation of the order "#00000001" should be sent to "donald@duck.com"
+
+
+
+Scenario 3: Setting date when a shipment has been shipped
+  Tags: ['@api', '@ui']
+  Given  it is "20-02-2020 10:30:05" now
+  When  I browse shipments
+  And  I ship the shipment of order "#00000001"
+  Then  I should see the shipment of order "#00000001" as "Shipped"
+  And  I should see the shipment of order "#00000001" shipped at "20-02-2020 10:30:05"
+
+
+
+Scenario 4: Shipping a shipment that has been already shipped
+  Tags: ['@api', '@no-ui']
+  Given  this order has already been shipped
+  When  I try to ship the shipment of order "#00000001"
+  Then  I should be notified that shipment has been already shipped
+

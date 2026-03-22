@@ -1,0 +1,30 @@
+Feature: Spot market
+
+Background: 
+  Given  time is updated to "2024-01-01T00:00:00Z"
+  Given  the following network parameters are set:
+  Given  the following assets are registered:
+  Given  the fees configuration named "fees-config-1":
+  Given  the log normal risk model named "lognormal-risk-model-1":
+  And  the price monitoring named "price-monitoring-1":
+  And  the spot markets:
+  Given  the parties deposit on asset's general account the following amount:
+  And  the average block duration is "1"
+  And  the parties place the following orders:
+  And  the opening auction period ends for market "BTC/ETH"
+  When  the network moves ahead "1" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  And  the mark price should be "1000" for the market "BTC/ETH"
+
+Scenario 1: For an iceberg order sitting on the book, when a batch containing normal orders and other iceberg orders that will trades
+  Description: against the existing iceberg sitting on the book is sent, the resting iceberg order refreshes between each order in the
+            batch (0014-ORDT-095)
+  When  the parties place the following iceberg orders:
+  Then  the party "party1" starts a batch instruction
+  Then  the party "party1" adds the following orders to a batch:
+  Then  the party "party1" adds the following iceberg orders to a batch:
+  Then  the party "party1" adds the following orders to a batch:
+  Then  the party "party1" submits their batch instruction
+  Then  the following trades should be executed:
+  Then  the orders should have the following states:
+

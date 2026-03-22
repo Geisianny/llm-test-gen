@@ -1,0 +1,42 @@
+Scenario 1: 0068-MATC-061: Incoming MARKET orders will be matched against the opposite side of the book.
+  When  the parties place the following orders:
+  And  the parties place the following orders:
+  Then  the following trades should be executed:
+  And  the orders should have the following status:
+  When  the network moves ahead "1" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  And  the market data for the market "BTC/ETH" should be:
+
+
+
+Scenario 2: 0068-MATC-062: If not enough volume is available to fully fill the order, the remaining will be cancelled.
+  When  the parties place the following orders:
+  And  the parties place the following orders:
+  Then  the following trades should be executed:
+  And  the orders should have the following status:
+  When  the parties amend the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  And  the market data for the market "BTC/ETH" should be:
+
+
+
+Scenario 3: 0068-MATC-064: If there is no match the order will be cancelled. (0068-MATC-063: Incoming LIMIT orders will be matched against the opposite side of the book)
+  When  the parties place the following orders:
+  Then  the orders should have the following status:
+  When  the network moves ahead "1" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  And  the market data for the market "BTC/ETH" should be:
+
+
+
+Scenario 4: 0068-MATC-065: If there is a partial match then the remaining will be cancelled. (0068-MATC-063: Incoming LIMIT orders will be matched against the opposite side of the book)
+  When  the parties place the following orders:
+  And  the parties place the following orders:
+  Then  the following trades should be executed:
+  And  the orders should have the following status:
+  When  the parties amend the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  And  the market data for the market "BTC/ETH" should be:
+

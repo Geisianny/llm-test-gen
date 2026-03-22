@@ -1,0 +1,21 @@
+Scenario 1: Seeing ready order shipping state
+  Tags: ['@ui']
+  When  I browse orders
+  Then  order "#00000666" should have shipment state ready
+
+
+
+Scenario 2: Seeing shipped order shipping state
+  Tags: ['@ui']
+  Given  this order has already been shipped
+  When  I browse orders
+  Then  order "#00000666" should have shipment state shipped
+
+
+
+Scenario 3: Seeing cancelled order shipping state
+  Tags: ['@ui']
+  Given  the customer cancelled this order
+  When  I browse orders
+  Then  order "#00000666" should have shipment state cancelled
+

@@ -1,0 +1,61 @@
+Feature: Content API Search features
+
+Background: 
+  Given  "items"
+
+Scenario 1: Control access to Content API via privilege
+  Tags: ['@auth']
+  When  we get "/search_capi"
+  Then  we get list with 2 items
+  When  we get "/search_capi/1"
+  Then  we get OK response
+  When  we login as user "foo" with password "barword" and user type "user"
+  And  we get "/search_capi"
+  Then  we get error 403
+  When  we get "/search_capi/1"
+  Then  we get error 403
+
+Scenario 2: Search content api using parameters
+  Tags: ['@auth']
+  When  we get "/search_capi"
+  Then  we get list with 2 items
+  When  we get "/search_capi?q=foo"
+  Then  we get list with 1 items
+  When  we get "/search_capi?q=article"
+  Then  we get list with 2 items
+  When  we get "/search_capi?priority=1"
+  Then  we get list with 1 items
+  When  we get "/search_capi?priority=[1,6]"
+  Then  we get list with 2 items
+  When  we get "/search_capi?urgency=1"
+  Then  we get list with 1 items
+  When  we get "/search_capi?urgency=[1,3]"
+  Then  we get list with 2 items
+  When  we get "/search_capi?service=a"
+  Then  we get list with 1 items
+  When  we get "/search_capi?service=["a","f"]"
+  Then  we get list with 2 items
+  When  we get "/search_capi?item_source=XYZ"
+  Then  we get list with 1 items
+  When  we get "/search_capi?item_source=["XYZ","ABC"]"
+  Then  we get list with 2 items
+  When  we get "/search_capi?subject=04000000"
+  Then  we get list with 1 items
+  When  we get "/search_capi?subject=["04000000","15000000"]"
+  Then  we get list with 2 items
+  When  we get "/search_capi?subject=04000000&item_source=XYZ"
+  Then  we get list with 1 items
+  When  we get "/search_capi?filter=[{"terms":{"service.code": ["f"]}}, {"term": {"urgency": 3}}]"
+  Then  we get list with 1 items
+
+Scenario 3: Search content api by subscribers
+  Tags: ['@auth']
+  When  we get "/search_capi"
+  Then  we get list with 2 items
+  When  we get "/search_capi?subscribers=sub1"
+  Then  we get list with 1 items
+  When  we get "/search_capi?subscribers=sub2"
+  Then  we get list with 2 items
+  When  we get "/search_capi?subscribers=xxx"
+  Then  we get list with 0 items
+

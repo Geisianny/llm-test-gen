@@ -1,0 +1,61 @@
+Scenario 1: 001, market.liquidity.stakeToCcyVolume=2, 0007-POSN-010, 0013-ACCT-020
+  Given  the following network parameters are set:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the parties should have the following margin levels:
+  When  the opening auction period ends for market "ETH/MAR22"
+  Then  the auction ends with a traded volume of "50" at a price of "1000"
+  And  the insurance pool balance should be "0" for the market "ETH/MAR22"
+  And  the market data for the market "ETH/MAR22" should be:
+  Then  the order book should have the following volumes for market "ETH/MAR22":
+  Then  the parties should have the following profit and loss:
+  Then  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following profit and loss:
+
+
+
+Scenario 2: 002, market.liquidity.stakeToCcyVolume=0.5,
+  Given  the following network parameters are set:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the opening auction period ends for market "ETH/MAR22"
+  Then  the auction ends with a traded volume of "50" at a price of "1000"
+  And  the insurance pool balance should be "0" for the market "ETH/MAR22"
+  And  the market data for the market "ETH/MAR22" should be:
+  Then  the order book should have the following volumes for market "ETH/MAR22":
+  Then  the parties should have the following profit and loss:
+  Then  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following profit and loss:
+
+
+
+Scenario 3: 003, market.liquidity.stakeToCcyVolume=0
+  Given  the following network parameters are set:
+  And  the parties place the following orders with ticks:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the opening auction period ends for market "ETH/MAR22"
+  Then  the auction ends with a traded volume of "50" at a price of "1000"
+  And  the insurance pool balance should be "0" for the market "ETH/MAR22"
+  And  the market data for the market "ETH/MAR22" should be:
+  Then  the order book should have the following volumes for market "ETH/MAR22":
+
+
+
+Scenario 4: 004, market.liquidity.stakeToCcyVolume=0, 3 LPs make commitment, 0044-LIME-012
+  Given  the parties deposit on asset's general account the following amount:
+  And  the following network parameters are set:
+  And  the parties place the following orders with ticks:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the opening auction period ends for market "ETH/MAR22"
+  Then  the auction ends with a traded volume of "50" at a price of "1000"
+  And  the insurance pool balance should be "0" for the market "ETH/MAR22"
+  And  the market data for the market "ETH/MAR22" should be:
+  Then  the order book should have the following volumes for market "ETH/MAR22":
+  And  the liquidity fee factor should be "0.02" for the market "ETH/MAR22"
+

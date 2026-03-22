@@ -1,0 +1,10 @@
+Feature: Timeout
+Description: In order to use Karma
+  As a person who wants to write great tests
+  I want Karma to timeout if a browser fails to connect.
+
+Scenario 1: Broken Browser
+  Given  a configuration with:
+  When  I start Karma
+  Then  it fails with like:
+

@@ -1,0 +1,81 @@
+Feature: check when settlement data precision is different/equal to the settlement asset precision, and also check decimal on the market with different market/position/asset decimal
+
+Background: 
+  Given  the following assets are registered:
+  And  the perpetual oracles from "0xCAFECAFE1":
+  And  the perpetual oracles from "0xCAFECAFE2":
+  And  the perpetual oracles from "0xCAFECAFE3":
+  And  the liquidity sla params named "SLA":
+  And  the following network parameters are set:
+
+Scenario 1: 001 oracle data decimal > asset decimal 0070-MKTD-018, 0019-MCAL-091
+  Tags: ['@Perpetual']
+  Given  time is updated to "2021-02-11T16:35:21Z"
+  And  the markets:
+  And  the following network parameters are set:
+  And  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  Then  the network moves ahead "2" blocks
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  When  the network moves ahead "1" blocks
+  And  the parties place the following orders:
+  Then  the parties should have the following account balances:
+  When  the parties place the following orders:
+  Then  the parties should have the following account balances:
+  And  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  Then  the network moves ahead "4320h" with block duration of "240h"
+  And  the network moves ahead "18h29m43s" with block duration of "6053s"
+  When  the network moves ahead "5" blocks
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  And  the following transfers should happen:
+
+Scenario 2: 002 oracle data decimal < asset decimal 0070-MKTD-019
+  Tags: ['@Perpetual']
+  Given  time is updated to "2021-02-11T16:35:21Z"
+  And  the markets:
+  And  the following network parameters are set:
+  Given  the following network parameters are set:
+  And  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  Then  the network moves ahead "2" blocks
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  When  the network moves ahead "1" blocks
+  And  the parties place the following orders:
+  Then  the parties should have the following account balances:
+  When  the parties place the following orders:
+  Then  the parties should have the following account balances:
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE3":
+  Then  the network moves ahead "4320h" with block duration of "240h"
+  And  the network moves ahead "18h29m43s" with block duration of "6053s"
+  And  the network moves ahead "5" blocks
+  Then  the oracles broadcast data with block time signed with "0xCAFECAFE3":
+  And  the following transfers should happen:
+
+Scenario 3: 003 oracle data decimal = asset decimal, while market decimal is 1,  0070-MKTD-020
+  Tags: ['@PBlock']
+  Given  time is updated to "2021-02-11T16:35:21Z"
+  And  the markets:
+  And  the following network parameters are set:
+  And  the following network parameters are set:
+  And  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  Then  the network moves ahead "2" blocks
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  When  the network moves ahead "1" blocks
+  When  the parties place the following orders:
+  Then  the parties should have the following account balances:
+  When  the parties place the following orders:
+  Then  the parties should have the following account balances:
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE2":
+  Then  the network moves ahead "4320h" with block duration of "240h"
+  And  the network moves ahead "18h29m43s" with block duration of "6053s"
+  And  the network moves ahead "5" blocks
+  And  the oracles broadcast data with block time signed with "0xCAFECAFE2":
+  Then  the following transfers should happen:
+

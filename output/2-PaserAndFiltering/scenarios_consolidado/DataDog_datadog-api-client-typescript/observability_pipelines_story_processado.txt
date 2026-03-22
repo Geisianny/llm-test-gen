@@ -1,0 +1,186 @@
+Scenario 1: Create a new pipeline returns "Bad Request" response
+  Tags: ['@team:DataDog/observability-pipelines']
+  Given  operation "CreatePipeline" enabled
+  And  new "CreatePipeline" request
+  And  body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["filter-processor"], "type": "datadog_logs"}], "processors": [{"id": "unknown-processor", "include": "service:my-service", "inputs": ["datadog-agent-source"], "type": "filter"}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Main Observability Pipeline"}, "type": "pipelines"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 2: Create a new pipeline returns "Conflict" response
+  Tags: ['@generated', '@skip', '@team:DataDog/observability-pipelines']
+  Given  operation "CreatePipeline" enabled
+  And  new "CreatePipeline" request
+  And  body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["filter-processor"], "type": "datadog_logs"}], "processors": [{"id": "filter-processor", "include": "service:my-service", "inputs": ["datadog-agent-source"], "type": "filter"}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Main Observability Pipeline"}, "type": "pipelines"}}
+  When  the request is sent
+  Then  the response status is 409 Conflict
+
+
+
+Scenario 3: Create a new pipeline returns "OK" response
+  Tags: ['@team:DataDog/observability-pipelines']
+  Given  operation "CreatePipeline" enabled
+  And  new "CreatePipeline" request
+  And  body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["filter-processor"], "type": "datadog_logs"}], "processors": [{"id": "filter-processor", "include": "service:my-service", "inputs": ["datadog-agent-source"], "type": "filter"}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Main Observability Pipeline"}, "type": "pipelines"}}
+  When  the request is sent
+  Then  the response status is 201 OK
+  And  the response "data" has field "id"
+  And  the response "data.type" is equal to "pipelines"
+  And  the response "data.attributes.name" is equal to "Main Observability Pipeline"
+  And  the response "data.attributes.config.sources" has length 1
+  And  the response "data.attributes.config.processors" has length 1
+  And  the response "data.attributes.config.destinations" has length 1
+
+
+
+Scenario 4: Delete a pipeline returns "Conflict" response
+  Tags: ['@generated', '@skip', '@team:DataDog/observability-pipelines']
+  Given  operation "DeletePipeline" enabled
+  And  new "DeletePipeline" request
+  And  request contains "pipeline_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 409 Conflict
+
+
+
+Scenario 5: Delete a pipeline returns "Not Found" response
+  Tags: ['@team:DataDog/observability-pipelines']
+  Given  operation "DeletePipeline" enabled
+  And  new "DeletePipeline" request
+  And  request contains "pipeline_id" parameter with value "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+
+
+Scenario 6: Delete a pipeline returns "OK" response
+  Tags: ['@team:DataDog/observability-pipelines']
+  Given  operation "DeletePipeline" enabled
+  And  there is a valid "pipeline" in the system
+  And  new "DeletePipeline" request
+  And  request contains "pipeline_id" parameter from "pipeline.data.id"
+  When  the request is sent
+  Then  the response status is 204 OK
+
+
+
+Scenario 7: Get a specific pipeline returns "OK" response
+  Tags: ['@team:DataDog/observability-pipelines']
+  Given  operation "GetPipeline" enabled
+  And  there is a valid "pipeline" in the system
+  And  new "GetPipeline" request
+  And  request contains "pipeline_id" parameter from "pipeline.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data" has field "id"
+  And  the response "data.type" is equal to "pipelines"
+  And  the response "data.attributes.name" is equal to "Main Observability Pipeline"
+  And  the response "data.attributes.config.sources" has length 1
+  And  the response "data.attributes.config.processors" has length 1
+  And  the response "data.attributes.config.destinations" has length 1
+
+
+
+Scenario 8: List pipelines returns "Bad Request" response
+  Tags: ['@team:DataDog/observability-pipelines']
+  Given  operation "ListPipelines" enabled
+  And  new "ListPipelines" request
+  And  request contains "page[size]" parameter with value 0
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 9: List pipelines returns "OK" response
+  Tags: ['@team:DataDog/observability-pipelines']
+  Given  operation "ListPipelines" enabled
+  And  there is a valid "pipeline" in the system
+  And  new "ListPipelines" request
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data[0]" has field "id"
+  And  the response "data[0].type" is equal to "pipelines"
+  And  the response "data[0].attributes.name" is equal to "Main Observability Pipeline"
+  And  the response "data[0].attributes.config.sources" has length 1
+  And  the response "data[0].attributes.config.processors" has length 1
+  And  the response "data[0].attributes.config.destinations" has length 1
+
+
+
+Scenario 10: Update a pipeline returns "Bad Request" response
+  Tags: ['@team:DataDog/observability-pipelines']
+  Given  operation "UpdatePipeline" enabled
+  And  new "UpdatePipeline" request
+  And  there is a valid "pipeline" in the system
+  And  request contains "pipeline_id" parameter from "pipeline.data.id"
+  And  body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["filter-processor"], "type": "datadog_logs"}], "processors": [{"id": "unknown-processor", "include": "service:my-service", "inputs": ["datadog-agent-source"], "type": "filter"}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Main Observability Pipeline"}, "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "type": "pipelines"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 11: Update a pipeline returns "Conflict" response
+  Tags: ['@generated', '@skip', '@team:DataDog/observability-pipelines']
+  Given  operation "UpdatePipeline" enabled
+  And  new "UpdatePipeline" request
+  And  request contains "pipeline_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["filter-processor"], "type": "datadog_logs"}], "processors": [{"id": "filter-processor", "include": "service:my-service", "inputs": ["datadog-agent-source"], "type": "filter"}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Main Observability Pipeline"}, "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "type": "pipelines"}}
+  When  the request is sent
+  Then  the response status is 409 Conflict
+
+
+
+Scenario 12: Update a pipeline returns "Not Found" response
+  Tags: ['@team:DataDog/observability-pipelines']
+  Given  operation "UpdatePipeline" enabled
+  And  new "UpdatePipeline" request
+  And  request contains "pipeline_id" parameter with value "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+  And  body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["filter-processor"], "type": "datadog_logs"}], "processors": [{"id": "filter-processor", "include": "service:my-service", "inputs": ["datadog-agent-source"], "type": "filter"}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Main Observability Pipeline"}, "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "type": "pipelines"}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+
+
+Scenario 13: Update a pipeline returns "OK" response
+  Tags: ['@team:DataDog/observability-pipelines']
+  Given  operation "UpdatePipeline" enabled
+  And  there is a valid "pipeline" in the system
+  And  new "UpdatePipeline" request
+  And  request contains "pipeline_id" parameter from "pipeline.data.id"
+  And  body with value {"data": {"attributes": {"config": {"destinations": [{"id": "updated-datadog-logs-destination-id", "inputs": ["filter-processor"], "type": "datadog_logs"}], "processors": [{"id": "filter-processor", "include": "service:my-service", "inputs": ["datadog-agent-source"], "type": "filter"}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Updated Pipeline Name"}, "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "type": "pipelines"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data" has field "id"
+  And  the response "data.type" is equal to "pipelines"
+  And  the response "data.attributes.name" is equal to "Updated Pipeline Name"
+  And  the response "data.attributes.config.sources" has length 1
+  And  the response "data.attributes.config.processors" has length 1
+  And  the response "data.attributes.config.destinations" has length 1
+  And  the response "data.attributes.config.destinations[0].id" is equal to "updated-datadog-logs-destination-id"
+
+
+
+Scenario 14: Validate an observability pipeline returns "Bad Request" response
+  Tags: ['@team:DataDog/observability-pipelines']
+  Given  operation "ValidatePipeline" enabled
+  And  new "ValidatePipeline" request
+  And  body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["filter-processor"], "type": "datadog_logs"}], "processors": [{"id": "filter-processor", "inputs": ["datadog-agent-source"], "type": "filter"}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Main Observability Pipeline"}, "type": "pipelines"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+  And  the response "errors[0].title" is equal to "Field 'include' is required"
+  And  the response "errors[0].meta.field" is equal to "include"
+  And  the response "errors[0].meta.id" is equal to "filter-processor"
+  And  the response "errors[0].meta.message" is equal to "Field 'include' is required"
+
+
+
+Scenario 15: Validate an observability pipeline returns "OK" response
+  Tags: ['@team:DataDog/observability-pipelines']
+  Given  operation "ValidatePipeline" enabled
+  And  new "ValidatePipeline" request
+  And  body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["filter-processor"], "type": "datadog_logs"}], "processors": [{"id": "filter-processor", "include": "service:my-service", "inputs": ["datadog-agent-source"], "type": "filter"}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Main Observability Pipeline"}, "type": "pipelines"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "errors" has length 0
+

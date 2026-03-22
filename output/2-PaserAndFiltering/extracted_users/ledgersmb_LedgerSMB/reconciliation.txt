@@ -1,0 +1,77 @@
+Feature: Reconciliation
+Description: As a LedgerSMB user I want to be able to create a new bank reconciliation
+  report, save it, review it and delete it.
+Tags: ['@weasel']
+
+Background: 
+  Given  a standard test company
+  And  a logged in admin user
+
+Scenario 1: Create new reconciliation report, update and save.
+  Description: This scenario tests reconciling an account for the first time, where there
+is no previous report from which to get an opening balance.
+  Given  the following GL transaction posted on 2017-11-01:
+  And  the following GL transaction posted on 2017-11-02:
+  When  I navigate the menu and select the item at "Cash & Banking > Reconciliation"
+  Then  I should see the New Reconciliation Report screen.
+  When  I select "1060 Checking Account" from the drop down "Account"
+  And  I enter "1000.00" into "Statement Balance"
+  And  I enter "2018-01-01" into "Statement Date"
+  And  I press "Create New Report"
+  Then  I should see the Reconciliation Report screen
+  And  I should see these Reconciliation Report headings:
+  And  I expect the Cleared Transactions totals to be:
+  And  I expect the Outstanding Transactions totals to be:
+  When  I press "Select All"
+  Then  I should see these Reconciliation Report headings:
+  And  I expect the Cleared Transactions totals to be:
+  And  I expect the Outstanding Transactions section to be absent
+  When  I change the "Ending Statement Balance" to "800.00"
+  And  I update the page
+  Then  I should see these Reconciliation Report headings:
+  When  I press "Save"
+  Then  I should see the Search Reconciliation Reports screen
+
+Scenario 2: Search for reconciliation report and delete it,
+  Given  reconciliation reports with these properties:
+  When  I navigate the menu and select the item at "Cash & Banking > Reports > Reconciliation"
+  Then  I should see the Search Reconciliation Reports screen
+  When  I press "Search"
+  Then  I should see the Reconciliation Search Report screen
+  And  I expect the report to contain 1 row
+  And  I expect the 'Account' report column to contain '1060 Checking Account' for Statement Date '2018-01-01'
+  And  I expect the 'Statement Balance' report column to contain '101.00' for Statement Date '2018-01-01'
+  And  I expect the 'Approved' report column to contain '' for Statement Date '2018-01-01'
+  And  I expect the 'Submitted' report column to contain '' for Statement Date '2018-01-01'
+  And  I expect the 'Entered By' report column to contain '$$the user' for Statement Date '2018-01-01'
+  And  I expect the 'Approved By' report column to contain '' for Statement Date '2018-01-01'
+  When  I click the "2018-01-01" link
+  Then  I should see the Reconciliation Report screen
+  When  I press "Delete"
+  Then  I should see the Search Reconciliation Reports screen
+  When  I press "Search"
+  Then  I should see the Reconciliation Search Report screen
+  And  I expect the report to contain 0 rows
+
+Scenario 3: Update with new GL transaction on a new line
+  Given  an existing and empty reconciliation report
+  When  I open the reconciliation report
+  And  I enter a GL transaction with a balance of 100.00 into the reconciliation period
+  And  I update the screen
+  Then  I expect the reconciliation report to show one uncleared line
+
+Scenario 4: Update with new AR transaction on a new line
+  Given  an existing and empty reconciliation report
+  When  I open the reconciliation report
+  And  I enter an AR payment with a balance of 100.00 into the reconciliation period
+  And  I update the screen
+  Then  I expect the reconciliation report to show one uncleared line
+
+Scenario 5: Update with new GL transaction on an existing line
+  Given  an existing reconciliation report
+  And  a GL transaction with a balance of 100.00 into the reconciliation period
+  When  I open the reconciliation report
+  And  I mark all lines cleared
+  And  I enter a GL transaction with a balance of 50.00 into the reconciliation period
+  Then  I expect the reconciliation report to show one uncleared line
+

@@ -1,0 +1,27 @@
+Feature: Quick-test
+
+Scenario 1: 
+  And  the average block duration is "1"
+  And  the following network parameters are set:
+  And  the following assets are registered:
+  And  the simple risk model named "simple-risk-model":
+  And  the margin calculator named "margin-calculator":
+  And  the markets:
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties place the following orders:
+  And  the opening auction period ends for market "ETH/USD-1-10"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/USD-1-10"
+  When  the parties place the following orders:
+  When  the network moves ahead "11" blocks
+  Then  the parties should have the following account balances:
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the parties should have the following account balances:
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the parties should have the following account balances:
+  When  the parties withdraw the following assets:
+  Then  the network moves ahead "100" blocks
+  Then  debug transfers
+  Then  the parties should have the following account balances:
+

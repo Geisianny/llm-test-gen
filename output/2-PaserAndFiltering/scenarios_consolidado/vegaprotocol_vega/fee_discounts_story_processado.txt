@@ -1,0 +1,15 @@
+Scenario 1: transfer where fee-discount has decayed to 0 results in no fee discount (0057-TRAN-016)
+  Tags: ['@fee-discount']
+  And  the parties have the following transfer fee discounts:
+  Given  the following network parameters are set:
+  And  the network moves ahead "1" epochs
+  And  the parties have the following transfer fee discounts:
+  Given  "f0b40ebdc5b92cf2cf82ff5d0c3f94085d23d5ec2d37d0b929e177c6d4d37e4c" should have general account balance of "9998393" for asset "ETH"
+  And  the accumulated infrastructure fees should be "7" for the asset "ETH"
+  Given  the parties submit the following one off transfers:
+  Given  time is updated to "2021-08-26T00:10:01Z"
+  Then  "f0b40ebdc5b92cf2cf82ff5d0c3f94085d23d5ec2d37d0b929e177c6d4d37e4c" should have general account balance of "9983393" for asset "ETH"
+  Then  "a7c4b181ef9bf5e9029a016f854e4ad471208020fd86187d07f0b420004f06a4" should have general account balance of "10000" for asset "ETH"
+  And  the accumulated infrastructure fees should be "5007" for the asset "ETH"
+  Given  the parties submit the following one off transfers:
+

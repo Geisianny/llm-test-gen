@@ -1,0 +1,36 @@
+Scenario 1: See opportunities pop-up when marker is clicked
+  Given  the following organisations exist:
+  Given  the following volunteer opportunities exist:
+  Given  I visit the embedded index page
+  Then  I should see an infowindow when I click on the volunteer opportunities map markers:
+
+
+
+Scenario 2: See opportunities open in new window when clicked
+  Given  the following organisations exist:
+  Given  the following volunteer opportunities exist:
+  Given  I visit the embedded index page
+  Then  I should open opportunity in a new windows when clicked from the infowindow:
+
+
+
+Scenario 3: See only the map container and search form rendered in the body
+  Given  the following organisations exist:
+  Given  the following volunteer opportunities exist:
+  Given  I visit the embedded index page
+  Then  I should see the map container element on the page
+  And  I should see the search form
+
+
+
+Scenario Outline 4: See markers for do-it volunteer ops on the map and form - Example 1
+  Given  the following doit volunteer opportunities exist:
+  Given  I visit the embedded index page
+  And  I should see 1 markers in the map
+  And  the map should show the opportunity titled Eldery care
+
+  Examples:
+    | title |
+    | Eldery care |
+    | Office Support |
+

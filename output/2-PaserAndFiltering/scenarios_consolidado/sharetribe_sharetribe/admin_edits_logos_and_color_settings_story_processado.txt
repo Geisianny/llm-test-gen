@@ -1,0 +1,9 @@
+Scenario 1: Admin change favicon
+  Tags: ['@javascript']
+  Given  community "test" has default browse view "grid"
+  When  I attach the file "./spec/fixtures/Australian_painted_lady.jpg" to "community_favicon"
+  And  I press submit
+  Then  I wait for 1 seconds
+  And  I refresh the page
+  And  I should see "Australian_painted_lady.jpg"
+

@@ -1,0 +1,66 @@
+Scenario 1: Filtering payments in state "New"
+  Tags: ['@api', '@ui']
+  When  I browse payments
+  And  I choose "new" as a payment state
+  And  I filter
+  Then  I should see "3" payments in the list
+  And  I should see the payment of the "#00000001" order
+  And  I should see also the payment of the "#00000005" order
+  And  I should see also the payment of the "#00000006" order
+  But  I should not see the payment of the "#00000002" order
+
+
+
+Scenario 2: Filtering payments in state "Completed"
+  Tags: ['@api', '@ui']
+  When  I browse payments
+  And  I choose "completed" as a payment state
+  And  I filter
+  Then  I should see a single payment in the list
+  And  I should see the payment of the "#00000002" order
+  But  I should not see the payment of the "#00000003" order
+
+
+
+Scenario 3: Filtering payments in state "Processing"
+  Tags: ['@api', '@ui']
+  When  I browse payments
+  And  I choose "processing" as a payment state
+  And  I filter
+  Then  I should see a single payment in the list
+  And  I should see the payment of the "#00000003" order
+  But  I should not see the payment of the "#00000004" order
+
+
+
+Scenario 4: Filtering payments in state "Refunded"
+  Tags: ['@api', '@ui']
+  When  I browse payments
+  And  I choose "refunded" as a payment state
+  And  I filter
+  Then  I should see a single payment in the list
+  And  I should see the payment of the "#00000004" order
+  But  I should not see the payment of the "#00000005" order
+
+
+
+Scenario 5: Filtering payments in state "Cancelled"
+  Tags: ['@api', '@ui']
+  When  I browse payments
+  And  I choose "cancelled" as a payment state
+  And  I filter
+  Then  I should see a single payment in the list
+  And  I should see the payment of the "#00000005" order
+  But  I should not see the payment of the "#00000006" order
+
+
+
+Scenario 6: Filtering payments in state "Failed"
+  Tags: ['@api', '@ui']
+  When  I browse payments
+  And  I choose "failed" as a payment state
+  And  I filter
+  Then  I should see a single payment in the list
+  And  I should see the payment of the "#00000006" order
+  But  I should not see the payment of the "#00000001" order
+

@@ -1,0 +1,24 @@
+Feature: Set up a market with an opening auction, then uncross the book so that the part trading in auction becomes distressed
+
+Background: 
+  Given  the markets:
+  And  the parties deposit on asset's general account the following amount:
+  And  the following network parameters are set:
+
+Scenario 1: 
+  Tags: ['@Liquidation']
+  When  the parties place the following orders:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+  When  the opening auction period ends for market "ETH/DEC19"
+  Then  the market data for the market "ETH/DEC19" should be:
+  When  the network moves ahead "1" blocks
+  And  debug trades
+  And  the following trades should be executed:
+  Then  the parties should have the following profit and loss:
+  And  the accumulated liquidity fees should be "472" for the market "ETH/DEC19"
+  And  the insurance pool balance should be "19528" for the market "ETH/DEC19"
+  And  the parties should have the following account balances:
+

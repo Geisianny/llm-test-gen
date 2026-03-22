@@ -1,0 +1,11 @@
+Scenario 1: Non-persistent order does not result in an auction (1 out of 2 triggers breached),
+  And  the market data for the market "BTC/ETH" should be:
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  And  the orders should have the following states:
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  And  the orders should have the following states:
+

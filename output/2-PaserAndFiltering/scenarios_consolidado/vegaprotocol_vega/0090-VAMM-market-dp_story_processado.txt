@@ -1,0 +1,34 @@
+Scenario 1: Incoming order at AMM best price
+  Tags: ['@VAMM']
+  When  the parties place the following orders:
+  Then  the following trades should be executed:
+
+
+
+Scenario 2: Incoming order at AMM best price and orderbook volume exists at that price
+  Tags: ['@VAMM']
+  When  the parties place the following orders:
+  Then  the following trades should be executed:
+
+
+
+Scenario 3: Incoming order at AMM best price and orderbook volume exists at FAIR PRICE
+  Tags: ['@VAMM']
+  When  the parties place the following orders:
+  Then  the following trades should be executed:
+
+
+
+Scenario 4: Incoming order at AMM fair price and orderbook volume exists at FAIR PRICE
+  Tags: ['@VAMM']
+  When  the parties place the following orders:
+  Then  the following trades should be executed:
+
+
+
+Scenario 5: Incoming order at AMM fair price and orderbook volume exists at FAIR PRICE and at AMM best price
+  Tags: ['@VAMM']
+  When  the parties place the following orders:
+  Then  the following trades should be executed:
+  When  the network moves ahead "1" blocks
+

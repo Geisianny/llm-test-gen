@@ -1,0 +1,40 @@
+Scenario 1: Deleted order should disappear from the registry
+  Tags: ['@domain']
+  When  I delete the order "#00000022"
+  Then  this order should not exist in the registry
+
+
+
+Scenario 2: Payments of a deleted order should disappear from the registry
+  Tags: ['@domain']
+  When  I delete the order "#00000022"
+  Then  there should be no "Cash on Delivery" payments in the registry
+
+
+
+Scenario 3: Shipments of a deleted order should disappear from the registry
+  Tags: ['@domain']
+  When  I delete the order "#00000022"
+  Then  there should be no shipments with "Free" shipping method in the registry
+
+
+
+Scenario 4: Order items are deleted together with an order
+  Tags: ['@domain']
+  When  I delete the order "#00000022"
+  Then  the order item with product "PHP T-Shirt" should not exist
+
+
+
+Scenario 5: Order adjustments are deleted together with an order
+  Tags: ['@domain']
+  When  I delete the order "#00000022"
+  Then  adjustments of this order should not exist
+
+
+
+Scenario 6: Billing and shipping addresses are deleted with an order
+  Tags: ['@domain']
+  When  I delete the order "#00000022"
+  Then  billing and shipping addresses of this order should not exist
+

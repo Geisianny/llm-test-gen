@@ -1,0 +1,13 @@
+Scenario 1: Iterate the Class with Batch Listing
+  Then  iterating the behat-class "Test" should return 20 objects
+
+
+
+Scenario 2: Iterate the Class with Batch Listing with a offset
+  Then  iterating the behat-class "Test" with a offset of 5 should return 15 objects
+
+
+
+Scenario 3: Iterate the Class with Batch Listing with a offset and limit
+  Then  iterating the behat-class "Test" with a offset of 5 and limit of 1 should return 1 objects
+

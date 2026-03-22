@@ -1,0 +1,6 @@
+Scenario 1: 
+  Given  I am a logged in admin
+  And  I open Pimcore
+  And  I open resource "coreshop.taxation", "tax_item"
+  Then  tax-rates tab is open
+

@@ -1,0 +1,6 @@
+Scenario 1: Creation of a new AR transaction, no taxes
+  When  I open the AR transaction entry screen
+  And  I select customer "Customer 1"
+  Then  I expect to see these transaction header fields and values
+  And  I expect to see a transaction with 2 lines
+

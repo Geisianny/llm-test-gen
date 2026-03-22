@@ -1,0 +1,282 @@
+Feature: Embargo Date and Time on an Article (User Story: https://dev.sourcefabric.org/browse/SD-3036)
+
+Background: Setup data required to test the Embargo feature
+  Given  the "validators"
+  And  "desks"
+  And  "products"
+  And  "subscribers"
+  And  "archive"
+
+Scenario 1: Create a Text Article with Embargo
+  Tags: ['@auth']
+  When  we post to "/archive" with success
+  When  we get "/archive"
+  Then  we get list with 2 items
+  Then  we get "embargo" in "/archive/text-article-with-embargo"
+
+Scenario 2: Create a Text Article with Embargo an time zone
+  Tags: ['@auth']
+  When  we post to "/archive" with success
+  When  we get "/archive"
+  Then  we get list with 2 items
+  Then  we get "embargo" in "/archive/text-article-with-embargo"
+
+Scenario 3: Update a Text Article with Embargo and timezone
+  Tags: ['@auth']
+  When  we patch "/archive/123"
+  Then  we get response code 200
+  When  we get "/archive/123"
+  Then  we get existing resource
+  When  we patch "/archive/123"
+  Then  we get response code 200
+  When  we get "/archive/123"
+  Then  we get existing resource
+  When  we patch "/archive/123"
+  Then  we get response code 200
+  When  we get "/archive/123"
+  Then  we get existing resource
+  When  we patch "/archive/123"
+  Then  we get response code 200
+  When  we get "/archive/123"
+  Then  we get existing resource
+  When  we patch "/archive/123"
+  Then  we get response code 200
+  When  we get "/archive/123"
+  Then  we get existing resource
+
+Scenario 4: An article with Embargo always goes to Wire Subscribers irrespective of publish action until embargo lapses
+  Tags: ['@auth', '@vocabulary']
+  Given  "filter_conditions"
+  And  "content_filters" with objectid
+  When  we patch "/archive/123"
+  And  we publish "#archive._id#" with "publish" type and "published" state
+  Then  we get OK response
+  And  we get existing resource
+  And  we get expiry for schedule and embargo content 4320 minutes after "#archive_publish.embargo#"
+  And  we check if article has Embargo
+  When  we get "/published"
+  Then  we check if article has Embargo
+  When  we enqueue published
+  When  we get "/publish_queue"
+  Then  we get list with 3 items
+  When  we publish "#archive._id#" with "correct" type and "corrected" state
+  Then  we get OK response
+  When  we enqueue published
+  When  we get "/publish_queue"
+  Then  we get list with 6 items
+  When  we publish "#archive._id#" with "kill" type and "killed" state
+  Then  we get OK response
+  When  we enqueue published
+  When  we get "/publish_queue"
+  Then  we get list with 9 items
+
+Scenario 5: Publish an article with Embargo and validate metadata
+  Tags: ['@auth', '@vocabulary']
+  Given  "filter_conditions"
+  And  "content_filters" with objectid
+  When  we patch "/archive/123"
+  And  we publish "#archive._id#" with "publish" type and "published" state
+  Then  we get OK response
+  And  we get existing resource
+  And  we get expiry for schedule and embargo content 4320 minutes after "#archive_publish.embargo#"
+  And  we check if article has Embargo
+  When  we get "/published"
+  Then  we get existing resource
+  And  we check if article has Embargo
+  When  we enqueue published
+  When  we get "/publish_queue"
+  Then  we get list with 3 items
+  When  we enqueue published
+  And  we publish "#archive._id#" with "correct" type and "corrected" state
+  Then  we get OK response
+  When  we enqueue published
+  When  we get "/publish_queue"
+  Then  we get list with 6 items
+  When  we get "/published"
+  Then  we validate the published item expiry to be after publish expiry set in desk settings 4320
+
+Scenario 6: Publish an article with Embargo and embargo lapses
+  Tags: ['@auth', '@vocabulary']
+  Given  "filter_conditions"
+  And  "content_filters" with objectid
+  When  we patch "/archive/123"
+  And  we publish "#archive._id#" with "publish" type and "published" state
+  Then  we get OK response
+  And  we get existing resource
+  And  we get expiry for schedule and embargo content 4320 minutes after "#archive_publish.embargo#"
+  And  we check if article has Embargo
+  When  we get "/published"
+  Then  we get existing resource
+  And  we check if article has Embargo
+  When  we enqueue published
+  When  we get "/publish_queue"
+  Then  we get list with 3 items
+  When  embargo lapses for "#archive._id#"
+  And  we publish "#archive._id#" with "correct" type and "corrected" state
+  Then  we get OK response
+  When  we enqueue published
+  When  we get "/publish_queue"
+  Then  we get list with 6 items
+  When  we get "/archive/123"
+  When  we get "/published"
+  Then  we validate the published item expiry to be after publish expiry set in desk settings 4320
+
+Scenario 7: Publish an article with Embargo and change embargo in correction
+  Tags: ['@auth', '@vocabulary']
+  Given  "filter_conditions"
+  And  "content_filters" with objectid
+  When  we patch "/archive/123"
+  And  we publish "#archive._id#" with "publish" type and "published" state
+  Then  we get OK response
+  And  we get existing resource
+  And  we get expiry for schedule and embargo content 4320 minutes after "#archive_publish.embargo#"
+  And  we check if article has Embargo
+  When  we get "/published"
+  Then  we get existing resource
+  And  we check if article has Embargo
+  When  we enqueue published
+  When  we get "/publish_queue"
+  Then  we get list with 3 items
+  When  we publish "#archive._id#" with "correct" type and "corrected" state
+  Then  we get OK response
+  When  we enqueue published
+  When  we get "/publish_queue"
+  Then  we get list with 6 items
+  When  we get "/published"
+  Then  we validate the published item expiry to be after publish expiry set in desk settings 4320
+  And  we check if article has Embargo
+  When  we publish "#archive._id#" with "correct" type and "corrected" state
+  Then  we get OK response
+  When  we enqueue published
+  When  we get "/published"
+  Then  we validate the published item expiry to be after publish expiry set in desk settings 4320
+  When  we get "/archive/123"
+
+Scenario 8: Creating/Updating an item without a future Embargo should fail
+  Tags: ['@auth']
+  When  we post to "/archive"
+  Then  we get error 400
+  When  we patch "/archive/123"
+  Then  we get error 400
+
+Scenario 9: Creating/Updating a Package with Embargo should fail
+  Tags: ['@auth']
+  Given  "desks"
+  When  we post to "/archive"
+  Then  we get error 400
+  When  we post to "/archive" with success
+  And  we patch "/archive/tag:example.com,0000:newsml_BRE9A605"
+  Then  we get error 400
+
+Scenario 10: A package can't have Embargo Item(s)
+  Tags: ['@auth']
+  When  we patch "/archive/123"
+  And  we post to "/archive"
+  Then  we get error 400
+
+Scenario 11: An article can have both Publish Schedule and Embargo
+  Tags: ['@auth']
+  When  we post to "/archive" with success
+  When  we patch "/archive/123"
+  Then  we get response code 200
+
+Scenario 12: Can't set an Embargo after publishing
+  Tags: ['@auth']
+  When  we publish "#archive._id#" with "publish" type and "published" state
+  Then  we get OK response
+  And  we get existing resource
+  When  we get "/published"
+  Then  we get existing resource
+  When  we publish "#archive._id#" with "correct" type and "corrected" state
+  Then  we get error 400
+
+Scenario 13: Cannot rewrite an article which has Embargo
+  Tags: ['@auth']
+  When  we patch "/archive/123"
+  And  we publish "#archive._id#" with "publish" type and "published" state
+  Then  we get OK response
+  And  we get existing resource
+  When  we get "/published"
+  Then  we get existing resource
+  When  we rewrite "123"
+  Then  we get error 400
+
+Scenario 14: Embargo shouldn't be copied while Duplicating an Embargoed Article
+  Tags: ['@auth']
+  When  we patch "/archive/123"
+  Then  we get response code 200
+  When  we post to "/archive/123/duplicate" with success
+  And  we get "/archive/#duplicate._id#"
+  Then  there is no "embargo" in response
+
+Scenario 15: Embargo shouldn't be copied while Copying an Embargoed Article
+  Tags: ['@auth']
+  When  we post to "/archive" with success
+  When  we post to "/archive/text-article-with-embargo/copy" with success
+  And  we get "/archive/#copy._id#"
+  Then  there is no "embargo" in response
+
+Scenario 16: Deschedule an article then embargo the same article
+  Tags: ['@auth', '@vocabulary', '@test']
+  Given  "filter_conditions"
+  And  "content_filters" with objectid
+  When  we patch "/archive/123"
+  Then  we get response code 200
+  When  we publish "123" with "publish" type and "published" state
+  Then  we get OK response
+  And  we get existing resource
+  When  we get "/archive/123"
+  Then  we get existing resource
+  When  we get "/published"
+  Then  we get list with 1 items
+  When  we enqueue published
+  When  we get "/publish_queue"
+  Then  we get list with 0 items
+  When  we patch "/archive/123"
+  Then  we get OK response
+  When  we get "/archive/123"
+  Then  we get existing resource
+  When  we patch "/archive/123"
+  Then  we get OK response
+  When  we get "/archive/123"
+  Then  we get existing resource
+  When  we get "/published"
+  Then  we get list with 0 items
+  When  we get "/publish_queue"
+  Then  we get list with 0 items
+  When  we patch "/archive/123"
+  Then  we get OK response
+  When  we publish "123" with "publish" type and "published" state
+  Then  we get OK response
+  And  we get expiry for schedule and embargo content 4320 minutes after "#archive_publish.embargo#"
+  And  we check if article has Embargo
+  When  we get "/published"
+  Then  we check if article has Embargo
+  When  we enqueue published
+  When  we get "/publish_queue"
+  Then  we get list with 3 items
+
+Scenario 17: An article with Embargo goes to Digital Subscribers if not blocked
+  Tags: ['@auth']
+  When  we patch "/archive/123"
+  And  we publish "#archive._id#" with "publish" type and "published" state
+  Then  we get OK response
+  And  we get existing resource
+  And  we get expiry for schedule and embargo content 4320 minutes after "#archive_publish.embargo#"
+  And  we check if article has Embargo
+  When  we get "/published"
+  Then  we check if article has Embargo
+  When  we enqueue published
+  When  we get "/publish_queue"
+  Then  we get list with 3 items
+  When  we publish "#archive._id#" with "correct" type and "corrected" state
+  Then  we get OK response
+  When  we enqueue published
+  When  we get "/publish_queue"
+  Then  we get list with 6 items
+  When  we publish "#archive._id#" with "kill" type and "killed" state
+  Then  we get OK response
+  When  we enqueue published
+  When  we get "/publish_queue"
+  Then  we get list with 9 items
+

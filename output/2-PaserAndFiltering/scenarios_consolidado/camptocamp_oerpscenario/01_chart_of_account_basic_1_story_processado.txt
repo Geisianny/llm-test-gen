@@ -1,0 +1,22 @@
+Scenario 1: GENERIC CHART OF ACCOUNT CREATION
+  Tags: ['@anglosaxon_setup_chart']
+  Given  I need a "account.account" with oid: scen.acc_grni
+  And  having:
+  Given  I need a "account.account" with oid: scen.acc_gdni
+  And  having:
+  Given  I need a "account.account" with oid: scen.acc_cogs
+  And  having:
+  Given  I need a "account.account" with oid: scen.acc_pricediff
+  And  having:
+
+
+
+Scenario 2: DEFAULT ACCOUNT SETTINGS (PROPERTIES)
+  Tags: ['@anglosaxon_base_finance_setup_properties']
+  Given  I set global property named "property_stock_account_input" for model "product.template" and field "property_stock_account_input"
+  And  the property is related to model "account.account" using column "code" and value "405"
+  Given  I set global property named "property_stock_account_output" for model "product.template" and field "property_stock_account_output"
+  And  the property is related to model "account.account" using column "code" and value "415"
+  Given  I set global property named "property_account_expense" for model "product.template" and field "property_account_expense"
+  And  the property is related to model "account.account" using column "code" and value "690"
+

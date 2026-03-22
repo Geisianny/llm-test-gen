@@ -1,0 +1,13 @@
+Feature: News Items resource
+
+Scenario 1: It can display all items no matter what's the status
+  Tags: ['@auth']
+  When  we post to "archive"
+  And  we get "/news"
+  Then  we get list with 2 items
+
+Scenario 2: Keep it readonly for now
+  Tags: ['@auth']
+  When  we post to "news"
+  Then  we get error 405
+

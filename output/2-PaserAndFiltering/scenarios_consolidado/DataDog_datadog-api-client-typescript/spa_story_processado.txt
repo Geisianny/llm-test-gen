@@ -1,0 +1,47 @@
+Scenario 1: Get SPA Recommendations returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/data-and-analytics-processing']
+  Given  request contains "shard" parameter from "REPLACE.ME"
+  And  request contains "service" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 2: Get SPA Recommendations returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/data-and-analytics-processing']
+  Given  request contains "shard" parameter from "REPLACE.ME"
+  And  request contains "service" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 3: GetSPARecommendations returns a JSON:API Recommendation with driver and executor estimations
+  Tags: ['@skip', '@team:DataDog/data-and-analytics-processing']
+  Given  request contains "service" parameter with value "dedupeactivecontexts"
+  And  request contains "shard" parameter with value "adp_dedupeactivecontexts_org2"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+  And  the response "data.type" is equal to "recommendation"
+  And  the response "data" has field "attributes"
+  And  the response "data.attributes" has field "driver"
+  And  the response "data.attributes" has field "executor"
+  And  the response "data.attributes.driver" has field "estimation"
+  And  the response "data.attributes.driver.estimation" has field "cpu"
+  And  the response "data.attributes.driver.estimation" has field "memory"
+  And  the response "data.attributes.driver.estimation" has field "ephemeral_storage"
+  And  the response "data.attributes.driver.estimation" has field "heap"
+  And  the response "data.attributes.driver.estimation" has field "overhead"
+  And  the response "data.attributes.driver.estimation.cpu" has field "max"
+  And  the response "data.attributes.driver.estimation.cpu" has field "p95"
+  And  the response "data.attributes.driver.estimation.cpu" has field "p75"
+  And  the response "data.attributes.executor" has field "estimation"
+  And  the response "data.attributes.executor.estimation" has field "cpu"
+  And  the response "data.attributes.executor.estimation" has field "memory"
+  And  the response "data.attributes.executor.estimation" has field "ephemeral_storage"
+  And  the response "data.attributes.executor.estimation" has field "heap"
+  And  the response "data.attributes.executor.estimation" has field "overhead"
+  And  the response "data.attributes.executor.estimation.cpu" has field "max"
+  And  the response "data.attributes.executor.estimation.cpu" has field "p95"
+  And  the response "data.attributes.executor.estimation.cpu" has field "p75"
+

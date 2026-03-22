@@ -1,0 +1,23 @@
+Feature: Set up a spot market, with an opening auction, then uncross the book. Make sure opening auction can end.
+
+Background: 
+  Given  the fees configuration named "fees-config-1":
+  And  the simple risk model named "my-simple-risk-model":
+  And  the fees configuration named "my-fees-config":
+  And  the spot markets:
+  And  the parties deposit on asset's general account the following amount:
+
+Scenario 1: Party submits pegged orders and they are getting priced and repriced as needed
+  Given  the following network parameters are set:
+  When  the parties place the following orders:
+  And  the parties place the following pegged orders:
+  Then  the pegged orders should have the following states:
+  When  the opening auction period ends for market "BTC/ETH"
+  Then  the market data for the market "BTC/ETH" should be:
+  And  the pegged orders should have the following states:
+  And  the order book should have the following volumes for market "BTC/ETH":
+  When  the parties amend the following orders:
+  Then  the pegged orders should have the following states:
+  And  the order book should have the following volumes for market "BTC/ETH":
+  When  the parties submit the following liquidity provision:
+

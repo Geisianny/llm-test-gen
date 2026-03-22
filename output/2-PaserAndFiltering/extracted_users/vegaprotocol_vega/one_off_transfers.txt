@@ -1,0 +1,98 @@
+Feature: Test one off transfers
+
+Background: 
+  Given  time is updated to "2021-08-26T00:00:00Z"
+  Given  the following network parameters are set:
+  Given  the following assets are updated:
+  Given  the parties deposit on asset's general account the following amount:
+  And  create the network treasury account for asset "VEGA"
+
+Scenario 1: simple successful transfers when (transfer amount * transfer.fee.factor <= transfer.fee.maxQuantumAmount * quantum) (0057-TRAN-001, 0057-TRAN-007, 0057-TRAN-008)
+  Given  the parties submit the following one off transfers:
+  Then  "f0b40ebdc5b92cf2cf82ff5d0c3f94085d23d5ec2d37d0b929e177c6d4d37e4c" should have general account balance of "9910000" for asset "VEGA"
+  Given  time is updated to "2021-08-26T00:00:01Z"
+  Then  "f0b40ebdc5b92cf2cf82ff5d0c3f94085d23d5ec2d37d0b929e177c6d4d37e4c" should have general account balance of "9910000" for asset "VEGA"
+  Then  "a7c4b181ef9bf5e9029a016f854e4ad471208020fd86187d07f0b420004f06a4" should have general account balance of "10000" for asset "VEGA"
+  Given  time is updated to "2021-08-26T00:00:02Z"
+  Then  "f0b40ebdc5b92cf2cf82ff5d0c3f94085d23d5ec2d37d0b929e177c6d4d37e4c" should have general account balance of "9910000" for asset "VEGA"
+  Then  "a7c4b181ef9bf5e9029a016f854e4ad471208020fd86187d07f0b420004f06a4" should have general account balance of "10000" for asset "VEGA"
+  Then  "576380694832d9271682e86fffbbcebc09ca79c259baa5d4d0298e12ecdee303" should have general account balance of "20000" for asset "VEGA"
+  Given  time is updated to "2021-08-26T00:00:03Z"
+  Then  "f0b40ebdc5b92cf2cf82ff5d0c3f94085d23d5ec2d37d0b929e177c6d4d37e4c" should have general account balance of "9910000" for asset "VEGA"
+  Then  "a7c4b181ef9bf5e9029a016f854e4ad471208020fd86187d07f0b420004f06a4" should have general account balance of "10000" for asset "VEGA"
+  Then  "576380694832d9271682e86fffbbcebc09ca79c259baa5d4d0298e12ecdee303" should have general account balance of "20000" for asset "VEGA"
+  Then  "a3c024b4e23230c89884a54a813b1ecb4cb0f827a38641c66eeca466da6b2ddf" should have general account balance of "30000" for asset "VEGA"
+
+Scenario 2: simple successful transfers when (transfer amount * transfer.fee.factor > transfer.fee.maxQuantumAmount * quantum) (0057-TRAN-011)
+  Given  the following network parameters are set:
+  Given  the parties submit the following one off transfers:
+  Then  "f0b40ebdc5b92cf2cf82ff5d0c3f94085d23d5ec2d37d0b929e177c6d4d37e4c" should have general account balance of "9925000" for asset "VEGA"
+  Given  time is updated to "2021-08-26T00:00:01Z"
+  Then  "f0b40ebdc5b92cf2cf82ff5d0c3f94085d23d5ec2d37d0b929e177c6d4d37e4c" should have general account balance of "9925000" for asset "VEGA"
+  Then  "a7c4b181ef9bf5e9029a016f854e4ad471208020fd86187d07f0b420004f06a4" should have general account balance of "10000" for asset "VEGA"
+  Given  time is updated to "2021-08-26T00:00:02Z"
+  Then  "f0b40ebdc5b92cf2cf82ff5d0c3f94085d23d5ec2d37d0b929e177c6d4d37e4c" should have general account balance of "9925000" for asset "VEGA"
+  Then  "a7c4b181ef9bf5e9029a016f854e4ad471208020fd86187d07f0b420004f06a4" should have general account balance of "10000" for asset "VEGA"
+  Then  "576380694832d9271682e86fffbbcebc09ca79c259baa5d4d0298e12ecdee303" should have general account balance of "20000" for asset "VEGA"
+  Given  time is updated to "2021-08-26T00:00:03Z"
+  Then  "f0b40ebdc5b92cf2cf82ff5d0c3f94085d23d5ec2d37d0b929e177c6d4d37e4c" should have general account balance of "9925000" for asset "VEGA"
+  Then  "a7c4b181ef9bf5e9029a016f854e4ad471208020fd86187d07f0b420004f06a4" should have general account balance of "10000" for asset "VEGA"
+  Then  "576380694832d9271682e86fffbbcebc09ca79c259baa5d4d0298e12ecdee303" should have general account balance of "20000" for asset "VEGA"
+  Then  "a3c024b4e23230c89884a54a813b1ecb4cb0f827a38641c66eeca466da6b2ddf" should have general account balance of "30000" for asset "VEGA"
+
+Scenario 3: invalid transfers (0057-TRAN-005, 0057-TRAN-006)
+  Given  the parties submit the following one off transfers:
+
+Scenario 4: transfer to self succeeds
+  Given  the parties submit the following one off transfers:
+  Given  time is updated to "2021-08-26T00:00:05Z"
+  Then  "f0b40ebdc5b92cf2cf82ff5d0c3f94085d23d5ec2d37d0b929e177c6d4d37e4c" should have general account balance of "9995000" for asset "VEGA"
+
+Scenario 5: transfer from non existing account fails
+  Given  the parties submit the following one off transfers:
+
+Scenario 6: payout time in the past - should be executed immediately
+  Given  the parties submit the following one off transfers:
+  Then  "f0b40ebdc5b92cf2cf82ff5d0c3f94085d23d5ec2d37d0b929e177c6d4d37e4c" should have general account balance of "9985000" for asset "VEGA"
+  Then  "a7c4b181ef9bf5e9029a016f854e4ad471208020fd86187d07f0b420004f06a4" should have general account balance of "2500" for asset "VEGA"
+
+Scenario 7: Transfer from general account to reward account (0057-TRAN-002, 0057-TRAN-007, 0013-ACCT-028)
+  Given  the parties submit the following one off transfers:
+  Then  "f0b40ebdc5b92cf2cf82ff5d0c3f94085d23d5ec2d37d0b929e177c6d4d37e4c" should have general account balance of "9775000" for asset "VEGA"
+  And  the reward account of type "ACCOUNT_TYPE_GLOBAL_REWARD" should have balance of "10000" for asset "VEGA"
+  And  the reward account of type "ACCOUNT_TYPE_REWARD_MARKET_PROPOSERS" should have balance of "0" for asset "VEGA"
+  And  the reward account of type "ACCOUNT_TYPE_REWARD_LP_RECEIVED_FEES" should have balance of "0" for asset "VEGA"
+  And  the reward account of type "ACCOUNT_TYPE_REWARD_MAKER_RECEIVED_FEES" should have balance of "0" for asset "VEGA"
+  And  the reward account of type "ACCOUNT_TYPE_REWARD_MAKER_PAID_FEES" should have balance of "0" for asset "VEGA"
+  Given  time is updated to "2021-08-26T00:00:02Z"
+  Then  "f0b40ebdc5b92cf2cf82ff5d0c3f94085d23d5ec2d37d0b929e177c6d4d37e4c" should have general account balance of "9775000" for asset "VEGA"
+  Then  the reward account of type "ACCOUNT_TYPE_GLOBAL_REWARD" should have balance of "10000" for asset "VEGA"
+  And  the reward account of type "ACCOUNT_TYPE_REWARD_MARKET_PROPOSERS" should have balance of "20000" for asset "VEGA"
+  And  the reward account of type "ACCOUNT_TYPE_REWARD_LP_RECEIVED_FEES" should have balance of "0" for asset "VEGA"
+  And  the reward account of type "ACCOUNT_TYPE_REWARD_MAKER_RECEIVED_FEES" should have balance of "0" for asset "VEGA"
+  And  the reward account of type "ACCOUNT_TYPE_REWARD_MAKER_PAID_FEES" should have balance of "0" for asset "VEGA"
+  Given  time is updated to "2021-08-26T00:00:03Z"
+  Then  "f0b40ebdc5b92cf2cf82ff5d0c3f94085d23d5ec2d37d0b929e177c6d4d37e4c" should have general account balance of "9775000" for asset "VEGA"
+  And  the reward account of type "ACCOUNT_TYPE_GLOBAL_REWARD" should have balance of "10000" for asset "VEGA"
+  And  the reward account of type "ACCOUNT_TYPE_REWARD_MARKET_PROPOSERS" should have balance of "20000" for asset "VEGA"
+  And  the reward account of type "ACCOUNT_TYPE_REWARD_LP_RECEIVED_FEES" should have balance of "30000" for asset "VEGA"
+  And  the reward account of type "ACCOUNT_TYPE_REWARD_MAKER_RECEIVED_FEES" should have balance of "40000" for asset "VEGA"
+  And  the reward account of type "ACCOUNT_TYPE_REWARD_MAKER_PAID_FEES" should have balance of "50000" for asset "VEGA"
+  And  the reward account of type "ACCOUNT_TYPE_FEES_INFRASTRUCTURE" should have balance of "75000" for asset "VEGA"
+
+Scenario 8: Insufficient funds to cover transfer + fees (0057-TRAN-007)
+  Given  the parties submit the following one off transfers:
+
+Scenario 9: Cannot cancel scheduled one off transfer (0057-TRAN-010)
+  Given  the parties submit the following one off transfers:
+  When  the parties submit the following transfer cancellations:
+
+Scenario 10: Transfer from general account to Network Treasury Account by specifying "0" address and the account type (0013-ACCT-026)
+  Tags: ['@networktreasury']
+  Given  the parties submit the following one off transfers:
+  Then  "f0b40ebdc5b92cf2cf82ff5d0c3f94085d23d5ec2d37d0b929e177c6d4d37e4c" should have general account balance of "9985000" for asset "VEGA"
+  And  the reward account of type "ACCOUNT_TYPE_PENDING_TRANSFERS" should have balance of "10000" for asset "VEGA"
+  When  the network moves ahead "1" epochs
+  Then  "f0b40ebdc5b92cf2cf82ff5d0c3f94085d23d5ec2d37d0b929e177c6d4d37e4c" should have general account balance of "9985000" for asset "VEGA"
+  And  the reward account of type "ACCOUNT_TYPE_NETWORK_TREASURY" should have balance of "10000" for asset "VEGA"
+

@@ -1,0 +1,19 @@
+Feature: Do not let Taskomatic tasks interfere with our CI tests
+
+Scenario 1: Log in as admin user
+  Given  I am authorized for the "Admin" section
+
+Scenario 2: Disable scheduled reposyncs
+  When  I follow the left menu "Admin > Task Schedules"
+  And  I follow "mgr-sync-refresh-default"
+  And  I choose "disabled"
+  And  I click on "Update Schedule"
+  And  I click on "Disable Schedule"
+
+Scenario 3: Disable scheduled Cobbler syncs
+  When  I follow the left menu "Admin > Task Schedules"
+  And  I follow "cobbler-sync-default"
+  And  I choose "disabled"
+  And  I click on "Update Schedule"
+  And  I click on "Disable Schedule"
+

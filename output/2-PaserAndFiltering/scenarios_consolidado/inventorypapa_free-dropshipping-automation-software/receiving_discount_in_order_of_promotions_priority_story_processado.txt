@@ -1,0 +1,42 @@
+Scenario 1: Receiving fixed discount first when priority is greater
+  Tags: ['@ui', '@api']
+  Given  there is a promotion "Cebula Deal" with priority 1
+  And  it gives "$10.00" discount to every order
+  And  there is a promotion "Santa's Gift" with priority 4
+  And  it gives "20%" discount to every order
+  When  I add product "The Pug Mug" to the cart
+  Then  my cart total should be "$70.00"
+
+
+
+Scenario 2: Receiving percentage discount first when priority is greater
+  Tags: ['@ui', '@api']
+  Given  there is a promotion "Cebula Deal" with priority 5
+  And  it gives "$10.00" discount to every order
+  And  there is a promotion "Santa's Gift" with priority 2
+  And  it gives "20%" discount to every order
+  When  I add product "The Pug Mug" to the cart
+  Then  my cart total should be "$72.00"
+
+
+
+Scenario 3: Receiving discount from exclusive promotion even if their priority is lower than that of a regular one
+  Tags: ['@ui', '@api']
+  Given  there is a promotion "Cebula Deal" with priority 5
+  And  it gives "$10.00" discount to every order
+  And  there is an exclusive promotion "Golden Pug Market" with priority 1
+  And  it gives "20%" discount to every order
+  When  I add product "The Pug Mug" to the cart
+  Then  my cart total should be "$80.00"
+
+
+
+Scenario 4: Receiving discount from an exclusive promotion with higher priority
+  Tags: ['@ui', '@api']
+  Given  there is an exclusive promotion "Golden Pug Market" with priority 2
+  And  it gives "20%" discount to every order
+  And  there is an exclusive promotion "Sloth's Agility" with priority 5
+  And  it gives "$10.00" discount to every order
+  When  I add product "The Pug Mug" to the cart
+  Then  my cart total should be "$90.00"
+

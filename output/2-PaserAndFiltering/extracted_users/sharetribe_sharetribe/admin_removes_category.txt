@@ -1,0 +1,38 @@
+Feature: Admin removes a category
+
+Background: 
+  Given  I am logged in as "kassi_testperson2"
+  And  "kassi_testperson2" has admin rights in community "test"
+  And  community "test" has following category structure:
+  And  there is a listing with title "Sound of Music" with category "Books"
+
+Scenario 1: Admin removes a subcategory
+  Tags: ['@javascript']
+  Given  I am on the categories admin page
+  When  I remove category "Tools"
+  Then  the category "Tools" should be removed
+
+Scenario 2: Admin removes a top level category
+  Tags: ['@javascript']
+  Given  I am on the categories admin page
+  When  I remove category "Items" which needs confirmation
+  Then  I should see warning about the removal of subcategory "Tools"
+  When  I confirm category removal
+  Then  the category "Items" should be removed
+
+Scenario 3: Admin is not able to remove last top level categories
+  Tags: ['@javascript']
+  Given  "Services" is the only top level category in community "test"
+  And  I am on the categories admin page
+  Then  I should not be able to remove category "Services"
+
+Scenario 4: Admin removes a subcategory with listings
+  Tags: ['@javascript']
+  Given  I am on the categories admin page
+  When  I remove category "Books" which needs confirmation
+  Then  I should be able to select new category for listing "Sound of Music"
+  When  I select "Services" as a new category
+  And  I confirm category removal
+  Then  the category "Books" should be removed
+  And  the listing "Sound of Music" should belong to category "Items"
+

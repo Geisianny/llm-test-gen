@@ -1,0 +1,40 @@
+Feature: Simple negative price factor - spot markets
+Description: Test simply checks if an asset and market is configured such that the market
+    decimal places are greater than the asset decimal places, yielding a
+    negative price factor, the market still operates correctly.
+
+    This is validated by checking an LP meets their obligation when their orders
+    are sized and priced correctly. i.e. they are not penalised at the end of
+    the epoch.
+
+Background: 
+  Given  time is updated to "2024-01-01T00:00:00Z"
+  And  the average block duration is "1"
+  And  the following network parameters are set:
+  Given  the following assets are registered:
+  And  the spot markets:
+  Given  the parties deposit on asset's general account the following amount:
+  Given  the parties deposit on asset's general account the following amount:
+
+Scenario 1: Check if a futures / perpetual market operates correctly with a negative price factor
+  Given  the parties submit the following liquidity provision:
+  And  the parties place the following orders:
+  When  the parties place the following orders:
+  And  the opening auction period ends for market "BTC/USDT"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/USDT"
+  Given  the parties place the following orders:
+  And  the network moves ahead "1" blocks
+  When  the network moves ahead "1" epochs
+  Then  the following transfers should happen:
+
+Scenario 2: Check if a spot market operates correctly with a negative price factor
+  Given  the parties submit the following liquidity provision:
+  And  the parties place the following orders:
+  When  the parties place the following orders:
+  And  the opening auction period ends for market "BTC/USDT"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/USDT"
+  Given  the parties place the following orders:
+  And  the network moves ahead "1" blocks
+  When  the network moves ahead "1" epochs
+  Then  the following transfers should happen:
+

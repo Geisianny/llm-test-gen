@@ -1,0 +1,23 @@
+Scenario 1: Case 1: trader1 has insufficient MTM & only trader2 socialises the losses (0002-STTL-009)
+  Tags: ['@LossSocEvts']
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the mark price should be "100" for the market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  When  the parties place the following orders with ticks:
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  When  the parties place the following orders with ticks:
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  Then  the parties cancel the following orders:
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  When  the parties place the following orders with ticks:
+  Then  the parties cancel the following orders:
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  When  the parties place the following orders with ticks:
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  Then  the parties should have the following profit and loss:
+  And  the insurance pool balance should be "0" for the market "ETH/DEC19"
+  And  debug loss socialisation events
+  And  the cumulated balance for all accounts should be worth "400105000"
+

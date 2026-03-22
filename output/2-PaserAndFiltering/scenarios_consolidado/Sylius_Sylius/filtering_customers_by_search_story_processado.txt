@@ -1,0 +1,26 @@
+Scenario 1: Searching customers by email
+  Tags: ['@api', '@ui']
+  When  I want to see all customers in store
+  And  I search by "e.me" email
+  Then  I should see 2 customers on the list
+  And  I should see the customer "f.baggins@shire.me" on the list
+  And  I should see the customer "l.abhorsen@example.me" on the list
+
+
+
+Scenario 2: Filtering customers by firstname
+  Tags: ['@api', '@ui']
+  When  I want to see all customers in store
+  And  I search by "Lirael" first name
+  Then  I should see a single customer on the list
+  And  I should see the customer "l.abhorsen@example.me" on the list
+
+
+
+Scenario 3: Filtering customers by lastname
+  Tags: ['@api', '@ui']
+  When  I want to see all customers in store
+  And  I search by "Bespoke" last name
+  Then  I should see a single customer on the list
+  And  I should see the customer "g.bespoke@example.com" on the list
+

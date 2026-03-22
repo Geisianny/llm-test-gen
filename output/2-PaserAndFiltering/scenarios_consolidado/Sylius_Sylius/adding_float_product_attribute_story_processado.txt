@@ -1,0 +1,16 @@
+Scenario 1: Adding a new float product attribute
+  Tags: ['@api', '@ui']
+  When  I want to create a new float product attribute
+  And  I specify its code as "display_size"
+  And  I name it "Display Size" in "English (United States)"
+  And  I add it
+  Then  I should be notified that it has been successfully created
+  And  the float attribute "Display Size" should appear in the store
+
+
+
+Scenario 2: Seeing disabled type field while adding a float product attribute
+  Tags: ['@no-api', '@ui']
+  When  I want to create a new float product attribute
+  Then  the type field should be disabled
+

@@ -1,0 +1,38 @@
+Scenario 1: Receiving a discount from an ongoing promotion
+  Tags: ['@api', '@ui']
+  Given  this promotion is valid until tomorrow
+  And  I added product "PHP T-Shirt" to the cart
+  When  I check the details of my cart
+  Then  my cart total should be "$90.00"
+  And  my discount should be "-$10.00"
+
+
+
+Scenario 2: Receiving no discount from an expired promotion
+  Tags: ['@api', '@ui']
+  Given  this promotion has already expired
+  And  I added product "PHP T-Shirt" to the cart
+  When  I check the details of my cart
+  Then  my cart total should be "$100.00"
+  And  there should be no discount applied
+
+
+
+Scenario 3: Receiving a discount from a promotion that has already started
+  Tags: ['@api', '@ui']
+  Given  this promotion started yesterday
+  And  I added product "PHP T-Shirt" to the cart
+  When  I check the details of my cart
+  Then  my cart total should be "$90.00"
+  And  my discount should be "-$10.00"
+
+
+
+Scenario 4: Receiving no discount from a promotion that has not started yet
+  Tags: ['@api', '@ui']
+  Given  this promotion starts tomorrow
+  And  I added product "PHP T-Shirt" to the cart
+  When  I check the details of my cart
+  Then  my cart total should be "$100.00"
+  And  there should be no discount applied
+

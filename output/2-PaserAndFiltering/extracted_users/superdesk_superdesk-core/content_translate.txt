@@ -1,0 +1,60 @@
+Feature: Translate Content
+
+Scenario 1: Translate content item
+  Tags: ['@auth']
+  Given  "archive"
+  And  "desks"
+  When  we post to "/archive/translate"
+  And  we get "/archive/#archive._id#"
+  Then  we get existing resource
+  When  we get "/archive/#translate._id#"
+  Then  we get existing resource
+  When  we post to "/archive/translate"
+  And  we get "/archive/#translate._id#"
+  Then  we get existing resource
+  When  we post to "/archive/translate"
+  And  we get "/archive/#translate._id#"
+  Then  we get existing resource
+  When  we post to "/archive/#translate._id#/duplicate"
+  When  we get "/archive/#duplicate._id#"
+  Then  we get existing resource
+
+Scenario 2: Translate published content item
+  Tags: ['@auth']
+  Given  empty "ingest"
+  And  the "validators"
+  And  "desks"
+  And  "archive"
+  When  we patch "/archive/123"
+  When  we post to "/products" with success
+  And  we post to "/subscribers" with success
+  And  we publish "#archive._id#" with "publish" type and "published" state
+  Then  we get OK response
+  When  we post to "/archive/translate"
+  When  we get "/archive/#translate._id#"
+  Then  we get existing resource
+  When  we get "/published"
+  Then  we get list with 1 items
+
+Scenario 3: Translate package
+  Tags: ['@auth']
+  Given  "desks"
+  Given  "archive"
+  When  we post to "archive"
+  Then  we get new resource
+  When  we post to "/archive/translate"
+  When  we get "/archive/#translate._id#"
+  Then  we get existing resource
+  And  we get package items
+
+Scenario 4: Remove link when translation expires
+  Tags: ['@auth']
+  Given  "archive"
+  And  "desks"
+  When  we post to "/archive/translate"
+  And  we patch "/archive/#translate._id#"
+  Then  we get ok response
+  When  we expire items
+  And  we get "/archive/#archive._id#"
+  Then  we get existing resource
+

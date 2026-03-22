@@ -1,0 +1,16 @@
+Scenario 1: Create a new cart and add a product and unpublish the product
+  Given  I add the product "T-Shirt" to my cart
+  Given  I add the product "T-Shirt Blue" to my cart
+  Then  there should be two products in my cart
+  Given  the product "T-Shirt" is not published
+  And  I refresh my cart
+  Then  there should be one product in my cart
+
+
+
+Scenario 2: Create a new cart and add a product and publish the product
+  Given  I add the product "T-Shirt" to my cart
+  Then  there should be one product in my cart
+  Given  the product "T-Shirt" is published
+  Then  there should be one product in my cart
+

@@ -1,0 +1,35 @@
+Scenario 1: Changing coupon expires date
+  Tags: ['@ui']
+  Given  I want to modify the "SANTA2016" coupon for this promotion
+  When  I change expires date to "21.05.2019"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this coupon should be valid until "21.05.2019"
+
+
+
+Scenario 2: Changing coupons usage limit
+  Tags: ['@ui']
+  Given  I want to modify the "SANTA2016" coupon for this promotion
+  When  I change its usage limit to 50
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this coupon should have 50 usage limit
+
+
+
+Scenario 3: Changing coupons per customer usage limit
+  Tags: ['@ui']
+  Given  I want to modify the "SANTA2016" coupon for this promotion
+  When  I change its per customer usage limit to 20
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this coupon should have 20 per customer usage limit
+
+
+
+Scenario 4: Seeing a disabled code field when editing a coupon
+  Tags: ['@ui']
+  Given  I want to modify the "SANTA2016" coupon for this promotion
+  Then  the code field should be disabled
+

@@ -1,0 +1,9 @@
+Scenario 1: show the icon selector
+  Tags: ['@selenium-fixme']
+  Given  I follow "Edit sideboxes"
+  And  I follow "Edit" within ".button-bar"
+  When  I follow "New link"
+  Then  the "css=div.icon-selector" should not be visible
+  When  I click "div.icon"
+  Then  the "css=div.icon-selector" should be visible
+

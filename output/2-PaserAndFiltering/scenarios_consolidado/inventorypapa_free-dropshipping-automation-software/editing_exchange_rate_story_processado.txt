@@ -1,0 +1,18 @@
+Scenario 1: Change exchange rate's ratio
+  Tags: ['@ui', '@api']
+  Given  the exchange rate of "US Dollar" to "British Pound" is 1.30
+  And  I am editing this exchange rate
+  When  I change ratio to 3.21
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  it should have a ratio of 3.21
+
+
+
+Scenario 2: Being unable to change currencies
+  Tags: ['@ui', '@api']
+  Given  the exchange rate of "US Dollar" to "British Pound" is 1.30
+  When  I want to edit this exchange rate
+  Then  I should not be able to edit its source currency
+  And  I should not be able to edit its target currency
+

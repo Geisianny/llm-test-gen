@@ -1,0 +1,40 @@
+Scenario 1: Checking all taxons
+  Tags: ['@no-api', '@ui', '@mink:chromedriver']
+  When  I want to modify the "Shirt" product
+  And  I check all taxons
+  And  I save my changes
+  Then  the product "Shirt" should have the "Clothes" taxon
+  And  the product "Shirt" should have the "T-Shirts" taxon
+
+
+
+Scenario 2: Unchecking all taxons
+  Tags: ['@no-api', '@ui', '@mink:chromedriver']
+  When  I want to modify the "T-Shirt" product
+  And  I uncheck all taxons
+  And  I save my changes
+  Then  the product "Shirt" should not have the "Clothes" taxon
+  And  the product "Shirt" should not have the "T-Shirts" taxon
+
+
+
+Scenario 3: Checking all filtered taxons
+  Tags: ['@no-api', '@ui', '@mink:chromedriver']
+  When  I want to modify the "Shirt" product
+  And  I filter taxons by "T-Shirts"
+  And  I check all taxons
+  And  I save my changes
+  Then  the product "Shirt" should have the "T-Shirts" taxon
+  But  the product "Shirt" should not have the "Clothes" taxon
+
+
+
+Scenario 4: Unchecking all filtered taxons
+  Tags: ['@no-api', '@ui', '@mink:chromedriver']
+  When  I want to modify the "T-Shirt" product
+  And  I filter taxons by "T-Shirts"
+  And  I uncheck all taxons
+  And  I save my changes
+  Then  the product "Shirt" should not have the "T-Shirts" taxon
+  But  the product "Shirt" should have the "Clothes" taxon
+

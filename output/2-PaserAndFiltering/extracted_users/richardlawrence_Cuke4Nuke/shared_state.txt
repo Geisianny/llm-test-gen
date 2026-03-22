@@ -1,0 +1,27 @@
+Feature: Run .NET step definitions with shared state from Cucumber
+
+Background: 
+  Given  a standard Cucumber project directory structure
+  And  a file named "features/step_definitions/some_remote_place.wire" with:
+
+Scenario 1: Shared state in one step definition class
+  Given  a file named "features/adding.feature" with:
+  And  Cuke4Nuke started with a step definition assembly containing:
+  When  I run cucumber -f progress features
+  Then  STDERR should be empty
+  And  it should pass with
+
+Scenario 2: Multiple scenarios each get their own state
+  Given  a file named "features/adding.feature" with:
+  And  Cuke4Nuke started with a step definition assembly containing:
+  When  I run cucumber -f progress features
+  Then  STDERR should be empty
+  And  it should pass with
+
+Scenario 3: Shared state between two step definition classes
+  Given  a file named "features/adding.feature" with:
+  And  Cuke4Nuke started with a step definition assembly containing:
+  When  I run cucumber -f progress features
+  Then  STDERR should be empty
+  And  it should pass with
+

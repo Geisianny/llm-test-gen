@@ -1,0 +1,140 @@
+Scenario 1: Trying to add a new channel without specifying its code
+  Tags: ['@api', '@ui']
+  When  I want to create a new channel
+  And  I name it "Mobile channel"
+  But  I do not specify its code
+  And  I try to add it
+  Then  I should be notified that code is required
+  And  channel with name "Mobile channel" should not be added
+
+
+
+Scenario 2: Trying to add a new channel with a too long name
+  Tags: ['@api', '@ui']
+  When  I want to create a new channel
+  And  I specify its code as "MOBILE"
+  And  I specify its name as a too long string
+  And  I try to add it
+  Then  I should be notified that name is too long
+  And  channel with code "MOBILE" should not be added
+
+
+
+Scenario 3: Trying to add a new channel with a too long code
+  Tags: ['@api', '@ui']
+  When  I want to create a new channel
+  And  I name it "Mobile channel"
+  And  I specify a too long code
+  And  I try to add it
+  Then  I should be notified that code is too long
+
+
+
+Scenario 4: Trying to add a new channel without specifying its name
+  Tags: ['@api', '@ui']
+  When  I want to create a new channel
+  And  I specify its code as "MOBILE"
+  But  I do not name it
+  And  I try to add it
+  Then  I should be notified that name is required
+  And  channel with code "MOBILE" should not be added
+
+
+
+Scenario 5: Trying to add a new channel with too long color
+  Tags: ['@api', '@ui']
+  When  I want to create a new channel
+  And  I specify its code as "MOBILE"
+  And  I specify its color as a too long string
+  And  I try to add it
+  Then  I should be notified that color is too long
+  And  channel with code "MOBILE" should not be added
+
+
+
+Scenario 6: Trying to add a new channel with too long hostname
+  Tags: ['@api', '@ui']
+  When  I want to create a new channel
+  And  I specify its code as "MOBILE"
+  And  I specify its hostname as a too long string
+  And  I try to add it
+  Then  I should be notified that hostname is too long
+  And  channel with code "MOBILE" should not be added
+
+
+
+Scenario 7: Trying to add a new channel with too long theme name
+  Tags: ['@api', '@no-ui']
+  When  I want to create a new channel
+  And  I specify its code as "MOBILE"
+  And  I specify its theme name as a too long string
+  And  I try to add it
+  Then  I should be notified that "theme name" is too long
+  And  channel with code "MOBILE" should not be added
+
+
+
+Scenario 8: Trying to add a new channel with too long tax calculation strategy
+  Tags: ['@api', '@no-ui']
+  When  I want to create a new channel
+  And  I specify its code as "MOBILE"
+  And  I specify its tax calculation strategy as a too long string
+  And  I try to add it
+  Then  I should be notified that "tax calculation strategy" is too long
+  And  channel with code "MOBILE" should not be added
+
+
+
+Scenario 9: Trying to add a new channel without base currency
+  Tags: ['@api', '@ui']
+  When  I want to create a new channel
+  And  I specify its code as "MOBILE"
+  But  I do not choose base currency
+  And  I try to add it
+  Then  I should be notified that base currency is required
+  And  channel with code "MOBILE" should not be added
+
+
+
+Scenario 10: Trying to add a new channel without default locale
+  Tags: ['@api', '@ui']
+  When  I want to create a new channel
+  And  I specify its code as "MOBILE"
+  But  I do not choose default locale
+  And  I try to add it
+  Then  I should be notified that default locale is required
+  And  channel with code "MOBILE" should not be added
+
+
+
+Scenario 11: Trying to add a new channel with too long contact email
+  Tags: ['@api', '@ui']
+  When  I want to create a new channel
+  And  I specify its code as "MOBILE"
+  And  I specify its contact email as a too long string
+  And  I try to add it
+  Then  I should be notified that "contact email" is too long
+  And  channel with code "MOBILE" should not be added
+
+
+
+Scenario 12: Trying to add a new channel with too long contact phone number
+  Tags: ['@api', '@ui']
+  When  I want to create a new channel
+  And  I specify its code as "MOBILE"
+  And  I specify its contact phone number as a too long string
+  And  I try to add it
+  Then  I should be notified that "contact phone number" is too long
+  And  channel with code "MOBILE" should not be added
+
+
+
+Scenario 13: Trying to remove name from existing channel
+  Tags: ['@api', '@ui']
+  Given  the store operates on a channel named "Web Channel"
+  When  I want to modify this channel
+  And  I remove its name
+  And  I try to save my changes
+  Then  I should be notified that name is required
+  And  this channel should still be named "Web Channel"
+

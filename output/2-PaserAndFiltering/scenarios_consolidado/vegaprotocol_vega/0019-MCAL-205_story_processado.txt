@@ -1,0 +1,73 @@
+Scenario 1: The new order would result in trades does not change the state of the book
+  Tags: ['@MCAL205']
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following orders with ticks:
+  When  the network moves ahead "2" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+  When  the parties place the following pegged orders:
+  Then  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+  When  the parties submit update margin mode:
+  Then  the parties should have the following margin levels:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following margin levels:
+  And  the order book should have the following volumes for market "ETH/FEB23":
+  And  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+  And  the order book should have the following volumes for market "ETH/FEB23":
+  When  the parties place the following orders with ticks:
+  Then  the order book should have the following volumes for market "ETH/FEB23":
+
+
+
+Scenario 2: The new order doesn't result in trades still does not change the state of the book
+  Tags: ['@MCAL205']
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following orders with ticks:
+  When  the network moves ahead "2" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+  When  the parties place the following pegged orders:
+  Then  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+  When  the parties submit update margin mode:
+  Then  the parties should have the following margin levels:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following margin levels:
+  And  the order book should have the following volumes for market "ETH/FEB23":
+  And  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+  And  the order book should have the following volumes for market "ETH/FEB23":
+  When  the parties place the following orders with ticks:
+  Then  the order book should have the following volumes for market "ETH/FEB23":
+
+
+
+Scenario 3: The new order would result in trades, enough margin for both orders, not for orders and trades. does not change the state of the book
+  Tags: ['@MCAL205']
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following orders with ticks:
+  When  the network moves ahead "2" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+  When  the parties place the following pegged orders:
+  Then  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+  When  the parties submit update margin mode:
+  Then  the parties should have the following margin levels:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following margin levels:
+  And  the order book should have the following volumes for market "ETH/FEB23":
+  And  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+  And  the order book should have the following volumes for market "ETH/FEB23":
+  When  the parties place the following orders with ticks:
+  Then  the order book should have the following volumes for market "ETH/FEB23":
+

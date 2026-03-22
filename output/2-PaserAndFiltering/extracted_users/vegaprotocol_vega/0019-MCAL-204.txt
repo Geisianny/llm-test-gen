@@ -1,0 +1,26 @@
+Feature: Test switch between margin mode
+
+Background: 
+  Given  the following network parameters are set:
+  And  the liquidity monitoring parameters:
+  And  the simple risk model named "simple-risk-model":
+  And  the markets:
+
+Scenario 1: Amending an order to make it match while in isolated mode can fail if the margin requirements are not met.
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following orders:
+  When  the network moves ahead "2" blocks
+  Then  the mark price should be "15900" for the market "ETH/FEB23"
+  And  the parties submit update margin mode:
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  And  the parties place the following orders:
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  Then  the order book should have the following volumes for market "ETH/FEB23":
+  When  the parties amend the following orders:
+  And  the parties should have the following margin levels:
+  Then  the orders should have the following status:
+  Then  the order book should have the following volumes for market "ETH/FEB23":
+

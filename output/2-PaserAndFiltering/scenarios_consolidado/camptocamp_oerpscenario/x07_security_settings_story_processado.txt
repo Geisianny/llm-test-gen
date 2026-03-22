@@ -1,0 +1,40 @@
+Scenario 1: MULTICOMPANY SECURITY RULES
+  Tags: ['@multicompany_base_finance_multicompany_security_rules']
+  Given  I need a "ir.rule" with name: "Partner bank company rule"
+  And  having:
+
+
+
+Scenario 2: MULTICOMPANY SECURITY RULES
+  Tags: ['@multicompany_base_finance_multicompany_security_rules']
+  Given  I need a "ir.rule" with name: "res.partner company"
+  And  having:
+
+
+
+Scenario 3: MULTICOMPANY SECURITY RULES
+  Tags: ['@multicompany_base_finance_multicompany_security_rules']
+  Given  I need a "ir.rule" with name: "Portal Personal Contacts"
+  And  having:
+
+
+
+Scenario 4: MULTICOMPANY SECURITY RULES
+  Tags: ['@multicompany_base_finance_multicompany_security_rules']
+  Given  I need a "ir.rule" with name: "res_partner: read access on my partner"
+  And  having:
+
+
+
+Scenario 5: MULTICOMPANY SECURITY RULES
+  Tags: ['@multicompany_base_finance_multicompany_security_rules']
+  Given  I need a "ir.rule" with name: "Product multi-company"
+  And  having:
+
+
+
+Scenario 6: MULTICOMPANY SECURITY RULES
+  Tags: ['@multicompany_base_finance_multicompany_security_rules']
+  Given  I need a "ir.rule" with name: "Location multi-company"
+  And  having:
+

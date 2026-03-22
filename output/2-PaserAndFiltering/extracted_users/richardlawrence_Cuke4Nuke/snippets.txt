@@ -1,0 +1,51 @@
+Feature: Print step definition snippets for undefined steps
+
+Background: 
+  Given  a standard Cucumber project directory structure
+  And  a file named "features/step_definitions/some_remote_place.wire" with:
+
+Scenario 1: Undefined prints snippet
+  Given  a file named "features/wired.feature" with:
+  And  Cuke4Nuke started with no step definition assemblies
+  When  I run cucumber -f pretty
+  Then  the output should contain
+
+Scenario 2: Snippet with a table
+  Given  a file named "features/wired.feature" with:
+  And  Cuke4Nuke started with no step definition assemblies
+  When  I run cucumber -f pretty
+  Then  the output should contain
+
+Scenario 3: Snippet with a multiline string
+  Given  a file named "features/wired.feature" with:
+  And  Cuke4Nuke started with no step definition assemblies
+  When  I run cucumber -f pretty
+  Then  the output should contain
+
+Scenario 4: Snippet with a scenario outline
+  Given  a file named "features/wired.feature" with:
+  And  Cuke4Nuke started with no step definition assemblies
+  When  I run cucumber -f pretty
+  Then  the output should contain
+  And  the output should contain
+
+Scenario 5: Snippet with Background
+  Given  a file named "features/wired.feature" with:
+  And  Cuke4Nuke started with no step definition assemblies
+  When  I run cucumber -f pretty
+  Then  the output should contain
+  And  the output should contain
+
+Scenario 6: Snippet for step with trailing comma
+  Given  a file named "features/wired.feature" with:
+  And  Cuke4Nuke started with no step definition assemblies
+  When  I run cucumber -f pretty
+  Then  STDERR should be empty
+  And  the output should contain
+
+Scenario 7: Snippet for step with double quotes
+  Given  a file named "features/wired.feature" with:
+  And  Cuke4Nuke started with no step definition assemblies
+  When  I run cucumber -f pretty
+  Then  the output should contain
+

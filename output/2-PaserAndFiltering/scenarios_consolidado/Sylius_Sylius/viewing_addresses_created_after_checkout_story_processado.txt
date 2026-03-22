@@ -1,0 +1,9 @@
+Scenario 1: Viewing address created after placing an order
+  Tags: ['@api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  And  I addressed the cart with "John Doe" as the billing address
+  And  I chose "Free" shipping method and "Offline" payment method
+  When  I confirm my order
+  And  I browse my address book
+  Then  I should have 2 addresses in my address book
+

@@ -1,0 +1,24 @@
+Scenario 1: CREATION OF PRODUCT CATEGORIES
+  Tags: ['@product_category_creation']
+  Given  I need a "product.category" with name: Cat_A and oid: scenario.cat_A
+  And  having:
+  Given  I need a "product.category" with name: Cat_B and oid: scenario.cat_B
+  And  having:
+  Given  I need a "product.category" with name: Cat_C and oid: scenario.cat_C
+  And  having:
+
+
+
+Scenario 2: CREATION OF PRODUCTS
+  Tags: ['@product_creation']
+  Given  I need a "product.product" with name: P1 and oid: scenario.p1
+  And  having:
+  Given  I need a "product.product" with name: P2 and oid: scenario.p2
+  And  having:
+  Given  I need a "product.product" with name: P3 and oid: scenario.p3
+  And  having:
+  Given  I need a "product.product" with name: P4 and oid: scenario.p4
+  And  having:
+  Given  I need a "product.product" with name: P5 and oid: scenario.p5
+  And  having:
+

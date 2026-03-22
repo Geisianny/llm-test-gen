@@ -1,0 +1,180 @@
+Scenario 1: Create a new Action Connection returns "Bad Request" response
+  Tags: ['@team:DataDog/workflow-automation-dev']
+  Given  new "CreateActionConnection" request
+  And  body with value {"data":{"type":"action_connection","attributes":{"name":"Cassette Connection","integration":{"type":"AWS","credentials":{"type":"AWSAssumeRole","role":"MyRoleUpdated","account_id":"1"}}}}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 2: Create a new Action Connection returns "Successfully created Action Connection" response
+  Tags: ['@team:DataDog/workflow-automation-dev']
+  Given  new "CreateActionConnection" request
+  And  body with value {"data":{"type":"action_connection","attributes":{"name":"Cassette Connection {{ unique_lower_alnum }}","integration":{"type":"AWS","credentials":{"type":"AWSAssumeRole","role":"MyRoleUpdated","account_id":"123456789123"}}}}}
+  When  the request is sent
+  Then  the response status is 201 Successfully created Action Connection
+
+
+
+Scenario 3: Delete an existing Action Connection returns "Not Found" response
+  Tags: ['@team:DataDog/workflow-automation-dev']
+  Given  new "DeleteActionConnection" request
+  And  request contains "connection_id" parameter with value "aaa11111-aa11-aa11-aaaa-aaaaaa111111"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+
+
+Scenario 4: Delete an existing Action Connection returns "The resource was deleted successfully." response
+  Tags: ['@team:DataDog/workflow-automation-dev']
+  Given  there is a valid "action_connection" in the system
+  And  new "DeleteActionConnection" request
+  And  request contains "connection_id" parameter from "action_connection.data.id"
+  When  the request is sent
+  Then  the response status is 204 The resource was deleted successfully.
+
+
+
+Scenario 5: Get an existing Action Connection returns "Bad Request" response
+  Tags: ['@team:DataDog/workflow-automation-dev']
+  Given  new "GetActionConnection" request
+  And  request contains "connection_id" parameter with value "bad-format"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 6: Get an existing Action Connection returns "Not Found" response
+  Tags: ['@team:DataDog/workflow-automation-dev']
+  Given  new "GetActionConnection" request
+  And  request contains "connection_id" parameter with value "aaa11111-aa11-aa11-aaaa-aaaaaa111111"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+
+
+Scenario 7: Get an existing Action Connection returns "Successfully get Action Connection" response
+  Tags: ['@team:DataDog/workflow-automation-dev']
+  Given  new "GetActionConnection" request
+  And  request contains "connection_id" parameter with value "cb460d51-3c88-4e87-adac-d47131d0423d"
+  When  the request is sent
+  Then  the response status is 200 Successfully get Action Connection
+
+
+
+Scenario 8: Get an existing App Key Registration returns "Bad request" response
+  Tags: ['@team:DataDog/workflow-automation-dev']
+  Given  new "GetAppKeyRegistration" request
+  And  request contains "app_key_id" parameter with value "not_valid_app_key_id"
+  When  the request is sent
+  Then  the response status is 400 Bad request
+
+
+
+Scenario 9: Get an existing App Key Registration returns "Not found" response
+  Tags: ['@team:DataDog/workflow-automation-dev']
+  Given  new "GetAppKeyRegistration" request
+  And  request contains "app_key_id" parameter with value "aaa11111-aa11-aa11-aaaa-aaaaaa111111"
+  When  the request is sent
+  Then  the response status is 404 Not found
+
+
+
+Scenario 10: Get an existing App Key Registration returns "OK" response
+  Tags: ['@team:DataDog/workflow-automation-dev']
+  Given  new "GetAppKeyRegistration" request
+  And  request contains "app_key_id" parameter with value "b7feea52-994e-4714-a100-1bd9eff5aee1"
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 11: List App Key Registrations returns "Bad request" response
+  Tags: ['@skip', '@team:DataDog/workflow-automation-dev']
+  Given  new "ListAppKeyRegistrations" request
+  When  the request is sent
+  Then  the response status is 400 Bad request
+
+
+
+Scenario 12: List App Key Registrations returns "OK" response
+  Tags: ['@team:DataDog/workflow-automation-dev']
+  Given  new "ListAppKeyRegistrations" request
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 13: Register a new App Key returns "Bad request" response
+  Tags: ['@team:DataDog/workflow-automation-dev']
+  Given  new "RegisterAppKey" request
+  And  request contains "app_key_id" parameter with value "not_valid_app_key_id"
+  When  the request is sent
+  Then  the response status is 400 Bad request
+
+
+
+Scenario 14: Register a new App Key returns "Created" response
+  Tags: ['@team:DataDog/workflow-automation-dev']
+  Given  new "RegisterAppKey" request
+  And  request contains "app_key_id" parameter with value "b7feea52-994e-4714-a100-1bd9eff5aee1"
+  When  the request is sent
+  Then  the response status is 201 Created
+
+
+
+Scenario 15: Unregister an App Key returns "Bad request" response
+  Tags: ['@team:DataDog/workflow-automation-dev']
+  Given  new "UnregisterAppKey" request
+  And  request contains "app_key_id" parameter with value "not_valid_app_key_id"
+  When  the request is sent
+  Then  the response status is 400 Bad request
+
+
+
+Scenario 16: Unregister an App Key returns "No Content" response
+  Tags: ['@skip', '@team:DataDog/workflow-automation-dev']
+  Given  new "UnregisterAppKey" request
+  And  request contains "app_key_id" parameter with value "57cc69ae-9214-4ecc-8df8-43ecc1d92d99"
+  When  the request is sent
+  Then  the response status is 204 No Content
+
+
+
+Scenario 17: Unregister an App Key returns "Not found" response
+  Tags: ['@team:DataDog/workflow-automation-dev']
+  Given  new "UnregisterAppKey" request
+  And  request contains "app_key_id" parameter with value "57cc69ae-9214-4ecc-8df8-43ecc1d92d99"
+  When  the request is sent
+  Then  the response status is 404 Not found
+
+
+
+Scenario 18: Update an existing Action Connection returns "Bad Request" response
+  Tags: ['@team:DataDog/workflow-automation-dev']
+  Given  new "UpdateActionConnection" request
+  And  request contains "connection_id" parameter with value "cb460d51-3c88-4e87-adac-d47131d0423d"
+  And  body with value {"data":{"type":"action_connection","attributes":{"name":"Cassette Connection","integration":{"type":"AWS","credentials":{"type":"AWSAssumeRole","role":"MyRoleUpdated","account_id":"1"}}}}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 19: Update an existing Action Connection returns "Not Found" response
+  Tags: ['@team:DataDog/workflow-automation-dev']
+  Given  new "UpdateActionConnection" request
+  And  request contains "connection_id" parameter with value "aaa11111-aa11-aa11-aaaa-aaaaaa111111"
+  And  body with value {"data":{"type":"action_connection","attributes":{"name":"Cassette Connection","integration":{"type":"AWS","credentials":{"type":"AWSAssumeRole","role":"MyRoleUpdated","account_id":"123456789123"}}}}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+
+
+Scenario 20: Update an existing Action Connection returns "Successfully updated Action Connection" response
+  Tags: ['@team:DataDog/workflow-automation-dev']
+  Given  new "UpdateActionConnection" request
+  And  request contains "connection_id" parameter with value "cb460d51-3c88-4e87-adac-d47131d0423d"
+  And  body with value {"data":{"type":"action_connection","attributes":{"name":"Cassette Connection","integration":{"type":"AWS","credentials":{"type":"AWSAssumeRole","role":"MyRoleUpdated","account_id":"123456789123"}}}}}
+  When  the request is sent
+  Then  the response status is 200 Successfully updated Action Connection
+

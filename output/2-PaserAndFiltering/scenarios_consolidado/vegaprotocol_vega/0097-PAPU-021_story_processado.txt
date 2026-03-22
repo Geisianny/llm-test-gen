@@ -1,0 +1,9 @@
+Scenario 1: pap is not funded and expires nothing gets earmarked (0097-PAPU-021)
+  When  the protocol automated purchase is defined as:
+  And  the active pap id should be "12345" for the market "BTC/ETH"
+  Then  the oracles broadcast data with block time signed with "0xCAFECAFE2":
+  And  the network moves ahead "120" blocks
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  And  the active pap id should be "none" for the market "BTC/ETH"
+  And  the active pap order id should be "none" for the market "BTC/ETH"
+

@@ -1,0 +1,19 @@
+Scenario 1: 0090-VAMM-032: When an AMM is active on a market at time of settlement with a position in a well collateralised state, the market can settle successfully and then all funds on the AMM key are transferred back to the main party's account.
+  Tags: ['@VAMM']
+  When  the parties place the following orders:
+  Then  debug trades
+  Then  the following trades should be executed:
+  When  the network moves ahead "1" blocks
+  Then  the market data for the market "ETH/MAR22" should be:
+  And  the parties should have the following profit and loss:
+  And  the AMM pool status should be:
+  When  the oracles broadcast data signed with "0xCAFECAFE":
+  Then  the network moves ahead "1" blocks
+  And  the parties should have the following account balances:
+  When  the oracles broadcast data signed with "0xCAFECAFE":
+  Then  the market state should be "STATE_SETTLED" for the market "ETH/MAR22"
+  And  then the network moves ahead "1" blocks
+  Then  debug transfers
+  And  the following transfers should happen:
+  And  the parties should have the following account balances:
+

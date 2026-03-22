@@ -1,0 +1,290 @@
+Scenario 1: Search with a blank query on an affiliate page
+  Given  the following BingV7 Affiliates exist:
+  When  I am on bar.gov's search page
+  And  I press "Search" within the search box
+  Then  I should see "Please enter a search term in the box above."
+
+
+
+Scenario 2: Search with no results
+  Given  the following BingV7 Affiliates exist:
+  When  I am on bar.gov's search page
+  And  I fill in "Enter your search term" with "foobarbazbiz"
+  And  I press "Search" within the search box
+  Then  I should see "Sorry, no results found for 'foobarbazbiz'. Try entering fewer or more general search terms."
+
+
+
+Scenario 3: Searching a domain with Bing results that match a specific news item
+  Given  the following BingV7 Affiliates exist:
+  And  affiliate "bar.gov" has the following RSS feeds:
+  And  feed "Press" has the following news items:
+  When  I am on bar.gov's search page
+  And  I search for "Hillary Rodham Clinton first lady"
+  Then  I should see "Clinton RSS Test"
+
+
+
+Scenario 4: No results when searching with active RSS feeds
+  Given  the following BingV7 Affiliates exist:
+  And  affiliate "bar.gov" has the following RSS feeds:
+  And  feed "Photo Gallery" has the following news items:
+  When  I am on bar.gov's search page
+  And  I search for "item"
+  Then  I should see at least "2" web search results
+  When  I follow "Press" in the search navbar
+  Then  I should see "Sorry, no results found for 'item'. Try entering fewer or more general search terms."
+  When  I follow "Photo Gallery" in the search navbar
+  Then  I should see "item More news items for the feed"
+  When  I follow "Last day"
+  Then  I should see "Sorry, no results found for 'item'. Try entering fewer or more general search terms."
+  When  I follow "Clear"
+  Then  I should see at least "2" web search results
+
+
+
+Scenario 5: No results when searching on Spanish site with active RSS feeds
+  Given  the following BingV7 Affiliates exist:
+  And  affiliate "bar.gov" has the following RSS feeds:
+  And  feed "Photo Gallery" has the following news items:
+  When  I am on bar.gov's search page
+  And  I fill in "query" with "item"
+  And  I press "Buscar" within the search box
+  Then  I should see at least "2" web search results
+  When  I follow "Press" in the search navbar
+  Then  I should see "No hemos encontrado ningún resultado que contenga 'item'. Intente usar otras palabras clave o sinónimos."
+  When  I follow "Photo Gallery" in the search navbar
+  And  I follow "Último día"
+  Then  I should see "No hemos encontrado ningún resultado que contenga 'item'. Intente usar otras palabras clave o sinónimos."
+  When  I follow "Borrar"
+  Then  I should see at least "2" web search results
+
+
+
+Scenario 6: Searching on a site with media RSS
+  Given  the following BingV7 Affiliates exist:
+  And  affiliate "bar.gov" has the following RSS feeds:
+  And  feed "Photos" has the following news items:
+  When  I am on bar.gov's "Photos" news search page
+  And  I search for "photo"
+  Then  I should see 2 image results
+  And  I should see "Powered by Search.gov"
+
+
+
+Scenario 7: Visiting English affiliate search with multiple domains
+  Given  the following BingV7 Affiliates exist:
+  When  I am on bar.gov's search page
+  And  I fill in "Enter your search term" with "president"
+  And  I press "Search" within the search box
+  Then  I should see at least "2" web search results
+
+
+
+Scenario 8: Visiting Spanish affiliate search with multiple domains
+  Given  the following BingV7 Affiliates exist:
+  When  I am on bar.gov's search page
+  And  I fill in "Ingrese su búsqueda" with "president"
+  And  I press "Buscar" within the search box
+  Then  I should see at least "2" web search results
+
+
+
+Scenario 9: Searchers see English Medline Govbox
+  Tags: ['@javascript']
+  Given  the following BingV7 Affiliates exist:
+  And  the following Medline Topics exist:
+  When  I am on english-nih's search page
+  And  I fill in "query" with "hippopotomonstrosesquippedaliophobia"
+  And  I press "Search" within the search box
+  Then  I should not see "Hippopotomonstrosesquippedaliophobia y otros miedos irracionales"
+  Given  the following Medline Topics exist:
+  And  the following Related Medline Topics for "Hippopotomonstrosesquippedaliophobia" in English exist:
+  When  I am on english-nih's search page
+  And  I fill in "query" with "hippopotomonstrosesquippedaliophobia"
+  And  I press "Search" within the search box
+  Then  I should see "Hippopotomonstrosesquippedaliophobia and Other Irrational Fears" within the med topic govbox
+  And  I should see a link to "Hippo1" with url for "https://www.nlm.nih.gov/medlineplus/Hippopotomonstrosesquippedaliophobia.html"
+
+
+
+Scenario 10: Searchers see Spanish Medline Govbox
+  Tags: ['@javascript']
+  Given  the following BingV7 Affiliates exist:
+  And  the following Medline Topics exist:
+  When  I am on spanish-nih's search page
+  And  I fill in "query" with "hippopotomonstrosesquippedaliophobia"
+  And  I press "Buscar" within the search box
+  Then  I should not see "Hippopotomonstrosesquippedaliophobia and Other Irrational Fears"
+  Given  the following Medline Topics exist:
+  When  I am on spanish-nih's search page
+  And  I fill in "query" with "hippopotomonstrosesquippedaliophobia"
+  And  I press "Buscar" within the search box
+  Then  I should see "Hippopotomonstrosesquippedaliophobia y otros miedos irracionales" within the med topic govbox
+
+
+
+Scenario 11: When a searcher clicks on a collection and the query is blank
+  Given  the following BingV7 Affiliates exist:
+  And  affiliate "aff.gov" has the following document collections:
+  When  I go to aff.gov's search page
+  And  I follow "Topics" in the search navbar
+  Then  I should see "Please enter a search term"
+
+
+
+Scenario 12: When a searcher on an English site clicks on an RSS Feed and the query is blank
+  Given  the following BingV7 Affiliates exist:
+  And  affiliate "bar.gov" has the following RSS feeds:
+  And  feed "Press" has the following news items:
+  And  feed "en_agency_channel_id" has the following news items:
+  When  I am on bar.gov's search page
+  And  I follow "Press" in the search navbar
+  Then  I should see the browser page titled "Press - bar site Search Results"
+  And  I should see "First item"
+  And  I should see "Second item"
+  And  I should see "2 results"
+  And  I should see exactly "2" web search results
+  When  I am on bar.gov's search page
+  And  I fill in "query" with "first item"
+  And  I press "Search" within the search box
+  And  I follow "Videos" in the search navbar
+  Then  I should see "Refine your search"
+  And  I fill in "query" with ""
+  And  I press "Search" within the search box
+  Then  I should see the browser page titled "Videos - bar site Search Results"
+  And  I should see "First video item"
+
+
+
+Scenario 13: When a searcher on a Spanish site clicks on an RSS Feed and the query is blank
+  Given  the following BingV7 Affiliates exist:
+  And  affiliate "es.bar.gov" has the following RSS feeds:
+  And  feed "Press" has the following news items:
+  And  feed "es_agency_channel_id" has the following news items:
+  When  I am on es.bar.gov's search page
+  And  I follow "Press" in the search navbar
+  Then  I should see the browser page titled "Press - Spanish bar site resultados de la búsqueda"
+  Then  I should see "2 resultados"
+  And  I should see exactly "2" web search results
+  And  I should see "Noticia uno"
+  And  I should see "Noticia dos"
+  When  I am on es.bar.gov's search page
+  And  I fill in "query" with "noticia uno"
+  And  I press "Buscar" within the search box
+  And  I follow "Videos" in the search navbar
+  And  I fill in "query" with ""
+  And  I press "Buscar" within the search box
+  Then  I should see the browser page titled "Spanish Videos - Spanish bar site resultados de la búsqueda"
+  And  I should see "Noticia video uno"
+
+
+
+Scenario 14: Searching indexed document collections
+  Given  the following BingV7 Affiliates exist:
+  And  affiliate "agency.gov" has the following document collections:
+  And  the following IndexedDocuments exist:
+  When  I am on agency.gov's search page
+  And  I follow "Petitions" in the search navbar
+  And  I search for "death star r2d2 xyz3"
+  Then  I should see a link to "First petition article" with url for "http://petitions.whitehouse.gov/petition-1.html"
+  And  I should see a link to "Second petition article" with url for "http://petitions.whitehouse.gov/petition-2.html"
+
+
+
+Scenario 15: Searching on non navigable document collection
+  Given  the following BingV7 Affiliates exist:
+  And  affiliate "agency.gov" has the following document collections:
+  When  I am on agency.gov's "Blog" docs search page
+  Then  I should see "Blog" in the search navbar
+  And  I should not see a link to "Web"
+  And  I should not see a link to "Blog"
+  When  I search for "sba"
+  Then  I should see at least "1" web search results
+  And  I should not see a link to "Blog" in the search navbar
+
+
+
+Scenario 16: Searching for site specific results using query
+  Given  the following BingV7 Affiliates exist:
+  When  I am on agency.gov's search page
+  And  I search for "jobs site:www.usa.gov"
+  Then  every result URL should match "usa.gov"
+  And  I search for "jazz site:wikipedia.org"
+  Then  every result URL should match "usa.gov"
+
+
+
+Scenario 17: Affiliate search on affiliate with connections
+  Given  the following BingV7 Affiliates exist:
+  And  the following Connections exist for the affiliate "agency.gov":
+  When  I am on agency.gov's search page
+  And  I search for "jobs"
+  Then  I should see at least "10" web search results
+  And  every result URL should match "epa.gov"
+  And  I should see "Other Site"
+  When  I follow "Other Site" in the search navbar
+  Then  I should see the browser page titled "jobs - other site Search Results"
+  And  I should see at least "10" web search results
+  And  every result URL should match "cdc.gov"
+
+
+
+Scenario 18: Searching on sites with Featured Collections
+  Given  the following BingV7 Affiliates exist:
+  And  the following featured collections exist for the affiliate "agency.gov":
+  And  the following featured collection links exist for featured collection titled "Tornado Warning":
+  When  I am on agency.gov's search page
+  And  I fill in "query" with "warnings for a tornado"
+  And  I press "Search" within the search box
+  Then  I should see "Tornado Warning" in the boosted contents section
+  And  I should see a link to "Atlantic" with url for "http://www.nhc.noaa.gov/aboutnames.shtml#atl"
+  And  I should see a link to "Eastern North Pacific" with url for "http://www.nhc.noaa.gov/aboutnames.shtml#enp"
+  When  I fill in "query" with "Atlantic"
+  And  I press "Search" within the search box
+  Then  I should see a featured collection link title with "Atlantic" highlighted
+
+
+
+Scenario 19: Searching on sites with Boosted Contents
+  Given  the following BingV7 Affiliates exist:
+  And  the following Boosted Content entries exist for the affiliate "agency.gov"
+  And  the following Boosted Content entries exist for the affiliate "es.agency.gov"
+  When  I am on agency.gov's search page
+  And  I fill in "query" with "notes"
+  And  I press "Search" within the search box
+  Then  I should see a link to "Notes for Week Ending May 31, 2013" with url for "http://search.gov/releases/2013-05-31.html" in the boosted contents section
+  And  I should not see a link to "Notes for Week Ending June 21, 2013"
+  When  I am on es.agency.gov's search page
+  And  I fill in "query" with "emergencia"
+  And  I press "Buscar" within the search box
+  Then  I should see a link to "la página de prueba de Emergencia" with url for "http://www.agency.gov/911" in the boosted contents section
+
+
+
+Scenario 20: Entering a blank advanced search
+  Given  the following BingV7 Affiliates exist:
+  When  I am on usagov's advanced search page
+  And  I press "Search"
+  Then  I should be on the search page
+  And  I should see "Please enter a search term"
+
+
+
+Scenario 21: Searching with type-ahead suggestions
+  Tags: ['@javascript']
+  Given  the following BingV7 Affiliates exist:
+  And  the following SAYT Suggestions exist for agency.gov:
+  When  I am on agency.gov's search page
+  And  I fill in "query" with "popular"
+  Then  I should see a suggestion to search for "popular search phrase"
+
+
+
+Scenario 22: Searching with spelling suggestions
+  Given  the following BingV7 Affiliates exist:
+  When  I am on agency.gov's search page
+  And  I search for "qeury"
+  Then  I should see "Showing results for query"
+  And  I should see "Search instead for qeury"
+

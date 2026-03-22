@@ -1,0 +1,77 @@
+Feature: linked stop orders
+
+Background: 
+  Given  the markets:
+  And  the following network parameters are set:
+  Given  time is updated to "2019-11-30T00:00:00Z"
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+
+Scenario 1: A linked stop order with position size override will be cancelled if the position flips short to long (0014-ORDT-128)
+  When  the parties place the following orders:
+  When  the parties place the following orders:
+  Then  the stop orders should have the following states
+  When  the parties place the following orders:
+  Then  the stop orders should have the following states
+
+Scenario 2: A linked stop order with position size override will be cancelled if the position flips long to short (0014-ORDT-128)
+  When  the parties place the following orders:
+  When  the parties place the following orders:
+  Then  the stop orders should have the following states
+  When  the parties place the following orders:
+  Then  the stop orders should have the following states
+
+Scenario 3: A linked stop order with position size override will not be cancelled if the position is flat (0014-ORDT-128)
+  When  the parties place the following orders:
+  When  the parties place the following orders:
+  Then  the stop orders should have the following states
+  When  the parties place the following orders:
+  Then  the stop orders should have the following states
+
+Scenario 4: A linked stop order with position size override will not be cancelled if the position is flat (0014-ORDT-128)
+  When  the parties place the following orders:
+  When  the parties place the following orders:
+  Then  the stop orders should have the following states
+  When  the parties place the following orders:
+  Then  the stop orders should have the following states
+
+Scenario 5: A linked stop order with position size override will flatten the position after being triggered (0014-ORDT-127)
+  When  the parties place the following orders:
+  When  the parties place the following orders:
+  Then  the stop orders should have the following states
+  When  the parties place the following orders:
+  Then  the stop orders should have the following states
+
+Scenario 6: A linked stop order with position size override will be flattened when the stop order is triggered (0014-ORDT-127)
+  When  the parties place the following orders:
+  When  the parties place the following orders:
+  Then  the stop orders should have the following states
+  When  the parties place the following orders:
+  Then  the stop orders should have the following states
+
+Scenario 7: A linked stop order with position size override and scaling will partially flatten the position after being triggered (0014-ORDT-129)
+  When  the parties place the following orders:
+  When  the parties place the following orders:
+  Then  the stop orders should have the following states
+  When  the parties place the following orders:
+  Then  the stop orders should have the following states
+  And  the following trades should be executed:
+
+Scenario 8: A linked stop order with position size override and scaling will partially flattened the position when the stop order is triggered (0014-ORDT-129)
+  When  the parties place the following orders:
+  When  the parties place the following orders:
+  Then  the stop orders should have the following states
+  When  the parties place the following orders:
+  Then  the stop orders should have the following states
+  And  the following trades should be executed:
+
+Scenario 9: A linked stop order with position size override and scaling will be validated for correct scaling value
+  When  the parties place the following orders:
+  When  the parties place the following orders:
+  When  the parties place the following orders:
+  When  the parties place the following orders:
+

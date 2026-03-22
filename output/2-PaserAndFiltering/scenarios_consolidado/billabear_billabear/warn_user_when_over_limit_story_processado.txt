@@ -1,0 +1,25 @@
+Scenario 1: Warning
+  Given  I have authenticated to the API
+  Given  the follow metrics exist:
+  Given  the follow price "Product One" for "USD" monthly price with a usage tiered graduated for metric "Test One" with these tiers:
+  Given  the following subscriptions exist:
+  And  the following events exist:
+  And  stripe billing is disabled
+  And  there are usage limits for "customer.one@example.org":
+  When  the background task to update customer events is ran for "customer.one@example.org"
+  Then  there should be a usage warning for "customer.one@example.org"
+
+
+
+Scenario 2: Disable
+  Given  I have authenticated to the API
+  Given  the follow metrics exist:
+  Given  the follow price "Product One" for "USD" monthly price with a usage tiered graduated for metric "Test One" with these tiers:
+  Given  the following subscriptions exist:
+  And  the following events exist:
+  And  stripe billing is disabled
+  And  there are usage limits for "customer.one@example.org":
+  When  the background task to update customer events is ran for "customer.one@example.org"
+  Then  there should be a usage warning for "customer.one@example.org"
+  Then  the customer "customer.one@example.org" is disabled
+

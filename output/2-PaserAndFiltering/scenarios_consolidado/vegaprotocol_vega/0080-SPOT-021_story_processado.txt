@@ -1,0 +1,48 @@
+Scenario 1: If the fee rates change for any reason within an auction, the amount required to cover fees must be recalculated at uncrossing time,
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties place the following orders:
+  Then  the opening auction period ends for market "BTC/ETH"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  And  the mark price should be "100" for the market "BTC/ETH"
+  When  the network moves ahead "1" blocks
+  Then  "party3" should have holding account balance of "1000" for asset "ETH"
+  Then  "party3" should have general account balance of "200" for asset "ETH"
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "BTC/ETH"
+  Then  "party3" should have holding account balance of "1025" for asset "ETH"
+  Then  "party3" should have general account balance of "175" for asset "ETH"
+  Given  the following network parameters are set:
+  And  the orders should have the following status:
+  And  the parties place the following orders:
+  When  the network moves ahead "3" blocks
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  And  the orders should have the following status:
+  Then  "party3" should have holding account balance of "0" for asset "ETH"
+  Then  "party3" should have general account balance of "1200" for asset "ETH"
+
+
+
+Scenario 2: If the fee rates change for any reason within an auction, the amount required to cover fees must be recalculated at uncrossing time,
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties place the following orders:
+  Then  the opening auction period ends for market "BTC/ETH"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  And  the mark price should be "100" for the market "BTC/ETH"
+  When  the network moves ahead "1" blocks
+  Then  "party3" should have holding account balance of "1000" for asset "ETH"
+  Then  "party3" should have general account balance of "200" for asset "ETH"
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "BTC/ETH"
+  Then  "party3" should have holding account balance of "1025" for asset "ETH"
+  Then  "party3" should have general account balance of "175" for asset "ETH"
+  Given  the following network parameters are set:
+  And  the orders should have the following status:
+  And  the parties place the following orders:
+  When  the network moves ahead "3" blocks
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  And  the orders should have the following status:
+  Then  "party3" should have holding account balance of "1000" for asset "ETH"
+  Then  "party3" should have general account balance of "200" for asset "ETH"
+

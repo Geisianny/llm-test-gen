@@ -1,0 +1,32 @@
+Scenario 1: Properly rounded up tax for single product
+  Tags: ['@ui']
+  When  I add product "Symfony Mug" to the cart
+  Then  my cart total should be "$46.95"
+  And  my included in price taxes should be "$4.27"
+
+
+
+Scenario 2: Properly rounded down tax for single product
+  Tags: ['@ui']
+  When  I add product "PHP Mug" to the cart
+  Then  my cart total should be "$46.90"
+  And  my included in price taxes should be "$4.26"
+
+
+
+Scenario 3: Properly rounded taxes for order with multiple products without discount
+  Tags: ['@ui']
+  When  I add 2 products "PHP T-Shirt" to the cart
+  And  I add product "Symfony Mug" to the cart
+  Then  my cart total should be "$66.95"
+  And  my included in price taxes should be "$8.01"
+
+
+
+Scenario 4: Properly rounded taxes for order with multiple products with discount
+  Tags: ['@ui']
+  When  I add 2 products "PHP T-Shirt" to the cart
+  And  I add 2 products "Symfony Mug" to the cart
+  Then  my cart total should be "$113.90"
+  And  my included in price taxes should be "$12.28"
+

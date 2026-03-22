@@ -1,0 +1,72 @@
+Scenario 1: Search for organisations on an organisation individual page
+  Tags: ['@vcr']
+  Given  I select the "Advocacy" category from How They Help
+  And  I press "Submit"
+  Then  I should see "Unfriendly"
+  And  I should not see "Friendly"
+
+
+
+Scenario 2: be able to view link to charity site on individual charity page
+  Then  I should see the external website link for "Friendly" charity
+
+
+
+Scenario 3: display charity title in a visible way
+  Then  I should see "Friendly" < tagged > with "h2"
+
+
+
+Scenario 4: show organisation e-mail as link
+  Then  I should see a mail-link to "superadmin@friendly.xx"
+
+
+
+Scenario 5: show categories of charity by type
+  Then  I should see "Health" within "what_they_do"
+  And  I should see "Education" within "what_they_do"
+  And  I should see "Voluntary" within "who_they_help"
+  And  I should see "Finance" within "how_they_help"
+  And  I should not see "Animal Welfare" within "what_they_do"
+  And  I visit the show page for the organisation named "Unfriendly"
+  Then  I should not see "Health" within "what_they_do"
+  And  I should not see "Education" within "what_they_do"
+  And  I should not see "Animal Welfare" within "what_they_do"
+
+
+
+Scenario 6: categories link to search results of orgs with these categories
+  Given  I click "Health"
+  Then  I should be on the organisations search page
+  And  I should see "Friendly"
+
+
+
+Scenario 7: See the AddThis sharing sidebar
+  Tags: ['@javascript', '@billy']
+  Given  I visit the show page for the organisation named "Friendly"
+  Then  I should see the AddThis sharing sidebar
+
+
+
+Scenario Outline 8: show labels if field is present - Example 1
+  Then  I should see "Postcode"
+
+  Examples:
+    | label |
+    | Postcode |
+    | Email |
+    | Website |
+
+
+
+Scenario Outline 9: hide labels if field is empty - Example 1
+  Given  I visit the show page for the organisation named "Unfriendly"
+  Then  I should not see "Postcode"
+
+  Examples:
+    | label |
+    | Postcode |
+    | Email |
+    | Website |
+

@@ -1,0 +1,40 @@
+Feature: Config
+
+Scenario 1: Non-existing config return None
+  Tags: ['@auth']
+  When  we get "/config/foo"
+  Then  we get existing resource
+
+Scenario 2: Read config without auth
+  When  we get "/config/foo"
+  Then  we get existing resource
+
+Scenario 3: Get config
+  Tags: ['@auth']
+  Given  "config"
+  When  we get "/config/foo"
+  Then  we get existing resource
+
+Scenario 4: Set config
+  Tags: ['@auth']
+  When  we post to "/config"
+  Then  we get new resource
+  When  we get "/config/foo"
+  Then  we get existing resource
+  When  we post to "/config"
+  Then  we get new resource
+  When  we get "/config/foo"
+  Then  we get existing resource
+
+Scenario 5: Default values
+  Tags: ['@auth']
+  When  we init data "config"
+  When  we get "/config/client-settings"
+  Then  we get existing resource
+  When  we post to "/config"
+  And  we get "/config/client-settings"
+  Then  we get existing resource
+  When  we post to "/config"
+  And  we get "/config/client-settings"
+  Then  we get existing resource
+

@@ -1,0 +1,17 @@
+Scenario 1: Receiving fixed discount for my cart
+  Tags: ['@api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  When  I check the details of my cart
+  Then  my cart total should be "$90.00"
+  And  my discount should be "-$10.00"
+
+
+
+Scenario 2: Not receiving discount when promotion is disabled for current channel
+  Tags: ['@api', '@ui']
+  Given  the promotion was disabled for the channel "Web"
+  When  I added product "PHP T-Shirt" to the cart
+  When  I check the details of my cart
+  Then  my cart total should be "$100.00"
+  And  there should be no discount applied
+

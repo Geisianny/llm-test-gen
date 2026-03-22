@@ -1,0 +1,30 @@
+Scenario 1: Discounted price is round
+  Tags: ['@api', '@ui']
+  When  I view product "Orange Juice"
+  Then  I should see the product price "$17.00"
+  And  I should see the product original price "$20.00"
+
+
+
+Scenario 2: Discounted price is rounded to a lower last digit
+  Tags: ['@api', '@ui']
+  When  I view product "Apple Juice"
+  Then  I should see the product price "$17.21"
+  And  I should see the product original price "$20.25"
+
+
+
+Scenario 3: Discounted price is rounded to an upper last digit on 4/5 scenario
+  Tags: ['@api', '@ui']
+  When  I view product "Peach Juice"
+  Then  I should see the product price "$8.93"
+  And  I should see the product original price "$10.50"
+
+
+
+Scenario 4: Discounted price is rounded to an upper last digit
+  Tags: ['@api', '@ui']
+  When  I view product "Mango Juice"
+  Then  I should see the product price "$8.45"
+  And  I should see the product original price "$9.94"
+

@@ -1,0 +1,47 @@
+Feature: login
+Description: As a user
+  I want to login
+  In order to view pages logged in
+
+Background: 
+  Given  the following users
+
+Scenario 1: login from portal homepage
+  Tags: ['@selenium']
+  Given  feature "allow_change_of_redirection_after_login" is disabled on environment
+  And  I am not logged in
+  And  I go to the homepage
+  And  I follow "Login"
+  And  I wait 0.5 second for popin animation
+  And  I fill in the following:
+  When  I follow "Log in"
+  Then  I should be on the homepage
+  And  I should be logged in as "joaosilva"
+
+Scenario 2: login from some profile page
+  Tags: ['@selenium']
+  Given  feature "allow_change_of_redirection_after_login" is disabled on environment
+  And  I am not logged in
+  And  the following users
+  And  the following articles
+  And  I go to mariasilva's homepage
+  And  I follow "Login"
+  And  I wait 0.5 second for popin animation
+  And  I fill in the following:
+  When  I follow "Log in"
+  Then  I should be on mariasilva's homepage
+
+Scenario 3: view my control panel
+  Given  feature "allow_change_of_redirection_after_login" is disabled on environment
+  And  I am not logged in
+  And  I go to joaosilva's control panel
+  And  I should be on login page
+  And  I fill in the following:
+  When  I follow "Log in"
+  Then  I should be on joaosilva's control panel
+
+Scenario 4: be redirected if user goes to login page and is logged
+  Given  I am logged in as "joaosilva"
+  And  I go to login page
+  Then  I should be on joaosilva's control panel
+

@@ -1,0 +1,38 @@
+Scenario 1: 001 Enact a successor market when the parent market is still active; Two proposals that name the same parent can be submitted; 0081-SUCM-005, 0081-SUCM-006, 0081-SUCM-020, 0081-SUCM-021, 0081-SUCM-022
+  Tags: ['@SuccessorMarketActive', '@Liquidation']
+  Given  the markets:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  Then  the market data for the market "ETH/DEC19" should be:
+  When  the parties place the following orders:
+  And  the market data for the market "ETH/DEC19" should be:
+  When  the parties place the following orders:
+  Then  the parties should have the following account balances:
+  Then  the parties cancel the following orders:
+  When  the parties place the following orders:
+  When  the parties place the following orders:
+  Then  the network moves ahead "2" blocks
+  And  the insurance pool balance should be "6977" for the market "ETH/DEC19"
+  And  the global insurance pool balance should be "0" for the asset "USD"
+  Then  the parties should have the following account balances:
+  Then  the parties should have the following profit and loss:
+  And  the liquidity provider fee shares for the market "ETH/DEC19" should be:
+  And  then the network moves ahead "2" blocks
+  And  the insurance pool balance should be "6977" for the market "ETH/DEC19"
+  And  the global insurance pool balance should be "0" for the asset "USD"
+  When  the oracles broadcast data signed with "0xCAFECAFE1":
+  And  time is updated to "2023-07-21T00:00:00Z"
+  And  the global insurance pool balance should be "0" for the asset "USD"
+  Then  the parties should have the following account balances:
+  Then  the market state should be "STATE_TRADING_TERMINATED" for the market "ETH/DEC19"
+  And  the insurance pool balance should be "6977" for the market "ETH/DEC19"
+  When  the oracles broadcast data signed with "0xCAFECAFE1":
+  And  the insurance pool balance should be "16359" for the market "ETH/DEC19"
+  And  then the network moves ahead "10" blocks
+  And  the insurance pool balance should be "16359" for the market "ETH/DEC19"
+  And  the global insurance pool balance should be "0" for the asset "USD"
+  Then  the parties should have the following profit and loss:
+  Then  the parties should have the following account balances:
+

@@ -1,0 +1,14 @@
+Scenario 1: Create a new index and add fields
+  Given  the site has a index "localized_getter" for behat-class "LocalizedTest" with type "mysql"
+  And  the index has following fields:
+  Then  the index should have localized columns "shortDescription"
+
+
+
+Scenario 2: Create a new index, add fields and index some objects
+  Given  the site has a index "localized_getter" for behat-class "LocalizedTest" with type "mysql"
+  And  the index has following fields:
+  And  there is an instance of behat-class "LocalizedTest" with key "test1"
+  And  the object-instance has following values:
+  Then  the index localized column "shortDescription" for object-instance should have value "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam"
+

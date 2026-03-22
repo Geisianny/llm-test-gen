@@ -1,0 +1,85 @@
+Feature: Account registration
+Description: In order to avoid making mistakes when registering account
+    As a Visitor
+    I want to be prevented from creating an account without required fields
+Tags: ['@customer_registration']
+
+Background: 
+  Given  the store operates on a single channel in "United States"
+
+Scenario 1: Trying to register a new account with email that has been already used
+  Tags: ['@ui', '@api']
+  Given  there is a user "goodman@gmail.com" identified by "heisenberg"
+  When  I want to register a new account
+  And  I specify the first name as "Saul"
+  And  I specify the last name as "Goodman"
+  And  I specify the email as "goodman@gmail.com"
+  And  I try to register this account
+  Then  I should be notified that the email is already used
+  And  I should not be logged in
+
+Scenario 2: Trying to register a new account without specifying first name
+  Tags: ['@ui', '@api']
+  When  I want to register a new account
+  And  I do not specify the first name
+  And  I specify the last name as "Goodman"
+  And  I specify the email as "goodman@gmail.com"
+  And  I specify the password as "heisenberg"
+  And  I try to register this account
+  Then  I should be notified that the first name is required
+  And  I should not be logged in
+
+Scenario 3: Trying to register a new account without specifying last name
+  Tags: ['@ui', '@api']
+  When  I want to register a new account
+  And  I do not specify the last name
+  And  I specify the first name as "Saul"
+  And  I specify the email as "goodman@gmail.com"
+  And  I specify the password as "heisenberg"
+  And  I confirm this password
+  And  I try to register this account
+  Then  I should be notified that the last name is required
+  And  I should not be logged in
+
+Scenario 4: Trying to register a new account without specifying password
+  Tags: ['@ui', '@api']
+  When  I want to register a new account
+  And  I do not specify the password
+  And  I specify the first name as "Saul"
+  And  I specify the last name as "Goodman"
+  And  I specify the email as "goodman@gmail.com"
+  And  I try to register this account
+  Then  I should be notified that the password is required
+  And  I should not be logged in
+
+Scenario 5: Trying to register a new account without confirming password
+  Tags: ['@ui']
+  When  I want to register a new account
+  And  I specify the first name as "Saul"
+  Then  I specify the last name as "Goodman"
+  And  I specify the email as "goodman@gmail.com"
+  And  I specify the password as "heisenberg"
+  And  I do not confirm the password
+  And  I try to register this account
+  Then  I should be notified that the password do not match
+  And  I should not be logged in
+
+Scenario 6: Trying to register a new account without specifying email
+  Tags: ['@ui', '@api']
+  When  I want to register a new account
+  And  I do not specify the email
+  And  I specify the first name as "Saul"
+  And  I specify the last name as "Goodman"
+  And  I try to register this account
+  Then  I should be notified that the email is required
+  And  I should not be logged in
+
+Scenario 7: Trying to register a new account without providing required fields
+  Tags: ['@api']
+  When  I want to register a new account
+  And  I specify the email as "goodman@gmail.com"
+  And  I specify the password as "heisenberg"
+  And  I try to register this account
+  Then  I should be notified that the "first name" and "last name" have to be provided
+  And  I should not be logged in
+

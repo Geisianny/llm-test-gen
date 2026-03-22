@@ -1,0 +1,6 @@
+Scenario 1: Seeing only enabled products
+  Tags: ['@api', '@ui']
+  When  I browse products from product taxon code "T-Shirts"
+  Then  I should see 2 products in the list
+  And  I should not see the product "PHP T-Shirt"
+

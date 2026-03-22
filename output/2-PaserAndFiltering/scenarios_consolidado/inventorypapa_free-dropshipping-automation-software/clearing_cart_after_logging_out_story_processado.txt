@@ -1,0 +1,13 @@
+Scenario 1: Clearing cart after logging out
+  Tags: ['@ui']
+  When  I log out
+  And  I see the summary of my cart
+  Then  my cart should be empty
+
+
+
+Scenario 2: Clearing cart after logging out
+  Tags: ['@api']
+  When  I log out
+  Then  I don't have access to see the summary of my previous cart
+

@@ -1,0 +1,56 @@
+Scenario 1: the user should see his devices
+  Given  that the user joaosilva has the following devices
+  Given  I am logged in as "joaosilva"
+  Given  I go to joaosilva's control panel
+  When  I follow "Notifications"
+  Then  I should see "Banana Phone"
+  And  I should see "Zamzung Phone"
+
+
+
+Scenario 2: the user should delete his devices
+  Given  that the user joaosilva has the following devices
+  Given  I am logged in as "joaosilva"
+  Given  I go to joaosilva's control panel
+  When  I follow "Notifications"
+  When  I follow "delete_device_1"
+  Then  I should be on /myprofile/joaosilva/plugin/push_notification
+  And  I should not see "Zamzung Phone"
+
+
+
+Scenario 3: the user should only see the notifications enabled in the environment
+  Given  the following notifications
+  Given  I am logged in as "joaosilva"
+  Given  I go to joaosilva's control panel
+  When  I follow "Notifications"
+  Then  I should see "Add Friend"
+  And  I should see "New Article"
+  And  I should not see "New Member"
+  And  I should not see "Approve Article"
+
+
+
+Scenario 4: the user should be able to enable notifications
+  Given  the following notifications
+  Given  I am logged in as "joaosilva"
+  Given  I go to joaosilva's control panel
+  When  I follow "Notifications"
+  And  I check "settings_add_friend"
+  And  I check "settings_new_article"
+  When  I press "Save"
+  Then  the "settings_add_friend" checkbox should be checked
+  Then  the "settings_new_article" checkbox should be checked
+
+
+
+Scenario 5: the user should be able to disable notifications
+  Given  the following notifications
+  Given  that the user joaosilva has the following notifications
+  Given  I am logged in as "joaosilva"
+  Given  I go to joaosilva's control panel
+  When  I follow "Notifications"
+  And  I uncheck "settings_add_friend"
+  When  I press "Save"
+  Then  the "settings_add_friend" checkbox should not be checked
+

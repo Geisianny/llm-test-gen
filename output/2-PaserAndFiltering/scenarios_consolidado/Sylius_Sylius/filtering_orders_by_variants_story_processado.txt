@@ -1,0 +1,29 @@
+Scenario 1: Filtering orders by variant
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I browse orders
+  And  I filter by variant "Sundress"
+  Then  I should see 2 orders in the list
+  And  I should see an order with "#0000002" number
+  And  I should see an order with "#0000003" number
+
+
+
+Scenario 2: Filtering orders by multiple variants of the same product
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I browse orders
+  And  I filter by variants "Nebula Top" and "Neutron Sleeveless"
+  Then  I should see 2 orders in the list
+  And  I should see an order with "#0000001" number
+  And  I should see an order with "#0000002" number
+
+
+
+Scenario 3: Filtering orders by multiple variants of different products
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I browse orders
+  And  I filter by variants "Neutron Sleeveless" and "Sundress"
+  Then  I should see 3 orders in the list
+  And  I should see an order with "#0000001" number
+  And  I should see an order with "#0000002" number
+  And  I should see an order with "#0000003" number
+

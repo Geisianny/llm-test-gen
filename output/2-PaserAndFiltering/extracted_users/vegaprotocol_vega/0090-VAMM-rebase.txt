@@ -1,0 +1,83 @@
+Feature: vAMM rebasing when created or amended
+
+Background: 
+  Given  the average block duration is "1"
+  And  the margin calculator named "margin-calculator-1":
+  And  the log normal risk model named "log-normal-risk-model":
+  And  the liquidity monitoring parameters:
+  And  the following network parameters are set:
+  And  the following assets are registered:
+  And  the fees configuration named "fees-config-1":
+  And  the liquidity sla params named "SLA-22":
+  And  the markets:
+  And  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/MAR22"
+  Then  the following trades should be executed:
+  Then  the network moves ahead "1" epochs
+  And  the current epoch is "1"
+  Then  the parties submit the following AMM:
+  Then  the AMM pool status should be:
+
+Scenario 1: a vAMM submits a rebasing order to SELL when its base is lower than an existing AMM's (0090-VAMM-033)
+  Tags: ['@VAMM']
+  When  the parties submit the following AMM:
+  Then  the AMM pool status should be:
+  And  set the following AMM sub account aliases:
+  And  the following trades should be executed:
+  Then  the network moves ahead "1" blocks
+  And  the market data for the market "ETH/MAR22" should be:
+
+Scenario 2: a vAMM submission cannot rebase because it exceeds slippage but exceeds slippage
+  Tags: ['@VAMM']
+  When  the parties submit the following AMM:
+  Then  the AMM pool status should be:
+  When  the parties submit the following AMM:
+  Then  the AMM pool status should be:
+
+Scenario 3: a vAMM submits a rebasing order to BUY when its base is lower than an existing AMM's (0090-VAMM-033)
+  Tags: ['@VAMM']
+  When  the parties submit the following AMM:
+  Then  the AMM pool status should be:
+  And  set the following AMM sub account aliases:
+  And  the following trades should be executed:
+  Then  the network moves ahead "1" blocks
+  And  the market data for the market "ETH/MAR22" should be:
+
+Scenario 4: two aligned AMM's and one amends shifting its base lower and needs to submit a SELL rebasing order
+  Tags: ['@VAMM']
+  When  the parties submit the following AMM:
+  Then  the AMM pool status should be:
+  And  set the following AMM sub account aliases:
+  Then  the network moves ahead "1" blocks
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the parties amend the following AMM:
+  Then  the AMM pool status should be:
+  And  the following trades should be executed:
+  Then  the network moves ahead "1" blocks
+  And  the market data for the market "ETH/MAR22" should be:
+
+Scenario 5: two aligned AMM's and one amends shifting its base lower and needs to submit a BUY rebasing order
+  Tags: ['@VAMM']
+  When  the parties submit the following AMM:
+  Then  the AMM pool status should be:
+  And  set the following AMM sub account aliases:
+  Then  the network moves ahead "1" blocks
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the parties amend the following AMM:
+  Then  the AMM pool status should be:
+  And  the following trades should be executed:
+  Then  the network moves ahead "1" blocks
+  And  the market data for the market "ETH/MAR22" should be:
+
+Scenario 6: One AMM exists and another on is submitted such that their ranges are disjoint and cross entirely (0090-VAMM-034)
+  Tags: ['@VAMM']
+  When  the parties submit the following AMM:
+  Then  the AMM pool status should be:
+  And  set the following AMM sub account aliases:
+  Then  the network moves ahead "1" blocks
+  And  the following trades should be executed:
+  Then  the network moves ahead "1" blocks
+  And  the market data for the market "ETH/MAR22" should be:
+

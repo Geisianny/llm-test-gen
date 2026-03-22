@@ -1,0 +1,31 @@
+Scenario 1: Applying simple catalog promotions
+  Tags: ['@api', '@ui']
+  When  I view product "T-Shirt"
+  Then  I should see the product price "$14.00"
+  And  I should see the product original price "$20.00"
+
+
+
+Scenario 2: Applying simple catalog promotions on a product belongs to child taxon
+  Tags: ['@api', '@ui']
+  When  I view product "Blue Jeans"
+  Then  I should see the product price "$70.00"
+  And  I should see the product original price "$100.00"
+
+
+
+Scenario 3: Applying multiple catalog promotions
+  Tags: ['@api', '@ui']
+  Given  there is a catalog promotion "Summer sale" that reduces price by "10%" and applies on "Clothes" taxon
+  When  I view product "T-Shirt"
+  Then  I should see the product price "$12.60"
+  And  I should see the product original price "$20.00"
+
+
+
+Scenario 4: Not applying catalog promotion if it's not eligible
+  Tags: ['@api', '@ui']
+  When  I view product "Mug"
+  Then  I should see the product price "$5.00"
+  And  I should see this product has no catalog promotion applied
+

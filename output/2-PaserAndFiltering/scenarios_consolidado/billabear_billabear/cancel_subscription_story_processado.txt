@@ -1,0 +1,8 @@
+Scenario 1: Cancel subscription
+  Given  the follow customers exist:
+  And  the following subscriptions exist:
+  And  there is a manage customer session for "customer.one@example.org" that expires in "+5 minutes"
+  When  I cancel via the portal the subscription "Test Plan" for "customer.one@example.org"
+  Then  the subscription "Test Plan" for "customer.one@example.org" will be pending cancel
+  And  there should be a churn event for "customer.one@example.org"
+

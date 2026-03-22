@@ -1,0 +1,4 @@
+Scenario 1: Get a resource containing a raw object
+  When  I send a "GET" request to "/serializable_resources/1"
+  Then  the JSON should be equal to:
+

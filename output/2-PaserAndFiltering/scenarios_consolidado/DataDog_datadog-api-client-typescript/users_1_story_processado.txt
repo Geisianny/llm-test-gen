@@ -1,0 +1,228 @@
+Scenario 1: Create a user returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "CreateUser" request
+  And  body with value {"data": {"attributes": {"email": "jane.doe@example.com"}, "relationships": {"roles": {"data": [{"id": "3653d3c6-0c75-11ea-ad28-fb5701eabc7d", "type": "roles"}]}}, "type": "users"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 2: Create a user returns "OK" response
+  Tags: ['@team:DataDog/team-aaa-identity']
+  Given  new "CreateUser" request
+  And  body with value {"data": {"type": "users", "attributes": {"name": "Datadog API Client Python", "email": "{{ unique }}@datadoghq.com"}}}
+  When  the request is sent
+  Then  the response status is 201 OK
+  And  the response "data.attributes.email" is equal to "{{ unique_lower }}@datadoghq.com"
+  And  the response "data.attributes.name" is equal to "Datadog API Client Python"
+  And  the response "data.attributes.disabled" is false
+  And  the response "data.attributes.service_account" is false
+
+
+
+Scenario 3: Disable a user returns "Not found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "DisableUser" request
+  And  request contains "user_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not found
+
+
+
+Scenario 4: Disable a user returns "OK" response
+  Tags: ['@team:DataDog/team-aaa-identity']
+  Given  there is a valid "user" in the system
+  And  new "DisableUser" request
+  And  request contains "user_id" parameter from "user.data.id"
+  When  the request is sent
+  Then  the response status is 204 OK
+
+
+
+Scenario 5: Get a user invitation returns "Not found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "GetInvitation" request
+  And  request contains "user_invitation_uuid" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not found
+
+
+
+Scenario 6: Get a user invitation returns "OK" response
+  Tags: ['@team:DataDog/team-aaa-identity']
+  Given  there is a valid "user" in the system
+  And  the "user" has a "user_invitation"
+  And  new "GetInvitation" request
+  And  request contains "user_invitation_uuid" parameter from "user_invitation.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.attributes.invite_type" is equal to "openid_invite"
+  And  the response "data.attributes.uuid" is equal to "{{user_invitation.id}}"
+
+
+
+Scenario 7: Get a user organization returns "Not found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "ListUserOrganizations" request
+  And  request contains "user_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not found
+
+
+
+Scenario 8: Get a user organization returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "ListUserOrganizations" request
+  And  request contains "user_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 9: Get a user permissions returns "Not found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "ListUserPermissions" request
+  And  request contains "user_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not found
+
+
+
+Scenario 10: Get a user permissions returns "OK" response
+  Tags: ['@team:DataDog/team-aaa-identity']
+  Given  there is a valid "user" in the system
+  And  new "ListUserPermissions" request
+  And  request contains "user_id" parameter from "user.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data" has length 0
+
+
+
+Scenario 11: Get user details returns "Not found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "GetUser" request
+  And  request contains "user_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not found
+
+
+
+Scenario 12: Get user details returns "OK" response
+  Tags: ['@team:DataDog/team-aaa-identity']
+  Given  there is a valid "user" in the system
+  And  new "GetUser" request
+  And  request contains "user_id" parameter from "user.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK for get user
+  And  the response "data.id" is equal to "{{ user.data.id }}"
+  And  the response "data.type" is equal to "users"
+  And  the response "data.attributes.handle" is equal to "{{ unique_lower }}@datadoghq.com"
+
+
+
+Scenario 13: List all users returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "ListUsers" request
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 14: List all users returns "OK" response
+  Tags: ['@team:DataDog/team-aaa-identity']
+  Given  there is a valid "user" in the system
+  And  new "ListUsers" request
+  And  request contains "filter" parameter from "user.data.attributes.email"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "meta.page.total_filtered_count" is equal to 1
+  And  the response "data[0].attributes.email" has the same value as "user.data.attributes.email"
+
+
+
+Scenario 15: List all users returns "OK" response with pagination
+  Tags: ['@replay-only', '@skip-validation', '@team:DataDog/team-aaa-identity', '@with-pagination']
+  Given  new "ListUsers" request
+  And  request contains "page[size]" parameter with value 2
+  When  the request with pagination is sent
+  Then  the response status is 200 OK
+  And  the response has 3 items
+
+
+
+Scenario 16: Send invitation emails returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "SendInvitations" request
+  And  body with value {"data": []}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 17: Send invitation emails returns "OK" response
+  Tags: ['@team:DataDog/team-aaa-identity']
+  Given  there is a valid "user" in the system
+  And  new "SendInvitations" request
+  And  body with value {"data": [{"type": "user_invitations", "relationships": {"user": {"data": {"type": "{{ user.data.type }}", "id": "{{ user.data.id }}"}}}}]}
+  When  the request is sent
+  Then  the response status is 201 OK
+  And  the response "data" has length 1
+  And  the response "data[0].attributes.invite_type" is equal to "openid_invite"
+
+
+
+Scenario 18: Update a user returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "UpdateUser" request
+  And  request contains "user_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {}, "id": "00000000-0000-feed-0000-000000000000", "type": "users"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 19: Update a user returns "Bad User ID in Request" response
+  Tags: ['@team:DataDog/team-aaa-identity']
+  Given  there is a valid "user" in the system
+  And  new "UpdateUser" request
+  And  request contains "user_id" parameter from "user.data.id"
+  And  body with value {"data": {"id": "00000000-mismatch-body-id-ffffffffffff", "type": "users", "attributes": {"name": "updated", "disabled": true}}}
+  When  the request is sent
+  Then  the response status is 422 Bad User ID in Request
+
+
+
+Scenario 20: Update a user returns "Not found" response
+  Tags: ['@team:DataDog/team-aaa-identity']
+  Given  new "UpdateUser" request
+  And  request contains "user_id" parameter with value "00000000-dead-beef-dead-ffffffffffff"
+  And  body with value {"data": {"id": "00000000-dead-beef-dead-ffffffffffff", "type": "users", "attributes": {"name": "updated", "disabled": true}}}
+  When  the request is sent
+  Then  the response status is 404 Not found
+
+
+
+Scenario 21: Update a user returns "OK" response
+  Tags: ['@team:DataDog/team-aaa-identity']
+  Given  there is a valid "user" in the system
+  And  new "UpdateUser" request
+  And  request contains "user_id" parameter from "user.data.id"
+  And  body with value {"data": {"id": "{{ user.data.id }}", "type": "users", "attributes": {"name": "updated", "disabled": true}}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.attributes.email" has the same value as "user.data.attributes.email"
+  And  the response "data.attributes.title" has the same value as "user.data.attributes.title"
+  And  the response "data.attributes.name" is equal to "updated"
+  And  the response "data.attributes.disabled" is equal to true
+
+
+
+Scenario 22: Update a user returns "Unprocessable Entity" response
+  Tags: ['@generated', '@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "UpdateUser" request
+  And  request contains "user_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {}, "id": "00000000-0000-feed-0000-000000000000", "type": "users"}}
+  When  the request is sent
+  Then  the response status is 422 Unprocessable Entity
+

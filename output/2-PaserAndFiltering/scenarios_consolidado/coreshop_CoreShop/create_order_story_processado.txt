@@ -1,0 +1,44 @@
+Scenario 1: Create a new order and add a product
+  Given  I add the product "T-Shirt" to my cart
+  And  the cart ships to customer "some-customer@something.com" address with postcode "4600"
+  And  the cart invoices to customer "some-customer@something.com" address with postcode "4600"
+  And  I create an order from my cart
+  Then  there should be one product in my order
+  And  the notification rule for "order" should have been fired
+
+
+
+Scenario 2: Create a new order and add a product and calculate totals
+  Given  I add the product "T-Shirt" to my cart
+  And  the cart ships to customer "some-customer@something.com" address with postcode "4600"
+  And  the cart invoices to customer "some-customer@something.com" address with postcode "4600"
+  And  I create an order from my cart
+  Then  the order total should be "2400" including tax
+  And  the order total should be "2000" excluding tax
+  And  the notification rule for "order" should have been fired
+
+
+
+Scenario 3: Create a new order and add a product and calculate subtotals
+  Given  I add the product "T-Shirt" to my cart
+  And  the cart ships to customer "some-customer@something.com" address with postcode "4600"
+  And  the cart invoices to customer "some-customer@something.com" address with postcode "4600"
+  And  I create an order from my cart
+  Then  the order subtotal should be "2400" including tax
+  And  the order subtotal should be "2000" excluding tax
+  And  the notification rule for "order" should have been fired
+
+
+
+Scenario 4: Create a new order and add a product when I ship to a different country
+  Given  I add the product "T-Shirt" to my cart
+  And  the cart ships to customer "some-customer@something.com" address with postcode "04600"
+  And  the cart invoices to customer "some-customer@something.com" address with postcode "4600"
+  And  I create an order from my cart
+  Then  there should be one product in my order
+  And  the order total should be "2000" including tax
+  And  the order total should be "2000" excluding tax
+  And  the order subtotal should be "2000" including tax
+  And  the order subtotal should be "2000" excluding tax
+  And  the notification rule for "order" should have been fired
+

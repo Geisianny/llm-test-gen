@@ -1,0 +1,24 @@
+Scenario 1: Parties with long and short positions open and close position at same price, they have 0 realised returns but should still receive rewards (0056-REWA-121)(0056-REWA-128)(0056-REWA-210)
+  Given  the current epoch is "0"
+  And  the parties submit the following recurring transfers:
+  And  the network moves ahead "1" epochs
+  Given  the parties place the following orders:
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the parties should have the following profit and loss:
+  Given  the network moves ahead "1" epochs
+  Then  parties should have the following vesting account balances:
+
+
+
+Scenario 2: Given the following dispatch metrics, if an `eligible keys` list is specified in the recurring transfer, only parties included in the list and meeting other eligibility criteria should receive a score (0056-REWA-220)
+  Given  the current epoch is "0"
+  And  the parties submit the following recurring transfers:
+  And  the network moves ahead "1" epochs
+  Given  the parties place the following orders:
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the parties should have the following profit and loss:
+  Given  the network moves ahead "1" epochs
+  Then  parties should have the following vesting account balances:
+

@@ -1,0 +1,28 @@
+Scenario 1: 
+  Given  "party1" should have one account per asset
+  And  the average fill price is:
+  And  the markets are updated:
+  When  the parties place the following orders with ticks:
+  And  "party1" should have general account balance of "832630096" for asset "ETH"
+  And  the order book should have the following volumes for market "ETH/DEC19":
+  And  the following trades should be executed:
+  Then  the parties should have the following profit and loss:
+  Then  the following transfers should happen:
+  Then  the parties should have the following account balances:
+  And  the parties should have the following margin levels:
+  And  the parties should have the following profit and loss:
+  Then  the parties cancel the following orders:
+  And  the order book should have the following volumes for market "ETH/DEC19":
+  When  the parties place the following orders:
+  Then  the parties should have the following account balances:
+  And  the parties should have the following margin levels:
+  And  the parties should have the following profit and loss:
+  When  the parties place the following orders with ticks:
+  And  the following transfers should happen:
+  Then  the parties should have the following account balances:
+  And  the parties should have the following margin levels:
+  And  the parties should have the following profit and loss:
+  When  the parties place the following orders with ticks:
+  And  the parties should have the following margin levels:
+  And  the parties should have the following profit and loss:
+

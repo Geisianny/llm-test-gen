@@ -1,0 +1,42 @@
+Scenario 1: Adding a province to an existing country
+  Tags: ['@ui', '@javascript', '@api']
+  When  I want to edit this country
+  And  I add the "Scotland" province with "GB-SCT" code
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this country should have the "Scotland" province
+
+
+
+Scenario 2: Removing a province from an existing country
+  Tags: ['@ui', '@javascript', '@api']
+  Given  this country has the "Northern Ireland" province with "GB-NIR" code
+  When  I want to edit this country
+  And  I delete the "Northern Ireland" province of this country
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this country should not have the "Northern Ireland" province
+
+
+
+Scenario 3: Removing and adding a new province to an existing country
+  Tags: ['@ui', '@javascript', '@api']
+  Given  this country has the "Northern Ireland" province with "GB-NIR" code
+  When  I want to edit this country
+  And  I delete the "Northern Ireland" province of this country
+  And  I add the "Scotland" province with "GB-SCT" code
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this country should not have the "Northern Ireland" province
+  And  this country should have the "Scotland" province
+
+
+
+Scenario 4: Adding a province with an austrian province code
+  Tags: ['@ui', '@javascript', '@api']
+  When  I want to edit this country
+  And  I add the "Wien" province with "AT-9" code
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this country should have the "Wien" province
+

@@ -1,0 +1,6 @@
+Scenario 1: Picking up the cart with the locale other than default
+  Tags: ['@api']
+  When  I pick up cart in the "French (France)" locale
+  And  I check details of my cart
+  Then  my cart's locale should be "French (France)"
+

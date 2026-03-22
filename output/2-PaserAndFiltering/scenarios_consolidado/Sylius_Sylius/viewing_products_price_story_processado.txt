@@ -1,0 +1,6 @@
+Scenario 1: Viewing a detailed page with product's price
+  Tags: ['@api', '@ui']
+  Given  the store has a product "T-Shirt banana" priced at "$39.00"
+  When  I check this product's details
+  Then  I should see the product price "$39.00"
+

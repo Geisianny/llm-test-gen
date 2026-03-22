@@ -1,0 +1,12 @@
+Scenario 1: PAP auction is not started when market is suspended. (0097-PAPU-032)
+  When  the market states are updated through governance:
+  And  the trading mode should be "TRADING_MODE_SUSPENDED_VIA_GOVERNANCE" for the market "BTC/ETH"
+  When  the protocol automated purchase is defined as:
+  Then  the oracles broadcast data with block time signed with "0xCAFECAFE2":
+  And  the network moves ahead "5" blocks
+  Then  the automated purchase program for market "BTC/ETH" should have a snapshot balance of "200"
+  Then  the trading mode should be "TRADING_MODE_SUSPENDED_VIA_GOVERNANCE" for the market "BTC/ETH"
+  And  the network moves ahead "100" blocks
+  Then  the trading mode should be "TRADING_MODE_SUSPENDED_VIA_GOVERNANCE" for the market "BTC/ETH"
+  And  the buy back fees balance should be "5000" for the asset "BTC"
+

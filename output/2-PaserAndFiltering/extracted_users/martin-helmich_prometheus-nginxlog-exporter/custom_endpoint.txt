@@ -1,0 +1,7 @@
+Feature: Custom endpoint
+
+Scenario 1: Custom endpoint can be used
+  Given  a running exporter listening with configuration file "test-config-custom-endpoint.yaml"
+  When  the following HTTP request is logged to "access.log"
+  Then  the exporter should on "/custom" report value 1 for metric nginx_http_response_count_total{method="GET",status="200"}
+

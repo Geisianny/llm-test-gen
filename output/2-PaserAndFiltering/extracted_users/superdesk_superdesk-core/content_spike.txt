@@ -1,0 +1,186 @@
+Feature: Content Spiking
+
+Scenario 1: Spike a user content and validate metadata set by API
+  Tags: ['@auth', '@notification']
+  Given  "archive"
+  When  we get "/archive/item-1"
+  Then  we get latest
+  When  we spike "item-1"
+  Then  we get OK response
+  And  we get spiked content "item-1"
+  And  we get notifications
+  And  we get version 2
+  And  we get global content expiry
+  When  we get "/archive/item-1"
+  Then  we get existing resource
+  And  the field "event_id" value is not "abc123"
+
+Scenario 2: Spike a desk content
+  Tags: ['@auth']
+  Given  empty "desks"
+  Given  empty "archive"
+  Given  empty "stages"
+  Given  "desks"
+  Given  "archive"
+  When  we spike "item-1"
+  Then  we get OK response
+  And  we get spiked content "item-1"
+  And  we get version 2
+  And  we get desk spike expiry after "99"
+  When  we get "/archive/item-1"
+  Then  we get existing resource
+
+Scenario 3: Spike fetched content
+  Tags: ['@auth', '@provider']
+  Given  empty "archive"
+  Given  "desks"
+  And  ingest from "reuters"
+  When  we post to "/ingest/tag:reuters.com,2014:newsml_LOVEA6M0L7U2E/fetch"
+  Then  we get "_id"
+  When  we spike fetched item
+  Then  we get OK response
+
+Scenario 4: Unspike a content
+  Tags: ['@auth', '@notification']
+  Given  empty "archive"
+  Given  we have "administrator" as type of user
+  Given  "archive"
+  When  we spike "item-1"
+  And  we unspike "item-1"
+  Then  we get unspiked content "item-1"
+  And  we get notifications
+  And  we get version 3
+  And  we get global content expiry
+
+Scenario 5: Unspike a desk content
+  Tags: ['@auth']
+  Given  empty "desks"
+  Given  empty "archive"
+  Given  empty "stages"
+  Given  "desks"
+  Given  "archive"
+  When  we spike "item-1"
+  And  we unspike "item-1"
+  Then  we get unspiked content "item-1"
+  And  we get version 3
+  And  we get desk spike expiry after "60"
+
+Scenario 6: Unspike a desk content to different desk
+  Tags: ['@auth']
+  Given  "desks"
+  Given  "archive"
+  When  we spike "item-1"
+  When  we post to "desks"
+  When  we unspike "item-1"
+  Then  we get unspiked content "item-1"
+
+Scenario 7: Sign Off changes when content is spiked or unspiked
+  Tags: ['@auth']
+  Given  "desks"
+  When  we post to "/archive" with success
+  Then  we get new resource
+  When  we switch user
+  And  we spike "#archive._id#"
+  Then  we get OK response
+  When  we get "/archive/#archive._id#"
+  Then  we get existing resource
+  When  we login as user "bar" with password "foobar" and user type "admin"
+  And  we unspike "#archive._id#"
+  Then  we get OK response
+  When  we get "/archive/#archive._id#"
+  Then  we get existing resource
+
+Scenario 8: Spike a non-empty package
+  Tags: ['@auth']
+  Given  empty "archive"
+  And  "desks"
+  Given  "archive"
+  When  we post to "archive" with success
+  When  we spike "package-1"
+  Then  we get OK response
+  When  we get "/archive/package-1"
+  Then  we get existing resource
+  When  we get "/archive/item-1"
+  Then  we get existing resource
+  When  we spike "item-1"
+  Then  we get OK response
+
+Scenario 9: Unspike a non-empty package
+  Tags: ['@auth']
+  Given  empty "archive"
+  And  "desks"
+  Given  "archive"
+  When  we post to "archive" with success
+  When  we spike "package-1"
+  Then  we get OK response
+  When  we unspike "package-1"
+  Then  we get OK response
+  When  we get "/archive/package-1"
+  Then  we get existing resource
+  When  we get "/archive/item-1"
+  Then  we get existing resource
+
+Scenario 10: Spike a desk content with configured spike expiry
+  Tags: ['@auth']
+  Given  empty "desks"
+  Given  empty "archive"
+  Given  empty "stages"
+  Given  "desks"
+  Given  "archive"
+  Then  we set spike exipry "70"
+  When  we spike "item-1"
+  Then  we get OK response
+  And  we get spiked content "item-1"
+  And  we get version 2
+  And  we get desk spike expiry after "70"
+  When  we get "/archive/item-1"
+  Then  we get existing resource
+
+Scenario 11: Spike locked item
+  Tags: ['@auth', '@notification']
+  Given  "archive"
+  When  we post to "/archive/item-1/lock"
+  When  we spike "item-1"
+  Then  we get OK response
+  And  we get notifications
+  When  we get "/archive/item-1"
+  Then  we get existing resource
+
+Scenario 12: Spike translated item
+  Tags: ['@auth']
+  Given  "archive"
+  And  "desks"
+  When  we post to "/archive/translate"
+  And  we get "/archive/#archive._id#"
+  Then  we get existing resource
+  When  we get "/archive/#translate._id#"
+  Then  we get existing resource
+  When  we spike "#translate._id#"
+  Then  we get OK response
+  When  we get "/archive/#translate._id#"
+  Then  we get existing resource
+  When  we get "/archive/#archive._id#"
+  Then  we get existing resource
+
+Scenario 13: Spike translated item which is translated from a published item
+  Tags: ['@auth']
+  Given  "validators"
+  And  "desks"
+  And  "archive"
+  When  we patch "/archive/123"
+  When  we post to "/products" with success
+  And  we post to "/subscribers" with success
+  And  we publish "#archive._id#" with "publish" type and "published" state
+  Then  we get OK response
+  When  we post to "/archive/translate"
+  When  we get "/archive/#translate._id#"
+  Then  we get existing resource
+  When  we get "/published"
+  Then  we get list with 1 items
+  When  we spike "#translate._id#"
+  Then  we get OK response
+  When  we get "/archive/#translate._id#"
+  Then  we get existing resource
+  When  we get "/published"
+  Then  we get list with 1 items
+

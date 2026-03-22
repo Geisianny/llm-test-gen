@@ -1,0 +1,31 @@
+Feature: Target stake
+
+Background: 
+  Given  the following network parameters are set:
+  Given  the liquidity monitoring parameters:
+  And  the simple risk model named "simple-risk-model-1":
+  And  the log normal risk model named "log-normal-risk-model-1":
+  And  the fees configuration named "fees-config-1":
+  And  the margin calculator named "margin-calculator-1":
+  And  the markets:
+  And  time is updated to "2021-03-08T00:00:00Z"
+
+Scenario 1: Max open interest changes over time
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties place the following orders:
+  Then  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the mark price should be "0" for the market "ETH/DEC21"
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC21"
+  Then  the market data for the market "ETH/DEC21" should be:
+  Then  the mark price should be "110" for the market "ETH/DEC21"
+  And  the target stake should be "990" for the market "ETH/DEC21"
+  When  time is updated to "2021-03-08T01:00:00Z"
+  When  the parties place the following orders with ticks:
+  Then  the mark price should be "90" for the market "ETH/DEC21"
+  And  the target stake should be "810" for the market "ETH/DEC21"
+  When  time is updated to "2021-03-15T02:00:00Z"
+  Then  the mark price should be "90" for the market "ETH/DEC21"
+  And  the target stake should be "540" for the market "ETH/DEC21"
+

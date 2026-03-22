@@ -1,0 +1,9 @@
+Scenario 1: 0083-RFPR-063 with bulk team creation
+  Tags: ['@Closed']
+  When  the parties apply the following referral codes:
+  When  the parties apply the following referral codes:
+  Given  the parties submit the following recurring transfers:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  parties should have the following vesting account balances:
+

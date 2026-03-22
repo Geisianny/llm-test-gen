@@ -1,0 +1,6 @@
+Scenario 1: Deleting a product association type
+  Tags: ['@api', '@ui']
+  When  I delete the "Cross sell" product association type
+  Then  I should be notified that it has been successfully deleted
+  And  this product association type should no longer exist in the registry
+

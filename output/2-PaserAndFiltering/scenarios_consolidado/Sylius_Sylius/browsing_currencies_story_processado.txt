@@ -1,0 +1,6 @@
+Scenario 1: Browsing currencies in store
+  Tags: ['@api', '@ui']
+  When  I want to browse currencies of the store
+  Then  I should see 2 currencies on the list
+  And  I should see the currency "British Pound" on the list
+

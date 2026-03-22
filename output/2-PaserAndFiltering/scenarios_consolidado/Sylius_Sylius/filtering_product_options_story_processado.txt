@@ -1,0 +1,16 @@
+Scenario 1: Filtering product options by name
+  Tags: ['@api', '@ui']
+  When  I search for product options with "T-Shirt" name
+  Then  I should see 2 product options in the list
+  And  the product option "T-Shirt size" should be in the registry
+  And  the product option "T-Shirt color" should be in the registry
+
+
+
+Scenario 2: Filtering product options by code
+  Tags: ['@api', '@ui']
+  When  I search for product options with "xyz" code
+  Then  I should see 2 product options in the list
+  And  the product option "T-Shirt color" should be in the registry
+  And  the product option "Jeans size" should be in the registry
+

@@ -1,0 +1,41 @@
+Scenario 1: Retrieve billable call json list
+  Tags: ['@createSchema']
+  Given  I add Authorization header
+  When  I add "Accept" header equal to "application/json"
+  And  I send a "GET" request to "billable_calls?_itemsPerPage=2"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario 2: Retrieve certain billable call json
+  Given  I add Authorization header
+  When  I add "Accept" header equal to "application/json"
+  And  I send a "GET" request to "billable_calls/1"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json; charset=utf-8"
+  And  the JSON should be like:
+
+
+
+Scenario 3: Retrieve unpaginated billable call csv list
+  Given  I add Authorization header
+  When  I add "Accept" header equal to "text/csv"
+  And  I send a "GET" request to "billable_calls?_pagination=false"
+  Then  the response status code should be 200
+  And  the header "Content-Type" should be equal to "text/csv; charset=utf-8"
+  And  the streamed response should be equal to:
+
+
+
+Scenario 4: Retrieve unpaginated billable call json list
+  Given  I add Authorization header
+  When  I add "Accept" header equal to "application/json"
+  And  I send a "GET" request to "billable_calls?startTime%5Bbefore%5D=2019-01-01%2009%3A00%3A03&_pagination=false"
+  Then  the response status code should be 200
+  And  the header "Content-Type" should be equal to "application/json; charset=utf-8"
+  And  the streamed JSON should be equal to:
+

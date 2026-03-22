@@ -1,0 +1,42 @@
+Feature: CLI
+Description: In order to use Karma
+  As a person who wants to write great tests
+  I want command line interface to provide help and useful errors.
+
+Scenario 1: Top-level CLI help
+  When  I execute Karma with arguments: "--help"
+  Then  the stdout is exactly:
+
+Scenario 2: Current version
+  When  I execute Karma with arguments: "--version"
+  Then  the stdout matches RegExp:
+
+Scenario 3: Error when command is unknown
+  When  I execute Karma with arguments: "strat"
+  Then  the stderr is exactly:
+
+Scenario 4: No error when unknown option and argument are passed in
+  Given  a configuration with:
+  When  I execute Karma with arguments: "start sandbox/karma.conf.js unknown-argument --unknown-option"
+  Then  it passes with:
+
+Scenario 5: Init command help
+  When  I execute Karma with arguments: "init --help"
+  Then  the stdout is exactly:
+
+Scenario 6: Start command help
+  When  I execute Karma with arguments: "start --help"
+  Then  the stdout is exactly:
+
+Scenario 7: Run command help
+  When  I execute Karma with arguments: "run --help"
+  Then  the stdout is exactly:
+
+Scenario 8: Stop command help
+  When  I execute Karma with arguments: "stop --help"
+  Then  the stdout is exactly:
+
+Scenario 9: Completion command help
+  When  I execute Karma with arguments: "completion --help"
+  Then  the stdout is exactly:
+

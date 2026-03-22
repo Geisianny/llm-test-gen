@@ -1,0 +1,83 @@
+Feature: Test magin under isolated margin mode when there is not enough collateral
+
+Background: 
+  Given  the following network parameters are set:
+  And  the liquidity monitoring parameters:
+  And  the simple risk model named "simple-risk-model":
+  And  the markets:
+
+Scenario 1: 001 Check margin update when party does not have sufficient collateral
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties place the following orders:
+  And  the markets are updated:
+  When  the network moves ahead "2" blocks
+  Then  the mark price should be "15900" for the market "ETH/FEB23"
+  And  the order book should have the following volumes for market "ETH/FEB23":
+  And  the average fill price is:
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  And  the parties submit update margin mode:
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  And  the network moves ahead "1" blocks
+  And  the parties submit update margin mode:
+  And  the network moves ahead "2" blocks
+  And  the parties should have the following margin levels:
+  And  the parties submit update margin mode:
+  And  the network moves ahead "2" blocks
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  And  the parties place the following orders:
+  And  the parties place the following orders:
+  And  the network moves ahead "1" blocks
+  Then  the parties should have the following account balances:
+  And  the parties place the following orders:
+  And  the network moves ahead "1" blocks
+  Then  the parties should have the following account balances:
+  When  the parties amend the following orders:
+  And  the orders should have the following status:
+  And  the network moves ahead "1" blocks
+  And  the parties should have the following margin levels:
+  And  the parties place the following orders:
+  And  the parties should have the following margin levels:
+
+Scenario 2: 002 replicate panic in testnet: when party has an long order and they increase the price, (the order would be filled and then party does not have enough to cover the margin), the order should be stopped
+  Tags: ['@MCAL037']
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties place the following orders:
+  When  the network moves ahead "2" blocks
+  Then  the mark price should be "15900" for the market "ETH/FEB23"
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  And  the parties submit update margin mode:
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  And  the network moves ahead "1" blocks
+  And  the average fill price is:
+  And  the markets are updated:
+  When  the parties amend the following orders:
+  And  the orders should have the following status:
+  Then  the network moves ahead "2" blocks
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  When  the parties submit update margin mode:
+  Then  the network moves ahead "2" blocks
+  Then  the parties should have the following account balances:
+
+Scenario 3: 003 test when party holds short orders
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties place the following orders:
+  When  the network moves ahead "2" blocks
+  Then  the mark price should be "15900" for the market "ETH/FEB23"
+  And  the parties submit update margin mode:
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  And  the markets are updated:
+  And  the network moves ahead "1" blocks
+  When  the parties amend the following orders:
+  And  the markets are updated:
+  And  the parties amend the following orders:
+  And  the orders should have the following status:
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+

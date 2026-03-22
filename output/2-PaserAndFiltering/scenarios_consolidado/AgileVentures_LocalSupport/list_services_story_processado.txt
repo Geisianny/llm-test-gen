@@ -1,0 +1,26 @@
+Scenario 1: Not see header
+  And  I should see element "header"
+  And  I should see element "footer"
+
+
+
+Scenario 2: See a list of current services
+  Tags: ['@vcr']
+  Then  the index should contain:
+
+
+
+Scenario 3: Category selections maintain defaults following search
+  Given  I select 'Any' from 'Type of Activity'
+  And  no 'Location' is selected
+  And  no 'Self Care Categories' are selected
+  When  I select 'Group' from 'Type of Activity'
+  And  I select 'Westminster' from 'Location'
+  And  I select 'Autism' from 'Self Care Categories'
+  And  I press "Search"
+  Then  'Type of Activity' is set to 'Group'
+  And  'Location' is set to 'Westminster'
+  And  'Self Care Categories' is set to 'Autism'
+  And  I should see element "header"
+  And  I should see element "footer"
+

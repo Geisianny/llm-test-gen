@@ -1,0 +1,110 @@
+Scenario 1: A party's rebate is fixed for the epoch and only increases on the next epoch (0095-HVMR-026)(0095-HVMR-027)(0095-HVMR-028)
+  Given  the volume rebate program tiers named "vrt":
+  And  the volume rebate program:
+  And  the network moves ahead "1" epochs
+  Given  the parties place the following orders:
+  Then  the following trades should be executed:
+  Given  the network moves ahead "1" epochs
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  Given  the network moves ahead "1" epochs
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+
+
+
+Scenario Outline 2: Maker/taker volume does/does not contribute towards the maker volume fraction respectively (0095-HVMR-013)(0095-HVMR-014)(0095-HVMR-015)(0095-HVMR-016) - Example 1
+  Given  the volume rebate program tiers named "vrt":
+  And  the volume rebate program:
+  And  the network moves ahead "1" epochs
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  Given  the network moves ahead "1" epochs
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  Then  the following transfers should happen:
+
+  Examples:
+    | market |
+    | BTC/USD-0-1 |
+    | MXN-0-10/USD-0-1 |
+
+
+
+Scenario Outline 3: Trades on auction uncrossing do not contribute towards the maker volume fraction (0095-HVMR-017)(0095-HVMR-018) - Example 1
+  Given  the volume rebate program tiers named "vrt":
+  And  the volume rebate program:
+  And  the network moves ahead "1" epochs
+  Given  the parties place the following orders:
+  And  the parties cancel the following orders:
+  Then  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "BTC/USD-0-1"
+  Given  the parties place the following orders:
+  When  the network moves ahead "2" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/USD-0-1"
+  And  the following trades should be executed:
+  Given  the network moves ahead "1" epochs
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+
+  Examples:
+    | market | market string |
+    | BTC/USD-0-1 | "BTC/USD-0-1" |
+    | MXN-0-10/USD-0-1 | "MXN-0-10/USD-0-1" |
+
+
+
+Scenario Outline 4: Volume made in previous window correctly contributes towards maker volume fraction (0095-HVMR-019)(0095-HVMR-020)(0095-HVMR-021)(0095-HVMR-022) - Example 1
+  Given  the volume rebate program tiers named "vrt":
+  And  the volume rebate program:
+  And  the network moves ahead "1" epochs
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  Given  the network moves ahead "0" epochs
+  When  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  When  the network moves ahead "1" epochs
+  When  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+
+  Examples:
+    | market | window length | epochs between trades | party1 rebate | party2 rebate |
+    | BTC/USD-0-1 | 2 | "0" | 50 | 50 |
+    | BTC/USD-0-1 | 2 | "1" | 50 | 50 |
+    | BTC/USD-0-1 | 2 | "2" | 0 | 50 |
+    | MXN-0-10/USD-0-1 | 2 | "0" | 50 | 50 |
+    | MXN-0-10/USD-0-1 | 2 | "1" | 50 | 50 |
+    | MXN-0-10/USD-0-1 | 2 | "2" | 0 | 50 |
+
+
+
+Scenario Outline 5: Derivative and spot markets using assets with different quantums scale maker volume correctly (0095-HVMR-023)(0095-HVMR-024)(0095-HVMR-025) - Example 1
+  Given  the volume rebate program tiers named "vrt":
+  And  the volume rebate program:
+  And  the network moves ahead "1" epochs
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  Given  the network moves ahead "1" epochs
+  And  the parties place the following orders:
+  Then  debug trades
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+
+  Examples:
+    | usd market | mxn market | usd price | mxn price | party1 rebate | party2 rebate |
+    | BTC/USDT-0-1 | BTC/MXN-0-10 | 50001 | 500000 | 50 | 0 |
+    | BTC/USDT-0-1 | USD-0-1/MXN-0-10 | 50000 | 500000 | 50 | 500 |
+    | MXN-0-1/USD-0-10 | USD-0-1/MXN-0-10 | 50000 | 500001 | 0 | 500 |
+

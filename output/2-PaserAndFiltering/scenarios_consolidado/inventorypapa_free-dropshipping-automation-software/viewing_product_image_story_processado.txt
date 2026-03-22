@@ -1,0 +1,6 @@
+Scenario 1: Viewing a product's image on a product details page
+  Tags: ['@ui', '@javascript']
+  When  I check this product's details
+  Then  I should see the product name "Lamborghini Gallardo Model"
+  And  I should see a main image
+

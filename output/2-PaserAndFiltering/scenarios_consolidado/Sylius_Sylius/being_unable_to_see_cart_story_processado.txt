@@ -1,0 +1,5 @@
+Scenario 1: Being unable to see the details of a cart
+  Tags: ['@api', '@ui']
+  When  I try to view the summary of the customer's latest cart
+  Then  I should be informed that the order does not exist
+

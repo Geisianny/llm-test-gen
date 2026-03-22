@@ -1,0 +1,15 @@
+Scenario 1: Viewing a detailed page with default variant's price without discount
+  Tags: ['@ui']
+  When  I view product "Wyborowa Vodka"
+  Then  the product price should be "$40.00"
+  And  I should not see any original price
+
+
+
+Scenario 2: Viewing a detailed page with product's discount price for different variant
+  Tags: ['@ui', '@javascript']
+  When  I view product "Wyborowa Vodka"
+  And  I select "Wyborowa Apple" variant
+  Then  the product price should be "$12.55"
+  And  the product original price should be "$20.00"
+

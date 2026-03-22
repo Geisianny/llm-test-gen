@@ -1,0 +1,208 @@
+Scenario 1: As a non logged-in user I can create a contact
+  Given  I send a "POST" request to "/api/contacts" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 2: As a non logged-in user I can get a contact information with its UUID
+  When  I send a "GET" request to "/api/contacts/fdbc1c47-2c2e-4caf-b9d7-1212cabcd26f"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 3: As a non logged-in user I can update a contact interests
+  Given  I send a "PUT" request to "/api/contacts/fdbc1c47-2c2e-4caf-b9d7-1212cabcd26f" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 4: As a non logged-in user I can update a contact with postal code only and phone_contact checkbox
+  Given  I send a "PUT" request to "/api/contacts/fdbc1c47-2c2e-4caf-b9d7-1212cabcd26f" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+  Given  I send a "PUT" request to "/api/contacts/fdbc1c47-2c2e-4caf-b9d7-1212cabcd26f" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+  And  I should have 0 email
+
+
+
+Scenario 5: As a non logged-in user I can update a contact with full address and all contact checkboxes
+  Given  I send a "PUT" request to "/api/contacts/fdbc1c47-2c2e-4caf-b9d7-1212cabcd26f" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+  Then  I send a "PUT" request to "/api/contacts/fdbc1c47-2c2e-4caf-b9d7-1212cabcd26f" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 6: As a non logged-in user I can create a contact with the same email address as an existing account
+  Given  I send a "POST" request to "/api/contacts" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+  Given  I send a "PUT" request to "/api/contacts/fdbc1c47-2c2e-4caf-b9d7-1212cabcd26f" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+  Given  I send a "PUT" request to "/api/contacts/fdbc1c47-2c2e-4caf-b9d7-1212cabcd26f" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+  And  I should have 0 email
+
+
+
+Scenario 7: As a non logged-in user I can not create a contact with no captcha
+  Given  I send a "POST" request to "/api/contacts" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 8: As a non logged-in user I can not create a contact with invalid captcha
+  Given  I send a "POST" request to "/api/contacts" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 9: As a non logged-in user I can not create a contact with no cgu accepted
+  Given  I send a "POST" request to "/api/contacts" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 10: As a non logged-in user I can not create a contact with an invalid email address
+  Given  I send a "POST" request to "/api/contacts" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 11: As a non logged-in user I can not create a contact with an already existing email address
+  Given  I send a "POST" request to "/api/contacts" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 12: As a non logged-in user I can not create a contact with no first name
+  Given  I send a "POST" request to "/api/contacts" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 13: As a non logged-in user I can not create a contact with a too short first name
+  Given  I send a "POST" request to "/api/contacts" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 14: As a non logged-in user I can not create a contact with a too long first name
+  Given  I send a "POST" request to "/api/contacts" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 15: As a non logged-in user I can not create a contact with no source
+  Given  I send a "POST" request to "/api/contacts" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 16: As a non logged-in user I can not create a contact with an invalid source
+  Given  I send a "POST" request to "/api/contacts" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 17: As a non logged-in user I can not update a contact with invalid interests
+  Given  I send a "PUT" request to "/api/contacts/fdbc1c47-2c2e-4caf-b9d7-1212cabcd26f" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 18: As a non logged-in user I can not update a contact with no cgu accepted
+  Given  I send a "PUT" request to "/api/contacts/fdbc1c47-2c2e-4caf-b9d7-1212cabcd26f" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 19: As a non logged-in user I can not update a contact with an invalid phone number
+  Given  I send a "PUT" request to "/api/contacts/fdbc1c47-2c2e-4caf-b9d7-1212cabcd26f" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 20: As a non logged-in user I can not update a contact with an invalid birth date
+  Given  I send a "PUT" request to "/api/contacts/fdbc1c47-2c2e-4caf-b9d7-1212cabcd26f" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 21: As a non logged-in user I can not update a contact with a too long address
+  Given  I send a "PUT" request to "/api/contacts/fdbc1c47-2c2e-4caf-b9d7-1212cabcd26f" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 22: As a non logged-in user I can not update a contact with a too long postal code
+  Given  I send a "PUT" request to "/api/contacts/fdbc1c47-2c2e-4caf-b9d7-1212cabcd26f" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 23: As a non logged-in user I can not update a contact with a too long city name
+  Given  I send a "PUT" request to "/api/contacts/fdbc1c47-2c2e-4caf-b9d7-1212cabcd26f" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 24: As a non logged-in user I can not update a contact with an invalid country code
+  Given  I send a "PUT" request to "/api/contacts/fdbc1c47-2c2e-4caf-b9d7-1212cabcd26f" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+

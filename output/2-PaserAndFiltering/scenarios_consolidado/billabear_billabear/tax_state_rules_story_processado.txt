@@ -1,0 +1,54 @@
+Scenario 1: 
+  Given  the following subscriptions exist:
+  And  that the following countries exist:
+  And  the following country tax rules exist:
+  And  the following states exist:
+  And  the following state tax rules exist:
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  Then  there the latest invoice for "customer.seven@example.org" will have tax country of "US"
+  And  there the latest invoice for "customer.seven@example.org" will have tax state of "Texas"
+  Then  there the latest invoice for "customer.seven@example.org" will have tax rate of "9"
+  And  there the latest invoice for "customer.eight@example.org" will have tax state of "Quebec"
+  Then  there the latest invoice for "customer.eight@example.org" will have tax rate of "14.975"
+
+
+
+Scenario 2: Doesnt Meet Threshold
+  Given  the following subscriptions exist:
+  And  that the following countries exist:
+  And  the following country tax rules exist:
+  And  the following states exist:
+  And  the following state tax rules exist:
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  Then  there the latest invoice for "customer.eight@example.org" will not have tax state of "Quebec"
+
+
+
+Scenario 3: Meets transaction threshold
+  Given  the following subscriptions exist:
+  And  that the following countries exist:
+  And  the following country tax rules exist:
+  And  the following states exist:
+  And  the following state tax rules exist:
+  And  there are 200 transactions for "customer.eight@example.org" for the past 12 months
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  And  there the latest invoice for "customer.eight@example.org" will have tax state of "Quebec"
+  Then  there the latest invoice for "customer.eight@example.org" will have tax rate of "14.975"
+
+
+
+Scenario 4: Has Nexus
+  Given  the following subscriptions exist:
+  And  that the following countries exist:
+  And  the following country tax rules exist:
+  And  the following states exist:
+  And  the following state tax rules exist:
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  Then  there the latest invoice for "customer.seven@example.org" will have tax country of "US"
+  And  there the latest invoice for "customer.seven@example.org" will have tax state of "Texas"
+  Then  there the latest invoice for "customer.seven@example.org" will have tax rate of "9"
+

@@ -1,0 +1,130 @@
+Feature: Validate
+
+Scenario 1: Validate type
+  Tags: ['@auth']
+  Given  the "validators"
+  When  we post to "/validate"
+  Then  we get existing resource
+
+Scenario 2: Validate pass
+  Tags: ['@auth']
+  Given  the "validators"
+  When  we post to "/validate"
+  Then  we get existing resource
+
+Scenario 3: Validate required field
+  Tags: ['@auth']
+  Given  the "validators"
+  When  we post to "/validate"
+  Then  we get existing resource
+
+Scenario 4: Validate field length short
+  Tags: ['@auth']
+  Given  the "validators"
+  When  we post to "/validate"
+  Then  we get existing resource
+
+Scenario 5: Validate field minimum length fails
+  Tags: ['@auth']
+  Given  the "validators"
+  When  we post to "/validate"
+  Then  we get existing resource
+
+Scenario 6: Validate field maximum length passes
+  Tags: ['@auth']
+  Given  the "validators"
+  When  we post to "/validate"
+  Then  we get existing resource
+
+Scenario 7: Validate field length long
+  Tags: ['@auth']
+  Given  the "validators"
+  When  we post to "/validate"
+  Then  we get existing resource
+
+Scenario 8: Validate allowed values
+  Tags: ['@auth']
+  Given  the "validators"
+  When  we post to "/validate"
+  Then  we get existing resource
+
+Scenario 9: Validate allow unknown fields
+  Tags: ['@auth']
+  Given  the "validators"
+  When  we post to "/validate"
+  Then  we get existing resource
+
+Scenario 10: Missing validator will use default profile
+  Tags: ['@auth']
+  Given  the "validators"
+  When  we post to "/validate"
+  Then  we get existing resource
+
+Scenario 11: Validate using content type
+  Tags: ['@auth']
+  Given  "content_types"
+  When  we post to "/validate"
+  Then  we get existing resource
+
+Scenario 12: Validate custom field
+  Tags: ['@auth']
+  Given  "vocabularies"
+  And  "content_types"
+  When  we post to "/validate"
+  Then  we get existing resource
+  When  we post to "/validate"
+  Then  we get existing resource
+  When  we post to "/validate"
+  Then  we get existing resource
+
+Scenario 13: Validate using custom package schema
+  Tags: ['@auth']
+  Given  config update
+  When  we post to "/validate"
+  Then  we get existing resource
+
+Scenario 14: Validate multiple required custom fields
+  Tags: ['@auth']
+  Given  "vocabularies"
+  And  "content_types"
+  When  we post to "/validate"
+  Then  we get existing resource
+  When  we post to "/validate"
+  Then  we get existing resource
+
+Scenario 15: Validate subject field with missing scheme
+  Tags: ['@auth']
+  Given  "content_types"
+  When  we post to "/validate"
+  Then  we get existing resource
+
+Scenario 16: Validate subject with subject scheme not in allowed
+  Tags: ['@auth']
+  Given  "content_types"
+  When  we post to "/validate"
+  Then  we get existing resource
+
+Scenario 17: Validate subject using custom vocabulary for it
+  Tags: ['@auth']
+  Given  "content_types"
+  And  "vocabularies"
+  When  we post to "/validate"
+  Then  we get existing resource
+  When  we post to "/validate"
+  Then  we get existing resource
+
+Scenario 18: Validate picture using content profile
+  Tags: ['@auth']
+  Given  "content_types"
+  When  we post to "/validate"
+  Then  we get existing resource
+
+Scenario 19: Custom subject vocabulary should display the display name if present
+  Tags: ['@auth']
+  Given  "content_types"
+  And  "vocabularies"
+  When  we post to "/validate"
+  Then  we get existing resource
+  When  we post to "/validate"
+  Then  we get existing resource
+

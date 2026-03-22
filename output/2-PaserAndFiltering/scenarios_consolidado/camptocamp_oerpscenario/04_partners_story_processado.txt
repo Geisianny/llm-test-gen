@@ -1,0 +1,89 @@
+Scenario 1: Partner_1
+  Tags: ['@base_finance_partner']
+  Given  I need a "res.partner" with oid: scen.partner_1
+  And  having:
+  Given  I need a "res.partner" with oid: scen.partner_1_add_del
+  And  having:
+  Given  I need a "res.partner" with oid: scen.partner_1_add_inv
+  And  having:
+
+
+
+Scenario 2: Supplier_1
+  Given  I need a "res.partner" with oid: scen.supplier_1
+  And  having:
+  Given  I need a "res.partner" with oid: scen.supplier_1_add
+  And  having:
+
+
+
+Scenario 3: Supplier_2
+  Given  I need a "res.partner" with oid: scen.supplier_2
+  And  having:
+  Given  I need a "res.partner" with oid: scen.supplier_2_add
+  And  having:
+
+
+
+Scenario 4: Supplier_3
+  Given  I need a "res.partner" with oid: scen.supplier_3
+  And  having:
+  Given  I need a "res.partner" with oid: scen.supplier_3_add
+  And  having:
+
+
+
+Scenario 5: Supplier_4 en USD
+  Given  I need a "res.partner" with oid: scen.supplier_4_usd
+  And  having:
+  Given  I need a "res.partner" with oid: scen.supplier_4_add
+  And  having:
+
+
+
+Scenario 6: Customer_1
+  Given  I need a "res.partner" with oid: scen.customer_1
+  And  having:
+  Given  I need a "res.partner" with oid: scen.customer_1_add
+  And  having:
+
+
+
+Scenario 7: Customer_2
+  Given  I need a "res.partner" with oid: scen.customer_2
+  And  having:
+  Given  I need a "res.partner" with oid: scen.customer_2_add
+  And  having:
+
+
+
+Scenario 8: Customer_3
+  Given  I need a "res.partner" with oid: scen.customer_3
+  And  having:
+  Given  I need a "res.partner" with oid: scen.customer_3_add
+  And  having:
+
+
+
+Scenario 9: Customer_4
+  Given  I need a "res.partner" with oid: scen.customer_4
+  And  having:
+  Given  I need a "res.partner" with oid: scen.customer_4_add
+  And  having:
+
+
+
+Scenario 10: Customer_5
+  Given  I need a "res.partner" with oid: scen.customer_5
+  And  having:
+  Given  I need a "res.partner" with oid: scen.customer_5_add
+  And  having:
+
+
+
+Scenario 11: Customer_6
+  Given  I need a "res.partner" with oid: scen.customer_6
+  And  having:
+  Given  I need a "res.partner" with oid: scen.customer_6_add
+  And  having:
+

@@ -1,0 +1,20 @@
+Scenario 1: Going back to addressing step with "Change Address" button
+  Tags: ['@no-api', '@ui']
+  Given  I added product "Apollo 11 T-Shirt" to the cart
+  And  I addressed the cart
+  When  I go to the shipping step
+  And  I decide to change my address
+  Then  I should be redirected to the addressing step
+  And  I should be able to go to the shipping step again
+
+
+
+Scenario 2: Going back to the addressing step with steps panel
+  Tags: ['@no-api', '@ui']
+  Given  I added product "Apollo 11 T-Shirt" to the cart
+  And  I addressed the cart
+  When  I go to the shipping step
+  And  I navigate directly to the addressing step in the checkout steps panel
+  Then  I should be redirected to the addressing step
+  And  I should be able to go to the shipping step again
+

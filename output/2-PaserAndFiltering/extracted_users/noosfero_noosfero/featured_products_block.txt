@@ -1,0 +1,36 @@
+Feature: featured_products_block
+Description: As a profile owner
+  I want to edit the featured block
+
+Background: 
+  Given  I am on the homepage
+  And  the following users
+  And  the following enterprises
+  And  the following blocks
+  And  the following product_category
+  And  the following products
+  And  I am logged in as "eddievedder"
+
+Scenario 1: select a product to be featured
+  Tags: ['@selenium-fixme']
+  And  I follow "Manage my groups"
+  And  I follow "Control panel of this group"
+  And  I follow "Edit sideboxes"
+  Given  I follow "Edit" within ".featured-products-block"
+  And  I select "Car"
+  When  I press "Save"
+  Then  I should see "Car"
+  And  I should not see "float_to_currency"
+  And  I should not see "product_path"
+
+Scenario 2: display block with long description
+  Tags: ['@selenium-fixme']
+  Given  I follow "Manage my groups"
+  And  I follow "Control panel of this group"
+  And  I follow "Edit sideboxes"
+  And  I follow "Edit" within ".featured-products-block"
+  And  I select "Moto"
+  And  I press "Save"
+  When  I am on redemoinho's homepage
+  Then  I should see "Very long description of and auto-mobile moto to b..."
+

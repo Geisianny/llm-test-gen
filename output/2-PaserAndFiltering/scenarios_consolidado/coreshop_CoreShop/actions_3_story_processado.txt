@@ -1,0 +1,27 @@
+Scenario 1: Creating a Shipping Rule with a fixed price
+  Then  shipping for my cart with carrier "Post" should be priced at "2000"
+
+
+
+Scenario 2: Creating a Shipping Rule with a fixed price plus and additional amount
+  Given  the shipping rule has a action additional-amount of 5 in currency "EUR"
+  Then  shipping for my cart with carrier "Post" should be priced at "2500"
+
+
+
+Scenario 3: Creating a Shipping Rule with a fixed price plus and additional percent
+  Given  the shipping rule has a action additional-percent of 10%
+  Then  shipping for my cart with carrier "Post" should be priced at "2200"
+
+
+
+Scenario 4: Creating a Shipping Rule with a fixed price plus and discount amount
+  Given  the shipping rule has a action discount-amount of 5 in currency "EUR"
+  Then  shipping for my cart with carrier "Post" should be priced at "1500"
+
+
+
+Scenario 5: Creating a Shipping Rule with a fixed price plus and discount percent
+  Given  the shipping rule has a action discount-percent of 10%
+  Then  shipping for my cart with carrier "Post" should be priced at "1800"
+

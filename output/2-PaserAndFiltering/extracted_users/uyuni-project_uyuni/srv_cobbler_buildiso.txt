@@ -1,0 +1,96 @@
+Feature: Cobbler buildiso
+Description: Builds several ISOs with Cobbler and checks the configuration files and ISOs afterwards.
+Tags: ['@scope_cobbler', '@skip_if_github_validation']
+
+Scenario 1: Start Cobbler monitoring
+  When  I start local monitoring of Cobbler
+  And  I backup Cobbler settings file
+
+Scenario 2: Log in as testing user in the Cobbler buildiso context
+  Given  I am authorized as "testing" with password "testing"
+  And  I am logged in via the Cobbler API as user "testing" with password "testing"
+
+Scenario 3: Copy cobbler profiles on the server in the Cobbler buildiso context
+  When  I copy autoinstall mocked files on server
+
+Scenario 4: Create a dummy distro in the Cobbler buildiso context
+  Given  cobblerd is running
+  When  I create distro "buildisodistro"
+
+Scenario 5: Create dummy profiles in the Cobbler buildiso context
+  Given  distro "buildisodistro" exists
+  When  I create profile "orchid" for distro "buildisodistro"
+  And  I create profile "flame" for distro "buildisodistro"
+  And  I create profile "pearl" for distro "buildisodistro"
+
+Scenario 6: Check cobbler created a distro and profiles in the Cobbler buildiso context
+  When  I follow the left menu "Systems > Autoinstallation > Profiles"
+  Then  I should see a "buildisodistro" text
+  And  I should see a "orchid" text
+  And  I should see a "flame" text
+  And  I should see a "pearl" text
+
+Scenario 7: Create dummy system in the Cobbler buildiso context
+  Given  profile "orchid" exists
+  When  I create system "testsystem" for profile "orchid"
+  And  I add the Cobbler parameter "name-servers" with value "9.9.9.9" to item "system" with name "testsystem"
+
+Scenario 8: Prepare the Cobbler buildiso context
+  When  I prepare Cobbler for the buildiso command
+
+Scenario 9: Run Cobbler buildiso with all profiles and check isolinux config file in the Cobbler buildiso context
+  When  I run Cobbler buildiso for distro "buildisodistro" and all profiles
+  And  I check Cobbler buildiso ISO "profile_all" with xorriso
+  And  I check the Cobbler parameter "nameserver" with value "9.9.9.9" in the isolinux.cfg
+  And  I cleanup xorriso temp files
+
+Scenario 10: Run Cobbler buildiso with selected profile in the Cobbler buildiso context
+  When  I run Cobbler buildiso for distro "buildisodistro" and profile "orchid"
+  And  I check Cobbler buildiso ISO "orchid" with xorriso
+  And  I cleanup xorriso temp files
+
+Scenario 11: Run Cobbler buildiso with selected profile and without dns entries in the Cobbler buildiso context
+  When  I run Cobbler buildiso for distro "buildisodistro" and profile "orchid" without dns entries
+  And  I check Cobbler buildiso ISO "orchid" with xorriso
+  And  I cleanup xorriso temp files
+
+Scenario 12: Run Cobbler buildiso airgapped with all profiles in the Cobbler buildiso context
+  When  I run Cobbler buildiso "airgapped" for distro "buildisodistro"
+  And  I check Cobbler buildiso ISO "airgapped" with xorriso
+  And  I cleanup xorriso temp files
+
+Scenario 13: Run Cobbler buildiso standalone with all profiles in the Cobbler buildiso context
+  When  I run Cobbler buildiso "standalone" for distro "buildisodistro"
+  And  I check Cobbler buildiso ISO "standalone" with xorriso
+  And  I cleanup xorriso temp files
+
+Scenario 14: Cleanup: delete test system in the Cobbler buildiso context
+  Given  I am authorized as "testing" with password "testing"
+  When  I remove system "testsystem"
+
+Scenario 15: Cleanup: delete test profile in the Cobbler buildiso context
+  Given  I am authorized as "testing" with password "testing"
+  And  I remove profile "orchid"
+  And  I remove profile "flame"
+  And  I remove profile "pearl"
+  When  I follow the left menu "Systems > Autoinstallation > Profiles"
+  Then  I should not see a "orchid" text
+  And  I should not see a "flame" text
+  And  I should not see a "flame" text
+
+Scenario 16: Cleanup: delete test distro in the Cobbler buildiso context
+  Given  I am authorized as "testing" with password "testing"
+  And  I remove distro "buildisodistro"
+  And  I follow the left menu "Systems > Autoinstallation > Profiles"
+  Then  I should not see a "buildisodistro" text
+
+Scenario 17: Cleanup: Remove buildiso tmpdir and built ISO file in the Cobbler buildiso context
+  When  I cleanup after Cobbler buildiso
+
+Scenario 18: Check for errors in Cobbler monitoring
+  Tags: ['@flaky']
+  Then  the local logs for Cobbler should not contain errors
+
+Scenario 19: Logout from the Cobbler API
+  When  I log out from Cobbler via the API
+

@@ -1,0 +1,58 @@
+Feature: events search
+Description: As a noosfero visitor
+  I want to search for environment events
+
+Background: 
+  Given  the following users
+  And  the following events
+
+Scenario 1: filter events by day when selecting in the calendar
+  Tags: ['@selenium']
+  Given  I am on /search/events?year=2018&month=10
+  And  I follow "8" within ".agenda-calendar"
+  Then  I should see "Different Conference"
+  And  should not see "Another Conference"
+
+Scenario 2: show events of the month again after clicking on the day
+  Tags: ['@selenium']
+  Given  I am on /search/events?year=2018&month=10
+  And  I follow "8" within ".agenda-calendar"
+  And  I follow "October" within ".agenda-calendar"
+  Then  I should see "Different Conference"
+  And  should see "Another Conference"
+
+Scenario 3: paginate events of the month correctly
+  Given  the following events
+  And  I am on /search/events?year=2018&month=10
+  When  I follow "Next" within "#events-of-the-day"
+  Then  I should see "Party On"
+
+Scenario 4: paginate events of the day correctly
+  Tags: ['@selenium']
+  Given  the following events
+  And  I am on /search/events?year=2018&month=10
+  And  follow "15" within ".agenda-calendar"
+  And  The page should contain only 20 "#agenda-items .event-date"
+  When  I follow "Next" within ".xhr-links"
+  Then  The page should contain only 1 "#agenda-items .event-date"
+  And  I should see "October 2018" within "#agenda"
+
+Scenario 5: paginate events of the month correctly after selecting a day
+  Tags: ['@selenium']
+  Given  the following events
+  And  I am on /search/events?year=2018&month=10&day=17
+  When  I follow "October 2018"
+  And  follow "Next" within ".xhr-links"
+  Then  I should see "Party On"
+  And  I should see "October 2018" within "#agenda"
+
+Scenario 6: highlight the selected day when page is openened directly
+  Given  I am on /search/events?year=2018&month=10&day=8
+  Then  "8" should be visible within ".calendar-day.selected"
+
+Scenario 7: highlight the selected day when a day is selected
+  Tags: ['@selenium']
+  Given  I am on /search/events?year=2018&month=10
+  And  I follow "8"
+  Then  "8" should be visible within ".calendar-day.selected"
+

@@ -1,0 +1,56 @@
+Feature: Upload
+
+Scenario 1: Upload a binary file
+  Tags: ['@auth']
+  When  we upload a file "bike.jpg" to "/upload"
+  Then  we get a file reference
+  Then  we get file metadata
+  And  we get "avatar" renditions
+  And  we can delete that file
+
+Scenario 2: Upload a binary file with cropping
+  Tags: ['@auth']
+  When  we upload a binary file with cropping
+  Then  we get a file reference
+  Then  we get file metadata
+  And  we get "avatar" renditions
+  And  we get cropped data smaller than "25000"
+  And  we can fetch a data_uri
+  And  we can delete that file
+
+Scenario 3: Upload a file from URL with cropping
+  Tags: ['@auth']
+  When  we upload a file from URL with cropping
+  Then  we get a file reference
+  Then  we get file metadata
+  And  we get "avatar" renditions
+  And  we get cropped data smaller than "30000"
+  And  we can fetch a data_uri
+  And  we can delete that file
+
+Scenario 4: Upload a file from URL
+  Tags: ['@auth']
+  When  we upload a file from URL
+  Then  we get a file reference
+  Then  we get file metadata
+  And  we get "avatar" renditions
+  And  we can fetch a data_uri
+  And  we can delete that file
+
+Scenario 5: Upload a binary file
+  Tags: ['@amazon', '@auth']
+  When  we upload a file "bike.jpg" to "/upload"
+  Then  we get a file reference
+  Then  we get file metadata
+  And  we get "avatar" renditions
+  And  we can delete that file
+
+Scenario 6: Upload a binary file with cropping
+  Tags: ['@amazon', '@auth']
+  When  we upload a binary file with cropping
+  Then  we get a file reference
+  Then  we get file metadata
+  And  we get cropped data smaller than "25000"
+  And  we can fetch a data_uri
+  And  we can delete that file
+

@@ -1,0 +1,36 @@
+Feature: Create web portals
+Description: In order to manage web portals
+  as a super admin
+  I need to be able to create them through the API.
+
+Scenario 1: Create a web portal
+  Tags: ['@createSchema']
+  Given  I add Authorization header
+  When  I add "Content-Type" header equal to "application/json"
+  And  I add "Accept" header equal to "application/json"
+  And  I send a "POST" request to "/web_portals" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json; charset=utf-8"
+  And  the JSON should be equal to:
+
+Scenario 2: Retrieve created web portals
+  Given  I add Authorization header
+  When  I add "Accept" header equal to "application/json"
+  And  I send a "GET" request to "web_portals/7"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json; charset=utf-8"
+  And  the JSON should be like:
+
+Scenario 3: Create a web portal with logo
+  Tags: ['@createSchema']
+  Given  I add Authorization header
+  When  I add "Content-Type" header equal to "multipart/form-data; boundary=----IvozProviderFormBoundaryFUBrG71LG0e8DuZ8"
+  And  I add "Accept" header equal to "application/json"
+  And  I send a "POST" multipart request to "/web_portals" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json; charset=utf-8"
+  And  the JSON should be equal to:
+

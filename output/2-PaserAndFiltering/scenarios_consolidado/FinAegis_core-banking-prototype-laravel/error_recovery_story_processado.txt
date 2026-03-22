@@ -1,0 +1,101 @@
+Scenario 1: Database connection failure recovery
+  Given  the primary database is operational
+  When  the database connection is lost during a transaction
+  Then  the system should:
+  And  no data loss should occur
+  And  user should see graceful error message
+
+
+
+Scenario 2: Payment gateway timeout with retry
+  Given  a payment is being processed
+  When  the payment gateway times out after 30 seconds
+  Then  the retry mechanism should:
+  And  duplicate payment prevention should be active
+  And  idempotency key should be used
+
+
+
+Scenario 3: Circuit breaker activation and recovery
+  Given  the exchange rate service is healthy
+  When  the service fails 5 consecutive times
+  Then  the circuit breaker should:
+  And  cached rates should be used when circuit is open
+  And  monitoring should track circuit state changes
+
+
+
+Scenario 4: Distributed transaction partial failure
+  Given  a multi-bank transfer is initiated
+  When  one bank API fails after partial completion
+  Then  the recovery process should:
+  And  maintain ACID properties across systems
+
+
+
+Scenario 5: Queue processing failure recovery
+  Given  1000 messages are in the processing queue
+  When  the queue worker crashes at message 500
+  Then  the recovery should:
+  And  message ordering should be preserved where required
+
+
+
+Scenario 6: Cascading service failure containment
+  Given  service A depends on service B and C
+  When  service B fails completely
+  Then  the system should:
+  And  prevent cascade failure to other services
+  And  provide clear service status to users
+
+
+
+Scenario 7: Data corruption detection and recovery
+  Given  transaction data is being processed
+  When  data corruption is detected via checksum
+  Then  the recovery process should:
+  And  maintain audit trail of recovery actions
+
+
+
+Scenario 8: Network partition recovery
+  Given  a distributed system with multiple nodes
+  When  a network partition occurs
+  Then  each partition should:
+  And  maintain eventual consistency
+
+
+
+Scenario 9: Resource exhaustion prevention
+  Given  system resources are being monitored
+  When  memory usage approaches 90%
+  Then  the system should:
+  And  preserve critical operations
+  And  prevent out-of-memory crashes
+
+
+
+Scenario 10: Scheduled job failure recovery
+  Given  daily reconciliation is scheduled at 2 AM
+  When  the job fails due to temporary issue
+  Then  the scheduler should:
+  And  prevent duplicate executions
+  And  maintain job execution history
+
+
+
+Scenario 11: API rate limit recovery
+  Given  external API has rate limits
+  When  rate limit is exceeded
+  Then  the client should:
+  And  maintain request priority ordering
+
+
+
+Scenario 12: Disaster recovery activation
+  Given  primary data center fails
+  When  disaster recovery is triggered
+  Then  the failover should:
+  And  achieve RTO of 30 minutes
+  And  maintain RPO of 5 minutes
+

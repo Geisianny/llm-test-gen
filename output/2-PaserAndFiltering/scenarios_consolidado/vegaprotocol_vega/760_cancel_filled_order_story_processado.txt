@@ -1,0 +1,60 @@
+Scenario 1: 001 Traders place an order, a trade happens, and orders are cancelled after being filled; test newly added post-only and reduce-only orders:0068-MATC-040;0068-MATC-041;0068-MATC-042;0068-MATC-043;0068-MATC-044;0068-MATC-045;0068-MATC-046;0068-MATC-047;0068-MATC-048;0068-MATC-049;0068-MATC-050;0068-MATC-051;0068-MATC-055;0068-MATC-056;
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  Then  the order book should have the following volumes for market "ETH/DEC19":
+  Then  the parties should have the following profit and loss:
+  And  the parties place the following orders with ticks:
+  When  the parties cancel the following orders:
+  When  the parties cancel the following orders:
+  Then  the insurance pool balance should be "0" for the market "ETH/DEC19"
+  When  the parties place the following orders with ticks:
+  Then  the order book should have the following volumes for market "ETH/DEC19":
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following profit and loss:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following profit and loss:
+  Then  the order book should have the following volumes for market "ETH/DEC19":
+  When  the parties place the following orders with ticks:
+  And  then the network moves ahead "10" blocks
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  When  the parties place the following orders with ticks:
+  And  then the network moves ahead "1" blocks
+  Then  the parties should have the following profit and loss:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following profit and loss:
+  Then  the order book should have the following volumes for market "ETH/DEC19":
+  When  the parties place the following orders with ticks:
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  Then  the parties should have the following profit and loss:
+
+
+
+Scenario 2: 002 0068-MATC-048 for reduce-only MO, if not enough volume is available to **fully** fill the order, the remaining will be cancelled; check other order on the market when party canceled some order AC 0033-OCAN-008; 0033-OCAN-009
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  Then  the order book should have the following volumes for market "ETH/DEC19":
+  Then  the parties should have the following profit and loss:
+  Then  the order book should have the following volumes for market "ETH/DEC19":
+  Then  the parties amend the following orders:
+  When  the parties cancel the following orders:
+  Then  the parties amend the following orders:
+  Then  the order book should have the following volumes for market "ETH/DEC19":
+  And  then the network moves ahead "1" blocks
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  Then  the parties should have the following profit and loss:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following profit and loss:
+  And  then the network moves ahead "1" blocks
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  Then  the order book should have the following volumes for market "ETH/DEC19":
+  When  the parties place the following orders with ticks:
+  Then  the order book should have the following volumes for market "ETH/DEC19":
+  When  the parties cancel the following orders:
+  Then  the order book should have the following volumes for market "ETH/DEC19":
+  And  then the network moves ahead "1" blocks
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+

@@ -1,0 +1,5 @@
+Scenario 1: Viewing orders
+  Tags: ['@api', '@ui']
+  When  I browse my orders
+  Then  I should see a single order in the list
+

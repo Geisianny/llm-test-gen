@@ -1,0 +1,23 @@
+Feature: Composite mark price calculation
+
+Background: 
+  Given  the average block duration is "1"
+  Given  the following network parameters are set:
+  And  the liquidity monitoring parameters:
+  And  the simple risk model named "simple-risk-model":
+  And  the composite price oracles from "0xCAFECAFE1":
+  And  the markets:
+
+Scenario 1: Composite price composed of last traded, order book, and oracle price (0009-MRKP-022)(0009-MRKP-023)
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/FEB23"
+  Then  the mark price should be "15000" for the market "ETH/FEB23"
+  Given  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  When  the network moves ahead "2" blocks
+  Then  the mark price should be "15030" for the market "ETH/FEB23"
+  When  the network moves ahead "61" blocks
+  Then  the mark price should be "15045" for the market "ETH/FEB23"
+  When  the network moves ahead "241" blocks
+  Then  the mark price should be "15030" for the market "ETH/FEB23"
+

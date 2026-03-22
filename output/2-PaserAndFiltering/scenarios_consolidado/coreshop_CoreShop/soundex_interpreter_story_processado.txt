@@ -1,0 +1,5 @@
+Scenario 1: Adding a simple object to the index
+  Given  there is an instance of behat-class "InterpreterTest" with key "test1"
+  And  the object-instance has following values:
+  Then  the index column "soundex" for object-instance should have value "48000"
+

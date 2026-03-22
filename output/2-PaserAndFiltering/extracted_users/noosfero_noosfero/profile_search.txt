@@ -1,0 +1,52 @@
+Feature: search inside a profile
+Description: As a noosfero user
+  I want to search
+  In order to find stuff from a profile
+
+Background: 
+  Given  the following users
+  And  the following articles
+
+Scenario 1: search on profile
+  Given  I go to joaosilva's profile
+  And  I fill in "q" with "bees"
+  And  I follow "profile-search-button"
+  Then  I should see "bees and butterflies" within ".main-block"
+  And  I should not see "whales and dolphins" within ".main-block"
+
+Scenario 2: search for event on profile
+  Given  the following events
+  When  I go to joaosilva's profile
+  And  I fill in "q" with "birthday"
+  And  I follow "profile-search-button"
+  Then  I should see "John Doe's birthday" within ".main-block"
+  And  I should not see "Group meeting" within ".main-block"
+
+Scenario 3: simple search for event on profile search block
+  Given  the following blocks
+  When  I go to joaosilva's profile
+  And  I fill in "q" with "bees" within ".profile-search-block"
+  And  I press "Search" within ".profile-search-block"
+  Then  I should see "bees and butterflies" within ".main-block"
+
+Scenario 4: not display unpublished articles
+  Given  the following articles
+  And  I go to joaosilva's profile
+  And  I fill in "q" with "article"
+  And  I follow "profile-search-button"
+  Then  I should see "published article" within ".main-block"
+  And  I should not see "unpublished article" within ".main-block"
+
+Scenario 5: search on environment
+  Given  I go to joaosilva's profile
+  And  I fill in "q" with "bees"
+  And  I choose "General"
+  And  I follow "profile-search-button"
+  Then  I should be on the search page
+  And  I should see "bees and butterflies" within "#search-page"
+
+Scenario 6: not display search on private profiles
+  Given  the following users
+  And  I go to /profile/mariasilva/search
+  Then  I should see "friends only"
+

@@ -1,0 +1,82 @@
+Feature: Check the margin scaling levels (maintenance, search, initial, release) are correctly applied to the maintenance margin that is calculated by the risk model
+
+Background: 
+  Given  the log normal risk model named "log-normal-risk-model-1":
+  And  the margin calculator named "margin-calculator-0":
+  And  the margin calculator named "margin-calculator-1":
+  And  the markets:
+  And  the following network parameters are set:
+
+Scenario 1: 0010-MARG-015,0010-MARG-016,0010-MARG-017
+  Tags: ['@SLABug']
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  Then  the parties place the following orders:
+  When  the network moves ahead "2" blocks
+  Then  the mark price should be "10" for the market "ETH/DEC19"
+  And  the mark price should be "10" for the market "ETH/DEC20"
+  When  the parties place the following orders with ticks:
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following profit and loss:
+  Then  the order book should have the following volumes for market "ETH/DEC19":
+  Then  the order book should have the following volumes for market "ETH/DEC20":
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following profit and loss:
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following profit and loss:
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following profit and loss:
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+
+Scenario 2: Assure initial margin requirement must be met
+  Tags: ['@Liquidation']
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/DEC19"
+  Then  the market data for the market "ETH/DEC19" should be:
+  When  the parties place the following orders:
+  When  the parties deposit on asset's general account the following amount:
+  And  the parties place the following orders:
+  Then  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+  When  the parties place the following orders:
+  When  the parties deposit on asset's general account the following amount:
+  And  the parties place the following orders:
+  Then  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+  When  the network moves ahead "1" blocks
+  Then  debug trades
+  Then  the parties should have the following profit and loss:
+  And  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following margin levels:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following profit and loss:
+  And  the parties should have the following margin levels:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following profit and loss:
+  And  the parties should have the following margin levels:
+  When  the parties place the following orders with ticks:
+  When  the parties place the following orders with ticks:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following profit and loss:
+  And  the parties should have the following margin levels:
+  And  the parties place the following orders:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following profit and loss:
+  And  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+  And  the market data for the market "ETH/DEC19" should be:
+

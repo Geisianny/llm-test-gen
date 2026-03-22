@@ -1,0 +1,15 @@
+Feature: Editing a currency
+Description: In order to change currency configuration
+    As an Administrator
+    I want to be able to edit a currency
+Tags: ['@managing_currencies']
+
+Background: 
+  Given  I am logged in as an administrator
+
+Scenario 1: Seeing disabled code field while editing currency
+  Tags: ['@ui']
+  Given  the store has currency "Euro"
+  When  I want to edit this currency
+  Then  the code field should be disabled
+

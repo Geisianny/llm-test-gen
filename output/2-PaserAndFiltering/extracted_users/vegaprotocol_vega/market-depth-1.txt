@@ -1,0 +1,17 @@
+Feature: Test market depth events for pegged orders
+
+Background: 
+  Given  the markets:
+  And  the following network parameters are set:
+
+Scenario 1: Ensure the expected order events for pegged orders are produced when mid price changes
+  Tags: ['@Depth']
+  Given  the parties deposit on asset's general account the following amount:
+  Then  the parties place the following pegged orders:
+  Then  the pegged orders should have the following states:
+  When  the parties place the following orders:
+  Then  the orders should have the following states:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  Then  the pegged orders should have the following states:
+

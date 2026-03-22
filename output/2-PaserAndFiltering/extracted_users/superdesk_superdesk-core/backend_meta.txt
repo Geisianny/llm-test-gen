@@ -1,0 +1,7 @@
+Feature: Backend meta info
+
+Scenario 1: Fetch backend meta
+  Tags: ['@auth']
+  When  we get "/backend_meta"
+  Then  we get existing resource
+

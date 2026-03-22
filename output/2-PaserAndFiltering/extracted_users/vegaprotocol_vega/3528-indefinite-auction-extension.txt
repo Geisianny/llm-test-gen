@@ -1,0 +1,49 @@
+Feature: Replicate issue 3528, where price monitoring continuously extended liquidity auction
+
+Background: 
+  Given  the following network parameters are set:
+  And  the liquidity monitoring parameters:
+  And  the average block duration is "1"
+  And  the simple risk model named "simple-risk-model-1":
+  And  the log normal risk model named "log-normal-risk-model-1":
+  And  the fees configuration named "fees-config-1":
+  And  the price monitoring named "price-monitoring-1":
+  And  the markets:
+  And  the parties deposit on asset's general account the following amount:
+
+Scenario 1: Enter liquidity auction, extended by trades at liq. auction end, single trade -> single extension
+  Given  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/DEC21"
+  Then  the parties submit the following liquidity provision:
+  When  the network moves ahead "1" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC21"
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following orders:
+  And  the parties submit the following liquidity provision:
+  When  the network moves ahead "1" blocks
+  Then  the market data for the market "ETH/DEC21" should be:
+  When  the network moves ahead "301" blocks
+  Then  the market data for the market "ETH/DEC21" should be:
+
+Scenario 2: Enter liquidity auction, extended by trades at liq. auction end, multiple trades -> still a single extension
+  Given  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/DEC21"
+  And  the parties submit the following liquidity provision:
+  When  the network moves ahead "1" blocks
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following orders:
+  And  the parties submit the following liquidity provision:
+  When  the network moves ahead "1" blocks
+  Then  the market data for the market "ETH/DEC21" should be:
+  When  the parties place the following orders:
+  And  the network moves ahead "1" blocks
+  And  the parties place the following orders:
+  When  the network moves ahead "10" blocks
+  And  the parties submit the following liquidity provision:
+  When  the network moves ahead "290" blocks
+  Then  the market data for the market "ETH/DEC21" should be:
+

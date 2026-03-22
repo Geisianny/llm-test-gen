@@ -1,0 +1,24 @@
+Scenario 1: Seeing decreased quantity of product's items in selected variant after order payment
+  Tags: ['@api', '@ui']
+  Given  there is a customer "lucy@teamlucifer.com" that placed an order "#00000666"
+  And  the customer bought 3 units of "Green" variant of product "T-Shirt banana"
+  And  the customer "Lucifer Morningstar" addressed it to "Seaside Fwy", "90802" "Los Angeles" in the "United States" with identical billing address
+  And  the customer chose "Free" shipping method with "Cash on Delivery" payment
+  And  this order is already paid
+  When  I view all variants of the product "T-Shirt banana"
+  Then  the variant "Green" should have 2 items on hand
+
+
+
+Scenario 2: Seeing decreased quantity of product's items from different variants after order payment
+  Tags: ['@api', '@ui']
+  Given  there is a customer "lucy@teamlucifer.com" that placed an order "#00000666"
+  And  the customer bought 3 units of "Yellow" variant of product "T-Shirt banana"
+  And  the customer bought 2 units of "Green" variant of product "T-Shirt banana"
+  And  the customer "Lucifer Morningstar" addressed it to "Seaside Fwy", "90802" "Los Angeles" in the "United States" with identical billing address
+  And  the customer chose "Free" shipping method with "Cash on Delivery" payment
+  And  this order is already paid
+  When  I view all variants of the product "T-Shirt banana"
+  Then  the variant "Yellow" should have 2 items on hand
+  And  the variant "Green" should have 3 items on hand
+

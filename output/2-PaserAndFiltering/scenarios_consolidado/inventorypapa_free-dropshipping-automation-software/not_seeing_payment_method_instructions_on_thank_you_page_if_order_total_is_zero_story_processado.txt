@@ -1,0 +1,9 @@
+Scenario 1: Not being informed about payment instructions on thank you page
+  Tags: ['@ui']
+  Given  I have product "PHP T-Shirt" in the cart
+  When  I proceed selecting "Free" shipping method
+  And  I confirm my order
+  Then  I should see the thank you page
+  And  I should not see any instructions about payment method
+  And  I should not be able to change payment method
+

@@ -1,0 +1,28 @@
+Scenario 1: Showing the current currency
+  Tags: ['@api', '@ui']
+  When  I browse that channel
+  Then  I should shop using the "EUR" currency
+
+
+
+Scenario 2: Showing available currencies
+  Tags: ['@no-api', '@ui']
+  When  I browse that channel
+  Then  I should be able to shop using the "USD" currency
+
+
+
+Scenario 3: Showing available currencies
+  Tags: ['@api', '@ui']
+  When  I browse currencies
+  Then  I should see "USD" and "EUR" in the list
+
+
+
+Scenario 4: Switching the current currency
+  Tags: ['@no-api', '@ui']
+  When  I browse that channel
+  And  I switch to the "USD" currency
+  Then  I should shop using the "USD" currency
+  And  I should be able to shop using the "EUR" currency
+

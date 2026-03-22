@@ -1,0 +1,90 @@
+Scenario 1: Add tags to a host returns "Created" response
+  Tags: ['@generated', '@skip', '@team:DataDog/core-index']
+  Given  new "CreateHostTags" request
+  And  request contains "host_name" parameter from "REPLACE.ME"
+  And  body with value {"host": "test.host", "tags": ["environment:production"]}
+  When  the request is sent
+  Then  the response status is 201 Created
+
+
+
+Scenario 2: Add tags to a host returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/core-index']
+  Given  new "CreateHostTags" request
+  And  request contains "host_name" parameter from "REPLACE.ME"
+  And  body with value {"host": "test.host", "tags": ["environment:production"]}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+
+
+Scenario 3: Get Tags returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/core-index']
+  Given  new "ListHostTags" request
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+
+
+Scenario 4: Get Tags returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/core-index']
+  Given  new "ListHostTags" request
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 5: Get host tags returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/core-index']
+  Given  new "GetHostTags" request
+  And  request contains "host_name" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+
+
+Scenario 6: Get host tags returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/core-index']
+  Given  new "GetHostTags" request
+  And  request contains "host_name" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 7: Remove host tags returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/core-index']
+  Given  new "DeleteHostTags" request
+  And  request contains "host_name" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+
+
+Scenario 8: Remove host tags returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/core-index']
+  Given  new "DeleteHostTags" request
+  And  request contains "host_name" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 204 OK
+
+
+
+Scenario 9: Update host tags returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/core-index']
+  Given  new "UpdateHostTags" request
+  And  request contains "host_name" parameter from "REPLACE.ME"
+  And  body with value {"host": "test.host", "tags": ["environment:production"]}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+
+
+Scenario 10: Update host tags returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/core-index']
+  Given  new "UpdateHostTags" request
+  And  request contains "host_name" parameter from "REPLACE.ME"
+  And  body with value {"host": "test.host", "tags": ["environment:production"]}
+  When  the request is sent
+  Then  the response status is 201 OK
+

@@ -1,0 +1,80 @@
+Scenario 1: Trying to add a product review without specifying a rate
+  Tags: ['@api', '@ui', '@javascript']
+  When  I want to review product "Necronomicon"
+  And  I leave a comment "This book made me sad, but plot was fine.", titled "Not good, not bad" as "bartholomew@heaven.com"
+  But  I do not rate it
+  And  I try to add it
+  Then  I should be notified that I must check review rating
+
+
+
+Scenario 2: Trying to add a product review without specifying a title
+  Tags: ['@api', '@ui', '@javascript']
+  When  I want to review product "Necronomicon"
+  And  I leave a comment "This book made me sad, but plot was fine." as "bartholomew@heaven.com"
+  And  I rate it with 3 points
+  And  I try to add it
+  Then  I should be notified that title is required
+
+
+
+Scenario 3: Trying to add a product review with too short title
+  Tags: ['@api', '@ui', '@javascript']
+  When  I want to review product "Necronomicon"
+  And  I leave a comment "This book made me sad, but plot was fine.", titled "X" as "bartholomew@heaven.com"
+  And  I rate it with 3 points
+  And  I try to add it
+  Then  I should be notified that title must have at least 2 characters
+
+
+
+Scenario 4: Trying to add a product review with too long title
+  Tags: ['@api', '@ui', '@javascript']
+  When  I want to review product "Necronomicon"
+  And  I leave a comment "This book made me sad, but plot was fine." as "bartholomew@heaven.com"
+  And  I title it with very long title
+  And  I rate it with 3 points
+  And  I try to add it
+  Then  I should be notified that title must have at most 255 characters
+
+
+
+Scenario 5: Trying to add a product review without specifying a comment
+  Tags: ['@api', '@ui', '@javascript']
+  When  I want to review product "Necronomicon"
+  And  I leave a review titled "Not good, not bad" as "bartholomew@heaven.com"
+  And  I rate it with 3 points
+  And  I try to add it
+  Then  I should be notified that comment is required
+
+
+
+Scenario 6: Trying to add a product review without specifying an author email
+  Tags: ['@api', '@ui', '@javascript']
+  When  I want to review product "Necronomicon"
+  And  I leave a comment "Not good, not bad", titled "Not good, not bad"
+  And  I rate it with 3 points
+  And  I try to add it
+  Then  I should be notified that I must enter my email
+
+
+
+Scenario 7: Trying to add a product review with specifying already registered author email
+  Tags: ['@api', '@ui', '@javascript']
+  Given  there is a customer account "sam@winchester.com" identified by "familybusiness"
+  When  I want to review product "Necronomicon"
+  And  I leave a comment "Really good book, with many important info.", titled "Usefull" as "sam@winchester.com"
+  And  I rate it with 4 points
+  And  I try to add it
+  Then  I should be notified that this email is already registered
+
+
+
+Scenario 8: Trying to add a product review with an out-of-range rate
+  Tags: ['@api', '@no-ui']
+  When  I want to review product "Necronomicon"
+  And  I leave a comment "This book made me sad, but plot was fine.", titled "Not good, not bad" as "example@example.com"
+  And  I rate it with 6 points
+  And  I try to add it
+  Then  I should be notified that rating must be between 1 and 5
+

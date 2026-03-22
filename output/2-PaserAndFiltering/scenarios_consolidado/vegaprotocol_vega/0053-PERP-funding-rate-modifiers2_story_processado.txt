@@ -1,0 +1,10 @@
+Scenario 1: 0053-PERP-031 Funding rate calculated correctly when the internel TWAP is greater than the external TWAP
+  Tags: ['@Perpetual', '@funding-rate']
+  Given  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  time is updated to "2020-10-16T00:05:00Z"
+  When  the parties place the following orders:
+  Then  time is updated to "2020-10-16T00:10:00Z"
+  And  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  And  the mark price should be "1010" for the market "ETH/DEC19"
+  Then  the product data for the market "ETH/DEC19" should be:
+

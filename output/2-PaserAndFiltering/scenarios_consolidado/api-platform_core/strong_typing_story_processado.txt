@@ -1,0 +1,98 @@
+Scenario 1: Create a resource
+  Tags: ['@createSchema']
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/dummies" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario 2: Create a resource without a required property with a strongly-typed setter
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/dummies" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/problem+json; charset=utf-8"
+  And  the JSON node "@context" should be equal to "/contexts/Error"
+  And  the JSON node "@type" should be equal to "hydra:Error"
+  And  the JSON node "detail" should be equal to 'The type of the "name" attribute must be "string", "NULL" given.'
+
+
+
+Scenario 3: Create a resource with wrong value type for relation
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/dummies" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/problem+json; charset=utf-8"
+  And  the JSON node "@context" should be equal to "/contexts/Error"
+  And  the JSON node "@type" should be equal to "hydra:Error"
+  And  the JSON node "detail" should be equal to 'Invalid IRI "1".'
+  And  the JSON node "trace" should exist
+
+
+
+Scenario 4: Ignore invalid dates
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/dummies" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/problem+json; charset=utf-8"
+
+
+
+Scenario 5: Ignore date with wrong format
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/dummies" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/problem+json; charset=utf-8"
+
+
+
+Scenario 6: Send non-array data when an array is expected
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/dummies" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/problem+json; charset=utf-8"
+  And  the JSON node "@context" should be equal to "/contexts/Error"
+  And  the JSON node "@type" should be equal to "hydra:Error"
+  And  the JSON node "detail" should be equal to 'The type of the "relatedDummies" attribute must be "array", "string" given.'
+  And  the JSON node "trace" should exist
+
+
+
+Scenario 7: Send an object where an array is expected
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/dummies" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/problem+json; charset=utf-8"
+  And  the JSON node "@context" should be equal to "/contexts/Error"
+  And  the JSON node "@type" should be equal to "hydra:Error"
+  And  the JSON node "detail" should be equal to 'The type of the key "a" must be "int", "string" given.'
+
+
+
+Scenario 8: Send a scalar having the bad type
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/dummies" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/problem+json; charset=utf-8"
+  And  the JSON node "@context" should be equal to "/contexts/Error"
+  And  the JSON node "@type" should be equal to "hydra:Error"
+  And  the JSON node "detail" should be equal to 'The type of the "name" attribute must be "string", "integer" given.'
+
+
+
+Scenario 9: According to the JSON spec, allow numbers without explicit floating point for JSON formats
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/dummies" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+

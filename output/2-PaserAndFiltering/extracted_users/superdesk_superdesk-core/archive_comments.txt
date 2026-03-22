@@ -1,0 +1,80 @@
+Feature: News Items Archive Comments
+
+Scenario 1: Create comment for item
+  Tags: ['@auth']
+  Given  "archive"
+  Given  empty "item_comments"
+  When  we post to "/item_comments"
+  And  we get "/item_comments"
+  Then  we get list with 1 items
+
+Scenario 2: Create comments for item
+  Tags: ['@auth']
+  Given  "archive"
+  Given  empty "item_comments"
+  Given  empty "activity"
+  When  we post to "/item_comments"
+  When  we post to "/item_comments"
+  And  we get "/item_comments"
+  Then  we get list with 2 items
+  When  we get "/activity"
+  Then  we get list with 0 items
+
+Scenario 3: Create comment for item - get from /archive/_id/comments
+  Tags: ['@auth']
+  Given  "archive"
+  Given  empty "item_comments"
+  When  we post to "/item_comments"
+  And  we get "/archive/xyz/comments"
+  Then  we get list with 1 items
+
+Scenario 4: Create comment for item(Fail) - wrong user supplied
+  Tags: ['@auth']
+  Given  "archive"
+  Given  empty "item_comments"
+  When  we post to "users"
+  When  we post to "/item_comments"
+  Then  we get error 403
+
+Scenario 5: Create comment for item(Fail) - get from /archive/wrong_id/comments
+  Tags: ['@auth']
+  Given  "archive"
+  Given  empty "item_comments"
+  When  we post to "/item_comments"
+  And  we get "/archive/wrong_id/comments"
+  Then  we get error 404
+
+Scenario 6: Create comment for item(Fail) - wrong archive item supplied
+  Tags: ['@auth']
+  Given  empty "archive"
+  Given  empty "item_comments"
+  When  we post to "/item_comments"
+  Then  we get error 400
+
+Scenario 7: Create comment for item with user one mentions
+  Tags: ['@auth', '@notification']
+  Given  "archive"
+  Given  empty "item_comments"
+  When  we post to "/users"
+  Then  we get new resource
+  When  we mention user in comment for "/item_comments"
+  And  we get "/item_comments"
+  Then  we get list with 1 items
+  When  we get "/users/test_user"
+  Then  we get "_id"
+  And  we get notifications
+
+Scenario 8: Send notifications on mentions in inline comments
+  Tags: ['@auth']
+  Given  "users"
+  And  "archive"
+  When  we patch "/archive/xyz"
+  Then  we get updated response
+  Then  we get 1 emails
+  When  we get "/archive/xyz"
+  Then  we get existing resource
+  When  we patch "/archive/xyz"
+  Then  we get 0 emails
+  When  we patch "/archive/xyz"
+  Then  we get 1 emails
+

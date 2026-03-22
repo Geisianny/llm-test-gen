@@ -1,0 +1,9 @@
+Scenario 1: Adding a new product association type
+  Tags: ['@ui', '@api']
+  When  I want to create a new product association type
+  And  I specify its code as "cross_sell"
+  And  I name it "Cross sell" in "English (United States)"
+  And  I add it
+  Then  I should be notified that it has been successfully created
+  And  the product association type "Cross sell" should appear in the store
+

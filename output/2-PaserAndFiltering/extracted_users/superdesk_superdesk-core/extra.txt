@@ -1,0 +1,9 @@
+Feature: item.extra storage
+
+Scenario 1: It can store any data
+  Tags: ['@auth']
+  When  we post to "/archive"
+  Then  we get OK response
+  When  we post to "/archive"
+  Then  we get OK response
+

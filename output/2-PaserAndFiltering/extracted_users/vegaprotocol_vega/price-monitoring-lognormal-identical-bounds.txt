@@ -1,0 +1,27 @@
+Feature: Price monitoring test using forward risk model (bounds for the valid price moves around price of 100000 for the two horizons are: [99460,100541], [98999,101008])
+
+Background: 
+  Given  time is updated to "2020-10-16T00:00:00Z"
+  And  the price monitoring named "my-price-monitoring":
+  And  the log normal risk model named "my-log-normal-risk-model":
+  And  the markets:
+  And  the following network parameters are set:
+
+Scenario 1: Persistent order breaks a repeated trigger (upper bound)
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties place the following orders:
+  And  the opening auction period ends for market "ETH/DEC21"
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC21"
+  And  the mark price should be "110000" for the market "ETH/DEC21"
+  When  time is updated to "2020-10-16T00:02:00Z"
+  Then  the market data for the market "ETH/DEC21" should be:
+  When  time is updated to "2020-10-16T00:03:10Z"
+  And  the parties place the following orders:
+  And  the market data for the market "ETH/DEC21" should be:
+  When  time is updated to "2020-10-16T00:06:10Z"
+  Then  the market data for the market "ETH/DEC21" should be:
+  When  time is updated to "2020-10-16T00:06:11Z"
+  Then  the market data for the market "ETH/DEC21" should be:
+  When  time is updated to "2020-10-16T00:09:11Z"
+  Then  the market data for the market "ETH/DEC21" should be:
+

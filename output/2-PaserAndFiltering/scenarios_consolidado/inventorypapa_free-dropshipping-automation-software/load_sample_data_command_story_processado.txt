@@ -1,0 +1,5 @@
+Scenario 1: Running install sample data command
+  When  I run Sylius Install Load Sample Data command
+  And  I confirm loading sample data
+  Then  the command should finish successfully
+

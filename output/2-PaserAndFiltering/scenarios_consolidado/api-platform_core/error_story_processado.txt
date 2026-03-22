@@ -1,0 +1,104 @@
+Scenario 1: Get an rfc 7807 error
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/exception_problems" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/problem+json; charset=utf-8"
+  And  the header "Link" should contain '<http://www.w3.org/ns/hydra/error>; rel="http://www.w3.org/ns/json-ld#error"'
+  And  the JSON node "type" should exist
+  And  the JSON node "title" should not exists
+  And  the JSON node "hydra:title" should be equal to "An error occurred"
+  And  the JSON node "detail" should exist
+  And  the JSON node "description" should not exist
+  And  the JSON node "hydra:description" should exist
+  And  the JSON node "trace" should exist
+  And  the JSON node "status" should exist
+  And  the JSON node "@context" should exist
+
+
+
+Scenario 2: Get validation constraint violations
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/dummy_problems" with body:
+  Then  the response status code should be 422
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/problem+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario 3: Get an rfc 7807 bad request error
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/exception_problems" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/problem+json; charset=utf-8"
+  And  the header "Link" should contain '<http://www.w3.org/ns/hydra/error>; rel="http://www.w3.org/ns/json-ld#error"'
+  And  the JSON node "@context" should exist
+  And  the JSON node "type" should exist
+  And  the JSON node "hydra:title" should be equal to "An error occurred"
+  And  the JSON node "detail" should exist
+
+
+
+Scenario 4: Get an rfc 7807 not found error
+  When  I add "Accept" header equal to "application/ld+json"
+  And  I send a "POST" request to "/does_not_exist" with body:
+  Then  the response status code should be 404
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/problem+json; charset=utf-8"
+  And  the header "Link" should contain '<http://www.w3.org/ns/hydra/error>; rel="http://www.w3.org/ns/json-ld#error"'
+  And  the JSON node "@context" should exist
+  And  the JSON node "type" should exist
+  And  the JSON node "hydra:title" should be equal to "An error occurred"
+  And  the JSON node "detail" should exist
+  And  the JSON node "description" should not exist
+
+
+
+Scenario 5: Get an rfc 7807 bad method error
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  I send a "PATCH" request to "/dummy_problems" with body:
+  Then  the response status code should be 405
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/problem+json; charset=utf-8"
+  And  the header "Link" should contain '<http://www.w3.org/ns/hydra/error>; rel="http://www.w3.org/ns/json-ld#error"'
+  And  the JSON node "@context" should exist
+  And  the JSON node "type" should exist
+  And  the JSON node "hydra:title" should be equal to "An error occurred"
+  And  the JSON node "detail" should exist
+  And  the JSON node "description" should not exist
+
+
+
+Scenario 6: Get an rfc 7807 validation error
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I add "Accept" header equal to "application/ld+json"
+  And  I send a "POST" request to "/validation_exception_problems" with body:
+  Then  the response status code should be 422
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/problem+json; charset=utf-8"
+  And  the header "Link" should contain '<http://www.w3.org/ns/hydra/error>; rel="http://www.w3.org/ns/json-ld#error"'
+  And  the JSON node "@context" should exist
+  And  the JSON node "type" should exist
+  And  the JSON node "hydra:title" should be equal to "An error occurred"
+  And  the JSON node "detail" should exist
+  And  the JSON node "violations" should exist
+
+
+
+Scenario 7: Get an rfc 7807 error
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/exception_problems_without_prefix" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/problem+json; charset=utf-8"
+  And  the header "Link" should contain '<http://www.w3.org/ns/hydra/error>; rel="http://www.w3.org/ns/json-ld#error"'
+  And  the JSON node "type" should exist
+  And  the JSON node "hydra:title" should be equal to "An error occurred"
+  And  the JSON node "detail" should exist
+  And  the JSON node "description" should not exist
+  And  the JSON node "trace" should exist
+  And  the JSON node "status" should exist
+

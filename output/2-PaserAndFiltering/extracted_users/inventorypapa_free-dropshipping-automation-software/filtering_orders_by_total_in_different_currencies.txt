@@ -1,0 +1,70 @@
+Feature: Filtering orders by total in different currencies
+Description: In order to filter orders with total in a specific range and currency
+    As an Administrator
+    I want to be able to filter orders by their total and currency
+Tags: ['@managing_orders']
+
+Background: 
+  Given  the store operates on a channel named "Web-US" in "USD" currency
+  And  the store operates on a channel named "Web-UK" in "GBP" currency
+  And  the store has "Apple T-Shirt", "Pineapple T-Shirt" and "Pen T-Shirt" products
+  And  the store has customer "John Hancock" with email "hancock@superheronope.com"
+  And  this customer has placed an order "#00000001" buying a single "Apple T-Shirt" product for "$100" on the "Web-US" channel
+  And  this customer has also placed an order "#00000002" buying a single "Pineapple T-Shirt" product for "$200" on the "Web-US" channel
+  And  this customer has also placed an order "#00000003" buying a single "Pen T-Shirt" product for "$150.50" on the "Web-US" channel
+  And  this customer has also placed an order "#00000004" buying a single "Apple T-Shirt" product for "£200" on the "Web-UK" channel
+  And  this customer has also placed an order "#00000005" buying a single "Pineapple T-Shirt" product for "£150.50" on the "Web-UK" channel
+  And  this customer has also placed an order "#00000006" buying a single "Pen T-Shirt" product for "£100" on the "Web-UK" channel
+  And  I am logged in as an administrator
+  And  I am browsing orders
+
+Scenario 1: Filtering orders by currency alone
+  Tags: ['@ui']
+  When  I choose "British Pound" as the filter currency
+  And  I filter
+  Then  I should see 3 orders in the list
+  But  I should not see any orders with currency "USD"
+
+Scenario 2: Filtering orders with total greater than specified amount
+  Tags: ['@ui']
+  When  I choose "US Dollar" as the filter currency
+  And  I specify filter total being greater than 100
+  And  I filter
+  Then  I should see 2 orders in the list
+  And  I should see an order with "#00000002" number
+  And  I should see an order with "#00000003" number
+  But  I should not see an order with "#00000001" number
+  And  I should not see any orders with currency "GBP"
+
+Scenario 3: Filtering orders with total less than specified amount
+  Tags: ['@ui']
+  When  I choose "US Dollar" as the filter currency
+  And  I specify filter total being less than 200
+  And  I filter
+  Then  I should see 2 orders in the list
+  And  I should see an order with "#00000001" number
+  And  I should see an order with "#00000003" number
+  But  I should not see an order with "#00000002" number
+  And  I should not see any orders with currency "GBP"
+
+Scenario 4: Filtering order with total from a specified range
+  Tags: ['@ui']
+  When  I choose "British Pound" as the filter currency
+  And  I specify filter total being greater than 150.50
+  And  I specify filter total being less than 250
+  And  I filter
+  Then  I should see a single order in the list
+  And  I should see an order with "#00000004" number
+  But  I should not see an order with "#00000005" number
+  And  I should not see an order with "#00000006" number
+  And  I should not see any orders with currency "USD"
+
+Scenario 5: Filtering orders by total in given range but with no currency provided
+  Tags: ['@ui']
+  When  I specify filter total being greater than 150
+  And  I specify filter total being less than 200
+  And  I filter
+  Then  I should see 2 orders in the list
+  And  I should see an order with "#00000003" number
+  And  I should see an order with "#00000005" number
+

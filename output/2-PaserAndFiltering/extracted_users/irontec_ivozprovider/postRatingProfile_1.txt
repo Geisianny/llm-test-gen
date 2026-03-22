@@ -1,0 +1,13 @@
+Feature: Create rating profiles
+Description: In order to manage rating profiles
+  As a client admin
+  I need to be able to create them through the API.
+
+Scenario 1: Create a rating profile
+  Tags: ['@createSchema']
+  Given  I add Company Authorization header
+  When  I add "Content-Type" header equal to "application/json"
+  And  I add "Accept" header equal to "application/json"
+  And  I send a "POST" request to "/rating_profiles" with body:
+  Then  the response status code should be 405
+

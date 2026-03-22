@@ -1,0 +1,13 @@
+Scenario 1: Default carrier resolver with an anonymous customer
+  Given  I add the product "Shoe" to my cart
+  Then  the cart should use carrier "Post"
+  And  the cart shipping should be "2000" excluding tax
+
+
+
+Scenario 2: Default carrier resolver without valid carrier and an anonymous customer
+  Given  the site has a country "Germany" with currency "EUR"
+  And  the shipping rule has a condition countries with country "Germany"
+  And  I add the product "Shoe" to my cart
+  Then  the cart should not have a carrier
+

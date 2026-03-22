@@ -1,0 +1,9 @@
+Scenario 1: Initialize Sales settings
+  Given  the company currency is set to EUR
+  And  the following currency rate settings are:
+  And  a cash journal in USD exists
+  And  a cash journal in CHF exists
+  And  a cash journal in EUR exists
+  Given  a valid sale pricelist in CHF exists
+  And  a valid sale pricelist in EUR exists
+

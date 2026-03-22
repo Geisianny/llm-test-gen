@@ -1,0 +1,29 @@
+Scenario 1: Find out what's going on locally
+  Given  I fill in "Search Text" with "still" within the main body
+  And  I press "Search"
+  Then  I should see "Still good people"
+  Then  I should see "Second still podium"
+  And  I should not see "Some other event" within "events_scroll"
+  Then  I should see 2 markers in the map
+
+
+
+Scenario 2: Search a list of current events with a keyword that won't match
+  Given  I fill in "Search Text" with "non existent text" within the main body
+  And  I press "Search"
+  Then  I should see "Sorry, it seems we don't have quite what you are looking for."
+
+
+
+Scenario 3: Query string is visible after search
+  Given  I fill in "Search Text" with "search words" within the main body
+  And  I press "Search"
+  Then  the search box should contain "search words"
+
+
+
+Scenario 4: Search displays only future events
+  Given  I fill in "Search Text" with "Some past event" within the main body
+  And  I press "Search"
+  Then  I should see "Sorry, it seems we don't have quite what you are looking for."
+

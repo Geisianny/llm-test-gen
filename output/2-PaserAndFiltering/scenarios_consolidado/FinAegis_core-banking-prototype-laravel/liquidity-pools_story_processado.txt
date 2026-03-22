@@ -1,0 +1,98 @@
+Scenario 1: Create a new liquidity pool
+  Given  I am logged in as "alice@example.com"
+  When  I create a liquidity pool for "BTC/EUR" with fee rate "0.003"
+  Then  a liquidity pool should exist for "BTC/EUR"
+  And  the pool should have:
+
+
+
+Scenario 2: Add initial liquidity to empty pool
+  Given  a liquidity pool exists for "BTC/EUR"
+  And  I am logged in as "alice@example.com"
+  When  I add liquidity to the "BTC/EUR" pool:
+  Then  the pool reserves should be:
+  And  I should have pool shares worth "219.089023"
+  And  my balances should be:
+
+
+
+Scenario 3: Add liquidity maintaining pool ratio
+  Given  a liquidity pool exists for "BTC/EUR" with reserves:
+  And  I am logged in as "bob@example.com"
+  When  I add liquidity to the "BTC/EUR" pool:
+  Then  the pool reserves should be:
+  And  I should have "20%" of the pool shares
+
+
+
+Scenario 4: Prevent adding liquidity with wrong ratio
+  Given  a liquidity pool exists for "BTC/EUR" with reserves:
+  And  I am logged in as "bob@example.com"
+  When  I try to add liquidity to the "BTC/EUR" pool:
+  Then  the transaction should fail with "Input amounts deviate too much from pool ratio"
+
+
+
+Scenario 5: Execute swap through liquidity pool
+  Given  a liquidity pool exists for "BTC/EUR" with reserves:
+  And  I am logged in as "bob@example.com"
+  When  I swap "0.1" "BTC" for "EUR" in the pool
+  Then  I should receive approximately "4776.14" "EUR"
+  And  the pool should have collected fees of "14.40" "EUR"
+  And  the pool reserves should be:
+
+
+
+Scenario 6: Remove liquidity proportionally
+  Given  a liquidity pool exists for "BTC/EUR" with reserves:
+  And  I am logged in as "alice@example.com"
+  And  I have "50%" of the pool shares
+  When  I remove "25%" of my liquidity
+  Then  I should receive:
+  And  the pool reserves should be:
+
+
+
+Scenario 7: Distribute and claim rewards
+  Given  a liquidity pool exists for "BTC/EUR"
+  And  the following providers have shares:
+  When  "1000" "EUR" rewards are distributed to the pool
+  Then  the pending rewards should be:
+  When  "alice@example.com" claims rewards from the pool
+  Then  "alice@example.com" should receive "600" "EUR"
+  And  "alice@example.com" should have no pending rewards
+
+
+
+Scenario 8: Calculate pool metrics and APY
+  Given  a liquidity pool exists for "BTC/EUR" with reserves:
+  When  I view the pool metrics
+  Then  the metrics should show:
+
+
+
+Scenario 9: Price impact protection
+  Given  a liquidity pool exists for "BTC/EUR" with reserves:
+  And  I am logged in as "bob@example.com"
+  When  I try to swap "0.5" "BTC" for "EUR" with minimum output "23000"
+  Then  the transaction should fail with "Slippage tolerance exceeded"
+
+
+
+Scenario 10: Rebalance pool through external liquidity
+  Given  a liquidity pool exists for "BTC/EUR" with reserves:
+  And  the target price ratio is "48000"
+  When  the pool is rebalanced
+  Then  the pool should execute rebalancing trades
+  And  the pool reserves should maintain the constant product
+  And  the new ratio should be closer to "48000"
+
+
+
+Scenario 11: Multi-pool liquidity provision
+  Given  the following liquidity pools exist:
+  And  I am logged in as "alice@example.com"
+  When  I view my liquidity positions
+  Then  I should see positions in multiple pools
+  And  each position should show:
+

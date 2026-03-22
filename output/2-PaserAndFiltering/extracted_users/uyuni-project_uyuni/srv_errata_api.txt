@@ -1,0 +1,11 @@
+Feature: Systems errata API
+Tags: ['@scope_api']
+
+Scenario 1: Check the relevant errata for a system
+  Tags: ['@ssh_minion']
+  When  I retrieve the relevant errata for ssh_minion
+
+Scenario 2: Check the relevant errata for multiple systems
+  Tags: ['@ssh_minion', '@rhlike_minion', '@deblike_minion']
+  When  I retrieve the relevant errata for ssh_minion, rhlike_minion, deblike_minion
+

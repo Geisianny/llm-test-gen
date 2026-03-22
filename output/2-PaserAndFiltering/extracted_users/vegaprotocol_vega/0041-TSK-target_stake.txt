@@ -1,0 +1,120 @@
+Feature: Target stake
+
+Background: 
+  Given  the simple risk model named "simple-risk-model-1":
+  And  the following network parameters are set:
+  And  the log normal risk model named "log-normal-risk-model-1":
+  And  the fees configuration named "fees-config-1":
+  And  the margin calculator named "margin-calculator-1":
+  And  the markets:
+  And  the average block duration is "1"
+  And  time is updated to "2021-03-08T00:00:00Z"
+  Given  the parties deposit on asset's general account the following amount:
+
+Scenario 1: Max open interest changes over time (0041-TSTK-002, 0041-TSTK-003, 0042-LIQF-007)
+  Given  the liquidity monitoring parameters:
+  When  the markets are updated:
+  When  the parties place the following orders:
+  Then  the mark price should be "0" for the market "ETH/DEC21"
+  When  the parties place the following orders:
+  Then  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the opening auction period ends for market "ETH/DEC21"
+  Then  the market data for the market "ETH/DEC21" should be:
+  And  the liquidity fee factor should be "0.005" for the market "ETH/DEC21"
+  Then  the network moves ahead "1" blocks
+  When  the parties place the following orders with ticks:
+  Then  the market data for the market "ETH/DEC21" should be:
+  And  the liquidity fee factor should be "0.004" for the market "ETH/DEC21"
+  Then  the network moves ahead "10" blocks
+  And  the target stake should be "540" for the market "ETH/DEC21"
+  When  the parties place the following orders with ticks:
+  Then  the market data for the market "ETH/DEC21" should be:
+  And  the liquidity fee factor should be "0.003" for the market "ETH/DEC21"
+  And  the target stake should be "540" for the market "ETH/DEC21"
+  And  the liquidity fee factor should be "0.003" for the market "ETH/DEC21"
+  Then  the network moves ahead "1" blocks
+  And  the target stake should be "405" for the market "ETH/DEC21"
+  And  the liquidity fee factor should be "0.003" for the market "ETH/DEC21"
+  Then  the network moves ahead "40" blocks
+  And  the target stake should be "405" for the market "ETH/DEC21"
+  And  the liquidity fee factor should be "0.003" for the market "ETH/DEC21"
+  When  the parties place the following orders with ticks:
+  Then  the market data for the market "ETH/DEC21" should be:
+  And  the liquidity fee factor should be "0.002" for the market "ETH/DEC21"
+  When  the parties place the following orders with ticks:
+  Then  the market data for the market "ETH/DEC21" should be:
+  And  the liquidity fee factor should be "0.002" for the market "ETH/DEC21"
+  Then  the network moves ahead "10" blocks
+  And  the target stake should be "270" for the market "ETH/DEC21"
+  And  the liquidity fee factor should be "0.002" for the market "ETH/DEC21"
+  When  the parties place the following orders:
+  Then  the network moves ahead "1" blocks
+  And  the market data for the market "ETH/DEC21" should be:
+  And  the liquidity fee factor should be "0.001" for the market "ETH/DEC21"
+  When  the parties place the following orders with ticks:
+  Then  the market data for the market "ETH/DEC21" should be:
+  And  the liquidity fee factor should be "0.002" for the market "ETH/DEC21"
+  Then  the network moves ahead "10" blocks
+  And  the market data for the market "ETH/DEC21" should be:
+  And  the liquidity fee factor should be "0.001" for the market "ETH/DEC21"
+
+Scenario 2: Max open interest changes over time, testing change of timewindow (0041-TSTK-001; 0041-TSTK-004; 0041-TSTK-005)
+  Given  the liquidity monitoring parameters:
+  When  the markets are updated:
+  When  the parties place the following orders:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the mark price should be "0" for the market "ETH/DEC21"
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC21"
+  And  the market data for the market "ETH/DEC21" should be:
+  Then  the network moves ahead "1" blocks
+  When  the parties place the following orders with ticks:
+  Then  the market data for the market "ETH/DEC21" should be:
+  Then  the network moves ahead "10" blocks
+  And  the target stake should be "810" for the market "ETH/DEC21"
+  Then  the network moves ahead "10" blocks
+  And  the target stake should be "540" for the market "ETH/DEC21"
+  When  the parties place the following orders with ticks:
+  Then  the mark price should be "110" for the market "ETH/DEC21"
+  And  the target stake should be "2310" for the market "ETH/DEC21"
+  Given  the liquidity monitoring parameters:
+  When  the markets are updated:
+  And  the target stake should be "1540" for the market "ETH/DEC21"
+  When  the parties place the following orders with ticks:
+  And  the target stake should be "1870" for the market "ETH/DEC21"
+
+Scenario 3: Target stake is calculate correctly during auction in presence of wash trades
+  Given  the liquidity monitoring parameters:
+  When  the markets are updated:
+  When  the parties place the following orders:
+  Then  the mark price should be "0" for the market "ETH/DEC21"
+  When  the parties place the following orders:
+  And  the market data for the market "ETH/DEC21" should be:
+  Then  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/DEC21" should be:
+  Then  the opening auction period ends for market "ETH/DEC21"
+  Then  the market data for the market "ETH/DEC21" should be:
+
+Scenario 4: Target stake can drop during auction
+  Given  the liquidity monitoring parameters:
+  When  the markets are updated:
+  And  the parties place the following orders:
+  Then  the mark price should be "0" for the market "ETH/DEC21"
+  When  the parties place the following orders:
+  And  the market data for the market "ETH/DEC21" should be:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the opening auction period ends for market "ETH/DEC21"
+  Then  the market data for the market "ETH/DEC21" should be:
+  When  the network moves ahead "5" blocks
+  And  the parties place the following orders:
+  And  the market data for the market "ETH/DEC21" should be:
+  When  the network moves ahead "1" blocks
+  Then  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the market data for the market "ETH/DEC21" should be:
+

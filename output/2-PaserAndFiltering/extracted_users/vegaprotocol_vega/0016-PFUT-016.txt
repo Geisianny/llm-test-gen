@@ -1,0 +1,33 @@
+Feature: Oracle price data within range is used to determine the mid price
+
+Background: 
+  Given  the following network parameters are set:
+  Given  the following assets are registered:
+  Given  the liquidity monitoring parameters:
+  And  the log normal risk model named "dai-lognormal-risk":
+  And  the composite price oracles from "0xCAFECAFE1":
+  And  the markets:
+
+Scenario 1: 0016-PFUT-016: When a market is setup to use oracle based mark price and the value received from oracle is less than max_price then it gets used as is and mark-to-market flows are calculated according to that price.
+  Tags: ['@MidPrice', '@NoPerp', '@Capped']
+  Given  the parties deposit on asset's general account the following amount:
+  And  the average block duration is "1"
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  And  the opening auction period ends for market "DAI/DEC22"
+  Then  the following trades should be executed:
+  And  the market data for the market "DAI/DEC22" should be:
+  And  debug detailed orderbook volumes for market "DAI/DEC22"
+  And  the order book should have the following volumes for market "DAI/DEC22":
+  When  the parties place the following orders:
+  When  the network moves ahead "2" blocks
+  Then  the mark price should be "3500000" for the market "DAI/DEC22"
+  Then  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  When  the network moves ahead "2" blocks
+  Then  the mark price should be "3500000" for the market "DAI/DEC22"
+  Then  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  When  the network moves ahead "2" blocks
+  Then  the mark price should be "3200000" for the market "DAI/DEC22"
+  And  the following transfers should happen:
+

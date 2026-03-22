@@ -1,0 +1,6 @@
+Scenario 1: Accessing payment's order from the payment
+  Tags: ['@api', '@ui']
+  Given  I am browsing payments
+  When  I go to the details of the first payment's order
+  Then  I should see the details of order "#00000001"
+

@@ -1,0 +1,36 @@
+Feature: Settle capped futures market with a price within correct range
+
+Background: 
+  Given  time is updated to "2019-11-30T00:00:00Z"
+  And  the average block duration is "1"
+  And  the oracle spec for settlement data filtering data from "0xCAFECAFE1" named "ethDec21Oracle":
+  And  the oracle spec for trading termination filtering data from "0xCAFECAFE1" named "ethDec21Oracle":
+  And  the settlement data decimals for the oracle named "ethDec21Oracle" is given in "0" decimal places
+  And  the following network parameters are set:
+  And  the fees configuration named "fees-config-1":
+  And  the price monitoring named "price-monitoring-1":
+  And  the simple risk model named "simple-risk-model-1":
+  And  the markets:
+
+Scenario 1: 0016-PFUT-018: Settlement happened when market is being closed - happens when the oracle price is < max price cap, higher prices are ignored.
+  Tags: ['@SLABug', '@NoPerp', '@Capped']
+  Given  the initial insurance pool balance is "10000" for all the markets
+  And  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  And  the network moves ahead "2" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC21"
+  And  the market state should be "STATE_ACTIVE" for the market "ETH/DEC21"
+  Then  the network moves ahead "2" blocks
+  And  the oracles broadcast data signed with "0xCAFECAFE1":
+  And  the network moves ahead "2" blocks
+  Then  the market state should be "STATE_TRADING_TERMINATED" for the market "ETH/DEC21"
+  When  the oracles broadcast data signed with "0xCAFECAFE1":
+  And  the network moves ahead "2" blocks
+  Then  the market state should be "STATE_TRADING_TERMINATED" for the market "ETH/DEC21"
+  And  the last market state should be "STATE_TRADING_TERMINATED" for the market "ETH/DEC21"
+  When  the oracles broadcast data signed with "0xCAFECAFE1":
+  And  the network moves ahead "2" blocks
+  Then  the last market state should be "STATE_SETTLED" for the market "ETH/DEC21"
+

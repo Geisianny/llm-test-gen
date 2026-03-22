@@ -1,0 +1,22 @@
+Scenario 1: Try opening address checkout step
+  Given  I try to open the address checkout step
+  Then  I should be on the cart summary page
+
+
+
+Scenario 2: Try opening shipping checkout step
+  Given  I try to open the shipping checkout step
+  Then  I should be on the cart summary page
+
+
+
+Scenario 3: Try opening payment checkout step
+  Given  I try to open the payment checkout step
+  Then  I should be on the cart summary page
+
+
+
+Scenario 4: Try opening payment checkout step
+  Given  I try to open the summary checkout step
+  Then  I should be on the cart summary page
+

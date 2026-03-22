@@ -1,0 +1,19 @@
+Scenario 1: Banned user can't join the marketplace
+  Tags: ['@javascript']
+  When  I go to the home page
+  Then  I should see a message that I have been banned
+
+
+
+Scenario 2: Banned user can't create listings
+  Tags: ['@javascript']
+  When  I go to the new listing page
+  Then  I should see a message that I have been banned
+
+
+
+Scenario 3: Banned user can contact admin
+  Tags: ['@javascript']
+  When  I go to the feedback page
+  Then  I should be able to send a message to admin
+

@@ -1,0 +1,109 @@
+Scenario 1: Create a child organization returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "CreateChildOrg" request
+  And  body with value {"billing": {"type": "parent_billing"}, "name": "New child org", "subscription": {"type": "pro"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 2: Create a child organization returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "CreateChildOrg" request
+  And  body with value {"billing": {"type": "parent_billing"}, "name": "New child org", "subscription": {"type": "pro"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 3: Get organization information returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "GetOrg" request
+  And  request contains "public_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 4: Get organization information returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "GetOrg" request
+  And  request contains "public_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 5: List your managed organizations returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "ListOrgs" request
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 6: Spin-off Child Organization returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "DowngradeOrg" request
+  And  request contains "public_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 7: Spin-off Child Organization returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "DowngradeOrg" request
+  And  request contains "public_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 8: Update your organization returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "UpdateOrg" request
+  And  request contains "public_id" parameter from "REPLACE.ME"
+  And  body with value {"billing": {"type": "parent_billing"}, "description": "some description", "name": "New child org", "public_id": "abcdef12345", "settings": {"private_widget_share": false, "saml": {"enabled": false}, "saml_autocreate_access_role": "ro", "saml_autocreate_users_domains": {"domains": ["example.com"], "enabled": false}, "saml_can_be_enabled": false, "saml_idp_endpoint": "https://my.saml.endpoint", "saml_idp_initiated_login": {"enabled": false}, "saml_idp_metadata_uploaded": false, "saml_login_url": "https://my.saml.login.url", "saml_strict_mode": {"enabled": false}}, "subscription": {"type": "pro"}, "trial": false}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 9: Update your organization returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "UpdateOrg" request
+  And  request contains "public_id" parameter from "REPLACE.ME"
+  And  body with value {"billing": {"type": "parent_billing"}, "description": "some description", "name": "New child org", "public_id": "abcdef12345", "settings": {"private_widget_share": false, "saml": {"enabled": false}, "saml_autocreate_access_role": "ro", "saml_autocreate_users_domains": {"domains": ["example.com"], "enabled": false}, "saml_can_be_enabled": false, "saml_idp_endpoint": "https://my.saml.endpoint", "saml_idp_initiated_login": {"enabled": false}, "saml_idp_metadata_uploaded": false, "saml_login_url": "https://my.saml.login.url", "saml_strict_mode": {"enabled": false}}, "subscription": {"type": "pro"}, "trial": false}
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 10: Upload IdP metadata returns "Bad Request" response
+  Tags: ['@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "UploadIdPForOrg" request
+  And  request contains "public_id" parameter from "REPLACE.ME"
+  And  request contains "idp_file" parameter with value "./idp_metadata_invalid.xml"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 11: Upload IdP metadata returns "OK" response
+  Tags: ['@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "UploadIdPForOrg" request
+  And  request contains "public_id" parameter from "REPLACE.ME"
+  And  request contains "idp_file" parameter with value "./idp_metadata.xml"
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 12: Upload IdP metadata returns "Unsupported Media Type" response
+  Tags: ['@generated', '@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "UploadIdPForOrg" request
+  And  request contains "public_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 415 Unsupported Media Type
+

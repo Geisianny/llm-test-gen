@@ -1,0 +1,18 @@
+Scenario 1: Replicate bug where MTM happens at strange price
+  Tags: ['@CappedBug']
+  Given  the initial insurance pool balance is "10000" for all the markets
+  And  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  When  the parties place the following orders:
+  And  the network moves ahead "2" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC21"
+  And  the market state should be "STATE_ACTIVE" for the market "ETH/DEC21"
+  And  the mark price should be "400" for the market "ETH/DEC21"
+  And  the parties should have the following account balances:
+  And  the parties should have the following margin levels:
+  When  the network moves ahead "2" blocks
+  Then  the parties place the following orders:
+  When  the network moves ahead "2" blocks
+  Then  the mark price should be "400" for the market "ETH/DEC21"
+  And  the parties should have the following account balances:
+

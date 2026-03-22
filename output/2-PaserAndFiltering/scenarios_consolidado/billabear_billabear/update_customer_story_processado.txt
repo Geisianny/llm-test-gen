@@ -1,0 +1,6 @@
+Scenario 1: Get customer info
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  When  I update the customer info via the API for "customer.one@example.org" with:
+  Then  the customer "customer.one@example.org" should have the reference "Test Customer"
+

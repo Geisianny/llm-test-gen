@@ -1,0 +1,11 @@
+Scenario 1: set up 2 parties with balance
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  Then  the market data for the market "ETH/DEC20" should be:
+  When  the opening auction period ends for market "ETH/DEC20"
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  And  the following trades should be executed:
+  And  the mark price should be "1000000" for the market "ETH/DEC20"
+

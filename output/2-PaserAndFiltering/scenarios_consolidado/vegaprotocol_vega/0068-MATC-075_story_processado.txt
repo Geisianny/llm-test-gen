@@ -1,0 +1,6 @@
+Scenario 1: For Good 'Til Time (GTT) / Good 'Till Cancelled (GTC) / Good For Normal (GFN) orders:
+              the book will be STOPPED in full with none executed. (0068-MATC-075)
+  And  the parties place the following orders:
+  Then  the orders should have the following states:
+  Then  the orders should have the following status:
+

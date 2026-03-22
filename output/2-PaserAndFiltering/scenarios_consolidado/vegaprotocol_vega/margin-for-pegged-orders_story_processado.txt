@@ -1,0 +1,80 @@
+Scenario 1: Party cannot enter a pegged order when in isolated margin mode (0019-MCAL-049)
+  Given  the parties submit update margin mode:
+  When  the parties place the following pegged orders:
+  Then  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+
+
+
+Scenario 2: Party cannot enter a pegged order when in isolated margin mode (0019-MCAL-052)
+  Given  the parties submit update margin mode:
+  When  the parties place the following pegged iceberg orders:
+  Then  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+
+
+
+Scenario 3: When the party has a pegged order in cross margin mode switches to isolated margin mode the pegged order is cancelled (0019-MCAL-050)
+  Given  the parties submit update margin mode:
+  When  the parties place the following pegged orders:
+  Then  the parties should have the following margin levels:
+  Given  the parties should have the following account balances:
+  When  the parties submit update margin mode:
+  Then  the orders should have the following status:
+  And  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+
+
+
+Scenario 4: When the party has a pegged order in cross margin mode switches to isolated margin mode the pegged order is cancelled (0019-MCAL-051)
+  Given  the parties submit update margin mode:
+  When  the parties place the following pegged iceberg orders:
+  Then  the parties should have the following margin levels:
+  Given  the parties should have the following account balances:
+  When  the parties submit update margin mode:
+  Then  the orders should have the following status:
+  And  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+
+
+
+Scenario 5: When in cross margin mode and multiple parties enter multiple types of orders, when one party switches to isolated margin mode only their pegged orders are cancelled. (0019-MCAL-057)
+  Given  the parties submit update margin mode:
+  When  the parties place the following pegged orders:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  Then  the parties should have the following margin levels:
+  Given  the parties should have the following account balances:
+  When  the parties submit update margin mode:
+  Then  the orders should have the following status:
+  And  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+
+
+
+Scenario 6: A party in cross maring mode has a partially filled pegged order, when the party switches to isolated margin mode the pegged order is cancelled (0019-MCAL-075)
+  Given  the parties submit update margin mode:
+  When  the parties place the following pegged orders:
+  And  the parties place the following orders:
+  Then  the parties should have the following margin levels:
+  And  the average fill price is:
+  And  the markets are updated:
+  Given  the parties should have the following account balances:
+  When  the parties submit update margin mode:
+  Then  the orders should have the following status:
+  And  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+
+
+
+Scenario 7: A party in cross maring mode has a partially filled pegged order, when the party switches to isolated margin mode the pegged order is cancelled (0019-MCAL-078)
+  Given  the parties submit update margin mode:
+  When  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  Then  the parties should have the following margin levels:
+  Given  the parties should have the following account balances:
+  When  the parties submit update margin mode:
+  Then  the orders should have the following status:
+  And  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+

@@ -1,0 +1,87 @@
+Scenario 1: Update a residential device
+  Tags: ['@createSchema']
+  Given  I add Residential Company Authorization header
+  When  I add "Content-Type" header equal to "application/json"
+  And  I add "Accept" header equal to "application/json"
+  And  I send a "PUT" request to "/residential_devices/1" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario 2: Update a residential device
+  Tags: ['@createSchema']
+  Given  I add Residential Company Authorization header
+  When  I add "Content-Type" header equal to "application/json"
+  And  I add "Accept" header equal to "application/json"
+  And  I send a "PUT" request to "/residential_devices/1" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario 3: Update a residential device with invalid values
+  Tags: ['@createSchema']
+  Given  I add Residential Company Authorization header
+  When  I add "Content-Type" header equal to "application/json"
+  And  I add "Accept" header equal to "application/json"
+  And  I send a "PUT" request to "/residential_devices/6" with body:
+  Then  the response status code should be 400
+
+
+
+Scenario 4: Update a residential device with ruriDomain
+  Tags: ['@createSchema']
+  Given  I add Residential Company Authorization header
+  When  I add "Content-Type" header equal to "application/json"
+  And  I add "Accept" header equal to "application/json"
+  And  I send a "PUT" request to "/residential_devices/6" with body:
+  Then  the response status code should be 200
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json; charset=utf-8"
+  And  the JSON should be like:
+
+
+
+Scenario 5: Update a residential device with ip+port
+  Tags: ['@createSchema']
+  Given  I add Residential Company Authorization header
+  When  I add "Content-Type" header equal to "application/json"
+  And  I add "Accept" header equal to "application/json"
+  And  I send a "PUT" request to "/residential_devices/6" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json; charset=utf-8"
+  And  the JSON should be like:
+
+
+
+Scenario 6: Update a residential device directConnectivity
+  Tags: ['@createSchema']
+  Given  I add Residential Company Authorization header
+  When  I add "Content-Type" header equal to "application/json"
+  And  I add "Accept" header equal to "application/json"
+  And  I send a "PUT" request to "/residential_devices/1" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json; charset=utf-8"
+  And  the JSON should be like:
+
+
+
+Scenario 7: Update a residential device with ruriDomain and port without IP
+  Tags: ['@createSchema']
+  Given  I add Residential Company Authorization header
+  When  I add "Content-Type" header equal to "application/json"
+  And  I add "Accept" header equal to "application/json"
+  And  I send a "PUT" request to "/residential_devices/6" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json; charset=utf-8"
+  And  the JSON should be like:
+

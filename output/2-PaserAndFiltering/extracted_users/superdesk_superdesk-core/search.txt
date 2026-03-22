@@ -1,0 +1,224 @@
+Feature: Search Feature
+
+Scenario 1: Can search ingest
+  Tags: ['@auth']
+  Given  "ingest"
+  When  we get "/search"
+  Then  we get list with 1 items
+
+Scenario 2: Can search archive
+  Tags: ['@auth']
+  Given  "desks"
+  Given  "archive"
+  When  we get "/search"
+  Then  we get list with 1 items
+
+Scenario 3: Can not search private content
+  Tags: ['@auth']
+  Given  "archive"
+  When  we get "/search"
+  Then  we get list with 0 items
+
+Scenario 4: Can limit search to 1 result per shard
+  Tags: ['@auth']
+  Given  "desks"
+  Given  "archive"
+  Then  we set elastic limit
+  When  we get "/search"
+  Then  we get list with <6 items
+  When  we reset elastic limit
+  And  we get "/search"
+  Then  we get list with 9 items
+
+Scenario 5: Search Invisible stages without desk membership
+  Tags: ['@auth']
+  Given  empty "desks"
+  When  we post to "users"
+  When  we post to "/desks"
+  And  we get "/desks"
+  Then  we get list with 1 items
+  When  we get the default incoming stage
+  When  we post to "/archive"
+  Then  we get response code 201
+  When  we get "/search"
+  Then  we get list with 1 items
+  When  we patch "/stages/#desks.incoming_stage#"
+  Then  we get response code 200
+  When  we get "/search"
+  Then  we get list with 0 items
+  When  we get "/archive/#archive._id#"
+  Then  we get response code 403
+
+Scenario 6: Search archived items in Invisible stages
+  Tags: ['@auth']
+  Given  "desks"
+  And  "archived"
+  When  we post to "/archive"
+  Then  we get response code 201
+  And  we store "current_user" with value "#CONTEXT_USER_ID#" to context
+  When  we get "/search"
+  Then  we get list with 2 items
+  When  we patch "/stages/#desks.incoming_stage#"
+  Then  we get response code 200
+  When  we get "/search"
+  Then  we get list with 2 items
+  When  we get "/archive/#archive._id#"
+  Then  we get response code 200
+  When  we get "/archived"
+  Then  we get list with 1 items
+  When  we get "/archived/123:2"
+  Then  we get response code 200
+  When  we login as user "foo" with password "barword" and user type "user"
+  When  we get "/search"
+  Then  we get list with 0 items
+  When  we get "/archive/#archive._id#"
+  Then  we get response code 403
+  When  we get "/archived"
+  Then  we get list with 0 items
+  When  we get "/archived/123:2"
+  Then  we get response code 403
+  When  we patch "desks/#desks._id#"
+  Then  we get response code 200
+  When  we get "/search"
+  Then  we get list with 2 items
+  When  we get "/archive/#archive._id#"
+  Then  we get response code 200
+  When  we get "/archived"
+  Then  we get list with 1 items
+  When  we get "/archived/123:2"
+  Then  we get response code 200
+
+Scenario 7: Search Invisible stages with desk membership
+  Tags: ['@auth']
+  Given  empty "desks"
+  And  the "validators"
+  When  we post to "/desks"
+  And  we get "/desks"
+  Then  we get list with 1 items
+  When  we get the default incoming stage
+  When  we post to "/archive"
+  Then  we get response code 201
+  When  we get "/search"
+  Then  we get list with 1 items
+  When  we patch "/stages/#desks.incoming_stage#"
+  Then  we get response code 200
+  When  we get "/search"
+  Then  we get list with 1 items
+  When  we get "/archive/#archive._id#"
+  Then  we get response code 200
+  When  we login as user "foo" with password "barword" and user type "user"
+  When  we get "/search"
+  Then  we get list with 0 items
+  When  we get "/archive/#archive._id#"
+  Then  we get response code 403
+  When  we setup test user
+  And  we publish "#archive._id#" with "publish" type and "published" state
+  Then  we get OK response
+  When  we get "/published"
+  Then  we get list with 1 items
+  When  we get "/archive/#archive._id#"
+  Then  we get response code 200
+  When  we login as user "foo" with password "barword" and user type "user"
+  When  we get "/search"
+  Then  we get list with 0 items
+  When  we get "/published"
+  Then  we get list with 0 items
+  When  we get "/archive/#archive._id#"
+  Then  we get response code 403
+
+Scenario 8: Search by slugline
+  Tags: ['@auth']
+  Given  "ingest"
+  When  we get "/search?source={"query":{"filtered":{"filter": null,"query":{"query_string":{"query":"slugline:(abuse)","lenient":false,"default_operator":"AND"}}}}}"
+  Then  we get list with 1 items
+  When  we get "/search?source={"query":{"filtered":{"filter": null,"query":{"query_string":{"query":"slugline:(absent)","lenient":false,"default_operator":"AND"}}}}}"
+  Then  we get list with 0 items
+
+Scenario 9: Get item by guid no matter where it is
+  Tags: ['@auth']
+  Given  "ingest"
+  And  "archive"
+  And  "published"
+  When  we get "/search/item-ingest"
+  Then  we get response code 200
+  When  we get "/search/item-archive"
+  Then  we get response code 200
+  When  we get "/search/item-published"
+  Then  we get response code 200
+
+Scenario 10: Search returns spiked content from archive
+  Tags: ['@auth']
+  Given  "desks"
+  Given  "archive"
+  When  we get "/search"
+  Then  we get list with 2 items
+
+Scenario 11: Search returns only current users drafts
+  Tags: ['@auth']
+  Given  "desks"
+  Given  "archive"
+  When  we get "/search"
+  Then  we get list with 1 items
+
+Scenario 12: Search returns only spiked content when filtered from archive
+  Tags: ['@auth']
+  Given  "desks"
+  Given  "archive"
+  When  we get "/search?source={"query":{"filtered":{"filter":{"and":[{"term":{"state":"spiked"}}]}}}}"
+  Then  we get list with 1 items
+
+Scenario 13: Search items with highlight
+  Tags: ['@auth']
+  Given  "desks"
+  Given  "archive"
+  And  "ingest"
+  And  "published"
+  When  we get "/search?source={"query": {"filtered": {"query": {"query_string": {"query": "(foo)", "lenient": true, "default_operator": "AND"}}}}}"
+  Then  we get list with 1 items
+  When  we get "/search?es_highlight=1&source={"query": {"filtered": {"query": {"query_string": {"query": "(foo)", "lenient": true, "default_operator": "AND"}}}}}"
+  Then  we get list with 1 items
+  When  we get "/search?es_highlight=1&source={"query": {"filtered": {"query": {"query_string": {"query": "(a)", "lenient": true, "default_operator": "AND"}}}}}"
+  Then  we get list with 2 items
+  When  we get "/search?es_highlight=1&source={"query": {"filtered": {"query": {"query_string": {"query": "(div)", "lenient": true, "default_operator": "AND"}}}}}"
+  Then  we get list with 1 items
+  When  we get "/archive?es_highlight=1&source={"query": {"filtered": {"query": {"query_string": {"query": "(foo)", "lenient": true, "default_operator": "AND"}}}}}"
+  Then  we get list with 1 items
+  When  we get "/ingest?es_highlight=1&source={"query": {"filtered": {"query": {"query_string": {"query": "(test)", "lenient": true, "default_operator": "AND"}}}}}"
+  Then  we get list with 1 items
+  When  we get "/published?es_highlight=1&source={"query": {"filtered": {"query": {"query_string": {"query": "(test)", "lenient": true, "default_operator": "AND"}}}}}"
+  Then  we get list with 1 items
+
+Scenario 14: Search items with projections
+  Tags: ['@auth']
+  Given  "desks"
+  Given  "archive"
+  When  we get "/search?source={"query": {"filtered": {"query": {"query_string": {"query": "(foo)", "lenient": true, "default_operator": "AND"}}}}}"
+  Then  we get list with 1 items
+  When  we get "/search?projections=["headline"]&source={"query": {"filtered": {"query": {"query_string": {"query": "(foo)", "lenient": true, "default_operator": "AND"}}}}}"
+  Then  we get list with 1 items
+  And  we get "body_html" does not exist
+  And  we get "state" does not exist
+  And  we get "headline" does exist
+
+Scenario 15: Search archived items without task information
+  Tags: ['@auth']
+  Given  "archived"
+  When  we get "archived/123:2"
+  Then  we get response code 200
+  When  we get "archived"
+  Then  we get list with 1 items
+
+Scenario 16: Search by headline and body html containing accent word
+  Tags: ['@auth']
+  Given  "desks"
+  Given  "archive"
+  When  we get "/search?source={"query": {"filtered": {"query": {"query_string": {"query": "(jos)", "lenient": true, "default_operator": "AND"}}}}}"
+  Then  we get list with 2 items
+
+Scenario 17: Search by multiple words each matching in different field
+  Tags: ['@auth']
+  Given  "desks"
+  Given  "archive"
+  When  we get "/search?source={"query": {"filtered": {"query": {"query_string": {"query": "headline body", "lenient": true, "default_operator": "AND"}}}}}"
+  Then  we get list with 1 items
+

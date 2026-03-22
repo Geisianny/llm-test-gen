@@ -1,0 +1,29 @@
+Feature: Spot Markets
+
+Scenario 1: When entering an auction, for any open "buy" orders, the network must transfer additional funds from the parties'
+  Description: general_account to their respective holding_account to cover any potential fees resulting from the order trading
+            in the auction.(0080-SPOT-016).
+
+  Background:
+  Given  the following network parameters are set:
+  And  the average block duration is "1"
+  Given  the fees configuration named "fees-config-1":
+  And  the simple risk model named "my-simple-risk-model":
+  And  the fees configuration named "my-fees-config":
+  And  the price monitoring named "price-monitoring":
+  And  the spot markets:
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties place the following orders:
+  Then  the opening auction period ends for market "BTC/ETH"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  And  the mark price should be "100" for the market "BTC/ETH"
+  When  the network moves ahead "1" blocks
+  And  the parties place the following orders:
+  Then  "party3" should have holding account balance of "1000" for asset "ETH"
+  Then  "party3" should have general account balance of "9000" for asset "ETH"
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "BTC/ETH"
+  Then  "party3" should have holding account balance of "1001" for asset "ETH"
+  Then  "party3" should have general account balance of "8999" for asset "ETH"
+

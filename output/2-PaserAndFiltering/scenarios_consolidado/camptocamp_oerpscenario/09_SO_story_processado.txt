@@ -1,0 +1,29 @@
+Scenario 1: SO1000 CREATION
+  Tags: ['@SO1000']
+  Given  I need a "sale.order" with name: SO1000 and oid: scenario.SO1000
+  And  having:
+  Given  I need a "sale.order.line" with oid: scenario.SO1000_line1
+  And  having:
+  And  I confirm the SO
+  Then  1 picking should be created for the SO
+  When  I process the following product moves:
+  And  I create a customer invoice for the picking on %Y-01-25
+  Then  the picking should be in state done
+  When  I press the create invoice button from SO
+  Then  I should see the sale order SO1008 in progress
+  And  I should have a related draft invoice created
+
+
+
+Scenario 2: Create a sale order manually
+  Tags: ['@SO1008']
+  Given  I need a "sale.order" with name: SO1008 and oid: scenario.SO1008
+  And  having:
+  And  containing the following sale order lines:
+  When  I confirm the SO
+  Then  1 picking should be created for the SO
+  When  I process all shipments on %Y-01-25
+  When  I press the create invoice button from SO
+  Then  I should see the sale order SO1008 in progress
+  And  I should have a related draft invoice created
+

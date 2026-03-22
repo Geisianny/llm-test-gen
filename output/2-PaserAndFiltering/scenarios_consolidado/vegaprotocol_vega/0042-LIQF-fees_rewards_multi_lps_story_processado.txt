@@ -1,0 +1,26 @@
+Scenario 1: 001: All liquidity providers in the market receive a greater than zero amount of liquidity fee
+  Tags: ['@Now']
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  When  the network moves ahead "2" blocks
+  And  the parties place the following pegged iceberg orders:
+  Then  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/MAR22"
+  And  the following trades should be executed:
+  And  the market data for the market "ETH/MAR22" should be:
+  Then  the order book should have the following volumes for market "ETH/MAR22":
+  And  the liquidity provider fee shares for the market "ETH/MAR22" should be:
+  And  the parties should have the following account balances:
+  Then  the network moves ahead "1" blocks
+  And  the liquidity fee factor should be "0.003" for the market "ETH/MAR22"
+  Then  the parties place the following orders:
+  Then  the following transfers should happen:
+  And  the accumulated liquidity fees should be "600000" for the market "ETH/MAR22"
+  And  the parties should have the following account balances:
+  Then  the order book should have the following volumes for market "ETH/MAR22":
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/MAR22"
+  And  the accumulated liquidity fees should be "600000" for the market "ETH/MAR22"
+  Then  the network moves ahead "11" blocks
+  And  the following transfers should happen:
+  And  the accumulated liquidity fees should be "1" for the market "ETH/MAR22"
+

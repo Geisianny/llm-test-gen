@@ -1,0 +1,42 @@
+Feature: Closeout-cascades
+
+Background: 
+  Given  the margin calculator named "margin-calculator-1":
+  And  the markets:
+  And  the following network parameters are set:
+
+Scenario 1: Distressed position gets taken over by another party whose margin level is insufficient to support it (however mark price doesn't get updated on closeout trade and hence no further closeouts are carried out) (0005-COLL-002)
+  Tags: ['@NetworkParty', '@CloseOutTrades', '@Liquidation']
+  Given  the insurance pool balance should be "0" for the market "ETH/DEC19"
+  Given  the parties deposit on asset's general account the following amount:
+  Then  the cumulated balance for all accounts should be worth "3000000002100"
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  Then  the auction ends with a traded volume of "10" at a price of "10"
+  And  the mark price should be "10" for the market "ETH/DEC19"
+  And  the cumulated balance for all accounts should be worth "3000000002100"
+  When  the parties place the following orders with ticks:
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  And  the cumulated balance for all accounts should be worth "3000000002100"
+  When  the parties place the following orders:
+  Then  the order book should have the following volumes for market "ETH/DEC19":
+  When  the network moves ahead "3" blocks
+  Then  the mark price should be "100" for the market "ETH/DEC19"
+  And  debug trades
+  And  the following trades should be executed:
+  And  the cumulated balance for all accounts should be worth "3000000002100"
+  Then  the order book should have the following volumes for market "ETH/DEC19":
+  Then  the mark price should be "100" for the market "ETH/DEC19"
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following profit and loss:
+  Then  the parties should have the following account balances:
+  Then  the parties place the following orders:
+  And  the mark price should be "100" for the market "ETH/DEC19"
+  And  then the network moves ahead "10" blocks
+  And  the mark price should be "10" for the market "ETH/DEC19"
+  Then  the parties should have the following profit and loss:
+

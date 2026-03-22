@@ -1,0 +1,92 @@
+Scenario 1: Mark price update without any intervention, book stuck at old price
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  And  the network moves ahead "2" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+  When  the network moves ahead "100" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  And  the network moves ahead "25" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+  When  the network moves ahead "96" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+
+
+
+Scenario 2: Mark price update, followed by uncrossing trade near the new price
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  And  the network moves ahead "2" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+  When  the parties place the following orders with ticks:
+  And  the network moves ahead "5" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+  When  the network moves ahead "21" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+
+
+
+Scenario 3: Mark price update, followed by trigger update
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  And  the network moves ahead "2" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+  And  the price monitoring named "my-price-monitoring-2":
+  When  the markets are updated:
+  Then  the market data for the market "ETH/FEB23" should be:
+  And  the network moves ahead "3" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+  And  the network moves ahead "1" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+  And  the network moves ahead "1" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+  When  the markets are updated:
+  Then  the market data for the market "ETH/FEB23" should be:
+  When  the network moves ahead "1" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+
+
+
+Scenario 4: Mark price update, followed by trigger update (+ trade in auction, after market update)
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  And  the network moves ahead "2" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+  And  the price monitoring named "my-price-monitoring-2":
+  When  the markets are updated:
+  And  the network moves ahead "3" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+  When  the parties place the following orders with ticks:
+  And  the network moves ahead "1" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+  And  the network moves ahead "2" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+
+
+
+Scenario 5: Mark price update, followed by trigger update (+ oracle value gets resubmitted after the market update)
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  And  the network moves ahead "2" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+  And  the price monitoring named "my-price-monitoring-2":
+  When  the markets are updated:
+  And  the network moves ahead "3" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  And  the network moves ahead "1" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+  When  the parties place the following orders with ticks:
+  And  the network moves ahead "1" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+  When  the parties place the following orders with ticks:
+  And  the network moves ahead "2" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+  And  the network moves ahead "118" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+
+
+
+Scenario 6: Verify that trigger update in continuous trading works as expected
+  When  the network moves ahead "2" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+  And  the price monitoring named "my-price-monitoring-2":
+  When  the markets are updated:
+  And  the network moves ahead "3" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+

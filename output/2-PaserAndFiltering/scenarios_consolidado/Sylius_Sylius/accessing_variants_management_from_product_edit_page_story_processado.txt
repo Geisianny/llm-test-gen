@@ -1,0 +1,30 @@
+Scenario 1: Being able to access the variants list page
+  Tags: ['@no-api', '@ui']
+  When  I modify the "Audi" product
+  And  I go to the variants list
+  Then  I should be on the list of this product's variants
+
+
+
+Scenario 2: Being able to access the variant creation page
+  Tags: ['@no-api', '@ui']
+  When  I modify the "Audi" product
+  And  I go to the variant creation page
+  Then  I should be on the variant creation page for this product
+
+
+
+Scenario 3: Being able to access the variant generation page
+  Tags: ['@no-api', '@ui']
+  Given  this product has option "Model" with values "RS6" and "RS7"
+  When  I modify the "Audi" product
+  And  I go to the variant generation page
+  Then  I should be on the variant generation page for this product
+
+
+
+Scenario 4: Being unable to go to the generate variants page for a product without options
+  Tags: ['@no-api', '@ui']
+  When  I want to modify the "Audi" product
+  Then  I should not be able to go to the generate variants page
+

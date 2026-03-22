@@ -1,0 +1,121 @@
+Feature: Content Filter
+
+Scenario 1: Add a new content filter
+  Tags: ['@auth', '@vocabulary']
+  Given  empty "filter_conditions"
+  When  we post to "/filter_conditions" with success
+  Then  we get latest
+  Given  empty "content_filters"
+  When  we post to "/content_filters" with success
+  Then  we get latest
+  When  we post to "/content_filters" with success
+  And  we get "/content_filters"
+  Then  we get list with 2 items
+
+Scenario 2: Add a new content filter without global filter value but with archived flag
+  Tags: ['@auth', '@vocabulary', '@test']
+  Given  empty "filter_conditions"
+  When  we post to "/filter_conditions" with success
+  Then  we get latest
+  Given  empty "content_filters"
+  When  we post to "/content_filters" with success
+  And  we get "/content_filters"
+  Then  we get list with 1 items
+  When  we post to "/content_filters" with success
+  And  we get "/content_filters"
+  Then  we get list with 2 items
+
+Scenario 3: Add a new content filter with the same name fails
+  Tags: ['@auth', '@vocabulary']
+  Given  empty "filter_conditions"
+  When  we post to "/filter_conditions" with success
+  Then  we get latest
+  Given  empty "content_filters"
+  When  we post to "/content_filters" with success
+  Then  we get latest
+  When  we post to "/content_filters"
+  Then  we get error 400
+
+Scenario 4: Deleting content filter referenced by other content filters fails
+  Tags: ['@auth', '@vocabulary']
+  Given  empty "filter_conditions"
+  When  we post to "/filter_conditions" with success
+  Then  we get latest
+  Given  empty "content_filters"
+  When  we post to "/content_filters" with success
+  Then  we get latest
+  When  we post to "/content_filters" with success
+  When  we delete content filter "soccer"
+  Then  we get error 400
+  When  we delete content filter "tennis"
+  Then  we get error 204
+
+Scenario 5: Deleting content filter referenced by direct products for subscribers
+  Tags: ['@auth', '@vocabulary']
+  Given  empty "filter_conditions"
+  When  we post to "/filter_conditions" with success
+  Then  we get latest
+  Given  empty "content_filters"
+  When  we post to "/content_filters" with success
+  Then  we get latest
+  Given  empty "subscribers"
+  When  we post to "/products" with success
+  And  we post to "/subscribers" with success
+  Then  we get latest
+  When  we delete content filter "soccer"
+  Then  we get error 400
+
+Scenario 6: Deleting content filter referenced by api products for subscribers
+  Tags: ['@auth', '@vocabulary']
+  Given  empty "filter_conditions"
+  When  we post to "/filter_conditions" with success
+  Then  we get latest
+  Given  empty "content_filters"
+  When  we post to "/content_filters" with success
+  Then  we get latest
+  Given  empty "subscribers"
+  When  we post to "/products" with success
+  And  we post to "/subscribers" with success
+  Then  we get latest
+  When  we delete content filter "soccer"
+  Then  we get error 400
+
+Scenario 7: Deleting content filter referenced by routing schemes fails
+  Tags: ['@auth', '@vocabulary']
+  Given  empty "filter_conditions"
+  When  we post to "/filter_conditions" with success
+  Then  we get latest
+  Given  empty "content_filters"
+  When  we post to "/content_filters" with success
+  Then  we get latest
+  Given  empty "routing_schemes"
+  When  we post to "/routing_schemes"
+  Then  we get latest
+  When  we delete content filter "soccer"
+  Then  we get error 400
+
+Scenario 8: Try to Add duplicate filter
+  Tags: ['@auth', '@vocabulary']
+  Given  "filter_conditions"
+  When  we post to "/filter_conditions"
+  Then  we get error 400
+
+Scenario 9: Try to Add none duplicate filter
+  Tags: ['@auth', '@vocabulary']
+  Given  "filter_conditions"
+  When  we post to "/filter_conditions" with success
+  And  we get "/filter_conditions"
+  Then  we get list with 2 items
+
+Scenario 10: Update allowed fields on vocabulary add/delete
+  Tags: ['@auth', '@vocabulary']
+  Given  empty "filter_conditions"
+  When  we post to "vocabularies" with success
+  And  we post to "/filter_conditions" with success
+  And  we get "/filter_conditions"
+  Then  we get list with 1 items
+  When  we delete "/vocabularies/my_custom_field"
+  Then  we get OK response
+  When  we post to "/filter_conditions"
+  Then  we get error 400
+

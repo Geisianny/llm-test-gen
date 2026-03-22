@@ -1,0 +1,33 @@
+Feature: Workspace
+
+Scenario 1: User can create its workspace
+  Tags: ['@auth']
+  When  we post to "/workspaces"
+  Then  we get new resource
+
+Scenario 2: User can't change other users workspace
+  Tags: ['@auth']
+  Given  "users"
+  When  we post to "/workspaces"
+  Then  we get response code 403
+
+Scenario 3: Workspace name should be unique per user
+  Tags: ['@auth']
+  When  we post to "/workspaces"
+  And  we post to "/workspaces"
+  Then  we get response code 400
+
+Scenario 4: Workspace name should be unique globally
+  Tags: ['@auth']
+  When  we post to "/workspaces"
+  And  we post to "/workspaces"
+  Then  we get response code 400
+
+Scenario 5: Deleting workspace works
+  Tags: ['@auth']
+  When  we post to "/workspaces"
+  And  we delete latest
+  Then  we get response code 204
+  When  we post to "/workspaces"
+  Then  we get new resource
+

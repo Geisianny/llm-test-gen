@@ -1,0 +1,13 @@
+Feature: Create residential devices
+Description: In order to manage residential devices
+  As a client admin
+  I need to be able to create them through the API.
+
+Scenario 1: Create a residential device
+  Tags: ['@createSchema']
+  Given  I add Residential Company Authorization header
+  When  I add "Content-Type" header equal to "application/json"
+  And  I add "Accept" header equal to "application/json"
+  And  I send a "POST" request to "/residential_devices" with body:
+  Then  the response status code should be 405
+

@@ -1,0 +1,12 @@
+Feature: Restart on file change
+Description: In order to use Karma
+  As a person who wants to write great tests
+  I want Karma to re-run tests whenever file changes.
+
+Scenario 1: Re-run tests when file changes
+  Given  a configuration with:
+  When  I start a server in background
+  And  I wait until server output contains:
+  When  I touch file: "basic/test.js"
+  Then  the background stdout matches RegExp:
+

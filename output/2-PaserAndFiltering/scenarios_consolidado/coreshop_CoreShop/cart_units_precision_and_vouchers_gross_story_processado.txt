@@ -1,0 +1,12 @@
+Scenario 1: Create a new cart and add 1.5 units to the cart and then apply a voucher
+  Given  I add the product "Shoes" with unit "Carton" in quantity 1.5 to my cart
+  And  I apply the voucher code "asdf" to my cart
+  Then  the cart total should be "2250" excluding tax
+
+
+
+Scenario 2: Create a new cart and add 2.5014 units to the cart and then apply a voucher
+  Given  I add the product "Shoes" with unit "Palette" in quantity 2.5014 to my cart
+  And  I apply the voucher code "asdf" to my cart
+  Then  the cart total should be "281407" excluding tax
+

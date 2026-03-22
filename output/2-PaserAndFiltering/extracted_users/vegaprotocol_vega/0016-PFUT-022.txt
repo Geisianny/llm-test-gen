@@ -1,0 +1,51 @@
+Feature: When max_price is specified and the market is ran in a fully-collateralised mode and it has parties with open positions settling it at a price of 0 works correctly
+
+Background: 
+  Given  time is updated to "2019-11-30T00:00:00Z"
+  And  the average block duration is "1"
+  And  the oracle spec for settlement data filtering data from "0xCAFECAFE1" named "ethDec21Oracle":
+  And  the oracle spec for trading termination filtering data from "0xCAFECAFE1" named "ethDec21Oracle":
+  And  the settlement data decimals for the oracle named "ethDec21Oracle" is given in "0" decimal places
+  And  the following network parameters are set:
+  And  the fees configuration named "fees-config-1":
+  And  the price monitoring named "price-monitoring-1":
+  And  the log normal risk model named "lognormal-risk-model-1":
+  And  the markets:
+
+Scenario 1: 0016-PFUT-022: The sum of all final settlement cashflows equals 0 (loss socialisation does not happen). Assuming general account balances of all parties were 0 after opening the positions and all of their funds were in the margin accounts: short parties end up with balances equal to abs(position size) * max_price and long parties end up with 0 balances.
+  Tags: ['@SLABug', '@NoPerp', '@Capped', '@CSettle', '@CappedBug']
+  Given  the initial insurance pool balance is "10000" for all the markets
+  And  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  When  the parties place the following orders:
+  And  the network moves ahead "2" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC21"
+  And  the market state should be "STATE_ACTIVE" for the market "ETH/DEC21"
+  And  the mark price should be "1000" for the market "ETH/DEC21"
+  And  the parties should have the following account balances:
+  And  the parties should have the following margin levels:
+  When  the parties place the following orders:
+  And  the network moves ahead "2" blocks
+  Then  the mark price should be "1100" for the market "ETH/DEC21"
+  And  the parties should have the following account balances:
+  When  the parties submit update margin mode:
+  When  the parties place the following orders:
+  And  the following trades should be executed:
+  And  the network moves ahead "2" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC21"
+  Then  the mark price should be "1499" for the market "ETH/DEC21"
+  And  the parties should have the following account balances:
+  And  the parties should have the following margin levels:
+  When  the parties place the following orders:
+  And  the network moves ahead "2" blocks
+  Then  the parties should have the following account balances:
+  And  the following transfers should happen:
+  When  the oracles broadcast data signed with "0xCAFECAFE1":
+  And  the network moves ahead "2" blocks
+  Then  the market state should be "STATE_TRADING_TERMINATED" for the market "ETH/DEC21"
+  When  the oracles broadcast data signed with "0xCAFECAFE1":
+  And  the network moves ahead "2" blocks
+  Then  the last market state should be "STATE_SETTLED" for the market "ETH/DEC21"
+  And  the following transfers should happen:
+  And  the parties should have the following account balances:
+

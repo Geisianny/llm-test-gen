@@ -1,0 +1,16 @@
+Scenario 1: Preventing customer from adding disabled product
+  Tags: ['@api', '@no-ui']
+  Given  the product "PHP T-Shirt" has been disabled
+  When  I pick up my cart
+  And  I try to add product "PHP T-Shirt" to the cart
+  Then  I should be informed that product "PHP T-Shirt" does not exist
+
+
+
+Scenario 2: Preventing customer from adding disabled variant
+  Tags: ['@api', '@no-ui']
+  Given  the "Large" product variant is disabled
+  When  I pick up my cart
+  And  I try to add "Large" product variant
+  Then  I should be informed that "Large" product variant does not exist
+

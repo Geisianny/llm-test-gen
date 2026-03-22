@@ -1,0 +1,5 @@
+Scenario 1: Viewing product's attributes defined in different locales
+  Tags: ['@api', '@ui']
+  When  I modify the "Iron Pickaxe" product
+  And  I should see non-translatable attribute "crit chance" with value 10%
+

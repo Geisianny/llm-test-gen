@@ -1,0 +1,71 @@
+Feature: sales
+Description: As an enterprise's administrator
+  I want to view my sales
+  In order to manage the products I sold
+
+Background: 
+  Given  "ShoppingCart" plugin is enabled
+  And  "Orders" plugin is enabled
+  And  the following users
+  And  the following enterprise
+  And  "Moe" is admin of "Moes Tavern"
+  And  the shopping basket is enabled on "Moes Tavern"
+  And  the following product_categories
+  And  the following products
+  And  feature "products_for_enterprises" is enabled on environment
+  And  I am logged in as "moe"
+  And  I am on moes-tavern's control panel
+
+Scenario 1: view orders
+  Tags: ['@selenium']
+  Given  the following purchase from "homer" on "moes-tavern" that is "ordered"
+  When  I follow "Purchases and Sales"
+  Then  I should see "Homer" within any ".actor-name"
+  And  I should see "17.50" within any ".total"
+  And  I should see "Ordered" within any ".situation"
+
+Scenario 2: view orders with different status
+  Tags: ['@selenium']
+  Given  the following purchase from "homer" on "moes-tavern" that is "accepted"
+  And  the following purchase from "homer" on "moes-tavern" that is "delivered"
+  When  I follow "Purchases and Sales"
+  Then  I should see "Accepted" within any ".situation"
+  And  I should see "Delivered" within any ".situation"
+
+Scenario 3: filter orders by situation
+  Tags: ['@selenium']
+  Given  the following purchase from "homer" on "moes-tavern" that is "accepted"
+  And  the following purchase from "homer" on "moes-tavern" that is "delivered"
+  And  I follow "Purchases and Sales"
+  And  I should see "Accepted" within any ".situation"
+  And  I should see "Delivered" within any ".situation"
+  And  I select "Delivered" from "status"
+  When  I press "Filter"
+  Then  I should not see "Accepted" within any ".situation"
+  And  I should see "Delivered" within any ".situation"
+
+Scenario 4: filter orders by code
+  Tags: ['@selenium']
+  Given  the following purchase from "homer" on "moes-tavern" that is "ordered"
+  And  the following purchase from "homer" on "moes-tavern" that is "ordered"
+  And  I follow "Purchases and Sales"
+  And  I should see "1" within any ".code"
+  And  I should see "2" within any ".code"
+  And  I fill in "code" with "2"
+  When  I press "Filter"
+  Then  I should not see "1" within any ".code"
+  Then  I should see "2" within any ".code"
+
+Scenario 5: filter orders by consumer
+  Tags: ['@selenium']
+  Given  the following users
+  And  the following purchase from "homer" on "moes-tavern" that is "ordered"
+  And  the following purchase from "lovejoy" on "moes-tavern" that is "ordered"
+  And  I follow "Purchases and Sales"
+  And  I should see "Homer" within any ".actor-name"
+  And  I should see "Reverend Lovejoy" within any ".actor-name"
+  And  I select "Homer" from "consumer_id"
+  When  I press "Filter"
+  Then  I should see "Homer" within any ".actor-name"
+  And  I should not see "Reverend Lovejoy" within any ".actor-name"
+

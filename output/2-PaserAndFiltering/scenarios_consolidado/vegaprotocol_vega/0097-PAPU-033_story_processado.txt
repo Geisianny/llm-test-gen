@@ -1,0 +1,8 @@
+Scenario 1: The trigger for pap auction ticks however there is no price from the price oracle so the auction is skipped. (0097-PAPU-033)
+  When  the protocol automated purchase is defined as:
+  And  the network moves ahead "30" blocks
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  Then  the oracles broadcast data with block time signed with "0xCAFECAFE2":
+  And  the network moves ahead "30" blocks
+  And  the trading mode should be "TRADING_MODE_PROTOCOL_AUTOMATED_PURCHASE_AUCTION" for the market "BTC/ETH"
+

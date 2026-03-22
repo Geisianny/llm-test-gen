@@ -1,0 +1,19 @@
+Scenario 1: Holding inventory units
+  Tags: ['@api', '@ui']
+  Given  the customer bought 3 "Iron Maiden T-Shirt" products
+  And  the customer chose "Free" shipping method to "United States" with "Offline" payment
+  When  I view variants of the product "Iron Maiden T-Shirt"
+  Then  3 units of this product should be on hold
+  And  5 units of this product should be on hand
+
+
+
+Scenario 2: Release hold units after order has been paid
+  Tags: ['@api', '@ui']
+  Given  the customer bought 3 "Iron Maiden T-Shirt" products
+  And  the customer chose "Free" shipping method to "United States" with "Offline" payment
+  And  this order is already paid
+  When  I view variants of the product "Iron Maiden T-Shirt"
+  Then  2 units of this product should be on hand
+  And  there should be no units of this product on hold
+

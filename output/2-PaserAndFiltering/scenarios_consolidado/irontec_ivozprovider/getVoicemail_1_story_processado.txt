@@ -1,0 +1,45 @@
+Scenario 1: Retrieve the voicemails json list
+  Tags: ['@createSchema', '@userApiContext']
+  Given  I add User Authorization header
+  When  I add "Accept" header equal to "application/json"
+  And  I send a "GET" request to "/voicemails"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario 2: Retrieve a certain voicemail json
+  Tags: ['@createSchema', '@userApiContext']
+  Given  I add User Authorization header
+  When  I add "Accept" header equal to "application/json"
+  And  I send a "GET" request to "/voicemails/1"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario 3: Retrieve a certain voicemail belonging to another user json
+  Tags: ['@createSchema', '@userApiContext']
+  Given  I add User Authorization header
+  When  I add "Accept" header equal to "application/json"
+  And  I send a "GET" request to "/voicemails/2"
+  Then  the response status code should be 404
+  And  the header "Content-Type" should be equal to "application/problem+json; charset=utf-8"
+  And  the JSON should be like:
+
+
+
+Scenario 4: Retrieve a generic voicemail assigned to the user
+  Tags: ['@createSchema', '@userApiContext']
+  Given  I add User Authorization header
+  When  I add "Accept" header equal to "application/json"
+  And  I send a "GET" request to "/voicemails/3"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json; charset=utf-8"
+  And  the JSON should be equal to:
+

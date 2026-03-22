@@ -1,0 +1,41 @@
+Feature: vAMM rebasing when created or amended
+
+Background: 
+  Given  the average block duration is "1"
+  And  the margin calculator named "margin-calculator-1":
+  And  the log normal risk model named "log-normal-risk-model":
+  And  the liquidity monitoring parameters:
+  And  the following network parameters are set:
+  And  the following assets are registered:
+  And  the fees configuration named "fees-config-1":
+  And  the liquidity sla params named "SLA-22":
+  And  the oracle spec for settlement data filtering data from "0xCAFECAFE19" named "termination-oracle":
+  And  the oracle spec for trading termination filtering data from "0xCAFECAFE19" named "termination-oracle":
+  And  the markets:
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/MAR22"
+  Then  the following trades should be executed:
+  Then  the parties submit the following AMM:
+  Then  the AMM pool status should be:
+  And  set the following AMM sub account aliases:
+  And  the market data for the market "ETH/MAR22" should be:
+
+Scenario 1: AMM exists and trades outside of market tick sizes
+  Tags: ['@VAMM']
+  When  the parties place the following orders:
+  Then  the following trades should be executed:
+
+Scenario 2: pegged orders pegged to non-tick size AMM's
+  Tags: ['@VAMM']
+  Then  the parties place the following pegged orders:
+  Then  the order book should have the following volumes for market "ETH/MAR22":
+
+Scenario 3: Reference price is AMM not at market-tick and pegged offset is 0
+  Tags: ['@VAMM']
+  When  the parties cancel the following AMM:
+  When  the parties place the following pegged iceberg orders:
+  Then  the parties submit the following AMM:
+  And  the network moves ahead "1" blocks
+  Then  the order book should have the following volumes for market "ETH/MAR22":
+

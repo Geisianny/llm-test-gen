@@ -1,0 +1,10 @@
+Feature: Helpful warning and errors
+Description: In order to use Karma
+  As a person who wants to write great tests
+  I want to get messages which help me to fix problems
+
+Scenario 1: Karma fails to determine a file type from the file extension
+  Given  a configuration with:
+  When  I start Karma
+  Then  the stdout matches RegExp:
+

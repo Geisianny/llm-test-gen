@@ -1,0 +1,7 @@
+Scenario 1: Filtering product taxons
+  Tags: ['@no-api', '@ui', '@mink:chromedriver']
+  When  I want to modify the "Shirt" product
+  And  I filter taxons by "T-Shirts"
+  Then  I should see the "T-Shirts" taxon
+  But  I should not see the "Clothes" taxon
+

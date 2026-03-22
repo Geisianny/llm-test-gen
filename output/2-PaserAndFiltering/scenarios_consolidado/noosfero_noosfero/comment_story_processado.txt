@@ -1,0 +1,48 @@
+Scenario 1: post a comment while not authenticated
+  Tags: ['@selenium']
+  Given  I am not logged in
+  Given  I am on /booking/article-to-comment
+  And  I fill in "Name" with "Joey Ramone"
+  And  I fill in "e-mail" with "joey@ramones.com"
+  And  I fill in "comment-field" with "Hey ho, let's go now"
+  Then  I send enter key in "comment-field" field
+  When  I wait 3 seconds
+  Given  I am on /booking/article-to-comment
+  Then  I should see "Hey ho, let's go now"
+
+
+
+Scenario 2: post comment while authenticated
+  Tags: ['@selenium']
+  Given  I am on /booking/article-to-comment
+  And  I fill in "comment-field" with "Hey ho, let's go!"
+  And  I follow "Send"
+  And  I wait 1 seconds
+  Then  I should see "Hey ho, let"
+
+
+
+Scenario 3: post comment in a picture
+  Tags: ['@selenium-fixme']
+  Given  the following files
+  And  I am on /booking/rails.png?view=true
+  And  I fill in "comment-field" with "Hey ho, let's go!"
+  And  I click "#submit_form_button"
+  And  I wait 1 seconds
+  Then  I should see "Hey ho, let"
+
+
+
+Scenario 4: show error messages when make a blank comment
+  Tags: ['@selenium']
+  Given  I am on /booking/article-to-comment
+  When  I send enter key in "comment-field" field
+  Then  I should see "Body can't be blank"
+
+
+
+Scenario 5: wrong comment doesn't increment comment counter
+  Tags: ['@selenium']
+  Given  I am on /booking/article-with-comment
+  And  I should see "2 comments"
+

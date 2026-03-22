@@ -1,0 +1,25 @@
+Scenario 1: For Good 'Til Time (GTT) orders:
+  And  the market data for the market "BTC/ETH" should be:
+  And  the parties place the following orders:
+  Then  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "BTC/ETH"
+  When  the network moves ahead "11" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  And  the mark price should be "1050" for the market "BTC/ETH"
+
+
+
+Scenario 2: For Good 'Till Cancelled (GTC) orders:
+  And  the market data for the market "BTC/ETH" should be:
+  And  the parties place the following orders:
+  Then  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "BTC/ETH"
+  When  the network moves ahead "11" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  And  the mark price should be "1050" for the market "BTC/ETH"
+
+
+
+Scenario 3: For Good For Normal (GFN) orders:
+  And  the market data for the market "BTC/ETH" should be:
+  And  the parties place the following orders:
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+

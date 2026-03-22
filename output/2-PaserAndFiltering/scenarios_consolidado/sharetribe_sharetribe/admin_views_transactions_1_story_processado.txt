@@ -1,0 +1,47 @@
+Scenario 1: Admin views all transactions
+  Then  I should see 3 transaction with status "Free transaction"
+
+
+
+Scenario 2: Admin sorts transactions by listing
+  When  I sort records by "listing"
+  Then  I should see the transactions in ascending order by "listing"
+  When  I sort records by "listing"
+  Then  I should see the transactions in descending order by "listing"
+
+
+
+Scenario 3: Admin sorts transactions by start date
+  When  I sort records by "started"
+  Then  I should see the transactions in ascending time order by "started"
+  When  I sort records by "started"
+  Then  I should see the transactions in descending time order by "started"
+
+
+
+Scenario 4: Admin sorts transactions by latest activity
+  When  I sort records by "latest"
+  Then  I should see the transactions in ascending time order by "latest"
+  When  I sort records by "latest"
+  Then  I should see the transactions in descending time order by "latest"
+
+
+
+Scenario 5: Admin filters transaction by free status
+  When  I select "Free transaction (3)" from "status_"
+  Then  I should see 3 transaction with status "Free transaction"
+
+
+
+Scenario 6: Admin filters transaction by paid status
+  When  I select "Paid (0)" from "status_"
+  Then  I should see 0 transaction with status "Free transaction"
+
+
+
+Scenario 7: Admin sees single transaction
+  When  I open last transaction for listing "Moving help"
+  Then  I should see "Transaction #"
+  Then  I should see "for Moving help"
+  Then  I should see "Status: Free transaction"
+

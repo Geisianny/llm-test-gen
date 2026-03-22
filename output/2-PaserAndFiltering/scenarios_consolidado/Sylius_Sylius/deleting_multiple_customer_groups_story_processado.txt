@@ -1,0 +1,10 @@
+Scenario 1: Deleting multiple customer groups at once
+  Tags: ['@no-api', '@ui', '@mink:chromedriver']
+  When  I browse customer groups
+  And  I check the "Retail" customer group
+  And  I check also the "Wholesale" customer group
+  And  I delete them
+  Then  I should be notified that they have been successfully deleted
+  And  I should see a single customer group in the list
+  And  I should see the customer group "General" in the list
+

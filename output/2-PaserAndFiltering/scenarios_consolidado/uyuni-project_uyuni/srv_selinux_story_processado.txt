@@ -1,0 +1,3 @@
+Scenario 1: No previous operation has created wrong SELinux label
+  Then  files on container volumes should all have the proper SELinux label
+

@@ -1,0 +1,22 @@
+Scenario 1: Being able to access the variants list page
+  Tags: ['@ui']
+  When  I modify the "Audi" product
+  And  I go to the variants list
+  Then  I should be on the list of this product's variants
+
+
+
+Scenario 2: Being able to access the variant creation page
+  Tags: ['@ui']
+  When  I modify the "Audi" product
+  And  I go to the variant creation page
+  Then  I should be on the variant creation page for this product
+
+
+
+Scenario 3: Being able to access the variant generation page
+  Tags: ['@ui']
+  When  I modify the "Audi" product
+  And  I go to the variant generation page
+  Then  I should be on the variant generation page for this product
+

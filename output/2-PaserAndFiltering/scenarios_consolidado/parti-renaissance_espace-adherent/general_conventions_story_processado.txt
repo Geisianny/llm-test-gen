@@ -1,0 +1,25 @@
+Scenario 1: As an adherent, I can list general conventions
+  Given  I am logged with "gisele-berthoux@caramail.com" via OAuth client "J'écoute" with scope "jemarche_app"
+  And  I send a "GET" request to "/api/v3/general_conventions?page_size=3"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 2: As an adherent, I can get informations of a general convention
+  Given  I am logged with "gisele-berthoux@caramail.com" via OAuth client "J'écoute" with scope "jemarche_app"
+  And  I send a "GET" request to "/api/v3/general_conventions/c5317499-7130-4255-a7f8-418e72f5dfa5"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 3: As a granted user, I can post general conventions
+  Given  I am logged with "carl999@example.fr" via OAuth client "Make App" with scopes "write:general_conventions"
+  And  I send a "POST" request to "/api/v3/general_conventions" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+

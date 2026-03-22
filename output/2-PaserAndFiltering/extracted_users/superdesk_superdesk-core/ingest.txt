@@ -1,0 +1,139 @@
+Feature: Fetch From Ingest
+
+Scenario 1: List empty ingest
+  Tags: ['@auth']
+  Given  empty "ingest"
+  When  we get "/ingest"
+  Then  we get list with 0 items
+
+Scenario 2: Ingested articles get default priority and urgency
+  Tags: ['@auth']
+  Given  "ingest"
+  When  we get "/ingest"
+  Then  we get existing resource
+
+Scenario 3: List ingest with items for aggregates
+  Tags: ['@auth']
+  Given  "ingest"
+  When  we get "/ingest"
+  Then  we get list with 1 items
+  And  we get aggregations "type,desk,urgency,category,source,priority,genre,sms,legal"
+
+Scenario 4: Fetch an ingest package
+  Tags: ['@auth', '@provider']
+  Given  empty "ingest"
+  When  we fetch from "reuters" ingest "tag_reuters.com_2014_newsml_KBN0FL0NM:10"
+  And  we get "/ingest"
+  Then  we get existing resource
+
+Scenario 5: Check if Ingest Provider Sequence Number is per channel
+  Tags: ['@auth', '@provider']
+  Given  empty "ingest"
+  When  we fetch from "reuters" ingest "tag_reuters.com_2014_newsml_LYNXMPEA6F0MS:2"
+  And  we fetch from "AAP" ingest "aap.xml"
+  And  we get "/ingest/#reuters.tag_reuters.com_2014_newsml_LYNXMPEA6F0MS:2#"
+  Then  we get existing resource
+  When  we get "/ingest/#AAP.AAP.115314987.5417374#"
+  Then  we get existing resource
+
+Scenario 6: Test iptc code expansion
+  Tags: ['@auth', '@provider']
+  Given  empty "ingest"
+  When  we fetch from "AAP" ingest "aap-1.xml"
+  And  we get "/ingest"
+  Then  we get existing resource
+
+Scenario 7: Deleting an Ingest Provider after receiving items should be prohibited
+  Tags: ['@auth', '@provider']
+  Given  empty "ingest"
+  When  we fetch from "AAP" ingest "aap.xml"
+  And  we get "/ingest/#AAP.AAP.115314987.5417374#"
+  Then  we get "ingest_provider"
+  When  we delete "/ingest_providers/#ingest_provider#"
+  Then  we get error 403
+
+Scenario 8: Ingested item must have unique id and unique name
+  Tags: ['@auth', '@notification']
+  Given  empty "archive"
+  And  "desks"
+  Given  "ingest"
+  Then  we get "unique_id" in "/ingest/tag_example.com_0000_newsml_BRE9A605"
+  And  we get "unique_name" in "/ingest/tag_example.com_0000_newsml_BRE9A605"
+  When  we get "/ingest"
+  Then  we get existing resource
+  When  we post to "/ingest/tag_example.com_0000_newsml_BRE9A606/fetch"
+  Then  we get new resource
+  And  we get notifications
+  When  we get "/archive?q=#desks._id#"
+  Then  we get list with 1 items
+
+Scenario 9: Check if Ingest from AAP populates all subjects with qcode
+  Tags: ['@auth', '@provider']
+  Given  empty "ingest"
+  When  we fetch from "AAP" ingest "aap.xml"
+  And  we get "/ingest"
+  Then  we get existing resource
+
+Scenario 10: Check if Ingest of IPTC sample NITF populates all subjects with qcode
+  Tags: ['@auth', '@provider']
+  Given  empty "ingest"
+  When  we fetch from "AAP" ingest "nitf-fishing.xml"
+  And  we get "/ingest"
+  Then  we get existing resource
+
+Scenario 11: Check if Ingest of IPTC sample NITF populates anpa category based on mapping
+  Tags: ['@auth', '@provider']
+  Given  empty "ingest"
+  Given  the "vocabularies"
+  When  we fetch from "AAP" ingest "nitf-fishing.xml"
+  And  we get "/ingest"
+  Then  we get existing resource
+
+Scenario 12: Check given an item with an anpa category the iptc subject is derived
+  Tags: ['@auth', '@provider']
+  Given  empty "ingest"
+  Given  the "vocabularies"
+  When  we fetch from "DPA" ingest "IPTC7901_odd_charset.txt"
+  And  we get "/ingest"
+  Then  we get existing resource
+
+Scenario 13: Delete an ingest package
+  Tags: ['@auth', '@provider']
+  Given  empty "ingest"
+  When  we fetch from "reuters" ingest "tag_reuters.com_2014_newsml_KBN0FL0NM:10"
+  And  we get "/ingest"
+  Then  we get existing resource
+  When  we find for "ingest" the id as "ingest_packet" by "source={"filter":{"term":{"guid": "tag_reuters.com_2014_newsml_KBN0FL0NM:10"}}}"
+  When  we delete "/ingest/#ingest_packet#"
+  Then  we get response code 204
+  When  we get "/ingest"
+  Then  we get list with 0 items
+
+Scenario 14: Ingest ninjs
+  Tags: ['@auth', '@provider']
+  Given  empty "ingest"
+  When  we fetch from "ninjs" ingest "ninjs5.json"
+  And  we get "/ingest"
+  Then  we get existing resource
+
+Scenario 15: Ingest ninjs with embedded items
+  Tags: ['@auth', '@provider']
+  Given  empty "ingest"
+  When  we fetch from "ninjs" ingest "ninjs4.json"
+  And  we get "/ingest"
+  Then  we get existing resource
+
+Scenario 16: Ingest ninjs text
+  Tags: ['@auth', '@provider']
+  Given  empty "ingest"
+  When  we fetch from "ninjs" ingest "ninjs1.json"
+  And  we get "/ingest"
+  Then  we get existing resource
+
+Scenario 17: Ingest ninjs picture
+  Tags: ['@auth', '@provider']
+  Given  empty "ingest"
+  When  we fetch from "ninjs" ingest "ninjs6.json"
+  And  we get "/ingest"
+  Then  we get existing resource
+

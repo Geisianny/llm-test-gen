@@ -1,0 +1,10 @@
+Feature: Passing Options
+Description: In order to use Karma
+  As a person who wants to write great tests
+  I want to the browser to reconnect to Karma when it gets disconnected.
+
+Scenario 1: Manual disconnect from the browser
+  Given  a configuration with:
+  When  I start Karma
+  Then  it passes with:
+

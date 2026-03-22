@@ -1,0 +1,31 @@
+Feature: SAMS Integration
+Tags: ['@sams']
+
+Background: Setup Set
+  Given  config
+  When  we post to "/sams/sets"
+
+Scenario 1: Upload attachment to SAMS
+  Tags: ['@auth']
+  Given  config update
+  When  we upload a file "bike.jpg" to "/attachments"
+  When  we get "/attachments/#attachments._id#"
+  Then  we get existing resource
+  When  we get "/sams/assets/#attachments.media._id#"
+  Then  we get existing resource
+
+Scenario 2: Upload attachment after enabling SAMS
+  Tags: ['@auth']
+  When  we upload a file "bike.jpg" to "/attachments"
+  Then  we store response in "asset_1"
+  Given  config update
+  When  we upload a file "test_dict.txt" to "/attachments"
+  Then  we store response in "asset_2"
+  When  we get "/attachments/#asset_1._id#"
+  Then  we get OK response
+  When  we get "/sams/assets/#asset_1.media._id#"
+  Then  we get error 404
+  When  we get "/attachments/#asset_2._id#"
+  Then  we get OK response
+  When  we get "/sams/assets/#asset_2.media._id#"
+

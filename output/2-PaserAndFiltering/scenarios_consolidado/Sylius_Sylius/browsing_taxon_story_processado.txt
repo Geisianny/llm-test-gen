@@ -1,0 +1,6 @@
+Scenario 1: Browsing taxons in store
+  Tags: ['@api', '@ui', '@javascript']
+  When  I want to see all taxons in store
+  Then  I should see 2 taxons on the list
+  And  I should see the taxon named "T-Shirts" in the list
+

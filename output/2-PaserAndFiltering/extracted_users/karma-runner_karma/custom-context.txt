@@ -1,0 +1,10 @@
+Feature: Custom Context File
+Description: In order to use Karma
+  As a person who wants to write great tests
+  I want Karma to use a custom context file
+
+Scenario 1: Custom context.html file
+  Given  a configuration with:
+  When  I start Karma
+  Then  it passes with:
+

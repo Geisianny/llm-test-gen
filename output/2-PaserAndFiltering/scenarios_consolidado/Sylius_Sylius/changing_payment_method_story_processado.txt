@@ -1,0 +1,15 @@
+Scenario 1: Changing a payment method of an order
+  Tags: ['@api', '@ui']
+  When  I want to browse order details for this order
+  And  I change my payment method to "Bank Transfer"
+  Then  I should have "Bank Transfer" payment method on my order
+
+
+
+Scenario 2: Changing a payment method of an order with a disabled payment method
+  Tags: ['@api', '@ui']
+  Given  the payment method "Cash on Delivery" is disabled
+  When  I want to browse order details for this order
+  And  I change my payment method to "Bank Transfer"
+  Then  I should have "Bank Transfer" payment method on my order
+

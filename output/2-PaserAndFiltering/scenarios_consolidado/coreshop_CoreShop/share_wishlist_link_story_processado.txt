@@ -1,0 +1,8 @@
+Scenario 1: Adding a simple product to the wishlist
+  Given  the site has a product "TShirt" priced at 10000
+  And  the product is active and published and available for store "Austria"
+  When  I add this product to the wishlist
+  Then  I should be on the wishlist summary page
+  And  this wishlist item should have name "TShirt"
+  And  I can see the share wishlist link
+

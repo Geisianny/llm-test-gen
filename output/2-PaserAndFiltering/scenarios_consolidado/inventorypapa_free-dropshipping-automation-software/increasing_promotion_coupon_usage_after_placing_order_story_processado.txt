@@ -1,0 +1,21 @@
+Scenario 1: Seeing promotion coupon usage increased after order placement
+  Tags: ['@ui']
+  Given  there is a customer "john.doe@gmail.com" that placed an order "#00000022"
+  And  the customer bought a single "PHP T-Shirt" using "SANTA2016" coupon
+  And  the customer chose "Free" shipping method to "United States" with "Cash on Delivery" payment
+  When  I browse all coupons of "Christmas sale" promotion
+  Then  "SANTA2016" coupon should be used 1 time
+
+
+
+Scenario 2: Seeing promotion coupon usage increased correctly after few orders placement
+  Tags: ['@ui']
+  Given  there is a customer "john.doe@gmail.com" that placed an order "#00000022"
+  And  the customer bought a single "PHP T-Shirt" using "SANTA2016" coupon
+  And  the customer chose "Free" shipping method to "United States" with "Cash on Delivery" payment
+  Given  there is a customer "andrew.cole@gmail.com" that placed an order "#00000023"
+  And  the customer bought a single "PHP T-Shirt" using "SANTA2016" coupon
+  And  the customer chose "Free" shipping method to "United States" with "Cash on Delivery" payment
+  When  I browse all coupons of "Christmas sale" promotion
+  Then  "SANTA2016" coupon should be used 2 times
+

@@ -1,0 +1,145 @@
+Scenario 1: Create a resource
+  Tags: ['@createSchema']
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/uuid_identifier_dummies" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the header "Content-Location" should be equal to "/uuid_identifier_dummies/41b29566-144b-11e6-a148-3e1d05defe78.jsonld"
+  And  the header "Location" should be equal to "/uuid_identifier_dummies/41b29566-144b-11e6-a148-3e1d05defe78"
+
+
+
+Scenario 2: Get a resource
+  When  I send a "GET" request to "/uuid_identifier_dummies/41b29566-144b-11e6-a148-3e1d05defe78"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario 3: Get a collection
+  When  I send a "GET" request to "/uuid_identifier_dummies"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario 4: Update a resource
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "PUT" request to "/uuid_identifier_dummies/41b29566-144b-11e6-a148-3e1d05defe78" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the header "Content-Location" should be equal to "/uuid_identifier_dummies/41b29566-144b-11e6-a148-3e1d05defe78.jsonld"
+  And  the JSON should be equal to:
+
+
+
+Scenario 5: Create a resource with custom id generator
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/custom_generated_identifiers" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the header "Content-Location" should be equal to "/custom_generated_identifiers/foo.jsonld"
+  And  the header "Location" should be equal to "/custom_generated_identifiers/foo"
+  And  the JSON should be equal to:
+
+
+
+Scenario 6: Delete a resource
+  When  I send a "DELETE" request to "/uuid_identifier_dummies/41b29566-144b-11e6-a148-3e1d05defe78"
+  Then  the response status code should be 204
+  And  the response should be empty
+
+
+
+Scenario 7: Retrieve a resource identified by Ramsey\Uuid\Uuid
+  Tags: ['@!mongodb', '@createSchema']
+  Given  there is a ramsey identified resource with uuid "41B29566-144B-11E6-A148-3E1D05DEFE78"
+  When  I send a "GET" request to "/ramsey_uuid_dummies/41B29566-144B-11E6-A148-3E1D05DEFE78"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+
+
+
+Scenario 8: Delete a resource identified by a Ramsey\Uuid\Uuid
+  Tags: ['@!mongodb']
+  When  I send a "DELETE" request to "/ramsey_uuid_dummies/41B29566-144B-11E6-A148-3E1D05DEFE78"
+  Then  the response status code should be 204
+  And  the response should be empty
+
+
+
+Scenario 9: Retrieve a resource identified by a bad Ramsey\Uuid\Uuid
+  Tags: ['@!mongodb']
+  When  I send a "GET" request to "/ramsey_uuid_dummies/41B29566-144B-E1D05DEFE78"
+  Then  the response status code should be 404
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/problem+json; charset=utf-8"
+
+
+
+Scenario 10: Create a resource identified by Ramsey\Uuid\Uuid
+  Tags: ['@!mongodb', '@createSchema']
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/ramsey_uuid_dummies" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+
+
+
+Scenario 11: Create a resource with a Ramsey\Uuid\Uuid non-id field
+  Tags: ['@!mongodb']
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/ramsey_uuid_dummies" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+
+
+
+Scenario 12: Update a resource with a Ramsey\Uuid\Uuid non-id field
+  Tags: ['@!mongodb']
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "PUT" request to "/ramsey_uuid_dummies/41b29566-144b-11e6-a148-3e1d05defe78" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+
+
+
+Scenario 13: Create a resource identified by a bad Ramsey\Uuid\Uuid
+  Tags: ['@!mongodb']
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/ramsey_uuid_dummies" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/problem+json; charset=utf-8"
+
+
+
+Scenario 14: Update a resource with a bad Ramsey\Uuid\Uuid non-id field
+  Tags: ['@!mongodb']
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "PUT" request to "/ramsey_uuid_dummies/41b29566-144b-11e6-a148-3e1d05defe78" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/problem+json; charset=utf-8"
+
+
+
+Scenario 15: Retrieve a resource identified by Symfony\Component\Uid\Uuid
+  Tags: ['@!mongodb', '@createSchema']
+  Given  there is a Symfony dummy identified resource with uuid "cdf8f706-ebe3-4fb6-b0bd-ae7b48028f24"
+  When  I send a "GET" request to "/symfony_uuid_dummies/cdf8f706-ebe3-4fb6-b0bd-ae7b48028f24"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+

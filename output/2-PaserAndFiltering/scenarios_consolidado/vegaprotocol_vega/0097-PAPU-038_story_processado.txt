@@ -1,0 +1,8 @@
+Scenario 1: 0097-PAPU-038 - pap from is the base asset of the market so order side in pap auction is sell. the price is the oracle price scaled by the offset (0097-PAPU-040). The order size is matching the latest snapshot (0097-PAPU-041).
+  When  the protocol automated purchase is defined as:
+  Then  the oracles broadcast data with block time signed with "0xCAFECAFE2":
+  And  the network moves ahead "30" blocks
+  Then  the automated purchase program for market "BTC/ETH" should have a snapshot balance of "200"
+  And  the trading mode should be "TRADING_MODE_PROTOCOL_AUTOMATED_PURCHASE_AUCTION" for the market "BTC/ETH"
+  And  the order book should have the following volumes for market "BTC/ETH":
+

@@ -1,0 +1,15 @@
+Feature: Mocha reporter
+Description: In order to use Karma
+  As a person who wants to write great tests
+  I want to be able to use the mocha reporter.
+
+Scenario 1: Execute a test in ChromeHeadless with colors
+  Given  a configuration with:
+  When  I start Karma
+  Then  it passes with like:
+
+Scenario 2: Execute a test in ChromeHeadless with no-colors
+  Given  a configuration with:
+  When  I start Karma
+  Then  it passes with like:
+

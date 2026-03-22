@@ -1,0 +1,24 @@
+Scenario 1: Human friendly links from oranisations index page
+  Given  I visit the organisations index page
+  Then  the URL for "The Most Noble Great 1 Charity of London" should refer to "/organisations/most-noble-great"
+  And  the URL for "The Most Noble Great 2 Charity of London" should refer to "/organisations/most-noble-great-charity-london"
+  And  the URL for "The Most Noble Great 3 Charity of London" should refer to "/organisations/most-noble-great-3-charity-london-org"
+  And  the URL for "The Most Noble Great 3 of Charity of London" should refer to "/organisations/the-most-noble-great-3-of-charity-of-london"
+  And  the URL for "The Parochial Church Council Of The Ecclesiastical Parish Of St. Alban, North" should refer to "/organisations/parochial-church-st-alban-north"
+
+
+
+Scenario 2: Human friendly links from organisation show page
+  Given  I am signed in as a charity worker related to "The Parochial Church Council Of The Ecclesiastical Parish Of St. Alban, North"
+  Given  that the volunteer_ops_create flag is enabled
+  And  I visit the show page for the organisation named "The Parochial Church Council Of The Ecclesiastical Parish Of St. Alban, North"
+  Then  the URL for "Edit" should refer to "/organisations/parochial-church-st-alban-north/edit"
+  And  the URL for "Create a Volunteer Opportunity" should refer to "/organisations/parochial-church-st-alban-north/volunteer_ops/new"
+
+
+
+Scenario 3: Human friendly links from volunteer_ops_path
+  Given  I visit the volunteer opportunities page
+  Then  the URL for "The Most Noble Great 1 Charity of London" should refer to tracking link including "/organisations/most-noble-great"
+  And  the URL for "The Parochial Church Council Of The Ecclesiastical Parish Of St. Alban, North" should refer to tracking link including "/organisations/parochial-church-st-alban-north"
+

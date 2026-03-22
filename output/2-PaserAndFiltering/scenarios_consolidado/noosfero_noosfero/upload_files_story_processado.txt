@@ -1,0 +1,14 @@
+Scenario 1: provile links to upload files to community's gallery
+  Given  the following communities
+  And  the following galleries
+  And  I go to article "Gallery test"
+  Then  I should see "Upload files"
+
+
+
+Scenario 2: provile links to upload files to enterprise's gallery
+  Given  the following enterprises
+  And  the following galleries
+  And  I go to article "Gallery test"
+  Then  I should see "Upload files"
+

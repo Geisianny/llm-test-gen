@@ -1,0 +1,94 @@
+Feature: search products
+Description: As a noosfero user
+  I want to search products
+  In order to find ones that interest me
+
+Background: 
+  Given  the search index is empty
+  And  plugin Solr is enabled on environment
+  And  feature "disable_asset_products" is disabled on environment
+  And  the following enterprises
+  And  the following product_categories
+  And  the following products
+
+Scenario 1: not show pagination and facets on recent products
+  When  I go to the search products page
+  Then  The page should not contain "div.pagination"
+  And  The page should not contain "#facets-menu"
+
+Scenario 2: see default facets when searching
+  When  I go to the search products page
+  And  I fill in "search-input" with "wikis"
+  And  I press "Search"
+  Then  I should see "Related products" within "#facets-menu"
+  Then  I should see "City" within "#facets-menu"
+  Then  I should see "Qualifiers" within "#facets-menu"
+
+Scenario 3: search products by category
+  Given  the following product_category
+  And  the following product
+  When  I go to the search products page
+  And  I fill in "search-input" with "software livre"
+  And  I press "Search"
+  Then  I should see "Noosfero" within "#search-results"
+  And  I should not see "wikis consultancy"
+  And  I should not see "social networks consultancy"
+
+Scenario 4: see region on facets and results
+  Given  the following cities
+  And  the following enterprise
+  And  the following product_category
+  And  the following product
+  When  I go to the search products page
+  And  I fill in "search-input" with "Madeira"
+  And  I press "Search"
+  Then  I should see "Pres. Prudente" within "#facet-menu-f_region"
+  And  I should see ", SP" within "#facet-menu-f_region"
+  And  I should see "Pres. Prudente, SP" within "#search-results"
+
+Scenario 5: find product by region
+  Given  the following cities
+  And  the following enterprise
+  And  the following product_category
+  And  the following product
+  When  I go to the search products page
+  And  I fill in "search-input" with "Prudente"
+  And  I press "Search"
+  Then  I should see "Arte em Madeira" within "#search-results"
+
+Scenario 6: find products without exact query
+  Given  the following product_category
+  And  the following products
+  When  I go to the search products page
+  And  I fill in "search-input" with "Noosfero Network"
+  And  I press "Search"
+  Then  I should see "Noosfero Social Network Platform" within "#search-results"
+
+Scenario 7: filter products by facet
+  Given  the following enterprises
+  And  the following categories as facets
+  And  the following product_categories
+  And  the following products
+  When  I go to the search products page
+  And  I fill in "search-input" with "Network"
+  And  I press "Search"
+  And  I follow "Software Livre" within "#facets-menu"
+  Then  I should see "Noosfero Network" within "#search-results"
+  And  I should not see "Facebook Network"
+  When  I follow "remove facet" within ".facet-selected"
+  Then  I should see "Facebook Network"
+
+Scenario 8: remember facet filter when searching new query
+  Given  the following enterprises
+  And  the following categories as facets
+  And  the following product_categories
+  And  the following products
+  When  I go to the search products page
+  And  I fill in "search-input" with "Network"
+  And  I press "Search"
+  And  I follow "Software Livre" within "#facets-menu"
+  And  I fill in "search-input" with "Other"
+  And  I press "Search"
+  Then  I should see "Other open" within "#search-results"
+  And  I should not see "Other closed"
+

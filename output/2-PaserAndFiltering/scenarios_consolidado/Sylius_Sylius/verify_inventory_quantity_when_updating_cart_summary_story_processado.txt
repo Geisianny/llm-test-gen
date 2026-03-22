@@ -1,0 +1,11 @@
+Scenario 1: Preventing the cart recalculation when the form has errors
+  Tags: ['@no-api', '@ui', '@mink:chromedriver']
+  Given  I added 3 products "Iron Maiden T-Shirt" to the cart
+  And  I added product "Black Dress" to the cart
+  When  I change product "Iron Maiden T-Shirt" quantity to 4 in my cart
+  And  I change product "Black Dress" quantity to 11 in my cart
+  Then  I should be notified that this product has insufficient stock
+  And  I should see "Iron Maiden T-Shirt" with quantity 4 in my cart
+  And  I should see "Black Dress" with quantity 11 in my cart
+  And  the cart total should be "$100.36"
+

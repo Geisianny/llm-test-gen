@@ -1,0 +1,128 @@
+Scenario 1: As a logged-in user I can not create an audience if I have no rights
+  Given  I am logged with "carl999@example.fr" via OAuth client "JeMengage Web"
+  When  I send a "POST" request to "/api/v3/audiences" with body:
+  Then  the response status code should be 403
+
+
+
+Scenario 2: As a logged-in user I can not create an audience if I have no rights for this audience type
+  Given  I am logged with "referent-child@en-marche-dev.fr" via OAuth client "JeMengage Web"
+  When  I send a "POST" request to "/api/v3/audiences" with body:
+  Then  the response status code should be 403
+
+
+
+Scenario 3: As a logged-in user I can not create an audience with no data
+  Given  I am logged with "deputy@en-marche-dev.fr" via OAuth client "JeMengage Web"
+  When  I send a "POST" request to "/api/v3/audiences" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 4: As a logged-in user I can not create an audience with invalid data
+  Given  I am logged with "deputy@en-marche-dev.fr" via OAuth client "JeMengage Web"
+  When  I send a "POST" request to "/api/v3/audiences" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 5: As a logged-in user I can create an audience
+  Given  I am logged with "deputy@en-marche-dev.fr" via OAuth client "JeMengage Web"
+  When  I send a "POST" request to "/api/v3/audiences" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 6: As a logged-in user I can edit an audience
+  Given  I am logged with "deputy@en-marche-dev.fr" via OAuth client "JeMengage Web"
+  When  I send a "PUT" request to "/api/v3/audiences/f7ac8140-0a5b-4832-a5f4-47e661dc130c?scope=deputy" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 7: As a logged-in user with correct rights I can delete an audience
+  Given  I am logged with "deputy@en-marche-dev.fr" via OAuth client "JeMengage Web"
+  When  I send a "DELETE" request to "/api/v3/audiences/f7ac8140-0a5b-4832-a5f4-47e661dc130c?scope=deputy"
+  Then  the response status code should be 204
+
+
+
+Scenario 8: As a logged-in user with correct rights, but no audience type, I can not get audiences
+  Given  I am logged with "deputy@en-marche-dev.fr" via OAuth client "JeMengage Web"
+  When  I send a "GET" request to "/api/v3/audiences"
+  Then  the response status code should be 403
+
+
+
+Scenario 9: As a logged-in referent I can not get deputy audiences
+  Given  I am logged with "referent@en-marche-dev.fr" via OAuth client "JeMengage Web"
+  When  I send a "GET" request to "/api/v3/audiences?scope=deputy"
+  Then  the response status code should be 403
+
+
+
+Scenario 10: As a logged-in deputy I can get deputy audiences
+  Given  I am logged with "deputy@en-marche-dev.fr" via OAuth client "JeMengage Web"
+  When  I send a "GET" request to "/api/v3/audiences?scope=deputy"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 11: As a logged-in deputy I can get a candidate audience with all parameters
+  Given  I am logged with "deputy@en-marche-dev.fr" via OAuth client "JeMengage Web"
+  When  I send a "GET" request to "/api/v3/audiences/f7ac8140-0a5b-4832-a5f4-47e661dc130c?scope=deputy"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 12: As a logged-in deputy I can get a candidate audience with some parameters
+  Given  I am logged with "deputy@en-marche-dev.fr" via OAuth client "JeMengage Web"
+  When  I send a "GET" request to "/api/v3/audiences/bd298079-f763-4c7a-9a8a-a243d01d0e31?scope=deputy"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario Outline 13: As a non logged-in user I can not manage audiences - Example 1
+  Given  I send a "POST" request to "/api/v3/audiences"
+  Then  the response status code should be 401
+
+  Examples:
+    | method | url |
+    | POST | /api/v3/audiences |
+    | GET | /api/v3/audiences/f7ac8140-0a5b-4832-a5f4-47e661dc130c |
+    | PUT | /api/v3/audiences/f7ac8140-0a5b-4832-a5f4-47e661dc130c |
+    | DELETE | /api/v3/audiences/f7ac8140-0a5b-4832-a5f4-47e661dc130c |
+
+
+
+Scenario Outline 14: As a logged-in user with no correct rights I can not manage an audience - Example 1
+  Given  I am logged with "referent-child@en-marche-dev.fr" via OAuth client "JeMengage Web"
+  When  I send a "GET" request to "/api/v3/audiences/f7ac8140-0a5b-4832-a5f4-47e661dc130c"
+  Then  the response status code should be 403
+
+  Examples:
+    | method | url | user |
+    | GET | /api/v3/audiences/f7ac8140-0a5b-4832-a5f4-47e661dc130c | referent-child@en-marche-dev.fr |
+    | PUT | /api/v3/audiences/f7ac8140-0a5b-4832-a5f4-47e661dc130c | referent-child@en-marche-dev.fr |
+    | DELETE | /api/v3/audiences/f7ac8140-0a5b-4832-a5f4-47e661dc130c | referent-child@en-marche-dev.fr |
+    | GET | /api/v3/audiences/f7ac8140-0a5b-4832-a5f4-47e661dc130c | adherent-male-a@en-marche-dev.fr |
+    | PUT | /api/v3/audiences/f7ac8140-0a5b-4832-a5f4-47e661dc130c | adherent-male-a@en-marche-dev.fr |
+    | DELETE | /api/v3/audiences/f7ac8140-0a5b-4832-a5f4-47e661dc130c | adherent-male-a@en-marche-dev.fr |
+    | GET | /api/v3/audiences/f7ac8140-0a5b-4832-a5f4-47e661dc130c | carl999@example.fr |
+    | PUT | /api/v3/audiences/f7ac8140-0a5b-4832-a5f4-47e661dc130c | carl999@example.fr |
+    | DELETE | /api/v3/audiences/f7ac8140-0a5b-4832-a5f4-47e661dc130c | carl999@example.fr |
+

@@ -1,0 +1,89 @@
+Scenario 1: Amend rejected for non existing order, amend the order to cancel 0004-AMND-058
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the parties place the following orders:
+  Then  the parties amend the following orders:
+  And  the orders should have the following status:
+  And  the order book should have the following volumes for market "ETH/DEC21":
+  And  the parties cancel the following orders:
+  Then  the parties amend the following orders:
+
+
+
+Scenario 2: Reduce size with delta success and not loosing position in order book (0004-AMND-003, 0004-AMND-057)
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the parties place the following orders:
+  Then  the parties amend the following orders:
+  And  the orders should have the following states:
+  When  the parties place the following orders:
+  Then  the following trades should be executed:
+  And  the orders should have the following states:
+  When  the parties amend the following orders:
+  Then  the orders should have the following states:
+
+
+
+Scenario 3: Increase size success and loosing position in order book (0004-AMND-005, 0004-AMND-056)
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  When  the parties place the following orders:
+  And  the parties amend the following orders:
+  Then  the orders should have the following states:
+  When  the parties place the following orders:
+  Then  the following trades should be executed:
+  And  the orders should have the following states:
+  When  the parties amend the following orders:
+  Then  the orders should have the following states:
+  When  the parties place the following orders:
+  Then  the following trades should be executed:
+  And  the orders should have the following states:
+
+
+
+Scenario 4: Reduce size success and order cancelled as remaining is less than or equal to 0 (0004-AMND-058)
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  When  the parties place the following orders:
+  And  the parties amend the following orders:
+  Then  the orders should have the following status:
+  When  the parties place the following orders:
+  And  the parties amend the following orders:
+  Then  the orders should have the following status:
+
+
+
+Scenario 5: Amend to invalid tif is rejected
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  Then  the parties place the following orders:
+  Then  the parties amend the following orders:
+
+
+
+Scenario 6: TIF_GTC to TIF_GTT rejected without expiry
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties place the following orders:
+  Then  the parties place the following orders:
+  Then  the parties amend the following orders:
+
+
+
+Scenario 7: TIF_GTC to TIF_GTT with time in the past
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  Then  the parties place the following orders:
+  Then  the parties amend the following orders:
+

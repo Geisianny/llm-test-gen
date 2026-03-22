@@ -1,0 +1,138 @@
+Feature: Content Filter Tests
+
+Scenario 1: Test existing content filter to get matching articles
+  Tags: ['@auth', '@vocabulary']
+  Given  empty "archive"
+  When  we post to "/archive"
+  Given  empty "filter_conditions"
+  When  we post to "/filter_conditions" with success
+  Then  we get latest
+  Given  empty "content_filters"
+  When  we post to "/content_filters" with success
+  When  we post to "/content_filters/test"
+  Then  we get existing resource
+
+Scenario 2: Test in-memory content filter to get matching articles
+  Tags: ['@auth', '@vocabulary']
+  Given  empty "archive"
+  When  we post to "/archive"
+  Given  empty "filter_conditions"
+  When  we post to "/filter_conditions" with success
+  Then  we get latest
+  Given  empty "content_filters"
+  When  we post to "/content_filters/test"
+  Then  we get existing resource
+
+Scenario 3: Test content filter to get non-matching articles
+  Tags: ['@auth', '@vocabulary']
+  Given  empty "archive"
+  When  we post to "/archive"
+  Given  empty "filter_conditions"
+  When  we post to "/filter_conditions" with success
+  Then  we get latest
+  Given  empty "content_filters"
+  When  we post to "/content_filters" with success
+  When  we post to "/content_filters/test"
+  Then  we get existing resource
+
+Scenario 4: Test in-memory content filter to get non-matching articles
+  Tags: ['@auth', '@vocabulary']
+  Given  empty "archive"
+  When  we post to "/archive"
+  Given  empty "filter_conditions"
+  When  we post to "/filter_conditions" with success
+  Then  we get latest
+  Given  empty "content_filters"
+  When  we post to "/content_filters/test"
+  Then  we get existing resource
+
+Scenario 5: Test a single article
+  Tags: ['@auth', '@vocabulary']
+  Given  empty "archive"
+  When  we post to "/archive"
+  Given  empty "filter_conditions"
+  When  we post to "/filter_conditions" with success
+  Then  we get latest
+  Given  empty "content_filters"
+  When  we post to "/content_filters" with success
+  When  we post to "/content_filters/test"
+  Then  we get existing resource
+
+Scenario 6: Test in-memory content filter to single article
+  Tags: ['@auth', '@vocabulary']
+  Given  empty "archive"
+  When  we post to "/archive"
+  Given  empty "filter_conditions"
+  When  we post to "/filter_conditions" with success
+  Then  we get latest
+  Given  empty "content_filters"
+  When  we post to "/content_filters/test"
+  Then  we get existing resource
+
+Scenario 7: Test single article from ingest
+  Tags: ['@auth', '@vocabulary']
+  Given  "ingest"
+  Given  empty "filter_conditions"
+  When  we post to "/filter_conditions" with success
+  Then  we get latest
+  Given  empty "content_filters"
+  When  we post to "/content_filters" with success
+  When  we post to "/content_filters/test"
+  Then  we get existing resource
+
+Scenario 8: Test filtering with custom cv
+  Tags: ['@auth']
+  When  we post to "archive" with success
+  When  we post to "vocabularies" with success
+  When  we post to "/filter_conditions" with success
+  When  we post to "/content_filters/test"
+  Then  we get existing resource
+  When  we patch "/archive/#archive._id#"
+  When  we post to "/content_filters/test"
+  Then  we get existing resource
+
+Scenario 9: Test in-memory content filter using exists
+  Tags: ['@auth', '@vocabulary']
+  Given  empty "archive"
+  When  we post to "/archive"
+  Given  empty "filter_conditions"
+  When  we post to "/filter_conditions" with success
+  Then  we get latest
+  Given  empty "content_filters"
+  When  we post to "/content_filters/test"
+  Then  we get existing resource
+
+Scenario 10: Test in-memory content filter using exists false
+  Tags: ['@auth', '@vocabulary']
+  Given  empty "archive"
+  When  we post to "/archive"
+  Given  empty "filter_conditions"
+  When  we post to "/filter_conditions" with success
+  Then  we get latest
+  Given  empty "content_filters"
+  When  we post to "/content_filters/test"
+  Then  we get existing resource
+
+Scenario 11: Test in-memory content filter does not exists
+  Tags: ['@auth', '@vocabulary']
+  Given  empty "archive"
+  When  we post to "/archive"
+  Given  empty "filter_conditions"
+  When  we post to "/filter_conditions" with success
+  Then  we get latest
+  Given  empty "content_filters"
+  When  we post to "/content_filters/test"
+  Then  we get existing resource
+
+Scenario 12: Test language content filter
+  Tags: ['@auth', '@vocabulary']
+  Given  "vocabularies"
+  Given  "archive"
+  Given  "filter_conditions"
+  Given  "content_filters"
+  When  we post to "/content_filters/test"
+  Then  we get existing resource
+  When  we patch "/archive/#archive._id#"
+  When  we post to "/content_filters/test"
+  Then  we get existing resource
+

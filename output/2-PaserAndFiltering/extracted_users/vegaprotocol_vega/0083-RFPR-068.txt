@@ -1,0 +1,53 @@
+Feature: Team Rewards
+
+Background: 
+  Given  time is updated to "2023-01-01T00:00:00Z"
+  And  the average block duration is "1"
+  And  the following network parameters are set:
+  And  the following assets are registered:
+  And  the markets:
+  Given  the parties deposit on asset's general account the following amount:
+  Given  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  And  the opening auction period ends for market "ETH/USD-1-10"
+  When  the network moves ahead "1" blocks
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/USD-1-10"
+  And  the following teams with referees are created:
+
+Scenario 1: (0083-RFPR-068) Assert that a user joining a team is not eligible for rewards until the number of epochs since joining the team as specified in the rewards.team.minEpochsInTeam network parameter has passed.
+  Tags: ['@TeamStep']
+  Given  the parties submit the following recurring transfers:
+  When  the network moves ahead "1" epochs
+  And  the parties apply the following referral codes:
+  Given  the parties deposit on asset's general account the following amount:
+  When  the network moves ahead "3" epochs
+  And  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  parties should have the following vesting account balances:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  parties should have the following vesting account balances:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  parties should have the following vesting account balances:
+
+Scenario 2: (0083-RFPR-068) Setting min epoch to 0 means rewards straight away
+  Tags: ['@TeamStep']
+  And  the following network parameters are set:
+  Given  the parties submit the following recurring transfers:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  parties should have the following vesting account balances:
+
+Scenario 3: (0083-RFPR-068) Setting min epoch to 1 means one *whole* epoch in a team to get rewards
+  Tags: ['@TeamStep']
+  And  the following network parameters are set:
+  Given  the parties submit the following recurring transfers:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  parties should have the following vesting account balances:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  parties should have the following vesting account balances:
+

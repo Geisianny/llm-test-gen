@@ -1,0 +1,39 @@
+Feature: Viewing product's select attributes
+Description: In order to see product's specification
+    As a visitor
+    I want to be able to see product's select attributes
+Tags: ['@viewing_products']
+
+Background: 
+  Given  the store operates on a single channel in "United States"
+  And  the store has a product "T-shirt banana"
+  And  the store has a select product attribute "T-shirt material" with values "Banana skin" and "Cotton"
+  And  there is an administrator "sylius@example.com" identified by "sylius"
+
+Scenario 1: Viewing a detailed page with product's select attribute
+  Tags: ['@ui']
+  Given  this product has select attribute "T-shirt material" with values "Banana skin" and "Cotton"
+  When  I check this product's details
+  Then  I should see the product attribute "T-shirt material" with value "Banana skin, Cotton"
+
+Scenario 2: Viewing a detailed page with product's select attribute after changing a value
+  Tags: ['@ui']
+  Given  this product has select attribute "T-shirt material" with values "Banana skin" and "Cotton"
+  When  the administrator changes this product attribute's value "Cotton" to "Orange skin"
+  And  I check this product's details
+  Then  I should see the product attribute "T-shirt material" with value "Banana skin, Orange skin"
+
+Scenario 3: Viewing a detailed page with product's select attribute after removing an only value
+  Tags: ['@ui', '@javascript']
+  Given  this product has select attribute "T-shirt material" with value "Cotton"
+  When  the administrator deletes the value "Cotton" from this product attribute
+  And  I check this product's details
+  Then  I should not see the product attribute "T-shirt material"
+
+Scenario 4: Viewing a detailed page with product's select attribute after removing one of the value
+  Tags: ['@ui', '@javascript']
+  Given  this product has select attribute "T-shirt material" with values "Banana skin" and "Cotton"
+  When  the administrator deletes the value "Cotton" from this product attribute
+  And  I check this product's details
+  Then  I should see the product attribute "T-shirt material" with value "Banana skin"
+

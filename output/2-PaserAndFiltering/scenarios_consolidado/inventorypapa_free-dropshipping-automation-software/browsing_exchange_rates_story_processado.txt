@@ -1,0 +1,6 @@
+Scenario 1: Browsing store's exchange rates
+  Tags: ['@ui', '@api']
+  When  I am browsing exchange rates of the store
+  Then  I should see 2 exchange rates on the list
+  And  I should see an exchange rate between "British Pound" and "Bhutanese Ngultrum" on the list
+

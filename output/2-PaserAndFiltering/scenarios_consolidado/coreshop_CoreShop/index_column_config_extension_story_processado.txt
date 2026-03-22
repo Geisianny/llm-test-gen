@@ -1,0 +1,5 @@
+Scenario 1: Create a new index and the extension should create fields
+  Given  the site has a index "extension_column_config" for behat-class "ColumnExtensionTest" with type "mysql"
+  And  the index has following fields:
+  Then  the index should have a column "decimalTest" of type "decimalTest NUMERIC(20, 20) DEFAULT NULL"
+

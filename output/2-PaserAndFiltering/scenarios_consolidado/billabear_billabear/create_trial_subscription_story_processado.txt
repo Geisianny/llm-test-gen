@@ -1,0 +1,44 @@
+Scenario 1: Create
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  When  I create a trial subscription via the API for "customer.one@example.org" with the follow:
+  Then  there should be a subscription for the user "customer.one@example.org"
+  And  the trial started daily stat for the day should be 1
+  And  the trial started monthly stat for the day should be 1
+  And  the trial started yearly stat for the day should be 1
+  And  the subscriber daily stat for the day should be 0
+  And  the subscriber monthly stat for the day should be 0
+  And  the subscriber yearly stat for the day should be 0
+  And  the payment amount stats for the day should be 0 in the currency "USD"
+  And  the monthly recurring revenue estimate should be 0
+  And  the annual recurring revenue estimate should be 0
+  Then  there should be a trial started event for "customer.one@example.org"
+
+
+
+Scenario 2: Create
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  When  I create a trial subscription via the API for "customer.one@example.org" with the follow:
+  Then  there should not be a subscription for the user "customer.one@example.org"
+
+
+
+Scenario 3: One trial per customer fails
+  Given  I have authenticated to the API
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "3000" in "USD" with:
+  And  the follow customers exist:
+  And  there is not a trial started event for "customer.one@example.org" on subscription plan "OnePer"
+  When  I create a trial subscription via the API for "customer.one@example.org" with the follow:
+  Then  there should not be a subscription for the user "customer.one@example.org"
+
+
+
+Scenario 4: One trial per customer fails
+  Given  I have authenticated to the API
+  Given  a Subscription Plan exists for product "Product One" with a feature "Feature One" and a limit for "Feature Two" with a limit of 10 and price "3000" in "USD" with:
+  And  the follow customers exist:
+  And  there is a trial started event for "customer.one@example.org" on subscription plan "OnePer"
+  When  I create a trial subscription via the API for "customer.one@example.org" with the follow:
+  Then  there should not be a subscription for the user "customer.one@example.org"
+

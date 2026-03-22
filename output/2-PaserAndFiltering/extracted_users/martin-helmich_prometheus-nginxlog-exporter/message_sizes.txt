@@ -1,0 +1,12 @@
+Feature: Message sizes are counted
+
+Scenario 1: Response body sizes are counted
+  Given  a running exporter listening with configuration file "test-config-message-sizes.yaml"
+  When  the following HTTP request is logged to "access.log"
+  Then  the exporter should report value 3000 for metric test_http_response_size_bytes{method="GET",status="200"}
+
+Scenario 2: Request body sizes are counted
+  Given  a running exporter listening with configuration file "test-config-message-sizes.yaml"
+  When  the following HTTP request is logged to "access.log"
+  Then  the exporter should report value 900 for metric test_http_request_size_bytes{method="GET",status="200"}
+

@@ -1,0 +1,87 @@
+Scenario 1: Log in as admin user
+  Given  I am authorized for the "Admin" section
+
+
+
+Scenario 2: Create a custom channel for SUSE minions
+  Tags: ['@sle_minion']
+  When  I follow the left menu "Software > Manage > Channels"
+  And  I follow "Create Channel"
+  And  I enter "Devel-SUSE-Channel" as "Channel Name"
+  And  I enter "devel-suse-channel" as "Channel Label"
+  And  I select the parent channel for the "sle_minion" from "Parent Channel"
+  And  I select "x86_64" from "Architecture:"
+  And  I enter "Devel-SUSE-Channel for development repositories" as "Channel Summary"
+  And  I enter "Channel containing development repositories" as "Channel Description"
+  And  I click on "Create Channel"
+  Then  I should see a "Channel Devel-SUSE-Channel created." text
+
+
+
+Scenario 3: Create custom repositories inside the SUSE custom channel
+  Tags: ['@sle_minion']
+  When  I prepare the development repositories of "sle_minion" as part of "devel-suse-channel" channel
+
+
+
+Scenario 4: Create a custom channel for Build Host
+  Tags: ['@uyuni', '@build_host']
+  When  I follow the left menu "Software > Manage > Channels"
+  And  I follow "Create Channel"
+  And  I enter "Devel-Build-Host-Channel" as "Channel Name"
+  And  I enter "devel-build-host-channel" as "Channel Label"
+  And  I select the parent channel for the "build_host" from "Parent Channel"
+  And  I select "x86_64" from "Architecture:"
+  And  I enter "Devel-Build-Host-Channel for development repositories" as "Channel Summary"
+  And  I enter "Channel containing development repositories" as "Channel Description"
+  And  I click on "Create Channel"
+  Then  I should see a "Channel Devel-Build-Host-Channel created." text
+
+
+
+Scenario 5: Create custom repositories inside the Build Host custom channel
+  Tags: ['@uyuni', '@build_host']
+  When  I prepare the development repositories of "build_host" as part of "devel-build-host-channel" channel
+
+
+
+Scenario 6: Create a custom channel for Debian-like minions
+  Tags: ['@deblike_minion']
+  When  I follow the left menu "Software > Manage > Channels"
+  And  I follow "Create Channel"
+  And  I enter "Devel-Debian-like-Channel" as "Channel Name"
+  And  I enter "devel-debian-like-channel" as "Channel Label"
+  And  I select "Fake-Base-Channel-Debian-like" from "Parent Channel"
+  And  I select "AMD64 Debian" from "Architecture:"
+  And  I enter "Devel-Debian-like-Channel for development repositories" as "Channel Summary"
+  And  I enter "Channel containing development repositories" as "Channel Description"
+  And  I click on "Create Channel"
+  Then  I should see a "Channel Devel-Debian-like-Channel created." text
+
+
+
+Scenario 7: Create custom repositories inside the Debian-like custom channel
+  Tags: ['@deblike_minion']
+  When  I prepare the development repositories of "deblike_minion" as part of "devel-debian-like-channel" channel
+
+
+
+Scenario 8: Create a custom channel for RH-like minions
+  Tags: ['@rhlike_minion']
+  When  I follow the left menu "Software > Manage > Channels"
+  And  I follow "Create Channel"
+  And  I enter "Devel-RH-like-Channel" as "Channel Name"
+  And  I enter "devel-rh-like-channel" as "Channel Label"
+  And  I select "Fake-Base-Channel-RH-like" from "Parent Channel"
+  And  I select "x86_64" from "Architecture:"
+  And  I enter "Devel-RH-like-Channel for development repositories" as "Channel Summary"
+  And  I enter "Channel containing development repositories" as "Channel Description"
+  And  I click on "Create Channel"
+  Then  I should see a "Channel Devel-RH-like-Channel created." text
+
+
+
+Scenario 9: Create custom repositories inside the RH-like custom channel
+  Tags: ['@rhlike_minion']
+  When  I prepare the development repositories of "rhlike_minion" as part of "devel-rh-like-channel" channel
+

@@ -1,0 +1,18 @@
+Scenario 1: Add a new discount rule with 100 percent discount
+  Given  adding a cart price rule named "discount-10"
+  And  the cart rule is not a voucher rule
+  And  the cart rule is active
+  And  the cart rule has a action discount-percent with 100% discount
+  And  I add the product "Shoe" to my cart
+  Given  adding a cart price rule named "discount-100"
+  And  the cart rule is a voucher rule with code "discount-100"
+  And  the cart rule is active
+  And  the cart rule has a cart-item-action action
+  And  the cart item action has a action discount-percent with 100% discount
+  And  I apply the voucher code "discount-100" to my cart
+  Then  the cart discount should be "-12000" including tax
+  Then  the cart discount should be "-10000" excluding tax
+  Then  the cart total tax should be "0"
+  Then  the cart total should be "0" excluding tax
+  Then  the cart total should be "0" including tax
+

@@ -1,0 +1,16 @@
+Scenario 1: Get the on-demand concurrency cap returns "OK" response
+  Tags: ['@team:DataDog/synthetics-managing']
+  Given  new "GetOnDemandConcurrencyCap" request
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 2: Save new value for on-demand concurrency cap returns "OK" response
+  Tags: ['@team:DataDog/synthetics-managing']
+  Given  new "SetOnDemandConcurrencyCap" request
+  And  body with value {"on_demand_concurrency_cap": 20}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.attributes.on_demand_concurrency_cap" is equal to 20
+

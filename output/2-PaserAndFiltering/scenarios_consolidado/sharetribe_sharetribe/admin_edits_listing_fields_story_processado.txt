@@ -1,0 +1,34 @@
+Scenario 1: Admin changes custom field name
+  Tags: ['@javascript']
+  When  I change custom field "House type" name to "Room type"
+  Then  I should see "Room type"
+
+
+
+Scenario 2: Admin tries to give custom field invalid name
+  Tags: ['@javascript']
+  When  I change custom field "House type" name to ""
+  Then  I should see 1 validation errors in admin2
+
+
+
+Scenario 3: Admin changes categories
+  Tags: ['@javascript']
+  When  I change custom field "House type" categories
+  Then  correct categories should be stored
+
+
+
+Scenario 4: Admin tries to remove all categories
+  Tags: ['@javascript']
+  When  I try to remove all categories
+  Then  I should see 1 validation errors in admin2
+
+
+
+Scenario 5: Admin removes custom fields from category
+  Tags: ['@javascript']
+  When  I remove listing field "House type"
+  And  I remove listing field "Balcony type"
+  Then  I should see that I do not have any listing fields
+

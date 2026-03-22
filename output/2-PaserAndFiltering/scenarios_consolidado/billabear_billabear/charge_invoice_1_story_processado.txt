@@ -1,0 +1,6 @@
+Scenario 1: 
+  Given  the following invoices with a payment attempt exist:
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  When  charge the invoice for "customer.two@example.org"
+  Then  then the invoice for "customer.two@example.org" will be marked as paid
+

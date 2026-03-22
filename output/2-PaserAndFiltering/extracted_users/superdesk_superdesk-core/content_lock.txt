@@ -1,0 +1,159 @@
+Feature: Content Locking
+
+Scenario 1: Lock item and edit
+  Tags: ['@auth', '@notification']
+  Given  "archive"
+  When  we post to "/archive/item-1/lock"
+  Then  we get new resource
+  And  item "item-1" is assigned
+  And  we get notifications
+  When  we patch "/archive/item-1"
+  Then  we get OK response
+  When  we get "/workqueue?source={"filter": {"term": {"lock_user": "#CONTEXT_USER_ID#"}}}"
+  Then  we get list with 1 items
+
+Scenario 2: Unlocking version 0 draft item deletes the item
+  Tags: ['@auth']
+  Given  "archive"
+  When  we post to "/archive/item-1/lock"
+  Then  we get new resource
+  When  we post to "/archive/item-1/unlock"
+  And  we get "/archive/item-1"
+  Then  we get error 404
+
+Scenario 3: Unlocking version 1+ item unlocks the item
+  Tags: ['@auth', '@notification']
+  Given  "archive"
+  When  we post to "/archive/item-1/lock"
+  Then  we get new resource
+  And  we get notifications
+  When  we post to "/archive/item-1/unlock"
+  Then  we get new resource
+  And  we get notifications
+  When  we get "/archive/item-1"
+  Then  we get response code 200
+  When  we get "/workqueue?source={"filter": {"term": {"lock_user": "#CONTEXT_USER_ID#"}}}"
+  Then  we get list with 0 items
+
+Scenario 4: Fail edit on locked item
+  Tags: ['@auth']
+  Given  "archive"
+  When  we post to "/archive/item-1/lock"
+  And  we switch user
+  And  we patch "/archive/item-1"
+  Then  we get error 400
+
+Scenario 5: Fail to force unlock for other User workspace content
+  Tags: ['@auth']
+  Given  "archive"
+  When  we post to "/archive/item-1/lock"
+  Then  we get new resource
+  And  item "item-1" is locked
+  When  we switch user
+  And  we post to "/archive/item-1/unlock"
+  Then  we get error 403
+
+Scenario 6: Force unlock other user content on a desk with desk membership.
+  Tags: ['@auth']
+  Given  "desks"
+  Given  "archive"
+  When  we post to "/archive/item-1/lock"
+  Then  we get new resource
+  And  item "item-1" is locked
+  When  we switch user
+  When  we patch "/desks/#desks._id#"
+  And  we post to "/archive/item-1/unlock"
+  Then  we get new resource
+  And  item "item-1" is unlocked
+
+Scenario 7: Fail force unlock other user content on a desk with out desk membership.
+  Tags: ['@auth']
+  Given  "desks"
+  Given  "archive"
+  When  we post to "/archive/item-1/lock"
+  Then  we get new resource
+  And  item "item-1" is locked
+  When  we switch user
+  And  we post to "/archive/item-1/unlock"
+  Then  we get error 403
+
+Scenario 8: Fail lock if item is locked in another session
+  Tags: ['@auth']
+  Given  "archive"
+  When  we post to "/archive/item-1/lock"
+  Then  we get new resource
+  And  item "item-1" is locked
+  When  we setup test user
+  When  we post to "/archive/item-1/lock"
+  Then  we get error 403
+
+Scenario 9: Force unlock if item is locked in another session
+  Tags: ['@auth']
+  Given  "archive"
+  When  we post to "/archive/item-1/lock"
+  Then  we get new resource
+  And  item "item-1" is locked
+  When  we post to "/archive_autosave"
+  Then  we get new resource
+  When  we setup test user
+  When  we post to "/archive/item-1/unlock"
+  Then  we get new resource
+  And  item "item-1" is unlocked
+
+Scenario 10: Fail force unlock if you don't have privileges to unlock
+  Tags: ['@auth']
+  Given  "desks"
+  Given  "archive"
+  When  we post to "/archive/item-1/lock"
+  Then  we get new resource
+  And  item "item-1" is locked
+  When  we switch user
+  When  we patch "/desks/#desks._id#"
+  Then  we get OK response
+  When  we patch "/users/#USERS_ID#"
+  Then  we get OK response
+  When  we post to "/archive/item-1/unlock"
+  Then  we get error 403
+
+Scenario 11: Unlock a package in draft state, version 0 and with an item
+  Tags: ['@auth']
+  Given  "desks"
+  When  we post to "archive" with success
+  And  we post to "archive"
+  When  we get "/archive/package-1"
+  Then  we get existing resource
+  When  we post to "archive"
+  And  we get "/archive/package-2"
+  Then  we get existing resource
+  When  we post to "/archive/package-1/lock"
+  Then  we get new resource
+  And  item "package-1" is locked
+  When  we get "/archive/item-1"
+  Then  we get existing resource
+  When  we post to "/archive/package-1/unlock"
+  And  we get "/archive/package-1"
+  Then  we get error 404
+  When  we get "/archive/item-1"
+  Then  we get existing resource
+  And  we find no reference of package "package-1" in item
+
+Scenario 12: Unlocking an item that expired in mongo (bug)
+  Tags: ['@auth']
+  Given  "archive"
+  When  we post to "/archive/item-1/lock"
+  When  we remove item "item-1" from mongo
+  And  we post to "/archive/item-1/unlock"
+  Then  we get error 404
+  When  we get "/workqueue"
+  Then  we get list with 0 items
+
+Scenario 13: Unlocking an item with earlier publish schedule
+  Tags: ['@auth']
+  Given  "archive"
+  When  we post to "archive_autosave"
+  Then  we get ok response
+  When  we post to "/archive/item-1/lock"
+  Then  we get ok response
+  When  we post to "/archive/item-1/unlock"
+  Then  we get ok response
+

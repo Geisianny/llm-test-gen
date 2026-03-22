@@ -1,0 +1,38 @@
+Scenario 1: Receiving percentage discount for my cart
+  Tags: ['@ui', '@api']
+  When  I add product "PHP T-Shirt" to the cart
+  Then  my cart total should be "$80.00"
+  And  my discount should be "-$20.00"
+
+
+
+Scenario 2: Receiving percentage discount does not affect the shipping fee
+  Tags: ['@ui']
+  Given  the store has "DHL" shipping method with "$10.00" fee
+  And  I am a logged in customer
+  When  I add product "PHP T-Shirt" to the cart
+  And  I proceed selecting "DHL" shipping method
+  Then  my cart total should be "$90.00"
+  And  my cart shipping total should be "$10.00"
+  And  my discount should be "-$20.00"
+
+
+
+Scenario 3: Receiving percentage discount is correct for two items with different price
+  Tags: ['@ui', '@api']
+  Given  the store has a product "Vintage Watch" priced at "$1000.00"
+  When  I add product "PHP T-Shirt" to the cart
+  And  I add product "Vintage Watch" to the cart
+  Then  my cart total should be "$880.00"
+  And  my discount should be "-$220.00"
+
+
+
+Scenario 4: Receiving percentage discount is proportional to items values
+  Tags: ['@ui', '@api']
+  Given  the store has a product "Symfony T-Shirt" priced at "$100.00"
+  When  I add 11 products "PHP T-Shirt" to the cart
+  And  I add product "Symfony T-Shirt" to the cart
+  Then  my cart total should be "$960.00"
+  And  my discount should be "-$240.00"
+

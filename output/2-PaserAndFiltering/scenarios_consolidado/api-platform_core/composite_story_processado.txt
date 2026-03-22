@@ -1,0 +1,66 @@
+Scenario 1: Get a collection with composite identifiers
+  Tags: ['@createSchema']
+  Given  there are Composite identifier objects
+  When  I send a "GET" request to "/composite_items"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario 2: Get collection with composite identifiers
+  Tags: ['@createSchema']
+  Given  there are Composite identifier objects
+  When  I send a "GET" request to "/composite_relations"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario 3: Get the first composite relation
+  Tags: ['@createSchema']
+  Given  there are Composite identifier objects
+  When  I send a "GET" request to "/composite_relations/compositeItem=1;compositeLabel=1"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario 4: Get the first composite relation with a reverse identifiers order
+  Tags: ['@createSchema']
+  Given  there are Composite identifier objects
+  When  I send a "GET" request to "/composite_relations/compositeLabel=1;compositeItem=1"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario 5: Get the first composite relation with a missing identifier
+  Tags: ['@createSchema']
+  Given  there are Composite identifier objects
+  When  I send a "GET" request to "/composite_relations/compositeLabel=1;"
+  Then  the response status code should be 404
+
+
+
+Scenario 6: Get first composite item
+  Given  there are Composite identifier objects
+  When  I send a "GET" request to "/composite_items/1"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+
+
+
+Scenario 7: Get identifiers with different types
+  Given  there are Composite identifier objects
+  When  I send a "GET" request to "/composite_key_with_different_types/id=82133;verificationKey=7d75af772e637e45c36d041696e1128d"
+  Then  the response status code should be 200
+

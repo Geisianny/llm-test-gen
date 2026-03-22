@@ -1,0 +1,10 @@
+Feature: Results reporting
+Description: In order to use Karma
+  As a person who wants to write great tests
+  I want to Karma to report test results in the same order as they are executed.
+
+Scenario 1: Results appear as tests are executed
+  Given  a configuration with:
+  When  I start Karma
+  Then  it passes with like:
+

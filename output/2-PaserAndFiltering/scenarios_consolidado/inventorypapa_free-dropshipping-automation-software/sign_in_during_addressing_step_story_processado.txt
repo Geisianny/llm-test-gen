@@ -1,0 +1,29 @@
+Scenario 1: Displaying login form if the customer has an account
+  Tags: ['@ui', '@no-api', '@javascript']
+  Given  I have product "PHP T-Shirt" in the cart
+  And  I am at the checkout addressing step
+  When  I specify the email as "francis@underwood.com"
+  Then  I should be able to log in
+
+
+
+Scenario 2: Successful sign in
+  Tags: ['@ui', '@no-api', '@javascript']
+  Given  I have product "PHP T-Shirt" in the cart
+  And  I am at the checkout addressing step
+  When  I specify the email as "francis@underwood.com"
+  And  I specify the password as "whitehouse"
+  And  I sign in
+  Then  the login form should no longer be accessible
+
+
+
+Scenario 3: Failure sign in
+  Tags: ['@ui', '@no-api', '@javascript']
+  Given  I have product "PHP T-Shirt" in the cart
+  And  I am at the checkout addressing step
+  When  I specify the email as "francis@underwood.com"
+  And  I specify the password as "francis"
+  And  I sign in
+  Then  I should be notified about bad credentials
+

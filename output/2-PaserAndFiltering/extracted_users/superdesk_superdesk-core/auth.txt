@@ -1,0 +1,116 @@
+Feature: Authentication
+Tags: ['@dbauth']
+
+Scenario 1: Authenticate existing user
+  Given  "users"
+  When  we post to auth_db
+  Then  we get "token"
+  And  we get "user"
+  And  we get no "password"
+
+Scenario 2: Change user password with success
+  Given  "users"
+  When  we post to "/change_user_password" with success
+  And  we post to auth_db
+  Then  we get "token"
+  And  we get "user"
+  And  we get no "password"
+  When  we get "users/foo"
+  Then  we get existing resource
+
+Scenario 3: Change user password with wrong old password
+  Given  "users"
+  When  we post to "/change_user_password"
+  Then  we get error 401
+
+Scenario 4: Check reset password - expired token
+  Given  "users"
+  When  we post "foo@bar.org" to reset_password we get email with token
+  Then  we can check if token is valid
+  And  we update token to be expired
+  Then  token is invalid
+
+Scenario 5: Reset password existing user
+  Given  "users"
+  When  we post "foo@bar.org" to reset_password we get email with token
+  Then  we reset password for user
+
+Scenario 6: Reset password existing user - mixed case email
+  Given  "users"
+  When  we post "fOo@BAr.oRG" to reset_password we get email with token
+  Then  we reset password for user
+
+Scenario 7: Reset password disabled user
+  Given  "users"
+  When  we post to "/reset_user_password"
+  Then  we get error 403
+
+Scenario 8: Reset password existing user - disabled after mail is sent
+  Tags: ['@auth']
+  Given  "users"
+  When  we post "foo@bar.org" to reset_password we get email with token
+  When  we change user status to "enabled but inactive" using "/users/foo"
+  Then  we fail to reset password for user
+
+Scenario 9: Authenticate with wrong password returns error
+  Given  "users"
+  When  we post to auth_db
+  Then  we get error 401
+
+Scenario 10: Authenticate after user is disabled
+  Given  "users"
+  When  we post to auth_db
+  Then  we get error 403
+
+Scenario 11: Authenticate with non existing username
+  Given  "users"
+  When  we post to auth_db
+  Then  we get error 401
+
+Scenario 12: Fetch resources without auth token
+  When  we get "/"
+  Then  we get response code 200
+
+Scenario 13: Fetch users without auth token
+  When  we get "/users"
+  Then  we get error 401
+  And  we get "Access-Control-Allow-Origin" header
+
+Scenario 14: user logs in and no etag change
+  Tags: ['@auth']
+  When  we post to "/users"
+  Then  we get response code 201
+  And  we get new resource
+  When  we post to "auth_db"
+  Then  we get response code 201
+  When  we get "/users"
+  Then  we get list with 2 items
+
+Scenario 15: user logs out and no etag change
+  Tags: ['@auth']
+  When  we post to "/users"
+  Then  we get response code 201
+  And  we get new resource
+  When  we post to auth_db
+  When  we delete latest
+  Then  we get response code 204
+  When  we post to auth_db
+  When  we get "/users"
+  Then  we get list with 2 items
+
+Scenario 16: user logs in locks content and logs out logs in again and the content is no longer locked
+  Given  "users"
+  When  we post to auth_db
+  Given  "archive"
+  When  we post to "/archive/item-1/lock"
+  When  we delete "/auth/#AUTH_ID#"
+  Then  we get response code 204
+  When  we post to auth_db
+  When  we get "/archive"
+  Then  item "item-1" is unlocked
+
+Scenario 17: user deletes his session
+  Tags: ['@auth']
+  When  we delete "/auth/#AUTH_ID#"
+  Then  we get ok response
+

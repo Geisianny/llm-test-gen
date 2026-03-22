@@ -1,0 +1,117 @@
+Scenario 1: ADD SPECIFIC FINANCIAL ACCOUNT FOR THIS BANK ACCOUNT
+  Given  I need a "account.account" with oid: scen.acc_bank_eur
+  And  having:
+
+
+
+Scenario 2: FINANCIAL JOURNALS CREATION
+  Tags: ['@multicompany_base_finance_bank_journal_settings']
+  Given  there is a journal with name "BNP LA DEFENSE ENTREPRISE FR7630004013280001246072204" and company "MA SOCIETE FR"
+  And  having:
+
+
+
+Scenario 3: FINANCIAL JOURNALS CREATION
+  Tags: ['@multicompany_base_finance_bank_journal_settings']
+  Given  there is a journal with name "Commerzbank DE16 6808 0030 0553 0349 00" and company "MA SOCIETE CH"
+  And  having:
+
+
+
+Scenario 4: FINANCIAL JOURNALS CREATION
+  Tags: ['@multicompany_base_finance_bank_journal_settings']
+  Given  there is a journal with name "UniCredit Bank HU76 1091 8001 0000 0056 8267 0008" and company "MA SOCIETE CH"
+  And  having:
+
+
+
+Scenario 5: FINANCIAL JOURNALS CREATION
+  Given  there is a journal with name "Fio Banka CZ66 2010 0000 0026 0003 9960" and company "MA SOCIETE CH"
+  And  having:
+
+
+
+Scenario 6: FINANCIAL JOURNALS CREATION
+  Given  there is a journal with name "Sales Journal" and company "MA SOCIETE FR"
+  And  having:
+
+
+
+Scenario 7: FINANCIAL JOURNALS CREATION
+  Given  there is a journal with name "Sales Refund Journal" and company "MA SOCIETE FR"
+  And  having:
+
+
+
+Scenario 8: FINANCIAL JOURNALS CREATION
+  Given  there is a journal with name "Purchase Journal" and company "MA SOCIETE FR"
+  And  having:
+
+
+
+Scenario 9: FINANCIAL JOURNALS CREATION
+  Given  there is a journal with name "Purchase Refund Journal" and company "MA SOCIETE FR"
+  And  having:
+
+
+
+Scenario 10: FINANCIAL JOURNALS CREATION
+  Given  there is a journal with name "Miscellaneous Journal" and company "MA SOCIETE FR"
+  And  having:
+
+
+
+Scenario 11: FINANCIAL JOURNALS CREATION
+  Given  there is a journal with name "Opening Entries Journal" and company "MA SOCIETE FR"
+  And  having:
+
+
+
+Scenario 12: FINANCIAL JOURNALS CREATION
+  Tags: ['@multicompany_base_finance_petty_cash_journal_settings']
+  Given  there is a journal with name "Cash" and company "MA SOCIETE FR"
+  And  having:
+
+
+
+Scenario 13: FINANCIAL JOURNALS CREATION
+  Given  there is a journal with name "Sales Journal" and company "MA SOCIETE CH"
+  And  having:
+
+
+
+Scenario 14: FINANCIAL JOURNALS CREATION
+  Given  there is a journal with name "Sales Refund Journal" and company "MA SOCIETE CH"
+  And  having:
+
+
+
+Scenario 15: FINANCIAL JOURNALS CREATION
+  Given  there is a journal with name "Purchase Journal" and company "MA SOCIETE CH"
+  And  having:
+
+
+
+Scenario 16: FINANCIAL JOURNALS CREATION
+  Given  there is a journal with name "Purchase Refund Journal" and company "MA SOCIETE CH"
+  And  having:
+
+
+
+Scenario 17: FINANCIAL JOURNALS CREATION
+  Given  there is a journal with name "Miscellaneous Journal" and company "MA SOCIETE CH"
+  And  having:
+
+
+
+Scenario 18: FINANCIAL JOURNALS CREATION
+  Given  there is a journal with name "Opening Entries Journal" and company "MA SOCIETE CH"
+  And  having:
+
+
+
+Scenario 19: FINANCIAL JOURNALS CREATION
+  Tags: ['@multicompany_base_finance_petty_cash_journal_settings']
+  Given  there is a journal with name "Cash" and company "MA SOCIETE CH"
+  And  having:
+

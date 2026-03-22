@@ -1,0 +1,4 @@
+Scenario 1: Format the address to given format
+  Given  there is an address with country "Austria", "4600", "Wels", "Freiung", "9-11/N3"
+  Then  the address should format to "Freiung 9-11/N3\n4600 Wels\nAustria"
+

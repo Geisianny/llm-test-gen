@@ -1,0 +1,35 @@
+Feature: User deletes account
+
+Scenario 1: Only admin cannot delete acccount
+  Tags: ['@javascript']
+  Given  there are following users:
+  And  I am logged in as "kassi_testperson1"
+  When  I open user menu
+  When  I follow "Settings"
+  And  I follow "Account" within ".left-navi"
+  Then  I should see "Your account can't be deleted because you are the only administrator of the marketplace."
+
+Scenario 2: Only admin of the marketplace cannot delete acccount
+  Tags: ['@javascript']
+  Given  there are following users:
+  And  I am logged in as "kassi_testperson2"
+  When  I open user menu
+  When  I follow "Settings"
+  And  I follow "Account" within ".left-navi"
+  And  I will confirm all following confirmation dialogs in this page if I am running PhantomJS
+  And  I press "Permanently delete my account"
+  Then  I should see "Your account is now deleted."
+
+Scenario 3: Stripe account with non zero balance prohibit to delete acccount
+  Tags: ['@javascript']
+  Given  there are following users:
+  Given  community "test" has payment method "stripe" provisioned
+  Given  community "test" has payment method "stripe" enabled by admin
+  Given  I have confirmed stripe account as "kassi_testperson2"
+  Given  Stripe API refuse to delete the account
+  And  I am logged in as "kassi_testperson2"
+  And  I am on the account settings page
+  And  I will confirm all following confirmation dialogs in this page if I am running PhantomJS
+  And  I press "Permanently delete my account"
+  Then  I should see "You account balance is not 0 so it cannot be deleted."
+

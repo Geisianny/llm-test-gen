@@ -1,0 +1,18 @@
+Feature: Run Cuke4Nuke and Cucumber from a single command
+
+Background: 
+  Given  a standard Cucumber project directory structure
+  And  a file named "features/wired.feature" with:
+  And  a file named "features/step_definitions/some_remote_place.wire" with:
+
+Scenario 1: A passing step
+  Given  a step definition assembly containing:
+  When  I run the cuke4nuke wrapper
+  Then  STDERR should be empty
+  And  it should pass with
+
+Scenario 2: A failing step
+  Given  a step definition assembly containing:
+  When  I run the cuke4nuke wrapper
+  Then  it should fail
+

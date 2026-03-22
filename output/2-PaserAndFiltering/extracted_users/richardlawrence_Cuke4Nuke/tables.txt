@@ -1,0 +1,27 @@
+Feature: Use table multi-line step arguments
+
+Background: 
+  Given  a standard Cucumber project directory structure
+  And  a file named "features/step_definitions/some_remote_place.wire" with:
+
+Scenario 1: Table in a Given
+  Given  a file named "features/table.feature" with:
+  And  Cuke4Nuke started with a step definition assembly containing:
+  When  I run cucumber -f progress features
+  Then  STDERR should be empty
+  And  it should pass with
+
+Scenario 2: Table in a Then
+  Given  a file named "features/table.feature" with:
+  And  Cuke4Nuke started with a step definition assembly containing:
+  When  I run cucumber -b -f progress features
+  Then  STDERR should be empty
+  And  it should pass with
+
+Scenario 3: Table in a Then - Failed Diff
+  Given  a file named "features/table.feature" with:
+  And  Cuke4Nuke started with a step definition assembly containing:
+  When  I run cucumber -f pretty features
+  Then  STDERR should be empty
+  And  it should fail
+

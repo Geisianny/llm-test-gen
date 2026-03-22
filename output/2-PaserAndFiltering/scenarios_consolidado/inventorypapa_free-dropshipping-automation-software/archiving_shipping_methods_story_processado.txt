@@ -1,0 +1,32 @@
+Scenario 1: Archiving a shipping method
+  Tags: ['@ui', '@api']
+  Given  I am browsing shipping methods
+  When  I archive the "UPS Carrier" shipping method
+  Then  the only shipping method on the list should be "FedEx Carrier"
+
+
+
+Scenario 2: Archiving a shipping method does not remove it from the database
+  Tags: ['@domain']
+  When  I archive the "UPS Carrier" shipping method
+  Then  the shipping method "UPS Carrier" should still exist in the registry
+
+
+
+Scenario 3: Seeing only archived shipping methods
+  Tags: ['@ui', '@api']
+  Given  the shipping method "UPS Carrier" is archival
+  And  I am browsing shipping methods
+  When  I filter archival shipping methods
+  Then  the only shipping method on the list should be "UPS Carrier"
+
+
+
+Scenario 4: Restoring an archival shipping method
+  Tags: ['@ui', '@api']
+  Given  the shipping method "UPS Carrier" is archival
+  And  I am browsing archival shipping methods
+  When  I restore the "UPS Carrier" shipping method
+  Then  I should be viewing non archival shipping methods
+  And  I should see 2 shipping methods on the list
+

@@ -1,0 +1,47 @@
+Feature: Test allow lists, based on team_rewards.feature test in rewards set.
+
+Background: 
+  Given  time is updated to "2023-01-01T00:00:00Z"
+  And  the average block duration is "1"
+  And  the following network parameters are set:
+  And  the following assets are registered:
+  And  the markets:
+  Given  the parties deposit on asset's general account the following amount:
+  Given  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  And  the opening auction period ends for market "ETH/USD-1-10"
+  When  the network moves ahead "1" blocks
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/USD-1-10"
+  Given  the parties create the following referral codes:
+  And  the parties apply the following referral codes:
+  And  the team "team1" has the following members:
+  And  the team "team2" has the following members:
+  And  the team "team3" has the following members:
+
+Scenario 1: 0083-RFPR-063 Joining a closed team while not on the allow list should fail
+  Tags: ['@Closed']
+  Given  the parties submit the following recurring transfers:
+  When  the parties apply the following referral codes:
+  Then  the team "team2" has the following members:
+  And  the team "team1" has the following members:
+  And  the team "team3" has the following members:
+  When  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  "referee1" should have vesting account balance of "5714" for asset "USD-1-10"
+  And  "referee2" should have vesting account balance of "2142" for asset "USD-1-10"
+  And  "referee3" should have vesting account balance of "2142" for asset "USD-1-10"
+
+Scenario 2: 0083-RFPR-063 Joining a closed team while not on the allow list should fail, team with non-empty join list
+  Tags: ['@Closed']
+  Given  the parties submit the following recurring transfers:
+  When  the parties apply the following referral codes:
+  Then  the team "team2" has the following members:
+  And  the team "team1" has the following members:
+  And  the team "team3" has the following members:
+  When  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  "referee1" should have vesting account balance of "5714" for asset "USD-1-10"
+  And  "referee2" should have vesting account balance of "2142" for asset "USD-1-10"
+  And  "referee3" should have vesting account balance of "2142" for asset "USD-1-10"
+

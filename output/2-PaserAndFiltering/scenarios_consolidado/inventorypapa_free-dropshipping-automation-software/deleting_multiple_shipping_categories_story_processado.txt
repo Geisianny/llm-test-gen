@@ -1,0 +1,10 @@
+Scenario 1: Deleting multiple shipping categories at once
+  Tags: ['@ui', '@javascript']
+  When  I browse shipping categories
+  And  I check the "Big" shipping category
+  And  I check also the "Small" shipping category
+  And  I delete them
+  Then  I should be notified that they have been successfully deleted
+  And  I should see a single shipping category in the list
+  And  I should see the shipping category "Standard" in the list
+

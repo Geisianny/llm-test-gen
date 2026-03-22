@@ -1,0 +1,41 @@
+Scenario 1: 0044-LIME-080, 0044-LIME-082, GFA order in spot market
+  Given  time is updated to "2023-07-20T00:00:00Z"
+  Given  the fees configuration named "fees-config-1":
+  Given  the log normal risk model named "lognormal-risk-model-1":
+  And  the price monitoring named "price-monitoring-1":
+  And  the liquidity sla params named "SLA-1":
+  Given  the following assets are registered:
+  And  the following network parameters are set:
+  And  the spot markets:
+  And  the following network parameters are set:
+  Given  the parties deposit on asset's general account the following amount:
+  And  the average block duration is "1"
+  Given  the liquidity monitoring parameters:
+  When  the spot markets are updated:
+  When  the parties submit the following liquidity provision:
+  Then  the network moves ahead "4" blocks
+  And  the network treasury balance should be "0" for the asset "ETH"
+  And  the global insurance pool balance should be "0" for the asset "ETH"
+  And  the global insurance pool balance should be "0" for the asset "BTC"
+  And  the party "lp1" lp liquidity fee account balance should be "0" for the market "BTC/ETH"
+  Then  the party "lp1" lp liquidity bond account balance should be "1000" for the market "BTC/ETH"
+  And  the parties place the following orders:
+  Then  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  Then  the orders should have the following status:
+  Then  "lp1" should have holding account balance of "0" for asset "ETH"
+  Then  "lp1" should have general account balance of "39000" for asset "ETH"
+  Then  the party "lp1" lp liquidity bond account balance should be "1000" for the market "BTC/ETH"
+  Then  "lp1" should have holding account balance of "0" for asset "BTC"
+  Then  "lp1" should have general account balance of "2000" for asset "BTC"
+  Then  the network moves ahead "11" blocks
+  And  the network treasury balance should be "600" for the asset "ETH"
+  Then  the orders should have the following status:
+  Then  the market data for the market "BTC/ETH" should be:
+  And  the parties place the following orders:
+  Then  the market data for the market "BTC/ETH" should be:
+  And  the parties place the following orders:
+  Then  the network moves ahead "12" blocks
+  Then  the market data for the market "BTC/ETH" should be:
+  And  the network treasury balance should be "600" for the asset "ETH"
+

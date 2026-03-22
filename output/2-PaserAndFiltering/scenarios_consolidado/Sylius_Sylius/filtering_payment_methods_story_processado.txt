@@ -1,0 +1,23 @@
+Scenario 1: Filtering payment methods by name
+  Tags: ['@api', '@ui']
+  When  I search by "Bank" name
+  Then  I should see a single payment method in the list
+  And  I should see the payment method "Bank transfer"
+
+
+
+Scenario 2: Filtering payment methods by code
+  Tags: ['@api', '@ui']
+  When  I search by "xyz" code
+  Then  I should see 2 payment methods in the list
+  And  I should not see the payment method "Offline"
+
+
+
+Scenario 3: Filtering enabled payment methods
+  Tags: ['@api', '@ui']
+  When  I choose enabled filter
+  And  I filter
+  Then  I should see 2 payment methods in the list
+  And  I should not see the payment method "Offline"
+

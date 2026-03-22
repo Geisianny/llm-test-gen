@@ -1,0 +1,12 @@
+Feature: Passing Options
+Description: In order to use Karma
+  As a person who wants to write great tests
+  I want to be able to pass arguments from the config file to the browser.
+
+Scenario 1: Passing Options to run on the Command Line
+  Given  a configuration with:
+  When  I start a server in background
+  And  I wait until server output contains:
+  And  I run Karma with additional arguments: "-- arg1 arg2"
+  Then  it passes with:
+

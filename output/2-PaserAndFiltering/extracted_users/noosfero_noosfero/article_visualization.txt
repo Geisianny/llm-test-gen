@@ -1,0 +1,31 @@
+Feature: article visualization
+Description: As a user
+  I want to change view modes
+  In order to see articles in fullscreen or not in fullscreen
+
+Background: 
+  Given  the following users
+  And  "joaosilva" has no articles
+  And  the following articles
+  And  I am logged in as "joaosilva"
+
+Scenario 1: viewing the article in fullscreen by default
+  Tags: ['@selenium']
+  Given  I go to /joaosilva/sample-article?fullscreen=1
+  And  I follow "article-options"
+  Then  I should see "Exit full screen"
+
+Scenario 2: viewing the article not in fullscreen by default
+  Tags: ['@selenium']
+  Given  I go to /joaosilva/sample-article
+  And  I follow "article-options"
+  Then  I should see "Full screen"
+
+Scenario 3: changing the view mode from not in fullscreen to fullscreen
+  Tags: ['@selenium']
+  Given  I go to /joaosilva/sample-article
+  And  I follow "article-options"
+  And  I follow "Full screen"
+  And  I follow "article-options"
+  Then  I should see "Exit full screen"
+

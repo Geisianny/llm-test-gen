@@ -1,0 +1,28 @@
+Scenario 1: Make sure we are not charged for a transfer if we have a discount (0057-TRAN-023)
+  When  the parties place the following orders:
+  Then  the network moves ahead "1" epochs
+  And  the parties have the following transfer fee discounts:
+  Then  the network moves ahead "1" epochs
+  And  the parties have the following transfer fee discounts:
+  Then  the network moves ahead "1" epochs
+  And  the parties have the following transfer fee discounts:
+  Then  "1234567890123456789012345678901234567890123456789012345678900001" should have general account balance of "999999997340" for asset "BTC"
+  Given  the parties submit the following one off transfers:
+  Then  "1234567890123456789012345678901234567890123456789012345678900001" should have general account balance of "999999997240" for asset "BTC"
+  And  the parties have the following transfer fee discounts:
+
+
+
+Scenario 2: Make sure we are only charged for a transfer after the discount is used up (0057-TRAN-023)
+  When  the parties place the following orders:
+  Then  the network moves ahead "1" epochs
+  And  the parties have the following transfer fee discounts:
+  Then  the network moves ahead "1" epochs
+  And  the parties have the following transfer fee discounts:
+  Then  the network moves ahead "1" epochs
+  And  the parties have the following transfer fee discounts:
+  Then  "1234567890123456789012345678901234567890123456789012345678900001" should have general account balance of "999999997340" for asset "BTC"
+  Given  the parties submit the following one off transfers:
+  Then  "1234567890123456789012345678901234567890123456789012345678900001" should have general account balance of "999999996245" for asset "BTC"
+  And  the parties have the following transfer fee discounts:
+

@@ -1,0 +1,50 @@
+Scenario 1: Renaming the payment method
+  Tags: ['@api', '@ui']
+  When  I want to modify the "Offline" payment method
+  And  I rename it to "Cash on delivery" in "English (United States)"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this payment method "Name" should be "Cash on delivery"
+
+
+
+Scenario 2: Disabling payment method
+  Tags: ['@api', '@ui']
+  When  I want to modify the "Offline" payment method
+  And  I disable it
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this payment method should be disabled
+
+
+
+Scenario 3: Enabling payment method
+  Tags: ['@api', '@ui']
+  Given  the payment method "Offline" is disabled
+  When  I want to modify the "Offline" payment method
+  And  I enable it
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this payment method should be enabled
+
+
+
+Scenario 4: Being unable to edit code of an existing payment method
+  Tags: ['@api', '@ui']
+  When  I want to modify the "Offline" payment method
+  Then  I should not be able to edit its code
+
+
+
+Scenario 5: Being unable to edit gateway factory field of existing payment method
+  Tags: ['@api', '@ui']
+  When  I want to modify the "Offline" payment method
+  Then  the factory name field should be disabled
+
+
+
+Scenario 6: Being unable to change usePayum field of an existing payment method
+  Tags: ['@todo-api', '@ui']
+  When  I want to modify the "Offline" payment method
+  Then  I should not be able to edit its usePayum field
+

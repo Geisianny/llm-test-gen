@@ -1,0 +1,14 @@
+Scenario 1: Applying catalog promotion only once on variant defined in two scopes
+  Tags: ['@api', '@ui']
+  When  I view product "T-Shirt"
+  Then  I should see the product price "$14.00"
+  And  I should see the product original price "$20.00"
+
+
+
+Scenario 2: Applying catalog promotion on variant
+  Tags: ['@api', '@ui']
+  When  I view product "Pants"
+  Then  I should see the product price "$70.00"
+  And  I should see the product original price "$100.00"
+

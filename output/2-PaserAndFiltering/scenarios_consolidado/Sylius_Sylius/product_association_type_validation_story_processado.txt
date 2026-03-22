@@ -1,0 +1,39 @@
+Scenario 1: Trying to add a new product association type without specifying its code
+  Tags: ['@api', '@ui']
+  When  I want to create a new product association type
+  And  I name it "Up sell" in "English (United States)"
+  But  I do not specify its code
+  And  I try to add it
+  Then  I should be notified that code is required
+  And  the product association type with name "Up sell" should not be added
+
+
+
+Scenario 2: Trying to add a new product association type without specifying its name
+  Tags: ['@api', '@ui']
+  When  I want to create a new product association type
+  And  I specify its code as "up_sell"
+  But  I do not name it
+  And  I try to add it
+  Then  I should be notified that name is required
+  And  the product association type with code "up_sell" should not be added
+
+
+
+Scenario 3: Trying to remove name from an existing product association type
+  Tags: ['@api', '@ui']
+  When  I want to modify the "Cross sell" product association type
+  And  I remove its name from "English (United States)" translation
+  And  I try to save my changes
+  Then  I should be notified that name is required
+  And  this product association type should still be named "Cross sell"
+
+
+
+Scenario 4: Trying to add product association type translation in unexisting locale
+  Tags: ['@api', '@no-ui']
+  When  I want to modify the "Cross sell" product association type
+  And  I name it "Vente croisée" in "French (France)"
+  And  I save my changes
+  Then  I should be notified that the locale is not available
+

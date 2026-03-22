@@ -1,0 +1,18 @@
+Scenario 1: display profile info
+  When  I go to /mayhem/homepage
+  Then  I should see "queen@workerbees.org"
+  And  I should see "(288) 555-0153"
+
+
+
+Scenario 2: display products list
+  When  I go to /mayhem/homepage
+  Then  I should see "Natural Handmade"
+
+
+
+Scenario 3: display link to product
+  When  I go to /mayhem/homepage
+  And  I follow "Natural Handmade"
+  Then  I should be taken to "Natural Handmade" product page
+

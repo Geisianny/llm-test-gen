@@ -1,0 +1,16 @@
+Scenario 1: 001, LP gets penalty for exit (0044-LIME-025)
+  When  the opening auction period ends for market "ETH/DEC21"
+  And  the auction ends with a traded volume of "10" at a price of "1000"
+  Then  the market data for the market "ETH/DEC21" should be:
+  When  the network moves ahead "5" blocks
+  Then  the liquidity provisions should have the following states:
+  And  the insurance pool balance should be "0" for the market "ETH/DEC21"
+  And  the parties submit the following liquidity provision:
+  When  the network moves ahead "5" blocks
+  Then  the liquidity provisions should have the following states:
+  And  the insurance pool balance should be "0" for the market "ETH/DEC21"
+  And  the parties submit the following liquidity provision:
+  When  the network moves ahead "5" blocks
+  Then  the liquidity provisions should have the following states:
+  And  the insurance pool balance should be "15" for the market "ETH/DEC21"
+

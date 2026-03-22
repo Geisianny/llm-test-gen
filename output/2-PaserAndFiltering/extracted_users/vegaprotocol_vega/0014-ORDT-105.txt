@@ -1,0 +1,24 @@
+Feature: Spot market
+
+Background: 
+  Given  time is updated to "2024-01-01T00:00:00Z"
+  Given  the following network parameters are set:
+  Given  the following assets are registered:
+  Given  the fees configuration named "fees-config-1":
+  Given  the log normal risk model named "lognormal-risk-model-1":
+  And  the price monitoring named "price-monitoring-1":
+  And  the spot markets:
+  Given  the parties deposit on asset's general account the following amount:
+  And  the average block duration is "1"
+  And  the parties place the following orders:
+  And  the opening auction period ends for market "BTC/ETH"
+  When  the network moves ahead "1" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  And  the mark price should be "1000" for the market "BTC/ETH"
+
+Scenario 1: An aggressive iceberg order that crosses with an order where volume > iceberg volume, the iceberg order gets fully filled on entry,
+  Description: the iceberg order status is filled, the remaining quantity = 0. Atomic trades are generated if matched against multiple orders (0014-ORDT-105)
+  And  the parties place the following orders:
+  When  the parties place the following iceberg orders:
+  Then  the orders should have the following states:
+

@@ -1,0 +1,109 @@
+Feature: Ingest Provider
+
+Scenario 1: List empty providers
+  Tags: ['@auth']
+  Given  empty "ingest_providers"
+  When  we get "/ingest_providers"
+  Then  we get list with 0 items
+
+Scenario 2: Create new ingest_provider
+  Tags: ['@auth', '@notification']
+  Given  empty "ingest_providers"
+  When  we post to "ingest_providers"
+  And  we get "/ingest_providers"
+  Then  we get list with 1 items
+  When  we get "/activity/"
+  Then  we get existing resource
+  Then  we get notifications
+  Then  we get emails
+
+Scenario 3: Test provider config on save
+  Tags: ['@auth']
+  Given  "ingest_providers"
+  When  we patch "/ingest_providers/#ingest_providers._id#"
+  Then  we get error 400
+  When  we post to "ingest_providers"
+  Then  we get error 400
+  When  we post to "ingest_providers"
+  Then  we get OK response
+
+Scenario 4: Update ingest_provider aliases
+  Tags: ['@auth']
+  Given  "ingest_providers"
+  When  we patch "/ingest_providers/#ingest_providers._id#"
+  Then  expect json in "config/field_aliases"
+
+Scenario 5: Update ingest_provider
+  Tags: ['@auth', '@notification']
+  Given  "ingest_providers"
+  When  we patch "/ingest_providers/#ingest_providers._id#"
+  Then  we get updated response
+  When  we get "/activity/"
+  Then  we get existing resource
+  Then  we get notifications
+  Then  we get emails
+
+Scenario 6: Update critical errors for ingest_provider
+  Tags: ['@auth', '@notification']
+  Given  "ingest_providers"
+  When  we patch "/ingest_providers/#ingest_providers._id#"
+  Then  we get updated response
+
+Scenario 7: Open/Close ingest_provider
+  Tags: ['@auth', '@notification']
+  Given  "ingest_providers"
+  When  we patch "/ingest_providers/#ingest_providers._id#"
+  Then  we get updated response
+  When  we get "/activity/"
+  Then  we get existing resource
+  And  we get notifications
+  And  we get emails
+
+Scenario 8: Switch Off Notification on update ingest_provider
+  Tags: ['@auth', '@notification']
+  Given  empty "ingest_providers"
+  And  "ingest_providers"
+  When  we patch "/ingest_providers/#ingest_providers._id#"
+  Then  we get updated response
+  When  we get "/activity/"
+  Then  we get existing resource
+  Then  we get 0 emails
+  When  we patch "/ingest_providers/#ingest_providers._id#"
+  Then  we get updated response
+  When  we get "/activity/"
+  Then  we get existing resource
+  Then  we get 0 emails
+  When  we patch "/ingest_providers/#ingest_providers._id#"
+  Then  we get updated response
+  When  we get "/activity/"
+  Then  we get existing resource
+  Then  we get 0 emails
+
+Scenario 9: Delete an Ingest Provider which hasn't received items
+  Tags: ['@auth', '@notification']
+  Given  empty "ingest_providers"
+  When  we post to "ingest_providers"
+  And  we get "/ingest_providers"
+  Then  we get list with 1 items
+  When  we delete "/ingest_providers/#ingest_providers._id#"
+  Then  we get deleted response
+  When  we get "/activity/"
+  Then  we get existing resource
+  And  we get notifications
+
+Scenario 10: Disabled/Inactive Administrators don't receive emails when an Ingest Provider is created
+  Tags: ['@auth', '@notification']
+  Given  empty "ingest_providers"
+  When  we post to "/users"
+  And  we post to "ingest_providers"
+  Then  we get 1 emails
+
+Scenario 11: Creating a Ingest Provider with same name fails
+  Tags: ['@auth']
+  Given  empty "ingest_providers"
+  When  we post to "ingest_providers"
+  And  we get "/ingest_providers"
+  Then  we get list with 1 items
+  When  we post to "ingest_providers"
+  Then  we get error 400
+

@@ -1,0 +1,55 @@
+Feature: search enterprises
+Description: As a noosfero user
+  I want to search enterprises
+  In order to find ones that interest me
+
+Scenario 1: show empty search results
+  Tags: ['@selenium']
+  Given  the following enterprises
+  And  I go to the search enterprises page
+  And  I fill in "search-input" with "something unrelated"
+  And  I follow "Search" within ".search-form"
+  Then  I should see "None" within ".search-results-type-empty"
+
+Scenario 2: simple search for enterprise
+  Tags: ['@selenium-fixme']
+  Given  the following enterprises
+  When  I go to the search enterprises page
+  And  I fill in "search-input" with "shoes"
+  And  I follow "Search" within ".search-form"
+  Then  I should see "Shoes shop" within ".only-one-result-box"
+  And  I should see Shoes shop's profile image
+  And  I should not see "Fruits shop"
+  And  I should not see Fruits shop's profile image
+
+Scenario 3: show clean enterprise homepage on search results
+  Tags: ['@selenium']
+  Given  the following enterprises
+  And  the following articles
+  When  I go to the search enterprises page
+  And  I fill in "search-input" with "shoes"
+  And  I follow "Search" within ".search-form"
+  And  I wait for 1 seconds
+  And  I select "Full" from "display"
+  Then  I should see "This is the homepage of"
+  And  I should see "about sho..."
+
+Scenario 4: show clean enterprise description on search results
+  Tags: ['@selenium-fixme']
+  Given  the following enterprises
+  When  I go to the search enterprises page
+  And  I fill in "search-input" with "clothes"
+  And  I follow "Search" within ".search-form"
+  And  I select "Full" from "display"
+  And  I should see "This clothes shop" within ".search-enterprise-description"
+  And  I should see "really import..." within ".search-enterprise-description"
+
+Scenario 5: find enterprises without exact query
+  Tags: ['@selenium']
+  Given  the following enterprises
+  When  I go to the search enterprises page
+  And  I fill in "search-input" with "Noosfero Developers"
+  And  I follow "Search" within ".search-form"
+  And  I wait for 1 seconds
+  Then  I should see "Noosfero Developers Association" within "#search-results"
+

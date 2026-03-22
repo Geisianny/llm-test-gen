@@ -1,0 +1,36 @@
+Scenario 1: Track Product Impression
+  Then  tracking product impression with tracker "google-gtm-enhanced-ecommerce" should generate:
+
+
+
+Scenario 2: Track Product
+  Then  tracking product with tracker "google-gtm-enhanced-ecommerce" should generate:
+
+
+
+Scenario 3: Track Cart Add
+  Then  tracking cart-add for my cart with product with tracker "google-gtm-enhanced-ecommerce" should generate:
+
+
+
+Scenario 4: Track Cart Add
+  Then  tracking cart-remove for my cart with product with tracker "google-gtm-enhanced-ecommerce" should generate:
+
+
+
+Scenario 5: Track Checkout Step
+  Given  I add the product "T-Shirt" to my cart
+  Then  tracking checkout step for my cart with tracker "google-gtm-enhanced-ecommerce" should generate:
+
+
+
+Scenario 6: Track Checkout Complete
+  Given  the site has a customer "some-customer@something.com"
+  And  the customer "some-customer@something.com" has an address with country "Austria", "4600", "Wels", "Freiung", "9-11/N3"
+  And  the cart belongs to customer "some-customer@something.com"
+  And  I add the product "T-Shirt" to my cart
+  And  the cart ships to customer "some-customer@something.com" address with postcode "4600"
+  And  the cart invoices to customer "some-customer@something.com" address with postcode "4600"
+  And  I create an order from my cart
+  Then  tracking my order checkout complete with tracker "google-gtm-enhanced-ecommerce" should generate:
+

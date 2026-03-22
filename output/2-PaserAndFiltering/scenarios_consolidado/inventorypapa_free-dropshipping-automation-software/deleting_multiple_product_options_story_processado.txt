@@ -1,0 +1,10 @@
+Scenario 1: Deleting multiple product options at once
+  Tags: ['@ui', '@javascript']
+  When  I browse product options
+  And  I check the "T-Shirt size" product option
+  And  I check also the "T-Shirt color" product option
+  And  I delete them
+  Then  I should be notified that they have been successfully deleted
+  And  I should see a single product option in the list
+  And  I should see the product option "T-Shirt brand" in the list
+

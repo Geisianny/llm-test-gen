@@ -1,0 +1,62 @@
+Feature: Test LP mechanics when there are multiple liquidity providers, and LPs try to amend liquidity commitment;
+
+Background: 
+  Given  the margin calculator named "margin-calculator-1":
+  Given  the log normal risk model named "log-normal-risk-model":
+  And  the following network parameters are set:
+  And  the liquidity monitoring parameters:
+  And  the following assets are registered:
+  And  the fees configuration named "fees-config-1":
+  And  the price monitoring named "price-monitoring":
+  And  the liquidity sla params named "SLA-22":
+  And  the liquidity sla params named "SLA-23":
+  And  the markets:
+  And  the following network parameters are set:
+  Given  the average block duration is "1"
+
+Scenario 1: 001: lp1 and lp2 on the market ETH/MAR22, 0044-LIME-063, 0044-LIME-079, 0044-LIME-081, 0044-LIME-101
+  Tags: ['@Now']
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  When  the network moves ahead "4" blocks
+  And  the current epoch is "0"
+  Then  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/MAR22"
+  And  the following trades should be executed:
+  And  the market data for the market "ETH/MAR22" should be:
+  Then  the parties cancel the following orders:
+  Then  the parties place the following orders:
+  When  the network moves ahead "4" blocks
+  And  the current epoch is "0"
+  And  the parties submit the following liquidity provision:
+  And  the parties submit the following liquidity provision:
+  And  the supplied stake should be "10000" for the market "ETH/MAR22"
+  When  the network moves ahead "4" blocks
+  And  the supplied stake should be "6000" for the market "ETH/MAR22"
+  And  the current epoch is "1"
+  Then  the parties should have the following account balances:
+  Then  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the current epoch is "1"
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the parties place the following orders:
+  Then  the network moves ahead "1" blocks
+  And  the market data for the market "ETH/MAR22" should be:
+  Then  the parties should have the following account balances:
+  Then  the parties place the following orders:
+  Then  the network moves ahead "1" epochs
+  And  the current epoch is "2"
+  And  the market data for the market "ETH/MAR22" should be:
+  Then  the parties should have the following account balances:
+  And  the parties submit the following liquidity provision:
+  When  the network moves ahead "5" blocks
+  And  the current epoch is "2"
+  And  the market data for the market "ETH/MAR22" should be:
+  Then  the parties should have the following account balances:
+  And  the insurance pool balance should be "1417" for the market "ETH/MAR22"
+  Then  the network moves ahead "1" epochs
+  And  the current epoch is "3"
+  Then  the parties should have the following account balances:
+  Then  the following transfers should happen:
+  And  the insurance pool balance should be "1982" for the market "ETH/MAR22"
+

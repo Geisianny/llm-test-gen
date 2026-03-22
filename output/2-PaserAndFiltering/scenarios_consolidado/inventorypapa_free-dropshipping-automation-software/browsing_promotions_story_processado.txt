@@ -1,0 +1,15 @@
+Scenario 1: Browsing promotions
+  Tags: ['@ui', '@api']
+  Given  I want to browse promotions
+  Then  I should see a single promotion in the list
+  And  the "Basic promotion" promotion should exist in the registry
+
+
+
+Scenario 2: Browsing manage button for coupon based promotion
+  Tags: ['@ui', '@api']
+  Given  the store has promotion "Christmas sale" with coupon "Santa's gift"
+  And  I want to browse promotions
+  Then  this promotion should be coupon based
+  And  I should be able to manage coupons for this promotion
+

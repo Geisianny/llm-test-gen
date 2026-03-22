@@ -1,0 +1,148 @@
+Feature: Test the transfers to and from the insurance pools when markets terminate in various ways
+
+Background: 
+  Given  the average block duration is "1"
+  And  the following assets are registered:
+  And  the following network parameters are set:
+  And  the price monitoring named "price-monitoring-1":
+  And  the log normal risk model named "lognormal-risk-model-fish":
+  And  the margin calculator named "margin-calculator-1":
+  And  the fees configuration named "fees-config-1":
+  And  the oracle spec for settlement data filtering data from "0xCAFECAFE" named "ethDec19Oracle":
+  And  the oracle spec for trading termination filtering data from "0xCAFECAFE" named "ethDec19Oracle":
+  And  the oracle spec for settlement data filtering data from "0xCAFECAFE1" named "ethDec20Oracle":
+  And  the oracle spec for trading termination filtering data from "0xCAFECAFE1" named "ethDec20Oracle":
+  And  the oracle spec for settlement data filtering data from "0xCAFECAFE2" named "ethDec21Oracle":
+  And  the oracle spec for trading termination filtering data from "0xCAFECAFE2" named "ethDec21Oracle":
+  And  the markets:
+  And  the initial insurance pool balance is "1000000" for all the markets
+
+Scenario 1: Check insurance pool balances when markets are settled in a variety of ways, at different points in time
+  Tags: ['@InsurancePools']
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  And  the network moves ahead "2" blocks
+  Then  the mark price should be "150" for the market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_OPENING_AUCTION" for the market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_OPENING_AUCTION" for the market "ETH/DEC21"
+  And  the trading mode should be "TRADING_MODE_OPENING_AUCTION" for the market "ETH/DEC22"
+  And  the trading mode should be "TRADING_MODE_OPENING_AUCTION" for the market "ETH/DEC23"
+  When  the parties place the following orders:
+  And  the network moves ahead "1" blocks
+  Then  the mark price should be "150" for the market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_OPENING_AUCTION" for the market "ETH/DEC21"
+  And  the trading mode should be "TRADING_MODE_OPENING_AUCTION" for the market "ETH/DEC22"
+  And  the trading mode should be "TRADING_MODE_OPENING_AUCTION" for the market "ETH/DEC23"
+  When  the parties place the following orders:
+  And  the network moves ahead "1" blocks
+  Then  the mark price should be "150" for the market "ETH/DEC21"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC21"
+  And  the trading mode should be "TRADING_MODE_OPENING_AUCTION" for the market "ETH/DEC22"
+  And  the trading mode should be "TRADING_MODE_OPENING_AUCTION" for the market "ETH/DEC23"
+  And  the insurance pool balance should be "1000000" for the market "ETH/DEC19"
+  And  the insurance pool balance should be "1000000" for the market "ETH/DEC20"
+  And  the insurance pool balance should be "1000000" for the market "ETH/DEC21"
+  And  the insurance pool balance should be "1000000" for the market "ETH/DEC22"
+  And  the insurance pool balance should be "1000000" for the market "ETH/DEC23"
+  When  the parties place the following orders:
+  And  the network moves ahead "1" blocks
+  Then  the mark price should be "150" for the market "ETH/DEC22"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC21"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC22"
+  And  the trading mode should be "TRADING_MODE_OPENING_AUCTION" for the market "ETH/DEC23"
+  And  the insurance pool balance should be "1000000" for the market "ETH/DEC19"
+  And  the insurance pool balance should be "1000000" for the market "ETH/DEC20"
+  And  the insurance pool balance should be "1000000" for the market "ETH/DEC21"
+  And  the insurance pool balance should be "1000000" for the market "ETH/DEC22"
+  And  the insurance pool balance should be "1000000" for the market "ETH/DEC23"
+  When  the market states are updated through governance:
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC21"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC22"
+  And  the trading mode should be "TRADING_MODE_NO_TRADING" for the market "ETH/DEC23"
+  And  the insurance pool balance should be "1000000" for the market "ETH/DEC19"
+  And  the insurance pool balance should be "1000000" for the market "ETH/DEC20"
+  And  the insurance pool balance should be "1000000" for the market "ETH/DEC21"
+  And  the insurance pool balance should be "1000000" for the market "ETH/DEC22"
+  And  the insurance pool balance should be "0" for the market "ETH/DEC23"
+  And  the global insurance pool balance should be "1000000" for the asset "ETH"
+  When  the market states are updated through governance:
+  Then  the trading mode should be "TRADING_MODE_NO_TRADING" for the market "ETH/DEC22"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC21"
+  And  the trading mode should be "TRADING_MODE_NO_TRADING" for the market "ETH/DEC22"
+  And  the trading mode should be "TRADING_MODE_NO_TRADING" for the market "ETH/DEC23"
+  And  the insurance pool balance should be "1000000" for the market "ETH/DEC19"
+  And  the insurance pool balance should be "1000000" for the market "ETH/DEC20"
+  And  the insurance pool balance should be "1000000" for the market "ETH/DEC21"
+  And  the insurance pool balance should be "1000000" for the market "ETH/DEC22"
+  And  the insurance pool balance should be "0" for the market "ETH/DEC23"
+  And  the global insurance pool balance should be "1000000" for the asset "ETH"
+  When  the network moves ahead "10" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC21"
+  And  the insurance pool balance should be "1000000" for the market "ETH/DEC19"
+  And  the insurance pool balance should be "1000000" for the market "ETH/DEC20"
+  And  the insurance pool balance should be "1000000" for the market "ETH/DEC21"
+  And  the insurance pool balance should be "0" for the market "ETH/DEC22"
+  And  the insurance pool balance should be "0" for the market "ETH/DEC23"
+  And  the global insurance pool balance should be "2000000" for the asset "ETH"
+  When  the oracles broadcast data signed with "0xCAFECAFE2":
+  And  the network moves ahead "1" blocks
+  Then  the trading mode should be "TRADING_MODE_NO_TRADING" for the market "ETH/DEC21"
+  And  the insurance pool balance should be "1000000" for the market "ETH/DEC19"
+  And  the insurance pool balance should be "1000000" for the market "ETH/DEC20"
+  And  the insurance pool balance should be "1000000" for the market "ETH/DEC21"
+  And  the insurance pool balance should be "0" for the market "ETH/DEC22"
+  And  the insurance pool balance should be "0" for the market "ETH/DEC23"
+  And  the global insurance pool balance should be "2000000" for the asset "ETH"
+  When  the network moves ahead "10" blocks
+  Then  the trading mode should be "TRADING_MODE_NO_TRADING" for the market "ETH/DEC21"
+  And  the insurance pool balance should be "1000000" for the market "ETH/DEC19"
+  And  the insurance pool balance should be "1000000" for the market "ETH/DEC20"
+  And  the insurance pool balance should be "1000000" for the market "ETH/DEC21"
+  And  the insurance pool balance should be "0" for the market "ETH/DEC22"
+  And  the insurance pool balance should be "0" for the market "ETH/DEC23"
+  And  the global insurance pool balance should be "2000000" for the asset "ETH"
+  When  the oracles broadcast data signed with "0xCAFECAFE2":
+  And  the network moves ahead "10" blocks
+  Then  the insurance pool balance should be "1000000" for the market "ETH/DEC19"
+  And  the insurance pool balance should be "1000000" for the market "ETH/DEC20"
+  And  the insurance pool balance should be "0" for the market "ETH/DEC21"
+  And  the insurance pool balance should be "0" for the market "ETH/DEC22"
+  And  the insurance pool balance should be "0" for the market "ETH/DEC23"
+  And  the global insurance pool balance should be "3000000" for the asset "ETH"
+  When  the oracles broadcast data signed with "0xCAFECAFE1":
+  And  the oracles broadcast data signed with "0xCAFECAFE":
+  Then  the trading mode should be "TRADING_MODE_NO_TRADING" for the market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_NO_TRADING" for the market "ETH/DEC19"
+  And  the insurance pool balance should be "1000000" for the market "ETH/DEC19"
+  And  the insurance pool balance should be "1000000" for the market "ETH/DEC20"
+  And  the global insurance pool balance should be "3000000" for the asset "ETH"
+  When  the oracles broadcast data signed with "0xCAFECAFE1":
+  And  the network moves ahead "10" blocks
+  Then  the insurance pool balance should be "1000000" for the market "ETH/DEC19"
+  And  the global insurance pool balance should be "4000000" for the asset "ETH"
+  And  the insurance pool balance should be "0" for the market "ETH/DEC20"
+  And  the insurance pool balance should be "0" for the market "ETH/DEC21"
+  And  the insurance pool balance should be "0" for the market "ETH/DEC22"
+  And  the insurance pool balance should be "0" for the market "ETH/DEC23"
+  When  the oracles broadcast data signed with "0xCAFECAFE":
+  And  the network moves ahead "10" blocks
+  And  the global insurance pool balance should be "5000000" for the asset "ETH"
+  Then  the insurance pool balance should be "0" for the market "ETH/DEC19"
+  And  the insurance pool balance should be "0" for the market "ETH/DEC20"
+  And  the insurance pool balance should be "0" for the market "ETH/DEC21"
+  And  the insurance pool balance should be "0" for the market "ETH/DEC22"
+  And  the insurance pool balance should be "0" for the market "ETH/DEC23"
+

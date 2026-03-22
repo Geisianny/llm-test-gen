@@ -1,0 +1,9 @@
+Scenario 1: Adding note on the checkout summary step
+  Tags: ['@api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  And  I addressed the cart
+  When  I proceed with "Free" shipping method and "Offline" payment
+  And  I provide additional note like "Code to the front gateway is #44*"
+  And  I confirm my order
+  Then  the administrator should know about this additional note for this order made by "customer@example.com"
+

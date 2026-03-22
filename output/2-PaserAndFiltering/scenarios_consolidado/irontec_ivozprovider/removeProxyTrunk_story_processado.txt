@@ -1,0 +1,18 @@
+Scenario 1: Can't remove a proxy trunk with id equal to one
+  Tags: ['@createSchema']
+  Given  I add Authorization header
+  When  I add "Content-Type" header equal to "application/json"
+  And  I add "Accept" header equal to "application/json"
+  And  I send a "DELETE" request to "/proxy_trunks/1"
+  Then  the response status code should be 403
+
+
+
+Scenario 2: Can remove a proxy trunk with id different to one
+  Tags: ['@createSchema']
+  Given  I add Authorization header
+  When  I add "Content-Type" header equal to "application/json"
+  And  I add "Accept" header equal to "application/json"
+  And  I send a "DELETE" request to "/proxy_trunks/3"
+  Then  the response status code should be 204
+

@@ -1,0 +1,16 @@
+Feature: Formatters
+
+Scenario 1: Get list of formatters
+  Tags: ['@auth', '@notification']
+  When  we get "/formatters"
+  Then  we get list with 1+ items
+
+Scenario 2: Get formatted story
+  Tags: ['@auth', '@notification']
+  Given  the "validators"
+  And  "desks"
+  When  we post to "/archive" with success
+  Then  we get OK response
+  When  we post to "/formatters"
+  Then  we get response code 201
+

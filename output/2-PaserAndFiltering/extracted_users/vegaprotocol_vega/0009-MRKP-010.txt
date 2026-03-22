@@ -1,0 +1,15 @@
+Feature: Test setting of mark price algorithm for futures and perpetual markets
+
+Background: 
+  Given  the following network parameters are set:
+  And  the perpetual oracles from "0xCAFECAFE1":
+  And  the liquidity monitoring parameters:
+  And  the simple risk model named "simple-risk-model":
+  And  the markets:
+
+Scenario 1: Check that a market has been created successfully with the last trade price algo for mark price (0009-MRKP-010, 0009-MRKP-011)
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties place the following orders:
+  And  the mark price algo should be "COMPOSITE_PRICE_TYPE_LAST_TRADE" for the market "ETH/FEB23"
+  And  the mark price algo should be "COMPOSITE_PRICE_TYPE_LAST_TRADE" for the market "ETH/FEB22"
+

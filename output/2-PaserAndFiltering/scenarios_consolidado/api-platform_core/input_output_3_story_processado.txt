@@ -1,0 +1,22 @@
+Scenario 1: Get an item with a custom output
+  Tags: ['@createSchema']
+  Given  there is a DummyDtoCustom
+  When  I send a "GET" request to "/dummy_dto_custom_output/1"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/vnd.api+json; charset=utf-8"
+  And  the JSON should be valid according to the JSON API schema
+  And  the JSON should be a superset of:
+
+
+
+Scenario 2: Get a collection with a custom output
+  Tags: ['@createSchema']
+  Given  there are 2 DummyDtoCustom
+  When  I send a "GET" request to "/dummy_dto_custom_output"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/vnd.api+json; charset=utf-8"
+  And  the JSON should be valid according to the JSON API schema
+  And  the JSON should be a superset of:
+

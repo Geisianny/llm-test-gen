@@ -1,0 +1,12 @@
+Scenario 1: Valid token
+  Given  there is a manage customer session for "customer.one@example.org" that expires in "+5 minutes"
+  When  I view the manage customer endpoint for "customer.one@example.org"
+  Then  I will see the customer portal information
+
+
+
+Scenario 2: Expired token
+  Given  there is a manage customer session for "customer.one@example.org" that expires in "-5 minutes"
+  When  I view the manage customer endpoint for "customer.one@example.org"
+  Then  I will not see the customer portal information
+

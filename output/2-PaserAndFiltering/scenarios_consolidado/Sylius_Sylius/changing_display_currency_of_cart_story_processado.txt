@@ -1,0 +1,10 @@
+Scenario 1: Changing the currency of my cart
+  Tags: ['@no-api', '@ui']
+  Given  I added product "The Pug Mug" to the cart
+  When  I switch to the "GBP" currency
+  And  I check the details of my cart
+  Then  my cart total should be "£32.00"
+  And  total price of "The Pug Mug" item should be "£20.00"
+  And  my cart taxes should be "£2.00"
+  And  my cart shipping total should be "£10.00"
+

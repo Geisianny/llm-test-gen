@@ -1,0 +1,30 @@
+Feature: Test It is possible to configure a cash settled futures market to use a weighted average of 1. weighted average of trades over network.markPriceUpdateMaximumFrequency and 2. impact of leveraged notional on the order book with the value of USDT 100 and 3. an oracle source and if last trade is last updated more than 1 minute ago then it is removed and the remaining re-weighted and if the oracle is last updated more than 5 minutes ago then it is removed and the remaining re-weighted (0009-MRKP-018) and a perps market (with the oracle source different to that used for the external price in the perps market) (0009-MRKP-019).
+
+Background: 
+  Given  the following network parameters are set:
+  And  the liquidity monitoring parameters:
+  And  the simple risk model named "simple-risk-model":
+  And  the composite price oracles from "0xCAFECAFE1":
+  And  the markets:
+
+Scenario 1: 001 check mark price using weight average
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties place the following orders:
+  When  the network moves ahead "2" blocks
+  Then  the mark price should be "15900" for the market "ETH/FEB23"
+  And  the parties place the following orders:
+  And  the parties place the following orders:
+  Then  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  When  the network moves ahead "2" blocks
+  Then  the mark price should be "15953" for the market "ETH/FEB23"
+  And  the parties place the following orders:
+  When  the network moves ahead "2" blocks
+  Then  the mark price should be "15968" for the market "ETH/FEB23"
+  And  the parties place the following orders:
+  When  the network moves ahead "10" blocks
+  Then  the mark price should be "16000" for the market "ETH/FEB23"
+  When  the network moves ahead "10" blocks
+  And  the parties place the following orders:
+  When  the network moves ahead "2" blocks
+  Then  the mark price should be "15930" for the market "ETH/FEB23"
+

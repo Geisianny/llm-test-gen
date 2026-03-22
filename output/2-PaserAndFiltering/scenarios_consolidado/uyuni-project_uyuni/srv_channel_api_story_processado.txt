@@ -1,0 +1,61 @@
+Scenario 1: Create a custom software channel
+  When  I create the following channels:
+  Then  "foobar" should get listed with a call of listSoftwareChannels
+
+
+
+Scenario 2: Create a repository
+  When  I create a repo with label "foobar" and url
+  And  I associate repo "foobar" with channel "foobar"
+  Then  channel "foobar" should have attribute "last_modified" that is a date
+  And  channel "foobar" should not have attribute "yumrepo_last_sync"
+
+
+
+Scenario 3: Create a custom software channel as the child of another one
+  When  I create the following channels:
+  Then  "foobar-child" should get listed with a call of listSoftwareChannels
+  And  "foobar" should be the parent channel of "foobar-child"
+
+
+
+Scenario 4: List software channels
+  Then  something should get listed with a call of listSoftwareChannels
+
+
+
+Scenario 5: Delete a child software channel
+  When  I delete the software channel with label "foobar-child"
+  Then  "foobar-child" should not get listed with a call of listSoftwareChannels
+
+
+
+Scenario 6: Delete a software channel
+  When  I delete the repo with label "foobar"
+  And  I delete the software channel with label "foobar"
+  Then  "foobar" should not get listed with a call of listSoftwareChannels
+
+
+
+Scenario 7: Check last synchronization of a synced channel
+  Then  channel "fake-child-channel-i586" should have attribute "yumrepo_last_sync" that is a date
+
+
+
+Scenario 8: Verify if a channel is modular via the API
+  Tags: ['@rhlike_minion']
+  When  I verify channel "fake-base-channel-appstream" is modular via the API
+  And  I verify channel "fake-rpm-suse-channel" is not modular via the API
+
+
+
+Scenario 9: List modular channels via the API
+  Tags: ['@rhlike_minion']
+  When  channel "Fake-Base-Channel-AppStream" is present in the modular channels listed via the API
+
+
+
+Scenario 10: List available module streams for a given channel via the API
+  Tags: ['@rhlike_minion']
+  When  "scorpio" module streams "2.0, 2.1" are available for channel "fake-base-channel-appstream" via the API
+

@@ -1,0 +1,162 @@
+Feature: Internal Destinations
+
+Background: Set Initial Data
+  Given  the "validators"
+  When  we post to "/products" with success
+  And  we post to "/subscribers" with "digital" and success
+  When  we post to "/desks"
+  Then  we store "origin_desk" with value "#desks._id#" to context
+  Then  we store "origin_stage" with value "#desks.working_stage#" to context
+  When  we post to "desks"
+  Then  we store "destination_desk" with value "#desks._id#" to context
+  Then  we store "destination_stage" with value "#desks.incoming_stage#" to context
+
+Scenario 1: Create items for destinations on publish
+  Tags: ['@auth']
+  When  we post to "archive" with success
+  Given  "internal_destinations"
+  When  we publish "#archive._id#" with "publish" type and "published" state
+  Then  we get OK response
+  When  we get "/archive"
+  Then  we get list with 1 items
+  When  we get "/published"
+  Then  we get list with 1 items
+
+Scenario 2: Create & Publish item for destinations on publish and overwrite the item on correction and kill
+  Tags: ['@auth']
+  When  we post to "archive" with success
+  Given  "internal_destinations"
+  When  we publish "#archive._id#" with "publish" type and "published" state
+  Then  we get OK response
+  When  we get "/archive"
+  Then  we get list with 0 items
+  When  we get "/published"
+  Then  we get list with 2 items
+  When  we publish "#archive._id#" with "correct" type and "corrected" state
+  Then  we get OK response
+  When  we get "/published"
+  Then  we get list with 4 items
+  When  we publish "#archive._id#" with "kill" type and "killed" state
+  Then  we get OK response
+  When  we get "/published"
+  Then  we get list with 6 items
+
+Scenario 3: Publishing an item from the same desk as internal destination desk should not create another item.
+  Tags: ['@auth']
+  When  we post to "archive" with success
+  Given  "internal_destinations"
+  When  we publish "#archive._id#" with "publish" type and "published" state
+  Then  we get OK response
+  When  we get "/archive"
+  Then  we get list with 0 items
+  When  we get "/published"
+  Then  we get list with 1 items
+
+Scenario 4: Processed from is not set when item is duplicated or updated.
+  Tags: ['@auth']
+  When  we post to "archive" with success
+  Given  "internal_destinations"
+  When  we publish "#archive._id#" with "publish" type and "published" state
+  Then  we get OK response
+  When  we get "/published?where=%7B%22processed_from%22%3A%22123%22%7D"
+  Then  we get list with 1 items
+  Then  we store "published_item" with first item
+  When  we rewrite "#published_item._id#"
+  Then  we get OK response
+  When  we get "/archive/#REWRITE_ID#"
+  Then  we get existing resource
+  When  we post to "/archive/#published_item._id#/duplicate"
+  Then  we get OK response
+  When  we get "/archive/#duplicate._id#"
+  Then  we get existing resource
+
+Scenario 5: Create & Publish item for destinations on publish in global read off stage
+  Tags: ['@auth']
+  When  we post to "archive" with success
+  When  we post to "/stages" with success
+  Given  "internal_destinations"
+  When  we publish "#archive._id#" with "publish" type and "published" state
+  Then  we get OK response
+  When  we get "/archive"
+  Then  we get list with 0 items
+  When  we get "/published"
+  Then  we get list with 1 items
+  When  we patch "/desks/#destination_desk#"
+  Then  we get OK response
+  When  we get "/published"
+  Then  we get list with 2 items
+  When  we patch "/desks/#destination_desk#"
+  Then  we get OK response
+  When  we publish "#archive._id#" with "correct" type and "corrected" state
+  Then  we get OK response
+  When  we get "/published"
+  Then  we get list with 2 items
+  When  we patch "/desks/#destination_desk#"
+  Then  we get OK response
+  When  we get "/published"
+  Then  we get list with 4 items
+  When  we patch "/desks/#destination_desk#"
+  Then  we get OK response
+  When  we publish "#archive._id#" with "kill" type and "killed" state
+  Then  we get OK response
+  When  we get "/published"
+  Then  we get list with 3 items
+  When  we patch "/desks/#destination_desk#"
+  Then  we get OK response
+  When  we get "/published"
+  Then  we get list with 6 items
+
+Scenario 6: Create items for destinations on publish and keep the state same as original item's state.
+  Tags: ['@auth']
+  When  we post to "archive" with success
+  Given  "internal_destinations"
+  When  we publish "#archive._id#" with "publish" type and "scheduled" state
+  Then  we get OK response
+  When  we get "/published?where=%7B%22processed_from%22%3A%22123%22%7D"
+  Then  we get list with 1 items
+  When  we get "/published"
+  Then  we get list with 2 items
+
+Scenario 7: Send item to the destination desk on scheduled if send_after_schedule is disabled.
+  Tags: ['@auth']
+  When  we post to "archive" with success
+  Given  "internal_destinations"
+  When  we publish "#archive._id#" with "publish" type and "scheduled" state
+  Then  we get OK response
+  When  we get "/archive"
+  Then  we get list with 0 items
+  When  we get "/published"
+  Then  we get list with 2 items
+
+Scenario 8: Delay item creation for destinations on publish if the send_after_schedule is enabled for internal destinations
+  Tags: ['@auth']
+  When  we post to "archive" with success
+  Given  "internal_destinations"
+  When  we publish "#archive._id#" with "publish" type and "scheduled" state
+  Then  we get OK response
+  When  we get "/published?where=%7B%22processed_from%22%3A%22123%22%7D"
+  Then  we get list with 0 items
+  When  we get "/archive"
+  Then  we get list with 0 items
+  When  we get "/published"
+  Then  we get list with 1 items
+
+Scenario 9: Item created sucessfully for destinations on publish does not depend on send_after_schedule internal destinations
+  Tags: ['@auth']
+  When  we post to "archive" with success
+  Given  "internal_destinations"
+  When  we publish "#archive._id#" with "publish" type and "published" state
+  Then  we get OK response
+  When  we get "/archive"
+  Then  we get list with 0 items
+  When  we get "/published"
+  Then  we get list with 2 items
+  When  we post to "archive" with success
+  Given  "internal_destinations"
+  When  we publish "#archive._id#" with "publish" type and "published" state
+  Then  we get OK response
+  When  we get "/archive"
+  Then  we get list with 0 items
+  When  we get "/published"
+  Then  we get list with 5 items
+

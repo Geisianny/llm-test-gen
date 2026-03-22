@@ -1,0 +1,9 @@
+Scenario 1: test FOK limit order and market order (0068-MATC-067, 0068-MATC-068, 0068-MATC-069)
+  Given  the parties place the following orders:
+  And  "party5" should have general account balance of "894" for asset "BTC"
+  And  "party5" should have holding account balance of "0" for asset "BTC"
+  And  "party4" should have general account balance of "899" for asset "BTC"
+  Then  the orders should have the following status:
+  And  "party4" should have general account balance of "899" for asset "BTC"
+  And  "party5" should have general account balance of "894" for asset "BTC"
+

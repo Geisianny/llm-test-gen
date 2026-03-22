@@ -1,0 +1,31 @@
+Scenario 1: CONFIGURE BANQUE ACCOUNT:
+  Tags: ['@multicompany_base_finance_bank_account']
+  Given  I need a "res.partner.bank" with oid: scen.main_bank1
+  And  having:
+
+
+
+Scenario 2: CONFIGURE BANQUE ACCOUNT:
+  Tags: ['@multicompany_base_finance_bank_account']
+  Given  I need a "res.partner.bank" with oid: scen.CH_bank
+  And  having:
+  Given  I need a "res.partner.bank" with oid: scen.CH_bank_dta
+  And  having:
+
+
+
+Scenario 3: CONFIGURE BANQUE ACCOUNT:
+  Tags: ['@multicompany_base_finance_bank_account']
+  Given  I need a "res.bank" with oid: scen.CH_b1
+  And  having:
+  Given  I need a "res.partner.bank" with oid: scen.CH_bank1
+  And  having:
+  Given  I need a "res.bank" with oid: scen.CH_b4
+  And  having:
+  Given  I need a "res.partner.bank" with oid: scen.CH_bank4
+  And  having:
+  Given  I need a "res.bank" with oid: scen.CH_b5
+  And  having:
+  Given  I need a "res.partner.bank" with oid: scen.CH_bank5
+  And  having:
+

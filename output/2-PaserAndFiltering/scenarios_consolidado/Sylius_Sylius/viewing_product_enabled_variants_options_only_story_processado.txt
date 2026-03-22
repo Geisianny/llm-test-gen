@@ -1,0 +1,5 @@
+Scenario 1: Seeing only enabled variants options
+  Tags: ['@api', '@ui']
+  When  I view product "Super Cool T-Shirt"
+  Then  I should not be able to select the "Yellow" Color option value
+

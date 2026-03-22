@@ -1,0 +1,15 @@
+Scenario 1: Add a new guest product price rule for a guest customer which is valid
+  Given  I am guest "some-guest@something.com"
+  Then  the specific price rule "guest" for product "Shoe" should be valid
+
+
+
+Scenario 2: Add a new guest product price rule for a cart without a customer which is valid
+  Then  the specific price rule "guest" for product "Shoe" should be valid
+
+
+
+Scenario 3: Add a new guest product price rule for a customer which is invalid
+  Given  I am customer "some-customer@something.com"
+  Then  the specific price rule "guest" for product "Shoe" should be invalid
+

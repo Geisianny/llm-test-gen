@@ -1,0 +1,31 @@
+Feature: It is possible to configure a cash settled futures market to use an oracle source for the mark price (0009-MRKP-016) and a perps market (with the oracle source different to that used for the external price in the perps market) (0009-MRKP-017)
+
+Background: 
+  Given  the following network parameters are set:
+  And  the liquidity monitoring parameters:
+  And  the simple risk model named "simple-risk-model":
+  And  the composite price oracles from "0xCAFECAFE1":
+  And  the markets:
+
+Scenario 1: 001 check mark with oracle
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties place the following orders:
+  When  the network moves ahead "2" blocks
+  Then  the mark price should be "15900" for the market "ETH/FEB23"
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the mark price should be "15900" for the market "ETH/FEB23"
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the mark price should be "15900" for the market "ETH/FEB23"
+  When  the network moves ahead "2" blocks
+  Then  the mark price should be "15900" for the market "ETH/FEB23"
+  Then  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  When  the network moves ahead "1" blocks
+  Then  the mark price should be "16000" for the market "ETH/FEB23"
+  Then  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  When  the network moves ahead "2" blocks
+  Then  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  When  the network moves ahead "1" blocks
+  Then  the mark price should be "15000" for the market "ETH/FEB23"
+

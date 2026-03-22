@@ -1,0 +1,35 @@
+Scenario 1: Changing the lowest price for discounted products checking period
+  Tags: ['@api', '@ui']
+  When  I want to modify a channel "EU"
+  And  I specify 30 days as the lowest price for discounted products checking period
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  its lowest price for discounted products checking period should be set to 30 days
+
+
+
+Scenario 2: Being prevented from changing the lowest price for discounted products checking period to zero
+  Tags: ['@api', '@ui']
+  When  I want to modify a channel "EU"
+  And  I specify 0 days as the lowest price for discounted products checking period
+  And  I try to save my changes
+  Then  I should be notified that the lowest price for discounted products checking period must be greater than 0
+
+
+
+Scenario 3: Being prevented from changing the lowest price for discounted products checking period to a negative value
+  Tags: ['@api', '@ui']
+  When  I want to modify a channel "EU"
+  And  I specify -10 days as the lowest price for discounted products checking period
+  And  I try to save my changes
+  Then  I should be notified that the lowest price for discounted products checking period must be greater than 0
+
+
+
+Scenario 4: Being prevented from changing the lowest price for discounted products checking period to a too big value
+  Tags: ['@api', '@ui']
+  When  I want to modify a channel "EU"
+  And  I specify 99999999999 days as the lowest price for discounted products checking period
+  And  I try to save my changes
+  Then  I should be notified that the lowest price for discounted products checking period must be lower
+

@@ -1,0 +1,38 @@
+Scenario 1: Applying correct taxes for a single item unit with discount
+  Tags: ['@api', '@ui']
+  Given  I added product "Symfony Mug" to the cart
+  When  I check the details of my cart
+  Then  my cart total should be "$50.55"
+  And  my cart taxes should be "$4.60"
+
+
+
+Scenario 2: Applying correct taxes for a single item unit with discount
+  Tags: ['@api', '@ui']
+  Given  I added product "PHP Mug" to the cart
+  When  I check the details of my cart
+  Then  my cart total should be "$50.53"
+  And  my cart taxes should be "$4.59"
+
+
+
+Scenario 3: Applying correct taxes for multiple units of different products with discount and default calculator
+  Tags: ['@api', '@ui']
+  Given  I added 2 products "PHP T-Shirt" to the cart
+  And  I added 2 products "Symfony Mug" to the cart
+  When  I check the details of my cart
+  Then  my cart total should be "$125.70"
+  And  my cart taxes should be "$13.80"
+
+
+
+Scenario 4: Applying correct taxes for multiple units of different products with discount and decimal calculator
+  Tags: ['@api', '@ui']
+  Given  the "US VAT" tax rate has decimal calculator configured
+  And  the "Low VAT" tax rate has decimal calculator configured
+  And  I added 2 products "PHP T-Shirt" to the cart
+  And  I added 2 products "Symfony Mug" to the cart
+  When  I check the details of my cart
+  Then  my cart total should be "$125.69"
+  And  my cart taxes should be "$13.79"
+

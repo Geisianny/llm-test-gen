@@ -1,0 +1,48 @@
+Scenario 1: Displaying correct tax before specifying shipping address
+  Tags: ['@api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  When  I check the details of my cart
+  Then  my cart total should be "$100.00"
+  And  there should be no taxes charged
+
+
+
+Scenario 2: Displaying correct tax after specifying billing address
+  Tags: ['@api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  And  I addressed the cart to "Germany"
+  When  I check the details of my cart
+  Then  my cart total should be "$123.00"
+  And  my cart taxes should be "$23.00"
+
+
+
+Scenario 3: Displaying correct taxes for multiple products after specifying billing address
+  Tags: ['@api', '@ui']
+  Given  I added 3 products "PHP T-Shirt" to the cart
+  And  I addressed the cart to "Germany"
+  When  I check the details of my cart
+  Then  my cart total should be "$369.00"
+  And  my cart taxes should be "$69.00"
+
+
+
+Scenario 4: Displaying correct taxes for multiple products from different zones before specifying shipping address
+  Tags: ['@api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  And  I added 2 products "Symfony Mug" to the cart
+  When  I check the details of my cart
+  Then  my cart total should be "$205.00"
+  And  my cart taxes should be "$5.00"
+
+
+
+Scenario 5: Displaying correct taxes for multiple products from different zones after specifying billing address
+  Tags: ['@api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  And  I added 2 products "Symfony Mug" to the cart
+  And  I addressed the cart to "Germany"
+  When  I check the details of my cart
+  Then  my cart total should be "$223.00"
+  And  my cart taxes should be "$23.00"
+

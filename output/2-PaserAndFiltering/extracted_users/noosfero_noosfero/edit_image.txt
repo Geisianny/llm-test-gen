@@ -1,0 +1,24 @@
+Feature: edit_image
+Description: As a noosfero user
+  I want to upload images and assigns a link to each image
+
+Background: 
+  Given  I am on the homepage
+  And  the following users
+  And  I am logged in as "morgoth"
+
+Scenario 1: edit external link when edit image
+  Given  the following files
+  When  I go to edit "rails" by morgoth
+  Then  I should see "External link"
+
+Scenario 2: dont offer to edit external link if no image
+  Given  the following files
+  When  I go to edit "test_another" by morgoth
+  Then  I should not see "External link"
+
+Scenario 3: display tag list field when editing file
+  Given  the following files
+  When  I go to edit "rails" by morgoth
+  Then  I should see "Tag list"
+

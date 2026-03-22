@@ -1,0 +1,56 @@
+Feature: Various issues reported in the bug tracker remain solved
+
+Scenario 1: Issue 44: Patterns with numeric characters are possible
+  Given  a running exporter listening with configuration file "test-config-issue44.yaml"
+  When  the following HTTP request is logged to "access.log"
+  Then  the exporter should report value 1 for metric ht_router_http_response_count_total{method="",status="200"}
+
+Scenario 2: Issue 90: Unknown parse error
+  Given  a running exporter listening with configuration file "test-config-issue90.yaml"
+  When  the following HTTP request is logged to "access.log"
+  Then  the exporter should report value 3 for metric test_http_response_count_total{method="GET",status="200"}
+
+Scenario 3: Issue 91: Unknown parse error
+  Given  a running exporter listening with configuration file "test-config-issue91.yaml"
+  When  the following HTTP request is logged to "access.log"
+  Then  the exporter should report value 1 for metric test_http_response_count_total{method="GET",status="200"}
+
+Scenario 4: Issue 217: Multiple response time values
+  Given  a running exporter listening with configuration file "test-config-issue217.yaml"
+  When  the following HTTP request is logged to "access.log"
+  Then  the exporter should report value 12 for metric test_http_upstream_time_seconds_sum{method="GET",status="200"}
+
+Scenario 5: Issue 212: Parse errors from multiple namespaces
+  Given  a running exporter listening with configuration file "test-config-issue212.yaml"
+  When  the following HTTP request is logged to "access.log"
+  And  the following HTTP request is logged to "access2.log"
+  Then  the exporter should report value 3 for metric test_parse_errors_total
+  And  the exporter should report value 2 for metric test2_parse_errors_total
+
+Scenario 6: Issue 212: Parse errors from multiple files in same namespace
+  Given  a running exporter listening with configuration file "test-config-issue212b.yaml"
+  When  the following HTTP request is logged to "access.log"
+  And  the following HTTP request is logged to "access2.log"
+  Then  the exporter should report value 5 for metric test_parse_errors_total
+
+Scenario 7: Issue 212: Parse errors from multiple namespaces with namespace as label
+  Given  a running exporter listening with configuration file "test-config-issue212c.yaml"
+  When  the following HTTP request is logged to "access.log"
+  And  the following HTTP request is logged to "access2.log"
+  Then  the exporter should report value 3 for metric http_parse_errors_total{vhost="test"}
+  And  the exporter should report value 2 for metric http_parse_errors_total{vhost="test2"}
+
+Scenario 8: Issue 216: Cannot set only_counter for status, daemon panics
+  Given  a running exporter listening with configuration file "test-config-issue216.hcl"
+  When  the following HTTP request is logged to "access.log"
+  Then  the process should be running
+  And  the exporter should report value 1 for metric nginx_http_response_count_total{method="GET",status="200"}
+  And  the exporter should report value 1 for metric nginx_http_response_count_total{method="other",status="200"}
+  And  the exporter should report value 4 for metric nginx_http_response_time_seconds_hist_count
+
+Scenario 9: Issue 224: Missing float values
+  Given  a running exporter listening with configuration file "test-config-issue217.yaml"
+  When  the following HTTP request is logged to "access.log"
+  Then  the exporter should report value 0 for metric test_parse_errors_total
+  Then  the exporter should report value 4 for metric test_http_upstream_time_seconds_sum{method="GET",status="200"}
+

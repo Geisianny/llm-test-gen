@@ -1,0 +1,39 @@
+Feature: Leave a monitoring auction, enter a liquidity auction
+
+Background: 
+  And  the markets:
+  And  the following network parameters are set:
+
+Scenario 1: 
+  Tags: ['@SLABug']
+  Given  the parties deposit on asset's general account the following amount:
+  Then  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  When  the parties place the following orders:
+  And  time is updated to "2019-11-30T00:00:03Z"
+  Then  the market state should be "STATE_SUSPENDED" for the market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/DEC19"
+  Then  the parties cancel the following orders:
+  Then  the parties place the following orders:
+  When  the network moves ahead "15" blocks
+  Then  the market state should be "STATE_ACTIVE" for the market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the mark price should be "100291" for the market "ETH/DEC19"
+  Then  the parties place the following orders:
+  Then  the parties place the following pegged orders:
+  Then  the market state should be "STATE_SUSPENDED" for the market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/DEC19"
+  Then  the parties place the following orders:
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/DEC19"
+  And  the market state should be "STATE_SUSPENDED" for the market "ETH/DEC19"
+  And  time is updated to "2019-11-30T00:00:22Z"
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/DEC19"
+  And  the market state should be "STATE_SUSPENDED" for the market "ETH/DEC19"
+  Then  the parties place the following orders:
+  When  the network moves ahead "15" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the market state should be "STATE_ACTIVE" for the market "ETH/DEC19"
+

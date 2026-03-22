@@ -1,0 +1,10 @@
+Scenario 1: Change of market.liquidity.probabilityOfTrading.tau.scaling will immediately change the
+            of committed liquidity (0034-PROB-010)
+  And  the orders should have the following states:
+  Then  the pegged orders should have the following states:
+  Given  the network moves ahead "1" epochs
+  Then  the liquidity provider fee shares for the market "BTC/ETH" should be:
+  When  the following network parameters are set:
+  And  the network moves ahead "1" epochs
+  Then  the liquidity provider fee shares for the market "BTC/ETH" should be:
+

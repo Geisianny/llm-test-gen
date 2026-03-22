@@ -1,0 +1,45 @@
+Feature: Test setting of mark price
+
+Background: 
+  Given  the following network parameters are set:
+  And  the perpetual oracles from "0xCAFECAFE1":
+  And  the liquidity monitoring parameters:
+  And  the simple risk model named "simple-risk-model":
+  And  the composite price oracles from "0xCAFECAFE1":
+  And  the markets:
+
+Scenario 1: 001 check mark price using weight average
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties place the following orders:
+  When  the network moves ahead "2" blocks
+  Then  the mark price should be "15900" for the market "ETH/FEB23"
+  Then  the mark price should be "15900" for the market "ETH/FEB22"
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the mark price should be "15900" for the market "ETH/FEB23"
+  Then  the mark price should be "15900" for the market "ETH/FEB22"
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the mark price should be "15900" for the market "ETH/FEB23"
+  When  the network moves ahead "2" blocks
+  Then  the mark price should be "15900" for the market "ETH/FEB23"
+  Then  the mark price should be "15900" for the market "ETH/FEB22"
+  Then  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  When  the network moves ahead "1" blocks
+  Then  the mark price should be "15940" for the market "ETH/FEB23"
+  Then  the mark price should be "15940" for the market "ETH/FEB22"
+  When  the markets are updated:
+  Then  the mark price should be "15940" for the market "ETH/FEB23"
+  Then  the mark price should be "15940" for the market "ETH/FEB22"
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the mark price should be "15940" for the market "ETH/FEB23"
+  Then  the mark price should be "15940" for the market "ETH/FEB22"
+  And  the parties place the following orders:
+  When  the network moves ahead "2" blocks
+  Then  the mark price should be "15940" for the market "ETH/FEB23"
+  Then  the mark price should be "15940" for the market "ETH/FEB22"
+  When  the network moves ahead "1" blocks
+  Then  the mark price should be "15990" for the market "ETH/FEB23"
+  Then  the mark price should be "15990" for the market "ETH/FEB22"
+

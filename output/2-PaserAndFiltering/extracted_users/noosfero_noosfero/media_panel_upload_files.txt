@@ -1,0 +1,205 @@
+Feature: uploads items on media panel
+Description: As a noosfero user
+  I want to uploads items when creating or editing articles
+
+Background: 
+  Given  the following users
+  And  feature "media_panel" is enabled on environment
+  And  I am logged in as "joaosilva"
+  And  I am on /myprofile/joaosilva/cms/new?type=TextArticle
+
+Scenario 1: see media panel collapsed
+  Then  I should see "Insert media"
+  And  I should not see an element ".show-media-panel"
+
+Scenario 2: expand media panel
+  Tags: ['@selenium-fixme']
+  When  I follow "Show/Hide"
+  Then  I should see an element ".show-media-panel"
+
+Scenario 3: upload file showing percentage and name
+  Tags: ['@selenium-fixme']
+  When  I follow "Show/Hide"
+  And  I attach the file "public/images/rails.png" to "file"
+  Then  I should see "100%"
+  And  I should see "rails.png"
+
+Scenario 4: upload multiple files
+  Tags: ['@selenium-fixme']
+  When  I follow "Show/Hide"
+  And  I attach the file "public/images/rails.png" to "file"
+  And  I attach the file "public/503.jpg" to "file"
+  Then  I should see "rails.png" within "#file-1"
+  And  I should see "503.jpg" within "#file-2"
+
+Scenario 5: show error when upload fails
+  Tags: ['@selenium-fixme']
+  When  I follow "Show/Hide"
+  And  I attach the file "public/images/rails.png" to "file"
+  And  I attach the file "public/images/rails.png" to "file"
+  Then  I should see "rails.png" within "#file-1"
+  And  I should see "100%" within "#file-1"
+  But  I should see "Validation failed: Slug The title (article name) is already being used by another article, please use another title." within "#file-2"
+  And  The page should contain "div.error-message"
+
+Scenario 6: select destination folder
+  Tags: ['@selenium-fixme']
+  When  I follow "Show/Hide"
+  And  I attach the file "public/images/rails.png" to "file"
+  And  I select "joaosilva" from "parent_id" within "#media-upload-form"
+  And  I attach the file "public/503.jpg" to "file"
+  And  I go to joaosilva's cms
+  Then  I should not see "rails.png"
+  But  I should see "503"
+  When  I follow "Gallery"
+  Then  I should see "rails"
+  But  I should not see "503"
+
+Scenario 7: create new folder with parent
+  Tags: ['@selenium-fixme']
+  Given  I follow "Show/Hide"
+  And  I should see "joaosilva" within "#media-upload-form"
+  And  I should see "joaosilva/Gallery" within "#media-upload-form"
+  And  I should see "joaosilva" within "#published-media"
+  And  I should see "joaosilva/Gallery" within "#published-media"
+  When  I follow "New folder"
+  And  I select "joaosilva" from "parent_id" within "#new-folder-dialog"
+  And  I fill in "Name" with "Main folder" within "#new-folder-dialog"
+  And  I press "Create"
+  Then  I should see "joaosilva" within "#media-upload-form"
+  And  I should see "joaosilva/Gallery" within "#media-upload-form"
+  And  I should see "joaosilva/Main folder" within "#media-upload-form"
+  And  "joaosilva/Main folder" should be selected for "parent_id" within "#media-upload-form"
+  And  I should see "joaosilva" within "#published-media"
+  And  I should see "joaosilva/Gallery" within "#published-media"
+  And  I should see "joaosilva/Main folder" within "#published-media"
+  When  I follow "New folder"
+  And  I select "joaosilva/Gallery" from "parent_id" within "#new-folder-dialog"
+  And  I fill in "Name" with "Gallery folder" within "#new-folder-dialog"
+  And  I press "Create"
+  Then  I should see "joaosilva" within "#media-upload-form"
+  And  I should see "joaosilva/Gallery" within "#media-upload-form"
+  And  I should see "joaosilva/Main folder" within "#media-upload-form"
+  And  I should see "joaosilva/Gallery/Gallery folder" within "#media-upload-form"
+  And  "joaosilva/Gallery/Gallery folder" should be selected for "parent_id" within "#media-upload-form"
+  And  I should see "joaosilva" within "#published-media"
+  And  I should see "joaosilva/Gallery" within "#published-media"
+  And  I should see "joaosilva/Main folder" within "#published-media"
+  And  I should see "joaosilva/Gallery/Gallery folder" within "#published-media"
+
+Scenario 8: select type when create new folder
+  Tags: ['@selenium-fixme']
+  Given  I follow "Show/Hide"
+  And  I follow "New folder"
+  And  I choose "Folder" within "#new-folder-dialog"
+  And  I fill in "Name" with "Main new folder" within "#new-folder-dialog"
+  When  I press "Create"
+  Then  I should see "joaosilva/Gallery/Main new folder" within "#parent_id"
+  Given  I follow "New folder"
+  And  I choose "Gallery" within "#new-folder-dialog"
+  And  I fill in "Name" with "Gallery new folder" within "#new-folder-dialog"
+  When  I press "Create"
+  Then  I should see "joaosilva/Gallery/Gallery new folder" within "#parent_id"
+
+Scenario 9: hide and show upload list
+  Tags: ['@selenium-fixme']
+  When  I follow "Show/Hide"
+  And  I attach the file "public/images/rails.png" to "file"
+  And  I attach the file "public/503.jpg" to "file"
+  And  I follow "Hide all uploads"
+  Then  I should not see "503"
+  And  I should not see "rails"
+  When  I follow "Show all uploads"
+  Then  I should see "503"
+  And  I should see "rails"
+
+Scenario 10: update recent media after file upload
+  Tags: ['@selenium-fixme']
+  Given  the following files
+  When  I go to /myprofile/joaosilva/cms/new?type=TextArticle
+  And  I follow "Show/Hide"
+  And  I select "Recent media" from "parent_id" within "#published-media"
+  Then  I should see div with title "other-pic" within ".items"
+  When  I select "joaosilva" from "parent_id" within "#media-upload-form"
+  And  I attach the file "public/503.jpg" to "file"
+  Then  I should see div with title "503" within ".items"
+  And  I should see div with title "other-pic" within ".items"
+  When  I select "joaosilva/Gallery" from "parent_id" within "#media-upload-form"
+  And  I attach the file "public/images/rails.png" to "file"
+  And  I attach the file "public/robots.txt" to "file"
+  Then  I should see div with title "rails" within ".items"
+  And  I should see div with title "503" within ".items"
+  And  I should see div with title "other-pic" within ".items"
+  And  I should see "robots" link
+
+Scenario 11: select folder to show items
+  Tags: ['@selenium-fixme']
+  Given  the following galleries
+  And  the following files
+  When  I go to /myprofile/joaosilva/cms/new?type=TextArticle
+  And  I follow "Show/Hide"
+  And  I select "joaosilva/Gallery" from "parent_id" within "#published-media"
+  Then  I should see div with title "other-pic" within ".items"
+  And  I should not see div with title "rails.png" within ".items"
+  When  I select "joaosilva/other-gallery" from "parent_id" within "#published-media"
+  Then  I should see div with title "rails" within ".items"
+  And  I should not see div with title "other-pic" within ".items"
+
+Scenario 12: update selected folder content when upload file to same folder
+  Tags: ['@selenium-fixme']
+  Given  the following galleries
+  And  the following files
+  When  I go to /myprofile/joaosilva/cms/new?type=TextArticle
+  And  I follow "Show/Hide"
+  And  I select "joaosilva/Gallery" from "parent_id" within "#published-media"
+  And  I select "joaosilva/Gallery" from "parent_id" within "#media-upload-form"
+  And  I attach the file "public/503.jpg" to "file"
+  Then  I should see div with title "other-pic" within ".items"
+  And  I should see div with title "503" within ".items"
+  When  I select "joaosilva/other-gallery" from "parent_id" within "#media-upload-form"
+  And  I attach the file "public/robots.txt" to "file"
+  Then  I should see div with title "other-pic" within ".items"
+  And  I should see div with title "503" within ".items"
+  And  I should not see "robots" within ".items"
+
+Scenario 13: filter media with search
+  Tags: ['@selenium-fixme']
+  Given  the following galleries
+  And  the following files
+  When  I go to /myprofile/joaosilva/cms/new?type=TextArticle
+  And  I follow "Show/Hide"
+  And  I select "Recent media" from "parent_id" within "#published-media"
+  And  I fill in "Search" with "rails" within "#published-media"
+  Then  I should see div with title "rails" within ".items"
+  When  I select "joaosilva/Gallery" from "parent_id" within "#published-media"
+  And  I fill in "Search" with "rails" within "#published-media"
+  Then  I should not see div with title "rails.png" within ".items"
+  When  I select "joaosilva/other-gallery" from "parent_id" within "#published-media"
+  And  I fill in "Search" with "rails" within "#published-media"
+  Then  I should see div with title "rails" within ".items"
+
+Scenario 14: separate images from non-images
+  Tags: ['@selenium-fixme']
+  When  I follow "Show/Hide"
+  Then  I should not see "Images"
+  And  I should not see "Files"
+  When  I attach the file "public/robots.txt" to "file"
+  And  I attach the file "public/images/rails.png" to "file"
+  Then  I should see "Files"
+  And  I should see "robots" within ".generics"
+  But  I should not see "rails" within ".generics"
+  And  I should see "Images"
+  And  I should see div with title "rails" within ".images"
+  But  I should not see div with title "robots" within ".images"
+
+Scenario 15: view all media button if there are too many uploads
+  Tags: ['@selenium-fixme']
+  Given  the following galleries
+  And  the following files
+  When  I go to /myprofile/joaosilva/cms/new?type=TextArticle
+  And  I follow "Show/Hide"
+  And  I should not see "View all"
+  And  I attach the file "public/503.jpg" to "file"
+  Then  I should see "View all" link
+  And  I should see div with title "503" within ".images"
+

@@ -1,0 +1,16 @@
+Scenario 1: Changing products taxon to taxon with scheduled catalog promotion
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I change that the "T-Shirt" product does not belong to the "Clothes" taxon
+  And  I add "Shirts" taxon to the "T-Shirt" product
+  Then  the visitor should see that the "PHP T-Shirt" variant is not discounted
+  And  the visitor should still see "$100.00" as the price of the "T-Shirt" product in the "Web-US" channel
+
+
+
+Scenario 2: Changing products taxon to taxon with disabled catalog promotion
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I change that the "T-Shirt" product does not belong to the "Clothes" taxon
+  And  I add "Dishes" taxon to the "T-Shirt" product
+  Then  the visitor should see that the "PHP T-Shirt" variant is not discounted
+  And  the visitor should still see "$100.00" as the price of the "T-Shirt" product in the "Web-US" channel
+

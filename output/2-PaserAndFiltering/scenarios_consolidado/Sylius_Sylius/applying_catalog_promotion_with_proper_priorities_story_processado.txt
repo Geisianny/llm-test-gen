@@ -1,0 +1,5 @@
+Scenario 1: Applying catalog promotion with descending order by their priority
+  Tags: ['@api', '@ui']
+  When  I view "PHP T-Shirt" variant of the "T-Shirt" product
+  Then  I should see this variant is discounted from "$100.00" to "$30.00" with "Winter sale", "Summer sale", "Spring sale" and "Autumn sale" promotions
+

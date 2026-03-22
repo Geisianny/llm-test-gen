@@ -1,0 +1,20 @@
+Feature: Create bootstrap repositories
+Description: In order to be able to enroll clients with MU repositories
+  As the system administrator
+  I create all bootstrap repos with --with-custom-channels option
+
+Scenario 1: Create the bootstrap repositories including custom channels
+  When  I create the bootstrap repositories including custom channels
+
+Scenario 2: Create the bootstrap repository for SUSE Minion
+  Tags: ['@sle_minion']
+  When  I create the bootstrap repository for "sle_minion" on the server
+
+Scenario 3: Create the bootstrap repository for Proxy
+  Tags: ['@proxy']
+  When  I create the bootstrap repository for "proxy" on the server
+
+Scenario 4: Create the bootstrap repository for Build Host
+  Tags: ['@build_host']
+  When  I create the bootstrap repository for "build_host" on the server
+

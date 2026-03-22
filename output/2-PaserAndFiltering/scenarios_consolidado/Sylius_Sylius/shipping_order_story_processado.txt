@@ -1,0 +1,24 @@
+Scenario 1: Finalizing order's shipment
+  Tags: ['@api', '@ui']
+  Given  I view the summary of the order "#00000666"
+  When  specify its tracking code as "#00044"
+  And  I ship this order
+  Then  I should be notified that the order has been successfully shipped
+  And  it should have shipment in state shipped
+
+
+
+Scenario 2: Unable to finalize shipped order's shipment
+  Tags: ['@api', '@ui']
+  Given  this order has already been shipped
+  When  I view the summary of the order "#00000666"
+  Then  I should not be able to ship this order
+
+
+
+Scenario 3: Checking the shipment state of a completed order
+  Tags: ['@api', '@ui']
+  Given  this order has already been shipped
+  When  I browse orders
+  Then  this order should have order shipping state "Shipped"
+

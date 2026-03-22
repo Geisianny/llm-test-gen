@@ -1,0 +1,81 @@
+Feature: Publish content to the public API
+
+Scenario 1: Publish a text item
+  Tags: ['@auth', '@notification']
+  Given  "desks"
+  And  "archive"
+  And  the "validators"
+  When  we post to "/products" with success
+  And  we post to "/subscribers" with success
+  And  we publish "item1" with "publish" type and "published" state
+  Then  we get OK response
+  And  we get notifications
+  And  we get existing resource
+  When  we enqueue published
+  When  we get "/publish_queue"
+  Then  we get existing resource
+  When  we get "/published"
+  Then  we get existing resource
+
+Scenario 2: Publish a picture item to the API
+  Tags: ['@auth', '@notification']
+  Given  "desks"
+  And  "archive"
+  And  the "validators"
+  When  we post to "/products" with success
+  And  we post to "/subscribers" with success
+  And  we publish "20150723001158606583" with "publish" type and "published" state
+  Then  we get OK response
+  And  we get notifications
+  And  we get existing resource
+  When  we enqueue published
+  When  we get "/publish_queue"
+  Then  we get existing resource
+  When  we get "/publish_queue/20150723001158606583"
+  Then  we get formatted item
+  When  we get "/published"
+  Then  we get existing resource
+
+Scenario 3: Publish a composite item with a story and a picture to the API
+  Tags: ['@auth', '@notification']
+  Given  empty "archive"
+  Given  "desks"
+  And  the "validators"
+  When  we post to "archive" with success
+  When  we post to "archive" with success
+  When  we post to "archive" with success
+  When  we post to "/products" with success
+  And  we post to "/subscribers" with success
+  And  we publish "compositeitem" with "publish" type and "published" state
+  Then  we get OK response
+  And  we get notifications
+  And  we get existing resource
+  When  we enqueue published
+  When  we get "/publish_queue"
+  Then  we get existing resource
+  When  we get "/published/compositeitem"
+  Then  we get existing resource
+
+Scenario 4: Publish a composite item with embedded items
+  Tags: ['@auth', '@notification']
+  Given  empty "archive"
+  Given  "desks"
+  And  the "validators"
+  And  the "vocabularies"
+  When  we post to "archive" with success
+  When  we post to "archive" with success
+  When  we post to "archive" with success
+  When  we post to "/products" with success
+  And  we post to "/subscribers" with success
+  And  we publish "compositeitem" with "publish" type and "published" state
+  Then  we get OK response
+  And  we get existing resource
+  And  we get notifications
+  When  we enqueue published
+  When  we get "/publish_queue"
+  Then  we get list with 1 items
+  When  we get "/published/compositeitem"
+  Then  we get existing resource
+  When  we get "/publish_queue/compositeitem"
+  Then  we get formatted item
+

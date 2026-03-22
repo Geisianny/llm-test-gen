@@ -1,0 +1,33 @@
+Scenario 1: Being unable to see non-own order
+  Tags: ['@api']
+  When  I try to see the order placed by a customer "john@example.com"
+  Then  I should not be able to see that order
+
+
+
+Scenario 2: Being unable to see non-own order item
+  Tags: ['@api']
+  When  I try to see one of the items from the order placed by a customer "john@example.com"
+  Then  I should not be able to see that item
+
+
+
+Scenario 3: Being unable to see non-own order item unit
+  Tags: ['@api']
+  When  I try to see one of the units from the order placed by a customer "john@example.com"
+  Then  I should not be able to see that unit
+
+
+
+Scenario 4: Being unable to see non-own shipment
+  Tags: ['@api']
+  When  I try to see the shipment of the order placed by a customer "john@example.com"
+  Then  I should not be able to see that shipment
+
+
+
+Scenario 5: Being unable to see non-own payment
+  Tags: ['@api']
+  When  I try to see the payment of the order placed by a customer "john@example.com"
+  Then  I should not be able to see that payment
+

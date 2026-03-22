@@ -1,0 +1,6 @@
+Scenario 1: Success
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  there are cancellation requests:
+  When  I process the cancellation requests for "customer.one@example.org" and "Test Plan"
+  Then  the response data for the cancellation request will have the state as "completed"
+

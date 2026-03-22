@@ -1,0 +1,230 @@
+Scenario 1: Create an archive returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-forwarding']
+  Given  new "CreateLogsArchive" request
+  And  body with value {"data": {"attributes": {"destination": {"container": "container-name", "integration": {"client_id": "aaaaaaaa-1a1a-1a1a-1a1a-aaaaaaaaaaaa", "tenant_id": "aaaaaaaa-1a1a-1a1a-1a1a-aaaaaaaaaaaa"}, "storage_account": "account-name", "type": "azure"}, "include_tags": false, "name": "Nginx Archive", "query": "source:nginx", "rehydration_max_scan_size_in_gb": 100, "rehydration_tags": ["team:intake", "team:app"]}, "type": "archives"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 2: Create an archive returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-forwarding']
+  Given  new "CreateLogsArchive" request
+  And  body with value {"data": {"attributes": {"destination": {"container": "container-name", "integration": {"client_id": "aaaaaaaa-1a1a-1a1a-1a1a-aaaaaaaaaaaa", "tenant_id": "aaaaaaaa-1a1a-1a1a-1a1a-aaaaaaaaaaaa"}, "storage_account": "account-name", "type": "azure"}, "include_tags": false, "name": "Nginx Archive", "query": "source:nginx", "rehydration_max_scan_size_in_gb": 100, "rehydration_tags": ["team:intake", "team:app"]}, "type": "archives"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 3: Delete an archive returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-forwarding']
+  Given  new "DeleteLogsArchive" request
+  And  request contains "archive_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 4: Delete an archive returns "Not found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-forwarding']
+  Given  new "DeleteLogsArchive" request
+  And  request contains "archive_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not found
+
+
+
+Scenario 5: Delete an archive returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-forwarding']
+  Given  new "DeleteLogsArchive" request
+  And  request contains "archive_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 204 OK
+
+
+
+Scenario 6: Get all archives returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-forwarding']
+  Given  new "ListLogsArchives" request
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 7: Get an archive returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-forwarding']
+  Given  new "GetLogsArchive" request
+  And  request contains "archive_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 8: Get an archive returns "Not found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-forwarding']
+  Given  new "GetLogsArchive" request
+  And  request contains "archive_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not found
+
+
+
+Scenario 9: Get an archive returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-forwarding']
+  Given  new "GetLogsArchive" request
+  And  request contains "archive_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 10: Get archive order returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-forwarding']
+  Given  new "GetLogsArchiveOrder" request
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 11: Grant role to an archive returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-forwarding']
+  Given  new "AddReadRoleToArchive" request
+  And  request contains "archive_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"id": "3653d3c6-0c75-11ea-ad28-fb5701eabc7d", "type": "roles"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 12: Grant role to an archive returns "Not found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-forwarding']
+  Given  new "AddReadRoleToArchive" request
+  And  request contains "archive_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"id": "3653d3c6-0c75-11ea-ad28-fb5701eabc7d", "type": "roles"}}
+  When  the request is sent
+  Then  the response status is 404 Not found
+
+
+
+Scenario 13: Grant role to an archive returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-forwarding']
+  Given  new "AddReadRoleToArchive" request
+  And  request contains "archive_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"id": "3653d3c6-0c75-11ea-ad28-fb5701eabc7d", "type": "roles"}}
+  When  the request is sent
+  Then  the response status is 204 OK
+
+
+
+Scenario 14: List read roles for an archive returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-forwarding']
+  Given  new "ListArchiveReadRoles" request
+  And  request contains "archive_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 15: List read roles for an archive returns "Not found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-forwarding']
+  Given  new "ListArchiveReadRoles" request
+  And  request contains "archive_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not found
+
+
+
+Scenario 16: List read roles for an archive returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-forwarding']
+  Given  new "ListArchiveReadRoles" request
+  And  request contains "archive_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 17: Revoke role from an archive returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-forwarding']
+  Given  new "RemoveRoleFromArchive" request
+  And  request contains "archive_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"id": "3653d3c6-0c75-11ea-ad28-fb5701eabc7d", "type": "roles"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 18: Revoke role from an archive returns "Not found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-forwarding']
+  Given  new "RemoveRoleFromArchive" request
+  And  request contains "archive_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"id": "3653d3c6-0c75-11ea-ad28-fb5701eabc7d", "type": "roles"}}
+  When  the request is sent
+  Then  the response status is 404 Not found
+
+
+
+Scenario 19: Revoke role from an archive returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-forwarding']
+  Given  new "RemoveRoleFromArchive" request
+  And  request contains "archive_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"id": "3653d3c6-0c75-11ea-ad28-fb5701eabc7d", "type": "roles"}}
+  When  the request is sent
+  Then  the response status is 204 OK
+
+
+
+Scenario 20: Update an archive returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-forwarding']
+  Given  new "UpdateLogsArchive" request
+  And  request contains "archive_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"destination": {"container": "container-name", "integration": {"client_id": "aaaaaaaa-1a1a-1a1a-1a1a-aaaaaaaaaaaa", "tenant_id": "aaaaaaaa-1a1a-1a1a-1a1a-aaaaaaaaaaaa"}, "storage_account": "account-name", "type": "azure"}, "include_tags": false, "name": "Nginx Archive", "query": "source:nginx", "rehydration_max_scan_size_in_gb": 100, "rehydration_tags": ["team:intake", "team:app"]}, "type": "archives"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 21: Update an archive returns "Not found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-forwarding']
+  Given  new "UpdateLogsArchive" request
+  And  request contains "archive_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"destination": {"container": "container-name", "integration": {"client_id": "aaaaaaaa-1a1a-1a1a-1a1a-aaaaaaaaaaaa", "tenant_id": "aaaaaaaa-1a1a-1a1a-1a1a-aaaaaaaaaaaa"}, "storage_account": "account-name", "type": "azure"}, "include_tags": false, "name": "Nginx Archive", "query": "source:nginx", "rehydration_max_scan_size_in_gb": 100, "rehydration_tags": ["team:intake", "team:app"]}, "type": "archives"}}
+  When  the request is sent
+  Then  the response status is 404 Not found
+
+
+
+Scenario 22: Update an archive returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-forwarding']
+  Given  new "UpdateLogsArchive" request
+  And  request contains "archive_id" parameter from "REPLACE.ME"
+  And  body with value {"data": {"attributes": {"destination": {"container": "container-name", "integration": {"client_id": "aaaaaaaa-1a1a-1a1a-1a1a-aaaaaaaaaaaa", "tenant_id": "aaaaaaaa-1a1a-1a1a-1a1a-aaaaaaaaaaaa"}, "storage_account": "account-name", "type": "azure"}, "include_tags": false, "name": "Nginx Archive", "query": "source:nginx", "rehydration_max_scan_size_in_gb": 100, "rehydration_tags": ["team:intake", "team:app"]}, "type": "archives"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 23: Update archive order returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-forwarding']
+  Given  new "UpdateLogsArchiveOrder" request
+  And  body with value {"data": {"attributes": {"archive_ids": ["a2zcMylnM4OCHpYusxIi1g", "a2zcMylnM4OCHpYusxIi2g", "a2zcMylnM4OCHpYusxIi3g"]}, "type": "archive_order"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 24: Update archive order returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-forwarding']
+  Given  new "UpdateLogsArchiveOrder" request
+  And  body with value {"data": {"attributes": {"archive_ids": ["a2zcMylnM4OCHpYusxIi1g", "a2zcMylnM4OCHpYusxIi2g", "a2zcMylnM4OCHpYusxIi3g"]}, "type": "archive_order"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 25: Update archive order returns "Unprocessable Entity" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-forwarding']
+  Given  new "UpdateLogsArchiveOrder" request
+  And  body with value {"data": {"attributes": {"archive_ids": ["a2zcMylnM4OCHpYusxIi1g", "a2zcMylnM4OCHpYusxIi2g", "a2zcMylnM4OCHpYusxIi3g"]}, "type": "archive_order"}}
+  When  the request is sent
+  Then  the response status is 422 Unprocessable Entity
+

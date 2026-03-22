@@ -1,0 +1,18 @@
+Scenario 1: Seeing message about no new attributes selected
+  Tags: ['@ui', '@javascript']
+  When  I want to modify the "44 Magnum" product
+  And  I try to add new attributes
+  And  I save my changes
+  Then  attribute "Gun caliber" of product "44 Magnum" should be "11 mm"
+  And  product "44 Magnum" should have 1 attribute
+
+
+
+Scenario 2: Seeing message about no new attributes selected after all attributes deletion
+  Tags: ['@ui', '@javascript']
+  When  I want to modify the "44 Magnum" product
+  And  I remove its "Gun caliber" attribute
+  And  I try to add new attributes
+  And  I save my changes
+  Then  product "44 Magnum" should not have any attributes
+

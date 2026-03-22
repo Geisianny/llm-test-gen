@@ -1,0 +1,110 @@
+Feature: Test for parked/unparked pegged orders
+
+Background: Background name:
+  Given  the following network parameters are set:
+  And  the average block duration is "1"
+  And  the liquidity monitoring parameters:
+  And  the simple risk model named "simple-risk-model":
+  And  the price monitoring named "price-monitoring":
+  And  the markets:
+  And  the parties deposit on asset's general account the following amount:
+  When  the parties place the following orders:
+  And  the parties submit the following liquidity provision:
+  Then  the opening auction period ends for market "ETH/FEB23"
+  And  the mark price should be "1000" for the market "ETH/FEB23"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/FEB23"
+  And  the network moves ahead "1" blocks
+
+Scenario 1: In cross margin mode, party park pegged order, switch to isolated margin and the pegged order is cancelled 0019-MCAL-143
+  Given  the parties submit update margin mode:
+  When  the parties place the following pegged orders:
+  Then  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+  Given  the orders should have the following status:
+  When  the parties place the following orders:
+  Then  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/FEB23"
+  And  the orders should have the following status:
+  And  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+  Given  the parties cancel the following orders:
+  When  the parties submit update margin mode:
+  Then  the orders should have the following status:
+  Given  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/FEB23"
+  When  the network moves ahead "4" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/FEB23"
+  And  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+
+Scenario 2: In cross margin mode, party park pegged order, switch to isolated margin and the pegged order is cancelled 0019-MCAL-144
+  Given  the parties submit update margin mode:
+  When  the parties place the following pegged iceberg orders:
+  Then  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+  Given  the orders should have the following status:
+  When  the parties place the following orders:
+  Then  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/FEB23"
+  And  the orders should have the following status:
+  And  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+  Given  the parties cancel the following orders:
+  When  the parties submit update margin mode:
+  Then  the orders should have the following status:
+  Given  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/FEB23"
+  When  the network moves ahead "4" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/FEB23"
+  And  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+
+Scenario 3: In cross margin mode, partially fill pegged order, park then switch to isolated margin. Pegged order is cancelled 0019-MCAL-147
+  Given  the parties submit update margin mode:
+  And  the parties place the following pegged orders:
+  And  the parties place the following orders:
+  And  the following trades should be executed:
+  Then  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+  Given  the orders should have the following status:
+  When  the parties place the following orders:
+  Then  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/FEB23"
+  And  the orders should have the following status:
+  And  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+  Given  the parties cancel the following orders:
+  When  the parties submit update margin mode:
+  Then  the orders should have the following status:
+  Given  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/FEB23"
+  When  the network moves ahead "4" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/FEB23"
+  And  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+
+Scenario 4: In cross margin mode, partially fill pegged order, park then switch to isolated margin. Pegged order is cancelled 0019-MCAL-148
+  Given  the parties submit update margin mode:
+  When  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  And  the following trades should be executed:
+  Then  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+  Given  the orders should have the following status:
+  When  the parties place the following orders:
+  Then  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/FEB23"
+  And  the orders should have the following status:
+  And  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+  Given  the parties cancel the following orders:
+  When  the parties submit update margin mode:
+  Then  the orders should have the following status:
+  Given  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/FEB23"
+  When  the network moves ahead "4" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/FEB23"
+  And  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+
+Scenario 5: In auction a party in isolated margin mode enter pegged order that is rejected 0019-MCAL-049
+  Given  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/FEB23"
+  When  the parties place the following orders:
+  Then  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/FEB23"
+  Given  the parties submit update margin mode:
+  When  the parties place the following pegged orders:
+  And  the parties place the following pegged iceberg orders:
+  Then  the parties should have the following margin levels:
+

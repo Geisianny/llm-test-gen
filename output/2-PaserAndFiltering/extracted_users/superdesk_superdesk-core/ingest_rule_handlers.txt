@@ -1,0 +1,7 @@
+Feature: Ingest Rule Handlers
+
+Scenario 1: Get list of available rule handlers
+  Tags: ['@auth']
+  When  we get "/ingest_rule_handlers"
+  Then  we get list with 2 items
+

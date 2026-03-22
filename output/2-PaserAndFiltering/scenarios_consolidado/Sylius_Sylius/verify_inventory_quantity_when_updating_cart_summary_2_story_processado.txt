@@ -1,0 +1,7 @@
+Scenario 1: Placing an order with products that have sufficient quantity
+  Tags: ['@api', '@ui']
+  Given  I added 3 products "Iron Maiden T-Shirt" to the cart
+  And  I changed product "Iron Maiden T-Shirt" quantity to 5 in my cart
+  When  I check the details of my cart
+  And  I should see "Iron Maiden T-Shirt" with quantity 5 in my cart
+

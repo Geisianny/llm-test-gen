@@ -1,0 +1,14 @@
+Scenario 1: PAP order is submitted into a PAP auction and is fully matched. The full btc amount is swapped and the corresponding ETH amount is transferred to the corresponding network treasury.
+  When  the protocol automated purchase is defined as:
+  Then  the oracles broadcast data with block time signed with "0xCAFECAFE2":
+  And  the network moves ahead "30" blocks
+  Then  the automated purchase program for market "BTC/ETH" should have a snapshot balance of "200"
+  And  the trading mode should be "TRADING_MODE_PROTOCOL_AUTOMATED_PURCHASE_AUCTION" for the market "BTC/ETH"
+  And  the order book should have the following volumes for market "BTC/ETH":
+  And  the parties place the following orders:
+  And  the network moves ahead "61" blocks
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  And  the buy back fees balance should be "4800" for the asset "BTC"
+  And  the network treasury balance should be "191799000" for the asset "ETH"
+  And  "party2" should have general account balance of "200" for asset "BTC"
+

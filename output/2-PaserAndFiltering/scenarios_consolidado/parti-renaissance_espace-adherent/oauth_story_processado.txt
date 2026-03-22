@@ -1,0 +1,58 @@
+Scenario 1: OAuth client_id is malformed
+  Given  I am logged as "simple-user@example.ch"
+  When  I am on "/oauth/v2/auth?response_type=code&client_id=-af6d-4ce4-8239-04cfcefd5a19"
+  Then  the response status code should be 401
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 2: Retrieve authorization code on redirect URI after login
+  Given  I send a "GET" request to "/oauth/v2/auth" with parameters:
+  Then  I should be redirected to "/connexion"
+  When  I fill in the following:
+  And  I press "Me connecter"
+  Then  I should be on "/oauth/v2/auth"
+  And  the response status code should be 200
+  And  I should see "Je me connecte à Coalition App avec mon compte En Marche."
+  Given  I stop following redirections
+  Then  I press "Accepter"
+  Then  the response status code should be 302
+  And  the header "Location" should match "#^http://client-oauth.docker:8000/client/receive_authcode\?code=.+$#"
+
+
+
+Scenario 3: Password authentication
+  When  I send a "POST" request to "/oauth/v2/token" with parameters:
+  Then  the response should be in JSON
+  And  the response status code should be 400
+  And  the JSON should be equal to:
+  When  I send a "POST" request to "/oauth/v2/token" with parameters:
+  Then  the response should be in JSON
+  And  the response status code should be 200
+  And  the JSON should be equal to:
+
+
+
+Scenario 4: Grant type not allowed
+  Given  I send a "POST" request to "/oauth/v2/token" with parameters:
+  Then  the response should be in JSON
+  And  the response status code should be 401
+  And  the JSON should be equal to:
+
+
+
+Scenario 5: Tokeninfo for invalid token
+  When  I send a "GET" request to "/oauth/v2/tokeninfo"
+  Then  the response should be in JSON
+  And  the response status code should be 400
+  And  the JSON should be equal to:
+
+
+
+Scenario 6: Password authentication with JeMengage User
+  When  I send a "POST" request to "/oauth/v2/token" with parameters:
+  Then  the response should be in JSON
+  And  the response status code should be 200
+  And  the JSON should be equal to:
+

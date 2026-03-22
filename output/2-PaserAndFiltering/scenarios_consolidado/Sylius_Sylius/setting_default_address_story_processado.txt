@@ -1,0 +1,27 @@
+Scenario 1: Having no address marked as default at first
+  Tags: ['@api', '@ui']
+  When  I browse my address book
+  Then  I should have 2 addresses in my address book
+  And  I should not have a default address
+
+
+
+Scenario 2: Setting an address as default
+  Tags: ['@api', '@ui']
+  When  I browse my address book
+  And  I set the address of "Lucifer Morningstar" as default
+  Then  I should be notified that the address has been set as default
+  And  I should have 2 addresses in my address book
+  And  address "Lucifer Morningstar", "Seaside Fwy", "90802", "Los Angeles", "United States", "Arkansas" should be set as my default address
+
+
+
+Scenario 3: Only one address can be default
+  Tags: ['@api', '@ui']
+  Given  my default address is of "Lucifer Morningstar"
+  When  I browse my address book
+  And  I set the address of "Archangelo Prime" as default
+  Then  I should be notified that the address has been set as default
+  And  address "Archangelo Prime", "Mountain Av", "90640", "Isla del Muerte", "United States" should be set as my default address
+  And  the address assigned to "Lucifer Morningstar" should be in my book
+

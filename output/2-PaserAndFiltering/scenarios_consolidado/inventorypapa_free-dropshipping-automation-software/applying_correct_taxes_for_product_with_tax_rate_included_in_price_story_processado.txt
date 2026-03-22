@@ -1,0 +1,8 @@
+Scenario 1: Proper taxes for taxed product
+  Tags: ['@ui']
+  When  I add product "PHP T-Shirt" to the cart
+  Then  my cart total should be "$100.00"
+  And  my included in price taxes should be "$18.70"
+  And  there should be one item in my cart
+  And  total price of "PHP T-Shirt" item should be "$100.00"
+

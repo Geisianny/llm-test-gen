@@ -1,0 +1,9 @@
+Scenario 1: Seeing exchange rates for currencies available in channel
+  Tags: ['@api', '@no-ui']
+  Given  I changed my current channel to "Web-US"
+  When  I get exchange rates of the store
+  Then  I should see 2 exchange rates on the list
+  And  I should see that the exchange rate of "US Dollar" to "British Pound" is 0.7
+  And  I should see that the exchange rate of "Polish Zloty" to "US Dollar" is 0.23
+  And  I should not see "British Pound" to "Bhutanese Ngultrum" exchange rate
+

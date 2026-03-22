@@ -1,0 +1,21 @@
+Feature: Privilege
+
+Scenario 1: Get list of all privileges
+  Tags: ['@auth']
+  When  we get "/privileges"
+  Then  we get list with 10+ items
+
+Scenario 2: Post to a resource without required privilege
+  Tags: ['@auth']
+  Given  we have "user" as type of user
+  When  we post to "/users"
+  Then  we get response code 403
+
+Scenario 3: Post to a resource having role with required privilege
+  Tags: ['@auth']
+  Given  "roles"
+  Given  we have "Manager" role
+  Given  we have "user" as type of user
+  When  we post to "/users"
+  Then  we get response code 201
+

@@ -1,0 +1,16 @@
+Scenario 1: Finalizing order's payment
+  Tags: ['@api', '@ui']
+  Given  I am viewing the summary of the order "#00000001"
+  When  I mark this order as paid
+  Then  I should be notified that the order's payment has been successfully completed
+  And  it should have payment state "Completed"
+
+
+
+Scenario 2: Being unable to finalize completed order's payment
+  Tags: ['@api', '@ui']
+  Given  this order is already paid
+  When  I view the summary of the order "#00000001"
+  And  it should have payment state "Completed"
+  And  I should not be able to mark this order as paid again
+

@@ -1,0 +1,49 @@
+Feature: Test change of SLA market parameter
+
+Background: 
+  Given  the margin calculator named "margin-calculator-1":
+  Given  the log normal risk model named "log-normal-risk-model":
+  And  the following network parameters are set:
+  And  the liquidity monitoring parameters:
+  And  the following assets are registered:
+  And  the fees configuration named "fees-config-1":
+  And  the price monitoring named "price-monitoring":
+  And  the liquidity sla params named "SLA-22-1":
+  And  the liquidity sla params named "SLA-22-2":
+  And  the liquidity sla params named "SLA-22":
+  And  the liquidity sla params named "SLA-23":
+  And  the markets:
+  And  the following network parameters are set:
+  Given  the average block duration is "1"
+
+Scenario 1: 001: lp1 and lp2 on the market ETH/MAR22, 0044-LIME-091, 0044-LIME-093, 0044-LIME-029
+  Tags: ['@Now']
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  When  the network moves ahead "11" blocks
+  And  the parties place the following pegged iceberg orders:
+  Then  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/MAR22"
+  And  the following trades should be executed:
+  And  the market data for the market "ETH/MAR22" should be:
+  And  the liquidity fee factor should be "0.015" for the market "ETH/MAR22"
+  Then  the markets are updated:
+  Then  the network moves ahead "1" epochs
+  And  the insurance pool balance should be "0" for the market "ETH/MAR22"
+  Then  the network moves ahead "1" epochs
+  And  the insurance pool balance should be "0" for the market "ETH/MAR22"
+  Then  the markets are updated:
+  Then  the network moves ahead "3" epochs
+  Then  the following transfers should happen:
+  And  the insurance pool balance should be "6720" for the market "ETH/MAR22"
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/MAR22" should be:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following orders:
+  Then  the network moves ahead "4" blocks
+  Then  the parties should have the following account balances:
+  When  the network moves ahead "11" blocks
+  And  the insurance pool balance should be "6780" for the market "ETH/MAR22"
+  And  the market data for the market "ETH/MAR22" should be:
+  Then  the parties should have the following account balances:
+

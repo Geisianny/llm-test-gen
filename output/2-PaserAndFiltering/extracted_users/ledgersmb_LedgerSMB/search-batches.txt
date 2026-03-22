@@ -1,0 +1,54 @@
+Feature: Search Batches
+Description: As a LedgerSMB user I want to be able to search for previously created
+  voucher batches according to parameters which I specify, with the results
+  presented as a list.
+Tags: ['@weasel']
+
+Background: 
+  Given  a standard test company named "standard-batch-test"
+  And  batches with these properties:
+  And  a logged in admin user
+
+Scenario 1: Search for all unapproved batches
+  When  I navigate the menu and select the item at "Transaction Approval > Batches"
+  Then  I should see the Search Batches screen
+  When  I press "Search"
+  Then  I should see the Batch Search Report screen
+  And  I should see these headings:
+  And  I expect the report to contain 3 rows
+  And  I expect the 'Type' report column to contain 'ap' for Batch Number 'B-1001'
+  And  I expect the 'Date' report column to contain '2018-01-01' for Batch Number 'B-1001'
+  And  I expect the 'Description' report column to contain 'Batch-1' for Batch Number 'B-1001'
+  And  I expect the 'AR/AP/GL Amount' report column to contain '0.00' for Batch Number 'B-1001'
+  And  I expect the 'Payment Amount' report column to contain '0.00' for Batch Number 'B-1001'
+
+Scenario 2: Search for batches, filtering by batch type
+  When  I navigate the menu and select the item at "Transaction Approval > Batches"
+  Then  I should see the Search Batches screen
+  When  I select "payment" from the drop down "Transaction Type"
+  And  I press "Search"
+  Then  I should see the Batch Search Report screen
+  And  I should see these headings:
+  And  I expect the report to contain 1 row
+  And  I expect the 'Description' report column to contain 'Batch-3' for Batch Number 'B-1003'
+
+Scenario 3: Search for batches, filtering by description
+  When  I navigate the menu and select the item at "Transaction Approval > Batches"
+  Then  I should see the Search Batches screen
+  When  I enter "ABC" into "Description"
+  And  I press "Search"
+  Then  I should see the Batch Search Report screen
+  And  I should see these headings:
+  And  I expect the report to contain 1 row
+  And  I expect the 'Description' report column to contain 'Batch-ABC-2' for Batch Number 'B-1002'
+
+Scenario 4: Search for all approved batches
+  When  I navigate the menu and select the item at "Transaction Approval > Batches"
+  Then  I should see the Search Batches screen
+  When  I select "Approved"
+  And  I press "Search"
+  Then  I should see the Batch Search Report screen
+  And  I should see these headings:
+  And  I expect the report to contain 1 row
+  And  I expect the 'Description' report column to contain 'Batch-4' for Batch Number 'B-1004'
+

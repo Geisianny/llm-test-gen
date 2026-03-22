@@ -1,0 +1,5 @@
+Scenario 1: Preventing a potential XSS attack during updating the address
+  Tags: ['@no-api', '@ui', '@javascript']
+  When  I want to edit the address of "Lucifer Morningstar"
+  Then  I should be able to update it without unexpected alert
+

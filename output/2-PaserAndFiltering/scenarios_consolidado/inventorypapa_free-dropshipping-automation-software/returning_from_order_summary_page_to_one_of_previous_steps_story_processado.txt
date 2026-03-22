@@ -1,0 +1,68 @@
+Scenario 1: Going back to payment step
+  Tags: ['@ui', '@no-api']
+  Given  I have product "Stark Robe" in the cart
+  And  I complete addressing step with email "jon@snow.wall" and "United States" based billing address
+  And  I proceed with "Free" shipping method and "Cash on Delivery" payment
+  When  I decide to change the payment method
+  Then  I should be redirected to the payment step
+  And  I should be able to go to the summary page again
+
+
+
+Scenario 2: Going back to shipping step with steps panel
+  Tags: ['@ui', '@no-api']
+  Given  I have product "Stark Robe" in the cart
+  And  I complete addressing step with email "jon@snow.wall" and "United States" based billing address
+  And  I proceed with "Free" shipping method and "Cash on Delivery" payment
+  When  I go to the shipping step
+  Then  I should be redirected to the shipping step
+  And  I should be able to go to the payment step again
+
+
+
+Scenario 3: Going back to addressing step with steps panel
+  Tags: ['@ui', '@no-api']
+  Given  I have product "Stark Robe" in the cart
+  And  I complete addressing step with email "jon@snow.wall" and "United States" based billing address
+  And  I proceed with "Free" shipping method and "Cash on Delivery" payment
+  When  I go to the addressing step
+  Then  I should be redirected to the addressing step
+  And  I should be able to go to the shipping step again
+
+
+
+Scenario 4: Going back to addressing step with steps panel when used an email of customer which had placed an order before
+  Tags: ['@ui', '@no-api']
+  Given  the store has customer "jon@snow.wall"
+  And  this customer has a "United States" based address in their address book
+  And  I have product "Stark Robe" in the cart
+  And  I complete addressing step with email "jon@snow.wall" and "United States" based billing address
+  And  I proceed with "Free" shipping method and "Cash on Delivery" payment
+  When  I go to the addressing step
+  Then  I should be redirected to the addressing step
+  And  I should be able to go to the shipping step again
+
+
+
+Scenario 5: Going back to shipping step with steps panel when order total is zero
+  Tags: ['@ui', '@no-api']
+  Given  I have product "Stark Robe" in the cart
+  And  I have product "Paganini T-shirt" in the cart
+  And  I complete addressing step with email "jon@snow.wall" and "United States" based billing address
+  And  I proceed with "Free" shipping method
+  When  I go to the shipping step
+  Then  I should be redirected to the shipping step
+  And  I should be able to go to the complete step again
+
+
+
+Scenario 6: Going back to addressing step with steps panel when order total is zero
+  Tags: ['@ui', '@no-api']
+  Given  I have product "Stark Robe" in the cart
+  And  I have product "Paganini T-shirt" in the cart
+  And  I complete addressing step with email "jon@snow.wall" and "United States" based billing address
+  And  I proceed with "Free" shipping method
+  When  I go to the addressing step
+  Then  I should be redirected to the addressing step
+  And  I should be able to go to the shipping step again
+

@@ -1,0 +1,216 @@
+Feature: Rundowns
+
+Scenario 1: Show CRUD
+  Tags: ['@auth']
+  When  we post to "/shows"
+  Then  we get response code 201
+  When  we get "/shows"
+  Then  we get list with 1 items
+  When  we get "/shows/#shows._id#"
+  Then  we get existing resource
+  When  we patch "/shows/#shows._id#"
+  Then  we get OK response
+  When  we post to "/shows/#shows._id#/templates"
+  Then  we get OK response
+  When  we get "/shows/#shows._id#/templates"
+  Then  we get list with 1 items
+  When  we post to "/rundowns"
+  Then  we get OK response
+  When  we delete "/shows/#shows._id#"
+  Then  we get error 409
+  When  we delete "/rundowns/#rundowns._id#"
+  Then  we get OK response
+  When  we delete "/shows/#shows._id#"
+  Then  we get OK response
+  When  we get "/shows"
+  Then  we get list with 0 items
+  When  we get "/shows/#shows._id#/templates"
+  Then  we get list with 0 items
+
+Scenario 2: Templates CRUD
+  Tags: ['@auth']
+  Given  "shows"
+  When  we post to "/shows/#shows._id#/templates"
+  Then  we get new resource
+  When  we patch "/shows/#shows._id#/templates/#templates._id#"
+  Then  we get OK response
+  When  we get "/shows/#shows._id#/templates"
+  Then  we get list with 1 items
+  When  we delete "/shows/#shows._id#/templates/#templates._id#"
+  Then  we get OK response
+  When  we get "/shows/#shows._id#/templates"
+  Then  we get list with 0 items
+
+Scenario 3: Create rundown from template
+  Tags: ['@auth']
+  Given  "shows"
+  And  "rundown_templates"
+  When  we post to "/rundowns"
+  Then  we get new resource
+  When  we get "/rundowns"
+  Then  we get list with 1 items
+  When  we get "/rundown_items"
+  Then  we get list with 3 items
+  When  we patch "/rundowns/#rundowns._id#"
+  Then  we get OK response
+  When  we post to "/rundowns"
+  Then  we get new resource
+
+Scenario 4: Create rundown based on template schedule
+  Tags: ['@auth']
+  Given  "shows"
+  And  "rundown_templates"
+  When  we run task "apps.rundowns.tasks.create_scheduled_rundowns"
+  And  we get "/rundowns"
+  Then  we get list with 1 items
+  When  we get "/rundown_items"
+  Then  we get list with 2 items
+  When  we run task "apps.rundowns.tasks.create_scheduled_rundowns"
+  And  we get "/rundowns"
+  Then  we get list with 1 items
+
+Scenario 5: Add items to rundown template
+  Tags: ['@auth']
+  Given  "shows"
+  When  we post to "/shows/#shows._id#/templates"
+  When  we patch "/shows/#shows._id#/templates/#templates._id#"
+  Then  we get ok response
+  When  we post to "/rundowns"
+  Then  we get new resource
+  When  we get "/rundowns"
+  Then  we get list with 1 item
+  When  we get "/rundown_items"
+  Then  we get list with 1 items
+
+Scenario 6: Rundowns CRUD
+  Tags: ['@auth']
+  Given  "shows"
+  When  we post to "/rundowns"
+  Then  we get ok response
+  When  we post to "/rundown_items"
+  Then  we get OK response
+  When  we get "/rundowns"
+  Then  we get list with 1 items
+  When  we patch "/rundowns/#rundowns._id#"
+  Then  we get OK response
+  When  we get "/rundowns/#rundowns._id#"
+  Then  we get existing resource
+  When  we patch "/rundown_items/#rundown_items._id#"
+  Then  we get OK response
+  When  we get "/rundowns/#rundowns._id#"
+  Then  we get existing resource
+  When  we delete "/rundowns/#rundowns._id#"
+  Then  we get OK response
+  When  we delete "/rundown_items/#rundown_items._id#"
+  Then  we get OK response
+
+Scenario 7: Create rundown for today
+  Tags: ['@auth']
+  Given  "shows"
+  When  we post to "/rundowns"
+  Then  we get ok response
+
+Scenario 8: Locking
+  Tags: ['@auth']
+  Given  "shows"
+  When  we post to "/rundowns"
+  Then  we get ok response
+  When  we patch "/rundowns/#rundowns._id#"
+  Then  we get ok response
+  When  we patch "/rundowns/#rundowns._id#"
+  Then  we get ok response
+  When  we login as user "foo" with password "barword" and user type "administrator"
+  And  we patch "/rundowns/#rundowns._id#"
+  Then  we get error 412
+  When  we patch "/rundowns/#rundowns._id#"
+  Then  we get error 412
+  When  we patch "/rundowns/#rundowns._id#"
+  Then  we get error 412
+  When  we patch "/rundowns/#rundowns._id#"
+  Then  we get ok response
+  When  the lock expires "/rundowns/#rundowns._id#"
+  When  we patch "/rundowns/#rundowns._id#"
+  Then  we get ok response
+  When  we patch "/rundowns/#rundowns._id#"
+  Then  we get ok response
+  When  we patch "/rundowns/#rundowns._id#"
+  Then  we get ok response
+  When  we login as user "foo2" with password "barword" and user type "administrator"
+  And  we patch "/rundowns/#rundowns._id#"
+  Then  we get ok response
+  When  the lock expires "/rundowns/#rundowns._id#"
+  When  we patch "/rundowns/#rundowns._id#"
+  Then  we get ok response
+  When  we patch "/rundowns/#rundowns._id#"
+  Then  we get ok response
+  When  we patch "/rundowns/#rundowns._id#"
+  Then  we get ok response
+  When  we login as user "foo2" with password "barword" and user type "administrator"
+  And  we patch "/rundowns/#rundowns._id#"
+  Then  we get ok response
+
+Scenario 9: Export
+  Tags: ['@auth']
+  Given  "vocabularies"
+  When  we get "/rundown_export"
+  Then  we get list with 3 items
+  Given  "shows"
+  And  "rundowns"
+  And  "rundown_items"
+  When  we patch "rundowns/#rundowns._id#"
+  Then  we get OK response
+  When  we post to "rundown_export"
+  Then  we get response code 201
+  When  we get "#rundown_export.href#"
+  Then  we get response code 200
+  And  we get "Content-Disposition" header with "attachment; filename="Prompter-Rundown_Title_10.10.2022.pdf"" type
+  And  we get "Content-Type" header with "application/pdf" type
+  When  we post to "rundown_export"
+  Then  we get response code 201
+  When  we get "#rundown_export.href#"
+  Then  we get response code 200
+  And  we get "Content-Disposition" header with "attachment; filename="Technical-Rundown_Title_10.10.2022.csv"" type
+  And  we get "Content-Type" header with "text/csv; charset=utf-8" type
+  When  we post to "rundown_export"
+  Then  we get response code 201
+  When  we get "#rundown_export.href#"
+  Then  we get response code 200
+  And  we get "Content-Disposition" header with "attachment; filename="Technical-Rundown_Title_10.10.2022.pdf"" type
+  And  we get "Content-Type" header with "application/pdf" type
+
+Scenario 10: Search rundown by item contents
+  Tags: ['@auth']
+  Given  "shows"
+  And  "rundowns"
+  And  "rundown_items"
+  When  we patch "/rundowns/#rundowns._id#"
+  When  we get "/rundowns?q=searchable"
+  Then  we get list with 1 items
+  When  we get "/rundowns?q=title"
+  Then  we get list with 1 items
+  When  we get "/rundowns?source={"sort":[{"_updated":"desc"}],"size":50,"from":0,"query":{"filtered":{"query":{"query_string":{"query":"searchable"}}}}}"
+  Then  we get list with 1 items
+  When  we get "/rundowns?q=missing"
+  Then  we get list with 0 items
+  When  we post to "/rundown_items"
+  Then  we get ok response
+  When  we patch "/rundowns/#rundowns._id#"
+  Then  we get ok response
+  When  we get "/rundowns?q=missing"
+  Then  we get list with 1 items
+  When  we patch "/rundown_items/#rundown_items._id#"
+  And  we get "/rundowns?q=missing"
+  Then  we get list with 0 items
+
+Scenario 11: Rundown comments
+  Tags: ['@auth', '@notification']
+  Given  "shows"
+  And  "rundowns"
+  And  "rundown_items"
+  When  we post to "/rundown_comments"
+  Then  we get ok response
+  When  we get "/rundown_comments?where={"item":"#rundown_items._id#"}"
+  Then  we get list with 1 items
+  When  we get "/activity"
+  Then  we get list with 1+ items
+

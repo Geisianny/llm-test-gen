@@ -1,0 +1,6 @@
+Scenario 1: Browsing defined shipping categories
+  Tags: ['@ui', '@api']
+  When  I browse shipping categories
+  Then  I should see 2 shipping categories in the list
+  And  the shipping category "Standard" should be in the registry
+

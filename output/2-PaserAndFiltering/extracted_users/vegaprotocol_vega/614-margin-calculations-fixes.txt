@@ -1,0 +1,20 @@
+Feature: test bugfix 614 for margin calculations
+
+Background: 
+  Given  the markets:
+  And  the following network parameters are set:
+
+Scenario 1: CASE-1: Trader submits long order that will trade - new formula & high exit price
+  Tags: ['@MTMDelta']
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  Then  the parties place the following orders:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the mark price should be "94" for the market "ETH/DEC19"
+  When  the parties place the following orders with ticks:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  And  the cumulated balance for all accounts should be worth "3051000"
+

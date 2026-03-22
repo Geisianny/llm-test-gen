@@ -1,0 +1,13 @@
+Feature: Cannot Manage companies
+Description: In order to manage companies
+  as a super admin
+  I don't need to be able to create them through the API.
+
+Scenario 1: Cannot Create a company object
+  Tags: ['@createSchema']
+  Given  I add Authorization header
+  When  I add "Content-Type" header equal to "application/json"
+  And  I add "Accept" header equal to "application/json"
+  And  I send a "POST" request to "/companies" with body:
+  Then  the response status code should be 405
+

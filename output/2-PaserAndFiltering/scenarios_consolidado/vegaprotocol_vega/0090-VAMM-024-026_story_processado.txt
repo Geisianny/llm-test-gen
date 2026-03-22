@@ -1,0 +1,37 @@
+Scenario 1: 0090-VAMM-024: If other traders trade to move the market mid price to 140 the vAMM has a short position.
+  Tags: ['@VAMM']
+  When  the parties place the following orders:
+  Then  the following trades should be executed:
+  When  the network moves ahead "1" blocks
+  Then  the market data for the market "ETH/MAR22" should be:
+  And  the parties should have the following profit and loss:
+  And  the AMM pool status should be:
+
+
+
+Scenario 2: 0090-VAMM-025: If the vAMM is then amended such that it has a new base price of 140 it should attempt to place a trade to rebalance it's position to 0 at a mid price of 140. If that trade can execute with the slippage as configured in the request then the transaction is accepted.
+  Tags: ['@VAMM']
+  And  the parties place the following orders:
+  When  the parties amend the following AMM:
+  Then  the AMM pool status should be:
+  And  the following trades should be executed:
+  When  the network moves ahead "1" blocks
+  Then  the market data for the market "ETH/MAR22" should be:
+  And  the parties should have the following profit and loss:
+
+
+
+Scenario 3: 0090-VAMM-026: If the trade cannot execute with the slippage as configured in the request then the transaction is rejected and no changes to the vAMM are made.
+  Tags: ['@VAMM']
+  When  the parties place the following orders:
+  Then  the following trades should be executed:
+  When  the network moves ahead "1" blocks
+  Then  the market data for the market "ETH/MAR22" should be:
+  And  the parties should have the following profit and loss:
+  And  the AMM pool status should be:
+  When  the parties amend the following AMM:
+  Then  the AMM pool status should be:
+  And  the parties should have the following account balances:
+  When  the parties cancel the following AMM:
+  Then  the AMM pool status should be:
+

@@ -1,0 +1,59 @@
+Scenario 1: 001: A market which enters a state requiring liquidity auction through increased open interest during a block but then leaves state again prior to block completion never enters liquidity auction. (0035-LIQM-005)
+  Given  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/DEC21"
+  Then  the auction ends with a traded volume of "10" at a price of "1000"
+  And  the market data for the market "ETH/DEC21" should be:
+  Then  clear all events
+  When  the parties place the following orders:
+  And  the market data for the market "ETH/DEC21" should be:
+  Then  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the network moves ahead "1" blocks
+  And  the market data for the market "ETH/DEC21" should be:
+  Then  the following events should NOT be emitted:
+
+
+
+Scenario 2: 002: A market which enters a state requiring liquidity auction through reduced current stake (e.g. through LP bankruptcy) during a block but then leaves state again prior to block completion never enters liquidity auction. (0035-LIQM-006)
+  And  the average block duration is "1"
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/MAR22"
+  Then  the auction ends with a traded volume of "10" at a price of "1000"
+  And  the insurance pool balance should be "0" for the market "ETH/MAR22"
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the parties place the following orders:
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/MAR22"
+  When  the parties place the following orders:
+  And  clear all events
+  Then  the market data for the market "ETH/MAR22" should be:
+  Then  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the network moves ahead "1" blocks
+  And  the market data for the market "ETH/MAR22" should be:
+  Then  the following events should NOT be emitted:
+
+
+
+Scenario 3: 004: When the Max Open Interest field decreases for a created block to a level such that a liquidity auction which is active at the start of a block can now be exited the block stays in auction within the block but leaves at the end. (0035-LIQM-008)
+  Given  the following network parameters are set:
+  Given  the liquidity monitoring parameters:
+  When  the markets are updated:
+  And  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/DEC21"
+  Then  the market data for the market "ETH/DEC21" should be:
+  When  the network moves ahead "1" blocks
+  Then  the orders should have the following states:
+  And  the parties should have the following margin levels:
+  And  the liquidity provisions should have the following states:
+  When  the parties place the following orders with ticks:
+  And  the network moves ahead "5" blocks
+  Then  the market data for the market "ETH/DEC21" should be:
+  And  the liquidity provisions should have the following states:
+

@@ -1,0 +1,28 @@
+Feature: Test funding margin for Perps market
+
+Scenario 1: (0019-MCAL-027, 0019-MCAL-030 - cross margin, 0019-MCAL-058, 0019-MCAL-054 - isolated margin) check funding margin for Perps market when clumps are -0.05 and 0.05
+  Tags: ['@Perpetual']
+  Given  the following assets are registered:
+  And  the perpetual oracles from "0xCAFECAFE1":
+  And  the markets:
+  And  time is updated to "2024-01-01T00:00:00Z"
+  And  the parties deposit on asset's general account the following amount:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  When  the parties place the following orders:
+  And  the parties submit update margin mode:
+  Then  the mark price should be "1500" for the market "ETH/DEC19"
+  And  the parties should have the following margin levels:
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  And  time is updated to "2024-01-01T17:31:03Z"
+  And  the parties place the following orders:
+  And  the network moves ahead "5" blocks
+  And  the parties place the following orders:
+  And  the network moves ahead "5" blocks
+  Then  the parties should have the following margin levels:
+  When  the system unix time is "1704130273"
+  And  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  Then  the following funding period events should be emitted:
+  And  the following transfers should happen:
+

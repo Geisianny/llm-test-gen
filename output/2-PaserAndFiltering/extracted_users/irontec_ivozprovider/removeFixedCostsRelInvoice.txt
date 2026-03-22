@@ -1,0 +1,13 @@
+Feature: Manage fixed costs rel invoices
+Description: In order to manage fixed costs rel invoices
+  As a brand admin
+  I need to be able to delete them through the API.
+
+Scenario 1: Remove a fixed cost rel invoice
+  Tags: ['@createSchema']
+  Given  I add Brand Authorization header
+  When  I add "Content-Type" header equal to "application/json"
+  And  I add "Accept" header equal to "application/json"
+  And  I send a "DELETE" request to "/fixed_costs_rel_invoices/1"
+  Then  the response status code should be 204
+

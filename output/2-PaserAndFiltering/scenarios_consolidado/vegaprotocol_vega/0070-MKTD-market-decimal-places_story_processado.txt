@@ -1,0 +1,95 @@
+Scenario 1: 001: Markets with different precisions trade at the same price
+  Tags: ['@SLABug']
+  Given  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  Then  the market data for the market "USD/DEC19" should be:
+  Then  the market data for the market "USD/DEC20" should be:
+  Then  the market data for the market "USD/DEC21" should be:
+  When  the network moves ahead "2" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "USD/DEC21"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "USD/DEC20"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "USD/DEC19"
+
+
+
+Scenario 2: 002: Users engage in a USD market auction, (0070-MKTD-003, 0070-MKTD-008)
+  Tags: ['@Liquidation']
+  Given  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  And  the markets are updated:
+  When  the opening auction period ends for market "ETH/MAR22"
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/MAR22"
+  And  the parties should have the following account balances:
+  And  the following trades should be executed:
+
+
+
+Scenario 3: 003: Users engage in an ETH market auction, (0070-MKTD-003, 0070-MKTD-008)
+  Given  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "USD/DEC19"
+  Then  the auction ends with a traded volume of "10" at a price of "1000"
+  And  the parties should have the following account balances:
+  And  the following trades should be executed:
+
+
+
+Scenario 4: 004: Users engage in an ETH market auction with full decimal places, (0070-MKTD-003, 0070-MKTD-008)
+  Given  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "USD/DEC20"
+  Then  the auction ends with a traded volume of "10" at a price of "100000"
+  And  the parties should have the following account balances:
+  And  the following trades should be executed:
+
+
+
+Scenario 5: 005: User tops up markets with differing precisions with the same asset + amount, should result in identical margin changes, (0070-MKTD-004)
+  Tags: ['@SLABug']
+  Given  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  Then  the market data for the market "USD/DEC19" should be:
+  When  the network moves ahead "2" blocks
+  Then  the parties should have the following account balances:
+  When  the parties deposit on asset's general account the following amount:
+  Then  the parties should have the following account balances:
+
+
+
+Scenario 6: 006: User checks prices after opening auction, (0070-MKTD-005)
+  Tags: ['@SLABug']
+  Given  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  When  the network moves ahead "2" blocks
+  Then  the mark price should be "100000" for the market "USD/DEC20"
+  And  the mark price should be "1000" for the market "USD/DEC19"
+
+
+
+Scenario 7: 007: Offsets are calculated in market units, (0070-MKTD-007)
+  Tags: ['@SLABug']
+  Given  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  When  the network moves ahead "2" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "USD/DEC19"
+  When  the parties place the following pegged orders:
+  Then  the pegged orders should have the following states:
+
+
+
+Scenario 8: 008: Price monitoring bounds are calculated at asset precision but displayed rounded, (0070-MKTD-006)
+  Given  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "USD/DEC20"
+  Then  the price monitoring bounds for the market "USD/DEC19" should be:
+  And  the price monitoring bounds for the market "USD/DEC20" should be:
+  And  the price monitoring bounds for the market "USD/DEC21" should be:
+

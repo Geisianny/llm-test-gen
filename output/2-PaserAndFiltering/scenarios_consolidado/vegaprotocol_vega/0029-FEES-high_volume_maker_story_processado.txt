@@ -1,0 +1,10 @@
+Scenario 1: When there is `high_volume_market_maker_rebate`, `high_volume_maker_fee` should be taken from the `treasury/buyback_fee` components with value `high_volume_maker_fee = high_volume_factor * trade_value_for_fee_purposes` (0029-FEES-042, 0029-FEES-043, 0029-FEES-044, 0029-FEES-047)
+  Given  the parties place the following orders:
+  And  the network moves ahead "1" epochs
+  Given  the parties place the following orders:
+  And  the network moves ahead "1" epochs
+  Given  the parties place the following orders:
+  Then  the following trades should be executed:
+  And  the network moves ahead "1" epochs
+  And  the following transfers should happen:
+

@@ -1,0 +1,58 @@
+Scenario 1: Filtering orders by currency alone
+  Tags: ['@api', '@ui']
+  When  I choose "British Pound" as the filter currency
+  And  I filter
+  Then  I should see 3 orders in the list
+  But  I should not see any orders with currency "USD"
+
+
+
+Scenario 2: Filtering orders with total greater than specified amount
+  Tags: ['@api', '@ui']
+  When  I choose "US Dollar" as the filter currency
+  And  I specify filter total being greater than 100
+  And  I filter
+  Then  I should see 2 orders in the list
+  And  I should see an order with "#00000002" number
+  And  I should see an order with "#00000003" number
+  But  I should not see an order with "#00000001" number
+  And  I should not see any orders with currency "GBP"
+
+
+
+Scenario 3: Filtering orders with total less than specified amount
+  Tags: ['@api', '@ui']
+  When  I choose "US Dollar" as the filter currency
+  And  I specify filter total being less than 200
+  And  I filter
+  Then  I should see 2 orders in the list
+  And  I should see an order with "#00000001" number
+  And  I should see an order with "#00000003" number
+  But  I should not see an order with "#00000002" number
+  And  I should not see any orders with currency "GBP"
+
+
+
+Scenario 4: Filtering order with total from a specified range
+  Tags: ['@api', '@ui']
+  When  I choose "British Pound" as the filter currency
+  And  I specify filter total being greater than 150.50
+  And  I specify filter total being less than 250
+  And  I filter
+  Then  I should see a single order in the list
+  And  I should see an order with "#00000004" number
+  But  I should not see an order with "#00000005" number
+  And  I should not see an order with "#00000006" number
+  And  I should not see any orders with currency "USD"
+
+
+
+Scenario 5: Filtering orders by total in given range but with no currency provided
+  Tags: ['@api', '@ui']
+  When  I specify filter total being greater than 150
+  And  I specify filter total being less than 200
+  And  I filter
+  Then  I should see 2 orders in the list
+  And  I should see an order with "#00000003" number
+  And  I should see an order with "#00000005" number
+

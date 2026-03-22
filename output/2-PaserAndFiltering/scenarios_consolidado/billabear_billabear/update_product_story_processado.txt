@@ -1,0 +1,6 @@
+Scenario 1: Update product info
+  Given  I have authenticated to the API
+  And  the follow products exist:
+  When  I update the product info via the API for "Product One":
+  Then  there should be a product with the name "Product Three"
+

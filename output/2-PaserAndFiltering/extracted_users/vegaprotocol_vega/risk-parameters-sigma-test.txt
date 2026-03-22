@@ -1,0 +1,45 @@
+Feature: test risk model parameter sigma
+
+Background: 
+  Given  the log normal risk model named "log-normal-risk-model-53":
+  Given  the log normal risk model named "log-normal-risk-model-54":
+  Given  the log normal risk model named "log-normal-risk-model-0":
+  And  the margin calculator named "margin-calculator-1":
+  And  the fees configuration named "fees-config-1":
+  And  the price monitoring named "price-monitoring-1":
+  And  the markets:
+  And  the parties deposit on asset's general account the following amount:
+  And  the following network parameters are set:
+
+Scenario 1: 001, test market ETH/MAR53(sigma=50),
+  Tags: ['@Now']
+  Given  the liquidity monitoring parameters:
+  When  the markets are updated:
+  And  the following network parameters are set:
+  And  the average block duration is "1"
+  And  the parties submit the following liquidity provision:
+  When  the parties place the following orders:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/MAR53"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/MAR53"
+  And  the market data for the market "ETH/MAR53" should be:
+  Then  the order book should have the following volumes for market "ETH/MAR53":
+  And  the parties should have the following account balances:
+  And  the parties should have the following margin levels:
+
+Scenario 2: 002, test market ETH/MAR0 (kind of "normal" risk parameters setting),
+  Tags: ['@Now']
+  Given  the liquidity monitoring parameters:
+  When  the markets are updated:
+  And  the following network parameters are set:
+  And  the average block duration is "1"
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/MAR0"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/MAR0"
+  And  the market data for the market "ETH/MAR0" should be:
+  Then  the order book should have the following volumes for market "ETH/MAR0":
+  And  the parties should have the following account balances:
+  And  the parties should have the following margin levels:
+

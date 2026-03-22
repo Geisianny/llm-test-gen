@@ -1,0 +1,12 @@
+Scenario 1: Execute a test in ChromeHeadless with colors
+  Given  a configuration with:
+  When  I start Karma
+  Then  it passes with like:
+
+
+
+Scenario 2: Execute a test in ChromeHeadless with no-colors
+  Given  a configuration with:
+  When  I start Karma
+  Then  it passes with like:
+

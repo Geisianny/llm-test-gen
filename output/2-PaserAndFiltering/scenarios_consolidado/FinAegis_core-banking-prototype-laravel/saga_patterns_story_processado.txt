@@ -1,0 +1,89 @@
+Scenario 1: Simple transfer saga with successful completion
+  Given  account "A" has balance of 1000.00 USD
+  And  account "B" has balance of 500.00 USD
+  When  I initiate a transfer saga of 200.00 USD from "A" to "B"
+  Then  the saga should execute in sequence:
+  And  saga state should be persisted at each step
+  And  event store should contain all saga events
+
+
+
+Scenario 2: Transfer saga with compensation on deposit failure
+  Given  account "A" has balance of 1000.00 USD
+  And  account "B" is frozen for compliance
+  When  I initiate a transfer saga of 200.00 USD from "A" to "B"
+  Then  the saga should execute with compensation:
+  And  final balances should be:
+  And  compensation events should be recorded
+
+
+
+Scenario 3: Nested saga with partial compensation
+  Given  multiple accounts exist with various balances
+  When  I execute a bulk transfer saga with nested workflows:
+  Then  the saga compensation should occur:
+  And  parent saga should handle child workflow failures gracefully
+
+
+
+Scenario 4: Saga with external service integration failure
+  Given  payment gateway integration is configured
+  And  account "A" has balance of 500.00 USD
+  When  I initiate an external payment saga
+  And  the external payment gateway times out
+  Then  the saga should:
+  And  circuit breaker should be triggered for the gateway
+
+
+
+Scenario 5: Parallel saga execution with ordering constraints
+  Given  I need to execute multiple parallel operations
+  When  I initiate a complex saga with dependencies:
+  Then  operations should execute respecting constraints
+  And  parallel operations should complete before dependent ones
+  And  compensation should respect reverse dependency order
+
+
+
+Scenario 6: Saga compensation with idempotency
+  Given  a saga has partially completed with compensation
+  When  the same compensation is triggered again
+  Then  the system should:
+  And  no double compensation should occur
+  And  system state should remain consistent
+
+
+
+Scenario 7: Long-running saga with checkpoint recovery
+  Given  a multi-day batch processing saga is configured
+  When  the saga execution is interrupted at step 500 of 1000
+  Then  on restart the saga should:
+  And  maintain exactly-once processing guarantee
+
+
+
+Scenario 8: Saga with dynamic compensation strategies
+  Given  different compensation strategies are available
+  When  a saga fails requiring compensation
+  Then  the appropriate strategy should be selected:
+  And  strategy selection should be logged
+
+
+
+Scenario 9: Cross-domain saga coordination
+  Given  multiple domain services are involved
+  When  I execute a saga spanning:
+  Then  each domain should participate correctly
+  And  compensation should cascade across domains
+  And  domain boundaries should be respected
+  And  event correlation should track the entire saga
+
+
+
+Scenario 10: Saga monitoring and observability
+  Given  saga monitoring is enabled
+  When  multiple sagas are executing concurrently
+  Then  the monitoring system should track:
+  And  provide real-time saga visualization
+  And  alert on anomalous patterns
+

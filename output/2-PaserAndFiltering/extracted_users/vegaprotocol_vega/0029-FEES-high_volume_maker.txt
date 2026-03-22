@@ -1,0 +1,33 @@
+Feature: high volume maker fee rebate
+
+Background: 
+  Given  time is updated to "2023-01-01T00:00:00Z"
+  And  the average block duration is "1"
+  And  the margin calculator named "margin-calculator-1":
+  And  the log normal risk model named "log-normal-risk-model":
+  And  the price monitoring named "price-monitoring":
+  Given  the following network parameters are set:
+  And  the volume rebate program tiers named "vrt":
+  And  the volume rebate program:
+  And  the network moves ahead "1" epochs
+  And  the following assets are registered:
+  And  the markets:
+  And  the liquidity monitoring parameters:
+  When  the markets are updated:
+  Given  the parties deposit on asset's general account the following amount:
+  Given  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/USD"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/USD"
+
+Scenario 1: When there is `high_volume_market_maker_rebate`, `high_volume_maker_fee` should be taken from the `treasury/buyback_fee` components with value `high_volume_maker_fee = high_volume_factor * trade_value_for_fee_purposes` (0029-FEES-042, 0029-FEES-043, 0029-FEES-044, 0029-FEES-047)
+  Given  the parties place the following orders:
+  And  the network moves ahead "1" epochs
+  Given  the parties place the following orders:
+  And  the network moves ahead "1" epochs
+  Given  the parties place the following orders:
+  Then  the following trades should be executed:
+  And  the network moves ahead "1" epochs
+  And  the following transfers should happen:
+

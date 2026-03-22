@@ -1,0 +1,31 @@
+Scenario 1: Filtering enabled catalog promotions
+  Tags: ['@api', '@ui']
+  When  I browse catalog promotions
+  And  I filter enabled catalog promotions
+  Then  I should see a catalog promotion with name "Spring sale"
+  And  I should see a catalog promotion with name "Winter sale"
+  But  I should not see a catalog promotion with name "Surprise sale"
+  And  I should not see a catalog promotion with name "Special sale"
+
+
+
+Scenario 2: Filtering active catalog promotions
+  Tags: ['@api', '@ui']
+  When  I browse catalog promotions
+  And  I filter by active state
+  Then  I should see a catalog promotion with name "Spring sale"
+  And  I should see a catalog promotion with name "Winter sale"
+  But  I should not see a catalog promotion with name "Surprise sale"
+  And  I should not see a catalog promotion with name "Special sale"
+
+
+
+Scenario 3: Filtering inactive catalog promotions
+  Tags: ['@api', '@ui']
+  When  I browse catalog promotions
+  And  I filter by inactive state
+  Then  I should see a catalog promotion with name "Surprise sale"
+  And  I should see a catalog promotion with name "Special sale"
+  But  I should not see a catalog promotion with name "Winter sale"
+  And  I should not see a catalog promotion with name "Spring sale"
+

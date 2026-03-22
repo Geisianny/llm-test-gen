@@ -1,0 +1,14 @@
+Scenario 1: Create a new product with 3 variants
+  Given  the site has a product "Shoe" priced at 100
+  And  the product is allowed attribute group "Color"
+  And  the product has a variant "red"
+  And  the variant uses attribute color "red"
+  And  the variant is published
+  And  the product has a variant "blue"
+  And  the variant uses attribute color "blue"
+  And  the variant is published
+  And  the product has a variant "green"
+  And  the variant uses attribute color "green"
+  And  the variant is published
+  Then  the product should have 3 variants
+

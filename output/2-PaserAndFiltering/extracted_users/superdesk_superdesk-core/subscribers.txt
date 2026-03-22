@@ -1,0 +1,161 @@
+Feature: Subscribers
+
+Scenario 1: Add a new subscriber
+  Tags: ['@auth', '@notification']
+  Given  empty "subscribers"
+  When  we get "/subscribers"
+  Then  we get list with 0 items
+  When  we post to "/products" with success
+  And  we post to "/subscribers" with success
+  Then  we get OK response
+  Then  we get notifications
+  When  we get "/subscribers"
+  Then  we get list with 1 items
+
+Scenario 2: Create new subscriber with invalid product type.
+  Tags: ['@auth']
+  Given  empty "subscribers"
+  When  we get "/subscribers"
+  Then  we get list with 0 items
+  When  we post to "/products" with success
+  And  we post to "/subscribers"
+  Then  we get error 400
+  When  we patch "/products/#products._id#"
+  Then  we get OK response
+  When  we post to "/subscribers"
+  Then  we get error 400
+
+Scenario 3: Add a new subscriber without product succeeds
+  Tags: ['@auth']
+  Given  empty "subscribers"
+  When  we get "/subscribers"
+  Then  we get list with 0 items
+  When  we post to "/subscribers"
+  Then  we get response code 201
+
+Scenario 4: Update a subscriber
+  Tags: ['@auth', '@notification']
+  Given  empty "subscribers"
+  When  we post to "/products" with success
+  And  we post to "/subscribers"
+  Then  we get OK response
+  Then  we get notifications
+  When  we patch latest
+  Then  we get updated response
+  Then  we get notifications
+
+Scenario 5: Query subscribers by filter condition
+  Tags: ['@auth', '@vocabulary']
+  Given  empty "filter_conditions"
+  When  we post to "/filter_conditions" with success
+  Then  we get latest
+  Given  empty "content_filters"
+  When  we post to "/content_filters" with success
+  Then  we get latest
+  Given  empty "subscribers"
+  When  we post to "/products" with success
+  And  we post to "/subscribers" with success
+  And  we post to "/subscribers" with success
+  And  we get "/subscribers?filter_condition={"field":"anpa_category", "operator":"in", "value":"4"}"
+  Then  we get list with 1 items
+
+Scenario 6: Deleting a Subscriber is not allowed
+  Tags: ['@auth']
+  Given  empty "subscribers"
+  When  we post to "/products" with success
+  And  we post to "/subscribers"
+  When  we delete latest
+  Then  we get error 405
+
+Scenario 7: Creating a Subscriber should fail if there are no destinations
+  Tags: ['@auth']
+  Given  empty "subscribers"
+  When  we post to "/products" with success
+  And  we post to "/subscribers"
+  Then  we get error 400
+  When  we post to "/subscribers"
+  Then  we get error 400
+
+Scenario 8: Creating a subscriber with api product only but no destinations.
+  Tags: ['@auth']
+  Given  empty "subscribers"
+  When  we post to "/products" with success
+  And  we post to "/subscribers"
+  Then  we get OK response
+  When  we patch "/subscribers/#subscribers._id#"
+  Then  we get error 400
+  When  we patch "/subscribers/#subscribers._id#"
+  Then  we get error 400
+
+Scenario 9: Updating a Subscriber with no destinations should fail
+  Tags: ['@auth']
+  Given  empty "subscribers"
+  When  we get "/subscribers"
+  Then  we get list with 0 items
+  When  we post to "/products" with success
+  And  we post to "/subscribers" with success
+  And  we get "/subscribers"
+  Then  we get list with 1 items
+  When  we patch "/subscribers/#subscribers._id#"
+  Then  we get error 400
+
+Scenario 10: Creating a Subscriber should fail when Mandatory properties are not passed for destinations
+  Tags: ['@auth']
+  Given  empty "subscribers"
+  When  we post to "/products" with success
+  And  we post to "/subscribers"
+  Then  we get error 400
+
+Scenario 11: Creating a Subscriber with sequence number should fail if min value is less than or equal to 0
+  Tags: ['@auth']
+  Given  empty "subscribers"
+  When  we post to "/products" with success
+  And  we post to "/subscribers"
+  Then  we get error 400
+
+Scenario 12: Update critical errors for subscriber 1
+  Tags: ['@auth', '@notification']
+  Given  empty "subscribers"
+  When  we post to "/products" with success
+  And  we post to "/subscribers" with success
+  When  we patch "/subscribers/#subscribers._id#"
+  Then  we get updated response
+
+Scenario 13: Update critical errors for subscriber 2
+  Tags: ['@auth', '@vocabulary', '@notification']
+  Given  empty "filter_conditions"
+  When  we post to "/filter_conditions" with success
+  Then  we get latest
+  Given  empty "content_filters"
+  When  we post to "/content_filters" with success
+  Then  we get latest
+  Given  empty "subscribers"
+  When  we post to "/products" with success
+  And  we post to "/subscribers" with success
+  When  we patch "/subscribers/#subscribers._id#"
+  Then  we get updated response
+
+Scenario 14: Generate token for subscriber
+  Tags: ['@auth']
+  Given  "products"
+  Given  "subscribers"
+  When  we post to "subscriber_token"
+  Then  we get new resource
+
+Scenario 15: Adding destination should not remove secret key
+  Tags: ['@auth']
+  When  we post to "subscribers"
+  Then  we get OK response
+  When  we get "subscribers"
+  Then  we get existing resource
+  When  we get "subscribers/#subscribers._id#"
+  Then  we get existing resource
+  And  we check "subscribers" db item "#subscribers._id#"
+  When  we patch "/subscribers/#subscribers._id#"
+  Then  we get OK response
+  When  we get "subscribers"
+  Then  we get existing resource
+  When  we get "subscribers/#subscribers._id#"
+  Then  we get existing resource
+  And  we check "subscribers" db item "#subscribers._id#"
+

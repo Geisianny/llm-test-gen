@@ -1,0 +1,35 @@
+Feature: Location
+Description: As a user
+  I want to edit my address and location
+  So that others can find me in the map
+
+Background: 
+  And  the following users
+  And  I am logged in as "zezinho"
+
+Scenario 1: editing my address
+  Given  the following Person fields are active fields
+  And  I go to zezinho's control panel
+  And  I follow "Location" within "#section-profile"
+  When  I fill in "Address" with "Rua Marechal Floriano, 28"
+  And  I select "Brazil" from "profile_data_country"
+  And  I fill in "profile_data[zip_code]" with "40110010"
+  And  I follow "Save"
+  Then  "zezinho" should have the following data
+
+Scenario Outline 2: editing address of collectives - Example 1
+  Given  the following Community fields are active fields
+  Given  the following communities
+  And  I am on mycollective's control panel
+  And  I follow "Location" within "#section-profile"
+  When  I select "Brazil" from "profile_data_country"
+  And  I fill in "profile_data[zip_code]" with "40110010"
+  And  I fill in "Address" with "Rua Marechal Floriano, 28"
+  And  I follow "Save"
+  Then  "mycollective" should have the following data
+
+  Examples:
+    | class | plural |
+    | Community | communities |
+    | Enterprise | enterprises |
+

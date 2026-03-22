@@ -1,0 +1,6 @@
+Scenario 1: Unwithdrawing a withdrawn document
+  Given  I am a writer
+  When  I draft a new publication "My Publication"
+  And  I discard the draft publication
+  Then  the publication is deleted
+

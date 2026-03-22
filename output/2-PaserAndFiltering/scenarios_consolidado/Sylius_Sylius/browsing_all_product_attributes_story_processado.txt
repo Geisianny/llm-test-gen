@@ -1,0 +1,6 @@
+Scenario 1: Browsing all product attributes in store
+  Tags: ['@api', '@ui']
+  When  I want to see all product attributes in store
+  Then  I should see 3 product attributes in the list
+  And  I should see the product attribute "T-Shirt brand" in the list
+

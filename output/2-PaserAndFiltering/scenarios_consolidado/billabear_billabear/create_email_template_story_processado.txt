@@ -1,0 +1,43 @@
+Scenario 1: Create email template
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  When  I create an email template:
+  Then  there will be an email template for "subscription_created" with locale "en"
+
+
+
+Scenario 2: Create email template failure for no template id
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  When  I create an email template:
+  Then  there will not be an email template for "subscription_created" with locale "en"
+
+
+
+Scenario 3: Invalid name
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  When  I create an email template:
+  Then  I will get an error response
+  Then  there will not be an email template for "subscription_created_no" with locale "en"
+
+
+
+Scenario 4: Create email template with template id
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  When  I create an email template:
+  Then  there will be an email template for "subscription_created" with locale "en"
+
+
+
+Scenario 5: Invalid locale
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  When  I create an email template:
+  Then  I will get an error response
+  Then  there will not be an email template for "subscription_created" with locale "eke"
+
+
+
+Scenario 6: Already exits locale
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  Given  the following email templates exist:
+  When  I create an email template:
+  Then  I will get an error response
+

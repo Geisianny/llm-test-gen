@@ -1,0 +1,48 @@
+Feature: Iceberg orders
+
+Background: 
+  Given  the log normal risk model named "lognormal-risk-model-1":
+  And  the price monitoring named "price-monitoring-1":
+  And  the margin calculator named "margin-calculator-1":
+  And  the oracle spec for settlement data filtering data from "0xCAFECAFE19" named "ethDec19Oracle":
+  And  the oracle spec for trading termination filtering data from "0xCAFECAFE19" named "ethDec19Oracle":
+  Given  the markets:
+  And  the following network parameters are set:
+
+Scenario 1: Batch with normal orders and icebergs, 0014-ORDT-014, 0014-ORDT-015
+  Tags: ['@batch']
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the mark price should be "100" for the market "ETH/DEC19"
+  And  the parties place the following iceberg orders:
+  And  the parties should have the following account balances:
+  Then  the party "party3" starts a batch instruction
+  Then  the party "party3" adds the following orders to a batch:
+  Then  the party "party3" adds the following iceberg orders to a batch:
+  Then  the party "party3" submits their batch instruction
+  Then  the following trades should be executed:
+  And  the network moves ahead "10" blocks
+  And  the parties should have the following account balances:
+  When  the parties cancel the following orders:
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the mark price should be "101" for the market "ETH/DEC19"
+  Then  the party "party4" starts a batch instruction
+  Then  the party "party4" adds the following iceberg orders to a batch:
+  Then  the party "party4" adds the following orders to a batch:
+  Then  the party "party4" submits their batch instruction
+  And  the parties should have the following account balances:
+  Then  the parties should have the following margin levels:
+  And  the network moves ahead "10" blocks
+  And  the parties should have the following account balances:
+  When  the parties cancel the following orders:
+  Then  the iceberg orders should have the following states:
+  And  the network moves ahead "10" blocks
+  And  the parties should have the following account balances:
+  Then  the parties should have the following margin levels:
+  When  the parties cancel the following orders:
+  And  the parties should have the following account balances:
+

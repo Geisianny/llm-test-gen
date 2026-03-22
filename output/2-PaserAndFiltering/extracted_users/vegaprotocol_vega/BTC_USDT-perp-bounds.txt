@@ -1,0 +1,23 @@
+Feature: Reproduce BTC/USDT-PERP market configuration as updated on February 11th 2024
+
+Background: 
+  Given  time is updated to "2024-02-04T16:00:00Z"
+  And  the following assets are registered:
+  And  the log normal risk model named "log-normal-risk-model":
+  And  the margin calculator named "margin-calculator":
+  And  the fees configuration named "fees":
+  And  the price monitoring named "price-monitoring":
+  And  the liquidity monitoring parameters:
+  And  the liquidity sla params named "sla":
+  And  the perpetual oracles from "0xCAFECAFE1":
+  And  the markets:
+  And  the following network parameters are set:
+
+Scenario 1: Check the resulting bounds
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "BTC/USDT-PERP"
+  Then  the market data for the market "BTC/USDT-PERP" should be:
+

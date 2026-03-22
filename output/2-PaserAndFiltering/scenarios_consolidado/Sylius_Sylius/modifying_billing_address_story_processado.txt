@@ -1,0 +1,74 @@
+Scenario 1: Modifying a customer's billing address
+  Tags: ['@api', '@ui']
+  When  I view the summary of the order "#00000001"
+  And  I want to modify a customer's billing address of this order
+  And  I specify their new billing address as "Los Angeles", "Seaside Fwy", "90802", "United States" for "Lucifer Morningstar"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this order should have "Lucifer Morningstar", "Seaside Fwy", "90802", "Los Angeles", "United States" as its billing address
+
+
+
+Scenario 2: Being able to choose only provinces of the selected country
+  Tags: ['@no-api', '@ui', '@mink:chromedriver']
+  Given  the store also has country "Poland"
+  And  this country has the "Malopolska" province with "ML" code
+  And  this country has the "Slaskie" province with "SL" code
+  When  I view the summary of the order "#00000001"
+  And  I want to modify a customer's billing address of this order
+  And  I change the billing country to "Poland"
+  Then  I should be able to choose the "Malopolska" province for the billing address
+  And  I should be able to choose the "Slaskie" province for the billing address
+
+
+
+Scenario 3: Modifying a customer's billing address when a product's price has been changed
+  Tags: ['@api', '@ui']
+  Given  the product "Suit" changed its price to "$300.00"
+  When  I view the summary of the order "#00000001"
+  And  I want to modify a customer's billing address of this order
+  And  I specify their new billing address as "Los Angeles", "Seaside Fwy", "90802", "United States" for "Lucifer Morningstar"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this order should have "Lucifer Morningstar", "Seaside Fwy", "90802", "Los Angeles", "United States" as its billing address
+  And  the order's total should still be "$400.00"
+
+
+
+Scenario 4: Modifying a customer's billing address when a channel has been disabled
+  Tags: ['@api', '@ui']
+  Given  the channel "Web" has been disabled
+  When  I view the summary of the order "#00000001"
+  And  I want to modify a customer's billing address of this order
+  And  I specify their new billing address as "Los Angeles", "Seaside Fwy", "90802", "United States" for "Lucifer Morningstar"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this order should have "Lucifer Morningstar", "Seaside Fwy", "90802", "Los Angeles", "United States" as its billing address
+  And  the order's total should still be "$400.00"
+
+
+
+Scenario 5: Modifying a customer's billing address when the currency has been disabled
+  Tags: ['@api', '@ui']
+  Given  the currency "USD" has been disabled
+  When  I view the summary of the order "#00000001"
+  And  I want to modify a customer's billing address of this order
+  And  I specify their new billing address as "Los Angeles", "Seaside Fwy", "90802", "United States" for "Lucifer Morningstar"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this order should have "Lucifer Morningstar", "Seaside Fwy", "90802", "Los Angeles", "United States" as its billing address
+  And  the order's total should still be "$400.00"
+
+
+
+Scenario 6: Modifying a customer's billing address when the product is out of stock
+  Tags: ['@api', '@ui']
+  Given  the product "Suit" is out of stock
+  When  I view the summary of the order "#00000001"
+  And  I want to modify a customer's billing address of this order
+  And  I specify their new billing address as "Los Angeles", "Seaside Fwy", "90802", "United States" for "Lucifer Morningstar"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this order should have "Lucifer Morningstar", "Seaside Fwy", "90802", "Los Angeles", "United States" as its billing address
+  And  the order's total should still be "$400.00"
+

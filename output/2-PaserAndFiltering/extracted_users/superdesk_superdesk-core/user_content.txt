@@ -1,0 +1,35 @@
+Feature: User Content
+
+Scenario 1: List my new content
+  Tags: ['@auth']
+  Given  empty "archive"
+  When  we post to "/archive"
+  Then  we get new resource
+  When  we get user "content"
+  Then  we get list with 1 items
+  When  we switch user
+  And  we get user "content"
+  Then  we get list with 0 items
+
+Scenario 2: List my new content when having content with stages Given empty "desks"
+  Tags: ['@auth']
+  Given  empty "archive"
+  Given  empty "tasks"
+  Given  empty "stages"
+  Given  "desks"
+  When  we post to "archive"
+  When  we post to "archive"
+  When  we get user "content"
+  Then  we get list with 1 items
+
+Scenario 3: Hide new content version 0
+  Tags: ['@auth']
+  When  we post to "/archive"
+  Then  we get new resource
+  When  we get user "content"
+  Then  we get list with 0 items
+  When  we patch "/archive/item1"
+  Then  we get updated response
+  When  we get user "content"
+  Then  we get list with 1 items
+

@@ -1,0 +1,28 @@
+Scenario 1: Closed books disallow posting
+  Given  the following GL transaction posted on 2015-11-01:
+  When  I navigate the menu and select the item at "General Journal > Year End"
+  And  I enter "2015-11-15" into "Close As-Of"
+  And  I press "Close Period"
+  And  I enter "2015-11-30" into "Close As-Of"
+  And  I press "Close Period"
+  Then  I can't post a transaction on 2015-11-16
+
+
+
+Scenario 2: Reopen a closed period
+  When  I navigate the menu and select the item at "General Journal > Year End"
+  And  I press "Re-open Period"
+  Then  I can't post a transaction on 2015-11-15
+  When  I post the following GL transaction on 2015-11-16:
+  Then  the Balance Sheet per 2016-01-01 looks like:
+
+
+
+Scenario 3: Post year-end
+  When  I navigate the menu and select the item at "General Journal > Year End"
+  And  I enter these values:
+  And  I press "Post Yearend"
+  Then  I should see the year-end confirmation screen
+  And  the Balance Sheet per 2015-12-31 looks like:
+  And  the Balance Sheet per 2016-01-01 looks like:
+

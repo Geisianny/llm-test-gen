@@ -1,0 +1,8 @@
+Scenario 1: Get customer info
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  And  there is a payments for:
+  When  I refund 3500 the payment for "customer.one@example.org" for 3500 via API
+  Then  there will be a refund for "customer.one@example.org" of 3500
+

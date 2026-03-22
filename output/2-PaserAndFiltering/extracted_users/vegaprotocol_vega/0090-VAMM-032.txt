@@ -1,0 +1,47 @@
+Feature: vAMM behaviour when a market settles with distressed AMM.
+
+Background: 
+  Given  the average block duration is "1"
+  And  the margin calculator named "margin-calculator-1":
+  And  the log normal risk model named "log-normal-risk-model":
+  And  the liquidity monitoring parameters:
+  And  the following network parameters are set:
+  And  the following assets are registered:
+  And  the fees configuration named "fees-config-1":
+  And  the liquidity sla params named "SLA-22":
+  And  the oracle spec for settlement data filtering data from "0xCAFECAFE" named "ethMar22Oracle":
+  And  the oracle spec for trading termination filtering data from "0xCAFECAFE" named "ethMar22Oracle":
+  And  the settlement data decimals for the oracle named "ethMar22Oracle" is given in "0" decimal places
+  And  the markets:
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  Then  the network moves ahead "4" blocks
+  And  the current epoch is "0"
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/MAR22"
+  Then  the following trades should be executed:
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the parties submit the following AMM:
+  Then  the AMM pool status should be:
+  And  set the following AMM sub account aliases:
+  And  the following transfers should happen:
+
+Scenario 1: 0090-VAMM-032: When an AMM is active on a market at time of settlement with a position in a well collateralised state, the market can settle successfully and then all funds on the AMM key are transferred back to the main party's account.
+  Tags: ['@VAMM']
+  When  the parties place the following orders:
+  Then  debug trades
+  Then  the following trades should be executed:
+  When  the network moves ahead "1" blocks
+  Then  the market data for the market "ETH/MAR22" should be:
+  And  the parties should have the following profit and loss:
+  And  the AMM pool status should be:
+  When  the oracles broadcast data signed with "0xCAFECAFE":
+  Then  the network moves ahead "1" blocks
+  And  the parties should have the following account balances:
+  When  the oracles broadcast data signed with "0xCAFECAFE":
+  Then  the market state should be "STATE_SETTLED" for the market "ETH/MAR22"
+  And  then the network moves ahead "1" blocks
+  Then  debug transfers
+  And  the following transfers should happen:
+  And  the parties should have the following account balances:
+

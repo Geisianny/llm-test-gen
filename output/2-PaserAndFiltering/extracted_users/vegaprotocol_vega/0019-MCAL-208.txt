@@ -1,0 +1,35 @@
+Feature: test when isolated margin risk factor > 1
+
+Background: 
+  Given  the average block duration is "1"
+  And  the following network parameters are set:
+  And  the price monitoring named "my-price-monitoring-1":
+  And  the liquidity monitoring parameters:
+  And  the simple risk model named "simple-risk-model":
+  And  the markets:
+
+Scenario 1: 0019-MCAL-208
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following orders with ticks:
+  When  the network moves ahead "2" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+  And  the parties should have the following account balances:
+  When  the parties place the following pegged orders:
+  Then  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+  When  the parties submit update margin mode:
+  Then  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+  When  the parties amend the following orders:
+  Then  the orders should have the following status:
+  And  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  And  the network moves ahead "1" blocks
+  Then  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+

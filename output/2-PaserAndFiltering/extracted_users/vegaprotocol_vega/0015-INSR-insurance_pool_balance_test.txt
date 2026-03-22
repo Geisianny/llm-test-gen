@@ -1,0 +1,102 @@
+Feature: Test closeout type 1: margin >= cost of closeout
+
+Scenario 1: case 1 (using simple risk model) from https://docs.google.com/spreadsheets/d/1CIPH0aQmIKj6YeFW9ApP_l-jwB4OcsNQ/edit#gid=1555964910 (0015-INSR-001, 0015-INSR-003, 0018-RSKM-001, 0018-RSKM-003, 0010-MARG-004, 0010-MARG-005, 0010-MARG-006, 0010-MARG-007, 0010-MARG-008. 0010-MARG-009)
+  Tags: ['@PanicDebug']
+  Given  the simple risk model named "simple-risk-model-1":
+  And  the margin calculator named "margin-calculator-1":
+  And  the markets:
+  And  the following network parameters are set:
+  Given  the insurance pool balance should be "0" for the market "ETH/DEC19"
+  Given  the initial insurance pool balance is "15000" for all the markets
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  When  the parties place the following orders:
+  When  the parties place the following orders:
+  Then  the parties should have the following account balances:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the mark price should be "100" for the market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  When  the parties place the following orders with ticks:
+  And  the parties should have the following account balances:
+  Then  the parties should have the following margin levels:
+  When  the parties place the following orders with ticks:
+  And  the mark price should be "100" for the market "ETH/DEC19"
+  And  the insurance pool balance should be "15000" for the market "ETH/DEC19"
+  Then  the parties should have the following margin levels:
+  Then  the order book should have the following volumes for market "ETH/DEC19":
+  When  the parties place the following orders with ticks:
+  Then  the parties cancel the following orders:
+  Then  the parties place the following orders:
+  And  the parties should have the following account balances:
+  Then  the parties should have the following margin levels:
+  Then  the order book should have the following volumes for market "ETH/DEC19":
+  When  the parties place the following orders with ticks:
+  And  the network moves ahead "1" blocks
+  Then  the mark price should be "126" for the market "ETH/DEC19"
+  And  the insurance pool balance should be "38500" for the market "ETH/DEC19"
+  Then  the parties cancel the following orders:
+  Then  the parties place the following orders:
+  Then  the order book should have the following volumes for market "ETH/DEC19":
+  Then  the parties should have the following margin levels:
+  Then  the following transfers should happen:
+  Then  the order book should have the following volumes for market "ETH/DEC19":
+  Then  the mark price should be "126" for the market "ETH/DEC19"
+  And  the insurance pool balance should be "38500" for the market "ETH/DEC19"
+  Then  the parties should have the following account balances:
+  Then  the parties should have the following margin levels:
+  And  the cumulated balance for all accounts should be worth "5050075500"
+  And  the insurance pool balance should be "38500" for the market "ETH/DEC19"
+  Then  the parties cancel the following orders:
+  When  the parties place the following orders with ticks:
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the parties should have the following account balances:
+  Then  the parties should have the following margin levels:
+  When  the parties place the following orders with ticks:
+  And  the parties should have the following account balances:
+  Then  the parties should have the following margin levels:
+  When  the parties place the following orders with ticks:
+  And  the insurance pool balance should be "38500" for the market "ETH/DEC19"
+  Then  the mark price should be "70" for the market "ETH/DEC19"
+  Then  the parties should have the following profit and loss:
+  And  the parties should have the following account balances:
+  Then  the parties should have the following margin levels:
+  Then  the order book should have the following volumes for market "ETH/DEC19":
+
+Scenario 2: case 2 using lognomal risk model (0015-INSR-003, 0010-MARG-009, 0010-MARG-010, 0010-MARG-011)
+  Given  the log normal risk model named "lognormal-risk-model-fish":
+  And  the price monitoring named "price-monitoring-1":
+  And  the margin calculator named "margin-calculator-1":
+  And  the markets:
+  And  the following network parameters are set:
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders with ticks:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the mark price should be "100" for the market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following account balances:
+  Then  the parties should have the following margin levels:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following account balances:
+  Then  the parties should have the following margin levels:
+  And  the order book should have the following volumes for market "ETH/DEC19":
+  And  the mark price should be "100" for the market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following account balances:
+  Then  the parties should have the following margin levels:
+  And  the mark price should be "110" for the market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  When  the parties place the following orders with ticks:
+  And  the mark price should be "119" for the market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the order book should have the following volumes for market "ETH/DEC19":
+  Then  the parties should have the following account balances:
+  Then  the parties should have the following margin levels:
+  Then  the parties should have the following profit and loss:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following account balances:
+  Then  the parties should have the following margin levels:
+

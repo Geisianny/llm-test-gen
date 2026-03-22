@@ -1,0 +1,78 @@
+Scenario 1: Get a collection of objects without identifiers from a single resource with a single collection
+  When  I send a "GET" request to "/chairs"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+
+
+Scenario 2: Get a collection of objects with identifiers from a single resource with a single collection
+  When  I send a "GET" request to "/tables"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+
+
+Scenario 3: Get a single item still works
+  When  I send a "GET" request to "/cuillers/12345"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario Outline 4: Get a collection of objects with identifiers from a multiple resources class with multiple collections - Example 1
+  When  I send a "GET" request to "/forks"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+  Examples:
+    | uri |
+    | /forks |
+    | /fourchettes |
+
+
+
+Scenario Outline 5: Get a collection of objects with identifiers from a multiple resources class with multiple collections and an item operation - Example 1
+  When  I send a "GET" request to "/spoons"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+  Examples:
+    | uri |
+    | /spoons |
+    | /cuillers |
+
+
+
+Scenario Outline 6: Get a not exposed route returns a 404 with an explanation - Example 1
+  When  I send a "GET" request to "/tables/12345"
+  Then  the response status code should be 404
+  And  the response should be in JSON
+  And  the JSON node "detail" should be equal to "This route does not aim to be called."
+
+  Examples:
+    | uri | description |
+    | /tables/12345 | This route does not aim to be called. |
+    | /forks/12345 | This route does not aim to be called. |
+
+
+
+Scenario Outline 7: Get a not exposed route returns a 404 with an explanation - Example 1
+  When  I send a "GET" request to "/.well-known/genid/12345"
+  Then  the response status code should be 404
+  And  the response should be in JSON
+  And  the JSON node "detail" should be equal to "This route is not exposed on purpose. It generates an IRI for a collection resource without identifier nor item operation."
+
+  Examples:
+    | uri | description |
+    | /.well-known/genid/12345 | This route is not exposed on purpose. It generates an IRI for a collection resource without identifier nor item operation. |
+

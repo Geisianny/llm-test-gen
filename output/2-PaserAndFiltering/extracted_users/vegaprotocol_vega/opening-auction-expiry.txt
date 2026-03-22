@@ -1,0 +1,29 @@
+Feature: Set up a market, create indiciative price different to actual opening auction uncross price
+
+Background: 
+  Given  the simple risk model named "my-simple-risk-model":
+  Given  the markets:
+  And  the following network parameters are set:
+
+Scenario 1: 0043-MKTL-012 Simple test verifying the market is cancelled if it failes to leave opening auction
+  Tags: ['@DebugAuctionMax', '@Expires']
+  Given  the parties deposit on asset's general account the following amount:
+  And  the network moves ahead "5" blocks
+  Then  the parties submit the following liquidity provision:
+  Then  the market data for the market "ETH/DEC19" should be:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the market data for the market "ETH/DEC19" should be:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the market data for the market "ETH/DEC19" should be:
+  Then  the parties should have the following account balances:
+  When  the network moves ahead "10" blocks
+  Then  the last market state should be "STATE_CANCELLED" for the market "ETH/DEC19"
+  And  the orders should have the following status:
+  Then  "party1" should have general account balance of "100000" for asset "ETH"
+  Then  "party5" should have general account balance of "10000" for asset "ETH"
+  Then  "party6" should have general account balance of "10000" for asset "ETH"
+  Then  the following transfers should happen:
+  Then  the parties should have the following account balances:
+

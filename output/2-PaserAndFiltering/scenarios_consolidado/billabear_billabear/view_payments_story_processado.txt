@@ -1,0 +1,8 @@
+Scenario 1: Get customer info
+  When  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  And  there is a payments for:
+  When  I view the payment for "customer.one@example.org" for 3500
+  Then  I will see the details for the payment
+

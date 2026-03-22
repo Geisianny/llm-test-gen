@@ -1,0 +1,41 @@
+Feature: Create faxes in outs
+Description: In order to manage faxes in out
+  As a user
+  I need to be able to create them through the API.
+
+Scenario 1: Create a fax out
+  Tags: ['@createSchema']
+  Given  I add User Authorization header
+  When  I add "Content-Type" header equal to "multipart/form-data; boundary=----IvozProviderFormBoundaryFUBrG71LG0e8DuZ8"
+  And  I add "Accept" header equal to "application/json"
+  And  I send a "POST" multipart request to "/faxes_in_outs" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json; charset=utf-8"
+  And  the JSON should be like:
+
+Scenario 2: Retrieve created fax out
+  Given  I add User Authorization header
+  When  I add "Accept" header equal to "application/json"
+  And  I send a "GET" request to "faxes_in_outs/5"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json; charset=utf-8"
+  And  the JSON should be like:
+
+Scenario 3: Create a fax out without access to fax
+  Tags: ['@createSchema']
+  Given  I add User Authorization header
+  When  I add "Content-Type" header equal to "multipart/form-data; boundary=----IvozProviderFormBoundaryFUBrG71LG0e8DuZ8"
+  And  I add "Accept" header equal to "application/json"
+  And  I send a "POST" multipart request to "/faxes_in_outs" with body:
+  Then  the response status code should be 403
+
+Scenario 4: Cannot create inbound faxes
+  Tags: ['@createSchema']
+  Given  I add User Authorization header
+  When  I add "Content-Type" header equal to "multipart/form-data; boundary=----IvozProviderFormBoundaryFUBrG71LG0e8DuZ8"
+  And  I add "Accept" header equal to "application/json"
+  And  I send a "POST" multipart request to "/faxes_in_outs" with body:
+  Then  the response status code should be 403
+

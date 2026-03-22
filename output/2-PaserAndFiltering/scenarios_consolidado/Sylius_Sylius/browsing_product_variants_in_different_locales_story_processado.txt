@@ -1,0 +1,28 @@
+Scenario 1: Seeing all variants when some don't have translations in my locale which is also the base
+  Tags: ['@no-api', '@ui']
+  When  I want to view all variants of this product
+  Then  I should see 3 variants in the list
+  And  I should see a variant named "Berserk Pug with Axes"
+  And  I should also see a variant named "Berserk Pug with Morning Star"
+  And  I should also see 1 variant with no name
+
+
+
+Scenario 2: Seeing all variants when some don't have translations in my locale which is not the base
+  Tags: ['@no-api', '@ui']
+  Given  I change my locale to "Polish (Poland)"
+  When  I want to view all variants of this product
+  Then  I should see 3 variants in the list
+  And  I should see a variant named "Szałowy Mops z Toporami"
+  And  I should also see a variant named "Szałowy Mops z Mieczem"
+  And  I should also see 1 variant with no name
+
+
+
+Scenario 3: Seeing all variants when none have names in my locale
+  Tags: ['@no-api', '@ui']
+  Given  I change my locale to "Irish (Ireland)"
+  When  I want to view all variants of this product
+  Then  I should see 3 variants in the list
+  And  I should see 3 variants with no name
+

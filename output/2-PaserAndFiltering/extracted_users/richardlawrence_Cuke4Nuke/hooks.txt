@@ -1,0 +1,46 @@
+Feature: Run .NET Before and After hooks from Cucumber
+
+Background: 
+  Given  a standard Cucumber project directory structure
+  And  a file named "features/step_definitions/some_remote_place.wire" with:
+
+Scenario 1: Before hook
+  Given  a file named "features/adding.feature" with:
+  And  Cuke4Nuke started with a step definition assembly containing:
+  When  I run cucumber -f progress features
+  Then  STDERR should be empty
+  And  it should pass with
+
+Scenario 2: After hook throws exception (how else do we know it's called?)
+  Given  a file named "features/adding.feature" with:
+  And  Cuke4Nuke started with a step definition assembly containing:
+  When  I run cucumber -f progress features
+  Then  it should fail
+
+Scenario 3: Tagged Before hook (string, positive)
+  Given  a file named "features/adding.feature" with:
+  And  Cuke4Nuke started with a step definition assembly containing:
+  When  I run cucumber -f progress features
+  Then  STDERR should be empty
+  And  it should pass with
+
+Scenario 4: Tagged Before hook (string, negative)
+  Given  a file named "features/adding.feature" with:
+  And  Cuke4Nuke started with a step definition assembly containing:
+  When  I run cucumber -f progress features
+  Then  STDERR should be empty
+  And  it should pass with
+
+Scenario 5: Tagged After hook (string, positive)
+  Given  a file named "features/adding.feature" with:
+  And  Cuke4Nuke started with a step definition assembly containing:
+  When  I run cucumber -f progress features
+  Then  it should fail
+
+Scenario 6: Tagged After hook (string, negative)
+  Given  a file named "features/adding.feature" with:
+  And  Cuke4Nuke started with a step definition assembly containing:
+  When  I run cucumber -f progress features
+  Then  STDERR should be empty
+  And  it should pass with
+

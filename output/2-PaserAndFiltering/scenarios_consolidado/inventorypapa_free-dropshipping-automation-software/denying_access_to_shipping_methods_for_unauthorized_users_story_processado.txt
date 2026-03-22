@@ -1,0 +1,51 @@
+Scenario 1: Trying to add a new shipping method as a unauthorized user
+  Tags: ['@api']
+  When  I try to create a new shipping method with valid data
+  And  I try to add it
+  Then  I should be notified that my access has been denied
+
+
+
+Scenario 2: Trying to rename the shipping method
+  Tags: ['@api']
+  Given  I try to modify a shipping method "UPS Carrier"
+  When  I rename it to "UPS Transport" in "English (United States)"
+  And  I try to save my changes
+  Then  I should be notified that my access has been denied
+
+
+
+Scenario 3: Trying to browse shipping methods
+  Tags: ['@api']
+  When  I try to browse shipping methods
+  Then  I should be notified that my access has been denied
+
+
+
+Scenario 4: Trying to show shipping method
+  Tags: ['@api']
+  When  I try to show "UPS Carrier" shipping method
+  Then  I should be notified that my access has been denied
+
+
+
+Scenario 5: Trying to archive a shipping method
+  Tags: ['@api']
+  When  I try to archive the "UPS Carrier" shipping method
+  Then  I should be notified that my access has been denied
+
+
+
+Scenario 6: Trying to restore a shipping method
+  Tags: ['@api']
+  Given  the shipping method "UPS Carrier" is archival
+  When  I try to restore the "UPS Carrier" shipping method
+  Then  I should be notified that my access has been denied
+
+
+
+Scenario 7: Trying to delete shipping method
+  Tags: ['@api']
+  When  I try to delete shipping method "UPS Carrier"
+  Then  I should be notified that my access has been denied
+

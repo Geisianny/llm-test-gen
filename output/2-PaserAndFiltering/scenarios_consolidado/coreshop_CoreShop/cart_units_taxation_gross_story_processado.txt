@@ -1,0 +1,29 @@
+Scenario 1: Create a new cart and add a product and calculate totals
+  Given  I add the product "T-Shirt" with unit "Carton" to my cart
+  Then  the cart total tax should be "667"
+
+
+
+Scenario 2: Create a new cart, add a product and calculate subtotals
+  Given  I add the product "T-Shirt" with unit "Carton" to my cart
+  Given  I add the product "Shorts" with unit "Palette" to my cart
+  Then  the cart total tax should be "75667"
+
+
+
+Scenario 3: Create a new cart, add a product and calculate subtotals
+  Given  I add the product "Shoes" with unit "Pieces" to my cart
+  Given  I add the product "Shoes" with unit "Carton" to my cart
+  Given  I add the product "Shoes" with unit "Palette" to my cart
+  Given  I add the product "Shoes" to my cart
+  Given  I add the product "Shoes" with unit "Pieces" to my cart
+  Then  the cart total tax should be "25833"
+
+
+
+Scenario 4: Create a new cart for a different Tax Rate, add a product and calculate subtotals
+  Given  I add the product "CH T-Shirt" with unit "Carton" to my cart
+  Given  I add the product "CH T-Shirt" with unit "Pieces" to my cart
+  Then  the cart total should be "36590" including tax
+  Then  the cart total tax should be "2616"
+

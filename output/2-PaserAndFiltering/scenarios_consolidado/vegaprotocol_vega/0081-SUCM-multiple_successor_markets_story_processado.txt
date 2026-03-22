@@ -1,0 +1,16 @@
+Scenario 1: Two pending successor markets, and one proposed successor market. A pending successor market is enacted and the remaining successors are rejected (0081-SUCM-014)
+  Given  the markets:
+  Then  the market state should be "STATE_PENDING" for the market "ETH/DEC19"
+  And  the market state should be "STATE_PENDING" for the market "ETH/DEC20a"
+  And  the market state should be "STATE_PENDING" for the market "ETH/DEC20b"
+  And  the market state should be "STATE_PROPOSED" for the market "ETH/DEC20c"
+  Given  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties should have the following account balances:
+  When  the parties place the following orders:
+  And  the opening auction period ends for market "ETH/DEC20a"
+  Then  the market state should be "STATE_ACTIVE" for the market "ETH/DEC20a"
+  And  the last market state should be "STATE_REJECTED" for the market "ETH/DEC20b"
+  And  the last market state should be "STATE_REJECTED" for the market "ETH/DEC20c"
+  And  the parties should have the following account balances:
+

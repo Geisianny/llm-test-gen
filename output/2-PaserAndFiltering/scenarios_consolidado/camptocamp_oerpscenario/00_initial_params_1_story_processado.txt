@@ -1,0 +1,6 @@
+Scenario 1: MODULES INSTALLATION FOR ANGLO-SAXON ACCOUNTING
+  Tags: ['@anglosaxon_install_module']
+  Given  I do not want all demo data to be loaded on install
+  And  I install the required modules with dependencies:
+  Then  my modules should have been installed and models reloaded
+

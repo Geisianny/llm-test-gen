@@ -1,0 +1,28 @@
+Feature: Switching the current locale
+Description: In order to browse shop in my preferred locale
+    As a Customer
+    I want to be able to switch locales
+Tags: ['@locales']
+
+Background: 
+  Given  the store operates on a channel named "Web"
+  And  that channel allows to shop using "English (United States)" and "Polish (Poland)" locales
+  And  it uses the "English (United States)" locale by default
+
+Scenario 1: Showing the current locale
+  Tags: ['@ui']
+  When  I browse that channel
+  Then  I should shop using the "English (United States)" locale
+
+Scenario 2: Showing available locales
+  Tags: ['@ui']
+  When  I browse that channel
+  Then  I should be able to shop using the "Polish (Poland)" locale
+
+Scenario 3: Switching the current locale
+  Tags: ['@ui']
+  When  I browse that channel
+  And  I switch to the "Polish (Poland)" locale
+  Then  I should shop using the "polski (Polska)" locale
+  And  I should be able to shop using the "angielski (Stany Zjednoczone)" locale
+

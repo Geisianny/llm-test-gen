@@ -1,0 +1,172 @@
+Feature: Saved Searches
+
+Scenario 1: Create a Saved Search
+  Tags: ['@auth']
+  Given  empty "saved_searches"
+  When  we post to "/saved_searches"
+  Then  we get new resource
+  When  we get "/saved_searches"
+  Then  we get list with 1 items
+  When  we get "/saved_searches/#saved_searches._id#"
+  Then  we get existing resource
+
+Scenario 2: Create a Global Saved Search
+  Tags: ['@auth']
+  Given  empty "saved_searches"
+  When  we post to "/saved_searches"
+  Then  we get response code 201
+  When  we get "/saved_searches"
+  Then  we get list with 1 items
+
+Scenario 3: Create a Saved Search with facets
+  Tags: ['@auth']
+  Given  empty "saved_searches"
+  When  we post to "/saved_searches"
+  Then  we get response code 201
+
+Scenario 4: A user shouldn't see another user's searches but all saved searches will show them
+  Tags: ['@auth']
+  Given  empty "saved_searches"
+  When  we post to "/users"
+  When  we login as user "save_search" with password "barword" and user type "admin"
+  When  we post to "/saved_searches"
+  When  we switch user
+  When  we post to "/saved_searches"
+  When  we get "/saved_searches"
+  Then  we get list with 1 items
+  When  we login as user "save_search" with password "barword" and user type "admin"
+  When  we get "/saved_searches"
+  Then  we get list with 1 items
+  When  we get "/all_saved_searches"
+  Then  we get list with 2 items
+
+Scenario 5: A user should see another user's global searches
+  Tags: ['@auth']
+  Given  empty "saved_searches"
+  When  we post to "/users"
+  When  we login as user "save_search" with password "barword" and user type "admin"
+  And  we post to "/saved_searches"
+  When  we switch user
+  When  we post to "/saved_searches"
+  When  we get "/saved_searches"
+  Then  we get list with 2 items
+  When  we login as user "save_search" with password "barword" and user type "admin"
+  When  we get "/saved_searches"
+  Then  we get list with 1 items
+  When  we get "/all_saved_searches"
+  Then  we get list with 2 items
+
+Scenario 6: Create a Saved Search without a name
+  Tags: ['@auth']
+  Given  empty "saved_searches"
+  When  we post to "/saved_searches"
+  Then  we get error 400
+
+Scenario 7: Create a Saved Search without a filter
+  Tags: ['@auth']
+  Given  empty "saved_searches"
+  When  we post to "/saved_searches"
+  Then  we get error 400
+
+Scenario 8: Create a Saved Search with invalid filter
+  Tags: ['@auth']
+  Given  empty "saved_searches"
+  When  we post to "/saved_searches"
+  Then  we get error 400
+
+Scenario 9: Update a Saved Search
+  Tags: ['@auth']
+  Given  empty "saved_searches"
+  When  we post to "/saved_searches"
+  Then  we get response code 201
+  When  we patch "/saved_searches"
+  Then  we get response code 405
+
+Scenario 10: Update a global Saved Search with success
+  Tags: ['@auth']
+  Given  empty "saved_searches"
+  When  we post to "/saved_searches"
+  Then  we get response code 201
+  When  we patch "/saved_searches/#saved_searches._id#"
+  Then  we get response code 200
+
+Scenario 11: Create a Saved Search and retrieve content
+  Tags: ['@auth', '@provider']
+  Given  empty "ingest"
+  When  we fetch from "reuters" ingest "tag_reuters.com_2014_newsml_KBN0FL0NM:10"
+  Given  empty "saved_searches"
+  When  we post to "/saved_searches"
+  Then  we get response code 201
+  When  we get "/saved_searches/#saved_searches._id#"
+  Then  we get existing saved search
+  When  we get "/saved_searches/#saved_searches._id#/items"
+  Then  we get list with 3 items
+
+Scenario 12: A user cannot update another user's search
+  Tags: ['@auth']
+  Given  empty "saved_searches"
+  When  we post to "/users"
+  When  we login as user "save_search" with password "barword" and user type "admin"
+  And  we post to "/saved_searches"
+  When  we switch user
+  When  we patch "/users/#USERS_ID#"
+  When  we patch "/saved_searches/#saved_searches._id#"
+  Then  we get response code 403
+
+Scenario 13: A user with global search/admin privilege can update another user's global search
+  Tags: ['@auth']
+  Given  empty "saved_searches"
+  When  we post to "/users"
+  When  we login as user "save_search" with password "barword" and user type "admin"
+  And  we post to "/saved_searches"
+  When  we switch user
+  When  we patch "/saved_searches/#saved_searches._id#"
+  Then  we get response code 200
+  When  we patch "/saved_searches/#saved_searches._id#"
+  When  we get "/saved_searches/#saved_searches._id#"
+  Then  we get existing saved search
+
+Scenario 14: A user with global search/admin privilege cannot update another user's local search
+  Tags: ['@auth']
+  Given  empty "saved_searches"
+  When  we post to "/users"
+  When  we login as user "save_search" with password "barword" and user type "admin"
+  And  we post to "/saved_searches"
+  When  we switch user
+  When  we patch "/saved_searches/#saved_searches._id#"
+  Then  we get response code 400
+
+Scenario 15: Push notification on delete
+  Tags: ['@auth', '@notification']
+  When  we post to "/saved_searches"
+  When  we reset notifications
+  And  we delete "/saved_searches/#saved_searches._id#"
+  Then  we get OK response
+  And  we get notifications
+
+Scenario 16: A user cannot delete another user's search
+  Tags: ['@auth']
+  Given  empty "saved_searches"
+  When  we post to "/users"
+  When  we login as user "save_search" with password "barword" and user type "admin"
+  And  we post to "/saved_searches"
+  When  we switch user
+  When  we patch "/users/#USERS_ID#"
+  When  we delete "/saved_searches/#saved_searches._id#"
+  Then  we get response code 403
+
+Scenario 17: A user with global search privilege can delete another user's search
+  Tags: ['@auth']
+  Given  empty "saved_searches"
+  When  we post to "/users"
+  When  we login as user "save_search" with password "barword" and user type "admin"
+  And  we post to "/saved_searches"
+  When  we switch user
+  When  we delete "/saved_searches/#saved_searches._id#"
+  Then  we get response code 204
+
+Scenario 18: Add saved search with empty repo
+  Tags: ['@auth']
+  When  we post to "/saved_searches"
+  Then  we get new resource
+

@@ -1,0 +1,26 @@
+Scenario 1: Searching for products with name containing specific text
+  Tags: ['@ui', '@api']
+  When  I browse products from taxon "Guns"
+  And  I search for products with name "Magnum"
+  Then  I should see the product "44 Magnum"
+  And  I should not see the product "Glock 17"
+
+
+
+Scenario 2: Clearing filters
+  Tags: ['@ui', '@api']
+  When  I browse products from taxon "Guns"
+  And  I search for products with name "Magnum"
+  And  I clear filter
+  Then  I should see the product "44 Magnum"
+  And  I should see the product "Glock 17"
+
+
+
+Scenario 3: Seeing products only from specific taxon after search
+  Tags: ['@ui', '@api']
+  When  I browse products from taxon "Guns"
+  And  I search for products with name "Mag"
+  Then  I should see the product "44 Magnum"
+  And  I should not see the product "Magic stick"
+

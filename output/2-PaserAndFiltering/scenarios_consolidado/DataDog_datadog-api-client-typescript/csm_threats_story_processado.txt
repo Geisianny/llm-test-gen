@@ -1,0 +1,397 @@
+Scenario 1: Create a Workload Protection agent rule (US1-FED) returns "Bad Request" response
+  Tags: ['@replay-only', '@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  there is a valid "policy_rc" in the system
+  And  new "CreateCloudWorkloadSecurityAgentRule" request
+  And  body with value {"data": {"attributes": {"description": "My Agent rule", "enabled": true, "expression": "exec.file.name", "filters": [], "name": "my_agent_rule"}, "type": "agent_rule"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 2: Create a Workload Protection agent rule (US1-FED) returns "Conflict" response
+  Tags: ['@skip', '@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  there is a valid "policy_rc" in the system
+  And  new "CreateCloudWorkloadSecurityAgentRule" request
+  And  body with value {"data": {"attributes": {"description": "My Agent rule", "enabled": true, "expression": "exec.file.name == \"sh\"", "filters": [], "name": "my_agent_rule"}, "type": "agent_rule"}}
+  When  the request is sent
+  Then  the response status is 409 Conflict
+
+
+
+Scenario 3: Create a Workload Protection agent rule (US1-FED) returns "OK" response
+  Tags: ['@replay-only', '@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  there is a valid "policy_rc" in the system
+  And  new "CreateCloudWorkloadSecurityAgentRule" request
+  And  body with value {"data": {"attributes": {"description": "My Agent rule", "enabled": true, "expression": "exec.file.name == \"sh\"", "filters": [], "name": "{{ unique_lower_alnum }}"}, "type": "agent_rule"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 4: Create a Workload Protection agent rule returns "Bad Request" response
+  Tags: ['@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  there is a valid "policy_rc" in the system
+  And  new "CreateCSMThreatsAgentRule" request
+  And  body with value {"data": {"attributes": {"description": "My Agent rule", "enabled": true, "expression": "exec.file.name", "filters": [], "name": "my_agent_rule", "policy_id": "{{ policy.data.id }}", "product_tags": []}, "type": "agent_rule"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 5: Create a Workload Protection agent rule returns "Conflict" response
+  Tags: ['@skip', '@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  there is a valid "policy_rc" in the system
+  And  new "CreateCSMThreatsAgentRule" request
+  And  body with value {"data": {"attributes": {"description": "My Agent rule", "enabled": true, "expression": "exec.file.name == \"sh\"", "filters": [], "name": "my_agent_rule", "policy_id": "{{ policy.data.id }}", "product_tags": []}, "type": "agent_rule"}}
+  When  the request is sent
+  Then  the response status is 409 Conflict
+
+
+
+Scenario 6: Create a Workload Protection agent rule returns "OK" response
+  Tags: ['@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  there is a valid "policy_rc" in the system
+  And  new "CreateCSMThreatsAgentRule" request
+  And  body with value {"data": {"attributes": {"description": "My Agent rule", "enabled": true, "expression": "exec.file.name == \"sh\"", "agent_version": "> 7.60", "filters": [], "name": "{{ unique_lower_alnum }}", "policy_id": "{{ policy.data.id }}", "product_tags": []}, "type": "agent_rule"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 7: Create a Workload Protection agent rule with set action returns "OK" response
+  Tags: ['@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  there is a valid "policy_rc" in the system
+  And  new "CreateCSMThreatsAgentRule" request
+  And  body with value {"data": {"attributes": {"description": "My Agent rule with set action", "enabled": true, "expression": "exec.file.name == \"sh\"", "filters": [], "name": "{{ unique_lower_alnum }}", "policy_id": "{{ policy.data.id }}", "product_tags": [], "actions": [{"set": {"name": "test_set", "value": "test_value", "scope": "process", "inherited": true}}, {"hash": {}}]}, "type": "agent_rule"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 8: Create a Workload Protection agent rule with set action with expression returns "OK" response
+  Tags: ['@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  there is a valid "policy_rc" in the system
+  And  new "CreateCSMThreatsAgentRule" request
+  And  body with value {"data": {"attributes": {"description": "My Agent rule with set action with expression", "enabled": true, "expression": "exec.file.name == \"sh\"", "filters": [], "name": "{{ unique_lower_alnum }}", "policy_id": "{{ policy.data.id }}", "product_tags": [], "actions": [{"set": {"name": "test_set", "expression": "open.file.path", "default_value": "/dev/null", "scope": "process"}}]}, "type": "agent_rule"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 9: Create a Workload Protection policy returns "Bad Request" response
+  Tags: ['@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  new "CreateCSMThreatsAgentPolicy" request
+  And  body with value {"data": {"attributes": {"description": "My agent policy", "enabled": true, "hostTags": [], "hostTagsLists": [], "name": "test"}, "type": "policy"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 10: Create a Workload Protection policy returns "Conflict" response
+  Tags: ['@skip', '@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  new "CreateCSMThreatsAgentPolicy" request
+  And  body with value {"data": {"attributes": {"description": "My agent policy", "enabled": true, "hostTags": [], "name": "my_agent_policy"}, "type": "policy"}}
+  When  the request is sent
+  Then  the response status is 409 Conflict
+
+
+
+Scenario 11: Create a Workload Protection policy returns "OK" response
+  Tags: ['@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  new "CreateCSMThreatsAgentPolicy" request
+  And  body with value {"data": {"attributes": {"description": "My agent policy", "enabled": true, "hostTagsLists": [["env:test"]], "name": "my_agent_policy_2"}, "type": "policy"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 12: Delete a Workload Protection agent rule (US1-FED) returns "Not Found" response
+  Tags: ['@replay-only', '@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  new "DeleteCloudWorkloadSecurityAgentRule" request
+  And  request contains "agent_rule_id" parameter with value "non-existent-rule-id"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+
+
+Scenario 13: Delete a Workload Protection agent rule (US1-FED) returns "OK" response
+  Tags: ['@replay-only', '@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  there is a valid "agent_rule" in the system
+  And  new "DeleteCloudWorkloadSecurityAgentRule" request
+  And  request contains "agent_rule_id" parameter from "agent_rule.data.id"
+  When  the request is sent
+  Then  the response status is 204 OK
+
+
+
+Scenario 14: Delete a Workload Protection agent rule returns "Not Found" response
+  Tags: ['@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  new "DeleteCSMThreatsAgentRule" request
+  And  request contains "agent_rule_id" parameter with value "non-existent-rule-id"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+
+
+Scenario 15: Delete a Workload Protection agent rule returns "OK" response
+  Tags: ['@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  there is a valid "policy_rc" in the system
+  And  there is a valid "agent_rule_rc" in the system
+  And  new "DeleteCSMThreatsAgentRule" request
+  And  request contains "agent_rule_id" parameter from "agent_rule.data.id"
+  And  request contains "policy_id" parameter from "policy.data.id"
+  When  the request is sent
+  Then  the response status is 204 OK
+
+
+
+Scenario 16: Delete a Workload Protection policy returns "Not Found" response
+  Tags: ['@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  new "DeleteCSMThreatsAgentPolicy" request
+  And  request contains "policy_id" parameter with value "non-existent-policy-id"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+
+
+Scenario 17: Delete a Workload Protection policy returns "OK" response
+  Tags: ['@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  there is a valid "policy_rc" in the system
+  And  new "DeleteCSMThreatsAgentPolicy" request
+  And  request contains "policy_id" parameter from "policy.data.id"
+  When  the request is sent
+  Then  the response status is 204 OK
+
+
+
+Scenario 18: Download the Workload Protection policy (US1-FED) returns "OK" response
+  Tags: ['@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  new "DownloadCloudWorkloadPolicyFile" request
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 19: Download the Workload Protection policy returns "OK" response
+  Tags: ['@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  new "DownloadCSMThreatsPolicy" request
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 20: Get a Workload Protection agent rule (US1-FED) returns "Not Found" response
+  Tags: ['@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  new "GetCloudWorkloadSecurityAgentRule" request
+  And  request contains "agent_rule_id" parameter with value "abc-def-ghi"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+
+
+Scenario 21: Get a Workload Protection agent rule (US1-FED) returns "OK" response
+  Tags: ['@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  there is a valid "agent_rule" in the system
+  And  new "GetCloudWorkloadSecurityAgentRule" request
+  And  request contains "agent_rule_id" parameter from "agent_rule.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 22: Get a Workload Protection agent rule returns "Not Found" response
+  Tags: ['@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  new "GetCSMThreatsAgentRule" request
+  And  request contains "agent_rule_id" parameter with value "abc-def-ghi"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+
+
+Scenario 23: Get a Workload Protection agent rule returns "OK" response
+  Tags: ['@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  there is a valid "policy_rc" in the system
+  And  there is a valid "agent_rule_rc" in the system
+  And  new "GetCSMThreatsAgentRule" request
+  And  request contains "agent_rule_id" parameter from "agent_rule.data.id"
+  And  request contains "policy_id" parameter from "policy.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 24: Get a Workload Protection policy returns "Not Found" response
+  Tags: ['@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  new "GetCSMThreatsAgentPolicy" request
+  And  request contains "policy_id" parameter with value "non-existent-policy-id"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+
+
+Scenario 25: Get a Workload Protection policy returns "OK" response
+  Tags: ['@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  there is a valid "policy_rc" in the system
+  And  new "GetCSMThreatsAgentPolicy" request
+  And  request contains "policy_id" parameter from "policy.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 26: Get all Workload Protection agent rules (US1-FED) returns "OK" response
+  Tags: ['@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  new "ListCloudWorkloadSecurityAgentRules" request
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 27: Get all Workload Protection agent rules returns "OK" response
+  Tags: ['@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  new "ListCSMThreatsAgentRules" request
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 28: Get all Workload Protection policies returns "OK" response
+  Tags: ['@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  new "ListCSMThreatsAgentPolicies" request
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 29: Update a Workload Protection agent rule (US1-FED) returns "Bad Request" response
+  Tags: ['@replay-only', '@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  there is a valid "agent_rule" in the system
+  And  new "UpdateCloudWorkloadSecurityAgentRule" request
+  And  request contains "agent_rule_id" parameter from "agent_rule.data.id"
+  And  body with value {"data": {"attributes": {"description": "My Agent rule", "enabled": true, "expression": "exec.file.name"}, "id": "{{ agent_rule.data.id }}", "type": "agent_rule"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 30: Update a Workload Protection agent rule (US1-FED) returns "Concurrent Modification" response
+  Tags: ['@skip', '@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  there is a valid "agent_rule" in the system
+  And  new "UpdateCloudWorkloadSecurityAgentRule" request
+  And  request contains "agent_rule_id" parameter from "agent_rule.data.id"
+  And  body with value {"data": {"attributes": {"description": "My Agent rule", "enabled": true, "expression": "exec.file.name == \"sh\""}, "id": "{{ agent_rule.data.id }}", "type": "agent_rule"}}
+  When  the request is sent
+  Then  the response status is 409 Concurrent Modification
+
+
+
+Scenario 31: Update a Workload Protection agent rule (US1-FED) returns "Not Found" response
+  Tags: ['@replay-only', '@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  new "UpdateCloudWorkloadSecurityAgentRule" request
+  And  request contains "agent_rule_id" parameter with value "non-existent-rule-id"
+  And  body with value {"data": {"attributes": {"description": "My Agent rule", "enabled": true, "expression": "exec.file.name == \"sh\""}, "id": "invalid-agent-rule-id", "type": "agent_rule"}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+
+
+Scenario 32: Update a Workload Protection agent rule (US1-FED) returns "OK" response
+  Tags: ['@replay-only', '@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  there is a valid "agent_rule" in the system
+  And  new "UpdateCloudWorkloadSecurityAgentRule" request
+  And  request contains "agent_rule_id" parameter from "agent_rule.data.id"
+  And  body with value {"data": {"attributes": {"description": "Updated Agent rule", "expression": "exec.file.name == \"sh\""}, "id": "{{ agent_rule.data.id }}", "type": "agent_rule"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 33: Update a Workload Protection agent rule returns "Bad Request" response
+  Tags: ['@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  there is a valid "policy_rc" in the system
+  And  there is a valid "agent_rule_rc" in the system
+  And  new "UpdateCSMThreatsAgentRule" request
+  And  request contains "agent_rule_id" parameter from "agent_rule.data.id"
+  And  body with value {"data": {"attributes": {"description": "My Agent rule", "enabled": true, "expression": "exec.file.name == \"sh\"", "policy_id": "{{ policy.data.id }}", "product_tags": []}, "id": "invalid-agent-rule-id", "type": "agent_rule"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 34: Update a Workload Protection agent rule returns "Concurrent Modification" response
+  Tags: ['@skip', '@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  there is a valid "agent_rule_rc" in the system
+  And  there is a valid "policy_rc" in the system
+  And  new "UpdateCSMThreatsAgentRule" request
+  And  request contains "agent_rule_id" parameter from "agent_rule.data.id"
+  And  body with value {"data": {"attributes": {"description": "My Agent rule", "enabled": true, "expression": "exec.file.name == \"sh\"", "policy_id": "{{ policy.data.id }}", "product_tags": []}, "id": "{{ agent_rule.data.id }}", "type": "agent_rule"}}
+  When  the request is sent
+  Then  the response status is 409 Concurrent Modification
+
+
+
+Scenario 35: Update a Workload Protection agent rule returns "Not Found" response
+  Tags: ['@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  there is a valid "policy_rc" in the system
+  And  new "UpdateCSMThreatsAgentRule" request
+  And  request contains "agent_rule_id" parameter with value "non-existent-rule-id"
+  And  body with value {"data": {"attributes": {"description": "My Agent rule", "enabled": true, "expression": "exec.file.name == \"sh\"", "policy_id": "{{ policy.data.id }}", "product_tags": []}, "id": "non-existent-rule-id", "type": "agent_rule"}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+
+
+Scenario 36: Update a Workload Protection agent rule returns "OK" response
+  Tags: ['@skip', '@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  there is a valid "policy_rc" in the system
+  And  there is a valid "agent_rule_rc" in the system
+  And  new "UpdateCSMThreatsAgentRule" request
+  And  request contains "agent_rule_id" parameter from "agent_rule.data.id"
+  And  request contains "policy_id" parameter from "policy.data.id"
+  And  body with value {"data": {"attributes": {"description": "My Agent rule", "enabled": true, "expression": "exec.file.name == \"sh\"", "policy_id": "{{ policy.data.id }}", "product_tags": []}, "id": "{{ agent_rule.data.id }}", "type": "agent_rule"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 37: Update a Workload Protection policy returns "Bad Request" response
+  Tags: ['@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  there is a valid "policy_rc" in the system
+  And  new "UpdateCSMThreatsAgentPolicy" request
+  And  request contains "policy_id" parameter from "policy.data.id"
+  And  body with value {"data": {"attributes": {"description": "My agent policy", "enabled": true, "hostTags": ["env:test"], "hostTagsLists": [["env:test"]], "name": ""}, "id": "{{ policy.data.id }}", "type": "policy"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 38: Update a Workload Protection policy returns "Concurrent Modification" response
+  Tags: ['@skip', '@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  there is a valid "policy_rc" in the system
+  And  new "UpdateCSMThreatsAgentPolicy" request
+  And  request contains "policy_id" parameter from "policy.data.id"
+  And  body with value {"data": {"attributes": {"description": "My agent policy", "enabled": true, "hostTags": [], "name": "my_agent_policy"}, "id": "{{ policy.data.id }}", "type": "policy"}}
+  When  the request is sent
+  Then  the response status is 409 Concurrent Modification
+
+
+
+Scenario 39: Update a Workload Protection policy returns "Not Found" response
+  Tags: ['@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  new "UpdateCSMThreatsAgentPolicy" request
+  And  request contains "policy_id" parameter with value "non-existent-policy-id"
+  And  body with value {"data": {"attributes": {"description": "My agent policy", "enabled": true, "hostTags": [], "name": "my_agent_policy"}, "id": "non-existent-policy-id", "type": "policy"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 40: Update a Workload Protection policy returns "OK" response
+  Tags: ['@team:DataDog/k9-cloud-security-platform', '@team:DataDog/k9-cws-backend']
+  Given  there is a valid "policy_rc" in the system
+  And  new "UpdateCSMThreatsAgentPolicy" request
+  And  request contains "policy_id" parameter from "policy.data.id"
+  And  body with value {"data": {"attributes": {"description": "Updated agent policy", "enabled": true, "hostTagsLists": [["env:test"]], "name": "updated_agent_policy"}, "id": "{{ policy.data.id }}", "type": "policy"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+

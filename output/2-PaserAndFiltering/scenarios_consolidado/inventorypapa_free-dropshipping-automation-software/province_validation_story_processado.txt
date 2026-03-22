@@ -1,0 +1,38 @@
+Scenario 1: Trying to add a new province without specifying its code
+  Tags: ['@ui', '@javascript', '@api']
+  When  I want to create a new province in country "United Kingdom"
+  And  I name the province "Scotland"
+  But  I do not specify the province code
+  And  I try to save changes
+  Then  I should be notified that code is required
+  And  province with name "Scotland" should not be added in this country
+
+
+
+Scenario 2: Trying to add a new province without specifying its name
+  Tags: ['@ui', '@javascript', '@api']
+  When  I want to create a new province in country "United Kingdom"
+  And  I specify the province code as "GB-SCT"
+  But  I do not name the province
+  And  I try to save changes
+  Then  I should be notified that name is required
+  And  province with code "GB-SCT" should not be added in this country
+
+
+
+Scenario 3: Trying to remove name from an existing province
+  Tags: ['@ui', '@javascript', '@api']
+  Given  this country has the "Northern Ireland" province with "GB-NIR" code
+  When  I want to edit this country
+  And  I remove "Northern Ireland" province name
+  Then  I should be notified that name of the province is required
+  And  the province should still be named "Northern Ireland" in this country
+
+
+
+Scenario 4: Trying to change code of existing province
+  Tags: ['@api']
+  Given  this country has the "Northern Ireland" province with "GB-NIR" code
+  When  I want to edit this country
+  Then  I should not be able to edit its code
+

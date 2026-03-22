@@ -1,0 +1,9 @@
+Scenario 1: Trying to add shipping category with taken code
+  Tags: ['@ui', '@api']
+  Given  I want to create a new shipping category
+  When  I specify its code as "STANDARD"
+  And  I name it "Normal"
+  And  I try to add it
+  Then  I should be notified that shipping category with this code already exists
+  And  there should still be only one shipping category with code "STANDARD"
+

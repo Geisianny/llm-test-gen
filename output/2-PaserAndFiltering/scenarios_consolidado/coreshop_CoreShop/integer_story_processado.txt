@@ -1,0 +1,5 @@
+Scenario 1: Create a new index and add integer Field
+  Given  the site has a index "myindex" for behat-class "TestIndexFields" with type "mysql"
+  And  the index has following fields:
+  Then  the index should have columns "integer"
+

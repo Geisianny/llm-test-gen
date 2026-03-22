@@ -1,0 +1,23 @@
+Scenario 1: Accessing product show page in shop from the product show page where product is available in more than one channel
+  Tags: ['@ui']
+  Given  this product is available in the "Europe" channel
+  When  I access "Bugatti" product page
+  And  I show this product in the "Europe" channel
+  Then  I should see this product in the "Europe" channel in the shop
+
+
+
+Scenario 2: Accessing product show page in shop from the product show page where product is available in one channel
+  Tags: ['@ui']
+  When  I access "Bugatti" product page
+  And  I show this product in this channel
+  Then  I should see this product in the "Europe" channel in the shop
+
+
+
+Scenario 3: Being unable to access product show page in shop when the product is disabled
+  Tags: ['@ui']
+  Given  this product has been disabled
+  When  I access "Bugatti" product page
+  Then  I should not be able to show this product in shop
+

@@ -1,0 +1,12 @@
+Feature: Authorization Server
+
+Scenario 1: Valid client authenticate with success
+  Given  authorized clients
+  When  we do OAuth2 client authentication with id "0102030405060708090a0b0c" and password "secret_pwd_123"
+  Then  we get a valid access token
+
+Scenario 2: Invalid client can't authenticate
+  Given  authorized clients
+  When  we do OAuth2 client authentication with id "0102030405060708090a0b0c" and password "bad_secret_pwd"
+  Then  we don't get an access token
+

@@ -1,0 +1,11 @@
+Scenario 1: I can sign a petition
+  Given  I send a "POST" request to "/api/petition/signature" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+  And  I should have 1 email "PetitionConfirmationMessage" for "gisele-berthoux@caramail.com" with payload:
+  When  I stop following redirections
+  And  I click on the email link "primary_link"
+  Then  the response status code should be 302
+  And  the header "Location" should be equal to "/petitions/ma-premiere-petition?merci"
+

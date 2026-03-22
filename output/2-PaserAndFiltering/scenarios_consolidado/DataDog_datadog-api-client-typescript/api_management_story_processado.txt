@@ -1,0 +1,131 @@
+Scenario 1: Create a new API returns "API created successfully" response
+  Tags: ['@integration-only', '@skip-terraform-config', '@skip-validation', '@team:DataDog/api-management']
+  Given  operation "CreateOpenAPI" enabled
+  And  new "CreateOpenAPI" request
+  And  request contains "openapi_spec_file" parameter with value "openapi-spec.yaml"
+  When  the request is sent
+  Then  the response status is 201 API created successfully
+  And  the response "data.attributes.failed_endpoints" has length 0
+
+
+
+Scenario 2: Create a new API returns "Bad request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/api-management']
+  Given  operation "CreateOpenAPI" enabled
+  And  new "CreateOpenAPI" request
+  When  the request is sent
+  Then  the response status is 400 Bad request
+
+
+
+Scenario 3: Delete an API returns "API deleted successfully" response
+  Tags: ['@integration-only', '@skip-terraform-config', '@skip-validation', '@team:DataDog/api-management']
+  Given  operation "DeleteOpenAPI" enabled
+  And  there is a valid "managed_api" in the system
+  And  new "DeleteOpenAPI" request
+  And  request contains "id" parameter from "managed_api.data.id"
+  When  the request is sent
+  Then  the response status is 204 API deleted successfully
+
+
+
+Scenario 4: Delete an API returns "API not found error" response
+  Tags: ['@generated', '@skip', '@team:DataDog/api-management']
+  Given  operation "DeleteOpenAPI" enabled
+  And  new "DeleteOpenAPI" request
+  And  request contains "id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 API not found error
+
+
+
+Scenario 5: Delete an API returns "Bad request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/api-management']
+  Given  operation "DeleteOpenAPI" enabled
+  And  new "DeleteOpenAPI" request
+  And  request contains "id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad request
+
+
+
+Scenario 6: Get an API returns "API not found error" response
+  Tags: ['@generated', '@skip', '@team:DataDog/api-management']
+  Given  operation "GetOpenAPI" enabled
+  And  new "GetOpenAPI" request
+  And  request contains "id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 API not found error
+
+
+
+Scenario 7: Get an API returns "Bad request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/api-management']
+  Given  operation "GetOpenAPI" enabled
+  And  new "GetOpenAPI" request
+  And  request contains "id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad request
+
+
+
+Scenario 8: Get an API returns "OK" response
+  Tags: ['@integration-only', '@skip-terraform-config', '@skip-validation', '@team:DataDog/api-management']
+  Given  operation "GetOpenAPI" enabled
+  And  there is a valid "managed_api" in the system
+  And  new "GetOpenAPI" request
+  And  request contains "id" parameter from "managed_api.data.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 9: List APIs returns "Bad request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/api-management']
+  Given  operation "ListAPIs" enabled
+  And  new "ListAPIs" request
+  When  the request is sent
+  Then  the response status is 400 Bad request
+
+
+
+Scenario 10: List APIs returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/api-management']
+  Given  operation "ListAPIs" enabled
+  And  new "ListAPIs" request
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 11: Update an API returns "API not found error" response
+  Tags: ['@generated', '@skip', '@team:DataDog/api-management']
+  Given  operation "UpdateOpenAPI" enabled
+  And  new "UpdateOpenAPI" request
+  And  request contains "id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 API not found error
+
+
+
+Scenario 12: Update an API returns "API updated successfully" response
+  Tags: ['@integration-only', '@skip-terraform-config', '@skip-validation', '@team:DataDog/api-management']
+  Given  operation "UpdateOpenAPI" enabled
+  And  there is a valid "managed_api" in the system
+  And  new "UpdateOpenAPI" request
+  And  request contains "id" parameter from "managed_api.data.id"
+  And  request contains "openapi_spec_file" parameter with value "openapi-spec.yaml"
+  When  the request is sent
+  Then  the response status is 200 API updated successfully
+  And  the response "data.attributes.failed_endpoints" has length 0
+
+
+
+Scenario 13: Update an API returns "Bad request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/api-management']
+  Given  operation "UpdateOpenAPI" enabled
+  And  new "UpdateOpenAPI" request
+  And  request contains "id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad request
+

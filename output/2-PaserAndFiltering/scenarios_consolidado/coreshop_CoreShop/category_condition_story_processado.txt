@@ -1,0 +1,38 @@
+Scenario 1: Add a new category cart price rule which is valid
+  Given  I add the product "Shoe" to my cart
+  And  adding a cart price rule named "category"
+  And  the cart rule is active
+  And  the cart rule is not a voucher rule
+  And  the cart rule has a condition categories with category "Shoes"
+  Then  the cart rule should be valid for my cart
+
+
+
+Scenario 2: Add a new category cart price rule which is invalid
+  Given  I add the product "Shoe" to my cart
+  And  adding a cart price rule named "category"
+  And  the cart rule is active
+  And  the cart rule is not a voucher rule
+  And  the cart rule has a condition categories with category "Coats"
+  And  the cart rule should be invalid for my cart
+
+
+
+Scenario 3: Add a new category cart price rule for a child category which is invalid
+  Given  I add the product "Sneaker" to my cart
+  And  adding a cart price rule named "category"
+  And  the cart rule is active
+  And  the cart rule is not a voucher rule
+  And  the cart rule has a condition categories with category "Shoes"
+  Then  the cart rule should be invalid for my cart
+
+
+
+Scenario 4: Add a new category cart price rule for a child category which is valid
+  Given  I add the product "Sneaker" to my cart
+  And  adding a cart price rule named "category"
+  And  the cart rule is active
+  And  the cart rule is not a voucher rule
+  And  the cart rule has a condition categories with category "Shoes" and it is recursive
+  Then  the cart rule should be valid for my cart
+

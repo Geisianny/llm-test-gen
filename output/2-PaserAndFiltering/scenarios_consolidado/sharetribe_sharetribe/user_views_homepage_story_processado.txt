@@ -1,0 +1,61 @@
+Scenario 1: Latest offers on the homepage
+  Tags: ['@javascript']
+  Given  there are following users:
+  And  there is a listing with title "car spare parts" from "kassi_testperson1" with category "Items" and with listing shape "Selling"
+  And  there is a listing with title "bike" from "kassi_testperson1" with category "Items" and with listing shape "Selling"
+  And  that listing is closed
+  And  there is a listing with title "saw" from "kassi_testperson2" with category "Items" and with listing shape "Requesting"
+  When  I am on the homepage
+  Then  I should see "car spare parts"
+  And  I should not see "bike"
+  And  I should see "saw"
+
+
+
+Scenario 2: Latest requests on the homepage
+  Tags: ['@javascript']
+  Given  there are following users:
+  And  there is a listing with title "massage" from "kassi_testperson2" with category "Services" and with listing shape "Requesting"
+  And  I am logged in as "kassi_testperson1"
+  When  I am on the homepage
+  Then  I should see "massage"
+  And  I should not see "offer item"
+
+
+
+Scenario 3: User browses homepage when there is no content
+  Tags: ['@javascript']
+  Given  there are following users:
+  When  I am on the homepage
+  When  I log in as "kassi_testperson2"
+  When  there is a listing with title "car spare parts" from "kassi_testperson1" with category "Items" and with listing shape "Requesting"
+  And  I am on the homepage
+  When  there is a listing with title "car spare parts" from "kassi_testperson1" with category "Items" and with listing shape "Selling"
+  And  I am on the homepage
+  Then  I should not see "No open item, service or rideshare requests."
+  And  I should not see "No open item, service or rideshare offers."
+
+
+
+Scenario 4: Superadmin views a community he is not a member of
+  Tags: ['@javascript']
+  Given  there are following users:
+  When  I am logged in as "kassi_testperson1"
+  And  I move to community "test2"
+  And  "kassi_testperson1" is superadmin
+  And  I am on the home page
+  Then  I should not see "Join community"
+  And  I should see "Post a new listing"
+
+
+
+Scenario 5: Unlogged user views private community
+  Tags: ['@javascript']
+  Given  there are following users:
+  And  I am not logged in
+  And  there is a listing with title "car spare parts" from "kassi_testperson1" with category "Items" and with listing shape "Selling"
+  And  community "test" is private
+  When  I am on the home page
+  Then  I should not see "car spare parts"
+  And  I should see "Sign up"
+

@@ -1,0 +1,51 @@
+Feature: Advanced content management
+Tags: ['@scope_building_container_images', '@no_auth_registry']
+
+Scenario 1: Log in as docker user
+  Given  I am authorized as "docker" with password "docker"
+
+Scenario 2: Create an image store as Docker admin
+  When  I follow the left menu "Images > Stores"
+  And  I follow "Create"
+  And  I enter "docker_admin" as "label"
+  And  I enter the URI of the registry as "uri"
+  And  I click on "create-btn"
+  Then  I wait until table row contains a "galaxy-registry" text
+
+Scenario 3: Create a profile as Docker admin
+  Tags: ['@scc_credentials']
+  When  I follow the left menu "Images > Profiles"
+  And  I follow "Create"
+  And  I enter "suse_docker_admin" as "label"
+  And  I select "galaxy-registry" from "imageStore"
+  And  I select "1-SUSE-KEY-x86_64" from "activationKey"
+  And  I enter "Docker/serverhost" relative to profiles as "path"
+  And  I click on "create-btn"
+
+Scenario 4: Create a user without rights nor roles
+  Given  I am authorized for the "Admin" section
+  When  I create a user with name "norole" and password "norole" with roles ""
+
+Scenario 5: Log in as docker user
+  Given  I am authorized as "docker" with password "docker"
+
+Scenario 6: Cleanup: remove Docker profile
+  Tags: ['@scc_credentials']
+  Given  I am authorized as "docker" with password "docker"
+  When  I follow the left menu "Images > Profiles"
+  And  I check the row with the "suse_docker_admin" text
+  And  I click on "Delete"
+  And  I click on the red confirmation button
+  And  I should see a "Image profile has been deleted." text
+
+Scenario 7: Cleanup: remove image store
+  When  I follow the left menu "Images > Stores"
+  And  I check the row with the "docker_admin" text
+  And  I click on "Delete"
+  And  I click on the red confirmation button
+  And  I should see a "Image store has been deleted." text
+
+Scenario 8: Cleanup: delete no role user
+  Given  I am authorized for the "Admin" section
+  When  I delete user "norole"
+

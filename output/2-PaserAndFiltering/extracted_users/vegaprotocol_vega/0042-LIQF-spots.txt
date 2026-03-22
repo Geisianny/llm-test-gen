@@ -1,0 +1,101 @@
+Feature: Test liquidity provider reward distribution; Should also cover liquidity-fee-setting and equity-like-share calc and total stake.
+
+Background: 
+  Given  the simple risk model named "simple-risk-model-1":
+  And  the price monitoring named "price-monitoring":
+  And  the fees configuration named "fees-config-1":
+  And  the fees configuration named "fees-config-2":
+  And  the fees configuration named "fees-config-3":
+  And  the fees configuration named "fees-config-4":
+  Given  the following assets are registered:
+  And  the following network parameters are set:
+  Given  the liquidity monitoring parameters:
+  And  the liquidity sla params named "SLA":
+  And  the spot markets:
+  Given  the average block duration is "1"
+
+Scenario 1: 001: The resulting liquidity-fee-factor is always equal to one of the liquidity provider's individually nominated fee factors  (0042-LIQF-063)
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the parties place the following orders:
+  Then  the opening auction period ends for market "BTC/ETH"
+  When  the network moves ahead "1" blocks
+  And  the following trades should be executed:
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  And  the mark price should be "1000" for the market "BTC/ETH"
+  And  the supplied stake should be "10000" for the market "BTC/ETH"
+  And  the target stake should be "7500" for the market "BTC/ETH"
+  And  the liquidity provider fee shares for the market "BTC/ETH" should be:
+  And  the liquidity fee factor should be "0.002" for the market "BTC/ETH"
+  And  the accumulated liquidity fees should be "0" for the market "BTC/ETH"
+  Then  the parties place the following orders with ticks:
+  And  the following trades should be executed:
+  And  the accumulated liquidity fees should be "394" for the market "BTC/ETH"
+  Then  time is updated to "2019-11-30T00:10:05Z"
+  Then  the following transfers should happen:
+
+Scenario 2: 002: Liquidity fee factors are recalculated every time the liquidity demand estimate changes.  (0042-LIQF-064)
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the parties place the following orders:
+  Then  the opening auction period ends for market "BTC/ETH"
+  When  the network moves ahead "1" blocks
+  And  the following trades should be executed:
+  And  the liquidity fee factor should be "0.001" for the market "BTC/ETH"
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the network moves ahead "1" blocks
+  And  the liquidity fee factor should be "0.001" for the market "BTC/ETH"
+  When  the network moves ahead "1" epochs
+  And  the liquidity fee factor should be "0.002" for the market "BTC/ETH"
+
+Scenario 3: 003: If passage of time causes the liquidity demand estimate to change, the fee factor is correctly recalculated.  (0042-LIQF-065)
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the parties place the following orders:
+  Then  the opening auction period ends for market "BTC/ETH"
+  When  the network moves ahead "1" blocks
+  And  the following trades should be executed:
+  Then  the liquidity fee factor should be "0.002" for the market "BTC/ETH"
+  And  the parties submit the following liquidity provision:
+  When  the network moves ahead "1" epochs
+  Then  the liquidity fee factor should be "0.002" for the market "BTC/ETH"
+  When  the network moves ahead "9" blocks
+  Then  the liquidity fee factor should be "0.002" for the market "BTC/ETH"
+  When  the network moves ahead "1" blocks
+  Then  the liquidity fee factor should be "0.001" for the market "BTC/ETH"
+
+Scenario 4: 004 Liquidity fee setting to METHOD_CONSTANT(0042-LIQF-070), METHOD_MARGINAL_COST (0042-LIQF-071), and METHOD_WEIGHTED_AVERAGE(0042-LIQF-069)
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "BTC/ETH"
+  When  the spot markets are updated:
+  When  the network moves ahead "1" blocks
+  And  the following trades should be executed:
+  And  the market data for the market "BTC/ETH" should be:
+  And  the liquidity fee factor should be "0.08" for the market "BTC/ETH"
+  When  the spot markets are updated:
+  Then  the network moves ahead "2" blocks
+  And  the liquidity fee factor should be "0.01" for the market "BTC/ETH"
+  When  the spot markets are updated:
+  Then  the network moves ahead "1" blocks
+  And  the liquidity fee factor should be "0.0047272727272727" for the market "BTC/ETH"
+  When  the parties submit the following liquidity provision:
+  Then  the network moves ahead "1" blocks
+  And  the liquidity fee factor should be "0.0054545454545455" for the market "BTC/ETH"
+  When  the spot markets are updated:
+  When  the parties submit the following liquidity provision:
+  Then  the network moves ahead "1" blocks
+  And  the liquidity fee factor should be "0.0375" for the market "BTC/ETH"
+

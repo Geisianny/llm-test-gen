@@ -1,0 +1,96 @@
+Scenario 1: Given a spot market, if an LP increases or decreases their commitment the target stake should be updated correctly. (0041-TSTK-109)(0041-TSTK-110)(0041-TSTK-112)
+  Given  the following network parameters are set:
+  And  the liquidity monitoring parameters:
+  And  the spot markets are updated:
+  Given  the parties submit the following liquidity provision:
+  When  the parties place the following orders:
+  And  the network moves ahead "2" blocks
+  Then  the market data for the market "BTC/USDT" should be:
+  Given  the parties submit the following liquidity provision:
+  When  the network moves ahead "1" blocks
+  Then  the market data for the market "BTC/USDT" should be:
+  Given  the parties submit the following liquidity provision:
+  When  the network moves ahead "1" blocks
+  Then  the market data for the market "BTC/USDT" should be:
+  Given  the network moves ahead "1" epochs
+  Then  the market data for the market "BTC/USDT" should be:
+  Given  the network moves ahead "19" blocks
+  Then  the market data for the market "BTC/USDT" should be:
+  Given  the network moves ahead "1" blocks
+  Then  the market data for the market "BTC/USDT" should be:
+  Given  the liquidity monitoring parameters:
+  When  the spot markets are updated:
+  Then  the market data for the market "BTC/USDT" should be:
+
+
+
+Scenario 2: Given a spot market, a decrease of time_window will immediately change the length of time window over which the total stake is measured and old records will be dropped hence the target stake will immediately change. (0041-TSTK-113)
+  Given  the following network parameters are set:
+  And  the liquidity monitoring parameters:
+  And  the spot markets are updated:
+  Given  the parties submit the following liquidity provision:
+  When  the parties place the following orders:
+  And  the network moves ahead "2" blocks
+  Then  the market data for the market "BTC/USDT" should be:
+  Given  the parties submit the following liquidity provision:
+  When  the network moves ahead "1" epochs
+  And  the network moves ahead "1" blocks
+  Then  the market data for the market "BTC/USDT" should be:
+  Given  the liquidity monitoring parameters:
+  When  the spot markets are updated:
+  Then  the market data for the market "BTC/USDT" should be:
+
+
+
+Scenario Outline 3: Given a spot market using zero decimals, the target stake should be correctly set to the product of the scaling factor and maximum supplied stake over the window. (0041-TSTK-106)(0041-TSTK-108) - Example 1
+  Given  the following network parameters are set:
+  And  the liquidity monitoring parameters:
+  And  the spot markets are updated:
+  Given  the parties submit the following liquidity provision:
+  When  the parties place the following orders:
+  And  the network moves ahead "2" blocks
+  Then  the market data for the market "ETH/USDC" should be:
+
+  Examples:
+    | scaling factor | target stake |
+    | 0 | 0 |
+    | 0.5 | 5000 |
+    | 1 | 10000 |
+
+
+
+Scenario Outline 4: Given a spot market using non-zero decimals, the target stake should be correctly set to the product of the scaling factor and maximum supplied stake over the window. (0041-TSTK-107)(0041-TSTK-108) - Example 1
+  Given  the following network parameters are set:
+  And  the liquidity monitoring parameters:
+  And  the spot markets are updated:
+  Given  the parties submit the following liquidity provision:
+  When  the parties place the following orders:
+  And  the network moves ahead "2" blocks
+  Then  the market data for the market "BTC/USDT" should be:
+
+  Examples:
+    | scaling factor | target stake |
+    | 0 | 0 |
+    | 0.5 | 5000 |
+    | 1 | 10000 |
+
+
+
+Scenario Outline 5: Given a spot market, change of market.stake.target.scalingFactor will immediately change the target stake. (0041-TSTK-111) - Example 1
+  Given  the following network parameters are set:
+  And  the liquidity monitoring parameters:
+  And  the spot markets are updated:
+  Given  the parties submit the following liquidity provision:
+  When  the parties place the following orders:
+  And  the network moves ahead "2" blocks
+  Then  the market data for the market "BTC/USDT" should be:
+  Given  the liquidity monitoring parameters:
+  When  the spot markets are updated:
+  Then  the market data for the market "BTC/USDT" should be:
+
+  Examples:
+    | scaling factor | target stake |
+    | 0 | 0 |
+    | 0.5 | 5000 |
+    | 1 | 10000 |
+

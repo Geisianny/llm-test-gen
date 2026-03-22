@@ -1,0 +1,34 @@
+Scenario 1: Log in as org admin user
+  Given  I am authorized
+
+
+
+Scenario 2: Check the Salt entitlement
+  Given  I am on the Systems overview page of this "sle_minion"
+  Then  I should see a "[Salt]" text
+
+
+
+Scenario 3: Check that installed packages are visible
+  When  I follow "Software" in the content area
+  And  I follow "List / Remove"
+  Then  I should see a "aaa_base" text
+
+
+
+Scenario 4: Check that Hardware Refresh button works on a SLES Salt minion
+  When  I follow "Details" in the content area
+  And  I follow "Hardware" in the content area
+  And  I click on "Schedule Hardware Refresh"
+  Then  I should see a "You have successfully scheduled a hardware profile refresh" text
+  When  I wait until event "Hardware List Refresh scheduled" is completed
+  And  I wait until there is no Salt job calling the module "hardware.profileupdate" on "sle_minion"
+
+
+
+Scenario 5: Check that Update Properties button works
+  When  I follow "Details" in the content area
+  And  I follow "Hardware" in the content area
+  And  I click on "Update Properties"
+  Then  I should see a "Networking properties updated." text
+

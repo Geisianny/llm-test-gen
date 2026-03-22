@@ -1,0 +1,10 @@
+Scenario 1: Get customer info
+  When  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  When  I view the subscription stats
+  Then  I will see the subscription count for "Test Plan" as 2
+  And  I will see the subscription count for "Test Two" as 1
+  And  I will see the yearly subscription count as 1
+  And  I will see the monthy subscription count as 2
+

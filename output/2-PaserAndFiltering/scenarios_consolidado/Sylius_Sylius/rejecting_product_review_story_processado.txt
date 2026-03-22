@@ -1,0 +1,7 @@
+Scenario 1: Rejecting a product review
+  Tags: ['@api', '@ui']
+  When  I want to browse product reviews
+  And  I reject the "Crap" product review
+  Then  I should be notified that it has been successfully rejected
+  And  this product review status should be "rejected"
+

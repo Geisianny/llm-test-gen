@@ -1,0 +1,36 @@
+Feature: Rule Sets Resource
+
+Scenario 1: List empty rule_sets
+  Tags: ['@auth']
+  Given  empty "rule_sets"
+  When  we get "/rule_sets"
+  Then  we get list with 0 items
+
+Scenario 2: List rule_sets
+  Tags: ['@auth']
+  When  we post to "/rule_sets"
+  Then  we get response code 201
+  When  we get "/rule_sets/"
+  Then  we get existing resource
+
+Scenario 3: Delete rule_sets
+  Tags: ['@auth']
+  Given  "rule_sets"
+  When  we delete "/rule_sets/#rule_sets._id#"
+  Then  we get response code 204
+
+Scenario 4: Delete rule_sets when in use
+  Tags: ['@auth']
+  Given  "rule_sets"
+  Given  "ingest_providers"
+  When  we delete "/rule_sets/#rule_sets._id#"
+  Then  we get response code 403
+
+Scenario 5: Patch rule_sets
+  Tags: ['@auth']
+  Given  "rule_sets"
+  When  we patch "/rule_sets/#rule_sets._id#"
+  Then  we get response code 200
+  When  we get "/rule_sets/#rule_sets._id#"
+  Then  we get existing resource
+

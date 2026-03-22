@@ -1,0 +1,6 @@
+Scenario 1: Seeing basic information about shipment
+  Tags: ['@ui', '@api']
+  When  I view the first shipment of the order "#00000001"
+  Then  I should see 2 "Apple" units in the list
+  And  I should see 3 "Banana" units in the list
+

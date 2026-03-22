@@ -1,0 +1,19 @@
+Scenario 1: Retrieve a taxon
+  Tags: ['@createSchema']
+  Given  there is the following taxon:
+  When  I send a "GET" request to "/taxa/WONDERFUL_TAXON"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario 2: Retrieve a product with a main taxon
+  Given  there is the following product:
+  When  I send a "GET" request to "/products/GREAT_PRODUCT"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+

@@ -1,0 +1,19 @@
+Scenario 1: Simple test with different indicative price before auction uncross
+  Tags: ['@IPOTest']
+  Given  the parties deposit on asset's general account the following amount:
+  When  the network moves ahead "3" blocks
+  Then  the market data for the market "ETH/DEC19" should be:
+  When  the parties place the following orders:
+  When  the network moves ahead "4" blocks
+  Then  the market data for the market "ETH/DEC19" should be:
+  And  the parties cancel the following orders:
+  And  the parties place the following orders:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the opening auction period ends for market "ETH/DEC19"
+  Then  the market data for the market "ETH/DEC19" should be:
+  Then  the following trades should be executed:
+  And  the mark price should be "10000" for the market "ETH/DEC19"
+  And  the orders should have the following status:
+  And  the market data for the market "ETH/DEC19" should be:
+

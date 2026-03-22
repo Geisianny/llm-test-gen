@@ -1,0 +1,7 @@
+Scenario 1: 0056-REWA-097 scope individuals is paid out to all eligible parties (in team, and not in team alike)
+  Tags: ['@TeamStep']
+  Given  the parties submit the following recurring transfers:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  parties should have the following vesting account balances:
+

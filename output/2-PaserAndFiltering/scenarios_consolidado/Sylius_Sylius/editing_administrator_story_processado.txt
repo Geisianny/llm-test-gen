@@ -1,0 +1,29 @@
+Scenario 1: Changing name and email of an existing administrator
+  Tags: ['@api', '@ui']
+  When  I want to edit this administrator
+  And  I change its name to "Jon Snow"
+  And  I change its email to "jon@example.com"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this administrator with name "Jon Snow" should appear in the store
+
+
+
+Scenario 2: Changing password of an existing administrator
+  Tags: ['@api', '@ui']
+  When  I want to edit this administrator
+  And  I change its password to "example"
+  And  I save my changes
+  Then  I should be able to log in as "ted@example.com" authenticated by "example" password
+  But  I should not be able to log in as "ted@example.com" authenticated by "bear" password
+
+
+
+Scenario 3: Changing password and name of an existing administrator and sign in again
+  Tags: ['@api', '@ui']
+  When  I want to edit this administrator
+  And  I change its name to "ted"
+  And  I change its password to "example"
+  And  I save my changes
+  Then  I should be able to log in as "ted@example.com" authenticated by "example" password
+

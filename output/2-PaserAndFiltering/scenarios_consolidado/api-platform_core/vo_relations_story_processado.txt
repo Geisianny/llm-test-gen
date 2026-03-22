@@ -1,0 +1,53 @@
+Scenario 1: Create Value object resource
+  Tags: ['@createSchema']
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/vo_dummy_cars" with body:
+  Then  the response status code should be 201
+  And  the JSON should be equal to:
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+
+
+
+Scenario 2: Create Value object with IRI and nullable parameter
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/vo_dummy_inspections" with body:
+  Then  the response status code should be 201
+  And  the JSON should be valid according to this schema:
+
+
+
+Scenario 3: Update Value object with writable and non writable property (legacy non-standard PUT)
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "PUT" request to "/vo_dummy_inspections/1" with body:
+  Then  the response status code should be 200
+  And  the JSON should be equal to:
+
+
+
+Scenario 4: Update Value object with writable and non writable property
+  When  I add "Content-Type" header equal to "application/merge-patch+json"
+  And  I send a "PATCH" request to "/vo_dummy_inspections/1" with body:
+  Then  the response status code should be 200
+  And  the JSON should be equal to:
+
+
+
+Scenario 5: Create Value object without required params
+  Tags: ['@createSchema']
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/vo_dummy_cars" with body:
+  Then  the response status code should be 400
+  And  the header "Content-Type" should be equal to "application/problem+json; charset=utf-8"
+  And  the header "Link" should contain '<http://www.w3.org/ns/hydra/error>; rel="http://www.w3.org/ns/json-ld#error"'
+  And  the JSON should be valid according to this schema:
+
+
+
+Scenario 6: Create Value object without default param
+  Tags: ['@createSchema']
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/vo_dummy_cars" with body:
+  Then  the response status code should be 201
+  And  the JSON should be equal to:
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+

@@ -1,0 +1,8 @@
+Scenario 1: Submit an aggressive iceberg order for size 100. There are multiple matching orders of size 20,30.
+            the iceberg order is (100 - (20+30)) (0014-ORDT-110)
+  And  the parties place the following orders:
+  When  the parties place the following iceberg orders:
+  Then  the orders should have the following states:
+  Then  the iceberg orders should have the following states:
+  Then  the order book should have the following volumes for market "BTC/ETH":
+

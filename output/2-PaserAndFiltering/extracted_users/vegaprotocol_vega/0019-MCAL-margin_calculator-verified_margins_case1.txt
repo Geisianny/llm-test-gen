@@ -1,0 +1,45 @@
+Feature: CASE-1: Trader submits long order that will trade - new formula & high exit price (0019-MCAL-001, 0019-MCAL-002, 0019-MCAL-003)
+
+Background: 
+  Given  the markets:
+  And  the following network parameters are set:
+  And  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  Then  the market data for the market "ETH/DEC19" should be:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the mark price should be "10300000" for the market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the parties place the following orders:
+  And  the parties place the following orders:
+  And  the order book should have the following volumes for market "ETH/DEC19":
+
+Scenario 1: 
+  Given  "party1" should have one account per asset
+  And  the average fill price is:
+  And  the markets are updated:
+  When  the parties place the following orders with ticks:
+  And  "party1" should have general account balance of "832630096" for asset "ETH"
+  And  the order book should have the following volumes for market "ETH/DEC19":
+  And  the following trades should be executed:
+  Then  the parties should have the following profit and loss:
+  Then  the following transfers should happen:
+  Then  the parties should have the following account balances:
+  And  the parties should have the following margin levels:
+  And  the parties should have the following profit and loss:
+  Then  the parties cancel the following orders:
+  And  the order book should have the following volumes for market "ETH/DEC19":
+  When  the parties place the following orders:
+  Then  the parties should have the following account balances:
+  And  the parties should have the following margin levels:
+  And  the parties should have the following profit and loss:
+  When  the parties place the following orders with ticks:
+  And  the following transfers should happen:
+  Then  the parties should have the following account balances:
+  And  the parties should have the following margin levels:
+  And  the parties should have the following profit and loss:
+  When  the parties place the following orders with ticks:
+  And  the parties should have the following margin levels:
+  And  the parties should have the following profit and loss:
+

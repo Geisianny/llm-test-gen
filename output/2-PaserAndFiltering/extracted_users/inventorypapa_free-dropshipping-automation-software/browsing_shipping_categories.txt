@@ -1,0 +1,17 @@
+Feature: Browsing shipping categories
+Description: In order to have a overview of all defined shipping categories
+    As an Administrator
+    I want to be able to browse list of them
+Tags: ['@managing_shipping_categories']
+
+Background: 
+  Given  the store operates on a single channel in "United States"
+  And  the store has "Over sized" and "Standard" shipping category
+  And  I am logged in as an administrator
+
+Scenario 1: Browsing defined shipping categories
+  Tags: ['@ui', '@api']
+  When  I browse shipping categories
+  Then  I should see 2 shipping categories in the list
+  And  the shipping category "Standard" should be in the registry
+

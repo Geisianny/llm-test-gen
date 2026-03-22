@@ -1,0 +1,84 @@
+Feature: Promotion validation
+Description: In order to avoid making mistakes when managing a promotion
+    As an Administrator
+    I want to be prevented from adding it without specifying required fields
+Tags: ['@managing_promotions']
+
+Background: 
+  Given  the store operates on a single channel in "United States"
+  And  I am logged in as an administrator
+
+Scenario 1: Trying to add a new promotion without specifying its code
+  Tags: ['@ui']
+  Given  I want to create a new promotion
+  When  I name it "No-VAT promotion"
+  And  I do not specify its code
+  And  I try to add it
+  Then  I should be notified that code is required
+  And  promotion with name "No-VAT promotion" should not be added
+
+Scenario 2: Trying to add a new promotion without specifying its name
+  Tags: ['@ui']
+  Given  I want to create a new promotion
+  When  I specify its code as "no_vat_promotion"
+  But  I do not name it
+  And  I try to add it
+  Then  I should be notified that name is required
+  And  promotion with code "no_vat_promotion" should not be added
+
+Scenario 3: Adding a promotion with start date set up after end date
+  Tags: ['@ui']
+  Given  I want to create a new promotion
+  When  I specify its code as "FULL_METAL_PROMOTION"
+  And  I name it "Full metal promotion"
+  And  I make it available from "24.12.2017" to "12.12.2017"
+  And  I try to add it
+  Then  I should be notified that promotion cannot end before it start
+
+Scenario 4: Trying to remove name from existing promotion
+  Tags: ['@ui']
+  Given  there is a promotion "Christmas sale"
+  And  I want to modify this promotion
+  When  I remove its name
+  And  I try to save my changes
+  Then  I should be notified that name is required
+  And  this promotion should still be named "Christmas sale"
+
+Scenario 5: Trying to add start later then end date for existing promotion
+  Tags: ['@ui']
+  Given  there is a promotion "Christmas sale"
+  And  I want to modify this promotion
+  And  I make it available from "24.12.2017" to "12.12.2017"
+  And  I try to save my changes
+  Then  I should be notified that promotion cannot end before it start
+
+Scenario 6: Trying to add a new promotion without specifying a percentage discount
+  Tags: ['@ui', '@javascript']
+  Given  I want to create a new promotion
+  When  I specify its code as "christmas_sale"
+  And  I name it "Christmas sale"
+  And  I add the "Order percentage discount" action configured without a percentage value
+  And  I try to add it
+  Then  I should be notified that this value should not be blank
+  And  promotion with name "Christmas sale" should not be added
+
+Scenario 7: Trying to add a new promotion with a wrong percentage discount
+  Tags: ['@ui', '@javascript']
+  Given  I want to create a new promotion
+  When  I specify its code as "christmas_sale"
+  And  I name it "Christmas sale"
+  And  I add the "Order percentage discount" action configured with a percentage value of 120%
+  And  I try to add it
+  Then  I should be notified that the maximum value of a percentage discount is 100%
+  And  promotion with name "Christmas sale" should not be added
+
+Scenario 8: Trying to add a new promotion with a negative percentage discount
+  Tags: ['@ui', '@javascript']
+  Given  I want to create a new promotion
+  When  I specify its code as "christmas_sale"
+  And  I name it "Christmas sale"
+  And  I add the "Order percentage discount" action configured with a percentage value of -20%
+  And  I try to add it
+  Then  I should be notified that a percentage discount value must be at least 0%
+  And  promotion with name "Christmas sale" should not be added
+

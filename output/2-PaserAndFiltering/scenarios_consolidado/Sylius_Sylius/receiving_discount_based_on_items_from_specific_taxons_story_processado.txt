@@ -1,0 +1,51 @@
+Scenario 1: Receiving discount on order while buying product from promoted taxon
+  Tags: ['@api', '@ui']
+  Given  the promotion gives "$20.00" off if order contains products classified as "T-Shirts"
+  And  I added product "PHP T-Shirt" to the cart
+  When  I check the details of my cart
+  And  my cart total should be "$80.00"
+  And  my discount should be "-$20.00"
+
+
+
+Scenario 2: Receiving no discount on order while buying product from different than promoted taxon
+  Tags: ['@api', '@ui']
+  Given  the promotion gives "$20.00" off if order contains products classified as "T-Shirts"
+  And  I added product "PHP Mug" to the cart
+  When  I check the details of my cart
+  And  my cart total should be "$20.00"
+  And  there should be no discount applied
+
+
+
+Scenario 3: Receiving discount on order while buying product from one of promoted taxon
+  Tags: ['@api', '@ui']
+  Given  the promotion gives "$20.00" off if order contains products classified as "T-Shirts" or "Mugs"
+  And  I added product "PHP T-Shirt" to the cart
+  When  I check the details of my cart
+  And  my cart total should be "$80.00"
+  And  my discount should be "-$20.00"
+
+
+
+Scenario 4: Receiving discount on order while buying multiple products from promoted taxon
+  Tags: ['@api', '@ui']
+  Given  the promotion gives "$50.00" off if order contains products classified as "T-Shirts"
+  And  I added 3 products "PHP T-Shirt" to the cart
+  When  I check the details of my cart
+  And  my cart total should be "$250.00"
+  And  my discount should be "-$50.00"
+
+
+
+Scenario 5: Receiving discount on order while buying product from both of promoted taxon
+  Tags: ['@api', '@ui']
+  Given  the promotion gives "$10.00" off if order contains products classified as "T-Shirts"
+  And  there is a promotion "Mugs promotion"
+  And  this promotion gives "$5.00" off if order contains products classified as "Mugs"
+  And  I added product "PHP T-Shirt" to the cart
+  And  I added product "PHP Mug" to the cart
+  When  I check the details of my cart
+  And  my cart total should be "$105.00"
+  And  my discount should be "-$15.00"
+

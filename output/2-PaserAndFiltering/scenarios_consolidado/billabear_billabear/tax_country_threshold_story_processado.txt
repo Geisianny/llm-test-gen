@@ -1,0 +1,69 @@
+Scenario 1: 
+  Given  the following subscriptions exist:
+  And  that the following countries exist:
+  And  the following country tax rules exist:
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  And  there the latest invoice for "customer.seven@example.org" will have tax country of "US"
+
+
+
+Scenario 2: 
+  Given  the following subscriptions exist:
+  And  that the following countries exist:
+  And  the following country tax rules exist:
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  And  there the latest invoice for "customer.seven@example.org" will have tax country is empty
+
+
+
+Scenario 3: 
+  Given  the following subscriptions exist:
+  And  that the following countries exist:
+  And  the following country tax rules exist:
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  And  there the latest invoice for "customer.seven@example.org" will have tax country of "GB"
+
+
+
+Scenario 4: 
+  Given  the following subscriptions exist:
+  And  that the following countries exist:
+  And  the following country tax rules exist:
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  And  there the latest invoice for "customer.seven@example.org" will have tax country of "GB"
+
+
+
+Scenario 5: 
+  Given  the following subscriptions exist:
+  And  that the following countries exist:
+  And  the following country tax rules exist:
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  And  there the latest invoice for "customer.seven@example.org" will have tax country of "GB"
+
+
+
+Scenario 6: Country transaction threshold not reached
+  Given  the following subscriptions exist:
+  And  that the following countries exist:
+  And  the following country tax rules exist:
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  And  there the latest invoice for "customer.eight@example.org" will have tax country of "GB"
+
+
+
+Scenario 7: Country transaction threshold reached
+  Given  the following subscriptions exist:
+  And  that the following countries exist:
+  And  the following country tax rules exist:
+  And  there are 200 transactions for "customer.eight@example.org" for the past 12 months
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  And  there the latest invoice for "customer.eight@example.org" will have tax country of "AU"
+

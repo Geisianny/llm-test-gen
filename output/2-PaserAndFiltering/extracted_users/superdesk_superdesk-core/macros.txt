@@ -1,0 +1,38 @@
+Feature: Macros
+
+Scenario 1: Get list of all macros
+  Tags: ['@auth']
+  When  we get "/macros"
+  Then  we get list with 2+ items
+
+Scenario 2: Get list of all macros by desk
+  Tags: ['@auth']
+  When  we get "/macros?desk=POLITICS"
+  Then  we get list with 2+ items
+
+Scenario 3: Get list of updated macros
+  Tags: ['@auth', '@clean']
+  Given  empty "stages"
+  Given  "desks"
+  Given  we create a new macro "behave_macro.py"
+  When  we get "/macros?desk=POLITICS"
+  Then  we get list with 2+ items
+
+Scenario 4: Trigger macro via name
+  Tags: ['@auth']
+  When  we post to "/macros"
+  Then  we get new resource
+
+Scenario 5: Trigger macro and commit
+  Tags: ['@auth']
+  Given  "archive"
+  When  we post to "/macros"
+  Then  we get new resource
+  When  we get "/archive/item1"
+  Then  we get existing resource
+
+Scenario 6: Return an error when triggering unknown macro
+  Tags: ['@auth']
+  When  we post to "/macros"
+  Then  we get response code 400
+

@@ -1,0 +1,20 @@
+Feature: Gravatar Support
+Description: Unauthenticated users may comment content and are displayed with Gravatar
+  pictures. The commenter with registered Gravatar image will have a link to
+  his/her Gravatar profile, others will have a link to the Gravatar homepage.
+
+Background: 
+  Given  the following users
+  And  the following articles
+  And  the following comments
+
+Scenario 1: The Aurium's gravatar picture must link to his gravatar profile
+  Tags: ['@selenium']
+  When  I go to article "My Article"
+  Then  I should see "Aurium (unauthenticated user)" linking to "//www.gravatar.com/24a625896a07aa37fdb2352e302e96de"
+
+Scenario 2: The NoOne's gravatar picture must link to Gravatar homepage
+  Tags: ['@selenium']
+  When  I go to article "My Article"
+  Then  I should see "NoOne (unauthenticated user)" linking to "//www.gravatar.com"
+

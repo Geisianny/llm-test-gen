@@ -1,0 +1,195 @@
+Feature: Desks
+
+Scenario 1: Empty desks list
+  Tags: ['@auth']
+  Given  empty "desks"
+  When  we get "/desks"
+  Then  we get list with 0 items
+
+Scenario 2: Create new desk
+  Tags: ['@auth', '@notification']
+  Given  empty "users"
+  Given  empty "desks"
+  When  we post to "users"
+  Then  we get existing resource
+  When  we post to "/desks"
+  And  we get "/desks/#desks._id#"
+  Then  we get existing resource
+  And  we get desk members count as 1
+  And  we get "incoming_stage"
+  And  we get "working_stage"
+  Then  we get notifications
+  When  we get the default incoming stage
+  And  we delete latest
+  Then  we get error 412
+  When  we post to "/stages"
+  Then  we get OK response
+  When  we get "/users/#users._id#"
+  Then  we get existing resource
+  When  we get "/users/#CONTEXT_USER_ID#"
+  Then  we get existing resource
+
+Scenario 3: Update desk
+  Tags: ['@auth', '@notification']
+  Given  empty "desks"
+  When  we post to "/desks"
+  Then  we get OK response
+  Then  we get existing resource
+  When  we patch latest
+  Then  we get updated response
+  Then  we get notifications
+  When  we patch latest
+  Then  we get updated response
+  And  we get desk members count as 1
+
+Scenario 4: Delete desk
+  Tags: ['@auth', '@notification']
+  Given  "desks"
+  When  we post to "/desks"
+  And  we delete latest
+  Then  we get notifications
+  Then  we get deleted response
+
+Scenario 5: Desk name must be unique.
+  Tags: ['@auth']
+  Given  empty "desks"
+  When  we post to "/desks"
+  Then  we get OK response
+  When  we post to "/desks"
+  Then  we get response code 400
+  When  we post to "/desks"
+  Then  we get OK response
+  When  we patch "/desks/#desks._id#"
+  Then  we get response code 400
+
+Scenario 6: Cannot delete desk if it is assigned as a default desk to user(s)
+  Tags: ['@auth']
+  Given  "users"
+  And  "desks"
+  When  we patch "/users/#users._id#"
+  And  we delete "/desks/#desks._id#"
+  Then  we get error 412
+
+Scenario 7: Remove user from desk membership
+  Tags: ['@auth', '@notification']
+  Given  "users"
+  And  "desks"
+  When  we patch "/desks/#desks._id#"
+  Then  we get updated response
+  Then  we get notifications
+
+Scenario 8: Set the monitoring settings
+  Tags: ['@auth']
+  Given  "users"
+  And  "desks"
+  When  we patch "/desks/#desks._id#"
+  Then  we get updated response
+  When  we get "/desks"
+  Then  we get list with 1 items
+
+Scenario 9: Update desk type
+  Tags: ['@auth', '@notification']
+  Given  we have "desks" with "SPORTS_DESK_ID" and success
+  When  we post to "archive"
+  And  we get "/archive/123"
+  Then  we get existing resource
+  When  we patch "/desks/#desks._id#"
+  Then  we get OK response
+  When  we patch "/desks/#desks._id#"
+  Then  we get OK response
+  When  we post to "/desks" with "FINANCE_DESK_ID" and success
+  And  we switch user
+  And  we post to "/archive/123/move"
+  Then  we get OK response
+  When  we get "/archive/123"
+  Then  we get existing resource
+  And  there is no "last_production_desk" in task
+  When  we patch "/desks/#SPORTS_DESK_ID#"
+  Then  we get error 400
+
+Scenario 10: Simple sluglines for desk
+  Tags: ['@auth', '@notification']
+  Given  we have "desks" with "SPORTS_DESK_ID" and success
+  Given  "published"
+  When  we post to "users"
+  When  we get "/desks/#SPORTS_DESK_ID#/sluglines"
+  Then  we get existing resource
+
+Scenario 11: Simple sluglines for desk with no place
+  Tags: ['@auth', '@notification']
+  Given  we have "desks" with "SPORTS_DESK_ID" and success
+  Given  "published"
+  When  we post to "users"
+  When  we get "/desks/#SPORTS_DESK_ID#/sluglines"
+  Then  we get existing resource
+
+Scenario 12: Simple change of slugline in same family
+  Tags: ['@auth', '@notification']
+  Given  we have "desks" with "SPORTS_DESK_ID" and success
+  When  we post to "published" with delay
+  And  we post to "published" with delay
+  When  we post to "users"
+  When  we get "/desks/#SPORTS_DESK_ID#/sluglines"
+  Then  we get existing resource
+
+Scenario 13: Retrieve number of items with desk stages overview
+  Tags: ['@auth', '@notification']
+  Given  we have "desks" with "SPORTS_DESK_ID" and success
+  And  we have "desks" with "POLITICS_DESK_ID" and success
+  Given  "archive"
+  When  we get "/desks/#SPORTS_DESK_ID#/overview/stages"
+  Then  we get existing resource
+  When  we get "/desks/all/overview/stages"
+  Then  we get existing resource
+  When  we post to "/desks/all/overview/stages"
+  Then  we get existing resource
+  When  we post to "/desks/#SPORTS_DESK_ID#/overview/stages"
+  Then  we get existing resource
+  When  we post to "/desks/#SPORTS_DESK_ID#/overview/stages"
+  Then  we get existing resource
+
+Scenario 14: Retrieve number of items with desk assignents overview
+  Tags: ['@auth', '@notification']
+  Given  we have "desks" with "SPORTS_DESK_ID" and success
+  And  we have "desks" with "POLITICS_DESK_ID" and success
+  Given  "assignments"
+  When  we get "/desks/#SPORTS_DESK_ID#/overview/assignments"
+  Then  we get existing resource
+  When  we get "/desks/all/overview/assignments"
+  Then  we get existing resource
+
+Scenario 15: Retrieve overview of users
+  Tags: ['@auth', '@notification']
+  Given  we have "roles" with "ROLE_EDITOR_ID" and success
+  And  we have "roles" with "ROLE_SUBEDITOR_ID" and success
+  And  we have "roles" with "ROLE_JOURNALIST_ID" and success
+  Given  we have "users" with "USER_1_ID" and success
+  And  we have "users" with "USER_2_ID" and success
+  And  we have "users" with "USER_3_ID" and success
+  And  we have "users" with "USER_4_ID" and success
+  And  we have "users" with "USER_5_ID" and success
+  Given  "desks"
+  Given  we have "desks" with "SPORTS_DESK_ID" and success
+  And  we have "desks" with "POLITICS_DESK_ID" and success
+  Given  "archive"
+  When  we get "/desks/#SPORTS_DESK_ID#/overview/users"
+  Then  we get existing resource
+  When  we get "/desks/all/overview/users"
+  Then  we get existing resource
+
+Scenario 16: Make the desk available in default content template
+  Tags: ['@auth', '@notification']
+  Given  empty "desks"
+  Given  "content_templates"
+  When  we post to "/desks"
+  Then  we get OK response
+  When  we get "content_templates/#content_templates._id#"
+  Then  we get existing resource
+
+Scenario 17: Desk members resource
+  Tags: ['@auth']
+  Given  "users"
+  And  "desks"
+  When  we get "/desks/#desks._id#/users"
+  Then  we get list with 1 items
+

@@ -1,0 +1,58 @@
+Feature: When market.amm.minCommitmentQuantum is 1000, mid price of the market 100, and a user with 1000 USDT creates a vAMM with commitment 1000, base price 100, upper price 150, lower price 85 and leverage ratio at each bound 0.25
+
+Background: 
+  Given  the average block duration is "1"
+  And  the margin calculator named "margin-calculator-1":
+  And  the log normal risk model named "log-normal-risk-model":
+  And  the liquidity monitoring parameters:
+  And  the following network parameters are set:
+  And  the following assets are registered:
+  And  the fees configuration named "fees-config-1":
+  And  the liquidity sla params named "SLA-22":
+  And  the markets:
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  Then  the network moves ahead "4" blocks
+  And  the current epoch is "0"
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/MAR22"
+  Then  the following trades should be executed:
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the parties submit the following AMM:
+  Then  the AMM pool status should be:
+  And  set the following AMM sub account aliases:
+  And  the following transfers should happen:
+
+Scenario 1: 0090-VAMM-024: If other traders trade to move the market mid price to 140 the vAMM has a short position.
+  Tags: ['@VAMM']
+  When  the parties place the following orders:
+  Then  the following trades should be executed:
+  When  the network moves ahead "1" blocks
+  Then  the market data for the market "ETH/MAR22" should be:
+  And  the parties should have the following profit and loss:
+  And  the AMM pool status should be:
+
+Scenario 2: 0090-VAMM-025: If the vAMM is then amended such that it has a new base price of 140 it should attempt to place a trade to rebalance it's position to 0 at a mid price of 140. If that trade can execute with the slippage as configured in the request then the transaction is accepted.
+  Tags: ['@VAMM']
+  And  the parties place the following orders:
+  When  the parties amend the following AMM:
+  Then  the AMM pool status should be:
+  And  the following trades should be executed:
+  When  the network moves ahead "1" blocks
+  Then  the market data for the market "ETH/MAR22" should be:
+  And  the parties should have the following profit and loss:
+
+Scenario 3: 0090-VAMM-026: If the trade cannot execute with the slippage as configured in the request then the transaction is rejected and no changes to the vAMM are made.
+  Tags: ['@VAMM']
+  When  the parties place the following orders:
+  Then  the following trades should be executed:
+  When  the network moves ahead "1" blocks
+  Then  the market data for the market "ETH/MAR22" should be:
+  And  the parties should have the following profit and loss:
+  And  the AMM pool status should be:
+  When  the parties amend the following AMM:
+  Then  the AMM pool status should be:
+  And  the parties should have the following account balances:
+  When  the parties cancel the following AMM:
+  Then  the AMM pool status should be:
+

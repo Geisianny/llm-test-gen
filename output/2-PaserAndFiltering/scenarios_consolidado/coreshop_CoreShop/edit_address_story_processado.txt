@@ -1,0 +1,24 @@
+Scenario 1: Edit my address
+  When  I open my addresses
+  And  I choose "Freiung" to edit
+  And  I change my street to "Blumensteig" and number "19/3"
+  And  I save my address
+  Then  the customer "elon@musk.com" address is country "Austria", "4600", "Wels", "Blumensteig", "19/3"
+
+
+
+Scenario 2: Add a address
+  When  I want to add a address information
+  And  my new Address is "Elon", "Twitter X", country "Austria", "1234", "Wien", "Herbststrasse", "16", "+45 5336445"
+  And  I save my address
+  Then  the customer "elon@musk.com" address is country "Austria", "1234", "Wien", "Herbststrasse", "16"
+
+
+
+Scenario 3: Delete a address
+  When  I want to add a address information
+  And  my new Address is "Elon", "Twitter X", country "Austria", "1160", "Wien", "Brunnengasse", "46", "+45 5336445"
+  And  I save my address
+  Then  I open my addresses
+  And  I want to delete my address with street "Brunnengasse"
+

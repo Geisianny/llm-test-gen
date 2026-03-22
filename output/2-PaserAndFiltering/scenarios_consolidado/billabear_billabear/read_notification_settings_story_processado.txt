@@ -1,0 +1,6 @@
+Scenario 1: Create email template
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  the notification settings are:
+  When  I view the notification settings
+  Then  I will see that the notification settings for EMSP is "sendgrid"
+

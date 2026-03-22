@@ -1,0 +1,19 @@
+Scenario 1: As a non logged-in user I cannot create a JeMengage user with empty and wrong data
+  Given  I send a "POST" request to "/api/membership?source=jemengage" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 2: As a non logged-in user I can create a JeMengage user
+  Given  I send a "POST" request to "/api/membership?source=jemengage" with body:
+  Then  the response status code should be 201
+
+
+
+Scenario 3: As a non logged-in user I can request a reset password
+  Given  I send a "POST" request to "/api/membership/forgot-password?source=jemengage" with body:
+  Then  the response status code should be 200
+  And  I should have 1 email "RenaissanceResetPasswordMessage" for "je-mengage-user-1@en-marche-dev.fr" with payload:
+

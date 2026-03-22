@@ -1,0 +1,88 @@
+Feature: User Activity
+
+Scenario 1: User activity
+  Tags: ['@auth']
+  When  we post to "/users"
+  Then  we get response code 201
+  When  we get "/activity/"
+  Then  we get existing resource
+  When  we delete "/users/foo"
+  Then  we get response code 204
+  When  we get "/activity/"
+  Then  we get existing resource
+
+Scenario 2: Image archive activity
+  Tags: ['@auth']
+  Given  empty "archive"
+  When  we upload a file "bike.jpg" to "archive"
+  When  we get "/activity/"
+  Then  we get existing resource
+
+Scenario 3: Filter activity by desk
+  Tags: ['@auth']
+  Given  empty "activity"
+  Given  "desks"
+  Given  "stages"
+  Given  "archive"
+  When  we patch "/tasks/tag:example.com,0000:newsml_BRE9A605"
+  Then  we get existing resource
+  When  we get "/activity?where={"desk": "#desks._id#"}"
+  Then  we get existing resource
+  When  we get "/activity?where={"desk": "invalid_desk_id"}"
+  Then  we get list with 0 items
+
+Scenario 4: Read notification by a user who is not meant to:
+  Tags: ['@auth']
+  Given  empty "comments"
+  When  we post to "/users"
+  When  we mention user in comment for "/comments"
+  Then  we get activity
+  When  we patch "/activity/#activity._id#"
+  Then  we get error 400
+
+Scenario 5: Read notification of a desk:
+  Tags: ['@auth']
+  Given  empty "comments"
+  When  we post to "/users"
+  And  we post to "/desks"
+  When  we post to "/comments"
+  Then  we get activity
+  When  we patch "/activity/#activity._id#"
+  Then  we get error 200
+
+Scenario 6: Read notification successful :
+  Tags: ['@auth']
+  Given  empty "comments"
+  When  we mention user in comment for "/comments"
+  Then  we get activity
+  When  we patch "/activity/#activity._id#"
+  Then  we get error 200
+
+Scenario 7: Read notification attempt bad transition :
+  Tags: ['@auth']
+  Given  empty "comments"
+  When  we mention user in comment for "/comments"
+  Then  we get activity
+  When  we patch "/activity/#activity._id#"
+  Then  we get error 400
+
+Scenario 8: Verify if activity was created on archive operations
+  Tags: ['@auth']
+  Given  empty "activity"
+  Given  empty "archive"
+  When  we post to "/archive" with success
+  And  we patch "/archive/some-global-unique-id"
+  And  we get "/activity"
+  Then  we get list with 2 items
+
+Scenario 9: A user should not the see activity on personal items of another user
+  Tags: ['@auth']
+  Given  empty "activity"
+  Given  empty "archive"
+  When  we post to "/archive" with success
+  And  we patch "/archive/some-global-unique-id"
+  When  we create a new user
+  When  we login as user "foo" with password "foofoo" and user type "user"
+  And  we get "/activity?where={\"user\":\"#previous_user._id#\"}"
+  Then  we get list with 1 items
+

@@ -1,0 +1,103 @@
+Scenario 1: Create a purchase order manually
+  Tags: ['@PO000']
+  Given  I need a "purchase.order" with name: PO1000
+  And  having:
+  And  containing the following purchase order lines:
+  When  I confirm the PO
+  Then  1 picking should be created for the PO
+  When  I process the following product moves:
+  And  I create a supplier invoice for the picking on %Y-01-25
+  Then  the picking should be in state done
+  And  1 draft invoice should be created for the PO
+  When  I open the credit invoice
+
+
+
+Scenario 2: Create a purchase order manually
+  Tags: ['@PO001']
+  Given  I need a "purchase.order" with name: PO1001
+  And  having:
+  And  containing the following purchase order lines:
+  When  I confirm the PO
+  Then  1 picking should be created for the PO
+  When  I process all moves on %Y-01-25
+  And  I create a supplier invoice for the picking on %Y-01-25
+  Then  the picking should be in state done
+  And  1 draft invoice should be created for the PO
+  When  I open the credit invoice
+
+
+
+Scenario 3: Create a purchase order manually
+  Tags: ['@PO002']
+  Given  I need a "purchase.order" with name: PO1002
+  And  having:
+  And  containing the following purchase order lines:
+  When  I confirm the PO
+  Then  1 picking should be created for the PO
+  When  I process all moves on %Y-01-17
+  And  I create a supplier invoice for the picking on %Y-01-17
+  Then  the picking should be in state done
+  And  1 draft invoice should be created for the PO
+  When  I open the credit invoice
+
+
+
+Scenario 4: Create a purchase order manually
+  Tags: ['@PO003']
+  Given  I need a "purchase.order" with name: PO1003
+  And  having:
+  And  containing the following purchase order lines:
+  When  I confirm the PO
+  Then  1 picking should be created for the PO
+  When  I process all moves on %Y-01-27
+  And  I create a supplier invoice for the picking on %Y-01-27
+  Then  the picking should be in state done
+  And  1 draft invoice should be created for the PO
+  When  I open the credit invoice
+
+
+
+Scenario 5: Create a purchase order manually
+  Tags: ['@PO004']
+  Given  I need a "purchase.order" with name: PO1004
+  And  having:
+  And  containing the following purchase order lines:
+  When  I confirm the PO
+  Then  1 picking should be created for the PO
+  When  I process all moves on %Y-02-25
+  And  I create a supplier invoice for the picking on %Y-02-25
+  Then  the picking should be in state done
+  And  1 draft invoice should be created for the PO
+  When  I open the credit invoice
+
+
+
+Scenario 6: Create a purchase order manually
+  Tags: ['@PO005']
+  Given  I need a "purchase.order" with name: PO1005
+  And  having:
+  And  containing the following purchase order lines:
+  When  I confirm the PO
+  Then  1 picking should be created for the PO
+  When  I process all moves on %Y-02-17
+  And  I create a supplier invoice for the picking on %Y-02-17
+  Then  the picking should be in state done
+  And  1 draft invoice should be created for the PO
+  When  I open the credit invoice
+
+
+
+Scenario 7: Create a purchase order manually
+  Tags: ['@PO006']
+  Given  I need a "purchase.order" with name: PO1006
+  And  having:
+  And  containing the following purchase order lines:
+  When  I confirm the PO
+  Then  1 picking should be created for the PO
+  When  I process all moves on %Y-02-27
+  And  I create a supplier invoice for the picking on %Y-02-27
+  Then  the picking should be in state done
+  And  1 draft invoice should be created for the PO
+  When  I open the credit invoice
+

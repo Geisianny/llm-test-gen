@@ -1,0 +1,34 @@
+Scenario 1: 0080-SPOT-024, 0080-SPOT-025 market orders should be rejected when traders do not have enough collateral to cover the trades in spot market
+  Given  the following network parameters are set:
+  Given  the following assets are registered:
+  Given  the fees configuration named "fees-config-1":
+  Given  the log normal risk model named "lognormal-risk-model-1":
+  And  the price monitoring named "price-monitoring-1":
+  And  the spot markets:
+  And  the following network parameters are set:
+  Given  the parties deposit on asset's general account the following amount:
+  And  the average block duration is "1"
+  Given  the parties submit the following liquidity provision:
+  Then  "party2" should have general account balance of "1000" for asset "USD"
+  Then  "party2" should have general account balance of "100" for asset "BTC"
+  And  the parties place the following orders:
+  Then  the network moves ahead "2" blocks
+  Then  the market data for the market "BTC/USD" should be:
+  Then  "party2" should have general account balance of "61000" for asset "USD"
+  Then  "party2" should have general account balance of "74" for asset "BTC"
+  Then  "party2" should have holding account balance of "25" for asset "BTC"
+  And  the parties place the following orders:
+  And  the parties place the following orders:
+  Then  the network moves ahead "1" blocks
+  Then  "party2" should have general account balance of "61000" for asset "USD"
+  Then  "party2" should have general account balance of "74" for asset "BTC"
+  Then  "party2" should have holding account balance of "25" for asset "BTC"
+  Then  "party3" should have general account balance of "1000" for asset "USD"
+  Then  "party4" should have general account balance of "1" for asset "BTC"
+  And  the parties place the following orders:
+  And  the parties place the following orders:
+  When  the parties amend the following orders:
+  And  the order book should have the following volumes for market "BTC/USD":
+  And  the parties place the following orders:
+  And  the parties place the following orders:
+

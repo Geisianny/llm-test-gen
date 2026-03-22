@@ -1,0 +1,24 @@
+Scenario 1: Seeing correct lowest price when selecting first variant from the list
+  Tags: ['@no-api', '@ui', '@javascript']
+  When  I view product "Wyborowa Vodka"
+  And  I select "Wyborowa Vodka 40%" variant
+  Then  I should see "$40.00" as its lowest price before the discount
+
+
+
+Scenario 2: Seeing correct lowest price when selecting another variant from the list
+  Tags: ['@no-api', '@ui', '@javascript']
+  When  I view product "Wyborowa Vodka"
+  And  I select "Wyborowa Vodka 50%" variant
+  Then  I should see "$50.00" as its lowest price before the discount
+
+
+
+Scenario 3: Seeing correct lowest price when selecting first variant from the list after selecting another variant
+  Tags: ['@no-api', '@ui', '@javascript']
+  When  I view product "Wyborowa Vodka"
+  And  I select "Wyborowa Vodka 50%" variant
+  And  I select "Wyborowa Vodka 30%" variant
+  And  I select "Wyborowa Vodka 40%" variant
+  Then  I should see "$40.00" as its lowest price before the discount
+

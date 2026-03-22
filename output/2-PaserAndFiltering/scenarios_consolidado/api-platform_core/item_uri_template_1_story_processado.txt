@@ -1,0 +1,73 @@
+Scenario 1: Get a collection of objects without any itemUriTemplate should generate the IRI from the first Get operation
+  When  I send a "GET" request to "/cars"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+
+
+Scenario 2: Get a collection of objects with an itemUriTemplate should generate the IRI from the correct operation
+  When  I send a "GET" request to "/brands/renault/cars"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+
+
+Scenario 3: Create an object without an itemUriTemplate should generate the IRI from the first Get operation
+  When  I add "Content-Type" header equal to "application/json"
+  And  I send a "POST" request to "/cars" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+
+
+Scenario 4: Create an object with an itemUriTemplate should generate the IRI from the correct operation
+  When  I add "Content-Type" header equal to "application/json"
+  And  I send a "POST" request to "/brands/renault/cars" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+
+
+Scenario 5: Get a collection referencing another resource for its IRI
+  When  I send a "GET" request to "/item_referenced_in_collection"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario 6: Get a collection referencing an itemUriTemplate
+  When  I send a "GET" request to "/issue5662/books/a/reviews"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario 7: Get a collection referencing an invalid itemUriTemplate
+  When  I send a "GET" request to "/issue5662/admin/reviews"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario 8: Create an object with an itemUriTemplate should generate the IRI according to the specified itemUriTemplate
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/issue5662/books/a/reviews" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON node "@id" should be equal to "/issue5662/books/a/reviews/0"
+

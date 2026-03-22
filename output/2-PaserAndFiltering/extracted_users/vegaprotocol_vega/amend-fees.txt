@@ -1,0 +1,53 @@
+Feature: Fees when amend trades
+
+Background: 
+  Given  the fees configuration named "fees-config-1":
+  And  the price monitoring named "price-monitoring":
+  And  the simple risk model named "simple-risk-model-1":
+  And  the markets:
+  And  the following network parameters are set:
+
+Scenario 1: Testing fees in continuous trading with one trade
+  Tags: ['@Fees']
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC21"
+  And  the market data for the market "ETH/DEC21" should be:
+  And  the order book should have the following volumes for market "ETH/DEC21":
+  When  the parties place the following orders with ticks:
+  Then  the market data for the market "ETH/DEC21" should be:
+  And  the following trades should be executed:
+  And  the following transfers should happen:
+  When  the parties place the following orders with ticks:
+  And  the order book should have the following volumes for market "ETH/DEC21":
+  When  the parties amend the following orders:
+  Then  the market data for the market "ETH/DEC21" should be:
+  And  the order book should have the following volumes for market "ETH/DEC21":
+  When  the parties amend the following orders:
+  Then  the market data for the market "ETH/DEC21" should be:
+  And  the following trades should be executed:
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/DEC21" should be:
+  And  the following trades should be executed:
+
+Scenario 2: Testing fees get collected when amended order trades
+  Given  the parties deposit on asset's general account the following amount:
+  And  the markets are updated:
+  When  the parties place the following orders:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the opening auction period ends for market "ETH/DEC21"
+  Then  the market data for the market "ETH/DEC21" should be:
+  When  the parties place the following orders with ticks:
+  Then  the market data for the market "ETH/DEC21" should be:
+  And  the following trades should be executed:
+  And  the following transfers should happen:
+  When  the parties place the following orders with ticks:
+  And  the parties amend the following orders:
+  Then  the network moves ahead "1" blocks
+  And  the following trades should be executed:
+  And  the market data for the market "ETH/DEC21" should be:
+  And  the following transfers should happen:
+

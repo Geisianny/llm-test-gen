@@ -1,0 +1,24 @@
+Scenario 1: Showing locales only from the current channel
+  Tags: ['@api', '@ui']
+  When  I browse the "Mobile" channel
+  Then  I should shop using the "Polish (Poland)" locale
+  And  I should be able to shop using the "Norwegian (Norway)" locale
+  And  I should not be able to shop using the "English (United States)" locale
+
+
+
+Scenario 2: Browsing channels using their default locales
+  Tags: ['@api', '@ui']
+  When  I browse the "Web" channel
+  And  I start browsing the "Mobile" channel
+  Then  I should shop using the "Polish (Poland)" locale
+
+
+
+Scenario 3: Switching a locale applies only to the current channel
+  Tags: ['@api', '@ui']
+  When  I browse the "Web" channel
+  And  I switch to the "Norwegian (Norway)" locale
+  And  I start browsing the "Mobile" channel
+  Then  I should still shop using the "Polish (Poland)" locale
+

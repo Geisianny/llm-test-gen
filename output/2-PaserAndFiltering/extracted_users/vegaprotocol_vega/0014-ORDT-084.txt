@@ -1,0 +1,29 @@
+Feature: Spot market
+
+Background: 
+  Given  time is updated to "2024-01-01T00:00:00Z"
+  Given  the following network parameters are set:
+  Given  the following assets are registered:
+  Given  the fees configuration named "fees-config-1":
+  Given  the log normal risk model named "lognormal-risk-model-1":
+  And  the price monitoring named "price-monitoring-1":
+  And  the spot markets:
+  Given  the parties deposit on asset's general account the following amount:
+  And  the average block duration is "1"
+  And  the parties place the following orders:
+  And  the opening auction period ends for market "BTC/ETH"
+  When  the network moves ahead "1" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+
+Scenario 1: Immediate orders, continuous trading Any GTT limit order that [still] resides on the order book at its expiry time is cancelled
+  Description: and removed from the book before any events are processed that rely on its being present on the book, including any calculation
+            that incorporates its volume and/or price level. (0014-ORDT-084)
+  Given  time is updated to "2024-01-01T00:01:00Z"
+  And  the parties place the following orders:
+  Then  the orders should have the following states:
+  And  the order book should have the following volumes for market "BTC/ETH":
+  Given  time is updated to "2024-01-01T00:02:00Z"
+  And  the parties place the following orders:
+  And  the orders should have the following status:
+  And  the order book should have the following volumes for market "BTC/ETH":
+

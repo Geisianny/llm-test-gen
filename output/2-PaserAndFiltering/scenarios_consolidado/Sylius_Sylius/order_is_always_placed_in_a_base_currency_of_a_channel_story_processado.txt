@@ -1,0 +1,13 @@
+Scenario 1: Placing an order with other than base display currency
+  Tags: ['@no-api', '@ui']
+  Given  I changed my currency to "GBP"
+  And  I added product "Angel T-Shirt" to the cart
+  And  I addressed the cart
+  When  I proceed with "DHL" shipping method and "Cash on Delivery" payment
+  And  I confirm my order
+  And  I am viewing the summary of my last order
+  Then  I should see "£40.00" as order's total
+  And  I should see "£20.00" as order's subtotal
+  And  I should see "£20.00" as item price
+  And  I should see "$40.00" as payment total
+

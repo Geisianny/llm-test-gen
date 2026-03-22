@@ -1,0 +1,21 @@
+Feature: Sylius Install Feature
+Description: In order to install Sylius via CLI
+    As a Developer
+    I want to run an installation command
+Tags: ['@installer', '@cli']
+
+Scenario 1: Registering administrator account
+  Given  I provide full administrator data
+  When  I run Sylius CLI installer
+  Then  I should see output "Administrator account successfully registered."
+
+Scenario 2: Trying to register administrator account without email
+  Given  I do not provide an email
+  When  I run Sylius CLI installer
+  Then  I should see output "This value should not be blank"
+
+Scenario 3: Trying to register administrator account with an incorrect email
+  Given  I do not provide a correct email
+  When  I run Sylius CLI installer
+  Then  I should see output "This value is not a valid email address."
+

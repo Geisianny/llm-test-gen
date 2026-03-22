@@ -1,0 +1,17 @@
+Scenario 1: Get customer info
+  When  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  When  I view the customer info via the site for "customer.one@example.org"
+  Then  I should see the limit info that "Feature Two" is limited to 25
+
+
+
+Scenario 2: Disabled
+  When  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  And  customer "customer.one@example.org" is disabled
+  When  I view the customer info via the site for "customer.one@example.org"
+  Then  I should see an empty limits response
+

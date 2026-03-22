@@ -1,0 +1,14 @@
+Scenario 1: Getting taxon root
+  Tags: ['@api']
+  When  I want to get taxon root
+  Then  I should see 4 taxons on the list
+  And  I should see the taxon named "Belts", "Wallets", "Watches" and "T-Shirts" in the list
+
+
+
+Scenario 2: Getting taxon leafs
+  Tags: ['@api']
+  When  I want to get children from taxon "Watches"
+  Then  I should see 2 taxons on the list
+  And  I should see the taxon named "Digital" and "Analog" in the list
+

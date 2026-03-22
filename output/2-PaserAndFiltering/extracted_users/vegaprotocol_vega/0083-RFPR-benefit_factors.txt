@@ -1,0 +1,110 @@
+Feature: Setting and applying referee benefit factors
+
+Background: 
+  Given  time is updated to "2023-01-01T00:00:00Z"
+  And  the average block duration is "1"
+  And  the margin calculator named "margin-calculator-1":
+  And  the log normal risk model named "log-normal-risk-model":
+  And  the price monitoring named "price-monitoring":
+  Given  the following network parameters are set:
+  Given  the referral benefit tiers "rbt":
+  And  the referral staking tiers "rst":
+  And  the referral program:
+  And  the network moves ahead "1" epochs
+  And  the following assets are registered:
+  And  the markets:
+  And  the liquidity monitoring parameters:
+  When  the markets are updated:
+  Given  the parties deposit on asset's general account the following amount:
+  Given  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  And  the opening auction period ends for market "ETH/USD.1.1"
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/USD.1.1"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/USD.1.2"
+  Given  the parties create the following referral codes:
+  And  the parties apply the following referral codes:
+  And  the team "team1" has the following members:
+
+Scenario 1: Referee incurs fees during continuous trading (0029-FEES-023)(0029-FEES-025)
+  Given  the parties place the following orders:
+  When  the network moves ahead "2" epochs
+  Then  the referral set stats for code "referral-code-1" at epoch "2" should have a running volume of 2000:
+  Given  the parties place the following orders:
+  When  the following trades should be executed:
+  Then  the following transfers should happen:
+
+Scenario 2: Referrer incurs fees during continuous trading (0029-FEES-023)(0029-FEES-025)
+  Given  the parties place the following orders:
+  When  the network moves ahead "2" epochs
+  Then  the referral set stats for code "referral-code-1" at epoch "2" should have a running volume of 2000:
+  Given  the parties place the following orders:
+  When  the following trades should be executed:
+  Then  the following transfers should happen:
+
+Scenario 3: Referee incurs fees when exiting an auction (0029-FEES-024)(0029-FEES-026)
+  Given  the parties place the following orders:
+  When  the network moves ahead "2" epochs
+  Then  the referral set stats for code "referral-code-1" at epoch "2" should have a running volume of 2000:
+  Given  the parties submit the following liquidity provision:
+  And  the network moves ahead "1" epochs
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/USD.1.1"
+  When  the parties place the following orders:
+  Then  the following trades should be executed:
+  And  the parties submit the following liquidity provision:
+  And  the network moves ahead "1" epochs
+  And  the following transfers should happen:
+
+Scenario 4: Referrer incurs fees when exiting an auction (0029-FEES-024)(0029-FEES-026)
+  Given  the parties place the following orders:
+  When  the network moves ahead "2" epochs
+  Then  the referral set stats for code "referral-code-1" at epoch "2" should have a running volume of 2000:
+  And  the market data for the market "ETH/USD.1.2" should be:
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/USD.1.2" should be:
+  When  the parties place the following orders:
+  And  the network moves ahead "1" epochs
+  And  the network moves ahead "3" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/USD.1.2"
+  And  the following trades should be executed:
+  And  the following transfers should happen:
+
+Scenario 5: Insufficent fees after discounts applied to pay a referral commision to the referrer (0029-FEES-029)
+  Given  the parties place the following orders:
+  When  the network moves ahead "2" epochs
+  Then  the referral set stats for code "referral-code-1" at epoch "2" should have a running volume of 2000:
+  Given  the parties place the following orders:
+  When  the following trades should be executed:
+  Then  the following transfers should happen:
+
+Scenario 6: Insufficent fees to be able to apply a referral discount discount for the referee (0029-FEES-030)
+  Given  the parties place the following orders:
+  When  the network moves ahead "2" epochs
+  Then  the referral set stats for code "referral-code-1" at epoch "2" should have a running volume of 2000:
+  Given  the parties place the following orders:
+  When  the following trades should be executed:
+  Then  the following transfers should happen:
+
+Scenario 7: Referal reward factor set greater than referralProgram.maxReferralRewardProportion (0029-FEES-029, 0029-FEES-031)
+  Given  the parties place the following orders:
+  When  the network moves ahead "3" epochs
+  Then  the referral set stats for code "referral-code-1" at epoch "3" should have a running volume of 3000:
+  Given  the parties place the following orders:
+  When  the following trades should be executed:
+  Then  the following transfers should happen:
+
+Scenario Outline 8: Referral set generates variable running taker volume with a referee with variable epochs in set (0083-RFPR-036)(0083-RFPR-037)(0083-RFPR-038)(0083-RFPR-039)(0083-RFPR-040) - Example 1
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  the referral set stats for code "referral-code-1" at epoch "1" should have a running volume of 1000:
+  Given  the parties place the following orders:
+
+  Examples:
+    | initial volume | running volume | time in set | max infra reward factor | max maker reward factor | max liquidity reward factor | max infra discount factor | max maker discount factor | max liquidity discount factor |
+    | 10 | 1000 | "1" | 0 | 0 | 0 | 0 | 0 | 0 |
+    | 10 | 1000 | "4" | 0 | 0 | 0 | 0 | 0 | 0 |
+    | 20 | 2000 | "1" | 0.021 | 0.022 | 0.023 | 0 | 0 | 0 |
+    | 30 | 3000 | "2" | 0.21 | 0.22 | 0.23 | 0.024 | 0.025 | 0.026 |
+    | 20 | 2000 | "3" | 0.021 | 0.022 | 0.023 | 0.024 | 0.025 | 0.026 |
+    | 30 | 3000 | "3" | 0.21 | 0.22 | 0.23 | 0.24 | 0.25 | 0.26 |
+

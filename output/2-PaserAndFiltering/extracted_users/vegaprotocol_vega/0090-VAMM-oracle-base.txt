@@ -1,0 +1,108 @@
+Feature: vAMM with oracle driven base price
+
+Background: 
+  Given  the following assets are registered:
+  And  the perpetual oracles from "0xCAFECAFE1":
+  And  the liquidity sla params named "SLA":
+  And  the liquidity monitoring parameters:
+  And  the markets:
+  And  the following network parameters are set:
+  And  the average block duration is "1"
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/MAR22"
+  Then  the following trades should be executed:
+
+Scenario 1: 0090-VAMM-038 It's possible to setup the vAMM so that it uses one of the oracles already available for the market in which it operates for its `base price`. In that case the deployment attempt should be deferred until the next value is received from the oracle.
+  Tags: ['@VAMM']
+  Then  the parties submit the following AMM:
+  Then  the AMM pool status should be:
+  And  set the following AMM sub account aliases:
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  Then  the AMM pool status should be:
+  Then  the market data for the market "ETH/MAR22" should be:
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  Then  the market data for the market "ETH/MAR22" should be:
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  Then  the market data for the market "ETH/MAR22" should be:
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  Then  the market data for the market "ETH/MAR22" should be:
+
+Scenario 2: 0090-VAMM-039 AMM has a static base price and amends itself to a oracle drive base price
+  Tags: ['@VAMM']
+  Then  the parties submit the following AMM:
+  Then  the AMM pool status should be:
+  And  set the following AMM sub account aliases:
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  And  the market data for the market "ETH/MAR22" should be:
+  Then  the parties amend the following AMM:
+  Then  the AMM pool status should be:
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  Then  the market data for the market "ETH/MAR22" should be:
+
+Scenario 3: AMM has a static base price and amends itself to a oracle drive base price where old base it out of range
+  Tags: ['@VAMM']
+  Then  the parties submit the following AMM:
+  Then  the AMM pool status should be:
+  And  set the following AMM sub account aliases:
+  And  the market data for the market "ETH/MAR22" should be:
+  Then  the parties amend the following AMM:
+  Then  the AMM pool status should be:
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  Then  the market data for the market "ETH/MAR22" should be:
+
+Scenario 4: 0090-VAMM-040, 0090-VAMM-041 base only gets update if difference in price is less that minimum price change trigger
+  Tags: ['@VAMM']
+  Then  the parties submit the following AMM:
+  Then  the AMM pool status should be:
+  And  set the following AMM sub account aliases:
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  And  the market data for the market "ETH/MAR22" should be:
+  Then  the network moves ahead "1" blocks
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  And  the market data for the market "ETH/MAR22" should be:
+
+Scenario 5: 0090-VAMM-042 updated base price is good, but slippage to rebase prevents it
+  Tags: ['@VAMM']
+  Then  the parties submit the following AMM:
+  Then  the AMM pool status should be:
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  Then  the AMM pool status should be:
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/MAR22" should be:
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  Then  the market data for the market "ETH/MAR22" should be:
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  Then  the AMM pool status should be:
+  Then  the market data for the market "ETH/MAR22" should be:
+
+Scenario 6: 0090-VAMM-043 AMM amendment uses slippage straight away
+  Tags: ['@VAMM']
+  Then  the parties submit the following AMM:
+  Then  the AMM pool status should be:
+  And  the market data for the market "ETH/MAR22" should be:
+  Then  the parties amend the following AMM:
+  Then  the AMM pool status should be:
+  When  the parties place the following orders:
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the oracles broadcast data with block time signed with "0xCAFECAFE1":
+  Then  the AMM pool status should be:
+
+Scenario 7: 0090-VAMM-043 AMM amended into pending AMM cannot be set into reduce only
+  Tags: ['@VAMM']
+  Then  the parties submit the following AMM:
+  Then  the AMM pool status should be:
+  When  the parties place the following orders:
+  Then  the parties amend the following AMM:
+  Then  the AMM pool status should be:
+  Then  the parties cancel the following AMM:
+  Then  the parties cancel the following AMM:
+  Then  the AMM pool status should be:
+

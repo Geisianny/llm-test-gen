@@ -1,0 +1,55 @@
+Scenario 1: Create a resource
+  Tags: ['@createSchema']
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/dummy_validation" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+
+
+
+Scenario 2: Create a resource with validation
+  Tags: ['@createSchema']
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/dummy_validation/validation_groups" with body:
+  Then  the response status code should be 422
+  And  the response should be in JSON
+  And  the JSON should be a superset of:
+  And  the header "Content-Type" should be equal to "application/problem+json; charset=utf-8"
+
+
+
+Scenario 3: Create a resource with validation group sequence
+  Tags: ['@createSchema']
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/dummy_validation/validation_sequence" with body:
+  Then  the response status code should be 422
+  And  the response should be in JSON
+  And  the JSON should be a superset of:
+  And  the header "Content-Type" should be equal to "application/problem+json; charset=utf-8"
+
+
+
+Scenario 4: Create a resource with serializedName property
+  Tags: ['@createSchema']
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "dummy_validation_serialized_name" with body:
+  Then  the response status code should be 422
+  And  the response should be in JSON
+  And  the JSON node "violations[0].message" should be equal to "This value should not be null."
+  And  the JSON node "violations[0].propertyPath" should be equal to "test"
+  And  the JSON node "detail" should be equal to "test: This value should not be null."
+  And  the header "Content-Type" should be equal to "application/problem+json; charset=utf-8"
+
+
+
+Scenario 5: Get violations constraints
+  Tags: ['@createSchema', '@!mongodb']
+  When  I add "Accept" header equal to "application/json"
+  And  I add "Content-Type" header equal to "application/json"
+  And  I send a "POST" request to "/issue5912s" with body:
+  Then  the response status code should be 422
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+  And  the header "Content-Type" should be equal to "application/problem+json; charset=utf-8"
+

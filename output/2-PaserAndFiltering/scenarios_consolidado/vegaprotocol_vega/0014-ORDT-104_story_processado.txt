@@ -1,0 +1,10 @@
+Scenario 1: In Spot market, cancelling an iceberg order will cancel the order, remove it from the order book,
+  When  the parties place the following iceberg orders:
+  And  "party1" should have holding account balance of "100" for asset "ETH"
+  And  "party1" should have general account balance of "9890" for asset "ETH"
+  Then  the order book should have the following volumes for market "BTC/ETH":
+  When  the parties cancel the following orders:
+  And  "party1" should have holding account balance of "0" for asset "ETH"
+  And  "party1" should have general account balance of "9990" for asset "ETH"
+  Then  the order book should have the following volumes for market "BTC/ETH":
+

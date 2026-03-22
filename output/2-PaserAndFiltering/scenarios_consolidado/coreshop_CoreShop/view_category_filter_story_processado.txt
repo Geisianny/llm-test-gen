@@ -1,0 +1,32 @@
+Scenario 1: latest products should still be
+  When  I check latest products
+  Then  I should see 6 products in the list
+
+
+
+Scenario 2: Filter with category list
+  Given  the site has a index "myindex" for class "CoreShopProduct" with type "mysql"
+  And  the index has following fields:
+  And  the site has a filter "myfilter" for index "myindex"
+  And  the filter has a condition with label "Topseller" and type "select" and a preselect for "Jacket"
+  And  the filter gets added to category "Coats"
+  And  I generate index "myindex" for products
+  When  I switch to category "Coats" on left menu
+  Then  I should see 1 products in the category list
+  And  I should see a filter with label "Topseller"
+  And  I select filter option "Rain Coat"
+  Then  I should see 1 products in the category list
+
+
+
+Scenario 3: Filter with search field
+  Given  the site has a index "myindex" for class "CoreShopProduct" with type "mysql"
+  And  the index has following fields:
+  And  the site has a filter "myfilter_search" for index "myindex"
+  And  the filter has a condition with label "Search" and type "search" on field "internalName"
+  And  the filter gets added to category "Coats"
+  And  I generate index "myindex" for products
+  When  I switch to category "Coats" on main menu
+  And  I type in search field "coat"
+  Then  I should see 2 products in the category list
+

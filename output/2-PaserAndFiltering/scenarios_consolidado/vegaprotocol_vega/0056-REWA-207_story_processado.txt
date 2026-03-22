@@ -1,0 +1,7 @@
+Scenario 1: Given a recurring transfer scoping a single market and specifying a non-zero target_notional_volume. If that market's volume is greater than the target, no more than the full reward amount is distributed. (0056-REWA-233).
+  Tags: ['@TeamStep']
+  Given  the parties submit the following recurring transfers:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  parties should have the following vesting account balances:
+

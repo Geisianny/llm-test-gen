@@ -1,0 +1,8 @@
+Scenario 1: The volume available is greater than the maximum auction size for pap therefore the maximum size is used in the auction. (0097-PAPI-025)
+  When  the protocol automated purchase is defined as:
+  Then  the oracles broadcast data with block time signed with "0xCAFECAFE2":
+  And  the network moves ahead "30" blocks
+  Then  the automated purchase program for market "BTC/ETH" should have a snapshot balance of "200"
+  And  the trading mode should be "TRADING_MODE_PROTOCOL_AUTOMATED_PURCHASE_AUCTION" for the market "BTC/ETH"
+  And  the order book should have the following volumes for market "BTC/ETH":
+

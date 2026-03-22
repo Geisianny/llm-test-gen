@@ -1,0 +1,178 @@
+Feature: invitation
+Description: As a noosfero visitor
+  I want to invite my friends to Noosfero
+
+Background: 
+  Given  the following users
+  And  the following communities
+  And  the following enterprises
+  And  I am logged in as "josesilva"
+
+Scenario 1: see link to invite friends
+  When  I am on /profile/josesilva/friends
+  Then  I should see "Invite people" link
+
+Scenario 2: see link to invite friends in myprofile
+  When  I am on /myprofile/josesilva/friends
+  Then  I should see "Invite people" link
+
+Scenario 3: go to invitation screen when follow link to invite friends
+  Given  I am on /myprofile/josesilva/friends
+  When  I follow "Invite people"
+  Then  I am on /profile/josesilva/invite/friends
+
+Scenario 4: back to friends after invite friends
+  Tags: ['@selenium']
+  Given  I am on /myprofile/josesilva/friends
+  And  I follow "Invite people"
+  And  I choose "Email"
+  And  I follow "Next"
+  And  I fill in "manual_import_addresses" with "misfits@devil.doll"
+  And  I follow "Personalize invitation mail"
+  And  I fill in "mail_template" with "Follow this link <url>"
+  When  I follow "Invite!"
+  Then  I should be on /profile/josesilva/friends
+
+Scenario 5: see link to invite members to community
+  When  I am on /profile/26-bsslines/members
+  Then  I should see "Invite people to join" link
+
+Scenario 6: not see link to invite members to community if has no rights
+  Given  I am logged in as "josesantos"
+  When  I am on /profile/26-bsslines/members
+  Then  I should not see "Invite people to join" link
+
+Scenario 7: go to invitation screen when follow link to invite members
+  Given  I am on /profile/26-bsslines/members
+  When  I follow "Invite people to join"
+  Then  I am on /profile/26-bsslines/invite/friends
+
+Scenario 8: see title when invite members
+  When  I am on /profile/26-bsslines/invite/friends
+  Then  I should see "Invite people to join"
+
+Scenario 9: not see link to invite members to enterprise
+  When  I am on /profile/beatles-for-sale/members
+  Then  I should not see "Invite people to join" link
+
+Scenario 10: deny access if user has no right to invite members
+  Given  I am logged in as "josesantos"
+  When  I am on /profile/26-bsslines/invite/friends
+  Then  I should see "Access denied"
+
+Scenario 11: not see link to invite members to enterprise in manage members
+  Given  I am on Beatles For Sale's members management
+  Then  I should not see "Invite people to join" link
+
+Scenario 12: back to members after invite friends to join a community
+  Tags: ['@selenium']
+  Given  I am on 26 Bsslines's members management
+  And  I follow "Invite people"
+  And  I choose "Email"
+  And  I follow "Next"
+  And  I fill in "manual_import_addresses" with "misfits@devil.doll"
+  And  I follow "Personalize invitation mail"
+  And  I fill in "mail_template" with "Follow this link <url>"
+  When  I follow "Invite!"
+  Then  I should be on /profile/26-bsslines/members
+
+Scenario 13: noosfero user receives a task when a user invites to join a community
+  Tags: ['@selenium']
+  Given  I am on 26 Bsslines's members management
+  And  I follow "Invite people"
+  And  I choose "Email"
+  And  I follow "Next"
+  And  I fill in "manual_import_addresses" with "santos@invalid.br"
+  And  I follow "Personalize invitation mail"
+  And  I fill in "mail_template" with "Follow this link <url>"
+  And  I follow "Invite!"
+  Given  there are no pending jobs
+  When  I am logged in as "josesantos"
+  And  I go to josesantos's control panel
+  And  I follow "Tasks" within "#section-profile"
+  Then  I should see "Community invitation" within ".task-title"
+  And  I should see "26 Bsslines" within ".task-information"
+
+Scenario 14: noosfero user accepts to join community through tasks
+  Tags: ['@selenium']
+  Given  I invite email "santos@invalid.br" to join community "26 Bsslines"
+  And  there are no pending jobs
+  When  I am logged in as "josesantos"
+  And  I go to josesantos's control panel
+  And  I follow "Tasks"
+  And  I should see "josesilva invited you to join 26 Bsslines."
+  And  I choose "Accept"
+  And  I follow "Save tasks"
+  Then  I should not see "josesilva invited you to join 26 Bsslines."
+  When  I go to josesantos's control panel
+  And  I follow "Groups" within "#section-relationships"
+  Then  I should see "26 Bsslines"
+
+Scenario 15: noosfero user rejects to join community
+  Tags: ['@selenium']
+  Given  I invite email "santos@invalid.br" to join community "26 Bsslines"
+  And  there are no pending jobs
+  When  I am logged in as "josesantos"
+  And  I go to josesantos's control panel
+  And  I follow "Tasks"
+  And  I should see "josesilva invited you to join 26 Bsslines."
+  And  I choose "Reject"
+  And  I follow "Save tasks"
+  Then  I should not see "josesilva invited you to join 26 Bsslines."
+  And  I go to josesantos's control panel
+  And  I follow "Groups" within "#section-relationships"
+  Then  I should not see "26 Bsslines"
+
+Scenario 16: noosfero user receives a task when a user invites to be friend
+  Tags: ['@selenium']
+  Given  I am on josesilva's control panel
+  And  I follow "Friends" within "#section-relationships"
+  And  I follow "Invite people"
+  And  I choose "Email"
+  And  I follow "Next"
+  And  I fill in "manual_import_addresses" with "santos@invalid.br"
+  And  I follow "Personalize invitation mail"
+  And  I fill in "mail_template" with "Follow this link <url>"
+  And  I follow "Invite!"
+  Given  there are no pending jobs
+  When  I am logged in as "josesantos"
+  And  I go to josesantos's control panel
+  And  I follow "menu-toggle"
+  Then  I should see "Friend invitation"
+  Then  I should see "josesilva wants to be your friend."
+
+Scenario 17: noosfero user accepts to be friend through tasks
+  Tags: ['@selenium']
+  Given  I am logged in as "josesilva"
+  And  I go to josesilva's control panel
+  And  I invite email "santos@invalid.br" to be my friend
+  And  there are no pending jobs
+  When  I am logged in as "josesantos"
+  And  I go to josesantos's control panel
+  And  I follow "Tasks"
+  And  I should see "josesilva wants to be your friend."
+  And  I follow "View task details"
+  And  I fill in "Classify your new friend" with "friends" within "#on-accept-information-1"
+  And  I choose "Accept"
+  And  I follow "Save tasks"
+  When  I go to josesantos's control panel
+  And  I follow "Friends"
+  Then  I should see "josesilva"
+
+Scenario 18: noosfero user rejects to be friend through tasks
+  Tags: ['@selenium']
+  Given  I am logged in as "josesilva"
+  And  I go to josesilva's control panel
+  And  I invite email "santos@invalid.br" to be my friend
+  And  there are no pending jobs
+  When  I am logged in as "josesantos"
+  And  I go to josesantos's control panel
+  And  I follow "Tasks"
+  And  I should see "josesilva wants to be your friend."
+  And  I choose "Reject"
+  And  I follow "Save tasks"
+  And  I should not see "josesilva wants to be your friend."
+  When  I go to josesantos's control panel
+  And  I follow "Friends" within "#section-relationships"
+  Then  I should not see "josesilva"
+

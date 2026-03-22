@@ -1,0 +1,20 @@
+Feature: Ensure network party are generated
+
+Background: 
+  Given  the markets:
+  And  the following network parameters are set:
+
+Scenario 1: Implement trade and order network
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  When  the parties place the following orders "1" blocks apart:
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  When  the parties place the following orders:
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  When  the parties place the following orders "1" blocks apart:
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  debug trades
+  Then  the following network trades should be executed:
+

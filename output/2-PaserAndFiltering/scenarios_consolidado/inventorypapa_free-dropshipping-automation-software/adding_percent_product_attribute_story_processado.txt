@@ -1,0 +1,16 @@
+Scenario 1: Adding a new percent product attribute
+  Tags: ['@ui']
+  Given  I want to create a new percent product attribute
+  When  I specify its code as "t_shirt_cotton_content"
+  And  I name it "T-shirt cotton content" in "English (United States)"
+  And  I add it
+  Then  I should be notified that it has been successfully created
+  And  the percent attribute "T-shirt cotton content" should appear in the store
+
+
+
+Scenario 2: Seeing disabled type field while adding a percent product attribute
+  Tags: ['@ui']
+  When  I want to create a new percent product attribute
+  Then  the type field should be disabled
+

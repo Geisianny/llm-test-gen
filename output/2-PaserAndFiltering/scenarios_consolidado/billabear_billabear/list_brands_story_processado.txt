@@ -1,0 +1,13 @@
+Scenario 1: List brands
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  When  I go to the brand list
+  Then  I should see the brand "Default"
+
+
+
+Scenario 2: List brands
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  the follow brands exist:
+  When  I go to the brand list
+  Then  I should see the brand "Example"
+

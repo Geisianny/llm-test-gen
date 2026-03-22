@@ -1,0 +1,37 @@
+Feature: Setting and applying activity streak benefits
+
+Background: 
+  Given  time is updated to "2023-01-01T00:00:00Z"
+  And  the average block duration is "1"
+  And  the following network parameters are set:
+  And  the following network parameters are set:
+  And  the following assets are registered:
+  And  the markets:
+  And  the liquidity monitoring parameters:
+  When  the markets are updated:
+  Given  the parties deposit on asset's general account the following amount:
+  Given  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  And  the opening auction period ends for market "ETH/USD.0.1"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/USD.0.1"
+
+Scenario Outline 1: Party builds an activity streak and receives greater benefits than an infrequently active trader (0086-ASPR-008)(0086-ASPR-009)(0086-ASPR-010) - Example 1
+  Given  the parties submit the following recurring transfers:
+  Given  the network moves ahead "1" epochs
+  And  the current epoch is "1"
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  the activity streaks at epoch "1" should be:
+  Given  the parties place the following orders:
+  Then  the network moves ahead "1" epochs
+  Then  "trader1" should have vesting account balance of "5000" for asset "USD.0.1"
+  Then  the network moves ahead "1" epochs
+  Then  "trader1" should have vested account balance of "1000" for asset "USD.0.1"
+
+  Examples:
+    | forward to epoch | active for | multipliers | vesting balance | vested balance |
+    | "1" | 1 | 1 | "5000" | "1000" |
+    | "3" | 3 | 2 | "6666" | "1333" |
+    | "6" | 6 | 3 | "7500" | "2250" |
+

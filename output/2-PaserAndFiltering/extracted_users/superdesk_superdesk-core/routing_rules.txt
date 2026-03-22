@@ -1,0 +1,138 @@
+Feature: Routing Scheme and Routing Rules
+
+Scenario 1: List empty routing schemes
+  Tags: ['@auth']
+  Given  empty "routing_schemes"
+  When  we get "/routing_schemes"
+  Then  we get list with 0 items
+
+Scenario 2: Create a valid Routing Scheme
+  Tags: ['@auth', '@vocabulary']
+  Given  empty "desks"
+  Given  empty "subscribers"
+  When  we post to "/subscribers" with success
+  Given  we have "/filter_conditions" with "FCOND_ID" and success
+  And  we have "/content_filters" with "FILTER_ID" and success
+  When  we post to "/desks"
+  And  we post to "/routing_schemes"
+  Then  we get response code 201
+  When  we get "/routing_schemes"
+  Then  we get existing resource
+  When  we post to "/routing_schemes"
+  Then  we get response code 201
+  When  we post to "/routing_schemes"
+  Then  we get response code 201
+
+Scenario 3: A Routing Scheme must have a unique name
+  Tags: ['@auth', '@vocabulary']
+  Given  empty "desks"
+  And  we have "/filter_conditions" with "FCOND_ID" and success
+  And  we have "/content_filters" with "FILTER_ID" and success
+  When  we post to "/desks"
+  And  we post to "/routing_schemes"
+  Then  we get response code 201
+  When  we post to "/routing_schemes"
+  Then  we get response code 400
+
+Scenario 4: Create an invalid Routing Scheme with no rules
+  Tags: ['@auth']
+  Given  empty "routing_schemes"
+  When  we post to "/routing_schemes"
+  Then  we get response code 400
+
+Scenario 5: Create an invalid Routing Scheme with rules having same name
+  Tags: ['@auth', '@vocabulary']
+  Given  empty "desks"
+  And  we have "/filter_conditions" with "FCOND_1_ID" and success
+  And  we have "/filter_conditions" with "FCOND_2_ID" and success
+  And  we have "/content_filters" with "FILTER_1_ID" and success
+  And  we have "/content_filters" with "FILTER_2_ID" and success
+  When  we post to "/desks"
+  And  we post to "/routing_schemes"
+  Then  we get response code 400
+
+Scenario 6: Create a valid Routing Scheme with an empty filter
+  Tags: ['@auth']
+  Given  empty "desks"
+  When  we post to "/desks"
+  When  we post to "/routing_schemes"
+  Then  we get response code 201
+
+Scenario 7: Create an invalid Routing Scheme with a empty actions
+  Tags: ['@auth', '@vocabulary']
+  Given  we have "/filter_conditions" with "FCOND_ID" and success
+  And  we have "/content_filters" with "FILTER_ID" and success
+  And  empty "routing_schemes"
+  When  we post to "/routing_schemes"
+  Then  we get response code 400
+
+Scenario 8: Create an invalid Routing Scheme with an invalid schedule
+  Tags: ['@auth', '@vocabulary']
+  Given  empty "routing_schemes"
+  Given  empty "desks"
+  Given  we have "/filter_conditions" with "FCOND_ID" and success
+  And  we have "/content_filters" with "FILTER_ID" and success
+  When  we post to "/desks"
+  Then  we get response code 201
+  When  we post to "/routing_schemes"
+  Then  we get response code 400
+  When  we post to "/routing_schemes"
+  Then  we get response code 400
+  When  we post to "/routing_schemes"
+  Then  we get response code 400
+  When  we post to "/routing_schemes"
+  Then  we get response code 400
+  When  we post to "/routing_schemes"
+  Then  we get response code 400
+  When  we post to "/routing_schemes"
+  Then  we get response code 201
+  When  we post to "/routing_schemes"
+  Then  we get response code 201
+
+Scenario 9: A user with no privilege to "routing schemes" can't create a Routing Scheme
+  Tags: ['@auth']
+  Given  we login as user "foo" with password "barword" and user type "user"
+  When  we post to "/routing_schemes"
+  Then  we get response code 403
+
+Scenario 10: Update Routing Scheme
+  Tags: ['@auth', '@vocabulary']
+  Given  empty "desks"
+  And  we have "/filter_conditions" with "FCOND_1_ID" and success
+  And  we have "/filter_conditions" with "FCOND_2_ID" and success
+  And  we have "/content_filters" with "FILTER_1_ID" and success
+  And  we have "/content_filters" with "FILTER_2_ID" and success
+  When  we post to "/desks"
+  And  we post to "/routing_schemes"
+  Then  we get response code 201
+  When  we patch "/routing_schemes/#routing_schemes._id#"
+  Then  we get response code 200
+
+Scenario 11: Delete a Routing Scheme
+  Tags: ['@auth', '@vocabulary']
+  Given  empty "desks"
+  Given  we have "/filter_conditions" with "FCOND_ID" and success
+  And  we have "/content_filters" with "FILTER_ID" and success
+  When  we post to "/desks"
+  And  we post to "/routing_schemes"
+  Then  we get response code 201
+  When  we delete "/routing_schemes/#routing_schemes._id#"
+  Then  we get response code 204
+
+Scenario 12: Delete routing scheme when in use
+  Tags: ['@auth']
+  Given  empty "desks"
+  When  we post to "/desks"
+  And  we post to "/routing_schemes"
+  And  we post to "ingest_providers"
+  When  we delete "/routing_schemes/#routing_schemes._id#"
+  Then  we get response code 403
+
+Scenario 13: Cannot delete desk when routing schemes are associated
+  Tags: ['@auth']
+  Given  empty "desks"
+  When  we post to "/desks"
+  And  we post to "/routing_schemes"
+  And  we delete "/desks/#desks._id#"
+  Then  we get error 412
+

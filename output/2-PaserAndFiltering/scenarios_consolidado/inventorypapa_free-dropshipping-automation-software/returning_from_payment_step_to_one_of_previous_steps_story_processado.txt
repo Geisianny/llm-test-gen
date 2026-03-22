@@ -1,0 +1,31 @@
+Scenario 1: Going back to shipping step with button
+  Tags: ['@ui', '@no-api']
+  Given  I have product "Hulk Mug" in the cart
+  And  I specified the billing address as "Ankh Morpork", "Frost Alley", "90210", "United States" for "Jon Snow"
+  And  I complete the shipping step
+  When  I decide to change order shipping method
+  Then  I should be redirected to the shipping step
+  And  I should be able to go to the payment step again
+
+
+
+Scenario 2: Going back to shipping step with steps panel
+  Tags: ['@ui', '@no-api']
+  Given  I have product "Hulk Mug" in the cart
+  And  I specified the billing address as "Ankh Morpork", "Frost Alley", "90210", "United States" for "Jon Snow"
+  And  I complete the shipping step
+  When  I go to the shipping step
+  Then  I should be redirected to the shipping step
+  And  I should be able to go to the payment step again
+
+
+
+Scenario 3: Going back to addressing step with steps panel
+  Tags: ['@ui', '@no-api']
+  Given  I have product "Hulk Mug" in the cart
+  And  I specified the billing address as "Ankh Morpork", "Frost Alley", "90210", "United States" for "Jon Snow"
+  And  I complete the shipping step
+  When  I go to the addressing step
+  Then  I should be redirected to the addressing step
+  And  I should be able to go to the shipping step again
+

@@ -1,0 +1,186 @@
+Scenario 1: As a logged-in user I can retrieve latitude & longitude of addresses near a given position
+  Given  I am logged with "michelle.dufour@example.ch" via OAuth client "JeMengage Mobile" with scope "jemarche_app"
+  When  I send a "GET" request to "/api/v3/pap/address/near?latitude=48.877018&longitude=2.32154&zoom=16"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 2: As a logged-in user I can retrieve full address information for a given address identifier
+  Given  I am logged with "michelle.dufour@example.ch" via OAuth client "JeMengage Mobile" with scope "jemarche_app"
+  When  I send a "GET" request to "/api/v3/pap/address/a0b9231b-9ff5-49b9-aa7a-1d28abbba32f"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 3: As a logged-in user I can retrieve the voter list for a given address identifier
+  Given  I am logged with "michelle.dufour@example.ch" via OAuth client "JeMengage Mobile" with scope "jemarche_app"
+  When  I send a "GET" request to "/api/v3/pap/address/a0b9231b-9ff5-49b9-aa7a-1d28abbba32f/voters"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 4: As a logged-in user I can retrieve the building block list for a given building identifier
+  Given  I am logged with "michelle.dufour@example.ch" via OAuth client "JeMengage Mobile" with scope "jemarche_app"
+  When  I send a "GET" request to "/api/v3/pap/buildings/faf30370-80c5-4a46-8c31-f6a361bfa23b/building_blocks"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 5: As a logged-in user I can retrieve the building block list for a given building identifier for a PAP campaign
+  Given  I am logged with "michelle.dufour@example.ch" via OAuth client "JeMengage Mobile" with scope "jemarche_app"
+  When  I send a "GET" request to "/api/v3/pap/buildings/faf30370-80c5-4a46-8c31-f6a361bfa23b/building_blocks?campaign_uuid=d0fa7f9c-e976-44ad-8a52-2a0a0d8acaf9"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 6: As a logged-in user I can open and close a building
+  Given  I am logged with "michelle.dufour@example.ch" via OAuth client "JeMengage Mobile" with scope "jemarche_app"
+  When  I send a "POST" request to "/api/v3/pap/buildings/2fbe7b02-944d-4abd-be3d-f9b2944917a9/events" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+  When  I send a "GET" request to "/api/v3/pap/address/a0b9231b-9ff5-49b9-aa7a-1d28abbba32f"
+  And  I wait 1 second
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+  When  I send a "POST" request to "/api/v3/pap/buildings/2fbe7b02-944d-4abd-be3d-f9b2944917a9/events" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+  When  I send a "GET" request to "/api/v3/pap/address/a0b9231b-9ff5-49b9-aa7a-1d28abbba32f"
+  And  I wait 1 second
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+  When  I send a "POST" request to "/api/v3/pap/buildings/2fbe7b02-944d-4abd-be3d-f9b2944917a9/events" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+  When  I send a "GET" request to "/api/v3/pap/address/a0b9231b-9ff5-49b9-aa7a-1d28abbba32f"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 7: As a logged-in user I can open and close a building block
+  Given  I am logged with "michelle.dufour@example.ch" via OAuth client "JeMengage Mobile" with scope "jemarche_app"
+  When  I send a "POST" request to "/api/v3/pap/buildings/2fbe7b02-944d-4abd-be3d-f9b2944917a9/events" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+  When  I send a "POST" request to "/api/v3/pap/buildings/2fbe7b02-944d-4abd-be3d-f9b2944917a9/events" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 8: As a logged-in user I can open and close a floor
+  Given  I am logged with "michelle.dufour@example.ch" via OAuth client "JeMengage Mobile" with scope "jemarche_app"
+  When  I send a "POST" request to "/api/v3/pap/buildings/2fbe7b02-944d-4abd-be3d-f9b2944917a9/events" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+  When  I send a "POST" request to "/api/v3/pap/buildings/2fbe7b02-944d-4abd-be3d-f9b2944917a9/events" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 9: As a logged-in user I cannot retrieve building history if no "campaign_uuid" passed
+  Given  I am logged with "michelle.dufour@example.ch" via OAuth client "JeMengage Mobile" with scope "jemarche_app"
+  When  I send a "GET" request to "/api/v3/pap/buildings/2bffd913-34fe-48ad-95f4-7381812b93dd/history"
+  Then  the response status code should be 400
+  And  the JSON should be equal to:
+
+
+
+Scenario 10: As a logged-in user I cannot retrieve building history for invalid campaign
+  Given  I am logged with "michelle.dufour@example.ch" via OAuth client "JeMengage Mobile" with scope "jemarche_app"
+  When  I send a "GET" request to "/api/v3/pap/buildings/2bffd913-34fe-48ad-95f4-7381812b93dd/history?campaign_uuid=d0fa7f9c-e976-44ad-8a52-2a0a0d8acaf8"
+  Then  the response status code should be 400
+  And  the JSON should be equal to:
+
+
+
+Scenario 11: As a logged-in user I can retrieve building history
+  Given  I am logged with "michelle.dufour@example.ch" via OAuth client "JeMengage Mobile" with scope "jemarche_app"
+  When  I send a "GET" request to "/api/v3/pap/buildings/2bffd913-34fe-48ad-95f4-7381812b93dd/history?campaign_uuid=d0fa7f9c-e976-44ad-8a52-2a0a0d8acaf9"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 12: As a logged-in user I cannot change building type with invalid type
+  Given  I am logged with "michelle.dufour@example.ch" via OAuth client "JeMengage Mobile" with scope "jemarche_app"
+  When  I send a "PUT" request to "api/v3/pap/buildings/faf30370-80c5-4a46-8c31-f6a361bfa23b" with body:
+  Then  the response status code should be 400
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario 13: As a logged-in user I can change building type
+  Given  I am logged with "michelle.dufour@example.ch" via OAuth client "JeMengage Mobile" with scope "jemarche_app"
+  When  I send a "PUT" request to "api/v3/pap/buildings/faf30370-80c5-4a46-8c31-f6a361bfa23b" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+
+
+Scenario Outline 14: As an anonymous I can not get address and voters information - Example 1
+  When  I send a "GET" request to "/api/v3/pap/address/near?latitude=48.879001640&longitude=2.3187434&zoom=15"
+  Then  the response status code should be 401
+
+  Examples:
+    | url |
+    | /api/v3/pap/address/near?latitude=48.879001640&longitude=2.3187434&zoom=15 |
+    | /api/v3/pap/address/near?latitude=48.879001640&longitude=2.3187434&latitudeDelta=0.02&longitudeDelta=0.01 |
+    | /api/v3/pap/address/a0b9231b-9ff5-49b9-aa7a-1d28abbba32f |
+    | /api/v3/pap/address/a0b9231b-9ff5-49b9-aa7a-1d28abbba32f/voters |
+    | /api/v3/pap/buildings/faf30370-80c5-4a46-8c31-f6a361bfa23b/building_blocks |
+    | /api/v3/pap/buildings/2bffd913-34fe-48ad-95f4-7381812b93dd/history |
+
+
+
+Scenario Outline 15: As a logged-in user with no PAP user role I cannot get and manage PAP campaigns - Example 1
+  Given  I am logged with "deputy-75-2@en-marche-dev.fr" via OAuth client "JeMengage Mobile" with scope "jemarche_app"
+  And  I send a "GET" request to "/api/v3/pap/buildings/faf30370-80c5-4a46-8c31-f6a361bfa23b/building_blocks"
+  Then  the response status code should be 403
+
+  Examples:
+    | method | url |
+    | GET | /api/v3/pap/buildings/faf30370-80c5-4a46-8c31-f6a361bfa23b/building_blocks |
+    | POST | /api/v3/pap/buildings/2fbe7b02-944d-4abd-be3d-f9b2944917a9/events |
+    | GET | /api/v3/pap/buildings/2bffd913-34fe-48ad-95f4-7381812b93dd/history |
+    | PUT | /api/v3/pap/buildings/2bffd913-34fe-48ad-95f4-7381812b93dd |
+
+
+
+Scenario Outline 16: As a logged-in user I can retrieve addresses near a given position ordered by distance - Example 1
+  Given  I am logged with "michelle.dufour@example.ch" via OAuth client "JeMengage Mobile" with scope "jemarche_app"
+  When  I send a "GET" request to "/api/v3/pap/address/near?latitude=48.879001640&longitude=2.3187434&latitudeDelta=0.02&longitudeDelta=0.01"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be a superset of:
+
+  Examples:
+    | latitude | longitude | latitudeDelta | longitudeDelta | addresses |
+    | 48.879001640 | 2.3187434 | 0.02 | 0.01 | [{"uuid": "ccfd846a-5439-42ad-85ce-286baf4e7269"}, {"uuid": "04e1d76f-c727-4612-afab-2dec2d71a480"}, {"uuid": "702eda29-39c6-4b3d-b28f-3fd3806747b2"}, {"uuid": "a0b9231b-9ff5-49b9-aa7a-1d28abbba32f"}] |
+    | 48.877018 | 2.32154 | 0.04 | 0.02 | [{"uuid": "a0b9231b-9ff5-49b9-aa7a-1d28abbba32f"}, {"uuid": "ccfd846a-5439-42ad-85ce-286baf4e7269"}, {"uuid": "04e1d76f-c727-4612-afab-2dec2d71a480"}, {"uuid": "702eda29-39c6-4b3d-b28f-3fd3806747b2"}] |
+

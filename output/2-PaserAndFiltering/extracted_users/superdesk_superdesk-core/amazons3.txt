@@ -1,0 +1,21 @@
+Feature: Amazon S3 integration
+
+Scenario 1: Upload image into archive with storage on amazon S3
+  Tags: ['@auth']
+  Given  config update
+  Given  empty "archive"
+  When  we upload a file "bike.jpg" to "archive"
+  When  we get "/archive"
+  Then  we get list with 1 items
+
+Scenario 2: Upload image into archive and check changed MEDIA_PREFIX
+  Tags: ['@auth']
+  Given  config update
+  Given  empty "archive"
+  When  we upload a file "bike.jpg" to "archive"
+  When  we get "/archive"
+  Then  we get list with 1 items
+  Given  config update
+  When  we get "/archive"
+  Then  we get list with 1 items
+

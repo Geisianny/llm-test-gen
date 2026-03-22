@@ -1,0 +1,14 @@
+Scenario 1: Having a variant's image displayed in the cart
+  Tags: ['@ui', '@no-api']
+  When  I add "Medium logo" variant of this product to the cart
+  Then  I should be on my cart summary page
+  And  1st item in my cart should have "ford.jpg" image displayed
+
+
+
+Scenario 2: Having a product's image displayed in the cart if variant does not have one
+  Tags: ['@ui', '@no-api']
+  When  I add "Small logo" variant of this product to the cart
+  Then  I should be on my cart summary page
+  And  1st item in my cart should have "lamborghini.jpg" image displayed
+

@@ -1,0 +1,30 @@
+Feature: Spot market
+
+Background: 
+  Given  the following network parameters are set:
+  Given  the following assets are registered:
+  Given  the fees configuration named "fees-config-1":
+  Given  the log normal risk model named "lognormal-risk-model-1":
+  And  the price monitoring named "price-monitoring-1":
+  And  the spot markets:
+  Given  the parties deposit on asset's general account the following amount:
+  And  the average block duration is "1"
+  And  the parties place the following orders:
+  And  the opening auction period ends for market "BTC/ETH"
+  When  the network moves ahead "1" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+
+Scenario 1: Immediate orders, continuous trading an aggressive persistent (GTC) limit order that crosses with trades >= to its volume
+  Description: is filled completely and does not appear on the order book or in the order book volume. Trades are atomically generated for the
+            full volume. (0014-ORDT-082)
+  And  the parties place the following orders:
+  And  the parties place the following orders:
+  And  the orders should have the following status:
+
+Scenario 2: Immediate orders, continuous trading an aggressive persistent (GTT) limit order that crosses with trades >= to its volume
+  Description: is filled completely and does not appear on the order book or in the order book volume. Trades are atomically generated for the
+            full volume. (0014-ORDT-082)
+  And  the parties place the following orders:
+  And  the parties place the following orders:
+  And  the orders should have the following status:
+

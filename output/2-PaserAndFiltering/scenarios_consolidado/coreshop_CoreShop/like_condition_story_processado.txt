@@ -1,0 +1,34 @@
+Scenario 1: Create a like both condition and render it
+  Given  there is a like condition with field-name "XY" and pattern "both" and value "blub"
+  Then  the condition rendered for "mysql" should look like "`XY` LIKE '%blub%'"
+
+
+
+Scenario 2: Create a like right condition and render it
+  Given  there is a like condition with field-name "XY" and pattern "right" and value "blub"
+  Then  the condition rendered for "mysql" should look like "`XY` LIKE 'blub%'"
+
+
+
+Scenario 3: Create a like left condition and render it
+  Given  there is a like condition with field-name "XY" and pattern "left" and value "blub"
+  Then  the condition rendered for "mysql" should look like "`XY` LIKE '%blub'"
+
+
+
+Scenario 4: Create a not-like both condition and render it
+  Given  there is a not-like condition with field-name "XY" and pattern "both" and value "blub"
+  Then  the condition rendered for "mysql" should look like "`XY` NOT LIKE '%blub%'"
+
+
+
+Scenario 5: Create a not-like right condition and render it
+  Given  there is a not-like condition with field-name "XY" and pattern "right" and value "blub"
+  Then  the condition rendered for "mysql" should look like "`XY` NOT LIKE 'blub%'"
+
+
+
+Scenario 6: Create a not-like left condition and render it
+  Given  there is a not-like condition with field-name "XY" and pattern "left" and value "blub"
+  Then  the condition rendered for "mysql" should look like "`XY` NOT LIKE '%blub'"
+

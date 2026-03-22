@@ -1,0 +1,16 @@
+Scenario 1: Filtering product association types by name
+  Tags: ['@ui', '@api']
+  When  I want to browse product association types
+  And  I filter product association types with name containing "Up"
+  Then  I should see only one product association type in the list
+  And  I should see the product association type "Up sell" in the list
+
+
+
+Scenario 2: Filtering product association types by code
+  Tags: ['@ui', '@api']
+  When  I want to browse product association types
+  And  I filter product association types with code containing "cross"
+  Then  I should see only one product association type in the list
+  And  I should see the product association type "Cross sell" in the list
+

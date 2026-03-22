@@ -1,0 +1,33 @@
+Scenario 1: List users
+  When  I call user.list_users()
+  Then  I should get at least user "admin"
+
+
+
+Scenario 2: List roles
+  When  I call user.list_roles() on user "admin"
+  Then  I should get at least one role that matches "_admin" suffix
+
+
+
+Scenario 3: Create user
+  When  I make sure "testuser" is not present
+  And  I call user.create() with login "testuser"
+  And  I call user.list_users()
+  Then  I should get at least user "testuser"
+
+
+
+Scenario 4: Role operations
+  When  I call user.add_role() on "testuser" with the role "org_admin"
+  And  I call user.list_roles() on user "testuser"
+  Then  I should get role "org_admin"
+  When  I call user.remove_role() on "testuser" with the role "org_admin"
+  And  I call user.list_roles() on user "testuser"
+  Then  I should not get role "org_admin"
+
+
+
+Scenario 5: Cleanup: user tests
+  When  I delete user "testuser"
+

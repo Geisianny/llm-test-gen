@@ -1,0 +1,54 @@
+Feature: Products
+
+Scenario 1: Update a product with publish filter
+  Tags: ['@auth', '@vocabulary']
+  Given  empty "filter_conditions"
+  When  we post to "/filter_conditions" with success
+  Then  we get latest
+  Given  empty "content_filters"
+  When  we post to "/content_filters" with success
+  Then  we get latest
+  Given  empty "subscribers"
+  When  we post to "/products" with success
+  And  we post to "/subscribers" with success
+  When  we patch "/products/#products._id#"
+  Then  we get updated response
+  When  we patch "/products/#products._id#"
+  Then  we get error 400
+  When  we post to "/products" with success
+  Then  we get OK response
+  When  we patch "/subscribers/#subscribers._id#"
+  Then  we get OK response
+  When  we patch "/products/#products._id#"
+  Then  we get OK response
+
+Scenario 2: Create or Update a product with no product type
+  Tags: ['@auth', '@vocabulary']
+  When  we post to "/products"
+  Then  we get new resource
+  When  we post to "/products"
+  Then  we get OK response
+  When  we patch "/products/#products._id#"
+  Then  we get error 400
+
+Scenario 3: Delete a product associated with subscriber fails
+  Tags: ['@auth', '@vocabulary']
+  Given  empty "filter_conditions"
+  When  we post to "/filter_conditions" with success
+  Then  we get latest
+  Given  empty "content_filters"
+  When  we post to "/content_filters" with success
+  Then  we get latest
+  Given  empty "subscribers"
+  When  we post to "/products" with success
+  And  we post to "/subscribers" with success
+  When  we delete "/products/#products._id#"
+  Then  we get error 400
+  When  we post to "/products" with success
+  And  we post to "/subscribers" with success
+  When  we delete "/products/#products._id#"
+  Then  we get error 400
+  When  we post to "/products" with success
+  When  we delete "/products/#products._id#"
+  Then  we get OK response
+

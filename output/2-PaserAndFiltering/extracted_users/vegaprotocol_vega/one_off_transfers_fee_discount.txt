@@ -1,0 +1,104 @@
+Feature: Test fee discounts for one off transfers
+
+Background: 
+  Given  time is updated to "2021-08-26T00:00:00Z"
+  And  the following network parameters are set:
+  And  the markets:
+  And  the following network parameters are set:
+  And  the parties deposit on asset's general account the following amount:
+  When  the parties deposit on asset's general account the following amount:
+  Then  the parties submit the following liquidity provision:
+  And  the parties place the following orders:
+  And  the opening auction period ends for market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  the following transfers should happen:
+
+Scenario 1: 0057-TRAN-021 when a party paid taker fee g in previous epoch, and transfer.feeDiscountDecayFraction = 0.9, then in the next epoch when a party (did not generate any fees) makes a transfer and the theoretical fee the party should pay is f, fee-free amount is then c = 0.9 x g. If c > f, then no transfer fee is paid. And a party makes another transfer, and the theoretical fee the party should pay is f, then the party is not getting any fee-free discount
+  Tags: ['@transfer', '@fee-discount']
+  Given  the parties have the following transfer fee discounts:
+  When  the network moves ahead "1" epochs
+  Then  the parties have the following transfer fee discounts:
+  Given  the parties submit the following one off transfers:
+  And  time is updated to "2021-08-26T00:00:10Z"
+  When  the parties have the following transfer fee discounts:
+  Then  the following transfers should happen:
+  Given  the parties submit the following one off transfers:
+  When  the parties have the following transfer fee discounts:
+  Then  the following transfers should happen:
+
+Scenario 2: 0057-TRAN-020 and 0057-TRAN-022 when a party made maker fee g in previous epoch, and transfer.feeDiscountDecayFraction = 0.9, then in the next epoch when a party (did not generate any fees) makes a transfer and the theoretical fee the party should pay is f, fee-free amount is then c = 0.9 x g. If c > f, then no transfer fee is paid. And a party makes another transfer, and the theoretical fee the party should pay is f, then the party is not getting any fee-free discount
+  Tags: ['@transfer', '@fee-discount']
+  Given  the parties have the following transfer fee discounts:
+  When  the network moves ahead "1" epochs
+  Then  the parties have the following transfer fee discounts:
+  Given  the parties submit the following one off transfers:
+  And  time is updated to "2021-08-26T00:00:10Z"
+  When  the parties have the following transfer fee discounts:
+  Then  the following transfers should happen:
+  Given  the parties submit the following one off transfers:
+  When  the parties have the following transfer fee discounts:
+  Then  the following transfers should happen:
+
+Scenario 3: 0057-TRAN-027 when a party makes a transfer and f would be the theoretical fee the party should pay then the fee on the transfer that is actually charged is -min(f-c,0). The system subsequently updates c <- max(0,c-f). At the end of epoch, update c <- c x D and c <- c + all_trading_fees_for_trades_involved_in, if c < M x quantum(M is transfer.feeDiscountMinimumTrackedAmount), then set c <- 0
+  Tags: ['@transfer', '@fee-discount']
+  Given  the parties have the following transfer fee discounts:
+  And  the following network parameters are set:
+  And  the following assets are updated:
+  When  the network moves ahead "1" epochs
+  Then  the parties have the following transfer fee discounts:
+  Given  the parties submit the following one off transfers:
+  When  time is updated to "2021-08-26T00:00:10Z"
+  Then  the parties have the following transfer fee discounts:
+  Given  the following transfers should happen:
+  When  the network moves ahead "1" epochs
+  Then  the parties have the following transfer fee discounts:
+
+Scenario 4: 0057-TRAN-027 when a party makes a transfer and f would be the theoretical fee the party should pay then the fee on the transfer that is actually charged is -min(f-c,0). The system subsequently updates c <- max(0,c-f). At the end of epoch, update c <- c x D and c <- c + all_trading_fees_for_trades_involved_in, if c < M x quantum(M is transfer.feeDiscountMinimumTrackedAmount), then set c <- 0
+  Tags: ['@transfer', '@fee-discount']
+  Given  the parties have the following transfer fee discounts:
+  And  the following network parameters are set:
+  And  the following assets are updated:
+  Given  the parties submit the following one off transfers:
+  When  time is updated to "2021-08-26T00:00:10Z"
+  Then  the parties have the following transfer fee discounts:
+  And  the following transfers should happen:
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  the following transfers should happen:
+  And  the parties have the following transfer fee discounts:
+
+Scenario 5: 0057-TRAN-027 when a party makes a transfer and f would be the theoretical fee the party should pay then the fee on the transfer that is actually charged is -min(f-c,0). The system subsequently updates c <- max(0,c-f). At the end of epoch, update c <- c x D and c <- c + all_trading_fees_for_trades_involved_in, if c < M x quantum(M is transfer.feeDiscountMinimumTrackedAmount), then set c <- 0
+  Tags: ['@transfer', '@fee-discount']
+  Given  the parties have the following transfer fee discounts:
+  And  the following network parameters are set:
+  And  the following assets are updated:
+  Given  the parties submit the following one off transfers:
+  When  time is updated to "2021-08-26T00:00:10Z"
+  Then  the parties have the following transfer fee discounts:
+  And  the following transfers should happen:
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  the following transfers should happen:
+  And  the parties have the following transfer fee discounts:
+
+Scenario 6: 0057-TRAN-024 when a party received maker fee f in previous epoch, and transfer.feeDiscountDecayFraction = 0.9, then in 3 epochs the fee-free discount amount would be c = 0.9^3 x f, when a party makes a transfer and the theoretical fee the party should pay is f1, and f1 <= 0.729 x f, then no amount is paid for transfer
+  Tags: ['@transfer', '@fee-discount']
+  Given  the parties have the following transfer fee discounts:
+  When  the network moves ahead "1" epochs
+  Then  the parties have the following transfer fee discounts:
+  Given  the parties have the following transfer fee discounts:
+  When  the network moves ahead "1" epochs
+  Then  the parties have the following transfer fee discounts:
+  Given  the parties have the following transfer fee discounts:
+  When  the network moves ahead "1" epochs
+  Then  the parties have the following transfer fee discounts:
+  Given  the parties submit the following one off transfers:
+  And  time is updated to "2021-08-26T00:00:10Z"
+  When  the parties have the following transfer fee discounts:
+  Then  the following transfers should happen:
+  Given  the parties submit the following one off transfers:
+  When  the parties have the following transfer fee discounts:
+  Then  the following transfers should happen:
+

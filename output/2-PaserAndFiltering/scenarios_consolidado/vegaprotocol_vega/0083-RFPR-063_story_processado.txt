@@ -1,0 +1,28 @@
+Scenario 1: 0083-RFPR-063 Joining a closed team while not on the allow list should fail
+  Tags: ['@Closed']
+  Given  the parties submit the following recurring transfers:
+  When  the parties apply the following referral codes:
+  Then  the team "team2" has the following members:
+  And  the team "team1" has the following members:
+  And  the team "team3" has the following members:
+  When  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  "referee1" should have vesting account balance of "5714" for asset "USD-1-10"
+  And  "referee2" should have vesting account balance of "2142" for asset "USD-1-10"
+  And  "referee3" should have vesting account balance of "2142" for asset "USD-1-10"
+
+
+
+Scenario 2: 0083-RFPR-063 Joining a closed team while not on the allow list should fail, team with non-empty join list
+  Tags: ['@Closed']
+  Given  the parties submit the following recurring transfers:
+  When  the parties apply the following referral codes:
+  Then  the team "team2" has the following members:
+  And  the team "team1" has the following members:
+  And  the team "team3" has the following members:
+  When  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  "referee1" should have vesting account balance of "5714" for asset "USD-1-10"
+  And  "referee2" should have vesting account balance of "2142" for asset "USD-1-10"
+  And  "referee3" should have vesting account balance of "2142" for asset "USD-1-10"
+

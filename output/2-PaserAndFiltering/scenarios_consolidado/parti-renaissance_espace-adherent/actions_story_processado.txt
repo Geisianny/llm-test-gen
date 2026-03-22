@@ -1,0 +1,28 @@
+Scenario 1: As a logged-in VOX user I can create and update an actions
+  Given  I am logged with "president-ad@renaissance-dev.fr" via OAuth client "J'écoute" with scope "jemarche_app"
+  And  I send a "POST" request to "/api/v3/actions?scope=president_departmental_assembly" with body:
+  Then  the response status code should be 201
+  And  the JSON should be equal to:
+  And  I should have 1 notification "ActionCreatedNotification" with data:
+  When  I save this response
+  And  I send a "PUT" request to "/api/v3/actions/:last_response.uuid:?scope=president_departmental_assembly" with body:
+  Then  the response status code should be 200
+  And  the JSON should be equal to:
+  And  I should have 1 notification "ActionUpdatedNotification" with data:
+  When  I send a "DELETE" request to "/api/v3/actions/:last_response.uuid:/register"
+  Then  the response status code should be 400
+  And  the JSON node "message" should be equal to "Vous ne pouvez pas vous désinscrire d'une action que vous avez créé."
+
+
+
+Scenario 2: As a logged-in VOX user I can get actions around me
+  Given  I am logged with "president-ad@renaissance-dev.fr" via OAuth client "J'écoute" with scope "jemarche_app"
+  And  I send a "GET" request to "/api/v3/actions?latitude=48.866667&longitude=2.333333"
+  Then  the response status code should be 200
+  And  the JSON node "metadata.items_per_page" should be equal to "300"
+  And  the JSON node "metadata.total_items" should be equal to "50"
+  When  I send a "GET" request to "/api/v3/actions?latitude=48.866667&longitude=2.333333&subscribedOnly=1"
+  Then  the response status code should be 200
+  And  the JSON node "metadata.items_per_page" should be equal to "300"
+  And  the JSON node "metadata.total_items" should be equal to "25"
+

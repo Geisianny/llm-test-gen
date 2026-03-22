@@ -1,0 +1,126 @@
+Scenario 1: Default search with no filter
+  When  I navigate the menu and select the item at "Cash & Banking > Reports > Reconciliation"
+  Then  I should see the Search Reconciliation Reports screen
+  When  I press "Search"
+  Then  I should see the Reconciliation Search Report screen
+  And  I expect the report to contain 4 rows
+  And  I expect the 'Account' report column to contain '1060 Checking Account' for Statement Date '2018-02-01'
+  And  I expect the 'Statement Balance' report column to contain '1000.01' for Statement Date '2018-02-01'
+  And  I expect the 'Approved' report column to contain '' for Statement Date '2018-02-01'
+  And  I expect the 'Submitted' report column to contain '✓' for Statement Date '2018-02-01'
+  And  I expect the 'Account' report column to contain '1060 Checking Account' for Statement Date '2018-03-01'
+  And  I expect the 'Statement Balance' report column to contain '1000.02' for Statement Date '2018-03-01'
+  And  I expect the 'Approved' report column to contain '✓' for Statement Date '2018-03-01'
+  And  I expect the 'Submitted' report column to contain '✓' for Statement Date '2018-03-01'
+  And  I expect the 'Statement Date' report column to contain '2018-01-01' for Account '1065 Petty Cash'
+  And  I expect the 'Statement Balance' report column to contain '100.00' for Account '1065 Petty Cash'
+  And  I expect the 'Approved' report column to contain '' for Account '1065 Petty Cash'
+  And  I expect the 'Submitted' report column to contain '' for Account '1065 Petty Cash'
+
+
+
+Scenario 2: Filter by "Statement Date From"
+  When  I navigate the menu and select the item at "Cash & Banking > Reports > Reconciliation"
+  Then  I should see the Search Reconciliation Reports screen
+  When  I enter "2018-02-01" into "Statement Date From"
+  And  I press "Search"
+  Then  I should see the Reconciliation Search Report screen
+  And  I should see these headings:
+  And  I expect the report to contain 2 rows
+  And  I expect the 'Account' report column to contain '1060 Checking Account' for Statement Date '2018-02-01'
+  And  I expect the 'Account' report column to contain '1060 Checking Account' for Statement Date '2018-03-01'
+
+
+
+Scenario 3: Filter by "Statement Date To"
+  When  I navigate the menu and select the item at "Cash & Banking > Reports > Reconciliation"
+  Then  I should see the Search Reconciliation Reports screen
+  When  I enter "2018-02-01" into "Statement Date To"
+  And  I press "Search"
+  Then  I should see the Reconciliation Search Report screen
+  And  I should see these headings:
+  And  I expect the report to contain 3 rows
+  And  I expect the 'Account' report column to contain '1060 Checking Account' for Statement Date '2018-02-01'
+
+
+
+Scenario 4: Filter by "Amount From"
+  When  I navigate the menu and select the item at "Cash & Banking > Reports > Reconciliation"
+  Then  I should see the Search Reconciliation Reports screen
+  When  I enter "1000.01" into "Amount From"
+  And  I press "Search"
+  Then  I should see the Reconciliation Search Report screen
+  And  I expect the report to contain 2 rows
+  And  I expect the 'Account' report column to contain '1060 Checking Account' for Statement Date '2018-02-01'
+  And  I expect the 'Account' report column to contain '1060 Checking Account' for Statement Date '2018-03-01'
+
+
+
+Scenario 5: Filter by "Amount To"
+  When  I navigate the menu and select the item at "Cash & Banking > Reports > Reconciliation"
+  Then  I should see the Search Reconciliation Reports screen
+  When  I enter "100.00" into "Amount To"
+  And  I press "Search"
+  Then  I should see the Reconciliation Search Report screen
+  And  I expect the report to contain 1 row
+  And  I expect the 'Account' report column to contain '1065 Petty Cash' for Statement Date '2018-01-01'
+
+
+
+Scenario 6: Filter by "Account"
+  When  I navigate the menu and select the item at "Cash & Banking > Reports > Reconciliation"
+  Then  I should see the Search Reconciliation Reports screen
+  When  I select "1065 Petty Cash" from the drop down "Account"
+  And  I press "Search"
+  Then  I should see the Reconciliation Search Report screen
+  And  I expect the report to contain 1 row
+  And  I expect the 'Account' report column to contain '1065 Petty Cash' for Statement Date '2018-01-01'
+
+
+
+Scenario 7: Filter by "Submission Status" is "Submitted"
+  When  I navigate the menu and select the item at "Cash & Banking > Reports > Reconciliation"
+  Then  I should see the Search Reconciliation Reports screen
+  When  I select "Submitted" from the drop down "Submission Status"
+  And  I press "Search"
+  Then  I should see the Reconciliation Search Report screen
+  And  I expect the report to contain 2 rows
+  And  I expect the 'Account' report column to contain '1060 Checking Account' for Statement Date '2018-02-01'
+  And  I expect the 'Account' report column to contain '1060 Checking Account' for Statement Date '2018-03-01'
+
+
+
+Scenario 8: Filter by "Submission Status" is "Not Submitted"
+  When  I navigate the menu and select the item at "Cash & Banking > Reports > Reconciliation"
+  Then  I should see the Search Reconciliation Reports screen
+  When  I select "Not Submitted" from the drop down "Submission Status"
+  And  I press "Search"
+  Then  I should see the Reconciliation Search Report screen
+  And  I expect the report to contain 2 rows
+  And  I expect the 'Statement Date' report column to contain '2018-01-01' for Account '1060 Checking Account'
+  And  I expect the 'Statement Date' report column to contain '2018-01-01' for Account '1065 Petty Cash'
+
+
+
+Scenario 9: Filter by "Approved Status" is "Approved"
+  When  I navigate the menu and select the item at "Cash & Banking > Reports > Reconciliation"
+  Then  I should see the Search Reconciliation Reports screen
+  When  I select "Approved" from the drop down "Approval Status"
+  And  I press "Search"
+  Then  I should see the Reconciliation Search Report screen
+  And  I expect the report to contain 1 row
+  And  I expect the 'Statement Date' report column to contain '2018-03-01' for Account '1060 Checking Account'
+
+
+
+Scenario 10: Filter by "Approved Status" is "Not Approved"
+  When  I navigate the menu and select the item at "Cash & Banking > Reports > Reconciliation"
+  Then  I should see the Search Reconciliation Reports screen
+  When  I select "Not Approved" from the drop down "Approval Status"
+  And  I press "Search"
+  Then  I should see the Reconciliation Search Report screen
+  And  I expect the report to contain 3 rows
+  And  I expect the 'Statement Date' report column to contain '2018-01-01' for Statement Balance '100.00'
+  And  I expect the 'Statement Date' report column to contain '2018-01-01' for Statement Balance '1000.00'
+  And  I expect the 'Statement Date' report column to contain '2018-02-01' for Statement Balance '1000.01'
+

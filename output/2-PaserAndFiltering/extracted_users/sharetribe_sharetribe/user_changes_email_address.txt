@@ -1,0 +1,46 @@
+Feature: User changes email address
+Description: In order to change the email address associated with me in Sharetribe
+  As a user
+  I want to be able to change my email address
+
+Background: 
+  Given  there are following communities:
+  And  there are following users:
+  And  there are following emails:
+  When  I move to community "testcommunity"
+  And  I am logged in as "sharetribe1"
+  And  I am on the account settings page
+
+Scenario 1: User adds a new email (and confirms it)
+  Tags: ['@javascript']
+  When  I add a new email "sharetribe1-2@example.com"
+  Then  I should have unconfirmed email "sharetribe1-2@example.com"
+  When  I confirm email address "sharetribe1-2@example.com"
+  Then  I should have confirmed email "sharetribe1-2@example.com"
+
+Scenario 2: User removes an email
+  Tags: ['@javascript']
+  Given  I will confirm all following confirmation dialogs in this page if I am running PhantomJS
+  Then  I should not be able to remove email "sharetribe2@example.com"
+  When  I remove email "sharetribe@example.com"
+  Then  I should not have email "sharetribe@example.com"
+
+Scenario 3: User changes notification email
+  Tags: ['@javascript']
+  Then  I should not be able to remove notifications from "sharetribe2@example.com"
+  When  I set notifications for email "sharetribe@example.com"
+  Then  I should be able to remove notifications from "sharetribe2@example.com"
+
+Scenario 4: User resends confirmation mail
+  Tags: ['@javascript']
+  Then  I should have unconfirmed email "sharetribe@yahoo.com"
+  And  I should not be able to resend confirmation for "sharetribe@example.com"
+  And  I should not be able to resend confirmation for "sharetribe2@example.com"
+  And  I should not be able to resend confirmation for "sharetribe@gmail.com"
+  And  I should be able to resend confirmation for "sharetribe@yahoo.com"
+  When  I resend confirmation for "sharetribe@yahoo.com"
+  And  "sharetribe@yahoo.com" should have 1 emails
+  And  I confirm email address "sharetribe@yahoo.com"
+  Then  I should have confirmed email "sharetribe@yahoo.com"
+  And  "sharetribe@yahoo.com" should have 1 emails
+

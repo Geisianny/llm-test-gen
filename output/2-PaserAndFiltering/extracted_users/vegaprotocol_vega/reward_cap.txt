@@ -1,0 +1,57 @@
+Feature: Capping distributed rewards at a multiple of fees paid
+Description: Tests checks:
+  - the cap_reward_fee_multiple correctly caps rewards distributed
+  to parties to a multiple of the total fees paid by each respective party.
+  - reallocation of unallocated rewards is attempted upto 10 times.
+  - unallocated rewards are carried over to the next epoch.
+
+Background: 
+  Given  time is updated to "2023-01-01T00:00:00Z"
+  And  the average block duration is "1"
+  And  the following network parameters are set:
+  And  the following assets are registered:
+  Given  the parties deposit on asset's general account the following amount:
+  And  the markets:
+  Given  the parties submit the following liquidity provision:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/USD-1-10"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/USD-1-10"
+
+Scenario Outline 1: Capping distributed rewards at a multiple of fees paid (0057-TRAN-070)(0057-TRAN-071) - Example 1
+  Given  the network moves ahead "1" epochs
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  Given  the current epoch is "1"
+  And  the parties submit the following recurring transfers:
+  When  the network moves ahead "1" epochs
+  Then  parties should have the following vesting account balances:
+
+  Examples:
+    | cap_reward_fee_multiple | party1_rewards | party2_rewards |
+    | 0.1 | 100 | 200 |
+    | 1 | 1000 | 2000 |
+    | 10 | 3333 | 6666 |
+
+Scenario Outline 2: Attempting to reallocate rewards after a party hits the cap and carrying over unallocated rewards (0057-TRAN-072)(0057-TRAN-073) - Example 1
+  Given  the network moves ahead "1" epochs
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  Given  the current epoch is "1"
+  And  the parties submit the following recurring transfers:
+  When  the network moves ahead "1" epochs
+  Then  parties should have the following vesting account balances:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  Given  the current epoch is "2"
+  When  the network moves ahead "1" epochs
+  Then  parties should have the following vesting account balances:
+
+  Examples:
+    | cap_reward_fee_multiple | epoch1_party1_rewards | epoch1_party2_rewards | epoch2_party1_rewards | epoch2_party2_rewards |
+    | 1 | 0 | 1000 | 9500 | 9500 |
+    | 5 | 0 | 5000 | 7500 | 7500 |
+    | 10 | 0 | 9990 | 5005 | 5005 |
+

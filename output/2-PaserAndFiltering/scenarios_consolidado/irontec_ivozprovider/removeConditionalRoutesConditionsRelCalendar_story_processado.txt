@@ -1,0 +1,8 @@
+Scenario 1: Remove a conditional routes conditions rel calendar
+  Tags: ['@createSchema']
+  Given  I add Company Authorization header
+  When  I add "Content-Type" header equal to "application/json"
+  And  I add "Accept" header equal to "application/json"
+  And  I send a "DELETE" request to "/conditional_routes_conditions_rel_calendars/1"
+  Then  the response status code should be 204
+

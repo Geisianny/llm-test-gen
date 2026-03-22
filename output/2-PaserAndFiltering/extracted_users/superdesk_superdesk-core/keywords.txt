@@ -1,0 +1,22 @@
+Feature: Keywords
+
+Scenario 1: Get the list of keywords for a content item
+  Tags: ['@alchemy', '@auth']
+  When  we post to "/keywords"
+  Then  we get existing resource
+
+Scenario 2: Save keywords on item publish
+  Tags: ['@auth', '@notification']
+  Given  config update
+  Given  "archive"
+  When  we publish "#archive._id#" with "publish" type and "published" state
+  Then  we get OK response
+  And  we get notifications
+  When  we get "vocabularies/keywords"
+  Then  we get existing resource
+  Given  "archive"
+  When  we publish "#archive._id#" with "publish" type and "published" state
+  And  we get "vocabularies/keywords"
+  Then  we get existing resource
+  And  we get notifications
+

@@ -1,0 +1,5 @@
+Scenario 1: Creating a new draft publication that applies to multiple nations
+  Given  I am a writer
+  When  I draft a new publication "something" that does not apply to the nations:
+  Then  the publication should be excluded from these nations:
+

@@ -1,0 +1,42 @@
+Feature: Setting and applying referral reward multipliers
+
+Background: 
+  Given  time is updated to "2023-01-01T00:00:00Z"
+  And  the average block duration is "1"
+  Given  the following network parameters are set:
+  Given  the following network parameters are set:
+  And  the validators:
+  And  the parties submit the following delegations:
+  Given  the referral benefit tiers "rbt":
+  And  the referral staking tiers "rst":
+  And  the referral program:
+  And  the network moves ahead "1" epochs
+  And  the following assets are registered:
+  And  the markets:
+  And  the liquidity monitoring parameters:
+  When  the markets are updated:
+  Given  the parties deposit on asset's general account the following amount:
+  Given  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  And  the opening auction period ends for market "ETH/USD.1.1"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/USD.1.1"
+  Given  the parties create the following referral codes:
+  And  the parties apply the following referral codes:
+
+Scenario Outline 1: Referrer stakes a variable amount and receives a multiplier on their referral rewards (0083-RFPR-046)(0083-RFPR-047)(0029-FEES-023)(0029-FEES-025) - Example 1
+  Then  the parties deposit on staking account the following amount:
+  Then  the parties submit the following delegations:
+  Given  the parties place the following orders:
+  When  the network moves ahead "2" epochs
+  Then  the referral set stats for code "referral-code-1" at epoch "2" should have a running volume of 1000:
+  Given  the parties place the following orders:
+  When  the following trades should be executed:
+  Then  the following transfers should happen:
+
+  Examples:
+    | staking amount | expected discounted fees | expected reward |
+    | 1001 | 96 | 6 |
+    | 2001 | 94 | 12 |
+    | 3001 | 89 | 27 |
+

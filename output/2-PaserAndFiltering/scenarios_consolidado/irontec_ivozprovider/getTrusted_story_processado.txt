@@ -1,0 +1,21 @@
+Scenario 1: Retrieve the Trusted addresses json list
+  Tags: ['@createSchema']
+  Given  I add Brand Authorization header
+  When  I add "Accept" header equal to "application/json"
+  And  I send a "GET" request to "trusteds"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json; charset=utf-8"
+  And  the JSON should be equal to:
+
+
+
+Scenario 2: Retrieve certain Trusted addresses json
+  Given  I add Brand Authorization header
+  When  I add "Accept" header equal to "application/json"
+  And  I send a "GET" request to "trusteds/1"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json; charset=utf-8"
+  And  the JSON should be like:
+

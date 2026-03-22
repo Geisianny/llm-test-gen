@@ -1,0 +1,151 @@
+Feature: Stages
+
+Background: Setup data required to test Stages feature
+  Given  empty "stages"
+  And  "desks"
+
+Scenario 1: Add a Stage and verify its order
+  Tags: ['@auth', '@notification']
+  When  we post to "/stages"
+  Then  we get notifications
+  Then  we get new resource
+
+Scenario 2: Stage name must be unique
+  Tags: ['@auth', '@notification']
+  When  we post to "/stages"
+  Then  we get OK response
+  When  we post to "/stages"
+  Then  we get error 400
+
+Scenario 3: Fails to add a Stage without a name
+  Tags: ['@auth', '@notification']
+  When  we post to "/stages"
+  Then  we get error 400
+
+Scenario 4: Update Stage Name and Description
+  Tags: ['@auth', '@notification']
+  When  we post to "/stages"
+  Then  we get new resource
+  When  we patch latest
+  Then  we get updated response
+
+Scenario 5: Adding content to a stage having 0 expiry will get global expiry for the content
+  Tags: ['@auth', '@notification']
+  When  we post to "/stages"
+  And  we post to "/archive"
+  And  we get "archive/testid1"
+  Then  we get global content expiry
+
+Scenario 6: Adding content to a stage having -1 expiry will get global expiry for the content
+  Tags: ['@auth', '@notification']
+  When  we post to "/stages"
+  And  we post to "/archive"
+  And  we get "archive/testid1"
+  Then  we get global content expiry
+
+Scenario 7: Can delete an empty stage
+  Tags: ['@auth', '@notification']
+  When  we post to "/stages"
+  And  we delete "/stages/#stages._id#"
+  Then  we get response code 204
+  Then  we get notifications
+
+Scenario 8: Toggle stage invisibility for notification
+  Tags: ['@auth', '@notification']
+  When  we post to "/stages"
+  And  we reset notifications
+  And  we get "/users/#CONTEXT_USER_ID#"
+  Then  we get existing resource
+  When  we patch "/stages/#stages._id#"
+  Then  we get response code 200
+  When  we get "/users/#CONTEXT_USER_ID#"
+  Then  we get existing resource
+  And  we get notifications
+  When  we post to "/users"
+  Then  we get OK response
+  And  we get existing resource
+  When  we patch "/stages/#stages._id#"
+  Then  we get response code 200
+  When  we get "/users/#CONTEXT_USER_ID#"
+  Then  we get existing resource
+  When  we get "/users/#users._id#"
+  Then  we get existing resource
+
+Scenario 9: Get visible and invisible stages
+  Tags: ['@auth', '@notification']
+  When  we post to "/stages"
+  Then  we get 2 visible stages
+  And  we get 2 invisible stages
+
+Scenario 10: Cannot delete stage if there are documents irrespective of their status
+  Tags: ['@auth', '@notification']
+  When  we post to "/stages"
+  And  we post to "archive"
+  When  we delete "/stages/#stages._id#"
+  Then  we get error 412
+  When  we spike "item-1"
+  Then  we get OK response
+  When  we delete "/stages/#stages._id#"
+  Then  we get error 412
+
+Scenario 11: Cannot delete stage if it is referred to by a routing scheme
+  Tags: ['@auth', '@vocabulary', '@notification']
+  Given  we have "/filter_conditions" with "FCOND_ID" and success
+  And  we have "/content_filters" with "FILTER_ID" and success
+  When  we post to "/stages"
+  And  we post to "/routing_schemes"
+  And  we delete "/stages/#stages._id#"
+  Then  we get error 412
+
+Scenario 12: Cannot delete either Working or Incoming Stage
+  Tags: ['@auth', '@notification']
+  When  we delete "/stages/#desks.working_stage#"
+  Then  we get error 412
+  When  we delete "/stages/#desks.incoming_stage#"
+  Then  we get error 412
+
+Scenario 13: Content can not be created on readonly stage
+  Tags: ['@auth']
+  When  we post to "/stages"
+  And  we post to "/archive"
+  Then  we get error 403
+
+Scenario 14: Content can be fetched to readonly stage
+  Tags: ['@auth']
+  When  we post to "/stages"
+  And  we post to "/archive"
+  Then  we get new resource
+
+Scenario 15: Content can not be send to readonly stage
+  Tags: ['@auth']
+  When  we post to "/stages"
+  And  we post to "/archive"
+  Then  we get new resource
+  When  we patch "/archive/item-1"
+  Then  we get error 403
+
+Scenario 16: Content on readonly stage is not editable
+  Tags: ['@auth']
+  When  we post to "/stages"
+  And  we post to "archive"
+  When  we patch "/stages/#stages._id#"
+  And  we patch "/archive/item-1"
+  Then  we get error 403
+
+Scenario 17: Reordering of stages
+  Tags: ['@auth']
+  Given  empty "desks"
+  And  empty "stages"
+  Given  "desks"
+  Given  "stages"
+  When  we get "stages"
+  Then  we get ordered list with 5 items
+  When  we post to "stages_order"
+  Then  we get OK response
+  When  we get "stages"
+  Then  we get ordered list with 5 items
+  When  we post to "stages"
+  Then  we get ok response
+  When  we get "stages"
+  Then  we get ordered list with 6 items
+

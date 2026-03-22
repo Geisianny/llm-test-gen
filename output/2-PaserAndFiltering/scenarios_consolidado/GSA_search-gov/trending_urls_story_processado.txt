@@ -1,0 +1,19 @@
+Scenario 1: Viewing the trending URLs page when data is available
+  Given  I am logged in with email "affiliate_admin@fixtures.org"
+  And  the following BingV7 Affiliates exist:
+  And  the following trending URLs exist:
+  And  the following hourly URL counts exist:
+  When  I am on the admin home page
+  And  I follow "Trending URLs"
+  Then  I should see "Trending URLs by Affiliate"
+  And  I should see the following table rows:
+
+
+
+Scenario 2: Viewing the trending URLs page when no data is available
+  Given  I am logged in with email "affiliate_admin@fixtures.org"
+  And  no trending URLs exist
+  When  I am on the admin home page
+  And  I follow "Trending URLs"
+  Then  I should see "No URLs are trending for any affiliate right now"
+

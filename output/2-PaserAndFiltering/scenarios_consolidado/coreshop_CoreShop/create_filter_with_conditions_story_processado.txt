@@ -1,0 +1,8 @@
+Scenario 1: Create a new filter with conditions
+  Given  the site has a index "myindex" for class "CoreShopProduct" with type "mysql"
+  And  the index has following fields:
+  And  the site has a filter "myfilter" for index "myindex"
+  And  the filter has following conditions:
+  Then  there should be a filter with name "myfilter"
+  And  the filter should have 3 conditions
+

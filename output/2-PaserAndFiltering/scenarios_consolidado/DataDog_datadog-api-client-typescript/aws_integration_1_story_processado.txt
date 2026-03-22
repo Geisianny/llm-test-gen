@@ -1,0 +1,265 @@
+Scenario 1: Create an AWS account returns "AWS Account object" response
+  Tags: ['@team:DataDog/aws-integrations']
+  Given  new "CreateAWSAccount" request
+  And  body with value {"data": {"attributes": {"account_tags": ["key:value"], "auth_config": {"role_name": "DatadogIntegrationRole"}, "aws_account_id": "123456789012", "aws_partition": "aws", "logs_config": {"lambda_forwarder": {"lambdas": ["arn:aws:lambda:us-east-1:123456789012:function:DatadogLambdaLogForwarder"], "log_source_config": {"tag_filters": [{"source": "s3", "tags": ["test:test"]}]}, "sources": ["s3"]}}, "metrics_config": {"automute_enabled": true, "collect_cloudwatch_alarms": true, "collect_custom_metrics": true, "enabled": true, "tag_filters": [{"namespace": "AWS/EC2", "tags": ["key:value"]}]}, "resources_config": {"cloud_security_posture_management_collection": false, "extended_collection": false}, "traces_config": {}}, "type": "account"}}
+  When  the request is sent
+  Then  the response status is 200 AWS Account object
+
+
+
+Scenario 2: Create an AWS integration returns "AWS Account object" response
+  Tags: ['@team:DataDog/aws-integrations']
+  Given  new "CreateAWSAccount" request
+  And  body with value {"data": {"attributes": {"account_tags": ["key:value"], "auth_config": {"access_key_id": "AKIAIOSFODNN7EXAMPLE", "secret_access_key": "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"}, "aws_account_id": "123456789012", "aws_partition": "aws", "logs_config": {"lambda_forwarder": {"lambdas": ["arn:aws:lambda:us-east-1:123456789012:function:DatadogLambdaLogForwarder"], "log_source_config": {"tag_filters": [{"source": "s3", "tags": ["test:test"]}]}, "sources": ["s3"]}}, "metrics_config": {"automute_enabled": true, "collect_cloudwatch_alarms": true, "collect_custom_metrics": true, "enabled": true, "tag_filters": [{"namespace": "AWS/EC2", "tags": ["key:value"]}]}, "resources_config": {"cloud_security_posture_management_collection": false, "extended_collection": false}, "traces_config": {}}, "type": "account"}}
+  When  the request is sent
+  Then  the response status is 200 AWS Account object
+
+
+
+Scenario 3: Create an AWS integration returns "Bad Request" response
+  Tags: ['@team:DataDog/aws-integrations']
+  Given  new "CreateAWSAccount" request
+  And  body with value {"data": {"attributes": {"account_tags": ["key:value"], "auth_config": {"role_name": "DatadogIntegrationRole"}, "aws_account_id": "123456789012", "aws_partition": "aws-invalid", "logs_config": {"lambda_forwarder": {"lambdas": ["arn:aws:lambda:us-east-1:123456789012:function:DatadogLambdaLogForwarder"], "log_source_config": {"tag_filters": [{"source": "s3", "tags": ["test:test"]}]}, "sources": ["s3"]}}, "metrics_config": {"automute_enabled": true, "collect_cloudwatch_alarms": true, "collect_custom_metrics": true, "enabled": true, "tag_filters": [{"namespace": "AWS/EC2", "tags": ["key:value"]}]}, "resources_config": {"cloud_security_posture_management_collection": false, "extended_collection": false}, "traces_config": {}}, "type": "account"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 4: Create an AWS integration returns "Conflict" response
+  Tags: ['@team:DataDog/aws-integrations']
+  Given  there is a valid "aws_account_v2" in the system
+  And  new "CreateAWSAccount" request
+  And  body with value {"data": {"attributes": {"account_tags": ["key:value"], "auth_config": {"role_name": "DatadogIntegrationRole"}, "aws_account_id": "123456789012", "aws_partition": "aws", "logs_config": {"lambda_forwarder": {"lambdas": ["arn:aws:lambda:us-east-1:123456789012:function:DatadogLambdaLogForwarder"], "log_source_config": {"tag_filters": [{"source": "s3", "tags": ["test:test"]}]}, "sources": ["s3"]}}, "metrics_config": {"automute_enabled": true, "collect_cloudwatch_alarms": true, "collect_custom_metrics": true, "enabled": true, "tag_filters": [{"namespace": "AWS/EC2", "tags": ["key:value"]}]}, "resources_config": {"cloud_security_posture_management_collection": false, "extended_collection": false}, "traces_config": {}}, "type": "account"}}
+  When  the request is sent
+  Then  the response status is 409 Conflict
+
+
+
+Scenario 5: Create an Amazon EventBridge source returns "Amazon EventBridge source created." response
+  Tags: ['@generated', '@skip', '@team:DataDog/aws-integrations']
+  Given  new "CreateAWSEventBridgeSource" request
+  And  body with value {"data": {"attributes": {"account_id": "123456789012", "create_event_bus": true, "event_generator_name": "app-alerts", "region": "us-east-1"}, "type": "event_bridge"}}
+  When  the request is sent
+  Then  the response status is 200 Amazon EventBridge source created.
+
+
+
+Scenario 6: Create an Amazon EventBridge source returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/aws-integrations']
+  Given  new "CreateAWSEventBridgeSource" request
+  And  body with value {"data": {"attributes": {"account_id": "123456789012", "create_event_bus": true, "event_generator_name": "app-alerts", "region": "us-east-1"}, "type": "event_bridge"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 7: Create an Amazon EventBridge source returns "Conflict" response
+  Tags: ['@generated', '@skip', '@team:DataDog/aws-integrations']
+  Given  new "CreateAWSEventBridgeSource" request
+  And  body with value {"data": {"attributes": {"account_id": "123456789012", "create_event_bus": true, "event_generator_name": "app-alerts", "region": "us-east-1"}, "type": "event_bridge"}}
+  When  the request is sent
+  Then  the response status is 409 Conflict
+
+
+
+Scenario 8: Delete an AWS integration returns "Bad Request" response
+  Tags: ['@team:DataDog/aws-integrations']
+  Given  new "DeleteAWSAccount" request
+  And  request contains "aws_account_config_id" parameter with value "not-a-uuid"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 9: Delete an AWS integration returns "No Content" response
+  Tags: ['@team:DataDog/aws-integrations']
+  Given  there is a valid "aws_account_v2" in the system
+  And  new "DeleteAWSAccount" request
+  And  request contains "aws_account_config_id" parameter from "aws_account_v2.data.id"
+  When  the request is sent
+  Then  the response status is 204 No Content
+
+
+
+Scenario 10: Delete an AWS integration returns "Not Found" response
+  Tags: ['@team:DataDog/aws-integrations']
+  Given  there is a valid "aws_account_v2" in the system
+  And  new "DeleteAWSAccount" request
+  And  request contains "aws_account_config_id" parameter with value "448169a8-251c-4344-abee-1c4edef39f7a"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+
+
+Scenario 11: Delete an Amazon EventBridge source returns "Amazon EventBridge source deleted." response
+  Tags: ['@generated', '@skip', '@team:DataDog/aws-integrations']
+  Given  new "DeleteAWSEventBridgeSource" request
+  And  body with value {"data": {"attributes": {"account_id": "123456789012", "event_generator_name": "app-alerts-zyxw3210", "region": "us-east-1"}, "type": "event_bridge"}}
+  When  the request is sent
+  Then  the response status is 200 Amazon EventBridge source deleted.
+
+
+
+Scenario 12: Delete an Amazon EventBridge source returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/aws-integrations']
+  Given  new "DeleteAWSEventBridgeSource" request
+  And  body with value {"data": {"attributes": {"account_id": "123456789012", "event_generator_name": "app-alerts-zyxw3210", "region": "us-east-1"}, "type": "event_bridge"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 13: Generate a new external ID returns "AWS External ID object" response
+  Tags: ['@team:DataDog/aws-integrations']
+  Given  new "CreateNewAWSExternalID" request
+  When  the request is sent
+  Then  the response status is 200 AWS External ID object
+
+
+
+Scenario 14: Generate new external ID returns "AWS External ID object" response
+  Tags: ['@team:DataDog/aws-integrations']
+  Given  new "CreateNewAWSExternalID" request
+  When  the request is sent
+  Then  the response status is 200 AWS External ID object
+
+
+
+Scenario 15: Get AWS integration IAM permissions returns "AWS IAM Permissions object" response
+  Tags: ['@generated', '@skip', '@team:DataDog/aws-integrations']
+  Given  new "GetAWSIntegrationIAMPermissions" request
+  When  the request is sent
+  Then  the response status is 200 AWS IAM Permissions object
+
+
+
+Scenario 16: Get AWS integration standard IAM permissions returns "AWS IAM Permissions object" response
+  Tags: ['@team:DataDog/aws-integrations']
+  Given  new "GetAWSIntegrationIAMPermissionsStandard" request
+  When  the request is sent
+  Then  the response status is 200 AWS IAM Permissions object
+
+
+
+Scenario 17: Get AWS integration standard IAM permissions returns "AWS integration standard IAM permissions." response
+  Tags: ['@generated', '@skip', '@team:DataDog/aws-integrations']
+  Given  new "GetAWSIntegrationIAMPermissionsStandard" request
+  When  the request is sent
+  Then  the response status is 200 AWS integration standard IAM permissions.
+
+
+
+Scenario 18: Get all Amazon EventBridge sources returns "Amazon EventBridge sources list." response
+  Tags: ['@generated', '@skip', '@team:DataDog/aws-integrations']
+  Given  new "ListAWSEventBridgeSources" request
+  When  the request is sent
+  Then  the response status is 200 Amazon EventBridge sources list.
+
+
+
+Scenario 19: Get all Amazon EventBridge sources returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/aws-integrations']
+  Given  new "ListAWSEventBridgeSources" request
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 20: Get an AWS integration by config ID returns "AWS Account object" response
+  Tags: ['@team:DataDog/aws-integrations']
+  Given  there is a valid "aws_account_v2" in the system
+  And  new "GetAWSAccount" request
+  And  request contains "aws_account_config_id" parameter from "aws_account_v2.data.id"
+  When  the request is sent
+  Then  the response status is 200 AWS Account object
+
+
+
+Scenario 21: Get an AWS integration by config ID returns "Bad Request" response
+  Tags: ['@team:DataDog/aws-integrations']
+  Given  new "GetAWSAccount" request
+  And  request contains "aws_account_config_id" parameter with value "not-a-uuid"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 22: Get an AWS integration by config ID returns "Not Found" response
+  Tags: ['@team:DataDog/aws-integrations']
+  Given  new "GetAWSAccount" request
+  And  request contains "aws_account_config_id" parameter with value "448169a8-251c-4344-abee-1c4edef39f7a"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+
+
+Scenario 23: Get resource collection IAM permissions returns "AWS IAM Permissions object" response
+  Tags: ['@team:DataDog/aws-integrations']
+  Given  new "GetAWSIntegrationIAMPermissionsResourceCollection" request
+  When  the request is sent
+  Then  the response status is 200 AWS IAM Permissions object
+
+
+
+Scenario 24: Get resource collection IAM permissions returns "AWS integration resource collection IAM permissions." response
+  Tags: ['@generated', '@skip', '@team:DataDog/aws-integrations']
+  Given  new "GetAWSIntegrationIAMPermissionsResourceCollection" request
+  When  the request is sent
+  Then  the response status is 200 AWS integration resource collection IAM permissions.
+
+
+
+Scenario 25: List all AWS integrations returns "AWS Accounts List object" response
+  Tags: ['@team:DataDog/aws-integrations']
+  Given  new "ListAWSAccounts" request
+  When  the request is sent
+  Then  the response status is 200 AWS Accounts List object
+
+
+
+Scenario 26: List available namespaces returns "AWS Namespaces List object" response
+  Tags: ['@team:DataDog/aws-integrations']
+  Given  new "ListAWSNamespaces" request
+  When  the request is sent
+  Then  the response status is 200 AWS Namespaces List object
+
+
+
+Scenario 27: List namespaces returns "AWS Namespaces List object" response
+  Tags: ['@team:DataDog/aws-integrations']
+  Given  new "ListAWSNamespaces" request
+  When  the request is sent
+  Then  the response status is 200 AWS Namespaces List object
+
+
+
+Scenario 28: Update an AWS integration returns "AWS Account object" response
+  Tags: ['@team:DataDog/aws-integrations']
+  Given  there is a valid "aws_account_v2" in the system
+  And  new "UpdateAWSAccount" request
+  And  request contains "aws_account_config_id" parameter from "aws_account_v2.data.id"
+  And  body with value {"data": {"attributes": {"account_tags": ["key:value"], "auth_config": {"role_name": "DatadogIntegrationRole"}, "aws_account_id": "123456789012", "aws_partition": "aws", "logs_config": {"lambda_forwarder": {"lambdas": ["arn:aws:lambda:us-east-1:123456789012:function:DatadogLambdaLogForwarder"], "log_source_config": {"tag_filters": [{"source": "s3", "tags": ["test:test"]}]}, "sources": ["s3"]}}, "metrics_config": {"automute_enabled": true, "collect_cloudwatch_alarms": true, "collect_custom_metrics": true, "enabled": true, "tag_filters": [{"namespace": "AWS/EC2", "tags": ["key:value"]}]}, "resources_config": {"cloud_security_posture_management_collection": false, "extended_collection": false}, "traces_config": {}}, "type": "account"}}
+  When  the request is sent
+  Then  the response status is 200 AWS Account object
+
+
+
+Scenario 29: Update an AWS integration returns "Bad Request" response
+  Tags: ['@team:DataDog/aws-integrations']
+  Given  there is a valid "aws_account_v2" in the system
+  And  new "UpdateAWSAccount" request
+  And  request contains "aws_account_config_id" parameter from "aws_account_v2.data.id"
+  And  body with value {"data": {"attributes": {"account_tags": ["key:value"], "auth_config": {"access_key_id": "AKIAIOSFODNN7EXAMPLE", "secret_access_key": "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"}, "aws_account_id": "123456789012", "aws_partition": "aws", "logs_config": {"lambda_forwarder": {"lambdas": ["arn:aws:lambda:us-east-1:123456789012:function:DatadogLambdaLogForwarder"], "log_source_config": {"tag_filters": [{"source": "s3", "tags": ["test:test"]}]}, "sources": ["s3"]}}, "metrics_config": {"automute_enabled": true, "collect_cloudwatch_alarms": true, "collect_custom_metrics": true, "enabled": true, "tag_filters": [{"namespace": "AWS/EC2", "tags": ["key:value"]}]}, "resources_config": {"cloud_security_posture_management_collection": false, "extended_collection": false}, "traces_config": {}}, "type": "account"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 30: Update an AWS integration returns "Not Found" response
+  Tags: ['@team:DataDog/aws-integrations']
+  Given  new "UpdateAWSAccount" request
+  And  request contains "aws_account_config_id" parameter with value "448169a8-251c-4344-abee-1c4edef39f7a"
+  And  body with value {"data": {"attributes": {"account_tags": ["key:value"], "auth_config": {"role_name": "DatadogIntegrationRole"}, "aws_account_id": "123456789012", "aws_partition": "aws", "logs_config": {"lambda_forwarder": {"lambdas": ["arn:aws:lambda:us-east-1:123456789012:function:DatadogLambdaLogForwarder"], "log_source_config": {"tag_filters": [{"source": "s3", "tags": ["test:test"]}]}, "sources": ["s3"]}}, "metrics_config": {"automute_enabled": true, "collect_cloudwatch_alarms": true, "collect_custom_metrics": true, "enabled": true, "tag_filters": [{"namespace": "AWS/EC2", "tags": ["key:value"]}]}, "resources_config": {"cloud_security_posture_management_collection": false, "extended_collection": false}, "traces_config": {}}, "type": "account"}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+

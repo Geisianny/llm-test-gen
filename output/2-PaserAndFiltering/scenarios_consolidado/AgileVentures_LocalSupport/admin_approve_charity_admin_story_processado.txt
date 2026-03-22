@@ -1,0 +1,80 @@
+Scenario 1: As a superadmin approving a pending users request
+  Tags: ['@vcr']
+  Given  I am signed in as a superadmin
+  When  I approve "pending@myorg.com"
+  Then  I should see "You have approved pending@myorg.com."
+  Then  "pending@myorg.com" is an organisation admin of "My Organisation"
+
+
+
+Scenario 2: As a superadmin deleting a user
+  Given  I am signed in as a superadmin
+  When  I delete "pending@myorg.com"
+  Then  I should see "You have deleted pending@myorg.com."
+  Then  user "pending@myorg.com" is deleted
+
+
+
+Scenario 3: As a superadmin declining a timo request but not deleting the user
+  Given  I am signed in as a superadmin
+  When  I decline "pending@myorg.com"
+  Then  I should see "You have declined pending@myorg.com's request for admin status for My Organisation."
+  Then  "pending@myorg.com" is not an organisation admin of "My Organisation"
+  And  "pending@myorg.com"'s request for "My Organisation" should not be persisted
+
+
+
+Scenario 4: As a superadmin about to recover a deleted user
+  Given  I am signed in as a superadmin
+  And  I visit the home page
+  And  I click on the deleted users link
+  Then  I should be on the deleted users page
+
+
+
+Scenario 5: As a superadmin recovering a deleted user
+  Given  I am signed in as a superadmin
+  And  I delete "pending@myorg.com"
+  Then  the user with email "pending@myorg.com" should be displayed on the all deleted users page
+  And  I restore the user with the email "pending@myorg.com"
+  Then  user "pending@myorg.com" is not deleted
+  And  I should see "You have restored pending@myorg.com"
+  And  the user with email "pending@myorg.com" should not be displayed on the all deleted users page
+
+
+
+Scenario 6: as a non-superadmin attempting to see deleted users
+  Given  I am signed in as an non-superadmin
+  And  I visit the deleted users page
+  Then  I should be on the home page
+  And  I should see "You must be signed in as a superadmin to perform this action!"
+
+
+
+Scenario 7: As a superadmin attempting self-deletion
+  Given  I am signed in as a superadmin
+  When  I delete "superadmin@myorg.com"
+  Then  I should see "You may not destroy your own account!"
+  Then  user "superadmin@myorg.com" is not deleted
+
+
+
+Scenario 8: As a non-superadmin trying to access users index
+  Given  I am signed in as a non-superadmin
+  And  I visit the registered users page
+  Then  I should be on the home page
+  And  I should see "You must be signed in as a superadmin to perform this action!"
+
+
+
+Scenario Outline 9: As a superadmin I should be able to see status of all users - Example 1
+  Given  I am signed in as a superadmin
+  And  I visit the registered users page
+  Then  I should see "nonsuperadmin@myorg.com"
+
+  Examples:
+    | email |
+    | nonsuperadmin@myorg.com |
+    | superadmin@myorg.com |
+    | pending@myorg.com |
+

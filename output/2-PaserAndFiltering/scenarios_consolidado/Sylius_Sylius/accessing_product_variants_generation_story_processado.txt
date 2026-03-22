@@ -1,0 +1,14 @@
+Scenario 1: Being unable to go to the generate variants page for a product without options
+  Tags: ['@no-api', '@ui']
+  When  I want to see the list of variants of the "Yerba Mate" product
+  Then  I should not be able to go to the generate variants page
+
+
+
+Scenario 2: Being able to go to the generate variants page for a product with options
+  Tags: ['@no-api', '@ui']
+  Given  this product has option "Taste" with values "Orange" and "Melon"
+  When  I want to see the list of variants of the "Yerba Mate" product
+  And  I go to generate variants page
+  Then  I should be on the "Yerba Mate" product generate variants page
+

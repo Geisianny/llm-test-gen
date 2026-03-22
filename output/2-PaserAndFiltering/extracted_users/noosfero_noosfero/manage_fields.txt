@@ -1,0 +1,74 @@
+Feature: check all manage fields
+Description: As an administrator
+  I want to check and uncheck all person, enterprise and community's fields
+
+Background: 
+  Given  the following users
+  And  the following enterprises
+  And  the following community
+  And  I am logged in as admin
+  And  I go to /admin/features/manage_fields
+
+Scenario 1: check all active person fields
+  Tags: ['@selenium']
+  Given  I follow "Person's fields"
+  And  I check "person_active"
+  And  I follow "Save changes"
+  When  I go to admin_user's control panel
+  And  I follow "Informations" within "#section-profile"
+  Then  I should see "Custom area of study"
+
+Scenario 2: check all active enterprise fields
+  Tags: ['@selenium']
+  Given  I follow "Enterprise's fields"
+  And  I check "enterprise_active"
+  And  I follow "Save changes"
+  When  I go to paper-street's control panel
+  And  I follow "Informations" within "#section-profile"
+  Then  I should see "Historic and current context"
+
+Scenario 3: check all active community fields
+  Tags: ['@selenium']
+  Given  I follow "Community's fields"
+  And  I check "community_active"
+  And  I follow "Save changes"
+  When  I go to mycommunity's control panel
+  And  I follow "Informations" within "#section-profile"
+  Then  I should see "Economic activity"
+
+Scenario 4: uncheck Check/Uncheck All active person field
+  Tags: ['@selenium']
+  Given  I follow "Person's fields"
+  And  I check "person_active"
+  And  I follow "Save changes"
+  And  I uncheck "person_active"
+  And  I follow "Save changes"
+  And  I follow "menu-dropdown"
+  And  I follow "Control panel"
+  And  I follow "Informations" within "#section-profile"
+  Then  I should not see "Custom area of study"
+
+Scenario 5: uncheck Check/Uncheck All active community field
+  Tags: ['@selenium']
+  Given  I follow "Community's fields"
+  And  I check "community_active"
+  And  I follow "Save changes"
+  And  I follow "Community's fields"
+  And  I uncheck "community_active"
+  And  I follow "Save changes"
+  When  I go to mycommunity's control panel
+  And  I follow "Informations" within "#section-profile"
+  Then  I should not see "Economic activity"
+
+Scenario 6: uncheck Check/Uncheck All active enterprise field
+  Tags: ['@selenium']
+  Given  I follow "Enterprise's fields"
+  And  I check "enterprise_active"
+  And  I follow "Save changes"
+  And  I follow "Enterprise's fields"
+  And  I uncheck "enterprise_active"
+  And  I follow "Save changes"
+  When  I go to paper-street's control panel
+  And  I follow "Informations" within "#section-profile"
+  Then  I should not see "Historic and current context"
+

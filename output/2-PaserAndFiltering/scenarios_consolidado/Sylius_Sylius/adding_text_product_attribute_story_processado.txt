@@ -1,0 +1,16 @@
+Scenario 1: Adding a new text product attribute
+  Tags: ['@api', '@ui']
+  When  I want to create a new text product attribute
+  And  I specify its code as "t_shirt_brand"
+  And  I name it "T-Shirt brand" in "English (United States)"
+  And  I add it
+  Then  I should be notified that it has been successfully created
+  And  the text attribute "T-Shirt brand" should appear in the store
+
+
+
+Scenario 2: Seeing disabled type field while adding text a product attribute
+  Tags: ['@no-api', '@ui']
+  When  I want to create a new text product attribute
+  Then  the type field should be disabled
+

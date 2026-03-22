@@ -1,0 +1,22 @@
+Feature: Ensure we don't uncross when leaving liquidity auction
+
+Background: 
+  Given  the following assets are registered:
+  And  the markets:
+  And  the following network parameters are set:
+
+Scenario 1: 
+  Tags: ['@Panic', '@SLABug']
+  Given  the parties deposit on asset's general account the following amount:
+  Then  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  When  the parties place the following orders:
+  And  the network moves ahead "1" blocks
+  When  the parties place the following orders:
+  And  time is updated to "2019-12-01T00:00:00Z"
+  Then  the market state should be "STATE_ACTIVE" for the market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+

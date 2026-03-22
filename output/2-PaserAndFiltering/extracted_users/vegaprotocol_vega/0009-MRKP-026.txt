@@ -1,0 +1,26 @@
+Feature: Mark price calculation on auction exit
+
+Background: 
+  Given  the average block duration is "1"
+  Given  the following network parameters are set:
+  And  the liquidity monitoring parameters:
+  And  the simple risk model named "simple-risk-model":
+  And  the price monitoring named "price-monitoring":
+  And  the markets:
+
+Scenario 1: Order book price set to indicative price during auctions and mark price calcualted on auction exit (0009-MRKP-024)(0009-MRKP-025)(0009-MRKP-026)(0009-MRKP-027)
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/FEB23"
+  Then  the mark price should be "15000" for the market "ETH/FEB23"
+  When  the network moves ahead "6" blocks
+  Then  the mark price should be "15030" for the market "ETH/FEB23"
+  Given  the market data for the market "ETH/FEB23" should be:
+  And  the parties amend the following orders:
+  And  the parties place the following orders:
+  When  the network moves ahead "10" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+  Given  the parties amend the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the market data for the market "ETH/FEB23" should be:
+

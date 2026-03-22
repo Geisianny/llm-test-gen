@@ -1,0 +1,39 @@
+Scenario 1: Generating new coupons with prefix
+  Tags: ['@api', '@ui']
+  When  I want to generate new coupons for this promotion
+  And  I choose the amount of 5 coupons to be generated
+  And  I specify their prefix as "CHRISTMAS_"
+  And  I specify their code length as 6
+  And  I generate these coupons
+  Then  I should be notified that they have been successfully generated
+  And  there should be 5 coupons related to this promotion
+  And  all of the coupon codes should be prefixed with "CHRISTMAS_"
+
+
+
+Scenario 2: Generating new coupons with suffix
+  Tags: ['@api', '@ui']
+  When  I want to generate new coupons for this promotion
+  And  I choose the amount of 5 coupons to be generated
+  And  I specify their suffix as "_CHRISTMAS"
+  And  I specify their code length as 6
+  And  I generate these coupons
+  Then  I should be notified that they have been successfully generated
+  And  there should be 5 coupons related to this promotion
+  And  all of the coupon codes should be suffixed with "_CHRISTMAS"
+
+
+
+Scenario 3: Generating new coupons with prefix and suffix
+  Tags: ['@api', '@ui']
+  When  I want to generate new coupons for this promotion
+  And  I choose the amount of 5 coupons to be generated
+  And  I specify their prefix as "CHRISTMAS_"
+  And  I specify their suffix as "_SALE"
+  And  I specify their code length as 6
+  And  I generate these coupons
+  Then  I should be notified that they have been successfully generated
+  And  there should be 5 coupons related to this promotion
+  And  all of the coupon codes should be prefixed with "CHRISTMAS_"
+  And  all of the coupon codes should be suffixed with "_SALE"
+

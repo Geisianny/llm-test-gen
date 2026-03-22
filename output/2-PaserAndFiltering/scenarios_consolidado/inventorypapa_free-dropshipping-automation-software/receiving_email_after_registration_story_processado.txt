@@ -1,0 +1,12 @@
+Scenario 1: Receiving a welcoming email after registration
+  Tags: ['@ui', '@email']
+  When  I register with email "ghastly@bespoke.com" and password "suitsarelife"
+  Then  a welcoming email should have been sent to "ghastly@bespoke.com"
+
+
+
+Scenario 2: Receiving a welcoming email after registration in different locale than the default one
+  Tags: ['@ui', '@email']
+  When  I register with email "ghastly@bespoke.com" and password "suitsarelife" in the "Polish (Poland)" locale
+  Then  a welcoming email should have been sent to "ghastly@bespoke.com" in "Polish (Poland)" locale
+

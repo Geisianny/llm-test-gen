@@ -1,0 +1,109 @@
+Feature: User preferences
+
+Scenario 1: List empty preferences
+  Tags: ['@auth']
+  Given  empty "preferences"
+  When  we get "/preferences"
+  Then  we get error 405
+
+Scenario 2: Fetch old preferences using new session
+  Tags: ['@auth']
+  When  we get "/preferences/54d876dc102454a053a6d786"
+  Then  we get error 404
+
+Scenario 3: Create new preference
+  Tags: ['@auth']
+  Given  we have sessions "/sessions"
+  When  we get "/preferences/#SESSION_ID#"
+  Then  we get default preferences
+
+Scenario 4: Update user archive view preference settings
+  Tags: ['@auth']
+  Given  we have sessions "/sessions"
+  When  we get "/preferences/#SESSION_ID#"
+  When  we patch latest
+  Then  we get existing resource
+
+Scenario 5: Update user feature preview preference settings
+  Tags: ['@auth']
+  Given  we have sessions "/sessions"
+  When  we patch "/preferences/#SESSION_ID#"
+  Then  we get existing resource
+
+Scenario 6: Update user preference settings
+  Tags: ['@auth']
+  Given  we have sessions "/sessions"
+  When  we patch "/preferences/#SESSION_ID#"
+  Then  we get existing resource
+
+Scenario 7: Update editor theme user preference settings
+  Tags: ['@auth']
+  Given  we have sessions "/sessions"
+  When  we patch "/preferences/#SESSION_ID#"
+  When  we get "/preferences/#SESSION_ID#"
+  Then  we get existing resource
+
+Scenario 8: Update user preference settings - wrong preference
+  Tags: ['@auth']
+  Given  we have sessions "/sessions"
+  When  we get "/preferences/#SESSION_ID#"
+  When  we patch "/preferences/#SESSION_ID#"
+  Then  we get error 400
+
+Scenario 9: Update session preference settings
+  Tags: ['@auth']
+  Given  we have sessions "/sessions"
+  When  we get "/preferences/#SESSION_ID#"
+  When  we patch "/preferences/#SESSION_ID#"
+  Then  we get existing resource
+  When  we delete "/auth/#SESSION_ID#"
+  Given  we login as user "test_user" with password "test_password" and user type "user"
+  When  we get "/preferences/#SESSION_ID#"
+  Then  we get error 404
+
+Scenario 10: Get active privileges from user with preferences
+  Tags: ['@auth']
+  Given  we have sessions "/sessions"
+  When  we patch "/users/#users._id#"
+  When  we get "/preferences/#SESSION_ID#"
+  Then  we get existing resource
+  And  there is no "feature:preview" preference
+  When  we patch "/users/#users._id#"
+  When  we get "/preferences/#SESSION_ID#"
+  Then  we get existing resource
+
+Scenario 11: Get active privileges from user and role with preferences
+  Tags: ['@auth']
+  Given  we have sessions "/sessions"
+  Given  "roles"
+  When  we patch "/users/#users._id#"
+  When  we get "/preferences/#SESSION_ID#"
+  Then  we get existing resource
+
+Scenario 12: Get all active privileges from administrator with preferences
+  Tags: ['@auth']
+  Given  we have sessions "/sessions"
+  When  we patch "/users/#users._id#"
+  When  we get "/preferences/#SESSION_ID#"
+  Then  we get existing resource
+
+Scenario 13: Session Preferences are deleted when user logsout of Superdesk
+  Tags: ['@auth']
+  Given  I logout
+  When  we login as user "foo" with password "barword" and user type "user"
+  Then  we get "/users/test_user" and match
+
+Scenario 14: Update user preference setting active destination
+  Tags: ['@auth']
+  Given  we have sessions "/sessions"
+  When  we get "/preferences/#SESSION_ID#"
+  When  we patch "/preferences/#SESSION_ID#"
+  Then  we get existing resource
+
+Scenario 15: Update editor spell checker user preferences settings
+  Tags: ['@auth']
+  Given  we have sessions "/sessions"
+  When  we patch "/preferences/#SESSION_ID#"
+  When  we get "/preferences/#SESSION_ID#"
+  Then  we get existing resource
+

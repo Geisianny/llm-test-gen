@@ -1,0 +1,15 @@
+Feature: Middleware
+Description: In order to use Karma
+  As a person who wants to write great tests
+  I want to use custom middleware with Karma.
+
+Scenario 1: Simple middleware
+  Given  a configuration with:
+  When  I start Karma
+  Then  it passes with:
+
+Scenario 2: Frameworks can add middleware
+  Given  a configuration with:
+  When  I start Karma
+  Then  it passes with:
+

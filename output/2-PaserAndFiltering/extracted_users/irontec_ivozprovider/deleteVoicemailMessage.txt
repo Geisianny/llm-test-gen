@@ -1,0 +1,21 @@
+Feature: Manage voicemail messages
+Description: In order to manage voicemail messages
+  As a user
+  I need to be able to delete them through the API.
+
+Scenario 1: Remove a voicemail message
+  Tags: ['@createSchema', '@userApiContext']
+  Given  I add User Authorization header
+  When  I add "Content-Type" header equal to "application/json"
+  And  I add "Accept" header equal to "application/json"
+  And  I send a "DELETE" request to "/voicemail_messages/1"
+  Then  the response status code should be 204
+
+Scenario 2: Remove a voicemail message belonging to another user
+  Tags: ['@createSchema', '@userApiContext']
+  Given  I add User Authorization header
+  When  I add "Content-Type" header equal to "application/json"
+  And  I add "Accept" header equal to "application/json"
+  And  I send a "DELETE" request to "/voicemail_messages/2"
+  Then  the response status code should be 404
+

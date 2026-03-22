@@ -1,0 +1,6 @@
+Scenario 1: Deleted shipping method should disappear from the registry
+  Tags: ['@ui', '@api']
+  When  I delete shipping method "UPS Ground"
+  Then  I should be notified that it has been successfully deleted
+  Then  this shipping method should no longer exist in the registry
+

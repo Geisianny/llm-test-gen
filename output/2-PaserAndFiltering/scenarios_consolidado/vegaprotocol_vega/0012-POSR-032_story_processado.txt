@@ -1,0 +1,5 @@
+Scenario 1: the distressed party uncrosses with the vAMM orders
+  Tags: ['@VAMM']
+  When  the network moves ahead "5" blocks
+  Then  the following trades should be executed:
+

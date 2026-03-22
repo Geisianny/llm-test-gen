@@ -1,0 +1,6 @@
+Scenario 1: Verifying the customer's IP address for a newly placed order
+  Tags: ['@api', '@ui']
+  Given  I am logged in as an administrator
+  When  I view the summary of the order placed by "customer@example.com"
+  Then  I should see this customer's IP address
+

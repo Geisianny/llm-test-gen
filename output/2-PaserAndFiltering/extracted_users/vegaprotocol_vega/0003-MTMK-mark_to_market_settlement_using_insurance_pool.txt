@@ -1,0 +1,32 @@
+Feature: Test mark to market settlement with insurance pool
+
+Background: 
+  Given  the markets:
+  And  the following network parameters are set:
+
+Scenario 1: If settlement amount > party’s margin account balance + party’s general account balance for the asset, the full balance of the party’s margin account is transferred to the market’s temporary settlement account, the full balance of the party’s general account for the assets are transferred to the market’s temporary settlement account, the minimum insurance pool account balance for the market & asset, and the remainder, i.e. the difference between the total amount transferred from the trader’s margin + general accounts and the settlement amount, is transferred from the insurance pool account for the market to the temporary settlement account for the market (0003-MTMK-003)
+  Tags: ['@Liquidation']
+  Given  the initial insurance pool balance is "10000" for all the markets
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the market data for the market "ETH/DEC19" should be:
+  Then  the parties should have the following account balances:
+  And  the settlement account should have a balance of "0" for the market "ETH/DEC19"
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following account balances:
+  And  the settlement account should have a balance of "0" for the market "ETH/DEC19"
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  And  the network moves ahead "1" blocks
+  Then  the parties should have the following account balances:
+  And  the orders should have the following status:
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the cumulated balance for all accounts should be worth "1145122"
+  And  the settlement account should have a balance of "0" for the market "ETH/DEC19"
+  And  the insurance pool balance should be "9520" for the market "ETH/DEC19"
+

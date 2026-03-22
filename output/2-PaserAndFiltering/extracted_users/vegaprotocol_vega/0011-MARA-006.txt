@@ -1,0 +1,95 @@
+Feature: check margin account with partially filled order
+
+Background: 
+  Given  the log normal risk model named "log-normal-risk-model-1":
+  And  the margin calculator named "margin-calculator-0":
+  And  the price monitoring named "price-monitoring-1":
+  And  the markets:
+  And  the following network parameters are set:
+  And  the average block duration is "1"
+
+Scenario 1: 001 If an order is partially filled and if this leads to a reduced position and reduced riskiest long / short then the margin requirements are seen to be reduced and if margin balance is above release level then the excess amount is transferred to the general account.0011-MARA-006. 0011-MARA-008
+  Tags: ['@Liquidation']
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/DEC20"
+  And  the mark price should be "10" for the market "ETH/DEC20"
+  When  the parties place the following orders with ticks:
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+
+Scenario 2: 002 check margin for GTT order type.0011-MARA-007
+  Tags: ['@Liquidation']
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/DEC20"
+  And  the mark price should be "10" for the market "ETH/DEC20"
+  When  the parties place the following orders with ticks:
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  Then  the network moves ahead "7" blocks
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  Then  the network moves ahead "7" blocks
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  Then  the network moves ahead "7" blocks
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+
+Scenario 3: 003 check margin for GFN order type 0011-MARA-009
+  Tags: ['@Liquidation']
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/DEC21"
+  And  the market data for the market "ETH/DEC21" should be:
+  When  the parties place the following orders with ticks:
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  And  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  And  the orders should have the following status:
+  When  the parties place the following orders with ticks:
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/DEC21"
+  And  the orders should have the following status:
+

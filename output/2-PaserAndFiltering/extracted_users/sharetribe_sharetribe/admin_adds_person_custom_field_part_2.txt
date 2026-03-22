@@ -1,0 +1,23 @@
+Feature: Admin adds a person custom field part 2
+
+Background: 
+  Given  I am logged in as "kassi_testperson2"
+  And  "kassi_testperson2" has admin rights in community "test"
+  And  I am on the person custom fields admin page
+  Then  I should see that I do not have any custom fields
+
+Scenario 1: Admin adds checkbox field
+  Tags: ['@javascript']
+  When  I add a new person checkbox field Amenities
+  Then  I should see that there is a custom field "Amenities"
+
+Scenario 2: Admin adds checkbox field with invalid data
+  Tags: ['@javascript']
+  When  I add a new person checkbox field Amenities with invalid data
+  Then  I should see 1 validation errors
+
+Scenario 3: Admin adds date field
+  Tags: ['@javascript']
+  When  I add a new person date field "Begin date"
+  Then  I should see that there is a custom field "Begin date"
+

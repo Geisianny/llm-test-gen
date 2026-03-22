@@ -1,0 +1,65 @@
+Scenario 1: Preventing anonymous user from claiming cart of logged in user
+  Tags: ['@no-api', '@ui', '@javascript']
+  Given  I am logged in as "robb@stark.com"
+  And  I have product "PHP T-Shirt" in the cart
+  When  an anonymous user in another browser adds products "PHP T-Shirt" and "Kotlin T-Shirt" to the cart
+  And  they complete addressing step with email "robb@stark.com" and "United States" based billing address
+  And  they add product "Symfony T-Shirt" to the cart
+  Then  their cart total should be "$150.00"
+
+
+
+Scenario 2: Preventing anonymous user from claiming cart of logged in user
+  Tags: ['@no-api', '@ui', '@javascript']
+  Given  I am logged in as "robb@stark.com"
+  And  I have product "PHP T-Shirt" in the cart
+  When  an anonymous user in another browser adds products "PHP T-Shirt" and "Kotlin T-Shirt" to the cart
+  And  they complete addressing step with email "robb@stark.com" and "United States" based billing address
+  And  they add product "Symfony T-Shirt" to the cart
+  And  I view my cart in the previous session
+  Then  there should be one item in my cart
+  And  my cart total should be "$20.00"
+
+
+
+Scenario 3: Preventing anonymous user from claiming cart of logged in user
+  Tags: ['@no-api', '@ui', '@mink:chromedriver']
+  When  I add product "PHP T-Shirt" to the cart
+  And  I sign in with email "robb@stark.com" and password "KingInTheNorth"
+  And  I log out
+  And  an anonymous user in another browser adds products "PHP T-Shirt" and "Kotlin T-Shirt" to the cart
+  And  they complete addressing step with email "robb@stark.com" and "United States" based billing address
+  And  they add product "Symfony T-Shirt" to the cart
+  And  I sign in again with email "robb@stark.com" and password "KingInTheNorth" in the previous session
+  And  I see the summary of my previous cart
+  Then  there should be one item in my cart
+  And  my cart total should be "$20.00"
+
+
+
+Scenario 4: Preventing anonymous user from claiming cart of logged in user
+  Tags: ['@no-api', '@ui', '@mink:chromedriver']
+  Given  on this channel account verification is not required
+  When  I add product "PHP T-Shirt" to the cart
+  And  I register with email "eddard@stark.com" and password "handOfTheKing"
+  And  I log out
+  And  an anonymous user in another browser adds products "PHP T-Shirt" and "Kotlin T-Shirt" to the cart
+  And  they complete addressing step with email "robb@stark.com" and "United States" based billing address
+  And  they add product "Symfony T-Shirt" to the cart
+  And  I sign in again with email "eddard@stark.com" and password "handOfTheKing" in the previous session
+  And  I see the summary of my previous cart
+  Then  there should be one item in my cart
+  And  my cart total should be "$20.00"
+
+
+
+Scenario 5: Preventing logged in user from claiming cart of anonymous user
+  Tags: ['@no-api', '@ui', '@javascript']
+  Given  an anonymous user added product "Kotlin T-Shirt" to the cart
+  And  they have completed addressing step with email "robb@stark.com" and "United States" based billing address
+  And  I am logged in as "robb@stark.com"
+  When  I add product "Sylius T-Shirt" to the cart
+  And  I view my cart in the previous session
+  Then  there should be one item in my cart
+  And  my cart total should be "$150.00"
+

@@ -1,0 +1,65 @@
+Scenario 1: Trying to add a zone without specifying its code
+  Tags: ['@ui', '@api']
+  When  I want to create a new zone consisting of country
+  And  I name it "European Union"
+  But  I do not specify its code
+  And  I try to add it
+  Then  I should be notified that code is required
+  And  zone with name "European Union" should not be added
+
+
+
+Scenario 2: Trying to add a zone without specifying its name
+  Tags: ['@ui', '@api']
+  When  I want to create a new zone consisting of country
+  And  I specify its code as "EU"
+  But  I do not specify its name
+  And  I try to add it
+  Then  I should be notified that name is required
+  And  zone with code "EU" should not be added
+
+
+
+Scenario 3: Trying to add a zone without any countries
+  Tags: ['@ui', '@api']
+  When  I want to create a new zone consisting of country
+  And  I name it "European Union"
+  And  I specify its code as "EU"
+  But  I do not add a country member
+  And  I add it
+  Then  I should be notified that at least one zone member is required
+  And  zone with name "European Union" should not be added
+
+
+
+Scenario 4: Being unable to edit code of an existing zone
+  Tags: ['@ui', '@api']
+  Given  the store has a zone "European Union" with code "EU"
+  And  it has the "France" country member
+  When  I want to modify the zone named "European Union"
+  Then  I should not be able to edit its code
+
+
+
+Scenario 5: Being unable to add itself to members during editing an existing zone
+  Tags: ['@ui', '@api']
+  Given  the store has a zone "European Union" with code "EU"
+  When  I want to modify the zone named "European Union"
+  Then  I can not add a zone "European Union"
+
+
+
+Scenario 6: Seeing a disabled type field when adding country type zone
+  Tags: ['@ui']
+  When  I want to create a new zone consisting of country
+  Then  I should not be able to edit its type
+  And  it should be of country type
+
+
+
+Scenario 7: Seeing a disabled type field when adding province type zone
+  Tags: ['@ui']
+  When  I want to create a new zone consisting of province
+  Then  I should not be able to edit its type
+  And  it should be of province type
+

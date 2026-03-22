@@ -1,0 +1,17 @@
+Feature: Clearing cart
+Description: In order to quick start shopping again
+    As a Visitor
+    I want to be able to clear my cart
+Tags: ['@shopping_cart']
+
+Background: 
+  Given  the store operates on a single channel in "United States"
+  And  the store has a product "T-shirt banana" priced at "$12.54"
+  And  I added this product to the cart
+
+Scenario 1: Clearing cart
+  Tags: ['@ui', '@api']
+  Given  I see the summary of my cart
+  When  I clear my cart
+  Then  my cart should be cleared
+

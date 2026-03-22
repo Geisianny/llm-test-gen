@@ -1,0 +1,17 @@
+Scenario 1: Editor adds field of operation
+  When  I create a new field of operation called "New Field" with description "Description"
+  Then  I am able to associate fatality notices with "New Field"
+
+
+
+Scenario 2: Only editors/writers from organisations which handle fatalities can create fatality notices
+  Given  I am a writer in the organisation "DFT"
+  Then  I cannot edit fields of operation
+  And  I cannot create new fatality notices
+
+
+
+Scenario 3: GDS editors can also edit fatality notices
+  Given  I am a GDS editor
+  Then  I can create a fatality notice
+

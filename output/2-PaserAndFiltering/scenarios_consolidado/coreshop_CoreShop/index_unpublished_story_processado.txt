@@ -1,0 +1,24 @@
+Scenario 1: The object instance is enabled but unpublished
+  Given  the object-instance has following values:
+  Then  the index should not have indexed the object
+
+
+
+Scenario 2: The object instance is enabled and published
+  Given  the object-instance has following values:
+  And  the object-instance is published
+  Then  the index should have indexed the object
+
+
+
+Scenario 3: The object instance is disabled and published
+  Given  the object-instance has following values:
+  And  the object-instance is published
+  Then  the index should not have indexed the object
+
+
+
+Scenario 4: The object instance is disabled and unpublished
+  Given  the object-instance has following values:
+  Then  the index should not have indexed the object
+

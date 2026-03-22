@@ -1,0 +1,24 @@
+Scenario 1: Buying a product in default currency for browsed channel
+  Tags: ['@ui', '@api']
+  Given  I change my current channel to "Web-EU"
+  When  I add product "Leprechaun's Gold" to the cart
+  Then  I should see "Leprechaun's Gold" with unit price "€10.00" in my cart
+
+
+
+Scenario 2: Buying a product with proper price after currency change
+  Tags: ['@ui']
+  Given  I change my current channel to "Web-EU"
+  And  the exchange rate of "Euro" to "British Pound" is 0.7
+  When  I switch to the "GBP" currency
+  And  I add product "Leprechaun's Gold" to the cart
+  Then  I should see "Leprechaun's Gold" with unit price "£7.00" in my cart
+
+
+
+Scenario 3: Buying a product with proper price after channel change
+  Tags: ['@ui']
+  Given  I change my current channel to "Web-GB"
+  When  I add product "Leprechaun's Gold" to the cart
+  Then  I should see "Leprechaun's Gold" with unit price "£15.00" in my cart
+

@@ -1,0 +1,20 @@
+Scenario 1: Trying to add a new shipping category without specifying its code
+  Tags: ['@ui', '@api']
+  When  I want to create a new shipping category
+  And  I name it "Standard"
+  But  I do not specify its code
+  And  I try to add it
+  Then  I should be notified that code is required
+  And  shipping category with name "Standard" should not be added
+
+
+
+Scenario 2: Trying to add a new shipping category without specifying its name
+  Tags: ['@ui', '@api']
+  When  I want to create a new shipping category
+  And  I specify its code as "STANDARD"
+  But  I do not specify its name
+  And  I try to add it
+  Then  I should be notified that name is required
+  And  shipping category with name "Standard" should not be added
+

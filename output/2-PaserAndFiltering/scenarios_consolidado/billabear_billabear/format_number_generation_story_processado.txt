@@ -1,0 +1,25 @@
+Scenario 1: 
+  Given  the following subscriptions exist:
+  And  stripe billing is enabled
+  And  the following credit transactions exist:
+  And  the subsequential invoice number is 13
+  And  the invoice number generation is format "RD%S"
+  When  the background task to reinvoice active subscriptions
+  Then  the subscription for "customer.one@example.org" will expire in a week
+  And  the latest invoice for "customer.one@example.org" will have the invoice number "RD14"
+  Then  the invoice subsequential number is 14
+
+
+
+Scenario 2: 
+  Given  the following subscriptions exist:
+  And  stripe billing is enabled
+  And  the following credit transactions exist:
+  And  the subsequential invoice number is 13
+  And  the invoice number generation is format "RD%R"
+  When  the background task to reinvoice active subscriptions
+  Then  the subscription for "customer.one@example.org" will expire in a week
+  And  the latest invoice for "customer.one@example.org" will not have the invoice number "RD14"
+  And  the latest invoice for "customer.one@example.org" will have the invoice number starting with "RD" and 8 chars
+  Then  the invoice subsequential number is 14
+

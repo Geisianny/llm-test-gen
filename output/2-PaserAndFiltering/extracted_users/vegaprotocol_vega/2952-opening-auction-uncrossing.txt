@@ -1,0 +1,18 @@
+Feature: Set up a market, with an opening auction, then uncross the book. Make sure opening auction can end if we have remaingin volume in the uncrossing range
+
+Background: 
+  And  the simple risk model named "my-simple-risk-model":
+  And  the fees configuration named "my-fees-config":
+  And  the markets:
+  And  the following network parameters are set:
+
+Scenario 1: set up 2 parties with balance
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  Then  the market data for the market "ETH/DEC20" should be:
+  When  the opening auction period ends for market "ETH/DEC20"
+  And  the following trades should be executed:
+  And  the mark price should be "1000000" for the market "ETH/DEC20"
+

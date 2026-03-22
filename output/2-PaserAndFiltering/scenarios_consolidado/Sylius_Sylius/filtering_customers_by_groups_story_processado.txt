@@ -1,0 +1,17 @@
+Scenario 1: Filtering customers by a group
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I want to see all customers in store
+  And  I filter by group "Retail"
+  Then  I should see a single customer on the list
+  And  I should see the customer "g.bespoke@example.com" in the list
+
+
+
+Scenario 2: Filtering customers by multiple groups
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I want to see all customers in store
+  And  I filter by groups "Retail" and "Wholesale"
+  Then  I should see 2 customers on the list
+  And  I should see the customer "l.abhorsen@example.com" in the list
+  And  I should see the customer "g.bespoke@example.com" in the list
+

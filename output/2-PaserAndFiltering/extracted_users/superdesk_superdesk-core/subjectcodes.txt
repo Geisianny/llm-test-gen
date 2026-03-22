@@ -1,0 +1,7 @@
+Feature: Subject codes api
+
+Scenario 1: Fetch subject codes
+  Tags: ['@auth']
+  When  we get "/subjectcodes/"
+  Then  we get list with 1404 items
+

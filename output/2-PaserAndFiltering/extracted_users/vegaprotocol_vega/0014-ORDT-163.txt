@@ -1,0 +1,33 @@
+Feature: stop order in spot market
+
+Background: 
+  Given  time is updated to "2024-01-01T00:00:00Z"
+  Given  the following network parameters are set:
+  Given  the following assets are registered:
+  Given  the fees configuration named "fees-config-1":
+  Given  the log normal risk model named "lognormal-risk-model-1":
+  And  the price monitoring named "price-monitoring-1":
+  And  the spot markets:
+  Given  the parties deposit on asset's general account the following amount:
+  And  the average block duration is "1"
+  And  the parties place the following orders:
+  And  the opening auction period ends for market "BTC/ETH"
+  When  the network moves ahead "1" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  And  the mark price should be "1000" for the market "BTC/ETH"
+
+Scenario 1: 0014-ORDT-163, 0014-ORDT-164: A wrapped buy/sell order will be rejected when triggered if the party doesn't have enough of the required quote asset to cover the order.
+  And  the parties place the following orders:
+  And  the parties place the following orders:
+  When  the parties place the following orders:
+  Then  the stop orders should have the following states
+  Then  "party1" should have general account balance of "100" for asset "ETH"
+  Then  "party1" should have general account balance of "11" for asset "BTC"
+  And  the parties cancel the following orders:
+  And  the parties place the following orders:
+  And  the parties place the following orders:
+  When  the parties place the following orders:
+  Then  the stop orders should have the following states
+  Then  "party2" should have general account balance of "10000" for asset "ETH"
+  Then  "party2" should have general account balance of "10" for asset "BTC"
+

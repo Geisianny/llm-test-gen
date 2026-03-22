@@ -1,0 +1,7 @@
+Scenario 1: Running install sample data command
+  When  I run CoreShop Install Fixtures Data command
+  And  I confirm loading Fixtures Data command
+  And  I run CoreShop Install Demo Data command
+  And  I confirm loading Demo Data command
+  Then  the command should finish successfully
+

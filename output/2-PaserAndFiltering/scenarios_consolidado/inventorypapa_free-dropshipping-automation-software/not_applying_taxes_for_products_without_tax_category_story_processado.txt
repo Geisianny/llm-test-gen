@@ -1,0 +1,23 @@
+Scenario 1: Proper taxes for untaxed product
+  Tags: ['@ui']
+  When  I add product "PHP T-Shirt" to the cart
+  Then  my cart total should be "$100.00"
+  And  there should be no taxes charged
+
+
+
+Scenario 2: Proper taxes for untaxed product with quantity specified
+  Tags: ['@ui']
+  When  I add 3 products "PHP T-Shirt" to the cart
+  Then  my cart total should be "$300.00"
+  And  there should be no taxes charged
+
+
+
+Scenario 3: Proper taxes for multiple untaxed products
+  Tags: ['@ui']
+  When  I add product "PHP T-Shirt" to the cart
+  And  I add product "Symfony Mug" to the cart
+  Then  my cart total should be "$130.00"
+  And  there should be no taxes charged
+

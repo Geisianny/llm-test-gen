@@ -1,0 +1,7 @@
+Scenario 1: 
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  the following vouchers exist:
+  When  I disable the voucher "Voucher One"
+  Then  the voucher "Voucher One" will be disabled
+  And  the voucher "Voucher Two" will be enabled
+

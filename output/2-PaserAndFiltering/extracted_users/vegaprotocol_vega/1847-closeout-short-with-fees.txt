@@ -1,0 +1,22 @@
+Feature: Short close-out test (see ln 449 of system-tests/grpc/trading/tradesTests.py & https://github.com/vegaprotocol/scenario-runner/tree/develop/scenarios/QA/issues/86)
+
+Background: 
+  Given  the fees configuration named "my-fees-config":
+  And  the markets:
+  And  the following network parameters are set:
+
+Scenario 1: https://drive.google.com/file/d/1bYWbNJvG7E-tcqsK26JMu2uGwaqXqm0L/view
+  Tags: ['@Liquidation']
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  Then  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  When  the parties place the following orders "1" blocks apart:
+  Then  the parties should have the following account balances:
+  When  the parties place the following orders "1" blocks apart:
+  And  the mark price should be "20" for the market "ETH/DEC19"
+  When  the network moves ahead "3" blocks
+  Then  the parties should have the following account balances:
+  And  the insurance pool balance should be "0" for the market "ETH/DEC19"
+  Then  the parties should have the following profit and loss:
+

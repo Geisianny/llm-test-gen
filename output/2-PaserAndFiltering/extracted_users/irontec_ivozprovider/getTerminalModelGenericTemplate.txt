@@ -1,0 +1,14 @@
+Feature: Test terminal generic template
+Description: In order to test terminal models generic templates
+  as a super admin
+  I need to be able to run them through the API.
+
+Scenario 1: Test terminal generic template
+  Tags: ['@createSchema']
+  Given  I add Authorization header
+  And  "/tmp/storage_path/Provision_template/2/generic.phtml" exists with the content of "/opt/irontec/ivozprovider/microservices/provision/templates/provisioning/YealinkT21P_E2/generic.cfg"
+  When  I add "Accept" header equal to "application/json"
+  And  I send a "GET" request to "terminal_models/2/test_generic_template"
+  Then  the response status code should be 200
+  And  the response should be equal to:
+

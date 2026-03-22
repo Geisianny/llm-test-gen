@@ -1,0 +1,14 @@
+Scenario 1: Get all CSM Agents returns "OK" response
+  Tags: ['@team:DataDog/k9-cloud-security-platform']
+  Given  new "ListAllCSMAgents" request
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 2: Get all CSM Serverless Agents returns "OK" response
+  Tags: ['@team:DataDog/k9-cloud-security-platform']
+  Given  new "ListAllCSMServerlessAgents" request
+  When  the request is sent
+  Then  the response status is 200 OK
+

@@ -1,0 +1,71 @@
+Feature: test negative PDP (position decimal places)
+
+Background: 
+  Given  the following network parameters are set:
+  Given  the liquidity monitoring parameters:
+  And  the following assets are registered:
+  And  the average block duration is "1"
+  And  the log normal risk model named "log-normal-risk-model-1":
+  And  the fees configuration named "fees-config-1":
+  And  the price monitoring named "price-monitoring-1":
+  And  the liquidity sla params named "SLA-1":
+  And  the liquidity sla params named "SLA-2":
+  And  the markets:
+  And  the parties deposit on asset's general account the following amount:
+
+Scenario 1: 001, test negative PDP when trading mode is auction (0019-MCAL-010)
+  Tags: ['@Now']
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  Then  the market data for the market "USD/DEC22" should be:
+  And  the parties should have the following account balances:
+  When  the opening auction period ends for market "USD/DEC22"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "USD/DEC22"
+  And  the mark price should be "1000" for the market "USD/DEC22"
+  Then  the parties should have the following account balances:
+  And  the parties should have the following margin levels:
+
+Scenario 2: 002, test negative PDP when trading mode is continuous (0003-MTMK-014, 0019-MCAL-010, 0029-FEES-014)
+  Tags: ['@Now']
+  Given  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "USD/DEC22"
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "USD/DEC22"
+  And  the auction ends with a traded volume of "10" at a price of "10"
+  And  the market data for the market "USD/DEC22" should be:
+  And  the parties should have the following account balances:
+  And  the parties should have the following margin levels:
+  And  the following trades should be executed:
+  Then  the parties should have the following profit and loss:
+  Then  the order book should have the following volumes for market "USD/DEC22":
+  And  the parties place the following orders with ticks:
+  And  the following trades should be executed:
+  And  the following transfers should happen:
+  Then  the parties should have the following profit and loss:
+  And  the parties should have the following account balances:
+  And  the parties should have the following margin levels:
+  And  the parties place the following orders with ticks:
+  And  the following trades should be executed:
+  And  the market data for the market "USD/DEC22" should be:
+  Then  the parties should have the following profit and loss:
+  And  the parties should have the following account balances:
+  And  the parties should have the following margin levels:
+
+Scenario 3: Assure LP orders never trade on entry, even with spread of 1 tick and extremely small LP price range
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "USD/DEC23"
+  Then  the market data for the market "USD/DEC23" should be:
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "USD/DEC23"
+  And  the order book should have the following volumes for market "USD/DEC23":
+  When  the parties place the following orders with ticks:
+  Then  the order book should have the following volumes for market "USD/DEC23":
+  When  the parties place the following orders with ticks:
+  Then  the order book should have the following volumes for market "USD/DEC23":
+  And  the market data for the market "USD/DEC23" should be:
+

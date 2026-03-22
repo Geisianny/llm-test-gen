@@ -1,0 +1,6 @@
+Feature: System info api
+
+Scenario 1: Health check
+  When  we get "/system/health"
+  Then  we get existing resource
+

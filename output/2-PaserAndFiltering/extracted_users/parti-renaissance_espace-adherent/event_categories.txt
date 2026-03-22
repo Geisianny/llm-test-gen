@@ -1,0 +1,12 @@
+Feature: 
+Description: In order to see event categories
+    As a logged-in user
+    I should be able to access API event categories
+Tags: ['@api', '@renaissance']
+
+Scenario 1: As a non logged-in user I get event categories with their group category
+  When  I send a "GET" request to "/api/event_categories"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+

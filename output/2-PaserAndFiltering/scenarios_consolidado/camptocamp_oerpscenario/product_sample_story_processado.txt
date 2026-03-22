@@ -1,0 +1,30 @@
+Scenario 1: Test product categories
+  Given  there is a product category named "Devices"
+  Given  there is a product category named "Missions"
+
+
+
+Scenario 2: Create Device and Mission
+  Given  there is a product named "Device 1.0" with the following attributes :
+  And  product is in category "Devices"
+  And  the supplier of the product is "Fournisseur Device"
+
+
+
+Scenario 3: create Supplier
+  Given  I need a "res.partner" with name: Pro living and oid: scenario.main_supplier
+  And  having:
+  Given  I need a "res.partner.address" with name: Pro living and oid: scenario.main_supplier_add
+  And  having:
+
+
+
+Scenario 4: Set product suplier rel on all product
+  Given  I set on supplier line on all product using supplier "scenario.main_supplier"
+
+
+
+Scenario 5: Create a product using DSL
+  Given  I need a "product.product" with name: Mission 1.0 and oid: scenario.mission1
+  And  having:
+

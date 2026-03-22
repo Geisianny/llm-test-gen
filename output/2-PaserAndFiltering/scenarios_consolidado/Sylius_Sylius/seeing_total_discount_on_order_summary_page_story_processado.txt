@@ -1,0 +1,13 @@
+Scenario 1: Seeing the total discount on order summary page
+  Tags: ['@api', '@ui']
+  Given  I added product "The Sorting Hat" to the cart
+  And  I am at the checkout addressing step
+  When  I specify the email as "jon.snow@example.com"
+  And  I specify the billing address as "Ankh Morpork", "Frost Alley", "90210", "United States" for "Jon Snow"
+  And  I complete the addressing step
+  And  I proceed with "Free" shipping method and "Offline" payment
+  Then  I should be on the checkout summary step
+  And  my order promotion total should be "-$9.00"
+  And  "Holiday promotion" should be applied to my order
+  And  "All year promotion" should be applied to my order
+

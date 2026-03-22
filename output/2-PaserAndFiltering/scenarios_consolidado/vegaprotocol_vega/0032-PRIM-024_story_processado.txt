@@ -1,0 +1,14 @@
+Scenario 1: The market continues in regular fashion once price protection auction period ends and price monitoring bounds
+  And  the market data for the market "BTC/ETH" should be:
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "BTC/ETH"
+  And  the orders should have the following states:
+  Then  the parties cancel the following orders:
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  And  the mark price should be "1030" for the market "BTC/ETH"
+  And  the orders should have the following states:
+  And  the market data for the market "BTC/ETH" should be:
+

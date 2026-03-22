@@ -1,0 +1,52 @@
+Scenario 1: Don't accept edit the profile with invalid lattes url
+  Tags: ['@selenium']
+  And  I check "Lattes Curriculum Plugin"
+  And  I follow "Save changes"
+  And  I go to /admin/features/manage_fields
+  Given  I follow "Person's fields"
+  And  I check "person_fields_lattes_url_active"
+  And  I check "person_fields_lattes_url_signup"
+  And  I follow "Save changes"
+  Given  I am on admin_user's control panel
+  When  I follow "Informations" within "#section-profile"
+  And  I fill in "Lattes URL" with "http://youtube.com.br/"
+  And  I follow "Save"
+  Then  I should see "Lattes url is invalid."
+
+
+
+Scenario 2: Import lattes informations
+  Tags: ['@selenium']
+  And  I check "Lattes Curriculum Plugin"
+  And  I follow "Save changes"
+  And  I go to /admin/features/manage_fields
+  Given  I follow "Person's fields"
+  And  I check "person_fields_lattes_url_active"
+  And  I check "person_fields_lattes_url_signup"
+  And  I follow "Save changes"
+  Given  I am on admin_user's control panel
+  And  the field lattes_url is public for all users
+  When  I follow "Informations" within "#section-profile"
+  And  I fill in "Lattes URL" with "http://lattes.cnpq.br/2864976228727880"
+  And  I follow "Save"
+  And  I go to /profile/admin_user#lattes_tab
+  Then  I should see "Lattes"
+
+
+
+Scenario 3: Don't show lattes informations for blank lattes urls
+  Tags: ['@selenium']
+  And  I check "Lattes Curriculum Plugin"
+  And  I follow "Save changes"
+  And  I go to /admin/features/manage_fields
+  Given  I follow "Person's fields"
+  And  I check "person_fields_lattes_url_active"
+  And  I check "person_fields_lattes_url_signup"
+  And  I follow "Save changes"
+  Given  I am on admin_user's control panel
+  And  the field lattes_url is public for all users
+  When  I follow "Informations" within "#section-profile"
+  And  I follow "Save"
+  And  I go to /profile/admin_user
+  Then  I should not see "Lattes"
+

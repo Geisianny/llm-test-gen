@@ -1,0 +1,23 @@
+Scenario 1: all sort of fees with multiple assets and multiple markets pay rewards on epoch end
+  Tags: ['@FeeRound', '@SLABug']
+  Given  the parties submit the following recurring transfers:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the parties place the following orders:
+  And  the market data for the market "ETH/DEC21" should be:
+  And  the market data for the market "ETH/DEC22" should be:
+  And  the market data for the market "BTC/DEC21" should be:
+  And  the market data for the market "BTC/DEC22" should be:
+  When  the network moves ahead "2" blocks
+  Then  the following trades should be executed:
+  And  the following trades should be executed:
+  And  the following trades should be executed:
+  And  the following trades should be executed:
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC21"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC22"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/DEC21"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/DEC22"
+  Then  the parties place the following orders with ticks:
+  And  the order book should have the following volumes for market "ETH/DEC21":
+  Then  the parties place the following orders with ticks:
+

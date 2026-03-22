@@ -1,0 +1,62 @@
+Feature: search contents
+Description: As a noosfero user
+  I want to search contents
+  In order to find ones that interest me
+
+Background: 
+  Given  the search index is empty
+  And  plugin Solr is enabled on environment
+  And  the following users
+  Given  the following users
+  And  the following articles
+  And  the following categories as facets
+
+Scenario 1: search articles by category
+  Given  the following category
+  And  the following articles
+  When  I go to the search articles page
+  And  I fill in "search-input" with "Software"
+  And  I press "Search"
+  Then  I should see "using noosfero" within "#search-results"
+  And  I should not see "bees and butterflies"
+  And  I should not see "whales and dolphins"
+
+Scenario 2: see default facets when searching
+  When  I go to the search articles page
+  And  I fill in "search-input" with "bees"
+  And  I press "Search"
+  Then  I should see "Type" within "#facets-menu"
+  And  I should see "Published date" within "#facets-menu"
+  And  I should see "Profile" within "#facets-menu"
+  And  I should see "Categories" within "#facets-menu"
+
+Scenario 3: find enterprises without exact query
+  When  I go to the search articles page
+  And  I fill in "search-input" with "bees and"
+  And  I press "Search"
+  Then  I should see "bees and butterflies" within "#search-results"
+
+Scenario 4: filter contents by facet
+  Given  the following categories
+  And  the following articles
+  When  I go to the search articles page
+  And  I fill in "search-input" with "this is an article"
+  And  I press "Search"
+  And  I follow "Software Livre" within "#facets-menu"
+  Then  I should see "noosfero and debian" within "#search-results"
+  And  I should not see "facebook and 1984"
+  When  I follow "remove facet" within ".facet-selected"
+  Then  I should see "facebook and 1984"
+
+Scenario 5: remember facet filter when searching new query
+  Given  the following category
+  And  the following articles
+  When  I go to the search articles page
+  And  I fill in "search-input" with "this is an article"
+  And  I press "Search"
+  And  I follow "Software Livre" within "#facets-menu"
+  And  I fill in "search-input" with "facebook"
+  And  I press "Search"
+  Then  I should see "facebook defense" within "#search-results"
+  And  I should not see "1984"
+

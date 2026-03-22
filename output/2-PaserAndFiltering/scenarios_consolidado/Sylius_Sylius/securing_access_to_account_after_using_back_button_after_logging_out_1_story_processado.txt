@@ -1,0 +1,7 @@
+Scenario 1: Securing access to the account after using the back button after logging out
+  Tags: ['@no-api', '@ui']
+  When  I log out
+  And  I go back one page in the browser
+  Then  I should not see my orders
+  And  I should be on the login page
+

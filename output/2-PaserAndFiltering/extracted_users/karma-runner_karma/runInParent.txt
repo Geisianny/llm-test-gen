@@ -1,0 +1,15 @@
+Feature: runInParent option
+Description: In order to use Karma
+  As a person who wants to write great tests
+  I want Karma to run without iframe or opening new window
+
+Scenario 1: Execute a test in ChromeHeadless
+  Given  a configuration with:
+  When  I start Karma
+  Then  it passes with:
+
+Scenario 2: Execute a test in Firefox
+  Given  a configuration with:
+  When  I start Karma
+  Then  it passes with:
+

@@ -1,0 +1,23 @@
+Feature: contact organization
+Description: As a user
+I want to contact an organization
+In order to ask questions and solve problems
+
+Background: 
+  Given  the following users
+  And  the following communities
+  And  I am logged in as "joaosilva"
+
+Scenario 1: without states
+  Tags: ['@selenium']
+  Given  I am on sample-community's homepage
+  When  I follow "Send an e-mail"
+  Then  I should not see "City and state"
+
+Scenario 2: with states
+  Tags: ['@selenium']
+  Given  the following states
+  And  I am on sample-community's homepage
+  When  I follow "Send an e-mail"
+  Then  I should see "City and state"
+

@@ -1,0 +1,22 @@
+Scenario 1: Picking up the cart with the locale other than default
+  Tags: ['@api', '@no-ui']
+  When  I pick up cart in the "English (United States)" locale
+  And  I check the details of my cart
+  Then  my cart's locale should be "English (United States)"
+
+
+
+Scenario 2: Picking up the cart without specified locale
+  Tags: ['@api', '@no-ui']
+  When  I pick up cart without specifying locale
+  And  I check the details of my cart
+  Then  my cart's locale should be "French (France)"
+
+
+
+Scenario 3: Picking up the cart with non valid locale
+  Tags: ['@api', '@no-ui']
+  When  I pick up cart using wrong locale
+  And  I check the details of my cart
+  Then  my cart's locale should be "French (France)"
+

@@ -1,0 +1,82 @@
+Feature: Replicate LP getting distressed during continuous trading, and after leaving an auction
+
+Background: 
+  Given  the following network parameters are set:
+  And  the liquidity monitoring parameters:
+  And  the average block duration is "1"
+  And  the simple risk model named "simple-risk-model-1":
+  And  the fees configuration named "fees-config-1":
+  And  the price monitoring named "price-monitoring-1":
+  And  the liquidity sla params named "SLA":
+  And  the markets:
+  And  the following network parameters are set:
+  And  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+
+Scenario 1: 001, LP gets distressed during continuous trading (0042-LIQF-014)
+  Tags: ['@Liquidation']
+  When  the opening auction period ends for market "ETH/DEC21"
+  And  the auction ends with a traded volume of "1000" at a price of "1000"
+  Then  the market data for the market "ETH/DEC21" should be:
+  And  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  Then  the following trades should be executed:
+  And  the parties should have the following profit and loss:
+  And  the parties should have the following account balances:
+  And  the market data for the market "ETH/DEC21" should be:
+  When  the parties place the following orders with ticks:
+  Then  the market data for the market "ETH/DEC21" should be:
+  And  the parties should have the following account balances:
+  And  the parties should have the following margin levels:
+  When  the network moves ahead "7" blocks
+  Then  the liquidity provisions should have the following states:
+  And  the insurance pool balance should be "1422" for the market "ETH/DEC21"
+
+Scenario 2: 002, LP gets distressed after auction
+  Tags: ['@Liquidation']
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the opening auction period ends for market "ETH/DEC21"
+  Then  the auction ends with a traded volume of "1000" at a price of "1000"
+  And  the market data for the market "ETH/DEC21" should be:
+  And  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  Then  the following trades should be executed:
+  And  the parties should have the following profit and loss:
+  And  the parties should have the following account balances:
+  And  the market data for the market "ETH/DEC21" should be:
+  When  the parties place the following orders with ticks:
+  Then  the market data for the market "ETH/DEC21" should be:
+  And  the parties should have the following account balances:
+  And  the parties should have the following margin levels:
+  When  the network moves ahead "7" blocks
+  Then  the market data for the market "ETH/DEC21" should be:
+  And  the parties should have the following account balances:
+  And  the parties should have the following margin levels:
+  And  the liquidity provisions should have the following states:
+  And  the insurance pool balance should be "1111" for the market "ETH/DEC21"
+
+Scenario 3: 003, 2 LPs on the market, LP1 gets distressed and closed-out during continuous trading (0042-LIQF-014)
+  Tags: ['@Liquidation']
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the opening auction period ends for market "ETH/DEC21"
+  Then  the auction ends with a traded volume of "1000" at a price of "1000"
+  And  the market data for the market "ETH/DEC21" should be:
+  And  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  Then  the following trades should be executed:
+  And  the parties should have the following profit and loss:
+  And  the parties should have the following account balances:
+  And  the market data for the market "ETH/DEC21" should be:
+  When  the parties place the following orders with ticks:
+  Then  the market data for the market "ETH/DEC21" should be:
+  And  the parties should have the following account balances:
+  And  the parties should have the following margin levels:
+  When  the network moves ahead "7" blocks
+  Then  the liquidity provisions should have the following states:
+  And  the market data for the market "ETH/DEC21" should be:
+  And  the insurance pool balance should be "1422" for the market "ETH/DEC21"
+

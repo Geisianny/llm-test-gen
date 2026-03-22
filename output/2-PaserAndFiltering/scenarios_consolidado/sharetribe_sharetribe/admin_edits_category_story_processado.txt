@@ -1,0 +1,57 @@
+Scenario 1: Admin changes category name
+  Tags: ['@javascript']
+  When  I change category "Furniture" name to "Tables"
+  Then  I should see that there is a top level category "Tables"
+
+
+
+Scenario 2: Admin tries to give category invalid name
+  Tags: ['@javascript']
+  When  I change category "Furniture" name to ""
+  Then  I should see 1 validation errors
+
+
+
+Scenario 3: Admin changes category parent
+  Tags: ['@javascript']
+  When  I change parent of category "Furniture" to "Goodies"
+  Then  I should see that there is a subcategory "Furniture"
+
+
+
+Scenario 4: Admin tries to give parent to category that has children
+  Tags: ['@javascript']
+  When  I try to edit category "Goodies"
+  Then  I should not see "Parent category"
+
+
+
+Scenario 5: Admin changes category listing shapes
+  Tags: ['@javascript']
+  When  I change listing shapes of category "Furniture" to following:
+  Then  category "Furniture" should have the following listing shapes:
+  When  I change listing shapes of category "Furniture" to following:
+  Then  category "Furniture" should have the following listing shapes:
+
+
+
+Scenario 6: Admin tries to remove all listing shapes
+  Tags: ['@javascript']
+  When  I try to remove all listing shapes from category "Furniture"
+  Then  I should see 1 validation errors
+
+
+
+Scenario 7: Admin edits category order
+  Tags: ['@javascript']
+  And  I wait for 1 seconds
+  When  I move category "Goodies" down 1 step
+  Then  the category order should be following:
+  And  I wait for 1 seconds
+  When  I move category "Books" up 1 step
+  Then  the category order should be following:
+  Then  I should see "Successfully saved"
+  And  I wait for 1 seconds
+  When  I refresh the page
+  Then  the category order should be following:
+

@@ -1,0 +1,67 @@
+Feature: Search Provider Feature
+
+Scenario 1: List empty providers
+  Tags: ['@auth']
+  Given  empty "search_providers"
+  When  we get "/search_providers"
+  Then  we get list with 0 items
+
+Scenario 2: Create a new Search Provider
+  Tags: ['@auth']
+  Given  empty "search_providers"
+  When  we post to "search_providers"
+  Then  we get new resource
+  When  we get "/search_providers"
+  Then  we get list with 1 items
+  When  we get "/privileges"
+  Then  we get list with 1+ items
+
+Scenario 3: Creating a Search Provider fails if the search provider type hasn't been registered with the application
+  Tags: ['@auth']
+  Given  empty "search_providers"
+  When  we post to "search_providers"
+  Then  we get error 400
+
+Scenario 4: Updating an existing search provider fails if the search provider type hasn't been registered with the application
+  Tags: ['@auth']
+  Given  empty "search_providers"
+  When  we post to "search_providers"
+  When  we patch "search_providers/#search_providers._id#"
+  Then  we get error 400
+
+Scenario 5: Deleting a Search Provider is allowed if no articles have been fetched from this search provider
+  Tags: ['@auth']
+  Given  empty "search_providers"
+  When  we post to "search_providers"
+  When  we delete "search_providers/#search_providers._id#"
+  Then  we get response code 204
+
+Scenario 6: Get list of registered search providers
+  Tags: ['@auth']
+  When  we get "allowed_values"
+  Then  we get existing resource
+
+Scenario 7: Search using custom search provider
+  Tags: ['@auth']
+  Given  "search_providers"
+  Given  "desks"
+  When  we get "search_providers_proxy?repo=#search_providers._id#"
+  Then  we get list with 1 items
+  When  we post to "search_providers_proxy?repo=#search_providers._id#"
+  Then  we get OK response
+  When  we get "/archive/#search_providers_proxy._id#"
+  Then  we get existing resource
+
+Scenario 8: Get available search providers
+  Tags: ['@auth']
+  When  we get "search_providers_allowed"
+  Then  we get list with 1+ items
+
+Scenario 9: Let search proxy work for ingest/archive/etc
+  Tags: ['@auth']
+  When  we post to "archive"
+  When  we get "search_providers_proxy?repo=archive"
+  Then  we get list with 1 items
+  When  we get "search_providers_proxy?repo=published,ingest"
+  Then  we get list with 0 items
+

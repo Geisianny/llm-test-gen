@@ -1,0 +1,17 @@
+Scenario 1: Viewing product variants with corresponding prices and options
+  Tags: ['@api', '@no-ui']
+  When  I view variants of the "Raspberry Pi" product
+  Then  I should see variant with "Memory" option and "1GB" option value priced at "$21.00" at 1st position
+  And  I should see variant with "Memory" option and "2GB" option value priced at "$42.00" at 2nd position
+  And  I should see variant with "Memory" option and "4GB" option value priced at "$84.00" at 3rd position
+
+
+
+Scenario 2: Filtering product variants by option
+  Tags: ['@api', '@no-ui']
+  When  I view variants of the "Raspberry Pi" product
+  And  I filter variants by "2GB" option value
+  Then  I should see variant with "Memory" option and "2GB" option value priced at "$42.00" at 1st position
+  And  I should not see variant with "Memory" option "1GB"
+  And  I should not see variant with "Memory" option "4GB"
+

@@ -1,0 +1,56 @@
+Scenario 1: set up 2 parties with balance
+  When  the parties place the following orders:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the parties should have the following margin levels:
+  Then  the parties should have the following account balances:
+  When  the parties withdraw the following assets:
+  Then  the parties should have the following account balances:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the following trades should be executed:
+  And  the mark price should be "10000" for the market "ETH/DEC19"
+  When  the network moves ahead "1" blocks
+  Then  the orders should have the following status:
+  Then  the parties should have the following account balances:
+
+
+
+Scenario 2: Uncross auction via order amendment
+  When  the parties place the following orders:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the network moves ahead "2" blocks
+  And  the parties amend the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the market data for the market "ETH/DEC19" should be:
+  And  the mark price should be "10000" for the market "ETH/DEC19"
+  And  the following trades should be executed:
+
+
+
+Scenario 3: Party cannot afford pegged orders upon uncrossing so they get stopped
+  Given  the following network parameters are set:
+  When  the parties place the following pegged orders:
+  And  the parties place the following orders:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the pegged orders should have the following states:
+  When  the opening auction period ends for market "ETH/DEC19"
+  Then  the market data for the market "ETH/DEC19" should be:
+  And  the pegged orders should have the following states:
+  And  the order book should have the following volumes for market "ETH/DEC19":
+  When  the parties place the following orders with ticks:
+  And  the parties cancel the following orders:
+  And  the parties place the following pegged iceberg orders:
+  Then  the network moves ahead "3" blocks
+  Then  the pegged orders should have the following states:
+  And  the order book should have the following volumes for market "ETH/DEC19":
+
+
+
+Scenario 4: max volume doesn't come from best bid and ask only
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/DEC19" should be:
+  When  the opening auction period ends for market "ETH/DEC19"
+  Then  the market data for the market "ETH/DEC19" should be:
+

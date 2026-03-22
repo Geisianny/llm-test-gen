@@ -1,0 +1,40 @@
+Feature: Given the market is currently in a monitoring auction, once an auction trigger occurs, if the current auction end time is less than the current time plus the program auction length, the auction end time is extended to the current time plus the program auction length. (0097-PAPU-031).
+
+Background: 
+  Given  the log normal risk model named "log-normal-risk-model":
+  And  the following network parameters are set:
+  And  the liquidity monitoring parameters:
+  And  the fees configuration named "fees-config-1":
+  And  the price monitoring named "price-monitoring":
+  And  the liquidity sla params named "SLA-22":
+  And  the following network parameters are set:
+  And  the following assets are registered:
+  And  the spot markets:
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "BTC/ETH"
+  And  the following trades should be executed:
+  And  the mark price should be "1000000" for the market "BTC/ETH"
+  And  the composite price oracles from "0xCAFECAFE2":
+  And  the time triggers oracle spec is:
+  And  the average block duration is "1"
+  And  the parties deposit on asset's general account the following amount:
+  Given  time is updated to "2024-09-24T00:00:00Z"
+  And  the parties submit the following one off transfers:
+  And  the buy back fees balance should be "5000" for the asset "BTC"
+
+Scenario 1: PAP auction is started when market is in monitoring auction that expires earlier than the expiration by the pap auction therefore the expiry of the auction is extended by the relative remaining time. (0097-PAPU-031)
+  And  the parties place the following orders:
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "BTC/ETH"
+  Then  the starting auction time for market "BTC/ETH" is "1727136000000000000"
+  And  the ending auction time for market "BTC/ETH" is "1727136030000000000"
+  When  the protocol automated purchase is defined as:
+  Then  the oracles broadcast data with block time signed with "0xCAFECAFE2":
+  And  the network moves ahead "5" blocks
+  Then  the automated purchase program for market "BTC/ETH" should have a snapshot balance of "200"
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "BTC/ETH"
+  Then  the starting auction time for market "BTC/ETH" is "1727136000000000000"
+  And  the ending auction time for market "BTC/ETH" is "1727136042000000000"
+

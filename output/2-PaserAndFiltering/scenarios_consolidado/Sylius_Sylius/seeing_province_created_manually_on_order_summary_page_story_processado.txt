@@ -1,0 +1,9 @@
+Scenario 1: Seeing manually defined province on order summary page
+  Tags: ['@api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  And  I addressed the cart with "Florida" province
+  And  I chose "DHL" shipping method and "Cash on Delivery" payment method
+  When  I check summary of my order
+  And  I should see "Florida" in the shipping address
+  And  I should see "Florida" in the billing address
+

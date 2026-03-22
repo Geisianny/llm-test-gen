@@ -1,0 +1,73 @@
+Scenario 1: Seeing disabled code field when editing promotion
+  Tags: ['@ui']
+  When  I want to modify a "Christmas sale" promotion
+  Then  the code field should be disabled
+
+
+
+Scenario 2: Editing promotions usage limit
+  Tags: ['@ui']
+  Given  I want to modify a "Christmas sale" promotion
+  When  I set its usage limit to 50
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  the "Christmas sale" promotion should be available to be used only 50 times
+
+
+
+Scenario 3: Editing promotion exclusiveness
+  Tags: ['@ui']
+  Given  I want to modify a "Christmas sale" promotion
+  When  I make it exclusive
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  the "Christmas sale" promotion should be exclusive
+
+
+
+Scenario 4: Editing promotions coupon based option
+  Tags: ['@ui']
+  Given  I want to modify a "Christmas sale" promotion
+  When  I make it coupon based
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  the "Christmas sale" promotion should be coupon based
+
+
+
+Scenario 5: Editing promotions channels
+  Tags: ['@ui']
+  Given  I want to modify a "Christmas sale" promotion
+  When  I make it applicable for the "United States" channel
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  the "Christmas sale" promotion should be applicable for the "United States" channel
+
+
+
+Scenario 6: Editing a promotion with start and end date
+  Tags: ['@ui']
+  Given  I want to modify a "Christmas sale" promotion
+  When  I make it available from "12.12.2017" to "24.12.2017"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  the "Christmas sale" promotion should be available from "12.12.2017" to "24.12.2017"
+
+
+
+Scenario 7: Editing promotion after adding a new channel
+  Tags: ['@ui']
+  Given  this promotion gives "$10.00" discount to every order
+  When  the store also operates on another channel named "EU-WEB"
+  Then  I should be able to modify a "Christmas sale" promotion
+
+
+
+Scenario 8: Remove priority from existing promotion
+  Tags: ['@ui']
+  Given  I want to modify a "Christmas sale" promotion
+  When  I remove its priority
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  the "Christmas sale" promotion should have priority 1
+

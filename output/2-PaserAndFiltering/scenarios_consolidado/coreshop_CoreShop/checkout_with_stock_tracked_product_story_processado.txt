@@ -1,0 +1,15 @@
+Scenario 1: I proceed to the checkout
+  Given  I am at the address checkout step
+  Then  I should be on the address checkout step
+  And  I use the last address as invoice address
+  And  I submit the address step
+  Then  I should be on the shipping checkout step
+  When  I submit the shipping step
+  Then  I should be on the payment checkout step
+  And  I select the payment provider "Bankwire"
+  When  I submit the payment step
+  Then  I should be on the summary checkout step
+  When  I accept the checkout terms of service
+  And  I submit the order
+  Then  I should be on the thank you page
+

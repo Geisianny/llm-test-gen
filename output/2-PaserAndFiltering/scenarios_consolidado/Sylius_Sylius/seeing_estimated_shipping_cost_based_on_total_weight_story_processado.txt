@@ -1,0 +1,14 @@
+Scenario 1: Seeing valid estimated shipping cost for the cart with a total weight over minimum total weight configured on the shipping method
+  Tags: ['@api', '@ui']
+  Given  I added product "Jacket for the Lochness Monster" to the cart
+  When  I check the details of my cart
+  Then  my cart estimated shipping cost should be "$200.00"
+
+
+
+Scenario 2: Seeing valid estimated shipping cost for the cart with a total weight under maximum total weight configured on the shipping method
+  Tags: ['@api', '@ui']
+  Given  I added product "T-Shirt for Tinkerbell" to the cart
+  When  I check the details of my cart
+  Then  my cart estimated shipping cost should be "$2.00"
+

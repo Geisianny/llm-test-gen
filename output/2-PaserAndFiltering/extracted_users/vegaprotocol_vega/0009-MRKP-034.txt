@@ -1,0 +1,23 @@
+Feature: Test It is possible to configure a cash settled futures and perps market to use median
+
+Background: 
+  Given  the following network parameters are set:
+  And  the liquidity monitoring parameters:
+  And  the simple risk model named "simple-risk-model":
+  And  the composite price oracles from "0xCAFECAFE1":
+  And  the markets:
+
+Scenario 1: 001 check mark price using median with traded mark price and book mark price, 0009-MRKP-034, 0009-MRKP-035
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties place the following orders:
+  When  the network moves ahead "2" blocks
+  Then  the mark price should be "15900" for the market "ETH/FEB23"
+  And  the parties place the following orders:
+  When  the network moves ahead "5" blocks
+  Then  the mark price should be "15937" for the market "ETH/FEB23"
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the mark price should be "15937" for the market "ETH/FEB23"
+  When  the network moves ahead "3" blocks
+  Then  the mark price should be "15972" for the market "ETH/FEB23"
+

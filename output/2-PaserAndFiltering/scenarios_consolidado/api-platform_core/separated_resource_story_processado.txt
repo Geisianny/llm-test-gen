@@ -1,0 +1,78 @@
+Scenario 1: Get collection
+  Tags: ['@!mongodb', '@createSchema']
+  Given  there are 5 separated entities
+  When  I send a "GET" request to "/separated_entities"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  Then  the JSON should be valid according to this schema:
+
+
+
+Scenario 2: Get ordered collection
+  Tags: ['@!mongodb', '@createSchema']
+  Given  there are 5 separated entities
+  When  I send a "GET" request to "/separated_entities?order[value]=desc"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON node "hydra:member[0].value" should be equal to "5"
+
+
+
+Scenario 3: Get item
+  Tags: ['@!mongodb', '@createSchema']
+  Given  there are 5 separated entities
+  When  I send a "GET" request to "/separated_entities/1"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+
+
+
+Scenario 4: Get all EntityClassAndCustomProviderResources
+  Tags: ['@!mongodb', '@createSchema']
+  Given  there are 1 separated entities
+  When  I send a "GET" request to "/entityClassAndCustomProviderResources"
+  Then  the response status code should be 200
+
+
+
+Scenario 5: Get one EntityClassAndCustomProviderResource
+  Tags: ['@!mongodb', '@createSchema']
+  Given  there are 1 separated entities
+  When  I send a "GET" request to "/entityClassAndCustomProviderResources/1"
+  Then  the response status code should be 200
+
+
+
+Scenario 6: Get collection
+  Tags: ['@mongodb', '@createSchema']
+  Given  there are 5 separated entities
+  When  I send a "GET" request to "/separated_documents"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  Then  the JSON should be valid according to this schema:
+
+
+
+Scenario 7: Get ordered collection
+  Tags: ['@mongodb', '@createSchema']
+  Given  there are 5 separated entities
+  When  I send a "GET" request to "/separated_documents?order[value]=desc"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON node "hydra:member[0].value" should be equal to "5"
+
+
+
+Scenario 8: Get item
+  Tags: ['@mongodb', '@createSchema']
+  Given  there are 5 separated entities
+  When  I send a "GET" request to "/separated_documents/1"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+

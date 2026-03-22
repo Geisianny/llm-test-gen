@@ -1,0 +1,51 @@
+Scenario 1: Products are sorted by position in ascending order by default
+  Tags: ['@ui']
+  When  I am browsing products from "Soft Toys" taxon
+  Then  I should see 3 products in the list
+  And  they should have order like "Old pug", "Young pug" and "Small pug"
+
+
+
+Scenario 2: New product is added as last one
+  Tags: ['@ui']
+  Given  I added a product "Big pug"
+  And  I assigned this product to "Soft Toys" taxon
+  When  I am browsing products from "Soft Toys" taxon
+  Then  the last product on the list should have name "Big pug"
+
+
+
+Scenario 3: Product with position 0 is set as the first one
+  Tags: ['@ui']
+  When  I am browsing products from "Soft Toys" taxon
+  And  I set the position of "Young pug" to 0
+  And  I save my new configuration
+  Then  the first product on the list should have name "Young pug"
+
+
+
+Scenario 4: Product with the highest position is set as the last one
+  Tags: ['@ui']
+  When  I am browsing products from "Soft Toys" taxon
+  And  I set the position of "Young pug" to 12
+  And  I save my new configuration
+  Then  the last product on the list should have name "Young pug"
+
+
+
+Scenario 5: Sort products in descending order
+  Tags: ['@ui']
+  When  I am browsing products from "Soft Toys" taxon
+  And  I start sorting products by position
+  Then  I should see 3 products in the list
+  And  they should have order like "Small pug", "Young pug" and "Old pug"
+
+
+
+Scenario 6: Being unable to use a non-numeric string as a product position
+  Tags: ['@ui']
+  Given  I am browsing products from "Soft Toys" taxon
+  When  I set the position of "Young pug" to "test"
+  And  I save my new configuration
+  Then  I should be notified that the position "test" is invalid
+

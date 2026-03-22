@@ -1,0 +1,43 @@
+Scenario 1: Informing customer about order total change due to product price change
+  Tags: ['@api', '@ui']
+  Given  I am a logged in customer
+  And  I added product "PHP T-Shirt" to the cart
+  And  I proceeded through the checkout process
+  And  this product price has been changed to "$25.00"
+  And  I confirm my order
+  Then  my order should not be placed due to changed order total
+
+
+
+Scenario 2: Being able to confirm order after information appears
+  Tags: ['@api', '@ui']
+  Given  I am a logged in customer
+  And  I added product "PHP T-Shirt" to the cart
+  And  I proceeded through the checkout process
+  And  this product price has been changed to "$25.00"
+  When  I confirm my order
+  Then  my order should not be placed due to changed order total
+
+
+
+Scenario 3: Informing customer about order total change due to tax change
+  Tags: ['@api', '@ui']
+  Given  I am a logged in customer
+  And  I added product "PHP T-Shirt" to the cart
+  And  I proceeded through the checkout process
+  And  the "NA VAT" tax rate has changed to 10%
+  When  I confirm my order
+  Then  my order should not be placed due to changed order total
+
+
+
+Scenario 4: Informing customer about order total change due to shipping method fee change
+  Tags: ['@api', '@ui']
+  Given  the store has "UPS" shipping method with "$20.00" fee
+  And  I added product "PHP T-Shirt" to the cart
+  When  I complete addressing step with email "guest@example.com" and "United States" based billing address
+  And  I proceed with "UPS" shipping method and "Offline" payment
+  And  the shipping fee for "UPS" shipping method has been changed to "$30.00"
+  And  I confirm my order
+  Then  my order should not be placed due to changed order total
+

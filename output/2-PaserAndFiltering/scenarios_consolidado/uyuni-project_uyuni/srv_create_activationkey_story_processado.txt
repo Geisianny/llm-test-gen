@@ -1,0 +1,60 @@
+Scenario 1: Log in as admin user
+  Given  I am authorized for the "Admin" section
+
+
+
+Scenario 2: Create an activation key with a channel
+  Tags: ['@sle_minion']
+  When  I create an activation key with id "SUSE-KEY-x86_64", description "SUSE Test Key x86_64", limit of 20 and contact method "default"
+  Then  I should get the new activation key "1-SUSE-KEY-x86_64"
+
+
+
+Scenario 3: Create an activation key for RedHat-like minion
+  Tags: ['@rhlike_minion']
+  When  I create an activation key with id "RH-LIKE-KEY", description "RedHat like Test Key", base channel "fake-base-channel-rh-like", limit of 20 and contact method "default"
+  Then  I should get the new activation key "1-RH-LIKE-KEY"
+
+
+
+Scenario 4: Create an activation key for Debian-like minion
+  Tags: ['@deblike_minion']
+  When  I create an activation key with id "DEBLIKE-KEY", description "Debian-like Test Key", base channel "fake-base-channel-debian-like", limit of 20 and contact method "default"
+  Then  I should get the new activation key "1-DEBLIKE-KEY"
+
+
+
+Scenario 5: Create an activation key with a channel for salt-ssh
+  Tags: ['@ssh_minion']
+  When  I create an activation key with id "SUSE-SSH-KEY-x86_64", description "SUSE SSH Test Key x86_64", limit of 20 and contact method "ssh-push"
+  Then  I should get the new activation key "1-SUSE-SSH-KEY-x86_64"
+
+
+
+Scenario 6: Create an activation key with a channel for salt-ssh via tunnel
+  Tags: ['@ssh_minion']
+  When  I create an activation key with id "SUSE-SSH-TUNNEL-KEY-x86_64", description "SUSE SSH Tunnel Test Key x86_64", limit of 20 and contact method "ssh-push-tunnel"
+  Then  I should get the new activation key "1-SUSE-SSH-TUNNEL-KEY-x86_64"
+
+
+
+Scenario 7: Create an activation key for the proxy
+  Tags: ['@proxy']
+  When  I create an activation key with id "PROXY-KEY-x86_64", description "Proxy Key x86_64", limit of 1
+  Then  I should get the new activation key "1-PROXY-KEY-x86_64"
+
+
+
+Scenario 8: Create an activation key for the build host
+  Tags: ['@build_host']
+  When  I create an activation key with id "BUILD-HOST-KEY-x86_64", description "Build host Key x86_64"
+  And  I set the entitlements of the activation key "1-BUILD-HOST-KEY-x86_64" to "container_build_host, osimage_build_host"
+  Then  I should get the new activation key "1-BUILD-HOST-KEY-x86_64"
+
+
+
+Scenario 9: Create an activation key for the terminal
+  Tags: ['@scc_credentials']
+  When  I create an activation key with id "TERMINAL-KEY-x86_64", description "Terminal Key x86_64"
+  Then  I should get the new activation key "1-TERMINAL-KEY-x86_64"
+

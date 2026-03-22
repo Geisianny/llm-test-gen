@@ -1,0 +1,58 @@
+Scenario 1: Incoming order at AMM best price
+  Tags: ['@VAMM']
+  When  the parties place the following orders:
+  When  the parties place the following orders:
+  Then  the following trades should be executed:
+
+
+
+Scenario 2: Incoming order at AMM best price BUY
+  Tags: ['@VAMM']
+  When  the parties place the following orders:
+  When  the parties place the following orders:
+  Then  the following trades should be executed:
+
+
+
+Scenario 3: Incoming order at AMM with massive spread
+  Tags: ['@VAMM']
+  Then  the parties amend the following AMM:
+  Then  the AMM pool status should be:
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the parties place the following orders:
+  When  the parties place the following orders:
+  Then  the following trades should be executed:
+  And  the market data for the market "ETH/MAR22" should be:
+
+
+
+Scenario 4: Incoming order at AMM with massive spread BUY
+  Tags: ['@VAMM']
+  Then  the parties amend the following AMM:
+  Then  the AMM pool status should be:
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the parties place the following orders:
+  When  the parties place the following orders:
+  Then  the following trades should be executed:
+  And  the market data for the market "ETH/MAR22" should be:
+
+
+
+Scenario 5: Spread when AMM is traded in both directions
+  Tags: ['@VAMM']
+  Then  the parties amend the following AMM:
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the parties place the following orders:
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the parties place the following orders:
+  And  the market data for the market "ETH/MAR22" should be:
+
+
+
+Scenario 6: Incoming market order
+  Tags: ['@VAMM']
+  When  the parties place the following orders:
+  Then  the following trades should be executed:
+  When  the parties place the following orders:
+  Then  the following trades should be executed:
+

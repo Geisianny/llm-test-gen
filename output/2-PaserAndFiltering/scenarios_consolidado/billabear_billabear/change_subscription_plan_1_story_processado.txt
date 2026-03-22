@@ -1,0 +1,57 @@
+Scenario 1: Update Plan
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  And  the following payment details:
+  When  I update the subscription "Test Plan" for "customer.one@example.org" to plan:
+  Then  the subscription "Test Plan" for "customer.one@example.org" will not exist
+  And  the subscription "Better Test Plan" for "customer.one@example.org" will exist
+
+
+
+Scenario 2: Update Plan - Read
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  And  the following payment details:
+  When  I go to update the subscription plan for "Test Plan" for "customer.one@example.org"
+  Then  I will see the plan "Even Better Test Plan" with the price 5500 in "USD"
+  Then  I will see the plan "Better Test Plan" with the price 4500 in "USD"
+  Then  I will see the plan "Even Better Test Plan" with the price 55000 in "USD"
+  Then  I will not see the plan "Better Test Plan" with the price 4000 in "EUR"
+
+
+
+Scenario 3: Update Plan - Stripe Billing Disable
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  stripe billing is disabled
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  And  the following payment details:
+  When  I update the subscription "Test Plan" for "customer.one@example.org" to plan to be changed instantly:
+  Then  the subscription "Test Plan" for "customer.one@example.org" will not exist
+  And  the subscription "Better Test Plan" for "customer.one@example.org" will exist
+  And  the latest invoice for "customer.one@example.org" will have amount due as 1500
+
+
+
+Scenario 4: Downgrade event
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  stripe billing is disabled
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  And  the following payment details:
+  When  I update the subscription "Better Test Plan" for "customer.one@example.org" to plan to be changed instantly:
+  Then  there should be an downgrade event for "customer.one@example.org"
+
+
+
+Scenario 5: Upgrade event
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  stripe billing is disabled
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  And  the following payment details:
+  When  I update the subscription "Better Test Plan" for "customer.one@example.org" to plan to be changed instantly:
+  Then  there should be an upgrade event for "customer.one@example.org"
+

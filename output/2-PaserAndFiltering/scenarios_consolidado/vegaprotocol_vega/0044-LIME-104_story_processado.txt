@@ -1,0 +1,19 @@
+Scenario 1: If a liquidity provider has fraction_of_time_on_book >= market.liquidity.commitmentMinTimeFraction, no penalty will be taken from their bond account (0044-LIME-104)
+  When  the opening auction period ends for market "BTC/ETH"
+  And  the auction ends with a traded volume of "10" at a price of "1000"
+  Then  the market data for the market "BTC/ETH" should be:
+  And  the parties should have the following account balances:
+  When  the network moves ahead "1" epochs
+  Then  the liquidity provisions should have the following states:
+  And  the parties should have the following account balances:
+  When  the network moves ahead "3" blocks
+  Then  the parties cancel the following orders:
+  Then  the spot markets are updated:
+  Then  the network moves ahead "1" epochs
+  And  the parties should have the following account balances:
+  When  the parties place the following orders:
+  Then  the network moves ahead "4" blocks
+  Then  the parties cancel the following orders:
+  Then  the network moves ahead "1" epochs
+  And  the parties should have the following account balances:
+

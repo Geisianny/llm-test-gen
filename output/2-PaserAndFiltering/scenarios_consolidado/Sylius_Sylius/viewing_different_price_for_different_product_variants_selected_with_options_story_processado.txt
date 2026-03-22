@@ -1,0 +1,13 @@
+Scenario 1: Viewing a detailed page with product's price
+  Tags: ['@no-api', '@ui']
+  When  I view product "Wyborowa Vodka"
+  Then  I should see the product price "$20.00"
+
+
+
+Scenario 2: Viewing a detailed page with product's price for different option
+  Tags: ['@no-api', '@ui', '@javascript']
+  When  I view product "Wyborowa Vodka"
+  And  I select its volume as "0,7L"
+  Then  I should see the product price "$25.00"
+

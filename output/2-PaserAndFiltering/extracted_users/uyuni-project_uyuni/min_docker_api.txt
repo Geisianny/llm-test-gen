@@ -1,0 +1,23 @@
+Feature: API "image" namespace for containers and sub-namespaces
+Tags: ['@skip_if_cloud', '@scope_building_container_images', '@no_auth_registry']
+
+Scenario 1: Test "image.store" namespace
+  When  I create and delete an image store via API
+  And  I list image store types and image stores via API
+  And  I set and get details of image store via API
+
+Scenario 2: Test "image.profiles" namespace
+  Tags: ['@scc_credentials']
+  When  I create and delete profiles via API
+  And  I create and delete profile custom values via API
+  And  I list image profiles via API
+  And  I set and get profile details via API
+
+Scenario 3: Cleanup: remove custom system info
+  Tags: ['@scc_credentials']
+  Given  I am authorized
+  When  I follow the left menu "Systems > Custom System Info"
+  And  I follow "arancio"
+  And  I follow "Delete Key"
+  And  I click on "Delete Key"
+

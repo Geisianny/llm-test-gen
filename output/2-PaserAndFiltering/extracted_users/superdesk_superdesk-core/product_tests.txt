@@ -1,0 +1,16 @@
+Feature: Product Tests
+
+Scenario 1: Fails if the article does not exist
+  Tags: ['@auth']
+  When  we post to "products/test"
+  Then  we get error 400
+
+Scenario 2: Product test endpoint
+  Tags: ['@auth']
+  Given  "filter_conditions"
+  And  "content_filters"
+  And  "products"
+  When  we post to "/archive"
+  When  we post to "products/test"
+  Then  we get existing resource
+

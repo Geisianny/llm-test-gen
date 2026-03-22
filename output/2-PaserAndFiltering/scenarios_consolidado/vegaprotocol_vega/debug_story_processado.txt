@@ -1,0 +1,12 @@
+Scenario 1: Reproduce opening auction without LP
+  Tags: ['@SLADebug']
+  Given  the markets:
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/DEC19" should be:
+  When  the parties submit the following liquidity provision:
+  And  the market data for the market "ETH/DEC19" should be:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the network moves ahead "20" blocks
+  And  the market data for the market "ETH/DEC19" should be:
+  Then  the following transfers should happen:
+

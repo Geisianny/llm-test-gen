@@ -1,0 +1,10 @@
+Feature: ES Modules
+Description: In order to use Karma
+  As a person who wants to write great tests
+  I want to use different script types with Karma.
+
+Scenario 1: Globbing modules, with both .js and .mjs extensions
+  Given  a configuration with:
+  When  I start Karma
+  Then  it passes with like:
+

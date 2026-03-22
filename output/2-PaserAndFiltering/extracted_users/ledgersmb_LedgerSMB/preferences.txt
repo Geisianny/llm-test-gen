@@ -1,0 +1,85 @@
+Feature: Check correct operation of Preferences screen
+Tags: ['@one-db', '@weasel']
+
+Background: 
+  Given  a standard test company
+  And  these preferences for the admin:
+  And  a logged in admin
+
+Scenario Outline 1: I change user preferences to the <selection> language - Example 1
+  When  I navigate the menu and select the item at "Preferences"
+  And  I select the "Preferences" tab
+  And  I select "American English" from the drop down "Language"
+  And  I save the page
+  And  I select the "Preferences" tab
+  Then  I expect "American English" to be selected for "Language"
+
+  Examples:
+    | selection | translation | language | preferences |
+    | American English | American English | Language | Preferences |
+    | Brazilian Portuguese | português - Brasil | Idioma | Preferências |
+
+Scenario Outline 2: I change user preferences to the <selection> language - Example 2
+  Tags: ['@extended']
+  When  I navigate the menu and select the item at "Preferences"
+  And  I select the "Preferences" tab
+  And  I select "British English" from the drop down "Language"
+  And  I save the page
+  And  I select the "Preferences" tab
+  Then  I expect "British English" to be selected for "Language"
+
+  Examples:
+    | selection | translation | language | preferences |
+    | British English | British English | Language | Preferences |
+    | Canadian English | Canadian English | Language | Preferences |
+    | Canadian French | français canadien | Langue | Préférences |
+    | Catalan | català | Idioma | Preferències |
+    | Danish | dansk | Sprog | Præferencer |
+    | Dutch | Nederlands | Taal | Instellingen |
+    | Estonian | eesti | Keel | Eelistused |
+    | Finnish | suomi | Kieli | Asetukset |
+    | Flemish | Vlaams | Taal | Instellingen |
+    | French | français | Langue | Préférences |
+    | French - Belgium | français - Belgique | Langue | Préférences |
+    | German | Deutsch | Sprache | Benutzereinstellungen |
+    | Hungarian | magyar | Nyelv | Beállítások |
+    | Icelandic | íslenska | Túngumál | Uppsetningar |
+    | Indonesian | Indonesia | Bahasa | Preferences |
+    | Italian | italiano | Lingua | Preferenze |
+    | Malay - Malaysia | Melayu - Malaysia | Bahasa | Keutamaan |
+    | Mexican Spanish | español de México | Lenguaje | Preferencias |
+    | Norwegian Bokmål | norsk bokmål | Språk | Innstillinger |
+    | Portuguese | português | Língua | Preferências |
+    | Spanish | español | Lenguaje | Preferencias |
+    | Spanish - Argentina | español - Argentina | Idioma | Preferencias |
+    | Spanish - Colombia | español - Colombia | Idioma | Preferencias |
+    | Spanish - Ecuador | español - Ecuador | Lenguaje | Preferencias |
+    | Spanish - Panama | español - Panamá | Idioma | Preferencias |
+    | Spanish - Paraguay | español - Paraguay | Idioma | Preferencias |
+    | Spanish - Venezuela | español - Venezuela | Idioma | Preferencias |
+    | Swedish | svenska | Språk | Inställningar |
+    | Swiss High German | Schweizer Hochdeutsch | Sprache | Benutzereinstellungen |
+
+Scenario Outline 3: I change user preferences to the <selection> language - Example 3
+  Tags: ['@wip']
+  When  I navigate the menu and select the item at "Preferences"
+  And  I select the "Preferences" tab
+  And  I select "Arabic - Egypt" from the drop down "Language"
+  And  I save the page
+  And  I select the "Preferences" tab
+  Then  I expect "العربية - مصر" to be selected for "اللغة"
+
+  Examples:
+    | selection | translation | language | preferences |
+    | Arabic - Egypt | العربية - مصر | اللغة | Preferences |
+    | Bulgarian | български | Език | Свойства |
+    | Chinese - China | 中文 - 中国 | 语言 | 个人设定 |
+    | Chinese - Taiwan | 中文 - 台灣 | 語言 | 個人設定 |
+    | Czech | čeština | Jazyk | Nastavení |
+    | Greek | Ελληνικά | Γλώσσα | Επιλογές |
+    | Lithuanian | lietuvių | Kalba | Nuostatos |
+    | Polish | polski | Język | Preferencje |
+    | Russian | русский | Язык | Настройки |
+    | Turkish | Türkçe | Dil | Tercihler |
+    | Ukrainian | українська | Мова | Параметри |
+

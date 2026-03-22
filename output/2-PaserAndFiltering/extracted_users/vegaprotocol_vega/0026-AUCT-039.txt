@@ -1,0 +1,33 @@
+Feature: Set up a market, with an opening auction, then uncross the book. Make sure opening auction can end even if we don't have best bid/ask after uncrossing.
+
+Background: 
+  Given  the following assets are registered:
+  And  the simple risk model named "my-simple-risk-model":
+  And  the fees configuration named "my-fees-config":
+  And  the markets:
+  And  the following network parameters are set:
+  And  the average block duration is "1"
+  And  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+
+Scenario 1: 0026-AUCT-039: No best bid after leaving opening auction. Also covers 0016-PFUT-025: normal futures can be submitted without specifying the capped futures fields - all futures tests do this.
+  Tags: ['@NewAuct']
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/DEC20" should be:
+  When  the network moves ahead "2" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  And  the order book should have the following volumes for market "ETH/DEC20":
+  And  the following trades should be executed:
+  And  the mark price should be "1000000" for the market "ETH/DEC20"
+
+Scenario 2: 0026-AUCT-040: No best ask after leaving opening auction.
+  Tags: ['@NewAuct']
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/DEC20" should be:
+  When  the network moves ahead "2" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  And  the order book should have the following volumes for market "ETH/DEC20":
+  And  the following trades should be executed:
+  And  the mark price should be "999500" for the market "ETH/DEC20"
+

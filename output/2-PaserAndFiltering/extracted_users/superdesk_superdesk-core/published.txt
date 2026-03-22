@@ -1,0 +1,31 @@
+Feature: Published Items Repo
+
+Scenario 1: List empty published
+  Tags: ['@auth']
+  Given  empty "published"
+  When  we get "/published"
+  Then  we get list with 0 items
+
+Scenario 2: Get published items with published state
+  Tags: ['@auth']
+  Given  "archive"
+  Given  "published"
+  When  we get "/published"
+  Then  we get existing resource
+  When  we get "/published?published_id=1"
+  Then  we get existing resource
+
+Scenario 3: Insert published items with non-published state
+  Tags: ['@auth']
+  When  we post to "published"
+  Then  we get error 400
+
+Scenario 4: Update published items with non-published state
+  Tags: ['@auth']
+  Given  "archive"
+  When  we post to "published" with success
+  When  we patch "/published/tag:example.com,0000:newsml_BRE9A607"
+  Then  we get OK response
+  When  we patch "/published/tag:example.com,0000:newsml_BRE9A607"
+  Then  we get error 400
+

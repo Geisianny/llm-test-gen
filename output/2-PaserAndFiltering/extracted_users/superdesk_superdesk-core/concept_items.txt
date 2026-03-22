@@ -1,0 +1,128 @@
+Feature: Concept items
+
+Scenario 1: Create a concept item: success
+  Tags: ['@auth']
+  Given  "vocabularies"
+  Given  empty "concept_items"
+  When  we post to "/concept_items"
+  Then  we get response code 201
+  When  we get "/concept_items"
+  Then  we get existing resource
+  When  we get "/concept_items/#concept_items._id#"
+  Then  we get response code 200
+  When  we get "/concept_items/#concept_items._id#"
+  Then  we get existing resource
+
+Scenario 2: Create a concept item: no languages cv
+  Tags: ['@auth']
+  Given  empty "concept_items"
+  When  we post to "/concept_items"
+  Then  we get response code 400
+
+Scenario 3: Create a concept item: no required fields
+  Tags: ['@auth']
+  Given  "vocabularies"
+  Given  empty "concept_items"
+  When  we post to "/concept_items"
+  Then  we get error 400
+  When  we post to "/concept_items"
+  Then  we get error 400
+  When  we post to "/concept_items"
+  Then  we get error 400
+  When  we post to "/concept_items"
+  Then  we get error 400
+  When  we post to "/concept_items"
+  Then  we get error 400
+
+Scenario 4: Create a concept item: duplicate labels
+  Tags: ['@auth']
+  Given  "vocabularies"
+  Given  empty "concept_items"
+  When  we post to "/concept_items"
+  Then  we get error 400
+
+Scenario 5: Create a concept item: wrong and not supported cpnat_type
+  Tags: ['@auth']
+  Given  "vocabularies"
+  Given  empty "concept_items"
+  When  we post to "/concept_items"
+  Then  we get error 400
+  When  we post to "/concept_items"
+  Then  we get error 400
+
+Scenario 6: Create a concept item: not allowed properties for cpnat:abstract
+  Tags: ['@auth']
+  Given  "vocabularies"
+  Given  empty "concept_items"
+  When  we post to "/concept_items"
+  Then  we get error 400
+
+Scenario 7: Create a concept item: group_id in payload
+  Tags: ['@auth', '@app_init']
+  Given  empty "concept_items"
+  When  we post to "/concept_items"
+  Then  we get response code 201
+  When  we get "/concept_items"
+  Then  we get existing resource
+  When  we get "/concept_items"
+  When  we post to "/concept_items"
+  Then  we get response code 409
+  When  we post to "/concept_items"
+  Then  we get response code 201
+
+Scenario 8: Patch a concept item
+  Tags: ['@auth', '@app_init']
+  Given  empty "concept_items"
+  When  we post to "/concept_items"
+  Then  we get response code 201
+  When  we patch "/concept_items/#concept_items._id#"
+  Then  we get updated response
+  When  we patch "/concept_items/#concept_items._id#"
+  Then  we get error 400
+  When  we patch "/concept_items/#concept_items._id#"
+  Then  we get error 400
+  When  we post to "/concept_items"
+  When  we get "/concept_items"
+  When  we patch "/concept_items/#concept_items._id#"
+  Then  we get response code 400
+
+Scenario 9: Put a concept item
+  Tags: ['@auth']
+  Given  "vocabularies"
+  Given  empty "concept_items"
+  When  we post to "/concept_items"
+  Then  we get response code 201
+  When  we put to "/concept_items/#concept_items._id#"
+  Then  we get updated response
+
+Scenario 10: Delete a concept item
+  Tags: ['@auth']
+  Given  "vocabularies"
+  Given  empty "concept_items"
+  When  we post to "/concept_items"
+  Then  we get response code 201
+  When  we delete "/concept_items/#concept_items._id#"
+  Then  we get response code 204
+
+Scenario 11: Fill definition_text from definition_html during creation and update
+  Tags: ['@auth']
+  Given  "vocabularies"
+  Given  empty "concept_items"
+  When  we post to "/concept_items"
+  Then  we get response code 201
+  When  we get "/concept_items"
+  Then  we get existing resource
+  When  we put to "/concept_items/#concept_items._id#"
+  Then  we get updated response
+  When  we put to "/concept_items/#concept_items._id#"
+  Then  we get updated response
+  When  we patch "/concept_items/#concept_items._id#"
+  Then  we get updated response
+
+Scenario 12: Any user can create a concept item
+  Tags: ['@auth']
+  Given  "vocabularies"
+  When  we login as user "foo" with password "foofoo" and user type "user"
+  When  we post to "/concept_items"
+  Then  we get response code 201
+

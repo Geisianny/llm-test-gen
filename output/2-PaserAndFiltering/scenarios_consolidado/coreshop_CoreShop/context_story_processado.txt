@@ -1,0 +1,9 @@
+Scenario 1: Site should be using currency "EUR"
+  Then  the site should be using currency "EUR"
+
+
+
+Scenario 2: Site should be using currency "USD"
+  And  I am using currency "USD"
+  Then  the site should be using currency "USD"
+

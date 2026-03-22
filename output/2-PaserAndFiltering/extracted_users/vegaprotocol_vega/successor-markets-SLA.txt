@@ -1,0 +1,60 @@
+Feature: Simple example of successor markets
+
+Background: 
+  Given  time is updated to "2019-11-30T00:00:00Z"
+  And  the following assets are registered:
+  Given  the log normal risk model named "lognormal-risk-model-fish":
+  And  the margin calculator named "margin-calculator-1":
+  Given  time is updated to "2023-07-20T00:00:00Z"
+  Given  the average block duration is "1"
+  And  the oracle spec for settlement data filtering data from "0xCAFECAFE1" named "ethDec19Oracle":
+  And  the oracle spec for trading termination filtering data from "0xCAFECAFE1" named "ethDec19Oracle":
+  And  the settlement data decimals for the oracle named "ethDec19Oracle" is given in "5" decimal places
+  And  the oracle spec for settlement data filtering data from "0xCAFECAFE20" named "ethDec20Oracle":
+  And  the oracle spec for trading termination filtering data from "0xCAFECAFE20" named "ethDec20Oracle":
+  And  the settlement data decimals for the oracle named "ethDec20Oracle" is given in "5" decimal places
+  And  the liquidity monitoring parameters:
+  And  the following network parameters are set:
+  And  the liquidity sla params named "SLA":
+  And  the oracle spec for settlement data filtering data from "0xCAFECAFE1" named "ethDec20Oracle":
+  And  the oracle spec for trading termination filtering data from "0xCAFECAFE1" named "ethDec20Oracle":
+  And  the parties deposit on asset's general account the following amount:
+
+Scenario 1: 001 Enact a successor market when the parent market is still active; Two proposals that name the same parent can be submitted; 0081-SUCM-005, 0081-SUCM-006, 0081-SUCM-020, 0081-SUCM-021, 0081-SUCM-022
+  Tags: ['@SuccessorMarketActive', '@Liquidation']
+  Given  the markets:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  Then  the market data for the market "ETH/DEC19" should be:
+  When  the parties place the following orders:
+  And  the market data for the market "ETH/DEC19" should be:
+  When  the parties place the following orders:
+  Then  the parties should have the following account balances:
+  Then  the parties cancel the following orders:
+  When  the parties place the following orders:
+  When  the parties place the following orders:
+  Then  the network moves ahead "2" blocks
+  And  the insurance pool balance should be "6977" for the market "ETH/DEC19"
+  And  the global insurance pool balance should be "0" for the asset "USD"
+  Then  the parties should have the following account balances:
+  Then  the parties should have the following profit and loss:
+  And  the liquidity provider fee shares for the market "ETH/DEC19" should be:
+  And  then the network moves ahead "2" blocks
+  And  the insurance pool balance should be "6977" for the market "ETH/DEC19"
+  And  the global insurance pool balance should be "0" for the asset "USD"
+  When  the oracles broadcast data signed with "0xCAFECAFE1":
+  And  time is updated to "2023-07-21T00:00:00Z"
+  And  the global insurance pool balance should be "0" for the asset "USD"
+  Then  the parties should have the following account balances:
+  Then  the market state should be "STATE_TRADING_TERMINATED" for the market "ETH/DEC19"
+  And  the insurance pool balance should be "6977" for the market "ETH/DEC19"
+  When  the oracles broadcast data signed with "0xCAFECAFE1":
+  And  the insurance pool balance should be "16359" for the market "ETH/DEC19"
+  And  then the network moves ahead "10" blocks
+  And  the insurance pool balance should be "16359" for the market "ETH/DEC19"
+  And  the global insurance pool balance should be "0" for the asset "USD"
+  Then  the parties should have the following profit and loss:
+  Then  the parties should have the following account balances:
+

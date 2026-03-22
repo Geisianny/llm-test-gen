@@ -1,0 +1,144 @@
+Feature: Test LP mechanics when there are multiple liquidity providers;
+
+Background: 
+  Given  the margin calculator named "margin-calculator-1":
+  Given  the log normal risk model named "log-normal-risk-model":
+  And  the following assets are registered:
+  And  the fees configuration named "fees-config-1":
+  And  the price monitoring named "price-monitoring":
+  And  the liquidity sla params named "SLA":
+  And  the liquidity sla params named "SLA2":
+  And  the liquidity sla params named "SLA3":
+  And  the liquidity monitoring parameters:
+  And  the following network parameters are set:
+  Given  the liquidity monitoring parameters:
+  And  the markets:
+  Given  the average block duration is "2"
+
+Scenario 1: 001: lp1 and lp2 under supplies liquidity (and expects to get penalty for not meeting the SLA) since both have orders outside price range
+  Tags: ['@Now']
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  When  the network moves ahead "2" blocks
+  And  the parties place the following pegged iceberg orders:
+  Then  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/MAR22"
+  And  the following trades should be executed:
+  And  the market data for the market "ETH/MAR22" should be:
+  And  the liquidity fee factor should be "0.02" for the market "ETH/MAR22"
+  And  the parties should have the following account balances:
+  Then  the parties place the following orders:
+  And  the market data for the market "ETH/MAR22" should be:
+  Then  the network moves ahead "6" blocks
+  And  the parties should have the following account balances:
+  Then  the following transfers should happen:
+  And  the insurance pool balance should be "40269" for the market "ETH/MAR22"
+  Then  the network moves ahead "6" blocks
+  And  the parties should have the following account balances:
+  And  the insurance pool balance should be "60394" for the market "ETH/MAR22"
+
+Scenario 2: An LP cancelled in one Epoch will receive no fees in the next even with orders still on-book (0044-LIME-097)
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  When  the network moves ahead "2" blocks
+  And  the parties place the following pegged iceberg orders:
+  Then  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/MAR23"
+  And  the following trades should be executed:
+  And  the market data for the market "ETH/MAR23" should be:
+  And  the parties should have the following account balances:
+  Then  the parties place the following orders:
+  And  the network moves ahead "1" epochs
+  And  the parties should have the following account balances:
+  Then  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  party "lp1" cancels their liquidity provision for market "ETH/MAR23"
+  Then  the network moves ahead "1" epochs
+  And  the parties should have the following account balances:
+  Then  the parties place the following orders:
+  Then  the network moves ahead "1" epochs
+  And  the parties should have the following account balances:
+
+Scenario 3: An LP with orders inside valid range during auction isn't penalised (0044-LIME-096)
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  When  the network moves ahead "2" blocks
+  Then  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/JAN23"
+  And  the following trades should be executed:
+  And  the market data for the market "ETH/JAN23" should be:
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/JAN23" should be:
+  When  the network moves ahead "2" blocks
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/JAN23"
+  Then  the market data for the market "ETH/JAN23" should be:
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/JAN23"
+  Then  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/JAN23"
+  Then  the parties should have the following account balances:
+  When  the network moves ahead "1" epochs
+  Then  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/JAN23"
+  Then  the parties should have the following account balances:
+
+Scenario 4: An LP with bid orders outside valid range during auction is penalised (0044-LIME-098)
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  When  the network moves ahead "2" blocks
+  Then  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/JAN23"
+  And  the following trades should be executed:
+  And  the market data for the market "ETH/JAN23" should be:
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/JAN23" should be:
+  When  the network moves ahead "2" blocks
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/JAN23"
+  Then  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/JAN23"
+  Then  the parties should have the following account balances:
+  When  the network moves ahead "2" epochs
+  Then  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/JAN23"
+  Then  the parties should have the following account balances:
+
+Scenario 5: An LP with ask orders outside valid range during auction is penalised (0044-LIME-099)
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  When  the network moves ahead "2" blocks
+  Then  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/JAN23"
+  And  the following trades should be executed:
+  And  the market data for the market "ETH/JAN23" should be:
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/JAN23" should be:
+  Then  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/JAN23"
+  Then  the parties should have the following account balances:
+  When  the network moves ahead "2" epochs
+  Then  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/JAN23"
+  Then  the parties should have the following account balances:
+
+Scenario 6: 001b: lp1 and lp2 under supplies liquidity (and expects to get penalty for not meeting the SLA) since both have orders outside price range, this time with half the fees paid based on score.
+  Tags: ['@Now']
+  Given  the following network parameters are set:
+  And  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  When  the network moves ahead "2" blocks
+  And  the parties place the following pegged iceberg orders:
+  Then  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/MAR22"
+  And  the following trades should be executed:
+  And  the market data for the market "ETH/MAR22" should be:
+  And  the liquidity fee factor should be "0.02" for the market "ETH/MAR22"
+  And  the parties should have the following account balances:
+  Then  the parties place the following orders:
+  And  the market data for the market "ETH/MAR22" should be:
+  Then  the network moves ahead "6" blocks
+  And  the parties should have the following account balances:
+  Then  the following transfers should happen:
+  And  the insurance pool balance should be "40269" for the market "ETH/MAR22"
+  Then  the network moves ahead "6" blocks
+  And  the parties should have the following account balances:
+  And  the insurance pool balance should be "60394" for the market "ETH/MAR22"
+

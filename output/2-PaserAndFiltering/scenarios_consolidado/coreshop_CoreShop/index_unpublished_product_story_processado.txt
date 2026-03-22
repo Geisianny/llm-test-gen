@@ -1,0 +1,22 @@
+Scenario 1: The product is enabled and published
+  Then  the index should have indexed the product "Shoe"
+
+
+
+Scenario 2: The product is enabled and unpublished
+  Given  the product is not published
+  Then  the index should not have indexed the product "Shoe"
+
+
+
+Scenario 3: The object instance is not active and published
+  Given  the product is not active
+  Then  the index should not have indexed the product "Shoe"
+
+
+
+Scenario 4: The object instance is disabled and unpublished
+  Given  the product is not active
+  Given  the product is not published
+  Then  the index should not have indexed the product "Shoe"
+

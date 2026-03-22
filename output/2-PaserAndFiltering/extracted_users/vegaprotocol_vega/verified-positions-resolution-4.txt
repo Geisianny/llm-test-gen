@@ -1,0 +1,30 @@
+Feature: Position resolution case 4
+
+Background: 
+  Given  the markets:
+  And  the following network parameters are set:
+
+Scenario 1: close out when there is enough orders on the orderbook to cover the position (0008-TRAD-006, 0008-TRAD-007))
+  Tags: ['@Liquidation']
+  Given  the parties deposit on asset's general account the following amount:
+  Then  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the mark price should be "180" for the market "ETH/DEC19"
+  When  the parties place the following orders with ticks:
+  And  the markets are updated:
+  When  the parties place the following orders with ticks:
+  And  the mark price should be "180" for the market "ETH/DEC19"
+  Then  the order book should have the following volumes for market "ETH/DEC19":
+  And  the average fill price is:
+  Then  the parties should have the following account balances:
+  Then  the parties should have the following margin levels:
+  Then  the parties cancel the following orders:
+  When  the parties place the following orders with ticks:
+  When  the parties place the following orders with ticks:
+  And  the mark price should be "300" for the market "ETH/DEC19"
+  Then  the parties should have the following profit and loss:
+  Then  the parties should have the following account balances:
+  And  the insurance pool balance should be "0" for the market "ETH/DEC19"
+  When  the parties place the following orders with ticks:
+

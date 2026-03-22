@@ -1,0 +1,18 @@
+Scenario 1: Enabling showing the lowest price of discounted products on a channel
+  Tags: ['@api', '@ui']
+  When  I want to modify a channel "US Channel"
+  And  I enable showing the lowest price of discounted products
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  the "US Channel" channel should have the lowest price of discounted products prior to the current discount enabled
+
+
+
+Scenario 2: Disabling showing the lowest price of discounted products on a channel
+  Tags: ['@api', '@ui']
+  When  I want to modify a channel "EU Channel"
+  And  I disable showing the lowest price of discounted products
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  the "EU Channel" channel should have the lowest price of discounted products prior to the current discount disabled
+

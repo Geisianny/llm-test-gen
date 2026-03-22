@@ -1,0 +1,13 @@
+Scenario 1: Seeing payment state as paid on orders list
+  Tags: ['@ui']
+  When  I browse orders
+  Then  the order "#00000666" should have order payment state "Paid"
+
+
+
+Scenario 2: Seeing payment state as paid on order's summary
+  Tags: ['@ui']
+  When  I view the summary of the order "#00000666"
+  Then  I should be informed that there are no payments
+  And  I should not be able to refund this payment
+

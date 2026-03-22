@@ -1,0 +1,6 @@
+Scenario 1: Viewing orders only from current channel
+  Tags: ['@ui']
+  When  I change my current channel to "Web-US"
+  And  I browse my orders
+  Then  I should see a single order in the list
+

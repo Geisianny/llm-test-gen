@@ -1,0 +1,71 @@
+Feature: Tasks
+
+Scenario 1: List empty tasks
+  Tags: ['@auth']
+  Given  empty "tasks"
+  When  we get "/tasks"
+  Then  we get list with 0 items
+
+Scenario 2: Create new task
+  Tags: ['@auth']
+  Given  empty "desks"
+  Given  empty "archive"
+  Given  empty "tasks"
+  When  we post to "desks"
+  When  we post to "tasks"
+  When  we post to "archive"
+  And  we get "/tasks"
+  Then  we get list with 1 items
+
+Scenario 3: Update task description
+  Tags: ['@auth']
+  Given  "tasks"
+  When  we patch given
+  And  we get "/tasks"
+  Then  we get list with 1 items
+
+Scenario 4: Update multiple task description
+  Tags: ['@auth']
+  Given  "tasks"
+  When  we patch given
+  And  we patch latest
+  Then  we get updated response
+
+Scenario 5: Update task-desk asignment
+  Tags: ['@auth']
+  Given  empty "desks"
+  Given  empty "tasks"
+  When  we post to "users"
+  When  we post to "desks"
+  When  we post to "tasks"
+  And  we patch latest
+  Then  we get updated response
+
+Scenario 6: Update task status on stage change
+  Tags: ['@auth']
+  Given  empty "tasks"
+  Given  empty "stages"
+  Given  "desks"
+  When  we post to "stages"
+  When  we post to "users"
+  When  we post to "tasks"
+  Then  we get existing resource
+  When  we patch latest
+  Then  we get existing resource
+
+Scenario 7: Delete task
+  Tags: ['@auth']
+  Given  empty "tasks"
+  When  we post to "users"
+  When  we post to "tasks"
+  And  we delete latest
+  Then  we get deleted response
+
+Scenario 8: Filter out tasks for spiked items
+  Tags: ['@auth']
+  Given  "desks"
+  And  "archive"
+  When  we spike "task-1"
+  And  we get "/tasks"
+  Then  we get list with 0 items
+

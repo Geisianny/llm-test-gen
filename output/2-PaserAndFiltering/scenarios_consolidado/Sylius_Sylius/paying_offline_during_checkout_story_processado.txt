@@ -1,0 +1,21 @@
+Scenario 1: Successfully placing an order
+  Tags: ['@api', '@ui']
+  Given  this payment method is not using Payum
+  And  I added product "PHP T-Shirt" to the cart
+  And  I addressed the cart
+  And  I chose "Free" shipping method and "Offline" payment method
+  When  I check the details of my cart
+  And  I confirm my order
+  Then  I should see the thank you page
+
+
+
+Scenario 2: Using Payum successfully placing an order
+  Tags: ['@api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  And  I addressed the cart
+  And  I chose "Free" shipping method and "Offline" payment method
+  When  I check the details of my cart
+  And  I confirm my order
+  Then  I should see the thank you page
+

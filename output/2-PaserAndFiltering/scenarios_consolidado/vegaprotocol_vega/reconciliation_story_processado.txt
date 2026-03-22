@@ -1,0 +1,58 @@
+Scenario 1: Party submits delegations which by the time they are processed are uncovered
+  When  the parties submit the following delegations:
+  Then  the parties should have the following delegation balances for epoch 2:
+  Given  the parties withdraw from staking account the following amount:
+  When  the network moves ahead "63" blocks
+  Then  the parties should have the following delegation balances for epoch 2:
+
+
+
+Scenario 2: Party dissociation gets reconciled during the epoch
+  Given  the parties withdraw from staking account the following amount:
+  Then  the parties should have the following delegation balances for epoch 1:
+  When  the network moves ahead "16" blocks
+  Then  the parties should have the following delegation balances for epoch 1:
+  Then  the parties should have the following delegation balances for epoch 2:
+  When  the network moves ahead "47" blocks
+  Then  the parties should have the following delegation balances for epoch 1:
+  Then  the parties should have the following delegation balances for epoch 2:
+
+
+
+Scenario 3: Party dissociation gets reconciled during the epoch incrementally
+  Given  the parties submit the following undelegations:
+  Given  the parties withdraw from staking account the following amount:
+  When  the network moves ahead "2" blocks
+  Given  the parties withdraw from staking account the following amount:
+  When  the network moves ahead "14" blocks
+  Then  the parties should have the following delegation balances for epoch 1:
+  When  the network moves ahead "15" blocks
+  Then  the parties should have the following delegation balances for epoch 1:
+  Given  the parties withdraw from staking account the following amount:
+  When  the network moves ahead "16" blocks
+  Then  the parties should have the following delegation balances for epoch 1:
+  Then  the parties should have the following delegation balances for epoch 2:
+  When  the network moves ahead "15" blocks
+  Then  the parties should have the following delegation balances for epoch 1:
+  Then  the parties should have the following delegation balances for epoch 2:
+
+
+
+Scenario 4: A party withdraws during the epoch and has pending delegations for next epoch
+  When  the parties submit the following delegations:
+  Then  the parties should have the following delegation balances for epoch 2:
+  When  the network moves ahead "63" blocks
+  Then  the parties submit the following undelegations:
+  Then  the parties submit the following delegations:
+  Then  the parties should have the following delegation balances for epoch 3:
+  Given  the parties withdraw from staking account the following amount:
+  When  the network moves ahead "20" blocks
+  Then  the parties should have the following delegation balances for epoch 2:
+  Then  the parties should have the following delegation balances for epoch 3:
+  When  the network moves ahead "5" blocks
+  And  the parties deposit on staking account the following amount:
+  Then  the parties submit the following delegations:
+  Then  the parties should have the following delegation balances for epoch 3:
+  When  the network moves ahead "50" blocks
+  Then  the parties should have the following delegation balances for epoch 3:
+

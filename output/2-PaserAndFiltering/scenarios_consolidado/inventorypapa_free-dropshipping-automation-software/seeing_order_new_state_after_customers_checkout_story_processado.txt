@@ -1,0 +1,8 @@
+Scenario 1: Verifying that order has new state right after checkout
+  Tags: ['@ui']
+  Given  the customer bought 3 "Iron Maiden T-Shirt" products
+  And  the customer chose "Free" shipping method to "United States" with "offline" payment
+  When  I browse orders
+  Then  I should see a single order from customer "sylius@example.com"
+  And  it should have a "new" state
+

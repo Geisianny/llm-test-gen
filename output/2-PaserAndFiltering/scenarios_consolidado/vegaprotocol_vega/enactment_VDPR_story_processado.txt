@@ -1,0 +1,45 @@
+Scenario Outline 1: No program currently active, new program enacted, discount factors applied from the start of the next epoch. - Example 1
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  Given  the volume discount program tiers named "vdt":
+  And  the volume discount program:
+  Given  the network moves ahead "1" epochs
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+
+  Examples:
+    | market |
+    | BTC/USD-0-1 |
+    | MXN-0-1/USD-0-1 |
+
+
+
+Scenario Outline 2: Program currently active, program update enacted, discount factors applied from the start of the next epoch. - Example 1
+  Given  the volume discount program tiers named "vdt":
+  And  the volume discount program:
+  And  the network moves ahead "1" epochs
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  Given  the network moves ahead "1" epochs
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  Given  the volume discount program tiers named "vdt":
+  And  the volume discount program:
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  Given  the network moves ahead "1" epochs
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  debug trades
+  And  the following trades should be executed:
+
+  Examples:
+    | market |
+    | BTC/USD-0-1 |
+    | MXN-0-1/USD-0-1 |
+

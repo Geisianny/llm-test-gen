@@ -1,0 +1,20 @@
+Scenario 1: List standard prices
+  Given  the follow products exist:
+  And  the follow prices exist:
+  Given  I have authenticated to the API
+  When  I fetch all prices for the product "Product One" via API
+  Then  I should see in the API response with only 3 result in the data set
+  And  there should be a price for 1000 in the data set
+
+
+
+Scenario 2: List with usage prices
+  Given  the follow products exist:
+  And  the follow prices exist:
+  Given  the follow metrics exist:
+  Given  the follow price "Product One" for "USD" yearly price with a usage tiered graduated for metric "Test One" with these tiers:
+  Given  I have authenticated to the API
+  When  I fetch all prices for the product "Product One" via API
+  Then  I should see in the API response with only 4 result in the data set
+  And  there should be a price for 1000 in the data set
+

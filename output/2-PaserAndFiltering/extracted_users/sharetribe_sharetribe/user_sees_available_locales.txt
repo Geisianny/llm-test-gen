@@ -1,0 +1,32 @@
+Feature: User sees available locales
+Description: In order to have relevant languages available in own community
+  As a user
+  I want to see only the relevant languages in the languages list
+
+Scenario 1: User comes to multiple locale community
+  Tags: ['@javascript']
+  Given  the test community has following available locales:
+  When  I am on the home page
+  And  I open language menu
+  Then  I should see "English" on the language menu
+  Then  I should see "Suomi" on the language menu
+  Then  I select "English" from the language menu
+  And  I should see "Post a new listing" within "#new-listing-link"
+  And  I open language menu
+  And  I select "Suomi" from the language menu
+  Then  I should see "Lisää uusi ilmoitus!" within "#new-listing-link"
+
+Scenario 2: User comes to single locale community
+  Given  the test community has following available locales:
+  When  I am on the home page
+  Then  I should not see selector "#locale_select_padding"
+  And  I should see "Post a new listing" within "#new-listing-link"
+
+Scenario 3: There are no locales in community settings
+  Tags: ['@javascript']
+  Given  the test community has following available locales:
+  When  I am on the home page
+  And  I open language menu
+  And  I select "Suomi" from the language menu
+  Then  I should see "Lisää uusi ilmoitus!" within "#new-listing-link"
+

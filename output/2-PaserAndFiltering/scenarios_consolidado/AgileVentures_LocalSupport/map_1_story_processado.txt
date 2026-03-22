@@ -1,0 +1,91 @@
+Scenario 1: Show all charities in map on organisations index page map
+  Tags: ['@javascript', '@vcr', '@billy']
+  Given  I visit the organisations index page
+  Then  I should see the following pin markers in the map:
+
+
+
+Scenario 2: Infowindow appears when clicking on map marker
+  Tags: ['@javascript', '@billy']
+  Given  I visit the organisations index page
+  Then  I should see an infowindow when I click on the map pin markers:
+
+
+
+Scenario 3: Organisation map has large icon for organisation with no users
+  Tags: ['@javascript', '@billy']
+  Given  I visit the organisations index page
+  Then  the organisation "Indian Elders Association" should have a large icon
+
+
+
+Scenario 4: Changing address on the map changes the map coordinates
+  Tags: ['@vcr']
+  Given  I visit the organisations index page
+  Then  the coordinates for "Harrow Bereavement Counselling" and "Youth UK" should not be the same
+  And  the coordinates for "Age UK" and "Youth UK" should be the same
+  Given  cookies are approved
+  When  I am signed in as a charity worker related to "Youth UK"
+  And  I update "Youth UK" charity address to be "34 pinner road"
+  And  I visit the organisations index page
+  Then  the coordinates for "Harrow Bereavement Counselling" and "Youth UK" should be the same
+  Then  the coordinates for "Age UK" and "Youth UK" should not be the same
+
+
+
+Scenario 5: Changing postcode changes the map coordinates
+  Tags: ['@vcr', '@billy']
+  Given  I visit the organisations index page
+  Given  cookies are approved
+  When  I am signed in as a charity worker related to "Wrong Postcode UK"
+  And  I update "Wrong Postcode UK" charity postcode to be "E1 6LT"
+  And  I visit the organisations index page
+  Then  the coordinates for "Wrong Postcode UK" should not be "51.58152579999999, -0.3439557"
+
+
+
+Scenario 6: Show meaning of large map icons on home page
+  Given  I visit the organisations index page
+  And  I click "Close"
+  Then  I should see "Details updated within the last 12 months"
+  Then  I should see "Details NOT updated within the last 12 months"
+
+
+
+Scenario 7: Do not show meaning of large map icons on volunteer ops page
+  Given  I visit the volunteer opportunities page
+  And  I click "Close"
+  Then  I should not see "Details updated within the last 12 months"
+  Then  I should not see "Details NOT updated within the last 12 months"
+
+
+
+Scenario 8: If the Google Maps API key is set that will appear in the right location
+  Given  the Google Maps API key is set
+  When  I visit the home page
+  Then  the google map key should be appended to the gmap js script
+
+
+
+Scenario 9: If the Google Maps API key is not set it will not appear at all
+  Given  the Google Maps API key is not set
+  When  I visit the home page
+  Then  the google map key should not be appended to the gmap js script
+
+
+
+Scenario Outline 10: Organisation map has small icon for organisations updated more than 365 days ago - Example 1
+  Tags: ['@javascript', '@billy']
+  Given  I travel a year plus "-10" days into the future
+  And  I visit the organisations index page
+  Then  the organisation "Youth UK" should have a large icon
+
+  Examples:
+    | days | size |
+    | -10 | large |
+    | -1 | large |
+    | 0 | small |
+    | 1 | small |
+    | 10 | small |
+    | 100 | small |
+

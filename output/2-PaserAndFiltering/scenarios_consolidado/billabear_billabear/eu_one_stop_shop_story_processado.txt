@@ -1,0 +1,16 @@
+Scenario 1: 
+  Given  the EU one stop shop rule is enabled
+  Given  the following subscriptions exist:
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  And  there the latest invoice for "customer.two@example.org" will have tax country of "FR"
+
+
+
+Scenario 2: 
+  Given  the EU one stop shop rule is not enabled
+  Given  the following subscriptions exist:
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  And  there the latest invoice for "customer.three@example.org" will have tax country of "DE"
+

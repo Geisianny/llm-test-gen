@@ -1,0 +1,6 @@
+Scenario 1: Limiting the number of orders
+  Tags: ['@api', '@no-ui']
+  When  I browse orders
+  And  I limit number of items to 1
+  Then  I should see a single order in the list
+

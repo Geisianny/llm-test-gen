@@ -1,0 +1,27 @@
+Scenario 1: Add a new zone cart price rule which is valid
+  Given  adding a cart price rule named "zone"
+  And  the cart rule is active
+  And  the cart rule is not a voucher rule
+  And  the cart rule has a condition zones with zone "Europe"
+  Then  the cart rule should be valid for my cart
+
+
+
+Scenario 2: Add a new zone cart price rule which is valid for another zone
+  Given  the customer "some-customer@something.com" has an address with country "USA", "95014", "Cupertino", "One Infinite Loop", "1"
+  And  the cart invoices to customer "some-customer@something.com" address with postcode "95014"
+  And  adding a cart price rule named "zone"
+  And  the cart rule is active
+  And  the cart rule is not a voucher rule
+  And  the cart rule has a condition zones with zone "America"
+  Then  the cart rule should be valid for my cart
+
+
+
+Scenario 3: Add a new zone cart price rule which is invalid
+  Given  adding a cart price rule named "zone"
+  And  the cart rule is active
+  And  the cart rule is not a voucher rule
+  And  the cart rule has a condition zones with zone "Asia"
+  Then  the cart rule should be invalid for my cart
+

@@ -1,0 +1,10 @@
+Scenario 1: 
+  Given  the following subscriptions exist:
+  And  stripe billing is enabled
+  And  the following credit transactions exist:
+  And  the invoice number generation is subsequential with the count of 13
+  When  the background task to reinvoice active subscriptions
+  Then  the subscription for "customer.one@example.org" will expire in a week
+  And  the latest invoice for "customer.one@example.org" will have the invoice number 14
+  Then  the invoice subsequential number is 14
+

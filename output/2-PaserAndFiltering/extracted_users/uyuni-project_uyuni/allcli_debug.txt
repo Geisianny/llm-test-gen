@@ -1,0 +1,5 @@
+Feature: Debug the clients after the testsuite has run
+
+Scenario 1: Extract the logs from all our clients
+  When  I extract the log files from all our active nodes
+

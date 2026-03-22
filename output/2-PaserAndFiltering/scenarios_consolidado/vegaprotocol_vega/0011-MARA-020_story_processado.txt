@@ -1,0 +1,8 @@
+Scenario 1: In Spot Market, cancelling an order releases the holding amount back to user's general account. (0011-MARA-020)
+  Given  the parties place the following orders:
+  And  "party5" should have general account balance of "94" for asset "BTC"
+  When  the parties place the following orders:
+  Then  the orders should have the following status:
+  Then  the parties cancel the following orders:
+  And  "party5" should have general account balance of "98" for asset "BTC"
+

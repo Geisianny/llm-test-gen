@@ -1,0 +1,20 @@
+Feature: In Spot market, holding will taken before the order is entered into the book
+
+Background: 
+  Given  the following assets are registered:
+  Given  the fees configuration named "fees-config-1":
+  And  the simple risk model named "my-simple-risk-model":
+  And  the fees configuration named "my-fees-config":
+  And  the spot markets:
+  And  the average block duration is "1"
+  Given  the parties deposit on asset's general account the following amount:
+
+Scenario 1: In Spot market, holding will taken before the order is entered into the book (0025-OCRE-005, 0025-OCRE-006)
+  When  the parties place the following iceberg orders:
+  And  the parties place the following orders:
+  And  the opening auction period ends for market "BTC/ETH"
+  When  the network moves ahead "1" blocks
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/ETH"
+  And  the parties place the following orders:
+  Then  the orders should have the following states:
+

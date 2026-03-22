@@ -1,0 +1,43 @@
+Scenario 1: Proper taxes for taxed product
+  Tags: ['@ui']
+  When  I add product "PHP T-Shirt" to the cart
+  Then  my cart total should be "$123.00"
+  And  my cart taxes should be "$23.00"
+
+
+
+Scenario 2: Proper taxes for multiple same products with the same tax rate
+  Tags: ['@ui']
+  When  I add 3 products "PHP T-Shirt" to the cart
+  Then  my cart total should be "$369.00"
+  And  my cart taxes should be "$69.00"
+
+
+
+Scenario 3: Proper taxes for multiple different products with the same tax rate
+  Tags: ['@ui']
+  When  I add 3 products "PHP T-Shirt" to the cart
+  And  I add 2 products "Symfony Hat" to the cart
+  Then  my cart total should be "$442.80"
+  And  my cart taxes should be "$82.80"
+
+
+
+Scenario 4: Proper taxes after removing one of the item
+  Tags: ['@ui']
+  Given  I have 3 products "PHP T-Shirt" in the cart
+  And  I have 2 products "Symfony Hat" in the cart
+  When  I remove product "PHP T-Shirt" from the cart
+  Then  my cart total should be "$73.80"
+  And  my cart taxes should be "$13.80"
+
+
+
+Scenario 5: Proper taxes after changing item quantity
+  Tags: ['@ui']
+  Given  I have 3 products "PHP T-Shirt" in the cart
+  And  I have 2 products "Symfony Hat" in the cart
+  When  I change "PHP T-Shirt" quantity to 1
+  Then  my cart total should be "$196.80"
+  And  my cart taxes should be "$36.80"
+

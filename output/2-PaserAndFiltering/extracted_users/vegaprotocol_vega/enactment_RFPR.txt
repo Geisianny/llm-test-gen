@@ -1,0 +1,70 @@
+Feature: Referral program - program enactment
+Description: Referral program rewards sets who comprise above a specified
+  taker volume with a discount on all of their members fees.
+
+  Tests check on program enactment party benefit factors are updated
+  correctly and applied in the next epoch.
+
+Background: 
+  Given  the average block duration is "1"
+  And  the following network parameters are set:
+  And  the following assets are registered:
+  Given  the parties deposit on asset's general account the following amount:
+  And  the markets:
+  And  the spot markets:
+  And  the parties place the following orders:
+  And  the parties place the following orders:
+  And  the parties place the following orders:
+  And  the parties place the following orders:
+  When  the network moves ahead "2" blocks
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/USD-0-1"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "MXN-0-1/USD-0-1"
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties create the following referral codes:
+  And  the parties apply the following referral codes:
+
+Scenario Outline 1: No program currently active, new program enacted, benefit factors applied from the start of the next epoch. - Example 1
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  Given  the referral benefit tiers "rbt":
+  And  the referral staking tiers "rst":
+  And  the referral program:
+  Given  the network moves ahead "1" epochs
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+
+  Examples:
+    | market |
+    | BTC/USD-0-1 |
+    | MXN-0-1/USD-0-1 |
+
+Scenario Outline 2: Program currently active, program update enacted, benefit factors applied from the start of the next epoch. - Example 1
+  Given  the referral benefit tiers "rbt":
+  And  the referral staking tiers "rst":
+  And  the referral program:
+  And  the network moves ahead "1" epochs
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  Given  the network moves ahead "2" epochs
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  Given  the referral benefit tiers "rbt":
+  And  the referral staking tiers "rst":
+  And  the referral program:
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  Given  the network moves ahead "1" epochs
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  And  the following trades should be executed:
+
+  Examples:
+    | market |
+    | BTC/USD-0-1 |
+    | MXN-0-1/USD-0-1 |
+

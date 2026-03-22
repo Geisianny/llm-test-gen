@@ -1,0 +1,77 @@
+Scenario 1: a party place a new order in the system, margin are updated, the order is closed, margin is 0ed
+  Tags: ['@MarginRelease']
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  Then  the parties place the following orders:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the mark price should be "1000" for the market "ETH/DEC19"
+  When  the parties place the following orders:
+  Then  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+  When  the parties cancel the following orders:
+  Then  the parties should have the following account balances:
+
+
+
+Scenario 2: a party place a new market order in the system, order, trade, party margin is updated, then place an GTC order which will trade, margin is 0ed
+  Tags: ['@MarginRelease', '@Chris']
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  Then  the parties place the following orders:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the mark price should be "1000" for the market "ETH/DEC19"
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+  Then  the parties should have the following profit and loss:
+  When  the parties place the following orders:
+  Then  the parties should have the following margin levels:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+
+
+
+Scenario 3: a party place a new order in the system, party is closed out with only potential position, margin is 0ed
+  Tags: ['@MarginRelease']
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  Then  the parties place the following orders:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the mark price should be "1000" for the market "ETH/DEC19"
+  When  the parties place the following orders:
+  Then  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the mark price should be "500" for the market "ETH/DEC19"
+  Then  the parties should have the following account balances:
+
+
+
+Scenario 4: a party place a new order in the system, party is closing position via closeout of other parties
+  Tags: ['@MarginRelease', '@NoPerp']
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  Then  the parties place the following orders:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  And  the mark price should be "1000" for the market "ETH/DEC19"
+  When  the parties place the following orders:
+  Then  the parties should have the following margin levels:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following profit and loss:
+  And  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  And  the network moves ahead "1" blocks
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  Then  the parties should have the following account balances:
+  Then  the parties should have the following profit and loss:
+

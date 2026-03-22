@@ -1,0 +1,165 @@
+Feature: Publish Queue
+
+Scenario 1: Add a new transmission entry to the queue
+  Tags: ['@auth']
+  Given  empty "archive"
+  And  empty "subscribers"
+  When  we post to "/archive"
+  When  we post to "/products" with success
+  And  we post to "/subscribers" with success
+  And  we post to "/publish_queue" with success
+  And  we get "/publish_queue"
+  Then  we get list with 1 items
+
+Scenario 2: No transmission will happen if subscriber doesn't have product
+  Tags: ['@auth']
+  Given  empty "archive"
+  And  empty "subscribers"
+  And  empty "products"
+  And  "products"
+  And  the "validators"
+  And  "desks"
+  And  "archive"
+  And  "subscribers"
+  When  we publish "#archive._id#" with "publish" type and "published" state
+  Then  we get OK response
+  When  we enqueue published
+  When  we get "/publish_queue"
+  Then  we get list with 0 items
+
+Scenario 3: Error in queueing will be recorded if happens
+  Tags: ['@auth', '@vocabulary']
+  Given  empty "archive"
+  And  empty "subscribers"
+  And  empty "products"
+  Given  empty "filter_conditions"
+  When  we post to "/filter_conditions" with success
+  Then  we get latest
+  Given  empty "content_filters"
+  When  we post to "/content_filters" with success
+  Then  we get latest
+  Given  "products"
+  And  the "validators"
+  And  "desks"
+  And  "archive"
+  And  "subscribers"
+  When  we publish "#archive._id#" with "publish" type and "published" state
+  Then  we get error 400
+  When  we enqueue published
+  When  we get "/publish_queue"
+  Then  we get list with 0 items
+  When  we get "/published"
+  Then  we get existing resource
+
+Scenario 4: Transmission will have the collated codes
+  Tags: ['@auth']
+  Given  empty "archive"
+  And  empty "subscribers"
+  And  empty "products"
+  And  "products"
+  And  the "validators"
+  And  "desks"
+  And  "archive"
+  And  "subscribers"
+  When  we publish "#archive._id#" with "publish" type and "published" state
+  Then  we get OK response
+  When  we enqueue published
+  When  we get "/publish_queue"
+  Then  we get list with 1 items
+  When  we publish "#archive._id#" with "correct" type and "corrected" state
+  Then  we get OK response
+  When  we enqueue published
+  And  we get "/publish_queue"
+  Then  we get list with 2 items
+  When  we publish "#archive._id#" with "kill" type and "killed" state
+  Then  we get OK response
+  When  we enqueue published
+  And  we get "/publish_queue"
+  Then  we get list with 3 items
+
+Scenario 5: Patch a transmission entry
+  Tags: ['@auth']
+  Given  empty "archive"
+  And  empty "subscribers"
+  When  we post to "/archive"
+  When  we post to "/products" with success
+  And  we post to "/subscribers" with success
+  And  we post to "/publish_queue" with success
+  And  we get "/publish_queue"
+  Then  we get list with 1 items
+  When  we patch "/publish_queue/#publish_queue._id#"
+  And  we get "/publish_queue"
+  Then  we get list with 1 items
+
+Scenario 6: Published Item should have published sequence number when published and placed in queue
+  Tags: ['@auth']
+  Given  the "validators"
+  And  "desks"
+  When  we post to "/products" with success
+  And  we post to "/subscribers" with success
+  And  we post to "/archive" with success
+  And  we post to "/stages" with success
+  And  we publish "#archive._id#" with "publish" type and "published" state
+  Then  we get "publish_sequence_no" in "/published/123"
+
+Scenario 7: Creating a new publish queue entry should add published sequence number
+  Tags: ['@auth', '@notification']
+  Given  empty "archive"
+  And  empty "subscribers"
+  When  we post to "/archive"
+  When  we post to "/products" with success
+  And  we post to "/subscribers" with success
+  And  we post to "/publish_queue"
+  Then  we get OK response
+  Then  we get "published_seq_num" in "/publish_queue/#archive._id#"
+  When  we patch "/publish_queue/#publish_queue._id#"
+  Then  we get latest
+  And  we get notifications
+
+Scenario 8: publish queue us returned in correct order
+  Tags: ['@auth']
+  Given  "subscribers"
+  And  "publish_queue"
+  When  we get "/publish_queue"
+  Then  we get list ordered by _created with 4 items
+
+Scenario 9: Expire published queue items
+  Tags: ['@auth']
+  Given  empty "subscribers"
+  And  config update
+  When  we post to "/archive" with success
+  When  we post to "/products" with success
+  And  we post to "/subscribers" with success
+  And  we post to "/publish_queue" with success
+  And  we get "/publish_queue"
+  Then  we get list with 1 items
+  When  we expire items
+  And  we get "/publish_queue"
+  Then  we get list with 0 items
+
+Scenario 10: Transmission will have the collated codes on takedown
+  Tags: ['@auth']
+  Given  empty "archive"
+  And  empty "subscribers"
+  And  empty "products"
+  And  "products"
+  And  the "validators"
+  And  "desks"
+  And  "archive"
+  And  "subscribers"
+  When  we publish "#archive._id#" with "publish" type and "published" state
+  Then  we get OK response
+  When  we enqueue published
+  When  we get "/publish_queue"
+  Then  we get list with 1 items
+  When  we publish "#archive._id#" with "correct" type and "corrected" state
+  Then  we get OK response
+  When  we enqueue published
+  And  we get "/publish_queue"
+  Then  we get list with 2 items
+  When  we publish "#archive._id#" with "takedown" type and "recalled" state
+  Then  we get OK response
+  When  we enqueue published
+  And  we get "/publish_queue"
+  Then  we get list with 3 items
+

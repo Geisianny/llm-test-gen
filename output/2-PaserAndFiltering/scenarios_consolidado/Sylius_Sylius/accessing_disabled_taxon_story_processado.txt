@@ -1,0 +1,17 @@
+Scenario 1: Accessing a disabled taxon
+  Tags: ['@no-api', '@ui']
+  Given  the store has "T-Shirts" taxonomy
+  And  the "T-Shirts" taxon is disabled
+  When  I try to browse products from taxon "T-Shirts"
+  Then  I should be informed that the taxon does not exist
+
+
+
+Scenario 2: Filtering products by taxon available only for enabled taxon
+  Tags: ['@api', '@no-ui']
+  Given  the store has "Food" taxonomy
+  And  the store has a product "Baguette" priced at "$2.00" belonging to the "Food" taxon
+  And  the "Food" taxon is disabled
+  When  I browse products from product taxon code "Food"
+  Then  I should see empty list of products
+

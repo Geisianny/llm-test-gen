@@ -1,0 +1,4 @@
+Scenario 1: Create a new product
+  Given  the site has a product "Shoe 2" priced at 200
+  Then  the product "Shoe 2" should be priced at "200"
+

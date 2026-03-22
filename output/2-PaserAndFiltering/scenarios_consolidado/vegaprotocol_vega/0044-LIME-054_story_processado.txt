@@ -1,0 +1,37 @@
+Scenario 1: 001 0044-LIME-054,For a market that is in opening auction and LP has committed liquidity:
+  Given  time is updated to "2023-07-20T00:00:00Z"
+  Given  the fees configuration named "fees-config-1":
+  Given  the log normal risk model named "lognormal-risk-model-1":
+  And  the price monitoring named "price-monitoring-1":
+  And  the liquidity sla params named "SLA-1":
+  Given  the following assets are registered:
+  And  the following network parameters are set:
+  And  the spot markets:
+  And  the following network parameters are set:
+  Given  the parties deposit on asset's general account the following amount:
+  And  the average block duration is "1"
+  Given  the liquidity monitoring parameters:
+  When  the spot markets are updated:
+  When  the parties submit the following liquidity provision:
+  Then  the network moves ahead "1" blocks
+  And  the network treasury balance should be "0" for the asset "ETH"
+  Then  the party "lp1" lp liquidity bond account balance should be "1000" for the market "BTC/ETH"
+  Then  the party "lp2" lp liquidity bond account balance should be "2000" for the market "BTC/ETH"
+  And  the supplied stake should be "5000" for the market "BTC/ETH"
+  When  party "lp3" cancels their liquidity provision for market "BTC/ETH"
+  Then  the network moves ahead "1" blocks
+  And  the network treasury balance should be "0" for the asset "ETH"
+  Then  the party "lp1" lp liquidity bond account balance should be "1000" for the market "BTC/ETH"
+  Then  the party "lp2" lp liquidity bond account balance should be "2000" for the market "BTC/ETH"
+  Then  the party "lp3" lp liquidity bond account balance should be "0" for the market "BTC/ETH"
+  And  the supplied stake should be "3000" for the market "BTC/ETH"
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the market data for the market "BTC/ETH" should be:
+  Then  the network moves ahead "5" blocks
+  And  the network treasury balance should be "1200" for the asset "ETH"
+  Then  the party "lp1" lp liquidity bond account balance should be "600" for the market "BTC/ETH"
+  Then  the party "lp2" lp liquidity bond account balance should be "1200" for the market "BTC/ETH"
+  And  the supplied stake should be "1800" for the market "BTC/ETH"
+  When  the parties submit the following liquidity provision:
+

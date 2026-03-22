@@ -1,0 +1,58 @@
+Feature: Test LP fee distribution in LP mechanics in 0042
+
+Background: 
+  Given  the margin calculator named "margin-calculator-1":
+  Given  the log normal risk model named "log-normal-risk-model":
+  And  the liquidity monitoring parameters:
+  And  the following network parameters are set:
+  And  the following assets are registered:
+  And  the fees configuration named "fees-config-1":
+  And  the price monitoring named "price-monitoring":
+  And  the liquidity sla params named "SLA-22":
+  And  the markets:
+  And  the following network parameters are set:
+  Given  the average block duration is "1"
+
+Scenario 1: 001: lp1 and lp2 on the market ETH/MAR22, 0042-LIQF-043
+  Tags: ['@Now']
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  When  the network moves ahead "4" blocks
+  And  the current epoch is "0"
+  Then  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/MAR22"
+  And  the following trades should be executed:
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the network moves ahead "1" epochs
+  And  the supplied stake should be "9600" for the market "ETH/MAR22"
+  And  the insurance pool balance should be "400" for the market "ETH/MAR22"
+  And  the current epoch is "1"
+  Then  the parties should have the following account balances:
+  Then  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  And  the insurance pool balance should be "760" for the market "ETH/MAR22"
+  Then  the parties should have the following account balances:
+  Then  the following transfers should happen:
+
+Scenario 2: 001b: lp1 and lp2 on the market ETH/MAR22, 0042-LIQF-043 with fee share factor set to 0.5
+  Tags: ['@Now']
+  Given  the parties deposit on asset's general account the following amount:
+  And  the following network parameters are set:
+  And  the parties submit the following liquidity provision:
+  When  the network moves ahead "4" blocks
+  And  the current epoch is "0"
+  Then  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/MAR22"
+  And  the following trades should be executed:
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the network moves ahead "1" epochs
+  And  the supplied stake should be "9600" for the market "ETH/MAR22"
+  And  the insurance pool balance should be "400" for the market "ETH/MAR22"
+  And  the current epoch is "1"
+  Then  the parties should have the following account balances:
+  Then  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  And  the insurance pool balance should be "760" for the market "ETH/MAR22"
+  Then  the parties should have the following account balances:
+  Then  the following transfers should happen:
+

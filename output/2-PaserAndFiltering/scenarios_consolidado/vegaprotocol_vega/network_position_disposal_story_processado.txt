@@ -1,0 +1,137 @@
+Scenario 1: Network takes over distressed position and disposes position over time (0012-POSR-022)(0012-POSR-023)
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  When  the parties place the following orders:
+  When  the parties place the following orders:
+  And  the opening auction period ends for market "ETH/MAR22"
+  Then  the market data for the market "ETH/MAR22" should be:
+  Given  the parties place the following orders:
+  Then  the network moves ahead "1" blocks
+  Then  the parties should have the following profit and loss:
+  And  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+  Given  the parties amend the following orders:
+  And  the parties place the following orders:
+  Then  the network moves ahead "1" blocks
+  Then  the market data for the market "ETH/MAR22" should be:
+  Then  debug trades
+  Then  the parties should have the following profit and loss:
+  And  the following network trades should be executed:
+  And  clear trade events
+  Then  the network moves ahead "5" blocks
+  And  the following network trades should be executed:
+  Then  debug trades
+  And  clear trade events
+  Then  the network moves ahead "5" blocks
+  Then  debug trades
+  And  the following network trades should be executed:
+  And  clear trade events
+  Then  the network moves ahead "5" blocks
+  Then  debug trades
+  And  the following network trades should be executed:
+  And  clear trade events
+  Then  the network moves ahead "5" blocks
+  And  the following network trades should be executed:
+  And  clear trade events
+  Then  the network moves ahead "5" blocks
+  And  the following network trades should be executed:
+  And  clear trade events
+  Then  the network moves ahead "5" blocks
+  And  the following network trades should be executed:
+  And  clear trade events
+  Then  the network moves ahead "5" blocks
+  And  the following network trades should be executed:
+  And  clear trade events
+
+
+
+Scenario 2: Network takes over distressed position and disposes position full position once position smaller than full disposal size (0012-POSR-022)(0012-POSR-024)
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  When  the parties place the following orders:
+  When  the parties place the following orders:
+  And  the opening auction period ends for market "ETH/MAR23"
+  Then  the market data for the market "ETH/MAR23" should be:
+  Given  the parties place the following orders:
+  Then  the network moves ahead "1" blocks
+  Then  the parties should have the following profit and loss:
+  And  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+  Given  the parties amend the following orders:
+  And  the parties place the following orders:
+  Then  the network moves ahead "1" blocks
+  Then  the market data for the market "ETH/MAR23" should be:
+  Then  debug trades
+  Then  the parties should have the following profit and loss:
+  And  the following network trades should be executed:
+  And  clear trade events
+  Then  the network moves ahead "5" blocks
+  And  the following network trades should be executed:
+  Then  debug trades
+  And  clear trade events
+  Then  the network moves ahead "5" blocks
+  Then  debug trades
+  And  the following network trades should be executed:
+  And  clear trade events
+  Then  the network moves ahead "5" blocks
+  Then  debug trades
+  And  the following network trades should be executed:
+  And  clear trade events
+  Then  the network moves ahead "5" blocks
+  And  the following network trades should be executed:
+  And  clear trade events
+
+
+
+Scenario 3: Network takes over distressed position and attempts to dispose position during price monitoring auction
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  When  the parties place the following orders:
+  When  the parties place the following orders:
+  And  the opening auction period ends for market "ETH/MAR22"
+  Then  the market data for the market "ETH/MAR22" should be:
+  Given  the parties place the following orders:
+  Then  the network moves ahead "1" blocks
+  Then  the parties should have the following profit and loss:
+  And  the parties should have the following margin levels:
+  And  the parties should have the following account balances:
+  Given  the parties amend the following orders:
+  And  the parties place the following orders:
+  Then  the network moves ahead "1" blocks
+  Then  the market data for the market "ETH/MAR22" should be:
+  Then  debug trades
+  Then  the parties should have the following profit and loss:
+  And  the following network trades should be executed:
+  And  clear trade events
+  And  the market data for the market "ETH/MAR22" should be:
+  Then  debug detailed orderbook volumes for market "ETH/MAR22"
+  And  the parties place the following orders:
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the network moves ahead "30" blocks
+  Then  the market data for the market "ETH/MAR22" should be:
+  When  the network moves ahead "31" blocks
+  Then  the market data for the market "ETH/MAR22" should be:
+  And  the following network trades should be executed:
+  Then  debug trades
+  And  clear trade events
+  Then  the network moves ahead "5" blocks
+  Then  debug trades
+  And  the following network trades should be executed:
+  And  clear trade events
+  Then  the network moves ahead "5" blocks
+  Then  debug trades
+  And  the following network trades should be executed:
+  And  clear trade events
+  Then  the network moves ahead "5" blocks
+  And  the following network trades should be executed:
+  And  clear trade events
+  Then  the network moves ahead "5" blocks
+  And  the following network trades should be executed:
+  And  clear trade events
+  Then  the network moves ahead "5" blocks
+  And  the following network trades should be executed:
+  And  clear trade events
+  Then  the network moves ahead "5" blocks
+  And  the following network trades should be executed:
+  And  clear trade events
+

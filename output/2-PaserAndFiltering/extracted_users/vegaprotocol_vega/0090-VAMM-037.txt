@@ -1,0 +1,54 @@
+Feature: 0090-VAMM-037: Pegged orders are deployed using vAMM orders as pegs if possible
+
+Background: 
+  Given  the average block duration is "1"
+  And  the margin calculator named "margin-calculator-1":
+  And  the log normal risk model named "log-normal-risk-model":
+  And  the liquidity monitoring parameters:
+  And  the following network parameters are set:
+  And  the following assets are registered:
+  And  the fees configuration named "fees-config-1":
+  And  the liquidity sla params named "SLA-22":
+  And  the markets:
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  Then  the network moves ahead "4" blocks
+  And  the current epoch is "0"
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "ETH/MAR22"
+  Then  the following trades should be executed:
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the parties submit the following AMM:
+  Then  the AMM pool status should be:
+  And  set the following AMM sub account aliases:
+  And  the following transfers should happen:
+
+Scenario 1: 0090-VAMM-037: With an existing book consisting solely of vAMM orders on one side, pegged orders referencing best bid/best ask remain deployed on the side with the vAMM orders. Pegged orders referencing the empty side of the book are parked.
+  Tags: ['@VAMM']
+  When  the parties place the following pegged iceberg orders:
+  Then  the order book should have the following volumes for market "ETH/MAR22":
+  When  the network moves ahead "1" blocks
+  Then  the order book should have the following volumes for market "ETH/MAR22":
+  When  the parties cancel the following orders:
+  Then  the order book should have the following volumes for market "ETH/MAR22":
+  When  the network moves ahead "1" blocks
+  Then  the order book should have the following volumes for market "ETH/MAR22":
+  When  the parties amend the following AMM:
+  Then  the AMM pool status should be:
+  When  the network moves ahead "1" blocks
+  Then  the order book should have the following volumes for market "ETH/MAR22":
+
+Scenario 2: 0090-VAMM-037: Cancelling an AMM with pegged orders hanging off its quotes causes them to be re-pegged
+  Tags: ['@VAMM']
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the parties place the following pegged orders:
+  Then  the order book should have the following volumes for market "ETH/MAR22":
+  When  the network moves ahead "1" blocks
+  When  the parties cancel the following AMM:
+  Then  the market data for the market "ETH/MAR22" should be:
+  Then  the order book should have the following volumes for market "ETH/MAR22":
+  When  the network moves ahead "1" blocks
+  When  the parties submit the following AMM:
+  Then  the market data for the market "ETH/MAR22" should be:
+  Then  the order book should have the following volumes for market "ETH/MAR22":
+

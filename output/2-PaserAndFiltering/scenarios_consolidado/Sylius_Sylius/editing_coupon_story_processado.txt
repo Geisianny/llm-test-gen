@@ -1,0 +1,45 @@
+Scenario 1: Changing coupon expires date
+  Tags: ['@api', '@ui']
+  When  I want to modify the "SANTA2016" coupon for this promotion
+  And  I change its expiration date to "21.05.2019"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this coupon should be valid until "21.05.2019"
+
+
+
+Scenario 2: Changing coupons usage limit
+  Tags: ['@api', '@ui']
+  When  I want to modify the "SANTA2016" coupon for this promotion
+  And  I change its usage limit to 50
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this coupon should have 50 usage limit
+
+
+
+Scenario 3: Changing coupons per customer usage limit
+  Tags: ['@api', '@ui']
+  When  I want to modify the "SANTA2016" coupon for this promotion
+  And  I change its per customer usage limit to 20
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this coupon should have 20 per customer usage limit
+
+
+
+Scenario 4: Changing whether it can be reused from cancelled orders
+  Tags: ['@api', '@ui']
+  When  I want to modify the "SANTA2016" coupon for this promotion
+  And  I make it not reusable from cancelled orders
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this coupon should not be reusable from cancelled orders
+
+
+
+Scenario 5: Being unable to change code of promotion coupon
+  Tags: ['@api', '@ui']
+  When  I want to modify the "SANTA2016" coupon for this promotion
+  Then  I should not be able to edit its code
+

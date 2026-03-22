@@ -1,0 +1,14 @@
+Scenario 1: Getting errors in my language
+  Tags: ['@ui']
+  Given  I am editing my details
+  When  I change its email to "wrong-email"
+  And  I save my changes
+  Then  I should be notified that this email is not valid in "Polish (Poland)" locale
+
+
+
+Scenario 2: Seeing menu in my language
+  Tags: ['@ui']
+  When  I open administration dashboard
+  Then  I should see sidebar catalog section configuration in "Polish (Poland)" locale
+

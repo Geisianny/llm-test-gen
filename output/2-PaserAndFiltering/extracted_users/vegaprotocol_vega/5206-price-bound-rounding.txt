@@ -1,0 +1,45 @@
+Feature: Ensure price bounds are triggered as and when they should be, considering rounding and decimal places
+
+Background: 
+  Given  the price monitoring named "st-price-monitoring":
+  And  the following assets are registered:
+  And  the log normal risk model named "st-log-normal-risk-model":
+  And  the markets:
+  And  the following network parameters are set:
+  And  the trading mode should be "TRADING_MODE_OPENING_AUCTION" for the market "ETH/DEC20"
+
+Scenario 1: Replicate issue where price monitoring should be triggered at min bound - 1
+  Tags: ['@STAuc']
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties place the following orders:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the mark price should be "0" for the market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_OPENING_AUCTION" for the market "ETH/DEC20"
+  When  the opening auction period ends for market "ETH/DEC20"
+  Then  the mark price should be "977142640" for the market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/DEC20" should be:
+  And  the market data for the market "ETH/DEC20" should be:
+  When  the parties place the following orders:
+  Then  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/DEC20"
+  And  the market data for the market "ETH/DEC20" should be:
+
+Scenario 2: Replicate  issue where price bounds are violated by 1 * 10^(market decimal places)
+  Tags: ['@STAuc']
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties place the following orders:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the mark price should be "0" for the market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_OPENING_AUCTION" for the market "ETH/DEC20"
+  When  the opening auction period ends for market "ETH/DEC20"
+  Then  the mark price should be "977142640" for the market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  When  the parties place the following orders:
+  And  the market data for the market "ETH/DEC20" should be:
+  When  the parties place the following orders:
+  Then  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/DEC20"
+  And  the market data for the market "ETH/DEC20" should be:
+

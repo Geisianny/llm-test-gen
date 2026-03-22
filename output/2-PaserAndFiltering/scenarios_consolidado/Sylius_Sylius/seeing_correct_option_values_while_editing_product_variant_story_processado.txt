@@ -1,0 +1,18 @@
+Scenario 1: Seeing default option values while editing product variant in store
+  Tags: ['@no-api', '@ui']
+  When  I want to modify the "Wyborowa Vodka Exquisite" product variant
+  And  I should see the "Type" option as "Clear"
+  And  I should see the "Taste" option as "Orange"
+
+
+
+Scenario 2: Seeing changed option values while editing product variant in store
+  Tags: ['@no-api', '@ui']
+  When  I want to modify the "Wyborowa Vodka Exquisite" product variant
+  And  I change its "Taste" option to "Melon"
+  And  I change its "Type" option to "Color"
+  And  I save my changes
+  And  I want to modify the "Wyborowa Vodka Exquisite" product variant
+  Then  I should see the "Taste" option as "Melon"
+  And  I should see the "Type" option as "Color"
+

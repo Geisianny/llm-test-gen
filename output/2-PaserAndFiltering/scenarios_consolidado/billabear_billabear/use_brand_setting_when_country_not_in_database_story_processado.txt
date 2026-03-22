@@ -1,0 +1,18 @@
+Scenario 1: Standard Tax Rate
+  Given  the follow customers exist:
+  Given  the following subscriptions exist:
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  And  there the latest invoice for "customer.south@example.org" will have tax country of "ZA"
+  And  there the latest invoice for "customer.south@example.org" will have tax rate of 12
+
+
+
+Scenario 2: Digital Services Tax Rate not set use standard tax rate
+  Given  the follow customers exist:
+  Given  the following subscriptions exist:
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  And  there the latest invoice for "customer.south@example.org" will have tax country of "ZA"
+  And  there the latest invoice for "customer.south@example.org" will have tax rate of 15
+

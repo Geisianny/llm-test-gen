@@ -1,0 +1,79 @@
+Feature: Unpublish content
+
+Scenario 1: Unpublish single item
+  Tags: ['@auth']
+  Given  "desks"
+  And  "archive"
+  When  we post to "/products" with success
+  And  we post to "/subscribers" with success
+  And  we publish "#archive._id#" with "publish" type and "published" state
+  Then  we get OK response
+  When  we enqueue published
+  Then  we assert the content api item "123" is published to subscriber "#subscribers._id#"
+  When  we get "/items/123"
+  And  we publish "#archive._id#" with "unpublish" type and "unpublished" state
+  Then  we get OK response
+  And  we get existing resource
+  When  we enqueue published
+  Then  we assert the content api item "123" is published to subscriber "#subscribers._id#"
+  When  we get "/publish_queue"
+  Then  we get list with 4 items
+  When  we patch "/archive/#archive._id#"
+  Then  we get OK response
+  When  we publish "#archive._id#" with "publish" type and "published" state
+  Then  we get OK response
+
+Scenario 2: Unpublish an item that is in a published package
+  Tags: ['@auth']
+  Given  empty "archive"
+  Given  "desks"
+  And  the "validators"
+  When  we post to "archive" with success
+  When  we post to "archive" with success
+  When  we post to "archive" with success
+  When  we post to "/products" with success
+  And  we post to "/subscribers" with success
+  And  we publish "compositeitem" with "publish" type and "published" state
+  Then  we get OK response
+  When  we publish "tag:localhost:2015:515b895a-b336-48b2-a506-5ffaf561b916" with "unpublish" type and "unpublished" state
+  Then  we get OK response
+
+Scenario 3: Unpublish an item with associations
+  Tags: ['@auth']
+  Given  "desks"
+  And  "archive"
+  When  we get "/archive/"
+  When  we post to "/products" with success
+  And  we post to "/subscribers" with success
+  And  we publish "123" with "publish" type and "published" state
+  Then  we get OK response
+  When  we publish "123" with "unpublish" type and "unpublished" state
+  Then  we get OK response
+  When  we get "/archive/123/"
+  Then  we get OK response
+  And  we get existing resource
+  When  we get "/archive/d7c9bd89-ece1-400b-bccb-14eb49c8013f/"
+  Then  we get OK response
+  And  we get existing resource
+
+Scenario 4: Unpublish single item without record in publish queue
+  Tags: ['@auth']
+  Given  "desks"
+  And  "archive"
+  And  config update
+  When  we post to "/products" with success
+  And  we post to "/subscribers" with success
+  And  we publish "#archive._id#" with "publish" type and "published" state
+  Then  we get OK response
+  When  we enqueue published
+  Then  we assert the content api item "123" is published to subscriber "#subscribers._id#"
+  When  we get "/items/123"
+  Given  empty "publish_queue"
+  When  we publish "#archive._id#" with "unpublish" type and "unpublished" state
+  Then  we get OK response
+  And  we get existing resource
+  When  we enqueue published
+  Then  we assert the content api item "123" is published to subscriber "#subscribers._id#"
+  When  we get "/publish_queue"
+  Then  we get list with 2 items
+

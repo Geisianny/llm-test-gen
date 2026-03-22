@@ -1,0 +1,10 @@
+Scenario 1: Deleting multiple zones at once
+  Tags: ['@no-api', '@ui', '@mink:chromedriver']
+  When  I browse zones
+  And  I check the "North America" zone
+  And  I check also the "South America" zone
+  And  I delete them
+  Then  I should be notified that they have been successfully deleted
+  And  I should see a single zone in the list
+  And  I should see the zone named "Europe" in the list
+

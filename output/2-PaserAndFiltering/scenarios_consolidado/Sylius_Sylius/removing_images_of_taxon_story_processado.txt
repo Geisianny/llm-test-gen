@@ -1,0 +1,60 @@
+Scenario 1: Removing a single image of a taxon
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  Given  the "T-Shirts" taxon has an image "t-shirts.jpg" with "banner" type
+  When  I want to modify the "T-Shirts" taxon
+  And  I remove an image with "banner" type
+  And  I save my changes to the images
+  Then  I should be notified that the changes have been successfully applied
+  And  this taxon should not have any images
+
+
+
+Scenario 2: Removing all images of a taxon
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  Given  the "T-Shirts" taxon has an image "t-shirts.jpg" with "banner" type
+  And  the "T-Shirts" taxon also has an image "t-shirts.jpg" with "thumbnail" type
+  When  I want to modify the "T-Shirts" taxon
+  And  I remove an image with "banner" type
+  And  I also remove an image with "thumbnail" type
+  And  I save my changes to the images
+  Then  I should be notified that the changes have been successfully applied
+  And  this taxon should not have any images
+
+
+
+Scenario 3: Removing only one image of a taxon
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  Given  the "T-Shirts" taxon has an image "t-shirts.jpg" with "banner" type
+  And  the "T-Shirts" taxon also has an image "t-shirts.jpg" with "thumbnail" type
+  When  I want to modify the "T-Shirts" taxon
+  And  I remove an image with "banner" type
+  And  I save my changes to the images
+  Then  I should be notified that the changes have been successfully applied
+  And  this taxon should have an image with "thumbnail" type
+  But  this taxon should not have any images with "banner" type
+
+
+
+Scenario 4: Removing only one image of a taxon when all images have same type
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  Given  the "T-Shirts" taxon has an image "t-shirts.jpg" with "banner" type
+  And  the "T-Shirts" taxon also has an image "mugs.jpg" with "banner" type
+  When  I want to modify the "T-Shirts" taxon
+  And  I remove the first image
+  And  I save my changes to the images
+  Then  I should be notified that the changes have been successfully applied
+  And  this taxon should have only one image
+
+
+
+Scenario 5: Adding multiple images and removing a single image of a taxon
+  Tags: ['@no-api', '@ui', '@mink:chromedriver']
+  When  I want to modify the "T-Shirts" taxon
+  And  I attach the "t-shirts.jpg" image with "banner" type
+  And  I attach the "t-shirts.jpg" image with "thumbnail" type
+  And  I remove the first image
+  And  I save my changes to the images
+  Then  I should be notified that it has been successfully edited
+  And  this taxon should have an image with "thumbnail" type
+  But  this taxon should not have any images with "banner" type
+

@@ -1,0 +1,57 @@
+Scenario 1: Registering a new account with minimum information
+  Tags: ['@ui', '@api']
+  When  I want to register a new account
+  And  I specify the first name as "Saul"
+  And  I specify the last name as "Goodman"
+  And  I specify the email as "goodman@gmail.com"
+  And  I specify the password as "heisenberg"
+  And  I confirm this password
+  And  I register this account
+  Then  I should be notified that new account has been successfully created
+  But  I should not be logged in
+
+
+
+Scenario 2: Registering a new account with minimum information when channel has disabled registration verification
+  Tags: ['@ui', '@api']
+  Given  on this channel account verification is not required
+  When  I want to register a new account
+  And  I specify the first name as "Saul"
+  And  I specify the last name as "Goodman"
+  And  I specify the email as "goodman@gmail.com"
+  And  I specify the password as "heisenberg"
+  And  I confirm this password
+  And  I register this account
+  Then  I should be notified that new account has been successfully created
+  And  I should be logged in
+
+
+
+Scenario 3: Registering a new account with all details
+  Tags: ['@ui', '@api']
+  When  I want to register a new account
+  And  I specify the first name as "Saul"
+  And  I specify the last name as "Goodman"
+  And  I specify the email as "goodman@gmail.com"
+  And  I specify the password as "heisenberg"
+  And  I confirm this password
+  And  I specify the phone number as "123456789"
+  And  I register this account
+  Then  I should be notified that new account has been successfully created
+  But  I should not be logged in
+
+
+
+Scenario 4: Registering a guest account
+  Tags: ['@ui', '@api']
+  Given  there is a customer "goodman@gmail.com" that placed an order "#001"
+  When  I want to register a new account
+  And  I specify the first name as "Saul"
+  And  I specify the last name as "Goodman"
+  And  I specify the email as "goodman@gmail.com"
+  And  I specify the password as "heisenberg"
+  And  I confirm this password
+  And  I register this account
+  Then  I should be notified that new account has been successfully created
+  But  I should not be logged in
+

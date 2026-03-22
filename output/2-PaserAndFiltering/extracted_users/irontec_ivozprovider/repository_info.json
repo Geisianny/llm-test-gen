@@ -1,0 +1,4201 @@
+{
+  "repository_name": "ivozprovider",
+  "repository_owner": "irontec",
+  "repository_url": "https://github.com/irontec/ivozprovider",
+  "visibility": "public",
+  "is_private": false,
+  "total_feature_files": 698,
+  "downloaded_files": 698,
+  "download_date": "2025-11-26 02:35:04",
+  "feature_files": [
+    {
+      "name": "genericProvision.feature",
+      "original_path": "microservices/provision/features/genericProvision.feature",
+      "size": 849,
+      "sha": "a7aefeaa407fc29a4a544878b7588175a3524fc5"
+    },
+    {
+      "name": "specificProvision.feature",
+      "original_path": "microservices/provision/features/specificProvision.feature",
+      "size": 1654,
+      "sha": "a4869cfe254cc7a61039d51f98aaeee193577a61"
+    },
+    {
+      "name": "test.feature",
+      "original_path": "microservices/provision/features/test.feature",
+      "size": 172,
+      "sha": "6f7b0d60fbcdddee1602373a1f468b16e240c9cf"
+    },
+    {
+      "name": "acl.feature",
+      "original_path": "web/rest/brand/features/acl.feature",
+      "size": 2723,
+      "sha": "1972b651c81c549e50f69718a4162e3abb2a6571"
+    },
+    {
+      "name": "auth.feature",
+      "original_path": "web/rest/brand/features/auth.feature",
+      "size": 2247,
+      "sha": "f2172a71a54011f164d15f96d3203593bdb1ecb1"
+    },
+    {
+      "name": "exchangeTimezones.feature",
+      "original_path": "web/rest/brand/features/exchangeTimezones.feature",
+      "size": 1750,
+      "sha": "7b26b666431310a46897ccb90348e8c2f57ba67f"
+    },
+    {
+      "name": "getTrusted.feature",
+      "original_path": "web/rest/brand/features/kam/trusted/getTrusted.feature",
+      "size": 1440,
+      "sha": "ad8413c551db77551e4ec9ac7a9efb7f86e6bb1a"
+    },
+    {
+      "name": "postTrusted.feature",
+      "original_path": "web/rest/brand/features/kam/trusted/postTrusted.feature",
+      "size": 1879,
+      "sha": "5533c42cf0c6b1148a7dfd76f70193517b5f5f49"
+    },
+    {
+      "name": "putTrusted.feature",
+      "original_path": "web/rest/brand/features/kam/trusted/putTrusted.feature",
+      "size": 1198,
+      "sha": "c2c63e8934cb907168defcbadd8aaa0f2b11731a"
+    },
+    {
+      "name": "removeTrusted.feature",
+      "original_path": "web/rest/brand/features/kam/trusted/removeTrusted.feature",
+      "size": 467,
+      "sha": "091d65c21c73310e081199b113617dcbcbfa2d96"
+    },
+    {
+      "name": "getUsersAddresses.feature",
+      "original_path": "web/rest/brand/features/kam/usersAddresses/getUsersAddresses.feature",
+      "size": 1367,
+      "sha": "1c8f2754254630eaf682c222000d7b232ccafa5d"
+    },
+    {
+      "name": "postUsersAddresses.feature",
+      "original_path": "web/rest/brand/features/kam/usersAddresses/postUsersAddresses.feature",
+      "size": 1497,
+      "sha": "3824d009fb5d739cb452c6569b567dbddca0ccb2"
+    },
+    {
+      "name": "putUsersAddresses.feature",
+      "original_path": "web/rest/brand/features/kam/usersAddresses/putUsersAddresses.feature",
+      "size": 943,
+      "sha": "09b6cdd16e229081c138b692e47ff0041c1b17c9"
+    },
+    {
+      "name": "removeUsersAddresses.feature",
+      "original_path": "web/rest/brand/features/kam/usersAddresses/removeUsersAddresses.feature",
+      "size": 470,
+      "sha": "f689b32dac7c150c4ebead512c528b1e1e24ad0f"
+    },
+    {
+      "name": "getActiveCalls.feature",
+      "original_path": "web/rest/brand/features/my/activeCalls/getActiveCalls.feature",
+      "size": 1663,
+      "sha": "c809812549fa94b2f7dd6ec2a3b7d20c0fe54feb"
+    },
+    {
+      "name": "getActiveCallsFilters.feature",
+      "original_path": "web/rest/brand/features/my/activeCalls/getActiveCallsFilters.feature",
+      "size": 4912,
+      "sha": "557c98e7635cc13c7b4778be174548294b8dad29"
+    },
+    {
+      "name": "getDashboard.feature",
+      "original_path": "web/rest/brand/features/my/dashboard/getDashboard.feature",
+      "size": 1858,
+      "sha": "7cc718ca17859996ea9c4b0d4d1cddcceb1392fe"
+    },
+    {
+      "name": "getProfile.feature",
+      "original_path": "web/rest/brand/features/my/profile/getProfile.feature",
+      "size": 13575,
+      "sha": "d581c297652de275982b3e206b37856b0e23c29d"
+    },
+    {
+      "name": "getRegistrationSummary.feature",
+      "original_path": "web/rest/brand/features/my/registrationSummary/getRegistrationSummary.feature",
+      "size": 1164,
+      "sha": "dc6dcbdaee65a4cea05b7a36ccd4b4fd43225d83"
+    },
+    {
+      "name": "getLogo.feature",
+      "original_path": "web/rest/brand/features/my/theme/getLogo.feature",
+      "size": 268,
+      "sha": "b8bcf36443181996306ee0d54ecf81a2e5e453b9"
+    },
+    {
+      "name": "getWebTheme.feature",
+      "original_path": "web/rest/brand/features/my/theme/getWebTheme.feature",
+      "size": 730,
+      "sha": "76d0c6ebc46a5335ca2ba515213a5a1f6f8763ea"
+    },
+    {
+      "name": "getAdministrators.feature",
+      "original_path": "web/rest/brand/features/provider/administrator/getAdministrators.feature",
+      "size": 3521,
+      "sha": "63cc3965af224d14e11b72728986cb2d381d7b41"
+    },
+    {
+      "name": "postAdministratorMassUpdateAcl.feature",
+      "original_path": "web/rest/brand/features/provider/administrator/postAdministratorMassUpdateAcl.feature",
+      "size": 1639,
+      "sha": "80e0a9b8c1907f0faf941bfcc7acae2cbd09e6ab"
+    },
+    {
+      "name": "postAdministrators.feature",
+      "original_path": "web/rest/brand/features/provider/administrator/postAdministrators.feature",
+      "size": 3624,
+      "sha": "6824e65fddfe96511d4ce028b3de48c22982ebf3"
+    },
+    {
+      "name": "putAdministrators.feature",
+      "original_path": "web/rest/brand/features/provider/administrator/putAdministrators.feature",
+      "size": 2018,
+      "sha": "ffb062650007f40d59b748cfd5c50e521c92c18c"
+    },
+    {
+      "name": "removeAdministrators.feature",
+      "original_path": "web/rest/brand/features/provider/administrator/removeAdministrators.feature",
+      "size": 1156,
+      "sha": "43d15e469def233913b4a0dfb03bdebe260c6ae3"
+    },
+    {
+      "name": "getAdministratorRelPublicEntities.feature",
+      "original_path": "web/rest/brand/features/provider/administratorRelPublicEntities/getAdministratorRelPublicEntities.feature",
+      "size": 5785,
+      "sha": "b1d5c22af098394599dd10f4ff4849cfb4a47e01"
+    },
+    {
+      "name": "postAdministratorRelPublicEntities.feature",
+      "original_path": "web/rest/brand/features/provider/administratorRelPublicEntities/postAdministratorRelPublicEntities.feature",
+      "size": 770,
+      "sha": "90608c7cc1e90c7ae9d5193805863cbba3b83b50"
+    },
+    {
+      "name": "putAdministratorRelPublicEntities.feature",
+      "original_path": "web/rest/brand/features/provider/administratorRelPublicEntities/putAdministratorRelPublicEntities.feature",
+      "size": 1140,
+      "sha": "617adfbe197ccad2fcd11291fafba9cf671e5322"
+    },
+    {
+      "name": "removeAdministratorRelPublicEntities.feature",
+      "original_path": "web/rest/brand/features/provider/administratorRelPublicEntities/removeAdministratorRelPublicEntities.feature",
+      "size": 544,
+      "sha": "4c7d106460db756bc9d13e5ccfdf7ec8bd20135d"
+    },
+    {
+      "name": "getApplicationServerSets.feature",
+      "original_path": "web/rest/brand/features/provider/applicationServerSets/getApplicationServerSets.feature",
+      "size": 1742,
+      "sha": "c062291350e620340a59161fc952cf4b24a7a2e0"
+    },
+    {
+      "name": "getBalanceMovement.feature",
+      "original_path": "web/rest/brand/features/provider/balanceMovement/getBalanceMovement.feature",
+      "size": 1901,
+      "sha": "a4b373dd0d255fd357dad1a63015f9964bdc79a4"
+    },
+    {
+      "name": "postBalanceMovement.feature",
+      "original_path": "web/rest/brand/features/provider/balanceMovement/postBalanceMovement.feature",
+      "size": 703,
+      "sha": "51093b3f7f978f4561439f0bb242b8cdd6119107"
+    },
+    {
+      "name": "putBalanceMovement.feature",
+      "original_path": "web/rest/brand/features/provider/balanceMovement/putBalanceMovement.feature",
+      "size": 673,
+      "sha": "82c938270fafe368ffef30279eb49ab6b7361db5"
+    },
+    {
+      "name": "removeBalanceMovement.feature",
+      "original_path": "web/rest/brand/features/provider/balanceMovement/removeBalanceMovement.feature",
+      "size": 485,
+      "sha": "7a06f71cd67d96a96af1b18ea7adff0e573fbf82"
+    },
+    {
+      "name": "getBalanceNotification.feature",
+      "original_path": "web/rest/brand/features/provider/balanceNotification/getBalanceNotification.feature",
+      "size": 1867,
+      "sha": "1151c25a4f547605a5e18d73d251dc1c4c653b78"
+    },
+    {
+      "name": "postBalanceNotification.feature",
+      "original_path": "web/rest/brand/features/provider/balanceNotification/postBalanceNotification.feature",
+      "size": 1711,
+      "sha": "390e394198789e6bddaab6b1b889d9f966dd078b"
+    },
+    {
+      "name": "putBalanceNotification.feature",
+      "original_path": "web/rest/brand/features/provider/balanceNotification/putBalanceNotification.feature",
+      "size": 1067,
+      "sha": "e3c6fdde823d177f7b761cc58870e1d9882110a1"
+    },
+    {
+      "name": "removeBalanceNotification.feature",
+      "original_path": "web/rest/brand/features/provider/balanceNotification/removeBalanceNotification.feature",
+      "size": 496,
+      "sha": "0d0b03e78fc153467ce0f492fc0fbbcfffee5892"
+    },
+    {
+      "name": "getBannedAddress.feature",
+      "original_path": "web/rest/brand/features/provider/bannedAddress/getBannedAddress.feature",
+      "size": 1750,
+      "sha": "8ebfdfbc3c45318adc84f30609ac62e47989a0ec"
+    },
+    {
+      "name": "postBannedAddress.feature",
+      "original_path": "web/rest/brand/features/provider/bannedAddress/postBannedAddress.feature",
+      "size": 533,
+      "sha": "dd4046f3cfd05a1e36e1312e12a28eaaceb85277"
+    },
+    {
+      "name": "putBannedAddress.feature",
+      "original_path": "web/rest/brand/features/provider/bannedAddress/putBannedAddress.feature",
+      "size": 519,
+      "sha": "328487a0323676e307fcf0a91eca881f38a4e9ef"
+    },
+    {
+      "name": "removeBannedAddress.feature",
+      "original_path": "web/rest/brand/features/provider/bannedAddress/removeBannedAddress.feature",
+      "size": 1171,
+      "sha": "f3d92ad1a3fa98b7cd5d959951d10a7dd27d1b42"
+    },
+    {
+      "name": "getBillableCalls.feature",
+      "original_path": "web/rest/brand/features/provider/billableCalls/getBillableCalls.feature",
+      "size": 2903,
+      "sha": "36564673b9b47e3129e3d63afc0ec247f0e7d3f4"
+    },
+    {
+      "name": "postBillableCalls.feature",
+      "original_path": "web/rest/brand/features/provider/billableCalls/postBillableCalls.feature",
+      "size": 1509,
+      "sha": "4663a70ad51022a2557948136e283906de92b4c5"
+    },
+    {
+      "name": "putBillableCalls.feature",
+      "original_path": "web/rest/brand/features/provider/billableCalls/putBillableCalls.feature",
+      "size": 1858,
+      "sha": "a6f48d269939a8efd01fcf087db258077331cd83"
+    },
+    {
+      "name": "removeBillableCalls.feature",
+      "original_path": "web/rest/brand/features/provider/billableCalls/removeBillableCalls.feature",
+      "size": 368,
+      "sha": "ba80aa6495cf946fbb3929671ad12afc81442ca7"
+    },
+    {
+      "name": "getBrands.feature",
+      "original_path": "web/rest/brand/features/provider/brand/getBrands.feature",
+      "size": 2902,
+      "sha": "28a4c2d32cc1b48a0781fa2cb2f642863fdbb8ce"
+    },
+    {
+      "name": "postBrands.feature",
+      "original_path": "web/rest/brand/features/provider/brand/postBrands.feature",
+      "size": 542,
+      "sha": "8dde00b9c4d55608e4c3923b38d416a3663ec7fd"
+    },
+    {
+      "name": "putBrands.feature",
+      "original_path": "web/rest/brand/features/provider/brand/putBrands.feature",
+      "size": 4067,
+      "sha": "b812357100bbae4e1e019736ed3d78ef86e08687"
+    },
+    {
+      "name": "removeBrands.feature",
+      "original_path": "web/rest/brand/features/provider/brand/removeBrands.feature",
+      "size": 441,
+      "sha": "16b7bc11418a4af1f3123f39a7c21992c2e48e5e"
+    },
+    {
+      "name": "getBrandService.feature",
+      "original_path": "web/rest/brand/features/provider/brandService/getBrandService.feature",
+      "size": 1950,
+      "sha": "64373c4edabac1199174cc201bc5a316011d0bc2"
+    },
+    {
+      "name": "postBrandService.feature",
+      "original_path": "web/rest/brand/features/provider/brandService/postBrandService.feature",
+      "size": 1756,
+      "sha": "7365c2bc0594bfe73f6b71bcd6c37a80cd583ff8"
+    },
+    {
+      "name": "putBrandService.feature",
+      "original_path": "web/rest/brand/features/provider/brandService/putBrandService.feature",
+      "size": 822,
+      "sha": "e8f543c7e42da94a1b91259fa1fa5592c4ba471e"
+    },
+    {
+      "name": "removeBrandService.feature",
+      "original_path": "web/rest/brand/features/provider/brandService/removeBrandService.feature",
+      "size": 459,
+      "sha": "ef68c94c19c29655504efd8b031dab85c498cde9"
+    },
+    {
+      "name": "getCallCsvReport.feature",
+      "original_path": "web/rest/brand/features/provider/callCsvReport/getCallCsvReport.feature",
+      "size": 2276,
+      "sha": "0cb836d736f88eb918ac1e2dee7d369af30104c8"
+    },
+    {
+      "name": "postCallCsvReport.feature",
+      "original_path": "web/rest/brand/features/provider/callCsvReport/postCallCsvReport.feature",
+      "size": 674,
+      "sha": "6cb3812ba720d6bfa22c73a32db5fb1dcb578317"
+    },
+    {
+      "name": "putCallCsvReport.feature",
+      "original_path": "web/rest/brand/features/provider/callCsvReport/putCallCsvReport.feature",
+      "size": 649,
+      "sha": "f9b32de1776229d4c621c056a3bf230c047f9107"
+    },
+    {
+      "name": "removeCallCsvReport.feature",
+      "original_path": "web/rest/brand/features/provider/callCsvReport/removeCallCsvReport.feature",
+      "size": 475,
+      "sha": "3ff68fd0decc8ce7158f3817072008cca9b85af3"
+    },
+    {
+      "name": "getCallCsvScheduler.feature",
+      "original_path": "web/rest/brand/features/provider/callCsvScheduler/getCallCsvScheduler.feature",
+      "size": 2137,
+      "sha": "f85072e04e1915179bcfde9c9b2809ccb0181e92"
+    },
+    {
+      "name": "postCallCsvScheduler.feature",
+      "original_path": "web/rest/brand/features/provider/callCsvScheduler/postCallCsvScheduler.feature",
+      "size": 2931,
+      "sha": "f972d6ea43d4bc4b5268ed2e54d5e16a3daa51f4"
+    },
+    {
+      "name": "putCallCsvScheduler.feature",
+      "original_path": "web/rest/brand/features/provider/callCsvScheduler/putCallCsvScheduler.feature",
+      "size": 1868,
+      "sha": "0a38c9c695ff1c0851aa8fb4bd69d9265bfcb1ef"
+    },
+    {
+      "name": "removeCallCsvScheduler.feature",
+      "original_path": "web/rest/brand/features/provider/callCsvScheduler/removeCallCsvScheduler.feature",
+      "size": 476,
+      "sha": "58430a0627fcf021e1b3109ccc0b05d8bef2b619"
+    },
+    {
+      "name": "getCarrier.feature",
+      "original_path": "web/rest/brand/features/provider/carrier/getCarrier.feature",
+      "size": 2551,
+      "sha": "7ce850769ffcaf4d5f75abac7fbf12cd0a97b5f2"
+    },
+    {
+      "name": "postCarrier.feature",
+      "original_path": "web/rest/brand/features/provider/carrier/postCarrier.feature",
+      "size": 2433,
+      "sha": "1f754d8045db89a8019e487dce0d1b342eba989f"
+    },
+    {
+      "name": "postModifyCarrierBalance.feature",
+      "original_path": "web/rest/brand/features/provider/carrier/postModifyCarrierBalance.feature",
+      "size": 3426,
+      "sha": "9cb83d14fa6a7315a6c6d0dbdcf3d5cf6c051f19"
+    },
+    {
+      "name": "putCarrier.feature",
+      "original_path": "web/rest/brand/features/provider/carrier/putCarrier.feature",
+      "size": 1779,
+      "sha": "5bb4737a34a1e0ee701337566aff2d439634412b"
+    },
+    {
+      "name": "removeCarrier.feature",
+      "original_path": "web/rest/brand/features/provider/carrier/removeCarrier.feature",
+      "size": 443,
+      "sha": "fb74cacf069c3f7ebacfad59cba77edccbbae822"
+    },
+    {
+      "name": "getCarrierServer.feature",
+      "original_path": "web/rest/brand/features/provider/carrierServer/getCarrierServer.feature",
+      "size": 2299,
+      "sha": "6286d5cf7becee3da45388d94422ae4a6555fa60"
+    },
+    {
+      "name": "getCarrierServerStatus.feature",
+      "original_path": "web/rest/brand/features/provider/carrierServer/getCarrierServerStatus.feature",
+      "size": 2290,
+      "sha": "f2086cc23a5a0c81a64f2b44735803baf5a90dab"
+    },
+    {
+      "name": "postCarrierServer.feature",
+      "original_path": "web/rest/brand/features/provider/carrierServer/postCarrierServer.feature",
+      "size": 2669,
+      "sha": "75696c53adcc6321b7507099acc85465fae203ad"
+    },
+    {
+      "name": "putCarrierServer.feature",
+      "original_path": "web/rest/brand/features/provider/carrierServer/putCarrierServer.feature",
+      "size": 1605,
+      "sha": "6de63a0ba2e4546c066f8b37dd618faef9141008"
+    },
+    {
+      "name": "removeCarrierServer.feature",
+      "original_path": "web/rest/brand/features/provider/carrierServer/removeCarrierServer.feature",
+      "size": 471,
+      "sha": "314cc7b403dc9b2ea1466040f83b82fdc392ceb4"
+    },
+    {
+      "name": "getCompanies.feature",
+      "original_path": "web/rest/brand/features/provider/company/getCompanies.feature",
+      "size": 9839,
+      "sha": "fc0566221fa457f27f828f0e80f0e9e27030fb16"
+    },
+    {
+      "name": "postCompanies.feature",
+      "original_path": "web/rest/brand/features/provider/company/postCompanies.feature",
+      "size": 10965,
+      "sha": "d409493ac2837fd6cb4530e9d97865ca3c9d962a"
+    },
+    {
+      "name": "postModifyCompanyBalance.feature",
+      "original_path": "web/rest/brand/features/provider/company/postModifyCompanyBalance.feature",
+      "size": 1795,
+      "sha": "e582b86cf5c916b0aead968f7a7c4e72026a5794"
+    },
+    {
+      "name": "putCompanies.feature",
+      "original_path": "web/rest/brand/features/provider/company/putCompanies.feature",
+      "size": 6601,
+      "sha": "942b56bec0e176b7cfcc648a351ddbe9985c7bef"
+    },
+    {
+      "name": "removeCompanies.feature",
+      "original_path": "web/rest/brand/features/provider/company/removeCompanies.feature",
+      "size": 444,
+      "sha": "ba8d1220f2162f72b55cd4aecc632ea4fbf379a0"
+    },
+    {
+      "name": "getCorporations.feature",
+      "original_path": "web/rest/brand/features/provider/corporation/getCorporations.feature",
+      "size": 1506,
+      "sha": "6dd494bb5b94e3ec66c64200f31bc5f207e30a6a"
+    },
+    {
+      "name": "postCorporations.feature",
+      "original_path": "web/rest/brand/features/provider/corporation/postCorporations.feature",
+      "size": 1440,
+      "sha": "149cb60cc37285af1d5b0d40029faf1c783e7896"
+    },
+    {
+      "name": "putCorporations.feature",
+      "original_path": "web/rest/brand/features/provider/corporation/putCorporations.feature",
+      "size": 950,
+      "sha": "389ac39167f7d62dbddb58fa64baa519d3d3e84b"
+    },
+    {
+      "name": "removeCorporations.feature",
+      "original_path": "web/rest/brand/features/provider/corporation/removeCorporations.feature",
+      "size": 459,
+      "sha": "d86daff153933be949c9c3c33fae45952f593811"
+    },
+    {
+      "name": "getCountry.feature",
+      "original_path": "web/rest/brand/features/provider/country/getCountry.feature",
+      "size": 11038,
+      "sha": "2a005f205d3185e3e420558b369eb715e0d7d838"
+    },
+    {
+      "name": "getCurrency.feature",
+      "original_path": "web/rest/brand/features/provider/currency/getCurrency.feature",
+      "size": 2103,
+      "sha": "1a4ee5e37d07cf47497bccc44a7b19de91c3618b"
+    },
+    {
+      "name": "getDdi.feature",
+      "original_path": "web/rest/brand/features/provider/ddi/getDdi.feature",
+      "size": 3037,
+      "sha": "e82ffbde36e3054bd411833f7bb1fe839915f5ce"
+    },
+    {
+      "name": "postDdi.feature",
+      "original_path": "web/rest/brand/features/provider/ddi/postDdi.feature",
+      "size": 2199,
+      "sha": "2062957e3b3fa96ce5618434219fbb0bf599c136"
+    },
+    {
+      "name": "putDdi.feature",
+      "original_path": "web/rest/brand/features/provider/ddi/putDdi.feature",
+      "size": 1185,
+      "sha": "43973c70e999038b4371b3f4b7ef6b96d2b86413"
+    },
+    {
+      "name": "removeDdi.feature",
+      "original_path": "web/rest/brand/features/provider/ddi/removeDdi.feature",
+      "size": 426,
+      "sha": "b39fc5229841e97cd69adacee02b5aa85c7dbeaa"
+    },
+    {
+      "name": "getDdiProvider.feature",
+      "original_path": "web/rest/brand/features/provider/ddiProvider/getDdiProvider.feature",
+      "size": 2076,
+      "sha": "85f9e4c4de8b68aaa8ad64ef6b0695f1c38f60d4"
+    },
+    {
+      "name": "postDdiProvider.feature",
+      "original_path": "web/rest/brand/features/provider/ddiProvider/postDdiProvider.feature",
+      "size": 2345,
+      "sha": "b839ad9004d3c43b54a458e3b9486971a408ce57"
+    },
+    {
+      "name": "putDdiProvider.feature",
+      "original_path": "web/rest/brand/features/provider/ddiProvider/putDdiProvider.feature",
+      "size": 2024,
+      "sha": "4e32c1b412ab8298e45eb39520216f8fec758d6d"
+    },
+    {
+      "name": "removeDdiProvider.feature",
+      "original_path": "web/rest/brand/features/provider/ddiProvider/removeDdiProvider.feature",
+      "size": 463,
+      "sha": "39b063fa3981b4aa80c049a4f2dcb68ed8dab4df"
+    },
+    {
+      "name": "getDdiProviderAddress.feature",
+      "original_path": "web/rest/brand/features/provider/ddiProviderAddress/getDdiProviderAddress.feature",
+      "size": 1547,
+      "sha": "a6f212574ab67d40745b78960fa80007f16ac659"
+    },
+    {
+      "name": "postDdiProviderAddress.feature",
+      "original_path": "web/rest/brand/features/provider/ddiProviderAddress/postDdiProviderAddress.feature",
+      "size": 1769,
+      "sha": "ce8a73382c9283a9fb40ac5d6d6107fcbf15bee9"
+    },
+    {
+      "name": "putDdiProviderAddress.feature",
+      "original_path": "web/rest/brand/features/provider/ddiProviderAddress/putDdiProviderAddress.feature",
+      "size": 992,
+      "sha": "5f642869ad9ca6d96d6b9ce30a2a3533cff46a99"
+    },
+    {
+      "name": "removeDdiProviderAddress.feature",
+      "original_path": "web/rest/brand/features/provider/ddiProviderAddress/removeDdiProviderAddress.feature",
+      "size": 498,
+      "sha": "bbf8fe74eede280471dd53de08982bf21355276c"
+    },
+    {
+      "name": "getDdiProviderRegistration.feature",
+      "original_path": "web/rest/brand/features/provider/ddiProviderRegistration/getDdiProviderRegistration.feature",
+      "size": 2081,
+      "sha": "e1f7bc5fb43c9eb6aaa01cf5335a64dd6ca949ae"
+    },
+    {
+      "name": "getDdiProviderRegistrationStatus.feature",
+      "original_path": "web/rest/brand/features/provider/ddiProviderRegistration/getDdiProviderRegistrationStatus.feature",
+      "size": 899,
+      "sha": "c848b5f2592bf1b2bb1887d186b3e9b455c821ba"
+    },
+    {
+      "name": "postDdiProviderRegistration.feature",
+      "original_path": "web/rest/brand/features/provider/ddiProviderRegistration/postDdiProviderRegistration.feature",
+      "size": 2776,
+      "sha": "c087eb9a4dc333da19b6934e2352a8a86214f50b"
+    },
+    {
+      "name": "putDdiProviderRegistration.feature",
+      "original_path": "web/rest/brand/features/provider/ddiProviderRegistration/putDdiProviderRegistration.feature",
+      "size": 1708,
+      "sha": "4bd94e21ee1b24252fafaa3e9ad3b1ec7b8e99cd"
+    },
+    {
+      "name": "removeDdiProviderRegistration.feature",
+      "original_path": "web/rest/brand/features/provider/ddiProviderRegistration/removeDdiProviderRegistration.feature",
+      "size": 510,
+      "sha": "8beb7385aef541b77d15538054c34596788e0c8d"
+    },
+    {
+      "name": "getDestination.feature",
+      "original_path": "web/rest/brand/features/provider/destination/getDestination.feature",
+      "size": 2051,
+      "sha": "6aae7fed043e3789917a584858d29b9711eb908b"
+    },
+    {
+      "name": "postDestination.feature",
+      "original_path": "web/rest/brand/features/provider/destination/postDestination.feature",
+      "size": 1764,
+      "sha": "37b3ce8291a57f19fa5f6d60d09a2e267231ace4"
+    },
+    {
+      "name": "putDestination.feature",
+      "original_path": "web/rest/brand/features/provider/destination/putDestination.feature",
+      "size": 1182,
+      "sha": "7c72432e32b0b9a3a73074de9ccdc3d608ed000a"
+    },
+    {
+      "name": "removeDestination.feature",
+      "original_path": "web/rest/brand/features/provider/destination/removeDestination.feature",
+      "size": 457,
+      "sha": "182210da1bfbef71a1556a40eba66f0231ab11df"
+    },
+    {
+      "name": "getDestinationRate.feature",
+      "original_path": "web/rest/brand/features/provider/destinationRate/getDestinationRate.feature",
+      "size": 1635,
+      "sha": "af38b0764b1ede1da740e2116cf28143ba308ac1"
+    },
+    {
+      "name": "postDestinationRate.feature",
+      "original_path": "web/rest/brand/features/provider/destinationRate/postDestinationRate.feature",
+      "size": 1792,
+      "sha": "7ffd3c6d8027b7d9e31b2c49a0f3cc1246c20182"
+    },
+    {
+      "name": "putDestinationRate.feature",
+      "original_path": "web/rest/brand/features/provider/destinationRate/putDestinationRate.feature",
+      "size": 1074,
+      "sha": "774b864b6e1a01f19a6470eea4531741bf6b4cf6"
+    },
+    {
+      "name": "removeDestinationRate.feature",
+      "original_path": "web/rest/brand/features/provider/destinationRate/removeDestinationRate.feature",
+      "size": 477,
+      "sha": "bb97138308abf8e5c377345608383045a174eada"
+    },
+    {
+      "name": "getDestinationRateGroup.feature",
+      "original_path": "web/rest/brand/features/provider/destinationRateGroup/getDestinationRateGroup.feature",
+      "size": 2898,
+      "sha": "e2526677f80cdcc4b57d9ae16174ebe1ab0ca6c6"
+    },
+    {
+      "name": "postDestinationRateGroup.feature",
+      "original_path": "web/rest/brand/features/provider/destinationRateGroup/postDestinationRateGroup.feature",
+      "size": 4658,
+      "sha": "69423200b3e9ee145eeecc29bb786e6c4e506c14"
+    },
+    {
+      "name": "putDestinationRateGroup.feature",
+      "original_path": "web/rest/brand/features/provider/destinationRateGroup/putDestinationRateGroup.feature",
+      "size": 2960,
+      "sha": "f11e2060659f49481da4dfbd26300dcd7c9560cb"
+    },
+    {
+      "name": "removeDestinationRateGroup.feature",
+      "original_path": "web/rest/brand/features/provider/destinationRateGroup/removeDestinationRateGroup.feature",
+      "size": 501,
+      "sha": "e90d217165fbd7aa0bf115c426a88fa932b4a057"
+    },
+    {
+      "name": "getDomains.feature",
+      "original_path": "web/rest/brand/features/provider/domain/getDomains.feature",
+      "size": 1193,
+      "sha": "ba6e46c81bcc06ee80f5ba92fbec0b68d80b3eed"
+    },
+    {
+      "name": "postDomains.feature",
+      "original_path": "web/rest/brand/features/provider/domain/postDomains.feature",
+      "size": 624,
+      "sha": "a42056d44eaaf6849e4c139be056b9ebe86c25d5"
+    },
+    {
+      "name": "putDomains.feature",
+      "original_path": "web/rest/brand/features/provider/domain/putDomains.feature",
+      "size": 494,
+      "sha": "d7751fe41a082df7b733567d606b05894dc53476"
+    },
+    {
+      "name": "removeDomains.feature",
+      "original_path": "web/rest/brand/features/provider/domain/removeDomains.feature",
+      "size": 436,
+      "sha": "7a87a17dfbec136f828464db2182ffbcbc31ff36"
+    },
+    {
+      "name": "getExtension.feature",
+      "original_path": "web/rest/brand/features/provider/extension/getExtension.feature",
+      "size": 2218,
+      "sha": "cc5526e6ce207bff7b43d3a32d96bb26c35e97b9"
+    },
+    {
+      "name": "getFax.feature",
+      "original_path": "web/rest/brand/features/provider/fax/getFax.feature",
+      "size": 967,
+      "sha": "5b5bead8250b8b528a443e6054aff0e18e27baeb"
+    },
+    {
+      "name": "getFeatures.feature",
+      "original_path": "web/rest/brand/features/provider/features/getFeatures.feature",
+      "size": 3390,
+      "sha": "0598693ffcd2e4522d80a7f51ee08aec2c6166d7"
+    },
+    {
+      "name": "getFeaturesRelBrand.feature",
+      "original_path": "web/rest/brand/features/provider/featuresRelBrand/getFeaturesRelBrand.feature",
+      "size": 1879,
+      "sha": "e183621b78f1761e2f0e9fca0595b5d931644823"
+    },
+    {
+      "name": "postFeaturesRelBrand.feature",
+      "original_path": "web/rest/brand/features/provider/featuresRelBrand/postFeaturesRelBrand.feature",
+      "size": 573,
+      "sha": "86fe69b60a1db555f4e974cdf1dd66a848c4ee6b"
+    },
+    {
+      "name": "putFeaturesRelBrand.feature",
+      "original_path": "web/rest/brand/features/provider/featuresRelBrand/putFeaturesRelBrand.feature",
+      "size": 555,
+      "sha": "d646cdff601041fbd81ceb6651def71be8b187a5"
+    },
+    {
+      "name": "removeFeaturesRelBrand.feature",
+      "original_path": "web/rest/brand/features/provider/featuresRelBrand/removeFeaturesRelBrand.feature",
+      "size": 488,
+      "sha": "78ce3926d96541f81ec6617d6d272e8ce30d67f0"
+    },
+    {
+      "name": "getFeaturesRelCompanies.feature",
+      "original_path": "web/rest/brand/features/provider/featuresRelCompanies/getFeaturesRelCompanies.feature",
+      "size": 5500,
+      "sha": "ae4e382d3cbfc2a8c0f674e81d5f3b4714dbdb2b"
+    },
+    {
+      "name": "postFeaturesRelCompanies.feature",
+      "original_path": "web/rest/brand/features/provider/featuresRelCompanies/postFeaturesRelCompanies.feature",
+      "size": 5244,
+      "sha": "b356f76bdadfaf26a28fa7a5fb1090aa35150eda"
+    },
+    {
+      "name": "putFeaturesRelCompanies.feature",
+      "original_path": "web/rest/brand/features/provider/featuresRelCompanies/putFeaturesRelCompanies.feature",
+      "size": 591,
+      "sha": "fabae0366ced7cb1e0404e25d44db0abc2f46e60"
+    },
+    {
+      "name": "removeFeaturesRelCompanies.feature",
+      "original_path": "web/rest/brand/features/provider/featuresRelCompanies/removeFeaturesRelCompanies.feature",
+      "size": 500,
+      "sha": "2f537926f1152b5499b01f2921dbc42efce4508a"
+    },
+    {
+      "name": "getFixedCost.feature",
+      "original_path": "web/rest/brand/features/provider/fixedCost/getFixedCost.feature",
+      "size": 1462,
+      "sha": "451aec4863a7009987dc235c497a383a7aa49adb"
+    },
+    {
+      "name": "postFixedCost.feature",
+      "original_path": "web/rest/brand/features/provider/fixedCost/postFixedCost.feature",
+      "size": 1485,
+      "sha": "7641738ae7a19d7fa19dab073db55ff0a1ab9d39"
+    },
+    {
+      "name": "putFixedCost.feature",
+      "original_path": "web/rest/brand/features/provider/fixedCost/putFixedCost.feature",
+      "size": 932,
+      "sha": "e4d5dd6ca9abcfa047f33b5b309b1a2e17d91b73"
+    },
+    {
+      "name": "removeFixedCost.feature",
+      "original_path": "web/rest/brand/features/provider/fixedCost/removeFixedCost.feature",
+      "size": 455,
+      "sha": "ff598e895db8c404813b376450859d39ed1a5ce5"
+    },
+    {
+      "name": "getFixedCostsRelInvoice.feature",
+      "original_path": "web/rest/brand/features/provider/fixedCostsRelInvoice/getFixedCostsRelInvoice.feature",
+      "size": 2871,
+      "sha": "0eb5f3c6149a0f6c36fb95556a33288b34a7fc19"
+    },
+    {
+      "name": "postFixedCostsRelInvoice.feature",
+      "original_path": "web/rest/brand/features/provider/fixedCostsRelInvoice/postFixedCostsRelInvoice.feature",
+      "size": 2970,
+      "sha": "b01e61842a9c6580d386e80d48529977389e616a"
+    },
+    {
+      "name": "putFixedCostsRelInvoice.feature",
+      "original_path": "web/rest/brand/features/provider/fixedCostsRelInvoice/putFixedCostsRelInvoice.feature",
+      "size": 1647,
+      "sha": "a0cfe0241981cf5c8e6e4f84ff4034a652648468"
+    },
+    {
+      "name": "removeFixedCostsRelInvoice.feature",
+      "original_path": "web/rest/brand/features/provider/fixedCostsRelInvoice/removeFixedCostsRelInvoice.feature",
+      "size": 506,
+      "sha": "a148e1608a0fda0f2a9539070ee506ab1cc1ca90"
+    },
+    {
+      "name": "getFixedCostsRelInvoiceScheduler.feature",
+      "original_path": "web/rest/brand/features/provider/fixedCostsRelInvoiceScheduler/getFixedCostsRelInvoiceScheduler.feature",
+      "size": 2964,
+      "sha": "7f3e40235cce92f984136c077e127f2e4826611e"
+    },
+    {
+      "name": "postFixedCostsRelInvoiceScheduler.feature",
+      "original_path": "web/rest/brand/features/provider/fixedCostsRelInvoiceScheduler/postFixedCostsRelInvoiceScheduler.feature",
+      "size": 2284,
+      "sha": "cc29d71e4aa28af35f80becad331ec956711ed4f"
+    },
+    {
+      "name": "putFixedCostsRelInvoiceScheduler.feature",
+      "original_path": "web/rest/brand/features/provider/fixedCostsRelInvoiceScheduler/putFixedCostsRelInvoiceScheduler.feature",
+      "size": 1452,
+      "sha": "227ee67433f981a7ec493ac9219a2089e99edffa"
+    },
+    {
+      "name": "removeFixedCostsRelInvoiceScheduler.feature",
+      "original_path": "web/rest/brand/features/provider/fixedCostsRelInvoiceScheduler/removeFixedCostsRelInvoiceScheduler.feature",
+      "size": 546,
+      "sha": "be0210eecf7cb38d410680b6ddee6b74abdd1f1b"
+    },
+    {
+      "name": "getFriend.feature",
+      "original_path": "web/rest/brand/features/provider/friend/getFriend.feature",
+      "size": 4277,
+      "sha": "a6767864a667c7cf6e6b8bb9e0b15b77ce69f7ec"
+    },
+    {
+      "name": "getFriendStatus.feature",
+      "original_path": "web/rest/brand/features/provider/friend/getFriendStatus.feature",
+      "size": 1527,
+      "sha": "258fc29ce807f49b6d9d0685b7e95a71d3ff1538"
+    },
+    {
+      "name": "postFriend.feature",
+      "original_path": "web/rest/brand/features/provider/friend/postFriend.feature",
+      "size": 4556,
+      "sha": "607d30b08762c357c29323ffb0e2ac1eb92af45f"
+    },
+    {
+      "name": "putFriend.feature",
+      "original_path": "web/rest/brand/features/provider/friend/putFriend.feature",
+      "size": 3461,
+      "sha": "773165025dbdf540ce78ab3c231770ed813ee786"
+    },
+    {
+      "name": "removeFriend.feature",
+      "original_path": "web/rest/brand/features/provider/friend/removeFriend.feature",
+      "size": 703,
+      "sha": "5f1ea30e32fbb8320afc57851a23d970741c44b7"
+    },
+    {
+      "name": "getInvoice.feature",
+      "original_path": "web/rest/brand/features/provider/invoice/getInvoice.feature",
+      "size": 2145,
+      "sha": "80344699f494e8080632321c1c056435a758799b"
+    },
+    {
+      "name": "postInvoice.feature",
+      "original_path": "web/rest/brand/features/provider/invoice/postInvoice.feature",
+      "size": 2828,
+      "sha": "2afc9272ad11e67e4036bf0e3b821b677a456826"
+    },
+    {
+      "name": "postRegenerateInvoice.feature",
+      "original_path": "web/rest/brand/features/provider/invoice/postRegenerateInvoice.feature",
+      "size": 625,
+      "sha": "9f08eba382c8b4efda57f8456c66ad5cd2b8f8e6"
+    },
+    {
+      "name": "putInvoice.feature",
+      "original_path": "web/rest/brand/features/provider/invoice/putInvoice.feature",
+      "size": 1507,
+      "sha": "f3ffaa93c873e8fb255f6b2e25fdba651eb051ac"
+    },
+    {
+      "name": "removeInvoice.feature",
+      "original_path": "web/rest/brand/features/provider/invoice/removeInvoice.feature",
+      "size": 441,
+      "sha": "348a878d3156d3db4f5fae8a941e7aa65838471c"
+    },
+    {
+      "name": "getInvoiceNumberSequence.feature",
+      "original_path": "web/rest/brand/features/provider/invoiceNumberSequence/getInvoiceNumberSequence.feature",
+      "size": 1488,
+      "sha": "cc2a374ca5e2810775e1d3fc33f75d286dad718b"
+    },
+    {
+      "name": "postInvoiceNumberSequence.feature",
+      "original_path": "web/rest/brand/features/provider/invoiceNumberSequence/postInvoiceNumberSequence.feature",
+      "size": 1797,
+      "sha": "8ac448129c64dbbba11a0f5710831809f322b626"
+    },
+    {
+      "name": "putInvoiceNumberSequence.feature",
+      "original_path": "web/rest/brand/features/provider/invoiceNumberSequence/putInvoiceNumberSequence.feature",
+      "size": 1204,
+      "sha": "31ebd6ec8a29ec4904cfdb9ba476473ca4a600ae"
+    },
+    {
+      "name": "removeInvoiceNumberSequence.feature",
+      "original_path": "web/rest/brand/features/provider/invoiceNumberSequence/removeInvoiceNumberSequence.feature",
+      "size": 508,
+      "sha": "8cc69578d63e69ada84c5cf8edab260a6bd09bd2"
+    },
+    {
+      "name": "getInvoiceScheduler.feature",
+      "original_path": "web/rest/brand/features/provider/invoiceScheduler/getInvoiceScheduler.feature",
+      "size": 1901,
+      "sha": "06e21f68cdc345772ef15a98891f93db920dae58"
+    },
+    {
+      "name": "postInvoiceScheduler.feature",
+      "original_path": "web/rest/brand/features/provider/invoiceScheduler/postInvoiceScheduler.feature",
+      "size": 2971,
+      "sha": "948b3f7125eceb885307fde259172470decc359b"
+    },
+    {
+      "name": "putInvoiceScheduler.feature",
+      "original_path": "web/rest/brand/features/provider/invoiceScheduler/putInvoiceScheduler.feature",
+      "size": 1600,
+      "sha": "261e0bb11feb00896520b22da65bb44e01a86640"
+    },
+    {
+      "name": "removeInvoiceScheduler.feature",
+      "original_path": "web/rest/brand/features/provider/invoiceScheduler/removeInvoiceScheduler.feature",
+      "size": 481,
+      "sha": "f1937dc450197d0bd3a702e1d5761da893fe709d"
+    },
+    {
+      "name": "getInvoiceTemplate.feature",
+      "original_path": "web/rest/brand/features/provider/invoiceTemplate/getInvoiceTemplate.feature",
+      "size": 1654,
+      "sha": "ec2ecc1428a1f6835fd196a3edda492d0c2acadd"
+    },
+    {
+      "name": "getInvoiceTemplatePreview.feature",
+      "original_path": "web/rest/brand/features/provider/invoiceTemplate/getInvoiceTemplatePreview.feature",
+      "size": 437,
+      "sha": "42d76bcf3ef221bc7e088b939665ce185c7e875d"
+    },
+    {
+      "name": "postInvoiceTemplate.feature",
+      "original_path": "web/rest/brand/features/provider/invoiceTemplate/postInvoiceTemplate.feature",
+      "size": 1789,
+      "sha": "600a8b2fc9633c6cc5769a2543fb0de19406f828"
+    },
+    {
+      "name": "putInvoiceTemplate.feature",
+      "original_path": "web/rest/brand/features/provider/invoiceTemplate/putInvoiceTemplate.feature",
+      "size": 1774,
+      "sha": "2a1bfa6c9a15aaf5c8c3b61e36f7e4fd2282d023"
+    },
+    {
+      "name": "removeInvoiceTemplate.feature",
+      "original_path": "web/rest/brand/features/provider/invoiceTemplate/removeInvoiceTemplate.feature",
+      "size": 813,
+      "sha": "c80d085c614e189359cec319f0408ef046fdcf20"
+    },
+    {
+      "name": "getLanguage.feature",
+      "original_path": "web/rest/brand/features/provider/language/getLanguage.feature",
+      "size": 2167,
+      "sha": "da081bbb5fff647554d308b51a41794a8909a546"
+    },
+    {
+      "name": "getLocation.feature",
+      "original_path": "web/rest/brand/features/provider/location/getLocation.feature",
+      "size": 939,
+      "sha": "b33e1f96112aa688420f6835c6c1e8927c2919eb"
+    },
+    {
+      "name": "getMatchList.feature",
+      "original_path": "web/rest/brand/features/provider/matchList/getMatchList.feature",
+      "size": 1206,
+      "sha": "cbd7da9ecee23c6cfc03413cb75511825e717bc3"
+    },
+    {
+      "name": "postMatchList.feature",
+      "original_path": "web/rest/brand/features/provider/matchList/postMatchList.feature",
+      "size": 1291,
+      "sha": "22ea0a09f2b4e754b1145869abc803c2e857697f"
+    },
+    {
+      "name": "putMatchList.feature",
+      "original_path": "web/rest/brand/features/provider/matchList/putMatchList.feature",
+      "size": 1490,
+      "sha": "49acadb827c132e2fe9769216cc5205c69f11c91"
+    },
+    {
+      "name": "removeMatchList.feature",
+      "original_path": "web/rest/brand/features/provider/matchList/removeMatchList.feature",
+      "size": 455,
+      "sha": "1e7f0d1236edcec345b04a8c34ca52a711be4bba"
+    },
+    {
+      "name": "getMatchListPattern.feature",
+      "original_path": "web/rest/brand/features/provider/matchListPattern/getMatchListPattern.feature",
+      "size": 1651,
+      "sha": "1e66a2d69ee12d3c5b940885716f49bf108cad06"
+    },
+    {
+      "name": "postMatchListPattern.feature",
+      "original_path": "web/rest/brand/features/provider/matchListPattern/postMatchListPattern.feature",
+      "size": 1812,
+      "sha": "851a4230b6d4f29f00e59fbc85af5608bbbdb166"
+    },
+    {
+      "name": "putMatchListPattern.feature",
+      "original_path": "web/rest/brand/features/provider/matchListPattern/putMatchListPattern.feature",
+      "size": 1141,
+      "sha": "78b0be64b2ce79d8aac44f9fa0e0a330eae7e16f"
+    },
+    {
+      "name": "removeMatchListPattern.feature",
+      "original_path": "web/rest/brand/features/provider/matchListPattern/removeMatchListPattern.feature",
+      "size": 487,
+      "sha": "be8ff7a0e4bfe94f04fa86940a1adbbc0943541e"
+    },
+    {
+      "name": "getMediaRelaySets.feature",
+      "original_path": "web/rest/brand/features/provider/mediaRelaySets/getMediaRelaySets.feature",
+      "size": 1481,
+      "sha": "40aa0eb3e99658138eab810d554b3db3cd6839a1"
+    },
+    {
+      "name": "getMusicOnHold.feature",
+      "original_path": "web/rest/brand/features/provider/musicOnHold/getMusicOnHold.feature",
+      "size": 1631,
+      "sha": "4d0ad0708f40b551ff7904dc98175bc8de6cf094"
+    },
+    {
+      "name": "postMusicOnHold.feature",
+      "original_path": "web/rest/brand/features/provider/musicOnHold/postMusicOnHold.feature",
+      "size": 2334,
+      "sha": "4eb735018ace865cd1a1c34adcc81bcb4c595e60"
+    },
+    {
+      "name": "putMusicOnHold.feature",
+      "original_path": "web/rest/brand/features/provider/musicOnHold/putMusicOnHold.feature",
+      "size": 2714,
+      "sha": "303f26115f6c3ee46a6e3f414648f86d33951fd8"
+    },
+    {
+      "name": "removeMusicOnHold.feature",
+      "original_path": "web/rest/brand/features/provider/musicOnHold/removeMusicOnHold.feature",
+      "size": 467,
+      "sha": "07bf901704b972a3bc523dc56c47ab1ffb633885"
+    },
+    {
+      "name": "getNotificationTemplate.feature",
+      "original_path": "web/rest/brand/features/provider/notificationTemplate/getNotificationTemplate.feature",
+      "size": 1347,
+      "sha": "1a8751a1ae525457ac4b41a7d39da14aa175a352"
+    },
+    {
+      "name": "postNotificationTemplate.feature",
+      "original_path": "web/rest/brand/features/provider/notificationTemplate/postNotificationTemplate.feature",
+      "size": 1456,
+      "sha": "dc2e95b246e361b4dd4a36242298c3fabd49d4d2"
+    },
+    {
+      "name": "putNotificationTemplate.feature",
+      "original_path": "web/rest/brand/features/provider/notificationTemplate/putNotificationTemplate.feature",
+      "size": 908,
+      "sha": "5156582969c44dd6dfeddee8e7bc90e870f4b6d2"
+    },
+    {
+      "name": "removeNotificationTemplate.feature",
+      "original_path": "web/rest/brand/features/provider/notificationTemplate/removeNotificationTemplate.feature",
+      "size": 500,
+      "sha": "8d3f94cd29e7b1531d72d5891fc9361b38be0d2b"
+    },
+    {
+      "name": "getNotificationTemplateContent.feature",
+      "original_path": "web/rest/brand/features/provider/notificationTemplateContent/getNotificationTemplateContent.feature",
+      "size": 1770,
+      "sha": "f6f610e0b1ef6fb4d46f0fc2a7111cbd368a9ef7"
+    },
+    {
+      "name": "postNotificationTemplateContent.feature",
+      "original_path": "web/rest/brand/features/provider/notificationTemplateContent/postNotificationTemplateContent.feature",
+      "size": 0,
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "name": "putNotificationTemplateContent.feature",
+      "original_path": "web/rest/brand/features/provider/notificationTemplateContent/putNotificationTemplateContent.feature",
+      "size": 1216,
+      "sha": "b242426e0030f77455c996a58c3ccd8d202aeb09"
+    },
+    {
+      "name": "removeNotificationTemplateContent.feature",
+      "original_path": "web/rest/brand/features/provider/notificationTemplateContent/removeNotificationTemplateContent.feature",
+      "size": 532,
+      "sha": "ee569fb5d6c679924b0bacfb79a55f9edd6c30d4"
+    },
+    {
+      "name": "getOutgoingDdiRule.feature",
+      "original_path": "web/rest/brand/features/provider/outgoingDdiRule/getOutgoingDdiRule.feature",
+      "size": 1391,
+      "sha": "7e24eb9a2467dca2c48751dd06a7c6e8b6d6ab32"
+    },
+    {
+      "name": "postOutgoingDdiRule.feature",
+      "original_path": "web/rest/brand/features/provider/outgoingDdiRule/postOutgoingDdiRule.feature",
+      "size": 639,
+      "sha": "ee6e8755369408e4b0d54eb5a765e6c28df649dc"
+    },
+    {
+      "name": "putOutgoingDdiRule.feature",
+      "original_path": "web/rest/brand/features/provider/outgoingDdiRule/putOutgoingDdiRule.feature",
+      "size": 562,
+      "sha": "cf1c3c3c19d8817c1bc46cbdeaf706959272bbe0"
+    },
+    {
+      "name": "removeOutgoingDdiRule.feature",
+      "original_path": "web/rest/brand/features/provider/outgoingDdiRule/removeOutgoingDdiRule.feature",
+      "size": 483,
+      "sha": "9c3cfeb89228a11cfa3ffc22c15d23c5c1795c8e"
+    },
+    {
+      "name": "getOutgoingRouting.feature",
+      "original_path": "web/rest/brand/features/provider/outgoingRouting/getOutgoingRouting.feature",
+      "size": 2752,
+      "sha": "cc93cd28f542bb4d4102fff27ab409a72e5173d1"
+    },
+    {
+      "name": "postOutgoingRouting.feature",
+      "original_path": "web/rest/brand/features/provider/outgoingRouting/postOutgoingRouting.feature",
+      "size": 2964,
+      "sha": "648c72aed1d7fa2b5a441cdd29684dfcb4ecd70e"
+    },
+    {
+      "name": "putOutgoingRouting.feature",
+      "original_path": "web/rest/brand/features/provider/outgoingRouting/putOutgoingRouting.feature",
+      "size": 1584,
+      "sha": "be5f7d082c8c26f39fa3829c2dd870f7e3d55327"
+    },
+    {
+      "name": "removeOutgoingRouting.feature",
+      "original_path": "web/rest/brand/features/provider/outgoingRouting/removeOutgoingRouting.feature",
+      "size": 479,
+      "sha": "f9738b757a72baca7449a95445ff85d8fdf9fdc3"
+    },
+    {
+      "name": "getProxyTrunk.feature",
+      "original_path": "web/rest/brand/features/provider/proxyTrunk/getProxyTrunk.feature",
+      "size": 1346,
+      "sha": "d3c2022eaa8855f8be9d6ad23fe7624956ce2f83"
+    },
+    {
+      "name": "getPublicEntities.feature",
+      "original_path": "web/rest/brand/features/provider/publicEntity/getPublicEntities.feature",
+      "size": 3065,
+      "sha": "8296ee072da50964c8d982e75f4ba23dbe4d72f3"
+    },
+    {
+      "name": "postPublicEntities.feature",
+      "original_path": "web/rest/brand/features/provider/publicEntity/postPublicEntities.feature",
+      "size": 882,
+      "sha": "d8013c855521fac0811b5b3ef5a5610f956bdbaa"
+    },
+    {
+      "name": "putPublicEntities.feature",
+      "original_path": "web/rest/brand/features/provider/publicEntity/putPublicEntities.feature",
+      "size": 884,
+      "sha": "40d81f687618dccba094b098a5e86a17253c275d"
+    },
+    {
+      "name": "removePublicEntities.feature",
+      "original_path": "web/rest/brand/features/provider/publicEntity/removePublicEntities.feature",
+      "size": 470,
+      "sha": "3d36a0e33b6c9f7aa1dfc44bbf62ca082f472f44"
+    },
+    {
+      "name": "getRatingPlan.feature",
+      "original_path": "web/rest/brand/features/provider/ratingPlan/getRatingPlan.feature",
+      "size": 1875,
+      "sha": "5eb510cfc5f3ed9611121cfaa635740c69ad1595"
+    },
+    {
+      "name": "postRatingPlan.feature",
+      "original_path": "web/rest/brand/features/provider/ratingPlan/postRatingPlan.feature",
+      "size": 2246,
+      "sha": "256fdbe59b44d485aa0ce683cdf0afae362b94d2"
+    },
+    {
+      "name": "putRatingPlan.feature",
+      "original_path": "web/rest/brand/features/provider/ratingPlan/putRatingPlan.feature",
+      "size": 1433,
+      "sha": "14f11124cb4409f1838549362cba0866e320b874"
+    },
+    {
+      "name": "removeRatingPlan.feature",
+      "original_path": "web/rest/brand/features/provider/ratingPlan/removeRatingPlan.feature",
+      "size": 457,
+      "sha": "cbbed41e3daf0d4b29b7e3e59264af5acd0415f8"
+    },
+    {
+      "name": "getRatingPlanGroup.feature",
+      "original_path": "web/rest/brand/features/provider/ratingPlanGroup/getRatingPlanGroup.feature",
+      "size": 2260,
+      "sha": "0ca86eeecce5cc02cbfea47802ff9dce75610dd1"
+    },
+    {
+      "name": "postRatingPlanGroup.feature",
+      "original_path": "web/rest/brand/features/provider/ratingPlanGroup/postRatingPlanGroup.feature",
+      "size": 2248,
+      "sha": "c10170d1f28e3eccfe2e1ab5d1caf41886848222"
+    },
+    {
+      "name": "postRatingPlanGroupSimulateCall.feature",
+      "original_path": "web/rest/brand/features/provider/ratingPlanGroup/postRatingPlanGroupSimulateCall.feature",
+      "size": 1171,
+      "sha": "067a54b8acb969e9a65f8f51f24110839bc67651"
+    },
+    {
+      "name": "putRatingPlanGroup.feature",
+      "original_path": "web/rest/brand/features/provider/ratingPlanGroup/putRatingPlanGroup.feature",
+      "size": 1422,
+      "sha": "cc46d2d9271396a2b66db90283501c21e9e9d9e0"
+    },
+    {
+      "name": "removeRatingPlanGroup.feature",
+      "original_path": "web/rest/brand/features/provider/ratingPlanGroup/removeRatingPlanGroup.feature",
+      "size": 481,
+      "sha": "72585183292ee468cefb77cd46636f362b02c80f"
+    },
+    {
+      "name": "getRatingProfile.feature",
+      "original_path": "web/rest/brand/features/provider/ratingProfile/getRatingProfile.feature",
+      "size": 1686,
+      "sha": "a8da5faee653ed5a83c4c87cca81407114b009e0"
+    },
+    {
+      "name": "postRatingProfile.feature",
+      "original_path": "web/rest/brand/features/provider/ratingProfile/postRatingProfile.feature",
+      "size": 1672,
+      "sha": "1fc5269ffbce3d75abe6c13cc6ae71594ff8c782"
+    },
+    {
+      "name": "postRatingProfileSimulateCall.feature",
+      "original_path": "web/rest/brand/features/provider/ratingProfile/postRatingProfileSimulateCall.feature",
+      "size": 1168,
+      "sha": "a5ee8f1c6169597012e309ada17509a139d70b16"
+    },
+    {
+      "name": "putRatingProfile.feature",
+      "original_path": "web/rest/brand/features/provider/ratingProfile/putRatingProfile.feature",
+      "size": 1049,
+      "sha": "d66937df721e088d882ed567edb15b33ebe9d3d3"
+    },
+    {
+      "name": "removeRatingProfile.feature",
+      "original_path": "web/rest/brand/features/provider/ratingProfile/removeRatingProfile.feature",
+      "size": 469,
+      "sha": "f90322ac8f31d6980e6bda2168d479ae85646f64"
+    },
+    {
+      "name": "getResidentialDevice.feature",
+      "original_path": "web/rest/brand/features/provider/residentialDevice/getResidentialDevice.feature",
+      "size": 4849,
+      "sha": "dcab1310c1506184dae14b5d859fff31ac0605d6"
+    },
+    {
+      "name": "getResidentialDeviceStatus.feature",
+      "original_path": "web/rest/brand/features/provider/residentialDevice/getResidentialDeviceStatus.feature",
+      "size": 2769,
+      "sha": "66f352ebfe6721c2e936c7628ec485d5cabd1a16"
+    },
+    {
+      "name": "postResidentialDevice.feature",
+      "original_path": "web/rest/brand/features/provider/residentialDevice/postResidentialDevice.feature",
+      "size": 2912,
+      "sha": "fcb4fb7155a0891992259e0b066d98f1b8f3be07"
+    },
+    {
+      "name": "putResidentialDevice.feature",
+      "original_path": "web/rest/brand/features/provider/residentialDevice/putResidentialDevice.feature",
+      "size": 2299,
+      "sha": "0710a69374f88943c75f20d73226b693d2655b33"
+    },
+    {
+      "name": "removeResidentialDevice.feature",
+      "original_path": "web/rest/brand/features/provider/residentialDevice/removeResidentialDevice.feature",
+      "size": 486,
+      "sha": "c087a2403efae665ff7dac05ade0dc1c4431b49f"
+    },
+    {
+      "name": "getRetailAccount.feature",
+      "original_path": "web/rest/brand/features/provider/retailAccount/getRetailAccount.feature",
+      "size": 4293,
+      "sha": "55f625ccfcae94906d61690266e195d695c05902"
+    },
+    {
+      "name": "getRetailAccountStatus.feature",
+      "original_path": "web/rest/brand/features/provider/retailAccount/getRetailAccountStatus.feature",
+      "size": 3124,
+      "sha": "2a62ca163b05bb218a4240c8599c7645addda371"
+    },
+    {
+      "name": "postRetailAccount.feature",
+      "original_path": "web/rest/brand/features/provider/retailAccount/postRetailAccount.feature",
+      "size": 2636,
+      "sha": "99254dd366e4be8a02ca6a375edbc5ff5de01238"
+    },
+    {
+      "name": "putRetailAccount.feature",
+      "original_path": "web/rest/brand/features/provider/retailAccount/putRetailAccount.feature",
+      "size": 2142,
+      "sha": "2cc66c733b477feb7ae6b16278794f95e97f24dc"
+    },
+    {
+      "name": "removeRetailAccount.feature",
+      "original_path": "web/rest/brand/features/provider/retailAccount/removeRetailAccount.feature",
+      "size": 470,
+      "sha": "b9437bc54cd8aa11bdc4303c901bd5d42660b695"
+    },
+    {
+      "name": "getRoutingPattern.feature",
+      "original_path": "web/rest/brand/features/provider/routingPattern/getRoutingPattern.feature",
+      "size": 2221,
+      "sha": "06ffa2c1acb53dc9866668289b0a45defd0e64eb"
+    },
+    {
+      "name": "postRoutingPattern.feature",
+      "original_path": "web/rest/brand/features/provider/routingPattern/postRoutingPattern.feature",
+      "size": 2266,
+      "sha": "361be5591a4ac3d3450efdfe5db0c3ba1db2aa90"
+    },
+    {
+      "name": "putRoutingPattern.feature",
+      "original_path": "web/rest/brand/features/provider/routingPattern/putRoutingPattern.feature",
+      "size": 1433,
+      "sha": "89dca6c021a6313e7c2cdf03d19eb11ebd06f327"
+    },
+    {
+      "name": "removeRoutingPattern.feature",
+      "original_path": "web/rest/brand/features/provider/routingPattern/removeRoutingPattern.feature",
+      "size": 475,
+      "sha": "abb5085ac0df318547be0f66f1f25d65dccac898"
+    },
+    {
+      "name": "getRoutingPatternGroups.feature",
+      "original_path": "web/rest/brand/features/provider/routingPatternGroup/getRoutingPatternGroups.feature",
+      "size": 1615,
+      "sha": "8b2204c96e32b16cbacc05d669ed34ea91745417"
+    },
+    {
+      "name": "postRoutingPatternGroups.feature",
+      "original_path": "web/rest/brand/features/provider/routingPatternGroup/postRoutingPatternGroups.feature",
+      "size": 1641,
+      "sha": "50ab6b5d40b80c8fda09d93b8fba6b73551913c7"
+    },
+    {
+      "name": "putRoutingPatternGroups.feature",
+      "original_path": "web/rest/brand/features/provider/routingPatternGroup/putRoutingPatternGroups.feature",
+      "size": 1059,
+      "sha": "31b5d97dbd976bccb806de12a66b310d6f3926df"
+    },
+    {
+      "name": "removeRoutingPatternGroups.feature",
+      "original_path": "web/rest/brand/features/provider/routingPatternGroup/removeRoutingPatternGroups.feature",
+      "size": 499,
+      "sha": "a804b4408ae50f06f495b711d6ddd375c9681e03"
+    },
+    {
+      "name": "getRoutingPatternGroupsRelPattern.feature",
+      "original_path": "web/rest/brand/features/provider/routingPatternGroupsRelPattern/getRoutingPatternGroupsRelPattern.feature",
+      "size": 3160,
+      "sha": "fd8ccfcf25b228a6955c24ec3993f84f41a1eeee"
+    },
+    {
+      "name": "postRoutingPatternGroupsRelPattern.feature",
+      "original_path": "web/rest/brand/features/provider/routingPatternGroupsRelPattern/postRoutingPatternGroupsRelPattern.feature",
+      "size": 2515,
+      "sha": "e566fd801065a684934ff9f254e1d7b3cc73dccf"
+    },
+    {
+      "name": "removeRoutingPatternGroupsRelPattern.feature",
+      "original_path": "web/rest/brand/features/provider/routingPatternGroupsRelPattern/removeRoutingPatternGroupsRelPattern.feature",
+      "size": 551,
+      "sha": "ff05d830fc72db5fce11af8eb60f433e020d0bdd"
+    },
+    {
+      "name": "getRoutingTag.feature",
+      "original_path": "web/rest/brand/features/provider/routingTag/getRoutingTag.feature",
+      "size": 1362,
+      "sha": "32dca857b65349c06c8ceb589f190f4151c443d3"
+    },
+    {
+      "name": "postRoutingTag.feature",
+      "original_path": "web/rest/brand/features/provider/routingTag/postRoutingTag.feature",
+      "size": 1359,
+      "sha": "296228ebb7eb3a20b3e816d8704687c282ba83f0"
+    },
+    {
+      "name": "putRoutingTag.feature",
+      "original_path": "web/rest/brand/features/provider/routingTag/putRoutingTag.feature",
+      "size": 852,
+      "sha": "f4b0ed87e25d0801ea5bee4873e80f6faf704104"
+    },
+    {
+      "name": "removeRoutingTag.feature",
+      "original_path": "web/rest/brand/features/provider/routingTag/removeRoutingTag.feature",
+      "size": 463,
+      "sha": "eef23396f98e7e66dc0981c15fad29293597bd49"
+    },
+    {
+      "name": "getService.feature",
+      "original_path": "web/rest/brand/features/provider/service/getService.feature",
+      "size": 3826,
+      "sha": "4b90ef8e4b65ab7dd4cc9fdb706a447abe9fc824"
+    },
+    {
+      "name": "getUnassignedServices.feature",
+      "original_path": "web/rest/brand/features/provider/service/getUnassignedServices.feature",
+      "size": 2594,
+      "sha": "c6b1cf263c94bef8e4b4da7e72ce3ab6a88e825d"
+    },
+    {
+      "name": "postService.feature",
+      "original_path": "web/rest/brand/features/provider/service/postService.feature",
+      "size": 856,
+      "sha": "78a8590cd4750c4ff500660ce7e54e4de243e071"
+    },
+    {
+      "name": "putService.feature",
+      "original_path": "web/rest/brand/features/provider/service/putService.feature",
+      "size": 880,
+      "sha": "6701a828eb2c2d55263beabe772cc3c21b3eae43"
+    },
+    {
+      "name": "removeService.feature",
+      "original_path": "web/rest/brand/features/provider/service/removeService.feature",
+      "size": 463,
+      "sha": "4ba39fa0fae2b4bf6603f017806446e01e219e64"
+    },
+    {
+      "name": "getSpecialNumber.feature",
+      "original_path": "web/rest/brand/features/provider/specialNumber/getSpecialNumber.feature",
+      "size": 2005,
+      "sha": "7b56df204c5492cf98eaf932aad7e5fc9838fc5f"
+    },
+    {
+      "name": "postSpecialNumber.feature",
+      "original_path": "web/rest/brand/features/provider/specialNumber/postSpecialNumber.feature",
+      "size": 2015,
+      "sha": "664b6ab9a3996c2f372f725e1274bcdb76422c3b"
+    },
+    {
+      "name": "putSpecialNumber.feature",
+      "original_path": "web/rest/brand/features/provider/specialNumber/putSpecialNumber.feature",
+      "size": 1374,
+      "sha": "58c786875442ab6357c44c3bf4c73785b5e50121"
+    },
+    {
+      "name": "removeSpecialNumber.feature",
+      "original_path": "web/rest/brand/features/provider/specialNumber/removeSpecialNumber.feature",
+      "size": 802,
+      "sha": "29e1fa571c106d2c6eb35ed519de83effef38c83"
+    },
+    {
+      "name": "getTerminal.feature",
+      "original_path": "web/rest/brand/features/provider/terminal/getTerminal.feature",
+      "size": 1707,
+      "sha": "37186c34706b1c25499f72c32d39c1f231bf34e5"
+    },
+    {
+      "name": "getTerminalStatus.feature",
+      "original_path": "web/rest/brand/features/provider/terminal/getTerminalStatus.feature",
+      "size": 1737,
+      "sha": "12a6acbacf958ec2162a28d80a4065d7af8e0573"
+    },
+    {
+      "name": "getTimezone.feature",
+      "original_path": "web/rest/brand/features/provider/timezone/getTimezone.feature",
+      "size": 4592,
+      "sha": "212df65db88e9e4e6a5db046fbe514b235881d6d"
+    },
+    {
+      "name": "getTransformationRule.feature",
+      "original_path": "web/rest/brand/features/provider/transformationRule/getTransformationRule.feature",
+      "size": 3583,
+      "sha": "04ac505ce1159f555b6eb51f8b3892db075e18a1"
+    },
+    {
+      "name": "postTransformationRule.feature",
+      "original_path": "web/rest/brand/features/provider/transformationRule/postTransformationRule.feature",
+      "size": 3156,
+      "sha": "9a13cc5646a70193003019e2e53b523b79550e2e"
+    },
+    {
+      "name": "putTransformationRule.feature",
+      "original_path": "web/rest/brand/features/provider/transformationRule/putTransformationRule.feature",
+      "size": 1594,
+      "sha": "21e0daeffc1b61c729d27bdd6dcd1f76ad4a2a5c"
+    },
+    {
+      "name": "removeTransformationRule.feature",
+      "original_path": "web/rest/brand/features/provider/transformationRule/removeTransformationRule.feature",
+      "size": 1187,
+      "sha": "df314759bb4a824660030d4c4922f4556c14718d"
+    },
+    {
+      "name": "getTransformationRuleSet.feature",
+      "original_path": "web/rest/brand/features/provider/transformationRuleSet/getTransformationRuleSet.feature",
+      "size": 2783,
+      "sha": "2817e2428631f5cede0bdbe6183a988a5dc44f8c"
+    },
+    {
+      "name": "postTransformationRuleSet.feature",
+      "original_path": "web/rest/brand/features/provider/transformationRuleSet/postTransformationRuleSet.feature",
+      "size": 2540,
+      "sha": "bd18d620e8816acfc81994396a1e6e40f04e958c"
+    },
+    {
+      "name": "putTransformationRuleSet.feature",
+      "original_path": "web/rest/brand/features/provider/transformationRuleSet/putTransformationRuleSet.feature",
+      "size": 2058,
+      "sha": "97e8ae55e999e5678edf72db40e140bb361b5ca3"
+    },
+    {
+      "name": "removeTransformationRuleSet.feature",
+      "original_path": "web/rest/brand/features/provider/transformationRuleSet/removeTransformationRuleSet.feature",
+      "size": 854,
+      "sha": "a3ffd82b8e690e4ce8db8308035e360c06c618fc"
+    },
+    {
+      "name": "getUser.feature",
+      "original_path": "web/rest/brand/features/provider/user/getUser.feature",
+      "size": 2277,
+      "sha": "d6c15c1b7cae7a9a560e92a3f50d4ac9fa4bfbc1"
+    },
+    {
+      "name": "postUser.feature",
+      "original_path": "web/rest/brand/features/provider/user/postUser.feature",
+      "size": 483,
+      "sha": "5aee8f677248740b665a8f49b0d0685b4e02c595"
+    },
+    {
+      "name": "postUserMassImport.feature",
+      "original_path": "web/rest/brand/features/provider/user/postUserMassImport.feature",
+      "size": 9493,
+      "sha": "7cb214cebfeac71c96f45b3e39deb534474bbc02"
+    },
+    {
+      "name": "putUser.feature",
+      "original_path": "web/rest/brand/features/provider/user/putUser.feature",
+      "size": 477,
+      "sha": "b6a7442fb3f06fb75c73bf6ae9ad225956532179"
+    },
+    {
+      "name": "removeUser.feature",
+      "original_path": "web/rest/brand/features/provider/user/removeUser.feature",
+      "size": 431,
+      "sha": "eacc961d60405e26be675df40ee1bea56418705e"
+    },
+    {
+      "name": "getWebPortal.feature",
+      "original_path": "web/rest/brand/features/provider/webPortal/getWebPortal.feature",
+      "size": 2695,
+      "sha": "7f649b33f1dbd332b7474120a92e41da2b150bba"
+    },
+    {
+      "name": "postWebPortal.feature",
+      "original_path": "web/rest/brand/features/provider/webPortal/postWebPortal.feature",
+      "size": 2736,
+      "sha": "d720fd3e9980f31b714a7fc0dac704e4d8b0c63f"
+    },
+    {
+      "name": "putWebPortal.feature",
+      "original_path": "web/rest/brand/features/provider/webPortal/putWebPortal.feature",
+      "size": 4236,
+      "sha": "86d016bd0671114211f5c03d6eab615942c13520"
+    },
+    {
+      "name": "removeWebPortal.feature",
+      "original_path": "web/rest/brand/features/provider/webPortal/removeWebPortal.feature",
+      "size": 455,
+      "sha": "3055132980e81bc41eeecc79b323ab80e277f591"
+    },
+    {
+      "name": "requestPayloadTzConversions.feature",
+      "original_path": "web/rest/brand/features/requestPayloadTzConversions.feature",
+      "size": 2381,
+      "sha": "e59efa26aaa2f0c36f77132f7006efd8a0f5f31e"
+    },
+    {
+      "name": "auth_1.feature",
+      "original_path": "web/rest/client/features/auth.feature",
+      "size": 2542,
+      "sha": "6c97ce8ef74548353acc5f71a407ee152707f176"
+    },
+    {
+      "name": "getActiveCalls_1.feature",
+      "original_path": "web/rest/client/features/my/activeCalls/getActiveCalls.feature",
+      "size": 584,
+      "sha": "b8fc2bb3a8e1e00603497bf997c052e1c4134901"
+    },
+    {
+      "name": "getActiveCallsFilters_1.feature",
+      "original_path": "web/rest/client/features/my/activeCalls/getActiveCallsFilters.feature",
+      "size": 563,
+      "sha": "c3f533ce936f82ed46f34cb7f8d9ae90f6b1519c"
+    },
+    {
+      "name": "getDashboard_1.feature",
+      "original_path": "web/rest/client/features/my/dashboard/getDashboard.feature",
+      "size": 7209,
+      "sha": "5b2e7986a8b7eadc9289d05cc8060264a30c62ed"
+    },
+    {
+      "name": "getProfile_1.feature",
+      "original_path": "web/rest/client/features/my/profile/getProfile.feature",
+      "size": 17536,
+      "sha": "0a1a310b182f31a1bbd99e7ad76ee4954c466d80"
+    },
+    {
+      "name": "getLogo_1.feature",
+      "original_path": "web/rest/client/features/my/theme/getLogo.feature",
+      "size": 269,
+      "sha": "fb84a834f80873d98bbc0b17200972796757fdb5"
+    },
+    {
+      "name": "getWebTheme_1.feature",
+      "original_path": "web/rest/client/features/my/theme/getWebTheme.feature",
+      "size": 736,
+      "sha": "6c9d98109a4cae26835667618a4f74d44f6bfcca"
+    },
+    {
+      "name": "getBillableCall.feature",
+      "original_path": "web/rest/client/features/provider/billableCall/getBillableCall.feature",
+      "size": 16388,
+      "sha": "e3c30f30aabb0e093cfeaa2b1eeb71171e3db217"
+    },
+    {
+      "name": "getCalendar.feature",
+      "original_path": "web/rest/client/features/provider/calendar/getCalendar.feature",
+      "size": 1273,
+      "sha": "4ab85925895f0134195e15822409386023ecbd13"
+    },
+    {
+      "name": "postCalendar.feature",
+      "original_path": "web/rest/client/features/provider/calendar/postCalendar.feature",
+      "size": 1290,
+      "sha": "7d222ba899379da940f4871e9d625c6e0280fab7"
+    },
+    {
+      "name": "putCalendar.feature",
+      "original_path": "web/rest/client/features/provider/calendar/putCalendar.feature",
+      "size": 807,
+      "sha": "215d731a21bbd85fd66e32b167d216c9509287e0"
+    },
+    {
+      "name": "removeCalendar.feature",
+      "original_path": "web/rest/client/features/provider/calendar/removeCalendar.feature",
+      "size": 450,
+      "sha": "da8e4b92a508fd8916a82f2ddeaa419171aca0e2"
+    },
+    {
+      "name": "getCalendarPeriod.feature",
+      "original_path": "web/rest/client/features/provider/calendarPeriod/getCalendarPeriod.feature",
+      "size": 2337,
+      "sha": "bd2fc7bba0582c119729d3075e6dbf97b3565e22"
+    },
+    {
+      "name": "postCalendarPeriod.feature",
+      "original_path": "web/rest/client/features/provider/calendarPeriod/postCalendarPeriod.feature",
+      "size": 2532,
+      "sha": "f51a4f9cde5e8591deb23adebbb8a6d5f2afa96b"
+    },
+    {
+      "name": "putCalendarPeriod.feature",
+      "original_path": "web/rest/client/features/provider/calendarPeriod/putCalendarPeriod.feature",
+      "size": 1418,
+      "sha": "97f8a60e47fc67d883a633afc77263546f75acdd"
+    },
+    {
+      "name": "removeCalendarPeriod.feature",
+      "original_path": "web/rest/client/features/provider/calendarPeriod/removeCalendarPeriod.feature",
+      "size": 471,
+      "sha": "8e806ae0fe5c617ca2c5b601007c5741b482cf8a"
+    },
+    {
+      "name": "getCalendarPeriodsRelSchedule.feature",
+      "original_path": "web/rest/client/features/provider/calendarPeriodsRelSchedule/getCalendarPeriodsRelSchedule.feature",
+      "size": 2902,
+      "sha": "5140ca66f8a91f71684ca750ae6d02c5aa0f08b5"
+    },
+    {
+      "name": "postCalendarPeriodsRelSchedule.feature",
+      "original_path": "web/rest/client/features/provider/calendarPeriodsRelSchedule/postCalendarPeriodsRelSchedule.feature",
+      "size": 2903,
+      "sha": "d7d1a943acba1de876f74e57c03586466babb93c"
+    },
+    {
+      "name": "putCalendarPeriodsRelSchedule.feature",
+      "original_path": "web/rest/client/features/provider/calendarPeriodsRelSchedule/putCalendarPeriodsRelSchedule.feature",
+      "size": 914,
+      "sha": "05dffd3e2ab6500537cc5a02430dadd25cc03033"
+    },
+    {
+      "name": "removeCalendarPeriodsRelSchedule.feature",
+      "original_path": "web/rest/client/features/provider/calendarPeriodsRelSchedule/removeCalendarPeriodsRelSchedule.feature",
+      "size": 526,
+      "sha": "df26ece3350aca7398d2cb7f42919b28e095dc8f"
+    },
+    {
+      "name": "getCallAcl.feature",
+      "original_path": "web/rest/client/features/provider/callAcl/getCallAcl.feature",
+      "size": 1433,
+      "sha": "2223268c782893f17444e8418982c30daf377652"
+    },
+    {
+      "name": "postCallAcl.feature",
+      "original_path": "web/rest/client/features/provider/callAcl/postCallAcl.feature",
+      "size": 1415,
+      "sha": "9447d7b394cee97c57e2e496a72ebe1a59df013b"
+    },
+    {
+      "name": "putCallAcl.feature",
+      "original_path": "web/rest/client/features/provider/callAcl/putCallAcl.feature",
+      "size": 846,
+      "sha": "88832798327bf71ae58f9779c0713fefbeceb164"
+    },
+    {
+      "name": "removeCallAcl.feature",
+      "original_path": "web/rest/client/features/provider/callAcl/removeCallAcl.feature",
+      "size": 450,
+      "sha": "a245b580200d6cce946a98428aee696b63633b05"
+    },
+    {
+      "name": "getCallAclRelMatchList.feature",
+      "original_path": "web/rest/client/features/provider/callAclRelMatchList/getCallAclRelMatchList.feature",
+      "size": 1887,
+      "sha": "1de32b03befaeded81dcc7336715d09dd520e362"
+    },
+    {
+      "name": "postCallAclRelMatchList.feature",
+      "original_path": "web/rest/client/features/provider/callAclRelMatchList/postCallAclRelMatchList.feature",
+      "size": 1792,
+      "sha": "d0ed0277a3da47ca7081f78572acc7b7dd85d83f"
+    },
+    {
+      "name": "removeCallAclRelMatchList.feature",
+      "original_path": "web/rest/client/features/provider/callAclRelMatchList/removeCallAclRelMatchList.feature",
+      "size": 510,
+      "sha": "2c0f02ddf36f3ceb1ecb63322dd9d8d574654c41"
+    },
+    {
+      "name": "getCallCsvReport_1.feature",
+      "original_path": "web/rest/client/features/provider/callCsvReport/getCallCsvReport.feature",
+      "size": 2250,
+      "sha": "dae6dbcb1458b75b9b7277aff2242d3b19c82d8a"
+    },
+    {
+      "name": "postCallCsvReport_1.feature",
+      "original_path": "web/rest/client/features/provider/callCsvReport/postCallCsvReport.feature",
+      "size": 696,
+      "sha": "0bb2b6dc69e9d3259ea9e9e26f852a317ffc7b68"
+    },
+    {
+      "name": "putCallCsvReport_1.feature",
+      "original_path": "web/rest/client/features/provider/callCsvReport/putCallCsvReport.feature",
+      "size": 674,
+      "sha": "7517f2570c05471d06cde0970ed74b5f967b770e"
+    },
+    {
+      "name": "removeCallCsvReport_1.feature",
+      "original_path": "web/rest/client/features/provider/callCsvReport/removeCallCsvReport.feature",
+      "size": 478,
+      "sha": "64c2c73e471fe5f2457493f417ab5a5e525b3ec3"
+    },
+    {
+      "name": "getCallCsvScheduler_1.feature",
+      "original_path": "web/rest/client/features/provider/callCsvScheduler/getCallCsvScheduler.feature",
+      "size": 2026,
+      "sha": "823b4cff18dd48718958fd6a40ea2a97eb6b210e"
+    },
+    {
+      "name": "postCallCsvScheduler_1.feature",
+      "original_path": "web/rest/client/features/provider/callCsvScheduler/postCallCsvScheduler.feature",
+      "size": 2678,
+      "sha": "774a95a124f641b499111361f92bd260163f9a76"
+    },
+    {
+      "name": "putCallCsvScheduler_1.feature",
+      "original_path": "web/rest/client/features/provider/callCsvScheduler/putCallCsvScheduler.feature",
+      "size": 1580,
+      "sha": "9b2db89f17d0f21e5193c536858a460097974f95"
+    },
+    {
+      "name": "removeCallCsvScheduler_1.feature",
+      "original_path": "web/rest/client/features/provider/callCsvScheduler/removeCallCsvScheduler.feature",
+      "size": 479,
+      "sha": "892f490d65508b90e1d2a39e29f55ee2ba31ea18"
+    },
+    {
+      "name": "getCallForwardSetting.feature",
+      "original_path": "web/rest/client/features/provider/callForwardSetting/getCallForwardSetting.feature",
+      "size": 3934,
+      "sha": "a56e53f207f97bdb8a1397a4b04bd37b4a8a94fa"
+    },
+    {
+      "name": "postCallForwardSetting.feature",
+      "original_path": "web/rest/client/features/provider/callForwardSetting/postCallForwardSetting.feature",
+      "size": 2776,
+      "sha": "d701d0ff42323665a654a0499f4ec62d27d9f31c"
+    },
+    {
+      "name": "putCallForwardSetting.feature",
+      "original_path": "web/rest/client/features/provider/callForwardSetting/putCallForwardSetting.feature",
+      "size": 1577,
+      "sha": "aa73599700210ca0f9a8e6e1b10a2b03a9353838"
+    },
+    {
+      "name": "removeCallForwardSetting.feature",
+      "original_path": "web/rest/client/features/provider/callForwardSetting/removeCallForwardSetting.feature",
+      "size": 496,
+      "sha": "bf868417c219117f6e58034483d9f6175aa5b840"
+    },
+    {
+      "name": "getCompany.feature",
+      "original_path": "web/rest/client/features/provider/company/getCompany.feature",
+      "size": 3325,
+      "sha": "4a55b1ba855e3f5d5a4efc2857c3d9ed8fa647e8"
+    },
+    {
+      "name": "getCompanyByCorporationUnassigned.feature",
+      "original_path": "web/rest/client/features/provider/company/getCompanyByCorporationUnassigned.feature",
+      "size": 912,
+      "sha": "b427b5a8ea6ae9c2f6116c7d5496ffdc669ce7ca"
+    },
+    {
+      "name": "getCompanyService.feature",
+      "original_path": "web/rest/client/features/provider/companyService/getCompanyService.feature",
+      "size": 1874,
+      "sha": "726089bb6b36248570ba69f1f851b2b84f77c55b"
+    },
+    {
+      "name": "postCompanyService.feature",
+      "original_path": "web/rest/client/features/provider/companyService/postCompanyService.feature",
+      "size": 1771,
+      "sha": "d94559da3ec756d51ec3c3618fe99b9ddb06788f"
+    },
+    {
+      "name": "putCompanyService.feature",
+      "original_path": "web/rest/client/features/provider/companyService/putCompanyService.feature",
+      "size": 838,
+      "sha": "ec5d0474a1b13f566952c8f37de5cb02867ebc09"
+    },
+    {
+      "name": "removeCompanyService.feature",
+      "original_path": "web/rest/client/features/provider/companyService/removeCompanyService.feature",
+      "size": 479,
+      "sha": "42d06658c0f51b4e8009551a572e69ab86b0ea6c"
+    },
+    {
+      "name": "getConditionalRoute.feature",
+      "original_path": "web/rest/client/features/provider/conditionalRoute/getConditionalRoute.feature",
+      "size": 2466,
+      "sha": "94c14922b506698e2a73c84565c4231270229b4b"
+    },
+    {
+      "name": "postConditionalRoute.feature",
+      "original_path": "web/rest/client/features/provider/conditionalRoute/postConditionalRoute.feature",
+      "size": 2376,
+      "sha": "faf52b2d25203c6f9d2c31fdafce4847243137a4"
+    },
+    {
+      "name": "putConditionalRoute.feature",
+      "original_path": "web/rest/client/features/provider/conditionalRoute/putConditionalRoute.feature",
+      "size": 1543,
+      "sha": "eacc7a5e54db2db6b64e6a3de65d84baa73f8e8b"
+    },
+    {
+      "name": "removeConditionalRoute.feature",
+      "original_path": "web/rest/client/features/provider/conditionalRoute/removeConditionalRoute.feature",
+      "size": 486,
+      "sha": "3ee5f9dec0be2b107ff64ec8064e989396a06182"
+    },
+    {
+      "name": "getConditionalRoutesCondition.feature",
+      "original_path": "web/rest/client/features/provider/conditionalRoutesCondition/getConditionalRoutesCondition.feature",
+      "size": 2757,
+      "sha": "0d2f2bcb8203c8307edec0a0eacff2b0e29754c4"
+    },
+    {
+      "name": "postConditionalRoutesCondition.feature",
+      "original_path": "web/rest/client/features/provider/conditionalRoutesCondition/postConditionalRoutesCondition.feature",
+      "size": 4569,
+      "sha": "8e5cc9c56ac668788524581d26e4ea5bf76018e1"
+    },
+    {
+      "name": "putConditionalRoutesCondition.feature",
+      "original_path": "web/rest/client/features/provider/conditionalRoutesCondition/putConditionalRoutesCondition.feature",
+      "size": 2033,
+      "sha": "149e2e152ded7507f872ca42b7d7ab223e26daa6"
+    },
+    {
+      "name": "removeConditionalRoutesCondition.feature",
+      "original_path": "web/rest/client/features/provider/conditionalRoutesCondition/removeConditionalRoutesCondition.feature",
+      "size": 530,
+      "sha": "80239805eb52c79681f7eb7c786c8e208867838b"
+    },
+    {
+      "name": "getConditionalRoutesConditionsRelCalendar.feature",
+      "original_path": "web/rest/client/features/provider/conditionalRoutesConditionsRelCalendar/getConditionalRoutesConditionsRelCalendar.feature",
+      "size": 2638,
+      "sha": "4dc8f0cee93c7105a2e02b40373988b0b58e70de"
+    },
+    {
+      "name": "postConditionalRoutesConditionsRelCalendar.feature",
+      "original_path": "web/rest/client/features/provider/conditionalRoutesConditionsRelCalendar/postConditionalRoutesConditionsRelCalendar.feature",
+      "size": 2690,
+      "sha": "7b094c777643aaf52bb133fdf4a71fef31925fb7"
+    },
+    {
+      "name": "putConditionalRoutesConditionsRelCalendar.feature",
+      "original_path": "web/rest/client/features/provider/conditionalRoutesConditionsRelCalendar/putConditionalRoutesConditionsRelCalendar.feature",
+      "size": 676,
+      "sha": "0267df842328a82c31cde3cb9f93b4736dab1c86"
+    },
+    {
+      "name": "removeConditionalRoutesConditionsRelCalendar.feature",
+      "original_path": "web/rest/client/features/provider/conditionalRoutesConditionsRelCalendar/removeConditionalRoutesConditionsRelCalendar.feature",
+      "size": 586,
+      "sha": "85c6d7c7cec89dec60397df0fbbbe3a6bfb916d4"
+    },
+    {
+      "name": "getConditionalRoutesConditionsRelMatchlist.feature",
+      "original_path": "web/rest/client/features/provider/conditionalRoutesConditionsRelMatchlist/getConditionalRoutesConditionsRelMatchlist.feature",
+      "size": 2717,
+      "sha": "957656c4fc43a55a367f14069b4b39e054fcd736"
+    },
+    {
+      "name": "postConditionalRoutesConditionsRelMatchlist.feature",
+      "original_path": "web/rest/client/features/provider/conditionalRoutesConditionsRelMatchlist/postConditionalRoutesConditionsRelMatchlist.feature",
+      "size": 2767,
+      "sha": "a004d5d42ee3f5685b2b19f784a4d85fc0fb74e7"
+    },
+    {
+      "name": "putConditionalRoutesConditionsRelMatchlist.feature",
+      "original_path": "web/rest/client/features/provider/conditionalRoutesConditionsRelMatchlist/putConditionalRoutesConditionsRelMatchlist.feature",
+      "size": 687,
+      "sha": "512690ddcc32e8bd5c40fbe4ac9b5baad90b39ac"
+    },
+    {
+      "name": "removeConditionalRoutesConditionsRelMatchlist.feature",
+      "original_path": "web/rest/client/features/provider/conditionalRoutesConditionsRelMatchlist/removeConditionalRoutesConditionsRelMatchlist.feature",
+      "size": 590,
+      "sha": "200349a6fe9133daff208913590baf1664803a36"
+    },
+    {
+      "name": "getConditionalRoutesConditionsRelRouteLock.feature",
+      "original_path": "web/rest/client/features/provider/conditionalRoutesConditionsRelRouteLock/getConditionalRoutesConditionsRelRouteLock.feature",
+      "size": 3020,
+      "sha": "e19b86b670e801c5fc2bfe4a650e9d24f69e30b5"
+    },
+    {
+      "name": "postConditionalRoutesConditionsRelRouteLock.feature",
+      "original_path": "web/rest/client/features/provider/conditionalRoutesConditionsRelRouteLock/postConditionalRoutesConditionsRelRouteLock.feature",
+      "size": 3020,
+      "sha": "308c12e907d59e3bc9695edbbe031eb5cf110424"
+    },
+    {
+      "name": "putConditionalRoutesConditionsRelRouteLock.feature",
+      "original_path": "web/rest/client/features/provider/conditionalRoutesConditionsRelRouteLock/putConditionalRoutesConditionsRelRouteLock.feature",
+      "size": 678,
+      "sha": "e91eca09e0741e78ea55ca5ce18adf60ab403b89"
+    },
+    {
+      "name": "removeConditionalRoutesConditionsRelRouteLock.feature",
+      "original_path": "web/rest/client/features/provider/conditionalRoutesConditionsRelRouteLock/removeConditionalRoutesConditionsRelRouteLock.feature",
+      "size": 582,
+      "sha": "443c8a0d29d604708f53d6ee159d0bced4d8011c"
+    },
+    {
+      "name": "getConditionalRoutesConditionsRelSchedule.feature",
+      "original_path": "web/rest/client/features/provider/conditionalRoutesConditionsRelSchedule/getConditionalRoutesConditionsRelSchedule.feature",
+      "size": 3255,
+      "sha": "98dcfd4965978fa731c53a6c0856206c525635d8"
+    },
+    {
+      "name": "postConditionalRoutesConditionsRelSchedule.feature",
+      "original_path": "web/rest/client/features/provider/conditionalRoutesConditionsRelSchedule/postConditionalRoutesConditionsRelSchedule.feature",
+      "size": 3280,
+      "sha": "49e3129105d8d55d7649a71e7c7aaeb239b14480"
+    },
+    {
+      "name": "putConditionalRoutesConditionsRelSchedule.feature",
+      "original_path": "web/rest/client/features/provider/conditionalRoutesConditionsRelSchedule/putConditionalRoutesConditionsRelSchedule.feature",
+      "size": 681,
+      "sha": "0d0267272c6339f21cce5ea6fef09c1bb9154871"
+    },
+    {
+      "name": "removeConditionalRoutesConditionsRelSchedule.feature",
+      "original_path": "web/rest/client/features/provider/conditionalRoutesConditionsRelSchedule/removeConditionalRoutesConditionsRelSchedule.feature",
+      "size": 586,
+      "sha": "f473ba7ed5494be91cea9fceb94545fb6c074871"
+    },
+    {
+      "name": "getConferenceRoom.feature",
+      "original_path": "web/rest/client/features/provider/conferenceRoom/getConferenceRoom.feature",
+      "size": 1517,
+      "sha": "326c1177e1c67f59f7b7037e5a258c4d0a226746"
+    },
+    {
+      "name": "postConferenceRoom.feature",
+      "original_path": "web/rest/client/features/provider/conferenceRoom/postConferenceRoom.feature",
+      "size": 1720,
+      "sha": "25ff4e5efed09325f6851a460e15a422e7b696ad"
+    },
+    {
+      "name": "putConferenceRoom.feature",
+      "original_path": "web/rest/client/features/provider/conferenceRoom/putConferenceRoom.feature",
+      "size": 1019,
+      "sha": "78b84ce5ff70fc443e5441a6a5e73635a42c6ad0"
+    },
+    {
+      "name": "removeConferenceRoom.feature",
+      "original_path": "web/rest/client/features/provider/conferenceRoom/removeConferenceRoom.feature",
+      "size": 478,
+      "sha": "54f30312fbdf10e4bba08ccd13667ca6132f37a6"
+    },
+    {
+      "name": "getContact.feature",
+      "original_path": "web/rest/client/features/provider/contact/getContact.feature",
+      "size": 3327,
+      "sha": "98021ec1049b45ad27e898c8e42ab5f6c8e611b7"
+    },
+    {
+      "name": "postContact.feature",
+      "original_path": "web/rest/client/features/provider/contact/postContact.feature",
+      "size": 3174,
+      "sha": "372d098eb514ed765d51c56df89cf89f52a314d8"
+    },
+    {
+      "name": "putContact.feature",
+      "original_path": "web/rest/client/features/provider/contact/putContact.feature",
+      "size": 1341,
+      "sha": "485763cab7e8db4518d67601d4519a691460071e"
+    },
+    {
+      "name": "removeContact.feature",
+      "original_path": "web/rest/client/features/provider/contact/removeContact.feature",
+      "size": 1085,
+      "sha": "bd82cfb46c7111785d7712d91aa5dbb3553afb7b"
+    },
+    {
+      "name": "getCountry_1.feature",
+      "original_path": "web/rest/client/features/provider/country/getCountry.feature",
+      "size": 11188,
+      "sha": "7aa5e543a7169fcf3d99cd50fa91ab94d9758249"
+    },
+    {
+      "name": "getDdi_1.feature",
+      "original_path": "web/rest/client/features/provider/ddi/getDdi.feature",
+      "size": 4075,
+      "sha": "0977a531fc6ebee962fc2875e0030d4d58138e96"
+    },
+    {
+      "name": "postDdi_1.feature",
+      "original_path": "web/rest/client/features/provider/ddi/postDdi.feature",
+      "size": 1053,
+      "sha": "ccf9bf9a6235d706a490b612df14c9b2de7f3f3d"
+    },
+    {
+      "name": "putDdi_1.feature",
+      "original_path": "web/rest/client/features/provider/ddi/putDdi.feature",
+      "size": 1885,
+      "sha": "7527cca5a5ff0b5b5f78b859522262cb42bd6cae"
+    },
+    {
+      "name": "removeDdi_1.feature",
+      "original_path": "web/rest/client/features/provider/ddi/removeDdi.feature",
+      "size": 430,
+      "sha": "a36a2561e0b30c7b9e05a8def0edebdfc1d4d6d5"
+    },
+    {
+      "name": "getDomains_1.feature",
+      "original_path": "web/rest/client/features/provider/domain/getDomains.feature",
+      "size": 912,
+      "sha": "856b7eb0f5acfb6b9518ba3b2871afb70094ebb9"
+    },
+    {
+      "name": "postDomains_1.feature",
+      "original_path": "web/rest/client/features/provider/domain/postDomains.feature",
+      "size": 625,
+      "sha": "f36f80f5a28e3594b48a3781086befd46b27f1b6"
+    },
+    {
+      "name": "putDomains_1.feature",
+      "original_path": "web/rest/client/features/provider/domain/putDomains.feature",
+      "size": 495,
+      "sha": "94bb828cb1c47f3155b025058cfdc683540a0305"
+    },
+    {
+      "name": "removeDomains_1.feature",
+      "original_path": "web/rest/client/features/provider/domain/removeDomains.feature",
+      "size": 437,
+      "sha": "e8a22b4f749ce37db839aa57dd9aaab87cf96ec1"
+    },
+    {
+      "name": "getExtension_1.feature",
+      "original_path": "web/rest/client/features/provider/extension/getExtension.feature",
+      "size": 4789,
+      "sha": "7b3bc6ddb6b1658ce7b101b11725f93f284e0aeb"
+    },
+    {
+      "name": "getExtensionUnassigned.feature",
+      "original_path": "web/rest/client/features/provider/extension/getExtensionUnassigned.feature",
+      "size": 2565,
+      "sha": "a0b763049e3ac96d690cb910d437f7279042c286"
+    },
+    {
+      "name": "postExtension.feature",
+      "original_path": "web/rest/client/features/provider/extension/postExtension.feature",
+      "size": 5557,
+      "sha": "4aace9e86cd9b72caecae8f323bd9d565c693eb5"
+    },
+    {
+      "name": "postExtensionMassImport.feature",
+      "original_path": "web/rest/client/features/provider/extension/postExtensionMassImport.feature",
+      "size": 7426,
+      "sha": "93ed1933937505d1aaa29e9c337251050cdc5a1a"
+    },
+    {
+      "name": "putExtension.feature",
+      "original_path": "web/rest/client/features/provider/extension/putExtension.feature",
+      "size": 1467,
+      "sha": "b14b6af1893ef926f01790893f23b40fd6b41d98"
+    },
+    {
+      "name": "removeExtension.feature",
+      "original_path": "web/rest/client/features/provider/extension/removeExtension.feature",
+      "size": 455,
+      "sha": "79d77129c2e9c750f720be3083174e2616baf775"
+    },
+    {
+      "name": "getExternalCallFilter.feature",
+      "original_path": "web/rest/client/features/provider/externalCallFilter/getExternalCallFilter.feature",
+      "size": 2516,
+      "sha": "01a75e4b80951d77e2981f88c6b77a639cfeb3c5"
+    },
+    {
+      "name": "postExternalCallFilter.feature",
+      "original_path": "web/rest/client/features/provider/externalCallFilter/postExternalCallFilter.feature",
+      "size": 5544,
+      "sha": "7f163e8127000bd6a817f5ff17ed689e01dd8f8d"
+    },
+    {
+      "name": "putExternalCallFilter.feature",
+      "original_path": "web/rest/client/features/provider/externalCallFilter/putExternalCallFilter.feature",
+      "size": 2454,
+      "sha": "ebb69abeb3870ba1afd21e3463777cbbf10484a6"
+    },
+    {
+      "name": "removeExternalCallFilter.feature",
+      "original_path": "web/rest/client/features/provider/externalCallFilter/removeExternalCallFilter.feature",
+      "size": 498,
+      "sha": "9599ee714796d809c92680efe1e8381a074c412b"
+    },
+    {
+      "name": "getExternalCallFilterBlackList.feature",
+      "original_path": "web/rest/client/features/provider/externalCallFilterBlackList/getExternalCallFilterBlackList.feature",
+      "size": 3099,
+      "sha": "3f760dbd7815c9dcf58293e67d16a8000e3bbfc1"
+    },
+    {
+      "name": "postExternalCallFilterBlackList.feature",
+      "original_path": "web/rest/client/features/provider/externalCallFilterBlackList/postExternalCallFilterBlackList.feature",
+      "size": 3136,
+      "sha": "c9ad10497b896ee82092ff7ac73e6451c6df1bd3"
+    },
+    {
+      "name": "putExternalCallFilterBlackList.feature",
+      "original_path": "web/rest/client/features/provider/externalCallFilterBlackList/putExternalCallFilterBlackList.feature",
+      "size": 907,
+      "sha": "7f366e6624752fe93d66ec5898d01413d47e7d3f"
+    },
+    {
+      "name": "removeExternalCallFilterBlackList.feature",
+      "original_path": "web/rest/client/features/provider/externalCallFilterBlackList/removeExternalCallFilterBlackList.feature",
+      "size": 543,
+      "sha": "b06ee1f8f5a9b275be6328cd4af48de82d301db8"
+    },
+    {
+      "name": "getExternalCallFilterRelCalendar.feature",
+      "original_path": "web/rest/client/features/provider/externalCallFilterRelCalendar/getExternalCallFilterRelCalendar.feature",
+      "size": 3040,
+      "sha": "6ee3a09e445bce18fe3cd2648225332e13cef161"
+    },
+    {
+      "name": "postExternalCallFilterRelCalendar.feature",
+      "original_path": "web/rest/client/features/provider/externalCallFilterRelCalendar/postExternalCallFilterRelCalendar.feature",
+      "size": 3080,
+      "sha": "a5c03131691bff9fd035783b0714c5cc62ba9195"
+    },
+    {
+      "name": "removeExternalCallFilterRelCalendar.feature",
+      "original_path": "web/rest/client/features/provider/externalCallFilterRelCalendar/removeExternalCallFilterRelCalendar.feature",
+      "size": 550,
+      "sha": "6be30832aa9ca61cac61467b7722d07c06d0344c"
+    },
+    {
+      "name": "getExternalCallFilterRelSchedule.feature",
+      "original_path": "web/rest/client/features/provider/externalCallFilterRelSchedule/getExternalCallFilterRelSchedule.feature",
+      "size": 3655,
+      "sha": "e07e3d0c0e1e5bb37c0997d8d58324bf641ffd81"
+    },
+    {
+      "name": "postExternalCallFilterRelSchedule.feature",
+      "original_path": "web/rest/client/features/provider/externalCallFilterRelSchedule/postExternalCallFilterRelSchedule.feature",
+      "size": 3651,
+      "sha": "c97b4bb2a5223a6753defc7342edef535a7170e7"
+    },
+    {
+      "name": "removeExternalCallFilterRelSchedule.feature",
+      "original_path": "web/rest/client/features/provider/externalCallFilterRelSchedule/removeExternalCallFilterRelSchedule.feature",
+      "size": 550,
+      "sha": "5c578869981174be8a4e9973e27ed0cea5c5bbb5"
+    },
+    {
+      "name": "getExternalCallFilterWhiteList.feature",
+      "original_path": "web/rest/client/features/provider/externalCallFilterWhiteList/getExternalCallFilterWhiteList.feature",
+      "size": 3099,
+      "sha": "f2ac261a5c01019aee6c74f65c0962ba8f4e1383"
+    },
+    {
+      "name": "postExternalCallFilterWhiteList.feature",
+      "original_path": "web/rest/client/features/provider/externalCallFilterWhiteList/postExternalCallFilterWhiteList.feature",
+      "size": 3117,
+      "sha": "7cb00010c1662e9cd09be2d3534bc9e886577196"
+    },
+    {
+      "name": "putExternalCallFilterWhiteList.feature",
+      "original_path": "web/rest/client/features/provider/externalCallFilterWhiteList/putExternalCallFilterWhiteList.feature",
+      "size": 907,
+      "sha": "a1b8c3e3ade017512da9b9225526474368113e45"
+    },
+    {
+      "name": "removeExternalCallFilterWhiteList.feature",
+      "original_path": "web/rest/client/features/provider/externalCallFilterWhiteList/removeExternalCallFilterWhiteList.feature",
+      "size": 542,
+      "sha": "fddff74c0217fe0efdacb2944ed76231305e4648"
+    },
+    {
+      "name": "getFaxes.feature",
+      "original_path": "web/rest/client/features/provider/faxes/getFaxes.feature",
+      "size": 1525,
+      "sha": "c124553e8c3a7c828e6f07a7a73bb16e1d115395"
+    },
+    {
+      "name": "postFaxes.feature",
+      "original_path": "web/rest/client/features/provider/faxes/postFaxes.feature",
+      "size": 1735,
+      "sha": "302d47526e7e9064a520f08c50c2d5814f15bcab"
+    },
+    {
+      "name": "putFaxes.feature",
+      "original_path": "web/rest/client/features/provider/faxes/putFaxes.feature",
+      "size": 1719,
+      "sha": "12575f8c20da3b27038dd234b97a5e418351fed4"
+    },
+    {
+      "name": "removeFaxes.feature",
+      "original_path": "web/rest/client/features/provider/faxes/removeFaxes.feature",
+      "size": 435,
+      "sha": "297d737f7f0ebd4a6db66dbcf2efb7286914ce3b"
+    },
+    {
+      "name": "getFaxesInOut.feature",
+      "original_path": "web/rest/client/features/provider/faxesInOut/getFaxesInOut.feature",
+      "size": 3141,
+      "sha": "32a942ff990242fe633bb51594e7bb575f3ac5f3"
+    },
+    {
+      "name": "postFaxesInOut.feature",
+      "original_path": "web/rest/client/features/provider/faxesInOut/postFaxesInOut.feature",
+      "size": 3337,
+      "sha": "957748bdd82e5d3f5f73e092fe176b4788c41833"
+    },
+    {
+      "name": "postFaxesInOutResend.feature",
+      "original_path": "web/rest/client/features/provider/faxesInOut/postFaxesInOutResend.feature",
+      "size": 1286,
+      "sha": "0ec8b3858794b32ef106ef97731a265b2d21bad4"
+    },
+    {
+      "name": "removeFaxesInOut.feature",
+      "original_path": "web/rest/client/features/provider/faxesInOut/removeFaxesInOut.feature",
+      "size": 459,
+      "sha": "8e9391737774288d67e385f98d5fd07d855604e8"
+    },
+    {
+      "name": "getFeaturesRelCompany.feature",
+      "original_path": "web/rest/client/features/provider/featuresRelCompany/getFeaturesRelCompany.feature",
+      "size": 2885,
+      "sha": "d59d0558948971a19ef571daf349ecd101b224f1"
+    },
+    {
+      "name": "postFeaturesRelCompany.feature",
+      "original_path": "web/rest/client/features/provider/featuresRelCompany/postFeaturesRelCompany.feature",
+      "size": 566,
+      "sha": "610158b7c00096626981be3187feb6188440f0a0"
+    },
+    {
+      "name": "removeFeaturesRelCompany.feature",
+      "original_path": "web/rest/client/features/provider/featuresRelCompany/removeFeaturesRelCompany.feature",
+      "size": 500,
+      "sha": "5c87e81fcdf97acc1b249cf6d12c6d1940f5d59d"
+    },
+    {
+      "name": "getFriend_1.feature",
+      "original_path": "web/rest/client/features/provider/friend/getFriend.feature",
+      "size": 2342,
+      "sha": "e5d69854232d5756e23ddd1fabe61fb6027077da"
+    },
+    {
+      "name": "getFriendStatus_1.feature",
+      "original_path": "web/rest/client/features/provider/friend/getFriendStatus.feature",
+      "size": 2198,
+      "sha": "abcb107d84a031b69f2eac7514b571e88598c68b"
+    },
+    {
+      "name": "postFriend_1.feature",
+      "original_path": "web/rest/client/features/provider/friend/postFriend.feature",
+      "size": 1081,
+      "sha": "b7c2579cee3e014924702a9dbdbc76bc2d24c14a"
+    },
+    {
+      "name": "putFriend_1.feature",
+      "original_path": "web/rest/client/features/provider/friend/putFriend.feature",
+      "size": 5000,
+      "sha": "7ec6d0bc30bc8abaf27064124e36e6c95cd558ad"
+    },
+    {
+      "name": "removeFriend_1.feature",
+      "original_path": "web/rest/client/features/provider/friend/removeFriend.feature",
+      "size": 443,
+      "sha": "1eacd638670d9180aba80e4ea86a379903fdb14e"
+    },
+    {
+      "name": "getFriendsPattern.feature",
+      "original_path": "web/rest/client/features/provider/friendsPattern/getFriendsPattern.feature",
+      "size": 1879,
+      "sha": "d324835d61c7802a070b804f360488fdcc944a74"
+    },
+    {
+      "name": "postFriendsPattern.feature",
+      "original_path": "web/rest/client/features/provider/friendsPattern/postFriendsPattern.feature",
+      "size": 2060,
+      "sha": "7eeef59a0b87d0693eb7b4237307c36e1534d7ea"
+    },
+    {
+      "name": "putFriendsPattern.feature",
+      "original_path": "web/rest/client/features/provider/friendsPattern/putFriendsPattern.feature",
+      "size": 948,
+      "sha": "3fdfca720eff1adef9a7535be5734ea527ff9a60"
+    },
+    {
+      "name": "removeFriendsPattern.feature",
+      "original_path": "web/rest/client/features/provider/friendsPattern/removeFriendsPattern.feature",
+      "size": 477,
+      "sha": "4451a1a48abfe6818a095cd893ce28f4246ac0e1"
+    },
+    {
+      "name": "getHolidayDate.feature",
+      "original_path": "web/rest/client/features/provider/holidayDate/getHolidayDate.feature",
+      "size": 2440,
+      "sha": "821db655945865902bd4b95cf0627963ae6a8a14"
+    },
+    {
+      "name": "postHolidayDate.feature",
+      "original_path": "web/rest/client/features/provider/holidayDate/postHolidayDate.feature",
+      "size": 2564,
+      "sha": "c5cef8bae19784187d0e4b2de629e712fbdf6b10"
+    },
+    {
+      "name": "postHolidayDateMassImport.feature",
+      "original_path": "web/rest/client/features/provider/holidayDate/postHolidayDateMassImport.feature",
+      "size": 7622,
+      "sha": "649950724a5e31ce640b2f2b13d064e39e13b370"
+    },
+    {
+      "name": "postHolidayDateRange.feature",
+      "original_path": "web/rest/client/features/provider/holidayDate/postHolidayDateRange.feature",
+      "size": 6067,
+      "sha": "63f2b29ee488c459ccf686d561e07cc0d71fef6d"
+    },
+    {
+      "name": "putHolidayDate.feature",
+      "original_path": "web/rest/client/features/provider/holidayDate/putHolidayDate.feature",
+      "size": 1209,
+      "sha": "8f0ab838d0a29e3164495bcf150a35d5cb1a3a64"
+    },
+    {
+      "name": "removeHolidayDate.feature",
+      "original_path": "web/rest/client/features/provider/holidayDate/removeHolidayDate.feature",
+      "size": 466,
+      "sha": "40094c0f7df1c2675ad5cb3a6ad6b130a0c2c501"
+    },
+    {
+      "name": "getHuntGroup.feature",
+      "original_path": "web/rest/client/features/provider/huntGroup/getHuntGroup.feature",
+      "size": 1636,
+      "sha": "9680e0550199c47f7f3c03ebd348c0395e347a25"
+    },
+    {
+      "name": "getHuntGroupUsersAvailable.feature",
+      "original_path": "web/rest/client/features/provider/huntGroup/getHuntGroupUsersAvailable.feature",
+      "size": 1318,
+      "sha": "45420ac7896ef5a91d8b591ae0ab4f09aad4dd5b"
+    },
+    {
+      "name": "postHuntGroup.feature",
+      "original_path": "web/rest/client/features/provider/huntGroup/postHuntGroup.feature",
+      "size": 2806,
+      "sha": "7ea18089e52edaa4715a8e48de47b5285f1ca37f"
+    },
+    {
+      "name": "putHuntGroup.feature",
+      "original_path": "web/rest/client/features/provider/huntGroup/putHuntGroup.feature",
+      "size": 1529,
+      "sha": "76bdb09ff4eec986c03711224ff96f288f292bc3"
+    },
+    {
+      "name": "removeHuntGroup.feature",
+      "original_path": "web/rest/client/features/provider/huntGroup/removeHuntGroup.feature",
+      "size": 458,
+      "sha": "5b670f04d0225e2d40e2c3a1243997f5cc4e5a79"
+    },
+    {
+      "name": "getHuntGroupMember.feature",
+      "original_path": "web/rest/client/features/provider/huntGroupMember/getHuntGroupMember.feature",
+      "size": 2465,
+      "sha": "385862c69a9c8357055b283f21d2e30a30986269"
+    },
+    {
+      "name": "postHuntGroupMember.feature",
+      "original_path": "web/rest/client/features/provider/huntGroupMember/postHuntGroupMember.feature",
+      "size": 2227,
+      "sha": "5c3c512c0f8013071b3b8fcd74ecc9f9edeb70a3"
+    },
+    {
+      "name": "putHuntGroupMember.feature",
+      "original_path": "web/rest/client/features/provider/huntGroupMember/putHuntGroupMember.feature",
+      "size": 1116,
+      "sha": "ef7d0f937bd9c9999eeaaad0f262799fe3f0aec1"
+    },
+    {
+      "name": "removeHuntGroupMember.feature",
+      "original_path": "web/rest/client/features/provider/huntGroupMember/removeHuntGroupMember.feature",
+      "size": 494,
+      "sha": "d30f82502948f15b6c20bfb726d1d620ef7e53ca"
+    },
+    {
+      "name": "getIvr.feature",
+      "original_path": "web/rest/client/features/provider/ivr/getIvr.feature",
+      "size": 4840,
+      "sha": "9eb1115b54c6491ae077764b84d6e90b372a93b0"
+    },
+    {
+      "name": "postIvr.feature",
+      "original_path": "web/rest/client/features/provider/ivr/postIvr.feature",
+      "size": 7021,
+      "sha": "af4bd8fd9d3e99cf80f752d16e9189ee88000adb"
+    },
+    {
+      "name": "putIvr.feature",
+      "original_path": "web/rest/client/features/provider/ivr/putIvr.feature",
+      "size": 2135,
+      "sha": "6ff2b644cf7e9acb1297a85bb1e884347d5a97d5"
+    },
+    {
+      "name": "removeIvr.feature",
+      "original_path": "web/rest/client/features/provider/ivr/removeIvr.feature",
+      "size": 431,
+      "sha": "af8d6cdb447c8dbaa16ca09b7659f02eda157c71"
+    },
+    {
+      "name": "getIvrEntry.feature",
+      "original_path": "web/rest/client/features/provider/ivrEntry/getIvrEntry.feature",
+      "size": 3022,
+      "sha": "ca198839009ab5cdd55ccf77a104d01cb924a930"
+    },
+    {
+      "name": "postIvrEntry.feature",
+      "original_path": "web/rest/client/features/provider/ivrEntry/postIvrEntry.feature",
+      "size": 3860,
+      "sha": "8e3a166287d08ae711bf1693d0945741bb89cada"
+    },
+    {
+      "name": "putIvrEntry.feature",
+      "original_path": "web/rest/client/features/provider/ivrEntry/putIvrEntry.feature",
+      "size": 1362,
+      "sha": "ebb5632eb6b877a88512e7cbce73be11e4566a57"
+    },
+    {
+      "name": "removeIvrEntry.feature",
+      "original_path": "web/rest/client/features/provider/ivrEntry/removeIvrEntry.feature",
+      "size": 457,
+      "sha": "c342f1d4e912cdb208f1e016c70fe2bb3bb67aa7"
+    },
+    {
+      "name": "getIvrExcludedExtension.feature",
+      "original_path": "web/rest/client/features/provider/ivrExcludedExtension/getIvrExcludedExtension.feature",
+      "size": 3840,
+      "sha": "9ac95fe64497f3bceb3692fce9903506fd4b8cf8"
+    },
+    {
+      "name": "postIvrExcludedExtension.feature",
+      "original_path": "web/rest/client/features/provider/ivrExcludedExtension/postIvrExcludedExtension.feature",
+      "size": 3819,
+      "sha": "82d3640476dbda2b053b9f728c0f41307d47a5d2"
+    },
+    {
+      "name": "putIvrExcludedExtension.feature",
+      "original_path": "web/rest/client/features/provider/ivrExcludedExtension/putIvrExcludedExtension.feature",
+      "size": 887,
+      "sha": "b900265923c6d2fd23cbcb9a3c96dac10d6cdb0d"
+    },
+    {
+      "name": "removeIvrExcludedExtension.feature",
+      "original_path": "web/rest/client/features/provider/ivrExcludedExtension/removeIvrExcludedExtension.feature",
+      "size": 506,
+      "sha": "28803be27f0016537b227c41443b97ec0862ef10"
+    },
+    {
+      "name": "getLanguage_1.feature",
+      "original_path": "web/rest/client/features/provider/language/getLanguage.feature",
+      "size": 2172,
+      "sha": "48f9e4bd4b410cf875f4c288b48e81e99ee77349"
+    },
+    {
+      "name": "getLocation_1.feature",
+      "original_path": "web/rest/client/features/provider/location/getLocation.feature",
+      "size": 2039,
+      "sha": "1a5f50b23898276d6c06be52d4fa705684374682"
+    },
+    {
+      "name": "postLocation.feature",
+      "original_path": "web/rest/client/features/provider/location/postLocation.feature",
+      "size": 1659,
+      "sha": "71fd41b54cdccd5379c4e9527d268fac1dd9e2ea"
+    },
+    {
+      "name": "putLocation.feature",
+      "original_path": "web/rest/client/features/provider/location/putLocation.feature",
+      "size": 2213,
+      "sha": "bbd70a62b2a0cc116e63d747a28a347bdd7a411e"
+    },
+    {
+      "name": "removeLocation.feature",
+      "original_path": "web/rest/client/features/provider/location/removeLocation.feature",
+      "size": 451,
+      "sha": "cc6c4963d7661f0b0e5255ae1f6f295c438771d4"
+    },
+    {
+      "name": "getLocution.feature",
+      "original_path": "web/rest/client/features/provider/locution/getLocution.feature",
+      "size": 1672,
+      "sha": "c7a396e70edeece8fc9abf067229170a05874d91"
+    },
+    {
+      "name": "postLocution.feature",
+      "original_path": "web/rest/client/features/provider/locution/postLocution.feature",
+      "size": 2328,
+      "sha": "bcfb177d551aa8b374310ddea641f86a23302a3e"
+    },
+    {
+      "name": "putLocution.feature",
+      "original_path": "web/rest/client/features/provider/locution/putLocution.feature",
+      "size": 2756,
+      "sha": "0fe21d2cf381b0c17e97df8e25450f6422601d21"
+    },
+    {
+      "name": "removeLocution.feature",
+      "original_path": "web/rest/client/features/provider/locution/removeLocution.feature",
+      "size": 451,
+      "sha": "7fb83221e8323a795635ab1f4d9359c89bff0afc"
+    },
+    {
+      "name": "getMatchList_1.feature",
+      "original_path": "web/rest/client/features/provider/matchList/getMatchList.feature",
+      "size": 1502,
+      "sha": "8048d5262b9afdcdf6831efbae19455272a5fa99"
+    },
+    {
+      "name": "postMatchList_1.feature",
+      "original_path": "web/rest/client/features/provider/matchList/postMatchList.feature",
+      "size": 1352,
+      "sha": "c85f639b0cac90545a476e42aa13c451b27b4cae"
+    },
+    {
+      "name": "putMatchList_1.feature",
+      "original_path": "web/rest/client/features/provider/matchList/putMatchList.feature",
+      "size": 1876,
+      "sha": "e73bb1f45c615b29016499e08b392addeb7d89e8"
+    },
+    {
+      "name": "removeMatchList_1.feature",
+      "original_path": "web/rest/client/features/provider/matchList/removeMatchList.feature",
+      "size": 780,
+      "sha": "303f53a39fe3aa7e0711af9997d04b6faced750e"
+    },
+    {
+      "name": "getMatchListPattern_1.feature",
+      "original_path": "web/rest/client/features/provider/matchListPattern/getMatchListPattern.feature",
+      "size": 1911,
+      "sha": "00c673eedf21f493994d1ce16bc56187fe8ecbe3"
+    },
+    {
+      "name": "postMatchListPattern_1.feature",
+      "original_path": "web/rest/client/features/provider/matchListPattern/postMatchListPattern.feature",
+      "size": 1912,
+      "sha": "b51bb6a017043f99e49c53333e2ec311a13fb26c"
+    },
+    {
+      "name": "putMatchListPattern_1.feature",
+      "original_path": "web/rest/client/features/provider/matchListPattern/putMatchListPattern.feature",
+      "size": 1590,
+      "sha": "7b8c762a9df07d8b3f00660749c64156065664f7"
+    },
+    {
+      "name": "removeMatchListPattern_1.feature",
+      "original_path": "web/rest/client/features/provider/matchListPattern/removeMatchListPattern.feature",
+      "size": 830,
+      "sha": "b9d05c39b9c38a3cbe6aa73e2df58403f83185c8"
+    },
+    {
+      "name": "getMusicOnHold_1.feature",
+      "original_path": "web/rest/client/features/provider/musicOnHold/getMusicOnHold.feature",
+      "size": 1632,
+      "sha": "0243cdd6fcb21515675cb089fb98f339f94ec8a9"
+    },
+    {
+      "name": "postMusicOnHold_1.feature",
+      "original_path": "web/rest/client/features/provider/musicOnHold/postMusicOnHold.feature",
+      "size": 2339,
+      "sha": "8db0f1f531c6b68cbbd0c076d771a48148032aeb"
+    },
+    {
+      "name": "putMusicOnHold_1.feature",
+      "original_path": "web/rest/client/features/provider/musicOnHold/putMusicOnHold.feature",
+      "size": 2719,
+      "sha": "58d44e2d9f39cbf22f17c9757a6286569c6c5ada"
+    },
+    {
+      "name": "removeMusicOnHold_1.feature",
+      "original_path": "web/rest/client/features/provider/musicOnHold/removeMusicOnHold.feature",
+      "size": 470,
+      "sha": "771a885c2c72b5f91547317b70dce35026a8f65c"
+    },
+    {
+      "name": "getOutgoingDdiRule_1.feature",
+      "original_path": "web/rest/client/features/provider/outgoingDdiRule/getOutgoingDdiRule.feature",
+      "size": 1369,
+      "sha": "94a3bd93422da1b4ecc5890b632aa3ed6c2bf545"
+    },
+    {
+      "name": "postOutgoingDdiRule_1.feature",
+      "original_path": "web/rest/client/features/provider/outgoingDdiRule/postOutgoingDdiRule.feature",
+      "size": 1530,
+      "sha": "d72dd190cfce93d6143c6c35562762a9bfc7f4d0"
+    },
+    {
+      "name": "putOutgoingDdiRule_1.feature",
+      "original_path": "web/rest/client/features/provider/outgoingDdiRule/putOutgoingDdiRule.feature",
+      "size": 944,
+      "sha": "758a7fbfd162e6dfafc556c3a378d620f15524f4"
+    },
+    {
+      "name": "removeOutgoingDdiRule_1.feature",
+      "original_path": "web/rest/client/features/provider/outgoingDdiRule/removeOutgoingDdiRule.feature",
+      "size": 486,
+      "sha": "6fd70303d9b57b9e64331bde38fd54af1751a8ea"
+    },
+    {
+      "name": "getOutgoingDdiRulesPattern.feature",
+      "original_path": "web/rest/client/features/provider/outgoingDdiRulesPattern/getOutgoingDdiRulesPattern.feature",
+      "size": 2180,
+      "sha": "a6ef4165a95d6205b1eaac7efcb78dae02579f86"
+    },
+    {
+      "name": "postOutgoingDdiRulesPattern.feature",
+      "original_path": "web/rest/client/features/provider/outgoingDdiRulesPattern/postOutgoingDdiRulesPattern.feature",
+      "size": 2342,
+      "sha": "dc110b5e80c6e01c473721ae58debe864b7db706"
+    },
+    {
+      "name": "putOutgoingDdiRulesPattern.feature",
+      "original_path": "web/rest/client/features/provider/outgoingDdiRulesPattern/putOutgoingDdiRulesPattern.feature",
+      "size": 1181,
+      "sha": "d0f4b3297ab29c3384580b14dc92e245f85e41e1"
+    },
+    {
+      "name": "removeOutgoingDdiRulesPattern.feature",
+      "original_path": "web/rest/client/features/provider/outgoingDdiRulesPattern/removeOutgoingDdiRulesPattern.feature",
+      "size": 522,
+      "sha": "80fe17df362d434b51c5ad44abd02a6e6c92c9bb"
+    },
+    {
+      "name": "getPickUpGroup.feature",
+      "original_path": "web/rest/client/features/provider/pickUpGroup/getPickUpGroup.feature",
+      "size": 1317,
+      "sha": "a42fbcd26c036c9768cfc579058f008357b32ca3"
+    },
+    {
+      "name": "postPickUpGroup.feature",
+      "original_path": "web/rest/client/features/provider/pickUpGroup/postPickUpGroup.feature",
+      "size": 1520,
+      "sha": "0aa39638fc9717b289368fb996ddda8c0019231b"
+    },
+    {
+      "name": "putPickUpGroup.feature",
+      "original_path": "web/rest/client/features/provider/pickUpGroup/putPickUpGroup.feature",
+      "size": 918,
+      "sha": "b1ac8060b1ef86add38ad3d16f0ab00af8b51efa"
+    },
+    {
+      "name": "removePickUpGroup.feature",
+      "original_path": "web/rest/client/features/provider/pickUpGroup/removePickUpGroup.feature",
+      "size": 470,
+      "sha": "e0e79349fcb14d79276b5686035164d73ea1ea27"
+    },
+    {
+      "name": "getPickUpRelUser.feature",
+      "original_path": "web/rest/client/features/provider/pickUpRelUser/getPickUpRelUser.feature",
+      "size": 3429,
+      "sha": "1d1bdb7f1716e4cd899cdc4c356847a461f35d03"
+    },
+    {
+      "name": "postPickUpRelUser.feature",
+      "original_path": "web/rest/client/features/provider/pickUpRelUser/postPickUpRelUser.feature",
+      "size": 3467,
+      "sha": "901cdcb9c3be6e67cedc6577a67718f4f033a87a"
+    },
+    {
+      "name": "removePickUpRelUser.feature",
+      "original_path": "web/rest/client/features/provider/pickUpRelUser/removePickUpRelUser.feature",
+      "size": 482,
+      "sha": "daaf557a2e6c2a3365e8d8743da6a707eee66f5e"
+    },
+    {
+      "name": "getQueue.feature",
+      "original_path": "web/rest/client/features/provider/queue/getQueue.feature",
+      "size": 4304,
+      "sha": "0174ffad7bcde5152e7c47bdace1a07dfd1a0bda"
+    },
+    {
+      "name": "postQueue.feature",
+      "original_path": "web/rest/client/features/provider/queue/postQueue.feature",
+      "size": 5851,
+      "sha": "bdb1315c2e3c5739c9b24f06375129bd2955c902"
+    },
+    {
+      "name": "putQueue.feature",
+      "original_path": "web/rest/client/features/provider/queue/putQueue.feature",
+      "size": 2457,
+      "sha": "ba18fd51153f515c80dbf7eb7c3cd335a422d9d5"
+    },
+    {
+      "name": "removeQueue.feature",
+      "original_path": "web/rest/client/features/provider/queue/removeQueue.feature",
+      "size": 438,
+      "sha": "c819bd22415f1d3af7fdac230efebea9dd4c2f4f"
+    },
+    {
+      "name": "getQueueMember.feature",
+      "original_path": "web/rest/client/features/provider/queueMember/getQueueMember.feature",
+      "size": 5429,
+      "sha": "eefa97773f5ae251f5e8374f8bbcee8b5348194d"
+    },
+    {
+      "name": "postQueueMember.feature",
+      "original_path": "web/rest/client/features/provider/queueMember/postQueueMember.feature",
+      "size": 5317,
+      "sha": "2eebb8565e8a167a092007804ecc918b8fce9097"
+    },
+    {
+      "name": "putQueueMember.feature",
+      "original_path": "web/rest/client/features/provider/queueMember/putQueueMember.feature",
+      "size": 866,
+      "sha": "f59311dfeee25c188631917c2bc13788cae6d7c5"
+    },
+    {
+      "name": "removeQueueMember.feature",
+      "original_path": "web/rest/client/features/provider/queueMember/removeQueueMember.feature",
+      "size": 466,
+      "sha": "2c2be16b6e4d62fc60b4ed65d8b617bbaa445696"
+    },
+    {
+      "name": "getPrices.feature",
+      "original_path": "web/rest/client/features/provider/ratingPlanGroup/getPrices.feature",
+      "size": 664,
+      "sha": "40eeb034e0ccb7a90d31b53d1c8914a34917b193"
+    },
+    {
+      "name": "getRatingPlanGroup_1.feature",
+      "original_path": "web/rest/client/features/provider/ratingPlanGroup/getRatingPlanGroup.feature",
+      "size": 1896,
+      "sha": "e0a72ca01c5e22ca0113a46c248b65a633faecd2"
+    },
+    {
+      "name": "getRatingProfile_1.feature",
+      "original_path": "web/rest/client/features/provider/ratingProfile/getRatingProfile.feature",
+      "size": 1650,
+      "sha": "e2d7bbc3cf7b7dafb1dd8da0b95132a909d3c592"
+    },
+    {
+      "name": "postRatingProfile_1.feature",
+      "original_path": "web/rest/client/features/provider/ratingProfile/postRatingProfile.feature",
+      "size": 567,
+      "sha": "4a3090467880453d2cbeba159d60b8de96e081f9"
+    },
+    {
+      "name": "postRatingProfileSimulateCall_1.feature",
+      "original_path": "web/rest/client/features/provider/ratingProfile/postRatingProfileSimulateCall.feature",
+      "size": 1170,
+      "sha": "0eded69df916c0df8e2687fa285bbf05e75f09b3"
+    },
+    {
+      "name": "putRatingProfile_1.feature",
+      "original_path": "web/rest/client/features/provider/ratingProfile/putRatingProfile.feature",
+      "size": 568,
+      "sha": "c92b52b21ee0a5139afeec687f523d189abed4e2"
+    },
+    {
+      "name": "removeRatingProfile_1.feature",
+      "original_path": "web/rest/client/features/provider/ratingProfile/removeRatingProfile.feature",
+      "size": 474,
+      "sha": "ad683ffd3010177f43164c580257f3bb45e5b855"
+    },
+    {
+      "name": "getRecording.feature",
+      "original_path": "web/rest/client/features/provider/recording/getRecording.feature",
+      "size": 2633,
+      "sha": "e534e340f37f4a1f9739592ba4a534cbceec13c8"
+    },
+    {
+      "name": "getRecordingZipFiles.feature",
+      "original_path": "web/rest/client/features/provider/recording/getRecordingZipFiles.feature",
+      "size": 614,
+      "sha": "4895df1765e638c8ba225959b2da84f40beb642d"
+    },
+    {
+      "name": "removeRecording.feature",
+      "original_path": "web/rest/client/features/provider/recording/removeRecording.feature",
+      "size": 454,
+      "sha": "1dcf8ec0ca2e8f34797849b9cf652d35b15cebb3"
+    },
+    {
+      "name": "getResidentialDevice_1.feature",
+      "original_path": "web/rest/client/features/provider/residentialDevices/getResidentialDevice.feature",
+      "size": 4369,
+      "sha": "86cfddbf065e2070b9419c325db789b767aa56e1"
+    },
+    {
+      "name": "getResidentialDeviceStatus_1.feature",
+      "original_path": "web/rest/client/features/provider/residentialDevices/getResidentialDeviceStatus.feature",
+      "size": 3889,
+      "sha": "4edea53f8bef4cc27c614c1c649fc3a9be88dbf0"
+    },
+    {
+      "name": "postResidentialDevice_1.feature",
+      "original_path": "web/rest/client/features/provider/residentialDevices/postResidentialDevice.feature",
+      "size": 729,
+      "sha": "d11f0861546652dbfa196b02adde5447b410b1fe"
+    },
+    {
+      "name": "putResidentialDevice_1.feature",
+      "original_path": "web/rest/client/features/provider/residentialDevices/putResidentialDevice.feature",
+      "size": 7056,
+      "sha": "0d046069e845e1068ac57ed2b9d020de21c757d8"
+    },
+    {
+      "name": "removeResidentialDevice_1.feature",
+      "original_path": "web/rest/client/features/provider/residentialDevices/removeResidentialDevice.feature",
+      "size": 502,
+      "sha": "391a173ba002c7f887a7f26ac38c5d9f06f37482"
+    },
+    {
+      "name": "getRetailAccount_1.feature",
+      "original_path": "web/rest/client/features/provider/retailAccount/getRetailAccount.feature",
+      "size": 3737,
+      "sha": "0c97963f8204bd6b5b8c0b2a954d28242095cb69"
+    },
+    {
+      "name": "getRetailAccountStatus_1.feature",
+      "original_path": "web/rest/client/features/provider/retailAccount/getRetailAccountStatus.feature",
+      "size": 3564,
+      "sha": "0ec0433b86f2f46c3055fbb5542c9f4e8b95ee31"
+    },
+    {
+      "name": "postRetailAccount_1.feature",
+      "original_path": "web/rest/client/features/provider/retailAccount/postRetailAccount.feature",
+      "size": 725,
+      "sha": "2caeadc28a6ebec882d5641e204cc24cdcb55e86"
+    },
+    {
+      "name": "putRetailAccount_1.feature",
+      "original_path": "web/rest/client/features/provider/retailAccount/putRetailAccount.feature",
+      "size": 4251,
+      "sha": "6d152813d0a66ce614e3ca622f011fa475e578ee"
+    },
+    {
+      "name": "removeRetailAccount_1.feature",
+      "original_path": "web/rest/client/features/provider/retailAccount/removeRetailAccount.feature",
+      "size": 481,
+      "sha": "839e3ed031452ec3fcbfe44afc4129e4aea688b7"
+    },
+    {
+      "name": "getRouteLock.feature",
+      "original_path": "web/rest/client/features/provider/routeLock/getRouteLock.feature",
+      "size": 1803,
+      "sha": "f0fbd345ffe19c8ce4ee8202fa7045fa388c8508"
+    },
+    {
+      "name": "postRouteLock.feature",
+      "original_path": "web/rest/client/features/provider/routeLock/postRouteLock.feature",
+      "size": 1724,
+      "sha": "f20c9bb22e7b2a752c278ded9d9e3a73dce8a017"
+    },
+    {
+      "name": "putRouteLock.feature",
+      "original_path": "web/rest/client/features/provider/routeLock/putRouteLock.feature",
+      "size": 940,
+      "sha": "0b225443b6736755cb1c53ec8c05f2ad951645d6"
+    },
+    {
+      "name": "removeRouteLock.feature",
+      "original_path": "web/rest/client/features/provider/routeLock/removeRouteLock.feature",
+      "size": 458,
+      "sha": "3aeb394451cb01250db798a956c044586de12679"
+    },
+    {
+      "name": "getRoutingTag_1.feature",
+      "original_path": "web/rest/client/features/provider/routingTag/getRoutingTag.feature",
+      "size": 1265,
+      "sha": "5289e44ab0875085c4259854c3012b554b9e5c90"
+    },
+    {
+      "name": "postRoutingTag_1.feature",
+      "original_path": "web/rest/client/features/provider/routingTag/postRoutingTag.feature",
+      "size": 575,
+      "sha": "4a33d1d7207e14c87bfd041700e9f216f80e5204"
+    },
+    {
+      "name": "putRoutingTag_1.feature",
+      "original_path": "web/rest/client/features/provider/routingTag/putRoutingTag.feature",
+      "size": 583,
+      "sha": "ec0de559e0eeae53e4679d1ea518989cca83b134"
+    },
+    {
+      "name": "removeRoutingTag_1.feature",
+      "original_path": "web/rest/client/features/provider/routingTag/removeRoutingTag.feature",
+      "size": 467,
+      "sha": "ef5af00f2452566a4722b2b168d41e65909d9e05"
+    },
+    {
+      "name": "getSchedule.feature",
+      "original_path": "web/rest/client/features/provider/schedule/getSchedule.feature",
+      "size": 2112,
+      "sha": "209deede98bc5441dd69864713cb6481a171846f"
+    },
+    {
+      "name": "postSchedule.feature",
+      "original_path": "web/rest/client/features/provider/schedule/postSchedule.feature",
+      "size": 2045,
+      "sha": "cab99a17ee733eaf2161784b94643ecead238346"
+    },
+    {
+      "name": "putSchedule.feature",
+      "original_path": "web/rest/client/features/provider/schedule/putSchedule.feature",
+      "size": 1302,
+      "sha": "30f1d115d692ab705a5eb875539cf46c2f72a424"
+    },
+    {
+      "name": "removeSchedule.feature",
+      "original_path": "web/rest/client/features/provider/schedule/removeSchedule.feature",
+      "size": 450,
+      "sha": "4ee1a9280e588ad9ef4e2f89a2406368fa8d0b29"
+    },
+    {
+      "name": "getServices.feature",
+      "original_path": "web/rest/client/features/provider/service/getServices.feature",
+      "size": 3353,
+      "sha": "c9be5f16d6cd9932994c85d4c8925bf57aaa5439"
+    },
+    {
+      "name": "getUnassignedServices_1.feature",
+      "original_path": "web/rest/client/features/provider/service/getUnassignedServices.feature",
+      "size": 2588,
+      "sha": "23ba38e99ebc287850a28b320623c45c4f045717"
+    },
+    {
+      "name": "getSurvivalDevices.feature",
+      "original_path": "web/rest/client/features/provider/survivalDevice/getSurvivalDevices.feature",
+      "size": 2118,
+      "sha": "570f42c97f502cd488995bc9702e42971dd745d4"
+    },
+    {
+      "name": "postSurvivalDevice.feature",
+      "original_path": "web/rest/client/features/provider/survivalDevice/postSurvivalDevice.feature",
+      "size": 1324,
+      "sha": "9d69cfb45db4d23702da3c68cc2e0b0bcd4819ad"
+    },
+    {
+      "name": "putSurvivalDevice.feature",
+      "original_path": "web/rest/client/features/provider/survivalDevice/putSurvivalDevice.feature",
+      "size": 1326,
+      "sha": "a92df9c7560292bce9e6f841bb3cf11489f69566"
+    },
+    {
+      "name": "removeSurvivalDevice.feature",
+      "original_path": "web/rest/client/features/provider/survivalDevice/removeSurvivalDevice.feature",
+      "size": 469,
+      "sha": "ba0ebffe6802c2f2fd7733646ef1fc825fb00f8d"
+    },
+    {
+      "name": "getTerminal_1.feature",
+      "original_path": "web/rest/client/features/provider/terminal/getTerminal.feature",
+      "size": 3297,
+      "sha": "5f705e7243f3cfb779ecb29b9c7e7a4c16e049a9"
+    },
+    {
+      "name": "getTerminalStatus_1.feature",
+      "original_path": "web/rest/client/features/provider/terminal/getTerminalStatus.feature",
+      "size": 2569,
+      "sha": "82e587076120f58b22325d792237a958928e6427"
+    },
+    {
+      "name": "getUnassignedTerminals.feature",
+      "original_path": "web/rest/client/features/provider/terminal/getUnassignedTerminals.feature",
+      "size": 2244,
+      "sha": "46297a5e413484a2a2766e6c2ea5788d84bf6281"
+    },
+    {
+      "name": "postTerminal.feature",
+      "original_path": "web/rest/client/features/provider/terminal/postTerminal.feature",
+      "size": 2349,
+      "sha": "aee995c6c2550c8bef0489e356cf3c211ce245c3"
+    },
+    {
+      "name": "putTerminal.feature",
+      "original_path": "web/rest/client/features/provider/terminal/putTerminal.feature",
+      "size": 1410,
+      "sha": "aa4a12f3fec1d0dade76c957847207a0d0e8a976"
+    },
+    {
+      "name": "removeTerminal.feature",
+      "original_path": "web/rest/client/features/provider/terminal/removeTerminal.feature",
+      "size": 450,
+      "sha": "3cfac8c18de13b030131d5e3a4a0351d0a31bbfc"
+    },
+    {
+      "name": "getTerminalModel.feature",
+      "original_path": "web/rest/client/features/provider/terminalModel/getTerminalModel.feature",
+      "size": 3087,
+      "sha": "5fdb89404afcc102e0b716e583caedede23d960c"
+    },
+    {
+      "name": "postTerminalModel.feature",
+      "original_path": "web/rest/client/features/provider/terminalModel/postTerminalModel.feature",
+      "size": 520,
+      "sha": "952a771bf99222abf9c54525748af0fa1c695112"
+    },
+    {
+      "name": "putTerminalModel.feature",
+      "original_path": "web/rest/client/features/provider/terminalModel/putTerminalModel.feature",
+      "size": 521,
+      "sha": "37071212de78f430f8af6fb8b9bb010f701b42dc"
+    },
+    {
+      "name": "removeTerminalModel.feature",
+      "original_path": "web/rest/client/features/provider/terminalModel/removeTerminalModel.feature",
+      "size": 471,
+      "sha": "07d9818844376fabb8fc208927e76f06b811b002"
+    },
+    {
+      "name": "getTimezone_1.feature",
+      "original_path": "web/rest/client/features/provider/timezone/getTimezone.feature",
+      "size": 4599,
+      "sha": "48a00377acac4f09fdc9019b7707954c4529dd5a"
+    },
+    {
+      "name": "getTransformationRuleSet_1.feature",
+      "original_path": "web/rest/client/features/provider/transformationRuleSet/getTransformationRuleSet.feature",
+      "size": 3173,
+      "sha": "a3bdbed25f05ea7612756fd11d3ba4314a4b432f"
+    },
+    {
+      "name": "getUser_1.feature",
+      "original_path": "web/rest/client/features/provider/user/getUser.feature",
+      "size": 4405,
+      "sha": "06ab62d3904fbe4e7d7a8e2a257a4758163464cf"
+    },
+    {
+      "name": "getUsersDetailed.feature",
+      "original_path": "web/rest/client/features/provider/user/getUsersDetailed.feature",
+      "size": 4195,
+      "sha": "54d15fd5b18e77596b1b4a2b0036ed8bc87a32de"
+    },
+    {
+      "name": "postUser_1.feature",
+      "original_path": "web/rest/client/features/provider/user/postUser.feature",
+      "size": 5565,
+      "sha": "1025ac2aa1e4fc9bddabb2fb8831c5bca7cf43c2"
+    },
+    {
+      "name": "putUser_1.feature",
+      "original_path": "web/rest/client/features/provider/user/putUser.feature",
+      "size": 3174,
+      "sha": "a0d5394ad04483ce4c28d2b2aa5e2c10ec6d8b87"
+    },
+    {
+      "name": "removeUser_1.feature",
+      "original_path": "web/rest/client/features/provider/user/removeUser.feature",
+      "size": 434,
+      "sha": "6095a402d005aa2f8dba624d6acf07f08f177741"
+    },
+    {
+      "name": "getUsersCdr.feature",
+      "original_path": "web/rest/client/features/provider/usersCdr/getUsersCdr.feature",
+      "size": 3949,
+      "sha": "8a1ce02de09b6dfd52eb96791857802f98718232"
+    },
+    {
+      "name": "getVoicemail.feature",
+      "original_path": "web/rest/client/features/provider/voicemail/getVoicemail.feature",
+      "size": 5153,
+      "sha": "eb03484605b6aaa7ef0e39f8aedf18dd7aa774c9"
+    },
+    {
+      "name": "postVoicemail.feature",
+      "original_path": "web/rest/client/features/provider/voicemail/postVoicemail.feature",
+      "size": 3601,
+      "sha": "bce859b48aea613108c2c6f515d31d789828531d"
+    },
+    {
+      "name": "putVoicemail.feature",
+      "original_path": "web/rest/client/features/provider/voicemail/putVoicemail.feature",
+      "size": 5562,
+      "sha": "0f826ea258557ca1c3dbc949e0ea692d3b574efc"
+    },
+    {
+      "name": "removeVoicemail.feature",
+      "original_path": "web/rest/client/features/provider/voicemail/removeVoicemail.feature",
+      "size": 1446,
+      "sha": "2c1a17c00b168101be9d193e0822e0e7c049289c"
+    },
+    {
+      "name": "getVoicemailMessage.feature",
+      "original_path": "web/rest/client/features/provider/voicemailMessage/getVoicemailMessage.feature",
+      "size": 2469,
+      "sha": "af6f94717c2230f8d2d95f276af57724258cf0dd"
+    },
+    {
+      "name": "removeVoicemailMessage.feature",
+      "original_path": "web/rest/client/features/provider/voicemailMessage/removeVoicemailMessage.feature",
+      "size": 825,
+      "sha": "56a266bf68350378e4ea51f30b8ad2f25fdca369"
+    },
+    {
+      "name": "getVoicemailRelUsers.feature",
+      "original_path": "web/rest/client/features/provider/voicemailRelUser/getVoicemailRelUsers.feature",
+      "size": 2595,
+      "sha": "04177c6f0329aed74fa9cb4c27fbaa14ec524f1a"
+    },
+    {
+      "name": "postVoicemailRelUsers.feature",
+      "original_path": "web/rest/client/features/provider/voicemailRelUser/postVoicemailRelUsers.feature",
+      "size": 2907,
+      "sha": "f115be80e1864a1647b181c5df9864de615cd8ed"
+    },
+    {
+      "name": "removeVoicemailRelUsers.feature",
+      "original_path": "web/rest/client/features/provider/voicemailRelUser/removeVoicemailRelUsers.feature",
+      "size": 490,
+      "sha": "51a5ef0d0236993c7c0b5c7c2331614e10898028"
+    },
+    {
+      "name": "getWebPortal_1.feature",
+      "original_path": "web/rest/client/features/provider/webPortal/getWebPortal.feature",
+      "size": 1415,
+      "sha": "35f722ebadfa34d7cd4ff0ecad42b19bb04c7749"
+    },
+    {
+      "name": "auth_2.feature",
+      "original_path": "web/rest/platform/features/auth.feature",
+      "size": 1198,
+      "sha": "13e3934d3f269b48deafa5646060716e99741c44"
+    },
+    {
+      "name": "getRtpengine.feature",
+      "original_path": "web/rest/platform/features/kam/rtpengine/getRtpengine.feature",
+      "size": 1597,
+      "sha": "5dfe31d2e550e4207af1906ea7fd4b45224b5c1f"
+    },
+    {
+      "name": "postRtpengine.feature",
+      "original_path": "web/rest/platform/features/kam/rtpengine/postRtpengine.feature",
+      "size": 1971,
+      "sha": "bee6e7eb4bb37f5347143ca825b9fa1508e0f273"
+    },
+    {
+      "name": "putRtpengine.feature",
+      "original_path": "web/rest/platform/features/kam/rtpengine/putRtpengine.feature",
+      "size": 1179,
+      "sha": "4364741472a2fd4a1ce4cecf603dca3ec23ab4b5"
+    },
+    {
+      "name": "removeRtpengine.feature",
+      "original_path": "web/rest/platform/features/kam/rtpengine/removeRtpengine.feature",
+      "size": 445,
+      "sha": "ddf789a2c5401f8963e85df13efc60122171c7a0"
+    },
+    {
+      "name": "getActiveCalls_2.feature",
+      "original_path": "web/rest/platform/features/my/activeCalls/getActiveCalls.feature",
+      "size": 1112,
+      "sha": "7285190c9b0a6002876bc757aa1f6d087296fcd3"
+    },
+    {
+      "name": "getActiveCallsFilters_2.feature",
+      "original_path": "web/rest/platform/features/my/activeCalls/getActiveCallsFilters.feature",
+      "size": 4863,
+      "sha": "cec4ad34195809e3e23fbfce0cef4d036950c6a6"
+    },
+    {
+      "name": "getDashboard_2.feature",
+      "original_path": "web/rest/platform/features/my/dashboard/getDashboard.feature",
+      "size": 1457,
+      "sha": "708d55cb18594eb73389a41e46e32f40bd468958"
+    },
+    {
+      "name": "getProfile_2.feature",
+      "original_path": "web/rest/platform/features/my/profile/getProfile.feature",
+      "size": 6642,
+      "sha": "871788b09c335c972d9bab91e165fac7724fd358"
+    },
+    {
+      "name": "getLogo_2.feature",
+      "original_path": "web/rest/platform/features/my/theme/getLogo.feature",
+      "size": 262,
+      "sha": "4d56530af48b705cdf9a101351ae8d358b0c6fd0"
+    },
+    {
+      "name": "getWebTheme_2.feature",
+      "original_path": "web/rest/platform/features/my/theme/getWebTheme.feature",
+      "size": 1392,
+      "sha": "2798631444726838597b08a7bd358d08b3932fec"
+    },
+    {
+      "name": "pagination.feature",
+      "original_path": "web/rest/platform/features/pagination.feature",
+      "size": 1858,
+      "sha": "97fa0a7dcea0c3cf1fa5a9cda097668d09ed6bf6"
+    },
+    {
+      "name": "getAdministrators_1.feature",
+      "original_path": "web/rest/platform/features/provider/administrator/getAdministrators.feature",
+      "size": 3955,
+      "sha": "d06d30575aa8e5e513fcbe3d299533b97681cd88"
+    },
+    {
+      "name": "postAdministratorMassUpdateAcl_1.feature",
+      "original_path": "web/rest/platform/features/provider/administrator/postAdministratorMassUpdateAcl.feature",
+      "size": 1615,
+      "sha": "8056c6315c3c97fd5c4282aadc6c4656da194cee"
+    },
+    {
+      "name": "postAdministrators_1.feature",
+      "original_path": "web/rest/platform/features/provider/administrator/postAdministrators.feature",
+      "size": 2497,
+      "sha": "e351312a7589608accb3efa2c6e7ea1ca0c5d58e"
+    },
+    {
+      "name": "putAdministrators_1.feature",
+      "original_path": "web/rest/platform/features/provider/administrator/putAdministrators.feature",
+      "size": 1837,
+      "sha": "779f909063d8a5c62fffe3da968376aa653e708c"
+    },
+    {
+      "name": "removeAdministrators_1.feature",
+      "original_path": "web/rest/platform/features/provider/administrator/removeAdministrators.feature",
+      "size": 800,
+      "sha": "41a38ea649d55db9dea61d4d23a498b0fd91733f"
+    },
+    {
+      "name": "getAdministratorRelPublicEntities_1.feature",
+      "original_path": "web/rest/platform/features/provider/administratorRelPublicEntities/getAdministratorRelPublicEntities.feature",
+      "size": 5910,
+      "sha": "01c06ce4a0fbd656b2cddc25a28f58b196a1e195"
+    },
+    {
+      "name": "postAdministratorRelPublicEntities_1.feature",
+      "original_path": "web/rest/platform/features/provider/administratorRelPublicEntities/postAdministratorRelPublicEntities.feature",
+      "size": 786,
+      "sha": "0f9d0563739ebe8e14b3d86e4f11d437542c48a8"
+    },
+    {
+      "name": "putAdministratorRelPublicEntities_1.feature",
+      "original_path": "web/rest/platform/features/provider/administratorRelPublicEntities/putAdministratorRelPublicEntities.feature",
+      "size": 1134,
+      "sha": "123103ba60dd617e51bcf18661007c3a3d07445b"
+    },
+    {
+      "name": "removeAdministratorRelPublicEntities_1.feature",
+      "original_path": "web/rest/platform/features/provider/administratorRelPublicEntities/removeAdministratorRelPublicEntities.feature",
+      "size": 538,
+      "sha": "64bcc537e05c1a8b4a218750260e45594a11379e"
+    },
+    {
+      "name": "getApplicationServer.feature",
+      "original_path": "web/rest/platform/features/provider/applicationServer/getApplicationServer.feature",
+      "size": 1620,
+      "sha": "b7b350ff88eeaff98f224376bfc9464b73de9a82"
+    },
+    {
+      "name": "postApplicationServer.feature",
+      "original_path": "web/rest/platform/features/provider/applicationServer/postApplicationServer.feature",
+      "size": 1396,
+      "sha": "3294c8ca160785468449d9e9b31a7f245edaa737"
+    },
+    {
+      "name": "putApplicationServer.feature",
+      "original_path": "web/rest/platform/features/provider/applicationServer/putApplicationServer.feature",
+      "size": 874,
+      "sha": "544d5adb8367883a70546e8d1a696b68a090e341"
+    },
+    {
+      "name": "removeApplicationServer.feature",
+      "original_path": "web/rest/platform/features/provider/applicationServer/removeApplicationServer.feature",
+      "size": 1109,
+      "sha": "621cb67a5c84b45ef4181bc2edf316b3473b922e"
+    },
+    {
+      "name": "getApplicationServerSet.feature",
+      "original_path": "web/rest/platform/features/provider/applicationServerSet/getApplicationServerSet.feature",
+      "size": 2581,
+      "sha": "89b3315b1c63309af49e5c139972f7f32b2e003a"
+    },
+    {
+      "name": "postApplicationServerSet.feature",
+      "original_path": "web/rest/platform/features/provider/applicationServerSet/postApplicationServerSet.feature",
+      "size": 1172,
+      "sha": "146b96ddea77e26a59f80bc70025d5d28dc3ea70"
+    },
+    {
+      "name": "putApplicationServerSet.feature",
+      "original_path": "web/rest/platform/features/provider/applicationServerSet/putApplicationServerSet.feature",
+      "size": 4008,
+      "sha": "d9b7f94c3b676f40becf256ce811912dbc612f62"
+    },
+    {
+      "name": "removeApplicationServerSet.feature",
+      "original_path": "web/rest/platform/features/provider/applicationServerSet/removeApplicationServerSet.feature",
+      "size": 852,
+      "sha": "6d50a1f302e5e74e3baca881914de8daada04cee"
+    },
+    {
+      "name": "getBannedAddress_1.feature",
+      "original_path": "web/rest/platform/features/provider/bannedAddress/getBannedAddress.feature",
+      "size": 1458,
+      "sha": "00e4f046ca4b30246026f439558de89855ccb9d9"
+    },
+    {
+      "name": "postBannedAddress_1.feature",
+      "original_path": "web/rest/platform/features/provider/bannedAddress/postBannedAddress.feature",
+      "size": 527,
+      "sha": "0a3b695b383630219159447995ec4fe57fd57284"
+    },
+    {
+      "name": "putBannedAddress_1.feature",
+      "original_path": "web/rest/platform/features/provider/bannedAddress/putBannedAddress.feature",
+      "size": 513,
+      "sha": "f1a9c6e57538a9402d35c66ff0cc6c984ea28a46"
+    },
+    {
+      "name": "removeBannedAddress_1.feature",
+      "original_path": "web/rest/platform/features/provider/bannedAddress/removeBannedAddress.feature",
+      "size": 468,
+      "sha": "00b01047d30a03b771ca7ac48a72002555923045"
+    },
+    {
+      "name": "getBillableCalls_1.feature",
+      "original_path": "web/rest/platform/features/provider/billableCalls/getBillableCalls.feature",
+      "size": 19084,
+      "sha": "1d91208479d79177025ac72ea157197c69310b90"
+    },
+    {
+      "name": "postBillableCalls_1.feature",
+      "original_path": "web/rest/platform/features/provider/billableCalls/postBillableCalls.feature",
+      "size": 397,
+      "sha": "335627097f67708db9a5856aca772ee993b9ba86"
+    },
+    {
+      "name": "putBillableCalls_1.feature",
+      "original_path": "web/rest/platform/features/provider/billableCalls/putBillableCalls.feature",
+      "size": 1834,
+      "sha": "4bf4715eeb6efe658784466d4c1d29061fbe510a"
+    },
+    {
+      "name": "removeBillableCalls_1.feature",
+      "original_path": "web/rest/platform/features/provider/billableCalls/removeBillableCalls.feature",
+      "size": 362,
+      "sha": "b1a5296f70bfb4fa3de2f844e7222e9c719737ac"
+    },
+    {
+      "name": "getBrands_1.feature",
+      "original_path": "web/rest/platform/features/provider/brand/getBrands.feature",
+      "size": 4987,
+      "sha": "cd700809c67b0cc0a917276763fac35a8f3ffd14"
+    },
+    {
+      "name": "postBrands_1.feature",
+      "original_path": "web/rest/platform/features/provider/brand/postBrands.feature",
+      "size": 11730,
+      "sha": "28d092fdcde05c07b517c8def797c96a7bc30d35"
+    },
+    {
+      "name": "putBrands_1.feature",
+      "original_path": "web/rest/platform/features/provider/brand/putBrands.feature",
+      "size": 6735,
+      "sha": "b5ee31f847754315c904b6ad92763ead8c376f44"
+    },
+    {
+      "name": "removeBrands_1.feature",
+      "original_path": "web/rest/platform/features/provider/brand/removeBrands.feature",
+      "size": 429,
+      "sha": "f5e1803c07c70e1042945c52d57bfa91dd7cc6fb"
+    },
+    {
+      "name": "getBrandService_1.feature",
+      "original_path": "web/rest/platform/features/provider/brandService/getBrandService.feature",
+      "size": 2021,
+      "sha": "87965a904e6fb36a0ab251a7b33852dc492cbaa9"
+    },
+    {
+      "name": "postBrandService_1.feature",
+      "original_path": "web/rest/platform/features/provider/brandService/postBrandService.feature",
+      "size": 1872,
+      "sha": "eebaf4a2f022969f4a3f3c32b6b1c68324b13711"
+    },
+    {
+      "name": "putBrandService_1.feature",
+      "original_path": "web/rest/platform/features/provider/brandService/putBrandService.feature",
+      "size": 862,
+      "sha": "d814d3292e02e7fedc3d5c2b3b2dd2958822a457"
+    },
+    {
+      "name": "removeBrandService_1.feature",
+      "original_path": "web/rest/platform/features/provider/brandService/removeBrandService.feature",
+      "size": 453,
+      "sha": "b5c8151fa454f49d29e57bee43505bc07498509e"
+    },
+    {
+      "name": "getCarrier_1.feature",
+      "original_path": "web/rest/platform/features/provider/carrier/getCarrier.feature",
+      "size": 1001,
+      "sha": "95363e8262d72533c3ef11b5db55cde01d094281"
+    },
+    {
+      "name": "postCarrier_1.feature",
+      "original_path": "web/rest/platform/features/provider/carrier/postCarrier.feature",
+      "size": 618,
+      "sha": "2d2e5e5b2c1cc6adcee08ad4342f70c27887999a"
+    },
+    {
+      "name": "putCarrier_1.feature",
+      "original_path": "web/rest/platform/features/provider/carrier/putCarrier.feature",
+      "size": 599,
+      "sha": "0f3a13a19944e0ca65771ddca2f34d302f6663e7"
+    },
+    {
+      "name": "removeCarrier_1.feature",
+      "original_path": "web/rest/platform/features/provider/carrier/removeCarrier.feature",
+      "size": 437,
+      "sha": "f9e407e0103fba04c732e17ba0b588b7ec05833a"
+    },
+    {
+      "name": "getCompany_1.feature",
+      "original_path": "web/rest/platform/features/provider/company/getCompany.feature",
+      "size": 3417,
+      "sha": "d8b8b009f03f7dd178c64e0775c0dba77a676b43"
+    },
+    {
+      "name": "postCompany.feature",
+      "original_path": "web/rest/platform/features/provider/company/postCompany.feature",
+      "size": 838,
+      "sha": "7e1bdd6d710cab5cfcbc63711715a1ea4b44f450"
+    },
+    {
+      "name": "putCompany.feature",
+      "original_path": "web/rest/platform/features/provider/company/putCompany.feature",
+      "size": 794,
+      "sha": "05f76e0973675fd3f67b42b1608d521de6220395"
+    },
+    {
+      "name": "removeCompany.feature",
+      "original_path": "web/rest/platform/features/provider/company/removeCompany.feature",
+      "size": 445,
+      "sha": "933df7e7b9cedaa3cfcbfbaa79639a6985e32589"
+    },
+    {
+      "name": "getCountry_2.feature",
+      "original_path": "web/rest/platform/features/provider/country/getCountry.feature",
+      "size": 11022,
+      "sha": "8e28ad71a8e770cc563f72e938b74ad4b4375b10"
+    },
+    {
+      "name": "getCurrency_1.feature",
+      "original_path": "web/rest/platform/features/provider/currency/getCurrency.feature",
+      "size": 2087,
+      "sha": "eabc2ed33c08676bf3f3b44fa2b6d6b8c47d02b0"
+    },
+    {
+      "name": "postCurrency.feature",
+      "original_path": "web/rest/platform/features/provider/currency/postCurrency.feature",
+      "size": 1202,
+      "sha": "d3a8ce615d20e2cbdbb807f89575a5e0018a1285"
+    },
+    {
+      "name": "putCurrency.feature",
+      "original_path": "web/rest/platform/features/provider/currency/putCurrency.feature",
+      "size": 1164,
+      "sha": "3c40afaa1abe5772d4b3fa7cd702a7c6a92bfddc"
+    },
+    {
+      "name": "removeCurrency.feature",
+      "original_path": "web/rest/platform/features/provider/currency/removeCurrency.feature",
+      "size": 448,
+      "sha": "9e57acf23e9bc319b1d239cc9efa38a44dac78b3"
+    },
+    {
+      "name": "getDdiProvider_1.feature",
+      "original_path": "web/rest/platform/features/provider/ddiProvider/getDdiProvider.feature",
+      "size": 944,
+      "sha": "7e8f7a1d260184db33cb1dc723140d094d66867b"
+    },
+    {
+      "name": "postDdiProvider_1.feature",
+      "original_path": "web/rest/platform/features/provider/ddiProvider/postDdiProvider.feature",
+      "size": 659,
+      "sha": "79b75b5d3966b914d8d1b999fe7f6c4e56e509b7"
+    },
+    {
+      "name": "putDdiProvider_1.feature",
+      "original_path": "web/rest/platform/features/provider/ddiProvider/putDdiProvider.feature",
+      "size": 665,
+      "sha": "186ac3a558939ba559d2ba3c1ae4d49fb575a461"
+    },
+    {
+      "name": "removeDdiProvider_1.feature",
+      "original_path": "web/rest/platform/features/provider/ddiProvider/removeDdiProvider.feature",
+      "size": 457,
+      "sha": "cd0f3504a23577c03d3bee6dce77b0d70338f307"
+    },
+    {
+      "name": "getDomains_2.feature",
+      "original_path": "web/rest/platform/features/provider/domain/getDomains.feature",
+      "size": 2003,
+      "sha": "6989e9363c1388ea4c63827244de20958a3d2d07"
+    },
+    {
+      "name": "postDomains_2.feature",
+      "original_path": "web/rest/platform/features/provider/domain/postDomains.feature",
+      "size": 624,
+      "sha": "496f5d642f0e5541123efe67d6b0a425bba9b910"
+    },
+    {
+      "name": "putDomains_2.feature",
+      "original_path": "web/rest/platform/features/provider/domain/putDomains.feature",
+      "size": 493,
+      "sha": "3340ac10dec2a903ae6109e3fc9488f8d004f93b"
+    },
+    {
+      "name": "removeDomains_2.feature",
+      "original_path": "web/rest/platform/features/provider/domain/removeDomains.feature",
+      "size": 436,
+      "sha": "445268b53fd5dcc3a5eb571dfcc1e7bed8c841f8"
+    },
+    {
+      "name": "getFeatures_1.feature",
+      "original_path": "web/rest/platform/features/provider/features/getFeatures.feature",
+      "size": 3378,
+      "sha": "40c16bfe8cb2820fd04827f93949bf374d6ef743"
+    },
+    {
+      "name": "postFeatures.feature",
+      "original_path": "web/rest/platform/features/provider/features/postFeatures.feature",
+      "size": 1704,
+      "sha": "7d92d746d075c601cde87b89b0fd78e94f55a94e"
+    },
+    {
+      "name": "putFeatures.feature",
+      "original_path": "web/rest/platform/features/provider/features/putFeatures.feature",
+      "size": 1071,
+      "sha": "52f5b36b561a736089aaef36a508bca48c06f6af"
+    },
+    {
+      "name": "removeFeatures.feature",
+      "original_path": "web/rest/platform/features/provider/features/removeFeatures.feature",
+      "size": 438,
+      "sha": "ec9040faef9681d79723876a29f0df4e25a13967"
+    },
+    {
+      "name": "getFeaturesRelBrand_1.feature",
+      "original_path": "web/rest/platform/features/provider/featuresRelBrand/getFeaturesRelBrand.feature",
+      "size": 3006,
+      "sha": "45b43db51fa788442e548b1a3df44d87aaf77d1b"
+    },
+    {
+      "name": "postFeaturesRelBrand_1.feature",
+      "original_path": "web/rest/platform/features/provider/featuresRelBrand/postFeaturesRelBrand.feature",
+      "size": 2522,
+      "sha": "17e93b68de97360843f08844c48a44a40dc9b35c"
+    },
+    {
+      "name": "putFeaturesRelBrand_1.feature",
+      "original_path": "web/rest/platform/features/provider/featuresRelBrand/putFeaturesRelBrand.feature",
+      "size": 585,
+      "sha": "071f8eca4c2d4df133aeba9e89ae35dda0499e0e"
+    },
+    {
+      "name": "removeFeaturesRelBrand_1.feature",
+      "original_path": "web/rest/platform/features/provider/featuresRelBrand/removeFeaturesRelBrand.feature",
+      "size": 1168,
+      "sha": "68cefdd00dd01a4730aab625d8f9c38cbee7af56"
+    },
+    {
+      "name": "getInvoices.feature",
+      "original_path": "web/rest/platform/features/provider/invoice/getInvoices.feature",
+      "size": 902,
+      "sha": "bc638bc00c61cf09765b2162614742c8906c4fe7"
+    },
+    {
+      "name": "postInvoices.feature",
+      "original_path": "web/rest/platform/features/provider/invoice/postInvoices.feature",
+      "size": 517,
+      "sha": "0016fb84e35d526a5a60f03ede5770e15a4f3912"
+    },
+    {
+      "name": "putInvoices.feature",
+      "original_path": "web/rest/platform/features/provider/invoice/putInvoices.feature",
+      "size": 520,
+      "sha": "41cea15f8ec1e19861de0afd5a7197a5dcd1398c"
+    },
+    {
+      "name": "removeInvoices.feature",
+      "original_path": "web/rest/platform/features/provider/invoice/removeInvoices.feature",
+      "size": 437,
+      "sha": "63cb7d5efb9a36769bfde62e04bca93b8f591f48"
+    },
+    {
+      "name": "getInvoiceTemplate_1.feature",
+      "original_path": "web/rest/platform/features/provider/invoiceTemplate/getInvoiceTemplate.feature",
+      "size": 2980,
+      "sha": "a1699544480ce87683dcc83ee88e37b8977e6dfe"
+    },
+    {
+      "name": "getInvoiceTemplatePreview_1.feature",
+      "original_path": "web/rest/platform/features/provider/invoiceTemplate/getInvoiceTemplatePreview.feature",
+      "size": 431,
+      "sha": "790e9e7707209d61b7a946d523b564e529771720"
+    },
+    {
+      "name": "postInvoiceTemplate_1.feature",
+      "original_path": "web/rest/platform/features/provider/invoiceTemplate/postInvoiceTemplate.feature",
+      "size": 1928,
+      "sha": "4adcfc4aea08c300fa50c4cb47c1e87aa63daa99"
+    },
+    {
+      "name": "putInvoiceTemplate_1.feature",
+      "original_path": "web/rest/platform/features/provider/invoiceTemplate/putInvoiceTemplate.feature",
+      "size": 1245,
+      "sha": "3ddd1082637a1adc42f9c566077a67c1f9a86547"
+    },
+    {
+      "name": "removeInvoiceTemplate_1.feature",
+      "original_path": "web/rest/platform/features/provider/invoiceTemplate/removeInvoiceTemplate.feature",
+      "size": 474,
+      "sha": "62d544468f426bb1a170e8f174ff6d9892130035"
+    },
+    {
+      "name": "getLanguage_2.feature",
+      "original_path": "web/rest/platform/features/provider/language/getLanguage.feature",
+      "size": 2155,
+      "sha": "e75a03b189f3b79d1acfa8c3c69bba4fdfc0b3df"
+    },
+    {
+      "name": "getMediaRelaySet.feature",
+      "original_path": "web/rest/platform/features/provider/mediaRelaySet/getMediaRelaySet.feature",
+      "size": 1580,
+      "sha": "70280f63068f96f8c5c0bc06fc5170538049e224"
+    },
+    {
+      "name": "postMediaRelaySet.feature",
+      "original_path": "web/rest/platform/features/provider/mediaRelaySet/postMediaRelaySet.feature",
+      "size": 1427,
+      "sha": "89894568e102c2dc665c1975827697d698393d72"
+    },
+    {
+      "name": "putMediaRelaySet.feature",
+      "original_path": "web/rest/platform/features/provider/mediaRelaySet/putMediaRelaySet.feature",
+      "size": 1368,
+      "sha": "76f15c9ebff8fbd0f47276e219667b7bfc0d2c6c"
+    },
+    {
+      "name": "removeMediaRelaySet.feature",
+      "original_path": "web/rest/platform/features/provider/mediaRelaySet/removeMediaRelaySet.feature",
+      "size": 1072,
+      "sha": "1e1c12daaf26672c7fe44d8909b8530d1f78f78d"
+    },
+    {
+      "name": "getNotificationTemplate_1.feature",
+      "original_path": "web/rest/platform/features/provider/notificationTemplate/getNotificationTemplate.feature",
+      "size": 1752,
+      "sha": "95b488a42c0270bc1500095b884e90520467f73b"
+    },
+    {
+      "name": "postNotificationTemplate_1.feature",
+      "original_path": "web/rest/platform/features/provider/notificationTemplate/postNotificationTemplate.feature",
+      "size": 608,
+      "sha": "90c4751d3708b6681e4a0dcd65794a759a25911d"
+    },
+    {
+      "name": "putNotificationTemplate_1.feature",
+      "original_path": "web/rest/platform/features/provider/notificationTemplate/putNotificationTemplate.feature",
+      "size": 615,
+      "sha": "ae5f6955967c54771169ac5a73dd147af6ba9a4e"
+    },
+    {
+      "name": "removeNotificationTemplate_1.feature",
+      "original_path": "web/rest/platform/features/provider/notificationTemplate/removeNotificationTemplate.feature",
+      "size": 500,
+      "sha": "cb44162957a659d4cbeeb8840a454e960299ef72"
+    },
+    {
+      "name": "getNotificationTemplateContent_1.feature",
+      "original_path": "web/rest/platform/features/provider/notificationTemplateContent/getNotificationTemplateContent.feature",
+      "size": 1971,
+      "sha": "6dabb9c7484173633f5ebf2c84add7baf1bc919f"
+    },
+    {
+      "name": "postNotificationTemplateContent_1.feature",
+      "original_path": "web/rest/platform/features/provider/notificationTemplateContent/postNotificationTemplateContent.feature",
+      "size": 689,
+      "sha": "017bdef0b7c1e604b660ef018a417deaa1507c12"
+    },
+    {
+      "name": "putNotificationTemplateContent_1.feature",
+      "original_path": "web/rest/platform/features/provider/notificationTemplateContent/putNotificationTemplateContent.feature",
+      "size": 1207,
+      "sha": "a46c0133ba9d0623af714b89d5554e024c81b96b"
+    },
+    {
+      "name": "removeNotificationTemplateContent_1.feature",
+      "original_path": "web/rest/platform/features/provider/notificationTemplateContent/removeNotificationTemplateContent.feature",
+      "size": 532,
+      "sha": "be6cbd305be64e1ea9415b222fe5cf4d8293068a"
+    },
+    {
+      "name": "getProxyTrunk_1.feature",
+      "original_path": "web/rest/platform/features/provider/proxyTrunk/getProxyTrunk.feature",
+      "size": 1656,
+      "sha": "8b016d87c3772a10219588ccdb36ff7d14eb24a3"
+    },
+    {
+      "name": "postProxyTrunk.feature",
+      "original_path": "web/rest/platform/features/provider/proxyTrunk/postProxyTrunk.feature",
+      "size": 1505,
+      "sha": "072d1ef41c62da4b71478f212ae532ccf6882d65"
+    },
+    {
+      "name": "putProxyTrunk.feature",
+      "original_path": "web/rest/platform/features/provider/proxyTrunk/putProxyTrunk.feature",
+      "size": 2091,
+      "sha": "65b5aac24d7e0c426cb7ac59a4f6b94bb72da0bd"
+    },
+    {
+      "name": "removeProxyTrunk.feature",
+      "original_path": "web/rest/platform/features/provider/proxyTrunk/removeProxyTrunk.feature",
+      "size": 828,
+      "sha": "2c6a3c37596c7beed9a20dec9aebfd7317879ebf"
+    },
+    {
+      "name": "getProxyTrunkRelBrand.feature",
+      "original_path": "web/rest/platform/features/provider/proxyTrunkRelBrand/getProxyTrunkRelBrand.feature",
+      "size": 3545,
+      "sha": "97cd4364a6ba5eb15dce1b45d62e8ea0bf55d0a7"
+    },
+    {
+      "name": "postProxyTrunkRelBrand.feature",
+      "original_path": "web/rest/platform/features/provider/proxyTrunkRelBrand/postProxyTrunkRelBrand.feature",
+      "size": 2469,
+      "sha": "21683fb2d51e94db26e187b5b560c570b15ba8ef"
+    },
+    {
+      "name": "putProxyTrunkRelBrand.feature",
+      "original_path": "web/rest/platform/features/provider/proxyTrunkRelBrand/putProxyTrunkRelBrand.feature",
+      "size": 864,
+      "sha": "40c5c04ad5d48136f2f36984812f0002a6f57187"
+    },
+    {
+      "name": "removeProxyTrunkRelBrand.feature",
+      "original_path": "web/rest/platform/features/provider/proxyTrunkRelBrand/removeProxyTrunkRelBrand.feature",
+      "size": 512,
+      "sha": "e1b79a40de3ea8dddd1885e5023f06c7cf899548"
+    },
+    {
+      "name": "getProxyUser.feature",
+      "original_path": "web/rest/platform/features/provider/proxyUser/getProxyUser.feature",
+      "size": 1485,
+      "sha": "28faadd8de8a9802aa7c0259df1fc2e17f07aa91"
+    },
+    {
+      "name": "postProxyUser.feature",
+      "original_path": "web/rest/platform/features/provider/proxyUser/postProxyUser.feature",
+      "size": 1491,
+      "sha": "1ba50d88dd2aa9be6110d2f4044795e1fd40dc20"
+    },
+    {
+      "name": "putProxyUser.feature",
+      "original_path": "web/rest/platform/features/provider/proxyUser/putProxyUser.feature",
+      "size": 2144,
+      "sha": "5305396fed53121e1f4372360d461044da6ba3dd"
+    },
+    {
+      "name": "removeProxyUser.feature",
+      "original_path": "web/rest/platform/features/provider/proxyUser/removeProxyUser.feature",
+      "size": 798,
+      "sha": "247c4dd6c52ff825acb0250076781887f57fe47d"
+    },
+    {
+      "name": "getPublicEntities_1.feature",
+      "original_path": "web/rest/platform/features/provider/publicEntity/getPublicEntities.feature",
+      "size": 2999,
+      "sha": "acb7c2b834fbc517461ee2a0d80c8950d7a80af1"
+    },
+    {
+      "name": "postPublicEntities_1.feature",
+      "original_path": "web/rest/platform/features/provider/publicEntity/postPublicEntities.feature",
+      "size": 876,
+      "sha": "70d271b3473255f0338231e62bf3479791813002"
+    },
+    {
+      "name": "putPublicEntities_1.feature",
+      "original_path": "web/rest/platform/features/provider/publicEntity/putPublicEntities.feature",
+      "size": 878,
+      "sha": "62472da27166cf372fcf5dc1ac6997229f38ab26"
+    },
+    {
+      "name": "removePublicEntities_1.feature",
+      "original_path": "web/rest/platform/features/provider/publicEntity/removePublicEntities.feature",
+      "size": 464,
+      "sha": "257dea7ad4d283b68dcf29c3c41bce7c3b1783be"
+    },
+    {
+      "name": "getService_1.feature",
+      "original_path": "web/rest/platform/features/provider/service/getService.feature",
+      "size": 3818,
+      "sha": "9ba96631d84d4ef79eb2f752afc64127880868e9"
+    },
+    {
+      "name": "putService_1.feature",
+      "original_path": "web/rest/platform/features/provider/service/putService.feature",
+      "size": 1926,
+      "sha": "df125edebcc9e840d5c4f325be621a059d0be8a9"
+    },
+    {
+      "name": "getSpecialNumber_1.feature",
+      "original_path": "web/rest/platform/features/provider/specialNumber/getSpecialNumber.feature",
+      "size": 1759,
+      "sha": "de1477b206cb950079a224b6f9cae29ea12b51bb"
+    },
+    {
+      "name": "postSpecialNumber_1.feature",
+      "original_path": "web/rest/platform/features/provider/specialNumber/postSpecialNumber.feature",
+      "size": 1889,
+      "sha": "00476e422acadf68f694983f93cbdfcdecae0f17"
+    },
+    {
+      "name": "putSpecialNumber_1.feature",
+      "original_path": "web/rest/platform/features/provider/specialNumber/putSpecialNumber.feature",
+      "size": 889,
+      "sha": "0f90d2c9896c8e0887fecd7507ee41d8916bff2c"
+    },
+    {
+      "name": "removeSpecialNumber_1.feature",
+      "original_path": "web/rest/platform/features/provider/specialNumber/removeSpecialNumber.feature",
+      "size": 466,
+      "sha": "84cc8d9e8cedb29b8f9013dd6ae40b7f5f472368"
+    },
+    {
+      "name": "getTerminalManufacturer.feature",
+      "original_path": "web/rest/platform/features/provider/terminalManufacturer/getTerminalManufacturer.feature",
+      "size": 1914,
+      "sha": "869bed74c3e5700a3116c5d73661279df5a69912"
+    },
+    {
+      "name": "postTerminalManufacturer.feature",
+      "original_path": "web/rest/platform/features/provider/terminalManufacturer/postTerminalManufacturer.feature",
+      "size": 1591,
+      "sha": "a2056ef5b5060af6fa9308b115f815a4d0a3202f"
+    },
+    {
+      "name": "putTerminalManufacturer.feature",
+      "original_path": "web/rest/platform/features/provider/terminalManufacturer/putTerminalManufacturer.feature",
+      "size": 1048,
+      "sha": "22861504d05daaab61a58ae767ec2fa5a2feb5dd"
+    },
+    {
+      "name": "removeTerminalManufacturer.feature",
+      "original_path": "web/rest/platform/features/provider/terminalManufacturer/removeTerminalManufacturer.feature",
+      "size": 494,
+      "sha": "f263e3af5b4c620a093ab98ac938fdfd7ef90e87"
+    },
+    {
+      "name": "getTerminalModel_1.feature",
+      "original_path": "web/rest/platform/features/provider/terminalModel/getTerminalModel.feature",
+      "size": 3440,
+      "sha": "7599de7acd88b60b014e2fb4b219647ef68e15e9"
+    },
+    {
+      "name": "getTerminalModelDefaultTemplate.feature",
+      "original_path": "web/rest/platform/features/provider/terminalModel/getTerminalModelDefaultTemplate.feature",
+      "size": 1150,
+      "sha": "8b28476f7be89cfd0b7bbc2e3ada6960da4d08c9"
+    },
+    {
+      "name": "getTerminalModelGenericTemplate.feature",
+      "original_path": "web/rest/platform/features/provider/terminalModel/getTerminalModelGenericTemplate.feature",
+      "size": 1315,
+      "sha": "8eb59d2a225d3773af2be3277fa4aed972cf1d33"
+    },
+    {
+      "name": "getTerminalModelSpecificTemplate.feature",
+      "original_path": "web/rest/platform/features/provider/terminalModel/getTerminalModelSpecificTemplate.feature",
+      "size": 1057,
+      "sha": "57be701acfc107e055d24918247c4b35e8fb2ea0"
+    },
+    {
+      "name": "postTerminalModel_1.feature",
+      "original_path": "web/rest/platform/features/provider/terminalModel/postTerminalModel.feature",
+      "size": 2311,
+      "sha": "3dea7c3cfdec8f4639f71cfa6a7875446c77e15a"
+    },
+    {
+      "name": "putTerminalModel_1.feature",
+      "original_path": "web/rest/platform/features/provider/terminalModel/putTerminalModel.feature",
+      "size": 1309,
+      "sha": "4dced8a13a98abfd8f224fce1b752e7613e19594"
+    },
+    {
+      "name": "removeTerminalModel_1.feature",
+      "original_path": "web/rest/platform/features/provider/terminalModel/removeTerminalModel.feature",
+      "size": 465,
+      "sha": "2c84f7307e007c0d57a50f87a79ae129027c7a12"
+    },
+    {
+      "name": "getTimezone_2.feature",
+      "original_path": "web/rest/platform/features/provider/timezone/getTimezone.feature",
+      "size": 5028,
+      "sha": "1ffe5ede9af4103988e2c70f85c3d5412b489698"
+    },
+    {
+      "name": "getWebPortal_2.feature",
+      "original_path": "web/rest/platform/features/provider/webPortal/getWebPortal.feature",
+      "size": 2554,
+      "sha": "e20589b75d58f9ef21ff36036198b9c386e6e0ee"
+    },
+    {
+      "name": "postWebPortal_1.feature",
+      "original_path": "web/rest/platform/features/provider/webPortal/postWebPortal.feature",
+      "size": 3441,
+      "sha": "8bed98e880e23205bb68e1de46d302a758ec80ad"
+    },
+    {
+      "name": "putWebPortal_1.feature",
+      "original_path": "web/rest/platform/features/provider/webPortal/putWebPortal.feature",
+      "size": 2635,
+      "sha": "d52f0e5def26d817401877330be0ecde5a17ad86"
+    },
+    {
+      "name": "removeWebPortal_1.feature",
+      "original_path": "web/rest/platform/features/provider/webPortal/removeWebPortal.feature",
+      "size": 449,
+      "sha": "cb75b5750e0a4b928684a2eafe8648660003ef33"
+    },
+    {
+      "name": "querystringFilters.feature",
+      "original_path": "web/rest/platform/features/querystringFilters.feature",
+      "size": 23754,
+      "sha": "ecaae5706b50a3f91f5e613f6123100dd69a5b37"
+    },
+    {
+      "name": "tzConversions.feature",
+      "original_path": "web/rest/platform/features/tzConversions.feature",
+      "size": 7147,
+      "sha": "050032b734fe14e7124c9ce658a70575cbd5ef7f"
+    },
+    {
+      "name": "auth_3.feature",
+      "original_path": "web/rest/user/features/auth.feature",
+      "size": 1525,
+      "sha": "8c62b06e2eacec0ef8bf85ec3672b4e8d9174549"
+    },
+    {
+      "name": "getCallForwardSettings.feature",
+      "original_path": "web/rest/user/features/my/call_forward_settings/getCallForwardSettings.feature",
+      "size": 4115,
+      "sha": "962b7f4b55d24b0f0405a9d018dc1d3354b948ec"
+    },
+    {
+      "name": "postCallForwardSettings.feature",
+      "original_path": "web/rest/user/features/my/call_forward_settings/postCallForwardSettings.feature",
+      "size": 1320,
+      "sha": "e9840a1e6ee18627a6a1e0eb34d604a0238a7a69"
+    },
+    {
+      "name": "getCallHistory.feature",
+      "original_path": "web/rest/user/features/my/call_history/getCallHistory.feature",
+      "size": 2758,
+      "sha": "d5f0a8419cbbbf1fefeda27674638bd84688792d"
+    },
+    {
+      "name": "getCallStats.feature",
+      "original_path": "web/rest/user/features/my/call_stats/getCallStats.feature",
+      "size": 669,
+      "sha": "e6b02d364e22b40819ed0e5b42207c750099c3e3"
+    },
+    {
+      "name": "getCompanyAssistants.feature",
+      "original_path": "web/rest/user/features/my/company_assistants/getCompanyAssistants.feature",
+      "size": 639,
+      "sha": "47a6287ef9cfc4062bfd8c7eee24ccc27330ce06"
+    },
+    {
+      "name": "getCompanyCountry.feature",
+      "original_path": "web/rest/user/features/my/company_country/getCompanyCountry.feature",
+      "size": 1014,
+      "sha": "b962af085c59ff240592d7fc05c48ecc2e116282"
+    },
+    {
+      "name": "getCompanyExtensions.feature",
+      "original_path": "web/rest/user/features/my/company_extensions/getCompanyExtensions.feature",
+      "size": 1193,
+      "sha": "7870376c21ff1323ca11616c287fef09c327e3aa"
+    },
+    {
+      "name": "getCompanyVoicemails.feature",
+      "original_path": "web/rest/user/features/my/company_voicemails/getCompanyVoicemails.feature",
+      "size": 1249,
+      "sha": "9622ed5aefc096765e83aa4c1be61cb01ac5ff0d"
+    },
+    {
+      "name": "getDashboard_3.feature",
+      "original_path": "web/rest/user/features/my/dashboard/getDashboard.feature",
+      "size": 732,
+      "sha": "c6aaa4b7000becc132f8d71fd17f1a1cb01b653a"
+    },
+    {
+      "name": "getMyLastMonthCalls.feature",
+      "original_path": "web/rest/user/features/my/last_month_calls/getMyLastMonthCalls.feature",
+      "size": 723,
+      "sha": "dae0203e6a88f8730f408fba73399cbc7b4b16ac"
+    },
+    {
+      "name": "getProfile_3.feature",
+      "original_path": "web/rest/user/features/my/profile/getProfile.feature",
+      "size": 865,
+      "sha": "def697c7b53eb4baecdd7c3985fa325724a560ec"
+    },
+    {
+      "name": "putProfile.feature",
+      "original_path": "web/rest/user/features/my/profile/putProfile.feature",
+      "size": 2656,
+      "sha": "c991aef7b811d693a48e1ca73fb6133e4987fe5e"
+    },
+    {
+      "name": "getStatus.feature",
+      "original_path": "web/rest/user/features/my/status/getStatus.feature",
+      "size": 1232,
+      "sha": "5fa99d8ef947e45321f1c67f09505b7c79fc6952"
+    },
+    {
+      "name": "getLogo_3.feature",
+      "original_path": "web/rest/user/features/my/theme/getLogo.feature",
+      "size": 267,
+      "sha": "c524e4dcb358caed73179ea1cb2952911be75539"
+    },
+    {
+      "name": "getWebTheme_3.feature",
+      "original_path": "web/rest/user/features/my/theme/getWebTheme.feature",
+      "size": 725,
+      "sha": "6de15eaffc7187f730f5959625e53e7c59073b0e"
+    },
+    {
+      "name": "getFaxes_1.feature",
+      "original_path": "web/rest/user/features/provider/faxes/getFaxes.feature",
+      "size": 1758,
+      "sha": "cde4169bcd7cd35e5be7487c2caa08581264760e"
+    },
+    {
+      "name": "getFaxesInOut_1.feature",
+      "original_path": "web/rest/user/features/provider/faxesInOut/getFaxesInOut.feature",
+      "size": 2714,
+      "sha": "327aaee667aaad649159edd3043cc33bb1452517"
+    },
+    {
+      "name": "postFaxesInOut_1.feature",
+      "original_path": "web/rest/user/features/provider/faxesInOut/postFaxesInOut.feature",
+      "size": 4130,
+      "sha": "14d00fab166a6fce4093ed5dd748518f6b336659"
+    },
+    {
+      "name": "postFaxesInOutResend_1.feature",
+      "original_path": "web/rest/user/features/provider/faxesInOut/postFaxesInOutResend.feature",
+      "size": 1269,
+      "sha": "a8ccd40026f1dc563198764872ce0d4c97cfd80c"
+    },
+    {
+      "name": "getRecording_1.feature",
+      "original_path": "web/rest/user/features/provider/recording/getRecording.feature",
+      "size": 2022,
+      "sha": "8772f9ed5ed6b0b57ea504db61a1fdb9a2536ca9"
+    },
+    {
+      "name": "getRecordingZipFiles_1.feature",
+      "original_path": "web/rest/user/features/provider/recording/getRecordingZipFiles.feature",
+      "size": 603,
+      "sha": "6cf3e6ec7d5415b19fdbab93587fa85a86c26fa2"
+    },
+    {
+      "name": "removeRecording_1.feature",
+      "original_path": "web/rest/user/features/provider/recording/removeRecording.feature",
+      "size": 443,
+      "sha": "323335ad77b8900422e9a78514f84e1894f29e6a"
+    },
+    {
+      "name": "getVoicemail_1.feature",
+      "original_path": "web/rest/user/features/provider/voicemail/getVoicemail.feature",
+      "size": 2946,
+      "sha": "8722208e4097f9f1ebaf2061a575e67acf58b972"
+    },
+    {
+      "name": "putVoicemail_1.feature",
+      "original_path": "web/rest/user/features/provider/voicemail/putVoicemail.feature",
+      "size": 1496,
+      "sha": "613c544bb9d3aa4c1d51d82df4a6afdaa57daf3c"
+    },
+    {
+      "name": "deleteVoicemailMessage.feature",
+      "original_path": "web/rest/user/features/provider/voicemail_message/deleteVoicemailMessage.feature",
+      "size": 869,
+      "sha": "2e7115133a293e96dbe08fc306d4a3748dfcd8fa"
+    },
+    {
+      "name": "getVoicemailMessage_1.feature",
+      "original_path": "web/rest/user/features/provider/voicemail_message/getVoicemailMessage.feature",
+      "size": 2218,
+      "sha": "3de7dff823d020814bfe5024817edce4a2d4a773"
+    }
+  ],
+  "status": "success"
+}

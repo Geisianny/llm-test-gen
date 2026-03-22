@@ -1,0 +1,6 @@
+Scenario 1: Browsing product association types in the store
+  Tags: ['@api', '@ui']
+  When  I want to browse product association types
+  Then  I should see 2 product association types in the list
+  And  I should see the product association type "Cross sell" in the list
+

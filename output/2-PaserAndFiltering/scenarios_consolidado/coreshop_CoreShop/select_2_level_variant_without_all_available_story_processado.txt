@@ -1,0 +1,6 @@
+Scenario 1: View product and select other variant
+  When  I click on attribute color "blue"
+  Then  attribute value "M" is disabled
+  Then  attribute value "S" is enabled
+  And  attribute color "red" is enabled
+

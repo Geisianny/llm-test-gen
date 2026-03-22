@@ -1,0 +1,61 @@
+Scenario 1: Skipping shipping checkout step
+  Tags: ['@no-api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  And  I addressed the cart
+  When  I try to open checkout complete page
+  Then  I should be on the checkout shipping step
+
+
+
+Scenario 2: Skipping payment checkout step
+  Tags: ['@no-api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  And  I addressed the cart
+  When  I want to complete the shipping step
+  And  I have selected "Free" shipping method
+  And  I complete the shipping step
+  And  I try to open checkout complete page
+  Then  I should be on the checkout payment step
+
+
+
+Scenario 3: Skipping addressing checkout step
+  Tags: ['@no-api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  And  I am at the checkout addressing step
+  When  I try to open checkout complete page
+  Then  I should be on the checkout addressing step
+
+
+
+Scenario 4: Skipping addressing checkout step when order total is zero
+  Tags: ['@no-api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  And  I have product "Paganini T-Shirt" in the cart
+  And  I am at the checkout addressing step
+  When  I try to open checkout complete page
+  Then  I should be on the checkout addressing step
+
+
+
+Scenario 5: Not being able to skip the checkout shipping selection step when order total is zero
+  Tags: ['@no-api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  And  I have product "Paganini T-Shirt" in the cart
+  And  I addressed the cart
+  When  I try to open checkout complete page
+  Then  I should be on the checkout shipping step
+
+
+
+Scenario 6: Not being able go to payment checkout step when order total is zero and payments not exists
+  Tags: ['@no-api', '@ui']
+  Given  I added product "PHP T-Shirt" to the cart
+  And  I added product "Paganini T-Shirt" to the cart
+  And  I addressed the cart
+  When  I try to open checkout complete page
+  And  I have selected "Free" shipping method
+  And  I complete the shipping step
+  And  I want to pay for order
+  Then  I should be on the checkout complete step
+

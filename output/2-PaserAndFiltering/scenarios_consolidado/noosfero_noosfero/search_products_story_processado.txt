@@ -1,0 +1,66 @@
+Scenario 1: show recent products on index
+  When  I go to the search products page
+  Then  I should see "wikis consultancy" within "#search-results"
+  And  I should see "social networks consultancy" within "#search-results"
+
+
+
+Scenario 2: show empty search results
+  When  I search products for "something unrelated"
+  Then  I should see "None" within ".search-results-type-empty"
+
+
+
+Scenario 3: show percentage (100%) of solidary economy inputs in results
+  Given  the following inputs
+  When  I go to the search products page
+  And  I fill in "search-input" with "wikis"
+  And  I follow "Search" within ".search-form"
+  Then  I should see "100%" within "div.search-product-ecosol-percentage-icon-100"
+
+
+
+Scenario 4: show percentage (50%) of solidary economy inputs in results
+  Given  the following inputs
+  When  I go to the search products page
+  And  I fill in "search-input" with "wikis"
+  And  I follow "Search" within ".search-form"
+  Then  I should see "50%" within "div.search-product-ecosol-percentage-icon-50"
+
+
+
+Scenario 5: show percentage (75%) of solidary economy inputs in results
+  Given  the following inputs
+  When  I go to the search products page
+  And  I fill in "search-input" with "wikis"
+  And  I follow "Search" within ".search-form"
+  Then  I should see "75%" within "div.search-product-ecosol-percentage-icon-75"
+
+
+
+Scenario 6: show percentage (25%) of solidary economy inputs in results
+  Given  the following inputs
+  When  I go to the search products page
+  And  I fill in "search-input" with "wikis"
+  And  I follow "Search" within ".search-form"
+  Then  I should see "25%" within "div.search-product-ecosol-percentage-icon-25"
+
+
+
+Scenario 7: find products without exact query
+  Given  the following product_category
+  And  the following products
+  When  I go to the search products page
+  And  I fill in "search-input" with "Noosfero Social"
+  And  I follow "Search" within ".search-form"
+  Then  I should see "Noosfero Social Network Platform" within "#search-results"
+
+
+
+Scenario 8: simple search for product
+  When  I go to the search products page
+  And  I fill in "search-input" with "wikis"
+  And  I follow "Search" within ".search-form"
+  Then  I should see "wikis consultancy" within "div.search-results-products"
+  And  I should not see "social networks consultancy"
+

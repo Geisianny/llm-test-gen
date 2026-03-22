@@ -1,0 +1,31 @@
+Scenario 1: 0044-LIME-064, When the LP increases its commitment and the increment is higher than its general account balance, the increments are rejected, and the old provision persists
+  Given  the fees configuration named "fees-config-1":
+  Given  the log normal risk model named "lognormal-risk-model-1":
+  And  the price monitoring named "price-monitoring-1":
+  And  the liquidity sla params named "SLA-1":
+  Given  the following assets are registered:
+  And  the following network parameters are set:
+  Given  time is updated to "2023-07-20T00:00:00Z"
+  And  the spot markets:
+  And  the following network parameters are set:
+  Given  the parties deposit on asset's general account the following amount:
+  And  the average block duration is "1"
+  Given  the liquidity monitoring parameters:
+  When  the spot markets are updated:
+  When  the parties submit the following liquidity provision:
+  And  the parties should have the following account balances:
+  Then  the network moves ahead "1" blocks
+  And  the network treasury balance should be "0" for the asset "ETH"
+  And  the party "lpprov1" lp liquidity fee account balance should be "0" for the market "BTC/ETH"
+  Then  the party "lpprov1" lp liquidity bond account balance should be "2000" for the market "BTC/ETH"
+  Then  the party "lpprov1" lp liquidity bond account balance should be "20" for the market "BTC/ETH2"
+  Then  the market data for the market "BTC/ETH" should be:
+  And  the parties place the following orders:
+  When  the network moves ahead "1" blocks
+  Then  the market data for the market "BTC/ETH" should be:
+  And  the parties should have the following account balances:
+  Then  the network moves ahead "2" blocks
+  When  the parties submit the following liquidity provision:
+  Then  the market data for the market "BTC/ETH" should be:
+  And  the network treasury balance should be "0" for the asset "ETH"
+

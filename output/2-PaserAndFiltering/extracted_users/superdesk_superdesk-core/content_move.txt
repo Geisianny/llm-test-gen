@@ -1,0 +1,191 @@
+Feature: Move or Send Content to another desk
+
+Scenario 1: Send Content from personal to another desk
+  Tags: ['@auth', '@notification']
+  Given  "desks"
+  And  "archive"
+  When  we post to "/archive/123/move"
+  Then  we get OK response
+  And  we save etag
+  And  we get notifications
+  When  we get "/archive/123?version=all"
+  Then  we get list with 1 items
+  When  we get "/archive/123"
+  Then  we get existing resource
+  Then  there is no "last_production_desk" in task
+  And  there is no "last_authoring_desk" in task
+  And  we get matching etag
+
+Scenario 2: Send Content from one desk to another desk and validate metadata set by API
+  Tags: ['@auth', '@notification']
+  Given  we have "desks" with "SPORTS_DESK_ID" and success
+  When  we post to "archive"
+  And  we get "/archive/123"
+  Then  we get existing resource
+  When  we post to "/desks" with "FINANCE_DESK_ID" and success
+  And  we switch user
+  And  we post to "/archive/123/move"
+  Then  we get OK response
+  And  we get notifications
+  When  we get "/archive/123"
+  Then  we get existing resource
+  And  there is no "last_production_desk" in task
+
+Scenario 3: Send Content from one desk to another desk with same desk_type does not change the last_production_desk and last_authoring_desk
+  Tags: ['@auth']
+  Given  we have "desks" with "SPORTS_DESK_ID" and success
+  When  we post to "archive"
+  And  we get "/archive/123"
+  Then  we get existing resource
+  When  we post to "/desks" with "FINANCE_DESK_ID" and success
+  And  we switch user
+  And  we post to "/archive/123/move"
+  Then  we get OK response
+  When  we get "/archive/123"
+  Then  we get existing resource
+  And  there is no "last_production_desk" in task
+  When  we post to "/desks" with "NATIONAL_DESK_ID" and success
+  And  we post to "/archive/123/move"
+  Then  we get OK response
+  When  we get "/archive/123"
+  Then  we get existing resource
+  And  there is no "last_production_desk" in task
+  When  we post to "/desks" with "ENTERTAINMENT_DESK_ID" and success
+  And  we post to "/archive/123/move"
+  Then  we get OK response
+  When  we get "/archive/123"
+  Then  we get existing resource
+
+Scenario 4: Send Content from one stage to another stage with same desk
+  Tags: ['@auth']
+  Given  "desks"
+  When  we post to "archive"
+  And  we post to "/stages"
+  And  we post to "/archive/123/move"
+  Then  we get OK response
+  When  we get "/archive/123"
+  Then  we get existing resource
+  And  there is no "last_authoring_desk" in task
+  And  there is no "last_production_desk" in task
+
+Scenario 5: Send Content from one stage to another stage with incoming validation rule fails
+  Tags: ['@auth', '@clean']
+  Given  "desks"
+  Given  we create a new macro "validate_headline_macro.py"
+  When  we post to "archive"
+  And  we post to "/stages"
+  And  we post to "/archive/123/move"
+  Then  we get error 400
+
+Scenario 6: Send Content from one stage to another stage with incoming rule succeeds
+  Tags: ['@auth', '@clean']
+  Given  "desks"
+  Given  we create a new macro "behave_macro.py"
+  When  we post to "archive"
+  And  we post to "/stages"
+  And  we post to "/archive/123/move"
+  Then  we get OK response
+  When  we get "/archive/123"
+  Then  we get existing resource
+
+Scenario 7: Send Content from one stage to another stage with outgoing validation rule fails
+  Tags: ['@auth', '@clean']
+  Given  "desks"
+  Given  we create a new macro "validate_headline_macro.py"
+  When  we get "/stages/#desks.incoming_stage#"
+  When  we patch "/stages/#desks.incoming_stage#"
+  When  we post to "archive"
+  And  we post to "/stages"
+  And  we post to "/archive/123/move"
+  Then  we get error 400
+
+Scenario 8: Send Content from one stage to another stage with outgoing rule succeeds
+  Tags: ['@auth', '@clean']
+  Given  "desks"
+  Given  we create a new macro "behave_macro.py"
+  When  we get "/stages/#desks.incoming_stage#"
+  When  we patch "/stages/#desks.incoming_stage#"
+  When  we post to "archive"
+  And  we post to "/stages"
+  And  we post to "/archive/123/move"
+  Then  we get OK response
+  When  we get "/archive/123"
+  Then  we get existing resource
+
+Scenario 9: Move should fail if no desk is specified
+  Tags: ['@auth']
+  Given  "archive"
+  When  we post to "/archive/123/move"
+  Then  we get error 400
+
+Scenario 10: Move should fail if desk and no stage is specified
+  Tags: ['@auth']
+  Given  "desks"
+  And  "archive"
+  When  we post to "/archive/123/move"
+  Then  we get error 400
+
+Scenario 11: Move should fail if desk and stage are same
+  Tags: ['@auth']
+  Given  "desks"
+  And  "archive"
+  When  we post to "/archive/123/move"
+  Then  we get error 412
+
+Scenario 12: Move should fail if user trying to move a published content
+  Tags: ['@auth']
+  Given  "desks"
+  And  "archive"
+  When  we post to "/desks"
+  And  we post to "/archive/123/move"
+  Then  we get response code 201
+
+Scenario 13: User can move content without a move privilege if member of the destination desk
+  Tags: ['@auth']
+  Given  "users"
+  And  "desks"
+  And  "archive"
+  When  we patch "/users/#users._id#"
+  When  we post to "/desks"
+  And  we login as user "foo" with password "bar" and user type "user"
+  And  we post to "/archive/123/move"
+  Then  we get response code 201
+
+Scenario 14: User can't move content without a move privilege if not member of the destination desk
+  Tags: ['@auth']
+  Given  "users"
+  And  "desks"
+  And  "archive"
+  When  we patch "/users/#users._id#"
+  When  we post to "/desks"
+  And  we login as user "foo" with password "bar" and user type "user"
+  And  we post to "/archive/123/move"
+  Then  we get response code 403
+
+Scenario 15: Move package with all package
+  Tags: ['@auth']
+  Given  empty "archive"
+  And  "desks"
+  Given  "archive"
+  When  we post to "archive" with success
+  When  we post to "/desks"
+  And  we post to "/archive/package-1/move"
+  Then  we get response code 201
+  When  we get "/archive/package-1"
+  Then  we get existing resource
+  When  we get "/archive/item-1"
+  Then  we get existing resource
+
+Scenario 16: Send Content from one desk to Personal desk
+  Tags: ['@auth']
+  Given  we have "desks" with "SPORTS_DESK_ID" and success
+  When  we post to "archive"
+  And  we get "/archive/123"
+  Then  we get existing resource
+  When  we post to "/desks" with "FINANCE_DESK_ID" and success
+  And  we switch user
+  And  we post to "/archive/123/move"
+  Then  we get OK response
+  When  we get "/archive/123"
+  Then  we get existing resource
+

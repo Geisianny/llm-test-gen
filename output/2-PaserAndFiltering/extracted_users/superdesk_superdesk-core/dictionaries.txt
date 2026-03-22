@@ -1,0 +1,97 @@
+Feature: Dictionaries Upload
+
+Scenario 1: Upload a new dictionary and patch it
+  Tags: ['@auth', '@notification']
+  When  we upload a new dictionary with success
+  Then  we get new resource
+  And  we get notifications
+  When  we upload to an existing dictionary with success
+  Then  we get existing resource
+  And  we get notifications
+
+Scenario 2: Update dictionary
+  Tags: ['@auth']
+  When  we upload a new dictionary with success
+  And  we patch latest
+  Then  we get updated response
+  When  we delete latest
+  Then  we get ok response
+
+Scenario 3: Update dictionary with existing name
+  Tags: ['@auth']
+  When  we upload a new dictionary with success
+  When  we post to "/dictionaries"
+  When  we patch "/dictionaries/5b4e1a6ecc3a2d6b4fda7f04"
+  Then  we get error 400
+
+Scenario 4: Create duplicate dictionary for different languages
+  Tags: ['@auth']
+  When  we upload a new dictionary with success
+  When  we upload a new dictionary with success
+
+Scenario 5: Create duplicate dictionary for the same language
+  Tags: ['@auth']
+  When  we upload a new dictionary with success
+  When  we post to "/dictionaries"
+  Then  we get error 400
+
+Scenario 6: User dictionary
+  Tags: ['@auth']
+  When  we post to "/users"
+  And  we post to "/dictionaries"
+  Then  we get new resource
+  When  we patch "/dictionaries/#dictionaries._id#"
+  Then  we get updated response
+  When  we get "/dictionaries/#dictionaries._id#"
+  Then  we get existing resource
+
+Scenario 7: Create personal duplicate dictionary for different languages
+  Tags: ['@auth']
+  When  we post to "/users"
+  And  we post to "/dictionaries"
+  Then  we get new resource
+  When  we post to "/dictionaries"
+  Then  we get new resource
+  When  we patch "/dictionaries/#dictionaries._id#"
+  Then  we get error 400
+
+Scenario 8: Create personal duplicate abbreviations dictionary for different languages
+  Tags: ['@auth']
+  When  we post to "/users"
+  And  we post to "/dictionaries"
+  Then  we get new resource
+  When  we post to "/dictionaries"
+  Then  we get new resource
+
+Scenario 9: Create personal duplicate dictionary for the same language
+  Tags: ['@auth']
+  When  we post to "/users"
+  And  we post to "/dictionaries"
+  Then  we get new resource
+  When  we post to "/dictionaries"
+  Then  we get error 400
+
+Scenario 10: Create personal duplicate abbreviations dictionary for the same language
+  Tags: ['@auth']
+  When  we post to "/users"
+  And  we post to "/dictionaries"
+  Then  we get new resource
+  When  we post to "/dictionaries"
+  Then  we get error 400
+
+Scenario 11: Create personal abbreviations dictionary without user fails
+  Tags: ['@auth']
+  When  we post to "/users"
+  And  we post to "/dictionaries"
+  Then  we get error 400
+
+Scenario 12: Create abbreviations with dotted keys (SDESK-3083)
+  Tags: ['@auth']
+  When  we post to "/users"
+  And  we post to "/dictionaries"
+  And  we get "/dictionaries/5b4e1a6ecc3a2d6b4fda7f04"
+  Then  we get existing resource
+  When  we patch latest
+  And  we get "/dictionaries/5b4e1a6ecc3a2d6b4fda7f04"
+  Then  we get existing resource
+

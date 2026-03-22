@@ -1,0 +1,30 @@
+Scenario 1: A supportconfig is taken from the server
+  When  I generate a supportconfig for the server
+  Then  I obtain and extract the supportconfig from the server
+
+
+
+Scenario 2: Execute Health Check tool with server supportconfig
+  When  I start the health check tool with supportconfig "/root/server-supportconfig/uyuni-server-supportconfig/" on "localhost"
+  Then  I check that the health check tool is running on "localhost"
+
+
+
+Scenario 3: Health Check containers are healthy and running
+  When  I wait until port "9000" is listening on "localhost" host
+  Then  I wait until port "3100" is listening on "localhost" host
+  And  I wait until port "9081" is listening on "localhost" host
+  And  I wait until port "3000" is listening on "localhost" host
+
+
+
+Scenario 4: Health Check containers are exposing metrics
+  Then  I check that the health check tool exposes metrics on "localhost"
+
+
+
+Scenario 5: I can stop the Health Check tool
+  When  I stop health check tool on "localhost"
+  Then  I check that the health check tool is not running on "localhost"
+  And  I remove test supportconfig on "localhost"
+

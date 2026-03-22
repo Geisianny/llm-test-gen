@@ -1,0 +1,106 @@
+Scenario 1: Get collection ordered in ascending order on an identifier property
+  When  I send a "GET" request to "/tweets?order%5Bid%5D=asc"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+
+
+Scenario 2: Get collection ordered in descending order on an identifier property
+  When  I send a "GET" request to "/tweets?order%5Bid%5D=desc"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+
+
+Scenario 3: Get collection ordered in ascending order on an identifier property and in ascending order on a nested identifier property
+  When  I send a "GET" request to "/tweets?order%5Bauthor.id%5D=asc&order%5Bid%5D=asc"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+
+
+Scenario 4: Get collection ordered in descending order on an identifier property and in ascending order on a nested identifier property
+  When  I send a "GET" request to "/tweets?order%5Bauthor.id%5D=asc&order%5Bid%5D=desc"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+
+
+Scenario 5: Get collection ordered in ascending order on an identifier property and in descending order on a nested identifier property
+  When  I send a "GET" request to "/tweets?order%5Bauthor.id%5D=desc&order%5Bid%5D=asc"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+
+
+Scenario 6: Get collection ordered in descending order on an identifier property and in descending order on a nested identifier property
+  When  I send a "GET" request to "/tweets?order%5Bauthor.id%5D=desc&order%5Bid%5D=desc"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+
+
+Scenario 7: Get collection ordered in ascending order on an identifier property with new elasticsearch operations
+  When  I send a "GET" request to "/books?order%5Bid%5D=asc"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+
+
+Scenario 8: Get collection ordered in descending order on an identifier property with new elasticsearch operations
+  When  I send a "GET" request to "/books?order%5Bid%5D=desc"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+
+
+Scenario 9: Get collection ordered in ascending order on an identifier property and in ascending order on a nested identifier property with new elasticsearch operations
+  When  I send a "GET" request to "/books?order%5Blibrary.id%5D=asc&order%5Bid%5D=asc"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+
+
+Scenario 10: Get collection ordered in descending order on an identifier property and in ascending order on a nested identifier property with new elasticsearch operations
+  When  I send a "GET" request to "/books?order%5Blibrary.id%5D=asc&order%5Bid%5D=desc"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+
+
+Scenario 11: Get collection ordered in ascending order on an identifier property and in descending order on a nested identifier property with new elasticsearch operations
+  When  I send a "GET" request to "/books?order%5Blibrary.id%5D=desc&order%5Bid%5D=asc"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+
+
+
+Scenario 12: Get collection ordered in descending order on an identifier property and in descending order on a nested identifier property with new elasticsearch operations
+  When  I send a "GET" request to "/books?order%5Blibrary.id%5D=desc&order%5Bid%5D=desc"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the JSON should be valid according to this schema:
+

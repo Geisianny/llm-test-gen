@@ -1,0 +1,30 @@
+Scenario 1: Simply have the vamm1 submit an order to the book that uncrosses with its own derived key.
+  Tags: ['@VAMM']
+  When  the parties place the following orders:
+  And  the network moves ahead "1" blocks
+  Then  the following trades should be executed:
+  And  the parties should have the following profit and loss:
+  When  the parties place the following hacked orders:
+  Then  the following trades should be executed:
+  When  the network moves ahead "1" blocks
+  Then  the parties should have the following profit and loss:
+  When  the parties place the following orders:
+  Then  the following trades should be executed:
+  When  the network moves ahead "1" blocks
+  When  the parties cancel the following AMM:
+  Then  the parties place the following orders:
+  When  the parties place the following orders:
+  Then  the following trades should be executed:
+  When  the network moves ahead "1" blocks
+  Then  the parties should have the following profit and loss:
+  When  the parties place the following hacked orders:
+  Then  the following trades should be executed:
+  When  the network moves ahead "1" blocks
+  When  the parties place the following orders:
+  When  the parties place the following orders:
+  Then  the following trades should be executed:
+  When  the network moves ahead "1" blocks
+  Then  the parties should have the following profit and loss:
+  And  the AMM pool status should be:
+  When  the parties place the following hacked orders:
+

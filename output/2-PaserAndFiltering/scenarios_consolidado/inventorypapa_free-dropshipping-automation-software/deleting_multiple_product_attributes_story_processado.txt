@@ -1,0 +1,10 @@
+Scenario 1: Deleting multiple product attributes at once
+  Tags: ['@ui', '@javascript']
+  When  I browse product attributes
+  And  I check the "Publisher" product attribute
+  And  I check also the "Description" product attribute
+  And  I delete them
+  Then  I should be notified that they have been successfully deleted
+  And  I should see a single product attribute in the list
+  And  I should see the product attribute "Pages" in the list
+

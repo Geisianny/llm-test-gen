@@ -1,0 +1,73 @@
+Scenario 1: Create a concrete resource
+  Tags: ['@createSchema']
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/concrete_dummies" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the header "Content-Location" should be equal to "/concrete_dummies/1.jsonld"
+  And  the header "Location" should be equal to "/concrete_dummies/1"
+  And  the JSON should be equal to:
+
+
+
+Scenario 2: Get a resource
+  When  I send a "GET" request to "/abstract_dummies/1"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the header "Content-Location" should not exist
+  And  the JSON should be equal to:
+
+
+
+Scenario 3: Get a collection
+  When  I send a "GET" request to "/abstract_dummies"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the header "Content-Location" should not exist
+  And  the JSON should be valid according to this schema:
+
+
+
+Scenario 4: Update a concrete resource
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "PUT" request to "/concrete_dummies/1" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the header "Content-Location" should be equal to "/concrete_dummies/1.jsonld"
+  And  the JSON should be equal to:
+
+
+
+Scenario 5: Update a concrete resource using abstract resource uri
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "PUT" request to "/abstract_dummies/1" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the header "Content-Location" should be equal to "/concrete_dummies/1.jsonld"
+  And  the JSON should be equal to:
+
+
+
+Scenario 6: Delete a resource
+  When  I send a "DELETE" request to "/abstract_dummies/1"
+  Then  the response status code should be 204
+  And  the response should be empty
+
+
+
+Scenario 7: Create a concrete resource with discriminator
+  Tags: ['@createSchema']
+  When  I add "Content-Type" header equal to "application/ld+json"
+  And  I send a "POST" request to "/abstract_dummies" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/ld+json; charset=utf-8"
+  And  the header "Content-Location" should be equal to "/concrete_dummies/1.jsonld"
+  And  the header "Location" should be equal to "/concrete_dummies/1"
+  And  the JSON should be equal to:
+

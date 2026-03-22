@@ -1,0 +1,6 @@
+Scenario 1: Seeing only enabled products
+  Tags: ['@api']
+  When  I browse products
+  Then  I should see only 2 products
+  And  I should not see the product with name "PHP T-shirt"
+

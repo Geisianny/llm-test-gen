@@ -1,0 +1,22 @@
+Feature: HTTP Push publishing
+
+Scenario 1: Publish a text item
+  Tags: ['@auth']
+  Given  "products"
+  Given  "subscribers"
+  Given  "content_types"
+  Given  "desks"
+  Given  "vocabularies"
+  When  we post to "archive"
+  When  we patch "archive/#archive._id#"
+  When  we publish "#archive._id#" with "publish" type and "published" state
+  Then  we get OK response
+  Then  we pushed 1 item
+  When  we publish "#archive._id#" with "correct" type and "corrected" state
+  Then  we pushed 1 item
+  When  we rewrite "#archive._id#"
+  And  we publish "#REWRITE_ID#" with "publish" type and "published" state
+  Then  we pushed 1 item
+  When  we publish "#archive._id#" with "kill" type and "killed" state
+  Then  we pushed 1 item
+

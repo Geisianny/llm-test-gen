@@ -1,0 +1,29 @@
+Scenario 1: Searching one criteria
+  When  I am on the homepage
+  And  I fill in "Your Budget" with "50000"
+  And  I check "Rails"
+  And  I press "Find a developer"
+  Then  I should see "Hashrock"
+  And  I should not see "Clearright"
+
+
+
+Scenario 2: Searching another criteria
+  When  I am on the homepage
+  And  I fill in "Your Budget" with "50000"
+  And  I check "Visual Design"
+  And  I press "Find a developer"
+  Then  I should see "Clearright"
+  And  I should not see "Hashrock"
+
+
+
+Scenario 3: Searching all criteria
+  When  I am on the homepage
+  And  I fill in "Your Budget" with "50000"
+  And  I check "Visual Design"
+  And  I check "Rails"
+  And  I press "Find a developer"
+  Then  I should not see "Clearright"
+  And  I should not see "Hashrock"
+

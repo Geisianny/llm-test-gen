@@ -1,0 +1,33 @@
+Scenario 1: show recent communities on index
+  Given  the following community
+  When  I go to the search communities page
+  Then  I should see "Noosfero Community" within "#search-results"
+  And  I should see Noosfero Community's community image
+  And  I should see "Linux Community" within "#search-results"
+  And  I should see Linux Community's community image
+
+
+
+Scenario 2: show empty search results
+  When  I search communities for "something unrelated"
+  Then  I should see "None" within ".search-results-type-empty"
+
+
+
+Scenario 3: simple search for community
+  When  I go to the search communities page
+  And  I fill in "search-input" with "noosfero"
+  And  I follow "search-button"
+  Then  I should see "Noosfero Community" within "#search-results"
+  And  I should see "Noosfero Community" within ".only-one-result-box"
+  And  I should see Noosfero Community's community image
+
+
+
+Scenario 4: find communities without exact query
+  Given  the following communities
+  When  I go to the search communities page
+  And  I fill in "search-input" with "Linux Users"
+  And  I follow "search-button"
+  Then  I should see "Linux Users Without a Clue" within "#search-results"
+

@@ -1,0 +1,12 @@
+Feature: Pending Steps
+
+Background: 
+  Given  a standard Cucumber project directory structure
+  And  a file named "features/wired.feature" with:
+  And  a file named "features/step_definitions/some_remote_place.wire" with:
+
+Scenario 1: Pending step gives pending output
+  Given  Cuke4Nuke started with a step definition assembly containing:
+  When  I run cucumber -f pretty -q
+  Then  it should pass with
+

@@ -1,0 +1,161 @@
+Scenario 1: Persistent order results in an auction (both triggers breached), no orders placed during auction, auction terminates with a trade from order that originally triggered the auction. (0032-PRIM-020, 0032-PRIM-005)
+  Tags: ['@SupStake']
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  And  the mark price should be "100000" for the market "ETH/DEC20"
+  And  the market data for the market "ETH/DEC20" should be:
+  And  the accumulated infrastructure fees should be "0" for the asset "ETH"
+  And  the accumulated liquidity fees should be "0" for the market "ETH/DEC20"
+  When  time is updated to "2020-10-16T00:10:00Z"
+  Then  the parties place the following orders:
+  And  the accumulated infrastructure fees should be "0" for the asset "ETH"
+  And  the accumulated liquidity fees should be "10000" for the market "ETH/DEC20"
+  And  the market data for the market "ETH/DEC20" should be:
+  And  the order book should have the following volumes for market "ETH/DEC20":
+  And  the mark price should be "100000" for the market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  And  the accumulated infrastructure fees should be "0" for the asset "ETH"
+  And  the accumulated liquidity fees should be "10000" for the market "ETH/DEC20"
+  When  the parties place the following orders:
+  Then  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/DEC20"
+  And  the mark price should be "100000" for the market "ETH/DEC20"
+  When  time is updated to "2020-10-16T00:14:00Z"
+  Then  the market data for the market "ETH/DEC20" should be:
+  When  time is updated to "2020-10-16T00:14:01Z"
+  Then  the market data for the market "ETH/DEC20" should be:
+  Then  time is updated to "2020-10-16T00:20:01Z"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  And  the mark price should be "111000" for the market "ETH/DEC20"
+
+
+
+Scenario 2: Persistent order results in an auction (both triggers breached), orders placed during auction result in a trade with indicative price within the price monitoring bounds, hence auction concludes. (0032-PRIM-021)
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  And  the mark price should be "100000" for the market "ETH/DEC20"
+  When  time is updated to "2020-10-16T00:10:00Z"
+  Then  the parties place the following orders:
+  And  the mark price should be "100000" for the market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  When  the parties place the following orders:
+  Then  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/DEC20"
+  And  the mark price should be "100000" for the market "ETH/DEC20"
+  When  time is updated to "2020-10-16T00:14:00Z"
+  Then  the market data for the market "ETH/DEC20" should be:
+  And  the mark price should be "100000" for the market "ETH/DEC20"
+  When  time is updated to "2020-10-16T00:14:01Z"
+  Then  the market data for the market "ETH/DEC20" should be:
+  When  the parties place the following orders:
+  And  time is updated to "2020-10-16T00:20:01Z"
+  Then  the market data for the market "ETH/DEC20" should be:
+
+
+
+Scenario 3: Persistent order results in an auction (one trigger breached), no orders placed during auction, auction terminates with a trade from order that originally triggered the auction. (0032-PRIM-006)
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  And  the mark price should be "110000" for the market "ETH/DEC20"
+  When  time is updated to "2020-10-16T00:10:00Z"
+  Then  the parties place the following orders:
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  And  the mark price should be "110000" for the market "ETH/DEC20"
+  Then  time is updated to "2020-10-16T00:12:10Z"
+  When  the parties place the following orders:
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/DEC20"
+  And  the mark price should be "110000" for the market "ETH/DEC20"
+  Then  time is updated to "2020-10-16T00:13:10Z"
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/DEC20"
+  Then  time is updated to "2020-10-16T00:20:11Z"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  And  the mark price should be "111000" for the market "ETH/DEC20"
+
+
+
+Scenario 4: Non-persistent order do not result in an auction (one trigger breached) (0032-PRIM-003)
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  And  the mark price should be "110000" for the market "ETH/DEC20"
+  When  time is updated to "2020-10-16T00:10:00Z"
+  Then  the parties place the following orders:
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  And  the mark price should be "110000" for the market "ETH/DEC20"
+  When  time is updated to "2020-10-16T00:10:10Z"
+  Then  the parties place the following orders:
+  Then  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  And  the mark price should be "110000" for the market "ETH/DEC20"
+
+
+
+Scenario 5: Non-persistent order results in an auction (one trigger breached), orders placed during auction result in trade with indicative price outside the price monitoring bounds, hence auction get extended, additional orders resulting in more trades placed, auction concludes. (0032-PRIM-008)
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  And  the mark price should be "110000" for the market "ETH/DEC20"
+  When  time is updated to "2020-10-16T00:02:00Z"
+  Then  the parties place the following orders:
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  And  the mark price should be "110000" for the market "ETH/DEC20"
+  When  time is updated to "2020-10-16T00:02:10Z"
+  Then  the parties place the following orders:
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/DEC20"
+  And  the mark price should be "110000" for the market "ETH/DEC20"
+  When  time is updated to "2020-10-16T00:03:10Z"
+  Then  the parties place the following orders:
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/DEC20"
+  When  time is updated to "2020-10-16T00:06:11Z"
+  Then  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/DEC20"
+  And  the mark price should be "110000" for the market "ETH/DEC20"
+  When  time is updated to "2020-10-16T00:08:11Z"
+  Then  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/DEC20"
+  Then  the parties place the following orders:
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/DEC20"
+  And  the mark price should be "110000" for the market "ETH/DEC20"
+  Then  time is updated to "2020-10-16T00:12:11Z"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  And  the mark price should be "303000" for the market "ETH/DEC20"
+
+
+
+Scenario 6: Start with high first indicative uncrossing price and much lower final auction price
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  Then  the network moves ahead "59" blocks
+  And  the trading mode should be "TRADING_MODE_OPENING_AUCTION" for the market "ETH/DEC20"
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC20"
+  And  the market data for the market "ETH/DEC20" should be:
+
+
+
+Scenario 7: Start with low first indicative uncrossing price and much higher final auction price
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  Then  the network moves ahead "59" blocks
+  And  the trading mode should be "TRADING_MODE_OPENING_AUCTION" for the market "ETH/DEC20"
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC20"
+  And  the market data for the market "ETH/DEC20" should be:
+

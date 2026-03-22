@@ -1,0 +1,6 @@
+Scenario 1: Deleting a product variant from the product catalog
+  Tags: ['@api', '@ui']
+  When  I delete the "Medium PHP Mug" variant of product "PHP Mug"
+  Then  I should be notified that it has been successfully deleted
+  And  this variant should not exist in the product catalog
+

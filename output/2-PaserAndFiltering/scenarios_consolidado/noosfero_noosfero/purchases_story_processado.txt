@@ -1,0 +1,102 @@
+Scenario 1: view orders
+  Tags: ['@selenium']
+  Given  the following purchase from "homer" on "moes-tavern" that is "ordered"
+  When  I follow "Purchases made"
+  Then  I should see "Moes Tavern" within any ".actor-name"
+  And  I should see "17.50" within any ".total"
+  And  I should see "Ordered" within any ".situation"
+
+
+
+Scenario 2: view orders with different status
+  Tags: ['@selenium']
+  Given  the following purchase from "homer" on "moes-tavern" that is "accepted"
+  And  the following purchase from "homer" on "moes-tavern" that is "delivered"
+  When  I follow "Purchases made"
+  Then  I should see "Accepted" within any ".situation"
+  And  I should see "Delivered" within any ".situation"
+
+
+
+Scenario 3: filter orders by situation
+  Tags: ['@selenium']
+  Given  the following purchase from "homer" on "moes-tavern" that is "accepted"
+  And  the following purchase from "homer" on "moes-tavern" that is "delivered"
+  And  I follow "Purchases made"
+  And  I should see "Accepted" within any ".situation"
+  And  I should see "Delivered" within any ".situation"
+  And  I select "Delivered" from "status"
+  When  I press "Filter"
+  Then  I should not see "Accepted" within any ".situation"
+  And  I should see "Delivered" within any ".situation"
+
+
+
+Scenario 4: filter orders by code
+  Tags: ['@selenium']
+  Given  the following purchase from "homer" on "moes-tavern" that is "ordered"
+  And  the following purchase from "homer" on "moes-tavern" that is "ordered"
+  And  I follow "Purchases made"
+  And  I should see "1" within any ".code"
+  And  I should see "2" within any ".code"
+  And  I fill in "code" with "2"
+  When  I press "Filter"
+  Then  I should not see "1" within any ".code"
+  Then  I should see "2" within any ".code"
+
+
+
+Scenario 5: filter orders by supplier
+  Tags: ['@selenium']
+  Given  the following users
+  And  the following enterprise
+  And  the shopping basket is enabled on "First Church of Springfield"
+  And  the following product_categories
+  And  the following products
+  And  the following purchase from "homer" on "moes-tavern" that is "ordered"
+  And  the following purchase from "homer" on "first-church-of-springfield" that is "ordered"
+  And  I follow "Purchases made"
+  And  I should see "Moes Tavern" within any ".actor-name"
+  And  I should see "First Church of Springfield" within any ".actor-name"
+  And  I select "Moes Tavern" from "supplier_id"
+  When  I press "Filter"
+  Then  I should see "Moes Tavern" within any ".actor-name"
+  And  I should not see "First Church of Springfield" within any ".actor-name"
+
+
+
+Scenario 6: products checkout
+  Tags: ['@selenium-fixme']
+  Given  "moes-tavern" has the following delivery methods
+  And  I am on moes-tavern's products page
+  And  I follow "Add to basket"
+  And  I wait 0.2 seconds to finish the request
+  And  I follow "Add to basket"
+  And  I wait 0.2 seconds to finish the request
+  And  I follow "Add to basket"
+  And  I follow "Show basket"
+  And  I wait 1 second for animations
+  And  I follow "Shopping checkout"
+  And  I fill in "Contact phone" with "123456789"
+  And  I select "Bike ($8.00)" from "Option"
+  And  I follow "Send buy request"
+  And  I go to homer's control panel
+  When  I follow "Purchases made"
+  Then  I should see "Moes Tavern" within any ".actor-name"
+
+
+
+Scenario 7: repeat order
+  Tags: ['@selenium-fixme']
+  Given  "moes-tavern" has the following delivery methods
+  And  the following purchase from "homer" on "moes-tavern" that is "ordered"
+  And  I am on moes-tavern's products page
+  And  I follow "Add to basket"
+  And  I follow "Add to basket"
+  And  I follow "Show basket"
+  And  I follow "Hide basket"
+  When  I follow "checkout"
+  Then  I should see "Shopping checkout"
+  And  I should see "Duff"
+  And  I should see "French fries"
+

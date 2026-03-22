@@ -1,0 +1,93 @@
+Scenario 1: 0090-VAMM-028: The volume quoted to move from price 100 to price 110 in one step is the same as the sum of the volumes to move in 10 steps of 1.
+  Tags: ['@VAMM']
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/MAR22" should be:
+  And  the following trades should be executed:
+  When  the network moves ahead "1" blocks
+  Then  the parties should have the following profit and loss:
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/MAR23" should be:
+  And  the following trades should be executed:
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/MAR23" should be:
+  And  the following trades should be executed:
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/MAR23" should be:
+  And  the following trades should be executed:
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/MAR23" should be:
+  And  the following trades should be executed:
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/MAR23" should be:
+  And  the following trades should be executed:
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/MAR23" should be:
+  And  the following trades should be executed:
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/MAR23" should be:
+  And  the following trades should be executed:
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/MAR23" should be:
+  And  the following trades should be executed:
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/MAR23" should be:
+  And  the following trades should be executed:
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/MAR23" should be:
+  And  the following trades should be executed:
+  When  the network moves ahead "1" blocks
+  Then  the parties should have the following profit and loss:
+
+
+
+Scenario 2: 0090-VAMM-029: The volume quoted to move from price 100 to price 90 in one step is the same as the sum of the volumes to move in 10 steps of 1.
+  Tags: ['@VAMM']
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/MAR22" should be:
+  And  the following trades should be executed:
+  When  the network moves ahead "1" blocks
+  Then  the parties should have the following profit and loss:
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/MAR23" should be:
+  And  the following trades should be executed:
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/MAR23" should be:
+  And  the following trades should be executed:
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/MAR23" should be:
+  And  the following trades should be executed:
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/MAR23" should be:
+  And  the following trades should be executed:
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/MAR23" should be:
+  And  debug trades
+  And  the following trades should be executed:
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/MAR23" should be:
+  And  the following trades should be executed:
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/MAR23" should be:
+  And  the following trades should be executed:
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/MAR23" should be:
+  And  the following trades should be executed:
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/MAR23" should be:
+  And  the following trades should be executed:
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/MAR23" should be:
+  And  the following trades should be executed:
+  When  the network moves ahead "1" blocks
+  Then  the parties should have the following profit and loss:
+
+
+
+Scenario 3: 0090-VAMM-030: The volume quoted to move from price 110 to 90 is the same as the volume to move from 100 to 110 + 100 to 90.
+  Tags: ['@VAMM']
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/MAR23" should be:
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/MAR23" should be:
+

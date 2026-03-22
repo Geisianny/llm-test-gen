@@ -1,0 +1,68 @@
+Scenario 1: Adding a catalog promotion with a priority higher than all existing catalog promotions does not change priority values
+  Tags: ['@api', '@ui']
+  When  I create a new catalog promotion with "collection_sale" code and "Collection sale" name and 50 priority
+  Then  there should be 4 catalog promotions on the list
+  And  the catalog promotion named "Winter sale" should have priority 20
+  And  the catalog promotion named "Year-end sale" should have priority 30
+  And  the catalog promotion named "Spring sale" should have priority 40
+  And  the catalog promotion named "Collection sale" should have priority 50
+
+
+
+Scenario 2: Adding a catalog promotion with a priority lower than all existing ones
+  Tags: ['@api', '@ui']
+  When  I create a new catalog promotion with "collection_sale" code and "Collection sale" name and 10 priority
+  Then  there should be 4 catalog promotions on the list
+  And  the catalog promotion named "Winter sale" should have priority 21
+  And  the catalog promotion named "Year-end sale" should have priority 31
+  And  the catalog promotion named "Spring sale" should have priority 41
+  And  the catalog promotion named "Collection sale" should have priority 10
+
+
+
+Scenario 3: Adding a catalog promotion with a priority equal to one of the existing catalog promotions
+              but has no effect on the others
+  Tags: ['@api', '@ui']
+  When  I create a new catalog promotion with "collection_sale" code and "Collection sale" name and 30 priority
+  Then  there should be 4 catalog promotions on the list
+  And  the catalog promotion named "Winter sale" should have priority 20
+  And  the catalog promotion named "Year-end sale" should have priority 31
+  And  the catalog promotion named "Spring sale" should have priority 41
+  And  the catalog promotion named "Collection sale" should have priority 30
+
+
+
+Scenario 4: Adding a catalog promotion with a priority equal -1
+  Tags: ['@api', '@ui']
+  When  I create a new catalog promotion with "collection_sale" code and "Collection sale" name and -1 priority
+  Then  there should be 4 catalog promotions on the list
+  And  the catalog promotion named "Winter sale" should have priority 20
+  And  the catalog promotion named "Year-end sale" should have priority 30
+  And  the catalog promotion named "Spring sale" should have priority 40
+  And  the catalog promotion named "Collection sale" should have priority 41
+
+
+
+Scenario 5: Adding a catalog promotion with some negative priority lower than -1
+              is already taken increases the priority value of all catalog promotions with a priority greater equal than
+              calculated priority value by 1
+  Tags: ['@api', '@ui']
+  When  I create a new catalog promotion with "collection_sale" code and "Collection sale" name and -15 priority
+  Then  there should be 4 catalog promotions on the list
+  And  the catalog promotion named "Winter sale" should have priority 20
+  And  the catalog promotion named "Year-end sale" should have priority 31
+  And  the catalog promotion named "Spring sale" should have priority 41
+  And  the catalog promotion named "Collection sale" should have priority 27
+
+
+
+Scenario 6: Updating a catalog promotion priority to one of the existing catalog promotions decreases its priority value by 1
+  Tags: ['@api', '@ui']
+  When  I want to modify a catalog promotion "Winter sale"
+  And  I set its priority to 30
+  And  I save my changes
+  Then  there should be 3 catalog promotions on the list
+  And  the catalog promotion named "Winter sale" should have priority 30
+  And  the catalog promotion named "Year-end sale" should have priority 29
+  And  the catalog promotion named "Spring sale" should have priority 40
+

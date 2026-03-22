@@ -1,0 +1,16 @@
+Feature: Spellcheck
+
+Scenario 1: Spellcheck suggest corrections for word using all dicts for given language
+  Tags: ['@auth']
+  Given  "dictionaries"
+  When  we post to "spellcheck"
+  Then  we get new resource
+  When  we post to "spellcheck"
+  Then  we get new resource
+
+Scenario 2: Spellcheck is using only active dictionaries
+  Tags: ['@auth']
+  Given  "dictionaries"
+  When  we post to "spellcheck"
+  Then  we get new resource
+

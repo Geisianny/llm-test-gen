@@ -1,0 +1,40 @@
+Feature: Editing promotion coupon
+Description: In order to change promotion coupon usage limits or expires date
+    As an Administrator
+    I want to be able to edit coupon
+Tags: ['@managing_promotion_coupons']
+
+Background: 
+  Given  the store operates on a single channel in "United States"
+  And  the store has promotion "Christmas sale" with coupon "SANTA2016"
+  And  I am logged in as an administrator
+
+Scenario 1: Changing coupon expires date
+  Tags: ['@ui']
+  Given  I want to modify the "SANTA2016" coupon for this promotion
+  When  I change expires date to "21.05.2019"
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this coupon should be valid until "21.05.2019"
+
+Scenario 2: Changing coupons usage limit
+  Tags: ['@ui']
+  Given  I want to modify the "SANTA2016" coupon for this promotion
+  When  I change its usage limit to 50
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this coupon should have 50 usage limit
+
+Scenario 3: Changing coupons per customer usage limit
+  Tags: ['@ui']
+  Given  I want to modify the "SANTA2016" coupon for this promotion
+  When  I change its per customer usage limit to 20
+  And  I save my changes
+  Then  I should be notified that it has been successfully edited
+  And  this coupon should have 20 per customer usage limit
+
+Scenario 4: Seeing a disabled code field when editing a coupon
+  Tags: ['@ui']
+  Given  I want to modify the "SANTA2016" coupon for this promotion
+  Then  the code field should be disabled
+

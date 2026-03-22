@@ -1,0 +1,26 @@
+Feature: Copy Content in Personal Workspace
+
+Scenario 1: Copy content in personal workspace and validate metadata set by API
+  Tags: ['@auth']
+  Given  "archive"
+  When  we patch given
+  And  we patch latest
+  Then  we get updated response
+  When  we post to "/archive/123/copy"
+  When  we get "/archive/#copy._id#"
+  Then  we get existing resource
+  And  we get version 4
+  When  we get "/archive/#copy._id#?version=all"
+  Then  we get list with 4 items
+  When  we get "/archive/"
+  Then  we get list with 2 items
+
+Scenario 2: Copy item in a desk will show it in personal
+  Tags: ['@auth']
+  Given  "desks"
+  And  "archive"
+  When  we post to "/archive/123/copy"
+  Then  we get new resource
+  When  we get "/archive/"
+  Then  we get list with 2 items
+

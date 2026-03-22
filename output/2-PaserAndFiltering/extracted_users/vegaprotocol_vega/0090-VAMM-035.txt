@@ -1,0 +1,58 @@
+Feature: With two vAMMs existing on the market, and no other orders, both of which have the same fair price, another counterparty placing a large buy order for a given volume, followed by a large sell order for the same volume, results in the vAMMs both taking a position and then returning to 0 position, with a balance increase equal to the maker fees received plus those for the incoming trader crossing the spread.
+
+Background: 
+  Given  the average block duration is "1"
+  And  the following network parameters are set:
+  And  the following assets are registered:
+  And  the fees configuration named "fees-config-1":
+  And  the markets:
+
+Scenario 1: Double-sided vAMMs
+  Tags: ['@VAMM']
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties place the following orders:
+  And  the opening auction period ends for market "ETH/MAR22"
+  Then  the following trades should be executed:
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the parties submit the following AMM:
+  Then  the AMM pool status should be:
+  And  set the following AMM sub account aliases:
+  And  the following transfers should happen:
+  Then  the parties should have the following account balances:
+  When  the network moves ahead "11" blocks
+  Then  the current epoch is "0"
+  When  the parties place the following orders:
+  Then  the following trades should be executed:
+  When  the network moves ahead "2" blocks
+  And  the parties should have the following profit and loss:
+  When  the parties place the following orders:
+  Then  debug trades
+  Then  the following trades should be executed:
+  When  the network moves ahead "2" blocks
+  And  the parties should have the following profit and loss:
+  Then  the parties should have the following account balances:
+
+Scenario 2: Single-sided vAMMs
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties place the following orders:
+  And  the opening auction period ends for market "ETH/MAR22"
+  Then  the following trades should be executed:
+  And  the market data for the market "ETH/MAR22" should be:
+  When  the parties submit the following AMM:
+  Then  the AMM pool status should be:
+  And  set the following AMM sub account aliases:
+  And  the following transfers should happen:
+  Then  the parties should have the following account balances:
+  When  the network moves ahead "11" blocks
+  Then  the current epoch is "0"
+  When  the parties place the following orders:
+  Then  the following trades should be executed:
+  When  the network moves ahead "2" blocks
+  And  the parties should have the following profit and loss:
+  When  the parties place the following orders:
+  Then  debug trades
+  Then  the following trades should be executed:
+  When  the network moves ahead "2" blocks
+  And  the parties should have the following profit and loss:
+  Then  the parties should have the following account balances:
+

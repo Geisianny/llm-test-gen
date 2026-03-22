@@ -1,0 +1,54 @@
+Feature: Auto Delegation
+
+Background: 
+  Given  the following network parameters are set:
+  Given  time is updated to "2021-08-26T00:00:00Z"
+  Given  the average block duration is "2"
+  And  the validators:
+  Then  the parties submit the following delegations:
+  And  the parties deposit on staking account the following amount:
+  Then  the network moves ahead "7" blocks
+
+Scenario 1: A party enters auto delegation mode by nominating all of its associated stake (0059-STKG-019)
+  Description: Description: Once a party has delegated all of its associated stake, it enters auto delegation mode. Once it has more stake associated, it gets automatically distributed between the validators maintaining the same distribution.
+  When  the parties submit the following delegations:
+  Then  the network moves ahead "7" blocks
+  And  the parties deposit on staking account the following amount:
+  When  the network moves ahead "7" blocks
+  Then  the parties should have the following delegation balances for epoch 3:
+
+Scenario 2: A party dissociates VEGA token leading to undelegation proportionally to their current delegation (0059-STKG-012, 0059-STKG-018)
+  Description: Description: Once a party dissociates VEGA tokens their delegation is adjusted automatically to reflect that in the same propotion as the delegation with respect to the amount withdrawn
+  When  the parties submit the following delegations:
+  When  the network moves ahead "7" blocks
+  Given  the parties withdraw from staking account the following amount:
+  When  the network moves ahead "7" blocks
+  Then  the parties should have the following delegation balances for epoch 3:
+
+Scenario 3: A party enters auto delegation mode by nominating all of its associated stake, once more tokens are associated they are distributed however not in epochs when manual delegation takes place (0059-STKG-020)
+  Description: Description: Once a party has delegated all of its associated stake, it enters auto delegation mode. In the following epoch they submit manual delegations so the auto delegation doesn't kick in. An epoch later the remaining tokens are distributed.
+  When  the parties submit the following delegations:
+  Given  the network moves ahead "7" blocks
+  And  the parties deposit on staking account the following amount:
+  And  the parties submit the following delegations:
+  When  the network moves ahead "7" blocks
+  Then  the parties should have the following delegation balances for epoch 3:
+  When  the network moves ahead "7" blocks
+  Then  the parties should have the following delegation balances for epoch 4:
+
+Scenario 4: A party qualifies to auto delegation by delegating all of their associated tokens however by manually undelegation they exit auto delegation mode (0059-STKG-013, STKG-0014, 0059-STKG-021)
+  Description: Description: Once a party dissociates VEGA tokens their delegation is adjusted automatically to reflect that in the same proportion as the delegation with respect to the amount withdrawn
+  When  the parties submit the following delegations:
+  When  the network moves ahead "7" blocks"
+  Then  the parties submit the following undelegations:
+  When  the network moves ahead "7" blocks
+  Then  the parties should have the following delegation balances for epoch 3:
+  Then  the parties deposit on staking account the following amount:
+  Then  the parties submit the following delegations:
+  When  the network moves ahead "7" blocks
+  When  the network moves ahead "7" blocks
+  Then  the parties should have the following delegation balances for epoch 5:
+  Then  the parties deposit on staking account the following amount:
+  When  the network moves ahead "7" blocks
+  Then  the parties should have the following delegation balances for epoch 6:
+

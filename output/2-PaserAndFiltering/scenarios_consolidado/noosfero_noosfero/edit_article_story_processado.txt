@@ -1,0 +1,269 @@
+Scenario 1: create a folder
+  Given  I am on joaosilva's control panel
+  And  I follow "New" within "#section-content"
+  When  I follow "Folder"
+  And  I fill in "Title" with "My Folder"
+  And  I follow "Save"
+  And  I go to joaosilva's control panel
+  And  I follow "Manage" within "#section-content"
+  Then  I should see "My Folder"
+
+
+
+Scenario 2: denied access folder for a not logged user
+  Tags: ['@selenium']
+  Given  the following communities
+  And  the following users
+  And  "Mario Souto" is a member of "Free Software"
+  And  "Maria Silva" is a member of "Free Software"
+  And  I am on freesoftware's control panel
+  And  I follow "New" within "#section-content"
+  And  I should see "Folder"
+  When  I follow "Folder"
+  And  I fill in "Title" with "My Folder"
+  And  I fill in post-access hidden field with "1"
+  And  I follow "Save"
+  And  I log off
+  And  I go to /freesoftware/my-folder
+  Then  I should see "You are not allowed to view this page."
+
+
+
+Scenario 3: Hide token field when show to members is activated
+  Tags: ['@selenium']
+  Given  the following communities
+  And  the following users
+  And  "Mario Souto" is a member of "Free Software"
+  And  "Maria Silva" is a member of "Free Software"
+  And  I am on freesoftware's control panel
+  And  I follow "New" within "#section-content"
+  And  I should see "Folder"
+  When  I follow "Folder"
+  And  I fill in "Title" with "My Folder"
+  And  I fill in post-access hidden field with "1"
+  Then  I should not see "Fill in the search"
+
+
+
+Scenario 4: show exception users field when you choose the private option
+  Tags: ['@selenium']
+  Given  the following communities
+  And  the following users
+  And  "Mario Souto" is a member of "Free Software"
+  And  "Maria Silva" is a member of "Free Software"
+  And  I am on freesoftware's control panel
+  And  I follow "New" within "#section-content"
+  And  I should see "Folder"
+  When  I follow "Folder"
+  And  I fill in "Title" with "My Folder"
+  And  I fill in post-access hidden field with "3"
+  And  I uncheck "article_show_to_followers"
+  Then  I should see "Allow only community members entered below to view this content"
+
+
+
+Scenario 5: allowed user should see the content of a folder
+  Tags: ['@selenium']
+  Given  the following communities
+  And  the following users
+  And  the following articles
+  And  "Mario Souto" is a member of "Free Software"
+  And  "Maria Silva" is a member of "Free Software"
+  And  I go to /freesoftware/my-folder
+  And  I follow "article-options"
+  When  I follow "Edit"
+  And  I fill in post-access hidden field with "2"
+  And  I follow "Save"
+  And  I add to "My Folder" the following exception "Maria Silva"
+  And  I am logged in as "maria"
+  And  I go to /freesoftware/my-folder
+  Then  I should see "My Folder"
+
+
+
+Scenario 6: redirect to the created folder
+  Tags: ['@selenium']
+  Given  I am on joaosilva's control panel
+  And  I follow "New" within "#section-content"
+  When  I follow "Folder"
+  And  I fill in "Title" with "My Folder"
+  And  I fill in post-access hidden field with "1"
+  And  I follow "Save"
+  Then  I should see "My Folder"
+  And  I should be on /joaosilva/my-folder
+
+
+
+Scenario 7: cancel button back to cms
+  Tags: ['@selenium']
+  Given  I am on joaosilva's control panel
+  And  I follow "Manage" within "#section-content"
+  And  I follow "New content"
+  And  I follow "Folder"
+  When  I follow "Cancel" within ".main-block"
+  Then  I should see "Control panel"
+
+
+
+Scenario 8: display tag list field when creating event
+  Tags: ['@selenium']
+  Given  I am on joaosilva's control panel
+  And  I follow "New" within "#section-content"
+  And  I should see "Event" within ".article-types"
+  When  I follow "Event" within ".article-types"
+  Then  I should see "Tag list"
+
+
+
+Scenario 9: display tag list field when creating folder
+  Given  I am on joaosilva's control panel
+  And  I follow "New" within "#section-content"
+  And  I should see "Folder"
+  When  I follow "Folder"
+  Then  I should see "Tag list"
+
+
+
+Scenario 10: create new article with tags
+  Given  I am on joaosilva's control panel
+  And  I follow "New" within "#section-content"
+  When  I follow "Text article"
+  Then  I should see "Tag list"
+  When  I fill in "Title" with "Article with tags"
+  And  I fill in "Tag list" with "aurium, bug"
+  And  I follow "Save"
+  And  I go to /joaosilva/article-with-tags
+  Then  I should see "aurium" within "#article-tags"
+  And  I should see "bug" within "#article-tags"
+
+
+
+Scenario 11: redirect to the created article
+  Tags: ['@selenium']
+  Given  I am on joaosilva's control panel
+  And  I follow "New" within "#section-content"
+  When  I follow "Text article"
+  And  I fill in "Title" with "My Article"
+  And  I fill in post-access hidden field with "1"
+  And  I follow "Save"
+  Then  I should see "My Article"
+  And  I should be on /joaosilva/my-article
+
+
+
+Scenario 12: edit an article
+  Tags: ['@selenium']
+  Given  I am on joaosilva's sitemap
+  When  I follow "Save the whales"
+  And  I follow "article-options"
+  And  I follow "Edit"
+  And  I fill in "Title" with "My Article edited"
+  And  I follow "Save"
+  Then  I should be on /joaosilva/my-article-edited
+
+
+
+Scenario 13: cancel button back to article when edit
+  Tags: ['@selenium']
+  Given  I am on joaosilva's sitemap
+  When  I follow "Save the whales"
+  And  I follow "article-options"
+  And  I follow "Edit"
+  And  I follow "Cancel"
+  Then  I should be on /joaosilva/save-the-whales
+
+
+
+Scenario 14: create an article inside a folder
+  Tags: ['@selenium']
+  Given  I am on joaosilva's control panel
+  And  I follow "New" within "#section-content"
+  And  I should see "Folder"
+  And  I follow "Folder"
+  And  I fill in "Title" with "My Folder"
+  And  I follow "Save"
+  Then  I should be on /joaosilva/my-folder
+  Then  I follow "article-options"
+  When  I follow "New article"
+  And  I should see "Text article"
+  And  I follow "Text article"
+  And  I fill in "Title" with "My Article"
+  And  I follow "Save"
+  Then  I should see "My Article"
+  And  I should be on /joaosilva/my-folder/my-article
+
+
+
+Scenario 15: cancel button back to folder after giving up creating
+  Tags: ['@selenium']
+  Given  I am on joaosilva's control panel
+  And  I follow "New" within "#section-content"
+  And  I should see "Folder"
+  And  I follow "Folder"
+  And  I fill in "Title" with "My Folder"
+  And  I follow "Save"
+  Then  I should be on /joaosilva/my-folder
+  Then  I follow "article-options"
+  When  I follow "New article"
+  And  I should see "Text article"
+  And  I follow "Text article"
+  And  I follow "Cancel" within ".no-boxes"
+  Then  I should be on /joaosilva/my-folder
+
+
+
+Scenario 16: save and continue
+  Given  I am on /joaosilva/save-the-whales
+  And  I follow "Edit"
+  When  I fill in "Text" with "new text"
+  And  I follow "Save and continue"
+  Then  the "Text" field should contain "new text"
+  And  I should be on "Save the whales" edit page
+
+
+
+Scenario 17: save and continue when creating a new article
+  Given  I am on joaosilva's control panel
+  And  I follow "New" within "#section-content"
+  And  I should see "Text article"
+  And  I follow "Text article"
+  And  I fill in "Title" with "My new article"
+  And  I fill in "Text" with "text for the new article"
+  And  I follow "Save and continue"
+  Then  I should be on "My new article" edit page
+  And  the "Title" field should contain "My new article"
+  And  the "Text" field should contain "text for the new article"
+
+
+
+Scenario 18: add a translation to an article
+  Tags: ['@selenium']
+  Given  I am on joaosilva's sitemap
+  And  I follow "Save the whales"
+  And  the following languages "en es" are available on environment
+  Then  I should not see "Add translation"
+  Then  I follow "article-options"
+  And  I follow "Edit"
+  And  I select "English" from "Language"
+  Then  I follow "Save"
+  Then  I follow "article-options"
+  And  I follow "Add translation"
+  And  I fill in "Title" with "Mi neuvo artículo"
+  And  I select "Español" from "Language"
+  When  I follow "Save"
+  Then  I should be on /joaosilva/mi-neuvo-articulo
+  And  I should see "Translations"
+
+
+
+Scenario 19: create an article with time
+  Tags: ['@selenium']
+  Given  I am on joaosilva's control panel
+  And  I follow "New" within "#section-content"
+  When  I follow "Text article"
+  And  I fill in "Title" with "My time testing Article"
+  And  I fill in "Publish date" with "1980-11-15 20:37"
+  And  I follow "Save"
+  And  I go to /joaosilva/my-time-testing-article
+  Then  I should see "November 15, 1980 20:37"
+

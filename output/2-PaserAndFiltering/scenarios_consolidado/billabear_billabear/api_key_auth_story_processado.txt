@@ -1,0 +1,19 @@
+Scenario 1: Valid
+  Given  the follow api keys exist:
+  When  I use the API key "key-one"
+  Then  I will get a valid response
+
+
+
+Scenario 2: View API Key
+  Given  the follow api keys exist:
+  When  I use the API key "key-four"
+  Then  I will get an unauthorised error response
+
+
+
+Scenario 3: View API Key
+  Given  the follow api keys exist:
+  When  I use the API key "key-three"
+  Then  I will get an unauthorised error response
+

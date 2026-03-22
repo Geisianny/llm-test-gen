@@ -1,0 +1,9 @@
+Feature: Test for excessive SCC accesses
+Tags: ['@srv_scc_access_logging']
+
+Scenario 1: Count UI SCC accesses in rhn_web_ui.log
+  Then  the word "scc.suse.com" does not occur more than 100 times in "/var/log/rhn/rhn_web_ui.log" on "server"
+
+Scenario 2: Count Taskomatic SCC accesses in rhn_taskomatic_daemon.log
+  Then  the word "scc.suse.com" does not occur more than 50 times in "/var/log/rhn/rhn_taskomatic_daemon.log" on "server"
+

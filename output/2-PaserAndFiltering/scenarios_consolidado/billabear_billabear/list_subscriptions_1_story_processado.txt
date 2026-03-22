@@ -1,0 +1,7 @@
+Scenario 1: Get customer info
+  Given  I have authenticated to the API
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  When  I request the subscription list api
+  Then  I will see a subscription in the list for "Test Plan"
+

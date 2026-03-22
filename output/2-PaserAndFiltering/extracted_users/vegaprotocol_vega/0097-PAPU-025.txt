@@ -1,0 +1,35 @@
+Feature: Once the volume snapshot of a program is triggered, if the balance of the from account is above the maximum auction size specified in the program, then the maximum auction size is earmarked for the next auction. (0097-PAPU-025).
+
+Background: 
+  Given  the log normal risk model named "log-normal-risk-model":
+  And  the following network parameters are set:
+  And  the liquidity monitoring parameters:
+  And  the fees configuration named "fees-config-1":
+  And  the price monitoring named "price-monitoring":
+  And  the liquidity sla params named "SLA-22":
+  And  the following network parameters are set:
+  And  the following assets are registered:
+  And  the spot markets:
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  And  the parties place the following orders:
+  When  the opening auction period ends for market "BTC/ETH"
+  And  the following trades should be executed:
+  And  the mark price should be "1000000" for the market "BTC/ETH"
+  And  the composite price oracles from "0xCAFECAFE2":
+  And  the time triggers oracle spec is:
+  And  the average block duration is "1"
+  And  the parties deposit on asset's general account the following amount:
+  Given  time is updated to "2024-09-24T00:00:00Z"
+  And  the parties submit the following one off transfers:
+  And  the buy back fees balance should be "5000" for the asset "BTC"
+
+Scenario 1: The volume available is greater than the maximum auction size for pap therefore the maximum size is used in the auction. (0097-PAPI-025)
+  When  the protocol automated purchase is defined as:
+  Then  the oracles broadcast data with block time signed with "0xCAFECAFE2":
+  And  the network moves ahead "30" blocks
+  Then  the automated purchase program for market "BTC/ETH" should have a snapshot balance of "200"
+  And  the trading mode should be "TRADING_MODE_PROTOCOL_AUTOMATED_PURCHASE_AUCTION" for the market "BTC/ETH"
+  And  the order book should have the following volumes for market "BTC/ETH":
+

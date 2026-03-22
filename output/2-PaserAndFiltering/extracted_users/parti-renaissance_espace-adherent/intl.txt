@@ -1,0 +1,11 @@
+Feature: 
+Description: As a non logged-in user
+    I should be able to retrieve intl informations
+Tags: ['@api', '@renaissance']
+
+Scenario 1: As a non logged-in user I can retrieve countries informations
+  When  I send a "GET" request to "/api/countries"
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the JSON should be a superset of:
+

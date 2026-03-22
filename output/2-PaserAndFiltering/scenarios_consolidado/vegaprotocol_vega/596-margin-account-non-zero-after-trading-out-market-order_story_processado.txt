@@ -1,0 +1,54 @@
+Scenario 1: Traded out position but monies left in margin account
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the parties place the following orders:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the mark price should be "100" for the market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following account balances:
+  And  the cumulated balance for all accounts should be worth "3041000"
+  When  the parties amend the following pegged iceberg orders:
+  And  the parties place the following orders with ticks:
+  Then  the parties should have the following account balances:
+  And  the cumulated balance for all accounts should be worth "3041000"
+  When  the parties place the following orders with ticks:
+  When  the parties place the following orders with ticks:
+  When  the parties place the following orders with ticks:
+  Then  the parties cancel the following orders:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following account balances:
+  And  the cumulated balance for all accounts should be worth "3041000"
+
+
+
+Scenario 2: Traded out position but monies left in margin account if trade which trade out do not update the markprice
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the parties place the following orders:
+  When  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/DEC19"
+  And  the mark price should be "100" for the market "ETH/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC19"
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following account balances:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following account balances:
+  And  the cumulated balance for all accounts should be worth "3041000"
+  When  the parties amend the following pegged iceberg orders:
+  And  the parties place the following orders with ticks:
+  Then  the parties should have the following account balances:
+  And  the cumulated balance for all accounts should be worth "3041000"
+  When  the parties place the following orders with ticks:
+  When  the parties place the following orders with ticks:
+  When  the parties place the following orders with ticks:
+  Then  the parties cancel the following orders:
+  When  the parties place the following orders with ticks:
+  Then  the parties should have the following account balances:
+  And  the cumulated balance for all accounts should be worth "3041000"
+

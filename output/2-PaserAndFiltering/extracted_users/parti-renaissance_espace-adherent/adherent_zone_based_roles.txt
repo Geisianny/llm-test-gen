@@ -1,0 +1,18 @@
+Feature: 
+Description: In order to manage adherent zone based roles
+    As a logged-in user granted with a specific feature
+    I should be able to create, read and update adherent zone based roles
+Tags: ['@api']
+
+Scenario Outline 1: As a user granted with local scope, I can create an adherent zone based role - Example 1
+  Given  I am logged with "referent@en-marche-dev.fr" via OAuth client "JeMengage Web" with scope "jemengage_admin"
+  And  I send a "POST" request to "/api/v3/zone_based_role?scope=president_departmental_assembly" with body:
+  Then  the response status code should be 201
+  And  the response should be in JSON
+  And  the JSON should be equal to:
+
+  Examples:
+    | user | scope |
+    | referent@en-marche-dev.fr | president_departmental_assembly |
+    | senateur@en-marche-dev.fr | delegated_08f40730-d807-4975-8773-69d8fae1da74 |
+

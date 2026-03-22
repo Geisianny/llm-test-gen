@@ -1,0 +1,130 @@
+Scenario 1: Trying to add promotion with translation in unexisting locale
+  Tags: ['@api', '@no-ui']
+  Given  there is a promotion "Christmas sale"
+  When  I want to modify this promotion
+  And  I specify its label as "Vente de Noël" in "French (France)" locale
+  And  I try to save my changes
+  Then  I should be notified that the locale is not available
+
+
+
+Scenario 2: Trying to add a new promotion without specifying its code
+  Tags: ['@api', '@ui']
+  When  I want to create a new promotion
+  And  I name it "No-VAT promotion"
+  And  I do not specify its code
+  And  I try to add it
+  Then  I should be notified that code is required
+  And  promotion with name "No-VAT promotion" should not be added
+
+
+
+Scenario 3: Trying to add a new promotion with a too long code
+  Tags: ['@api', '@ui']
+  When  I want to create a new promotion
+  And  I name it "No-VAT promotion"
+  And  I specify a too long code
+  And  I try to add it
+  Then  I should be notified that code is too long
+
+
+
+Scenario 4: Trying to add a new promotion without specifying its name
+  Tags: ['@api', '@ui']
+  When  I want to create a new promotion
+  And  I specify its code as "no_vat_promotion"
+  But  I do not name it
+  And  I try to add it
+  Then  I should be notified that name is required
+  And  promotion with code "no_vat_promotion" should not be added
+
+
+
+Scenario 5: Adding a promotion with start date set up after end date
+  Tags: ['@api', '@ui']
+  When  I want to create a new promotion
+  And  I specify its code as "FULL_METAL_PROMOTION"
+  And  I name it "Full metal promotion"
+  And  I make it available from "24.12.2017" to "12.12.2017"
+  And  I try to add it
+  Then  I should be notified that promotion cannot end before it starts
+
+
+
+Scenario 6: Trying to remove name from existing promotion
+  Tags: ['@api', '@ui']
+  Given  there is a promotion "Christmas sale"
+  When  I want to modify this promotion
+  And  I remove its name
+  And  I try to save my changes
+  Then  I should be notified that name is required
+  And  this promotion should still be named "Christmas sale"
+
+
+
+Scenario 7: Trying to add start later then end date for existing promotion
+  Tags: ['@api', '@ui']
+  Given  there is a promotion "Christmas sale"
+  When  I want to modify this promotion
+  And  I make it available from "24.12.2017" to "12.12.2017"
+  And  I try to save my changes
+  Then  I should be notified that promotion cannot end before it starts
+
+
+
+Scenario 8: Adding a promotion with label exceeding 255 characters
+  Tags: ['@api', '@ui']
+  Given  there is a promotion "Christmas sale"
+  When  I want to modify this promotion
+  And  I replace its label with a string exceeding the limit in "Polish (Poland)" locale
+  And  I try to save my changes
+  Then  I should be notified that promotion label in "Polish (Poland)" locale is too long
+
+
+
+Scenario 9: Trying to add a new promotion without specifying an order percentage discount
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I want to create a new promotion
+  And  I specify its code as "christmas_sale"
+  And  I name it "Christmas sale"
+  And  I add the "Order percentage discount" action configured without a percentage value
+  And  I try to add it
+  Then  I should be notified that this value should not be blank
+  And  promotion with name "Christmas sale" should not be added
+
+
+
+Scenario 10: Trying to add a new promotion without specifying an item percentage discount
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I want to create a new promotion
+  And  I specify its code as "christmas_sale"
+  And  I name it "Christmas sale"
+  And  I add the "Item percentage discount" action configured without a percentage value for "United States" channel
+  And  I try to add it
+  Then  I should be notified that this value should not be blank
+  And  promotion with name "Christmas sale" should not be added
+
+
+
+Scenario 11: Trying to add a new promotion with a wrong order percentage discount
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I want to create a new promotion
+  And  I specify its code as "christmas_sale"
+  And  I name it "Christmas sale"
+  And  I add the "Order percentage discount" action configured with a percentage value of "120%"
+  And  I try to add it
+  Then  I should be notified that a percentage discount value must be between 0% and 100%
+  And  promotion with name "Christmas sale" should not be added
+
+
+
+Scenario 12: Trying to add a new promotion with a wrong item percentage discount
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I want to create a new promotion
+  And  I specify its code as "christmas_sale"
+  And  I name it "Christmas sale"
+  And  I add the "Item percentage discount" action configured with a percentage value of "130%" for "United States" channel
+  And  I try to add it
+  Then  I should be notified that a percentage discount value must be between 0% and 100%
+  And  promotion with name "Christmas sale" should not be added
+

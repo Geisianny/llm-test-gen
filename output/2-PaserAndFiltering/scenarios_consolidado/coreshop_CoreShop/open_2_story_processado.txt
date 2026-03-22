@@ -1,0 +1,6 @@
+Scenario 1: 
+  Given  I am a logged in admin
+  And  I open Pimcore
+  And  I open resource "coreshop.currency", "exchange_rate"
+  Then  exchange-rates tab is open
+

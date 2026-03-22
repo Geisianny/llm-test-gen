@@ -1,0 +1,22 @@
+Feature: List available products
+Description: In order to use software channels
+  As root user
+  I want to list available products from command line
+
+Scenario 1: List available products
+  Tags: ['@susemanager']
+  When  I execute mgr-sync "list products" with user "admin" and password "admin"
+  Then  I should get "[ ] SUSE Linux Enterprise Desktop 15 SP3 x86_64"
+
+Scenario 2: List available products
+  Tags: ['@uyuni']
+  When  I execute mgr-sync "list products" with user "admin" and password "admin"
+  Then  I should get "[ ] openSUSE Leap 15.6 x86_64"
+
+Scenario 3: List all available products
+  Tags: ['@susemanager']
+  When  I execute mgr-sync "list products -e"
+  Then  I should get "[ ] SUSE Linux Enterprise Desktop 15 SP3 x86_64"
+  And  I should get "  [ ] (R) Basesystem Module 15 SP3 x86_64"
+  And  I should get "  [ ] Desktop Applications Module 15 SP3 x86_64"
+

@@ -1,0 +1,4 @@
+Scenario 1: View product and select other variant
+  When  I click on attribute color "red"
+  Then  I should be on the detail page for variant with key "red"
+

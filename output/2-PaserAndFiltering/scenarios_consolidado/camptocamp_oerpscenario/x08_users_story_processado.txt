@@ -1,0 +1,21 @@
+Scenario 1: USER RIGHTS SETTINGS
+  Tags: ['@multicompany_base_finance_users']
+  Given  we select users below:
+  Then  we assign all groups to the users
+
+
+
+Scenario 2: USERS SETTINGS
+  Tags: ['@multicompany_base_finance_users']
+  Given  I need a "res.users" with oid: scen.fr_main_user
+  And  having:
+  And  we assign to user the groups bellow:
+
+
+
+Scenario 3: USERS SETTINGS
+  Tags: ['@multicompany_base_finance_users']
+  Given  I need a "res.users" with oid: scen.ch_main_user
+  And  having:
+  And  we assign to user the groups bellow:
+

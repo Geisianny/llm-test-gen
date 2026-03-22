@@ -1,0 +1,100 @@
+Scenario 1: Create a dashboard list returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/dashboards-backend']
+  Given  new "CreateDashboardList" request
+  And  body with value {"name": "My Dashboard"}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 2: Create a dashboard list returns "OK" response
+  Tags: ['@team:DataDog/dashboards-backend']
+  Given  new "CreateDashboardList" request
+  And  body with value {"name": "{{ unique }}"}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "name" is equal to "{{ unique }}"
+
+
+
+Scenario 3: Delete a dashboard list returns "Not Found" response
+  Tags: ['@team:DataDog/dashboards-backend']
+  Given  new "DeleteDashboardList" request
+  And  request contains "list_id" parameter with value 0
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+
+
+Scenario 4: Delete a dashboard list returns "OK" response
+  Tags: ['@team:DataDog/dashboards-backend']
+  Given  there is a valid "dashboard_list" in the system
+  And  new "DeleteDashboardList" request
+  And  request contains "list_id" parameter from "dashboard_list.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "deleted_dashboard_list_id" has the same value as "dashboard_list.id"
+
+
+
+Scenario 5: Get a dashboard list returns "Not Found" response
+  Tags: ['@team:DataDog/dashboards-backend']
+  Given  new "GetDashboardList" request
+  And  request contains "list_id" parameter with value 0
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+
+
+Scenario 6: Get a dashboard list returns "OK" response
+  Tags: ['@team:DataDog/dashboards-backend']
+  Given  there is a valid "dashboard_list" in the system
+  And  new "GetDashboardList" request
+  And  request contains "list_id" parameter from "dashboard_list.id"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "id" has the same value as "dashboard_list.id"
+  And  the response "name" has the same value as "dashboard_list.name"
+
+
+
+Scenario 7: Get all dashboard lists returns "OK" response
+  Tags: ['@replay-only', '@team:DataDog/dashboards-backend']
+  Given  there is a valid "dashboard_list" in the system
+  And  new "ListDashboardLists" request
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "dashboard_lists[0].name" has the same value as "dashboard_list.name"
+
+
+
+Scenario 8: Update a dashboard list returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/dashboards-backend']
+  Given  new "UpdateDashboardList" request
+  And  request contains "list_id" parameter from "REPLACE.ME"
+  And  body with value {"name": "My Dashboard"}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 9: Update a dashboard list returns "Not Found" response
+  Tags: ['@team:DataDog/dashboards-backend']
+  Given  new "UpdateDashboardList" request
+  And  request contains "list_id" parameter with value 0
+  And  body with value {"name": "Not found"}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+
+
+Scenario 10: Update a dashboard list returns "OK" response
+  Tags: ['@team:DataDog/dashboards-backend']
+  Given  there is a valid "dashboard_list" in the system
+  And  new "UpdateDashboardList" request
+  And  request contains "list_id" parameter from "dashboard_list.id"
+  And  body with value {"name": "updated {{unique}}"}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "name" is equal to "updated {{ unique }}"
+

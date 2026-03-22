@@ -1,0 +1,46 @@
+Feature: Spot market SLA
+
+Scenario 1: 001 0044-LIME-044,For a market with `market.liquidity.earlyExitPenalty = 0.25` and `total stake = target stake + 1200` already, a liquidity provider who reduces their commitment by `2000` will receive a total of `1800` back into their general account with `200` transferred into the market's insurance account (`40` received without penalty, then the remaining `60` receiving a `25%` penalty).
+  Given  time is updated to "2023-07-20T00:00:00Z"
+  Given  the fees configuration named "fees-config-1":
+  Given  the log normal risk model named "lognormal-risk-model-1":
+  And  the price monitoring named "price-monitoring-1":
+  And  the liquidity sla params named "SLA-1":
+  Given  the following assets are registered:
+  And  the following network parameters are set:
+  And  the spot markets:
+  And  the following network parameters are set:
+  Given  the parties deposit on asset's general account the following amount:
+  And  the average block duration is "1"
+  Given  the liquidity monitoring parameters:
+  When  the spot markets are updated:
+  When  the parties submit the following liquidity provision:
+  Then  the network moves ahead "1" blocks
+  And  the network treasury balance should be "0" for the asset "ETH"
+  And  the global insurance pool balance should be "0" for the asset "ETH"
+  And  the global insurance pool balance should be "0" for the asset "BTC"
+  And  the party "lp1" lp liquidity fee account balance should be "0" for the market "BTC/ETH"
+  Then  the party "lp1" lp liquidity bond account balance should be "3000" for the market "BTC/ETH"
+  Then  the market data for the market "BTC/ETH" should be:
+  And  the parties place the following orders:
+  When  the network moves ahead "2" blocks
+  Then  the following trades should be executed:
+  Then  the market data for the market "BTC/ETH" should be:
+  Then  "lp1" should have general account balance of "1000" for asset "ETH"
+  Then  "lp2" should have general account balance of "2000" for asset "ETH"
+  When  the parties submit the following liquidity provision:
+  Then  the network moves ahead "4" blocks
+  And  the network treasury balance should be "250" for the asset "ETH"
+  Then  the party "lp1" lp liquidity bond account balance should be "1000" for the market "BTC/ETH"
+  Then  the party "lp2" lp liquidity bond account balance should be "2000" for the market "BTC/ETH"
+  Then  "lp1" should have general account balance of "2750" for asset "ETH"
+  Then  "lp2" should have general account balance of "2000" for asset "ETH"
+  Then  the market data for the market "BTC/ETH" should be:
+  When  the parties submit the following liquidity provision:
+  Then  the network moves ahead "4" blocks
+  And  the network treasury balance should be "375" for the asset "ETH"
+  Then  the party "lp1" lp liquidity bond account balance should be "500" for the market "BTC/ETH"
+  Then  the party "lp2" lp liquidity bond account balance should be "2000" for the market "BTC/ETH"
+  Then  "lp1" should have general account balance of "3125" for asset "ETH"
+  Then  "lp2" should have general account balance of "2000" for asset "ETH"
+

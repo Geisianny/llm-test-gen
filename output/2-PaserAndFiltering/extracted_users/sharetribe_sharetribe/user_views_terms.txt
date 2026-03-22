@@ -1,0 +1,12 @@
+Feature: User views terms
+Description: In order to check what terms I am accepting when I register to Sharetribe
+  As a user
+  I want to be able to
+
+Scenario 1: User views terms in community Test
+  Tags: ['@javascript']
+  Given  I am not logged in
+  And  I am on the signup page
+  When  I follow "Terms of Service"
+  Then  I should see "get started with creating your Terms of Service"
+

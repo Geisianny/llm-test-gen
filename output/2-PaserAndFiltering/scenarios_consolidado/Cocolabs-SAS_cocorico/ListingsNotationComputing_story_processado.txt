@@ -1,0 +1,4 @@
+Scenario 1: I can alert compute listings notations
+  When  I run "cocorico_listing_search:computeNotation" command
+  Then  I should see "1 listing(s) notation computed" on console
+

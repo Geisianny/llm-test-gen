@@ -1,0 +1,13 @@
+Feature: Delete domains
+Description: In order to manage domains
+  as a brand admin
+  I should not be able to delete them through the API.
+
+Scenario 1: Delete a domain
+  Tags: ['@createSchema']
+  Given  I add Authorization header
+  When  I add "Content-Type" header equal to "application/json"
+  And  I add "Accept" header equal to "application/json"
+  And  I send a "DELETE" request to "/domains/5"
+  Then  the response status code should be 404
+

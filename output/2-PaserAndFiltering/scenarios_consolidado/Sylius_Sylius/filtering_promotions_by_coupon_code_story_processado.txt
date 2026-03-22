@@ -1,0 +1,7 @@
+Scenario 1: Filtering promotions by coupon code
+  Tags: ['@api', '@ui']
+  When  I want to browse promotions
+  And  I filter promotions by coupon code equal "MAGIC"
+  And  I should see a single promotion in the list
+  And  I should see the promotion "Christmas sale" in the list
+

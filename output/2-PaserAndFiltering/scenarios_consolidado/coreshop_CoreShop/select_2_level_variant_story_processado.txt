@@ -1,0 +1,9 @@
+Scenario 1: View product and select other variant
+  When  I click on attribute color "green"
+  And  attribute value "S" is not selected
+  And  attribute value "M" is not selected
+  And  attribute value "L" is not selected
+  And  attribute value "XL" is not selected
+  When  I click on attribute value "S"
+  Then  I should be on the detail page for variant with key "t-shirt-green-s"
+

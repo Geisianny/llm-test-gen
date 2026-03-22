@@ -1,0 +1,54 @@
+Feature: Update application server set
+Description: In order to manage application server sets
+  as a super admin
+  I need to be able to update them through the API.
+
+Scenario 1: Update an applicationServer
+  Tags: ['@createSchema']
+  Given  I add Authorization header
+  When  I add "Content-Type" header equal to "application/json"
+  And  I add "Accept" header equal to "application/json"
+  And  I send a "PUT" request to "/application_server_sets/1" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json; charset=utf-8"
+  And  the JSON should be equal to:
+
+Scenario 2: Application server set with id zero cannot be edited
+  Tags: ['@createSchema']
+  Given  I add Authorization header
+  When  I add "Content-Type" header equal to "application/json"
+  And  I add "Accept" header equal to "application/json"
+  And  I send a "PUT" request to "/application_server_sets/0" with body:
+  Then  the response status code should be 403
+
+Scenario 3: Application server can not have all applicationServers removed
+  Tags: ['@createSchema']
+  Given  I add Authorization header
+  When  I add "Content-Type" header equal to "application/json"
+  And  I add "Accept" header equal to "application/json"
+  And  I send a "PUT" request to "/application_server_sets/1" with body:
+  Then  the response status code should be 400
+
+Scenario 4: Application server can remove applicationServers 2 and add 3
+  Tags: ['@createSchema']
+  Given  I add Authorization header
+  When  I add "Content-Type" header equal to "application/json"
+  And  I add "Accept" header equal to "application/json"
+  And  I send a "PUT" request to "/application_server_sets/0" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json; charset=utf-8"
+  And  the JSON should be equal to:
+
+Scenario 5: Application server can remove applicationServers 1 and add 3
+  Tags: ['@createSchema']
+  Given  I add Authorization header
+  When  I add "Content-Type" header equal to "application/json"
+  And  I add "Accept" header equal to "application/json"
+  And  I send a "PUT" request to "/application_server_sets/1" with body:
+  Then  the response status code should be 200
+  And  the response should be in JSON
+  And  the header "Content-Type" should be equal to "application/json; charset=utf-8"
+  And  the JSON should be equal to:
+

@@ -1,0 +1,21 @@
+Scenario 1: Syntax Error in a test file
+  Given  a configuration with:
+  When  I start Karma
+  Then  it fails with:
+
+
+
+Scenario 2: Not single-run Syntax Error in a test file
+  Given  a configuration with:
+  When  I start a server in background
+  And  I wait until server output contains:
+  And  I run Karma
+  Then  it fails with like:
+
+
+
+Scenario 3: Missing module Error in a test file
+  Given  a configuration with:
+  When  I start Karma
+  Then  it fails with:
+

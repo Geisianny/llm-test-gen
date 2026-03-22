@@ -1,0 +1,24 @@
+Scenario 1: 
+  Given  the following subscriptions exist:
+  And  stripe billing is disabled
+  And  that the tax settings for tax customers with tax number is true
+  When  the background task to reinvoice active subscriptions
+  Then  the subscription for "customer.four@example.org" will expire in a week
+  And  there the latest invoice for "customer.four@example.org" will have tax rate for UK
+
+
+
+Scenario 2: Use standard rate
+  Given  the following subscriptions exist:
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  And  there the latest invoice for "customer.one@example.org" will have tax rate of 15
+
+
+
+Scenario 3: Use standard services rate for digital service product when no rate exists for digital services
+  Given  the following subscriptions exist:
+  And  stripe billing is disabled
+  When  the background task to reinvoice active subscriptions
+  And  there the latest invoice for "customer.two@example.org" will have tax rate of 24
+

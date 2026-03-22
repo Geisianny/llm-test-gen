@@ -1,0 +1,7 @@
+Feature: Localization
+
+Scenario 1: Get timezones
+  Tags: ['@auth']
+  When  we get "/locales/timezones"
+  Then  we get existing resource
+

@@ -1,0 +1,12 @@
+Scenario 1: Seeing total payment
+  Tags: ['@ui']
+  When  I view the summary of the order "#00000666"
+  Then  it should have 2 items
+  And  the product named "Angel T-Shirt" should be in the items list
+  And  the product named "Angel Mug" should be in the items list
+  And  the order's shipping total should be "$10.00"
+  And  the order's tax total should be "$8.97"
+  And  the order's items total should be "$66.97"
+  And  the order's total should be "$76.97"
+  And  the order's payment should also be "$76.97"
+

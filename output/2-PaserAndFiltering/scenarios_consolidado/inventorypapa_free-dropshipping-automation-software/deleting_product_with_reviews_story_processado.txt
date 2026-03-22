@@ -1,0 +1,6 @@
+Scenario 1: Deleted product reviews disappear from the product catalog
+  Tags: ['@domain', '@ui', '@api']
+  When  I delete the "Toyota GT86 model" product
+  Then  I should be notified that it has been successfully deleted
+  And  there should be no reviews of this product
+

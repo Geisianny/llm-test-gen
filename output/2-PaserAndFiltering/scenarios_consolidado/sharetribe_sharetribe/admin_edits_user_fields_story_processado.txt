@@ -1,0 +1,19 @@
+Scenario 1: Admin changes custom field name
+  Tags: ['@javascript']
+  When  I change custom field "Balcony type" name to "Room type"
+  Then  I should see "Room type"
+
+
+
+Scenario 2: Admin tries to give custom field invalid name
+  Tags: ['@javascript']
+  When  I change custom field "Balcony type" name to ""
+  Then  I should see 1 validation errors in admin2
+
+
+
+Scenario 3: Admin removes custom fields from category
+  Tags: ['@javascript']
+  When  I remove user field "Balcony type"
+  Then  I should see that I do not have any listing fields
+

@@ -1,0 +1,84 @@
+Feature: article versioning
+Description: As a user
+  I want to see article versions
+  In order to be able to change between versions of an article
+
+Background: 
+  Given  the following users
+  And  "joaosilva" has no articles
+  And  the following articles
+  And  the article "Sample Article" is updated with
+  And  I am logged in as "joaosilva"
+
+Scenario 1: enabling visualization of versions
+  Tags: ['@selenium']
+  Given  the following articles
+  Given  I am on article "New Article"
+  Then  I should not see "All versions"
+  And  I follow "article-options"
+  And  I follow "Edit" within "#article-options-dropdown"
+  And  I check "I want this article to display a link to older versions"
+  And  I follow "Save"
+  Then  I should be on article "New Article"
+  And  I follow "article-options"
+  And  I should see "All versions"
+
+Scenario 2: list versions of an article
+  Tags: ['@selenium']
+  Given  I am on article "Edited Article"
+  And  I follow "article-options"
+  When  I follow "All versions"
+  Then  I should be on /joaosilva/edited-article/versions
+  And  I should see "Version 1" within "#article-versions"
+  And  I should see "Version 2" within "#article-versions"
+
+Scenario 3: see specific version
+  Tags: ['@selenium']
+  Given  I go to article "Edited Article"
+  Then  I should see "Edited Article" within ".title"
+  And  I should see "This is the second version of the article" within ".article-body"
+  And  I follow "article-options"
+  When  I follow "All versions"
+  And  I follow "Version 1"
+  Then  I should see "Sample Article" within ".title"
+  And  I should see "This is the first version of the article" within ".article-body"
+
+Scenario 4: revert to a specific version generates a new version
+  Tags: ['@selenium']
+  Given  I go to article "Edited Article"
+  And  I follow "article-options"
+  When  I follow "All versions"
+  Then  I should not see "Version 3" within "#article-versions"
+  And  I follow "Version 1"
+  And  I follow "Revert to this version"
+  And  I follow "Save"
+  Then  I should see "Sample Article" within ".title"
+  And  I follow "article-options"
+  When  I follow "All versions"
+  Then  I should see "Version 3" within "#article-versions"
+
+Scenario 5: try to access versions of unexistent article
+  Tags: ['@selenium']
+  Given  I go to /joaosilva/unexistent-article/versions
+  Then  I should see "There is no such page:"
+
+Scenario 6: deny access to versions when disabled on article
+  Tags: ['@selenium']
+  Given  the following articles
+  And  I go to /joaosilva/versions-disabled/versions
+  Then  I should see "Access denied"
+
+Scenario 7: deny access to specific version when disabled on article and not logged
+  Tags: ['@selenium']
+  Given  the article "Edited Article" is updated with
+  And  I am not logged in
+  And  I go to /joaosilva/edited-article?version=1
+  Then  I should see "Access denied"
+
+Scenario 8: deny access to specific version when disabled, private and not logged
+  Tags: ['@selenium']
+  Given  the article "Edited Article" is updated with
+  And  I am not logged in
+  And  I go to /joaosilva/edited-article?version=1
+  Then  I should see "Access denied"
+

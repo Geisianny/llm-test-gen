@@ -1,0 +1,6 @@
+Scenario 1: Being prevented from changing the payment method of a cancelled order
+  Tags: ['@api', '@ui']
+  When  I want to browse order details for this order
+  And  I try to change my payment method to "Bank Transfer"
+  Then  I should be notified that I can no longer change payment method of this order
+

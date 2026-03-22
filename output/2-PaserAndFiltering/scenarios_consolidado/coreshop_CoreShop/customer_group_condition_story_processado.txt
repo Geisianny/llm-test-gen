@@ -1,0 +1,18 @@
+Scenario 1: Add a new customer-group cart rule which is valid
+  Given  adding a cart price rule named "customer-group"
+  And  the cart rule is active
+  And  the cart rule is not a voucher rule
+  And  the cart rule has a condition customer-groups with customer-group "Frequent Buyers"
+  Then  the cart rule should be valid for my cart
+
+
+
+Scenario 2: Add a new customer-group cart rule which is invalid
+  Given  the site has a customer-group "New Customers"
+  And  the customer "some-customer@something.com" is in customer-group "New Customers"
+  And  adding a cart price rule named "customer-group"
+  And  the cart rule is active
+  And  the cart rule is not a voucher rule
+  And  the cart rule has a condition customer-groups with customer-group "Frequent Buyers"
+  Then  the cart rule should be invalid for my cart
+

@@ -1,0 +1,13 @@
+Scenario 1: Deleted product disappears from the product catalog
+  Tags: ['@ui', '@api']
+  When  I delete the "Toyota GT86 model" product
+  Then  I should be notified that it has been successfully deleted
+  And  this product should not exist in the product catalog
+
+
+
+Scenario 2: Deleted product variants disappear from the product catalog
+  Tags: ['@domain']
+  When  I delete the "Toyota GT86 model" product
+  Then  there should be no variants of this product in the product catalog
+

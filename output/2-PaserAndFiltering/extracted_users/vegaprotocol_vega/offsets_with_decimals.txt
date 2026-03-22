@@ -1,0 +1,24 @@
+Feature: Test how offsets are applied with decimals
+
+Scenario 1: 
+  Given  the following network parameters are set:
+  And  the liquidity monitoring parameters:
+  And  the following assets are registered:
+  And  the average block duration is "2"
+  And  the log normal risk model named "log-normal-risk-model-1":
+  And  the fees configuration named "fees-config-1":
+  And  the price monitoring named "price-monitoring-1":
+  And  the liquidity sla params named "SLA":
+  And  the following network parameters are set:
+  And  the markets:
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  Then  the parties place the following orders:
+  Then  the opening auction period ends for market "USD/DEC19"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "USD/DEC19"
+  And  the market data for the market "USD/DEC19" should be:
+  Then  the orders should have the following states:
+  Then  the parties place the following pegged orders:
+  Then  the orders should have the following states:
+

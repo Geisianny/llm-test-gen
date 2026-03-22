@@ -1,0 +1,59 @@
+Scenario 1: Scenario for the system test with opening auction
+  Given  the parties deposit on asset's general account the following amount:
+  When  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  And  the parties place the following orders:
+  Then  the mark price should be "0" for the market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_OPENING_AUCTION" for the market "ETH/DEC20"
+  When  time is updated to "2020-10-16T00:00:06Z"
+  Then  the trading mode should be "TRADING_MODE_OPENING_AUCTION" for the market "ETH/DEC20"
+  When  time is updated to "2020-10-16T00:00:07Z"
+  Then  the mark price should be "100000" for the market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  And  the market data for the market "ETH/DEC20" should be:
+  And  the parties cancel the following orders:
+  When  the parties place the following orders:
+  Then  the mark price should be "100000" for the market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/DEC20"
+  And  the parties cancel the following orders:
+  When  time is updated to "2020-10-16T00:00:10Z"
+  Then  the parties place the following orders:
+  Then  time is updated to "2020-10-16T00:00:20Z"
+  And  the mark price should be "100000" for the market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/DEC20"
+  Then  time is updated to "2020-10-16T00:00:22Z"
+  And  the mark price should be "100356" for the market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/DEC20" should be:
+  Then  time is updated to "2020-10-16T00:00:26Z"
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/DEC20" should be:
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/DEC20" should be:
+  When  time is updated to "2020-10-16T00:00:28Z"
+  Then  the parties place the following orders:
+  And  the mark price should be "100448" for the market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/DEC20"
+  When  time is updated to "2020-10-16T00:00:33Z"
+  Then  the mark price should be "100448" for the market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/DEC20"
+  And  the parties cancel the following orders:
+  When  time is updated to "2020-10-16T00:00:43Z"
+  Then  the mark price should be "100448" for the market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+  When  the parties place the following orders:
+  Then  the market data for the market "ETH/DEC20" should be:
+  When  time is updated to "2020-10-16T00:00:55Z"
+  Then  the parties place the following orders:
+  Then  the market data for the market "ETH/DEC20" should be:
+  When  time is updated to "2020-10-16T00:01:01Z"
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "ETH/DEC20"
+  Then  the market data for the market "ETH/DEC20" should be:
+  When  time is updated to "2020-10-16T00:01:02Z"
+  Then  the market data for the market "ETH/DEC20" should be:
+  When  time is updated to "2020-10-16T00:01:11Z"
+  Then  the mark price should be "100650" for the market "ETH/DEC20"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/DEC20"
+

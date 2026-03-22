@@ -1,0 +1,288 @@
+Scenario 1: Bulk Delete SLO Timeframes returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/slo-app']
+  Given  new "DeleteSLOTimeframeInBulk" request
+  And  body with value {"id1": ["7d", "30d"], "id2": ["7d", "30d"]}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 2: Bulk Delete SLO Timeframes returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/slo-app']
+  Given  new "DeleteSLOTimeframeInBulk" request
+  And  body with value {"id1": ["7d", "30d"], "id2": ["7d", "30d"]}
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 3: Check if SLOs can be safely deleted returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/slo-app']
+  Given  new "CheckCanDeleteSLO" request
+  And  request contains "ids" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 4: Check if SLOs can be safely deleted returns "Conflict" response
+  Tags: ['@generated', '@skip', '@team:DataDog/slo-app']
+  Given  new "CheckCanDeleteSLO" request
+  And  request contains "ids" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 409 Conflict
+
+
+
+Scenario 5: Check if SLOs can be safely deleted returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/slo-app']
+  Given  new "CheckCanDeleteSLO" request
+  And  request contains "ids" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 6: Create a time-slice SLO object returns "OK" response
+  Tags: ['@team:DataDog/slo-app']
+  Given  new "CreateSLO" request
+  And  body with value {"type":"time_slice","description":"string","name":"{{ unique }}","sli_specification":{"time_slice":{"query":{"formulas":[{"formula":"query1"}],"queries":[{"data_source":"metrics","name":"query1","query":"trace.servlet.request{env:prod}"}]},"comparator":">","threshold":5}},"tags":["env:prod"],"thresholds":[{"target":97.0,"target_display":"97.0","timeframe":"7d","warning":98,"warning_display":"98.0"}],"timeframe":"7d","target_threshold":97.0,"warning_threshold":98}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data[0].timeframe" is equal to "7d"
+  And  the response "data[0].target_threshold" is equal to 97.0
+  And  the response "data[0].warning_threshold" is equal to 98.0
+
+
+
+Scenario 7: Create an SLO object returns "Bad Request" response
+  Tags: ['@team:DataDog/slo-app']
+  Given  new "CreateSLO" request
+  And  body with value {"type":"monitor","name":"{{ unique }}","thresholds":[{"target":95.0,"target_display":"95.0","timeframe":"7d","warning":98,"warning_display":"98.0"}]}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 8: Create an SLO object returns "OK" response
+  Tags: ['@team:DataDog/slo-app']
+  Given  new "CreateSLO" request
+  And  body with value {"type":"metric","description":"string","groups":["env:test","role:mysql"],"monitor_ids":[],"name":"{{ unique }}","query":{"denominator":"sum:httpservice.hits{!code:3xx}.as_count()","numerator":"sum:httpservice.hits{code:2xx}.as_count()"},"tags":["env:prod","app:core"],"thresholds":[{"target":97.0,"target_display":"97.0","timeframe":"7d","warning":98,"warning_display":"98.0"}],"timeframe":"7d","target_threshold":97.0,"warning_threshold":98}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data[0].timeframe" is equal to "7d"
+  And  the response "data[0].target_threshold" is equal to 97.0
+  And  the response "data[0].warning_threshold" is equal to 98.0
+
+
+
+Scenario 9: Delete an SLO returns "Conflict" response
+  Tags: ['@generated', '@skip', '@team:DataDog/slo-app']
+  Given  new "DeleteSLO" request
+  And  request contains "slo_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 409 Conflict
+
+
+
+Scenario 10: Delete an SLO returns "Not found" response
+  Tags: ['@team:DataDog/slo-app']
+  Given  new "DeleteSLO" request
+  And  request contains "slo_id" parameter with value "{{ unique_lower_alnum }}"
+  When  the request is sent
+  Then  the response status is 404 Not found
+
+
+
+Scenario 11: Delete an SLO returns "OK" response
+  Tags: ['@team:DataDog/slo-app']
+  Given  there is a valid "slo" in the system
+  And  new "DeleteSLO" request
+  And  request contains "slo_id" parameter from "slo.data[0].id"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data[0]" has the same value as "slo.data[0].id"
+
+
+
+Scenario 12: Get Corrections For an SLO returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/slo-app']
+  Given  new "GetSLOCorrections" request
+  And  request contains "slo_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 13: Get Corrections For an SLO returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/slo-app']
+  Given  new "GetSLOCorrections" request
+  And  request contains "slo_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+
+
+Scenario 14: Get Corrections For an SLO returns "OK" response
+  Tags: ['@team:DataDog/slo-app']
+  Given  there is a valid "slo" in the system
+  And  there is a valid "correction" for "slo"
+  And  new "GetSLOCorrections" request
+  And  request contains "slo_id" parameter from "slo.data[0].id"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data" has length 1
+
+
+
+Scenario 15: Get all SLOs returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/slo-app']
+  Given  new "ListSLOs" request
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 16: Get all SLOs returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/slo-app']
+  Given  new "ListSLOs" request
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+
+
+Scenario 17: Get all SLOs returns "OK" response
+  Tags: ['@team:DataDog/slo-app']
+  Given  there is a valid "slo" in the system
+  And  new "ListSLOs" request
+  And  request contains "ids" parameter from "slo.data[0].id"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data" has length 1
+  And  the response "data[0].id" has the same value as "slo.data[0].id"
+
+
+
+Scenario 18: Get all SLOs returns "OK" response with pagination
+  Tags: ['@replay-only', '@skip-validation', '@team:DataDog/slo-app', '@with-pagination']
+  Given  new "ListSLOs" request
+  And  request contains "limit" parameter with value 2
+  When  the request with pagination is sent
+  Then  the response status is 200 OK
+  And  the response has 3 items
+
+
+
+Scenario 19: Get an SLO's details returns "Not found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/slo-app']
+  Given  new "GetSLO" request
+  And  request contains "slo_id" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not found
+
+
+
+Scenario 20: Get an SLO's details returns "OK" response
+  Tags: ['@team:DataDog/slo-app']
+  Given  there is a valid "slo" in the system
+  And  new "GetSLO" request
+  And  request contains "slo_id" parameter from "slo.data[0].id"
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.type" is equal to "metric"
+
+
+
+Scenario 21: Get an SLO's history returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/slo-app']
+  Given  new "GetSLOHistory" request
+  And  request contains "slo_id" parameter from "REPLACE.ME"
+  And  request contains "from_ts" parameter from "REPLACE.ME"
+  And  request contains "to_ts" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 22: Get an SLO's history returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/slo-app']
+  Given  new "GetSLOHistory" request
+  And  request contains "slo_id" parameter from "REPLACE.ME"
+  And  request contains "from_ts" parameter from "REPLACE.ME"
+  And  request contains "to_ts" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+
+
+Scenario 23: Get an SLO's history returns "OK" response
+  Tags: ['@team:DataDog/slo-app']
+  Given  there is a valid "slo" in the system
+  And  new "GetSLOHistory" request
+  And  request contains "slo_id" parameter from "slo.data[0].id"
+  And  request contains "from_ts" parameter with value {{ timestamp("now - 1d") }}
+  And  request contains "to_ts" parameter with value {{ timestamp("now") }}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.series.res_type" is equal to "time_series"
+
+
+
+Scenario 24: Search for SLOs returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/slo-app']
+  Given  new "SearchSLO" request
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 25: Search for SLOs returns "OK" response
+  Tags: ['@replay-only', '@team:DataDog/slo-app']
+  Given  there is a valid "slo" in the system
+  And  new "SearchSLO" request
+  And  request contains "query" parameter from "slo.data[0].name"
+  And  request contains "page[size]" parameter with value 20
+  And  request contains "page[number]" parameter with value 0
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data.attributes.slos[0].data.attributes.name" is equal to "{{ slo.data[0].name }}"
+  And  the response "data.attributes.slos[0].data.attributes.overall_status[0].error_budget_remaining" is equal to null
+  And  the response "data.attributes.slos[0].data.attributes.overall_status[0].status" is equal to null
+  And  the response "data.attributes.slos[0].data.attributes.status.state" is equal to "no_data"
+
+
+
+Scenario 26: Update an SLO returns "Bad Request" response
+  Tags: ['@team:DataDog/slo-app']
+  Given  new "UpdateSLO" request
+  And  there is a valid "slo" in the system
+  And  request contains "slo_id" parameter from "slo.data[0].id"
+  And  body with value {"type":"monitor","name":"{{ unique }}","thresholds":[{"target":95.0,"target_display":"95.0","timeframe":"7d","warning":98,"warning_display":"98.0"}]}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 27: Update an SLO returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/slo-app']
+  Given  new "UpdateSLO" request
+  And  request contains "slo_id" parameter from "REPLACE.ME"
+  And  body with value {"description": null, "groups": ["env:prod", "role:mysql"], "monitor_ids": [], "monitor_tags": [], "name": "Custom Metric SLO", "query": {"denominator": "sum:my.custom.metric{*}.as_count()", "numerator": "sum:my.custom.metric{type:good}.as_count()"}, "sli_specification": {"time_slice": {"comparator": "<", "query": {"formulas": [{"formula": "query2/query1"}], "queries": [{"data_source": "metrics", "name": "query1", "query": "sum:trace.servlet.request.hits{*} by {env}.as_count()"}, {"data_source": "metrics", "name": "query1", "query": "sum:trace.servlet.request.errors{*} by {env}.as_count()"}]}, "threshold": 5}}, "tags": ["env:prod", "app:core"], "target_threshold": 99.9, "thresholds": [{"target": 95, "timeframe": "7d"}, {"target": 95, "timeframe": "30d", "warning": 97}], "timeframe": "30d", "type": "metric", "warning_threshold": 99.95}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+
+
+Scenario 28: Update an SLO returns "OK" response
+  Tags: ['@team:DataDog/slo-app']
+  Given  there is a valid "slo" in the system
+  And  new "UpdateSLO" request
+  And  request contains "slo_id" parameter from "slo.data[0].id"
+  And  body with value {"type":"metric","name":"{{ slo.data[0].name }}","thresholds":[{"target":97.0,"timeframe":"7d","warning":98.0}],"timeframe":"7d","target_threshold":97.0,"warning_threshold":98,"query":{"numerator":"sum:httpservice.hits{code:2xx}.as_count()","denominator":"sum:httpservice.hits{!code:3xx}.as_count()"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+  And  the response "data[0].thresholds[0].target" is equal to 97.0
+  And  the response "data[0].timeframe" is equal to "7d"
+  And  the response "data[0].target_threshold" is equal to 97.0
+  And  the response "data[0].warning_threshold" is equal to 98.0
+

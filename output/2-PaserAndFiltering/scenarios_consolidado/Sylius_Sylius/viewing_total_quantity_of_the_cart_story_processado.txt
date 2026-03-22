@@ -1,0 +1,21 @@
+Scenario 1: Viewing a total quantity for 1 product with quantity equals 1
+  Tags: ['@no-api', '@ui', '@javascript']
+  When  I add product "PHP T-Shirt" to the cart
+  Then  I should see cart total quantity is 1
+
+
+
+Scenario 2: Viewing a total quantity for 1 product with quantity equals 2
+  Tags: ['@no-api', '@ui', '@javascript']
+  When  I add 2 products "PHP T-Shirt" to the cart
+  Then  I should see cart total quantity is 2
+
+
+
+Scenario 3: Viewing a total quantity for 3 products with various quantities
+  Tags: ['@no-api', '@ui', '@javascript']
+  When  I add 2 products "PHP T-Shirt" to the cart
+  And  I add 3 products "Sylius T-Shirt" to the cart
+  And  I add product "Symfony T-Shirt" to the cart
+  Then  I should see cart total quantity is 6
+

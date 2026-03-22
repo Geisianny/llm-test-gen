@@ -1,0 +1,42 @@
+Scenario 1: show link if image is scaled
+  Tags: ['@selenium']
+  Given  the following article with image
+  When  I go to /booking/small
+  And  display ".zoomify-image"
+  Then  I should see "Zoom in"
+
+
+
+Scenario 2: not show link if image is not scaled
+  Tags: ['@selenium']
+  Given  the following article with image
+  When  I go to /booking/real
+  And  display ".zoomify-image"
+  Then  "Zoom in" should not be visible within "a#zoomify-image"
+
+
+
+Scenario 3: not show link if image does not have dimensions set
+  Tags: ['@selenium']
+  Given  the following article with image
+  When  I go to /booking/not-set
+  And  display ".zoomify-image"
+  Then  "Zoom in" should not be visible within "a#zoomify-image"
+
+
+
+Scenario 4: copy style from image
+  Tags: ['@selenium-fixme']
+  Given  the following article with image
+  When  I go to /booking/with-style
+  Then  "zoomable-image" should be right aligned
+
+
+
+Scenario 5: zoom image
+  Tags: ['@selenium-fixme']
+  Given  the following article with image
+  When  I go to /booking/zoom
+  And  I follow "Zoom in" within "a#zoomify-image"
+  Then  I should see "fancybox-wrap"
+

@@ -1,0 +1,9 @@
+Scenario 1: Being redirected to previous filtered page after cancelling editing an existing payment method
+  Tags: ['@no-api', '@ui', '@mink:chromedriver']
+  When  I browse payment methods
+  And  I choose enabled filter
+  And  I filter
+  And  I want to modify the "Offline" payment method
+  And  I cancel my changes
+  Then  I should be redirected to the previous page of only enabled payment methods
+

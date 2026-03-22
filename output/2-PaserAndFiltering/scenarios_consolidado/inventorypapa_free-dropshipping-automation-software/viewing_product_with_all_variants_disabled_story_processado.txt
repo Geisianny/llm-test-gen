@@ -1,0 +1,12 @@
+Scenario 1: Viewing product with all variants disabled
+  Tags: ['@ui']
+  When  I check this product's details
+  Then  I should see the product name "Super Cool T-Shirt"
+
+
+
+Scenario 2: Viewing product with all variants disabled from taxon page
+  Tags: ['@ui']
+  When  I browse products from taxon "T-Shirts"
+  Then  I should see the product "Super Cool T-Shirt"
+

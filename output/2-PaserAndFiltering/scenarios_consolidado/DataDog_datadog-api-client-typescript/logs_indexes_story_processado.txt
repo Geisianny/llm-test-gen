@@ -1,0 +1,115 @@
+Scenario 1: Create an index returns "Invalid Parameter Error" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-core']
+  Given  new "CreateLogsIndex" request
+  And  body with value {"daily_limit": 300000000, "daily_limit_reset": {"reset_time": "14:00", "reset_utc_offset": "+02:00"}, "daily_limit_warning_threshold_percentage": 70, "exclusion_filters": [{"filter": {"query": "*", "sample_rate": 1.0}, "name": "payment"}], "filter": {"query": "source:python"}, "name": "main", "num_flex_logs_retention_days": 360, "num_retention_days": 15}
+  When  the request is sent
+  Then  the response status is 400 Invalid Parameter Error
+
+
+
+Scenario 2: Create an index returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-core']
+  Given  new "CreateLogsIndex" request
+  And  body with value {"daily_limit": 300000000, "daily_limit_reset": {"reset_time": "14:00", "reset_utc_offset": "+02:00"}, "daily_limit_warning_threshold_percentage": 70, "exclusion_filters": [{"filter": {"query": "*", "sample_rate": 1.0}, "name": "payment"}], "filter": {"query": "source:python"}, "name": "main", "num_flex_logs_retention_days": 360, "num_retention_days": 15}
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 3: Create an index returns "Unprocessable Entity" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-core']
+  Given  new "CreateLogsIndex" request
+  And  body with value {"daily_limit": 300000000, "daily_limit_reset": {"reset_time": "14:00", "reset_utc_offset": "+02:00"}, "daily_limit_warning_threshold_percentage": 70, "exclusion_filters": [{"filter": {"query": "*", "sample_rate": 1.0}, "name": "payment"}], "filter": {"query": "source:python"}, "name": "main", "num_flex_logs_retention_days": 360, "num_retention_days": 15}
+  When  the request is sent
+  Then  the response status is 422 Unprocessable Entity
+
+
+
+Scenario 4: Delete an index returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-core']
+  Given  new "DeleteLogsIndex" request
+  And  request contains "name" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+
+
+Scenario 5: Delete an index returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-core']
+  Given  new "DeleteLogsIndex" request
+  And  request contains "name" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 6: Get all indexes returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-core']
+  Given  new "ListLogIndexes" request
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 7: Get an index returns "Not Found" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-core']
+  Given  new "GetLogsIndex" request
+  And  request contains "name" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+
+
+Scenario 8: Get an index returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-core']
+  Given  new "GetLogsIndex" request
+  And  request contains "name" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 9: Get indexes order returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-core']
+  Given  new "GetLogsIndexOrder" request
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 10: Update an index returns "Invalid Parameter Error" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-core']
+  Given  new "UpdateLogsIndex" request
+  And  request contains "name" parameter from "REPLACE.ME"
+  And  body with value {"daily_limit": 300000000, "daily_limit_reset": {"reset_time": "14:00", "reset_utc_offset": "+02:00"}, "daily_limit_warning_threshold_percentage": 70, "disable_daily_limit": false, "exclusion_filters": [{"filter": {"query": "*", "sample_rate": 1.0}, "name": "payment"}], "filter": {"query": "source:python"}, "num_flex_logs_retention_days": 360, "num_retention_days": 15}
+  When  the request is sent
+  Then  the response status is 400 Invalid Parameter Error
+
+
+
+Scenario 11: Update an index returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-core']
+  Given  new "UpdateLogsIndex" request
+  And  request contains "name" parameter from "REPLACE.ME"
+  And  body with value {"daily_limit": 300000000, "daily_limit_reset": {"reset_time": "14:00", "reset_utc_offset": "+02:00"}, "daily_limit_warning_threshold_percentage": 70, "disable_daily_limit": false, "exclusion_filters": [{"filter": {"query": "*", "sample_rate": 1.0}, "name": "payment"}], "filter": {"query": "source:python"}, "num_flex_logs_retention_days": 360, "num_retention_days": 15}
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 12: Update indexes order returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-core']
+  Given  new "UpdateLogsIndexOrder" request
+  And  body with value {"index_names": ["main", "payments", "web"]}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 13: Update indexes order returns "OK" response
+  Tags: ['@generated', '@skip', '@team:DataDog/logs-backend', '@team:DataDog/logs-core']
+  Given  new "UpdateLogsIndexOrder" request
+  And  body with value {"index_names": ["main", "payments", "web"]}
+  When  the request is sent
+  Then  the response status is 200 OK
+

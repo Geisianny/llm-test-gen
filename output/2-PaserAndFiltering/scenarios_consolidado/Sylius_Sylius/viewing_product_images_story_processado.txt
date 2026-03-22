@@ -1,0 +1,16 @@
+Scenario 1: Viewing a product's main image on a product details page
+  Tags: ['@api', '@ui', '@javascript']
+  When  I view product "Lamborghini Gallardo Model"
+  Then  I should see the product name "Lamborghini Gallardo Model"
+  And  I should be able to see a main image of type "main"
+
+
+
+Scenario 2: Viewing a products images in correct order
+  Tags: ['@api', '@ui', '@javascript']
+  When  I view product "Lamborghini Gallardo Model"
+  Then  I should see the product name "Lamborghini Gallardo Model"
+  And  the main image should be of type "main"
+  And  the first thumbnail image should be of type "main"
+  And  the second thumbnail image should be of type "other"
+

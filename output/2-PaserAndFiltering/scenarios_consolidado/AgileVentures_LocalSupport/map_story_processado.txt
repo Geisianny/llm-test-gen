@@ -1,0 +1,12 @@
+Scenario 1: Show all events in map on events page map
+  Tags: ['@javascript', '@vcr', '@billy']
+  Given  I visit the events page
+  Then  I should see the following event markers in the map:
+
+
+
+Scenario 2: Infowindow appears when clicking on map marker
+  Tags: ['@javascript', '@billy']
+  Given  I visit the events page
+  Then  I should see an infowindow when I click on the event map markers:
+

@@ -1,0 +1,38 @@
+Feature: Admin edits listing fields
+
+Background: 
+  Given  I am logged in as "kassi_testperson2"
+  And  "kassi_testperson2" has admin rights in community "test"
+  And  community "test" has following category structure:
+  And  there is a custom field "House type" in community "test" for category "Housing spaces"
+  And  there is a custom dropdown field "Balcony type" in community "test" with options:
+  And  I am on the listing fields admin2 page
+  Then  I should see "House type"
+  And  I should see "Balcony type"
+
+Scenario 1: Admin changes custom field name
+  Tags: ['@javascript']
+  When  I change custom field "House type" name to "Room type"
+  Then  I should see "Room type"
+
+Scenario 2: Admin tries to give custom field invalid name
+  Tags: ['@javascript']
+  When  I change custom field "House type" name to ""
+  Then  I should see 1 validation errors in admin2
+
+Scenario 3: Admin changes categories
+  Tags: ['@javascript']
+  When  I change custom field "House type" categories
+  Then  correct categories should be stored
+
+Scenario 4: Admin tries to remove all categories
+  Tags: ['@javascript']
+  When  I try to remove all categories
+  Then  I should see 1 validation errors in admin2
+
+Scenario 5: Admin removes custom fields from category
+  Tags: ['@javascript']
+  When  I remove listing field "House type"
+  And  I remove listing field "Balcony type"
+  Then  I should see that I do not have any listing fields
+

@@ -1,0 +1,13 @@
+Scenario 1: PAP auction is started when market is in monitoring auction that expires earlier than the expiration by the pap auction therefore the expiry of the auction is extended by the relative remaining time. (0097-PAPU-031)
+  And  the parties place the following orders:
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "BTC/ETH"
+  Then  the starting auction time for market "BTC/ETH" is "1727136000000000000"
+  And  the ending auction time for market "BTC/ETH" is "1727136030000000000"
+  When  the protocol automated purchase is defined as:
+  Then  the oracles broadcast data with block time signed with "0xCAFECAFE2":
+  And  the network moves ahead "5" blocks
+  Then  the automated purchase program for market "BTC/ETH" should have a snapshot balance of "200"
+  And  the trading mode should be "TRADING_MODE_MONITORING_AUCTION" for the market "BTC/ETH"
+  Then  the starting auction time for market "BTC/ETH" is "1727136000000000000"
+  And  the ending auction time for market "BTC/ETH" is "1727136042000000000"
+

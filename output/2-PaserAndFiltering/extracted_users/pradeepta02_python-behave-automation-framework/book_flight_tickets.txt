@@ -1,0 +1,29 @@
+Feature: Verify flight ticket booking
+Description: """
+In order to verify round trip flght ticket booking works
+As an user
+When I book a roundtrip ticket
+I should be able to book the ticket
+"""
+
+Scenario 1: Book a roundtrip ticket
+  Description: """
+      STEPS:
+
+      1. Search for a flight
+      2. Select the default flights selected by cleartrip
+      4. Opt for trip insurance
+      5. Add traveller details
+
+      VERIFICATION: User should be presented with payment section
+    """
+  Tags: ['@smoke', '@flight-booking', '@id-xxxx']
+  Given  I am logged in to cleartrip as an user
+  When  I search for a flight with below details
+  And  I proceed with the booking
+  And  I select trip insurance
+  And  I accept terms and conditions
+  When  I continue with the booking
+  And  I add traveller with below details
+  Then  I should be presented with payment section
+

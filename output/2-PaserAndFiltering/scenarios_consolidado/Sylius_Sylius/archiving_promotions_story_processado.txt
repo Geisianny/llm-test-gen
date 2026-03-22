@@ -1,0 +1,36 @@
+Scenario 1: Archiving a promotion
+  Tags: ['@api', '@ui']
+  When  I browse promotions
+  And  I archive the "Christmas sale" promotion
+  Then  I should see a single promotion in the list
+  And  I should see the promotion "New Year sale" in the list
+
+
+
+Scenario 2: Archiving a promotion does not remove it from the database
+  Tags: ['@domain']
+  When  I archive the "Christmas sale" promotion
+  Then  the promotion "Christmas sale" should still exist in the registry
+
+
+
+Scenario 3: Seeing only archived promotions
+  Tags: ['@api', '@ui']
+  Given  the promotion "Christmas sale" is archived
+  When  I browse promotions
+  And  I filter archival promotions
+  Then  I should see a single promotion in the list
+  And  I should see the promotion "Christmas sale" in the list
+  And  I should not see the promotion "New Year sale" in the list
+
+
+
+Scenario 4: Restoring an archival promotion
+  Tags: ['@api', '@ui']
+  Given  the promotion "Christmas sale" is archived
+  When  I browse promotions
+  And  I filter archival promotions
+  And  I restore the "Christmas sale" promotion
+  Then  I should be viewing non archival promotions
+  And  I should see 2 promotions on the list
+

@@ -1,0 +1,96 @@
+Feature: Setting and applying activity streak benefits
+
+Background: 
+  Given  time is updated to "2023-01-01T00:00:00Z"
+  And  the average block duration is "1"
+  And  the following network parameters are set:
+  And  the following network parameters are set:
+  And  the following assets are registered:
+  And  the markets:
+  And  the network moves ahead "1" blocks
+  Given  the parties deposit on asset's general account the following amount:
+  Given  the parties submit the following liquidity provision:
+  And  the parties place the following pegged iceberg orders:
+  When  the parties place the following orders:
+  And  the opening auction period ends for market "BTC/USD.1.10"
+  Then  the network moves ahead "1" blocks
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "ETH/USD.1.10"
+  And  the trading mode should be "TRADING_MODE_CONTINUOUS" for the market "BTC/USD.1.10"
+
+Scenario 1: Parties rewards from different markets (using the same settlement asset) are transferred into the same vesting account (0085-RVST-004)(0085-RVST-005)
+  Given  the parties submit the following recurring transfers:
+  And  the network moves ahead "1" blocks
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  "trader1" should have vesting account balance of "20000" for asset "USD.1.10"
+  When  the network moves ahead "1" epochs
+  Then  "trader1" should have vesting account balance of "18000" for asset "USD.1.10"
+  And  "trader1" should have vested account balance of "2000" for asset "USD.1.10"
+
+Scenario 2: Party receive rewards from pool funded with a transfer with a non-zero lock period (0085-RVST-011)
+  Given  the parties submit the following recurring transfers:
+  And  the network moves ahead "1" blocks
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  "trader1" should have vesting account balance of "10000" for asset "USD.1.10"
+  When  the network moves ahead "1" epochs
+  Then  "trader1" should have vesting account balance of "10000" for asset "USD.1.10"
+  When  the network moves ahead "1" epochs
+  And  "trader1" should have vesting account balance of "9000" for asset "USD.1.10"
+  Then  "trader1" should have vested account balance of "1000" for asset "USD.1.10"
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  "trader1" should have vesting account balance of "18100" for asset "USD.1.10"
+  And  "trader1" should have vested account balance of "1900" for asset "USD.1.10"
+  When  the network moves ahead "1" epochs
+  Then  "trader1" should have vesting account balance of "17290" for asset "USD.1.10"
+  And  "trader1" should have vested account balance of "2710" for asset "USD.1.10"
+  When  the network moves ahead "1" epochs
+  And  "trader1" should have vesting account balance of "15561" for asset "USD.1.10"
+  Then  "trader1" should have vested account balance of "4439" for asset "USD.1.10"
+
+Scenario 3: Parties attempt to transfer rewards to or from vesting and vested accounts (0085-RVST-006)(0085-RVST-007)(0085-RVST-008)
+  Given  the parties submit the following recurring transfers:
+  And  the network moves ahead "1" blocks
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  "a3c024b4e23230c89884a54a813b1ecb4cb0f827a38641c66eeca466da6b2ddf" should have vesting account balance of "9000" for asset "USD.1.10"
+  And  "a3c024b4e23230c89884a54a813b1ecb4cb0f827a38641c66eeca466da6b2ddf" should have vested account balance of "1000" for asset "USD.1.10"
+  Given  the parties submit the following one off transfers:
+  And  "a3c024b4e23230c89884a54a813b1ecb4cb0f827a38641c66eeca466da6b2ddf" should have vested account balance of "999" for asset "USD.1.10"
+
+Scenario Outline 4: Parties rewards vest at the correct rate and adhere to the minimum quantum transfer (0085-RVST-009)(0085-RVST-010) - Example 1
+  Given  the following network parameters are set:
+  Given  the parties submit the following recurring transfers:
+  And  the network moves ahead "1" blocks
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  "trader1" should have vesting account balance of "10000" for asset "USD.1.10"
+  When  the network moves ahead "1" epochs
+  Then  "trader1" should have vested account balance of "1000" for asset "USD.1.10"
+
+  Examples:
+    | base rate | minimum transfer | vested amount |
+    | 0.1 | 1 | "1000" |
+    | 0.1 | 200 | "2000" |
+    | 0.1 | 2000 | "10000" |
+    | 1.0 | 1 | "10000" |
+
+Scenario Outline 5: Party receives rewards but does not withdraw them in order to receive a bonus multiplier (0085-RVST-012)(0085-RVST-013)(0085-RVST-014) - Example 1
+  Given  the following network parameters are set:
+  Given  the parties submit the following recurring transfers:
+  And  the network moves ahead "1" blocks
+  Given  the parties place the following orders:
+  And  the network moves ahead "1" epochs
+  Then  "trader1" should have vesting account balance of "10000" for asset "USD.1.10"
+  Given  the parties place the following orders:
+  When  the network moves ahead "1" epochs
+  Then  "trader1" should have vesting account balance of "7500" for asset "USD.1.10"
+  And  "trader2" should have vesting account balance of "2500" for asset "USD.1.10"
+
+  Examples:
+    | minimum quantum balance | reward multiplier | trader1 rewards | trader2 rewards |
+    | "500" | "3" | "7500" | "2500" |
+    | "500" | "4" | "8000" | "2000" |
+    | "5000000" | "3" | "5000" | "5000" |
+

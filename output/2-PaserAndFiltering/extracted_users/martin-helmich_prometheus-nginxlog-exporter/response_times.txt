@@ -1,0 +1,22 @@
+Feature: Upstream response times are summarized
+
+Scenario 1: Single request is summarized
+  Given  a running exporter listening on "access.log" with upstream-time format
+  When  the following HTTP request is logged to "access.log"
+  Then  the exporter should report value 10 for metric nginx_http_upstream_time_seconds{method="GET",status="200",quantile="0.5"}
+
+Scenario 2: .5 quantile of upstream time is computed
+  Given  a running exporter listening on "access.log" with upstream-time format
+  When  the following HTTP request is logged to "access.log"
+  Then  the exporter should report value 20 for metric nginx_http_upstream_time_seconds{method="GET",status="200",quantile="0.5"}
+
+Scenario 3: .5 quantile of upstream connect time is computed
+  Given  a running exporter listening on "access.log" with upstream-connect-time format
+  When  the following HTTP request is logged to "access.log"
+  Then  the exporter should report value 5 for metric nginx_http_upstream_connect_time_seconds{method="GET",status="200",quantile="0.5"}
+
+Scenario 4: .5 quantile of response time is computed
+  Given  a running exporter listening on "access.log" with request-time format
+  When  the following HTTP request is logged to "access.log"
+  Then  the exporter should report value 20 for metric nginx_http_response_time_seconds{method="GET",status="200",quantile="0.5"}
+

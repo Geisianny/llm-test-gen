@@ -1,0 +1,6 @@
+Scenario 1: Viewing only enabled variants
+  Tags: ['@api', '@no-ui']
+  When  I view variants
+  Then  I should see "Small", "Medium" and "Large" variants
+  But  I should not see "Extra Large" variant
+

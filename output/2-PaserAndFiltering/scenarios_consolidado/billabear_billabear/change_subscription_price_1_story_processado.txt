@@ -1,0 +1,19 @@
+Scenario 1: Update price
+  When  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  And  the following payment details:
+  When  I update the subscription "Test Plan" for "customer.one@example.org" to use the 3500 in "USD" per "month" price
+  Then  the subscription "Test Plan" for "customer.one@example.org" will be for 3500 in "USD" per "month"
+
+
+
+Scenario 2: Update price - Stripe Billing
+  When  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  stripe billing is disabled
+  And  the follow customers exist:
+  And  the following subscriptions exist:
+  And  the following payment details:
+  When  I update the subscription "Test Plan" for "customer.one@example.org" to use the 3500 in "USD" per "month" price
+  Then  the subscription "Test Plan" for "customer.one@example.org" will be for 3500 in "USD" per "month"
+

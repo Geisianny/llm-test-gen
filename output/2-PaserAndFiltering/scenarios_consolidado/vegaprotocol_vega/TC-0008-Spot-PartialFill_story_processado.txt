@@ -1,0 +1,39 @@
+Scenario 1: Spot Order gets filled partially among three parties
+  Given  the fees configuration named "fees-config-1":
+  And  the simple risk model named "my-simple-risk-model":
+  And  the fees configuration named "my-fees-config":
+  And  the spot markets:
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties place the following orders:
+  And  the opening auction period ends for market "BTC/ETH"
+  Then  "party1" should have holding account balance of "750000" for asset "ETH"
+  Then  "party2" should have holding account balance of "5" for asset "BTC"
+  Then  "party3" should have holding account balance of "3500000" for asset "ETH"
+  And  "party1" should have general account balance of "99250000" for asset "ETH"
+  And  "party2" should have general account balance of "0" for asset "BTC"
+  And  "party3" should have general account balance of "996500000" for asset "ETH"
+  And  the parties amend the following orders:
+  Then  "party1" should have holding account balance of "750000" for asset "ETH"
+  Then  "party2" should have holding account balance of "5" for asset "BTC"
+  Then  "party3" should have holding account balance of "3500000" for asset "ETH"
+  And  the opening auction period ends for market "BTC/ETH"
+  And  the following trades should be executed:
+  Then  "party1" should have holding account balance of "0" for asset "ETH"
+  Then  "party2" should have holding account balance of "4" for asset "BTC"
+  Then  "party3" should have holding account balance of "3500000" for asset "ETH"
+  And  "party1" should have general account balance of "99250000" for asset "ETH"
+  And  "party1" should have general account balance of "1" for asset "BTC"
+  And  "party2" should have general account balance of "0" for asset "BTC"
+  And  "party3" should have general account balance of "996500000" for asset "ETH"
+  And  the parties amend the following orders:
+  And  the following trades should be executed:
+  Then  "party1" should have holding account balance of "0" for asset "ETH"
+  Then  "party2" should have holding account balance of "0" for asset "BTC"
+  Then  "party3" should have holding account balance of "700000" for asset "ETH"
+  Then  "party1" should have general account balance of "99250000" for asset "ETH"
+  Then  "party1" should have general account balance of "1" for asset "BTC"
+  Then  "party2" should have general account balance of "3530400" for asset "ETH"
+  Then  "party2" should have general account balance of "0" for asset "BTC"
+  Then  "party3" should have general account balance of "996514000" for asset "ETH"
+  Then  "party3" should have general account balance of "4" for asset "BTC"
+

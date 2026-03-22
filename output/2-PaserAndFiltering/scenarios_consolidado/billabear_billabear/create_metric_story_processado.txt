@@ -1,0 +1,36 @@
+Scenario 1: Create a metric
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  When  I create a metric via the app with the following:
+  Then  there should be a metric called "Testing Metric"
+
+
+
+Scenario 2: Invalid no aggregation property
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  When  I create a metric via the app with the following:
+  Then  there should not be a metric called "Testing Metric"
+
+
+
+Scenario 3: Valid with aggregation property
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  When  I create a metric via the app with the following:
+  Then  there should be a metric called "Testing Metric"
+
+
+
+Scenario 4: Valid with filters
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  I want to have the following filters on a metric
+  When  I create a metric via the app with the following:
+  Then  there should be a metric called "Testing Metric"
+  And  the metric "Testing Metric" will have a filter for "filter_one"
+
+
+
+Scenario 5: Valid with invalid filters
+  Given  I have logged in as "sally.brown@example.org" with the password "AF@k3P@ss"
+  And  I want to have the following filters on a metric
+  When  I create a metric via the app with the following:
+  Then  there should not be a metric called "Testing Metric"
+

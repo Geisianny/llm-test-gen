@@ -1,0 +1,40 @@
+Feature: 
+Description: In order to see some Jemengage endpoints
+    As a user
+    I should be able to access Jemengage API
+Tags: ['@api', '@renaissance']
+
+Scenario 1: As a non logged-in user I can get a RGPD text
+  Given  I send a "GET" request to "/api/je-mengage/rgpd"
+  Then  the response status code should be 200
+  And  the JSON should be equal to:
+
+Scenario 2: As a non logged-in user I can get legalities texts
+  Given  I send a "GET" request to "/api/je-mengage/je-mengage-mentions-legales"
+  Then  the response status code should be 200
+  And  the JSON should be equal to:
+
+Scenario 3: As a non logged-in user I can get data protection policy text
+  Given  I send a "GET" request to "/api/je-mengage/je-mengage-politique-protection-donnees"
+  Then  the response status code should be 200
+  And  the JSON should be equal to:
+
+Scenario 4: As a non logged-in user I cannot get a non-existent mentions text
+  Given  I send a "GET" request to "/api/je-mengage/je-mengage-mentions"
+  Then  the response status code should be 404
+
+Scenario 5: As a non logged-in user I cannot get a non-existent header block
+  Given  I send a "GET" request to "/api/je-mengage/headers/connexion"
+  Then  the response status code should be 404
+
+Scenario 6: As a non logged-in user I can get the connexion page header block
+  Given  I send a "GET" request to "/api/je-mengage/headers/page-connexion"
+  Then  the response status code should be 200
+  And  the JSON should be equal to:
+
+Scenario 7: As a logged-in user I can get the homepage header block
+  Given  I am logged with "jacques.picard@en-marche.fr" via OAuth client "JeMengage Mobile" with scope "jemarche_app"
+  When  I send a "GET" request to "/api/v3/je-mengage/headers/page-accueil"
+  Then  the response status code should be 200
+  And  the JSON should be equal to:
+

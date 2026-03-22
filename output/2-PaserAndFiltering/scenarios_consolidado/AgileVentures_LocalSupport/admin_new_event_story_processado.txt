@@ -1,0 +1,67 @@
+Scenario 1: Unsuccessfully attempt to create event without being signed-in
+  When  I visit the new event page
+  Then  I should be on the sign in page
+
+
+
+Scenario 2: Successfully create an event while being signed-in as superadmin
+  Given  I am signed in as a superadmin
+  And  I visit the home page
+  And  I click "New Event"
+  Given  I fill in the new event page validly
+  Then  I press "Create Event"
+  Then  I should see "Event was successfully created"
+  And  I should see "at 09:00"
+  And  I should see "at 09:20"
+
+
+
+Scenario 3: Get validation error creating new event with empty fields
+  Given  I am signed in as a superadmin
+  And  I visit the home page
+  And  I follow "New Event"
+  And  I press "Create Event"
+  Then  I should see "can't be blank"
+  Then  I should see "can't be blank"
+
+
+
+Scenario 4: Logged in non-superadmin user should not see new event link
+  Given  I am signed in as a non-superadmin
+  Given  I visit the home page
+  Then  I should not see "New Event"
+
+
+
+Scenario 5: non logged in user should not see new event link
+  Given  I visit the home page
+  Then  I should not see "New Event"
+
+
+
+Scenario 6: Non-superadmin unsuccessfully attempts to create an event
+  Given  I am signed in as a non-superadmin
+  And  I create "Unwanted" event
+  Then  I should be on the events page
+  Then  I should see permission denied
+  And  I should not see "Event was successfully created"
+  And  "Unwanted" event should not exist
+
+
+
+Scenario 7: 
+  Tags: ['@javascript']
+  Given  I am signed in as a superadmin
+  And  I visit the new event page
+  When  I click on the "#event_end_date" text field
+  Then  I should see "Su Mo Tu We Th Fr Sa" in ".bootstrap-datetimepicker-widget"
+
+
+
+Scenario 8: 
+  Tags: ['@javascript']
+  Given  I am signed in as a superadmin
+  And  I visit the new event page
+  When  I click on the "#event_start_date" text field
+  Then  I should see "Su Mo Tu We Th Fr Sa" in ".bootstrap-datetimepicker-widget"
+

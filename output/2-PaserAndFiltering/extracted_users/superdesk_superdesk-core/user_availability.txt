@@ -1,0 +1,90 @@
+Feature: User Availability
+Description: As an administrator
+    I want to manage user availability records
+    So that I can track when users are available or unavailable
+
+Scenario 1: Create, Read, Update, Delete user availability
+  Tags: ['@auth', '@notification']
+  When  we post to "user_availability"
+  Then  we get OK response
+  And  we get existing resource
+  When  we get "/user_availability/#user_availability._id#"
+  Then  we get OK response
+  And  we get existing resource
+  When  we patch "/user_availability/#user_availability._id#"
+  Then  we get OK response
+  And  we get existing resource
+  When  we get "/user_availability?where={"date":"2023-05-15"}"
+  Then  we get list with 1 items
+  When  we patch "/user_availability/#user_availability._id#"
+  Then  we get OK response
+  When  we delete "/user_availability/#user_availability._id#"
+  Then  we get OK response
+  And  we get notifications
+  When  we get "/user_availability/#user_availability._id#"
+  Then  we get error 404
+  When  we post to "user_availability"
+  Then  we get OK response
+
+Scenario 2: Default user availability
+  Tags: ['@auth', '@notification']
+  When  we setup test user
+  When  we put to "/default_user_availability/#CONTEXT_USER_ID#"
+  Then  we get OK response
+  And  we get existing resource
+  And  we get notifications
+  When  we get "/user_availability"
+  Then  we get list with 30+ items
+  When  we get "/default_user_availability/#CONTEXT_USER_ID#"
+  Then  we get OK response
+  And  we get existing resource
+  When  we put to "/default_user_availability/#CONTEXT_USER_ID#"
+  Then  we get OK response
+  And  we get existing resource
+  And  we get notifications
+  When  we patch "/default_user_availability/#CONTEXT_USER_ID#"
+  Then  we get error 405
+  When  we delete "/default_user_availability/#CONTEXT_USER_ID#"
+  Then  we get error 405
+  Given  "users"
+  When  we put to "/default_user_availability/#users._id#"
+  Then  we get error 403
+  When  we post to "default_user_availability"
+  Then  we get error 405
+  When  we put to "/default_user_availability/#CONTEXT_USER_ID#"
+  And  we get "user_availability"
+  Then  we get list with 0 items
+  When  we put to "/default_user_availability/#CONTEXT_USER_ID#"
+  And  we get "user_availability"
+  Then  we get list with 10+ items
+  When  we put to "/default_user_availability/#CONTEXT_USER_ID#"
+  And  we post to "/user_availability"
+  Then  we get OK response
+  And  we get existing resource
+
+Scenario 3: Manage other user's availability
+  Tags: ['@auth']
+  When  we setup test user
+  When  we post to "user_availability"
+  Then  we get OK response
+  When  we setup test user
+  When  we put to "/default_user_availability/#FOO_USER_ID#"
+  Then  we get error 403
+  When  we patch "/user_availability/#user_availability._id#"
+  Then  we get error 403
+  When  we delete "/user_availability/#user_availability._id#"
+  Then  we get error 403
+  When  we post to "/user_availability"
+  Then  we get error 403
+  When  we add privilege "user_availability_manage" to user "bar"
+  When  we put to "/default_user_availability/#FOO_USER_ID#"
+  Then  we get OK response
+  And  we get existing resource
+  When  we post to "/user_availability"
+  Then  we get OK response
+  And  we get existing resource
+  When  we patch "/user_availability/#user_availability._id#"
+  Then  we get OK response
+  When  we delete "/user_availability/#user_availability._id#"
+  Then  we get OK response
+

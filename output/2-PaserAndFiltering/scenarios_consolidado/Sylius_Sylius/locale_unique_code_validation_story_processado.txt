@@ -1,0 +1,5 @@
+Scenario 1: Trying to add new locale with used code
+  Tags: ['@api', '@ui', '@mink:chromedriver']
+  When  I want to add a new locale
+  Then  I should not be able to choose "Norwegian (Norway)"
+

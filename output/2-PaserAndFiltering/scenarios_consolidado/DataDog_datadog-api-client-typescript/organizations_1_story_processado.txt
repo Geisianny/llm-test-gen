@@ -1,0 +1,97 @@
+Scenario 1: Get a specific Org Config value returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "GetOrgConfig" request
+  And  request contains "org_config_name" parameter from "REPLACE.ME"
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 2: Get a specific Org Config value returns "Not Found" response
+  Tags: ['@team:DataDog/team-aaa-identity']
+  Given  new "GetOrgConfig" request
+  And  request contains "org_config_name" parameter with value "i_dont_exist"
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+
+
+Scenario 3: Get a specific Org Config value returns "OK" response
+  Tags: ['@team:DataDog/team-aaa-identity']
+  Given  new "GetOrgConfig" request
+  And  request contains "org_config_name" parameter with value "custom_roles"
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 4: List Org Configs returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "ListOrgConfigs" request
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 5: List Org Configs returns "OK" response
+  Tags: ['@team:DataDog/team-aaa-identity']
+  Given  new "ListOrgConfigs" request
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 6: Update a specific Org Config returns "Bad Request" response
+  Tags: ['@team:DataDog/team-aaa-identity']
+  Given  new "UpdateOrgConfig" request
+  And  request contains "org_config_name" parameter with value "custom_roles"
+  And  body with value {"data": {"attributes": {"value": "not-a-boolean"}, "type": "org_configs"}}
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 7: Update a specific Org Config returns "Not Found" response
+  Tags: ['@team:DataDog/team-aaa-identity']
+  Given  new "UpdateOrgConfig" request
+  And  request contains "org_config_name" parameter with value "i_dont_exist"
+  And  body with value {"data": {"attributes": {"value": []}, "type": "org_configs"}}
+  When  the request is sent
+  Then  the response status is 404 Not Found
+
+
+
+Scenario 8: Update a specific Org Config returns "OK" response
+  Tags: ['@team:DataDog/team-aaa-identity']
+  Given  new "UpdateOrgConfig" request
+  And  request contains "org_config_name" parameter with value "monitor_timezone"
+  And  body with value {"data": {"attributes": {"value": "UTC"}, "type": "org_configs"}}
+  When  the request is sent
+  Then  the response status is 200 OK
+
+
+
+Scenario 9: Upload IdP metadata returns "Bad Request - caused by either malformed XML or invalid SAML IdP metadata" response
+  Tags: ['@skip-go', '@skip-java', '@skip-python', '@skip-ruby', '@skip-rust', '@skip-terraform-config', '@skip-typescript', '@skip-validation', '@team:DataDog/team-aaa-identity']
+  Given  new "UploadIdPMetadata" request
+  And  request contains "idp_file" parameter with value "fixtures/organizations/saml_configurations/invalid_idp_metadata.xml"
+  When  the request is sent
+  Then  the response status is 400 Bad Request - caused by either malformed XML or invalid SAML IdP metadata
+
+
+
+Scenario 10: Upload IdP metadata returns "Bad Request" response
+  Tags: ['@generated', '@skip', '@team:DataDog/team-aaa-identity']
+  Given  new "UploadIdPMetadata" request
+  When  the request is sent
+  Then  the response status is 400 Bad Request
+
+
+
+Scenario 11: Upload IdP metadata returns "OK" response
+  Tags: ['@integration-only', '@skip-terraform-config', '@skip-validation', '@team:DataDog/team-aaa-identity']
+  Given  new "UploadIdPMetadata" request
+  And  request contains "idp_file" parameter with value "fixtures/organizations/saml_configurations/valid_idp_metadata.xml"
+  When  the request is sent
+  Then  the response status is 200 OK
+

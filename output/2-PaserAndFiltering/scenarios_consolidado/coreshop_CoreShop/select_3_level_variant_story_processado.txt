@@ -1,0 +1,18 @@
+Scenario 1: View product and select other variant
+  When  I click on attribute color "green"
+  And  attribute value "S" is not selected
+  And  attribute value "M" is not selected
+  And  attribute value "L" is not selected
+  And  attribute value "XL" is not selected
+  And  attribute value "Summer" is not selected
+  And  attribute value "Winter" is not selected
+  When  I click on attribute value "S"
+  And  attribute value "Summer" is not selected
+  And  attribute value "Winter" is not selected
+  When  I click on attribute value "Winter"
+  Then  I should be on the detail page for variant with key "t-shirt-green-s-winter"
+  When  I click on attribute color "blue"
+  When  I click on attribute value "XL"
+  When  I click on attribute value "Summer"
+  Then  I should be on the detail page for variant with key "t-shirt-blue-xl-summer"
+

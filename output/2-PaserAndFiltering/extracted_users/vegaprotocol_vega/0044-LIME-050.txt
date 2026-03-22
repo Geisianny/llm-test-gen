@@ -1,0 +1,45 @@
+Feature: Test LP, when market is in opening auction, in terms of the liquidity they are expected to supply: this only takes effect from the start of the next epoch
+
+Background: 
+  Given  the margin calculator named "margin-calculator-1":
+  Given  the log normal risk model named "log-normal-risk-model":
+  And  the following network parameters are set:
+  And  the liquidity monitoring parameters:
+  And  the following assets are registered:
+  And  the fees configuration named "fees-config-1":
+  And  the price monitoring named "price-monitoring":
+  And  the liquidity sla params named "SLA-22":
+  And  the liquidity sla params named "SLA-23":
+  And  the markets:
+  And  the following network parameters are set:
+  Given  the average block duration is "1"
+
+Scenario 1: 001: lp1 and lp2 on the market ETH/MAR22 placed commitment during opening auction, 0044-LIME-050
+  Tags: ['@Now']
+  Given  the parties deposit on asset's general account the following amount:
+  And  the parties submit the following liquidity provision:
+  And  the supplied stake should be "8000" for the market "ETH/MAR22"
+  When  the network moves ahead "4" blocks
+  And  the insurance pool balance should be "0" for the market "ETH/MAR22"
+  And  the parties submit the following liquidity provision:
+  And  the supplied stake should be "12000" for the market "ETH/MAR22"
+  When  the network moves ahead "4" blocks
+  And  the insurance pool balance should be "0" for the market "ETH/MAR22"
+  And  the current epoch is "0"
+  And  the parties place the following pegged iceberg orders:
+  When  the network moves ahead "5" blocks
+  And  the current epoch is "1"
+  Then  the parties place the following orders:
+  Then  the opening auction period ends for market "ETH/MAR22"
+  And  the insurance pool balance should be "0" for the market "ETH/MAR22"
+  And  the following trades should be executed:
+  When  the network moves ahead "6" blocks
+  And  the current epoch is "1"
+  And  the insurance pool balance should be "0" for the market "ETH/MAR22"
+  And  the supplied stake should be "12000" for the market "ETH/MAR22"
+  When  the network moves ahead "6" blocks
+  And  the current epoch is "2"
+  And  the insurance pool balance should be "3600" for the market "ETH/MAR22"
+  And  the supplied stake should be "8400" for the market "ETH/MAR22"
+  Then  the following transfers should happen:
+

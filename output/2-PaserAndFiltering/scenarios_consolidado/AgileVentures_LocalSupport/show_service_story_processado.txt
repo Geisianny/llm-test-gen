@@ -1,0 +1,30 @@
+Scenario 1: See a volunteer opportunity and hyperlink
+  Given  I visit the show page for the service named "Office Support"
+  Then  I should see:
+  And  I should not see "Indian Elders Association"
+
+
+
+Scenario 2: See URLs in services pages are hyperlinked
+  Given  I visit the show page for the service named "Office Support"
+  Then  the page includes a hyperlink to "http://test.com"
+
+
+
+Scenario 3: See emails in services pages are hyperlinked
+  Given  I visit the show page for the service named "Litter Box Scooper"
+  Then  the page includes email hyperlink "test@test.com"
+
+
+
+Scenario 4: See service location with different address
+  Tags: ['@vcr']
+  Given  I visit the show page for the service named "Driving Support"
+  Then  I should see "Service location: Station Rd, HA8 7BD"
+
+
+
+Scenario 5: See search form on show page
+  Given  I visit the show page for the service named "Office Support"
+  Then  I should see a search form
+

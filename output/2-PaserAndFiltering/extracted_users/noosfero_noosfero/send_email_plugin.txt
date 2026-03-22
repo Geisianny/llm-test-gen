@@ -1,0 +1,33 @@
+Feature: send_email_plugin
+
+Background: 
+  Given  the following users
+  And  I am logged in as "joaosilva"
+
+Scenario 1: expand macro in article content
+  Given  plugin SendEmail is enabled on environment
+  And  the following articles
+  When  I go to /joaosilva/sample-article
+  Then  I should see "URL path to /profile/joaosilva/plugin/send_email/deliver action"
+
+Scenario 2: expand macro in block content
+  Given  plugin SendEmail is enabled on environment
+  And  the following blocks
+  When  I go to Joao Silva's homepage
+  Then  I should see "URL path to /profile/joaosilva/plugin/send_email/deliver action"
+
+Scenario 3: as admin I can configure plugin
+  Given  I am logged in as admin
+  When  I go to the environment control panel
+  And  I follow "Plugins"
+  Then  I should see "Configuration" linking to "/admin/plugin/send_email/admin"
+
+Scenario 4: configure plugin to allow emails to john@example.com
+  Given  I am logged in as admin
+  When  I go to /admin/plugin/send_email
+  Then  I should not see "john@example.com"
+  When  I fill in "E-Mail addresses you want to allow to send" with "john@example.com"
+  And  I follow "Save"
+  Then  I go to /admin/plugin/send_email
+  And  I should see "john@example.com"
+
