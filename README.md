@@ -1,67 +1,53 @@
-# Investigating the Use of a Large Language Model for Acceptance Test Scenario Generation
+# Investigando o uso de LLM para geração de cenários Gherkin
 
-This repository provides all scripts, configurations, and artifacts required to reproduce the experiment described in the study: *Investigating the Use of an LLM for Acceptance Test Scenario Generation*.
+Resumo:
 
----
+<p align="justify">
+A crescente demanda por qualidade em software tem impulsionado
+práticas como Behavior-Driven Development (BDD) e testes de aceitação automatizados, nos quais cenários em Gherkin descrevem
+o comportamento esperado do sistema. No entanto, a elaboração
+manual de cenários é trabalhosa e sujeita à inconsistências. Neste
+contexto, realizamos um estudo empírico para avaliar a viabilidade
+do uso do modelo LLaMA-4 Maverick 17B-128E na geração de
+cenários Gherkin a partir de histórias de usuário. Partindo de uma
+amostra de 104 histórias de 26 projetos do GitHub, geramos 520 cenários utilizando few-shot prompting e avaliamos sua qualidade. Os
+resultados revelaram ausência de erros sintáticos e boa aderência às
+boas práticas (apenas 4 cenários com defeito, excluindo-se erros de
+indentação e comprimento excessivo de step ou título, reparáveis
+por simples ajuste no prompt). A similaridade textual com cenários
+humanos, medida por TF-IDF e embeddings, apresentou valores intermediários (0,44 e 0,58), sugerindo que o modelo capturou melhor
+o comportamento funcional dos cenários sem reproduzir exatamente o estilod de escrita humana. No entanto, a inspeção manual
+dos casos extremos sinalizou a avaliação de similaridade textual
+foi, em geral, pouco conclusiva quanto à adequação do vocabulário
+adotado nos cenários gerados, em partes devido à baixa qualidade
+de parte dos cenários de referência. No mais, constatamos alta cobertura funcional dos cenários gerados a partir da avaliação manual
+destes, o que significa que os cenários cobriram satisfatoriamente
+o fluxo principal e os fluxos alternativos esperados para a história,
+conforme instruído pelo prompt. Por fim, a partir da análise manual
+de uma subamostra de 104 cenários (1 cenário por história) por dois
+revisores (com taxa de concordância de 87,5%), constatamos alta
+coesão semântica dos cenários gerados, ou seja, os cenários se mostraram alinhados aos requisitos de software subjacentes às histórias.
+Em conjunto, os achados sugerem que o modelo é viável como suporte inicial à geração de cenários Gherkin, contribuindo para a
+automação e padronização dos testes de aceitação, sem dispensar a
+validação humana.
 
-## ⚙️ Experimental Pipeline
-
-The project implements a complete pipeline divided into the following stages:
-
-| Step | Description |
-|------|------------|
-| 0-GitHubSearch | Search for repositories containing Gherkin |
-| 1-downloader | Data collection |
-| 2-ParserAndFiltering | Data cleaning and validation |
-| 2.1-RandomSelection | Sample selection |
-| 3-Characterization | User story characterization |
-| 4-UsEvaluation | User story evaluation |
-| 5-LLMsToTest | Scenario generation using LLMs |
-| 6-FeatureEvaluation | Feature evaluation |
-| 7-scenario_quality | Scenario quality evaluation |
-| featuresEvaluationSummary | Results consolidation |
-
----
-
-## 🚀 Setup & Execution
-
-### 1. Create a virtual environment
-
-```bash
-python -m venv venv
-```
-
-### 2. Activate the environment
-
-**Windows**
-```bash
-venv\Scripts\activate
-```
-
-**Linux / macOS**
-```bash
-source venv/bin/activate
-```
-
-### 3. Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### 4. Configure environment variables
-
-```bash
-cp .env_example .env
-```
+</p>
 
 ---
 
+## Configuração de estudo
 
-## 📁 Output Structure
+- [Script de busca no github](./0-GitHubSearch)
+- [Script de dowloader dos dados](./1-downloader)
+- Script de filtragem e parser
+- Script de seleção da amostra
+- Script de busca de informações dos repositorios
+- Script de geração dos cenarios 
+- Script para execução das metricas
+- Dados coletados 
 
-Results are available in:
+---
 
-```bash
-/output
-```
+## Resultados da avaliação
+
+
