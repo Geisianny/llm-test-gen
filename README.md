@@ -39,15 +39,22 @@ validação humana.
 
 - [Script de busca no github](./0-GitHubSearch)
 - [Script de dowloader dos dados](./1-downloader)
-- Script de filtragem e parser
-- Script de seleção da amostra
-- Script de busca de informações dos repositorios
-- Script de geração dos cenarios 
-- Script para execução das metricas
-- Dados coletados 
+- [Script de filtragem e seleção dos dados](./2-PaserAndFiltering)
+- [Script de seleção da amostra](./2.1-RandomSelection)
+- [Script de busca de informações dos repositorios](./3-Characterization)
+- [Script de geração dos cenarios](./5-LlmUsToTest)
+- [Script para execução das metricas](./6-FeatureEvaluation)
+- [Script para execução das metricas de similaridade](./7-scenario_quality)
+- [Dados coletados](./featuresEvaluationSummary)
 
 ---
 
 ## Resultados da avaliação
 
+- [Informações sobre os repositorios da amostra]()
+- [PP1: Com que frequência os cenários gerados por LLM são sintaticamente corretos e seguem as boas práticas?]()
+- [PP2: Em que medida os cenários gerados por LLM são textualmente similares aos gerados por humanos?]()
+- [PP3: Com que frequência os cenários gerados apresentam coesão semântica em relação às histórias de usuário?]()
+- [PP4: Com que frequência os cenários gerados apresentam cobertura funcional adequada das histórias de usuário?]()
+- [Outros resultados]()
 
