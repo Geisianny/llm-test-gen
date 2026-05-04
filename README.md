@@ -52,9 +52,9 @@ validação humana.
 ## Resultados da avaliação
 
 - [Informações sobre os repositorios da amostra](./repositorios_amostra/)
-- [PP1: Com que frequência os cenários gerados por LLM são sintaticamente corretos e seguem as boas práticas?]()
-- [PP2: Em que medida os cenários gerados por LLM são textualmente similares aos gerados por humanos?]()
-- [PP3: Com que frequência os cenários gerados apresentam coesão semântica em relação às histórias de usuário?]()
-- [PP4: Com que frequência os cenários gerados apresentam cobertura funcional adequada das histórias de usuário?]()
+- [PP1: Com que frequência os cenários gerados por LLM são sintaticamente corretos e seguem as boas práticas?](./PP1)
+- [PP2: Em que medida os cenários gerados por LLM são textualmente similares aos gerados por humanos?](./PP2)
+- [PP3: Com que frequência os cenários gerados apresentam coesão semântica em relação às histórias de usuário?](./PP3)
+- [PP4: Com que frequência os cenários gerados apresentam cobertura funcional adequada das histórias de usuário?](./PP4)
 - [Outras informações](.\outras_informacoes)
 
