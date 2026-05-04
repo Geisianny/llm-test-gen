@@ -56,5 +56,5 @@ validação humana.
 - [PP2: Em que medida os cenários gerados por LLM são textualmente similares aos gerados por humanos?]()
 - [PP3: Com que frequência os cenários gerados apresentam coesão semântica em relação às histórias de usuário?]()
 - [PP4: Com que frequência os cenários gerados apresentam cobertura funcional adequada das histórias de usuário?]()
-- [Outros resultados]()
+- [Outras informações](.\outras_informacoes)
 

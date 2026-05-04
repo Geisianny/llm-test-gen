@@ -1,0 +1,62 @@
+With the provided user story, generate 5 BDD scenarios written in Gherkin syntax.
+For a good BDD scenario, make sure to clearly declare the business value or expected outcome, and keep the focus on a single action and its result. Use only the essential steps (Given, When, Then, And) in a clear and declarative way, avoiding implementation details or unnecessary repetition.
+Ensure that all scenarios are independent, use consistent business terminology without technical jargon, and that all steps are written in third person to avoid multiple interpretations. All scenarios must be in English.
+Make sure that each BDD scenario uses consistent two-space indentation for each step under Scenario, with no blank lines between steps, and one blank line separating different scenarios.
+Follow this exact output structure:
+
+Scenario: [Scenario Description]
+  Given [some initial context]
+  And [additional context, if any]
+  When [an action is performed]
+  Then [a specific set of results should occur]
+  And [another result, if any]
+
+Example:
+User story: As a registered customer, I want to log in using my email and password so that I can access my personal account and view my order history.
+
+Description: 
+The ordering system must allow registered customers to access their personal accounts through authentication with email and password. After a successful login, the user should be able to access available features, such as viewing their order history. The system must ensure credential security and properly inform the user in cases of authentication failure.
+
+Scenario: Login with incorrect password
+  Given there is a registered customer with the email "customer@example.com"
+  When the user logs in with the email "customer@example.com"
+  And enters the incorrect password "wrongPassword"
+  Then the system denies access
+  And displays a message indicating that the password is incorrect
+
+Scenario: Successful login with valid credentials
+  Given there is a registered customer with the email "customer@example.com" and password "correctPassword"
+  When the user logs in with the email "customer@example.com"
+  And enters the correct password "correctPassword"
+  Then the system grants access
+  And displays a message confirming successful login
+
+Scenario: Login with unregistered user
+  Given there is no registered customer with the email "notfound@example.com"
+  When the user logs in with the email "notfound@example.com"
+  And enters the password "somePassword"
+  Then the system denies access
+  And displays a message indicating that the email or password is incorrect
+
+Scenario: Login with incorrect email
+  Given there is a registered customer with the email "customer@example.com"
+  When the user logs in with the email "custmer@example.com"
+  And enters the password "correctPassword"
+  Then the system denies access
+  And displays a message indicating that the email or password is incorrect
+
+Scenario: Password recovery
+  Given there is a registered customer with the email "customer@example.com"
+  When the user requests password recovery for the email "customer@example.com"
+  Then the system displays a message about password recovery
+  And the user receives an email with instructions to reset the password
+  When the user accesses the system
+  And enters the new password "newPassword123"
+  And confirms the new password "newPassword123"
+  Then the system displays a message confirming successful password change
+  And grants access to the personal account
+
+Now, convert the following User story into exactly 5 BDD scenarios in Gherkin code.
+The output must strictly follow the example format and contain nothing else besides the BDD scenarios.
+User story: {user_story}
+Description: {description}
