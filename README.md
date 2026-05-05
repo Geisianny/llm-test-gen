@@ -5,31 +5,26 @@ Resumo:
 <p align="justify">
 A crescente demanda por qualidade em software tem impulsionado
 práticas como Behavior-Driven Development (BDD) e testes de aceitação automatizados, nos quais cenários em Gherkin descrevem
-o comportamento esperado do sistema. No entanto, a elaboração
-manual de cenários é trabalhosa e sujeita à inconsistências. Neste
-contexto, realizamos um estudo empírico para avaliar a viabilidade
-do uso do modelo LLaMA-4 Maverick 17B-128E na geração de
-cenários Gherkin a partir de histórias de usuário. Partindo de uma
-amostra de 104 histórias de 26 projetos do GitHub, geramos 520 cenários utilizando few-shot prompting e avaliamos sua qualidade. Os
-resultados revelaram ausência de erros sintáticos e boa aderência às
-boas práticas (apenas 4 cenários com defeito, excluindo-se erros de
-indentação e comprimento excessivo de step ou título, reparáveis
-por simples ajuste no prompt). A similaridade textual com cenários
-humanos, medida por TF-IDF e embeddings, apresentou valores intermediários (0,44 e 0,58), sugerindo que o modelo capturou melhor
-o comportamento funcional dos cenários sem reproduzir exatamente o estilod de escrita humana. No entanto, a inspeção manual
-dos casos extremos sinalizou a avaliação de similaridade textual
-foi, em geral, pouco conclusiva quanto à adequação do vocabulário
-adotado nos cenários gerados, em partes devido à baixa qualidade
-de parte dos cenários de referência. No mais, constatamos alta cobertura funcional dos cenários gerados a partir da avaliação manual
-destes, o que significa que os cenários cobriram satisfatoriamente
-o fluxo principal e os fluxos alternativos esperados para a história,
-conforme instruído pelo prompt. Por fim, a partir da análise manual
-de uma subamostra de 104 cenários (1 cenário por história) por dois
-revisores (com taxa de concordância de 87,5%), constatamos alta
-coesão semântica dos cenários gerados, ou seja, os cenários se mostraram alinhados aos requisitos de software subjacentes às histórias.
-Em conjunto, os achados sugerem que o modelo é viável como suporte inicial à geração de cenários Gherkin, contribuindo para a
-automação e padronização dos testes de aceitação, sem dispensar a
-validação humana.
+o comportamento esperado do sistema. No entanto, a elaboração manual de cenários é trabalhosa e sujeita à inconsistências. Neste
+contexto, realizamos um estudo empírico para avaliar a viabilidade do uso do modelo LLaMA-4 Maverick 17B-128E na geração de
+cenários Gherkin a partir de histórias de usuário. Partindo de uma amostra de 104 histórias de 26 projetos do GitHub, geramos 520
+cenários utilizando few-shot prompting e avaliamos sua qualidade.
+Os resultados revelaram a ausência de erros sintáticos e boa aderência às boas práticas (apenas 4 cenários com defeito, excluindo-se
+erros de indentação e comprimento excessivo de step ou título, reparáveis por simples ajuste no prompt). A similaridade textual com
+cenários humanos, medida por TF-IDF e embeddings, apresentou valores intermediários (0,44 e 0,58), sugerindo que o modelo capturou
+melhor o comportamento funcional dos cenários, sem reproduzir exatamente o estilo de escrita humana. No entanto, considerando
+que, em muitos casos os cenários humanos focavam em detalhes de implementação e não em regras de negócio, ou não cobriam
+amplamente os fluxos mais prováveis da história, valores intermediários de similaridade não implicam, necessariamente, inadequação
+vocabular nos cenários gerados. No mais, através de análise manual,
+constatamos alta cobertura funcional dos cenários gerados, o que significa que eles cobriram satisfatoriamente o fluxo principal e
+os fluxos alternativos esperados para a história. Por fim, a partir
+da análise manual de uma subamostra de 104 cenários (1 cenário
+por história) por dois revisores (taxa de concordância de 87,5%),
+constatamos alta coesão semântica, ou seja, os cenários se mostraram alinhados aos requisitos subjacentes às histórias. Em conjunto,
+os achados sugerem que o modelo é viável como suporte inicial
+à geração de cenários Gherkin, contribuindo para a automação e
+padronização dos testes de aceitação, sem dispensar a validação
+humana.
 
 </p>
 
